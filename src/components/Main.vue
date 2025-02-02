@@ -18,7 +18,7 @@
                 label-position="left"
                 style="margin-top: 20px">
                 <el-form-item label="Group policy scope">
-                    <el-radio-group v-model="scope" size="small">
+                    <el-radio-group v-model="scope">
                         <el-radio-button label="machine">
                             Machine
                         </el-radio-button>
@@ -26,7 +26,7 @@
                     </el-radio-group>
                 </el-form-item>
                 <el-form-item label="Language">
-                    <el-select v-model="lang" size="small" style="width: 200px">
+                    <el-select v-model="lang" style="width: 200px">
                         <el-option
                             v-for="l in langs"
                             :label="displayLanguage(l)"
