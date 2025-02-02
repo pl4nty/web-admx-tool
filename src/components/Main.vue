@@ -38,9 +38,11 @@
 
         <tree :data="treeData" :configs="configs" @click="click"></tree>
 
-        <template-mgmt
-            v-model="showTemplateMgmt"
-            @update="po => console.log((policyObject = po))"></template-mgmt>
+        <suspense>
+            <template-mgmt
+                v-model="showTemplateMgmt"
+                @update="po => console.log((policyObject = po))"></template-mgmt>
+        </suspense>
 
         <template-config v-model="showTemplateConfig"></template-config>
 

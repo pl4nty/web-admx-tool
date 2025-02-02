@@ -191,10 +191,10 @@ const loadServer = async e => {
     let name
     try {
         const prompt = await ElMessageBox.prompt(
-            'Please input server URL (use /web-admx-tool/test.json for testing!)',
+            'Please input server URL (use test.json for testing!)',
             'Tip',
             {
-                inputValue: '/web-admx-tool/test.json',
+                inputValue: 'test.json',
                 confirmButtonText: 'OK',
                 cancelButtonText: 'Cancel'
             }
@@ -223,5 +223,26 @@ const loadServer = async e => {
 
     emit('update', mergeObjects())
     drawer.value = false
+}
+
+{
+    await Promise.all(['test.json'].map(async name => {
+        let data
+        try {
+            data = await (await fetch(name)).json()
+        } catch (error) {
+            console.error(error)
+            ElMessage.error(error.message)
+            return
+        }
+
+        templates.value.push({
+            type: 'server',
+            name,
+            data
+        })
+    }))
+
+    emit('update', mergeObjects())
 }
 </script>
