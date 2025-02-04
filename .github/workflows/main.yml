@@ -15,8 +15,10 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
       - name: EvergreenAdmx
-        # Install-Script -Name EvergreenAdmx
+        # MDOP is partially superseded by Windows, and Windows ships an old winget version in-box
+        # pending PRs: Install-Script -Name EvergreenAdmx
         run: |
+          .\.github\EvergreenAdmx.ps1 -Verbose -WorkingDirectory . -Include "Microsoft Desktop Optimization Pack"
           .\.github\EvergreenAdmx.ps1 -Verbose -WorkingDirectory . -Include @(
             "Windows 11"
             "Microsoft Edge"
@@ -31,10 +33,20 @@ jobs:
             "Microsoft Desktop Optimization Pack"
             "Mozilla Firefox"
             "Zoom Desktop Client"
-            "Azure Virtual Desktop"
-            "Microsoft Winget"
+            "Azure Virtual Desktop" 
           )
+          .\.github\EvergreenAdmx.ps1 -Verbose -WorkingDirectory . -Include "Microsoft Winget"
+
+      - uses: actions/setup-node@v4.2.0
+        with:
+          cache: 'npm'
+      - name: admx2json
+        working-directory: admx
+        run: |
+          npm i fast-xml-parser
+          ../src/utils/admx2json.js .
+
       - uses: EndBug/add-and-commit@v9.1.4
         with:
           default_author: github_actions
-          message: Change detected
+          message: Updated ADMX data
