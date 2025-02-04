@@ -226,7 +226,7 @@ const loadServer = async e => {
 }
 
 {
-    await Promise.all(['test.json'].map(async name => {
+    await Promise.all(['admx.json'].map(async name => {
         let data
         try {
             data = await (await fetch(name)).json()

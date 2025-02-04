@@ -1,0 +1,40 @@
+name: Refresh data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *" # daily
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  main:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4.2.2
+        with:
+          ref: ${{ github.head_ref }}
+      - name: EvergreenAdmx
+        # "Windows 11"
+        # "Microsoft OneDrive"
+        # "Microsoft Office"
+        # "Microsoft Desktop Optimization Pack"
+        # Install-Script -Name EvergreenAdmx
+        run: |
+          .\.github\EvergreenAdmx.ps1 -Verbose -WorkingDirectory . -Include @(
+            "Microsoft Edge"
+            "FSLogix"
+            "Adobe Acrobat"
+            "Adobe Reader"
+            "BIS-F"
+            "Citrix Workspace App"
+            "Google Chrome"
+            "Mozilla Firefox"
+            "Zoom Desktop Client"
+            "Azure Virtual Desktop"
+            "Microsoft Winget"
+          )
+      - uses: EndBug/add-and-commit@v9.1.4
+        with:
+          default_author: github_actions
+          message: Change detected
