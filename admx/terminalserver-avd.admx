@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.1" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+    <policyNamespaces>
+        <target prefix="terminalServer-AVD" namespace="Microsoft.Policies.TerminalServer-AVD" />
+        <using prefix="terminalserver" namespace="Microsoft.Policies.TerminalServer" />
+    </policyNamespaces>
+    <resources minRequiredRevision="1.0" />
+
+    <supportedOn>
+        <definitions>
+            <definition name="AVD_SUPPORTED" displayName="$(string.AVD_SUPPORTED)" />
+        </definitions>
+    </supportedOn>
+    <categories>
+        <category name="AVD_GP_NODE" displayName="$(string.AVD_GP_NODE)" explainText="$(string.AVD_User_Help)">
+            <parentCategory ref="terminalserver:TS_TERMINAL_SERVER" />
+        </category>
+    </categories>
+    <policies>
+
+        <!-- Graphics Policies -->
+
+        <!-- Configure HEVC -->
+        <policy name="AVD_SERVER_HEVC" class="Machine" displayName="$(string.AVD_SERVER_HEVC)" explainText="$(string.AVD_SERVER_HEVC_EXPLAIN)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="HEVCHardwareEncodePreferred">
+            <parentCategory ref="AVD_GP_NODE" />
+            <supportedOn ref="AVD_SUPPORTED" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
+
+        <policy name="AVD_SERVER_SCREEN_CAPTURE_PROTECTION" class="Machine" displayName="$(string.AVD_SERVER_SCREEN_CAPTURE_PROTECTION)" presentation="$(presentation.AVD_SERVER_SCREEN_CAPTUTE_PROTECTION_OPTIONS)" explainText="$(string.AVD_SERVER_SCREEN_CAPTURE_PROTECTION_EXPLAIN)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services">
+            <parentCategory ref="AVD_GP_NODE" />
+            <supportedOn ref="AVD_SUPPORTED" />
+            <elements>
+                <enum id="AVD_SERVER_SCREEN_CAPTURE_PROTECTION_LEVEL" valueName="fEnableScreenCaptureProtect">
+                <item displayName="$(string.AVD_SERVER_BLOCK_SCREEN_CAPTURE_ON_CLIENT_ONLY)">
+                    <value>
+                    <decimal value="1" />
+                    </value>
+                </item>
+                <item displayName="$(string.AVD_SERVER_BLOCK_SCREEN_CAPTURE_ON_BOTH)">
+                    <value>
+                    <decimal value="2" />
+                    </value>
+                </item>
+                </enum>
+            </elements>
+        </policy>
+      
+        <policy name="AVD_SERVER_WATERMARKING" class="Machine" displayName="$(string.AVD_SERVER_WATERMARKING)" presentation="$(presentation.AVD_SERVER_WATERMARKING)" explainText="$(string.AVD_SERVER_WATERMARKING_EXPLAIN)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="fEnableWatermarking">
+            <parentCategory ref="AVD_GP_NODE" />
+            <supportedOn ref="AVD_SUPPORTED" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+            <elements>
+                <decimal id="Part_WatermarkingQrScale" valueName="WatermarkingQrScale" minValue="1" maxValue="10" storeAsText="false" />
+                <decimal id="Part_WatermarkingOpacity" valueName="WatermarkingOpacity" minValue="100" maxValue="9999" storeAsText="false" />
+                <decimal id="Part_WatermarkingWidthFactor" valueName="WatermarkingWidthFactor" minValue="100" maxValue="1000" storeAsText="false" />
+                <decimal id="Part_WatermarkingHeightFactor" valueName="WatermarkingHeightFactor" minValue="100" maxValue="1000" storeAsText="false" />
+		<enum id="Part_WatermarkingContent" valueName="WatermarkingContent">
+                  <item displayName="$(string.AVD_SERVER_WATERMARKING_CONTENT_ACTIVITYID)">
+                    <value>
+                       <decimal value="0" />
+                    </value>
+                  </item>
+                  <item displayName="$(string.AVD_SERVER_WATERMARKING_CONTENT_DEVICEID)">
+                    <value>
+                      <decimal value="1" />
+                    </value>
+                  </item>
+                </enum>
+            </elements>
+        </policy>
+      
+       <policy name="AVD_SERVER_CONNECTION_INTERVAL_GRAPHICS_DATA" class="Machine" displayName="$(string.AVD_SERVER_CONNECTION_INTERVAL_GRAPHICS_DATA)" explainText="$(string.AVD_SERVER_CONNECTION_INTERVAL_GRAPHICS_DATA_EXPLAIN)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="fEnableConnectionIntervalGraphicsData">
+            <parentCategory ref="AVD_GP_NODE" />
+            <supportedOn ref="AVD_SUPPORTED" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
+      
+        <!-- Transport Policies -->
+
+        <policy name="AVD_SERVER_UDP_PORT_REDIRECTOR" class="Machine" displayName="$(string.AVD_SERVER_UDP_PORT_REDIRECTOR)" presentation="$(presentation.AVD_SERVER_UDP_PORT_REDIRECTOR)" explainText="$(string.AVD_SERVER_UDP_PORT_REDIRECTOR_EXPLAIN)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="fUseUdpPortRedirector">
+            <parentCategory ref="AVD_GP_NODE" />
+            <supportedOn ref="AVD_SUPPORTED" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+            <elements>
+                <decimal id="Part_UdpRedirectorPort" valueName="UdpRedirectorPort" minValue="1024" maxValue="65535" storeAsText="false" />
+            </elements>
+        </policy>
+      
+        <policy name="AVD_SERVER_UDP_STUN_CLIENT_PORT_RANGE" class="Machine" displayName="$(string.AVD_SERVER_UDP_STUN_CLIENT_PORT_RANGE)" presentation="$(presentation.AVD_SERVER_UDP_STUN_CLIENT_PORT_RANGE)" explainText="$(string.AVD_SERVER_UDP_STUN_CLIENT_PORT_RANGE_EXPLAIN)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="ICEEnableClientPortRange">
+            <parentCategory ref="AVD_GP_NODE" />
+            <supportedOn ref="AVD_SUPPORTED" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+            <elements>
+                <decimal id="Part_ICEClientPortBase" valueName="ICEClientPortBase" minValue="1024" maxValue="49151" storeAsText="false" />
+                <decimal id="Part_ICEClientPortRange" valueName="ICEClientPortRange" minValue="100" maxValue="65535" storeAsText="false" />
+            </elements>
+        </policy>
+
+    </policies>
+</policyDefinitions>
