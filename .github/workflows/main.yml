@@ -15,10 +15,8 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
       - name: EvergreenAdmx
-        # MDOP is partially superseded by Windows, and Windows ships an old winget version in-box
-        # pending PRs: Install-Script -Name EvergreenAdmx
+        # note conflicts - MDOP is partially superseded by Windows, and Windows ships an old winget version in-box
         run: |
-          .\.github\EvergreenAdmx.ps1 -Verbose -WorkingDirectory . -Include "Microsoft Desktop Optimization Pack"
           .\.github\EvergreenAdmx.ps1 -Verbose -WorkingDirectory . -Include @(
             "Windows 11"
             "Microsoft Edge"
@@ -33,9 +31,9 @@ jobs:
             "Microsoft Desktop Optimization Pack"
             "Mozilla Firefox"
             "Zoom Desktop Client"
-            "Azure Virtual Desktop" 
+            "Azure Virtual Desktop"
+            "Microsoft Winget"
           )
-          .\.github\EvergreenAdmx.ps1 -Verbose -WorkingDirectory . -Include "Microsoft Winget"
 
       - uses: actions/setup-node@v4.2.0
         with:
