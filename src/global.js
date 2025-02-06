@@ -146,6 +146,7 @@ const categories = computed(() => {
     try {
         const results = []
         Object.keys(policyObject.value).forEach(file => {
+            console.log('Loading', file)
             let categories =
                 policyObject.value[file].policy.policyDefinitions.categories
                     ?.category

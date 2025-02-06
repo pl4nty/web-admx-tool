@@ -1,4 +1,4 @@
-import { XMLParser } from 'fast-xml-parser'
+import { parseStringPromise } from 'xml2js'
 
 export const getVal = val => {
     let del = false,
@@ -24,22 +24,15 @@ export const getVal = val => {
     }
 }
 
-export const convert = folder => {
-    const parser = new XMLParser({
-        ignoreAttributes: false,
-        attributeNamePrefix: '',
-        ignoreDeclaration: true,
-        stopNodes: [
-            'policyDefinitionResources.resources.presentationTable.presentation'
-        ]
-    })
-    const presentationParser = new XMLParser({
-        ignoreAttributes: false,
-        attributeNamePrefix: '',
-        preserveOrder: true
-    })
-    folder.forEach(f => {
-        f.content = parser.parse(f.content)
+export const convert = async folder => {
+    await Promise.all(folder.map(async (f,i) => {
+        console.log('Parsing', f.name)
+        const parseOptions = {
+            charkey: "#text",
+            explicitArray: false,
+            mergeAttrs: true
+        }
+        f.content = await parseStringPromise(f.content, parseOptions)
         if (f.content.policyDefinitions) {
             delete f.content['policyDefinitions']['revision']
             delete f.content['policyDefinitions']['schemaVersion']
@@ -68,12 +61,13 @@ export const convert = folder => {
                 p[i] = {
                     id: p[i].id,
                     item: p[i]['#text']
-                        ? presentationParser.parse(p[i]['#text'])
+                        ? await parseStringPromise(p[i]['#text'], parseOptions)
                         : null
                 }
             }
         }
-    })
+        folder[i] = f
+    }))
     const converted = {}
     folder
         .filter(f => !f.name.includes('/'))
