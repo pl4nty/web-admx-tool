@@ -10,7 +10,10 @@ const processFolder = async (cwd, files, res) => {
             file.toLowerCase().endsWith('.admx') ||
             file.toLowerCase().endsWith('.adml')
         ) {
-            const text = fs.readFileSync(join(cwd, file), 'utf16le').toString()
+            const fileBuffer = fs.readFileSync(join(cwd, file))
+            const header = fileBuffer.toString('utf8', 0, 200)
+            const encoding = header.includes('encoding="utf-16"') ? 'utf16le' : 'utf8'
+            const text = fileBuffer.toString(encoding)
             res.push({
                 name: file,
                 content: text
