@@ -1,6 +1,15 @@
 import fs from 'fs'
+import util from 'util'
 import path, { join } from 'path'
 import { convert } from './admx.js'
+
+const isUtf16 = (buffer) => {
+    // Check for UTF-16 LE BOM (FF FE)
+    if (buffer[0] === 0xFF && buffer[1] === 0xFE) return true;
+    // Check for UTF-16 BE BOM (FE FF)
+    if (buffer[0] === 0xFE && buffer[1] === 0xFF) return true;
+    return false;
+}
 
 // adapted from TemplateMgmt.vue
 const processFolder = async (cwd, files, res) => {
@@ -10,10 +19,8 @@ const processFolder = async (cwd, files, res) => {
             file.toLowerCase().endsWith('.admx') ||
             file.toLowerCase().endsWith('.adml')
         ) {
-            const fileBuffer = fs.readFileSync(join(cwd, file))
-            const header = fileBuffer.toString('utf8', 0, 200)
-            const encoding = header.includes('encoding="utf-16"') ? 'utf16le' : 'utf8'
-            const text = fileBuffer.toString(encoding)
+            const buffer = fs.readFileSync(join(cwd, file))
+            const text = buffer.toString(isUtf16(buffer) ? 'utf16le' : 'utf8')
             res.push({
                 name: file,
                 content: text
@@ -34,9 +41,9 @@ try {
     const files = fs.readdirSync(folderPath, { recursive: true })
     await processFolder(folderPath, files, results)
 
-    const converted = convert(results)
+    const converted = await convert(results)
     const outputPath = path.join(process.cwd(), '..', 'public', 'admx.json')
-    console.log(converted)
+    console.dir(util.inspect(converted, false, null))
 
     fs.writeFileSync(outputPath, JSON.stringify(converted))
     console.log(`Conversion complete. Output written to ${outputPath}`)
