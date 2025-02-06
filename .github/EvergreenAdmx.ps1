@@ -106,7 +106,7 @@ $ErrorActionPreference = "SilentlyContinue"
 
 $admxversions = $null
 if (-not $WorkingDirectory) { $WorkingDirectory = $PSScriptRoot }
-if (Test-Path -Path "$($WorkingDirectory)\admxversions.xml") { $admxversions = Import-Clixml -Path "$($WorkingDirectory)\admxversions.xml" }
+if (Test-Path -Path "$($WorkingDirectory)\admxversions.json") { $admxversions = Get-Content -Path "$($WorkingDirectory)\admxversions.json" | ConvertFrom-Json }
 if (-not (Test-Path -Path "$($WorkingDirectory)\admx")) { $null = New-Item -Path "$($WorkingDirectory)\admx" -ItemType Directory -Force }
 if (-not (Test-Path -Path "$($WorkingDirectory)\downloads")) { $null = New-Item -Path "$($WorkingDirectory)\downloads" -ItemType Directory -Force }
 if ($PolicyStore -and -not $PolicyStore.EndsWith("\")) { $PolicyStore += "\" }
@@ -2884,6 +2884,6 @@ else
     if ($admx) { if ($admxversions.Winget) { $admxversions.Winget = $admx } else { $admxversions += @{ Winget = @{ Version = $admx.Version; URI = $admx.URI } } } }
 }
 
-Write-Verbose "`nSaving Admx versions to '$($WorkingDirectory)\admxversions.xml'"
-$admxversions | Export-Clixml -Path "$($WorkingDirectory)\admxversions.xml" -Force
+Write-Verbose "`nSaving Admx versions to '$($WorkingDirectory)\admxversions.json'"
+$admxversions | ConvertTo-Json | Set-Content -Path "$($WorkingDirectory)\admxversions.json" -Force
 #endregion
