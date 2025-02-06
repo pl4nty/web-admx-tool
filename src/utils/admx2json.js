@@ -14,7 +14,6 @@ const isUtf16 = (buffer) => {
 // adapted from TemplateMgmt.vue
 const processFolder = async (cwd, files, res) => {
     for (const file of files) {
-        console.log('Processing', file)
         if (
             file.toLowerCase().endsWith('.admx') ||
             file.toLowerCase().endsWith('.adml')
@@ -43,7 +42,6 @@ try {
 
     const converted = await convert(results)
     const outputPath = path.join(process.cwd(), '..', 'public', 'admx.json')
-    console.dir(util.inspect(converted, false, null))
 
     fs.writeFileSync(outputPath, JSON.stringify(converted))
     console.log(`Conversion complete. Output written to ${outputPath}`)

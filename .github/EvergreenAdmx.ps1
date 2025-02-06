@@ -2885,5 +2885,6 @@ else
 }
 
 Write-Verbose "`nSaving Admx versions to '$($WorkingDirectory)\admxversions.xml'"
+Write-Host $admxversions
 $admxversions | Export-Clixml -Path "$($WorkingDirectory)\admxversions.xml" -Force
 #endregion
