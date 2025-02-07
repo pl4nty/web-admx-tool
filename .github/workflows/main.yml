@@ -17,7 +17,8 @@ jobs:
       - name: EvergreenAdmx
         # note conflicts - MDOP is partially superseded by Windows, and Windows ships an old winget version in-box
         run: |
-          .\.github\EvergreenAdmx.ps1 -Verbose -WorkingDirectory . -Include @(
+          Invoke-WebRequest https://raw.githubusercontent.com/pl4nty/EvergreenAdmx/refs/heads/main/EvergreenAdmx.ps1 -OutFile $env:TEMP\EvergreenAdmx.ps1
+          & $env:TEMP\EvergreenAdmx.ps1 -Verbose -WorkingDirectory . -Include @(
             "Windows 11"
             "Microsoft Edge"
             "Microsoft OneDrive"
