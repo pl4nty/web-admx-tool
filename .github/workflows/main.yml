@@ -59,6 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: fstossesds/admx-lint
+      options: --user root
     steps:
       - uses: actions/download-artifact@v4.1.8
         with:
