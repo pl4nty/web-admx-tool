@@ -35,6 +35,11 @@ jobs:
             "Azure Virtual Desktop"
             "Microsoft Winget"
             "Brave Browser"
+            "Winget-AutoUpdate"
+            "Winget-AutoUpdate-aaS"
+            "Devolutions Remote Desktop Manager"
+            "Slack"
+            "MakeMeAdmin"
           )
 
       - uses: actions/setup-node@v4.2.0
@@ -50,3 +55,18 @@ jobs:
         with:
           default_author: github_actions
           message: Updated ADMX data
+  lint:
+    needs: main
+    runs-on: ubuntu-latest
+    container:
+      image: fstossesds/admx-lint
+      options: --user root
+    steps:
+      - uses: actions/checkout@v4.2.2
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Lint ADMX
+        run: |
+          for file in admx/*.admx; do
+            admx-lint --input_file "$file" || true
+          done

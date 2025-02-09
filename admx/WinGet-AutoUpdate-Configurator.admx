@@ -1,0 +1,220 @@
+﻿<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.04" xsi:schemaLocation="" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+	<policyNamespaces>
+		<target prefix="WinGet-AutoUpdate-Configurator" namespace="WinGet-AutoUpdate-Configurator.Configuration.Policies"/>
+	</policyNamespaces>
+	<resources minRequiredRevision="1.0" fallbackCulture="en-us"/>
+	<supportedOn>
+		<definitions>
+			<definition name="SupportedOn" displayName="$(string.SupportedOn)"/>
+		</definitions>
+	</supportedOn>
+	<categories>
+      <category name="WAUC" displayName="$(string.WAUC)"/>
+      <category name="Configuration" displayName="$(string.Configuration)">
+        <parentCategory ref="WAUC" />
+      </category>
+      <category name="Mods" displayName="$(string.Mods)">
+        <parentCategory ref="WAUC" />
+      </category>
+    </categories>
+
+    <policies>
+<policy name="Winget-AutoUpdate-ModsConfig" class="Machine" displayName="$(string.ModsConfigDisplayName)" explainText="$(string.ModsConfigexplainText)" presentation="$(presentation.ModsConfigPresentation)" key="SOFTWARE\Policies\weatherlights.com\Winget-AutoUpdate">
+	<parentCategory ref="Mods"/>
+	<supportedOn ref="SupportedOn"/>
+	<elements>
+        <list id="ModsConfig" key="SOFTWARE\Policies\weatherlights.com\Winget-AutoUpdate\Mods" additive="true" explicitValue="true"/>
+	</elements>
+</policy>
+
+<!-- Policy SOFTWARE-Policies-weatherlights.com-Winget-AutoUpdate-List -->
+<policy name="Winget-AutoUpdate-List" class="Machine" displayName="$(string.ListDisplayName)" explainText="$(string.ListexplainText)" presentation="$(presentation.ListPresentation)" key="SOFTWARE\Policies\weatherlights.com\Winget-AutoUpdate">
+	<parentCategory ref="Configuration"/>
+	<supportedOn ref="SupportedOn"/>
+	<elements>
+        <list id="List" key="SOFTWARE\Policies\weatherlights.com\Winget-AutoUpdate\List" valuePrefix=""/>
+	</elements>
+</policy>
+
+
+<!-- Policy SOFTWARE-Policies-weatherlights.com-Winget-AutoUpdate-UpdatesInterval -->
+<policy name="Winget-AutoUpdate-UpdatesInterval" class="Machine" displayName="$(string.UpdatesIntervalDisplayName)" explainText="$(string.UpdatesIntervalexplainText)" presentation="$(presentation.UpdatesIntervalPresentation)" key="SOFTWARE\Policies\weatherlights.com\Winget-AutoUpdate">
+	<parentCategory ref="Configuration"/>
+	<supportedOn ref="SupportedOn"/>
+<elements>
+        <enum id="UpdatesInterval" valueName="UpdatesInterval">
+            <item displayName="$(string.UpdatesIntervalDaily)">
+                <value>
+                    <string>Daily</string>
+                </value>
+            </item>
+            <item displayName="$(string.UpdatesIntervalBiDaily)">
+                <value>
+                    <string>BiDaily</string>
+                </value>
+            </item>
+            <item displayName="$(string.UpdatesIntervalWeekly)">
+                <value>
+                    <string>Weekly</string>
+                </value>
+            </item>
+            <item displayName="$(string.UpdatesIntervalBiWeekly)">
+                <value>
+                    <string>BiWeekly</string>
+                </value>
+            </item>
+            <item displayName="$(string.UpdatesIntervalMonthly)">
+                <value>
+                    <string>Monthly</string>
+                </value>
+            </item>
+            <item displayName="$(string.UpdatesIntervalNever)">
+                <value>
+                    <string>Never</string>
+                </value>
+            </item>
+        </enum>
+   </elements>
+</policy>
+
+<!-- Policy SOFTWARE-Policies-weatherlights.com-Winget-AutoUpdate-RunOnMetered -->
+<policy name="Winget-AutoUpdate-RunOnMetered" class="Machine" displayName="$(string.RunOnMetereddisplayName)" explainText="$(string.RunOnMeteredexplainText)" key="SOFTWARE\Policies\weatherlights.com\Winget-AutoUpdate" valueName="RunOnMetered">
+	<parentCategory ref="Configuration"/>
+	<supportedOn ref="SupportedOn"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+</policy>
+
+<!-- Policy SOFTWARE-Policies-weatherlights.com-Winget-AutoUpdate-UseWhiteList -->
+<policy name="Winget-AutoUpdate-UseWhiteList" class="Machine" displayName="$(string.UseWhiteListdisplayName)" explainText="$(string.UseWhiteListexplainText)" key="SOFTWARE\Policies\weatherlights.com\Winget-AutoUpdate" valueName="UseWhiteList">
+	<parentCategory ref="Configuration"/>
+	<supportedOn ref="SupportedOn"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+</policy>
+
+<!-- Policy SOFTWARE-Policies-weatherlights.com-Winget-AutoUpdate-NotificationLevel -->
+<policy name="Winget-AutoUpdate-NotificationLevel" class="Machine" displayName="$(string.NotificationLeveldisplayName)" explainText="$(string.NotificationLevelexplainText)" presentation="$(presentation.NotificationLevelPresentation)" key="SOFTWARE\Policies\weatherlights.com\Winget-AutoUpdate">
+	<parentCategory ref="Configuration"/>
+	<supportedOn ref="SupportedOn"/>
+	<elements>
+        <enum id="NotificationLevel" valueName="NotificationLevel">
+            <item displayName="$(string.NotificationLevelFull)">
+                <value>
+                    <string>Full</string>
+                </value>
+            </item>
+            <item displayName="$(string.NotificationLevelSuccessOnly)">
+                <value>
+                    <string>SuccessOnly</string>
+                </value>
+            </item>
+            <item displayName="$(string.NotificationLevelNone)">
+                <value>
+                    <string>None</string>
+                </value>
+            </item>
+        </enum>
+   </elements>
+</policy>
+
+<!-- Policy SOFTWARE-Policies-weatherlights.com-Winget-AutoUpdate-UpdatesAtLogon -->
+<policy name="Winget-AutoUpdate-UpdatesAtLogon" class="Machine" displayName="$(string.UpdatesAtLogondisplayName)" explainText="$(string.UpdatesAtLogonexplainText)" key="SOFTWARE\Policies\weatherlights.com\Winget-AutoUpdate" valueName="UpdatesAtLogon">
+	<parentCategory ref="Configuration"/>
+	<supportedOn ref="SupportedOn"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+</policy>
+
+<policy name="Winget-AutoUpdate-DesktopShortcut" class="Machine" displayName="$(string.DesktopShortcutdisplayName)" explainText="$(string.DesktopShortcutexplainText)" key="SOFTWARE\Policies\weatherlights.com\Winget-AutoUpdate" valueName="DesktopShortcut">
+	<parentCategory ref="Configuration"/>
+	<supportedOn ref="SupportedOn"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+</policy>
+
+<policy name="Winget-AutoUpdate-StartMenuShortcut" class="Machine" displayName="$(string.StartMenuShortcutdisplayName)" explainText="$(string.StartMenuShortcutexplainText)" key="SOFTWARE\Policies\weatherlights.com\Winget-AutoUpdate" valueName="StartMenuShortcut">
+	<parentCategory ref="Configuration"/>
+	<supportedOn ref="SupportedOn"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+</policy>
+
+<policy name="Winget-AutoUpdate-DoNotUpdate" class="Machine" displayName="$(string.DoNotUpdatedisplayName)" explainText="$(string.DoNotUpdateexplainText)" key="SOFTWARE\Policies\weatherlights.com\Winget-AutoUpdate" valueName="DoNotUpdate">
+	<parentCategory ref="Configuration"/>
+	<supportedOn ref="SupportedOn"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+</policy>
+
+<policy name="Winget-AutoUpdate-ReinstallOnRefresh" class="Machine" displayName="$(string.ReinstallOnRefreshdisplayName)" explainText="$(string.ReinstallOnRefreshexplainText)" key="SOFTWARE\Policies\weatherlights.com\Winget-AutoUpdate" valueName="ReinstallOnRefresh">
+	<parentCategory ref="Configuration"/>
+	<supportedOn ref="SupportedOn"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+</policy>
+
+<policy name="Winget-AutoUpdate-InstallUserContext" class="Machine" displayName="$(string.InstallUserContextdisplayName)" explainText="$(string.InstallUserContextexplainText)" key="SOFTWARE\Policies\weatherlights.com\Winget-AutoUpdate" valueName="InstallUserContext">
+	<parentCategory ref="Configuration"/>
+	<supportedOn ref="SupportedOn"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+</policy>
+
+<policy name="Winget-AutoUpdate-BypassListForUsers" class="Machine" displayName="$(string.BypassListForUsersdisplayName)" explainText="$(string.BypassListForUsersexplainText)" key="SOFTWARE\Policies\weatherlights.com\Winget-AutoUpdate" valueName="BypassListForUsers">
+	<parentCategory ref="Configuration"/>
+	<supportedOn ref="SupportedOn"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+</policy>
+
+<!-- Policy SOFTWARE-Policies-weatherlights.com-Winget-AutoUpdate-UpdatesAtTime -->
+<policy name="Winget-AutoUpdate-UpdatesAtTime" class="Machine" displayName="$(string.UpdatesAtTimedisplayName)" explainText="$(string.UpdatesAtTimeexplainText)" presentation="$(presentation.UpdatesAtTimePresentation)" key="SOFTWARE\Policies\weatherlights.com\Winget-AutoUpdate">
+	<parentCategory ref="Configuration"/>
+	<supportedOn ref="SupportedOn"/>
+	<elements><text id="UpdatesAtTime" valueName="UpdatesAtTime" maxLength="1000000" required="true"/></elements>
+</policy>
+
+<policy name="Winget-AutoUpdate-ModsPath" class="Machine" displayName="$(string.ModsPathdisplayName)" explainText="$(string.ModsPathexplainText)" presentation="$(presentation.ModsPathPresentation)" key="SOFTWARE\Policies\weatherlights.com\Winget-AutoUpdate">
+	<parentCategory ref="Configuration"/>
+	<supportedOn ref="SupportedOn"/>
+	<elements><text id="ModsPath" valueName="ModsPath" maxLength="1000000" required="true"/></elements>
+</policy>
+</policies>
+</policyDefinitions>

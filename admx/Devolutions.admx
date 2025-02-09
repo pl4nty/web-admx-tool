@@ -1,0 +1,2080 @@
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="fullarmor" namespace="FullArmor.Policies.4A4D1B96_D670_46EB_A114_BF27836821EC" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <supersededAdm fileName="" />
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="CAT_DEVOLUTIONS" displayName="$(string.CAT_DEVOLUTIONS)" />
+    <category name="CAT_RDM" displayName="$(string.CAT_RDM)">
+      <parentCategory ref="CAT_DEVOLUTIONS" />
+    </category>
+    <category name="CAT_RDM_GENERAL" displayName="$(string.CAT_RDM_GENERAL)">
+      <parentCategory ref="CAT_RDM" />
+    </category>
+    <category name="CAT_RDM_SECURITY" displayName="$(string.CAT_RDM_SECURITY)">
+      <parentCategory ref="CAT_RDM" />
+    </category>
+    <category name="CAT_RDM_SESSIONS" displayName="$(string.CAT_RDM_SESSIONS)">
+      <parentCategory ref="CAT_RDM" />
+    </category>
+    <category name="CAT_RDM_UI" displayName="$(string.CAT_RDM_UI)">
+      <parentCategory ref="CAT_RDM" />
+    </category>
+  </categories>
+  <policies>
+      <policy 
+		name="POL_RDM_ALLOWSYNCALLVAULTSBACKGROUND"
+		class="Both" 
+		displayName="$(string.POL_RDM_ALLOWSYNCALLVAULTSBACKGROUND)"
+		explainText="$(string.POL_RDM_ALLOWSYNCALLVAULTSBACKGROUND_HELP)"
+		presentation="$(presentation.INPUT_DEC_ALLOWSYNCALLVAULTSBACKGROUND)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="AllowSyncAllVaultsBackground">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_ALLOWSYNCALLVAULTSBACKGROUND" valueName="AllowSyncAllVaultsBackground" maxValue="20000" />
+	</elements>
+    </policy>
+    <policy 
+		name="POL_RDM_ALWAYSPROMPTFORPASSPHRASE"
+		class="Both"
+		displayName="$(string.POL_RDM_ALWAYSPROMPTFORPASSPHRASE)"
+		explainText="$(string.POL_RDM_ALWAYSPROMPTFORPASSPHRASE_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="AlwaysPromptForPassphrase">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_APPLICATION2FAMODE"
+		class="Both" 
+		displayName="$(string.POL_RDM_APPLICATION2FAMODE)"
+		explainText="$(string.POL_RDM_APPLICATION2FAMODE_HELP)"
+		presentation="$(presentation.INPUT_DEC_APPLICATION2FAMODE)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="Application2FAMode">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_APPLICATION2FAMODE" valueName="Application2FAMode" maxValue="20000" />
+	</elements>
+    </policy>
+    <policy 
+		name="POL_RDM_APPLYFORCEDPASSWORDTEMPLATEINPASSWORDGENERATORTOOL"
+		class="Both"
+		displayName="$(string.POL_RDM_APPLYFORCEDPASSWORDTEMPLATEINPASSWORDGENERATORTOOL)"
+		explainText="$(string.POL_RDM_APPLYFORCEDPASSWORDTEMPLATEINPASSWORDGENERATORTOOL_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ApplyForcedPasswordTemplateInPasswordGeneratorTool">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_CHECKFORSERVERCERTIFICATEREVOCATION"
+		class="Both" 
+		displayName="$(string.POL_RDM_CHECKFORSERVERCERTIFICATEREVOCATION)"
+		explainText="$(string.POL_RDM_CHECKFORSERVERCERTIFICATEREVOCATION_HELP)"
+		presentation="$(presentation.INPUT_DEC_CHECKFORSERVERCERTIFICATEREVOCATION)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="CheckForServerCertificateRevocation">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_CHECKFORSERVERCERTIFICATEREVOCATION" valueName="CheckForServerCertificateRevocation" maxValue="20000" />
+	</elements>
+    </policy>
+    <policy 
+		name="POL_RDM_CLIPBOARDCOPYMETHOD"
+		class="Both" 
+		displayName="$(string.POL_RDM_CLIPBOARDCOPYMETHOD)"
+		explainText="$(string.POL_RDM_CLIPBOARDCOPYMETHOD_HELP)"
+		presentation="$(presentation.INPUT_DEC_CLIPBOARDCOPYMETHOD)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="ClipboardCopyMethod">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_CLIPBOARDCOPYMETHOD" valueName="ClipboardCopyMethod" maxValue="20000" />
+	</elements>
+    </policy>
+    <policy 
+		name="POL_RDM_CONFIRMSESSIONSOPENONCOUNTGREATERTHAN"
+		class="Both" 
+		displayName="$(string.POL_RDM_CONFIRMSESSIONSOPENONCOUNTGREATERTHAN)"
+		explainText="$(string.POL_RDM_CONFIRMSESSIONSOPENONCOUNTGREATERTHAN_HELP)"
+		presentation="$(presentation.INPUT_DEC_CONFIRMSESSIONSOPENONCOUNTGREATERTHAN)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="ConfirmSessionsOpenOnCountGreaterThan">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_CONFIRMSESSIONSOPENONCOUNTGREATERTHAN" valueName="ConfirmSessionsOpenOnCountGreaterThan" maxValue="20000" />
+	</elements>
+    </policy>
+    <policy 
+		name="POL_RDM_DASHBOARDAUTOFOCUSITEMONTABSELECT"
+		class="Both" 
+		displayName="$(string.POL_RDM_DASHBOARDAUTOFOCUSITEMONTABSELECT)"
+		explainText="$(string.POL_RDM_DASHBOARDAUTOFOCUSITEMONTABSELECT_HELP)"
+		presentation="$(presentation.INPUT_DEC_DASHBOARDAUTOFOCUSITEMONTABSELECT)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="DashboardAutoFocusItemOnTabSelect">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_DASHBOARDAUTOFOCUSITEMONTABSELECT" valueName="DashboardAutoFocusItemOnTabSelect" maxValue="20000" />
+	</elements>
+    </policy>
+    <policy 
+		name="POL_RDM_DASHBOARDAUTOFOCUSTABONITEMSELECT"
+		class="Both" 
+		displayName="$(string.POL_RDM_DASHBOARDAUTOFOCUSTABONITEMSELECT)"
+		explainText="$(string.POL_RDM_DASHBOARDAUTOFOCUSTABONITEMSELECT_HELP)"
+		presentation="$(presentation.INPUT_DEC_DASHBOARDAUTOFOCUSTABONITEMSELECT)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="DashboardAutoFocusTabOnItemSelect">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_DASHBOARDAUTOFOCUSTABONITEMSELECT" valueName="DashboardAutoFocusTabOnItemSelect" maxValue="20000" />
+	</elements>
+    </policy>
+    <policy 
+		name="POL_RDM_DASHBOARDHIDEALLASSETPANELS"
+		class="Both"
+		displayName="$(string.POL_RDM_DASHBOARDHIDEALLASSETPANELS)"
+		explainText="$(string.POL_RDM_DASHBOARDHIDEALLASSETPANELS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DashboardHideAllAssetPanels">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DASHBOARDHIDEALLATTACHMENTSPANELS"
+		class="Both"
+		displayName="$(string.POL_RDM_DASHBOARDHIDEALLATTACHMENTSPANELS)"
+		explainText="$(string.POL_RDM_DASHBOARDHIDEALLATTACHMENTSPANELS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DashboardHideAllAttachmentsPanels">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DASHBOARDHIDEALLDOCUMENTATIONPANELS"
+		class="Both"
+		displayName="$(string.POL_RDM_DASHBOARDHIDEALLDOCUMENTATIONPANELS)"
+		explainText="$(string.POL_RDM_DASHBOARDHIDEALLDOCUMENTATIONPANELS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DashboardHideAllDocumentationPanels">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DASHBOARDHIDEALLENTRIESPANELS"
+		class="Both"
+		displayName="$(string.POL_RDM_DASHBOARDHIDEALLENTRIESPANELS)"
+		explainText="$(string.POL_RDM_DASHBOARDHIDEALLENTRIESPANELS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DashboardHideAllEntriesPanels">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DASHBOARDHIDEALLLOGSPANELS"
+		class="Both"
+		displayName="$(string.POL_RDM_DASHBOARDHIDEALLLOGSPANELS)"
+		explainText="$(string.POL_RDM_DASHBOARDHIDEALLLOGSPANELS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DashboardHideAllLogsPanels">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DASHBOARDHIDEALLMACROSCRIPTTOOLSPANELS"
+		class="Both"
+		displayName="$(string.POL_RDM_DASHBOARDHIDEALLMACROSCRIPTTOOLSPANELS)"
+		explainText="$(string.POL_RDM_DASHBOARDHIDEALLMACROSCRIPTTOOLSPANELS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DashboardHideAllMacroScriptToolsPanels">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DASHBOARDHIDEALLMANAGEMENTTOOLSPANELS"
+		class="Both"
+		displayName="$(string.POL_RDM_DASHBOARDHIDEALLMANAGEMENTTOOLSPANELS)"
+		explainText="$(string.POL_RDM_DASHBOARDHIDEALLMANAGEMENTTOOLSPANELS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DashboardHideAllManagementToolsPanels">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DASHBOARDHIDEALLOVERVIEWPANELS"
+		class="Both"
+		displayName="$(string.POL_RDM_DASHBOARDHIDEALLOVERVIEWPANELS)"
+		explainText="$(string.POL_RDM_DASHBOARDHIDEALLOVERVIEWPANELS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DashboardHideAllOverviewPanels">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DASHBOARDHIDEALLPASSWORDLISTPANELS"
+		class="Both"
+		displayName="$(string.POL_RDM_DASHBOARDHIDEALLPASSWORDLISTPANELS)"
+		explainText="$(string.POL_RDM_DASHBOARDHIDEALLPASSWORDLISTPANELS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DashboardHideAllPasswordListPanels">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DASHBOARDHIDEALLPERMISSIONSPANELS"
+		class="Both"
+		displayName="$(string.POL_RDM_DASHBOARDHIDEALLPERMISSIONSPANELS)"
+		explainText="$(string.POL_RDM_DASHBOARDHIDEALLPERMISSIONSPANELS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DashboardHideAllPermissionsPanels">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DASHBOARDHIDEALLRECORDINGSPANELS"
+		class="Both"
+		displayName="$(string.POL_RDM_DASHBOARDHIDEALLRECORDINGSPANELS)"
+		explainText="$(string.POL_RDM_DASHBOARDHIDEALLRECORDINGSPANELS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DashboardHideAllRecordingsPanels">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DASHBOARDHIDEALLREFERENCEDBYPANELS"
+		class="Both"
+		displayName="$(string.POL_RDM_DASHBOARDHIDEALLREFERENCEDBYPANELS)"
+		explainText="$(string.POL_RDM_DASHBOARDHIDEALLREFERENCEDBYPANELS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DashboardHideAllReferencedByPanels">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DASHBOARDHIDEALLSUBCONNECTIONSPANELS"
+		class="Both"
+		displayName="$(string.POL_RDM_DASHBOARDHIDEALLSUBCONNECTIONSPANELS)"
+		explainText="$(string.POL_RDM_DASHBOARDHIDEALLSUBCONNECTIONSPANELS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DashboardHideAllSubConnectionsPanels">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DASHBOARDHIDEALLSUMMARYPANELS"
+		class="Both"
+		displayName="$(string.POL_RDM_DASHBOARDHIDEALLSUMMARYPANELS)"
+		explainText="$(string.POL_RDM_DASHBOARDHIDEALLSUMMARYPANELS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DashboardHideAllSummaryPanels">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DASHBOARDHIDEALLTASKPANELS"
+		class="Both"
+		displayName="$(string.POL_RDM_DASHBOARDHIDEALLTASKPANELS)"
+		explainText="$(string.POL_RDM_DASHBOARDHIDEALLTASKPANELS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DashboardHideAllTaskPanels">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DEFAULTNAVIGATIONPANETAB"
+		class="Both" 
+		displayName="$(string.POL_RDM_DEFAULTNAVIGATIONPANETAB)"
+		explainText="$(string.POL_RDM_DEFAULTNAVIGATIONPANETAB_HELP)"
+		presentation="$(presentation.INPUT_DEC_DEFAULTNAVIGATIONPANETAB)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="DefaultNavigationPaneTab">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_DEFAULTNAVIGATIONPANETAB" valueName="DefaultNavigationPaneTab" maxValue="20000" />
+	</elements>
+    </policy>
+    <policy 
+		name="POL_RDM_DEFAULTPOWERSHELLVERSION"
+		class="Both" 
+		displayName="$(string.POL_RDM_DEFAULTPOWERSHELLVERSION)"
+		explainText="$(string.POL_RDM_DEFAULTPOWERSHELLVERSION_HELP)"
+		presentation="$(presentation.INPUT_DEC_DEFAULTPOWERSHELLVERSION)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="DefaultPowerShellVersion">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_DEFAULTPOWERSHELLVERSION" valueName="DefaultPowerShellVersion" maxValue="20000" />
+	</elements>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEABOUT"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEABOUT)"
+		explainText="$(string.POL_RDM_DISABLEABOUT_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableAbout">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEADDON"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEADDON)"
+		explainText="$(string.POL_RDM_DISABLEADDON_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableAddOn">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEADDONENTRIES"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEADDONENTRIES)"
+		explainText="$(string.POL_RDM_DISABLEADDONENTRIES_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableAddOnEntries">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEADDONMANAGER"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEADDONMANAGER)"
+		explainText="$(string.POL_RDM_DISABLEADDONMANAGER_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableAddOnManager">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEANALYTICS"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEANALYTICS)"
+		explainText="$(string.POL_RDM_DISABLEANALYTICS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableAnalytics">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEAPPLICATIONTOOLS"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEAPPLICATIONTOOLS)"
+		explainText="$(string.POL_RDM_DISABLEAPPLICATIONTOOLS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableApplicationTools">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEAUTOFOCUSDASHBOARD"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEAUTOFOCUSDASHBOARD)"
+		explainText="$(string.POL_RDM_DISABLEAUTOFOCUSDASHBOARD_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableAutoFocusDashboard">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEAUTOUPDATE"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEAUTOUPDATE)"
+		explainText="$(string.POL_RDM_DISABLEAUTOUPDATE_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableAutoUpdate">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLECACHING"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLECACHING)"
+		explainText="$(string.POL_RDM_DISABLECACHING_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableCaching">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLECUSTOMIMAGE"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLECUSTOMIMAGE)"
+		explainText="$(string.POL_RDM_DISABLECUSTOMIMAGE_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableCustomImage">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLECYBERARKPASSWORDRETRIEVAL"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLECYBERARKPASSWORDRETRIEVAL)"
+		explainText="$(string.POL_RDM_DISABLECYBERARKPASSWORDRETRIEVAL_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableCyberArkPasswordRetrieval">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEDRAGANDDROP"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEDRAGANDDROP)"
+		explainText="$(string.POL_RDM_DISABLEDRAGANDDROP_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableDragAndDrop">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEEXECUTESCRIPTSVIATERMINAL"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEEXECUTESCRIPTSVIATERMINAL)"
+		explainText="$(string.POL_RDM_DISABLEEXECUTESCRIPTSVIATERMINAL_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableExecuteScriptsViaTerminal">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEEXPORTVAULTMENUS"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEEXPORTVAULTMENUS)"
+		explainText="$(string.POL_RDM_DISABLEEXPORTVAULTMENUS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableExportVaultMenus">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEFILEDATASOURCES"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEFILEDATASOURCES)"
+		explainText="$(string.POL_RDM_DISABLEFILEDATASOURCES_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableFileDataSources">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEFILEOPTIONS"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEFILEOPTIONS)"
+		explainText="$(string.POL_RDM_DISABLEFILEOPTIONS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableFileOptions">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEGLOBALVAULTINUSERVAULT"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEGLOBALVAULTINUSERVAULT)"
+		explainText="$(string.POL_RDM_DISABLEGLOBALVAULTINUSERVAULT_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableGlobalVaultInUserVault">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEHELP"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEHELP)"
+		explainText="$(string.POL_RDM_DISABLEHELP_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableHelp">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEIMPORTEXPORTOPTIONS"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEIMPORTEXPORTOPTIONS)"
+		explainText="$(string.POL_RDM_DISABLEIMPORTEXPORTOPTIONS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableImportExportOptions">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEIMPORTINPRIVATEVAULT"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEIMPORTINPRIVATEVAULT)"
+		explainText="$(string.POL_RDM_DISABLEIMPORTINPRIVATEVAULT_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableImportInPrivateVault">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLELAUNCHATSTARTUP"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLELAUNCHATSTARTUP)"
+		explainText="$(string.POL_RDM_DISABLELAUNCHATSTARTUP_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableLaunchAtStartup">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLELICENSEEXPIRATIONMESSAGE"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLELICENSEEXPIRATIONMESSAGE)"
+		explainText="$(string.POL_RDM_DISABLELICENSEEXPIRATIONMESSAGE_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableLicenseExpirationMessage">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLELOCALDRIVESHARING"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLELOCALDRIVESHARING)"
+		explainText="$(string.POL_RDM_DISABLELOCALDRIVESHARING_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableLocalDriveSharing">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEMASKPASSWORDINVIEWPASSWORD"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEMASKPASSWORDINVIEWPASSWORD)"
+		explainText="$(string.POL_RDM_DISABLEMASKPASSWORDINVIEWPASSWORD_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableMaskPasswordInViewPassword">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEMOUSEJIGGLER"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEMOUSEJIGGLER)"
+		explainText="$(string.POL_RDM_DISABLEMOUSEJIGGLER_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableMouseJiggler">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEMYACCOUNTSETTINGS"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEMYACCOUNTSETTINGS)"
+		explainText="$(string.POL_RDM_DISABLEMYACCOUNTSETTINGS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableMyAccountSettings">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEMYPERSONALCREDENTIALS"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEMYPERSONALCREDENTIALS)"
+		explainText="$(string.POL_RDM_DISABLEMYPERSONALCREDENTIALS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableMyPersonalCredentials">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEMYPERSONALPRIVATEKEY"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEMYPERSONALPRIVATEKEY)"
+		explainText="$(string.POL_RDM_DISABLEMYPERSONALPRIVATEKEY_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableMyPersonalPrivateKey">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEMYPRIVILEGEDACCOUNT"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEMYPRIVILEGEDACCOUNT)"
+		explainText="$(string.POL_RDM_DISABLEMYPRIVILEGEDACCOUNT_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableMyPrivilegedAccount">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLENETWORKSCAN"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLENETWORKSCAN)"
+		explainText="$(string.POL_RDM_DISABLENETWORKSCAN_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableNetworkScan">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEOFFLINE"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEOFFLINE)"
+		explainText="$(string.POL_RDM_DISABLEOFFLINE_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableOffline">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEONBOARDING"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEONBOARDING)"
+		explainText="$(string.POL_RDM_DISABLEONBOARDING_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableOnboarding">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEONLINEACCOUNT"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEONLINEACCOUNT)"
+		explainText="$(string.POL_RDM_DISABLEONLINEACCOUNT_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableOnlineAccount">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEOPENWITHPARAMETERS"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEOPENWITHPARAMETERS)"
+		explainText="$(string.POL_RDM_DISABLEOPENWITHPARAMETERS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableOpenWithParameters">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEPASSWORDGENERATOR"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEPASSWORDGENERATOR)"
+		explainText="$(string.POL_RDM_DISABLEPASSWORDGENERATOR_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisablePasswordGenerator">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEQUICKCONNECT"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEQUICKCONNECT)"
+		explainText="$(string.POL_RDM_DISABLEQUICKCONNECT_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableQuickConnect">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLERDPGATEWAYEDITIONINENTRY"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLERDPGATEWAYEDITIONINENTRY)"
+		explainText="$(string.POL_RDM_DISABLERDPGATEWAYEDITIONINENTRY_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableRDPGatewayEditionInEntry">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLERDPHARDDRIVESSPECIFICSETTINGS"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLERDPHARDDRIVESSPECIFICSETTINGS)"
+		explainText="$(string.POL_RDM_DISABLERDPHARDDRIVESSPECIFICSETTINGS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableRDPHardDrivesSpecificSettings">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEREADWRITEOFFLINE"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEREADWRITEOFFLINE)"
+		explainText="$(string.POL_RDM_DISABLEREADWRITEOFFLINE_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableReadWriteOffline">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEREVEALPASSWORD"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEREVEALPASSWORD)"
+		explainText="$(string.POL_RDM_DISABLEREVEALPASSWORD_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableRevealPassword">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEREVEALPASSWORDINMYACCOUNTSETTINGS"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEREVEALPASSWORDINMYACCOUNTSETTINGS)"
+		explainText="$(string.POL_RDM_DISABLEREVEALPASSWORDINMYACCOUNTSETTINGS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableRevealPasswordInMyAccountSettings">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLESENDERRORREPORTDIALOG"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLESENDERRORREPORTDIALOG)"
+		explainText="$(string.POL_RDM_DISABLESENDERRORREPORTDIALOG_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableSendErrorReportDialog">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLESENDMESSAGEINDASHBOARD"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLESENDMESSAGEINDASHBOARD)"
+		explainText="$(string.POL_RDM_DISABLESENDMESSAGEINDASHBOARD_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableSendMessageInDashboard">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLESESSIONRECORDING"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLESESSIONRECORDING)"
+		explainText="$(string.POL_RDM_DISABLESESSIONRECORDING_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableSessionRecording">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLETOOLSADDONMANAGER"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLETOOLSADDONMANAGER)"
+		explainText="$(string.POL_RDM_DISABLETOOLSADDONMANAGER_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableToolsAddOnManager">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLETOOLSCHOCOLATEYCONSOLE"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLETOOLSCHOCOLATEYCONSOLE)"
+		explainText="$(string.POL_RDM_DISABLETOOLSCHOCOLATEYCONSOLE_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableToolsChocolateyConsole">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLETOOLSEXTENSIONMANAGER"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLETOOLSEXTENSIONMANAGER)"
+		explainText="$(string.POL_RDM_DISABLETOOLSEXTENSIONMANAGER_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableToolsExtensionManager">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLETOOLSLOCALRDPREMOTEAPPMANAGER"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLETOOLSLOCALRDPREMOTEAPPMANAGER)"
+		explainText="$(string.POL_RDM_DISABLETOOLSLOCALRDPREMOTEAPPMANAGER_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableToolsLocalRDPRemoteAppManager">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLETOOLSMENU"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLETOOLSMENU)"
+		explainText="$(string.POL_RDM_DISABLETOOLSMENU_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableToolsMenu">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLETOOLSOPENNEWREMOTEDESKTOP"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLETOOLSOPENNEWREMOTEDESKTOP)"
+		explainText="$(string.POL_RDM_DISABLETOOLSOPENNEWREMOTEDESKTOP_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableToolsOpenNewRemoteDesktop">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLETOOLSPOWERSHELLRDMCMDLET"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLETOOLSPOWERSHELLRDMCMDLET)"
+		explainText="$(string.POL_RDM_DISABLETOOLSPOWERSHELLRDMCMDLET_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableToolsPowershellRDMCmdlet">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLETOOLSRDMAGENT"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLETOOLSRDMAGENT)"
+		explainText="$(string.POL_RDM_DISABLETOOLSRDMAGENT_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableToolsRDMAgent">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLETOPPANE"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLETOPPANE)"
+		explainText="$(string.POL_RDM_DISABLETOPPANE_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableTopPane">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEUPDATE"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEUPDATE)"
+		explainText="$(string.POL_RDM_DISABLEUPDATE_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableUpdate">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEUSERVAULTEXPORT"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEUSERVAULTEXPORT)"
+		explainText="$(string.POL_RDM_DISABLEUSERVAULTEXPORT_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableUserVaultExport">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEWEBSITECREDENTIALAUTOFILLAFTERDELAY"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEWEBSITECREDENTIALAUTOFILLAFTERDELAY)"
+		explainText="$(string.POL_RDM_DISABLEWEBSITECREDENTIALAUTOFILLAFTERDELAY_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableWebsiteCredentialAutoFillAfterDelay">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_ENABLECONNECTIONAFTEREXPIRATION"
+		class="Both"
+		displayName="$(string.POL_RDM_ENABLECONNECTIONAFTEREXPIRATION)"
+		explainText="$(string.POL_RDM_ENABLECONNECTIONAFTEREXPIRATION_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="EnableConnectionAfterExpiration">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_ENABLELEGACYCHROMEPROFILEHANDLING"
+		class="Both"
+		displayName="$(string.POL_RDM_ENABLELEGACYCHROMEPROFILEHANDLING)"
+		explainText="$(string.POL_RDM_ENABLELEGACYCHROMEPROFILEHANDLING_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="EnableLegacyChromeProfileHandling">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_ENABLEPOWERSHELLREMOTECONSOLEHOOKING"
+		class="Both"
+		displayName="$(string.POL_RDM_ENABLEPOWERSHELLREMOTECONSOLEHOOKING)"
+		explainText="$(string.POL_RDM_ENABLEPOWERSHELLREMOTECONSOLEHOOKING_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="EnablePowerShellRemoteConsoleHooking">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_ENABLERDPHOOKING"
+		class="Both"
+		displayName="$(string.POL_RDM_ENABLERDPHOOKING)"
+		explainText="$(string.POL_RDM_ENABLERDPHOOKING_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="EnableRDPHooking">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCEAPPLICATIONMFA"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCEAPPLICATIONMFA)"
+		explainText="$(string.POL_RDM_FORCEAPPLICATIONMFA_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceApplicationMFA">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCECLEARCACHEONCLOSECHROME"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCECLEARCACHEONCLOSECHROME)"
+		explainText="$(string.POL_RDM_FORCECLEARCACHEONCLOSECHROME_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceClearCacheOnCloseChrome">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCECLEARCACHEONCLOSEMSEDGE"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCECLEARCACHEONCLOSEMSEDGE)"
+		explainText="$(string.POL_RDM_FORCECLEARCACHEONCLOSEMSEDGE_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceClearCacheOnCloseMSEdge">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCECLOSEONIDLE"
+		class="Both" 
+		displayName="$(string.POL_RDM_FORCECLOSEONIDLE)"
+		explainText="$(string.POL_RDM_FORCECLOSEONIDLE_HELP)"
+		presentation="$(presentation.INPUT_DEC_FORCECLOSEONIDLE)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="ForceCloseOnIdle">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_FORCECLOSEONIDLE" valueName="ForceCloseOnIdle" maxValue="20000" />
+	</elements>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCECURRENTCONFIGURATIONLOADING"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCECURRENTCONFIGURATIONLOADING)"
+		explainText="$(string.POL_RDM_FORCECURRENTCONFIGURATIONLOADING_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceCurrentConfigurationLoading">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCEDEFAULTCONFIGURATIONLOADING"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCEDEFAULTCONFIGURATIONLOADING)"
+		explainText="$(string.POL_RDM_FORCEDEFAULTCONFIGURATIONLOADING_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceDefaultConfigurationLoading">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCEDISABLEALLSESSIONEVENTS"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCEDISABLEALLSESSIONEVENTS)"
+		explainText="$(string.POL_RDM_FORCEDISABLEALLSESSIONEVENTS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceDisableAllSessionEvents">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCEENABLEDPAPICRYPTOGRAPHYONLOCALFILES"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCEENABLEDPAPICRYPTOGRAPHYONLOCALFILES)"
+		explainText="$(string.POL_RDM_FORCEENABLEDPAPICRYPTOGRAPHYONLOCALFILES_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceEnableDPAPICryptographyOnLocalFiles">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCEHIDEPASSWORDFORADMINISTRATORS"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCEHIDEPASSWORDFORADMINISTRATORS)"
+		explainText="$(string.POL_RDM_FORCEHIDEPASSWORDFORADMINISTRATORS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceHidePasswordForAdministrators">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCELOCALAPPLICATIONPASSWORD"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCELOCALAPPLICATIONPASSWORD)"
+		explainText="$(string.POL_RDM_FORCELOCALAPPLICATIONPASSWORD_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceLocalApplicationPassword">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCELOCALMYACCOUNTSETTINGS"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCELOCALMYACCOUNTSETTINGS)"
+		explainText="$(string.POL_RDM_FORCELOCALMYACCOUNTSETTINGS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceLocalMyAccountSettings">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCELOCKONIDLE"
+		class="Both" 
+		displayName="$(string.POL_RDM_FORCELOCKONIDLE)"
+		explainText="$(string.POL_RDM_FORCELOCKONIDLE_HELP)"
+		presentation="$(presentation.INPUT_DEC_FORCELOCKONIDLE)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="ForceLockOnIdle">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_FORCELOCKONIDLE" valueName="ForceLockOnIdle" maxValue="20000" />
+	</elements>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCELOCKONMINIMIZE"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCELOCKONMINIMIZE)"
+		explainText="$(string.POL_RDM_FORCELOCKONMINIMIZE_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceLockOnMinimize">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCELOCKONSTANDBY"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCELOCKONSTANDBY)"
+		explainText="$(string.POL_RDM_FORCELOCKONSTANDBY_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceLockOnStandby">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCELOCKONWINDOWSLOCK"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCELOCKONWINDOWSLOCK)"
+		explainText="$(string.POL_RDM_FORCELOCKONWINDOWSLOCK_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceLockOnWindowsLock">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCELOGIN"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCELOGIN)"
+		explainText="$(string.POL_RDM_FORCELOGIN_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceLogin">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCEREFRESHBEFORECOPYFROMENTRY"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCEREFRESHBEFORECOPYFROMENTRY)"
+		explainText="$(string.POL_RDM_FORCEREFRESHBEFORECOPYFROMENTRY_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceRefreshBeforeCopyFromEntry">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCEREFRESHBEFOREEDITENTRY"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCEREFRESHBEFOREEDITENTRY)"
+		explainText="$(string.POL_RDM_FORCEREFRESHBEFOREEDITENTRY_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceRefreshBeforeEditEntry">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCEREFRESHBEFOREEXECUTEENTRY"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCEREFRESHBEFOREEXECUTEENTRY)"
+		explainText="$(string.POL_RDM_FORCEREFRESHBEFOREEXECUTEENTRY_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceRefreshBeforeExecuteEntry">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCEREFRESHBEFOREVIEWPASSWORD"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCEREFRESHBEFOREVIEWPASSWORD)"
+		explainText="$(string.POL_RDM_FORCEREFRESHBEFOREVIEWPASSWORD_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceRefreshBeforeViewPassword">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCESECUREDESKTOP"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCESECUREDESKTOP)"
+		explainText="$(string.POL_RDM_FORCESECUREDESKTOP_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceSecureDesktop">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCESYSTEMPROXY"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCESYSTEMPROXY)"
+		explainText="$(string.POL_RDM_FORCESYSTEMPROXY_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceSystemProxy">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCETREEVIEWCOLLAPSEATLAUNCH"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCETREEVIEWCOLLAPSEATLAUNCH)"
+		explainText="$(string.POL_RDM_FORCETREEVIEWCOLLAPSEATLAUNCH_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceTreeViewCollapseAtLaunch">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCEUPDATINGALLUPDATE"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCEUPDATINGALLUPDATE)"
+		explainText="$(string.POL_RDM_FORCEUPDATINGALLUPDATE_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceUpdatingAllUpdate">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCEUPDATINGALLUPDATEANDBETA"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCEUPDATINGALLUPDATEANDBETA)"
+		explainText="$(string.POL_RDM_FORCEUPDATINGALLUPDATEANDBETA_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceUpdatingAllUpdateAndBeta">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCEUPDATINGMAJORUPDATE"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCEUPDATINGMAJORUPDATE)"
+		explainText="$(string.POL_RDM_FORCEUPDATINGMAJORUPDATE_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceUpdatingMajorUpdate">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCEUPDATINGONCEAMONTH"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCEUPDATINGONCEAMONTH)"
+		explainText="$(string.POL_RDM_FORCEUPDATINGONCEAMONTH_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceUpdatingOnceAMonth">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCEUSERSPECIFICSETTINGSMIGRATION"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCEUSERSPECIFICSETTINGSMIGRATION)"
+		explainText="$(string.POL_RDM_FORCEUSERSPECIFICSETTINGSMIGRATION_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceUserSpecificSettingsMigration">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCEWINDOWSCREDENTIALSANDCURRENTLYLOGGEDONUSERNAMEANDDOMAIN"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCEWINDOWSCREDENTIALSANDCURRENTLYLOGGEDONUSERNAMEANDDOMAIN)"
+		explainText="$(string.POL_RDM_FORCEWINDOWSCREDENTIALSANDCURRENTLYLOGGEDONUSERNAMEANDDOMAIN_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceWindowsCredentialsAndCurrentlyLoggedOnUsernameAndDomain">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCEWINDOWSHELLO"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCEWINDOWSHELLO)"
+		explainText="$(string.POL_RDM_FORCEWINDOWSHELLO_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceWindowsHello">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_HIDEDASHBOARD"
+		class="Both"
+		displayName="$(string.POL_RDM_HIDEDASHBOARD)"
+		explainText="$(string.POL_RDM_HIDEDASHBOARD_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="HideDashboard">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_HIDENAVIGATIONPANE"
+		class="Both"
+		displayName="$(string.POL_RDM_HIDENAVIGATIONPANE)"
+		explainText="$(string.POL_RDM_HIDENAVIGATIONPANE_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="HideNavigationPane">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_HIDEPORTINRDP"
+		class="Both"
+		displayName="$(string.POL_RDM_HIDEPORTINRDP)"
+		explainText="$(string.POL_RDM_HIDEPORTINRDP_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="HidePortInRDP">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_HIDEWHATSNEWPAGE"
+		class="Both"
+		displayName="$(string.POL_RDM_HIDEWHATSNEWPAGE)"
+		explainText="$(string.POL_RDM_HIDEWHATSNEWPAGE_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="HideWhatsNewPage">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_IGNOREAPPLICATIONCERTIFICATEERRORS"
+		class="Both"
+		displayName="$(string.POL_RDM_IGNOREAPPLICATIONCERTIFICATEERRORS)"
+		explainText="$(string.POL_RDM_IGNOREAPPLICATIONCERTIFICATEERRORS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="IgnoreApplicationCertificateErrors">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_LASTPASS2FAMODE"
+		class="Both" 
+		displayName="$(string.POL_RDM_LASTPASS2FAMODE)"
+		explainText="$(string.POL_RDM_LASTPASS2FAMODE_HELP)"
+		presentation="$(presentation.INPUT_DEC_LASTPASS2FAMODE)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="LastPass2FAMode">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_LASTPASS2FAMODE" valueName="LastPass2FAMode" maxValue="20000" />
+	</elements>
+    </policy>
+    <policy 
+		name="POL_RDM_LIMITENTRIESLAUNCHEDINASINGLEACTION"
+		class="Both" 
+		displayName="$(string.POL_RDM_LIMITENTRIESLAUNCHEDINASINGLEACTION)"
+		explainText="$(string.POL_RDM_LIMITENTRIESLAUNCHEDINASINGLEACTION_HELP)"
+		presentation="$(presentation.INPUT_DEC_LIMITENTRIESLAUNCHEDINASINGLEACTION)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="LimitEntriesLaunchedInASingleAction">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_LIMITENTRIESLAUNCHEDINASINGLEACTION" valueName="LimitEntriesLaunchedInASingleAction" maxValue="20000" />
+	</elements>
+    </policy>
+    <policy 
+		name="POL_RDM_LOCKNAVIGATIONPANE"
+		class="Both"
+		displayName="$(string.POL_RDM_LOCKNAVIGATIONPANE)"
+		explainText="$(string.POL_RDM_LOCKNAVIGATIONPANE_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="LockNavigationPane">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_NOINTERNETCONNECTION"
+		class="Both"
+		displayName="$(string.POL_RDM_NOINTERNETCONNECTION)"
+		explainText="$(string.POL_RDM_NOINTERNETCONNECTION_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="NoInternetConnection">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_ONLYALLOWCREDENTIALSINPRIVATEVAULT"
+		class="Both"
+		displayName="$(string.POL_RDM_ONLYALLOWCREDENTIALSINPRIVATEVAULT)"
+		explainText="$(string.POL_RDM_ONLYALLOWCREDENTIALSINPRIVATEVAULT_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="OnlyAllowCredentialsInPrivateVault">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_RESTRICTTODVLSDATASOURCE"
+		class="Both"
+		displayName="$(string.POL_RDM_RESTRICTTODVLSDATASOURCE)"
+		explainText="$(string.POL_RDM_RESTRICTTODVLSDATASOURCE_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="RestrictToDVLSDataSource">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_RESTRICTTOHUBBUSINESSDATASOURCE"
+		class="Both"
+		displayName="$(string.POL_RDM_RESTRICTTOHUBBUSINESSDATASOURCE)"
+		explainText="$(string.POL_RDM_RESTRICTTOHUBBUSINESSDATASOURCE_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="RestrictToHubBusinessDataSource">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_RESTRICTTOHUBPERSONALDATASOURCE"
+		class="Both"
+		displayName="$(string.POL_RDM_RESTRICTTOHUBPERSONALDATASOURCE)"
+		explainText="$(string.POL_RDM_RESTRICTTOHUBPERSONALDATASOURCE_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="RestrictToHubPersonalDataSource">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_SQLITEDEFAULTLOCATION"
+		class="Both" 
+		displayName="$(string.POL_RDM_SQLITEDEFAULTLOCATION)"
+		explainText="$(string.POL_RDM_SQLITEDEFAULTLOCATION_HELP)"
+		presentation="$(presentation.INPUT_DEC_SQLITEDEFAULTLOCATION)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="SQLiteDefaultLocation">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<text id="INPUT_DEC_SQLITEDEFAULTLOCATION" valueName="SQLiteDefaultLocation"/>
+	</elements>
+    </policy>
+  </policies>
+</policyDefinitions>
