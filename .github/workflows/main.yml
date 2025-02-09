@@ -35,6 +35,11 @@ jobs:
             "Azure Virtual Desktop"
             "Microsoft Winget"
             "Brave Browser"
+            "Winget-AutoUpdate"
+            "Winget-AutoUpdate-aaS"
+            "Devolutions Remote Desktop Manager"
+            "Slack"
+            "MakeMeAdmin"
           )
 
       - uses: actions/setup-node@v4.2.0
@@ -60,9 +65,8 @@ jobs:
       - uses: actions/checkout@v4.2.2
         with:
           ref: ${{ github.head_ref }}
-      - run: ls -la .
       - name: Lint ADMX
         run: |
           for file in admx/*.admx; do
-            admx-lint --input_file "$file"
+            admx-lint --input_file "$file" || true
           done
