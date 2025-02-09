@@ -64,8 +64,13 @@ jobs:
       - uses: actions/download-artifact@v4.1.8
         with:
           path: /home/appuser
-      - name: lint ADMX
+      - run: ls -la /home/appuser
+      - uses: actions/checkout@v4.2.2
+        with:
+          path: /home/appuser
+          ref: ${{ github.head_ref }}
+      - name: Lint ADMX
         run: |
-          for file in /home/appuser/artifact/admx/*.admx; do
+          for file in /home/appuser/artifact/admx; do
             admx-lint --input_file "$file"
           done
