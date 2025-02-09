@@ -50,3 +50,17 @@ jobs:
         with:
           default_author: github_actions
           message: Updated ADMX data
+  lint:
+    needs: main
+    runs-on: ubuntu-latest
+    container: fstossesds/admx-lint
+    steps:
+      - uses: actions/checkout@v4.2.2
+        with:
+          ref: ${{ github.ref_name }}
+      - name: lint ADMX
+        working-directory: admx
+        run: |
+          for file in *.admx; do
+            admx-lint --input_file "$file"
+          done
