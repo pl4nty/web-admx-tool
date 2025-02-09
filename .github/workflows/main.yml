@@ -66,8 +66,8 @@ jobs:
           path: /home/appuser
       - run: ls -la /home/appuser
       - uses: actions/checkout@v4.2.2
+        continue-on-error: true
         with:
-          path: /home/appuser
           ref: ${{ github.head_ref }}
       - name: Lint ADMX
         run: |
