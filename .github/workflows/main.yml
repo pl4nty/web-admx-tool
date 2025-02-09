@@ -60,7 +60,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4.2.2
         with:
-          ref: ${{ jobs.main.outputs.commit_long_sha || github.head_ref }}
+          ref: ${{ needs.main.outputs.commit_long_sha || github.head_ref }}
       - name: lint ADMX
         working-directory: admx
         run: |
