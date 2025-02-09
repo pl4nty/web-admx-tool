@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target namespace="Salesforce.Policies.Slack" prefix="slack" />
+    <using namespace="Microsoft.Policies.Windows" prefix="windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <supportedOn>
+    <definitions>
+      <definition displayName="$(string.SUPPORTED_WIN7)" name="SUPPORTED_WIN7"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="slack" displayName="$(string.slack)" explainText="$(string.slack_Explain)"/>
+    <category name="slackDefaults" displayName="$(string.slackDefaults)" explainText="$(string.slackDefaults_Explain)">
+      <parentCategory ref="slack" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="ClientEnvironment" class="Both" displayName="$(string.ClientEnvironment)" explainText="$(string.ClientEnvironment_Explain)" presentation="$(presentation.ClientEnvironment)" key="Software\Policies\Slack">
+      <parentCategory ref="slack" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <enum id="ClientEnvironment_Enum" valueName="ClientEnvironment">
+          <item displayName="$(string.ClientEnvironment_Commercial)">
+            <value>
+              <decimal value="1000"/>
+            </value>
+          </item>
+          <item displayName="$(string.ClientEnvironment_GovSlack)">
+            <value>
+              <decimal value="1001"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="ClientEnvironment_defaults" class="Both" displayName="$(string.ClientEnvironment)" explainText="$(string.ClientEnvironment_Explain)" presentation="$(presentation.ClientEnvironment)" key="Software\Policies\Slack\Defaults">
+      <parentCategory ref="slackDefaults" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <enum id="ClientEnvironment_Enum" valueName="ClientEnvironment">
+          <item displayName="$(string.ClientEnvironment_Commercial)">
+            <value>
+              <decimal value="1000"/>
+            </value>
+          </item>
+          <item displayName="$(string.ClientEnvironment_GovSlack)">
+            <value>
+              <decimal value="1001"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="HardwareAcceleration" class="Both" displayName="$(string.HardwareAcceleration)" explainText="$(string.HardwareAcceleration_Explain)" presentation="$(presentation.Generic)" key="Software\Policies\Slack" valueName="HardwareAcceleration">
+      <parentCategory ref="slack" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="HardwareAcceleration_defaults" class="Both" displayName="$(string.HardwareAcceleration)" explainText="$(string.HardwareAcceleration_Explain)" presentation="$(presentation.Generic)" key="Software\Policies\Slack\Defaults" valueName="HardwareAcceleration">
+      <parentCategory ref="slackDefaults" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DownloadPath" class="Both" displayName="$(string.DownloadPath)" explainText="$(string.DownloadPath_Explain)" presentation="$(presentation.DownloadPath)" key="Software\Policies\Slack">
+      <parentCategory ref="slack" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <text id="DownloadPath" valueName="DownloadPath" />
+      </elements>
+    </policy>
+    <policy name="DownloadPath_defaults" class="Both" displayName="$(string.DownloadPath)" explainText="$(string.DownloadPath_Explain)" presentation="$(presentation.DownloadPath)" key="Software\Policies\Slack\Defaults">
+      <parentCategory ref="slackDefaults" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <text id="DownloadPath" valueName="DownloadPath" />
+      </elements>
+    </policy>
+    <policy name="HideOnStartup" class="Both" displayName="$(string.HideOnStartup)" explainText="$(string.HideOnStartup_Explain)" presentation="$(presentation.Generic)" key="Software\Policies\Slack" valueName="HideOnStartup">
+      <parentCategory ref="slack" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="HideOnStartup_defaults" class="Both" displayName="$(string.HideOnStartup)" explainText="$(string.HideOnStartup_Explain)" presentation="$(presentation.Generic)" key="Software\Policies\Slack\Defaults" valueName="HideOnStartup">
+      <parentCategory ref="slackDefaults" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DefaultSignInTeam" class="Both" displayName="$(string.DefaultSignInTeam)" explainText="$(string.DefaultSignInTeam_Explain)" presentation="$(presentation.DefaultTeam)" key="Software\Policies\Slack">
+      <parentCategory ref="slack" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+       <elements>
+        <text id="DefaultTeam" valueName="DefaultSignInTeam" />
+      </elements>
+    </policy>
+    <policy name="ReleaseChannel" class="Both" displayName="$(string.ReleaseChannel)" explainText="$(string.ReleaseChannel_Explain)" presentation="$(presentation.ReleaseChannel)" key="Software\Policies\Slack">
+      <parentCategory ref="slack" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <enum id="ReleaseChannel_Enum" valueName="ReleaseChannel">
+          <item displayName="$(string.ReleaseChannel_Prod)">
+            <value>
+              <string>prod</string>
+            </value>
+          </item>
+          <item displayName="$(string.ReleaseChannel_Beta)">
+            <value>
+              <string>beta</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="ReleaseChannel_defaults" class="Both" displayName="$(string.ReleaseChannel)" explainText="$(string.ReleaseChannel_Explain)" presentation="$(presentation.ReleaseChannel)" key="Software\Policies\Slack\Defaults">
+      <parentCategory ref="slackDefaults" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <enum id="ReleaseChannel_Enum" valueName="ReleaseChannel">
+          <item displayName="$(string.ReleaseChannel_Prod)">
+            <value>
+              <string>prod</string>
+            </value>
+          </item>
+          <item displayName="$(string.ReleaseChannel_Beta)">
+            <value>
+              <string>beta</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="AutoUpdate" class="Both" displayName="$(string.AutoUpdate)" explainText="$(string.AutoUpdate_Explain)" presentation="$(presentation.Generic)" key="Software\Policies\Slack" valueName="AutoUpdate">
+      <parentCategory ref="slack" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AutoUpdate_defaults" class="Both" displayName="$(string.AutoUpdate)" explainText="$(string.AutoUpdate_Explain)" presentation="$(presentation.Generic)" key="Software\Policies\Slack\Defaults" valueName="AutoUpdate">
+      <parentCategory ref="slackDefaults" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>
