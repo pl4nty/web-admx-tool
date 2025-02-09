@@ -10,8 +10,6 @@ on:
 jobs:
   main:
     runs-on: windows-latest
-    outputs:
-      commit_long_sha: ${{ steps.commit.outputs.commit_long_sha }}
     steps:
       - uses: actions/checkout@v4.2.2
         with:
@@ -49,20 +47,21 @@ jobs:
           node ../src/utils/admx2json.js .
 
       - uses: EndBug/add-and-commit@v9.1.4
-        id: commit
         with:
           default_author: github_actions
           message: Updated ADMX data
+
+      - uses: actions/upload-artifact@v4.6.0
+        with:
+          path: admx
   lint:
     needs: main
     runs-on: ubuntu-latest
     container: fstossesds/admx-lint
     steps:
-      - uses: actions/checkout@v4.2.2
-        with:
-          ref: ${{ needs.main.outputs.commit_long_sha || github.head_ref }}
+      - uses: download-artifact@v4.1.8
       - name: lint ADMX
-        working-directory: admx
+        working-directory: artefact/admx
         run: |
           for file in *.admx; do
             admx-lint --input_file "$file"
