@@ -66,8 +66,7 @@ jobs:
           name: artifact
           path: /home/appuser
       - name: lint ADMX
-        working-directory: /home/appuser/admx
         run: |
-          for file in *.admx; do
+          for file in /home/appuser/admx/*.admx; do
             admx-lint --input_file "$file"
           done
