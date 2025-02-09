@@ -50,10 +50,6 @@ jobs:
         with:
           default_author: github_actions
           message: Updated ADMX data
-
-      - uses: actions/upload-artifact@v4.6.0
-        with:
-          path: admx
   lint:
     needs: main
     runs-on: ubuntu-latest
@@ -61,16 +57,12 @@ jobs:
       image: fstossesds/admx-lint
       options: --user root
     steps:
-      - uses: actions/download-artifact@v4.1.8
-        with:
-          path: /home/appuser
-      - run: ls -la /home/appuser
       - uses: actions/checkout@v4.2.2
-        continue-on-error: true
         with:
           ref: ${{ github.head_ref }}
+      - run: ls -la .
       - name: Lint ADMX
         run: |
-          for file in /home/appuser/artifact/admx; do
+          for file in admx/*.admx; do
             admx-lint --input_file "$file"
           done
