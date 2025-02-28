@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 135.0.3140.0-->
+  <!--microsoft_edge version: 135.0.3154.3-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -100,12 +100,13 @@
       <definition displayName="$(string.OBSOLETE_WIN7_V77_V86)" name="OBSOLETE_WIN7_V77_V86"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V88_V120)" name="OBSOLETE_WIN7_V88_V120"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V118_V130)" name="OBSOLETE_WIN7_V118_V130"/>
-      <definition displayName="$(string.OBSOLETE_WIN7_V95_V107)" name="OBSOLETE_WIN7_V95_V107"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V107_V133)" name="OBSOLETE_WIN7_V107_V133"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V80_V94)" name="OBSOLETE_WIN7_V80_V94"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V95_V107)" name="OBSOLETE_WIN7_V95_V107"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V79_V86)" name="OBSOLETE_WIN7_V79_V86"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V79_V92)" name="OBSOLETE_WIN7_V79_V92"/>
-      <definition displayName="$(string.OBSOLETE_WIN7_V77_V131)" name="OBSOLETE_WIN7_V77_V131"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V110_V125)" name="OBSOLETE_WIN7_V110_V125"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V77_V131)" name="OBSOLETE_WIN7_V77_V131"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V83_V129)" name="OBSOLETE_WIN7_V83_V129"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V116_V123)" name="OBSOLETE_WIN7_V116_V123"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V102_V133)" name="OBSOLETE_WIN7_V102_V133"/>
@@ -970,6 +971,16 @@
         <list id="NotificationsBlockedForUrlsDesc" key="Software\Policies\Microsoft\Edge\NotificationsBlockedForUrls" valuePrefix=""/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.PartitionedBlobUrlUsage)" explainText="$(string.PartitionedBlobUrlUsage_Explain)" key="Software\Policies\Microsoft\Edge" name="PartitionedBlobUrlUsage" presentation="$(presentation.PartitionedBlobUrlUsage)" valueName="PartitionedBlobUrlUsage">
+      <parentCategory ref="ContentSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7_V135"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.PluginsAllowedForUrls)" explainText="$(string.PluginsAllowedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="PluginsAllowedForUrls" presentation="$(presentation.PluginsAllowedForUrls)">
       <parentCategory ref="ContentSettings"/>
       <supportedOn ref="OBSOLETE_WIN7_V77_V87"/>
@@ -1651,7 +1662,7 @@
     </policy>
     <policy class="Both" displayName="$(string.LinkedAccountEnabled)" explainText="$(string.LinkedAccountEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="LinkedAccountEnabled" presentation="$(presentation.LinkedAccountEnabled)" valueName="LinkedAccountEnabled">
       <parentCategory ref="Identity"/>
-      <supportedOn ref="SUPPORTED_WIN7_V107"/>
+      <supportedOn ref="OBSOLETE_WIN7_V107_V133"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -3123,6 +3134,13 @@
       <supportedOn ref="OBSOLETE_WIN7_V79_V85"/>
       <elements>
         <text id="NewTabPageCompanyLogo" maxLength="1000000" valueName="NewTabPageCompanyLogo"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.NewTabPageCompanyLogoBackplateColor)" explainText="$(string.NewTabPageCompanyLogoBackplateColor_Explain)" key="Software\Policies\Microsoft\Edge" name="NewTabPageCompanyLogoBackplateColor" presentation="$(presentation.NewTabPageCompanyLogoBackplateColor)">
+      <parentCategory ref="Startup"/>
+      <supportedOn ref="SUPPORTED_WIN7_V135"/>
+      <elements>
+        <text id="NewTabPageCompanyLogoBackplateColor" maxLength="1000000" valueName="NewTabPageCompanyLogoBackplateColor"/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.NewTabPageCompanyLogoEnabled)" explainText="$(string.NewTabPageCompanyLogoEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="NewTabPageCompanyLogoEnabled" presentation="$(presentation.NewTabPageCompanyLogoEnabled)" valueName="NewTabPageCompanyLogoEnabled">
