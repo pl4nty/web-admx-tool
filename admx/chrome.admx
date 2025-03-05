@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--chrome version: 133.0.6943.142-->
+  <!--chrome version: 134.0.6998.36-->
   <policyNamespaces>
     <target namespace="Google.Policies.Chrome" prefix="chrome"/>
     <using namespace="Google.Policies" prefix="Google"/>
@@ -3463,6 +3463,26 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.NTPOutlookCardVisible)" explainText="$(string.NTPOutlookCardVisible_Explain)" key="Software\Policies\Google\Chrome" name="NTPOutlookCardVisible" presentation="$(presentation.NTPOutlookCardVisible)" valueName="NTPOutlookCardVisible">
+      <parentCategory ref="googlechrome"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.NTPSharepointCardVisible)" explainText="$(string.NTPSharepointCardVisible_Explain)" key="Software\Policies\Google\Chrome" name="NTPSharepointCardVisible" presentation="$(presentation.NTPSharepointCardVisible)" valueName="NTPSharepointCardVisible">
+      <parentCategory ref="googlechrome"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.NativeHostsExecutablesLaunchDirectly)" explainText="$(string.NativeHostsExecutablesLaunchDirectly_Explain)" key="Software\Policies\Google\Chrome" name="NativeHostsExecutablesLaunchDirectly" presentation="$(presentation.NativeHostsExecutablesLaunchDirectly)" valueName="NativeHostsExecutablesLaunchDirectly">
       <parentCategory ref="googlechrome"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -3878,6 +3898,16 @@
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.SelectParserRelaxationEnabled)" explainText="$(string.SelectParserRelaxationEnabled_Explain)" key="Software\Policies\Google\Chrome" name="SelectParserRelaxationEnabled" presentation="$(presentation.SelectParserRelaxationEnabled)" valueName="SelectParserRelaxationEnabled">
+      <parentCategory ref="googlechrome"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.ServiceWorkerToControlSrcdocIframeEnabled)" explainText="$(string.ServiceWorkerToControlSrcdocIframeEnabled_Explain)" key="Software\Policies\Google\Chrome" name="ServiceWorkerToControlSrcdocIframeEnabled" presentation="$(presentation.ServiceWorkerToControlSrcdocIframeEnabled)" valueName="ServiceWorkerToControlSrcdocIframeEnabled">
       <parentCategory ref="googlechrome"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
