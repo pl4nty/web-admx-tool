@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--brave version: 133.1.75.181-->
+  <!--brave version: 134.1.76.73-->
   <policyNamespaces>
     <target namespace="BraveSoftware.Policies.Brave" prefix="brave" />
   </policyNamespaces>
@@ -3546,6 +3546,26 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.NTPOutlookCardVisible)" explainText="$(string.NTPOutlookCardVisible_Explain)" key="Software\Policies\BraveSoftware\Brave" name="NTPOutlookCardVisible" presentation="$(presentation.NTPOutlookCardVisible)" valueName="NTPOutlookCardVisible">
+      <parentCategory ref="brave" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.NTPSharepointCardVisible)" explainText="$(string.NTPSharepointCardVisible_Explain)" key="Software\Policies\BraveSoftware\Brave" name="NTPSharepointCardVisible" presentation="$(presentation.NTPSharepointCardVisible)" valueName="NTPSharepointCardVisible">
+      <parentCategory ref="brave" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.NativeHostsExecutablesLaunchDirectly)" explainText="$(string.NativeHostsExecutablesLaunchDirectly_Explain)" key="Software\Policies\BraveSoftware\Brave" name="NativeHostsExecutablesLaunchDirectly" presentation="$(presentation.NativeHostsExecutablesLaunchDirectly)" valueName="NativeHostsExecutablesLaunchDirectly">
       <parentCategory ref="brave" />
       <supportedOn ref="SUPPORTED_WIN7" />
@@ -3961,6 +3981,16 @@
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.SelectParserRelaxationEnabled)" explainText="$(string.SelectParserRelaxationEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SelectParserRelaxationEnabled" presentation="$(presentation.SelectParserRelaxationEnabled)" valueName="SelectParserRelaxationEnabled">
+      <parentCategory ref="brave" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.ServiceWorkerToControlSrcdocIframeEnabled)" explainText="$(string.ServiceWorkerToControlSrcdocIframeEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ServiceWorkerToControlSrcdocIframeEnabled" presentation="$(presentation.ServiceWorkerToControlSrcdocIframeEnabled)" valueName="ServiceWorkerToControlSrcdocIframeEnabled">
       <parentCategory ref="brave" />
       <supportedOn ref="SUPPORTED_WIN7" />
       <enabledValue>

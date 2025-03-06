@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 135.0.3154.4--><displayName/><description/><resources><stringTable><string id="ApplicationGuard_group">Application Guard settings</string><string id="ApplicationGuardContainerProxy">Application Guard Container Proxy</string><string id="ApplicationGuardContainerProxy_Explain">Configures the proxy settings for Microsoft Edge Application Guard.
+<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 135.0.3168.2--><displayName/><description/><resources><stringTable><string id="ApplicationGuard_group">Application Guard settings</string><string id="ApplicationGuardContainerProxy">Application Guard Container Proxy</string><string id="ApplicationGuardContainerProxy_Explain">Configures the proxy settings for Microsoft Edge Application Guard.
 If you enable this policy, Microsoft Edge Application Guard ignores other sources of proxy configurations.
 
 If you don't configure this policy, Microsoft Edge Application Guard uses the proxy configuration of the host.
@@ -5630,7 +5630,7 @@ This policy is used to manage access to the Outlook menu from Microsoft Edge.
 If you enable or don't configure this policy, users can access the Outlook menu.
 If you disable this policy, users can't access the Outlook menu.</string><string id="OverrideSecurityRestrictionsOnInsecureOrigin">Control where security restrictions on insecure origins apply</string><string id="OverrideSecurityRestrictionsOnInsecureOrigin_Explain">Specifies a list of origins (URLs) or hostname patterns (like &quot;*.contoso.com&quot;) for which security restrictions on insecure origins don't apply.
 
-This policy lets you specify allowed origins for legacy applications that can't deploy TLS or set up a staging server for internal web development so that developers can test out features requiring secure contexts without having to deploy TLS on the staging server. This policy also prevents the origin from being labeled &quot;Not Secure&quot; in the omnibox.
+This policy allows you to specify permitted origins for legacy applications that cannot deploy TLS or for internal web development staging servers. It enables developers to test features requiring secure contexts without the need to configure TLS on the staging server. Patterns are only accepted for hostnames; URLs or origins with schemes must be exact matches. This policy also prevents the origin from being labeled &quot;Not Secure&quot; in the omnibox.
 
 Setting a list of URLs in this policy has the same effect as setting the command-line flag '--unsafely-treat-insecure-origin-as-secure' to a comma-separated list of the same URLs. If you enable this policy, it overrides the command-line flag.
 
