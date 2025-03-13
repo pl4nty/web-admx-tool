@@ -95,6 +95,8 @@
 	  <string id="POL_RDM_DISABLEFILEDATASOURCES_HELP">Disable the menu File->Data sources</string>
       <string id="POL_RDM_DISABLEFILEOPTIONS">Disable file options</string>
 	  <string id="POL_RDM_DISABLEFILEOPTIONS_HELP">Disable the menu File->Options</string>
+      <string id="POL_RDM_DISABLEFILETRANSFERFORSSH">Disable file transfer for SSH</string>
+	  <string id="POL_RDM_DISABLEFILETRANSFERFORSSH_HELP">Disable file transfer for SSH entries</string>
       <string id="POL_RDM_DISABLEGLOBALVAULTINUSERVAULT">Disable system vault in user vault</string>
 	  <string id="POL_RDM_DISABLEGLOBALVAULTINUSERVAULT_HELP">Disable the system contacts, macros and VPNs in the user vault</string>
       <string id="POL_RDM_DISABLEHELP">Disable help</string>
@@ -133,6 +135,12 @@
 	  <string id="POL_RDM_DISABLEOPENWITHPARAMETERS_HELP">Disable the 'open with' parameters</string>
       <string id="POL_RDM_DISABLEPASSWORDGENERATOR">Disable password generator</string>
 	  <string id="POL_RDM_DISABLEPASSWORDGENERATOR_HELP">Disable the password generator</string>
+      <string id="POL_RDM_DISABLEPASSWORDSAVINGINTOOLS">Disable password saving in Tools</string>
+	  <string id="POL_RDM_DISABLEPASSWORDSAVINGINTOOLS_HELP">Disable the possiblity to save passwords in Tools</string>
+      <string id="POL_RDM_DISABLEPASSWORDSAVINGINUSERSPECIFICSETTINGS">Disable password saving in user specific settings</string>
+	  <string id="POL_RDM_DISABLEPASSWORDSAVINGINUSERSPECIFICSETTINGS_HELP">Disable the possiblity to save passwords at the user specific settings level</string>
+      <string id="POL_RDM_DISABLEPASSWORDSAVINGINVAULTS">Disable password saving in vaults</string>
+	  <string id="POL_RDM_DISABLEPASSWORDSAVINGINVAULTS_HELP">Disable the possiblity to save passwords at the vault level</string>
       <string id="POL_RDM_DISABLEQUICKCONNECT">Disable quick connect</string>
 	  <string id="POL_RDM_DISABLEQUICKCONNECT_HELP">Disable the quick connect features</string>
       <string id="POL_RDM_DISABLERDPGATEWAYEDITIONINENTRY">Disable RDP gateway edition in entry</string>
@@ -263,6 +271,8 @@
 	  <string id="POL_RDM_NOINTERNETCONNECTION_HELP">Disable certain features requiring an internet connection, such as telemetry, automatic favicon fetching and checking for add-on updates.</string>
       <string id="POL_RDM_ONLYALLOWCREDENTIALSINPRIVATEVAULT">Only allow credentials in user vault</string>
 	  <string id="POL_RDM_ONLYALLOWCREDENTIALSINPRIVATEVAULT_HELP">Only allow the creation of credentials when inside the user vault</string>
+      <string id="POL_RDM_PROTECTDATAFROMSCREENCAPTURE">Protect data from screen capture</string>
+	  <string id="POL_RDM_PROTECTDATAFROMSCREENCAPTURE_HELP">Adds a layer of protection which prevents acquiring data from most RDM windows (including sensitive areas) with screen captures</string>
       <string id="POL_RDM_RESTRICTTODVLSDATASOURCE">Restrict to Devolutions Server data source</string>
 	  <string id="POL_RDM_RESTRICTTODVLSDATASOURCE_HELP">Restricts the creation of data source to the Devolutions Server type</string>
       <string id="POL_RDM_RESTRICTTOHUBBUSINESSDATASOURCE">Restrict to Hub Business data source</string>
@@ -339,6 +349,11 @@
             </presentation>
 	<presentation id="INPUT_DEC_LIMITENTRIESLAUNCHEDINASINGLEACTION">
               <decimalTextBox refId="INPUT_DEC_LIMITENTRIESLAUNCHEDINASINGLEACTION" defaultValue="0" spinStep="1">Session count must be equal or smaller than:</decimalTextBox>
+            </presentation>
+	<presentation id="INPUT_DEC_PROTECTDATAFROMSCREENCAPTURE">
+              <decimalTextBox refId="INPUT_DEC_PROTECTDATAFROMSCREENCAPTURE" defaultValue="0" spinStep="1">0 = Disabled (no changes) 
+ 1 = Enable the screen capture protection 
+ 2 = Disable the screen capture protection</decimalTextBox>
             </presentation>
 	<presentation id="INPUT_DEC_SQLITEDEFAULTLOCATION">
          <textBox refId="INPUT_DEC_SQLITEDEFAULTLOCATION">

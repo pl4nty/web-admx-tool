@@ -679,6 +679,22 @@
 		</disabledValue>
     </policy>
     <policy 
+		name="POL_RDM_DISABLEFILETRANSFERFORSSH"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEFILETRANSFERFORSSH)"
+		explainText="$(string.POL_RDM_DISABLEFILETRANSFERFORSSH_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableFileTransferForSSH">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
 		name="POL_RDM_DISABLEGLOBALVAULTINUSERVAULT"
 		class="Both"
 		displayName="$(string.POL_RDM_DISABLEGLOBALVAULTINUSERVAULT)"
@@ -973,6 +989,54 @@
 		explainText="$(string.POL_RDM_DISABLEPASSWORDGENERATOR_HELP)"
 		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
 		valueName="DisablePasswordGenerator">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEPASSWORDSAVINGINTOOLS"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEPASSWORDSAVINGINTOOLS)"
+		explainText="$(string.POL_RDM_DISABLEPASSWORDSAVINGINTOOLS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisablePasswordSavingInTools">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEPASSWORDSAVINGINUSERSPECIFICSETTINGS"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEPASSWORDSAVINGINUSERSPECIFICSETTINGS)"
+		explainText="$(string.POL_RDM_DISABLEPASSWORDSAVINGINUSERSPECIFICSETTINGS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisablePasswordSavingInUserSpecificSettings">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEPASSWORDSAVINGINVAULTS"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEPASSWORDSAVINGINVAULTS)"
+		explainText="$(string.POL_RDM_DISABLEPASSWORDSAVINGINVAULTS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisablePasswordSavingInVaults">
       <parentCategory ref="CAT_RDM_SECURITY" />
       <supportedOn ref="SUPPORTED_WindowsVista" />
 		<enabledValue>
@@ -2015,6 +2079,20 @@
 		</disabledValue>
     </policy>
     <policy 
+		name="POL_RDM_PROTECTDATAFROMSCREENCAPTURE"
+		class="Both" 
+		displayName="$(string.POL_RDM_PROTECTDATAFROMSCREENCAPTURE)"
+		explainText="$(string.POL_RDM_PROTECTDATAFROMSCREENCAPTURE_HELP)"
+		presentation="$(presentation.INPUT_DEC_PROTECTDATAFROMSCREENCAPTURE)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="ProtectDataFromScreenCapture">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_PROTECTDATAFROMSCREENCAPTURE" valueName="ProtectDataFromScreenCapture" maxValue="20000" />
+	</elements>
+    </policy>
+    <policy 
 		name="POL_RDM_RESTRICTTODVLSDATASOURCE"
 		class="Both"
 		displayName="$(string.POL_RDM_RESTRICTTODVLSDATASOURCE)"
@@ -2068,8 +2146,7 @@
 		displayName="$(string.POL_RDM_SQLITEDEFAULTLOCATION)"
 		explainText="$(string.POL_RDM_SQLITEDEFAULTLOCATION_HELP)"
 		presentation="$(presentation.INPUT_DEC_SQLITEDEFAULTLOCATION)" 
-		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
-		valueName="SQLiteDefaultLocation">
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager">
       <parentCategory ref="CAT_RDM_GENERAL" />
       <supportedOn ref="SUPPORTED_WindowsVista" />
 	<elements>
