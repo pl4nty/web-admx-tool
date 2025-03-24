@@ -1,5 +1,4 @@
 import fs from 'fs'
-import util from 'util'
 import path, { join } from 'path'
 import { convert } from './admx.js'
 

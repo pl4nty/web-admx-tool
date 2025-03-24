@@ -48,7 +48,7 @@ jobs:
       - name: admx2json
         working-directory: admx
         run: |
-          npm i fast-xml-parser
+          npm i xml2js
           node ../src/utils/admx2json.js .
 
       - uses: EndBug/add-and-commit@v9.1.4
