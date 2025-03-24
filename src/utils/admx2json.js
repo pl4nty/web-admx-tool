@@ -42,6 +42,7 @@ try {
 
     const converted = await convert(results)
     const outputPath = path.join(process.cwd(), '..', 'public', 'admx.json')
+    console.log(converted)
 
     fs.writeFileSync(outputPath, JSON.stringify(converted))
     console.log(`Conversion complete. Output written to ${outputPath}`)
