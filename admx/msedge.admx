@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 136.0.3193.0-->
+  <!--microsoft_edge version: 136.0.3209.2-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -16,6 +16,7 @@
       <definition displayName="$(string.SUPPORTED_WIN7_V133)" name="SUPPORTED_WIN7_V133"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V134)" name="SUPPORTED_WIN7_V134"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V135)" name="SUPPORTED_WIN7_V135"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V136)" name="SUPPORTED_WIN7_V136"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V77)" name="SUPPORTED_WIN7_V77"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V78)" name="SUPPORTED_WIN7_V78"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V79)" name="SUPPORTED_WIN7_V79"/>
@@ -84,6 +85,7 @@
       <definition displayName="$(string.OBSOLETE_WIN7_V99_V130)" name="OBSOLETE_WIN7_V99_V130"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V101_V127)" name="OBSOLETE_WIN7_V101_V127"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V85_V91)" name="OBSOLETE_WIN7_V85_V91"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V115_V135)" name="OBSOLETE_WIN7_V115_V135"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V81_V84)" name="OBSOLETE_WIN7_V81_V84"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V110_V126)" name="OBSOLETE_WIN7_V110_V126"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V93_V113)" name="OBSOLETE_WIN7_V93_V113"/>
@@ -1999,6 +2001,16 @@
     <policy class="Both" displayName="$(string.PasswordDeleteOnBrowserCloseEnabled)" explainText="$(string.PasswordDeleteOnBrowserCloseEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="PasswordDeleteOnBrowserCloseEnabled" presentation="$(presentation.PasswordDeleteOnBrowserCloseEnabled)" valueName="PasswordDeleteOnBrowserCloseEnabled">
       <parentCategory ref="PasswordManager"/>
       <supportedOn ref="SUPPORTED_WIN7_V117"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.PasswordExportEnabled)" explainText="$(string.PasswordExportEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="PasswordExportEnabled" presentation="$(presentation.PasswordExportEnabled)" valueName="PasswordExportEnabled">
+      <parentCategory ref="PasswordManager"/>
+      <supportedOn ref="SUPPORTED_WIN7_V136"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -5299,7 +5311,7 @@
     </policy>
     <policy class="Both" displayName="$(string.EnhanceSecurityModeOptOutUXEnabled)" explainText="$(string.EnhanceSecurityModeOptOutUXEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="EnhanceSecurityModeOptOutUXEnabled" presentation="$(presentation.EnhanceSecurityModeOptOutUXEnabled)" valueName="EnhanceSecurityModeOptOutUXEnabled">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V115"/>
+      <supportedOn ref="OBSOLETE_WIN7_V115_V135"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -8108,6 +8120,13 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.WebContentFilteringBlockedCategories)" explainText="$(string.WebContentFilteringBlockedCategories_Explain)" key="Software\Policies\Microsoft\Edge" name="WebContentFilteringBlockedCategories" presentation="$(presentation.WebContentFilteringBlockedCategories)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V118"/>
+      <elements>
+        <list id="WebContentFilteringBlockedCategoriesDesc" key="Software\Policies\Microsoft\Edge\WebContentFilteringBlockedCategories" valuePrefix=""/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.WebDriverOverridesIncompatiblePolicies)" explainText="$(string.WebDriverOverridesIncompatiblePolicies_Explain)" key="Software\Policies\Microsoft\Edge" name="WebDriverOverridesIncompatiblePolicies" presentation="$(presentation.WebDriverOverridesIncompatiblePolicies)" valueName="WebDriverOverridesIncompatiblePolicies">
       <parentCategory ref="microsoft_edge"/>
