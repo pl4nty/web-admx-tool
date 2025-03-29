@@ -3869,6 +3869,26 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="L_BlockOrgChart" class="User" displayName="$(string.L_BlockOrgChart)" explainText="$(string.L_BlockOrgChartExplain)" key="software\policies\microsoft\office\16.0\common\security" valueName="blockorgchart">
+      <parentCategory ref="L_SecuritySettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_BlockOLEGraph" class="User" displayName="$(string.L_BlockOLEGraph)" explainText="$(string.L_BlockOLEGraphExplain)" key="software\policies\microsoft\office\16.0\common\security" valueName="blockolegraph">
+      <parentCategory ref="L_SecuritySettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="L_RequireOCSPAtSignatureGenerationTime" class="User" displayName="$(string.L_RequireOCSPAtSignatureGenerationTime)" explainText="$(string.L_RequireOCSPAtSignatureGenerationTimeExplain)" key="software\policies\microsoft\office\16.0\common\signatures" valueName="requireocsp">
       <parentCategory ref="L_DigSig" />
       <supportedOn ref="windows:SUPPORTED_Windows7" />
@@ -18891,6 +18911,26 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="L_BlockWecFallback" class="User" displayName="$(string.L_BlockWecFallback)" explainText="$(string.L_BlockWecFallbackExplain)" key="software\policies\microsoft\office\16.0\common\fileio" valueName="blockwecfallback">
+      <parentCategory ref="L_SecuritySettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_BlockInsecureProtocols" class="User" displayName="$(string.L_BlockInsecureProtocols)" explainText="$(string.L_BlockInsecureProtocolsExplain)" key="software\policies\microsoft\office\16.0\common\fileio" valueName="blockinsecureprotocols">
+      <parentCategory ref="L_SecuritySettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="L_DisableTrainingUser" class="User" displayName="$(string.L_DisableTrainingUser)" explainText="$(string.L_DisableTrainingUserExplain)" key="software\policies\microsoft\office\16.0\common\ai\training\general" valueName="disabletraining">
       <parentCategory ref="L_AITrainingGeneral" />
       <supportedOn ref="windows:SUPPORTED_Windows10_0" />
@@ -19563,6 +19603,16 @@
       </elements>
     </policy>
     <policy name="L_LinksOpenRightDefaultSettingIsNative" class="User" displayName="$(string.L_LinksOpenRightDefaultSettingIsNative)" explainText="$(string.L_LinksOpenRightDefaultSettingIsNativeExplain)" key="software\policies\microsoft\office\16.0\common\internet" valueName="linksopenrightdefaultsettingisnative">
+      <parentCategory ref="L_miscellaneous437" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_RestrictKFMFromOffice" class="User" displayName="$(string.L_RestrictKFMFromOffice)" explainText="$(string.L_RestrictKFMFromOfficeExplain)" key="software\policies\microsoft\office\16.0\common\kfm" valueName="disablekfmbusbarforcommercialusers">
       <parentCategory ref="L_miscellaneous437" />
       <supportedOn ref="windows:SUPPORTED_Windows7" />
       <enabledValue>

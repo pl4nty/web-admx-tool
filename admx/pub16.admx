@@ -618,5 +618,15 @@
         </enum>
       </elements>
     </policy>
+    <policy name="L_DisablePublisher" class="User" displayName="$(string.L_DisablePublisher)" explainText="$(string.L_DisablePublisherExplain)" key="software\policies\microsoft\office\16.0\publisher" valueName="disablelaunch">
+      <parentCategory ref="L_MicrosoftOfficePublisher" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>
