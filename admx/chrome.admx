@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--chrome version: 134.0.6998.178-->
+  <!--chrome version: 135.0.7049.42-->
   <policyNamespaces>
     <target namespace="Google.Policies.Chrome" prefix="chrome"/>
     <using namespace="Google.Policies" prefix="Google"/>
@@ -825,6 +825,16 @@
       <elements>
         <list id="NotificationsBlockedForUrlsDesc" key="Software\Policies\Google\Chrome\NotificationsBlockedForUrls" valuePrefix=""/>
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.PartitionedBlobUrlUsage)" explainText="$(string.PartitionedBlobUrlUsage_Explain)" key="Software\Policies\Google\Chrome" name="PartitionedBlobUrlUsage" presentation="$(presentation.PartitionedBlobUrlUsage)" valueName="PartitionedBlobUrlUsage">
+      <parentCategory ref="ContentSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.PdfLocalFileAccessAllowedForDomains)" explainText="$(string.PdfLocalFileAccessAllowedForDomains_Explain)" key="Software\Policies\Google\Chrome" name="PdfLocalFileAccessAllowedForDomains" presentation="$(presentation.PdfLocalFileAccessAllowedForDomains)">
       <parentCategory ref="ContentSettings"/>
@@ -2897,6 +2907,13 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.EnterpriseSearchAggregatorSettings)" explainText="$(string.EnterpriseSearchAggregatorSettings_Explain)" key="Software\Policies\Google\Chrome" name="EnterpriseSearchAggregatorSettings" presentation="$(presentation.EnterpriseSearchAggregatorSettings)">
+      <parentCategory ref="googlechrome"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <text id="EnterpriseSearchAggregatorSettings" maxLength="1000000" valueName="EnterpriseSearchAggregatorSettings"/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.ExemptDomainFileTypePairsFromFileTypeDownloadWarnings)" explainText="$(string.ExemptDomainFileTypePairsFromFileTypeDownloadWarnings_Explain)" key="Software\Policies\Google\Chrome" name="ExemptDomainFileTypePairsFromFileTypeDownloadWarnings" presentation="$(presentation.ExemptDomainFileTypePairsFromFileTypeDownloadWarnings)">
       <parentCategory ref="googlechrome"/>
