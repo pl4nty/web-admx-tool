@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 136.0.3209.2-->
+  <!--microsoft_edge version: 136.0.3227.1-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -5677,6 +5677,16 @@
         <list id="HttpAllowlistDesc" key="Software\Policies\Microsoft\Edge\HttpAllowlist" valuePrefix=""/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.HttpsUpgradesEnabled)" explainText="$(string.HttpsUpgradesEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="HttpsUpgradesEnabled" presentation="$(presentation.HttpsUpgradesEnabled)" valueName="HttpsUpgradesEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V136"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.HubsSidebarEnabled)" explainText="$(string.HubsSidebarEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="HubsSidebarEnabled" presentation="$(presentation.HubsSidebarEnabled)" valueName="HubsSidebarEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V99"/>
@@ -8123,7 +8133,7 @@
     </policy>
     <policy class="Both" displayName="$(string.WebContentFilteringBlockedCategories)" explainText="$(string.WebContentFilteringBlockedCategories_Explain)" key="Software\Policies\Microsoft\Edge" name="WebContentFilteringBlockedCategories" presentation="$(presentation.WebContentFilteringBlockedCategories)">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V118"/>
+      <supportedOn ref="SUPPORTED_WIN7_V135"/>
       <elements>
         <list id="WebContentFilteringBlockedCategoriesDesc" key="Software\Policies\Microsoft\Edge\WebContentFilteringBlockedCategories" valuePrefix=""/>
       </elements>

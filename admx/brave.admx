@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--brave version: 134.1.76.82-->
+  <!--brave version: 135.1.77.95-->
   <policyNamespaces>
     <target namespace="BraveSoftware.Policies.Brave" prefix="brave" />
   </policyNamespaces>
@@ -898,6 +898,16 @@
       <elements>
         <list id="NotificationsBlockedForUrlsDesc" key="Software\Policies\BraveSoftware\Brave\NotificationsBlockedForUrls" valuePrefix="" />
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.PartitionedBlobUrlUsage)" explainText="$(string.PartitionedBlobUrlUsage_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PartitionedBlobUrlUsage" presentation="$(presentation.PartitionedBlobUrlUsage)" valueName="PartitionedBlobUrlUsage">
+      <parentCategory ref="ContentSettings" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.PdfLocalFileAccessAllowedForDomains)" explainText="$(string.PdfLocalFileAccessAllowedForDomains_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PdfLocalFileAccessAllowedForDomains" presentation="$(presentation.PdfLocalFileAccessAllowedForDomains)">
       <parentCategory ref="ContentSettings" />
@@ -2980,6 +2990,13 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.EnterpriseSearchAggregatorSettings)" explainText="$(string.EnterpriseSearchAggregatorSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="EnterpriseSearchAggregatorSettings" presentation="$(presentation.EnterpriseSearchAggregatorSettings)">
+      <parentCategory ref="brave" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <text id="EnterpriseSearchAggregatorSettings" maxLength="1000000" valueName="EnterpriseSearchAggregatorSettings" />
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.ExemptDomainFileTypePairsFromFileTypeDownloadWarnings)" explainText="$(string.ExemptDomainFileTypePairsFromFileTypeDownloadWarnings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ExemptDomainFileTypePairsFromFileTypeDownloadWarnings" presentation="$(presentation.ExemptDomainFileTypePairsFromFileTypeDownloadWarnings)">
       <parentCategory ref="brave" />
