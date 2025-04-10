@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 136.0.3227.1-->
+  <!--microsoft_edge version: 136.0.3240.4-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -105,6 +105,7 @@
       <definition displayName="$(string.OBSOLETE_WIN7_V107_V133)" name="OBSOLETE_WIN7_V107_V133"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V80_V94)" name="OBSOLETE_WIN7_V80_V94"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V95_V107)" name="OBSOLETE_WIN7_V95_V107"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V123_V135)" name="OBSOLETE_WIN7_V123_V135"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V79_V86)" name="OBSOLETE_WIN7_V79_V86"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V79_V92)" name="OBSOLETE_WIN7_V79_V92"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V110_V125)" name="OBSOLETE_WIN7_V110_V125"/>
@@ -246,6 +247,9 @@
       <parentCategory ref="microsoft_edge_recommended"/>
     </category>
     <category displayName="$(string.PrivateNetworkRequestSettings_group)" name="PrivateNetworkRequestSettings">
+      <parentCategory ref="microsoft_edge"/>
+    </category>
+    <category displayName="$(string.Profile_group)" name="Profile">
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.Proxy_group)" name="Proxy">
@@ -2682,6 +2686,16 @@
     <policy class="Both" displayName="$(string.PrivateNetworkAccessRestrictionsEnabled)" explainText="$(string.PrivateNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="PrivateNetworkAccessRestrictionsEnabled" presentation="$(presentation.PrivateNetworkAccessRestrictionsEnabled)" valueName="PrivateNetworkAccessRestrictionsEnabled">
       <parentCategory ref="PrivateNetworkRequestSettings"/>
       <supportedOn ref="SUPPORTED_WIN7_V131"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.ProfileTypeInProfileButtonEnabled)" explainText="$(string.ProfileTypeInProfileButtonEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="ProfileTypeInProfileButtonEnabled" presentation="$(presentation.ProfileTypeInProfileButtonEnabled)" valueName="ProfileTypeInProfileButtonEnabled">
+      <parentCategory ref="Profile"/>
+      <supportedOn ref="SUPPORTED_WIN7_V136"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -6670,7 +6684,7 @@
     </policy>
     <policy class="Both" displayName="$(string.NewBaseUrlInheritanceBehaviorAllowed)" explainText="$(string.NewBaseUrlInheritanceBehaviorAllowed_Explain)" key="Software\Policies\Microsoft\Edge" name="NewBaseUrlInheritanceBehaviorAllowed" presentation="$(presentation.NewBaseUrlInheritanceBehaviorAllowed)" valueName="NewBaseUrlInheritanceBehaviorAllowed">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V123"/>
+      <supportedOn ref="OBSOLETE_WIN7_V123_V135"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -6947,7 +6961,7 @@
     </policy>
     <policy class="Both" displayName="$(string.RSAKeyUsageForLocalAnchorsEnabled)" explainText="$(string.RSAKeyUsageForLocalAnchorsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="RSAKeyUsageForLocalAnchorsEnabled" presentation="$(presentation.RSAKeyUsageForLocalAnchorsEnabled)" valueName="RSAKeyUsageForLocalAnchorsEnabled">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V123"/>
+      <supportedOn ref="OBSOLETE_WIN7_V123_V135"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>

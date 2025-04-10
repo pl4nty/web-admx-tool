@@ -1923,6 +1923,22 @@
 		</disabledValue>
     </policy>
     <policy 
+		name="POL_RDM_HIDEBROWSEHOSTBUTTON"
+		class="Both"
+		displayName="$(string.POL_RDM_HIDEBROWSEHOSTBUTTON)"
+		explainText="$(string.POL_RDM_HIDEBROWSEHOSTBUTTON_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="HideBrowseHostButton">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
 		name="POL_RDM_HIDEDASHBOARD"
 		class="Both"
 		displayName="$(string.POL_RDM_HIDEDASHBOARD)"
