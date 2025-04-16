@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 136.0.3240.8--><displayName/><description/><resources><stringTable><string id="ApplicationGuard_group">Application Guard settings</string><string id="ApplicationGuardContainerProxy">Application Guard Container Proxy</string><string id="ApplicationGuardContainerProxy_Explain">Configures the proxy settings for Microsoft Edge Application Guard.
+<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 137.0.3255.0--><displayName/><description/><resources><stringTable><string id="ApplicationGuard_group">Application Guard settings</string><string id="ApplicationGuardContainerProxy">Application Guard Container Proxy</string><string id="ApplicationGuardContainerProxy_Explain">Configures the proxy settings for Microsoft Edge Application Guard.
 If you enable this policy, Microsoft Edge Application Guard ignores other sources of proxy configurations.
 
 If you don't configure this policy, Microsoft Edge Application Guard uses the proxy configuration of the host.
@@ -4202,7 +4202,7 @@ Policy options mapping:
 
 Use the preceding information when configuring this policy.</string><string id="DownloadRestrictions_DefaultDownloadSecurity">No special restrictions</string><string id="DownloadRestrictions_BlockDangerousDownloads">Block malicious downloads and dangerous file types</string><string id="DownloadRestrictions_BlockPotentiallyDangerousDownloads">Block potentially dangerous or unwanted downloads and dangerous file types</string><string id="DownloadRestrictions_BlockAllDownloads">Block all downloads</string><string id="DownloadRestrictions_BlockMaliciousDownloads">Block malicious downloads</string><string id="DynamicCodeSettings">Dynamic Code Settings</string><string id="DynamicCodeSettings_Explain">This policy controls the dynamic code settings for Microsoft Edge.
 
-Disabling dynamic code improves the security of Microsoft Edge by preventing potentially hostile dynamic code and third-party code from making changes to Microsoft Edge's behavior. However this might cause compatibility issues with third-party software that must run in the browser process.
+Disabling dynamic code improves the security of Microsoft Edge by preventing potentially hostile dynamic code and third-party code from making changes to Microsoft Edge's behavior. However this might cause compatibility issues with third-party software (e.g. certain printer drivers) that must run in the browser process.
 
 If you set this policy to 0 (the default) or leave unset, then Microsoft Edge will use the default settings.
 
@@ -5576,7 +5576,8 @@ If you enable this policy, mutation events will continue to be fired, even if th
 
 If you disable or don't configure this policy, these events will not be fired.
 
-This policy is a temporary workaround, and enterprises should still work to remove their dependencies on these mutation events.</string><string id="NativeHostsExecutablesLaunchDirectly">Force Windows executable Native Messaging hosts to launch directly</string><string id="NativeHostsExecutablesLaunchDirectly_Explain">This policy controls whether native host executables launch directly on Windows.
+Note:
+This policy is a temporary workaround and will be deprecated starting with Microsoft Edge version 137.</string><string id="NativeHostsExecutablesLaunchDirectly">Force Windows executable Native Messaging hosts to launch directly</string><string id="NativeHostsExecutablesLaunchDirectly_Explain">This policy controls whether native host executables launch directly on Windows.
 
 If you enable this policy, Microsoft Edge is forced to launch native messaging hosts implemented as executables directly.
 
