@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<policyDefinitionResources revision="6.2" schemaVersion="1.0">
+<policyDefinitionResources revision="6.4" schemaVersion="1.0">
   <displayName>ZoomMeetings</displayName>
   <description>ZoomMeetings</description>
   <resources>
@@ -53,6 +53,15 @@ If this policy is set to true, client will automatically start and move itself t
 If this policy is set to false, client will not automatically start after system reboot.
 
 If this policy is not set, client will use default policy.</string>
+      <string id="UseWinINetResolveProxy_Policy">Always use WinINet to do proxy resolve</string>
+      <string id="UseWinINetResolveProxy_Policy_Recommend">Always use WinINet to do proxy resolve (Recommendation Setting)</string>
+      <string id="UseWinINetResolveProxy_Explain">Default policy is false.
+
+If this policy is enabled, the client will always use WinINet to do proxy resolve.
+
+If this policy is disabled, the client will use WinHTTP to do proxy resolve first, WinINet will be used as the failover resolver.
+
+If this policy is not set, client will use the default setting.</string>
       <string id="SetSSOURL_Policy">Set default SSO URL for client login</string>
       <string id="SetSSOURL_Policy_Recommend">Set default SSO URL for client login (Recommendation Setting)</string>
       <string id="SetSSOURL_Explain">Default URL is empty, client will manually enter the SSO URL for SSO log in.
@@ -1111,7 +1120,7 @@ If this policy is not set, client will use the default setting.</string>
       <string id="SetAudioSignalProcessType_Policy">Set to enable 'signal processing by windows audio device drivers' for windows</string>
       <string id="SetAudioSignalProcessType_Policy_Recommend">Set to enable 'signal processing by windows audio device drivers' for windows (Recommendation Setting)</string>
       <string id="SetAudioSignalProcessType_Part">Set to enable 'signal processing by windows audio device drivers' for windows</string>
-      <string id="SetAudioSignalProcessType_Explain">This policy is exactly same as the manual setting: "Settings""Audio"  "Signal processing by windows audio device drivers". Its default policy is 0, client will default to Auto.
+      <string id="SetAudioSignalProcessType_Explain">This policy is exactly same as the manual setting: "Settings"-"Audio"-"Signal processing by windows audio device drivers". Its default policy is 0, client will default to Auto.
 
 If this policy is a valid string, client will use the specified type listed as below:
 0 - Auto
@@ -1206,7 +1215,7 @@ Default policy is disabled.
 
 This policy depends on EnableClientAutoUpdate, if EnableClientAutoUpdate is disabled, AlwaysCheckLatestVersion will not work, even if it is enabled. (For msi package, EnableClientAutoUpdate is disabled by default. For exe, it is enabled)
 
-If EnableSilentAutoUpdate is enabled(default is enabled), it's better to use SetUpdatingChannel instead of this policy.
+If EnableSilentAutoUpdate is enabled(default is enabled), it's better to use SetUpdatingChannel instead of this policy.
 
 If this policy is enabled, client will check the latest version in the background.
 
@@ -1450,7 +1459,7 @@ If this policy is not set, client will use the default setting.</string>
       <string id="AU2_SetUpdateChannel_Policy">Set the specified update channel when auto-update feature is enabled</string>
       <string id="AU2_SetUpdateChannel_Policy_Recommend">Set the specified update channel when auto-update feature is enabled (Recommendation Setting)</string>
       <string id="AU2_SetUpdateChannel_Part">Set the specified update channel when auto-update feature is enabled</string>
-      <string id="AU2_SetUpdateChannel_Explain">Default policy is '0', client will subscribe 'Slow' as update channel when the auto-update feature is enabled.
+      <string id="AU2_SetUpdateChannel_Explain">Default policy is '0', client will subscribe 'Slow' as update channel when the auto-update feature is enabled.
 
 This policy depends on AU2_EnableAutoUpdate, if AU2_EnableAutoUpdate is disabled, AU2_SetUpdateChannel will not work.
 
@@ -1481,16 +1490,16 @@ If this policy is not set, client will use the default setting.</string>
       <string id="AU2_EnablePromptUpdateForAU2_Policy_Recommend">Set to prompt the user to update when exiting a meeting or webinar if an update is available (Recommendation Setting)</string>
       <string id="AU2_EnablePromptUpdateForAU2_Explain">Default setting is disabled.
 
-If this policy is enabled, client will prompt the user to update when exiting a meeting or webinar if an update is available.
+If this policy is enabled, client will prompt the user to update when exiting a meeting or webinar if an update is available.
 
-If this policy is disabled, client will not prompt the user to update when exiting a meeting or webinar if an update is available.
+If this policy is disabled, client will not prompt the user to update when exiting a meeting or webinar if an update is available.
 
 If this policy is not set, client will use the default setting.</string>
       <string id="AU2_EnableUpdateSuccessNotification_Policy">Set to show a toast indicating that an update has been successfully applied</string>
       <string id="AU2_EnableUpdateSuccessNotification_Policy_Recommend">Set to show a toast indicating that an update has been successfully applied (Recommendation Setting)</string>
       <string id="AU2_EnableUpdateSuccessNotification_Explain">Default policy is enabled.
 
-If this policy is enabled, client will show a toast indicating that an update has been successfully applied on the next launch after an update has been applied.
+If this policy is enabled, client will show a toast indicating that an update has been successfully applied on the next launch after an update has been applied.
 
 If this policy is disabled, client will not show a toast indicating that an update has been successfully applied on the next launch after an update has been applied.
 
@@ -1501,7 +1510,7 @@ If this policy is not set, client will use the default setting.</string>
 
 If this policy is enabled, client will enable the 'Check for Updates' option.
 
-If this policy is disabled, client will disable the 'Check for Updates' option.
+If this policy is disabled, client will disable the 'Check for Updates' option.
 
 If this policy is not set, client will use the default setting.</string>
       <string id="DisableBroadcastBOMessage_Policy">Set to disable the ability of the host to broadcast messages to breakout rooms</string>
@@ -1655,6 +1664,20 @@ If the Zoom's version is lower than the specific version, the client will auto u
 The format of this string should be major.minor.patch.build, for example: "5.10.4.5035"
 
 If this policy is not set, client will use the default setting.</string>
+      <string id="AU2_Update3rdStorageUrl_Policy">Set a local storage url for update</string>
+      <string id="AU2_Update3rdStorageUrl_Policy_Recommend">Set a local storage url for update (Recommendation Setting)</string>
+      <string id="AU2_Update3rdStorageUrl_Part">Set a local storage url for update</string>
+      <string id="AU2_Update3rdStorageUrl_Explain">Default policy is empty.
+
+This policy depends on AU2_DeploySpecificVersion, if AU2_DeploySpecificVersion is empty, AU2_Update3rdStorageUrl will not work.
+
+Stored installation package needs to be named according to the following rules: ZoomInstallerFull.msi, x64_ZoomInstallerFull.msi, winarm64_ZoomInstallerFull.msi.
+
+If the user's installation package can be downloaded through such a link: "http://127.0.0.1/x64_ZoomInstallerFull.msi", this string should be "http://127.0.0.1".
+
+If this policy is a valid string, client will use this string as the update download url when the target version of the update is specified.
+
+If this policy is not set, client will use the default setting.</string>
       <string id="AU2_SetUpdateSchedule_Policy">Set auto update schedule</string>
       <string id="AU2_SetUpdateSchedule_Policy_Recommend">Set auto update schedule (Recommendation Setting)</string>
       <string id="AU2_SetUpdateSchedule_Part">Set the specified update channel when auto-update feature is enabled</string>
@@ -1755,7 +1778,7 @@ If this policy is not set, client will use the default setting.</string>
       <string id="SetVideoRenderingPostProcessing_Policy">Set to enable video rendering post processing</string>
       <string id="SetVideoRenderingPostProcessing_Policy_Recommend">Set to enable video rendering post processing (Recommendation Setting)</string>
       <string id="SetVideoRenderingPostProcessing_Part">Set to enable video rendering post processing</string>
-      <string id="SetVideoRenderingPostProcessing_Explain">This policy is exactly same as the manual setting: "Settings""Video"  "Advanced"  "Video Rendering Post Processing". Its default policy is 0, client will default to Auto.
+      <string id="SetVideoRenderingPostProcessing_Explain">This policy is exactly same as the manual setting: "Settings"-"Video"-"Advanced"-"Video Rendering Post Processing". Its default policy is 0, client will default to Auto.
 
 If this policy is a valid integer, client will use the specified type listed as below:
 0 - Auto
@@ -1766,7 +1789,7 @@ If this policy is not set, client will use the default setting.</string>
       <string id="SetVideoCapturingMethod_Policy">Set video capturing method</string>
       <string id="SetVideoCapturingMethod_Policy_Recommend">Set video capturing method (Recommendation Setting)</string>
       <string id="SetVideoCapturingMethod_Part">Set video capturing method</string>
-      <string id="SetVideoCapturingMethod_Explain">This policy is exactly same as the manual setting: "Settings""Video"  "Advanced"  "Video Capturing Method". Its default policy is 0, client will default to Auto.
+      <string id="SetVideoCapturingMethod_Explain">This policy is exactly same as the manual setting: "Settings"-"Video"-"Advanced"-"Video Capturing Method". Its default policy is 0, client will default to Auto.
 
 If this policy is a valid integer, client will use the specified type listed as below:
 0 - Auto
@@ -1854,15 +1877,15 @@ If this setting is not set, client will use the default setting.</string>
       <string id="EnableZCCNativeVideo_Policy_Recommend">Force to enable the native video feature of Zoom Contact Center (Recommendation Setting)</string>
       <string id="EnableZCCNativeVideo_Explain">Default policy is disabled.
 
-If this setting is enabled, client will force to enable the native video feature of Zoom Contact Center.
+If this setting is enabled, client will force enable the native video feature of Zoom Contact Center.
 
-If this setting is disabled, client will not force to enable the native video feature of Zoom Contact Center.
+If this setting is disabled, client will not force enable the native video feature of Zoom Contact Center.
 
 If this setting is not set, client will use the default setting.</string>
       <string id="ZCCMsgAudioSetting_Policy">Setting up message notifications for Zoom Contact Center</string>
       <string id="ZCCMsgAudioSetting_Policy_Recommend">Setting up message notifications for Zoom Contact Center (Recommendation Setting)</string>
       <string id="ZCCMsgAudioSetting_Part">Setting up message notifications for Zoom Contact Center</string>
-      <string id="ZCCMsgAudioSetting_Explain">This policy is exactly same as the manual setting: "Settings"→"Audio"→"Contact Center message notifications". Its default policy is 1, client will default to Always play notifications.
+      <string id="ZCCMsgAudioSetting_Explain">This policy is exactly same as the manual setting: "Settings"-"Audio"-"Contact Center message notifications". Its default policy is 1, client will default to Always play notifications.
 
 If this policy is a valid integer, client will use the specified type listed as below:
 0 - No effect
@@ -1874,7 +1897,7 @@ If this policy is not set, client will use the default setting.</string>
       <string id="AudioCapturePlaybackMode_Policy">Set audio capture and playback API</string>
       <string id="AudioCapturePlaybackMode_Policy_Recommend">Set audio capture and playback API (Recommendation Setting)</string>
       <string id="AudioCapturePlaybackMode_Part">Set audio capture and playback API</string>
-      <string id="AudioCapturePlaybackMode_Explain">This policy is exactly the same as the manual setting: "Settings"→"Audio"→"Advanced"→"Audio capture and playback API". Its default policy is 0.
+      <string id="AudioCapturePlaybackMode_Explain">This policy is exactly the same as the manual setting: "Settings"-"Audio"-"Advanced"-"Audio capture and playback API". Its default policy is 0.
 
 0 - Auto: Default value, using synchronous Windows API for audio capture and playback.
 1 - Windows Audio Session API: Uses synchronous Windows API for audio capture and playback.
@@ -2051,12 +2074,6 @@ If this policy is not set, client will use the default setting.</string>
 If this policy is enabled, the client only allow one section opened at a time.
 If this policy is disabled, the client will not limit sections
 If this policy is not set, the client will use the default setting.</string>
-      <string id="DisableReportProblem_Policy">Disable reporting of problems on the client</string>
-      <string id="DisableReportProblem_Policy_Recommend">Disable reporting of problems on the client (Recommendation Setting)</string>
-      <string id="DisableReportProblem_Explain">Default policy is disabled.
-If this policy is enabled, the client will not be able to report problems.
-If this policy is disabled, the client can report problems.
-If this policy is not set, client will use the default setting.</string>
       <string id="SeparateIMChatAndChannel_Policy">Organize chats by section</string>
       <string id="SeparateIMChatAndChannel_Policy_Recommend">Organize chats by section (Recommendation Setting)</string>
       <string id="SeparateIMChatAndChannel_Explain">Default policy is disabled.
@@ -2077,25 +2094,120 @@ If this setting is empty, and DisableIMFileTransfer is enabled, client will disa
 
 If this policy is not set, client will use default setting.</string>
       <string id="AllowedIMFileTransferDomain_Part">Allowed IM file transfer domain list</string>
+      <string id="MessageNotificationPreference_Policy">Setting up message notifications preferences for Team Chat</string>
+      <string id="MessageNotificationPreference_Policy_Recommend">Setting up message notifications preferences for Team Chat (Recommendation Setting)</string>
+      <string id="MessageNotificationPreference_Explain">This policy is exactly same as the manual setting: "Settings"-"Team Chat"-"Message Preferences". Its default policy is 1, client will default to notify direct messages, mentions, and replies.
+
+If this policy is a valid integer, client will use the specified type listed as below:
+0 - All messages
+1 - Direct messages, mentions, and replies
+2 - Off
+
+If this policy is not set, client will use the default setting.</string>
+      <string id="MessageNotificationPreference_Part">Setting up message notifications preferences for Team Chat</string>
+      <string id="KeepUnreadMessagesOnTop_Policy">Keep all unread messages at the top of recent chats</string>
+      <string id="KeepUnreadMessagesOnTop_Policy_Recommend">Keep all unread messages at the top of recent chats (Recommendation Setting)</string>
+      <string id="KeepUnreadMessagesOnTop_Explain">Default policy is disabled.
+If this setting is true, client will keep all unread messages at the top of recent chats.
+
+If this setting is false, client will not keep all unread messages at the top of recent chats.
+
+If this policy is not set, client will use the default setting.</string>
+      <string id="ShowUnreadCountForChannel_Policy">Show unread message count for channels</string>
+      <string id="ShowUnreadCountForChannel_Policy_Recommend">Show unread message count for channels (Recommendation Setting)</string>
+      <string id="ShowUnreadCountForChannel_Explain">Default policy is disabled.
+If this setting is true, client will show unread message count for channels.
+
+If this setting is false, client will not show unread message count for channels.
+
+If this policy is not set, client will use the default setting.</string>
+      <string id="ShowUnreadCountForMeetingChat_Policy">Show unread message count for meeting chats</string>
+      <string id="ShowUnreadCountForMeetingChat_Policy_Recommend">Show unread message count for meeting chats (Recommendation Setting)</string>
+      <string id="ShowUnreadCountForMeetingChat_Explain">Default policy is disabled.
+If this setting is true, client will show unread message count for meeting chats.
+
+If this setting is false, client will not show unread message count for meeting chats.
+
+If this policy is not set, client will use the default setting.</string>
+      <string id="UnreadViewOrder_Policy">Where to start when viewing unread messages in a channel</string>
+      <string id="UnreadViewOrder_Policy_Recommend">Where to start when viewing unread messages in a channel (Recommendation Setting)</string>
+      <string id="UnreadViewOrder_Explain">Its default policy is 0, client will default to start viewing unread messages at the first unread message.
+
+If this policy is a valid integer, client will use the specified type listed as below:
+0 - Start at the first unread message
+1 - Start at the latest unread message
+
+If this policy is not set, client will use the default setting.</string>
+      <string id="UnreadViewOrder_Part">Where to start when viewing unread messages in a channel</string>
+      <string id="ReceiveNotificationsByKeyword_Policy">Setting keywords as the basis for triggering message notifications</string>
+      <string id="ReceiveNotificationsByKeyword_Policy_Recommend">Setting keywords as the basis for triggering message notifications (Recommendation Setting)</string>
+      <string id="ReceiveNotificationsByKeyword_Explain">Default policy is empty.
+If this policy is a valid string, the client will trigger message notifications based on these keywords.
+If this setting is empty, client will trigger message notifications normally.
+
+If this policy is not set, client will use default setting.</string>
+      <string id="ReceiveNotificationsByKeyword_Part">Setting keywords as the basis for triggering message notifications</string>
+      <string id="PreferredLanguage_Policy">Use this language when translating messages</string>
+      <string id="PreferredLanguage_Policy_Recommend">Use this language when translating messages (Recommendation Setting)</string>
+      <string id="PreferredLanguage_Explain">Default policy is empty.
+If this policy is a valid string(for example:en), the client will use this language when translating messages
+If this setting is empty, the client will use the default language when translating messages.
+
+If this policy is not set, client will use default setting.</string>
+      <string id="PreferredLanguage_Part">Use this language when translating messages</string>
       <string id="EnableDumpTPStatInfo_Policy">Enable saving meeting statistics data to local log file</string>
       <string id="EnableDumpTPStatInfo_Policy_Recommend">Enable saving meeting statistics data to local log file (Recommendation Setting)</string>
       <string id="EnableDumpTPStatInfo_Explain">Default policy is disabled.
+
 If this setting is true, client will save meeting statistics data to local log file.
+
 If this setting is false, client will not save meeting statistics data to local log file.
-If this policy is not set, the client will use the default setting.</string>
+
+If this policy is not set, client will use the default setting.</string>
       <string id="DisableInMeetingZoomDocs_Policy">Disable Zoom Docs for Meetings</string>
       <string id="DisableInMeetingZoomDocs_Policy_Recommend">Disable Zoom Docs for Meetings (Recommendation Setting)</string>
       <string id="DisableInMeetingZoomDocs_Explain">Default policy is disabled.
+
 If this policy is enabled, this policy will disable Zoom Docs for Meetings.
+
 If this policy is disabled, this policy will not disable Zoom Docs for Meetings.
+
 If this policy is not set, the client will use the default setting.</string>
       <string id="AllowedMeetingSurvivability_Policy">Allow the client to switch to survivable mode</string>
       <string id="AllowedMeetingSurvivability_Policy_Recommend">Allow the client to switch to survivable mode (Recommendation Setting)</string>
       <string id="AllowedMeetingSurvivability_Explain">Default policy is empty.
 If this policy is a valid survivability info string, the client can switch to survivable mode.
 If this policy is empty, the client does not support survivable mode.
+
 If this policy is not set, client will use default setting.</string>
       <string id="AllowedMeetingSurvivability_Part">Allow the client to switch to survivable mode</string>
+      <string id="DisableReportProblem_Policy">Disable reporting of problems on the client</string>
+      <string id="DisableReportProblem_Policy_Recommend">Disable reporting of problems on the client (Recommendation Setting)</string>
+      <string id="DisableReportProblem_Explain">Default policy is disabled.
+If this policy is enabled, the client will not be able to report problems.
+If this policy is disabled, the client can report problems.
+If this policy is not set, client will use the default setting.</string>
+      <string id="DisableWindowsGenFullDump_Policy">Disable full dump generation on windows platform client</string>
+      <string id="DisableWindowsGenFullDump_Policy_Recommend">Disable full dump generation on windows platform client (Recommendation Setting)</string>
+      <string id="DisableWindowsGenFullDump_Explain">Default policy is disabled.
+If this policy is enabled, the client will not be able to generate full dump.
+If this policy is disabled, the client can generate full dump.
+If this policy is not set, client will use the default setting.</string>
+      <string id="KeepMeetingOnTop_Policy">Force Zoom Meetings on top of other apps during meetings</string>
+      <string id="KeepMeetingOnTop_Policy_Recommend">Force Zoom Meetings on top of other apps during meetings (Recommendation Setting)</string>
+      <string id="KeepMeetingOnTop_Explain">Default policy is disabled.
+
+If this policy is enabled, Zoom Meetings will be forced to sit on top of other apps during meetings.
+
+If this policy is disabled, Zoom Meetings will not be forced to sit on top of other apps during meetings.
+
+If this policy is not set, the client will use the default setting.</string>
+      <string id="EnableNewSigninUI_Policy">Enable the new login UI</string>
+      <string id="EnableNewSigninUI_Policy_Recommend">Enable the new login UI (Recommendation Setting)</string>
+      <string id="EnableNewSigninUI_Explain">Default policy is enabled.
+If this policy is enabled, the client will use the new login UI.
+If this policy is disabled, the client will not the use the new login UI.
+If this policy is not set, client will use the default setting.</string>
       <string id="ADMXMigrator_UnresolvedString">ADMX Migrator encountered a string that is not present in the source ADM string table.</string>
       <string id="ADMXMigrator_NoSupportedOn">ADMX Migrator encountered a policy that does not have a supportedOn value.</string>
     </stringTable>
@@ -2104,6 +2216,7 @@ If this policy is not set, client will use default setting.</string>
       <presentation id="DisableCreatingDesktopShortcut_Policy" />
       <presentation id="AutoStartAfterReboot_Policy" />
       <presentation id="AutoStartInSystemTray_Policy" />
+      <presentation id="UseWinINetResolveProxy_Policy" />
       <presentation id="SetSSOURL_Policy">
         <textBox refId="SetSSOURL_Part">
           <label>Set SSO host</label>
@@ -2224,7 +2337,10 @@ If this policy is not set, client will use default setting.</string>
       <presentation id="DisableDiscoverWhatsNew_Policy" />
       <presentation id="DisableP2PStunTraffic_Policy" />
       <presentation id="DisableZoomIfNotZDMManaged_Policy" />
+      <presentation id="EnableDumpTPStatInfo_Policy" />
       <presentation id="DisableReportProblem_Policy" />
+      <presentation id="DisableWindowsGenFullDump_Policy" />
+      <presentation id="EnableNewSigninUI_Policy" />
       <presentation id="AU2_EnableAutoUpdate_Policy" />
       <presentation id="AU2_SetUpdateChannel_Policy">
         <decimalTextBox refId="AU2_SetUpdateChannel_Part" defaultValue="0" spinStep="1">Set the specified update channel when auto-update feature is enabled</decimalTextBox>
@@ -2237,6 +2353,11 @@ If this policy is not set, client will use default setting.</string>
       <presentation id="AU2_DeploySpecificVersion_Policy">
         <textBox refId="AU2_DeploySpecificVersion_Part">
           <label>Specify the update target version</label>
+        </textBox>
+      </presentation>
+      <presentation id="AU2_Update3rdStorageUrl_Policy">
+        <textBox refId="AU2_Update3rdStorageUrl_Part">
+          <label>Set a local storage url for update</label>
         </textBox>
       </presentation>
       <presentation id="AU2_SetUpdateSchedule_Policy">
@@ -2273,11 +2394,23 @@ If this policy is not set, client will use default setting.</string>
           <label>Allowed IM file transfer domain list</label>
         </textBox>
       </presentation>
-      <presentation id="EnableDumpTPStatInfo_Policy" />
-      <presentation id="DisableInMeetingZoomDocs_Policy" />
-      <presentation id="AllowedMeetingSurvivability_Policy">
-        <textBox refId="AllowedMeetingSurvivability_Part">
-          <label>Allow the client to switch to survivable mode</label>
+      <presentation id="MessageNotificationPreference_Policy">
+        <decimalTextBox refId="MessageNotificationPreference_Part" defaultValue="1" spinStep="1">Setting up message notifications preferences for Team Chat</decimalTextBox>
+      </presentation>
+      <presentation id="KeepUnreadMessagesOnTop_Policy" />
+      <presentation id="ShowUnreadCountForChannel_Policy" />
+      <presentation id="ShowUnreadCountForMeetingChat_Policy" />
+      <presentation id="UnreadViewOrder_Policy">
+        <decimalTextBox refId="UnreadViewOrder_Part" defaultValue="0" spinStep="1">Where to start when viewing unread messages in a channel</decimalTextBox>
+      </presentation>
+      <presentation id="ReceiveNotificationsByKeyword_Policy">
+        <textBox refId="ReceiveNotificationsByKeyword_Part">
+          <label>Setting keywords as the basis for triggering message notifications</label>
+        </textBox>
+      </presentation>
+      <presentation id="PreferredLanguage_Policy">
+        <textBox refId="PreferredLanguage_Part">
+          <label>Use this language when translating messages</label>
         </textBox>
       </presentation>
       <presentation id="TurnOffVideoCameraOnJoin_Policy" />
@@ -2461,10 +2594,18 @@ If this policy is not set, client will use default setting.</string>
       <presentation id="DisableAICQueries_Policy" />
       <presentation id="EnableAutoCopyConfInvitationURL_Policy" />
       <presentation id="DisableAssignTypist_Policy" />
+      <presentation id="DisableInMeetingZoomDocs_Policy" />
+      <presentation id="AllowedMeetingSurvivability_Policy">
+        <textBox refId="AllowedMeetingSurvivability_Part">
+          <label>Allow the client to switch to survivable mode</label>
+        </textBox>
+      </presentation>
+      <presentation id="KeepMeetingOnTop_Policy" />
       <presentation id="EnableClientAutoUpdate_Policy_Recommend" />
       <presentation id="DisableCreatingDesktopShortcut_Policy_Recommend" />
       <presentation id="AutoStartAfterReboot_Policy_Recommend" />
       <presentation id="AutoStartInSystemTray_Policy_Recommend" />
+      <presentation id="UseWinINetResolveProxy_Policy_Recommend" />
       <presentation id="SetSSOURL_Policy_Recommend">
         <textBox refId="SetSSOURL_Part">
           <label>Set SSO host</label>
@@ -2585,7 +2726,10 @@ If this policy is not set, client will use default setting.</string>
       <presentation id="DisableDiscoverWhatsNew_Policy_Recommend" />
       <presentation id="DisableP2PStunTraffic_Policy_Recommend" />
       <presentation id="DisableZoomIfNotZDMManaged_Policy_Recommend" />
+      <presentation id="EnableDumpTPStatInfo_Policy_Recommend" />
       <presentation id="DisableReportProblem_Policy_Recommend" />
+      <presentation id="DisableWindowsGenFullDump_Policy_Recommend" />
+      <presentation id="EnableNewSigninUI_Policy_Recommend" />
       <presentation id="AU2_EnableAutoUpdate_Policy_Recommend" />
       <presentation id="AU2_SetUpdateChannel_Policy_Recommend">
         <decimalTextBox refId="AU2_SetUpdateChannel_Part" defaultValue="0" spinStep="1">Set the specified update channel when auto-update feature is enabled</decimalTextBox>
@@ -2598,6 +2742,11 @@ If this policy is not set, client will use default setting.</string>
       <presentation id="AU2_DeploySpecificVersion_Policy_Recommend">
         <textBox refId="AU2_DeploySpecificVersion_Part">
           <label>Specify the update target version</label>
+        </textBox>
+      </presentation>
+      <presentation id="AU2_Update3rdStorageUrl_Policy_Recommend">
+        <textBox refId="AU2_Update3rdStorageUrl_Part">
+          <label>Set a local storage url for update</label>
         </textBox>
       </presentation>
       <presentation id="AU2_SetUpdateSchedule_Policy_Recommend">
@@ -2634,11 +2783,23 @@ If this policy is not set, client will use default setting.</string>
           <label>Allowed IM file transfer domain list</label>
         </textBox>
       </presentation>
-      <presentation id="EnableDumpTPStatInfo_Policy_Recommend" />
-      <presentation id="DisableInMeetingZoomDocs_Policy_Recommend" />
-      <presentation id="AllowedMeetingSurvivability_Policy_Recommend">
-        <textBox refId="AllowedMeetingSurvivability_Part">
-          <label>Allow the client to switch to survivable mode</label>
+      <presentation id="MessageNotificationPreference_Policy_Recommend">
+        <decimalTextBox refId="MessageNotificationPreference_Part" defaultValue="1" spinStep="1">Setting up message notifications preferences for Team Chat</decimalTextBox>
+      </presentation>
+      <presentation id="KeepUnreadMessagesOnTop_Policy_Recommend" />
+      <presentation id="ShowUnreadCountForChannel_Policy_Recommend" />
+      <presentation id="ShowUnreadCountForMeetingChat_Policy_Recommend" />
+      <presentation id="UnreadViewOrder_Policy_Recommend">
+        <decimalTextBox refId="UnreadViewOrder_Part" defaultValue="0" spinStep="1">Where to start when viewing unread messages in a channel</decimalTextBox>
+      </presentation>
+      <presentation id="ReceiveNotificationsByKeyword_Policy_Recommend">
+        <textBox refId="ReceiveNotificationsByKeyword_Part">
+          <label>Setting keywords as the basis for triggering message notifications</label>
+        </textBox>
+      </presentation>
+      <presentation id="PreferredLanguage_Policy_Recommend">
+        <textBox refId="PreferredLanguage_Part">
+          <label>Use this language when translating messages</label>
         </textBox>
       </presentation>
       <presentation id="TurnOffVideoCameraOnJoin_Policy_Recommend" />
@@ -2822,6 +2983,13 @@ If this policy is not set, client will use default setting.</string>
       <presentation id="DisableAICQueries_Policy_Recommend" />
       <presentation id="EnableAutoCopyConfInvitationURL_Policy_Recommend" />
       <presentation id="DisableAssignTypist_Policy_Recommend" />
+      <presentation id="DisableInMeetingZoomDocs_Policy_Recommend" />
+      <presentation id="AllowedMeetingSurvivability_Policy_Recommend">
+        <textBox refId="AllowedMeetingSurvivability_Part">
+          <label>Allow the client to switch to survivable mode</label>
+        </textBox>
+      </presentation>
+      <presentation id="KeepMeetingOnTop_Policy_Recommend" />
     </presentationTable>
   </resources>
 </policyDefinitionResources>
