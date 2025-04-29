@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<policyDefinitionResources revision="6.9" schemaVersion="1.0">
+<policyDefinitionResources revision="6.10" schemaVersion="1.0">
   <displayName/>
   <description/>
   <resources>
@@ -77,6 +77,7 @@
       <string id="SUPPORTED_FF131">Firefox 131 or later, Firefox 128.3 ESR or later</string>
       <string id="SUPPORTED_FF137_ONLY">Firefox 137 or later</string>
       <string id="SUPPORTED_FF138_ONLY">Firefox 138 or later</string>
+      <string id="SUPPORTED_FF138">Firefox 138, Firefox 128.10 ESR</string>
       <string id="firefox">Firefox</string>
       <string id="Permissions_group">Permissions</string>
       <string id="Camera_group">Camera</string>
@@ -900,6 +901,9 @@ If this policy is enabled or not configured, user messaging preferences cannot b
       <string id="DisabledCiphers_TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256">TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256</string>
       <string id="DisabledCiphers_TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384">TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</string>
       <string id="DisabledCiphers_TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256">TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256</string>
+      <string id="DisabledCiphers_TLS_CHACHA20_POLY1305_SHA256">TLS_CHACHA20_POLY1305_SHA256</string>
+      <string id="DisabledCiphers_TLS_AES_128_GCM_SHA256">TLS_AES_128_GCM_SHA256</string>
+      <string id="DisabledCiphers_TLS_AES_256_GCM_SHA384">TLS_AES_256_GCM_SHA384</string>
       <string id="DisabledCiphers_Explain">If this policy is enabled, the corresponding cipher is disabled.
 
 If this policy is disabled, the corresponding cipher is enabled.
@@ -1216,6 +1220,12 @@ If this policy is enabled or not configured, print operations will use DLP.</str
       <string id="ContentAnalysis_TimeoutResult_Explain">If this policy is enabled, you can indicate the desired behavior for DLP requests if the DLP agent does not respond to a request in less than AgentTimeout seconds. 
 
 If this policy is disabled or not configured, the request will be denied.</string>
+      <string id="SkipTermsOfUse">Skip Terms of Use</string>
+      <string id="SkipTermsOfUse_Explain">If this policy is enabled, the Firefox Terms of Use (https://www.mozilla.org/about/legal/terms/firefox/) and Privacy Notice (https://www.mozilla.org/privacy/firefox/) do not display upon startup.
+
+You represent that you accept and have the authority to accept the Terms of Use on behalf of all individuals to whom you provide access to this browser.
+
+If this policy is disabled or not configured, the Firefox Terms of Use and Privacy Notice do display upon startup.</string>
       <string id="Preferences_Boolean_Explain">If this policy is enabled, the preference is locked to true. If this policy is disabled, the preference is locked to false.
 
 For a description of the preference, see:
