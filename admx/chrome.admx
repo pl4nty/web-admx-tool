@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--chrome version: 135.0.7049.115-->
+  <!--chrome version: 136.0.7103.49-->
   <policyNamespaces>
     <target namespace="Google.Policies.Chrome" prefix="chrome"/>
     <using namespace="Google.Policies" prefix="Google"/>
@@ -1207,6 +1207,29 @@
         <list id="WindowPlacementBlockedForUrlsDesc" key="Software\Policies\Google\Chrome\WindowPlacementBlockedForUrls" valuePrefix=""/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.TabOrganizerSettings)" explainText="$(string.TabOrganizerSettings_Explain)" key="Software\Policies\Google\Chrome" name="TabOrganizerSettings" presentation="$(presentation.TabOrganizerSettings)">
+      <parentCategory ref="DeprecatedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="TabOrganizerSettings" valueName="TabOrganizerSettings">
+          <item displayName="$(string.TabOrganizerSettings_Allowed)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.TabOrganizerSettings_AllowedWithoutLogging)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.TabOrganizerSettings_Disabled)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.AutoFillEnabled)" explainText="$(string.AutoFillEnabled_Explain)" key="Software\Policies\Google\Chrome" name="AutoFillEnabled" presentation="$(presentation.AutoFillEnabled)" valueName="AutoFillEnabled">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -1325,16 +1348,6 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.SigninAllowed)" explainText="$(string.SigninAllowed_Explain)" key="Software\Policies\Google\Chrome" name="SigninAllowed" presentation="$(presentation.SigninAllowed)" valueName="SigninAllowed">
-      <parentCategory ref="DeprecatedPolicies"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.ThirdPartyBlockingEnabled)" explainText="$(string.ThirdPartyBlockingEnabled_Explain)" key="Software\Policies\Google\Chrome" name="ThirdPartyBlockingEnabled" presentation="$(presentation.ThirdPartyBlockingEnabled)" valueName="ThirdPartyBlockingEnabled">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
@@ -1750,29 +1763,6 @@
             </value>
           </item>
           <item displayName="$(string.TabCompareSettings_Disabled)">
-            <value>
-              <decimal value="2"/>
-            </value>
-          </item>
-        </enum>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.TabOrganizerSettings)" explainText="$(string.TabOrganizerSettings_Explain)" key="Software\Policies\Google\Chrome" name="TabOrganizerSettings" presentation="$(presentation.TabOrganizerSettings)">
-      <parentCategory ref="GenerativeAI"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <enum id="TabOrganizerSettings" valueName="TabOrganizerSettings">
-          <item displayName="$(string.TabOrganizerSettings_Allowed)">
-            <value>
-              <decimal value="0"/>
-            </value>
-          </item>
-          <item displayName="$(string.TabOrganizerSettings_AllowedWithoutLogging)">
-            <value>
-              <decimal value="1"/>
-            </value>
-          </item>
-          <item displayName="$(string.TabOrganizerSettings_Disabled)">
             <value>
               <decimal value="2"/>
             </value>
@@ -3729,6 +3719,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.ReduceAcceptLanguageEnabled)" explainText="$(string.ReduceAcceptLanguageEnabled_Explain)" key="Software\Policies\Google\Chrome" name="ReduceAcceptLanguageEnabled" presentation="$(presentation.ReduceAcceptLanguageEnabled)" valueName="ReduceAcceptLanguageEnabled">
+      <parentCategory ref="googlechrome"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.RelaunchNotification)" explainText="$(string.RelaunchNotification_Explain)" key="Software\Policies\Google\Chrome" name="RelaunchNotification" presentation="$(presentation.RelaunchNotification)">
       <parentCategory ref="googlechrome"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -4298,6 +4298,13 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.WebAuthenticationRemoteDesktopAllowedOrigins)" explainText="$(string.WebAuthenticationRemoteDesktopAllowedOrigins_Explain)" key="Software\Policies\Google\Chrome" name="WebAuthenticationRemoteDesktopAllowedOrigins" presentation="$(presentation.WebAuthenticationRemoteDesktopAllowedOrigins)">
+      <parentCategory ref="googlechrome"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <list id="WebAuthenticationRemoteDesktopAllowedOriginsDesc" key="Software\Policies\Google\Chrome\WebAuthenticationRemoteDesktopAllowedOrigins" valuePrefix=""/>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.WebRtcEventLogCollectionAllowed)" explainText="$(string.WebRtcEventLogCollectionAllowed_Explain)" key="Software\Policies\Google\Chrome" name="WebRtcEventLogCollectionAllowed" presentation="$(presentation.WebRtcEventLogCollectionAllowed)" valueName="WebRtcEventLogCollectionAllowed">
       <parentCategory ref="googlechrome"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -4677,6 +4684,16 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.DataURLWhitespacePreservationEnabled)" explainText="$(string.DataURLWhitespacePreservationEnabled_Explain)" key="Software\Policies\Google\Chrome" name="DataURLWhitespacePreservationEnabled" presentation="$(presentation.DataURLWhitespacePreservationEnabled)" valueName="DataURLWhitespacePreservationEnabled">
+      <parentCategory ref="Network"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.HappyEyeballsV3Enabled)" explainText="$(string.HappyEyeballsV3Enabled_Explain)" key="Software\Policies\Google\Chrome" name="HappyEyeballsV3Enabled" presentation="$(presentation.HappyEyeballsV3Enabled)" valueName="HappyEyeballsV3Enabled">
       <parentCategory ref="Network"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
@@ -6316,6 +6333,16 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.TargetBlankImpliesNoOpener)" explainText="$(string.TargetBlankImpliesNoOpener_Explain)" key="Software\Policies\Google\Chrome" name="TargetBlankImpliesNoOpener" presentation="$(presentation.TargetBlankImpliesNoOpener)" valueName="TargetBlankImpliesNoOpener">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.ThirdPartyBlockingEnabled)" explainText="$(string.ThirdPartyBlockingEnabled_Explain)" key="Software\Policies\Google\Chrome" name="ThirdPartyBlockingEnabled" presentation="$(presentation.ThirdPartyBlockingEnabled)" valueName="ThirdPartyBlockingEnabled">
       <parentCategory ref="RemovedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
