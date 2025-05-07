@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 137.0.3282.1-->
+  <!--microsoft_edge version: 137.0.3296.4-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -17,6 +17,7 @@
       <definition displayName="$(string.SUPPORTED_WIN7_V134)" name="SUPPORTED_WIN7_V134"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V135)" name="SUPPORTED_WIN7_V135"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V136)" name="SUPPORTED_WIN7_V136"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V137)" name="SUPPORTED_WIN7_V137"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V77)" name="SUPPORTED_WIN7_V77"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V78)" name="SUPPORTED_WIN7_V78"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V79)" name="SUPPORTED_WIN7_V79"/>
@@ -85,6 +86,7 @@
       <definition displayName="$(string.OBSOLETE_WIN7_V99_V130)" name="OBSOLETE_WIN7_V99_V130"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V101_V127)" name="OBSOLETE_WIN7_V101_V127"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V85_V91)" name="OBSOLETE_WIN7_V85_V91"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V81_V136)" name="OBSOLETE_WIN7_V81_V136"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V115_V135)" name="OBSOLETE_WIN7_V115_V135"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V81_V84)" name="OBSOLETE_WIN7_V81_V84"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V110_V126)" name="OBSOLETE_WIN7_V110_V126"/>
@@ -1959,6 +1961,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.HappyEyeballsV3Enabled)" explainText="$(string.HappyEyeballsV3Enabled_Explain)" key="Software\Policies\Microsoft\Edge" name="HappyEyeballsV3Enabled" presentation="$(presentation.HappyEyeballsV3Enabled)" valueName="HappyEyeballsV3Enabled">
+      <parentCategory ref="Network"/>
+      <supportedOn ref="SUPPORTED_WIN7_V137"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.IPv6ReachabilityOverrideEnabled)" explainText="$(string.IPv6ReachabilityOverrideEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="IPv6ReachabilityOverrideEnabled" presentation="$(presentation.IPv6ReachabilityOverrideEnabled)" valueName="IPv6ReachabilityOverrideEnabled">
       <parentCategory ref="Network"/>
       <supportedOn ref="SUPPORTED_WIN7_V132"/>
@@ -3508,7 +3520,7 @@
     </policy>
     <policy class="Both" displayName="$(string.AddressBarMicrosoftSearchInBingProviderEnabled)" explainText="$(string.AddressBarMicrosoftSearchInBingProviderEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="AddressBarMicrosoftSearchInBingProviderEnabled" presentation="$(presentation.AddressBarMicrosoftSearchInBingProviderEnabled)" valueName="AddressBarMicrosoftSearchInBingProviderEnabled">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V81"/>
+      <supportedOn ref="OBSOLETE_WIN7_V81_V136"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -8125,6 +8137,13 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.WebAuthenticationRemoteDesktopAllowedOrigins)" explainText="$(string.WebAuthenticationRemoteDesktopAllowedOrigins_Explain)" key="Software\Policies\Microsoft\Edge" name="WebAuthenticationRemoteDesktopAllowedOrigins" presentation="$(presentation.WebAuthenticationRemoteDesktopAllowedOrigins)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V137"/>
+      <elements>
+        <list id="WebAuthenticationRemoteDesktopAllowedOriginsDesc" key="Software\Policies\Microsoft\Edge\WebAuthenticationRemoteDesktopAllowedOrigins" valuePrefix=""/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.WebCaptureEnabled)" explainText="$(string.WebCaptureEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="WebCaptureEnabled" presentation="$(presentation.WebCaptureEnabled)" valueName="WebCaptureEnabled">
       <parentCategory ref="microsoft_edge"/>
