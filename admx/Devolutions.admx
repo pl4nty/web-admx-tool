@@ -999,6 +999,22 @@
 		</disabledValue>
     </policy>
     <policy 
+		name="POL_RDM_DISABLEPASSWORDHISTORY"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEPASSWORDHISTORY)"
+		explainText="$(string.POL_RDM_DISABLEPASSWORDHISTORY_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisablePasswordHistory">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
 		name="POL_RDM_DISABLEPASSWORDSAVINGINTOOLS"
 		class="Both"
 		displayName="$(string.POL_RDM_DISABLEPASSWORDSAVINGINTOOLS)"
