@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 137.0.3296.4--><displayName/><description/><resources><stringTable><string id="ApplicationGuard_group">Application Guard settings</string><string id="ApplicationGuardContainerProxy">Application Guard Container Proxy</string><string id="ApplicationGuardContainerProxy_Explain">Configures the proxy settings for Microsoft Edge Application Guard.
+<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 138.0.3309.1--><displayName/><description/><resources><stringTable><string id="ApplicationGuard_group">Application Guard settings</string><string id="ApplicationGuardContainerProxy">Application Guard Container Proxy</string><string id="ApplicationGuardContainerProxy_Explain">Configures the proxy settings for Microsoft Edge Application Guard.
 If you enable this policy, Microsoft Edge Application Guard ignores other sources of proxy configurations.
 
 If you don't configure this policy, Microsoft Edge Application Guard uses the proxy configuration of the host.
@@ -6837,17 +6837,24 @@ This policy doesn't work because this policy allowed these features to be select
 
 If you set this policy is set to True, the Web Components v0 features will be enabled for all sites.
 
-If you set this policy to False or don't set this policy, the Web Components v0 features will be disabled by default, starting in Microsoft Edge version 80.</string><string id="WebContentFilteringBlockedCategories">Configure Web Content Filtering</string><string id="WebContentFilteringBlockedCategories_Explain">You can configure this policy to block certain categories of URLs. Blocking a category prevents users in specified device groups from accessing URLs associated with the category.
+If you set this policy to False or don't set this policy, the Web Components v0 features will be disabled by default, starting in Microsoft Edge version 80.</string><string id="WebContentFilteringBlockedCategories">Configure Web Content Filtering</string><string id="WebContentFilteringBlockedCategories_Explain">Configure this policy to block access to specific categories of websites in Microsoft Edge on Windows devices. Web Content Filtering is available exclusively in Microsoft Edge on Windows and requires the appropriate Microsoft 365 licensing.
 
-The list of possible categories, their Category String, and their description are detailed at https://go.microsoft.com/fwlink/?linkid=2249965
+When this policy is enabled, users are blocked from accessing URLs that fall within the defined list of content categories. You can configure this by adding Category Strings to the list of blocked categories.
 
-To block a category, add the Category String of the category to the following List of blocked categories If you leave this policy unset or disable the policy, no URLs will be blocked.
+If the policy is not configured or is disabled, no categories will be blocked.
 
-If you want to block a specific URL without blocking an entire category, add the URL to the list of blocked URLs using the 'URLBlocklist' (Block access to a list of URLs) policy.
+To view the list of supported content categories, including each Category String and its definition, refer to: https://learn.microsoft.com/en-us/defender-endpoint/web-content-filtering?view=o365-worldwide#category-definitions
 
-If you want a specific URL in a blocked category to be accessible, add the URL to the list of allowed URLs using the 'URLAllowlist' (Define a list of allowed URLs) policy.
+To block a specific URL outside of a category, use the “Block access to a list of URLs” policy.
 
-This Web Content Filtering policy only works on Microsoft Edge on Windows 10 devices or above.
+To allow a specific URL that falls under a blocked category, use the “Define a list of allowed URLs” policy.
+
+Note: This policy is supported only when deployed through the Edge management service, not via Microsoft Intune.
+
+To use this policy, your organization must have one of the following licenses:
+- Microsoft 365 A1, A3, or A5
+- Microsoft 365 Business Premium
+- Microsoft 365 Business Basic or Standard with Intune Plan 1 or Plan 2
 
 Policy options mapping:
 
@@ -6898,6 +6905,10 @@ Policy options mapping:
 * weapons (weapons) = Weapons
 
 * web_based_email (web_based_email) = Web Based Email
+
+* gen_ai (gen_ai) = Gen AI
+
+* shopping (shopping) = Shopping
 
 * none (none) = None
 
