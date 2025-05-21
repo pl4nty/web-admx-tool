@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 138.0.3309.2-->
+  <!--microsoft_edge version: 138.0.3324.1-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -6734,6 +6734,27 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.OnBulkDataEntryEnterpriseConnector)" explainText="$(string.OnBulkDataEntryEnterpriseConnector_Explain)" key="Software\Policies\Microsoft\Edge" name="OnBulkDataEntryEnterpriseConnector" presentation="$(presentation.OnBulkDataEntryEnterpriseConnector)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V137"/>
+      <elements>
+        <text id="OnBulkDataEntryEnterpriseConnector" maxLength="1000000" valueName="OnBulkDataEntryEnterpriseConnector"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.OnFileAttachedEnterpriseConnector)" explainText="$(string.OnFileAttachedEnterpriseConnector_Explain)" key="Software\Policies\Microsoft\Edge" name="OnFileAttachedEnterpriseConnector" presentation="$(presentation.OnFileAttachedEnterpriseConnector)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V137"/>
+      <elements>
+        <text id="OnFileAttachedEnterpriseConnector" maxLength="1000000" valueName="OnFileAttachedEnterpriseConnector"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.OnPrintEnterpriseConnector)" explainText="$(string.OnPrintEnterpriseConnector_Explain)" key="Software\Policies\Microsoft\Edge" name="OnPrintEnterpriseConnector" presentation="$(presentation.OnPrintEnterpriseConnector)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V137"/>
+      <elements>
+        <text id="OnPrintEnterpriseConnector" maxLength="1000000" valueName="OnPrintEnterpriseConnector"/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.OrganizationLogoOverlayOnAppIconEnabled)" explainText="$(string.OrganizationLogoOverlayOnAppIconEnabled_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="OrganizationLogoOverlayOnAppIconEnabled_recommended" presentation="$(presentation.OrganizationLogoOverlayOnAppIconEnabled)" valueName="OrganizationLogoOverlayOnAppIconEnabled">
       <parentCategory ref="microsoft_edge_recommended"/>
