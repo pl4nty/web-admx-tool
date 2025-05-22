@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--chrome version: 136.0.7103.114-->
+  <!--chrome version: 137.0.7151.41-->
   <policyNamespaces>
     <target namespace="Google.Policies.Chrome" prefix="chrome"/>
     <using namespace="Google.Policies" prefix="Google"/>
@@ -1207,29 +1207,6 @@
         <list id="WindowPlacementBlockedForUrlsDesc" key="Software\Policies\Google\Chrome\WindowPlacementBlockedForUrls" valuePrefix=""/>
       </elements>
     </policy>
-    <policy class="Both" displayName="$(string.TabOrganizerSettings)" explainText="$(string.TabOrganizerSettings_Explain)" key="Software\Policies\Google\Chrome" name="TabOrganizerSettings" presentation="$(presentation.TabOrganizerSettings)">
-      <parentCategory ref="DeprecatedPolicies"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <enum id="TabOrganizerSettings" valueName="TabOrganizerSettings">
-          <item displayName="$(string.TabOrganizerSettings_Allowed)">
-            <value>
-              <decimal value="0"/>
-            </value>
-          </item>
-          <item displayName="$(string.TabOrganizerSettings_AllowedWithoutLogging)">
-            <value>
-              <decimal value="1"/>
-            </value>
-          </item>
-          <item displayName="$(string.TabOrganizerSettings_Disabled)">
-            <value>
-              <decimal value="2"/>
-            </value>
-          </item>
-        </enum>
-      </elements>
-    </policy>
     <policy class="Both" displayName="$(string.AutoFillEnabled)" explainText="$(string.AutoFillEnabled_Explain)" key="Software\Policies\Google\Chrome" name="AutoFillEnabled" presentation="$(presentation.AutoFillEnabled)" valueName="AutoFillEnabled">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -1308,16 +1285,6 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.JavascriptEnabled)" explainText="$(string.JavascriptEnabled_Explain)" key="Software\Policies\Google\Chrome" name="JavascriptEnabled" presentation="$(presentation.JavascriptEnabled)" valueName="JavascriptEnabled">
-      <parentCategory ref="DeprecatedPolicies"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.MutationEventsEnabled)" explainText="$(string.MutationEventsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="MutationEventsEnabled" presentation="$(presentation.MutationEventsEnabled)" valueName="MutationEventsEnabled">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
@@ -1637,6 +1604,29 @@
         <text id="FirstPartySetsOverrides" maxLength="1000000" valueName="FirstPartySetsOverrides"/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.AutofillPredictionSettings)" explainText="$(string.AutofillPredictionSettings_Explain)" key="Software\Policies\Google\Chrome" name="AutofillPredictionSettings" presentation="$(presentation.AutofillPredictionSettings)">
+      <parentCategory ref="GenerativeAI"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="AutofillPredictionSettings" valueName="AutofillPredictionSettings">
+          <item displayName="$(string.AutofillPredictionSettings_Allowed)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.AutofillPredictionSettings_AllowedWithoutLogging)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.AutofillPredictionSettings_Disabled)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.CreateThemesSettings)" explainText="$(string.CreateThemesSettings_Explain)" key="Software\Policies\Google\Chrome" name="CreateThemesSettings" presentation="$(presentation.CreateThemesSettings)">
       <parentCategory ref="GenerativeAI"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -1678,6 +1668,24 @@
           <item displayName="$(string.DevToolsGenAiSettings_Disabled)">
             <value>
               <decimal value="2"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.GeminiSettings)" explainText="$(string.GeminiSettings_Explain)" key="Software\Policies\Google\Chrome" name="GeminiSettings" presentation="$(presentation.GeminiSettings)">
+      <parentCategory ref="GenerativeAI"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="GeminiSettings" valueName="GeminiSettings">
+          <item displayName="$(string.GeminiSettings_Allowed)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.GeminiSettings_Disabled)">
+            <value>
+              <decimal value="1"/>
             </value>
           </item>
         </enum>
@@ -2462,6 +2470,16 @@
       <elements>
         <text id="BrowsingDataLifetime" maxLength="1000000" valueName="BrowsingDataLifetime"/>
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.BuiltInAIAPIsEnabled)" explainText="$(string.BuiltInAIAPIsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="BuiltInAIAPIsEnabled" presentation="$(presentation.BuiltInAIAPIsEnabled)" valueName="BuiltInAIAPIsEnabled">
+      <parentCategory ref="googlechrome"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.BuiltInDnsClientEnabled)" explainText="$(string.BuiltInDnsClientEnabled_Explain)" key="Software\Policies\Google\Chrome" name="BuiltInDnsClientEnabled" presentation="$(presentation.BuiltInDnsClientEnabled)" valueName="BuiltInDnsClientEnabled">
       <parentCategory ref="googlechrome"/>
@@ -3729,6 +3747,13 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.RelaunchFastIfOutdated)" explainText="$(string.RelaunchFastIfOutdated_Explain)" key="Software\Policies\Google\Chrome" name="RelaunchFastIfOutdated" presentation="$(presentation.RelaunchFastIfOutdated)">
+      <parentCategory ref="googlechrome"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <decimal id="RelaunchFastIfOutdated" maxValue="2000000000" minValue="7" valueName="RelaunchFastIfOutdated"/>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.RelaunchNotification)" explainText="$(string.RelaunchNotification_Explain)" key="Software\Policies\Google\Chrome" name="RelaunchNotification" presentation="$(presentation.RelaunchNotification)">
       <parentCategory ref="googlechrome"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -4713,16 +4738,6 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
-    <policy class="Both" displayName="$(string.ZstdContentEncodingEnabled)" explainText="$(string.ZstdContentEncodingEnabled_Explain)" key="Software\Policies\Google\Chrome" name="ZstdContentEncodingEnabled" presentation="$(presentation.ZstdContentEncodingEnabled)" valueName="ZstdContentEncodingEnabled">
-      <parentCategory ref="Network"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
     <policy class="Both" displayName="$(string.DeletingUndecryptablePasswordsEnabled)" explainText="$(string.DeletingUndecryptablePasswordsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="DeletingUndecryptablePasswordsEnabled" presentation="$(presentation.DeletingUndecryptablePasswordsEnabled)" valueName="DeletingUndecryptablePasswordsEnabled">
       <parentCategory ref="PasswordManager"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -5467,6 +5482,29 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.TabOrganizerSettings)" explainText="$(string.TabOrganizerSettings_Explain)" key="Software\Policies\Google\Chrome" name="TabOrganizerSettings" presentation="$(presentation.TabOrganizerSettings)">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="TabOrganizerSettings" valueName="TabOrganizerSettings">
+          <item displayName="$(string.TabOrganizerSettings_Allowed)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.TabOrganizerSettings_AllowedWithoutLogging)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.TabOrganizerSettings_Disabled)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.AssistantWebEnabled)" explainText="$(string.AssistantWebEnabled_Explain)" key="Software\Policies\Google\Chrome" name="AssistantWebEnabled" presentation="$(presentation.AssistantWebEnabled)" valueName="AssistantWebEnabled">
       <parentCategory ref="RemovedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -6022,6 +6060,16 @@
         <decimal id="MediaCacheSize" maxValue="2000000000" minValue="0" valueName="MediaCacheSize"/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.MutationEventsEnabled)" explainText="$(string.MutationEventsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="MutationEventsEnabled" presentation="$(presentation.MutationEventsEnabled)" valueName="MutationEventsEnabled">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.NativeClientForceAllowed)" explainText="$(string.NativeClientForceAllowed_Explain)" key="Software\Policies\Google\Chrome" name="NativeClientForceAllowed" presentation="$(presentation.NativeClientForceAllowed)" valueName="NativeClientForceAllowed">
       <parentCategory ref="RemovedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -6545,6 +6593,16 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.BlockTruncatedCookies)" explainText="$(string.BlockTruncatedCookies_Explain)" key="Software\Policies\Google\Chrome" name="BlockTruncatedCookies" presentation="$(presentation.BlockTruncatedCookies)" valueName="BlockTruncatedCookies">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.ZstdContentEncodingEnabled)" explainText="$(string.ZstdContentEncodingEnabled_Explain)" key="Software\Policies\Google\Chrome" name="ZstdContentEncodingEnabled" presentation="$(presentation.ZstdContentEncodingEnabled)" valueName="ZstdContentEncodingEnabled">
       <parentCategory ref="RemovedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
