@@ -1766,6 +1766,16 @@
         </enum>
       </elements>
     </policy>
+    <policy name="L_ExcelFileBlockExternalLinks" class="User" displayName="$(string.L_ExcelFileBlockExternalLinks)" explainText="$(string.L_ExcelFileBlockExternalLinksExplain)" key="software\policies\microsoft\office\16.0\excel\security\fileblock" valueName="fileblockexternallinks">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="L_AllowTrustedLocationsOnTheNetwork" class="User" Area="Security Baseline" AreaCategory="Zones and Locations" displayName="$(string.L_AllowTrustedLocationsOnTheNetwork)" explainText="$(string.L_AllowTrustedLocationsOnTheNetworkExplain)" key="software\policies\microsoft\office\16.0\excel\security\trusted locations" valueName="allownetworklocations">
       <parentCategory ref="L_TrustedLocations" />
       <supportedOn ref="windows:SUPPORTED_Windows7" />

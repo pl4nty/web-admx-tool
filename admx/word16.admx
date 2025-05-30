@@ -4944,5 +4944,25 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="L_ShowESignRibbon" class="User" displayName="$(string.L_ShowESignRibbon)" explainText="$(string.L_ShowESignRibbonExplain)" key="software\policies\microsoft\office\16.0\word\options" valueName="isesignenabled">
+      <parentCategory ref="L_MicrosoftOfficeWord" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_StartupBoostOption" class="User" displayName="$(string.L_StartupBoostTitle)" explainText="$(string.L_StartupBoostExplain)" key="software\policies\microsoft\office\16.0\word\options" valueName="prewarmadminallowed">
+      <parentCategory ref="L_OptionsGeneral" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>
