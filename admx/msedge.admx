@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 138.0.3338.1-->
+  <!--microsoft_edge version: 138.0.3351.8-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -78,9 +78,10 @@
       <definition displayName="$(string.OBSOLETE_WIN7_V84_V96)" name="OBSOLETE_WIN7_V84_V96"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V124_V132)" name="OBSOLETE_WIN7_V124_V132"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V92_V137)" name="OBSOLETE_WIN7_V92_V137"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V125_V137)" name="OBSOLETE_WIN7_V125_V137"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V77_V84)" name="OBSOLETE_WIN7_V77_V84"/>
-      <definition displayName="$(string.OBSOLETE_WIN7_V78_V83)" name="OBSOLETE_WIN7_V78_V83"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V77_V87)" name="OBSOLETE_WIN7_V77_V87"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V78_V83)" name="OBSOLETE_WIN7_V78_V83"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V101_V109)" name="OBSOLETE_WIN7_V101_V109"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V86_V93)" name="OBSOLETE_WIN7_V86_V93"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V77_V90)" name="OBSOLETE_WIN7_V77_V90"/>
@@ -1996,7 +1997,7 @@
     </policy>
     <policy class="Both" displayName="$(string.ZstdContentEncodingEnabled)" explainText="$(string.ZstdContentEncodingEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="ZstdContentEncodingEnabled" presentation="$(presentation.ZstdContentEncodingEnabled)" valueName="ZstdContentEncodingEnabled">
       <parentCategory ref="Network"/>
-      <supportedOn ref="SUPPORTED_WIN7_V125"/>
+      <supportedOn ref="OBSOLETE_WIN7_V125_V137"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -5119,6 +5120,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.EdgeHistoryAISearchEnabled)" explainText="$(string.EdgeHistoryAISearchEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="EdgeHistoryAISearchEnabled" presentation="$(presentation.EdgeHistoryAISearchEnabled)" valueName="EdgeHistoryAISearchEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V138"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.EdgeOpenInSidebarEnabled)" explainText="$(string.EdgeOpenInSidebarEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="EdgeOpenInSidebarEnabled" presentation="$(presentation.EdgeOpenInSidebarEnabled)" valueName="EdgeOpenInSidebarEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V122"/>
@@ -7797,6 +7808,16 @@
       <elements>
         <list id="SyncTypesListDisabledDesc" key="Software\Policies\Microsoft\Edge\SyncTypesListDisabled" valuePrefix=""/>
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.TLS13EarlyDataEnabled)" explainText="$(string.TLS13EarlyDataEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="TLS13EarlyDataEnabled" presentation="$(presentation.TLS13EarlyDataEnabled)" valueName="TLS13EarlyDataEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V138"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.TLS13HardeningForLocalAnchorsEnabled)" explainText="$(string.TLS13HardeningForLocalAnchorsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="TLS13HardeningForLocalAnchorsEnabled" presentation="$(presentation.TLS13HardeningForLocalAnchorsEnabled)" valueName="TLS13HardeningForLocalAnchorsEnabled">
       <parentCategory ref="microsoft_edge"/>

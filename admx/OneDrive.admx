@@ -59,26 +59,6 @@
             <list id="DisableCustomRootList" key="Software\Policies\Microsoft\OneDrive\DisableCustomRoot" additive="true" explicitValue="true"/>
         </elements>
     </policy>
-    <policy name="EnableAllOcsiClients" class="User" displayName="$(string.EnableAllOcsiClients)" explainText="$(string.EnableAllOcsiClients_help)" key="SOFTWARE\Policies\Microsoft\OneDrive" valueName="EnableAllOcsiClients">
-      <parentCategory ref="OneDriveNGSC" />
-      <supportedOn ref="windows:SUPPORTED_Windows7" />
-      <enabledValue>
-        <decimal value="1" />
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0" />
-      </disabledValue>
-    </policy>
-    <policy name="EnableHoldTheFile" class="User" displayName="$(string.EnableHoldTheFile)" explainText="$(string.EnableHoldTheFile_help)" key="SOFTWARE\Policies\Microsoft\OneDrive" valueName="EnableHoldTheFile">
-      <parentCategory ref="OneDriveNGSC" />
-      <supportedOn ref="windows:SUPPORTED_Windows7" />
-      <enabledValue>
-        <decimal value="1" />
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0" />
-      </disabledValue>
-    </policy>
     <policy name="EnableAutoStart" class="User" displayName="$(string.EnableAutoStart)" explainText="$(string.EnableAutoStart_help)" key="SOFTWARE\Policies\Microsoft\OneDrive" valueName="EnableAutoStart">
       <parentCategory ref="OneDriveNGSC" />
       <supportedOn ref="windows:SUPPORTED_Windows10" />
