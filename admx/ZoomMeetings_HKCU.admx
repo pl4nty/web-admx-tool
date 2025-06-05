@@ -140,6 +140,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="DisableLoginWithMicrosoft_Policy" class="User" displayName="$(string.DisableLoginWithMicrosoft_Policy)" explainText="$(string.DisableLoginWithMicrosoft_Explain)" presentation="$(presentation.DisableLoginWithMicrosoft_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="DisableLoginWithMicrosoft">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="DisableLoginWithEmail_Policy" class="User" displayName="$(string.DisableLoginWithEmail_Policy)" explainText="$(string.DisableLoginWithEmail_Explain)" presentation="$(presentation.DisableLoginWithEmail_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="DisableLoginWithEmail">
       <parentCategory ref="zoomgeneral" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
@@ -205,6 +215,16 @@
       </disabledValue>
     </policy>
     <policy name="EnableEmbedBrowserForSSO_Policy" class="User" displayName="$(string.EnableEmbedBrowserForSSO_Policy)" explainText="$(string.EnableEmbedBrowserForSSO_Explain)" presentation="$(presentation.EnableEmbedBrowserForSSO_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="EnableEmbedBrowserForSSO">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableNewWebView2SSO_Policy" class="User" displayName="$(string.EnableNewWebView2SSO_Policy)" explainText="$(string.EnableNewWebView2SSO_Explain)" presentation="$(presentation.EnableNewWebView2SSO_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="EnableNewWebView2SSO">
       <parentCategory ref="zoomgeneral" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
       <enabledValue>
@@ -542,6 +562,16 @@
         <decimal id="PreproxyDetectPolicy_Part" valueName="PreproxyDetectPolicy" required="true" minValue="0" maxValue="1" />
       </elements>
     </policy>
+    <policy name="DisableDoubleCheckDirect_Policy" class="User" displayName="$(string.DisableDoubleCheckDirect_Policy)" explainText="$(string.DisableDoubleCheckDirect_Explain)" presentation="$(presentation.DisableDoubleCheckDirect_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="DisableDoubleCheckDirect">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="EnableWinExtendProtectedAuth_Policy" class="User" displayName="$(string.EnableWinExtendProtectedAuth_Policy)" explainText="$(string.EnableWinExtendProtectedAuth_Explain)" presentation="$(presentation.EnableWinExtendProtectedAuth_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="EnableWinExtendProtectedAuth">
       <parentCategory ref="zoomgeneral" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
@@ -643,6 +673,36 @@
       </disabledValue>
     </policy>
     <policy name="DisableWindowsGenFullDump_Policy" class="User" displayName="$(string.DisableWindowsGenFullDump_Policy)" explainText="$(string.DisableWindowsGenFullDump_Explain)" presentation="$(presentation.DisableWindowsGenFullDump_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="DisableWindowsGenFullDump">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisablePrompt32bitWarning_Policy" class="User" displayName="$(string.DisablePrompt32bitWarning_Policy)" explainText="$(string.DisablePrompt32bitWarning_Explain)" presentation="$(presentation.DisablePrompt32bitWarning_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="DisablePrompt32bitWarning">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableProxyDetectForSpecialCases_Policy" class="User" displayName="$(string.EnableProxyDetectForSpecialCases_Policy)" explainText="$(string.EnableProxyDetectForSpecialCases_Explain)" presentation="$(presentation.EnableProxyDetectForSpecialCases_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="EnableProxyDetectForSpecialCases">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableNewSetting_Policy" class="User" displayName="$(string.DisableNewSetting_Policy)" explainText="$(string.DisableNewSetting_Explain)" presentation="$(presentation.DisableNewSetting_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="DisableNewSetting">
       <parentCategory ref="zoomgeneral" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
       <enabledValue>
@@ -2329,6 +2389,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="DisableLoginWithMicrosoft_Policy_Recommend" class="User" displayName="$(string.DisableLoginWithMicrosoft_Policy_Recommend)" explainText="$(string.DisableLoginWithMicrosoft_Explain)" presentation="$(presentation.DisableLoginWithMicrosoft_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="DisableLoginWithMicrosoft">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="DisableLoginWithEmail_Policy_Recommend" class="User" displayName="$(string.DisableLoginWithEmail_Policy_Recommend)" explainText="$(string.DisableLoginWithEmail_Explain)" presentation="$(presentation.DisableLoginWithEmail_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="DisableLoginWithEmail">
       <parentCategory ref="zoomgeneral_recommend" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
@@ -2394,6 +2464,16 @@
       </disabledValue>
     </policy>
     <policy name="EnableEmbedBrowserForSSO_Policy_Recommend" class="User" displayName="$(string.EnableEmbedBrowserForSSO_Policy_Recommend)" explainText="$(string.EnableEmbedBrowserForSSO_Explain)" presentation="$(presentation.EnableEmbedBrowserForSSO_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="EnableEmbedBrowserForSSO">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableNewWebView2SSO_Policy_Recommend" class="User" displayName="$(string.EnableNewWebView2SSO_Policy_Recommend)" explainText="$(string.EnableNewWebView2SSO_Explain)" presentation="$(presentation.EnableNewWebView2SSO_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="EnableNewWebView2SSO">
       <parentCategory ref="zoomgeneral_recommend" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
       <enabledValue>
@@ -2731,6 +2811,16 @@
         <decimal id="PreproxyDetectPolicy_Part" valueName="PreproxyDetectPolicy" required="true" minValue="0" maxValue="1" />
       </elements>
     </policy>
+    <policy name="DisableDoubleCheckDirect_Policy_Recommend" class="User" displayName="$(string.DisableDoubleCheckDirect_Policy_Recommend)" explainText="$(string.DisableDoubleCheckDirect_Explain)" presentation="$(presentation.DisableDoubleCheckDirect_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="DisableDoubleCheckDirect">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="EnableWinExtendProtectedAuth_Policy_Recommend" class="User" displayName="$(string.EnableWinExtendProtectedAuth_Policy_Recommend)" explainText="$(string.EnableWinExtendProtectedAuth_Explain)" presentation="$(presentation.EnableWinExtendProtectedAuth_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="EnableWinExtendProtectedAuth">
       <parentCategory ref="zoomgeneral_recommend" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
@@ -2832,6 +2922,36 @@
       </disabledValue>
     </policy>
     <policy name="DisableWindowsGenFullDump_Policy_Recommend" class="User" displayName="$(string.DisableWindowsGenFullDump_Policy_Recommend)" explainText="$(string.DisableWindowsGenFullDump_Explain)" presentation="$(presentation.DisableWindowsGenFullDump_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="DisableWindowsGenFullDump">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisablePrompt32bitWarning_Policy_Recommend" class="User" displayName="$(string.DisablePrompt32bitWarning_Policy_Recommend)" explainText="$(string.DisablePrompt32bitWarning_Explain)" presentation="$(presentation.DisablePrompt32bitWarning_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="DisablePrompt32bitWarning">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableProxyDetectForSpecialCases_Policy_Recommend" class="User" displayName="$(string.EnableProxyDetectForSpecialCases_Policy_Recommend)" explainText="$(string.EnableProxyDetectForSpecialCases_Explain)" presentation="$(presentation.EnableProxyDetectForSpecialCases_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="EnableProxyDetectForSpecialCases">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableNewSetting_Policy_Recommend" class="User" displayName="$(string.DisableNewSetting_Policy_Recommend)" explainText="$(string.DisableNewSetting_Explain)" presentation="$(presentation.DisableNewSetting_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="DisableNewSetting">
       <parentCategory ref="zoomgeneral_recommend" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
       <enabledValue>

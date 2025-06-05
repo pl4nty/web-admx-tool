@@ -759,6 +759,22 @@
 		</disabledValue>
     </policy>
     <policy 
+		name="POL_RDM_DISABLEINAPPUPSELLING"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEINAPPUPSELLING)"
+		explainText="$(string.POL_RDM_DISABLEINAPPUPSELLING_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableInAppUpselling">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
 		name="POL_RDM_DISABLELAUNCHATSTARTUP"
 		class="Both"
 		displayName="$(string.POL_RDM_DISABLELAUNCHATSTARTUP)"

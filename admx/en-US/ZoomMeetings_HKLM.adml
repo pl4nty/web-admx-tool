@@ -106,6 +106,15 @@ If this setting is enabled, login with SSO will be disabled.
 If this setting is disabled, login with SSO will be enabled.
 
 If this setting is not set, client will use default setting.</string>
+      <string id="DisableLoginWithMicrosoft_Policy">Disable login with Microsoft</string>
+      <string id="DisableLoginWithMicrosoft_Policy_Recommend">Disable login with Microsoft (Recommendation Setting)</string>
+      <string id="DisableLoginWithMicrosoft_Explain">Default setting is disabled.
+
+If this setting is enabled, login with Microsoft will be disabled.
+
+If this setting is disabled, login with Microsoft will be enabled.
+
+If this setting is not set, client will use default setting.</string>
       <string id="DisableLoginWithEmail_Policy">Disable login with email and password</string>
       <string id="DisableLoginWithEmail_Policy_Recommend">Disable login with email and password (Recommendation Setting)</string>
       <string id="DisableLoginWithEmail_Explain">Default setting is disabled.
@@ -418,6 +427,17 @@ If this policy is set to true, client will use embedded  browser for SSO.
 If this policy is set to false, client will launch system default browser for SSO.
 
 If this policy is not set, client will use default policy.</string>
+      <string id="EnableNewWebView2SSO_Policy">Enable SSO login using WebView2 browser kernel</string>
+      <string id="EnableNewWebView2SSO_Policy_Recommend">Enable SSO login using WebView2 browser kernel (Recommendation Setting)</string>
+      <string id="EnableNewWebView2SSO_Explain">Default policy is false.
+
+This policy depends on EnableEmbedBrowserForSSO, if EnableEmbedBrowserForSSO is false, EnableNewWebView2SSO will not work.
+
+If this policy is set to true, the SSO login page will use Microsoft's latest WebView2 browser kernel.
+
+If this policy is set to false, the SSO login page will use Microsoft's traditional IE browser kernel.
+
+If this policy is not set, client will use the default setting.</string>
       <string id="AlwaysShowVideoPreviewDialog_Policy">Always show video preview dialog when joining a video meeting</string>
       <string id="AlwaysShowVideoPreviewDialog_Policy_Recommend">Always show video preview dialog when joining a video meeting (Recommendation Setting)</string>
       <string id="AlwaysShowVideoPreviewDialog_Explain">Default policy is false.
@@ -1336,6 +1356,15 @@ If this policy is enabled, client will not update from 32 bit to 64 bit.
 If this policy is disabled, client will update from 32 bit to 64 bit.
 
 If this policy is not set, client will use the default setting.</string>
+      <string id="DisableDoubleCheckDirect_Policy">Disable double-checking winhttp proxy resolver query results</string>
+      <string id="DisableDoubleCheckDirect_Policy_Recommend">Disable double-checking winhttp proxy resolver query results (Recommendation Setting)</string>
+      <string id="DisableDoubleCheckDirect_Explain">Default policy is disabled.
+
+If this policy is enabled, winhttp proxy resolver query will skip the step for double check result via wininet.
+
+If this policy is disabled, it will have no effect.
+
+If this policy is not set, client will use the default setting.</string>
       <string id="DisableManualClosedCaptioning_Policy">Set to disable manual captions</string>
       <string id="DisableManualClosedCaptioning_Policy_Recommend">Set to disable manual captions (Recommendation Setting)</string>
       <string id="DisableManualClosedCaptioning_Explain">Default setting is disabled.
@@ -2201,6 +2230,24 @@ If this policy is not set, client will use the default setting.</string>
 If this policy is enabled, the client will not be able to generate full dump.
 If this policy is disabled, the client can generate full dump.
 If this policy is not set, client will use the default setting.</string>
+      <string id="DisablePrompt32bitWarning_Policy">Disable warning prompts for 32-bit clients</string>
+      <string id="DisablePrompt32bitWarning_Policy_Recommend">Disable warning prompts for 32-bit clients (Recommendation Setting)</string>
+      <string id="DisablePrompt32bitWarning_Explain">Default policy is disabled.
+If this policy is enabled, the 32-bit client will prompt a warning.
+If this policy is disabled, the 32-bit client do not prompt a warning.
+If this policy is not set, client will use the default setting.</string>
+      <string id="DisableNewSetting_Policy">Disable the new setting UI</string>
+      <string id="DisableNewSetting_Policy_Recommend">Disable the new setting UI (Recommendation Setting)</string>
+      <string id="DisableNewSetting_Explain">Default policy is disabled.
+If this policy is enabled, the client will not use the new setting UI.
+If this policy is disabled, the client will use the new setting UI.
+If this policy is not set, client will use the default setting.</string>
+      <string id="EnableProxyDetectForSpecialCases_Policy">Enable ProxyDetect logic for 30 mins refresh and networkchange</string>
+      <string id="EnableProxyDetectForSpecialCases_Policy_Recommend">Enable ProxyDetect logic for 30 mins refresh and networkchange (Recommendation Setting)</string>
+      <string id="EnableProxyDetectForSpecialCases_Explain">Default policy is disabled.
+If this policy is enabled, the Windows client will trigger proxy detect logic for 30 mins and network change situation.
+If this policy is disabled, the Windows client will not trigger proxy detect logic for 30 mins and network change situation.
+If this policy is not set, the Windows client will not trigger proxy detect logic for 30 mins and network change situation.</string>
       <string id="KeepMeetingOnTop_Policy">Force Zoom Meetings on top of other apps during meetings</string>
       <string id="KeepMeetingOnTop_Policy_Recommend">Force Zoom Meetings on top of other apps during meetings (Recommendation Setting)</string>
       <string id="KeepMeetingOnTop_Explain">Default policy is disabled.
@@ -2214,7 +2261,7 @@ If this policy is not set, the client will use the default setting.</string>
       <string id="EnableNewSigninUI_Policy_Recommend">Enable the new login UI (Recommendation Setting)</string>
       <string id="EnableNewSigninUI_Explain">Default policy is enabled.
 If this policy is enabled, the client will use the new login UI.
-If this policy is disabled, the client will not the use the new login UI.
+If this policy is disabled, the client will not use the new login UI.
 If this policy is not set, client will use the default setting.</string>
       <string id="ADMXMigrator_UnresolvedString">ADMX Migrator encountered a string that is not present in the source ADM string table.</string>
       <string id="ADMXMigrator_NoSupportedOn">ADMX Migrator encountered a policy that does not have a supportedOn value.</string>
@@ -2234,6 +2281,7 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="DisableGoogleLogin_Policy" />
       <presentation id="DisableFacebookLogin_Policy" />
       <presentation id="DisableLoginWithSSO_Policy" />
+      <presentation id="DisableLoginWithMicrosoft_Policy" />
       <presentation id="DisableLoginWithEmail_Policy" />
       <presentation id="SetAccountIDsRestrictedToJoin_Policy">
         <textBox refId="SetAccountIDsRestrictedToJoin_Part">
@@ -2250,6 +2298,7 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="BlockUntrustedSSLCert_Policy" />
       <presentation id="EnableCloudSwitch_Policy" />
       <presentation id="EnableEmbedBrowserForSSO_Policy" />
+      <presentation id="EnableNewWebView2SSO_Policy" />
       <presentation id="ForceSSOURL_Policy">
         <textBox refId="ForceSSOURL_Part">
           <label>Set and lock the default SSO URL for client login</label>
@@ -2338,6 +2387,7 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="PreproxyDetectPolicy_Policy">
         <decimalTextBox refId="PreproxyDetectPolicy_Part" defaultValue="0" spinStep="1">Set up to use the different policy to do proxy pre-detection</decimalTextBox>
       </presentation>
+      <presentation id="DisableDoubleCheckDirect_Policy" />
       <presentation id="EnableWinExtendProtectedAuth_Policy" />
       <presentation id="DisableMultipleAccountsSwitch_Policy" />
       <presentation id="DisableUserSignUp_Policy" />
@@ -2349,6 +2399,9 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="EnableDumpTPStatInfo_Policy" />
       <presentation id="DisableReportProblem_Policy" />
       <presentation id="DisableWindowsGenFullDump_Policy" />
+      <presentation id="DisablePrompt32bitWarning_Policy" />
+      <presentation id="EnableProxyDetectForSpecialCases_Policy" />
+      <presentation id="DisableNewSetting_Policy" />
       <presentation id="EnableNewSigninUI_Policy" />
       <presentation id="AU2_EnableAutoUpdate_Policy" />
       <presentation id="AU2_SetUpdateChannel_Policy">
@@ -2624,6 +2677,7 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="DisableGoogleLogin_Policy_Recommend" />
       <presentation id="DisableFacebookLogin_Policy_Recommend" />
       <presentation id="DisableLoginWithSSO_Policy_Recommend" />
+      <presentation id="DisableLoginWithMicrosoft_Policy_Recommend" />
       <presentation id="DisableLoginWithEmail_Policy_Recommend" />
       <presentation id="SetAccountIDsRestrictedToJoin_Policy_Recommend">
         <textBox refId="SetAccountIDsRestrictedToJoin_Part">
@@ -2640,6 +2694,7 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="BlockUntrustedSSLCert_Policy_Recommend" />
       <presentation id="EnableCloudSwitch_Policy_Recommend" />
       <presentation id="EnableEmbedBrowserForSSO_Policy_Recommend" />
+      <presentation id="EnableNewWebView2SSO_Policy_Recommend" />
       <presentation id="ForceSSOURL_Policy_Recommend">
         <textBox refId="ForceSSOURL_Part">
           <label>Set and lock the default SSO URL for client login</label>
@@ -2727,6 +2782,7 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="PreproxyDetectPolicy_Policy_Recommend">
         <decimalTextBox refId="PreproxyDetectPolicy_Part" defaultValue="0" spinStep="1">Set up to use the different policy to do proxy pre-detection</decimalTextBox>
       </presentation>
+      <presentation id="DisableDoubleCheckDirect_Policy_Recommend" />
       <presentation id="EnableWinExtendProtectedAuth_Policy_Recommend" />
       <presentation id="DisableMultipleAccountsSwitch_Policy_Recommend" />
       <presentation id="DisableUserSignUp_Policy_Recommend" />
@@ -2738,6 +2794,9 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="EnableDumpTPStatInfo_Policy_Recommend" />
       <presentation id="DisableReportProblem_Policy_Recommend" />
       <presentation id="DisableWindowsGenFullDump_Policy_Recommend" />
+      <presentation id="DisablePrompt32bitWarning_Policy_Recommend" />
+      <presentation id="EnableProxyDetectForSpecialCases_Policy_Recommend" />
+      <presentation id="DisableNewSetting_Policy_Recommend" />
       <presentation id="EnableNewSigninUI_Policy_Recommend" />
       <presentation id="AU2_EnableAutoUpdate_Policy_Recommend" />
       <presentation id="AU2_SetUpdateChannel_Policy_Recommend">
