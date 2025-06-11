@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 138.0.3351.8-->
+  <!--microsoft_edge version: 139.0.3365.2-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -92,8 +92,9 @@
       <definition displayName="$(string.OBSOLETE_WIN7_V85_V91)" name="OBSOLETE_WIN7_V85_V91"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V81_V136)" name="OBSOLETE_WIN7_V81_V136"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V115_V135)" name="OBSOLETE_WIN7_V115_V135"/>
-      <definition displayName="$(string.OBSOLETE_WIN7_V81_V84)" name="OBSOLETE_WIN7_V81_V84"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V128_V138)" name="OBSOLETE_WIN7_V128_V138"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V110_V126)" name="OBSOLETE_WIN7_V110_V126"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V81_V84)" name="OBSOLETE_WIN7_V81_V84"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V93_V113)" name="OBSOLETE_WIN7_V93_V113"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V98_V103)" name="OBSOLETE_WIN7_V98_V103"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V107_V112)" name="OBSOLETE_WIN7_V107_V112"/>
@@ -111,6 +112,7 @@
       <definition displayName="$(string.OBSOLETE_WIN7_V107_V133)" name="OBSOLETE_WIN7_V107_V133"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V80_V94)" name="OBSOLETE_WIN7_V80_V94"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V95_V107)" name="OBSOLETE_WIN7_V95_V107"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V132_V138)" name="OBSOLETE_WIN7_V132_V138"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V123_V135)" name="OBSOLETE_WIN7_V123_V135"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V79_V86)" name="OBSOLETE_WIN7_V79_V86"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V79_V92)" name="OBSOLETE_WIN7_V79_V92"/>
@@ -1988,6 +1990,16 @@
     <policy class="Both" displayName="$(string.IPv6ReachabilityOverrideEnabled)" explainText="$(string.IPv6ReachabilityOverrideEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="IPv6ReachabilityOverrideEnabled" presentation="$(presentation.IPv6ReachabilityOverrideEnabled)" valueName="IPv6ReachabilityOverrideEnabled">
       <parentCategory ref="Network"/>
       <supportedOn ref="SUPPORTED_WIN7_V132"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsEnabled)" explainText="$(string.LocalNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessRestrictionsEnabled" presentation="$(presentation.LocalNetworkAccessRestrictionsEnabled)" valueName="LocalNetworkAccessRestrictionsEnabled">
+      <parentCategory ref="Network"/>
+      <supportedOn ref="SUPPORTED_WIN7_V138"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -6433,7 +6445,7 @@
     </policy>
     <policy class="Both" displayName="$(string.KeyboardFocusableScrollersEnabled)" explainText="$(string.KeyboardFocusableScrollersEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="KeyboardFocusableScrollersEnabled" presentation="$(presentation.KeyboardFocusableScrollersEnabled)" valueName="KeyboardFocusableScrollersEnabled">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V128"/>
+      <supportedOn ref="OBSOLETE_WIN7_V128_V138"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -6930,6 +6942,16 @@
     <policy class="Both" displayName="$(string.PostQuantumKeyAgreementEnabled)" explainText="$(string.PostQuantumKeyAgreementEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="PostQuantumKeyAgreementEnabled" presentation="$(presentation.PostQuantumKeyAgreementEnabled)" valueName="PostQuantumKeyAgreementEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V120"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.PrefetchWithServiceWorkerEnabled)" explainText="$(string.PrefetchWithServiceWorkerEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="PrefetchWithServiceWorkerEnabled" presentation="$(presentation.PrefetchWithServiceWorkerEnabled)" valueName="PrefetchWithServiceWorkerEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V138"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -7435,7 +7457,7 @@
     </policy>
     <policy class="Both" displayName="$(string.SelectParserRelaxationEnabled)" explainText="$(string.SelectParserRelaxationEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="SelectParserRelaxationEnabled" presentation="$(presentation.SelectParserRelaxationEnabled)" valueName="SelectParserRelaxationEnabled">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V132"/>
+      <supportedOn ref="OBSOLETE_WIN7_V132_V138"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
