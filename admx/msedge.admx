@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 139.0.3365.2-->
+  <!--microsoft_edge version: 139.0.3380.1-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -19,6 +19,7 @@
       <definition displayName="$(string.SUPPORTED_WIN7_V136)" name="SUPPORTED_WIN7_V136"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V137)" name="SUPPORTED_WIN7_V137"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V138)" name="SUPPORTED_WIN7_V138"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V139)" name="SUPPORTED_WIN7_V139"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V77)" name="SUPPORTED_WIN7_V77"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V78)" name="SUPPORTED_WIN7_V78"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V79)" name="SUPPORTED_WIN7_V79"/>
@@ -1654,6 +1655,16 @@
       <elements>
         <text id="EdgeDefaultProfileEnabled" maxLength="1000000" valueName="EdgeDefaultProfileEnabled"/>
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.EdgeOpenExternalLinksWithAppSpecifiedProfile)" explainText="$(string.EdgeOpenExternalLinksWithAppSpecifiedProfile_Explain)" key="Software\Policies\Microsoft\Edge" name="EdgeOpenExternalLinksWithAppSpecifiedProfile" presentation="$(presentation.EdgeOpenExternalLinksWithAppSpecifiedProfile)" valueName="EdgeOpenExternalLinksWithAppSpecifiedProfile">
+      <parentCategory ref="Identity"/>
+      <supportedOn ref="SUPPORTED_WIN7_V139"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.GuidedSwitchEnabled)" explainText="$(string.GuidedSwitchEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="GuidedSwitchEnabled" presentation="$(presentation.GuidedSwitchEnabled)" valueName="GuidedSwitchEnabled">
       <parentCategory ref="Identity"/>
