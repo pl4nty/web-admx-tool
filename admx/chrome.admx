@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--chrome version: 137.0.7151.120-->
+  <!--chrome version: 138.0.7204.50-->
   <policyNamespaces>
     <target namespace="Google.Policies.Chrome" prefix="chrome"/>
     <using namespace="Google.Policies" prefix="Google"/>
@@ -93,9 +93,6 @@
       <parentCategory ref="googlechrome_recommended"/>
     </category>
     <category displayName="$(string.PrivacySandbox_group)" name="PrivacySandbox">
-      <parentCategory ref="googlechrome"/>
-    </category>
-    <category displayName="$(string.PrivateNetworkRequestSettings_group)" name="PrivateNetworkRequestSettings">
       <parentCategory ref="googlechrome"/>
     </category>
     <category displayName="$(string.RelatedWebsiteSets_group)" name="RelatedWebsiteSets">
@@ -1314,6 +1311,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.SelectParserRelaxationEnabled)" explainText="$(string.SelectParserRelaxationEnabled_Explain)" key="Software\Policies\Google\Chrome" name="SelectParserRelaxationEnabled" presentation="$(presentation.SelectParserRelaxationEnabled)" valueName="SelectParserRelaxationEnabled">
+      <parentCategory ref="DeprecatedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.SigninAllowed)" explainText="$(string.SigninAllowed_Explain)" key="Software\Policies\Google\Chrome" name="SigninAllowed" presentation="$(presentation.SigninAllowed)" valueName="SigninAllowed">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -1330,6 +1337,16 @@
       <elements>
         <list id="UnsafelyTreatInsecureOriginAsSecureDesc" key="Software\Policies\Google\Chrome\UnsafelyTreatInsecureOriginAsSecure" valuePrefix=""/>
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsEnabled)" explainText="$(string.LocalNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="LocalNetworkAccessRestrictionsEnabled" presentation="$(presentation.LocalNetworkAccessRestrictionsEnabled)" valueName="LocalNetworkAccessRestrictionsEnabled">
+      <parentCategory ref="DeprecatedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.ProxyBypassList)" explainText="$(string.ProxyBypassList_Explain)" key="Software\Policies\Google\Chrome" name="ProxyBypassList" presentation="$(presentation.ProxyBypassList)">
       <parentCategory ref="DeprecatedPolicies"/>
@@ -1602,6 +1619,24 @@
       <supportedOn ref="SUPPORTED_WIN7"/>
       <elements>
         <text id="FirstPartySetsOverrides" maxLength="1000000" valueName="FirstPartySetsOverrides"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.AIModeSettings)" explainText="$(string.AIModeSettings_Explain)" key="Software\Policies\Google\Chrome" name="AIModeSettings" presentation="$(presentation.AIModeSettings)">
+      <parentCategory ref="GenerativeAI"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="AIModeSettings" valueName="AIModeSettings">
+          <item displayName="$(string.AIModeSettings_Allowed)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.AIModeSettings_Disabled)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+        </enum>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.AutofillPredictionSettings)" explainText="$(string.AutofillPredictionSettings_Explain)" key="Software\Policies\Google\Chrome" name="AutofillPredictionSettings" presentation="$(presentation.AutofillPredictionSettings)">
@@ -3478,6 +3513,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.NTPFooterExtensionAttributionEnabled)" explainText="$(string.NTPFooterExtensionAttributionEnabled_Explain)" key="Software\Policies\Google\Chrome" name="NTPFooterExtensionAttributionEnabled" presentation="$(presentation.NTPFooterExtensionAttributionEnabled)" valueName="NTPFooterExtensionAttributionEnabled">
+      <parentCategory ref="googlechrome"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.NTPMiddleSlotAnnouncementVisible)" explainText="$(string.NTPMiddleSlotAnnouncementVisible_Explain)" key="Software\Policies\Google\Chrome" name="NTPMiddleSlotAnnouncementVisible" presentation="$(presentation.NTPMiddleSlotAnnouncementVisible)" valueName="NTPMiddleSlotAnnouncementVisible">
       <parentCategory ref="googlechrome"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -3578,6 +3623,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.PdfAnnotationsEnabled)" explainText="$(string.PdfAnnotationsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PdfAnnotationsEnabled" presentation="$(presentation.PdfAnnotationsEnabled)" valueName="PdfAnnotationsEnabled">
+      <parentCategory ref="googlechrome"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.PdfUseSkiaRendererEnabled)" explainText="$(string.PdfUseSkiaRendererEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PdfUseSkiaRendererEnabled" presentation="$(presentation.PdfUseSkiaRendererEnabled)" valueName="PdfUseSkiaRendererEnabled">
       <parentCategory ref="googlechrome"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -3630,6 +3685,16 @@
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.PostQuantumKeyAgreementEnabled)" explainText="$(string.PostQuantumKeyAgreementEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PostQuantumKeyAgreementEnabled" presentation="$(presentation.PostQuantumKeyAgreementEnabled)" valueName="PostQuantumKeyAgreementEnabled">
+      <parentCategory ref="googlechrome"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.PrefetchWithServiceWorkerEnabled)" explainText="$(string.PrefetchWithServiceWorkerEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PrefetchWithServiceWorkerEnabled" presentation="$(presentation.PrefetchWithServiceWorkerEnabled)" valueName="PrefetchWithServiceWorkerEnabled">
       <parentCategory ref="googlechrome"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
@@ -3939,16 +4004,6 @@
         <list id="SecurityKeyPermitAttestationDesc" key="Software\Policies\Google\Chrome\SecurityKeyPermitAttestation" valuePrefix=""/>
       </elements>
     </policy>
-    <policy class="Both" displayName="$(string.SelectParserRelaxationEnabled)" explainText="$(string.SelectParserRelaxationEnabled_Explain)" key="Software\Policies\Google\Chrome" name="SelectParserRelaxationEnabled" presentation="$(presentation.SelectParserRelaxationEnabled)" valueName="SelectParserRelaxationEnabled">
-      <parentCategory ref="googlechrome"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
     <policy class="Both" displayName="$(string.ServiceWorkerToControlSrcdocIframeEnabled)" explainText="$(string.ServiceWorkerToControlSrcdocIframeEnabled_Explain)" key="Software\Policies\Google\Chrome" name="ServiceWorkerToControlSrcdocIframeEnabled" presentation="$(presentation.ServiceWorkerToControlSrcdocIframeEnabled)" valueName="ServiceWorkerToControlSrcdocIframeEnabled">
       <parentCategory ref="googlechrome"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -4156,6 +4211,16 @@
       <elements>
         <list id="SyncTypesListDisabledDesc" key="Software\Policies\Google\Chrome\SyncTypesListDisabled" valuePrefix=""/>
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.TLS13EarlyDataEnabled)" explainText="$(string.TLS13EarlyDataEnabled_Explain)" key="Software\Policies\Google\Chrome" name="TLS13EarlyDataEnabled" presentation="$(presentation.TLS13EarlyDataEnabled)" valueName="TLS13EarlyDataEnabled">
+      <parentCategory ref="googlechrome"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.TabDiscardingExceptions)" explainText="$(string.TabDiscardingExceptions_Explain)" key="Software\Policies\Google\Chrome" name="TabDiscardingExceptions" presentation="$(presentation.TabDiscardingExceptions)">
       <parentCategory ref="googlechrome"/>
@@ -4768,6 +4833,13 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.PasswordManagerBlocklist)" explainText="$(string.PasswordManagerBlocklist_Explain)" key="Software\Policies\Google\Chrome" name="PasswordManagerBlocklist" presentation="$(presentation.PasswordManagerBlocklist)">
+      <parentCategory ref="PasswordManager"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <list id="PasswordManagerBlocklistDesc" key="Software\Policies\Google\Chrome\PasswordManagerBlocklist" valuePrefix=""/>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.PasswordManagerEnabled)" explainText="$(string.PasswordManagerEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PasswordManagerEnabled" presentation="$(presentation.PasswordManagerEnabled)" valueName="PasswordManagerEnabled">
       <parentCategory ref="PasswordManager"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -5043,6 +5115,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.PrivacySandboxIpProtectionEnabled)" explainText="$(string.PrivacySandboxIpProtectionEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PrivacySandboxIpProtectionEnabled" presentation="$(presentation.PrivacySandboxIpProtectionEnabled)" valueName="PrivacySandboxIpProtectionEnabled">
+      <parentCategory ref="PrivacySandbox"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.PrivacySandboxPromptEnabled)" explainText="$(string.PrivacySandboxPromptEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PrivacySandboxPromptEnabled" presentation="$(presentation.PrivacySandboxPromptEnabled)" valueName="PrivacySandboxPromptEnabled">
       <parentCategory ref="PrivacySandbox"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -5055,33 +5137,6 @@
     </policy>
     <policy class="Both" displayName="$(string.PrivacySandboxSiteEnabledAdsEnabled)" explainText="$(string.PrivacySandboxSiteEnabledAdsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PrivacySandboxSiteEnabledAdsEnabled" presentation="$(presentation.PrivacySandboxSiteEnabledAdsEnabled)" valueName="PrivacySandboxSiteEnabledAdsEnabled">
       <parentCategory ref="PrivacySandbox"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.InsecurePrivateNetworkRequestsAllowed)" explainText="$(string.InsecurePrivateNetworkRequestsAllowed_Explain)" key="Software\Policies\Google\Chrome" name="InsecurePrivateNetworkRequestsAllowed" presentation="$(presentation.InsecurePrivateNetworkRequestsAllowed)" valueName="InsecurePrivateNetworkRequestsAllowed">
-      <parentCategory ref="PrivateNetworkRequestSettings"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.InsecurePrivateNetworkRequestsAllowedForUrls)" explainText="$(string.InsecurePrivateNetworkRequestsAllowedForUrls_Explain)" key="Software\Policies\Google\Chrome" name="InsecurePrivateNetworkRequestsAllowedForUrls" presentation="$(presentation.InsecurePrivateNetworkRequestsAllowedForUrls)">
-      <parentCategory ref="PrivateNetworkRequestSettings"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <list id="InsecurePrivateNetworkRequestsAllowedForUrlsDesc" key="Software\Policies\Google\Chrome\InsecurePrivateNetworkRequestsAllowedForUrls" valuePrefix=""/>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.PrivateNetworkAccessRestrictionsEnabled)" explainText="$(string.PrivateNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PrivateNetworkAccessRestrictionsEnabled" presentation="$(presentation.PrivateNetworkAccessRestrictionsEnabled)" valueName="PrivateNetworkAccessRestrictionsEnabled">
-      <parentCategory ref="PrivateNetworkRequestSettings"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
         <decimal value="1"/>
@@ -6633,6 +6688,33 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.CloudPrintWarningsSuppressed)" explainText="$(string.CloudPrintWarningsSuppressed_Explain)" key="Software\Policies\Google\Chrome" name="CloudPrintWarningsSuppressed" presentation="$(presentation.CloudPrintWarningsSuppressed)" valueName="CloudPrintWarningsSuppressed">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.InsecurePrivateNetworkRequestsAllowed)" explainText="$(string.InsecurePrivateNetworkRequestsAllowed_Explain)" key="Software\Policies\Google\Chrome" name="InsecurePrivateNetworkRequestsAllowed" presentation="$(presentation.InsecurePrivateNetworkRequestsAllowed)" valueName="InsecurePrivateNetworkRequestsAllowed">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.InsecurePrivateNetworkRequestsAllowedForUrls)" explainText="$(string.InsecurePrivateNetworkRequestsAllowedForUrls_Explain)" key="Software\Policies\Google\Chrome" name="InsecurePrivateNetworkRequestsAllowedForUrls" presentation="$(presentation.InsecurePrivateNetworkRequestsAllowedForUrls)">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <list id="InsecurePrivateNetworkRequestsAllowedForUrlsDesc" key="Software\Policies\Google\Chrome\InsecurePrivateNetworkRequestsAllowedForUrls" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.PrivateNetworkAccessRestrictionsEnabled)" explainText="$(string.PrivateNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PrivateNetworkAccessRestrictionsEnabled" presentation="$(presentation.PrivateNetworkAccessRestrictionsEnabled)" valueName="PrivateNetworkAccessRestrictionsEnabled">
       <parentCategory ref="RemovedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>

@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 139.0.3380.1-->
+  <!--microsoft_edge version: 139.0.3394.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -6592,6 +6592,26 @@
     <policy class="Both" displayName="$(string.MetricsReportingEnabled)" explainText="$(string.MetricsReportingEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="MetricsReportingEnabled" presentation="$(presentation.MetricsReportingEnabled)" valueName="MetricsReportingEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="OBSOLETE_WIN7_V77_V88"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.Microsoft365CopilotChatIconEnabled)" explainText="$(string.Microsoft365CopilotChatIconEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="Microsoft365CopilotChatIconEnabled" presentation="$(presentation.Microsoft365CopilotChatIconEnabled)" valueName="Microsoft365CopilotChatIconEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V139"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.Microsoft365CopilotChatIconEnabled)" explainText="$(string.Microsoft365CopilotChatIconEnabled_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="Microsoft365CopilotChatIconEnabled_recommended" presentation="$(presentation.Microsoft365CopilotChatIconEnabled)" valueName="Microsoft365CopilotChatIconEnabled">
+      <parentCategory ref="microsoft_edge_recommended"/>
+      <supportedOn ref="SUPPORTED_WIN7_V139"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
