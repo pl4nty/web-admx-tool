@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<policyDefinitionResources revision="6.4" schemaVersion="1.0">
+<policyDefinitionResources revision="6.5" schemaVersion="1.0">
   <displayName>ZoomMeetings</displayName>
   <description>ZoomMeetings</description>
   <resources>
@@ -60,6 +60,15 @@ If this policy is not set, client will use default policy.</string>
 If this policy is enabled, the client will always use WinINet to do proxy resolve.
 
 If this policy is disabled, the client will use WinHTTP to do proxy resolve first, WinINet will be used as the failover resolver.
+
+If this policy is not set, client will use the default setting.</string>
+      <string id="DisablePacCurlDownload_Policy">Disable wininet proxy resolver use curl to download PAC</string>
+      <string id="DisablePacCurlDownload_Policy_Recommend">Disable wininet proxy resolver use curl to download PAC (Recommendation Setting)</string>
+      <string id="DisablePacCurlDownload_Explain">Default policy is false.
+
+If this policy is enabled, wininet proxy resolver won't try to download pac by curl.
+
+If this policy is disabled, wininet proxy resolver will try to download pac by curl.
 
 If this policy is not set, client will use the default setting.</string>
       <string id="SetSSOURL_Policy">Set default SSO URL for client login</string>
@@ -678,8 +687,8 @@ VIDEO: 8801
 If this setting is false, client will use default setting.
 
 If this policy is not set, client will use default setting.</string>
-      <string id="LegacyCaptureMode_Policy">Set to disable GPU acceleration</string>
-      <string id="LegacyCaptureMode_Policy_Recommend">Set to disable GPU acceleration (Recommendation Setting)</string>
+      <string id="LegacyCaptureMode_Policy">Disable Hardware Acceleration for Screen Sharing under Share Screen &gt; Advanced</string>
+      <string id="LegacyCaptureMode_Policy_Recommend">Disable Hardware Acceleration for Screen Sharing under Share Screen &gt; Advanced (Recommendation Setting)</string>
       <string id="LegacyCaptureMode_Explain">Default policy is GPU acceleration enabled.
 
 If this setting is true, client will disable the GPU acceleration.
@@ -705,15 +714,6 @@ If this setting is true, client will mute audio and stop video after locking the
 If this setting is false, client will not mute audio and stop video after locking the machine.
 
 If this policy is not set, client will use the default setting.</string>
-      <string id="EnableWeChatLogin_Policy">Set to enable login with wechat</string>
-      <string id="EnableWeChatLogin_Policy_Recommend">Set to enable login with wechat (Recommendation Setting)</string>
-      <string id="EnableWeChatLogin_Explain">Default setting is false.
-
-If this setting is false, login with WeChat will be disabled.
-
-If this setting is true, login with WeChat will be enabled.
-
-If this setting is not set, it will be disable if IT installed the client, otherwise use app-default (enable)</string>
       <string id="EnablePhoneLogin_Policy">Set to enable login with phone</string>
       <string id="EnablePhoneLogin_Policy_Recommend">Set to enable login with phone (Recommendation Setting)</string>
       <string id="EnablePhoneLogin_Explain">Default setting is false.
@@ -721,24 +721,6 @@ If this setting is not set, it will be disable if IT installed the client, other
 If this setting is false, login with Phone will be disabled.
 
 If this setting is true, login with Phone will be enabled.
-
-If this setting is not set, it will be disable if IT installed the client, otherwise use app-default (enable)</string>
-      <string id="EnableAliPayLogin_Policy">Set to enable login with alipay</string>
-      <string id="EnableAliPayLogin_Policy_Recommend">Set to enable login with alipay (Recommendation Setting)</string>
-      <string id="EnableAliPayLogin_Explain">Default setting is false.
-
-If this setting is false, login with Alipay will be disabled.
-
-If this setting is true, login with Alipay will be enabled.
-
-If this setting is not set, it will be disable if IT installed the client, otherwise use app-default (enable)</string>
-      <string id="EnableQQLogin_Policy">Set to enable login with QQ</string>
-      <string id="EnableQQLogin_Policy_Recommend">Set to enable login with QQ (Recommendation Setting)</string>
-      <string id="EnableQQLogin_Explain">Default setting is false.
-
-If this setting is false, login with QQ will be disabled.
-
-If this setting is true, login with QQ will be enabled.
 
 If this setting is not set, it will be disable if IT installed the client, otherwise use app-default (enable)</string>
       <string id="DefaultUsePortraitView_Policy">Set to use portrait view</string>
@@ -1402,8 +1384,8 @@ If this setting is true, Zoom app cannot join webinar before signing in.
 If this setting is false, Zoom app can join webinar without signing in.
 
 If this policy is not set, client will use the default setting.</string>
-      <string id="EnableHardwareOptimizeVideoSharing_Policy">Set to use hardware acceleration to optimize video sharing</string>
-      <string id="EnableHardwareOptimizeVideoSharing_Policy_Recommend">Set to use hardware acceleration to optimize video sharing (Recommendation Setting)</string>
+      <string id="EnableHardwareOptimizeVideoSharing_Policy">Enable Hardware Acceleration for Video Sharing under Share Screen &gt; Advanced</string>
+      <string id="EnableHardwareOptimizeVideoSharing_Policy_Recommend">Enable Hardware Acceleration for Video Sharing under Share Screen &gt; Advanced (Recommendation Setting)</string>
       <string id="EnableHardwareOptimizeVideoSharing_Explain">Default setting is enabled.
 
 If this setting is enabled, client will use hardware acceleration to optimize video sharing.
@@ -1488,7 +1470,7 @@ If this policy is not set, client will use the default setting.</string>
       <string id="AU2_SetUpdateChannel_Policy">Set the specified update channel when auto-update feature is enabled</string>
       <string id="AU2_SetUpdateChannel_Policy_Recommend">Set the specified update channel when auto-update feature is enabled (Recommendation Setting)</string>
       <string id="AU2_SetUpdateChannel_Part">Set the specified update channel when auto-update feature is enabled</string>
-      <string id="AU2_SetUpdateChannel_Explain">Default policy is '0', client will subscribe 'Slow' as update channel when the auto-update feature is enabled.
+      <string id="AU2_SetUpdateChannel_Explain">Default policy is empty, client will subscribe 'Slow' as update channel when the auto-update feature is enabled.
 
 This policy depends on AU2_EnableAutoUpdate, if AU2_EnableAutoUpdate is disabled, AU2_SetUpdateChannel will not work.
 
@@ -1933,6 +1915,16 @@ If this policy is not set, client will use the default setting.</string>
 2 - Windows Runtime API: Uses asynchronous Windows Runtime API for audio capture and playback.
 
 If this policy is not set, client will use the default setting.</string>
+      <string id="AudioEnhancementLevel_Policy">Turns on windows system enhancements for the speaker and microphone in use</string>
+      <string id="AudioEnhancementLevel_Policy_Recommend">Turns on windows system enhancements for the speaker and microphone in use (Recommendation Setting)</string>
+      <string id="AudioEnhancementLevel_Part">Turns on windows system enhancements for the speaker and microphone in use</string>
+      <string id="AudioEnhancementLevel_Explain">This policy is exactly the same as the manual setting: "Settings"-"Audio"-"Advanced"-"Windows system audio enhancements". Its default policy is 0.
+
+0 - Auto: Default value, using default Windows system setting.
+1 - On: Turn on the windows system audio enhancements setting.
+2 - Off: Turn off the windows system audio enhancements.
+
+If this policy is not set, client will use the default setting.</string>
       <string id="MeshMulticastIP_Policy">Set IP address for Zoom Mesh local detection</string>
       <string id="MeshMulticastIP_Policy_Recommend">Set IP address for Zoom Mesh local detection (Recommendation Setting)</string>
       <string id="MeshMulticastIP_Part">Set IP address for Zoom Mesh local detection</string>
@@ -2222,6 +2214,12 @@ If this policy is not set, client will use the default setting.</string>
 If this policy is enabled, the client will not be able to generate full dump.
 If this policy is disabled, the client can generate full dump.
 If this policy is not set, client will use the default setting.</string>
+      <string id="DisableWindowsDownloadWebview_Policy">Disable download webview on windows platform client</string>
+      <string id="DisableWindowsDownloadWebview_Policy_Recommend">Disable download webview on windows platform client (Recommendation Setting)</string>
+      <string id="DisableWindowsDownloadWebview_Explain">Default policy is disabled.
+If this policy is enabled, the client will not be able to download webview.
+If this policy is disabled, the client can download webview.
+If this policy is not set, client will use the default setting.</string>
       <string id="DisablePrompt32bitWarning_Policy">Disable warning prompts for 32-bit clients</string>
       <string id="DisablePrompt32bitWarning_Policy_Recommend">Disable warning prompts for 32-bit clients (Recommendation Setting)</string>
       <string id="DisablePrompt32bitWarning_Explain">Default policy is disabled.
@@ -2249,6 +2247,15 @@ If this policy is enabled, Zoom Meetings will be forced to sit on top of other a
 If this policy is disabled, Zoom Meetings will not be forced to sit on top of other apps during meetings.
 
 If this policy is not set, the client will use the default setting.</string>
+      <string id="DisableLocalASR_Policy">Disable local ASR feature</string>
+      <string id="DisableLocalASR_Policy_Recommend">Disable local ASR feature (Recommendation Setting)</string>
+      <string id="DisableLocalASR_Explain">Default policy is disabled.
+
+If this policy is enabled, the client will not use local ASR feature.
+
+If this policy is disabled, the client will use local ASR feature.
+
+If this policy is not set, the client will use the default setting.</string>
       <string id="EnableNewSigninUI_Policy">Enable the new login UI</string>
       <string id="EnableNewSigninUI_Policy_Recommend">Enable the new login UI (Recommendation Setting)</string>
       <string id="EnableNewSigninUI_Explain">Default policy is enabled.
@@ -2264,6 +2271,7 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="AutoStartAfterReboot_Policy" />
       <presentation id="AutoStartInSystemTray_Policy" />
       <presentation id="UseWinINetResolveProxy_Policy" />
+      <presentation id="DisablePacCurlDownload_Policy" />
       <presentation id="SetSSOURL_Policy">
         <textBox refId="SetSSOURL_Part">
           <label>Set SSO host</label>
@@ -2303,10 +2311,7 @@ If this policy is not set, client will use the default setting.</string>
         </textBox>
       </presentation>
       <presentation id="EnforceSignInToJoin_Policy" />
-      <presentation id="EnableWeChatLogin_Policy" />
       <presentation id="EnablePhoneLogin_Policy" />
-      <presentation id="EnableAliPayLogin_Policy" />
-      <presentation id="EnableQQLogin_Policy" />
       <presentation id="EnableAppleLogin_Policy" />
       <presentation id="DefaultUsePortraitView_Policy" />
       <presentation id="EmbedUserAgentString_Policy">
@@ -2390,13 +2395,16 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="EnableDumpTPStatInfo_Policy" />
       <presentation id="DisableReportProblem_Policy" />
       <presentation id="DisableWindowsGenFullDump_Policy" />
+      <presentation id="DisableWindowsDownloadWebview_Policy" />
       <presentation id="DisablePrompt32bitWarning_Policy" />
       <presentation id="EnableProxyDetectForSpecialCases_Policy" />
       <presentation id="DisableNewSetting_Policy" />
       <presentation id="EnableNewSigninUI_Policy" />
       <presentation id="AU2_EnableAutoUpdate_Policy" />
       <presentation id="AU2_SetUpdateChannel_Policy">
-        <decimalTextBox refId="AU2_SetUpdateChannel_Part" defaultValue="0" spinStep="1">Set the specified update channel when auto-update feature is enabled</decimalTextBox>
+        <textBox refId="AU2_SetUpdateChannel_Part">
+          <label>Set the specified update channel when auto-update feature is enabled</label>
+        </textBox>
       </presentation>
       <presentation id="AU2_EnableShowZoomUpdates_Policy" />
       <presentation id="AU2_EnableUpdateAvailableBanner_Policy" />
@@ -2622,6 +2630,9 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="ZCCMsgAudioSetting_Policy">
         <decimalTextBox refId="ZCCMsgAudioSetting_Part" defaultValue="1" spinStep="1">Setting up message notifications for Zoom Contact Center</decimalTextBox>
       </presentation>
+      <presentation id="AudioEnhancementLevel_Policy">
+        <decimalTextBox refId="AudioEnhancementLevel_Part" defaultValue="0" spinStep="1">Turns on windows system enhancements for the speaker and microphone in use</decimalTextBox>
+      </presentation>
       <presentation id="AudioCapturePlaybackMode_Policy">
         <decimalTextBox refId="AudioCapturePlaybackMode_Part" defaultValue="0" spinStep="1">Set audio capture and playback API</decimalTextBox>
       </presentation>
@@ -2654,11 +2665,13 @@ If this policy is not set, client will use the default setting.</string>
         </textBox>
       </presentation>
       <presentation id="KeepMeetingOnTop_Policy" />
+      <presentation id="DisableLocalASR_Policy" />
       <presentation id="EnableClientAutoUpdate_Policy_Recommend" />
       <presentation id="DisableCreatingDesktopShortcut_Policy_Recommend" />
       <presentation id="AutoStartAfterReboot_Policy_Recommend" />
       <presentation id="AutoStartInSystemTray_Policy_Recommend" />
       <presentation id="UseWinINetResolveProxy_Policy_Recommend" />
+      <presentation id="DisablePacCurlDownload_Policy_Recommend" />
       <presentation id="SetSSOURL_Policy_Recommend">
         <textBox refId="SetSSOURL_Part">
           <label>Set SSO host</label>
@@ -2698,10 +2711,7 @@ If this policy is not set, client will use the default setting.</string>
         </textBox>
       </presentation>
       <presentation id="EnforceSignInToJoin_Policy_Recommend" />
-      <presentation id="EnableWeChatLogin_Policy_Recommend" />
       <presentation id="EnablePhoneLogin_Policy_Recommend" />
-      <presentation id="EnableAliPayLogin_Policy_Recommend" />
-      <presentation id="EnableQQLogin_Policy_Recommend" />
       <presentation id="EnableAppleLogin_Policy_Recommend" />
       <presentation id="DefaultUsePortraitView_Policy_Recommend" />
       <presentation id="EmbedUserAgentString_Policy_Recommend">
@@ -2785,13 +2795,16 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="EnableDumpTPStatInfo_Policy_Recommend" />
       <presentation id="DisableReportProblem_Policy_Recommend" />
       <presentation id="DisableWindowsGenFullDump_Policy_Recommend" />
+      <presentation id="DisableWindowsDownloadWebview_Policy_Recommend" />
       <presentation id="DisablePrompt32bitWarning_Policy_Recommend" />
       <presentation id="EnableProxyDetectForSpecialCases_Policy_Recommend" />
       <presentation id="DisableNewSetting_Policy_Recommend" />
       <presentation id="EnableNewSigninUI_Policy_Recommend" />
       <presentation id="AU2_EnableAutoUpdate_Policy_Recommend" />
       <presentation id="AU2_SetUpdateChannel_Policy_Recommend">
-        <decimalTextBox refId="AU2_SetUpdateChannel_Part" defaultValue="0" spinStep="1">Set the specified update channel when auto-update feature is enabled</decimalTextBox>
+        <textBox refId="AU2_SetUpdateChannel_Part">
+          <label>Set the specified update channel when auto-update feature is enabled</label>
+        </textBox>
       </presentation>
       <presentation id="AU2_EnableShowZoomUpdates_Policy_Recommend" />
       <presentation id="AU2_EnableUpdateAvailableBanner_Policy_Recommend" />
@@ -3017,6 +3030,9 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="ZCCMsgAudioSetting_Policy_Recommend">
         <decimalTextBox refId="ZCCMsgAudioSetting_Part" defaultValue="1" spinStep="1">Setting up message notifications for Zoom Contact Center</decimalTextBox>
       </presentation>
+      <presentation id="AudioEnhancementLevel_Policy_Recommend">
+        <decimalTextBox refId="AudioEnhancementLevel_Part" defaultValue="0" spinStep="1">Turns on windows system enhancements for the speaker and microphone in use</decimalTextBox>
+      </presentation>
       <presentation id="AudioCapturePlaybackMode_Policy_Recommend">
         <decimalTextBox refId="AudioCapturePlaybackMode_Part" defaultValue="0" spinStep="1">Set audio capture and playback API</decimalTextBox>
       </presentation>
@@ -3049,6 +3065,7 @@ If this policy is not set, client will use the default setting.</string>
         </textBox>
       </presentation>
       <presentation id="KeepMeetingOnTop_Policy_Recommend" />
+      <presentation id="DisableLocalASR_Policy_Recommend" />
     </presentationTable>
   </resources>
 </policyDefinitionResources>

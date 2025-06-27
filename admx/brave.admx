@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--brave version: 137.1.79.126-->
+  <!--brave version: 138.1.80.113-->
   <policyNamespaces>
     <target namespace="BraveSoftware.Policies.Brave" prefix="brave" />
   </policyNamespaces>
@@ -94,9 +94,6 @@
       <parentCategory ref="brave_recommended" />
     </category>
     <category displayName="$(string.PrivacySandbox_group)" name="PrivacySandbox">
-      <parentCategory ref="brave" />
-    </category>
-    <category displayName="$(string.PrivateNetworkRequestSettings_group)" name="PrivateNetworkRequestSettings">
       <parentCategory ref="brave" />
     </category>
     <category displayName="$(string.RelatedWebsiteSets_group)" name="RelatedWebsiteSets">
@@ -1397,6 +1394,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.SelectParserRelaxationEnabled)" explainText="$(string.SelectParserRelaxationEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SelectParserRelaxationEnabled" presentation="$(presentation.SelectParserRelaxationEnabled)" valueName="SelectParserRelaxationEnabled">
+      <parentCategory ref="DeprecatedPolicies" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.SigninAllowed)" explainText="$(string.SigninAllowed_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SigninAllowed" presentation="$(presentation.SigninAllowed)" valueName="SigninAllowed">
       <parentCategory ref="DeprecatedPolicies" />
       <supportedOn ref="SUPPORTED_WIN7" />
@@ -1413,6 +1420,16 @@
       <elements>
         <list id="UnsafelyTreatInsecureOriginAsSecureDesc" key="Software\Policies\BraveSoftware\Brave\UnsafelyTreatInsecureOriginAsSecure" valuePrefix="" />
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsEnabled)" explainText="$(string.LocalNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="LocalNetworkAccessRestrictionsEnabled" presentation="$(presentation.LocalNetworkAccessRestrictionsEnabled)" valueName="LocalNetworkAccessRestrictionsEnabled">
+      <parentCategory ref="DeprecatedPolicies" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.ProxyBypassList)" explainText="$(string.ProxyBypassList_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ProxyBypassList" presentation="$(presentation.ProxyBypassList)">
       <parentCategory ref="DeprecatedPolicies" />
@@ -1685,6 +1702,24 @@
       <supportedOn ref="SUPPORTED_WIN7" />
       <elements>
         <text id="FirstPartySetsOverrides" maxLength="1000000" valueName="FirstPartySetsOverrides" />
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.AIModeSettings)" explainText="$(string.AIModeSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AIModeSettings" presentation="$(presentation.AIModeSettings)">
+      <parentCategory ref="GenerativeAI" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <enum id="AIModeSettings" valueName="AIModeSettings">
+          <item displayName="$(string.AIModeSettings_Allowed)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.AIModeSettings_Disabled)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.AutofillPredictionSettings)" explainText="$(string.AutofillPredictionSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AutofillPredictionSettings" presentation="$(presentation.AutofillPredictionSettings)">
@@ -3561,6 +3596,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.NTPFooterExtensionAttributionEnabled)" explainText="$(string.NTPFooterExtensionAttributionEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="NTPFooterExtensionAttributionEnabled" presentation="$(presentation.NTPFooterExtensionAttributionEnabled)" valueName="NTPFooterExtensionAttributionEnabled">
+      <parentCategory ref="brave" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.NTPMiddleSlotAnnouncementVisible)" explainText="$(string.NTPMiddleSlotAnnouncementVisible_Explain)" key="Software\Policies\BraveSoftware\Brave" name="NTPMiddleSlotAnnouncementVisible" presentation="$(presentation.NTPMiddleSlotAnnouncementVisible)" valueName="NTPMiddleSlotAnnouncementVisible">
       <parentCategory ref="brave" />
       <supportedOn ref="SUPPORTED_WIN7" />
@@ -3661,6 +3706,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.PdfAnnotationsEnabled)" explainText="$(string.PdfAnnotationsEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PdfAnnotationsEnabled" presentation="$(presentation.PdfAnnotationsEnabled)" valueName="PdfAnnotationsEnabled">
+      <parentCategory ref="brave" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.PdfUseSkiaRendererEnabled)" explainText="$(string.PdfUseSkiaRendererEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PdfUseSkiaRendererEnabled" presentation="$(presentation.PdfUseSkiaRendererEnabled)" valueName="PdfUseSkiaRendererEnabled">
       <parentCategory ref="brave" />
       <supportedOn ref="SUPPORTED_WIN7" />
@@ -3713,6 +3768,16 @@
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.PostQuantumKeyAgreementEnabled)" explainText="$(string.PostQuantumKeyAgreementEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PostQuantumKeyAgreementEnabled" presentation="$(presentation.PostQuantumKeyAgreementEnabled)" valueName="PostQuantumKeyAgreementEnabled">
+      <parentCategory ref="brave" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.PrefetchWithServiceWorkerEnabled)" explainText="$(string.PrefetchWithServiceWorkerEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PrefetchWithServiceWorkerEnabled" presentation="$(presentation.PrefetchWithServiceWorkerEnabled)" valueName="PrefetchWithServiceWorkerEnabled">
       <parentCategory ref="brave" />
       <supportedOn ref="SUPPORTED_WIN7" />
       <enabledValue>
@@ -4022,16 +4087,6 @@
         <list id="SecurityKeyPermitAttestationDesc" key="Software\Policies\BraveSoftware\Brave\SecurityKeyPermitAttestation" valuePrefix="" />
       </elements>
     </policy>
-    <policy class="Both" displayName="$(string.SelectParserRelaxationEnabled)" explainText="$(string.SelectParserRelaxationEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SelectParserRelaxationEnabled" presentation="$(presentation.SelectParserRelaxationEnabled)" valueName="SelectParserRelaxationEnabled">
-      <parentCategory ref="brave" />
-      <supportedOn ref="SUPPORTED_WIN7" />
-      <enabledValue>
-        <decimal value="1" />
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0" />
-      </disabledValue>
-    </policy>
     <policy class="Both" displayName="$(string.ServiceWorkerToControlSrcdocIframeEnabled)" explainText="$(string.ServiceWorkerToControlSrcdocIframeEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ServiceWorkerToControlSrcdocIframeEnabled" presentation="$(presentation.ServiceWorkerToControlSrcdocIframeEnabled)" valueName="ServiceWorkerToControlSrcdocIframeEnabled">
       <parentCategory ref="brave" />
       <supportedOn ref="SUPPORTED_WIN7" />
@@ -4239,6 +4294,16 @@
       <elements>
         <list id="SyncTypesListDisabledDesc" key="Software\Policies\BraveSoftware\Brave\SyncTypesListDisabled" valuePrefix="" />
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.TLS13EarlyDataEnabled)" explainText="$(string.TLS13EarlyDataEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="TLS13EarlyDataEnabled" presentation="$(presentation.TLS13EarlyDataEnabled)" valueName="TLS13EarlyDataEnabled">
+      <parentCategory ref="brave" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.TabDiscardingExceptions)" explainText="$(string.TabDiscardingExceptions_Explain)" key="Software\Policies\BraveSoftware\Brave" name="TabDiscardingExceptions" presentation="$(presentation.TabDiscardingExceptions)">
       <parentCategory ref="brave" />
@@ -4851,6 +4916,13 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.PasswordManagerBlocklist)" explainText="$(string.PasswordManagerBlocklist_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PasswordManagerBlocklist" presentation="$(presentation.PasswordManagerBlocklist)">
+      <parentCategory ref="PasswordManager" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <list id="PasswordManagerBlocklistDesc" key="Software\Policies\BraveSoftware\Brave\PasswordManagerBlocklist" valuePrefix="" />
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.PasswordManagerEnabled)" explainText="$(string.PasswordManagerEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PasswordManagerEnabled" presentation="$(presentation.PasswordManagerEnabled)" valueName="PasswordManagerEnabled">
       <parentCategory ref="PasswordManager" />
       <supportedOn ref="SUPPORTED_WIN7" />
@@ -5126,6 +5198,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.PrivacySandboxIpProtectionEnabled)" explainText="$(string.PrivacySandboxIpProtectionEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PrivacySandboxIpProtectionEnabled" presentation="$(presentation.PrivacySandboxIpProtectionEnabled)" valueName="PrivacySandboxIpProtectionEnabled">
+      <parentCategory ref="PrivacySandbox" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.PrivacySandboxPromptEnabled)" explainText="$(string.PrivacySandboxPromptEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PrivacySandboxPromptEnabled" presentation="$(presentation.PrivacySandboxPromptEnabled)" valueName="PrivacySandboxPromptEnabled">
       <parentCategory ref="PrivacySandbox" />
       <supportedOn ref="SUPPORTED_WIN7" />
@@ -5138,33 +5220,6 @@
     </policy>
     <policy class="Both" displayName="$(string.PrivacySandboxSiteEnabledAdsEnabled)" explainText="$(string.PrivacySandboxSiteEnabledAdsEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PrivacySandboxSiteEnabledAdsEnabled" presentation="$(presentation.PrivacySandboxSiteEnabledAdsEnabled)" valueName="PrivacySandboxSiteEnabledAdsEnabled">
       <parentCategory ref="PrivacySandbox" />
-      <supportedOn ref="SUPPORTED_WIN7" />
-      <enabledValue>
-        <decimal value="1" />
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0" />
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.InsecurePrivateNetworkRequestsAllowed)" explainText="$(string.InsecurePrivateNetworkRequestsAllowed_Explain)" key="Software\Policies\BraveSoftware\Brave" name="InsecurePrivateNetworkRequestsAllowed" presentation="$(presentation.InsecurePrivateNetworkRequestsAllowed)" valueName="InsecurePrivateNetworkRequestsAllowed">
-      <parentCategory ref="PrivateNetworkRequestSettings" />
-      <supportedOn ref="SUPPORTED_WIN7" />
-      <enabledValue>
-        <decimal value="1" />
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0" />
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.InsecurePrivateNetworkRequestsAllowedForUrls)" explainText="$(string.InsecurePrivateNetworkRequestsAllowedForUrls_Explain)" key="Software\Policies\BraveSoftware\Brave" name="InsecurePrivateNetworkRequestsAllowedForUrls" presentation="$(presentation.InsecurePrivateNetworkRequestsAllowedForUrls)">
-      <parentCategory ref="PrivateNetworkRequestSettings" />
-      <supportedOn ref="SUPPORTED_WIN7" />
-      <elements>
-        <list id="InsecurePrivateNetworkRequestsAllowedForUrlsDesc" key="Software\Policies\BraveSoftware\Brave\InsecurePrivateNetworkRequestsAllowedForUrls" valuePrefix="" />
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.PrivateNetworkAccessRestrictionsEnabled)" explainText="$(string.PrivateNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PrivateNetworkAccessRestrictionsEnabled" presentation="$(presentation.PrivateNetworkAccessRestrictionsEnabled)" valueName="PrivateNetworkAccessRestrictionsEnabled">
-      <parentCategory ref="PrivateNetworkRequestSettings" />
       <supportedOn ref="SUPPORTED_WIN7" />
       <enabledValue>
         <decimal value="1" />
@@ -6716,6 +6771,33 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.CloudPrintWarningsSuppressed)" explainText="$(string.CloudPrintWarningsSuppressed_Explain)" key="Software\Policies\BraveSoftware\Brave" name="CloudPrintWarningsSuppressed" presentation="$(presentation.CloudPrintWarningsSuppressed)" valueName="CloudPrintWarningsSuppressed">
+      <parentCategory ref="RemovedPolicies" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.InsecurePrivateNetworkRequestsAllowed)" explainText="$(string.InsecurePrivateNetworkRequestsAllowed_Explain)" key="Software\Policies\BraveSoftware\Brave" name="InsecurePrivateNetworkRequestsAllowed" presentation="$(presentation.InsecurePrivateNetworkRequestsAllowed)" valueName="InsecurePrivateNetworkRequestsAllowed">
+      <parentCategory ref="RemovedPolicies" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.InsecurePrivateNetworkRequestsAllowedForUrls)" explainText="$(string.InsecurePrivateNetworkRequestsAllowedForUrls_Explain)" key="Software\Policies\BraveSoftware\Brave" name="InsecurePrivateNetworkRequestsAllowedForUrls" presentation="$(presentation.InsecurePrivateNetworkRequestsAllowedForUrls)">
+      <parentCategory ref="RemovedPolicies" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <list id="InsecurePrivateNetworkRequestsAllowedForUrlsDesc" key="Software\Policies\BraveSoftware\Brave\InsecurePrivateNetworkRequestsAllowedForUrls" valuePrefix="" />
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.PrivateNetworkAccessRestrictionsEnabled)" explainText="$(string.PrivateNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PrivateNetworkAccessRestrictionsEnabled" presentation="$(presentation.PrivateNetworkAccessRestrictionsEnabled)" valueName="PrivateNetworkAccessRestrictionsEnabled">
       <parentCategory ref="RemovedPolicies" />
       <supportedOn ref="SUPPORTED_WIN7" />
       <enabledValue>
