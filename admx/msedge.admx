@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 139.0.3394.0-->
+  <!--microsoft_edge version: 139.0.3405.9-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -221,6 +221,9 @@
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.KioskMode_group)" name="KioskMode">
+      <parentCategory ref="microsoft_edge"/>
+    </category>
+    <category displayName="$(string.LocalNetworkAccessSettings_group)" name="LocalNetworkAccessSettings">
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.Manageability_group)" name="Manageability">
@@ -1506,6 +1509,13 @@
         <text id="ExtensionSettings" maxLength="1000000" valueName="ExtensionSettings"/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.MandatoryExtensionsForInPrivateNavigation)" explainText="$(string.MandatoryExtensionsForInPrivateNavigation_Explain)" key="Software\Policies\Microsoft\Edge" name="MandatoryExtensionsForInPrivateNavigation" presentation="$(presentation.MandatoryExtensionsForInPrivateNavigation)">
+      <parentCategory ref="Extensions"/>
+      <supportedOn ref="SUPPORTED_WIN7_V139"/>
+      <elements>
+        <list id="MandatoryExtensionsForInPrivateNavigationDesc" key="Software\Policies\Microsoft\Edge\MandatoryExtensionsForInPrivateNavigation" valuePrefix=""/>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.ControlDefaultStateOfAllowExtensionFromOtherStoresSettingEnabled)" explainText="$(string.ControlDefaultStateOfAllowExtensionFromOtherStoresSettingEnabled_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="ControlDefaultStateOfAllowExtensionFromOtherStoresSettingEnabled_recommended" presentation="$(presentation.ControlDefaultStateOfAllowExtensionFromOtherStoresSettingEnabled)" valueName="ControlDefaultStateOfAllowExtensionFromOtherStoresSettingEnabled">
       <parentCategory ref="Extensions_recommended"/>
       <supportedOn ref="SUPPORTED_WIN7_V101"/>
@@ -1867,6 +1877,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsEnabled)" explainText="$(string.LocalNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessRestrictionsEnabled" presentation="$(presentation.LocalNetworkAccessRestrictionsEnabled)" valueName="LocalNetworkAccessRestrictionsEnabled">
+      <parentCategory ref="LocalNetworkAccessSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7_V138"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.EdgeManagementPolicyOverridesPlatformPolicy)" explainText="$(string.EdgeManagementPolicyOverridesPlatformPolicy_Explain)" key="Software\Policies\Microsoft\Edge" name="EdgeManagementPolicyOverridesPlatformPolicy" presentation="$(presentation.EdgeManagementPolicyOverridesPlatformPolicy)" valueName="EdgeManagementPolicyOverridesPlatformPolicy">
       <parentCategory ref="Manageability"/>
       <supportedOn ref="SUPPORTED_WIN7_V119"/>
@@ -2001,16 +2021,6 @@
     <policy class="Both" displayName="$(string.IPv6ReachabilityOverrideEnabled)" explainText="$(string.IPv6ReachabilityOverrideEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="IPv6ReachabilityOverrideEnabled" presentation="$(presentation.IPv6ReachabilityOverrideEnabled)" valueName="IPv6ReachabilityOverrideEnabled">
       <parentCategory ref="Network"/>
       <supportedOn ref="SUPPORTED_WIN7_V132"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsEnabled)" explainText="$(string.LocalNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessRestrictionsEnabled" presentation="$(presentation.LocalNetworkAccessRestrictionsEnabled)" valueName="LocalNetworkAccessRestrictionsEnabled">
-      <parentCategory ref="Network"/>
-      <supportedOn ref="SUPPORTED_WIN7_V138"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
