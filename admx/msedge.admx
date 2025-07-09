@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 139.0.3405.9-->
+  <!--microsoft_edge version: 140.0.3421.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -20,6 +20,7 @@
       <definition displayName="$(string.SUPPORTED_WIN7_V137)" name="SUPPORTED_WIN7_V137"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V138)" name="SUPPORTED_WIN7_V138"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V139)" name="SUPPORTED_WIN7_V139"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V140)" name="SUPPORTED_WIN7_V140"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V77)" name="SUPPORTED_WIN7_V77"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V78)" name="SUPPORTED_WIN7_V78"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V79)" name="SUPPORTED_WIN7_V79"/>
@@ -108,6 +109,7 @@
       <definition displayName="$(string.OBSOLETE_WIN7_V99_V117)" name="OBSOLETE_WIN7_V99_V117"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V95_V98)" name="OBSOLETE_WIN7_V95_V98"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V77_V86)" name="OBSOLETE_WIN7_V77_V86"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V92_V139)" name="OBSOLETE_WIN7_V92_V139"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V88_V120)" name="OBSOLETE_WIN7_V88_V120"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V118_V130)" name="OBSOLETE_WIN7_V118_V130"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V107_V133)" name="OBSOLETE_WIN7_V107_V133"/>
@@ -3545,6 +3547,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.AdditionalDnsQueryTypesEnabled)" explainText="$(string.AdditionalDnsQueryTypesEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="AdditionalDnsQueryTypesEnabled" presentation="$(presentation.AdditionalDnsQueryTypesEnabled)" valueName="AdditionalDnsQueryTypesEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V140"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.AdditionalSearchBoxEnabled)" explainText="$(string.AdditionalSearchBoxEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="AdditionalSearchBoxEnabled" presentation="$(presentation.AdditionalSearchBoxEnabled)" valueName="AdditionalSearchBoxEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V123"/>
@@ -4014,7 +4026,7 @@
     </policy>
     <policy class="Both" displayName="$(string.AutomaticHttpsDefault)" explainText="$(string.AutomaticHttpsDefault_Explain)" key="Software\Policies\Microsoft\Edge" name="AutomaticHttpsDefault" presentation="$(presentation.AutomaticHttpsDefault)">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V92"/>
+      <supportedOn ref="OBSOLETE_WIN7_V92_V139"/>
       <elements>
         <enum id="AutomaticHttpsDefault" valueName="AutomaticHttpsDefault">
           <item displayName="$(string.AutomaticHttpsDefault_DisableAutomaticHttps)">
@@ -4037,7 +4049,7 @@
     </policy>
     <policy class="Both" displayName="$(string.AutomaticHttpsDefault)" explainText="$(string.AutomaticHttpsDefault_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="AutomaticHttpsDefault_recommended" presentation="$(presentation.AutomaticHttpsDefault)">
       <parentCategory ref="microsoft_edge_recommended"/>
-      <supportedOn ref="SUPPORTED_WIN7_V92"/>
+      <supportedOn ref="OBSOLETE_WIN7_V92_V139"/>
       <elements>
         <enum id="AutomaticHttpsDefault" valueName="AutomaticHttpsDefault">
           <item displayName="$(string.AutomaticHttpsDefault_DisableAutomaticHttps)">
@@ -5304,6 +5316,16 @@
     <policy class="Both" displayName="$(string.EnableSha1ForLocalAnchors)" explainText="$(string.EnableSha1ForLocalAnchors_Explain)" key="Software\Policies\Microsoft\Edge" name="EnableSha1ForLocalAnchors" presentation="$(presentation.EnableSha1ForLocalAnchors)" valueName="EnableSha1ForLocalAnchors">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="OBSOLETE_WIN7_V85_V91"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.EnableUnsafeSwiftShader)" explainText="$(string.EnableUnsafeSwiftShader_Explain)" key="Software\Policies\Microsoft\Edge" name="EnableUnsafeSwiftShader" presentation="$(presentation.EnableUnsafeSwiftShader)" valueName="EnableUnsafeSwiftShader">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V139"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -6841,6 +6863,13 @@
       <supportedOn ref="SUPPORTED_WIN7_V137"/>
       <elements>
         <text id="OnPrintEnterpriseConnector" maxLength="1000000" valueName="OnPrintEnterpriseConnector"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.OnSecurityEventEnterpriseConnector)" explainText="$(string.OnSecurityEventEnterpriseConnector_Explain)" key="Software\Policies\Microsoft\Edge" name="OnSecurityEventEnterpriseConnector" presentation="$(presentation.OnSecurityEventEnterpriseConnector)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V139"/>
+      <elements>
+        <text id="OnSecurityEventEnterpriseConnector" maxLength="1000000" valueName="OnSecurityEventEnterpriseConnector"/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.OrganizationLogoOverlayOnAppIconEnabled)" explainText="$(string.OrganizationLogoOverlayOnAppIconEnabled_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="OrganizationLogoOverlayOnAppIconEnabled_recommended" presentation="$(presentation.OrganizationLogoOverlayOnAppIconEnabled)" valueName="OrganizationLogoOverlayOnAppIconEnabled">
