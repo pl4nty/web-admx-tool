@@ -64,11 +64,28 @@ If this policy is disabled, the client will use WinHTTP to do proxy resolve firs
 If this policy is not set, client will use the default setting.</string>
       <string id="DisablePacCurlDownload_Policy">Disable wininet proxy resolver use curl to download PAC</string>
       <string id="DisablePacCurlDownload_Policy_Recommend">Disable wininet proxy resolver use curl to download PAC (Recommendation Setting)</string>
-      <string id="DisablePacCurlDownload_Explain">Default policy is false.
+      <string id="DisablePacCurlDownload_Explain">Default policy is enabled.
 
 If this policy is enabled, wininet proxy resolver won't try to download pac by curl.
 
 If this policy is disabled, wininet proxy resolver will try to download pac by curl.
+
+If this policy is not set, client will use the default setting.</string>
+      <string id="TryPKRequestDirectFirst_Policy">Enabling this option determines whether non-PK proxy requests should go directly based on the result of the PK request</string>
+      <string id="TryPKRequestDirectFirst_Policy_Recommend">Enabling this option determines whether non-PK proxy requests should go directly based on the result of the PK request (Recommendation Setting)</string>
+      <string id="TryPKRequestDirectFirst_Explain">Default policy is disabled.
+
+If this policy is enabled, and the PK request results in the proxy winning, it will not affect subsequent requests. However, if the PK request results in direct connection winning, all subsequent non-PK requests will use direct connections.
+
+If this policy is disabled, client will have no effect.
+
+If this policy is not set, client will use the default setting.</string>
+      <string id="ProxyPKRequestDelay_Policy">Set the delay time for proxy requests in PK requests</string>
+      <string id="ProxyPKRequestDelay_Policy_Recommend">Set the delay time for proxy requests in PK requests (Recommendation Setting)</string>
+      <string id="ProxyPKRequestDelay_Part">Set the delay time for proxy requests in PK requests</string>
+      <string id="ProxyPKRequestDelay_Explain">Default policy is 500.
+
+This policy depends on TryPKRequestDirectFirst. If TryPKRequestDirectFirst is disabled, this policy will have no effect. It sets the delay for proxy requests in PK requests to increase the likelihood of direct connections winning, helps reduce the load on proxy servers.
 
 If this policy is not set, client will use the default setting.</string>
       <string id="SetSSOURL_Policy">Set default SSO URL for client login</string>
@@ -694,6 +711,15 @@ If this policy is not set, client will use default setting.</string>
 If this setting is true, client will disable the GPU acceleration.
 
 If this setting is false, client will enable the GPU acceleration.
+
+If this policy is not set, client will use default setting.</string>
+      <string id="AnnotateHardwareAcceleration_Policy">Enable Hardware Acceleration for Annotations under Share Screen &gt; Advanced</string>
+      <string id="AnnotateHardwareAcceleration_Policy_Recommend">Enable Hardware Acceleration for Annotations under Share Screen &gt; Advanced (Recommendation Setting)</string>
+      <string id="AnnotateHardwareAcceleration_Explain">Default policy is enabled.
+
+If this setting is true, client will use hardware acceleration to optimize annotations on the shared screen.
+
+If this setting is false, client will not use hardware acceleration to optimize annotations.
 
 If this policy is not set, client will use default setting.</string>
       <string id="EnableStartMeetingWithRoomSystem_Policy">Set to show "Call Room System" button on home panel</string>
@@ -2288,6 +2314,10 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="AutoStartInSystemTray_Policy" />
       <presentation id="UseWinINetResolveProxy_Policy" />
       <presentation id="DisablePacCurlDownload_Policy" />
+      <presentation id="TryPKRequestDirectFirst_Policy" />
+      <presentation id="ProxyPKRequestDelay_Policy">
+        <decimalTextBox refId="ProxyPKRequestDelay_Part" defaultValue="500" spinStep="1">Set the delay time for proxy requests in PK requests</decimalTextBox>
+      </presentation>
       <presentation id="SetSSOURL_Policy">
         <textBox refId="SetSSOURL_Part">
           <label>Set SSO host</label>
@@ -2560,6 +2590,7 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="IgnoreBandwidthLimits_Policy" />
       <presentation id="EnableIndependentDataPort_Policy" />
       <presentation id="LegacyCaptureMode_Policy" />
+      <presentation id="AnnotateHardwareAcceleration_Policy" />
       <presentation id="EnableStartMeetingWithRoomSystem_Policy" />
       <presentation id="MuteWhenLockScreen_Policy" />
       <presentation id="AppendCallerNameForRoomSystem_Policy" />
@@ -2690,6 +2721,10 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="AutoStartInSystemTray_Policy_Recommend" />
       <presentation id="UseWinINetResolveProxy_Policy_Recommend" />
       <presentation id="DisablePacCurlDownload_Policy_Recommend" />
+      <presentation id="TryPKRequestDirectFirst_Policy_Recommend" />
+      <presentation id="ProxyPKRequestDelay_Policy_Recommend">
+        <decimalTextBox refId="ProxyPKRequestDelay_Part" defaultValue="500" spinStep="1">Set the delay time for proxy requests in PK requests</decimalTextBox>
+      </presentation>
       <presentation id="SetSSOURL_Policy_Recommend">
         <textBox refId="SetSSOURL_Part">
           <label>Set SSO host</label>
@@ -2960,6 +2995,7 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="IgnoreBandwidthLimits_Policy_Recommend" />
       <presentation id="EnableIndependentDataPort_Policy_Recommend" />
       <presentation id="LegacyCaptureMode_Policy_Recommend" />
+      <presentation id="AnnotateHardwareAcceleration_Policy_Recommend" />
       <presentation id="EnableStartMeetingWithRoomSystem_Policy_Recommend" />
       <presentation id="MuteWhenLockScreen_Policy_Recommend" />
       <presentation id="AppendCallerNameForRoomSystem_Policy_Recommend" />

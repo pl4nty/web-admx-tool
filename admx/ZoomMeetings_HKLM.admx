@@ -103,6 +103,23 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="TryPKRequestDirectFirst_Policy" class="Machine" displayName="$(string.TryPKRequestDirectFirst_Policy)" explainText="$(string.TryPKRequestDirectFirst_Explain)" presentation="$(presentation.TryPKRequestDirectFirst_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="TryPKRequestDirectFirst">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="ProxyPKRequestDelay_Policy" class="Machine" displayName="$(string.ProxyPKRequestDelay_Policy)" explainText="$(string.ProxyPKRequestDelay_Explain)" presentation="$(presentation.ProxyPKRequestDelay_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="ProxyPKRequestDelay_Part" valueName="ProxyPKRequestDelay" required="true" minValue="0" maxValue="100000" />
+      </elements>
+    </policy>
     <policy name="SetSSOURL_Policy" class="Machine" displayName="$(string.SetSSOURL_Policy)" explainText="$(string.SetSSOURL_Explain)" presentation="$(presentation.SetSSOURL_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General">
       <parentCategory ref="zoomgeneral" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
@@ -1567,6 +1584,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="AnnotateHardwareAcceleration_Policy" class="Machine" displayName="$(string.AnnotateHardwareAcceleration_Policy)" explainText="$(string.AnnotateHardwareAcceleration_Explain)" presentation="$(presentation.AnnotateHardwareAcceleration_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Meetings" valueName="AnnotateHardwareAcceleration">
+      <parentCategory ref="zoommeetings" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="EnableStartMeetingWithRoomSystem_Policy" class="Machine" displayName="$(string.EnableStartMeetingWithRoomSystem_Policy)" explainText="$(string.EnableStartMeetingWithRoomSystem_Explain)" presentation="$(presentation.EnableStartMeetingWithRoomSystem_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Meetings" valueName="EnableStartMeetingWithRoomSystem">
       <parentCategory ref="zoommeetings" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
@@ -2378,6 +2405,23 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy name="TryPKRequestDirectFirst_Policy_Recommend" class="Machine" displayName="$(string.TryPKRequestDirectFirst_Policy_Recommend)" explainText="$(string.TryPKRequestDirectFirst_Explain)" presentation="$(presentation.TryPKRequestDirectFirst_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="TryPKRequestDirectFirst">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="ProxyPKRequestDelay_Policy_Recommend" class="Machine" displayName="$(string.ProxyPKRequestDelay_Policy_Recommend)" explainText="$(string.ProxyPKRequestDelay_Explain)" presentation="$(presentation.ProxyPKRequestDelay_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="ProxyPKRequestDelay_Part" valueName="ProxyPKRequestDelay" required="true" minValue="0" maxValue="100000" />
+      </elements>
     </policy>
     <policy name="SetSSOURL_Policy_Recommend" class="Machine" displayName="$(string.SetSSOURL_Policy_Recommend)" explainText="$(string.SetSSOURL_Explain)" presentation="$(presentation.SetSSOURL_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General">
       <parentCategory ref="zoomgeneral_recommend" />
@@ -3814,6 +3858,16 @@
       </disabledValue>
     </policy>
     <policy name="LegacyCaptureMode_Policy_Recommend" class="Machine" displayName="$(string.LegacyCaptureMode_Policy_Recommend)" explainText="$(string.LegacyCaptureMode_Explain)" presentation="$(presentation.LegacyCaptureMode_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Meetings" valueName="LegacyCaptureMode">
+      <parentCategory ref="zoommeetings_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AnnotateHardwareAcceleration_Policy_Recommend" class="Machine" displayName="$(string.AnnotateHardwareAcceleration_Policy_Recommend)" explainText="$(string.AnnotateHardwareAcceleration_Explain)" presentation="$(presentation.AnnotateHardwareAcceleration_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Meetings" valueName="AnnotateHardwareAcceleration">
       <parentCategory ref="zoommeetings_recommend" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
       <enabledValue>
