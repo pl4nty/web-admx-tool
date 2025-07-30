@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 140.0.3442.1-->
+  <!--microsoft_edge version: 140.0.3456.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -223,9 +223,6 @@
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.KioskMode_group)" name="KioskMode">
-      <parentCategory ref="microsoft_edge"/>
-    </category>
-    <category displayName="$(string.LocalNetworkAccessSettings_group)" name="LocalNetworkAccessSettings">
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.Manageability_group)" name="Manageability">
@@ -1879,16 +1876,6 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
-    <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsEnabled)" explainText="$(string.LocalNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessRestrictionsEnabled" presentation="$(presentation.LocalNetworkAccessRestrictionsEnabled)" valueName="LocalNetworkAccessRestrictionsEnabled">
-      <parentCategory ref="LocalNetworkAccessSettings"/>
-      <supportedOn ref="SUPPORTED_WIN7_V138"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
     <policy class="Both" displayName="$(string.EdgeManagementPolicyOverridesPlatformPolicy)" explainText="$(string.EdgeManagementPolicyOverridesPlatformPolicy_Explain)" key="Software\Policies\Microsoft\Edge" name="EdgeManagementPolicyOverridesPlatformPolicy" presentation="$(presentation.EdgeManagementPolicyOverridesPlatformPolicy)" valueName="EdgeManagementPolicyOverridesPlatformPolicy">
       <parentCategory ref="Manageability"/>
       <supportedOn ref="SUPPORTED_WIN7_V119"/>
@@ -2023,6 +2010,16 @@
     <policy class="Both" displayName="$(string.IPv6ReachabilityOverrideEnabled)" explainText="$(string.IPv6ReachabilityOverrideEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="IPv6ReachabilityOverrideEnabled" presentation="$(presentation.IPv6ReachabilityOverrideEnabled)" valueName="IPv6ReachabilityOverrideEnabled">
       <parentCategory ref="Network"/>
       <supportedOn ref="SUPPORTED_WIN7_V132"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsEnabled)" explainText="$(string.LocalNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessRestrictionsEnabled" presentation="$(presentation.LocalNetworkAccessRestrictionsEnabled)" valueName="LocalNetworkAccessRestrictionsEnabled">
+      <parentCategory ref="Network"/>
+      <supportedOn ref="SUPPORTED_WIN7_V138"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -5791,6 +5788,34 @@
       <supportedOn ref="SUPPORTED_WIN7_V123"/>
       <elements>
         <list id="HttpAllowlistDesc" key="Software\Policies\Microsoft\Edge\HttpAllowlist" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.HttpsOnlyMode)" explainText="$(string.HttpsOnlyMode_Explain)" key="Software\Policies\Microsoft\Edge" name="HttpsOnlyMode" presentation="$(presentation.HttpsOnlyMode)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V140"/>
+      <elements>
+        <enum id="HttpsOnlyMode" valueName="HttpsOnlyMode">
+          <item displayName="$(string.HttpsOnlyMode_allowed)">
+            <value>
+              <string>allowed</string>
+            </value>
+          </item>
+          <item displayName="$(string.HttpsOnlyMode_disallowed)">
+            <value>
+              <string>disallowed</string>
+            </value>
+          </item>
+          <item displayName="$(string.HttpsOnlyMode_force_enabled)">
+            <value>
+              <string>force_enabled</string>
+            </value>
+          </item>
+          <item displayName="$(string.HttpsOnlyMode_force_balanced_enabled)">
+            <value>
+              <string>force_balanced_enabled</string>
+            </value>
+          </item>
+        </enum>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.HttpsUpgradesEnabled)" explainText="$(string.HttpsUpgradesEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="HttpsUpgradesEnabled" presentation="$(presentation.HttpsUpgradesEnabled)" valueName="HttpsUpgradesEnabled">
