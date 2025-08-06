@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 140.0.3456.0-->
+  <!--microsoft_edge version: 140.0.3471.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -223,6 +223,9 @@
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.KioskMode_group)" name="KioskMode">
+      <parentCategory ref="microsoft_edge"/>
+    </category>
+    <category displayName="$(string.LocalNetworkAccessSettings_group)" name="LocalNetworkAccessSettings">
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.Manageability_group)" name="Manageability">
@@ -1875,6 +1878,20 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessAllowedForUrls)" explainText="$(string.LocalNetworkAccessAllowedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessAllowedForUrls" presentation="$(presentation.LocalNetworkAccessAllowedForUrls)">
+      <parentCategory ref="LocalNetworkAccessSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7_V140"/>
+      <elements>
+        <list id="LocalNetworkAccessAllowedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LocalNetworkAccessAllowedForUrls" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessBlockedForUrls)" explainText="$(string.LocalNetworkAccessBlockedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessBlockedForUrls" presentation="$(presentation.LocalNetworkAccessBlockedForUrls)">
+      <parentCategory ref="LocalNetworkAccessSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7_V140"/>
+      <elements>
+        <list id="LocalNetworkAccessBlockedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LocalNetworkAccessBlockedForUrls" valuePrefix=""/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.EdgeManagementPolicyOverridesPlatformPolicy)" explainText="$(string.EdgeManagementPolicyOverridesPlatformPolicy_Explain)" key="Software\Policies\Microsoft\Edge" name="EdgeManagementPolicyOverridesPlatformPolicy" presentation="$(presentation.EdgeManagementPolicyOverridesPlatformPolicy)" valueName="EdgeManagementPolicyOverridesPlatformPolicy">
       <parentCategory ref="Manageability"/>
@@ -7315,6 +7332,16 @@
     <policy class="Both" displayName="$(string.RestorePdfView)" explainText="$(string.RestorePdfView_Explain)" key="Software\Policies\Microsoft\Edge" name="RestorePdfView" presentation="$(presentation.RestorePdfView)" valueName="RestorePdfView">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V113"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.RestrictCoreSharingOnRenderer)" explainText="$(string.RestrictCoreSharingOnRenderer_Explain)" key="Software\Policies\Microsoft\Edge" name="RestrictCoreSharingOnRenderer" presentation="$(presentation.RestrictCoreSharingOnRenderer)" valueName="RestrictCoreSharingOnRenderer">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V140"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
