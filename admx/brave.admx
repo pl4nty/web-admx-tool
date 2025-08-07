@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--brave version: 138.1.80.125-->
+  <!--brave version: 139.1.81.131-->
   <policyNamespaces>
     <target namespace="BraveSoftware.Policies.Brave" prefix="brave" />
   </policyNamespaces>
@@ -12,11 +12,12 @@
     </definitions>
   </supportedOn>
   <categories>
+    <category displayName="$(string.Cat_Brave)" name="Cat_Brave" />
     <category displayName="$(string.brave)" name="brave">
-      <parentCategory ref="brave:Cat_Brave" />
+      <parentCategory ref="Cat_Brave" />
     </category>
     <category displayName="$(string.brave_recommended)" name="brave_recommended">
-      <parentCategory ref="brave:Cat_Brave" />
+      <parentCategory ref="Cat_Brave" />
     </category>
     <category displayName="$(string.Accessibility_group)" name="Accessibility">
       <parentCategory ref="brave" />
@@ -70,6 +71,9 @@
       <parentCategory ref="brave" />
     </category>
     <category displayName="$(string.BrowserSwitcher_group)" name="BrowserSwitcher">
+      <parentCategory ref="brave" />
+    </category>
+    <category displayName="$(string.LocalNetworkAccessSettings_group)" name="LocalNetworkAccessSettings">
       <parentCategory ref="brave" />
     </category>
     <category displayName="$(string.ActiveDirectoryManagement_group)" name="ActiveDirectoryManagement">
@@ -1394,16 +1398,6 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
-    <policy class="Both" displayName="$(string.SelectParserRelaxationEnabled)" explainText="$(string.SelectParserRelaxationEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SelectParserRelaxationEnabled" presentation="$(presentation.SelectParserRelaxationEnabled)" valueName="SelectParserRelaxationEnabled">
-      <parentCategory ref="DeprecatedPolicies" />
-      <supportedOn ref="SUPPORTED_WIN7" />
-      <enabledValue>
-        <decimal value="1" />
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0" />
-      </disabledValue>
-    </policy>
     <policy class="Both" displayName="$(string.SigninAllowed)" explainText="$(string.SigninAllowed_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SigninAllowed" presentation="$(presentation.SigninAllowed)" valueName="SigninAllowed">
       <parentCategory ref="DeprecatedPolicies" />
       <supportedOn ref="SUPPORTED_WIN7" />
@@ -1420,16 +1414,6 @@
       <elements>
         <list id="UnsafelyTreatInsecureOriginAsSecureDesc" key="Software\Policies\BraveSoftware\Brave\UnsafelyTreatInsecureOriginAsSecure" valuePrefix="" />
       </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsEnabled)" explainText="$(string.LocalNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="LocalNetworkAccessRestrictionsEnabled" presentation="$(presentation.LocalNetworkAccessRestrictionsEnabled)" valueName="LocalNetworkAccessRestrictionsEnabled">
-      <parentCategory ref="DeprecatedPolicies" />
-      <supportedOn ref="SUPPORTED_WIN7" />
-      <enabledValue>
-        <decimal value="1" />
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0" />
-      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.ProxyBypassList)" explainText="$(string.ProxyBypassList_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ProxyBypassList" presentation="$(presentation.ProxyBypassList)">
       <parentCategory ref="DeprecatedPolicies" />
@@ -1632,34 +1616,6 @@
       <supportedOn ref="SUPPORTED_WIN7" />
       <elements>
         <list id="ExtensionInstallTypeBlocklistDesc" key="Software\Policies\BraveSoftware\Brave\ExtensionInstallTypeBlocklist" valuePrefix="" />
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.ExtensionManifestV2Availability)" explainText="$(string.ExtensionManifestV2Availability_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ExtensionManifestV2Availability" presentation="$(presentation.ExtensionManifestV2Availability)">
-      <parentCategory ref="Extensions" />
-      <supportedOn ref="SUPPORTED_WIN7" />
-      <elements>
-        <enum id="ExtensionManifestV2Availability" valueName="ExtensionManifestV2Availability">
-          <item displayName="$(string.ExtensionManifestV2Availability_Default)">
-            <value>
-              <decimal value="0" />
-            </value>
-          </item>
-          <item displayName="$(string.ExtensionManifestV2Availability_Disable)">
-            <value>
-              <decimal value="1" />
-            </value>
-          </item>
-          <item displayName="$(string.ExtensionManifestV2Availability_Enable)">
-            <value>
-              <decimal value="2" />
-            </value>
-          </item>
-          <item displayName="$(string.ExtensionManifestV2Availability_EnableForForcedExtensions)">
-            <value>
-              <decimal value="3" />
-            </value>
-          </item>
-        </enum>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.ExtensionSettings)" explainText="$(string.ExtensionSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ExtensionSettings" presentation="$(presentation.ExtensionSettings)">
@@ -2138,6 +2094,30 @@
     </policy>
     <policy class="Both" displayName="$(string.BrowserSwitcherUseIeSitelist)" explainText="$(string.BrowserSwitcherUseIeSitelist_Explain)" key="Software\Policies\BraveSoftware\Brave" name="BrowserSwitcherUseIeSitelist" presentation="$(presentation.BrowserSwitcherUseIeSitelist)" valueName="BrowserSwitcherUseIeSitelist">
       <parentCategory ref="BrowserSwitcher" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessAllowedForUrls)" explainText="$(string.LocalNetworkAccessAllowedForUrls_Explain)" key="Software\Policies\BraveSoftware\Brave" name="LocalNetworkAccessAllowedForUrls" presentation="$(presentation.LocalNetworkAccessAllowedForUrls)">
+      <parentCategory ref="LocalNetworkAccessSettings" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <list id="LocalNetworkAccessAllowedForUrlsDesc" key="Software\Policies\BraveSoftware\Brave\LocalNetworkAccessAllowedForUrls" valuePrefix="" />
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessBlockedForUrls)" explainText="$(string.LocalNetworkAccessBlockedForUrls_Explain)" key="Software\Policies\BraveSoftware\Brave" name="LocalNetworkAccessBlockedForUrls" presentation="$(presentation.LocalNetworkAccessBlockedForUrls)">
+      <parentCategory ref="LocalNetworkAccessSettings" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <list id="LocalNetworkAccessBlockedForUrlsDesc" key="Software\Policies\BraveSoftware\Brave\LocalNetworkAccessBlockedForUrls" valuePrefix="" />
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsEnabled)" explainText="$(string.LocalNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="LocalNetworkAccessRestrictionsEnabled" presentation="$(presentation.LocalNetworkAccessRestrictionsEnabled)" valueName="LocalNetworkAccessRestrictionsEnabled">
+      <parentCategory ref="LocalNetworkAccessSettings" />
       <supportedOn ref="SUPPORTED_WIN7" />
       <enabledValue>
         <decimal value="1" />
@@ -2972,6 +2952,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.EnableUnsafeSwiftShader)" explainText="$(string.EnableUnsafeSwiftShader_Explain)" key="Software\Policies\BraveSoftware\Brave" name="EnableUnsafeSwiftShader" presentation="$(presentation.EnableUnsafeSwiftShader)" valueName="EnableUnsafeSwiftShader">
+      <parentCategory ref="brave" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.EncryptedClientHelloEnabled)" explainText="$(string.EncryptedClientHelloEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="EncryptedClientHelloEnabled" presentation="$(presentation.EncryptedClientHelloEnabled)" valueName="EncryptedClientHelloEnabled">
       <parentCategory ref="brave" />
       <supportedOn ref="SUPPORTED_WIN7" />
@@ -2989,6 +2979,13 @@
         <text id="EnterpriseCustomLabel" maxLength="1000000" valueName="EnterpriseCustomLabel" />
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.EnterpriseCustomLabelForBrowser)" explainText="$(string.EnterpriseCustomLabelForBrowser_Explain)" key="Software\Policies\BraveSoftware\Brave" name="EnterpriseCustomLabelForBrowser" presentation="$(presentation.EnterpriseCustomLabelForBrowser)">
+      <parentCategory ref="brave" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <text id="EnterpriseCustomLabelForBrowser" maxLength="1000000" valueName="EnterpriseCustomLabelForBrowser" />
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.EnterpriseHardwarePlatformAPIEnabled)" explainText="$(string.EnterpriseHardwarePlatformAPIEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="EnterpriseHardwarePlatformAPIEnabled" presentation="$(presentation.EnterpriseHardwarePlatformAPIEnabled)" valueName="EnterpriseHardwarePlatformAPIEnabled">
       <parentCategory ref="brave" />
       <supportedOn ref="SUPPORTED_WIN7" />
@@ -3004,6 +3001,13 @@
       <supportedOn ref="SUPPORTED_WIN7" />
       <elements>
         <text id="EnterpriseLogoUrl" maxLength="1000000" valueName="EnterpriseLogoUrl" />
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.EnterpriseLogoUrlForBrowser)" explainText="$(string.EnterpriseLogoUrlForBrowser_Explain)" key="Software\Policies\BraveSoftware\Brave" name="EnterpriseLogoUrlForBrowser" presentation="$(presentation.EnterpriseLogoUrlForBrowser)">
+      <parentCategory ref="brave" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <text id="EnterpriseLogoUrlForBrowser" maxLength="1000000" valueName="EnterpriseLogoUrlForBrowser" />
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.EnterpriseProfileBadgeToolbarSettings)" explainText="$(string.EnterpriseProfileBadgeToolbarSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="EnterpriseProfileBadgeToolbarSettings" presentation="$(presentation.EnterpriseProfileBadgeToolbarSettings)">
@@ -3417,16 +3421,6 @@
         <text id="IsolateOrigins" maxLength="1000000" valueName="IsolateOrigins" />
       </elements>
     </policy>
-    <policy class="Both" displayName="$(string.KeyboardFocusableScrollersEnabled)" explainText="$(string.KeyboardFocusableScrollersEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="KeyboardFocusableScrollersEnabled" presentation="$(presentation.KeyboardFocusableScrollersEnabled)" valueName="KeyboardFocusableScrollersEnabled">
-      <parentCategory ref="brave" />
-      <supportedOn ref="SUPPORTED_WIN7" />
-      <enabledValue>
-        <decimal value="1" />
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0" />
-      </disabledValue>
-    </policy>
     <policy class="Both" displayName="$(string.LensDesktopNTPSearchEnabled)" explainText="$(string.LensDesktopNTPSearchEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="LensDesktopNTPSearchEnabled" presentation="$(presentation.LensDesktopNTPSearchEnabled)" valueName="LensDesktopNTPSearchEnabled">
       <parentCategory ref="brave" />
       <supportedOn ref="SUPPORTED_WIN7" />
@@ -3597,6 +3591,16 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.NTPFooterExtensionAttributionEnabled)" explainText="$(string.NTPFooterExtensionAttributionEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="NTPFooterExtensionAttributionEnabled" presentation="$(presentation.NTPFooterExtensionAttributionEnabled)" valueName="NTPFooterExtensionAttributionEnabled">
+      <parentCategory ref="brave" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.NTPFooterManagementNoticeEnabled)" explainText="$(string.NTPFooterManagementNoticeEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="NTPFooterManagementNoticeEnabled" presentation="$(presentation.NTPFooterManagementNoticeEnabled)" valueName="NTPFooterManagementNoticeEnabled">
       <parentCategory ref="brave" />
       <supportedOn ref="SUPPORTED_WIN7" />
       <enabledValue>
@@ -5620,6 +5624,34 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.ExtensionManifestV2Availability)" explainText="$(string.ExtensionManifestV2Availability_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ExtensionManifestV2Availability" presentation="$(presentation.ExtensionManifestV2Availability)">
+      <parentCategory ref="RemovedPolicies" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <enum id="ExtensionManifestV2Availability" valueName="ExtensionManifestV2Availability">
+          <item displayName="$(string.ExtensionManifestV2Availability_Default)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ExtensionManifestV2Availability_Disable)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ExtensionManifestV2Availability_Enable)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.ExtensionManifestV2Availability_EnableForForcedExtensions)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.TabOrganizerSettings)" explainText="$(string.TabOrganizerSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="TabOrganizerSettings" presentation="$(presentation.TabOrganizerSettings)">
       <parentCategory ref="RemovedPolicies" />
       <supportedOn ref="SUPPORTED_WIN7" />
@@ -6154,6 +6186,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.KeyboardFocusableScrollersEnabled)" explainText="$(string.KeyboardFocusableScrollersEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="KeyboardFocusableScrollersEnabled" presentation="$(presentation.KeyboardFocusableScrollersEnabled)" valueName="KeyboardFocusableScrollersEnabled">
+      <parentCategory ref="RemovedPolicies" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.LoadCryptoTokenExtension)" explainText="$(string.LoadCryptoTokenExtension_Explain)" key="Software\Policies\BraveSoftware\Brave" name="LoadCryptoTokenExtension" presentation="$(presentation.LoadCryptoTokenExtension)" valueName="LoadCryptoTokenExtension">
       <parentCategory ref="RemovedPolicies" />
       <supportedOn ref="SUPPORTED_WIN7" />
@@ -6440,6 +6482,16 @@
       <elements>
         <list id="SafeBrowsingWhitelistDomainsDesc" key="Software\Policies\BraveSoftware\Brave\SafeBrowsingWhitelistDomains" valuePrefix="" />
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.SelectParserRelaxationEnabled)" explainText="$(string.SelectParserRelaxationEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SelectParserRelaxationEnabled" presentation="$(presentation.SelectParserRelaxationEnabled)" valueName="SelectParserRelaxationEnabled">
+      <parentCategory ref="RemovedPolicies" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.SendMouseEventsDisabledFormControlsEnabled)" explainText="$(string.SendMouseEventsDisabledFormControlsEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SendMouseEventsDisabledFormControlsEnabled" presentation="$(presentation.SendMouseEventsDisabledFormControlsEnabled)" valueName="SendMouseEventsDisabledFormControlsEnabled">
       <parentCategory ref="RemovedPolicies" />
