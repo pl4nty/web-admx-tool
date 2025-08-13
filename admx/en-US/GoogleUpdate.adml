@@ -13,6 +13,7 @@
       <string id="Sup_GoogleUpdate1_3_34_3">At least Google Update 1.3.34.3</string>
       <string id="Sup_GoogleUpdate1_3_35_441">At least Google Update 1.3.35.441</string>
       <string id="Sup_GoogleUpdate1_3_35_453">At least Google Update 1.3.35.453</string>
+      <string id="Sup_GoogleUpdate138_0_7200_0">At least GoogleUpdater 138.0.7200.0</string>
       <string id="Cat_GoogleUpdate">Google Update</string>
       <string id="Cat_Preferences">Preferences</string>
       <string id="Cat_ProxyServer">Proxy Server</string>
@@ -32,6 +33,8 @@
       <string id="Pol_TargetChannel">Target Channel override</string>
       <string id="Pol_TargetVersionPrefix">Target version prefix override</string>
       <string id="Pol_RollbackToTargetVersion">Rollback to Target version</string>
+      <string id="Pol_MajorVersionRollout">Major version rollout</string>
+      <string id="Pol_MinorVersionRollout">Minor version rollout</string>
       <string id="Part_AutoUpdateCheckPeriod">Minutes between update checks</string>
       <string id="Part_UpdateCheckSuppressedStartHour">Hour in a day that start to suppress update check</string>
       <string id="Part_UpdateCheckSuppressedStartMin">Minute in hour that starts to suppress update check</string>
@@ -48,10 +51,15 @@
       <string id="Part_UpdatePolicy">Policy</string>
       <string id="Part_TargetChannel">Target Channel</string>
       <string id="Part_TargetVersionPrefix">Target version prefix</string>
+      <string id="Part_MajorVersion">Rollout Policy</string>
+      <string id="Part_MinorVersion">Rollout Policy</string>
       <string id="Name_UpdatesEnabled">Always allow updates (recommended)</string>
       <string id="Name_ManualUpdatesOnly">Manual updates only</string>
       <string id="Name_AutomaticUpdatesOnly">Automatic silent updates only</string>
       <string id="Name_UpdatesDisabled">Updates disabled</string>
+      <string id="Name_RolloutDefault">Participate in gradual rollout (recommended)</string>
+      <string id="Name_RolloutSlow">Update only after gradual rollout completes</string>
+      <string id="Name_RolloutFast">Update immediately when gradual rollout starts</string>
       <string id="ProxyDisabled_DropDown">Never use a proxy</string>
       <string id="ProxyAutoDetect_DropDown">Auto detect proxy settings</string>
       <string id="ProxyPacScript_DropDown">Use a .pac proxy script</string>
@@ -178,6 +186,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGears">Specifies when to apply major Gears updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGears">Specifies when to apply minor Gears updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleAdsEditor">Google Ads Editor</string>
       <string id="Explain_InstallGoogleAdsEditor">Specifies whether Google Ads Editor can be installed using Google Update/Google Installer.
 
@@ -225,6 +239,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleAdsEditor">Specifies when to apply major Google Ads Editor updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleAdsEditor">Specifies when to apply minor Google Ads Editor updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleAdvertisingCookieOptoutPlugin">Google Advertising Cookie Opt-out Plugin</string>
@@ -276,6 +296,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleAdvertisingCookieOptoutPlugin">Specifies when to apply major Google Advertising Cookie Opt-out Plugin updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleAdvertisingCookieOptoutPlugin">Specifies when to apply minor Google Advertising Cookie Opt-out Plugin updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleAnalyticsOptoutBrowserAddonforInternetExplorer">Google Analytics Opt-out Browser Add-on (for Internet Explorer)</string>
       <string id="Explain_InstallGoogleAnalyticsOptoutBrowserAddonforInternetExplorer">Specifies whether Google Analytics Opt-out Browser Add-on (for Internet Explorer) can be installed using Google Update/Google Installer.
 
@@ -323,6 +349,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleAnalyticsOptoutBrowserAddonforInternetExplorer">Specifies when to apply major Google Analytics Opt-out Browser Add-on (for Internet Explorer) updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleAnalyticsOptoutBrowserAddonforInternetExplorer">Specifies when to apply minor Google Analytics Opt-out Browser Add-on (for Internet Explorer) updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleCredentialProviderforWindowsGCPW">Google Credential Provider for Windows (GCPW)</string>
@@ -374,6 +406,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleCredentialProviderforWindowsGCPW">Specifies when to apply major Google Credential Provider for Windows (GCPW) updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleCredentialProviderforWindowsGCPW">Specifies when to apply minor Google Credential Provider for Windows (GCPW) updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleChrome">Google Chrome</string>
@@ -433,6 +471,12 @@ Before you temporarily roll back users to a previous version of Chrome Browser, 
 Note: You can only roll back to Chrome Browser version 72 or later.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleChrome">Specifies when to apply major Google Chrome updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleChrome">Specifies when to apply minor Google Chrome updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleChromeBeta">Google Chrome Beta</string>
       <string id="Explain_InstallGoogleChromeBeta">Specifies whether Google Chrome Beta can be installed using Google Update/Google Installer.
 
@@ -490,6 +534,12 @@ Before you temporarily roll back users to a previous version of Chrome Browser, 
 Note: You can only roll back to Chrome Browser version 72 or later.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleChromeBeta">Specifies when to apply major Google Chrome Beta updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleChromeBeta">Specifies when to apply minor Google Chrome Beta updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleChromeBinaries">Google Chrome Binaries</string>
       <string id="Explain_InstallGoogleChromeBinaries">Specifies whether Google Chrome Binaries can be installed using Google Update/Google Installer.
 
@@ -537,6 +587,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleChromeBinaries">Specifies when to apply major Google Chrome Binaries updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleChromeBinaries">Specifies when to apply minor Google Chrome Binaries updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleChromeCanaryBuild">Google Chrome Canary Build</string>
@@ -596,6 +652,12 @@ Before you temporarily roll back users to a previous version of Chrome Browser, 
 Note: You can only roll back to Chrome Browser version 72 or later.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleChromeCanaryBuild">Specifies when to apply major Google Chrome Canary Build updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleChromeCanaryBuild">Specifies when to apply minor Google Chrome Canary Build updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleChromeDev">Google Chrome Dev</string>
       <string id="Explain_InstallGoogleChromeDev">Specifies whether Google Chrome Dev can be installed using Google Update/Google Installer.
 
@@ -653,6 +715,12 @@ Before you temporarily roll back users to a previous version of Chrome Browser, 
 Note: You can only roll back to Chrome Browser version 72 or later.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleChromeDev">Specifies when to apply major Google Chrome Dev updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleChromeDev">Specifies when to apply minor Google Chrome Dev updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleChromeFrame">Google Chrome Frame</string>
       <string id="Explain_InstallGoogleChromeFrame">Specifies whether Google Chrome Frame can be installed using Google Update/Google Installer.
 
@@ -700,6 +768,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleChromeFrame">Specifies when to apply major Google Chrome Frame updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleChromeFrame">Specifies when to apply minor Google Chrome Frame updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleCloudCertificateConnector">Google Cloud Certificate Connector</string>
@@ -751,6 +825,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleCloudCertificateConnector">Specifies when to apply major Google Cloud Certificate Connector updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleCloudCertificateConnector">Specifies when to apply minor Google Cloud Certificate Connector updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_LegacyBrowserSupport">Legacy Browser Support</string>
       <string id="Explain_InstallLegacyBrowserSupport">Specifies whether Legacy Browser Support can be installed using Google Update/Google Installer.
 
@@ -798,6 +878,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutLegacyBrowserSupport">Specifies when to apply major Legacy Browser Support updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutLegacyBrowserSupport">Specifies when to apply minor Legacy Browser Support updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleDriveFileStream">Google Drive File Stream</string>
@@ -851,6 +937,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleDriveFileStream">Specifies when to apply major Google Drive File Stream updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleDriveFileStream">Specifies when to apply minor Google Drive File Stream updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleDrivepluginforMicrosoftOffice">Google Drive plug-in for Microsoft Office</string>
       <string id="Explain_InstallGoogleDrivepluginforMicrosoftOffice">Specifies whether Google Drive plug-in for Microsoft Office can be installed using Google Update/Google Installer.
 
@@ -898,6 +990,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleDrivepluginforMicrosoftOffice">Specifies when to apply major Google Drive plug-in for Microsoft Office updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleDrivepluginforMicrosoftOffice">Specifies when to apply minor Google Drive plug-in for Microsoft Office updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleDrivepluginforMicrosoftOfficePerMachine">Google Drive plug-in for Microsoft Office Per Machine</string>
@@ -951,6 +1049,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleDrivepluginforMicrosoftOfficePerMachine">Specifies when to apply major Google Drive plug-in for Microsoft Office Per Machine updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleDrivepluginforMicrosoftOfficePerMachine">Specifies when to apply minor Google Drive plug-in for Microsoft Office Per Machine updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleEarth">Google Earth</string>
       <string id="Explain_InstallGoogleEarth">Specifies whether Google Earth can be installed using Google Update/Google Installer.
 
@@ -1000,6 +1104,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleEarth">Specifies when to apply major Google Earth updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleEarth">Specifies when to apply minor Google Earth updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleEarthperuserinstall">Google Earth (per-user install)</string>
@@ -1053,6 +1163,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleEarthperuserinstall">Specifies when to apply major Google Earth (per-user install) updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleEarthperuserinstall">Specifies when to apply minor Google Earth (per-user install) updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleEarthPlugin">Google Earth Plugin</string>
       <string id="Explain_InstallGoogleEarthPlugin">Specifies whether Google Earth Plugin can be installed using Google Update/Google Installer.
 
@@ -1100,6 +1216,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleEarthPlugin">Specifies when to apply major Google Earth Plugin updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleEarthPlugin">Specifies when to apply minor Google Earth Plugin updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleEarthPro">Google Earth Pro</string>
@@ -1153,6 +1275,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleEarthPro">Specifies when to apply major Google Earth Pro updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleEarthPro">Specifies when to apply minor Google Earth Pro updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleHangoutsPluginforMicrosoftOutlook">Google Hangouts Plugin for Microsoft Outlook®</string>
       <string id="Explain_InstallGoogleHangoutsPluginforMicrosoftOutlook">Specifies whether Google Hangouts Plugin for Microsoft Outlook® can be installed using Google Update/Google Installer.
 
@@ -1200,6 +1328,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleHangoutsPluginforMicrosoftOutlook">Specifies when to apply major Google Hangouts Plugin for Microsoft Outlook® updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleHangoutsPluginforMicrosoftOutlook">Specifies when to apply minor Google Hangouts Plugin for Microsoft Outlook® updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleEmailUploader">Google Email Uploader</string>
@@ -1251,6 +1385,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleEmailUploader">Specifies when to apply major Google Email Uploader updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleEmailUploader">Specifies when to apply minor Google Email Uploader updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleTalkLabsEdition">Google Talk Labs Edition</string>
       <string id="Explain_InstallGoogleTalkLabsEdition">Specifies whether Google Talk Labs Edition can be installed using Google Update/Google Installer.
 
@@ -1298,6 +1438,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleTalkLabsEdition">Specifies when to apply major Google Talk Labs Edition updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleTalkLabsEdition">Specifies when to apply minor Google Talk Labs Edition updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleTalkPluginVoiceandVideoChat">Google Talk Plugin (Voice and Video Chat)</string>
@@ -1349,6 +1495,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleTalkPluginVoiceandVideoChat">Specifies when to apply major Google Talk Plugin (Voice and Video Chat) updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleTalkPluginVoiceandVideoChat">Specifies when to apply minor Google Talk Plugin (Voice and Video Chat) updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleToolbarforFirefox">Google Toolbar (for Firefox)</string>
       <string id="Explain_InstallGoogleToolbarforFirefox">Specifies whether Google Toolbar (for Firefox) can be installed using Google Update/Google Installer.
 
@@ -1396,6 +1548,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleToolbarforFirefox">Specifies when to apply major Google Toolbar (for Firefox) updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleToolbarforFirefox">Specifies when to apply minor Google Toolbar (for Firefox) updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleToolbarforInternetExplorer">Google Toolbar (for Internet Explorer)</string>
@@ -1447,6 +1605,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleToolbarforInternetExplorer">Specifies when to apply major Google Toolbar (for Internet Explorer) updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleToolbarforInternetExplorer">Specifies when to apply minor Google Toolbar (for Internet Explorer) updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GWTDeveloperPluginForInternetExplorer">GWT Developer Plugin For Internet Explorer</string>
       <string id="Explain_InstallGWTDeveloperPluginForInternetExplorer">Specifies whether GWT Developer Plugin For Internet Explorer can be installed using Google Update/Google Installer.
 
@@ -1494,6 +1658,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGWTDeveloperPluginForInternetExplorer">Specifies when to apply major GWT Developer Plugin For Internet Explorer updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGWTDeveloperPluginForInternetExplorer">Specifies when to apply minor GWT Developer Plugin For Internet Explorer updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_O3D">O3D</string>
@@ -1545,6 +1715,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutO3D">Specifies when to apply major O3D updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutO3D">Specifies when to apply minor O3D updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_O3DExtras">O3D Extras</string>
       <string id="Explain_InstallO3DExtras">Specifies whether O3D Extras can be installed using Google Update/Google Installer.
 
@@ -1592,6 +1768,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutO3DExtras">Specifies when to apply major O3D Extras updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutO3DExtras">Specifies when to apply minor O3D Extras updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleAmharicInput">Google Amharic Input</string>
@@ -1643,6 +1825,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleAmharicInput">Specifies when to apply major Google Amharic Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleAmharicInput">Specifies when to apply minor Google Amharic Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleArabicInput">Google Arabic Input</string>
       <string id="Explain_InstallGoogleArabicInput">Specifies whether Google Arabic Input can be installed using Google Update/Google Installer.
 
@@ -1690,6 +1878,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleArabicInput">Specifies when to apply major Google Arabic Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleArabicInput">Specifies when to apply minor Google Arabic Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleBengaliInput">Google Bengali Input</string>
@@ -1741,6 +1935,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleBengaliInput">Specifies when to apply major Google Bengali Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleBengaliInput">Specifies when to apply minor Google Bengali Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleFarsiInput">Google Farsi Input</string>
       <string id="Explain_InstallGoogleFarsiInput">Specifies whether Google Farsi Input can be installed using Google Update/Google Installer.
 
@@ -1788,6 +1988,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleFarsiInput">Specifies when to apply major Google Farsi Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleFarsiInput">Specifies when to apply minor Google Farsi Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleGreekInput">Google Greek Input</string>
@@ -1839,6 +2045,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleGreekInput">Specifies when to apply major Google Greek Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleGreekInput">Specifies when to apply minor Google Greek Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleGujaratiInput">Google Gujarati Input</string>
       <string id="Explain_InstallGoogleGujaratiInput">Specifies whether Google Gujarati Input can be installed using Google Update/Google Installer.
 
@@ -1886,6 +2098,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleGujaratiInput">Specifies when to apply major Google Gujarati Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleGujaratiInput">Specifies when to apply minor Google Gujarati Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleHebrewInput">Google Hebrew Input</string>
@@ -1937,6 +2155,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleHebrewInput">Specifies when to apply major Google Hebrew Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleHebrewInput">Specifies when to apply minor Google Hebrew Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleHindiInput">Google Hindi Input</string>
       <string id="Explain_InstallGoogleHindiInput">Specifies whether Google Hindi Input can be installed using Google Update/Google Installer.
 
@@ -1984,6 +2208,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleHindiInput">Specifies when to apply major Google Hindi Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleHindiInput">Specifies when to apply minor Google Hindi Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleJapaneseInput">Google Japanese Input</string>
@@ -2035,6 +2265,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleJapaneseInput">Specifies when to apply major Google Japanese Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleJapaneseInput">Specifies when to apply minor Google Japanese Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleKannadaInput">Google Kannada Input</string>
       <string id="Explain_InstallGoogleKannadaInput">Specifies whether Google Kannada Input can be installed using Google Update/Google Installer.
 
@@ -2082,6 +2318,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleKannadaInput">Specifies when to apply major Google Kannada Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleKannadaInput">Specifies when to apply minor Google Kannada Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleMalayalamInput">Google Malayalam Input</string>
@@ -2133,6 +2375,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleMalayalamInput">Specifies when to apply major Google Malayalam Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleMalayalamInput">Specifies when to apply minor Google Malayalam Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleMarathiInput">Google Marathi Input</string>
       <string id="Explain_InstallGoogleMarathiInput">Specifies whether Google Marathi Input can be installed using Google Update/Google Installer.
 
@@ -2180,6 +2428,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleMarathiInput">Specifies when to apply major Google Marathi Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleMarathiInput">Specifies when to apply minor Google Marathi Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleNepaliInput">Google Nepali Input</string>
@@ -2231,6 +2485,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleNepaliInput">Specifies when to apply major Google Nepali Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleNepaliInput">Specifies when to apply minor Google Nepali Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleOriyaInput">Google Oriya Input</string>
       <string id="Explain_InstallGoogleOriyaInput">Specifies whether Google Oriya Input can be installed using Google Update/Google Installer.
 
@@ -2278,6 +2538,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleOriyaInput">Specifies when to apply major Google Oriya Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleOriyaInput">Specifies when to apply minor Google Oriya Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GooglePunjabiInput">Google Punjabi Input</string>
@@ -2329,6 +2595,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGooglePunjabiInput">Specifies when to apply major Google Punjabi Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGooglePunjabiInput">Specifies when to apply minor Google Punjabi Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleRussianInput">Google Russian Input</string>
       <string id="Explain_InstallGoogleRussianInput">Specifies whether Google Russian Input can be installed using Google Update/Google Installer.
 
@@ -2376,6 +2648,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleRussianInput">Specifies when to apply major Google Russian Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleRussianInput">Specifies when to apply minor Google Russian Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleSanskritInput">Google Sanskrit Input</string>
@@ -2427,6 +2705,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleSanskritInput">Specifies when to apply major Google Sanskrit Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleSanskritInput">Specifies when to apply minor Google Sanskrit Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleSerbianInput">Google Serbian Input</string>
       <string id="Explain_InstallGoogleSerbianInput">Specifies whether Google Serbian Input can be installed using Google Update/Google Installer.
 
@@ -2474,6 +2758,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleSerbianInput">Specifies when to apply major Google Serbian Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleSerbianInput">Specifies when to apply minor Google Serbian Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleSinhaleseInput">Google Sinhalese Input</string>
@@ -2525,6 +2815,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleSinhaleseInput">Specifies when to apply major Google Sinhalese Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleSinhaleseInput">Specifies when to apply minor Google Sinhalese Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleTamilInput">Google Tamil Input</string>
       <string id="Explain_InstallGoogleTamilInput">Specifies whether Google Tamil Input can be installed using Google Update/Google Installer.
 
@@ -2572,6 +2868,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleTamilInput">Specifies when to apply major Google Tamil Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleTamilInput">Specifies when to apply minor Google Tamil Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleTeluguInput">Google Telugu Input</string>
@@ -2623,6 +2925,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleTeluguInput">Specifies when to apply major Google Telugu Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleTeluguInput">Specifies when to apply minor Google Telugu Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleTigrinyaInput">Google Tigrinya Input</string>
       <string id="Explain_InstallGoogleTigrinyaInput">Specifies whether Google Tigrinya Input can be installed using Google Update/Google Installer.
 
@@ -2672,6 +2980,12 @@ If this policy is enabled, installs that have a version higher than that availab
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleTigrinyaInput">Specifies when to apply major Google Tigrinya Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleTigrinyaInput">Specifies when to apply minor Google Tigrinya Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
       <string id="Cat_GoogleUrduInput">Google Urdu Input</string>
       <string id="Explain_InstallGoogleUrduInput">Specifies whether Google Urdu Input can be installed using Google Update/Google Installer.
 
@@ -2719,6 +3033,12 @@ If this policy is not configured or is disabled, installs that have a version hi
 If this policy is enabled, installs that have a version higher than that available will be downgraded to the highest available version, respecting any configured target Channel and target version.
 
 This policy is meant to serve as temporary measure when Enterprise Administrators need to downgrade for business reasons. To ensure users are protected by the latest security updates, the most recent version should be used. When versions are downgraded to older versions, there could be incompatibilities.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MajorVersionRolloutGoogleUrduInput">Specifies when to apply major Google Urdu Input updates that are gradually rolling out. Major updates often have fixes, security patches, and new features.
+
+This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
+      <string id="Explain_MinorVersionRolloutGoogleUrduInput">Specifies when to apply minor Google Urdu Input updates that are gradually rolling out. Minor version updates often have fixes and security patches, but rarely contain new features.
 
 This policy is available only on Windows instances that are joined to a Microsoft&#x00AE; Active Directory&#x00AE; domain.</string>
     </stringTable>
@@ -2786,6 +3106,14 @@ This policy is available only on Windows instances that are joined to a Microsof
         </textBox>
       </presentation>
       <presentation id="Pol_RollbackToTargetVersion" />
+      <presentation id="Pol_MajorVersionRollout">
+        <dropdownList refId="Part_MajorVersion"
+            defaultItem="0">Policy</dropdownList>
+      </presentation>
+      <presentation id="Pol_MinorVersionRollout">
+        <dropdownList refId="Part_MinorVersion"
+            defaultItem="0">Policy</dropdownList>
+      </presentation>
 
     </presentationTable>
   </resources>

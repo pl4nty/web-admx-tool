@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 140.0.3471.0-->
+  <!--microsoft_edge version: 140.0.3485.6-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -7644,6 +7644,16 @@
       <elements>
         <list id="SerialBlockedForUrlsDesc" key="Software\Policies\Microsoft\Edge\SerialBlockedForUrls" valuePrefix=""/>
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.ServiceWorkerAutoPreloadEnabled)" explainText="$(string.ServiceWorkerAutoPreloadEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="ServiceWorkerAutoPreloadEnabled" presentation="$(presentation.ServiceWorkerAutoPreloadEnabled)" valueName="ServiceWorkerAutoPreloadEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V140"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.ServiceWorkerToControlSrcdocIframeEnabled)" explainText="$(string.ServiceWorkerToControlSrcdocIframeEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="ServiceWorkerToControlSrcdocIframeEnabled" presentation="$(presentation.ServiceWorkerToControlSrcdocIframeEnabled)" valueName="ServiceWorkerToControlSrcdocIframeEnabled">
       <parentCategory ref="microsoft_edge"/>
