@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 140.0.3485.6-->
+  <!--microsoft_edge version: 141.0.3500.1-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -21,6 +21,7 @@
       <definition displayName="$(string.SUPPORTED_WIN7_V138)" name="SUPPORTED_WIN7_V138"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V139)" name="SUPPORTED_WIN7_V139"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V140)" name="SUPPORTED_WIN7_V140"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V141)" name="SUPPORTED_WIN7_V141"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V77)" name="SUPPORTED_WIN7_V77"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V78)" name="SUPPORTED_WIN7_V78"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V79)" name="SUPPORTED_WIN7_V79"/>
@@ -223,9 +224,6 @@
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.KioskMode_group)" name="KioskMode">
-      <parentCategory ref="microsoft_edge"/>
-    </category>
-    <category displayName="$(string.LocalNetworkAccessSettings_group)" name="LocalNetworkAccessSettings">
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.Manageability_group)" name="Manageability">
@@ -1879,20 +1877,6 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
-    <policy class="Both" displayName="$(string.LocalNetworkAccessAllowedForUrls)" explainText="$(string.LocalNetworkAccessAllowedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessAllowedForUrls" presentation="$(presentation.LocalNetworkAccessAllowedForUrls)">
-      <parentCategory ref="LocalNetworkAccessSettings"/>
-      <supportedOn ref="SUPPORTED_WIN7_V140"/>
-      <elements>
-        <list id="LocalNetworkAccessAllowedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LocalNetworkAccessAllowedForUrls" valuePrefix=""/>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.LocalNetworkAccessBlockedForUrls)" explainText="$(string.LocalNetworkAccessBlockedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessBlockedForUrls" presentation="$(presentation.LocalNetworkAccessBlockedForUrls)">
-      <parentCategory ref="LocalNetworkAccessSettings"/>
-      <supportedOn ref="SUPPORTED_WIN7_V140"/>
-      <elements>
-        <list id="LocalNetworkAccessBlockedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LocalNetworkAccessBlockedForUrls" valuePrefix=""/>
-      </elements>
-    </policy>
     <policy class="Both" displayName="$(string.EdgeManagementPolicyOverridesPlatformPolicy)" explainText="$(string.EdgeManagementPolicyOverridesPlatformPolicy_Explain)" key="Software\Policies\Microsoft\Edge" name="EdgeManagementPolicyOverridesPlatformPolicy" presentation="$(presentation.EdgeManagementPolicyOverridesPlatformPolicy)" valueName="EdgeManagementPolicyOverridesPlatformPolicy">
       <parentCategory ref="Manageability"/>
       <supportedOn ref="SUPPORTED_WIN7_V119"/>
@@ -2033,6 +2017,20 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessAllowedForUrls)" explainText="$(string.LocalNetworkAccessAllowedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessAllowedForUrls" presentation="$(presentation.LocalNetworkAccessAllowedForUrls)">
+      <parentCategory ref="Network"/>
+      <supportedOn ref="SUPPORTED_WIN7_V140"/>
+      <elements>
+        <list id="LocalNetworkAccessAllowedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LocalNetworkAccessAllowedForUrls" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessBlockedForUrls)" explainText="$(string.LocalNetworkAccessBlockedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessBlockedForUrls" presentation="$(presentation.LocalNetworkAccessBlockedForUrls)">
+      <parentCategory ref="Network"/>
+      <supportedOn ref="SUPPORTED_WIN7_V140"/>
+      <elements>
+        <list id="LocalNetworkAccessBlockedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LocalNetworkAccessBlockedForUrls" valuePrefix=""/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsEnabled)" explainText="$(string.LocalNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessRestrictionsEnabled" presentation="$(presentation.LocalNetworkAccessRestrictionsEnabled)" valueName="LocalNetworkAccessRestrictionsEnabled">
       <parentCategory ref="Network"/>
@@ -7791,6 +7789,26 @@
     <policy class="Both" displayName="$(string.ShowRecommendationsEnabled)" explainText="$(string.ShowRecommendationsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="ShowRecommendationsEnabled" presentation="$(presentation.ShowRecommendationsEnabled)" valueName="ShowRecommendationsEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V89"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.ShowTabPreviewEnabled)" explainText="$(string.ShowTabPreviewEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="ShowTabPreviewEnabled" presentation="$(presentation.ShowTabPreviewEnabled)" valueName="ShowTabPreviewEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V141"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.ShowTabPreviewEnabled)" explainText="$(string.ShowTabPreviewEnabled_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="ShowTabPreviewEnabled_recommended" presentation="$(presentation.ShowTabPreviewEnabled)" valueName="ShowTabPreviewEnabled">
+      <parentCategory ref="microsoft_edge_recommended"/>
+      <supportedOn ref="SUPPORTED_WIN7_V141"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
