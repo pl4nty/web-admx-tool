@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 141.0.3500.1-->
+  <!--microsoft_edge version: 141.0.3514.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -3518,6 +3518,16 @@
           </item>
         </enum>
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.WebRtcPostQuantumKeyAgreement)" explainText="$(string.WebRtcPostQuantumKeyAgreement_Explain)" key="Software\Policies\Microsoft\Edge" name="WebRtcPostQuantumKeyAgreement" presentation="$(presentation.WebRtcPostQuantumKeyAgreement)" valueName="WebRtcPostQuantumKeyAgreement">
+      <parentCategory ref="WebRtc"/>
+      <supportedOn ref="SUPPORTED_WIN7_V141"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.AADWebSiteSSOUsingThisProfileEnabled)" explainText="$(string.AADWebSiteSSOUsingThisProfileEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="AADWebSiteSSOUsingThisProfileEnabled" presentation="$(presentation.AADWebSiteSSOUsingThisProfileEnabled)" valueName="AADWebSiteSSOUsingThisProfileEnabled">
       <parentCategory ref="microsoft_edge"/>
