@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 141.0.3514.0-->
+  <!--microsoft_edge version: 141.0.3525.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -122,6 +122,7 @@
       <definition displayName="$(string.OBSOLETE_WIN7_V79_V92)" name="OBSOLETE_WIN7_V79_V92"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V110_V125)" name="OBSOLETE_WIN7_V110_V125"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V77_V131)" name="OBSOLETE_WIN7_V77_V131"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V117_V140)" name="OBSOLETE_WIN7_V117_V140"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V83_V129)" name="OBSOLETE_WIN7_V83_V129"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V116_V123)" name="OBSOLETE_WIN7_V116_V123"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V124_V136)" name="OBSOLETE_WIN7_V124_V136"/>
@@ -1528,7 +1529,7 @@
     </policy>
     <policy class="Both" displayName="$(string.GamerModeEnabled)" explainText="$(string.GamerModeEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="GamerModeEnabled" presentation="$(presentation.GamerModeEnabled)" valueName="GamerModeEnabled">
       <parentCategory ref="EdgeGames"/>
-      <supportedOn ref="SUPPORTED_WIN7_V117"/>
+      <supportedOn ref="OBSOLETE_WIN7_V117_V140"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -1538,7 +1539,7 @@
     </policy>
     <policy class="Both" displayName="$(string.GamerModeEnabled)" explainText="$(string.GamerModeEnabled_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="GamerModeEnabled_recommended" presentation="$(presentation.GamerModeEnabled)" valueName="GamerModeEnabled">
       <parentCategory ref="EdgeGames_recommended"/>
-      <supportedOn ref="SUPPORTED_WIN7_V117"/>
+      <supportedOn ref="OBSOLETE_WIN7_V117_V140"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
