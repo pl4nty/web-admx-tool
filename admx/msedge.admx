@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 141.0.3525.0-->
+  <!--microsoft_edge version: 141.0.3537.9-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -6557,6 +6557,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.LiveVideoTranslationEnabled)" explainText="$(string.LiveVideoTranslationEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="LiveVideoTranslationEnabled" presentation="$(presentation.LiveVideoTranslationEnabled)" valueName="LiveVideoTranslationEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V141"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.LocalBrowserDataShareEnabled)" explainText="$(string.LocalBrowserDataShareEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalBrowserDataShareEnabled" presentation="$(presentation.LocalBrowserDataShareEnabled)" valueName="LocalBrowserDataShareEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V93"/>
@@ -6953,6 +6963,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.OriginKeyedProcessesEnabled)" explainText="$(string.OriginKeyedProcessesEnabled_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="OriginKeyedProcessesEnabled_recommended" presentation="$(presentation.OriginKeyedProcessesEnabled)" valueName="OriginKeyedProcessesEnabled">
+      <parentCategory ref="microsoft_edge_recommended"/>
+      <supportedOn ref="SUPPORTED_WIN7_V141"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.OutlookHubMenuEnabled)" explainText="$(string.OutlookHubMenuEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="OutlookHubMenuEnabled" presentation="$(presentation.OutlookHubMenuEnabled)" valueName="OutlookHubMenuEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="OBSOLETE_WIN7_V102_V105"/>
@@ -7245,6 +7265,13 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.RelaunchFastIfOutdated)" explainText="$(string.RelaunchFastIfOutdated_Explain)" key="Software\Policies\Microsoft\Edge" name="RelaunchFastIfOutdated" presentation="$(presentation.RelaunchFastIfOutdated)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V141"/>
+      <elements>
+        <decimal id="RelaunchFastIfOutdated" maxValue="2000000000" minValue="7" valueName="RelaunchFastIfOutdated"/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.RelaunchNotification)" explainText="$(string.RelaunchNotification_Explain)" key="Software\Policies\Microsoft\Edge" name="RelaunchNotification" presentation="$(presentation.RelaunchNotification)">
       <parentCategory ref="microsoft_edge"/>
