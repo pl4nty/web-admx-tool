@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 141.0.3537.9--><displayName/><description/><resources><stringTable><string id="ApplicationGuard_group">Application Guard settings</string><string id="ApplicationGuardContainerProxy">Application Guard Container Proxy</string><string id="ApplicationGuardContainerProxy_Explain">Configures the proxy settings for Microsoft Edge Application Guard.
+<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 142.0.3558.0--><displayName/><description/><resources><stringTable><string id="ApplicationGuard_group">Application Guard settings</string><string id="ApplicationGuardContainerProxy">Application Guard Container Proxy</string><string id="ApplicationGuardContainerProxy_Explain">Configures the proxy settings for Microsoft Edge Application Guard.
 If you enable this policy, Microsoft Edge Application Guard ignores other sources of proxy configurations.
 
 If you don't configure this policy, Microsoft Edge Application Guard uses the proxy configuration of the host.
@@ -221,7 +221,7 @@ If you don't configure this policy, the global default value from the 'DefaultCo
 
 See the 'CookiesAllowedForUrls' (Allow cookies on specific sites) and 'CookiesSessionOnlyForUrls' (Limit cookies from specific websites to the current session) policies for more information.
 
-Note there cannot be conflicting URL patterns set between these three policies:
+Note there can't be conflicting URL patterns set between these three policies:
 
 - CookiesBlockedForUrls
 
@@ -229,7 +229,7 @@ Note there cannot be conflicting URL patterns set between these three policies:
 
 - 'CookiesSessionOnlyForUrls'
 
-For detailed information on valid url patterns, please see https://go.microsoft.com/fwlink/?linkid=2095322. * is not an accepted value for this policy.
+For detailed information on valid url patterns, please see https://go.microsoft.com/fwlink/?linkid=2095322. * isn't an accepted value for this policy.
 
 Example value:
 
@@ -1470,7 +1470,7 @@ abcdefghijklmnopabcdefghijklmnop</string><string id="MandatoryExtensionsForInPri
 Microsoft Edge Gamer Mode allows gamers to personalize their browser with gaming themes and gives them the option of enabling Efficiency Mode for PC gaming, the Gaming feed on new tabs, sidebar apps for gamers, and more.
 
 If you enable or don't configure this policy, users can opt into Gamer Mode.
-If you disable this policy, Gamer Mode will be disabled.
+If you disable this policy, Gamer Mode is disabled.
 Note: Starting in Microsoft Edge version 141, this policy is obsolete because the Gamer Mode feature has been removed.</string><string id="GenerativeAI_group">Generative AI</string><string id="GenAILocalFoundationalModelSettings">Settings for GenAI local foundational model</string><string id="GenAILocalFoundationalModelSettings_Explain">Configure how Microsoft Edge downloads the foundational GenAI model and uses it for inference locally.
 
 When the policy is set to Allowed (0) or not set, the model is downloaded automatically, and used for inference.
@@ -2048,23 +2048,23 @@ Policy options mapping:
 
 * AutofillOff (3) = Autofill off
 
-Use the preceding information when configuring this policy.</string><string id="PrimaryPasswordSetting_Automatically">Automatically</string><string id="PrimaryPasswordSetting_WithDevicePassword">With device password</string><string id="PrimaryPasswordSetting_WithCustomPrimaryPassword">With custom primary password</string><string id="PrimaryPasswordSetting_AutofillOff">Autofill off</string><string id="Performance_group">Performance</string><string id="EfficiencyMode">Configure when efficiency mode should become active</string><string id="EfficiencyMode_Explain">This policy setting lets you configure when efficiency mode will become active. By default, efficiency mode is set to 'BalancedSavings'. On devices with no battery, efficiency mode is disabled by default and will not become active. Please note that Windows Energy Saver settings can influence when efficiency mode becomes active on all devices.
+Use the preceding information when configuring this policy.</string><string id="PrimaryPasswordSetting_Automatically">Automatically</string><string id="PrimaryPasswordSetting_WithDevicePassword">With device password</string><string id="PrimaryPasswordSetting_WithCustomPrimaryPassword">With custom primary password</string><string id="PrimaryPasswordSetting_AutofillOff">Autofill off</string><string id="Performance_group">Performance</string><string id="EfficiencyMode">Configure when efficiency mode should become active</string><string id="EfficiencyMode_Explain">This policy setting lets you configure when efficiency mode becomes active. By default, efficiency mode is set to 'BalancedSavings'. On devices with no battery, efficiency mode is disabled by default and does not become active. Please note that Windows Energy Saver settings can influence when efficiency mode becomes active on all devices.
 
 Individual sites may be blocked from participating in efficiency mode by configuring the policy 'SleepingTabsBlockedForUrls' (Block sleeping tabs on specific sites).
 
-Set this policy to 'AlwaysActive' and efficiency mode will always be active.
+Set this policy to 'AlwaysActive' and efficiency mode is always active.
 
-Set this policy to 'NeverActive' and efficiency mode will never become active.
+Set this policy to 'NeverActive' and efficiency mode never becomes active.
 
-Set this policy to 'ActiveWhenUnplugged' and efficiency mode will become active when the device is unplugged.
+Set this policy to 'ActiveWhenUnplugged' and efficiency mode becomes active when the device is unplugged.
 
-Set this policy to 'ActiveWhenUnpluggedBatteryLow' and efficiency mode will become active when the device is unplugged and the battery is low.
+Set this policy to 'ActiveWhenUnpluggedBatteryLow' and efficiency mode becomes active when the device is unplugged and the battery is low.
 
-Set this policy to 'BalancedSavings' and when the device is unplugged, efficiency mode will take moderate steps to save battery. When the device is unplugged and the battery is low, efficiency mode will take additional steps to save battery.
+Set this policy to 'BalancedSavings' and when the device is unplugged, efficiency mode takes moderate steps to save battery. When the device is unplugged and the battery is low, efficiency mode takes extra steps to save battery.
 
-Set this policy to 'MaximumSavings' and when the device is unplugged or unplugged and the battery is low, efficiency mode takes additional steps to save battery.
+Set this policy to 'MaximumSavings' and when the device is unplugged or unplugged and the battery is low, efficiency mode takes extra steps to save battery.
 
-If the device does not have a battery, efficiency mode will never become active in any mode other than 'AlwaysActive' unless the setting or 'EfficiencyModeEnabled' (Efficiency mode enabled) policy is enabled.
+If the device does not have a battery, efficiency mode never becomes active in any mode other than 'AlwaysActive' unless the setting or 'EfficiencyModeEnabled' (Efficiency mode enabled) policy is enabled.
 
 This policy has no effect if the 'EfficiencyModeEnabled' policy is disabled.
 
@@ -2082,11 +2082,11 @@ Policy options mapping:
 
 * ActiveWhenUnpluggedBatteryLow (3) = Efficiency mode is active when the device is unplugged and the battery is low
 
-* BalancedSavings (4) = When the device is unplugged, efficiency mode takes moderate steps to save battery. When the device is unplugged and the battery is low, efficiency mode takes additional steps to save battery.
+* BalancedSavings (4) = When the device is unplugged, efficiency mode takes moderate steps to save battery. When the device is unplugged and the battery is low, efficiency mode takes extra steps to save battery.
 
-* MaximumSavings (5) = When the device is unplugged or unplugged and the battery is low, efficiency mode takes additional steps to save battery.
+* MaximumSavings (5) = When the device is unplugged or unplugged and the battery is low, efficiency mode takes extra steps to save battery.
 
-Use the preceding information when configuring this policy.</string><string id="EfficiencyMode_AlwaysActive">Efficiency mode is always active</string><string id="EfficiencyMode_NeverActive">Efficiency mode is never active</string><string id="EfficiencyMode_ActiveWhenUnplugged">Efficiency mode is active when the device is unplugged</string><string id="EfficiencyMode_ActiveWhenUnpluggedBatteryLow">Efficiency mode is active when the device is unplugged and the battery is low</string><string id="EfficiencyMode_BalancedSavings">When the device is unplugged, efficiency mode takes moderate steps to save battery. When the device is unplugged and the battery is low, efficiency mode takes additional steps to save battery.</string><string id="EfficiencyMode_MaximumSavings">When the device is unplugged or unplugged and the battery is low, efficiency mode takes additional steps to save battery.</string><string id="EfficiencyModeEnabled">Efficiency mode enabled</string><string id="EfficiencyModeEnabled_Explain">Enables efficiency mode which helps extend battery life by saving computer resources. By default, efficiency mode is enabled for devices with a battery and disabled otherwise.
+Use the preceding information when configuring this policy.</string><string id="EfficiencyMode_AlwaysActive">Efficiency mode is always active</string><string id="EfficiencyMode_NeverActive">Efficiency mode is never active</string><string id="EfficiencyMode_ActiveWhenUnplugged">Efficiency mode is active when the device is unplugged</string><string id="EfficiencyMode_ActiveWhenUnpluggedBatteryLow">Efficiency mode is active when the device is unplugged and the battery is low</string><string id="EfficiencyMode_BalancedSavings">When the device is unplugged, efficiency mode takes moderate steps to save battery. When the device is unplugged and the battery is low, efficiency mode takes extra steps to save battery.</string><string id="EfficiencyMode_MaximumSavings">When the device is unplugged or unplugged and the battery is low, efficiency mode takes extra steps to save battery.</string><string id="EfficiencyModeEnabled">Efficiency mode enabled</string><string id="EfficiencyModeEnabled_Explain">Enables efficiency mode which helps extend battery life by saving computer resources. By default, efficiency mode is enabled for devices with a battery and disabled otherwise.
 
 If you enable this policy, efficiency mode will become active according to the setting chosen by the user. You can configure the efficiency mode setting using the 'EfficiencyMode' (Configure when efficiency mode should become active) policy. If the device does not have a battery, efficiency mode will always be active.
 
@@ -4978,7 +4978,7 @@ If you disable this policy, users, apps, and extensions can't enter full screen 
 
 Opening Microsoft Edge in kiosk mode using the command line is unavailable when full screen mode is disabled.</string><string id="GloballyScopeHTTPAuthCacheEnabled">Enable globally scoped HTTP auth cache</string><string id="GloballyScopeHTTPAuthCacheEnabled_Explain">This policy configures a single global per profile cache with HTTP server authentication credentials.
 
-If you disable or don't set this policy, the browser will use the default behavior of cross-site auth. This behavior will be to scope HTTP server authentication credentials by top-level site. So, if two sites use resources from the same authenticating domain, credentials need to be provided independently in the context of both sites. Cached proxy credentials are reused across sites.
+If you disable or don't set this policy, the browser uses the default behavior of cross-site auth. This behavior will be to scope HTTP server authentication credentials by top-level site. So, if two sites use resources from the same authenticating domain, credentials need to be provided independently in the context of both sites. Cached proxy credentials are reused across sites.
 
 If you enable this policy HTTP auth credentials entered in the context of one site will automatically be used in the context of another site.
 
