@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 142.0.3568.0--><displayName/><description/><resources><stringTable><string id="ApplicationGuard_group">Application Guard settings</string><string id="ApplicationGuardContainerProxy">Application Guard Container Proxy</string><string id="ApplicationGuardContainerProxy_Explain">Configures the proxy settings for Microsoft Edge Application Guard.
+<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 142.0.3581.0--><displayName/><description/><resources><stringTable><string id="ApplicationGuard_group">Application Guard settings</string><string id="ApplicationGuardContainerProxy">Application Guard Container Proxy</string><string id="ApplicationGuardContainerProxy_Explain">Configures the proxy settings for Microsoft Edge Application Guard.
 If you enable this policy, Microsoft Edge Application Guard ignores other sources of proxy configurations.
 
 If you don't configure this policy, Microsoft Edge Application Guard uses the proxy configuration of the host.
@@ -1471,11 +1471,15 @@ Microsoft Edge Gamer Mode allows gamers to personalize their browser with gaming
 
 If you enable or don't configure this policy, users can opt into Gamer Mode.
 If you disable this policy, Gamer Mode is disabled.
-Note: Starting in Microsoft Edge version 141, this policy is obsolete because the Gamer Mode feature has been removed.</string><string id="GenerativeAI_group">Generative AI</string><string id="GenAILocalFoundationalModelSettings">Settings for GenAI local foundational model</string><string id="GenAILocalFoundationalModelSettings_Explain">Configure how Microsoft Edge downloads the foundational GenAI model and uses it for inference locally.
+Note: Starting in Microsoft Edge version 141, this policy is obsolete because the Gamer Mode feature has been removed.</string><string id="GenerativeAI_group">Generative AI</string><string id="GenAILocalFoundationalModelSettings">Settings for GenAI local foundational model</string><string id="GenAILocalFoundationalModelSettings_Explain">This policy controls whether Microsoft Edge downloads the foundational GenAI model and uses it for local inference.
 
-When the policy is set to Allowed (0) or not set, the model is downloaded automatically, and used for inference.
+If you enable this policy and set the value to Allowed (0), the model is downloaded automatically and used for inference.
 
-When the policy is set to Disabled (1), the model will not be downloaded.
+If you enable this policy and set the value to Disallowed (1), the model is not downloaded.
+
+If you disable or don't configure this policy, the default applies, and the model is downloaded automatically and used for inference.
+
+Note: This policy supports dynamic refresh, so changes take effect without requiring a browser restart.
 
 Model downloading can also be disabled by ComponentUpdatesEnabled.
 
@@ -1483,9 +1487,9 @@ Policy options mapping:
 
 * Allowed (0) = Downloads model automatically
 
-* Disabled (1) = Do not download model
+* Disallowed (1) = Do not download model
 
-Use the preceding information when configuring this policy.</string><string id="GenAILocalFoundationalModelSettings_Allowed">Downloads model automatically</string><string id="GenAILocalFoundationalModelSettings_Disabled">Do not download model</string><string id="HTTPAuthentication_group">HTTP authentication</string><string id="AllHttpAuthSchemesAllowedForOrigins">List of origins that allow all HTTP authentication</string><string id="AllHttpAuthSchemesAllowedForOrigins_Explain">Set this policy to specify which origins allow all the HTTP authentication schemes Microsoft Edge supports regardless of the 'AuthSchemes' (Supported authentication schemes) policy.
+Use the preceding information when configuring this policy.</string><string id="GenAILocalFoundationalModelSettings_Allowed">Downloads model automatically</string><string id="GenAILocalFoundationalModelSettings_Disallowed">Do not download model</string><string id="HTTPAuthentication_group">HTTP authentication</string><string id="AllHttpAuthSchemesAllowedForOrigins">List of origins that allow all HTTP authentication</string><string id="AllHttpAuthSchemesAllowedForOrigins_Explain">Set this policy to specify which origins allow all the HTTP authentication schemes Microsoft Edge supports regardless of the 'AuthSchemes' (Supported authentication schemes) policy.
 
 Format the origin pattern according to this format (https://support.google.com/chrome/a?p=url_blocklist_filter_format). Up to 1,000 exceptions can be defined in 'AllHttpAuthSchemesAllowedForOrigins' (List of origins that allow all HTTP authentication).
 Wildcards are allowed for the whole origin or parts of the origin. Parts include the scheme, host, or port.

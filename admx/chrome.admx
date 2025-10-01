@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--chrome version: 140.0.7339.208-->
+  <!--chrome version: 141.0.7390.55-->
   <policyNamespaces>
     <target namespace="Google.Policies.Chrome" prefix="chrome"/>
     <using namespace="Google.Policies" prefix="Google"/>
@@ -3601,6 +3601,13 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.NTPShortcuts)" explainText="$(string.NTPShortcuts_Explain)" key="Software\Policies\Google\Chrome" name="NTPShortcuts" presentation="$(presentation.NTPShortcuts)">
+      <parentCategory ref="googlechrome"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <text id="NTPShortcuts" maxLength="1000000" valueName="NTPShortcuts"/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.NativeHostsExecutablesLaunchDirectly)" explainText="$(string.NativeHostsExecutablesLaunchDirectly_Explain)" key="Software\Policies\Google\Chrome" name="NativeHostsExecutablesLaunchDirectly" presentation="$(presentation.NativeHostsExecutablesLaunchDirectly)" valueName="NativeHostsExecutablesLaunchDirectly">
       <parentCategory ref="googlechrome"/>
