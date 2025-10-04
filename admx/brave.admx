@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--brave version: 140.1.82.172-->
+  <!--brave version: 141.1.83.109-->
   <policyNamespaces>
     <target namespace="BraveSoftware.Policies.Brave" prefix="brave" />
   </policyNamespaces>
@@ -3755,6 +3755,13 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.NTPShortcuts)" explainText="$(string.NTPShortcuts_Explain)" key="Software\Policies\BraveSoftware\Brave" name="NTPShortcuts" presentation="$(presentation.NTPShortcuts)">
+      <parentCategory ref="brave" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <text id="NTPShortcuts" maxLength="1000000" valueName="NTPShortcuts" />
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.NativeHostsExecutablesLaunchDirectly)" explainText="$(string.NativeHostsExecutablesLaunchDirectly_Explain)" key="Software\Policies\BraveSoftware\Brave" name="NativeHostsExecutablesLaunchDirectly" presentation="$(presentation.NativeHostsExecutablesLaunchDirectly)" valueName="NativeHostsExecutablesLaunchDirectly">
       <parentCategory ref="brave" />
