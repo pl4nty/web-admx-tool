@@ -599,6 +599,22 @@
 		</disabledValue>
     </policy>
     <policy 
+		name="POL_RDM_DISABLEDEVOLUTIONSSENDTOOL"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEDEVOLUTIONSSENDTOOL)"
+		explainText="$(string.POL_RDM_DISABLEDEVOLUTIONSSENDTOOL_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableDevolutionsSendTool">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
 		name="POL_RDM_DISABLEDRAGANDDROP"
 		class="Both"
 		displayName="$(string.POL_RDM_DISABLEDRAGANDDROP)"
@@ -829,6 +845,22 @@
 		explainText="$(string.POL_RDM_DISABLEMASKPASSWORDINVIEWPASSWORD_HELP)"
 		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
 		valueName="DisableMaskPasswordInViewPassword">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLEMCPSERVER"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEMCPSERVER)"
+		explainText="$(string.POL_RDM_DISABLEMCPSERVER_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableMCPServer">
       <parentCategory ref="CAT_RDM_SECURITY" />
       <supportedOn ref="SUPPORTED_WindowsVista" />
 		<enabledValue>
@@ -1341,6 +1373,22 @@
 		explainText="$(string.POL_RDM_DISABLETOOLSRDMAGENT_HELP)"
 		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
 		valueName="DisableToolsRDMAgent">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLETOOLSWINGETCONSOLE"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLETOOLSWINGETCONSOLE)"
+		explainText="$(string.POL_RDM_DISABLETOOLSWINGETCONSOLE_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableToolsWingetConsole">
       <parentCategory ref="CAT_RDM_UI" />
       <supportedOn ref="SUPPORTED_WindowsVista" />
 		<enabledValue>
