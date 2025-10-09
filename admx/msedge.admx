@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 142.0.3581.0-->
+  <!--microsoft_edge version: 142.0.3595.9-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -22,6 +22,7 @@
       <definition displayName="$(string.SUPPORTED_WIN7_V139)" name="SUPPORTED_WIN7_V139"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V140)" name="SUPPORTED_WIN7_V140"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V141)" name="SUPPORTED_WIN7_V141"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V142)" name="SUPPORTED_WIN7_V142"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V77)" name="SUPPORTED_WIN7_V77"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V78)" name="SUPPORTED_WIN7_V78"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V79)" name="SUPPORTED_WIN7_V79"/>
@@ -2856,6 +2857,23 @@
         <text id="RelatedWebsiteSetsOverrides" maxLength="1000000" valueName="RelatedWebsiteSetsOverrides"/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.ScarewareBlockerAllowListDomains)" explainText="$(string.ScarewareBlockerAllowListDomains_Explain)" key="Software\Policies\Microsoft\Edge" name="ScarewareBlockerAllowListDomains" presentation="$(presentation.ScarewareBlockerAllowListDomains)">
+      <parentCategory ref="ScarewareBlocker"/>
+      <supportedOn ref="SUPPORTED_WIN7_V142"/>
+      <elements>
+        <list id="ScarewareBlockerAllowListDomainsDesc" key="Software\Policies\Microsoft\Edge\ScarewareBlockerAllowListDomains" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.ScarewareBlockerBlocksDetectedSitesEnabled)" explainText="$(string.ScarewareBlockerBlocksDetectedSitesEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="ScarewareBlockerBlocksDetectedSitesEnabled" presentation="$(presentation.ScarewareBlockerBlocksDetectedSitesEnabled)" valueName="ScarewareBlockerBlocksDetectedSitesEnabled">
+      <parentCategory ref="ScarewareBlocker"/>
+      <supportedOn ref="SUPPORTED_WIN7_V142"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.ScarewareBlockerProtectionEnabled)" explainText="$(string.ScarewareBlockerProtectionEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="ScarewareBlockerProtectionEnabled" presentation="$(presentation.ScarewareBlockerProtectionEnabled)" valueName="ScarewareBlockerProtectionEnabled">
       <parentCategory ref="ScarewareBlocker"/>
       <supportedOn ref="SUPPORTED_WIN7_V134"/>
@@ -2866,9 +2884,39 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.ScarewareBlockerSendDetectedSitesToSmartScreenEnabled)" explainText="$(string.ScarewareBlockerSendDetectedSitesToSmartScreenEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="ScarewareBlockerSendDetectedSitesToSmartScreenEnabled" presentation="$(presentation.ScarewareBlockerSendDetectedSitesToSmartScreenEnabled)" valueName="ScarewareBlockerSendDetectedSitesToSmartScreenEnabled">
+      <parentCategory ref="ScarewareBlocker"/>
+      <supportedOn ref="SUPPORTED_WIN7_V142"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.ScarewareBlockerBlocksDetectedSitesEnabled)" explainText="$(string.ScarewareBlockerBlocksDetectedSitesEnabled_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="ScarewareBlockerBlocksDetectedSitesEnabled_recommended" presentation="$(presentation.ScarewareBlockerBlocksDetectedSitesEnabled)" valueName="ScarewareBlockerBlocksDetectedSitesEnabled">
+      <parentCategory ref="ScarewareBlocker_recommended"/>
+      <supportedOn ref="SUPPORTED_WIN7_V142"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.ScarewareBlockerProtectionEnabled)" explainText="$(string.ScarewareBlockerProtectionEnabled_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="ScarewareBlockerProtectionEnabled_recommended" presentation="$(presentation.ScarewareBlockerProtectionEnabled)" valueName="ScarewareBlockerProtectionEnabled">
       <parentCategory ref="ScarewareBlocker_recommended"/>
       <supportedOn ref="SUPPORTED_WIN7_V134"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.ScarewareBlockerSendDetectedSitesToSmartScreenEnabled)" explainText="$(string.ScarewareBlockerSendDetectedSitesToSmartScreenEnabled_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="ScarewareBlockerSendDetectedSitesToSmartScreenEnabled_recommended" presentation="$(presentation.ScarewareBlockerSendDetectedSitesToSmartScreenEnabled)" valueName="ScarewareBlockerSendDetectedSitesToSmartScreenEnabled">
+      <parentCategory ref="ScarewareBlocker_recommended"/>
+      <supportedOn ref="SUPPORTED_WIN7_V142"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
