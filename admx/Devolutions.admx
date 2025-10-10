@@ -1127,6 +1127,22 @@
 		</disabledValue>
     </policy>
     <policy 
+		name="POL_RDM_DISABLEASSISTANTRELATEDFEATURES"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEASSISTANTRELATEDFEATURES)"
+		explainText="$(string.POL_RDM_DISABLEASSISTANTRELATEDFEATURES_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableAssistantRelatedFeatures">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
 		name="POL_RDM_DISABLERDPGATEWAYEDITIONINENTRY"
 		class="Both"
 		displayName="$(string.POL_RDM_DISABLERDPGATEWAYEDITIONINENTRY)"
