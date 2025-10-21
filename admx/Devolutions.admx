@@ -127,6 +127,20 @@
 	</elements>
     </policy>
     <policy 
+		name="POL_RDM_CYBERARKKEEPAUTHENTICATEDSESSIONSALIVE"
+		class="Both" 
+		displayName="$(string.POL_RDM_CYBERARKKEEPAUTHENTICATEDSESSIONSALIVE)"
+		explainText="$(string.POL_RDM_CYBERARKKEEPAUTHENTICATEDSESSIONSALIVE_HELP)"
+		presentation="$(presentation.INPUT_DEC_CYBERARKKEEPAUTHENTICATEDSESSIONSALIVE)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="CyberArkKeepAuthenticatedSessionsAlive">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_CYBERARKKEEPAUTHENTICATEDSESSIONSALIVE" valueName="CyberArkKeepAuthenticatedSessionsAlive" maxValue="20000" />
+	</elements>
+    </policy>
+    <policy 
 		name="POL_RDM_DASHBOARDAUTOFOCUSITEMONTABSELECT"
 		class="Both" 
 		displayName="$(string.POL_RDM_DASHBOARDAUTOFOCUSITEMONTABSELECT)"
