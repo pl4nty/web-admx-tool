@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<policyDefinitionResources revision="6.5" schemaVersion="1.0">
+<policyDefinitionResources revision="6.6" schemaVersion="1.0">
   <displayName>ZoomMeetings</displayName>
   <description>ZoomMeetings</description>
   <resources>
@@ -2304,6 +2304,22 @@ If this policy is not set, the client will use the default setting.</string>
 If this policy is enabled, the client will use the new login UI.
 If this policy is disabled, the client will not use the new login UI.
 If this policy is not set, client will use the default setting.</string>
+      <string id="WebviewProxy_Policy">Configure the webview proxy server</string>
+      <string id="WebviewProxy_Policy_Recommend">Configure the webview proxy server (Recommendation Setting)</string>
+      <string id="WebviewProxy_Part">Configure the webview proxy server</string>
+      <string id="WebviewProxy_Explain">Default policy is empty.
+If this policy is empty or invalid, client will ignore this policy.
+If this policy is a valid string, client will use this string as the webview proxy server.
+If this setting is not set, client will use the default setting.</string>
+      <string id="OptimizeSlideControlWithOfficeAPI_Policy">Enable the use of Office API to control PowerPoint slides</string>
+      <string id="OptimizeSlideControlWithOfficeAPI_Policy_Recommend">Enable the use of Office API to control PowerPoint slides (Recommendation Setting)</string>
+      <string id="OptimizeSlideControlWithOfficeAPI_Explain">Default policy is disabled.
+
+If this policy is enabled, clients will be able to use the Office API to control PowerPoint slides.
+
+If this policy is disabled, clients will be unable to use the Office API to control PowerPoint slides.
+
+If this policy is not set, the client will use the default setting.</string>
       <string id="ADMXMigrator_UnresolvedString">ADMX Migrator encountered a string that is not present in the source ADM string table.</string>
       <string id="ADMXMigrator_NoSupportedOn">ADMX Migrator encountered a policy that does not have a supportedOn value.</string>
     </stringTable>
@@ -2447,6 +2463,11 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="EnableProxyDetectForSpecialCases_Policy" />
       <presentation id="DisableNewSetting_Policy" />
       <presentation id="EnableNewSigninUI_Policy" />
+      <presentation id="WebviewProxy_Policy">
+        <textBox refId="WebviewProxy_Part">
+          <label>Configure the webview proxy server</label>
+        </textBox>
+      </presentation>
       <presentation id="AU2_EnableAutoUpdate_Policy" />
       <presentation id="AU2_SetUpdateChannel_Policy">
         <textBox refId="AU2_SetUpdateChannel_Part">
@@ -2715,6 +2736,7 @@ If this policy is not set, client will use the default setting.</string>
       </presentation>
       <presentation id="KeepMeetingOnTop_Policy" />
       <presentation id="DisableLocalASR_Policy" />
+      <presentation id="OptimizeSlideControlWithOfficeAPI_Policy" />
       <presentation id="EnableClientAutoUpdate_Policy_Recommend" />
       <presentation id="DisableCreatingDesktopShortcut_Policy_Recommend" />
       <presentation id="AutoStartAfterReboot_Policy_Recommend" />
@@ -2853,6 +2875,11 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="EnableProxyDetectForSpecialCases_Policy_Recommend" />
       <presentation id="DisableNewSetting_Policy_Recommend" />
       <presentation id="EnableNewSigninUI_Policy_Recommend" />
+      <presentation id="WebviewProxy_Policy_Recommend">
+        <textBox refId="WebviewProxy_Part">
+          <label>Configure the webview proxy server</label>
+        </textBox>
+      </presentation>
       <presentation id="AU2_EnableAutoUpdate_Policy_Recommend" />
       <presentation id="AU2_SetUpdateChannel_Policy_Recommend">
         <textBox refId="AU2_SetUpdateChannel_Part">
@@ -3120,6 +3147,7 @@ If this policy is not set, client will use the default setting.</string>
       </presentation>
       <presentation id="KeepMeetingOnTop_Policy_Recommend" />
       <presentation id="DisableLocalASR_Policy_Recommend" />
+      <presentation id="OptimizeSlideControlWithOfficeAPI_Policy_Recommend" />
     </presentationTable>
   </resources>
 </policyDefinitionResources>

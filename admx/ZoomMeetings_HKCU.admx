@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<policyDefinitions revision="6.5" schemaVersion="1.0">
+<policyDefinitions revision="6.6" schemaVersion="1.0">
   <policyNamespaces>
-    <target prefix="fullarmor" namespace="ZoomMeetings_HKCU_6_5" />
+    <target prefix="fullarmor" namespace="ZoomMeetings_HKCU_6_6" />
     <using prefix="windows" namespace="Microsoft.Policies.Windows" />
   </policyNamespaces>
   <supersededAdm fileName="ZoomMeetings_HKCU.adm" />
-  <resources minRequiredRevision="6.5" />
+  <resources minRequiredRevision="6.6" />
   <supportedOn>
     <definitions>
       <definition name="SUPPORTED_WINXPSP2" displayName="$(string.SUPPORTED_WINXPSP2)" />
@@ -728,6 +728,13 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy name="WebviewProxy_Policy" class="User" displayName="$(string.WebviewProxy_Policy)" explainText="$(string.WebviewProxy_Explain)" presentation="$(presentation.WebviewProxy_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <text id="WebviewProxy_Part" valueName="WebviewProxyServer" />
+      </elements>
     </policy>
     <policy name="AU2_EnableAutoUpdate_Policy" class="User" displayName="$(string.AU2_EnableAutoUpdate_Policy)" explainText="$(string.AU2_EnableAutoUpdate_Explain)" presentation="$(presentation.AU2_EnableAutoUpdate_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Updates" valueName="AU2_EnableAutoUpdate">
       <parentCategory ref="zoomupdates" />
@@ -2326,6 +2333,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="OptimizeSlideControlWithOfficeAPI_Policy" class="User" displayName="$(string.OptimizeSlideControlWithOfficeAPI_Policy)" explainText="$(string.OptimizeSlideControlWithOfficeAPI_Explain)" presentation="$(presentation.OptimizeSlideControlWithOfficeAPI_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Meetings" valueName="OptimizeSlideControlWithOfficeAPI">
+      <parentCategory ref="zoommeetings" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="EnableClientAutoUpdate_Policy_Recommend" class="User" displayName="$(string.EnableClientAutoUpdate_Policy_Recommend)" explainText="$(string.EnableClientAutoUpdate_Explain)" presentation="$(presentation.EnableClientAutoUpdate_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="EnableClientAutoUpdate">
       <parentCategory ref="zoomgeneral_recommend" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
@@ -3011,6 +3028,13 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy name="WebviewProxy_Policy_Recommend" class="User" displayName="$(string.WebviewProxy_Policy_Recommend)" explainText="$(string.WebviewProxy_Explain)" presentation="$(presentation.WebviewProxy_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <text id="WebviewProxy_Part" valueName="WebviewProxyServer" />
+      </elements>
     </policy>
     <policy name="AU2_EnableAutoUpdate_Policy_Recommend" class="User" displayName="$(string.AU2_EnableAutoUpdate_Policy_Recommend)" explainText="$(string.AU2_EnableAutoUpdate_Explain)" presentation="$(presentation.AU2_EnableAutoUpdate_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Updates" valueName="AU2_EnableAutoUpdate">
       <parentCategory ref="zoomupdates_recommend" />
@@ -4600,6 +4624,16 @@
       </disabledValue>
     </policy>
     <policy name="DisableLocalASR_Policy_Recommend" class="User" displayName="$(string.DisableLocalASR_Policy_Recommend)" explainText="$(string.DisableLocalASR_Explain)" presentation="$(presentation.DisableLocalASR_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Meetings" valueName="DisableLocalASR">
+      <parentCategory ref="zoommeetings_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="OptimizeSlideControlWithOfficeAPI_Policy_Recommend" class="User" displayName="$(string.OptimizeSlideControlWithOfficeAPI_Policy_Recommend)" explainText="$(string.OptimizeSlideControlWithOfficeAPI_Explain)" presentation="$(presentation.OptimizeSlideControlWithOfficeAPI_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Meetings" valueName="OptimizeSlideControlWithOfficeAPI">
       <parentCategory ref="zoommeetings_recommend" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
       <enabledValue>
