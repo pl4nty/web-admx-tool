@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--chrome version: 141.0.7390.123-->
+  <!--chrome version: 142.0.7444.60-->
   <policyNamespaces>
     <target namespace="Google.Policies.Chrome" prefix="chrome"/>
     <using namespace="Google.Policies" prefix="Google"/>
@@ -1327,16 +1327,6 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
-    <policy class="Both" displayName="$(string.RendererCodeIntegrityEnabled)" explainText="$(string.RendererCodeIntegrityEnabled_Explain)" key="Software\Policies\Google\Chrome" name="RendererCodeIntegrityEnabled" presentation="$(presentation.RendererCodeIntegrityEnabled)" valueName="RendererCodeIntegrityEnabled">
-      <parentCategory ref="DeprecatedPolicies"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
     <policy class="Both" displayName="$(string.SigninAllowed)" explainText="$(string.SigninAllowed_Explain)" key="Software\Policies\Google\Chrome" name="SigninAllowed" presentation="$(presentation.SigninAllowed)" valueName="SigninAllowed">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -1544,6 +1534,16 @@
       <elements>
         <list id="ExtensionExtendedBackgroundLifetimeForPortConnectionsToUrlsDesc" key="Software\Policies\Google\Chrome\ExtensionExtendedBackgroundLifetimeForPortConnectionsToUrls" valuePrefix=""/>
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.ExtensionForceInstallWithNonMalwareViolationsEnabled)" explainText="$(string.ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="ExtensionForceInstallWithNonMalwareViolationsEnabled" presentation="$(presentation.ExtensionForceInstallWithNonMalwareViolationsEnabled)" valueName="ExtensionForceInstallWithNonMalwareViolationsEnabled">
+      <parentCategory ref="Extensions"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.ExtensionInstallAllowlist)" explainText="$(string.ExtensionInstallAllowlist_Explain)" key="Software\Policies\Google\Chrome" name="ExtensionInstallAllowlist" presentation="$(presentation.ExtensionInstallAllowlist)">
       <parentCategory ref="Extensions"/>
@@ -2079,6 +2079,16 @@
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsEnabled)" explainText="$(string.LocalNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="LocalNetworkAccessRestrictionsEnabled" presentation="$(presentation.LocalNetworkAccessRestrictionsEnabled)" valueName="LocalNetworkAccessRestrictionsEnabled">
+      <parentCategory ref="LocalNetworkAccessSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsTemporaryOptOut)" explainText="$(string.LocalNetworkAccessRestrictionsTemporaryOptOut_Explain)" key="Software\Policies\Google\Chrome" name="LocalNetworkAccessRestrictionsTemporaryOptOut" presentation="$(presentation.LocalNetworkAccessRestrictionsTemporaryOptOut)" valueName="LocalNetworkAccessRestrictionsTemporaryOptOut">
       <parentCategory ref="LocalNetworkAccessSettings"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
@@ -2731,6 +2741,29 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.DevToolsGoogleDeveloperProgramProfileAvailability)" explainText="$(string.DevToolsGoogleDeveloperProgramProfileAvailability_Explain)" key="Software\Policies\Google\Chrome" name="DevToolsGoogleDeveloperProgramProfileAvailability" presentation="$(presentation.DevToolsGoogleDeveloperProgramProfileAvailability)">
+      <parentCategory ref="googlechrome"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="DevToolsGoogleDeveloperProgramProfileAvailability" valueName="DevToolsGoogleDeveloperProgramProfileAvailability">
+          <item displayName="$(string.DevToolsGoogleDeveloperProgramProfileAvailability_Enabled)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.DevToolsGoogleDeveloperProgramProfileAvailability_EnabledWithoutBadges)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.DevToolsGoogleDeveloperProgramProfileAvailability_Disabled)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.DeveloperToolsAvailability)" explainText="$(string.DeveloperToolsAvailability_Explain)" key="Software\Policies\Google\Chrome" name="DeveloperToolsAvailability" presentation="$(presentation.DeveloperToolsAvailability)">
       <parentCategory ref="googlechrome"/>
@@ -6407,6 +6440,16 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.RSAKeyUsageForLocalAnchorsEnabled)" explainText="$(string.RSAKeyUsageForLocalAnchorsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="RSAKeyUsageForLocalAnchorsEnabled" presentation="$(presentation.RSAKeyUsageForLocalAnchorsEnabled)" valueName="RSAKeyUsageForLocalAnchorsEnabled">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.RendererCodeIntegrityEnabled)" explainText="$(string.RendererCodeIntegrityEnabled_Explain)" key="Software\Policies\Google\Chrome" name="RendererCodeIntegrityEnabled" presentation="$(presentation.RendererCodeIntegrityEnabled)" valueName="RendererCodeIntegrityEnabled">
       <parentCategory ref="RemovedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>

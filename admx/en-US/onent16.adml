@@ -4,7 +4,7 @@
   <description>Microsoft OneNote 2016</description>
   <resources>
     <stringTable>
-      <string id="L_Version">16.0.5510.1000</string>
+      <string id="L_Version">16.0.5527.1000</string>
       <string id="L_Empty">
       </string>
       <string id="L_ChecksUnchecksthecorrespondingUIoption">Checks/Unchecks the corresponding UI option.</string>
@@ -472,6 +472,22 @@ If you enable this policy, users can use supported Purview features, such as man
 If you disable this policy, users won't be able to apply, change or remove Sensitivity Labels in OneNote Sections.
 
 If you do not configure this policy setting, users won't be able to apply, change or remove Sensitivity Labels in OneNote Sections.</string>
+      <string id="L_Disableitemsinuserinterface">Disable Items in User Interface</string>
+      <string id="L_Custom">Custom</string>
+      <string id="L_disablecommandbarbuttonsandmenuitems290">Disable commands</string>
+      <string id="L_disableshortcutkeys291">Disable shortcut keys</string>
+      <string id="L_EnteracommandbarIDtodisable">Enter a command bar ID to disable</string>
+      <string id="L_Enterakeyandmodifiertodisable">Enter a key and modifier to disable</string>
+      <string id="L_SpecifytheIDforacommandbartodisable">This policy setting allows you to disable any command bar button and menu item with a command bar ID, including command bar buttons and menu items that are not in the predefined lists.
+
+If you enable this policy setting, you can enter an ID number to disable a specific command bar button or menu item.  The ID number needs to be in decimal (not hexadecimal).  Multiple values should be separated by commas.
+
+If you disable or do not configure this policy setting, all default command bar buttons or menu items are available to users.</string>
+      <string id="L_Specifythevirtualkeycodeandmodifierfortheshortcutkeytodisabl">This policy setting allows you to disable any shortcut key by using its virtual key code ID, including shortcut keys that are not in the predefined lists.
+
+If you enable this policy setting, you can enter a virtual key code ID number to disable a specific shortcut key.
+
+If you disable or do not configure this policy setting, all default shortcut keys are enabled for users.</string>
     </stringTable>
     <presentationTable>
       <presentation id="L_Pagetabsappearontheleft">
@@ -643,6 +659,12 @@ If you do not configure this policy setting, users won't be able to apply, chang
       <presentation id="L_EmbeddedFileSizeLimitPresentation">
         <decimalTextBox refId="L_EmbeddedFileSizeLimit" defaultValue="52428800" spinStep="10485760">
         </decimalTextBox>
+      </presentation>
+      <presentation id="L_disablecommandbarbuttonsandmenuitems290">
+        <listBox refId="L_EnteracommandbarIDtodisable">Enter a command bar ID to disable</listBox>
+      </presentation>
+      <presentation id="L_disableshortcutkeys291">
+        <listBox refId="L_Enterakeyandmodifiertodisable">Enter a key and modifier to disable</listBox>
       </presentation>
     </presentationTable>
   </resources>

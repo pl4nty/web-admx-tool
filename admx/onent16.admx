@@ -59,6 +59,12 @@
     <category name="L_Other" displayName="$(string.L_Other)">
       <parentCategory ref="L_OneNoteOptions" />
     </category>
+    <category name="L_Disableitemsinuserinterface" displayName="$(string.L_Disableitemsinuserinterface)">
+      <parentCategory ref="L_MicrosoftOfficeOneNote" />
+    </category>
+    <category name="L_Custom" displayName="$(string.L_Custom)">
+      <parentCategory ref="L_Disableitemsinuserinterface" />
+    </category>
   </categories>
   <policies>
     <policy name="L_Pagetabsappearontheleft" class="User" displayName="$(string.L_Pagetabsappearontheleft)" explainText="$(string.L_RightUncheckstheoptionPagetabsappearontheleftLeftCheckstheop)" presentation="$(presentation.L_Pagetabsappearontheleft)" key="software\policies\microsoft\office\16.0\onenote\options\other">
@@ -1193,6 +1199,20 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy name="L_disablecommandbarbuttonsandmenuitems290" class="User" displayName="$(string.L_disablecommandbarbuttonsandmenuitems290)" explainText="$(string.L_SpecifytheIDforacommandbartodisable)" presentation="$(presentation.L_disablecommandbarbuttonsandmenuitems290)" key="software\policies\microsoft\office\16.0\onenote\disabledcmdbaritemslist">
+      <parentCategory ref="L_Custom" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <list id="L_EnteracommandbarIDtodisable" valuePrefix="TCID" />
+      </elements>
+    </policy>
+    <policy name="L_disableshortcutkeys291" class="User" displayName="$(string.L_disableshortcutkeys291)" explainText="$(string.L_Specifythevirtualkeycodeandmodifierfortheshortcutkeytodisabl)" presentation="$(presentation.L_disableshortcutkeys291)" key="software\policies\microsoft\office\16.0\onenote\disabledshortcutkeyslist">
+      <parentCategory ref="L_Custom" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <list id="L_Enterakeyandmodifiertodisable" valuePrefix="KeyMod" />
+      </elements>
     </policy>
   </policies>
 </policyDefinitions>

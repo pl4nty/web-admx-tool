@@ -59,6 +59,9 @@
     <category name="L_DesktopAlert" displayName="$(string.L_DesktopAlert)">
       <parentCategory ref="L_AdvancedEmailoptions" />
     </category>
+    <category name="L_WhensendingamessageCategory" displayName="$(string.L_WhensendingamessageCategory)">
+      <parentCategory ref="L_AdvancedEmailoptions" />
+    </category>
     <category name="L_Trackingoptions" displayName="$(string.L_Trackingoptions)">
       <parentCategory ref="L_Emailoptions" />
     </category>
@@ -760,7 +763,7 @@
         </boolean>
       </elements>
     </policy>
-    <policy name="L_Whensendingamessage" class="User" displayName="$(string.L_Whensendingamessage)" explainText="$(string.L_SetsthevaluesinthecorrespondingUIoptions)" presentation="$(presentation.L_Whensendingamessage)" key="software\policies\microsoft\office\16.0\outlook\preferences">
+    <policy name="L_Whensendingamessage" class="User" displayName="$(string.L_Whensendingamessage)" explainText="$(string.L_SetsthevaluesinthecorrespondingUIoptionsdeprecated)" presentation="$(presentation.L_Whensendingamessage)" key="software\policies\microsoft\office\16.0\outlook\preferences">
       <parentCategory ref="L_AdvancedEmailoptions" />
       <supportedOn ref="windows:SUPPORTED_Windows7" />
       <elements>
@@ -836,6 +839,134 @@
             <decimal value="0" />
           </falseValue>
         </boolean>
+        <boolean id="L_AddpropertiestoattachmentstoenableReplywithChanges" key="software\policies\microsoft\office\16.0\outlook\options\mail" valueName="adhocreviewbehavior">
+          <trueValue>
+            <decimal value="0" />
+          </trueValue>
+          <falseValue>
+            <decimal value="1" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_Setimportance" class="User" displayName="$(string.L_Setimportance)" explainText="$(string.L_SetsthevalueforthecorrespondingUIoption)" presentation="$(presentation.L_Setimportance)" key="software\policies\microsoft\office\16.0\outlook\preferences">
+      <parentCategory ref="L_WhensendingamessageCategory" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_Setimportance" valueName="importance">
+          <item displayName="$(string.L_High)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Normal)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Low)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Setsensitivity" class="User" displayName="$(string.L_Setsensitivity)" explainText="$(string.L_SetsthevalueforthecorrespondingUIoption)" presentation="$(presentation.L_Setsensitivity)" key="software\policies\microsoft\office\16.0\outlook\preferences">
+      <parentCategory ref="L_WhensendingamessageCategory" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_Setsensitivity" valueName="sensitivity">
+          <item displayName="$(string.L_Normal)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Personal)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Private)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Confidential)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Messagesexpireafterdays" class="User" displayName="$(string.L_Messagesexpireafterdays)" explainText="$(string.L_SetsthevalueforthecorrespondingUIoption)" presentation="$(presentation.L_Messagesexpireafterdays)" key="software\policies\microsoft\office\16.0\outlook\preferences">
+      <parentCategory ref="L_WhensendingamessageCategory" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_Messagesexpireafterdays" key="software\policies\microsoft\office\16.0\outlook\options\general" valueName="numdaysexpire" minValue="0" maxValue="3652" />
+      </elements>
+    </policy>
+    <policy name="L_Allowcommasasaddressseparator" class="User" displayName="$(string.L_Allowcommasasaddressseparator)" explainText="$(string.L_SetsthevalueforthecorrespondingUIoption)" presentation="$(presentation.L_Allowcommasasaddressseparator)" key="software\policies\microsoft\office\16.0\outlook\preferences">
+      <parentCategory ref="L_WhensendingamessageCategory" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <boolean id="L_Allowcommasasaddressseparator" valueName="allowcommasinrecip">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_Automaticnamechecking" class="User" displayName="$(string.L_Automaticnamechecking)" explainText="$(string.L_SetsthevalueforthecorrespondingUIoption)" presentation="$(presentation.L_Automaticnamechecking)" key="software\policies\microsoft\office\16.0\outlook\preferences">
+      <parentCategory ref="L_WhensendingamessageCategory" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <boolean id="L_Automaticnamechecking" valueName="autonamecheck">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_DeletemeetingrequestfromInboxwhenresponding" class="User" displayName="$(string.L_DeletemeetingrequestfromInboxwhenresponding)" explainText="$(string.L_SetsthevalueforthecorrespondingUIoption)" presentation="$(presentation.L_DeletemeetingrequestfromInboxwhenresponding)" key="software\policies\microsoft\office\16.0\outlook\preferences">
+      <parentCategory ref="L_WhensendingamessageCategory" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <boolean id="L_DeletemeetingrequestfromInboxwhenresponding" valueName="deletewhenrespond">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_SuggestnameswhilecompletingToCcandBccfields" class="User" displayName="$(string.L_SuggestnameswhilecompletingToCcandBccfields)" explainText="$(string.L_SetsthevalueforthecorrespondingUIoption)" presentation="$(presentation.L_SuggestnameswhilecompletingToCcandBccfields)" key="software\policies\microsoft\office\16.0\outlook\preferences">
+      <parentCategory ref="L_WhensendingamessageCategory" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <boolean id="L_SuggestnameswhilecompletingToCcandBccfields" key="software\policies\microsoft\office\16.0\outlook\preferences" valueName="showautosug">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_AddpropertiestoattachmentstoenableReplywithChanges" class="User" displayName="$(string.L_AddpropertiestoattachmentstoenableReplywithChanges)" explainText="$(string.L_SetsthevalueforthecorrespondingUIoption)" presentation="$(presentation.L_AddpropertiestoattachmentstoenableReplywithChanges)" key="software\policies\microsoft\office\16.0\outlook\preferences">
+      <parentCategory ref="L_WhensendingamessageCategory" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
         <boolean id="L_AddpropertiestoattachmentstoenableReplywithChanges" key="software\policies\microsoft\office\16.0\outlook\options\mail" valueName="adhocreviewbehavior">
           <trueValue>
             <decimal value="0" />
