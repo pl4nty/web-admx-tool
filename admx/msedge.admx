@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 143.0.3638.1-->
+  <!--microsoft_edge version: 143.0.3650.3-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -228,6 +228,9 @@
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.KioskMode_group)" name="KioskMode">
+      <parentCategory ref="microsoft_edge"/>
+    </category>
+    <category displayName="$(string.LocalNetworkAccessSettings_group)" name="LocalNetworkAccessSettings">
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.Manageability_group)" name="Manageability">
@@ -1874,6 +1877,16 @@
     <policy class="Both" displayName="$(string.KioskSwipeGesturesEnabled)" explainText="$(string.KioskSwipeGesturesEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="KioskSwipeGesturesEnabled" presentation="$(presentation.KioskSwipeGesturesEnabled)" valueName="KioskSwipeGesturesEnabled">
       <parentCategory ref="KioskMode"/>
       <supportedOn ref="SUPPORTED_WIN7_V101"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsTemporaryOptOut)" explainText="$(string.LocalNetworkAccessRestrictionsTemporaryOptOut_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessRestrictionsTemporaryOptOut" presentation="$(presentation.LocalNetworkAccessRestrictionsTemporaryOptOut)" valueName="LocalNetworkAccessRestrictionsTemporaryOptOut">
+      <parentCategory ref="LocalNetworkAccessSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7_V143"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -7793,6 +7806,16 @@
           </item>
         </enum>
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.ShareBrowsingHistoryWithCopilotSearchAllowed)" explainText="$(string.ShareBrowsingHistoryWithCopilotSearchAllowed_Explain)" key="Software\Policies\Microsoft\Edge" name="ShareBrowsingHistoryWithCopilotSearchAllowed" presentation="$(presentation.ShareBrowsingHistoryWithCopilotSearchAllowed)" valueName="ShareBrowsingHistoryWithCopilotSearchAllowed">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V143"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.SharedArrayBufferUnrestrictedAccessAllowed)" explainText="$(string.SharedArrayBufferUnrestrictedAccessAllowed_Explain)" key="Software\Policies\Microsoft\Edge" name="SharedArrayBufferUnrestrictedAccessAllowed" presentation="$(presentation.SharedArrayBufferUnrestrictedAccessAllowed)" valueName="SharedArrayBufferUnrestrictedAccessAllowed">
       <parentCategory ref="microsoft_edge"/>
