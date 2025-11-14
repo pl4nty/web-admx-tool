@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<policyDefinitions revision="7.4" schemaVersion="1.0">
+<policyDefinitions revision="7.5" schemaVersion="1.0">
   <policyNamespaces>
     <target prefix="firefox" namespace="Mozilla.Policies.Firefox"/>
     <using prefix="Mozilla" namespace="Mozilla.Policies"/>
   </policyNamespaces>
-  <resources minRequiredRevision="7.4"/>
+  <resources minRequiredRevision="7.5"/>
   <supportedOn>
     <definitions>
       <definition name="UNSUPPORTED" displayName="$(string.UNSUPPORTED)"/>
@@ -83,6 +83,7 @@
       <definition name="SUPPORTED_FF142" displayName="$(string.SUPPORTED_FF142)"/>
       <definition name="SUPPORTED_FF144" displayName="$(string.SUPPORTED_FF144)"/>
       <definition name="SUPPORTED_FF144_ONLY" displayName="$(string.SUPPORTED_FF144_ONLY)"/>
+      <definition name="SUPPORTED_FF145_ONLY" displayName="$(string.SUPPORTED_FF145_ONLY)"/>
     </definitions>
   </supportedOn>
   <categories>
@@ -3723,6 +3724,26 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy name="I_TrackingProtection_BaselineExceptions" class="Both" displayName="$(string.TrackingProtection_BaselineExceptions)" explainText="$(string.TrackingProtection_BaselineExceptions_Explain)" key="Software\Policies\Mozilla\Firefox\EnableTrackingProtection" valueName="BaselineExceptions">
+      <parentCategory ref="TrackingProtection"/>
+      <supportedOn ref="SUPPORTED_FF144_ONLY"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="J_TrackingProtection_ConvenienceExceptions" class="Both" displayName="$(string.TrackingProtection_ConvenienceExceptions)" explainText="$(string.TrackingProtection_ConvenienceExceptions_Explain)" key="Software\Policies\Mozilla\Firefox\EnableTrackingProtection" valueName="ConvenienceExceptions">
+      <parentCategory ref="TrackingProtection"/>
+      <supportedOn ref="SUPPORTED_FF144_ONLY"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy name="UserMessaging_WhatsNew" class="Both" displayName="$(string.UserMessaging_WhatsNew)" explainText="$(string.UserMessaging_WhatsNew_Explain)" key="Software\Policies\Mozilla\Firefox\UserMessaging" valueName="WhatsNew">
       <parentCategory ref="UserMessaging"/>
       <supportedOn ref="SUPPORTED_FF75_ONLY"/>
@@ -4704,6 +4725,16 @@
     <policy name="VisualSearchEnabled" class="Both" displayName="$(string.VisualSearchEnabled)" explainText="$(string.VisualSearchEnabled_Explain)" key="Software\Policies\Mozilla\Firefox" valueName="VisualSearchEnabled">
       <parentCategory ref="firefox"/>
       <supportedOn ref="SUPPORTED_FF144_ONLY"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="GenerativeAI_Enabled" class="Both" displayName="$(string.GenerativeAI_Enabled)" explainText="$(string.GenerativeAI_Enabled_Explain)" key="Software\Policies\Mozilla\Firefox\GenerativeAI" valueName="Enabled">
+      <parentCategory ref="GenerativeAI"/>
+      <supportedOn ref="SUPPORTED_FF144"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
