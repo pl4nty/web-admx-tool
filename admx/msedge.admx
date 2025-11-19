@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 144.0.3664.1-->
+  <!--microsoft_edge version: 144.0.3677.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -228,9 +228,6 @@
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.KioskMode_group)" name="KioskMode">
-      <parentCategory ref="microsoft_edge"/>
-    </category>
-    <category displayName="$(string.LocalNetworkAccessSettings_group)" name="LocalNetworkAccessSettings">
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.Manageability_group)" name="Manageability">
@@ -1884,16 +1881,6 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
-    <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsTemporaryOptOut)" explainText="$(string.LocalNetworkAccessRestrictionsTemporaryOptOut_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessRestrictionsTemporaryOptOut" presentation="$(presentation.LocalNetworkAccessRestrictionsTemporaryOptOut)" valueName="LocalNetworkAccessRestrictionsTemporaryOptOut">
-      <parentCategory ref="LocalNetworkAccessSettings"/>
-      <supportedOn ref="SUPPORTED_WIN7_V143"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
     <policy class="Both" displayName="$(string.EdgeManagementPolicyOverridesPlatformPolicy)" explainText="$(string.EdgeManagementPolicyOverridesPlatformPolicy_Explain)" key="Software\Policies\Microsoft\Edge" name="EdgeManagementPolicyOverridesPlatformPolicy" presentation="$(presentation.EdgeManagementPolicyOverridesPlatformPolicy)" valueName="EdgeManagementPolicyOverridesPlatformPolicy">
       <parentCategory ref="Manageability"/>
       <supportedOn ref="SUPPORTED_WIN7_V119"/>
@@ -2052,6 +2039,16 @@
     <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsEnabled)" explainText="$(string.LocalNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessRestrictionsEnabled" presentation="$(presentation.LocalNetworkAccessRestrictionsEnabled)" valueName="LocalNetworkAccessRestrictionsEnabled">
       <parentCategory ref="Network"/>
       <supportedOn ref="SUPPORTED_WIN7_V138"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsTemporaryOptOut)" explainText="$(string.LocalNetworkAccessRestrictionsTemporaryOptOut_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessRestrictionsTemporaryOptOut" presentation="$(presentation.LocalNetworkAccessRestrictionsTemporaryOptOut)" valueName="LocalNetworkAccessRestrictionsTemporaryOptOut">
+      <parentCategory ref="Network"/>
+      <supportedOn ref="SUPPORTED_WIN7_V143"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
