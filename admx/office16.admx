@@ -2437,6 +2437,13 @@
         <decimal id="L_AgeOutPolicyDecimal" valueName="ageoutpolicy" minValue="1" maxValue="14" />
       </elements>
     </policy>
+    <policy name="L_AgeOutPolicyIncludingFilesPendingUpload" class="User" displayName="$(string.L_AgeOutPolicyIncludingFilesPendingUpload)" explainText="$(string.L_AgeOutPolicyIncludingFilesPendingUploadExplain)" presentation="$(presentation.L_AgeOutPolicyIncludingFilesPendingUpload)" key="software\policies\microsoft\office\16.0\common\fileio">
+      <parentCategory ref="L_miscellaneous437" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_AgeOutPolicyIncludingFilesPendingUploadDecimal" valueName="ageoutpolicyincludingfilespendingupload" minValue="0" maxValue="365" />
+      </elements>
+    </policy>
     <policy name="L_AgeOutPolicyLocalVersioning" class="User" displayName="$(string.L_AgeOutPolicyLocalVersioning)" explainText="$(string.L_AgeOutPolicyLocalVersioningExplain)" presentation="$(presentation.L_AgeOutPolicyLocalVersioning)" key="software\policies\microsoft\office\16.0\common\fileio">
       <parentCategory ref="L_miscellaneous437" />
       <supportedOn ref="windows:SUPPORTED_Windows7" />
@@ -18456,7 +18463,79 @@
               <decimal value="2" />
             </value>
           </item>
+          <item displayName="$(string.L_EnableForFilesExcludingAdminTrustedDocuments)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
         </enum>
+      </elements>
+    </policy>
+    <policy name="L_VBADigSigChainTrustedPublishers" class="User" displayName="$(string.L_VBADigSigChainTrustedPublishers)" explainText="$(string.L_VBADigSigChainTrustedPublishersExplain)" key="software\policies\microsoft\office\16.0\common\security" valueName="vbadigsigchaintrustedpublishers">
+      <parentCategory ref="L_SecuritySettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_RequireAlwaysOnMacroSig" class="User" displayName="$(string.L_RequireAlwaysOnMacroSig)" explainText="$(string.L_RequireAlwaysOnMacroSigExplain)" key="software\policies\microsoft\office\16.0\common\security" valueName="requirealwaysonmacrosig">
+      <parentCategory ref="L_SecuritySettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_BlockMOTWMacroInTrustedOrSigned" class="User" displayName="$(string.L_BlockMOTWMacroInTrustedOrSigned)" explainText="$(string.L_BlockMOTWMacroInTrustedOrSignedExplain)" key="software\policies\microsoft\office\16.0\common\security" valueName="blockmotwmacrointrustedorsigned">
+      <parentCategory ref="L_SecuritySettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_EnableMacroTrustLevel" class="User" displayName="$(string.L_EnableMacroTrustLevel)" explainText="$(string.L_EnableMacroTrustLevelExplain)" key="software\policies\microsoft\office\16.0\common\security" valueName="enablemacrotrustlevel">
+      <parentCategory ref="L_SecuritySettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_BlockVBAMacroTrustedDocument" class="User" displayName="$(string.L_BlockVBAMacroTrustedDocument)" explainText="$(string.L_BlockVBAMacroTrustedDocumentExplain)" key="software\policies\microsoft\office\16.0\common\security" valueName="blockvbamacrotrusteddocument">
+      <parentCategory ref="L_SecuritySettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_RestrictCUCOMAddin" class="User" displayName="$(string.L_RestrictCUCOMAddin)" explainText="$(string.L_RestrictCUCOMAddinExplain)" key="software\policies\microsoft\office\16.0\common\security" valueName="restrictcucomaddin">
+      <parentCategory ref="L_SecuritySettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_AllowedCOMAddins" class="User" displayName="$(string.L_AllowedCOMAddins)" explainText="$(string.L_AllowedCOMAddinsExplain)" presentation="$(presentation.L_AllowedCOMAddins)" key="software\policies\microsoft\office\16.0\common\security\allowedcomaddins">
+      <parentCategory ref="L_SecuritySettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <elements>
+        <list id="L_AllowedCOMAddinsList" explicitValue="true" />
       </elements>
     </policy>
     <policy name="L_OfficeReadinessToolkitEnableUsageAgent" class="User" displayName="$(string.L_OfficeReadinessToolkitEnableUsageAgent)" explainText="$(string.L_OfficeReadinessToolkitEnableUsageAgentExplain)" key="software\policies\microsoft\office\readinesstoolkit" valueName="enableusageagent">

@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 144.0.3677.0--><displayName/><description/><resources><stringTable><string id="ApplicationGuard_group">Application Guard settings</string><string id="ApplicationGuardContainerProxy">Application Guard Container Proxy</string><string id="ApplicationGuardContainerProxy_Explain">Configures the proxy settings for Microsoft Edge Application Guard.
+<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 144.0.3705.0--><displayName/><description/><resources><stringTable><string id="ApplicationGuard_group">Application Guard settings</string><string id="ApplicationGuardContainerProxy">Application Guard Container Proxy</string><string id="ApplicationGuardContainerProxy_Explain">Configures the proxy settings for Microsoft Edge Application Guard.
 If you enable this policy, Microsoft Edge Application Guard ignores other sources of proxy configurations.
 
 If you don't configure this policy, Microsoft Edge Application Guard uses the proxy configuration of the host.
@@ -1758,11 +1758,11 @@ The policy can be combined with 'EdgeManagementPolicyOverridesPlatformPolicy' (M
 
 If you enable or don't configure this policy, Microsoft Edge will attempt to connect to the Microsoft Edge management service to download and apply policy assigned to the Azure AD account of the user.
 
-If you disable this policy, Microsoft Edge will not attempt to connect to the Microsoft Edge management service.</string><string id="EdgeManagementEnrollmentToken">Microsoft Edge management enrollment token</string><string id="EdgeManagementEnrollmentToken_Explain">Microsoft Edge management service in Microsoft 365 Admin Center lets you set policy and manage users through a Microsoft Edge focused cloud-based management experience. This policy lets you specify an enrollment token that's used to register with Microsoft Edge management service and deploy the associated policies. The user must be signed into Microsoft Edge with a valid work or school account otherwise Microsoft Edge will not download the policy.
+If you disable this policy, Microsoft Edge will not attempt to connect to the Microsoft Edge management service.</string><string id="EdgeManagementEnrollmentToken">Microsoft Edge management enrollment token</string><string id="EdgeManagementEnrollmentToken_Explain">Microsoft Edge management service in Microsoft 365 Admin Center lets you set policy and manage users through a Microsoft Edge focused cloud-based management experience. This policy lets you specify an enrollment token that's used to register with Microsoft Edge management service and deploy the associated policies. The user must be signed into Microsoft Edge with a valid work or school account otherwise Microsoft Edge doesn't download the policy.
 
-If you enable this policy, Microsoft Edge will attempt to use the specified enrollment token to register with the Microsoft Edge management service and download the published policy.
+If you enable this policy, Microsoft Edge attempts to use the specified enrollment token to register with the Microsoft Edge management service and download the published policy.
 
-If you disable or don't configure this policy, Microsoft Edge will not attempt to connect to the Microsoft Edge management service.
+If you disable or don't configure this policy, Microsoft Edge doesn't attempt to connect to the Microsoft Edge management service.
 
 This policy can only be set as a platform policy.
 
@@ -1869,7 +1869,9 @@ Example value:
 
 http://www.example.com:8080
 [*.]example.edu
-*</string><string id="LocalNetworkAccessBlockedForUrlsDesc">Block sites from making requests to local network endpoints.</string><string id="LocalNetworkAccessRestrictionsEnabled">Specifies whether to block requests from public websites to devices on a user's local network.</string><string id="LocalNetworkAccessRestrictionsEnabled_Explain">Local Network Access restrictions prevent public websites from making
+*</string><string id="LocalNetworkAccessBlockedForUrlsDesc">Block sites from making requests to local network endpoints.</string><string id="LocalNetworkAccessRestrictionsEnabled">Specifies whether to block requests from public websites to devices on a user's local network. (deprecated)</string><string id="LocalNetworkAccessRestrictionsEnabled_Explain">DEPRECATED: This policy is deprecated. It is currently supported but will become obsolete in a future release.
+
+Local Network Access restrictions prevent public websites from making
 requests to devices on a user's local network without explicit user permission.
 
 If you enable this policy, Microsoft Edge blocks
@@ -1888,7 +1890,9 @@ Starting in version 140, Microsoft Edge introduces support for policies that man
 
 You can configure exceptions to allow specific URLs to bypass Local Network Access restrictions.
 
-You can also block specific URLs from making Local Network Access requests.</string><string id="LocalNetworkAccessRestrictionsTemporaryOptOut">Specifies whether to opt out of Local Network Access restrictions</string><string id="LocalNetworkAccessRestrictionsTemporaryOptOut_Explain">This policy allows for opting out of restrictions on requests to local network endpoints.
+You can also block specific URLs from making Local Network Access requests.
+
+Starting from Microsoft Edge version 144, this policy is deprecated because Local Network Access restrictions is enabled by default. The policy will be removed in a future release.</string><string id="LocalNetworkAccessRestrictionsTemporaryOptOut">Specifies whether to opt out of Local Network Access restrictions</string><string id="LocalNetworkAccessRestrictionsTemporaryOptOut_Explain">This policy allows for opting out of restrictions on requests to local network endpoints.
 
 If you enable this policy, Local Network Access requests will only display warnings in Edge DevTools when Local Network Access checks fail.
 
@@ -4618,11 +4622,11 @@ This policy is available only on Windows instances that are joined to a Microsof
 
 When enabled, Microsoft Edge uses SwiftShader to support WebGL on systems without GPU acceleration, such as headless environments or virtual machines.
 
-Starting in Microsoft Edge version 139, SwiftShader has been deprecated due to security concerns. As a result, WebGL context creation fails in scenarios where SwiftShader would have been used. Enabling this policy allows organizations to temporarily defer the deprecation and continue using SwiftShader.
+Starting in Microsoft Edge version 144, SwiftShader has been deprecated due to security concerns. As a result, WebGL context creation fails in scenarios where SwiftShader would have been used. Enabling this policy allows organizations to temporarily defer the deprecation and continue using SwiftShader.
 
 If you disable or don't configure this policy, WebGL context creation may fail on systems without hardware acceleration. This could cause web content relying on WebGL to function incorrectly if it doesn't handle context creation failures.
 
-Note: This is a temporary policy and will be removed in a future release.</string><string id="EncryptedClientHelloEnabled">TLS Encrypted ClientHello Enabled</string><string id="EncryptedClientHelloEnabled_Explain">Encrypted ClientHello (ECH) is an extension to TLS that encrypts the sensitive fields of ClientHello to improve privacy.
+Note: This policy is temporary and scheduled for removal in a future release. Microsoft does not guarantee the security of environments where this policy is enabled.</string><string id="EncryptedClientHelloEnabled">TLS Encrypted ClientHello Enabled</string><string id="EncryptedClientHelloEnabled_Explain">Encrypted ClientHello (ECH) is an extension to TLS that encrypts the sensitive fields of ClientHello to improve privacy.
 
 If ECH is enabled, Microsoft Edge might or might not use ECH depending on server support, the availability of the HTTPS DNS record, or the rollout status.
 
@@ -6276,11 +6280,13 @@ If you enable this policy or don't configure it, the QUIC protocol is allowed.
 
 If you disable this policy, the QUIC protocol is blocked.
 
-QUIC is a transport layer network protocol that can improve performance of web applications that currently use TCP.</string><string id="QuickSearchShowMiniMenu">Enables Microsoft Edge mini menu</string><string id="QuickSearchShowMiniMenu_Explain">Enables Microsoft Edge mini menu on websites and PDFs. The mini menu is triggered on text selection and has basic actions like copy and smart actions like definitions.
+QUIC is a transport layer network protocol that can improve performance of web applications that currently use TCP.</string><string id="QuickSearchShowMiniMenu">Enables Microsoft Edge mini menu</string><string id="QuickSearchShowMiniMenu_Explain">Enables the Microsoft Edge mini menu on websites and PDFs. The mini menu appears when users select text and provides basic actions like Copy and smart actions such as Definitions.
 
-If you enable or don't config this policy, selecting text on websites and PDFs will show the Microsoft Edge mini menu.
+If you enable or don't configure this policy, selecting text on websites or PDFs will show the mini menu.
 
-If you disable this policy, the Microsoft Edge mini menu will not be shown when text on websites and PDFs is selected.</string><string id="QuickViewOfficeFilesEnabled">Manage QuickView Office files capability in Microsoft Edge</string><string id="QuickViewOfficeFilesEnabled_Explain">Allows you to set whether users can view publicly accessible Office files on the web that aren't on OneDrive or SharePoint. (For example: Word documents, PowerPoint presentations, and Excel spreadsheets)
+If you disable this policy, the mini menu won't appear when users select text on websites or PDFs.
+
+Note: Starting in Microsoft Edge for Mac version 143, this policy is obsolete because the mini menu feature has been removed on Mac.</string><string id="QuickViewOfficeFilesEnabled">Manage QuickView Office files capability in Microsoft Edge</string><string id="QuickViewOfficeFilesEnabled_Explain">Allows you to set whether users can view publicly accessible Office files on the web that aren't on OneDrive or SharePoint. (For example: Word documents, PowerPoint presentations, and Excel spreadsheets)
 
 If you enable or don't configure this policy, these files can be viewed in Microsoft Edge using Office Viewer instead of downloading the files.
 

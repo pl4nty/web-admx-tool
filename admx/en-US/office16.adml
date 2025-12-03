@@ -4,7 +4,7 @@
   <description>Microsoft Office 2016</description>
   <resources>
     <stringTable>
-      <string id="L_Version">16.0.5527.1000</string>
+      <string id="L_Version">16.0.5532.1000</string>
       <string id="L_RelyonCSSforfontformatting">Rely on CSS for font formatting</string>
       <string id="L_RelyonCSSforfontformattingExplain">This policy setting allows you to rely on CSS for font formatting.
 
@@ -4057,7 +4057,19 @@ If you disable or do not configure this policy setting, no maximum limit will be
       <string id="L_visioexe89">visio.exe</string>
       <string id="L_pptviewexe186">pptview.exe</string>
       <string id="L_AgeOutPolicy">Age out documents older than n days</string>
-      <string id="L_AgeOutPolicyExplain">This policy controls when locally cached Office documents are aged out of the Office Document Cache</string>
+      <string id="L_AgeOutPolicyExplain">This policy controls when locally cached Office documents are aged out of the Office Document Cache. This does not include files that may have pending uploads.</string>
+      <string id="L_AgeOutPolicyIncludingFilesPendingUpload">Age out documents older than n days Including documents with pending uploads</string>
+      <string id="L_AgeOutPolicyIncludingFilesPendingUploadExplain">
+          This policy controls when locally cached Office documents are aged out of the Office Document Cache including if the file may have pending uploads. This acts as a maximum possible age (in days) for any file to remain in the Office Document Cache.
+
+          If you enable this policy setting, files older than the policy "Age out documents older than n days" as well as this setting will get cleaned up regardless of file pending upload status.
+
+          If you disable this policy setting or if you do not configure this policy setting, Office will clean out only files that do not have pending changes per the policy "Age out documents older than n days". Configuring this policy with a value of 0 is also considered disabling the policy.
+
+          For more information https://support.microsoft.com/en-us/topic/managing-office-document-cache-size-ea64af72-b597-408e-8ecf-fd55daa02476
+
+          Note: This policy setting only applies to Office builds 19328.20000 and newer
+      </string>
       <string id="L_AgeOutPolicyLocalVersioning">Number of days to keep local document versions in the local cache</string>
       <string id="L_AgeOutPolicyLocalVersioningExplain">This policy controls how long local document versions are kept in the local cache. The default setting is 30 days and applies to Word, Excel, and PowerPoint. 
 
@@ -4099,7 +4111,7 @@ If you enable or do not configure this policy setting, the More services link do
 
 If you disable this policy setting, the More Services link provides an option for users to add a new presentation service. In addition, the list of services previously added by users appears in the list of services.</string>
       <string id="L_DisableOfficeUserRoamingSettings">Disable Roaming Office User Settings</string>
-      <string id="L_DisableOfficeUserRoamingSettingsExplain">Microsoft Office includes the ability to roam settings for specific Office features amongst devices by storing this data in the cloud. This data includes user activity such as the list of most recently used documents as well as user preferences such as the Office theme. This policy setting controls whether this data is allowed to be stored in the cloud. 
+      <string id="L_DisableOfficeUserRoamingSettingsExplain">Microsoft Office includes the ability to roam settings for specific Office features amongst devices by storing this data in the cloud. This data includes user preferences such as the Office theme. This policy setting controls whether this data is allowed to be stored in the cloud. 
 
 If you enable this policy setting, roaming settings are only stored locally and not synchronized to the Microsoft Office roaming settings web service. 
 
@@ -4800,6 +4812,10 @@ If you enable this policy setting, you can choose from the following options to 
 
 - Enable for all files: If you choose this option, then low trust files are not excluded from runtime scanning.
 
+- Enable for files, excluding documents marked as trusted by an admin: If you choose this option, runtime scanning will be enabled for all files for which macros are enabled, except for the following files:
+      - Files opened from a Trusted Location
+      - Files that contain VBA that is digitally signed by a Trusted Publisher
+
 The VBA and XLM runtimes report to an antivirus system certain high-risk code behaviors the macro is about to execute. This allows the antivirus system to indicate whether or not the macro behavior is malicious. If the behavior is determined to be malicious, the Office application closes the session and the antivirus system can quarantine the file. If the behavior is non-malicious, the macro execution proceeds.
 
 Note: When macro runtime scanning is enabled, the runtime performance of affected VBA projects and XLM sheets may be reduced.
@@ -4812,6 +4828,80 @@ Note: This policy setting only applies to subscription versions of Office, such 
       <string id="L_DisableForAllDocuments">Disable for all documents</string>
       <string id="L_EnableForLowTrustDocumentsOnly">Enable for low trust documents</string>
       <string id="L_EnableForAllDocuments">Enable for all documents</string>
+      <string id="L_EnableForFilesExcludingAdminTrustedDocuments">Scan excluding documents marked as trusted by an admin</string>
+      <string id="L_VBADigSigChainTrustedPublishers">Allow root or intermediate certificates as VBA trusted publishers</string>
+      <string id="L_VBADigSigChainTrustedPublishersExplain">This policy setting controls whether root and intermediate certificates can be added as trusted publishers for VBA macro validation when the VBA Macro Notification Settings policy is set to "Disable all except digitally signed macros".
+
+If you enable this policy setting, administrators can add root or intermediate certificates to the trusted publishers store. VBA macros signed by any certificate that chains to these trusted root or intermediate certificates will be considered as signed by a trusted publisher and allowed to run.
+
+If you disable or don't configure this policy setting, only end (leaf) certificates can be added as trusted publishers.
+
+Note: This policy setting only takes effect when the VBA Macro Notification Settings policy is set to "Disable all except digitally signed macros".</string>
+      <string id="L_RequireAlwaysOnMacroSig">Require trusted publisher signatures for macros that are always loaded</string>
+      <string id="L_RequireAlwaysOnMacroSigExplain">This policy setting controls signature requirements for macros that are automatically loaded when Office applications start.
+
+Macros that are always loaded include VBA add-ins and templates that load automatically: Excel add-ins (xla/xlam), PowerPoint add-ins (ppa/ppam), Access add-ins (accda/mda), and Word templates (dot/dotm).
+
+If you enable this policy setting:
+- Unsigned macros that are always loaded are silently disabled and don't load.
+- Signed but untrusted macros that are always loaded display a red Message Bar with no option for users to enable them for the current session.
+- Macros signed by a trusted publisher are allowed to always load.
+
+If you disable or don't configure this policy setting, macros that are always on can load without requiring trusted publisher signatures.</string>
+      <string id="L_BlockVBAMacroTrustedDocument">Turn off Trusted Documents for VBA macros</string>
+      <string id="L_BlockVBAMacroTrustedDocumentExplain">This policy setting allows you to turn off the Trusted Documents feature for documents containing VBA macros.
+
+If you enable this policy setting, users will always see security notifications for VBA macros in documents. When users click "Enable Content" for VBA macros, Office will not create a trust record for the document, ensuring that the user is prompted every time they open the document.
+
+If you disable or don't configure this policy setting, the Trusted Documents feature allows users to always allow VBA macros in a document so that the user is not prompted the next time they open that document. Trusted documents are exempt from security notifications.
+
+Note: Enabling this policy setting does not clear existing trusted documents that were previously trusted.</string>
+      <string id="L_BlockMOTWMacroInTrustedOrSigned">Block all internet macros (ignore trusted locations or publishers)</string>
+      <string id="L_BlockMOTWMacroInTrustedOrSignedExplain">This policy setting removes the trusted location and trusted publisher exceptions for files downloaded from the internet with Mark of the Web (MOTW).
+
+By default, Office blocks macros from the internet but allows exceptions for files that are either in trusted locations or signed by trusted publishers.
+
+If you enable this policy setting, all macros in files downloaded from the internet will be blocked, including those in trusted locations or signed by trusted publishers. This provides maximum protection against internet-based macro threats.
+
+If you disable or don't configure this policy setting, the default behavior applies where macros from the internet are blocked except when the file is in a trusted location or signed by a trusted publisher.</string>
+      <string id="L_EnableMacroTrustLevel">Enable macro trust levels</string>
+      <string id="L_EnableMacroTrustLevelExplain">This policy setting controls whether macro trust levels are enabled, which classifies VBA macros into four security levels based on file location and digital signature status.
+
+If you enable this policy setting, VBA macros will be classified into the following trust levels with corresponding user experiences:
+
+- Lowest (Most Trusted): Files signed by a trusted publisher, saved to a trusted location, or unsaved files.
+      - User Experience: No Message Bar displayed, macros load normally.
+
+- Lower: Files opened from a connected personal or business OneDrive account, connected SharePoint location, or local OneDrive folders.
+      - User Experience: Yellow Message Bar with Enable Content option.
+
+- Moderate: Files opened from intranet locations, or signed with an extended validation (EV) certificate but not by a trusted publisher.
+      - User Experience: Yellow Message Bar with a Learn More option. This encourages security awareness by requiring additional steps before enabling macros.
+
+- Highest (Least Trusted): All other files.
+      - User Experience: Red Message Bar with macros blocked.
+
+When enabled, unsaved files containing macros will display a warning dialog when users attempt to save the file to local disk, informing them that saving locally may block macro execution when the file is reopened.
+
+If you disable or don't configure this policy setting, macro trust levels are not enabled and the standard macro security behavior applies.</string>
+      <string id="L_RestrictCUCOMAddin">Block loading of COM/VSTO add-ins registered in HKCU</string>
+      <string id="L_RestrictCUCOMAddinExplain">This policy setting controls whether COM/VSTO add-ins registered only in HKEY_CURRENT_USER (HKCU) are blocked from loading.
+
+Standard users can install add-ins through ClickOnce deployment or the Office Add-ins settings, which typically register add-ins in HKCU rather than HKEY_LOCAL_MACHINE (HKLM).
+
+If you enable this policy setting, all COM/VSTO add-ins registered only in HKCU will be blocked from loading, preventing users from running add-ins they have installed without administrator privileges.
+
+If you disable or don't configure this policy setting, COM/VSTO add-ins registered in HKCU are allowed to load normally.
+
+Note: Add-ins registered in HKLM (typically installed by administrators) are not affected by this policy setting.</string>
+      <string id="L_AllowedCOMAddins">List of allowed COM/VSTO add-ins registered in HKCU</string>
+      <string id="L_AllowedCOMAddinsExplain">This policy setting allows you to specify COM/VSTO add-ins registered in HKEY_CURRENT_USER (HKCU) that should be allowed to load, overriding the "Block loading of COM/VSTO add-ins registered in HKCU" policy.
+
+Some legitimate add-ins may be installed in HKCU even when deployed by administrators, due to how the independent software vendor (ISV) designed their installer. This policy provides an administrative override to allow specific add-ins to load despite being registered in HKCU.
+
+If you enable this policy setting, you can specify a list of COM/VSTO add-ins that are allowed to load from HKCU. Enter each add-in using its ProgID as the name.
+
+If you disable or don't configure this policy setting, the standard HKCU blocking behavior applies when that policy is enabled.</string>
       <string id="L_ReadinessToolkit">Readiness Toolkit</string>
       <string id="L_OfficeReadinessToolkitEnableUsageAgent">Allow add-in usage data to be generated and collected by the Readiness Toolkit</string>
       <string id="L_OfficeReadinessToolkitEnableUsageAgentExplain">This policy setting allows you to configure whether the Readiness Toolkit for Office generates and collects add-in usage data. The data generated and collected includes when the add-in is loaded and used, and if the add-in crashes. This information is available in reports provided by the Readiness Toolkit.
@@ -9261,6 +9351,10 @@ Note: This policy setting only applies to subscription versions of Office, such 
         <dropdownList refId="L_MacroRuntimeScanScopeEnum" noSort="true" defaultItem="0">
         </dropdownList>
       </presentation>
+      <presentation id="L_AllowedCOMAddins">
+        <listBox refId="L_AllowedCOMAddinsList">Allowed COM/VSTO Add-ins:</listBox>
+        <text>Enter the ProgID of each COM/VSTO add-in that should be allowed. The value can be any string.</text>
+      </presentation>
       <presentation id="L_OfficeReadinessToolkitCustomTags">
         <textBox refId="L_OfficeReadinessToolkitCustomTagsTag1">
           <label>Label 1:</label>
@@ -9305,6 +9399,9 @@ Important: You should only include hosts that you know and trust.​
       </presentation>
       <presentation id="L_AgeOutPolicyLocalVersioning">
         <decimalTextBox refId="L_AgeOutPolicyLocalVersioningDecimal">Number of days</decimalTextBox>
+      </presentation>
+      <presentation id="L_AgeOutPolicyIncludingFilesPendingUpload">
+        <decimalTextBox refId="L_AgeOutPolicyIncludingFilesPendingUploadDecimal">Number of days</decimalTextBox>
       </presentation>
       <presentation id="L_MaxImplicitCacheSize">
         <decimalTextBox refId="L_MaxImplicitCacheSizeDecimal">Percent of disk space</decimalTextBox>

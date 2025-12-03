@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--chrome version: 142.0.7444.176-->
+  <!--chrome version: 143.0.7499.41-->
   <policyNamespaces>
     <target namespace="Google.Policies.Chrome" prefix="chrome"/>
     <using namespace="Google.Policies" prefix="Google"/>
@@ -1704,6 +1704,24 @@
           <item displayName="$(string.DevToolsGenAiSettings_Disabled)">
             <value>
               <decimal value="2"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.GeminiActOnWebSettings)" explainText="$(string.GeminiActOnWebSettings_Explain)" key="Software\Policies\Google\Chrome" name="GeminiActOnWebSettings" presentation="$(presentation.GeminiActOnWebSettings)">
+      <parentCategory ref="GenerativeAI"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="GeminiActOnWebSettings" valueName="GeminiActOnWebSettings">
+          <item displayName="$(string.GeminiActOnWebSettings_Enabled)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.GeminiActOnWebSettings_Disabled)">
+            <value>
+              <decimal value="1"/>
             </value>
           </item>
         </enum>
