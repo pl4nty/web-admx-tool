@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--brave version: 142.1.84.141-->
+  <!--brave version: 143.1.85.111-->
   <policyNamespaces>
     <target namespace="BraveSoftware.Policies.Brave" prefix="brave" />
   </policyNamespaces>
@@ -234,6 +234,26 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.BraveDeAmpEnabled)" explainText="$(string.BraveDeAmpEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="BraveDeAmpEnabled" presentation="$(presentation.BraveDeAmpEnabled)" valueName="BraveDeAmpEnabled">
+      <parentCategory ref="BraveSoftware" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.BraveDebouncingEnabled)" explainText="$(string.BraveDebouncingEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="BraveDebouncingEnabled" presentation="$(presentation.BraveDebouncingEnabled)" valueName="BraveDebouncingEnabled">
+      <parentCategory ref="BraveSoftware" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.BraveNewsDisabled)" explainText="$(string.BraveNewsDisabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="BraveNewsDisabled" presentation="$(presentation.BraveNewsDisabled)" valueName="BraveNewsDisabled">
       <parentCategory ref="BraveSoftware" />
       <supportedOn ref="SUPPORTED_WIN7" />
@@ -255,6 +275,16 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.BravePlaylistEnabled)" explainText="$(string.BravePlaylistEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="BravePlaylistEnabled" presentation="$(presentation.BravePlaylistEnabled)" valueName="BravePlaylistEnabled">
+      <parentCategory ref="BraveSoftware" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.BraveReduceLanguageEnabled)" explainText="$(string.BraveReduceLanguageEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="BraveReduceLanguageEnabled" presentation="$(presentation.BraveReduceLanguageEnabled)" valueName="BraveReduceLanguageEnabled">
       <parentCategory ref="BraveSoftware" />
       <supportedOn ref="SUPPORTED_WIN7" />
       <enabledValue>
@@ -364,6 +394,24 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.DefaultBraveFingerprintingV2Setting)" explainText="$(string.DefaultBraveFingerprintingV2Setting_Explain)" key="Software\Policies\BraveSoftware\Brave" name="DefaultBraveFingerprintingV2Setting" presentation="$(presentation.DefaultBraveFingerprintingV2Setting)">
+      <parentCategory ref="BraveSoftware" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <enum id="DefaultBraveFingerprintingV2Setting" valueName="DefaultBraveFingerprintingV2Setting">
+          <item displayName="$(string.DefaultBraveFingerprintingV2Setting_DisableFingerprintingProtection)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.DefaultBraveFingerprintingV2Setting_EnableFingerprintingProtectionStandardMode)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.TorDisabled)" explainText="$(string.TorDisabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="TorDisabled" presentation="$(presentation.TorDisabled)" valueName="TorDisabled">
       <parentCategory ref="BraveSoftware" />
@@ -1868,6 +1916,24 @@
           <item displayName="$(string.DevToolsGenAiSettings_Disabled)">
             <value>
               <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.GeminiActOnWebSettings)" explainText="$(string.GeminiActOnWebSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="GeminiActOnWebSettings" presentation="$(presentation.GeminiActOnWebSettings)">
+      <parentCategory ref="GenerativeAI" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <enum id="GeminiActOnWebSettings" valueName="GeminiActOnWebSettings">
+          <item displayName="$(string.GeminiActOnWebSettings_Enabled)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.GeminiActOnWebSettings_Disabled)">
+            <value>
+              <decimal value="1" />
             </value>
           </item>
         </enum>
