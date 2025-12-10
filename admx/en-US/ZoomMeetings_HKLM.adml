@@ -2320,6 +2320,27 @@ If this policy is enabled, clients will be able to use the Office API to control
 If this policy is disabled, clients will be unable to use the Office API to control PowerPoint slides.
 
 If this policy is not set, the client will use the default setting.</string>
+      <string id="ExitPreference_Policy">Set preferences for client exit</string>
+      <string id="ExitPreference_Policy_Recommend">Set preferences for client exit (Recommendation Setting)</string>
+      <string id="ExitPreference_Part">Set preferences for client exit</string>
+      <string id="ExitPreference_Explain">This policy has a higher priority than CloseToSystemTray.
+      
+Default policy is 0.
+
+If this policy is set to 0, the client will minimize to the system tray when the main window is closed.
+
+If this policy is set to 1, the client will fully exit when the main window is closed.
+
+If this policy is not set, the client will use the default setting.</string>
+      <string id="DisableWindowsMeshUAC_Policy">Prevents the Mesh feature from initiating any User Account Control (UAC) prompts</string>
+      <string id="DisableWindowsMeshUAC_Policy_Recommend">Prevents the Mesh feature from initiating any User Account Control (UAC) prompts (Recommendation Setting)</string>
+      <string id="DisableWindowsMeshUAC_Explain">Default policy is disabled.
+
+If this policy is enabled, the client will not trigger any User Account Control (UAC) elevation for adding firewall rules required for the mesh feature.
+
+If this policy is disabled, the client may trigger a User Account Control (UAC) prompt.
+
+If this policy is not set, the client will use the default setting.</string>
       <string id="ADMXMigrator_UnresolvedString">ADMX Migrator encountered a string that is not present in the source ADM string table.</string>
       <string id="ADMXMigrator_NoSupportedOn">ADMX Migrator encountered a policy that does not have a supportedOn value.</string>
     </stringTable>
@@ -2467,6 +2488,9 @@ If this policy is not set, the client will use the default setting.</string>
         <textBox refId="WebviewProxy_Part">
           <label>Configure the webview proxy server</label>
         </textBox>
+      </presentation>
+      <presentation id="ExitPreference_Policy">
+        <decimalTextBox refId="ExitPreference_Part" defaultValue="0" spinStep="1">Set preferences for client exit</decimalTextBox>
       </presentation>
       <presentation id="AU2_EnableAutoUpdate_Policy" />
       <presentation id="AU2_SetUpdateChannel_Policy">
@@ -2737,6 +2761,7 @@ If this policy is not set, the client will use the default setting.</string>
       <presentation id="KeepMeetingOnTop_Policy" />
       <presentation id="DisableLocalASR_Policy" />
       <presentation id="OptimizeSlideControlWithOfficeAPI_Policy" />
+      <presentation id="DisableWindowsMeshUAC_Policy" />
       <presentation id="EnableClientAutoUpdate_Policy_Recommend" />
       <presentation id="DisableCreatingDesktopShortcut_Policy_Recommend" />
       <presentation id="AutoStartAfterReboot_Policy_Recommend" />
@@ -2879,6 +2904,9 @@ If this policy is not set, the client will use the default setting.</string>
         <textBox refId="WebviewProxy_Part">
           <label>Configure the webview proxy server</label>
         </textBox>
+      </presentation>
+      <presentation id="ExitPreference_Policy_Recommend">
+        <decimalTextBox refId="ExitPreference_Part" defaultValue="0" spinStep="1">Set preferences for client exit</decimalTextBox>
       </presentation>
       <presentation id="AU2_EnableAutoUpdate_Policy_Recommend" />
       <presentation id="AU2_SetUpdateChannel_Policy_Recommend">
@@ -3148,6 +3176,7 @@ If this policy is not set, the client will use the default setting.</string>
       <presentation id="KeepMeetingOnTop_Policy_Recommend" />
       <presentation id="DisableLocalASR_Policy_Recommend" />
       <presentation id="OptimizeSlideControlWithOfficeAPI_Policy_Recommend" />
+      <presentation id="DisableWindowsMeshUAC_Policy_Recommend" />
     </presentationTable>
   </resources>
 </policyDefinitionResources>

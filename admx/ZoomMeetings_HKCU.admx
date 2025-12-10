@@ -736,6 +736,13 @@
         <text id="WebviewProxy_Part" valueName="WebviewProxyServer" />
       </elements>
     </policy>
+    <policy name="ExitPreference_Policy" class="User" displayName="$(string.ExitPreference_Policy)" explainText="$(string.ExitPreference_Explain)" presentation="$(presentation.ExitPreference_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="ExitPreference_Part" valueName="ExitPreference" required="true" minValue="0" maxValue="1" />
+      </elements>
+    </policy>
     <policy name="AU2_EnableAutoUpdate_Policy" class="User" displayName="$(string.AU2_EnableAutoUpdate_Policy)" explainText="$(string.AU2_EnableAutoUpdate_Explain)" presentation="$(presentation.AU2_EnableAutoUpdate_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Updates" valueName="AU2_EnableAutoUpdate">
       <parentCategory ref="zoomupdates" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
@@ -2343,6 +2350,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="DisableWindowsMeshUAC_Policy" class="User" displayName="$(string.DisableWindowsMeshUAC_Policy)" explainText="$(string.DisableWindowsMeshUAC_Explain)" presentation="$(presentation.DisableWindowsMeshUAC_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Meetings" valueName="DisableWindowsMeshUAC">
+      <parentCategory ref="zoommeetings" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="EnableClientAutoUpdate_Policy_Recommend" class="User" displayName="$(string.EnableClientAutoUpdate_Policy_Recommend)" explainText="$(string.EnableClientAutoUpdate_Explain)" presentation="$(presentation.EnableClientAutoUpdate_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="EnableClientAutoUpdate">
       <parentCategory ref="zoomgeneral_recommend" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
@@ -3034,6 +3051,13 @@
       <supportedOn ref="SUPPORTED_WINXPSP2" />
       <elements>
         <text id="WebviewProxy_Part" valueName="WebviewProxyServer" />
+      </elements>
+    </policy>
+    <policy name="ExitPreference_Policy_Recommend" class="User" displayName="$(string.ExitPreference_Policy_Recommend)" explainText="$(string.ExitPreference_Explain)" presentation="$(presentation.ExitPreference_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="ExitPreference_Part" valueName="ExitPreference" required="true" minValue="0" maxValue="1" />
       </elements>
     </policy>
     <policy name="AU2_EnableAutoUpdate_Policy_Recommend" class="User" displayName="$(string.AU2_EnableAutoUpdate_Policy_Recommend)" explainText="$(string.AU2_EnableAutoUpdate_Explain)" presentation="$(presentation.AU2_EnableAutoUpdate_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Updates" valueName="AU2_EnableAutoUpdate">
@@ -4634,6 +4658,16 @@
       </disabledValue>
     </policy>
     <policy name="OptimizeSlideControlWithOfficeAPI_Policy_Recommend" class="User" displayName="$(string.OptimizeSlideControlWithOfficeAPI_Policy_Recommend)" explainText="$(string.OptimizeSlideControlWithOfficeAPI_Explain)" presentation="$(presentation.OptimizeSlideControlWithOfficeAPI_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Meetings" valueName="OptimizeSlideControlWithOfficeAPI">
+      <parentCategory ref="zoommeetings_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableWindowsMeshUAC_Policy_Recommend" class="User" displayName="$(string.DisableWindowsMeshUAC_Policy_Recommend)" explainText="$(string.DisableWindowsMeshUAC_Explain)" presentation="$(presentation.DisableWindowsMeshUAC_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Meetings" valueName="DisableWindowsMeshUAC">
       <parentCategory ref="zoommeetings_recommend" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
       <enabledValue>
