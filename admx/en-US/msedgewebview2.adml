@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 144.0.3719.7--><displayName/><description/><resources><stringTable><string id="WebView2LoaderOverrideSettings_group">Loader Override Settings</string><string id="BrowserExecutableFolder">Configure the location of the browser executable folder</string><string id="BrowserExecutableFolder_Explain">This policy configures WebView2 applications to use the WebView2 Runtime in the specified path. The folder should contain the following files: msedgewebview2.exe, msedge.dll, and so on.
+<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 145.0.3734.1--><displayName/><description/><resources><stringTable><string id="WebView2LoaderOverrideSettings_group">Loader Override Settings</string><string id="BrowserExecutableFolder">Configure the location of the browser executable folder</string><string id="BrowserExecutableFolder_Explain">This policy configures WebView2 applications to use the WebView2 Runtime in the specified path. The folder should contain the following files: msedgewebview2.exe, msedge.dll, and so on.
 
 To set the value for the folder path, provide a Value name and Value pair. Set value name to the Application User Model ID or the executable file name. You can use the &quot;*&quot; wildcard as value name to apply to all applications.
 
@@ -32,12 +32,12 @@ Name: WebView2APISample.exe, Value: 0,1,2</string><string id="ReleaseChannelsDes
 
 If you disable this policy, request methods are uppercased. This is the behavior on or before Microsoft Edge 108.
 
-If you enable or don't configure this policy, request methods are not uppercased, unless matching case-insensitively with DELETE, GET, HEAD, OPTIONS, POST, or PUT.
+If you enable or don't configure this policy, request methods aren't uppercased, unless matching case-insensitively with DELETE, GET, HEAD, OPTIONS, POST, or PUT.
 
 This would reject fetch(url, {method: 'Foo'}) + &quot;Access-Control-Allow-Methods: FOO&quot; response header,
 and would accept fetch(url, {method: 'Foo'}) + &quot;Access-Control-Allow-Methods: Foo&quot; response header.
 
-Note: request methods &quot;post&quot; and &quot;put&quot; are not affected, while &quot;patch&quot; is affected.
+Note: request methods &quot;post&quot; and &quot;put&quot; aren't affected, while &quot;patch&quot; is affected.
 
 This policy is intended to be temporary and will be removed in the future.</string><string id="BlockTruncatedCookies">Block truncated cookies (obsolete)</string><string id="BlockTruncatedCookies_Explain">OBSOLETE: This policy is obsolete and doesn't work after Microsoft Edge 131.
 
@@ -62,7 +62,7 @@ Not configured – The default behavior is to enable support for zstd content en
 NOTE:
 This policy has been made obsolete starting with Microsoft Edge version 138 because Microsoft Edge now always supports zstd content encoding.</string><string id="ExperimentationAndConfigurationServiceControl">Control communication with the Experimentation and Configuration Service</string><string id="ExperimentationAndConfigurationServiceControl_Explain">The Experimentation and Configuration Service is used to deploy Experimentation and Configuration payloads to the client.
 
-Experimentation payload consists of a list of early in development features that Microsoft is enabling for testing and feedback.
+Experimentation payload consists of a list of early-in-development features that Microsoft is enabling for testing and feedback.
 
 Configuration payload consists of a list of recommended settings that Microsoft wants to deploy to optimize the user experience.
 
@@ -72,9 +72,9 @@ If you set this policy to 'FullMode', the full payload is downloaded from the Ex
 
 If you set this policy to 'ConfigurationsOnlyMode', only the configuration payload is downloaded.
 
-If you set this policy to 'RestrictedMode', the communication with the Experimentation and Configuration Service is stopped completely. Microsoft does not recommend this setting.
+If you set this policy to 'RestrictedMode', the communication with the Experimentation and Configuration Service is stopped completely. Microsoft doesn't recommend this setting.
 
-If you don't configure this policy on a managed device, the behavior on Beta and Stable channels is the same as the 'ConfigurationsOnlyMode'. On Canary and Dev channels the behavior is the same as 'FullMode'.
+If you don't configure this policy on a managed device, the behavior on Beta and Stable channels is the same as the 'ConfigurationsOnlyMode'. On Canary and Dev channels, the behavior is the same as 'FullMode'.
 
 If you don't configure this policy on an unmanaged device, the behavior is the same as the 'FullMode'.
 

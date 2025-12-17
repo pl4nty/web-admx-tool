@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 144.0.3719.7-->
+  <!--microsoft_edge version: 145.0.3734.1-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -120,6 +120,7 @@
       <definition displayName="$(string.OBSOLETE_WIN7_V80_V94)" name="OBSOLETE_WIN7_V80_V94"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V95_V107)" name="OBSOLETE_WIN7_V95_V107"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V132_V138)" name="OBSOLETE_WIN7_V132_V138"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V99_V144)" name="OBSOLETE_WIN7_V99_V144"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V123_V135)" name="OBSOLETE_WIN7_V123_V135"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V78_V118)" name="OBSOLETE_WIN7_V78_V118"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V79_V86)" name="OBSOLETE_WIN7_V79_V86"/>
@@ -8362,7 +8363,7 @@
     </policy>
     <policy class="Both" displayName="$(string.UserAgentReduction)" explainText="$(string.UserAgentReduction_Explain)" key="Software\Policies\Microsoft\Edge" name="UserAgentReduction" presentation="$(presentation.UserAgentReduction)">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V99"/>
+      <supportedOn ref="OBSOLETE_WIN7_V99_V144"/>
       <elements>
         <enum id="UserAgentReduction" valueName="UserAgentReduction">
           <item displayName="$(string.UserAgentReduction_Default)">
