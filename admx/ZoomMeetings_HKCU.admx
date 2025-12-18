@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<policyDefinitions revision="6.6" schemaVersion="1.0">
+<policyDefinitions revision="6.7" schemaVersion="1.0">
   <policyNamespaces>
-    <target prefix="fullarmor" namespace="ZoomMeetings_HKCU_6_6" />
+    <target prefix="fullarmor" namespace="ZoomMeetings_HKCU_6_7" />
     <using prefix="windows" namespace="Microsoft.Policies.Windows" />
   </policyNamespaces>
   <supersededAdm fileName="ZoomMeetings_HKCU.adm" />
-  <resources minRequiredRevision="6.6" />
+  <resources minRequiredRevision="6.7" />
   <supportedOn>
     <definitions>
       <definition name="SUPPORTED_WINXPSP2" displayName="$(string.SUPPORTED_WINXPSP2)" />
@@ -743,6 +743,36 @@
         <decimal id="ExitPreference_Part" valueName="ExitPreference" required="true" minValue="0" maxValue="1" />
       </elements>
     </policy>
+    <policy name="DisableDesktopScreenshot_Policy" class="User" displayName="$(string.DisableDesktopScreenshot_Policy)" explainText="$(string.DisableDesktopScreenshot_Explain)" presentation="$(presentation.DisableDesktopScreenshot_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="DisableDesktopScreenshot">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DatabaseJournalDeleteMode_Policy" class="User" displayName="$(string.DatabaseJournalDeleteMode_Policy)" explainText="$(string.DatabaseJournalDeleteMode_Explain)" presentation="$(presentation.DatabaseJournalDeleteMode_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="DatabaseJournalDeleteMode">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableAutoDetectedVoiceActivity_Policy" class="User" displayName="$(string.EnableAutoDetectedVoiceActivity_Policy)" explainText="$(string.EnableAutoDetectedVoiceActivity_Explain)" presentation="$(presentation.EnableAutoDetectedVoiceActivity_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="EnableAutoDetectedVoiceActivity">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="AU2_EnableAutoUpdate_Policy" class="User" displayName="$(string.AU2_EnableAutoUpdate_Policy)" explainText="$(string.AU2_EnableAutoUpdate_Explain)" presentation="$(presentation.AU2_EnableAutoUpdate_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Updates" valueName="AU2_EnableAutoUpdate">
       <parentCategory ref="zoomupdates" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
@@ -1358,6 +1388,16 @@
       </disabledValue>
     </policy>
     <policy name="DisableRemoteSupport_Policy" class="User" displayName="$(string.DisableRemoteSupport_Policy)" explainText="$(string.DisableRemoteSupport_Explain)" presentation="$(presentation.DisableRemoteSupport_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Meetings" valueName="DisableRemoteSupport">
+      <parentCategory ref="zoommeetings" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableDarkRightPanel_Policy" class="User" displayName="$(string.EnableDarkRightPanel_Policy)" explainText="$(string.EnableDarkRightPanel_Explain)" presentation="$(presentation.EnableDarkRightPanel_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Meetings" valueName="EnableDarkRightPanel">
       <parentCategory ref="zoommeetings" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
       <enabledValue>
@@ -2360,6 +2400,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="EnableAutoFraming_Policy" class="User" displayName="$(string.EnableAutoFraming_Policy)" explainText="$(string.EnableAutoFraming_Explain)" presentation="$(presentation.EnableAutoFraming_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Meetings" valueName="EnableAutoFraming">
+      <parentCategory ref="zoommeetings" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="EnableClientAutoUpdate_Policy_Recommend" class="User" displayName="$(string.EnableClientAutoUpdate_Policy_Recommend)" explainText="$(string.EnableClientAutoUpdate_Explain)" presentation="$(presentation.EnableClientAutoUpdate_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="EnableClientAutoUpdate">
       <parentCategory ref="zoomgeneral_recommend" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
@@ -3060,6 +3110,36 @@
         <decimal id="ExitPreference_Part" valueName="ExitPreference" required="true" minValue="0" maxValue="1" />
       </elements>
     </policy>
+    <policy name="DisableDesktopScreenshot_Policy_Recommend" class="User" displayName="$(string.DisableDesktopScreenshot_Policy_Recommend)" explainText="$(string.DisableDesktopScreenshot_Explain)" presentation="$(presentation.DisableDesktopScreenshot_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="DisableDesktopScreenshot">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DatabaseJournalDeleteMode_Policy_Recommend" class="User" displayName="$(string.DatabaseJournalDeleteMode_Policy_Recommend)" explainText="$(string.DatabaseJournalDeleteMode_Explain)" presentation="$(presentation.DatabaseJournalDeleteMode_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="DatabaseJournalDeleteMode">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableAutoDetectedVoiceActivity_Policy_Recommend" class="User" displayName="$(string.EnableAutoDetectedVoiceActivity_Policy_Recommend)" explainText="$(string.EnableAutoDetectedVoiceActivity_Explain)" presentation="$(presentation.EnableAutoDetectedVoiceActivity_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="EnableAutoDetectedVoiceActivity">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="AU2_EnableAutoUpdate_Policy_Recommend" class="User" displayName="$(string.AU2_EnableAutoUpdate_Policy_Recommend)" explainText="$(string.AU2_EnableAutoUpdate_Explain)" presentation="$(presentation.AU2_EnableAutoUpdate_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Updates" valueName="AU2_EnableAutoUpdate">
       <parentCategory ref="zoomupdates_recommend" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
@@ -3675,6 +3755,16 @@
       </disabledValue>
     </policy>
     <policy name="DisableRemoteSupport_Policy_Recommend" class="User" displayName="$(string.DisableRemoteSupport_Policy_Recommend)" explainText="$(string.DisableRemoteSupport_Explain)" presentation="$(presentation.DisableRemoteSupport_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Meetings" valueName="DisableRemoteSupport">
+      <parentCategory ref="zoommeetings_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableDarkRightPanel_Policy_Recommend" class="User" displayName="$(string.EnableDarkRightPanel_Policy_Recommend)" explainText="$(string.EnableDarkRightPanel_Explain)" presentation="$(presentation.EnableDarkRightPanel_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Meetings" valueName="EnableDarkRightPanel">
       <parentCategory ref="zoommeetings_recommend" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
       <enabledValue>
@@ -4668,6 +4758,16 @@
       </disabledValue>
     </policy>
     <policy name="DisableWindowsMeshUAC_Policy_Recommend" class="User" displayName="$(string.DisableWindowsMeshUAC_Policy_Recommend)" explainText="$(string.DisableWindowsMeshUAC_Explain)" presentation="$(presentation.DisableWindowsMeshUAC_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Meetings" valueName="DisableWindowsMeshUAC">
+      <parentCategory ref="zoommeetings_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableAutoFraming_Policy_Recommend" class="User" displayName="$(string.EnableAutoFraming_Policy_Recommend)" explainText="$(string.EnableAutoFraming_Explain)" presentation="$(presentation.EnableAutoFraming_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Meetings" valueName="EnableAutoFraming">
       <parentCategory ref="zoommeetings_recommend" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
       <enabledValue>

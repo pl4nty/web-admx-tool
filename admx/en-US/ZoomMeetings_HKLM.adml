@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<policyDefinitionResources revision="6.6" schemaVersion="1.0">
+<policyDefinitionResources revision="6.7" schemaVersion="1.0">
   <displayName>ZoomMeetings</displayName>
   <description>ZoomMeetings</description>
   <resources>
@@ -2324,7 +2324,7 @@ If this policy is not set, the client will use the default setting.</string>
       <string id="ExitPreference_Policy_Recommend">Set preferences for client exit (Recommendation Setting)</string>
       <string id="ExitPreference_Part">Set preferences for client exit</string>
       <string id="ExitPreference_Explain">This policy has a higher priority than CloseToSystemTray.
-      
+
 Default policy is 0.
 
 If this policy is set to 0, the client will minimize to the system tray when the main window is closed.
@@ -2341,6 +2341,42 @@ If this policy is enabled, the client will not trigger any User Account Control 
 If this policy is disabled, the client may trigger a User Account Control (UAC) prompt.
 
 If this policy is not set, the client will use the default setting.</string>
+      <string id="EnableAutoFraming_Policy">Enable auto framing feature</string>
+      <string id="EnableAutoFraming_Policy_Recommend">Enable auto framing feature (Recommendation Setting)</string>
+      <string id="EnableAutoFraming_Explain">Default policy is false.
+
+If this policy is true, client will enable auto-framing.
+
+If this setting is false, client will disable auto-framing.
+
+If this policy is not set, client will use default setting or user setting.</string>
+      <string id="DisableDesktopScreenshot_Policy">Disable the screenshot feature in the desktop client</string>
+      <string id="DisableDesktopScreenshot_Policy_Recommend">Disable the screenshot feature in the desktop client (Recommendation Setting)</string>
+      <string id="DisableDesktopScreenshot_Explain">Default policy is disabled.
+If this policy is enabled, all screenshot functions on the client will be disabled.
+If this policy is disabled, all screenshot functions on the client are working properly.
+If this policy is not set, client will use the default setting.</string>
+      <string id="DatabaseJournalDeleteMode_Policy">Enabling the 'journal_mode=DELETE' option in SQLite</string>
+      <string id="DatabaseJournalDeleteMode_Policy_Recommend">Enabling the 'journal_mode=DELETE' option in SQLite (Recommendation Setting)</string>
+      <string id="DatabaseJournalDeleteMode_Explain">Default policy is disabled.
+If this policy is enabled, the client will enable the 'journal_mode=DELETE' option in SQLite to enhance compatibility and performance in inefficient storage environments such as NFS or NAS.
+If this policy is disabled, the client will not enable this option in SQLite.
+If this policy is not set, client will use the default setting.</string>
+      <string id="EnableAutoDetectedVoiceActivity_Policy">Automatically detect voice activity to create my notes</string>
+      <string id="EnableAutoDetectedVoiceActivity_Policy_Recommend">Automatically detect voice activity to create my notes (Recommendation Setting)</string>
+      <string id="EnableAutoDetectedVoiceActivity_Explain">Default policy is enabled.
+If this policy is enabled, the client will notify user when voice activity is detected on specified apps.
+If this policy is disabled, the client will not notify user when voice activity is detected on specified apps.
+If this policy is not set, the client will use the default setting.</string>
+      <string id="EnableDarkRightPanel_Policy">Set the meeting sidebar to display in dark mode.</string>
+      <string id="EnableDarkRightPanel_Policy_Recommend">Set the meeting sidebar to display in dark mode. (Recommendation Setting)</string>
+      <string id="EnableDarkRightPanel_Explain">Default setting is enabled.
+
+If this setting is enabled, the side panel in meeting will display dark mode.
+
+If this setting is disabled, the side panel appearance will follow setting.
+
+If this setting is not set, client will use default setting.</string>
       <string id="ADMXMigrator_UnresolvedString">ADMX Migrator encountered a string that is not present in the source ADM string table.</string>
       <string id="ADMXMigrator_NoSupportedOn">ADMX Migrator encountered a policy that does not have a supportedOn value.</string>
     </stringTable>
@@ -2492,6 +2528,9 @@ If this policy is not set, the client will use the default setting.</string>
       <presentation id="ExitPreference_Policy">
         <decimalTextBox refId="ExitPreference_Part" defaultValue="0" spinStep="1">Set preferences for client exit</decimalTextBox>
       </presentation>
+      <presentation id="DisableDesktopScreenshot_Policy" />
+      <presentation id="DatabaseJournalDeleteMode_Policy" />
+      <presentation id="EnableAutoDetectedVoiceActivity_Policy" />
       <presentation id="AU2_EnableAutoUpdate_Policy" />
       <presentation id="AU2_SetUpdateChannel_Policy">
         <textBox refId="AU2_SetUpdateChannel_Part">
@@ -2603,6 +2642,7 @@ If this policy is not set, the client will use the default setting.</string>
       <presentation id="EnableSplitScreen_Policy" />
       <presentation id="DisableRemoteControl_Policy" />
       <presentation id="DisableRemoteSupport_Policy" />
+      <presentation id="EnableDarkRightPanel_Policy" />
       <presentation id="EnableOriginalSound_Policy" />
       <presentation id="EnableFaceBeauty_Policy" />
       <presentation id="SetFaceBeautyValue_Policy">
@@ -2762,6 +2802,7 @@ If this policy is not set, the client will use the default setting.</string>
       <presentation id="DisableLocalASR_Policy" />
       <presentation id="OptimizeSlideControlWithOfficeAPI_Policy" />
       <presentation id="DisableWindowsMeshUAC_Policy" />
+      <presentation id="EnableAutoFraming_Policy" />
       <presentation id="EnableClientAutoUpdate_Policy_Recommend" />
       <presentation id="DisableCreatingDesktopShortcut_Policy_Recommend" />
       <presentation id="AutoStartAfterReboot_Policy_Recommend" />
@@ -2908,6 +2949,9 @@ If this policy is not set, the client will use the default setting.</string>
       <presentation id="ExitPreference_Policy_Recommend">
         <decimalTextBox refId="ExitPreference_Part" defaultValue="0" spinStep="1">Set preferences for client exit</decimalTextBox>
       </presentation>
+      <presentation id="DisableDesktopScreenshot_Policy_Recommend" />
+      <presentation id="DatabaseJournalDeleteMode_Policy_Recommend" />
+      <presentation id="EnableAutoDetectedVoiceActivity_Policy_Recommend" />
       <presentation id="AU2_EnableAutoUpdate_Policy_Recommend" />
       <presentation id="AU2_SetUpdateChannel_Policy_Recommend">
         <textBox refId="AU2_SetUpdateChannel_Part">
@@ -3018,6 +3062,7 @@ If this policy is not set, the client will use the default setting.</string>
       <presentation id="EnableSplitScreen_Policy_Recommend" />
       <presentation id="DisableRemoteControl_Policy_Recommend" />
       <presentation id="DisableRemoteSupport_Policy_Recommend" />
+      <presentation id="EnableDarkRightPanel_Policy_Recommend" />
       <presentation id="EnableOriginalSound_Policy_Recommend" />
       <presentation id="EnableFaceBeauty_Policy_Recommend" />
       <presentation id="SetFaceBeautyValue_Policy_Recommend">
@@ -3177,6 +3222,7 @@ If this policy is not set, the client will use the default setting.</string>
       <presentation id="DisableLocalASR_Policy_Recommend" />
       <presentation id="OptimizeSlideControlWithOfficeAPI_Policy_Recommend" />
       <presentation id="DisableWindowsMeshUAC_Policy_Recommend" />
+      <presentation id="EnableAutoFraming_Policy_Recommend" />
     </presentationTable>
   </resources>
 </policyDefinitionResources>
