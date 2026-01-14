@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--chrome version: 143.0.7499.193-->
+  <!--chrome version: 144.0.7559.60-->
   <policyNamespaces>
     <target namespace="Google.Policies.Chrome" prefix="chrome"/>
     <using namespace="Google.Policies" prefix="Google"/>
@@ -99,9 +99,6 @@
       <parentCategory ref="googlechrome"/>
     </category>
     <category displayName="$(string.ProtectedContent_group)" name="ProtectedContent">
-      <parentCategory ref="googlechrome"/>
-    </category>
-    <category displayName="$(string.RelatedWebsiteSets_group)" name="RelatedWebsiteSets">
       <parentCategory ref="googlechrome"/>
     </category>
     <category displayName="$(string.RemoteAccess_group)" name="RemoteAccess">
@@ -733,6 +730,13 @@
         <list id="FileSystemWriteBlockedForUrlsDesc" key="Software\Policies\Google\Chrome\FileSystemWriteBlockedForUrls" valuePrefix=""/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.GeolocationBlockedForUrls)" explainText="$(string.GeolocationBlockedForUrls_Explain)" key="Software\Policies\Google\Chrome" name="GeolocationBlockedForUrls" presentation="$(presentation.GeolocationBlockedForUrls)">
+      <parentCategory ref="ContentSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <list id="GeolocationBlockedForUrlsDesc" key="Software\Policies\Google\Chrome\GeolocationBlockedForUrls" valuePrefix=""/>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.ImagesAllowedForUrls)" explainText="$(string.ImagesAllowedForUrls_Explain)" key="Software\Policies\Google\Chrome" name="ImagesAllowedForUrls" presentation="$(presentation.ImagesAllowedForUrls)">
       <parentCategory ref="ContentSettings"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -860,6 +864,13 @@
       <supportedOn ref="SUPPORTED_WIN7"/>
       <elements>
         <list id="PopupsBlockedForUrlsDesc" key="Software\Policies\Google\Chrome\PopupsBlockedForUrls" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.PreciseGeolocationAllowedForUrls)" explainText="$(string.PreciseGeolocationAllowedForUrls_Explain)" key="Software\Policies\Google\Chrome" name="PreciseGeolocationAllowedForUrls" presentation="$(presentation.PreciseGeolocationAllowedForUrls)">
+      <parentCategory ref="ContentSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <list id="PreciseGeolocationAllowedForUrlsDesc" key="Software\Policies\Google\Chrome\PreciseGeolocationAllowedForUrls" valuePrefix=""/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.SensorsAllowedForUrls)" explainText="$(string.SensorsAllowedForUrls_Explain)" key="Software\Policies\Google\Chrome" name="SensorsAllowedForUrls" presentation="$(presentation.SensorsAllowedForUrls)">
@@ -1230,6 +1241,16 @@
         <list id="WindowPlacementBlockedForUrlsDesc" key="Software\Policies\Google\Chrome\WindowPlacementBlockedForUrls" valuePrefix=""/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsEnabled)" explainText="$(string.LocalNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="LocalNetworkAccessRestrictionsEnabled" presentation="$(presentation.LocalNetworkAccessRestrictionsEnabled)" valueName="LocalNetworkAccessRestrictionsEnabled">
+      <parentCategory ref="DeprecatedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.AutoFillEnabled)" explainText="$(string.AutoFillEnabled_Explain)" key="Software\Policies\Google\Chrome" name="AutoFillEnabled" presentation="$(presentation.AutoFillEnabled)" valueName="AutoFillEnabled">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -1367,6 +1388,36 @@
         </enum>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.PrivacySandboxAdMeasurementEnabled)" explainText="$(string.PrivacySandboxAdMeasurementEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PrivacySandboxAdMeasurementEnabled" presentation="$(presentation.PrivacySandboxAdMeasurementEnabled)" valueName="PrivacySandboxAdMeasurementEnabled">
+      <parentCategory ref="DeprecatedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.PrivacySandboxAdTopicsEnabled)" explainText="$(string.PrivacySandboxAdTopicsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PrivacySandboxAdTopicsEnabled" presentation="$(presentation.PrivacySandboxAdTopicsEnabled)" valueName="PrivacySandboxAdTopicsEnabled">
+      <parentCategory ref="DeprecatedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.PrivacySandboxSiteEnabledAdsEnabled)" explainText="$(string.PrivacySandboxSiteEnabledAdsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PrivacySandboxSiteEnabledAdsEnabled" presentation="$(presentation.PrivacySandboxSiteEnabledAdsEnabled)" valueName="PrivacySandboxSiteEnabledAdsEnabled">
+      <parentCategory ref="DeprecatedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.ProxyBypassList)" explainText="$(string.ProxyBypassList_Explain)" key="Software\Policies\Google\Chrome" name="ProxyBypassList" presentation="$(presentation.ProxyBypassList)">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -1447,6 +1498,23 @@
             </value>
           </item>
         </enum>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.RelatedWebsiteSetsEnabled)" explainText="$(string.RelatedWebsiteSetsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="RelatedWebsiteSetsEnabled" presentation="$(presentation.RelatedWebsiteSetsEnabled)" valueName="RelatedWebsiteSetsEnabled">
+      <parentCategory ref="DeprecatedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.RelatedWebsiteSetsOverrides)" explainText="$(string.RelatedWebsiteSetsOverrides_Explain)" key="Software\Policies\Google\Chrome" name="RelatedWebsiteSetsOverrides" presentation="$(presentation.RelatedWebsiteSetsOverrides)">
+      <parentCategory ref="DeprecatedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <text id="RelatedWebsiteSetsOverrides" maxLength="1000000" valueName="RelatedWebsiteSetsOverrides"/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.RemoteAccessHostClientDomain)" explainText="$(string.RemoteAccessHostClientDomain_Explain)" key="Software\Policies\Google\Chrome" name="RemoteAccessHostClientDomain" presentation="$(presentation.RemoteAccessHostClientDomain)">
@@ -1809,6 +1877,24 @@
         </enum>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.SearchContentSharingSettings)" explainText="$(string.SearchContentSharingSettings_Explain)" key="Software\Policies\Google\Chrome" name="SearchContentSharingSettings" presentation="$(presentation.SearchContentSharingSettings)">
+      <parentCategory ref="GenerativeAI"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="SearchContentSharingSettings" valueName="SearchContentSharingSettings">
+          <item displayName="$(string.SearchContentSharingSettings_Allowed)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.SearchContentSharingSettings_Disabled)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.TabCompareSettings)" explainText="$(string.TabCompareSettings_Explain)" key="Software\Policies\Google\Chrome" name="TabCompareSettings" presentation="$(presentation.TabCompareSettings)">
       <parentCategory ref="GenerativeAI"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -2095,16 +2181,6 @@
       <elements>
         <list id="LocalNetworkAccessBlockedForUrlsDesc" key="Software\Policies\Google\Chrome\LocalNetworkAccessBlockedForUrls" valuePrefix=""/>
       </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsEnabled)" explainText="$(string.LocalNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="LocalNetworkAccessRestrictionsEnabled" presentation="$(presentation.LocalNetworkAccessRestrictionsEnabled)" valueName="LocalNetworkAccessRestrictionsEnabled">
-      <parentCategory ref="LocalNetworkAccessSettings"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsTemporaryOptOut)" explainText="$(string.LocalNetworkAccessRestrictionsTemporaryOptOut_Explain)" key="Software\Policies\Google\Chrome" name="LocalNetworkAccessRestrictionsTemporaryOptOut" presentation="$(presentation.LocalNetworkAccessRestrictionsTemporaryOptOut)" valueName="LocalNetworkAccessRestrictionsTemporaryOptOut">
       <parentCategory ref="LocalNetworkAccessSettings"/>
@@ -4231,6 +4307,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.SilentPrintingEnabled)" explainText="$(string.SilentPrintingEnabled_Explain)" key="Software\Policies\Google\Chrome" name="SilentPrintingEnabled" presentation="$(presentation.SilentPrintingEnabled)" valueName="SilentPrintingEnabled">
+      <parentCategory ref="googlechrome"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.SitePerProcess)" explainText="$(string.SitePerProcess_Explain)" key="Software\Policies\Google\Chrome" name="SitePerProcess" presentation="$(presentation.SitePerProcess)" valueName="SitePerProcess">
       <parentCategory ref="googlechrome"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -4283,6 +4369,16 @@
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.StandardizedBrowserZoomEnabled)" explainText="$(string.StandardizedBrowserZoomEnabled_Explain)" key="Software\Policies\Google\Chrome" name="StandardizedBrowserZoomEnabled" presentation="$(presentation.StandardizedBrowserZoomEnabled)" valueName="StandardizedBrowserZoomEnabled">
+      <parentCategory ref="googlechrome"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.StaticStorageQuotaEnabled)" explainText="$(string.StaticStorageQuotaEnabled_Explain)" key="Software\Policies\Google\Chrome" name="StaticStorageQuotaEnabled" presentation="$(presentation.StaticStorageQuotaEnabled)" valueName="StaticStorageQuotaEnabled">
       <parentCategory ref="googlechrome"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
@@ -5232,26 +5328,6 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
-    <policy class="Both" displayName="$(string.PrivacySandboxAdMeasurementEnabled)" explainText="$(string.PrivacySandboxAdMeasurementEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PrivacySandboxAdMeasurementEnabled" presentation="$(presentation.PrivacySandboxAdMeasurementEnabled)" valueName="PrivacySandboxAdMeasurementEnabled">
-      <parentCategory ref="PrivacySandbox"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.PrivacySandboxAdTopicsEnabled)" explainText="$(string.PrivacySandboxAdTopicsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PrivacySandboxAdTopicsEnabled" presentation="$(presentation.PrivacySandboxAdTopicsEnabled)" valueName="PrivacySandboxAdTopicsEnabled">
-      <parentCategory ref="PrivacySandbox"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
     <policy class="Both" displayName="$(string.PrivacySandboxFingerprintingProtectionEnabled)" explainText="$(string.PrivacySandboxFingerprintingProtectionEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PrivacySandboxFingerprintingProtectionEnabled" presentation="$(presentation.PrivacySandboxFingerprintingProtectionEnabled)" valueName="PrivacySandboxFingerprintingProtectionEnabled">
       <parentCategory ref="PrivacySandbox"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -5282,16 +5358,6 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
-    <policy class="Both" displayName="$(string.PrivacySandboxSiteEnabledAdsEnabled)" explainText="$(string.PrivacySandboxSiteEnabledAdsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PrivacySandboxSiteEnabledAdsEnabled" presentation="$(presentation.PrivacySandboxSiteEnabledAdsEnabled)" valueName="PrivacySandboxSiteEnabledAdsEnabled">
-      <parentCategory ref="PrivacySandbox"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
     <policy class="Both" displayName="$(string.ProtectedContentIdentifiersAllowed)" explainText="$(string.ProtectedContentIdentifiersAllowed_Explain)" key="Software\Policies\Google\Chrome" name="ProtectedContentIdentifiersAllowed" presentation="$(presentation.ProtectedContentIdentifiersAllowed)" valueName="ProtectedContentIdentifiersAllowed">
       <parentCategory ref="ProtectedContent"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -5301,23 +5367,6 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.RelatedWebsiteSetsEnabled)" explainText="$(string.RelatedWebsiteSetsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="RelatedWebsiteSetsEnabled" presentation="$(presentation.RelatedWebsiteSetsEnabled)" valueName="RelatedWebsiteSetsEnabled">
-      <parentCategory ref="RelatedWebsiteSets"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.RelatedWebsiteSetsOverrides)" explainText="$(string.RelatedWebsiteSetsOverrides_Explain)" key="Software\Policies\Google\Chrome" name="RelatedWebsiteSetsOverrides" presentation="$(presentation.RelatedWebsiteSetsOverrides)">
-      <parentCategory ref="RelatedWebsiteSets"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <text id="RelatedWebsiteSetsOverrides" maxLength="1000000" valueName="RelatedWebsiteSetsOverrides"/>
-      </elements>
     </policy>
     <policy class="Both" displayName="$(string.RemoteAccessHostAllowClientPairing)" explainText="$(string.RemoteAccessHostAllowClientPairing_Explain)" key="Software\Policies\Google\Chrome" name="RemoteAccessHostAllowClientPairing" presentation="$(presentation.RemoteAccessHostAllowClientPairing)" valueName="RemoteAccessHostAllowClientPairing">
       <parentCategory ref="RemoteAccess"/>
