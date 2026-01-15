@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 145.0.3775.0-->
+  <!--microsoft_edge version: 145.0.3789.1-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -1728,6 +1728,16 @@
     <policy class="Both" displayName="$(string.EdgeOpenExternalLinksWithAppSpecifiedProfile)" explainText="$(string.EdgeOpenExternalLinksWithAppSpecifiedProfile_Explain)" key="Software\Policies\Microsoft\Edge" name="EdgeOpenExternalLinksWithAppSpecifiedProfile" presentation="$(presentation.EdgeOpenExternalLinksWithAppSpecifiedProfile)" valueName="EdgeOpenExternalLinksWithAppSpecifiedProfile">
       <parentCategory ref="Identity"/>
       <supportedOn ref="SUPPORTED_WIN7_V139"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.EditProfileEnabled)" explainText="$(string.EditProfileEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="EditProfileEnabled" presentation="$(presentation.EditProfileEnabled)" valueName="EditProfileEnabled">
+      <parentCategory ref="Identity"/>
+      <supportedOn ref="SUPPORTED_WIN7_V145"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -5969,6 +5979,34 @@
         </enum>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.HttpsOnlyMode)" explainText="$(string.HttpsOnlyMode_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="HttpsOnlyMode_recommended" presentation="$(presentation.HttpsOnlyMode)">
+      <parentCategory ref="microsoft_edge_recommended"/>
+      <supportedOn ref="SUPPORTED_WIN7_V140"/>
+      <elements>
+        <enum id="HttpsOnlyMode" valueName="HttpsOnlyMode">
+          <item displayName="$(string.HttpsOnlyMode_allowed)">
+            <value>
+              <string>allowed</string>
+            </value>
+          </item>
+          <item displayName="$(string.HttpsOnlyMode_disallowed)">
+            <value>
+              <string>disallowed</string>
+            </value>
+          </item>
+          <item displayName="$(string.HttpsOnlyMode_force_enabled)">
+            <value>
+              <string>force_enabled</string>
+            </value>
+          </item>
+          <item displayName="$(string.HttpsOnlyMode_force_balanced_enabled)">
+            <value>
+              <string>force_balanced_enabled</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.HttpsUpgradesEnabled)" explainText="$(string.HttpsUpgradesEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="HttpsUpgradesEnabled" presentation="$(presentation.HttpsUpgradesEnabled)" valueName="HttpsUpgradesEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V136"/>
@@ -7999,6 +8037,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.SilentPrintingEnabled)" explainText="$(string.SilentPrintingEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="SilentPrintingEnabled" presentation="$(presentation.SilentPrintingEnabled)" valueName="SilentPrintingEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V144"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.SitePerProcess)" explainText="$(string.SitePerProcess_Explain)" key="Software\Policies\Microsoft\Edge" name="SitePerProcess" presentation="$(presentation.SitePerProcess)" valueName="SitePerProcess">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V77"/>
@@ -8689,6 +8737,16 @@
     <policy class="Both" displayName="$(string.WebWidgetIsEnabledOnStartup)" explainText="$(string.WebWidgetIsEnabledOnStartup_Explain)" key="Software\Policies\Microsoft\Edge" name="WebWidgetIsEnabledOnStartup" presentation="$(presentation.WebWidgetIsEnabledOnStartup)" valueName="WebWidgetIsEnabledOnStartup">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="OBSOLETE_WIN7_V88_V119"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.WhatsNewPageForEntraProfilesEnabled)" explainText="$(string.WhatsNewPageForEntraProfilesEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="WhatsNewPageForEntraProfilesEnabled" presentation="$(presentation.WhatsNewPageForEntraProfilesEnabled)" valueName="WhatsNewPageForEntraProfilesEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V145"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
