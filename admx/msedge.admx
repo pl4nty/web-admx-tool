@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 145.0.3789.1-->
+  <!--microsoft_edge version: 145.0.3800.10-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -2195,6 +2195,16 @@
     <policy class="Both" displayName="$(string.PasswordManagerEnabled)" explainText="$(string.PasswordManagerEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="PasswordManagerEnabled" presentation="$(presentation.PasswordManagerEnabled)" valueName="PasswordManagerEnabled">
       <parentCategory ref="PasswordManager"/>
       <supportedOn ref="SUPPORTED_WIN7_V77"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.PasswordManagerPasskeysEnabled)" explainText="$(string.PasswordManagerPasskeysEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="PasswordManagerPasskeysEnabled" presentation="$(presentation.PasswordManagerPasskeysEnabled)" valueName="PasswordManagerPasskeysEnabled">
+      <parentCategory ref="PasswordManager"/>
+      <supportedOn ref="SUPPORTED_WIN7_V145"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -8746,7 +8756,7 @@
     </policy>
     <policy class="Both" displayName="$(string.WhatsNewPageForEntraProfilesEnabled)" explainText="$(string.WhatsNewPageForEntraProfilesEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="WhatsNewPageForEntraProfilesEnabled" presentation="$(presentation.WhatsNewPageForEntraProfilesEnabled)" valueName="WhatsNewPageForEntraProfilesEnabled">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V145"/>
+      <supportedOn ref="SUPPORTED_WIN7_V144"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
