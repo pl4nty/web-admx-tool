@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 145.0.3800.13-->
+  <!--microsoft_edge version: 145.0.3800.17-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -8595,6 +8595,16 @@
     <policy class="Both" displayName="$(string.WalletDonationEnabled)" explainText="$(string.WalletDonationEnabled_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="WalletDonationEnabled_recommended" presentation="$(presentation.WalletDonationEnabled)" valueName="WalletDonationEnabled">
       <parentCategory ref="microsoft_edge_recommended"/>
       <supportedOn ref="SUPPORTED_WIN7_V115"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.WebAppInstallByUserEnabled)" explainText="$(string.WebAppInstallByUserEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="WebAppInstallByUserEnabled" presentation="$(presentation.WebAppInstallByUserEnabled)" valueName="WebAppInstallByUserEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V145"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
