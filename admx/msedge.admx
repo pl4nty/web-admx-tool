@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 145.0.3800.22-->
+  <!--microsoft_edge version: 146.0.3818.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -128,6 +128,7 @@
       <definition displayName="$(string.OBSOLETE_WIN7_V109_V114)" name="OBSOLETE_WIN7_V109_V114"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V93_V105)" name="OBSOLETE_WIN7_V93_V105"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V97_V121)" name="OBSOLETE_WIN7_V97_V121"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V115_V145)" name="OBSOLETE_WIN7_V115_V145"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V81_V88)" name="OBSOLETE_WIN7_V81_V88"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V80_V132)" name="OBSOLETE_WIN7_V80_V132"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V107_V116)" name="OBSOLETE_WIN7_V107_V116"/>
@@ -786,7 +787,7 @@
     </policy>
     <policy class="Both" displayName="$(string.DefaultThirdPartyStoragePartitioningSetting)" explainText="$(string.DefaultThirdPartyStoragePartitioningSetting_Explain)" key="Software\Policies\Microsoft\Edge" name="DefaultThirdPartyStoragePartitioningSetting" presentation="$(presentation.DefaultThirdPartyStoragePartitioningSetting)">
       <parentCategory ref="ContentSettings"/>
-      <supportedOn ref="SUPPORTED_WIN7_V115"/>
+      <supportedOn ref="OBSOLETE_WIN7_V115_V145"/>
       <elements>
         <enum id="DefaultThirdPartyStoragePartitioningSetting" valueName="DefaultThirdPartyStoragePartitioningSetting">
           <item displayName="$(string.DefaultThirdPartyStoragePartitioningSetting_AllowPartitioning)">
@@ -1123,7 +1124,7 @@
     </policy>
     <policy class="Both" displayName="$(string.ThirdPartyStoragePartitioningBlockedForOrigins)" explainText="$(string.ThirdPartyStoragePartitioningBlockedForOrigins_Explain)" key="Software\Policies\Microsoft\Edge" name="ThirdPartyStoragePartitioningBlockedForOrigins" presentation="$(presentation.ThirdPartyStoragePartitioningBlockedForOrigins)">
       <parentCategory ref="ContentSettings"/>
-      <supportedOn ref="SUPPORTED_WIN7_V115"/>
+      <supportedOn ref="OBSOLETE_WIN7_V115_V145"/>
       <elements>
         <list id="ThirdPartyStoragePartitioningBlockedForOriginsDesc" key="Software\Policies\Microsoft\Edge\ThirdPartyStoragePartitioningBlockedForOrigins" valuePrefix=""/>
       </elements>

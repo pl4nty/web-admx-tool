@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 145.0.3800.22--><displayName/><description/><resources><stringTable><string id="WebView2LoaderOverrideSettings_group">Loader Override Settings</string><string id="BrowserExecutableFolder">Configure the location of the browser executable folder</string><string id="BrowserExecutableFolder_Explain">This policy configures WebView2 applications to use the WebView2 Runtime in the specified path. The folder should contain the following files: msedgewebview2.exe, msedge.dll, and so on.
+<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 146.0.3818.0--><displayName/><description/><resources><stringTable><string id="WebView2LoaderOverrideSettings_group">Loader Override Settings</string><string id="BrowserExecutableFolder">Configure the location of the browser executable folder</string><string id="BrowserExecutableFolder_Explain">This policy configures WebView2 applications to use the WebView2 Runtime in the specified path. The folder should contain the following files: msedgewebview2.exe, msedge.dll, and so on.
 
 To set the value for the folder path, provide a Value name and Value pair. Set value name to the Application User Model ID or the executable file name. You can use the &quot;*&quot; wildcard as value name to apply to all applications.
 
@@ -144,19 +144,19 @@ Microsoft Edge 123 and earlier have the
 following behavior:
 
 If this policy is set to enabled,
-Microsoft Edge will perform this key
+Microsoft Edge performs this key
 check. This helps prevent attacks where an attacker manipulates the browser into
-interpreting a key in ways that the certificate owner did not intend.
+interpreting a key in ways that the certificate owner didn't intend.
 
 If this policy is set to disabled,
-Microsoft Edge will skip this key check in
+Microsoft Edge skips this key check-in
 HTTPS connections that negotiate TLS 1.2 and use an RSA certificate that
 chains to a local trust anchor. Examples of local trust anchors include
 policy-provided or user-installed root certificates. In all other cases, the
 check is performed independent of this policy's setting.
 
-If this policy is not configured,
-Microsoft Edge will behave as if the
+If this policy isn't configured,
+Microsoft Edge behaves as if the
 policy is enabled.
 
 This policy is available for administrators to preview the behavior of a
