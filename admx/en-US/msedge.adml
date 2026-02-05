@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 146.0.3818.0--><displayName/><description/><resources><stringTable><string id="ApplicationGuard_group">Application Guard settings</string><string id="ApplicationGuardContainerProxy">Application Guard Container Proxy</string><string id="ApplicationGuardContainerProxy_Explain">Configures the proxy settings for Microsoft Edge Application Guard.
+<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 146.0.3829.2--><displayName/><description/><resources><stringTable><string id="ApplicationGuard_group">Application Guard settings</string><string id="ApplicationGuardContainerProxy">Application Guard Container Proxy</string><string id="ApplicationGuardContainerProxy_Explain">Configures the proxy settings for Microsoft Edge Application Guard.
 If you enable this policy, Microsoft Edge Application Guard ignores other sources of proxy configurations.
 
 If you don't configure this policy, Microsoft Edge Application Guard uses the proxy configuration of the host.
@@ -3630,7 +3630,7 @@ The default setting, &quot;Not configured&quot; respects the current media autop
 
 Setting to &quot;Enabled&quot; sets media autoplay to &quot;Allow&quot;.  All websites are allowed to autoplay media. Users can't override this policy.
 
-Setting to &quot;Disabled&quot; sets media autoplay to &quot;Limit&quot;.  This limits websites that are allowed to autoplay media to webpages with high media engagement and active WebRTC streams. Prior to Microsoft Edge version 92, this would set media autoplay to &quot;Block&quot;. Users can't override this policy.
+Setting to &quot;Disabled&quot; sets media autoplay to &quot;Block&quot;.  This blocks all websites from autoplaying media, regardless of engagement or site activity. Media will only play after an explicit user action. Prior to Microsoft Edge version 92, this would set media autoplay to &quot;Block&quot;, and from version 92 through 144 it mapped to &quot;Limit&quot;. This limits websites that are allowed to autoplay media to webpages with high media engagement and active WebRTC streams.  Beginning with Microsoft Edge version 145, &quot;Disabled&quot; once again maps to &quot;Block&quot;.  Users can't override this policy.
 
 A tab will need to be closed and re-opened for this policy to take effect.</string><string id="AutoplayAllowlist">Allow media autoplay on specific sites</string><string id="AutoplayAllowlist_Explain">Define a list of sites, based on URL patterns, that are allowed to autoplay media.
 
