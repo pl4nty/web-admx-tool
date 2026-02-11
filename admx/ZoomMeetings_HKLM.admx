@@ -167,6 +167,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="DisableLoginWithMagicCode_Policy" class="Machine" displayName="$(string.DisableLoginWithMagicCode_Policy)" explainText="$(string.DisableLoginWithMagicCode_Explain)" presentation="$(presentation.DisableLoginWithMagicCode_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="DisableLoginWithMagicCode">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="DisableLoginWithMicrosoft_Policy" class="Machine" displayName="$(string.DisableLoginWithMicrosoft_Policy)" explainText="$(string.DisableLoginWithMicrosoft_Explain)" presentation="$(presentation.DisableLoginWithMicrosoft_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="DisableLoginWithMicrosoft">
       <parentCategory ref="zoomgeneral" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
@@ -1198,6 +1208,16 @@
       </disabledValue>
     </policy>
     <policy name="EnterFullScreenWhenJoinMeeting_Policy" class="Machine" displayName="$(string.EnterFullScreenWhenJoinMeeting_Policy)" explainText="$(string.EnterFullScreenWhenJoinMeeting_Explain)" presentation="$(presentation.EnterFullScreenWhenJoinMeeting_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Meetings" valueName="EnterFullScreenWhenJoinMeeting">
+      <parentCategory ref="zoommeetings" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AutoStartMyNotes_Policy" class="Machine" displayName="$(string.AutoStartMyNotes_Policy)" explainText="$(string.AutoStartMyNotes_Explain)" presentation="$(presentation.AutoStartMyNotes_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Meetings" valueName="AutoStartMyNotes">
       <parentCategory ref="zoommeetings" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
       <enabledValue>
@@ -2554,6 +2574,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="DisableLoginWithMagicCode_Policy_Recommend" class="Machine" displayName="$(string.DisableLoginWithMagicCode_Policy_Recommend)" explainText="$(string.DisableLoginWithMagicCode_Explain)" presentation="$(presentation.DisableLoginWithMagicCode_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="DisableLoginWithMagicCode">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="DisableLoginWithMicrosoft_Policy_Recommend" class="Machine" displayName="$(string.DisableLoginWithMicrosoft_Policy_Recommend)" explainText="$(string.DisableLoginWithMicrosoft_Explain)" presentation="$(presentation.DisableLoginWithMicrosoft_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="DisableLoginWithMicrosoft">
       <parentCategory ref="zoomgeneral_recommend" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
@@ -3565,6 +3595,16 @@
       </disabledValue>
     </policy>
     <policy name="EnterFullScreenWhenJoinMeeting_Policy_Recommend" class="Machine" displayName="$(string.EnterFullScreenWhenJoinMeeting_Policy_Recommend)" explainText="$(string.EnterFullScreenWhenJoinMeeting_Explain)" presentation="$(presentation.EnterFullScreenWhenJoinMeeting_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Meetings" valueName="EnterFullScreenWhenJoinMeeting">
+      <parentCategory ref="zoommeetings_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AutoStartMyNotes_Policy_Recommend" class="Machine" displayName="$(string.AutoStartMyNotes_Policy_Recommend)" explainText="$(string.AutoStartMyNotes_Explain)" presentation="$(presentation.AutoStartMyNotes_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Meetings" valueName="AutoStartMyNotes">
       <parentCategory ref="zoommeetings_recommend" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
       <enabledValue>

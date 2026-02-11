@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--chrome version: 144.0.7559.133-->
+  <!--chrome version: 145.0.7632.46-->
   <policyNamespaces>
     <target namespace="Google.Policies.Chrome" prefix="chrome"/>
     <using namespace="Google.Policies" prefix="Google"/>
@@ -53,9 +53,6 @@
     <category displayName="$(string.Extensions_group)" name="Extensions">
       <parentCategory ref="googlechrome"/>
     </category>
-    <category displayName="$(string.FirstPartySets_group)" name="FirstPartySets">
-      <parentCategory ref="googlechrome"/>
-    </category>
     <category displayName="$(string.GenerativeAI_group)" name="GenerativeAI">
       <parentCategory ref="googlechrome"/>
     </category>
@@ -99,6 +96,9 @@
       <parentCategory ref="googlechrome"/>
     </category>
     <category displayName="$(string.ProtectedContent_group)" name="ProtectedContent">
+      <parentCategory ref="googlechrome"/>
+    </category>
+    <category displayName="$(string.Proxy_group)" name="Proxy">
       <parentCategory ref="googlechrome"/>
     </category>
     <category displayName="$(string.RemoteAccess_group)" name="RemoteAccess">
@@ -1241,7 +1241,7 @@
         <list id="WindowPlacementBlockedForUrlsDesc" key="Software\Policies\Google\Chrome\WindowPlacementBlockedForUrls" valuePrefix=""/>
       </elements>
     </policy>
-    <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsEnabled)" explainText="$(string.LocalNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="LocalNetworkAccessRestrictionsEnabled" presentation="$(presentation.LocalNetworkAccessRestrictionsEnabled)" valueName="LocalNetworkAccessRestrictionsEnabled">
+    <policy class="Both" displayName="$(string.FirstPartySetsEnabled)" explainText="$(string.FirstPartySetsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="FirstPartySetsEnabled" presentation="$(presentation.FirstPartySetsEnabled)" valueName="FirstPartySetsEnabled">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
@@ -1250,6 +1250,13 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.FirstPartySetsOverrides)" explainText="$(string.FirstPartySetsOverrides_Explain)" key="Software\Policies\Google\Chrome" name="FirstPartySetsOverrides" presentation="$(presentation.FirstPartySetsOverrides)">
+      <parentCategory ref="DeprecatedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <text id="FirstPartySetsOverrides" maxLength="1000000" valueName="FirstPartySetsOverrides"/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.AutoFillEnabled)" explainText="$(string.AutoFillEnabled_Explain)" key="Software\Policies\Google\Chrome" name="AutoFillEnabled" presentation="$(presentation.AutoFillEnabled)" valueName="AutoFillEnabled">
       <parentCategory ref="DeprecatedPolicies"/>
@@ -1338,6 +1345,39 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.ManagedAccountsSigninRestriction)" explainText="$(string.ManagedAccountsSigninRestriction_Explain)" key="Software\Policies\Google\Chrome" name="ManagedAccountsSigninRestriction" presentation="$(presentation.ManagedAccountsSigninRestriction)">
+      <parentCategory ref="DeprecatedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="ManagedAccountsSigninRestriction" valueName="ManagedAccountsSigninRestriction">
+          <item displayName="$(string.ManagedAccountsSigninRestriction_PrimaryAccount)">
+            <value>
+              <string>primary_account</string>
+            </value>
+          </item>
+          <item displayName="$(string.ManagedAccountsSigninRestriction_PrimaryAccountStrict)">
+            <value>
+              <string>primary_account_strict</string>
+            </value>
+          </item>
+          <item displayName="$(string.ManagedAccountsSigninRestriction_None)">
+            <value>
+              <string>none</string>
+            </value>
+          </item>
+          <item displayName="$(string.ManagedAccountsSigninRestriction_PrimaryAccountKeepExistingData)">
+            <value>
+              <string>primary_account_keep_existing_data</string>
+            </value>
+          </item>
+          <item displayName="$(string.ManagedAccountsSigninRestriction_PrimaryAccountStrictKeepExistingData)">
+            <value>
+              <string>primary_account_strict_keep_existing_data</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.PromotionalTabsEnabled)" explainText="$(string.PromotionalTabsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PromotionalTabsEnabled" presentation="$(presentation.PromotionalTabsEnabled)" valueName="PromotionalTabsEnabled">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -1365,29 +1405,6 @@
         <list id="UnsafelyTreatInsecureOriginAsSecureDesc" key="Software\Policies\Google\Chrome\UnsafelyTreatInsecureOriginAsSecure" valuePrefix=""/>
       </elements>
     </policy>
-    <policy class="Both" displayName="$(string.UserAgentReduction)" explainText="$(string.UserAgentReduction_Explain)" key="Software\Policies\Google\Chrome" name="UserAgentReduction" presentation="$(presentation.UserAgentReduction)">
-      <parentCategory ref="DeprecatedPolicies"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <enum id="UserAgentReduction" valueName="UserAgentReduction">
-          <item displayName="$(string.UserAgentReduction_Default)">
-            <value>
-              <decimal value="0"/>
-            </value>
-          </item>
-          <item displayName="$(string.UserAgentReduction_ForceDisabled)">
-            <value>
-              <decimal value="1"/>
-            </value>
-          </item>
-          <item displayName="$(string.UserAgentReduction_ForceEnabled)">
-            <value>
-              <decimal value="2"/>
-            </value>
-          </item>
-        </enum>
-      </elements>
-    </policy>
     <policy class="Both" displayName="$(string.PrivacySandboxAdMeasurementEnabled)" explainText="$(string.PrivacySandboxAdMeasurementEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PrivacySandboxAdMeasurementEnabled" presentation="$(presentation.PrivacySandboxAdMeasurementEnabled)" valueName="PrivacySandboxAdMeasurementEnabled">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -1399,6 +1416,16 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.PrivacySandboxAdTopicsEnabled)" explainText="$(string.PrivacySandboxAdTopicsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PrivacySandboxAdTopicsEnabled" presentation="$(presentation.PrivacySandboxAdTopicsEnabled)" valueName="PrivacySandboxAdTopicsEnabled">
+      <parentCategory ref="DeprecatedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.PrivacySandboxFingerprintingProtectionEnabled)" explainText="$(string.PrivacySandboxFingerprintingProtectionEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PrivacySandboxFingerprintingProtectionEnabled" presentation="$(presentation.PrivacySandboxFingerprintingProtectionEnabled)" valueName="PrivacySandboxFingerprintingProtectionEnabled">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
@@ -1603,16 +1630,6 @@
         <list id="ExtensionExtendedBackgroundLifetimeForPortConnectionsToUrlsDesc" key="Software\Policies\Google\Chrome\ExtensionExtendedBackgroundLifetimeForPortConnectionsToUrls" valuePrefix=""/>
       </elements>
     </policy>
-    <policy class="Both" displayName="$(string.ExtensionForceInstallWithNonMalwareViolationsEnabled)" explainText="$(string.ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="ExtensionForceInstallWithNonMalwareViolationsEnabled" presentation="$(presentation.ExtensionForceInstallWithNonMalwareViolationsEnabled)" valueName="ExtensionForceInstallWithNonMalwareViolationsEnabled">
-      <parentCategory ref="Extensions"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
     <policy class="Both" displayName="$(string.ExtensionInstallAllowlist)" explainText="$(string.ExtensionInstallAllowlist_Explain)" key="Software\Policies\Google\Chrome" name="ExtensionInstallAllowlist" presentation="$(presentation.ExtensionInstallAllowlist)">
       <parentCategory ref="Extensions"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -1671,23 +1688,6 @@
             </value>
           </item>
         </enum>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.FirstPartySetsEnabled)" explainText="$(string.FirstPartySetsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="FirstPartySetsEnabled" presentation="$(presentation.FirstPartySetsEnabled)" valueName="FirstPartySetsEnabled">
-      <parentCategory ref="FirstPartySets"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.FirstPartySetsOverrides)" explainText="$(string.FirstPartySetsOverrides_Explain)" key="Software\Policies\Google\Chrome" name="FirstPartySetsOverrides" presentation="$(presentation.FirstPartySetsOverrides)">
-      <parentCategory ref="FirstPartySets"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <text id="FirstPartySetsOverrides" maxLength="1000000" valueName="FirstPartySetsOverrides"/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.AIModeSettings)" explainText="$(string.AIModeSettings_Explain)" key="Software\Policies\Google\Chrome" name="AIModeSettings" presentation="$(presentation.AIModeSettings)">
@@ -3555,39 +3555,6 @@
         <list id="LookalikeWarningAllowlistDomainsDesc" key="Software\Policies\Google\Chrome\LookalikeWarningAllowlistDomains" valuePrefix=""/>
       </elements>
     </policy>
-    <policy class="Both" displayName="$(string.ManagedAccountsSigninRestriction)" explainText="$(string.ManagedAccountsSigninRestriction_Explain)" key="Software\Policies\Google\Chrome" name="ManagedAccountsSigninRestriction" presentation="$(presentation.ManagedAccountsSigninRestriction)">
-      <parentCategory ref="googlechrome"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <enum id="ManagedAccountsSigninRestriction" valueName="ManagedAccountsSigninRestriction">
-          <item displayName="$(string.ManagedAccountsSigninRestriction_PrimaryAccount)">
-            <value>
-              <string>primary_account</string>
-            </value>
-          </item>
-          <item displayName="$(string.ManagedAccountsSigninRestriction_PrimaryAccountStrict)">
-            <value>
-              <string>primary_account_strict</string>
-            </value>
-          </item>
-          <item displayName="$(string.ManagedAccountsSigninRestriction_None)">
-            <value>
-              <string>none</string>
-            </value>
-          </item>
-          <item displayName="$(string.ManagedAccountsSigninRestriction_PrimaryAccountKeepExistingData)">
-            <value>
-              <string>primary_account_keep_existing_data</string>
-            </value>
-          </item>
-          <item displayName="$(string.ManagedAccountsSigninRestriction_PrimaryAccountStrictKeepExistingData)">
-            <value>
-              <string>primary_account_strict_keep_existing_data</string>
-            </value>
-          </item>
-        </enum>
-      </elements>
-    </policy>
     <policy class="Both" displayName="$(string.ManagedBookmarks)" explainText="$(string.ManagedBookmarks_Explain)" key="Software\Policies\Google\Chrome" name="ManagedBookmarks" presentation="$(presentation.ManagedBookmarks)">
       <parentCategory ref="googlechrome"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -4073,6 +4040,13 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.RestrictPdfSaveToGoogleDriveAccountsToPattern)" explainText="$(string.RestrictPdfSaveToGoogleDriveAccountsToPattern_Explain)" key="Software\Policies\Google\Chrome" name="RestrictPdfSaveToGoogleDriveAccountsToPattern" presentation="$(presentation.RestrictPdfSaveToGoogleDriveAccountsToPattern)">
+      <parentCategory ref="googlechrome"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <text id="RestrictPdfSaveToGoogleDriveAccountsToPattern" maxLength="1000000" valueName="RestrictPdfSaveToGoogleDriveAccountsToPattern"/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.RestrictSigninToPattern)" explainText="$(string.RestrictSigninToPattern_Explain)" key="Software\Policies\Google\Chrome" name="RestrictSigninToPattern" presentation="$(presentation.RestrictSigninToPattern)">
       <parentCategory ref="googlechrome"/>
@@ -4564,6 +4538,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.WebAppInstallByUserEnabled)" explainText="$(string.WebAppInstallByUserEnabled_Explain)" key="Software\Policies\Google\Chrome" name="WebAppInstallByUserEnabled" presentation="$(presentation.WebAppInstallByUserEnabled)" valueName="WebAppInstallByUserEnabled">
+      <parentCategory ref="googlechrome"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.WebAppInstallForceList)" explainText="$(string.WebAppInstallForceList_Explain)" key="Software\Policies\Google\Chrome" name="WebAppInstallForceList" presentation="$(presentation.WebAppInstallForceList)">
       <parentCategory ref="googlechrome"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -4805,6 +4789,34 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.HttpsOnlyMode)" explainText="$(string.HttpsOnlyMode_Explain)" key="Software\Policies\Google\Chrome\Recommended" name="HttpsOnlyMode_recommended" presentation="$(presentation.HttpsOnlyMode)">
+      <parentCategory ref="googlechrome_recommended"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="HttpsOnlyMode" valueName="HttpsOnlyMode">
+          <item displayName="$(string.HttpsOnlyMode_allowed)">
+            <value>
+              <string>allowed</string>
+            </value>
+          </item>
+          <item displayName="$(string.HttpsOnlyMode_disallowed)">
+            <value>
+              <string>disallowed</string>
+            </value>
+          </item>
+          <item displayName="$(string.HttpsOnlyMode_force_enabled)">
+            <value>
+              <string>force_enabled</string>
+            </value>
+          </item>
+          <item displayName="$(string.HttpsOnlyMode_force_balanced_enabled)">
+            <value>
+              <string>force_balanced_enabled</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.ImportAutofillFormData)" explainText="$(string.ImportAutofillFormData_Explain)" key="Software\Policies\Google\Chrome\Recommended" name="ImportAutofillFormData_recommended" presentation="$(presentation.ImportAutofillFormData)" valueName="ImportAutofillFormData">
       <parentCategory ref="googlechrome_recommended"/>
@@ -5113,16 +5125,6 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
-    <policy class="Both" displayName="$(string.CloudPrintProxyEnabled)" explainText="$(string.CloudPrintProxyEnabled_Explain)" key="Software\Policies\Google\Chrome" name="CloudPrintProxyEnabled" presentation="$(presentation.CloudPrintProxyEnabled)" valueName="CloudPrintProxyEnabled">
-      <parentCategory ref="Printing"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
     <policy class="Both" displayName="$(string.DefaultPrinterSelection)" explainText="$(string.DefaultPrinterSelection_Explain)" key="Software\Policies\Google\Chrome" name="DefaultPrinterSelection" presentation="$(presentation.DefaultPrinterSelection)">
       <parentCategory ref="Printing"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -5328,26 +5330,6 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
-    <policy class="Both" displayName="$(string.PrivacySandboxFingerprintingProtectionEnabled)" explainText="$(string.PrivacySandboxFingerprintingProtectionEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PrivacySandboxFingerprintingProtectionEnabled" presentation="$(presentation.PrivacySandboxFingerprintingProtectionEnabled)" valueName="PrivacySandboxFingerprintingProtectionEnabled">
-      <parentCategory ref="PrivacySandbox"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.PrivacySandboxIpProtectionEnabled)" explainText="$(string.PrivacySandboxIpProtectionEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PrivacySandboxIpProtectionEnabled" presentation="$(presentation.PrivacySandboxIpProtectionEnabled)" valueName="PrivacySandboxIpProtectionEnabled">
-      <parentCategory ref="PrivacySandbox"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
     <policy class="Both" displayName="$(string.PrivacySandboxPromptEnabled)" explainText="$(string.PrivacySandboxPromptEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PrivacySandboxPromptEnabled" presentation="$(presentation.PrivacySandboxPromptEnabled)" valueName="PrivacySandboxPromptEnabled">
       <parentCategory ref="PrivacySandbox"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -5367,6 +5349,13 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.EnableProxyOverrideRulesForAllUsers)" explainText="$(string.EnableProxyOverrideRulesForAllUsers_Explain)" key="Software\Policies\Google\Chrome" name="EnableProxyOverrideRulesForAllUsers" presentation="$(presentation.EnableProxyOverrideRulesForAllUsers)">
+      <parentCategory ref="Proxy"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <decimal id="EnableProxyOverrideRulesForAllUsers" maxValue="2000000000" minValue="0" valueName="EnableProxyOverrideRulesForAllUsers"/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.RemoteAccessHostAllowClientPairing)" explainText="$(string.RemoteAccessHostAllowClientPairing_Explain)" key="Software\Policies\Google\Chrome" name="RemoteAccessHostAllowClientPairing" presentation="$(presentation.RemoteAccessHostAllowClientPairing)" valueName="RemoteAccessHostAllowClientPairing">
       <parentCategory ref="RemoteAccess"/>
@@ -5743,6 +5732,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.ExtensionForceInstallWithNonMalwareViolationsEnabled)" explainText="$(string.ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="ExtensionForceInstallWithNonMalwareViolationsEnabled" presentation="$(presentation.ExtensionForceInstallWithNonMalwareViolationsEnabled)" valueName="ExtensionForceInstallWithNonMalwareViolationsEnabled">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.ExtensionManifestV2Availability)" explainText="$(string.ExtensionManifestV2Availability_Explain)" key="Software\Policies\Google\Chrome" name="ExtensionManifestV2Availability" presentation="$(presentation.ExtensionManifestV2Availability)">
       <parentCategory ref="RemovedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -5795,6 +5794,16 @@
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.AssistantWebEnabled)" explainText="$(string.AssistantWebEnabled_Explain)" key="Software\Policies\Google\Chrome" name="AssistantWebEnabled" presentation="$(presentation.AssistantWebEnabled)" valueName="AssistantWebEnabled">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsEnabled)" explainText="$(string.LocalNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="LocalNetworkAccessRestrictionsEnabled" presentation="$(presentation.LocalNetworkAccessRestrictionsEnabled)" valueName="LocalNetworkAccessRestrictionsEnabled">
       <parentCategory ref="RemovedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
@@ -6841,6 +6850,29 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.UserAgentReduction)" explainText="$(string.UserAgentReduction_Explain)" key="Software\Policies\Google\Chrome" name="UserAgentReduction" presentation="$(presentation.UserAgentReduction)">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="UserAgentReduction" valueName="UserAgentReduction">
+          <item displayName="$(string.UserAgentReduction_Default)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.UserAgentReduction_ForceDisabled)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.UserAgentReduction_ForceEnabled)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.WebComponentsV0Enabled)" explainText="$(string.WebComponentsV0Enabled_Explain)" key="Software\Policies\Google\Chrome" name="WebComponentsV0Enabled" presentation="$(presentation.WebComponentsV0Enabled)" valueName="WebComponentsV0Enabled">
       <parentCategory ref="RemovedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -6941,6 +6973,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.CloudPrintProxyEnabled)" explainText="$(string.CloudPrintProxyEnabled_Explain)" key="Software\Policies\Google\Chrome" name="CloudPrintProxyEnabled" presentation="$(presentation.CloudPrintProxyEnabled)" valueName="CloudPrintProxyEnabled">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.CloudPrintSubmitEnabled)" explainText="$(string.CloudPrintSubmitEnabled_Explain)" key="Software\Policies\Google\Chrome" name="CloudPrintSubmitEnabled" presentation="$(presentation.CloudPrintSubmitEnabled)" valueName="CloudPrintSubmitEnabled">
       <parentCategory ref="RemovedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -6952,6 +6994,16 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.CloudPrintWarningsSuppressed)" explainText="$(string.CloudPrintWarningsSuppressed_Explain)" key="Software\Policies\Google\Chrome" name="CloudPrintWarningsSuppressed" presentation="$(presentation.CloudPrintWarningsSuppressed)" valueName="CloudPrintWarningsSuppressed">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.PrivacySandboxIpProtectionEnabled)" explainText="$(string.PrivacySandboxIpProtectionEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PrivacySandboxIpProtectionEnabled" presentation="$(presentation.PrivacySandboxIpProtectionEnabled)" valueName="PrivacySandboxIpProtectionEnabled">
       <parentCategory ref="RemovedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
