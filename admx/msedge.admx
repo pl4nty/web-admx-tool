@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 146.0.3844.0-->
+  <!--microsoft_edge version: 146.0.3856.9-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -26,6 +26,7 @@
       <definition displayName="$(string.SUPPORTED_WIN7_V143)" name="SUPPORTED_WIN7_V143"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V144)" name="SUPPORTED_WIN7_V144"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V145)" name="SUPPORTED_WIN7_V145"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V146)" name="SUPPORTED_WIN7_V146"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V77)" name="SUPPORTED_WIN7_V77"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V78)" name="SUPPORTED_WIN7_V78"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V79)" name="SUPPORTED_WIN7_V79"/>
@@ -233,6 +234,9 @@
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.KioskMode_group)" name="KioskMode">
+      <parentCategory ref="microsoft_edge"/>
+    </category>
+    <category displayName="$(string.LocalNetworkAccessSettings_group)" name="LocalNetworkAccessSettings">
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.Manageability_group)" name="Manageability">
@@ -1956,6 +1960,13 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessIpAddressSpaceOverrides)" explainText="$(string.LocalNetworkAccessIpAddressSpaceOverrides_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessIpAddressSpaceOverrides" presentation="$(presentation.LocalNetworkAccessIpAddressSpaceOverrides)">
+      <parentCategory ref="LocalNetworkAccessSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7_V146"/>
+      <elements>
+        <list id="LocalNetworkAccessIpAddressSpaceOverridesDesc" key="Software\Policies\Microsoft\Edge\LocalNetworkAccessIpAddressSpaceOverrides" valuePrefix=""/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.EdgeManagementPolicyOverridesPlatformPolicy)" explainText="$(string.EdgeManagementPolicyOverridesPlatformPolicy_Explain)" key="Software\Policies\Microsoft\Edge" name="EdgeManagementPolicyOverridesPlatformPolicy" presentation="$(presentation.EdgeManagementPolicyOverridesPlatformPolicy)" valueName="EdgeManagementPolicyOverridesPlatformPolicy">
       <parentCategory ref="Manageability"/>
@@ -8159,6 +8170,16 @@
     <policy class="Both" displayName="$(string.StandaloneHubsSidebarEnabled)" explainText="$(string.StandaloneHubsSidebarEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="StandaloneHubsSidebarEnabled" presentation="$(presentation.StandaloneHubsSidebarEnabled)" valueName="StandaloneHubsSidebarEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V114"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.StandardizedBrowserZoomEnabled)" explainText="$(string.StandardizedBrowserZoomEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="StandardizedBrowserZoomEnabled" presentation="$(presentation.StandardizedBrowserZoomEnabled)" valueName="StandardizedBrowserZoomEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V146"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
