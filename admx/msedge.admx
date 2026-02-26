@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 146.0.3856.9-->
+  <!--microsoft_edge version: 147.0.3878.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -27,6 +27,7 @@
       <definition displayName="$(string.SUPPORTED_WIN7_V144)" name="SUPPORTED_WIN7_V144"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V145)" name="SUPPORTED_WIN7_V145"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V146)" name="SUPPORTED_WIN7_V146"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V147)" name="SUPPORTED_WIN7_V147"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V77)" name="SUPPORTED_WIN7_V77"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V78)" name="SUPPORTED_WIN7_V78"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V79)" name="SUPPORTED_WIN7_V79"/>
@@ -176,6 +177,9 @@
     <category displayName="$(string.ContentSettings_group)" name="ContentSettings_recommended">
       <parentCategory ref="microsoft_edge_recommended"/>
     </category>
+    <category displayName="$(string.CryptographyCompliance_group)" name="CryptographyCompliance">
+      <parentCategory ref="microsoft_edge"/>
+    </category>
     <category displayName="$(string.DefaultSearchProvider_group)" name="DefaultSearchProvider">
       <parentCategory ref="microsoft_edge"/>
     </category>
@@ -276,6 +280,9 @@
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.Profile_group)" name="Profile">
+      <parentCategory ref="microsoft_edge"/>
+    </category>
+    <category displayName="$(string.ProtectedContent_group)" name="ProtectedContent">
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.Proxy_group)" name="Proxy">
@@ -1210,6 +1217,42 @@
         <text id="RegisteredProtocolHandlers" maxLength="1000000" valueName="RegisteredProtocolHandlers"/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.PreferSlowCiphers)" explainText="$(string.PreferSlowCiphers_Explain)" key="Software\Policies\Microsoft\Edge" name="PreferSlowCiphers" presentation="$(presentation.PreferSlowCiphers)">
+      <parentCategory ref="CryptographyCompliance"/>
+      <supportedOn ref="SUPPORTED_WIN7_V146"/>
+      <elements>
+        <enum id="PreferSlowCiphers" valueName="PreferSlowCiphers">
+          <item displayName="$(string.PreferSlowCiphers_CNSA)">
+            <value>
+              <string>cnsa</string>
+            </value>
+          </item>
+          <item displayName="$(string.PreferSlowCiphers_Default)">
+            <value>
+              <string>default</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.PreferSlowKexAlgorithms)" explainText="$(string.PreferSlowKexAlgorithms_Explain)" key="Software\Policies\Microsoft\Edge" name="PreferSlowKexAlgorithms" presentation="$(presentation.PreferSlowKexAlgorithms)">
+      <parentCategory ref="CryptographyCompliance"/>
+      <supportedOn ref="SUPPORTED_WIN7_V146"/>
+      <elements>
+        <enum id="PreferSlowKexAlgorithms" valueName="PreferSlowKexAlgorithms">
+          <item displayName="$(string.PreferSlowKexAlgorithms_CNSA2_0)">
+            <value>
+              <string>cnsa2</string>
+            </value>
+          </item>
+          <item displayName="$(string.PreferSlowKexAlgorithms_Default)">
+            <value>
+              <string>default</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.DefaultSearchProviderEnabled)" explainText="$(string.DefaultSearchProviderEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="DefaultSearchProviderEnabled" presentation="$(presentation.DefaultSearchProviderEnabled)" valueName="DefaultSearchProviderEnabled">
       <parentCategory ref="DefaultSearchProvider"/>
       <supportedOn ref="SUPPORTED_WIN7_V77"/>
@@ -1966,6 +2009,44 @@
       <supportedOn ref="SUPPORTED_WIN7_V146"/>
       <elements>
         <list id="LocalNetworkAccessIpAddressSpaceOverridesDesc" key="Software\Policies\Microsoft\Edge\LocalNetworkAccessIpAddressSpaceOverrides" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessPermissionsPolicyDefaultEnabled)" explainText="$(string.LocalNetworkAccessPermissionsPolicyDefaultEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessPermissionsPolicyDefaultEnabled" presentation="$(presentation.LocalNetworkAccessPermissionsPolicyDefaultEnabled)" valueName="LocalNetworkAccessPermissionsPolicyDefaultEnabled">
+      <parentCategory ref="LocalNetworkAccessSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7_V146"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAllowedForUrls)" explainText="$(string.LocalNetworkAllowedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAllowedForUrls" presentation="$(presentation.LocalNetworkAllowedForUrls)">
+      <parentCategory ref="LocalNetworkAccessSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7_V146"/>
+      <elements>
+        <list id="LocalNetworkAllowedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LocalNetworkAllowedForUrls" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkBlockedForUrls)" explainText="$(string.LocalNetworkBlockedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkBlockedForUrls" presentation="$(presentation.LocalNetworkBlockedForUrls)">
+      <parentCategory ref="LocalNetworkAccessSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7_V146"/>
+      <elements>
+        <list id="LocalNetworkBlockedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LocalNetworkBlockedForUrls" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LoopbackNetworkAllowedForUrls)" explainText="$(string.LoopbackNetworkAllowedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="LoopbackNetworkAllowedForUrls" presentation="$(presentation.LoopbackNetworkAllowedForUrls)">
+      <parentCategory ref="LocalNetworkAccessSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7_V146"/>
+      <elements>
+        <list id="LoopbackNetworkAllowedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LoopbackNetworkAllowedForUrls" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LoopbackNetworkBlockedForUrls)" explainText="$(string.LoopbackNetworkBlockedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="LoopbackNetworkBlockedForUrls" presentation="$(presentation.LoopbackNetworkBlockedForUrls)">
+      <parentCategory ref="LocalNetworkAccessSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7_V146"/>
+      <elements>
+        <list id="LoopbackNetworkBlockedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LoopbackNetworkBlockedForUrls" valuePrefix=""/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.EdgeManagementPolicyOverridesPlatformPolicy)" explainText="$(string.EdgeManagementPolicyOverridesPlatformPolicy_Explain)" key="Software\Policies\Microsoft\Edge" name="EdgeManagementPolicyOverridesPlatformPolicy" presentation="$(presentation.EdgeManagementPolicyOverridesPlatformPolicy)" valueName="EdgeManagementPolicyOverridesPlatformPolicy">
@@ -2891,6 +2972,16 @@
     <policy class="Both" displayName="$(string.ProfileTypeInProfileButtonEnabled)" explainText="$(string.ProfileTypeInProfileButtonEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="ProfileTypeInProfileButtonEnabled" presentation="$(presentation.ProfileTypeInProfileButtonEnabled)" valueName="ProfileTypeInProfileButtonEnabled">
       <parentCategory ref="Profile"/>
       <supportedOn ref="SUPPORTED_WIN7_V136"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.ProtectedContentIdentifiersAllowed)" explainText="$(string.ProtectedContentIdentifiersAllowed_Explain)" key="Software\Policies\Microsoft\Edge" name="ProtectedContentIdentifiersAllowed" presentation="$(presentation.ProtectedContentIdentifiersAllowed)" valueName="ProtectedContentIdentifiersAllowed">
+      <parentCategory ref="ProtectedContent"/>
+      <supportedOn ref="SUPPORTED_WIN7_V147"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -8819,6 +8910,16 @@
     <policy class="Both" displayName="$(string.WindowOcclusionEnabled)" explainText="$(string.WindowOcclusionEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="WindowOcclusionEnabled" presentation="$(presentation.WindowOcclusionEnabled)" valueName="WindowOcclusionEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V89"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.XSLTEnabled)" explainText="$(string.XSLTEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="XSLTEnabled" presentation="$(presentation.XSLTEnabled)" valueName="XSLTEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V147"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>

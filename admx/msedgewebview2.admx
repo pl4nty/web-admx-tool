@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 146.0.3856.9-->
+  <!--microsoft_edge version: 147.0.3878.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.WebView2" prefix="microsoft_edge_webview2"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -9,6 +9,7 @@
   <supportedOn>
     <definitions>
       <definition displayName="$(string.SUPPORTED_WIN7_V97)" name="SUPPORTED_WIN7_V97"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V147)" name="SUPPORTED_WIN7_V147"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V116)" name="SUPPORTED_WIN7_V116"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V118)" name="SUPPORTED_WIN7_V118"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V87)" name="SUPPORTED_WIN7_V87"/>
@@ -149,6 +150,16 @@
     <policy class="Both" displayName="$(string.RSAKeyUsageForLocalAnchorsEnabled)" explainText="$(string.RSAKeyUsageForLocalAnchorsEnabled_Explain)" key="Software\Policies\Microsoft\Edge\WebView2" name="RSAKeyUsageForLocalAnchorsEnabled" presentation="$(presentation.RSAKeyUsageForLocalAnchorsEnabled)" valueName="RSAKeyUsageForLocalAnchorsEnabled">
       <parentCategory ref="microsoft_edge_webview2"/>
       <supportedOn ref="OBSOLETE_WIN7_V123_V135"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.XSLTEnabled)" explainText="$(string.XSLTEnabled_Explain)" key="Software\Policies\Microsoft\Edge\WebView2" name="XSLTEnabled" presentation="$(presentation.XSLTEnabled)" valueName="XSLTEnabled">
+      <parentCategory ref="microsoft_edge_webview2"/>
+      <supportedOn ref="SUPPORTED_WIN7_V147"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
