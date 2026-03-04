@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 147.0.3878.0-->
+  <!--microsoft_edge version: 147.0.3890.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -238,9 +238,6 @@
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.KioskMode_group)" name="KioskMode">
-      <parentCategory ref="microsoft_edge"/>
-    </category>
-    <category displayName="$(string.LocalNetworkAccessSettings_group)" name="LocalNetworkAccessSettings">
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.Manageability_group)" name="Manageability">
@@ -2004,51 +2001,6 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
-    <policy class="Both" displayName="$(string.LocalNetworkAccessIpAddressSpaceOverrides)" explainText="$(string.LocalNetworkAccessIpAddressSpaceOverrides_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessIpAddressSpaceOverrides" presentation="$(presentation.LocalNetworkAccessIpAddressSpaceOverrides)">
-      <parentCategory ref="LocalNetworkAccessSettings"/>
-      <supportedOn ref="SUPPORTED_WIN7_V146"/>
-      <elements>
-        <list id="LocalNetworkAccessIpAddressSpaceOverridesDesc" key="Software\Policies\Microsoft\Edge\LocalNetworkAccessIpAddressSpaceOverrides" valuePrefix=""/>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.LocalNetworkAccessPermissionsPolicyDefaultEnabled)" explainText="$(string.LocalNetworkAccessPermissionsPolicyDefaultEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessPermissionsPolicyDefaultEnabled" presentation="$(presentation.LocalNetworkAccessPermissionsPolicyDefaultEnabled)" valueName="LocalNetworkAccessPermissionsPolicyDefaultEnabled">
-      <parentCategory ref="LocalNetworkAccessSettings"/>
-      <supportedOn ref="SUPPORTED_WIN7_V146"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.LocalNetworkAllowedForUrls)" explainText="$(string.LocalNetworkAllowedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAllowedForUrls" presentation="$(presentation.LocalNetworkAllowedForUrls)">
-      <parentCategory ref="LocalNetworkAccessSettings"/>
-      <supportedOn ref="SUPPORTED_WIN7_V146"/>
-      <elements>
-        <list id="LocalNetworkAllowedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LocalNetworkAllowedForUrls" valuePrefix=""/>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.LocalNetworkBlockedForUrls)" explainText="$(string.LocalNetworkBlockedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkBlockedForUrls" presentation="$(presentation.LocalNetworkBlockedForUrls)">
-      <parentCategory ref="LocalNetworkAccessSettings"/>
-      <supportedOn ref="SUPPORTED_WIN7_V146"/>
-      <elements>
-        <list id="LocalNetworkBlockedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LocalNetworkBlockedForUrls" valuePrefix=""/>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.LoopbackNetworkAllowedForUrls)" explainText="$(string.LoopbackNetworkAllowedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="LoopbackNetworkAllowedForUrls" presentation="$(presentation.LoopbackNetworkAllowedForUrls)">
-      <parentCategory ref="LocalNetworkAccessSettings"/>
-      <supportedOn ref="SUPPORTED_WIN7_V146"/>
-      <elements>
-        <list id="LoopbackNetworkAllowedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LoopbackNetworkAllowedForUrls" valuePrefix=""/>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.LoopbackNetworkBlockedForUrls)" explainText="$(string.LoopbackNetworkBlockedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="LoopbackNetworkBlockedForUrls" presentation="$(presentation.LoopbackNetworkBlockedForUrls)">
-      <parentCategory ref="LocalNetworkAccessSettings"/>
-      <supportedOn ref="SUPPORTED_WIN7_V146"/>
-      <elements>
-        <list id="LoopbackNetworkBlockedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LoopbackNetworkBlockedForUrls" valuePrefix=""/>
-      </elements>
-    </policy>
     <policy class="Both" displayName="$(string.EdgeManagementPolicyOverridesPlatformPolicy)" explainText="$(string.EdgeManagementPolicyOverridesPlatformPolicy_Explain)" key="Software\Policies\Microsoft\Edge" name="EdgeManagementPolicyOverridesPlatformPolicy" presentation="$(presentation.EdgeManagementPolicyOverridesPlatformPolicy)" valueName="EdgeManagementPolicyOverridesPlatformPolicy">
       <parentCategory ref="Manageability"/>
       <supportedOn ref="SUPPORTED_WIN7_V119"/>
@@ -2204,6 +2156,23 @@
         <list id="LocalNetworkAccessBlockedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LocalNetworkAccessBlockedForUrls" valuePrefix=""/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessIpAddressSpaceOverrides)" explainText="$(string.LocalNetworkAccessIpAddressSpaceOverrides_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessIpAddressSpaceOverrides" presentation="$(presentation.LocalNetworkAccessIpAddressSpaceOverrides)">
+      <parentCategory ref="Network"/>
+      <supportedOn ref="SUPPORTED_WIN7_V146"/>
+      <elements>
+        <list id="LocalNetworkAccessIpAddressSpaceOverridesDesc" key="Software\Policies\Microsoft\Edge\LocalNetworkAccessIpAddressSpaceOverrides" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessPermissionsPolicyDefaultEnabled)" explainText="$(string.LocalNetworkAccessPermissionsPolicyDefaultEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessPermissionsPolicyDefaultEnabled" presentation="$(presentation.LocalNetworkAccessPermissionsPolicyDefaultEnabled)" valueName="LocalNetworkAccessPermissionsPolicyDefaultEnabled">
+      <parentCategory ref="Network"/>
+      <supportedOn ref="SUPPORTED_WIN7_V146"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsEnabled)" explainText="$(string.LocalNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessRestrictionsEnabled" presentation="$(presentation.LocalNetworkAccessRestrictionsEnabled)" valueName="LocalNetworkAccessRestrictionsEnabled">
       <parentCategory ref="Network"/>
       <supportedOn ref="OBSOLETE_WIN7_V138_V144"/>
@@ -2223,6 +2192,34 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAllowedForUrls)" explainText="$(string.LocalNetworkAllowedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAllowedForUrls" presentation="$(presentation.LocalNetworkAllowedForUrls)">
+      <parentCategory ref="Network"/>
+      <supportedOn ref="SUPPORTED_WIN7_V146"/>
+      <elements>
+        <list id="LocalNetworkAllowedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LocalNetworkAllowedForUrls" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkBlockedForUrls)" explainText="$(string.LocalNetworkBlockedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkBlockedForUrls" presentation="$(presentation.LocalNetworkBlockedForUrls)">
+      <parentCategory ref="Network"/>
+      <supportedOn ref="SUPPORTED_WIN7_V146"/>
+      <elements>
+        <list id="LocalNetworkBlockedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LocalNetworkBlockedForUrls" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LoopbackNetworkAllowedForUrls)" explainText="$(string.LoopbackNetworkAllowedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="LoopbackNetworkAllowedForUrls" presentation="$(presentation.LoopbackNetworkAllowedForUrls)">
+      <parentCategory ref="Network"/>
+      <supportedOn ref="SUPPORTED_WIN7_V146"/>
+      <elements>
+        <list id="LoopbackNetworkAllowedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LoopbackNetworkAllowedForUrls" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LoopbackNetworkBlockedForUrls)" explainText="$(string.LoopbackNetworkBlockedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="LoopbackNetworkBlockedForUrls" presentation="$(presentation.LoopbackNetworkBlockedForUrls)">
+      <parentCategory ref="Network"/>
+      <supportedOn ref="SUPPORTED_WIN7_V146"/>
+      <elements>
+        <list id="LoopbackNetworkBlockedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LoopbackNetworkBlockedForUrls" valuePrefix=""/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.ZstdContentEncodingEnabled)" explainText="$(string.ZstdContentEncodingEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="ZstdContentEncodingEnabled" presentation="$(presentation.ZstdContentEncodingEnabled)" valueName="ZstdContentEncodingEnabled">
       <parentCategory ref="Network"/>
@@ -4494,6 +4491,16 @@
     <policy class="Both" displayName="$(string.BrowserGuestModeEnabled)" explainText="$(string.BrowserGuestModeEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="BrowserGuestModeEnabled" presentation="$(presentation.BrowserGuestModeEnabled)" valueName="BrowserGuestModeEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V77"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.BrowserGuestModeEnforced)" explainText="$(string.BrowserGuestModeEnforced_Explain)" key="Software\Policies\Microsoft\Edge" name="BrowserGuestModeEnforced" presentation="$(presentation.BrowserGuestModeEnforced)" valueName="BrowserGuestModeEnforced">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V147"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
