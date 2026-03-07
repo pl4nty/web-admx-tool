@@ -1,43 +1,45 @@
 <template>
-    <div>
-        <el-row>
-            <Title></Title>
-            <el-button :icon="isDark ? Moon : Sunny" circle @click="toggleDark()" style="position: absolute; top: 15px; right: 15px;" />
-        </el-row>
-        <el-divider />
-        <el-row>
-            <Main></Main>
-        </el-row>
+    <div class="d-flex flex-column" style="height: 100vh">
+        <TheHeader />
+
+        <div class="d-flex flex-row flex-grow-1 overflow-hidden">
+            <!-- Sidebar: tree navigation -->
+            <aside id="sidebar" class="p-2">
+                <PolicyTree />
+            </aside>
+
+            <!-- Main content area -->
+            <main id="main-content" class="p-0">
+                <!-- Search results overlay -->
+                <SearchResults v-if="query" />
+
+                <!-- Policy detail -->
+                <PolicyDetail v-else />
+            </main>
+        </div>
+
+        <!-- Modals -->
+        <FileUploadModal />
+        <ConfigModal />
     </div>
 </template>
 
-<style scoped>
-.center {
-    display: flex;
-    justify-content: center;
-}
-
-.padding {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-</style>
-
 <script setup>
-import { useDark, useToggle } from '@vueuse/core'
-import { Moon, Sunny } from '@element-plus/icons-vue'
+import { onMounted } from 'vue'
+import TheHeader from './components/TheHeader.vue'
+import PolicyTree from './components/PolicyTree.vue'
+import PolicyDetail from './components/PolicyDetail.vue'
+import SearchResults from './components/SearchResults.vue'
+import FileUploadModal from './components/FileUploadModal.vue'
+import ConfigModal from './components/ConfigModal.vue'
+import { useAdmx } from './composables/useAdmx'
+import { useSearch } from './composables/useSearch'
 
-const isDark = useDark()
-const toggleDark = useToggle(isDark)
+const { loadDefault } = useAdmx()
+const { query } = useSearch()
 
-const alive = ref(true)
-const reload = () => {
-    alive.value = false
-    nextTick(() => {
-        alive.value = true
-    })
-}
-
-provide('reload', reload)
-
+onMounted(() => {
+    loadDefault()
+})
 </script>
+
