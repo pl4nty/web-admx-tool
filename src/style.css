@@ -1,37 +1,108 @@
-.el-notification {
-  width: 500px !important;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.router-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-
-:root {
-  --ep-color-primary: red;
-}
+/* Custom styles on top of Bootstrap */
 
 body {
-  font-family: Inter, 'Helvetica Neue', Helvetica, 'PingFang SC',
-  'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  --el-font-size-base: 16px
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
-a {
-  color: var(--ep-color-primary);
+/* ── Sidebar ────────────────────────────────────────────────────────────────── */
+
+#sidebar {
+    width: 320px;
+    min-width: 220px;
+    max-width: 480px;
+    height: calc(100vh - 56px);
+    overflow-y: auto;
+    border-right: 1px solid var(--bs-border-color);
+    flex-shrink: 0;
 }
 
-code {
-  border-radius: 2px;
-  padding: 2px 4px;
-  background-color: var(--ep-color-primary-light-9);
-  color: var(--ep-color-primary);
+#main-content {
+    flex: 1;
+    height: calc(100vh - 56px);
+    overflow-y: auto;
 }
+
+/* ── Tree ───────────────────────────────────────────────────────────────────── */
+
+.tree-node {
+    padding: 0;
+}
+
+.tree-category-btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 0.35rem 0.75rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+.tree-category-btn:hover {
+    background-color: var(--bs-gray-100);
+}
+
+.tree-policy-btn {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    border-radius: 0;
+}
+
+.tree-policy-btn:hover {
+    background-color: var(--bs-gray-100);
+    color: var(--bs-primary);
+}
+
+.tree-policy-btn.active {
+    background-color: var(--bs-primary-bg-subtle);
+    color: var(--bs-primary);
+    font-weight: 500;
+}
+
+.tree-children {
+    padding-left: 1rem;
+    border-left: 1px solid var(--bs-gray-300);
+    margin-left: 0.75rem;
+}
+
+/* ── Policy detail ──────────────────────────────────────────────────────────── */
+
+.explain-text {
+    white-space: pre-wrap;
+    font-size: 0.875rem;
+    color: var(--bs-secondary);
+}
+
+/* ── Search results ─────────────────────────────────────────────────────────── */
+
+.search-result-item {
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.search-result-item:hover {
+    background-color: var(--bs-gray-100);
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────────────────────── */
+
+#sidebar::-webkit-scrollbar,
+#main-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+#sidebar::-webkit-scrollbar-thumb,
+#main-content::-webkit-scrollbar-thumb {
+    background-color: var(--bs-gray-400);
+    border-radius: 3px;
+}
+
