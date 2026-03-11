@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="fullarmor" namespace="ZoomVDI_HKCU" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <supersededAdm fileName="ZoomVDI_HKCU.adm" />
+  <resources minRequiredRevision="1.0" />
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_WINXPSP2" displayName="$(string.SUPPORTED_WINXPSP2)" />
+      <definition name="SUPPORTED_NotSpecified" displayName="$(string.ADMXMigrator_NoSupportedOn)" />
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="ZoomUsCommunicationVDI" displayName="$(string.ZoomUsCommunicationVDI)" />
+    <category name="zoomvdiclient" displayName="$(string.zoomvdiclient)">
+      <parentCategory ref="ZoomUsCommunicationVDI" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="ShareSubscribeFps_Policy" class="User" displayName="$(string.ShareSubscribeFps_Policy)" explainText="$(string.ShareSubscribeFps_Explain)" presentation="$(presentation.ShareSubscribeFps_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <enum id="ShareSubscribeFps_Part" valueName="ShareSubscribeFps">
+          <item displayName="$(string.ShareSubscribeFps_Set_To_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ShareSubscribeFps_Set_To_5)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="ShareCaptureFps_Policy" class="User" displayName="$(string.ShareCaptureFps_Policy)" explainText="$(string.ShareCaptureFps_Explain)" presentation="$(presentation.ShareCaptureFps_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="ShareCaptureFps_Part" valueName="ShareCaptureFps" required="true" minValue="1" maxValue="5" />
+      </elements>
+    </policy>
+    <policy name="UDPPortBegin_Policy" class="User" displayName="$(string.UDPPortBegin_Policy)" explainText="$(string.UDPPortBegin_Explain)" presentation="$(presentation.UDPPortBegin_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="UDPPortBegin_Part" valueName="UDPPortBegin" required="true" minValue="1700" maxValue="64000" />
+      </elements>
+    </policy>
+    <policy name="UDPPortEnd_Policy" class="User" displayName="$(string.UDPPortEnd_Policy)" explainText="$(string.UDPPortEnd_Explain)" presentation="$(presentation.UDPPortEnd_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="UDPPortEnd_Part" valueName="UDPPortEnd" required="true" minValue="1800" maxValue="65000" />
+      </elements>
+    </policy>
+    <policy name="DisableBoostPowerScheme_Policy" class="User" displayName="$(string.DisableBoostPowerScheme_Policy)" explainText="$(string.DisableBoostPowerScheme_Explain)" presentation="$(presentation.DisableBoostPowerScheme_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="DisableBoostPowerScheme">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="FallbackMode_Policy" class="User" displayName="$(string.FallbackMode_Policy)" explainText="$(string.FallbackMode_Explain)" presentation="$(presentation.FallbackMode_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="FallbackMode_Part" valueName="FallbackMode" required="true" minValue="1" maxValue="7" />
+      </elements>
+    </policy>
+    <policy name="LogLevel_Policy" class="User" displayName="$(string.LogLevel_Policy)" explainText="$(string.LogLevel_Explain)" presentation="$(presentation.LogLevel_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="LogLevel_Part" valueName="LogLevel" required="true" minValue="0" maxValue="4" />
+      </elements>
+    </policy>
+    <policy name="AllowEnableLog_Policy" class="User" displayName="$(string.AllowEnableLog_Policy)" explainText="$(string.AllowEnableLog_Explain)" presentation="$(presentation.AllowEnableLog_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="AllowEnableLog">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="LogReserveHours_Policy" class="User" displayName="$(string.LogReserveHours_Policy)" explainText="$(string.LogReserveHours_Explain)" presentation="$(presentation.LogReserveHours_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="LogReserveHours_Part" valueName="LogReserveHours" required="true" minValue="0" />
+      </elements>
+    </policy>
+    <policy name="LogReserveSize_Policy" class="User" displayName="$(string.LogReserveSize_Policy)" explainText="$(string.LogReserveSize_Explain)" presentation="$(presentation.LogReserveSize_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="LogReserveSize_Part" valueName="LogReserveSize" required="true" minValue="0" />
+      </elements>
+    </policy>
+    <policy name="MaxLogFileSize_Policy" class="User" displayName="$(string.MaxLogFileSize_Policy)" explainText="$(string.MaxLogFileSize_Explain)" presentation="$(presentation.MaxLogFileSize_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="MaxLogFileSize_Part" valueName="MaxLogFileSize" required="true" minValue="1" maxValue="100" />
+      </elements>
+    </policy>
+    <policy name="MaxLogFileCount_Policy" class="User" displayName="$(string.MaxLogFileCount_Policy)" explainText="$(string.MaxLogFileCount_Explain)" presentation="$(presentation.MaxLogFileCount_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="MaxLogFileCount_Part" valueName="MaxLogFileCount" required="true" minValue="8" maxValue="50" />
+      </elements>
+    </policy>
+    <policy name="DisableUDPBridge_Policy" class="User" displayName="$(string.DisableUDPBridge_Policy)" explainText="$(string.DisableUDPBridge_Explain)" presentation="$(presentation.DisableUDPBridge_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="DisableUDPBridge">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableICABridge_Policy" class="User" displayName="$(string.DisableICABridge_Policy)" explainText="$(string.DisableICABridge_Explain)" presentation="$(presentation.DisableICABridge_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="DisableICABridge">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableMMRDirect_Policy" class="User" displayName="$(string.DisableMMRDirect_Policy)" explainText="$(string.DisableMMRDirect_Explain)" presentation="$(presentation.DisableMMRDirect_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="DisableMMRDirect">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AudioAECLevel_Policy" class="User" displayName="$(string.AudioAECLevel_Policy)" explainText="$(string.AudioAECLevel_Explain)" presentation="$(presentation.AudioAECLevel_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="AudioAECLevel_Part" valueName="AudioAECLevel" required="true" minValue="1" maxValue="2" />
+      </elements>
+    </policy>
+    <policy name="SortBuddyMaxCount_Policy" class="User" displayName="$(string.SortBuddyMaxCount_Policy)" explainText="$(string.SortBuddyMaxCount_Explain)" presentation="$(presentation.SortBuddyMaxCount_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="SortBuddyMaxCount_Part" valueName="SortBuddyMaxCount" required="true" />
+      </elements>
+    </policy>
+    <policy name="PingServerFromThinClient_Policy" class="User" displayName="$(string.PingServerFromThinClient_Policy)" explainText="$(string.PingServerFromThinClient_Explain)" presentation="$(presentation.PingServerFromThinClient_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="PingServerFromThinClient">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableDifferentVersionTip_Policy" class="User" displayName="$(string.EnableDifferentVersionTip_Policy)" explainText="$(string.EnableDifferentVersionTip_Explain)" presentation="$(presentation.EnableDifferentVersionTip_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="EnableDifferentVersionTip">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="ServiceUnavailableTipMsg_Policy" class="User" displayName="$(string.ServiceUnavailableTipMsg_Policy)" explainText="$(string.ServiceUnavailableTipMsg_Explain)" presentation="$(presentation.ServiceUnavailableTipMsg_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <text id="ServiceUnavailableTipMsg_Part" valueName="ServiceUnavailableTipMsg" />
+      </elements>
+    </policy>
+    <policy name="FallbackModeTipMsg_Policy" class="User" displayName="$(string.FallbackModeTipMsg_Policy)" explainText="$(string.FallbackModeTipMsg_Explain)" presentation="$(presentation.FallbackModeTipMsg_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <text id="FallbackModeTipMsg_Part" valueName="FallbackModeTipMsg" />
+      </elements>
+    </policy>
+    <policy name="IncompatibleTipMsg_Policy" class="User" displayName="$(string.IncompatibleTipMsg_Policy)" explainText="$(string.IncompatibleTipMsg_Explain)" presentation="$(presentation.IncompatibleTipMsg_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <text id="IncompatibleTipMsg_Part" valueName="IncompatibleTipMsg" />
+      </elements>
+    </policy>
+    <policy name="MinPluginVersion_Policy" class="User" displayName="$(string.MinPluginVersion_Policy)" explainText="$(string.MinPluginVersion_Explain)" presentation="$(presentation.MinPluginVersion_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <text id="MinPluginVersion_Part" valueName="MinPluginVersion" />
+      </elements>
+    </policy>
+    <policy name="DisableWallView7x7_Policy" class="User" displayName="$(string.DisableWallView7x7_Policy)" explainText="$(string.DisableWallView7x7_Explain)" presentation="$(presentation.DisableWallView7x7_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="DisableWallView7x7">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="ForceWallView3x3_Policy" class="User" displayName="$(string.ForceWallView3x3_Policy)" explainText="$(string.ForceWallView3x3_Explain)" presentation="$(presentation.ForceWallView3x3_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="ForceWallView3x3">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AllowPluginDSCPMarking_Policy" class="User" displayName="$(string.AllowPluginDSCPMarking_Policy)" explainText="$(string.AllowPluginDSCPMarking_Explain)" presentation="$(presentation.AllowPluginDSCPMarking_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="AllowPluginDSCPMarking">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableShareOffload_Policy" class="User" displayName="$(string.DisableShareOffload_Policy)" explainText="$(string.DisableShareOffload_Explain)" presentation="$(presentation.DisableShareOffload_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="DisableShareOffload">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableShareAudioSound_Policy" class="User" displayName="$(string.EnableShareAudioSound_Policy)" explainText="$(string.EnableShareAudioSound_Explain)" presentation="$(presentation.EnableShareAudioSound_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="EnableShareAudioSound">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableOptimizeForVideo_Policy" class="User" displayName="$(string.EnableOptimizeForVideo_Policy)" explainText="$(string.EnableOptimizeForVideo_Explain)" presentation="$(presentation.EnableOptimizeForVideo_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="EnableOptimizeForVideo">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableWMIProvider_Policy" class="User" displayName="$(string.EnableWMIProvider_Policy)" explainText="$(string.EnableWMIProvider_Explain)" presentation="$(presentation.EnableWMIProvider_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="EnableWMIProvider">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DSCPValueForAudio_Policy" class="User" displayName="$(string.DSCPValueForAudio_Policy)" explainText="$(string.DSCPValueForAudio_Explain)" presentation="$(presentation.DSCPValueForAudio_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="DSCPValueForAudio_Part" valueName="DSCPValueForAudio" required="true" minValue="1" maxValue="63" />
+      </elements>
+    </policy>
+    <policy name="DSCPValueForVideo_Policy" class="User" displayName="$(string.DSCPValueForVideo_Policy)" explainText="$(string.DSCPValueForVideo_Explain)" presentation="$(presentation.DSCPValueForVideo_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="DSCPValueForVideo_Part" valueName="DSCPValueForVideo" required="true" minValue="1" maxValue="63" />
+      </elements>
+    </policy>
+    <policy name="GPOBandwidthOverrideWeb_Policy" class="User" displayName="$(string.GPOBandwidthOverrideWeb_Policy)" explainText="$(string.GPOBandwidthOverrideWeb_Explain)" presentation="$(presentation.GPOBandwidthOverrideWeb_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="GPOBandwidthOverrideWeb_Part" valueName="GPOBandwidthOverrideWeb" required="true" minValue="0" />
+      </elements>
+    </policy>
+    <policy name="DisableMMRDirect_Phone_Policy" class="User" displayName="$(string.DisableMMRDirect_Phone_Policy)" explainText="$(string.DisableMMRDirect_Phone_Explain)" presentation="$(presentation.DisableMMRDirect_Phone_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="DisableMMRDirect_Phone">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableUDPBridge_Phone_Policy" class="User" displayName="$(string.DisableUDPBridge_Phone_Policy)" explainText="$(string.DisableUDPBridge_Phone_Explain)" presentation="$(presentation.DisableUDPBridge_Phone_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="DisableUDPBridge_Phone">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableChannelBridge_Phone_Policy" class="User" displayName="$(string.DisableChannelBridge_Phone_Policy)" explainText="$(string.DisableChannelBridge_Phone_Explain)" presentation="$(presentation.DisableChannelBridge_Phone_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="DisableChannelBridge_Phone">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableVDIToolFileTransfer_Policy" class="User" displayName="$(string.DisableVDIToolFileTransfer_Policy)" explainText="$(string.DisableVDIToolFileTransfer_Explain)" presentation="$(presentation.DisableVDIToolFileTransfer_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="DisableVDIToolFileTransfer">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="CheckHdxMediaOptimization_Policy" class="User" displayName="$(string.CheckHdxMediaOptimization_Policy)" explainText="$(string.CheckHdxMediaOptimization_Explain)" presentation="$(presentation.CheckHdxMediaOptimization_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="CheckHdxMediaOptimization">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableVDIPluginAutoUpgrade_Policy" class="User" displayName="$(string.EnableVDIPluginAutoUpgrade_Policy)" explainText="$(string.EnableVDIPluginAutoUpgrade_Explain)" presentation="$(presentation.EnableVDIPluginAutoUpgrade_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="EnableVDIPluginAutoUpgrade">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AutoUpdatePluginVersion_Policy" class="User" displayName="$(string.AutoUpdatePluginVersion_Policy)" explainText="$(string.AutoUpdatePluginVersion_Explain)" presentation="$(presentation.AutoUpdatePluginVersion_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <text id="AutoUpdatePluginVersion_Part" valueName="AutoUpdatePluginVersion" />
+      </elements>
+    </policy>
+    <policy name="UpdatePluginLater_Policy" class="User" displayName="$(string.UpdatePluginLater_Policy)" explainText="$(string.UpdatePluginLater_Explain)" presentation="$(presentation.UpdatePluginLater_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="UpdatePluginLater_Part" valueName="UpdatePluginLater" required="true" minValue="0" maxValue="2" />
+      </elements>
+    </policy>
+    <policy name="DisableSyncDesktopVolumeToTerminal_Policy" class="User" displayName="$(string.DisableSyncDesktopVolumeToTerminal_Policy)" explainText="$(string.DisableSyncDesktopVolumeToTerminal_Explain)" presentation="$(presentation.DisableSyncDesktopVolumeToTerminal_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="DisableSyncDesktopVolumeToTerminal">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableScreenshotOptimization_Policy" class="User" displayName="$(string.DisableScreenshotOptimization_Policy)" explainText="$(string.DisableScreenshotOptimization_Explain)" presentation="$(presentation.DisableScreenshotOptimization_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="DisableScreenshotOptimization">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="PingServerFromThinClientOffloadConfRequest_Policy" class="User" displayName="$(string.PingServerFromThinClientOffloadConfRequest_Policy)" explainText="$(string.PingServerFromThinClientOffloadConfRequest_Explain)" presentation="$(presentation.PingServerFromThinClientOffloadConfRequest_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="PingServerFromThinClientOffloadConfRequest">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="PhoneCallTipMsg_Policy" class="User" displayName="$(string.PhoneCallTipMsg_Policy)" explainText="$(string.PhoneCallTipMsg_Explain)" presentation="$(presentation.PhoneCallTipMsg_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="PhoneCallTipMsg">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AutoUpdatePluginVersionWin_Policy" class="User" displayName="$(string.AutoUpdatePluginVersionWin_Policy)" explainText="$(string.AutoUpdatePluginVersionWin_Explain)" presentation="$(presentation.AutoUpdatePluginVersionWin_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <text id="AutoUpdatePluginVersionWin_Part" valueName="AutoUpdatePluginVersionWin" />
+      </elements>
+    </policy>
+    <policy name="AutoUpdatePluginVersionMac_Policy" class="User" displayName="$(string.AutoUpdatePluginVersionMac_Policy)" explainText="$(string.AutoUpdatePluginVersionMac_Explain)" presentation="$(presentation.AutoUpdatePluginVersionMac_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <text id="AutoUpdatePluginVersionMac_Part" valueName="AutoUpdatePluginVersionMac" />
+      </elements>
+    </policy>
+    <policy name="DisableGreenRoom_Policy" class="User" displayName="$(string.DisableGreenRoom_Policy)" explainText="$(string.DisableGreenRoom_Explain)" presentation="$(presentation.DisableGreenRoom_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="DisableGreenRoom">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="PluginInstallPathSignatureCheck_Policy" class="User" displayName="$(string.PluginInstallPathSignatureCheck_Policy)" explainText="$(string.PluginInstallPathSignatureCheck_Explain)" presentation="$(presentation.PluginInstallPathSignatureCheck_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="PluginInstallPathSignatureCheck">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="HideAdvancedSettings_Policy" class="User" displayName="$(string.HideAdvancedSettings_Policy)" explainText="$(string.HideAdvancedSettings_Explain)" presentation="$(presentation.HideAdvancedSettings_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\Meetings" valueName="HideAdvancedSettings">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>

@@ -16,6 +16,9 @@
         <category name="AVD_GP_NODE" displayName="$(string.AVD_GP_NODE)" explainText="$(string.AVD_User_Help)">
             <parentCategory ref="terminalserver:TS_TERMINAL_SERVER" />
         </category>
+        <category name="AVD_TRANSPORT_GP_NODE" displayName="$(string.AVD_TRANSPORT_GP_NODE)" explainText="$(string.AVD_TRANSPORT_GP_NODE_Help)">
+            <parentCategory ref="AVD_GP_NODE" />
+        </category>
     </categories>
     <policies>
 
@@ -121,6 +124,39 @@
                 <decimal id="Part_ICEClientPortBase" valueName="ICEClientPortBase" minValue="1024" maxValue="49151" storeAsText="false" />
                 <decimal id="Part_ICEClientPortRange" valueName="ICEClientPortRange" minValue="100" maxValue="65535" storeAsText="false" />
             </elements>
+        </policy>
+
+        <policy name="AVD_SERVER_UDP_SHORTPATH_DIRECT" class="Machine" displayName="$(string.AVD_SERVER_UDP_SHORTPATH_DIRECT)" explainText="$(string.AVD_SERVER_UDP_SHORTPATH_DIRECT_EXPLAIN)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="directUDP">
+            <parentCategory ref="AVD_TRANSPORT_GP_NODE" />
+            <supportedOn ref="AVD_SUPPORTED" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="2" />
+            </disabledValue>
+        </policy>
+
+        <policy name="AVD_SERVER_UDP_SHORTPATH_PUBLIC" class="Machine" displayName="$(string.AVD_SERVER_UDP_SHORTPATH_PUBLIC)" explainText="$(string.AVD_SERVER_UDP_SHORTPATH_PUBLIC_EXPLAIN)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="publicUDP">
+            <parentCategory ref="AVD_TRANSPORT_GP_NODE" />
+            <supportedOn ref="AVD_SUPPORTED" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="2" />
+            </disabledValue>
+        </policy>
+
+        <policy name="AVD_SERVER_UDP_SHORTPATH_RELAY" class="Machine" displayName="$(string.AVD_SERVER_UDP_SHORTPATH_RELAY)" explainText="$(string.AVD_SERVER_UDP_SHORTPATH_RELAY_EXPLAIN)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="relayUDP">
+            <parentCategory ref="AVD_TRANSPORT_GP_NODE" />
+            <supportedOn ref="AVD_SUPPORTED" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="2" />
+            </disabledValue>
         </policy>
 
     </policies>

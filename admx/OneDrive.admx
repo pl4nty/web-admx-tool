@@ -114,6 +114,13 @@
         <list id="DiskSpaceCheckThresholdMBList" key="Software\Policies\Microsoft\OneDrive\DiskSpaceCheckThresholdMB" additive="true" explicitValue="true"/>
       </elements>
     </policy>
+    <policy name="CustomSyncRootFolderName" class="Machine" displayName="$(string.CustomSyncRootFolderName)" explainText="$(string.CustomSyncRootFolderName_help)" presentation="$(presentation.CustomSyncRootFolderName_Pres)" key="Software\Policies\Microsoft\OneDrive">
+      <parentCategory ref="OneDriveNGSC" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS3" />
+      <elements>
+        <list id="CustomSyncRootFolderNameList" key="Software\Policies\Microsoft\OneDrive\CustomSyncRootFolderName" additive="true" explicitValue="true"/>
+      </elements>
+    </policy>
     <policy name="FilesOnDemandEnabled" class="Machine" displayName="$(string.FilesOnDemandEnabled)" explainText="$(string.FilesOnDemandEnabled_help)" key="SOFTWARE\Policies\Microsoft\OneDrive" valueName="FilesOnDemandEnabled">
       <parentCategory ref="OneDriveNGSC" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS3" />
@@ -172,6 +179,31 @@
             </value>
           </item>
         </enum>
+      </elements>
+    </policy>
+    <policy name="SharePointOnPremOIDC" class="Machine" displayName="$(string.SharePointOnPremOIDC)" explainText="$(string.SharePointOnPremOIDC_help)" presentation="$(presentation.SharePointOnPremOIDC_Pres)" key="SOFTWARE\Policies\Microsoft\OneDrive">
+      <parentCategory ref="OneDriveNGSC" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="SharePointOnPremOIDC_Dropdown" valueName="SharePointOnPremOIDC">
+          <item displayName="$(string.DisableOIDC)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.EnableOIDC)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SharePointOnPremApplicationIdUri" class="Machine" displayName="$(string.SharePointOnPremApplicationIdUri)" explainText="$(string.SharePointOnPremApplicationIdUri_help)" presentation="$(presentation.SharePointOnPremApplicationIdUri_Pres)" key="SOFTWARE\Policies\Microsoft\OneDrive">
+      <parentCategory ref="OneDriveNGSC" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="SharePointOnPremApplicationIdUriBox" maxLength="2000" required="false" valueName="SharePointOnPremApplicationIdUri" />
       </elements>
     </policy>
     <policy name="DisableFRETutorial" class="User" displayName="$(string.DisableFRETutorial)" explainText="$(string.DisableFRETutorial_help)" key="SOFTWARE\Policies\Microsoft\OneDrive" valueName="DisableTutorial">

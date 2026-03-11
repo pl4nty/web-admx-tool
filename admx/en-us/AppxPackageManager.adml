@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Copyright (C) Microsoft. All rights reserved.  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <!-- displayName and description are not used. Not supported by current Group Policy tools. -->
+  <displayName>Appx Package Manager</displayName>
+  <description>Appx Package Manager</description>
+  <resources>
+    <stringTable>
+      <string id="AppxDeployment">App Package Deployment</string>
+      <string id="AppxDeploymentAllowAllTrustedApps">Allow all trusted apps to install</string>
+      <string id="AppxDeploymentAllowAllTrustedAppsExplanation">This policy setting allows you to manage the installation of trusted line-of-business (LOB) or developer-signed packaged Microsoft Store apps.
+
+If you enable this policy setting, you can install any LOB or developer-signed packaged Microsoft Store app (which must be signed with a certificate chain that can be successfully validated by the local computer).
+
+If you disable or do not configure this policy setting, you cannot install LOB or developer-signed packaged Microsoft Store apps.</string>
+      <string id="AllowAutomaticAppArchiving">Archive infrequently used apps</string>
+      <string id="AllowAutomaticAppArchivingExplanation">This policy setting controls whether the system can archive infrequently used apps.
+
+If you enable this policy setting, then the system will periodically check for and archive infrequently used apps.
+
+If you disable this policy setting, then the system will not archive any apps.
+
+If you do not configure this policy setting (default), then the system will follow default behavior, which is to periodically check for and archive infrequently used apps, and the user will be able to configure this setting themselves.</string>
+      <string id="AllowDeploymentInSpecialProfiles">Allow deployment operations in special profiles</string>
+      <string id="AllowDeploymentInSpecialProfilesExplanation">This policy setting allows you to manage the deployment of packaged Microsoft Store apps when the user is signed in using a special profile. Special profiles are the following user profiles, where changes are discarded after the user signs off:
+
+Roaming user profiles to which the "Delete cached copies of roaming profiles" Group Policy setting applies
+
+Mandatory user profiles and super-mandatory profiles, which are created by an administrator
+
+Temporary user profiles, which are created when an error prevents the correct profile from loading
+
+User profiles for the Guest account and members of the Guests group
+
+
+If you enable this policy setting, Group Policy allows deployment operations (adding, registering, staging, updating, or removing an app package) of packaged Microsoft Store apps when using a special profile.
+
+If you disable or do not configure this policy setting, Group Policy blocks deployment operations of packaged Microsoft Store apps when using a special profile.</string>
+      <string id="AllowDevelopmentWithoutDevLicense">Allows development of packaged Microsoft Store apps and installing them from an integrated development environment (IDE)</string>
+      <string id="AllowDevelopmentWithoutDevLicenseExplanation">
+        Allows or denies development of Microsoft Store applications and installing them directly from an IDE.
+
+        If you enable this setting and enable the "Allow all trusted apps to install" Group Policy, you can develop Microsoft Store apps and install them directly from an IDE.
+
+        If you disable or do not configure this setting, you cannot develop Microsoft Store apps or install them directly from an IDE.
+      </string>
+      <string id="DisableDeploymentToNonSystemVolumes">Disable installing Windows apps on non-system volumes</string>
+      <string id="DisableDeploymentToNonSystemVolumesExplanation">
+        This policy setting allows you to manage installing Windows apps on additional volumes such as secondary partitions, USB drives, or SD cards.
+
+        If you enable this setting, you can't move or install Windows apps on volumes that are not the system volume.
+
+        If you disable or do not configure this setting, you can move or install Windows apps on other volumes.
+      </string>
+      <string id="RestrictAppDataToSystemVolume">Prevent users' app data from being stored on non-system volumes</string>
+      <string id="RestrictAppDataToSystemVolumeExplanation">
+        Prevent users' app data from moving to another location when an app is moved or installed on another location.
+
+        If you enable this setting, all users' app data will stay on the system volume, regardless of where the app is installed.
+
+        If you disable or do not configure this setting, then when an app is moved to a different volume, the users' app data will also move to this volume.
+      </string>
+      <string id="AllowSharedLocalAppData">Allow a Windows app to share application data between users</string>
+      <string id="AllowSharedLocalAppDataExplanation">Manages a Windows app's ability to share data between users who have installed the app.
+
+        If you enable this policy, a Windows app can share app data with other instances of that app. Data is shared through the SharedLocal folder. This folder is available through the Windows.Storage API.
+
+        If you disable this policy, a Windows app can't share app data with other instances of that app. If this policy was previously enabled, any previously shared app data will remain in the SharedLocal folder.
+      </string>
+      <string id="BlockNonAdminUserInstall">Prevent non-admin users from installing packaged Windows apps</string>
+      <string id="BlockNonAdminUserInstallExplanation">Manages non-Administrator users' ability to install Windows app packages.
+
+        If you enable this policy, non-Administrators will be unable to initiate installation of Windows app packages. Administrators who wish to install an app will need to do so from an Administrator context (for example, an Administrator PowerShell window). All users will still be able to install Windows app packages via the Microsoft Store, if permitted by other policies.
+
+        If you disable or do not configure this policy, all users will be able to initiate installation of Windows app packages.
+      </string>
+      <string id="ConfigureMSIXAuthenticationAuthorizedDomains">Set authorized domains for HTTPS authentication in MSIX streaming install</string>
+      <string id="ConfigureMSIXAuthenticationAuthorizedDomainsExplanation">This policy setting determines whether an EntraID OAuth token will be included in HTTPS communications to a specified fully qualified domain name for performing an MSIX streaming installation.
+
+If you enable this policy setting, HTTPS communications to the predefined fully qualified domains will incorporate the user's EntraID OAuth token when performing a streaming MSIX install. The value provided is a regular expression (ECMA Script) that will be used to match against the uppercased, fully qualified domain of the URL.
+
+If you disable or do not configure this policy setting, the user's EntraID OAuth token will only be shared with the default configured domains.
+      </string>
+      <string id="DisableBackgroundAutoUpdates">Not allow sideloaded apps to auto-update in the background</string>
+      <string id="DisableBackgroundAutoUpdatesExplanation">Manages a sideloaded apps' ability to auto-update in the background.
+
+        If you enable this policy, sideloaded apps will not auto-update in the background.
+
+        If you disable this policy, sideloaded apps will auto-update in the background.
+
+        Default is 'disabled' (key not present).
+      </string>
+      <string id="DisableMeteredNetworkBackgroundAutoUpdates">Not allow sideloaded apps to auto-update in the background on a metered network</string>
+      <string id="DisableMeteredNetworkBackgroundAutoUpdatesExplanation">Manages a sideloaded apps' ability to auto-update in the background on a metered network.
+
+        If you enable this policy, sideloaded apps will not auto-update in the background on a metered network.
+
+        If you disable this policy, sideloaded apps will auto-update in the background on a metered network.
+
+        Default is 'disabled' (key not present).
+      </string>
+      <string id="DisablePerUserUnsignedPackagesByDefault">Not allow per-user unsigned packages to install by default (requires explicitly allow per install)</string>
+      <string id="DisablePerUserUnsignedPackagesByDefaultExplanation">Not allow per-user unsigned packages to install by default (requires explicitly allow per install)
+
+        If you enable this policy, the AllowUnsigned option defaults to 'false'.
+
+        If you disable this policy, the AllowUnsigned option defaults to 'true'.
+
+        Default is 'disabled' (key not present).
+      </string>
+      <string id="AllowedNonAdminPackageFamilyNameRules">Allowed package family names for non-admin user install</string>
+      <string id="AllowedNonAdminPackageFamilyNameRulesExplanation">Allowed package family names for non-Administrator user Windows app package installation.
+
+If you enable this policy, you can enter a list of Windows app packages non-Administrators will be able to initiate installation of regardless of the configured "Prevent non-admin users from installing packaged Windows apps" policy.
+
+The values provided will be treated as regular expressions (ECMA Script). A package family name like Contoso.ContosoApp_8wekyb3d8bbwe is itself a valid regular expression that will match all packages in that family. A regular expression like ^Contoso.*_8wekyb3d8bbwe$ will also match Contoso.ContosoApp_8wekyb3d8bbwe
+
+If the package family name of an installing Windows app package matches any rule it will not be blocked by the "Prevent non-admin users from installing packaged Windows apps" policy. Installation may still be blocked by other policy or settings.
+
+If you disable or do not configure this policy, all Windows app packages will be subject to the configured "Prevent non-admin users from installing packaged Windows apps" policy.
+
+Default is 'disabled' (key not present).
+      </string>
+      <string id="RemoveDefaultMicrosoftStorePackages">Remove Default Microsoft Store packages from the system.</string>
+      <string id="RemoveDefaultMicrosoftStorePackagesExplanation">Removes Default Microsoft Store packages from the system.
+
+If you enable this policy, the selected Microsoft Store apps in the provided list will be uninstalled from the system. You can make adjustments to the default settings.
+
+Unselected apps in the list will not be removed.
+
+Default is 'disabled' (key not present).
+
+If the policy is disabled or not configured, no Default Microsoft Store packages will be removed from the system.
+
+* This is a headless app (no UI)
+
+** This app is the default handler for a common file type or protocol. Removing this app might result in a degraded user experience. We do not recommend removing this app.
+      </string>
+      <string id="RemoveDefaultMicrosoftStorePackagesDescription">Removes Default Microsoft Store packages from the system.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="ConfigureMSIXAuthenticationAuthorizedDomains">
+        <textBox refId="ConfigureMSIXAuthenticationAuthorizedDomains">
+          <label>Expression</label>
+        </textBox>
+      </presentation>
+      <presentation id="AllowedNonAdminPackageFamilyNameRules">
+        <listBox refId="AllowedNonAdminPackageFamilyNameRulesList">Allowed package family names for non-admin user install</listBox>
+      </presentation>
+      <presentation id="RemoveDefaultMicrosoftStorePackages">
+        <text>Removes Default Microsoft Store packages from the system.</text>
+        <checkBox refId="WindowsFeedbackHub" defaultChecked="false">Feedback Hub</checkBox>
+        <checkBox refId="MicrosoftOfficeHub" defaultChecked="false">Microsoft 365 Copilot</checkBox>
+        <checkBox refId="Clipchamp" defaultChecked="false">Microsoft Clipchamp</checkBox>
+        <checkBox refId="Copilot" defaultChecked="false">Microsoft Copilot</checkBox>
+        <checkBox refId="BingNews" defaultChecked="true">Microsoft News</checkBox>
+        <checkBox refId="Photos" defaultChecked="false">Microsoft Photos **</checkBox>
+        <checkBox refId="MicrosoftSolitaireCollection" defaultChecked="true">Microsoft Solitaire Collection</checkBox>
+        <checkBox refId="MicrosoftStickyNotes" defaultChecked="false">Microsoft Sticky Notes</checkBox>
+        <checkBox refId="MSTeams" defaultChecked="false">Microsoft Teams</checkBox>
+        <checkBox refId="Todo" defaultChecked="false">Microsoft To Do</checkBox>
+        <checkBox refId="BingWeather" defaultChecked="true">MSN Weather</checkBox>
+        <checkBox refId="OutlookForWindows" defaultChecked="false">Outlook for Windows</checkBox>
+        <checkBox refId="Paint" defaultChecked="false">Paint</checkBox>
+        <checkBox refId="QuickAssist" defaultChecked="false">Quick Assist</checkBox>
+        <checkBox refId="ScreenSketch" defaultChecked="false">Snipping Tool</checkBox>
+        <checkBox refId="WindowsCalculator" defaultChecked="false">Windows Calculator</checkBox>
+        <checkBox refId="WindowsCamera" defaultChecked="false">Windows Camera **</checkBox>
+        <checkBox refId="MediaPlayer" defaultChecked="false">Windows Media Player **</checkBox>
+        <checkBox refId="WindowsNotepad" defaultChecked="false">Windows Notepad **</checkBox>
+        <checkBox refId="WindowsSoundRecorder" defaultChecked="false">Windows Sound Recorder</checkBox>
+        <checkBox refId="WindowsTerminal" defaultChecked="false">Windows Terminal</checkBox>
+        <checkBox refId="GamingApp" defaultChecked="true">Xbox Gaming App</checkBox>
+        <checkBox refId="XboxIdentityProvider" defaultChecked="true">Xbox Identity Provider *</checkBox>
+        <checkBox refId="XboxSpeechToTextOverlay" defaultChecked="true">Xbox Speech To Text Overlay *</checkBox>
+        <checkBox refId="XboxTCUI" defaultChecked="true">Xbox TCUI *</checkBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

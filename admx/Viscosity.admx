@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="fullarmor" namespace="FullArmor.Policies.16BF8A78_5E63_4BCD_9ED2_AF87913E38A3" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_NotSpecified" displayName="$(string.SupportedOnWin10)" />
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="SparkLabs" displayName="$(string.sparklabs_display_name)" />
+    <category name="ViscosityPreferences" displayName="$(string.viscosity_preferences_display_name)">
+      <parentCategory ref="SparkLabs" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="AutomaticUpdating" class="Machine" displayName="$(string.unknown_22)" presentation="$(presentation.AutomaticUpdating)" key="Software\Policies\SparkLabs\Viscosity" valueName="AutoUpdate" explainText="$(string.AutomaticUpdating_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AutomaticUpdating_1" class="User" displayName="$(string.unknown_103)" presentation="$(presentation.AutomaticUpdating_1)" key="Software\Policies\SparkLabs\Viscosity" valueName="AutoUpdate" explainText="$(string.AutomaticUpdating_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="BlockIPv6" class="Machine" displayName="$(string.block_ipv6)" presentation="$(presentation.BlockIPv6)" key="Software\Policies\SparkLabs\Viscosity" valueName="BlockIPv6" explainText="$(string.BlockIPv6_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="BlockIPv6_user" class="User" displayName="$(string.block_ipv6)" presentation="$(presentation.BlockIPv6_user)" key="Software\Policies\SparkLabs\Viscosity" valueName="BlockIPv6" explainText="$(string.BlockIPv6_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="CreateVPNNetworkAdapteronImport" class="Machine" displayName="$(string.unknown_48)" presentation="$(presentation.CreateVPNNetworkAdapteronImport)" key="Software\Policies\SparkLabs\Viscosity" valueName="CreateAdapterOnImport" explainText="$(string.CreateVPNNetworkAdapteronImport_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="CreateVPNNetworkAdapteronImport_1" class="User" displayName="$(string.unknown_125)" presentation="$(presentation.CreateVPNNetworkAdapteronImport_1)" key="Software\Policies\SparkLabs\Viscosity" valueName="CreateAdapterOnImport" explainText="$(string.CreateVPNNetworkAdapteronImport_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="CustomProfileLocation" class="Machine" displayName="$(string.unknown_71)" presentation="$(presentation.CustomProfileLocation)" key="Software\Policies\SparkLabs\Viscosity" explainText="$(string.CustomProfileLocation_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <elements>
+        <text id="Path" valueName="CustomProfileLocation" />
+      </elements>
+    </policy>
+    <policy name="CustomProfileLocation_1" class="User" displayName="$(string.unknown_148)" presentation="$(presentation.CustomProfileLocation_1)" key="Software\Policies\SparkLabs\Viscosity" explainText="$(string.CustomProfileLocation_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <elements>
+        <text id="Path" valueName="CustomProfileLocation" />
+      </elements>
+    </policy>
+    <policy name="DetailsWindowOnTop" class="Machine" displayName="$(string.unknown_36)" presentation="$(presentation.DetailsWindowOnTop)" key="Software\Policies\SparkLabs\Viscosity" valueName="DetailsOnTop" explainText="$(string.DetailsWindowOnTop_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DetailsWindowOnTop_1" class="User" displayName="$(string.unknown_113)" presentation="$(presentation.DetailsWindowOnTop_1)" key="Software\Policies\SparkLabs\Viscosity" valueName="DetailsOnTop" explainText="$(string.DetailsWindowOnTop_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisconnectIfIdle" class="Machine" displayName="$(string.unknown_17)" presentation="$(presentation.DisconnectIfIdle)" key="Software\Policies\SparkLabs\Viscosity" explainText="$(string.DisconnectIfIdle_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <elements>
+        <boolean id="DisconnectIfIdle" valueName="DisconnectIfIdle">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <decimal id="Minutes" valueName="DisconnectIfIdleTimeout" />
+      </elements>
+    </policy>
+    <policy name="DisconnectIfIdle_1" class="User" displayName="$(string.unknown_98)" presentation="$(presentation.DisconnectIfIdle_1)" key="Software\Policies\SparkLabs\Viscosity" explainText="$(string.DisconnectIfIdle_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <elements>
+        <boolean id="DisconnectIfIdle" valueName="DisconnectIfIdle">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <decimal id="Minutes" valueName="DisconnectIfIdleTimeout" />
+      </elements>
+    </policy>
+    <policy name="GlobalConnectedScript" class="Machine" displayName="$(string.unknown_77)" presentation="$(presentation.GlobalConnectedScript)" key="Software\Policies\SparkLabs\Viscosity" explainText="$(string.GlobalConnectedScript_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <elements>
+        <text id="Path" valueName="globalConnectedScript" />
+      </elements>
+    </policy>
+    <policy name="GlobalConnectedScript_1" class="User" displayName="$(string.unknown_154)" presentation="$(presentation.GlobalConnectedScript_1)" key="Software\Policies\SparkLabs\Viscosity" explainText="$(string.GlobalConnectedScript_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <elements>
+        <text id="Path" valueName="globalConnectedScript" />
+      </elements>
+    </policy>
+    <policy name="GlobalDisconnectedScript" class="Machine" displayName="$(string.unknown_79)" presentation="$(presentation.GlobalDisconnectedScript)" key="Software\Policies\SparkLabs\Viscosity" explainText="$(string.GlobalDisconnectedScript_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <elements>
+        <text id="Path" valueName="globalDisconnectedScript" />
+      </elements>
+    </policy>
+    <policy name="GlobalDisconnectedScript_1" class="User" displayName="$(string.unknown_156)" presentation="$(presentation.GlobalDisconnectedScript_1)" key="Software\Policies\SparkLabs\Viscosity" explainText="$(string.GlobalDisconnectedScript_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <elements>
+        <text id="Path" valueName="globalDisconnectedScript" />
+      </elements>
+    </policy>
+    <policy name="License" class="Machine" displayName="$(string.license_display_name)" presentation="$(presentation.License)" key="Software\Policies\SparkLabs\Viscosity" explainText="$(string.License_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <elements>
+        <text id="License" valueName="License" />
+      </elements>
+    </policy>
+    <policy name="License_1" class="User" displayName="$(string.unknown_83)" presentation="$(presentation.License_1)" key="Software\Policies\SparkLabs\Viscosity" explainText="$(string.License_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <elements>
+        <text id="License" valueName="License" />
+      </elements>
+    </policy>
+    <policy name="MenuIcons" class="Machine" displayName="$(string.unknown_30)" presentation="$(presentation.MenuIcons)" key="Software\Policies\SparkLabs\Viscosity" explainText="$(string.MenuIcons_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <elements>
+        <text id="MenuIcons" valueName="MenuBarIcons" />
+      </elements>
+    </policy>
+    <policy name="MenuIcons_1" class="User" displayName="$(string.unknown_107)" presentation="$(presentation.MenuIcons_1)" key="Software\Policies\SparkLabs\Viscosity" explainText="$(string.MenuIcons_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <elements>
+        <text id="MenuIcons" valueName="MenuBarIcons" />
+      </elements>
+    </policy>
+    <policy name="MenuItemDisplay" class="Machine" displayName="$(string.menu_item_display)" presentation="$(presentation.MenuItemDisplay)" key="Software\Policies\SparkLabs\Viscosity" explainText="$(string.MenuItemDisplay_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <elements>
+        <enum id="MenuItemDisplayIP" valueName="MenuDisplayIPAddress" required="false">
+          <item displayName="$(string.prefer_ipv4)">
+            <value>
+              <string>ipv4</string>
+            </value>
+          </item>
+          <item displayName="$(string.prefer_ipv6)">
+            <value>
+              <string>ipv6</string>
+            </value>
+          </item>
+        </enum>
+        <enum id="MenuItemDisplayTraffic" valueName="MenuDisplayTraffic" required="false">
+          <item displayName="$(string.traffic_rates)">
+            <value>
+              <string>rates</string>
+            </value>
+          </item>
+          <item displayName="$(string.traffic_totals)">
+            <value>
+              <string>totals</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="MenuItemDisplay_user" class="User" displayName="$(string.menu_item_display)" presentation="$(presentation.MenuItemDisplay)" key="Software\Policies\SparkLabs\Viscosity" explainText="$(string.MenuItemDisplay_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <elements>
+        <enum id="MenuItemDisplayIP" valueName="MenuDisplayIPAddress" required="false">
+          <item displayName="$(string.prefer_ipv4)">
+            <value>
+              <string>ipv4</string>
+            </value>
+          </item>
+          <item displayName="$(string.prefer_ipv6)">
+            <value>
+              <string>ipv6</string>
+            </value>
+          </item>
+        </enum>
+        <enum id="MenuItemDisplayTraffic" valueName="MenuDisplayTraffic" required="false">
+          <item displayName="$(string.traffic_rates)">
+            <value>
+              <string>rates</string>
+            </value>
+          </item>
+          <item displayName="$(string.traffic_totals)">
+            <value>
+              <string>totals</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="Reconnectactiveconnectionsonwake" class="Machine" displayName="$(string.unknown_9)" explainText="$(string.unknown_10)" presentation="$(presentation.Reconnectactiveconnectionsonwake)" key="Software\Policies\SparkLabs\Viscosity" valueName="ReconnectOnWake">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="Reconnectactiveconnectionsonwake_1" class="User" displayName="$(string.unknown_90)" explainText="$(string.unknown_91)" presentation="$(presentation.Reconnectactiveconnectionsonwake_1)" key="Software\Policies\SparkLabs\Viscosity" valueName="ReconnectOnWake">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="Reconnectonwakedelay" class="Machine" displayName="$(string.unknown_14)" explainText="$(string.unknown_15)" presentation="$(presentation.Reconnectonwakedelay)" key="Software\Policies\SparkLabs\Viscosity">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <elements>
+        <decimal id="Reconnectonwakedelay" valueName="ConnectOnWakeDelay" />
+      </elements>
+    </policy>
+    <policy name="Reconnectonwakedelay_1" class="User" displayName="$(string.unknown_95)" explainText="$(string.unknown_96)" presentation="$(presentation.Reconnectonwakedelay_1)" key="Software\Policies\SparkLabs\Viscosity">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <elements>
+        <decimal id="Reconnectonwakedelay" valueName="ConnectOnWakeDelay" />
+      </elements>
+    </policy>
+    <policy name="RestrictEditing" class="Machine" displayName="$(string.unknown_73)" presentation="$(presentation.RestrictEditing)" key="Software\Policies\SparkLabs\Viscosity" valueName="RestrictEditing" explainText="$(string.RestrictEditing_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="RestrictEditing_1" class="User" displayName="$(string.unknown_150)" presentation="$(presentation.RestrictEditing_1)" key="Software\Policies\SparkLabs\Viscosity" valueName="RestrictEditing" explainText="$(string.RestrictEditing_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="StartViscosityAtLogin" class="Machine" displayName="$(string.unknown_4)" explainText="$(string.unknown_5)" presentation="$(presentation.StartViscosityAtLogin)" key="Software\Policies\SparkLabs\Viscosity" valueName="StartAtLogin">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="StartViscosityAtLogin_1" class="User" displayName="$(string.unknown_85)" explainText="$(string.unknown_86)" presentation="$(presentation.StartViscosityAtLogin_1)" key="Software\Policies\SparkLabs\Viscosity" valueName="StartAtLogin">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="UseSingleAdapterMode" class="Machine" displayName="$(string.unknown_40)" presentation="$(presentation.UseSingleAdapterMode)" key="Software\Policies\SparkLabs\Viscosity" valueName="SingleAdapter" explainText="$(string.UseSingleAdapterMode_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="UseSingleAdapterMode_1" class="User" displayName="$(string.unknown_117)" presentation="$(presentation.UseSingleAdapterMode_1)" key="Software\Policies\SparkLabs\Viscosity" valueName="SingleAdapter" explainText="$(string.UseSingleAdapterMode_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="UseWindowsDNS" class="Machine" displayName="$(string.use_windows_dns)" presentation="$(presentation.UseWindowsDNS)" key="Software\Policies\SparkLabs\Viscosity" valueName="UseWindowsDNS" explainText="$(string.UseWindowsDNS_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="UseWindowsDNS_user" class="User" displayName="$(string.use_windows_dns)" presentation="$(presentation.UseWindowsDNS)" key="Software\Policies\SparkLabs\Viscosity" valueName="UseWindowsDNS" explainText="$(string.UseWindowsDNS_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="UsernamePasswordStorage" class="Machine" displayName="$(string.unknown_64)" presentation="$(presentation.UsernamePasswordStorage)" key="Software\Policies\SparkLabs\Viscosity" explainText="$(string.UsernamePasswordStorage_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <elements>
+        <boolean id="RememberUsername" valueName="RememberUsername">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="EnablePasswordStorageSupport" valueName="PasswordSupport">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="UsernamePasswordStorage_1" class="User" displayName="$(string.unknown_141)" presentation="$(presentation.UsernamePasswordStorage_1)" key="Software\Policies\SparkLabs\Viscosity" explainText="$(string.UsernamePasswordStorage_Explain)">
+      <parentCategory ref="ViscosityPreferences" />
+      <supportedOn ref="SUPPORTED_NotSpecified" />
+      <elements>
+        <boolean id="RememberUsername" valueName="RememberUsername">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="EnablePasswordStorageSupport" valueName="PasswordSupport">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

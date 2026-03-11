@@ -299,5 +299,48 @@
                 <decimal value="0" />
             </disabledValue>
         </policy>
+        <policy name="AlwaysShowNotificationIcon" class="User" displayName="$(string.AlwaysShowNotificationIcon)" explainText="$(string.AlwaysShowNotificationIcon_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="AlwaysShowNotificationIcon">
+            <parentCategory ref="windows:StartMenu" />
+            <supportedOn ref="windows:SUPPORTED_Windows_11_0_22H2" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
+        <policy name="TurnOffAbbreviatedDateTimeFormat" class="User" displayName="$(string.TurnOffAbbreviatedDateTimeFormat)" explainText="$(string.TurnOffAbbreviatedDateTimeFormat_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="TurnOffAbbreviatedDateTimeFormat">
+            <parentCategory ref="windows:StartMenu" />
+            <supportedOn ref="windows:SUPPORTED_Windows_11_0_22H2" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
+        <policy name="ConfigureTaskbarSmallButtonBehavior" class="Both" displayName="$(string.ConfigureTaskbarSmallButtonBehavior_DisplayName)" explainText="$(string.ConfigureTaskbarSmallButtonBehavior_Help)" presentation="$(presentation.ConfigureTaskbarSmallButtonBehavior)" key="Software\Policies\Microsoft\Windows\Explorer">
+            <parentCategory ref="windows:StartMenu" />
+            <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER_ENTERPRISE_EDUCATION_PRO_SANDBOX" />
+            <elements>
+                <enum id="ConfigureTaskbarSmallButtonBehavior_Dropdown" valueName="ConfigureTaskbarSmallButtonBehavior" required="true">
+                    <item displayName="$(string.ConfigureTaskbarSmallButtonBehavior_Always)">
+                        <value>
+                            <decimal value="0" />
+                        </value>
+                    </item>
+                    <item displayName="$(string.ConfigureTaskbarSmallButtonBehavior_WhenTaskbarIsFull)">
+                        <value>
+                            <decimal value="1" />
+                        </value>
+                    </item>
+                    <item displayName="$(string.ConfigureTaskbarSmallButtonBehavior_Never)">
+                        <value>
+                            <decimal value="2" />
+                        </value>
+                    </item>
+                </enum>
+            </elements>
+        </policy>
     </policies>
 </policyDefinitions>

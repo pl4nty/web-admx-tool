@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 or later</string>
+      <!-- categories -->
+      <string id="slack">Slack</string>
+      <string id="slack_Explain">Allows configuration of the Slack desktop client.</string>
+      <string id="slackDefaults">Defaults</string>
+      <string id="slackDefaults_Explain">Allows to provide a set of default values that can be still adjusted by the end user.</string>
+      <!-- settings -->
+      <string id="HardwareAcceleration">Hardware Acceleration</string>
+      <string id="HardwareAcceleration_Explain">Enables or disable hardware accelerated rendering via GPU.</string>
+      <string id="ClientEnvironment">Client Environment</string>
+      <string id="ClientEnvironment_Explain">Configures the client to run in either commercial mode or government compliance mode (GovSlack).</string>
+      <string id="DownloadPath">Download Path</string>
+      <string id="DownloadPath_Explain">Defines the download location for documents from Slack</string>
+      <string id="HideOnStartup">Hide On Startup</string>
+      <string id="HideOnStartup_Explain">Indicates whether Slack is visible when launch on login is activated and the user logs into their machine.</string>
+      <string id="DefaultSignInTeam">Default SignIn Team</string>
+      <string id="DefaultSignInTeam_Explain">Sets a default team/workspace for users to sign-in on first launch.</string>
+      <string id="ReleaseChannel">Release Channel</string>
+      <string id="ReleaseChannel_Explain">Configure the client to receive updates from either the production or beta channel.</string>
+      <string id="AutoUpdate">Auto Update</string>
+      <string id="AutoUpdate_Explain">Enables or disables auto updates.</string>
+      <!-- values -->
+      <string id="ReleaseChannel_Prod">Production</string>
+      <string id="ReleaseChannel_Beta">Beta</string>
+      <string id="ClientEnvironment_Commercial">Commercial</string>
+      <string id="ClientEnvironment_GovSlack">GovSlack</string>
+      ReleaseChannel
+    </stringTable>
+    <presentationTable>
+      <presentation id="Generic"/>
+      <presentation id="DownloadPath">
+        <textBox refId="DownloadPath">
+          <label>Download Path</label>
+        </textBox>
+      </presentation>
+      <presentation id="DefaultTeam">
+        <textBox refId="DefaultTeam">
+          <label>Default Sign In Team</label>
+        </textBox>
+      </presentation>
+      <presentation id="ClientEnvironment">
+        <text>Configure client enviornment</text>
+        <text>See https://slack.com/solutions/govslack</text>
+        <dropdownList defaultItem="0" noSort="true" refId="ClientEnvironment_Enum">Environment</dropdownList>
+      </presentation>
+      <presentation id="ReleaseChannel">
+        <text>Configure release channel</text>
+        <dropdownList defaultItem="0" noSort="true" refId="ReleaseChannel_Enum">Channel</dropdownList>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

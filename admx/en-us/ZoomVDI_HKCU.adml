@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName>ZoomVDI</displayName>
+  <description>ZoomVDI</description>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WINXPSP2">Microsoft Windows XP SP2 or later</string>
+      <string id="ZoomUsCommunicationVDI">Zoom VDI</string>
+      <string id="zoomvdiclient">Zoom VDI Client Settings</string>
+      <string id="ShareSubscribeFps_Policy">Set share subscribe FPS</string>
+      <string id="ShareSubscribeFps_Part">Set share subscribe FPS</string>
+      <string id="ShareSubscribeFps_Explain">This is a user-defined subscribing sharing frame rate.
+
+It can be 1 or 5.</string>
+      <string id="ShareSubscribeFps_Set_To_1">1</string>
+      <string id="ShareSubscribeFps_Set_To_5">5</string>
+      <string id="ShareCaptureFps_Policy">Set share capture FPS</string>
+      <string id="ShareCaptureFps_Part">Set share capture FPS</string>
+      <string id="ShareCaptureFps_Explain">This is a user-defined screen capture frame rate.
+
+The value can be any number from 1 to 5. </string>
+      <string id="UDPPortBegin_Policy">Set UDP port begin</string>
+      <string id="UDPPortBegin_Part">Set UDP port begin</string>
+      <string id="UDPPortBegin_Explain">Admin-specified port range when connecting with UDP.
+
+The range for begin port is (1700, 64000).
+
+The range for end port is (1800, 65000).
+
+Also, note the begin-end range cannot be less than 100.
+
+Port range (7200-17210) is the default range for the Firewall inbound rules used by the Zoom VDI client on the VM side. Before testing UDPPortBegin-End, you will need to set the following:
+
+DisableUDPBridge=0; DisableICABridge=1;DisableMMRDirect=1  and configure a new Firewall inbound rule, like Port range (17000-65000)
+
+Additionally, be aware that if there are multiple users that share the same VM machine, reserving 8 ports for each user is recommended.</string>
+      <string id="UDPPortEnd_Policy">Set UDP port end</string>
+      <string id="UDPPortEnd_Part">Set UDP port end</string>
+      <string id="UDPPortEnd_Explain">Admin-specified port range when connecting with UDP.
+
+The range for begin port is (1700, 64000).
+
+The range for end port is (1800, 65000).
+
+Also, note the begin-end range cannot be less than 100.
+
+Port range (7200-17210) is the default range for the Firewall inbound rules used by the Zoom VDI client on the VM side. Before testing UDPPortBegin-End, you will need to set the following:
+
+DisableUDPBridge=0; DisableICABridge=1;DisableMMRDirect=1  and configure a new Firewall inbound rule, like Port range (17000-65000)
+
+Additionally, be aware that if there are multiple users that share the same VM machine, reserving 8 ports for each user is recommended.</string>
+      <string id="DisableBoostPowerScheme_Policy">Disable boost power scheme</string>
+      <string id="DisableBoostPowerScheme_Explain">Specify a value of one (1) to disable. Specify a value of zero (0) or not available to enable.
+
+This setting only applies to thin clients with 2 core CPU or less. By default, the VDI Client will force the thin client power settings to high-performance mode if this setting is not set or set to 0.</string>
+      <string id="FallbackMode_Policy">Set fallback mode</string>
+      <string id="FallbackMode_Part">Set fallback mode</string>
+      <string id="FallbackMode_Explain">If the registry settings are not configured, the default mode is one (1).
+
+Each number corresponds to a specific mode:
+
+(1) Normal mode (Behaves like the regular zoom client)
+
+(2) Runs as a screen share meeting (Audio and video are muted by default)
+
+(3) A pop-up appears that will say unable to meet and join
+
+(4) A dialogue prompt will display an error message. When the user closes the prompt the Zoom app will also be closed.
+
+(5) Video is disabled.
+
+(6) Video and sharing are disabled.
+
+(7) Video and computer audio are disabled</string>
+      <string id="LogLevel_Policy">Set log level</string>
+      <string id="LogLevel_Part">Set log level</string>
+      <string id="LogLevel_Explain">If set to zero (0), there may be some null log files generated.
+
+The log of the init procedure of the VDI plugin will always be generated.
+
+The following values determine the log output:
+
+(0) no log output
+
+(1) output error log
+
+(2) output warning log
+
+(3) output info log
+
+(4) output all logs</string>
+      <string id="AllowEnableLog_Policy">Allow enable log</string>
+      <string id="AllowEnableLog_Explain">(0)Disabled: users cannot enable logging
+
+(1)Enabled: users can enable logging</string>
+      <string id="LogReserveHours_Policy">Set log reserve hours</string>
+      <string id="LogReserveHours_Part">Set log reserve hours</string>
+      <string id="LogReserveHours_Explain">If set to 0 or not set, then there is no limitation.
+
+The duration (in hours) logs are kept.
+
+Set as a numerical value.</string>
+      <string id="LogReserveSize_Policy">Set log reserve size</string>
+      <string id="LogReserveSize_Part">Set log reserve size</string>
+      <string id="LogReserveSize_Explain">If set to 0 or not set, then there is no limitation.
+
+The total size of log files (in MB) to keep.
+
+Set as a numerical value.</string>
+      <string id="MaxLogFileSize_Policy">Set max log file size</string>
+      <string id="MaxLogFileSize_Part">Set max log file size</string>
+      <string id="MaxLogFileSize_Explain">Applicable to Windows thin client.
+
+Set value from 1 to 100 in MBs.</string>
+      <string id="MaxLogFileCount_Policy">Set max log file count</string>
+      <string id="MaxLogFileCount_Part">Set max log file count</string>
+      <string id="MaxLogFileCount_Explain">Applicable to Windows thin client.
+
+Set Value between 8-50.</string>
+      <string id="DisableUDPBridge_Policy">Disable UDP Bridge</string>
+      <string id="DisableUDPBridge_Explain">If your thin client cannot connect to the Virtual Desktop VM by UDP, setting this to enabled (1) may speed up the process of joining a meeting.
+
+Enabled (1): Cannot transfer data stream on UDP connection between VM and thin clientIf this is configured on the thin client, those settings will override the settings on the VM.
+
+Disabled (0): No restrictions</string>
+      <string id="DisableICABridge_Policy">Disable ICA Bridge</string>
+      <string id="DisableICABridge_Explain">If the MMR is inaccessible for the thin client, and the UDP connection from the thin client to the VM is not available, you will see the message "Zoom Plugin can not connect to the server according to your Zoom config and network status" and attempts to join or start meetings will fail when you set this value to enabled (1).
+
+If this is configured on the thin client those settings will override the settings on the VM.
+
+Enabled (1): Cannot transfer data stream on an ICA connection.
+
+Disabled (0): No restrictions</string>
+      <string id="DisableMMRDirect_Policy">Disable MMR direct</string>
+      <string id="DisableMMRDirect_Explain">If your network firewall has disabled the zoom connection process to Zoom MMRs on thin clients, setting this configuration to enabled (1) may speed up the procedure of joining a meeting.
+
+If this is configured on the thin client those settings will override the settings on the VM.
+
+Enabled (1): Cannot connect to an MMR on the thin client.
+
+Disabled (0): No restrictions</string>
+      <string id="AudioAECLevel_Policy">Set audio AEC level</string>
+      <string id="AudioAECLevel_Part">Set audio AEC level</string>
+      <string id="AudioAECLevel_Explain">The default value is 1.
+
+Advanced AEC offers higher-quality audio than Simple AEC, but it will use more CPU power on the thin client.
+
+(1) Simple AEC
+
+(2) Advanced AEC</string>
+      <string id="SortBuddyMaxCount_Policy">Set sort buddy max count</string>
+      <string id="SortBuddyMaxCount_Part">Set sort buddy max count</string>
+      <string id="SortBuddyMaxCount_Explain">(0) Company buddies will be sorted.
+
+(x) Company buddies will be sorted if the number is less than or equal to the value set.</string>
+      <string id="PingServerFromThinClient_Policy">Ping server from thin client</string>
+      <string id="PingServerFromThinClient_Explain">Enabled (1): Ping from the VDI VM.
+
+Disabled (0): Ping from the VDI VM.</string>
+      <string id="EnableDifferentVersionTip_Policy">Enable different version tip</string>
+      <string id="EnableDifferentVersionTip_Explain">This enables or disables an error message display when the VDI client and VDI plugin versions do not match.
+
+Enabled (1): Will display one.
+
+Disabled (0): Will display no warning message when there is a version mismatch</string>
+      <string id="ServiceUnavailableTipMsg_Policy">Set service unavailable tip message</string>
+      <string id="ServiceUnavailableTipMsg_Part">Set service unavailable tip message</string>
+      <string id="ServiceUnavailableTipMsg_Explain">The registry table string type does not support line return. If a line return is required, "backslash n" should be used to add the line return.
+
+The length of the content string cannot be greater than 1024 characters.
+
+Displays an administrator-defined message when the meeting cannot be started because the client is running fallback mode 3 or 4.
+
+When this entry does not exist (or the string value is empty), a default message will be displayed.
+
+When the string value is not empty, it will show the provided error message for either error condition.</string>
+      <string id="FallbackModeTipMsg_Policy">Set fallback mode tip message</string>
+      <string id="FallbackModeTipMsg_Part">Set fallback mode tip message</string>
+      <string id="FallbackModeTipMsg_Explain">The registry table string type does not support line return. If a line return is required, "backslash n" should be used to add the line return.
+
+The length of the content string cannot be greater than 1024 characters.
+
+Displays a user-defined message when the VDI plugin is not usable and fallback mode is set to 1, 2, 5, 6, or 7.
+
+When this registry key does not exist or the string value is empty, no dialog message will be shown.</string>
+      <string id="IncompatibleTipMsg_Policy">Set incompatible tip message</string>
+      <string id="IncompatibleTipMsg_Part">Set incompatible tip message</string>
+      <string id="IncompatibleTipMsg_Explain">precondition:
+
+1 Encrypted plugin before 3.3.0
+
+2 Join or start an e2e meeting
+
+Configure the meeting incompatibility message to match your internal helpdesk processes. The default message is "The Zoom Media Plugin is incompatible with the meeting, please contact your system administrator".</string>
+      <string id="MinPluginVersion_Policy">Set min plugin version</string>
+      <string id="MinPluginVersion_Part">Set min plugin version</string>
+      <string id="MinPluginVersion_Explain">Configure the version to match your existing thin client plugin deployment.
+
+Note that the default version for this setting is 2.1.5.</string>
+      <string id="DisableWallView7x7_Policy">Disable wall view 7x7</string>
+      <string id="DisableWallView7x7_Explain">Enabled (1): Revert to old logic and only display 5x5
+
+Disabled (0): Use new logic and offer 7x7 option if hardware requirements are met (release 5.9.6 and greater)</string>
+      <string id="ForceWallView3x3_Policy">Force wall view 3x3</string>
+      <string id="ForceWallView3x3_Explain">Enabled (1): Forces the use of 3x3.
+
+Disabled (0): This is the default value. Use 720HD to determine if 5x5 should be used.</string>
+      <string id="HideAdvancedSettings_Policy">Hide advanced settings</string>
+      <string id="HideAdvancedSettings_Explain">Enabled (1): The advanced settings will be hidden.
+
+Disabled (0): This is the default value. Advanced settings will be displayed.</string>
+      <string id="AllowPluginDSCPMarking_Policy">Allow plugin DSCP marking</string>
+      <string id="AllowPluginDSCPMarking_Explain">DSCP marking must be enabled in the Zoom web portal for this to work on the plugin side.
+
+Enabled (1): Add DSCP Marking to the plugin traffic.
+
+Disabled (0): DSCP Marking is absent from plugin traffic (even if it is enabled on the account).</string>
+      <string id="uniquedatadir_Policy">Enable unique data dir</string>
+      <string id="uniquedatadir_Part">Enable unique data dir</string>
+      <string id="uniquedatadir_Explain">Using the string "YES", will enable a unique folder within the path %appdata%\zoomvdi\data
+
+Configure this setting, to enable a unique data folder specific to the user profile for that device.</string>
+      <string id="DisableDirectConnection2Web_Policy">Disable direct connection to web</string>
+      <string id="DisableDirectConnection2Web_Explain">Impacts all web services related to REST API.</string>
+      <string id="DisableShareOffload_Policy">Disable share offload</string>
+      <string id="DisableShareOffload_Explain">The default value is 0.
+
+Value 1 uses a simple judgment method. When viewing a share, move the window quickly, and there will be no delay in the share window.
+
+Enabled (1): VDI view share does not offload.
+
+Disabled (0): VDI view share offloads.</string>
+      <string id="EnableShareAudioSound_Policy">Enable share audio sound</string>
+      <string id="EnableShareAudioSound_Explain">The default value is 0.
+
+Enabled (1): "share sound" option will be visible. 
+
+Disabled (0): "share sound" option will be hidden.</string>
+      <string id="EnableOptimizeForVideo_Policy">Enable optimize for video</string>
+      <string id="EnableOptimizeForVideo_Explain">The default value is 0.
+
+Enabled (1): "optimize for video clip" option will be visible.
+
+Disabled (0): "optimize for video clip" option will be hidden.</string>
+      <string id="EnableWMIProvider_Policy">Enable WMI provider</string>
+      <string id="EnableWMIProvider_Explain">Enabled (1): Enable the in-process WMI provider for the VDI client.
+
+Disabled (0): Disable the provider.</string>
+      <string id="DSCPValueForAudio_Policy">DSCP value for audio</string>
+      <string id="DSCPValueForAudio_Explain">Both values must be set for DSCP tagging to be applied and must be between 1 and 63, otherwise, the value from the Zoom web portal (account settings) is set. This value overrides the account settings if set, and doesn’t require the user to be logged in to an account.
+
+Applies DSCP tagging for audio and video. If using any values besides the default (40 for video, 56 for audio), DSCP tagging requires admin privileges and that the “EnableIndependentDataPort” key be set to 1 to tag the VDI client traffic. </string>
+      <string id="DSCPValueForAudio_Part">DSCP value for audio</string>
+      <string id="DSCPValueForVideo_Policy">DSCP value for video</string>
+      <string id="DSCPValueForVideo_Explain">Both values must be set for DSCP tagging to be applied and must be between 1 and 63, otherwise, the value from the Zoom web portal (account settings) is set. This value overrides the account settings if set, and doesn’t require the user to be logged in to an account.
+
+Applies DSCP tagging for audio and video. If using any values besides the default (40 for video, 56 for audio), DSCP tagging requires admin privileges and that the “EnableIndependentDataPort” key be set to 1 to tag the VDI client traffic. </string>
+      <string id="DSCPValueForVideo_Part">DSCP value for video</string>
+      <string id="GPOBandwidthOverrideWeb_Policy">GPO bandwidth override web</string>
+      <string id="GPOBandwidthOverrideWeb_Explain">If the policy GPOBandwidthOverrideWeb is enabled, we will ONLY use the bandwidth values from Policy Bandwidth Settings, regardless of whether the value exists under the device location and connection type (our default value is 0, and we use the previous bandwidth configuration rules if the value is not set).</string>
+      <string id="GPOBandwidthOverrideWeb_Part">GPO bandwidth override web</string>
+      <string id="DisableMMRDirect_Phone_Policy">Disable MMR direct phone</string>
+      <string id="DisableMMRDirect_Phone_Explain">If your network firewall prevents the zoom process from connecting to the Zoom Phone Server on the thin client, setting this registry option to enabled (1) may speed up Zoom Phone calls.
+
+If this is configured on the thin client, those settings will take override the settings on the virtual desktop.
+
+Enabled (1): Do not attempt to connect directly to the Zoom Phone Server from the thin client.
+
+Disabled (0): No restrictions</string>
+      <string id="DisableUDPBridge_Phone_Policy">Disable UDP bridge phone</string>
+      <string id="DisableUDPBridge_Phone_Explain">If your thin client cannot connect to the Virtual Desktop over UDP, setting this to enabled (1) may speed up the process of making a call.
+
+If this is configured on the thin client, the settings will override settings on the virtual desktop.
+
+Enabled (1): Prevent sending Zoom Phone audio over a UDP connection from the thin client to the virtual desktop.
+
+Disabled (0): No restrictions</string>
+      <string id="DisableChannelBridge_Phone_Policy">Disable channel bridge phone</string>
+      <string id="DisableChannelBridge_Phone_Explain">This option allows you to disable sending Zoom Phone audio over the protocol channel.
+
+If your configuration is expected to use Direct or UDP, setting this option to enabled (1) would prevent Zoom Phone from using the unintended media transport of the channel.
+
+Enabled (1): Prevent sending Zoom Phone audio over a channel connection (or example the ICA protocol connection channel).
+
+Disabled (0): No restrictions.</string>
+      <string id="DisableVDIToolFileTransfer_Policy">Disable VDI tool file transfer</string>
+      <string id="DisableVDIToolFileTransfer_Explain">The default value is disabled (0)
+
+This option allows you to disable the ability for the ZoomVDITool to pull log files from the remote client.
+
+Enabled (1): File transfer from Plugin to VM is disabled when using ZoomVDITool.
+
+Disabled (0): No restriction on Zoom VDI tool.</string>
+      <string id="CheckHdxMediaOptimization_Policy">Check HDX media optimization</string>
+      <string id="CheckHdxMediaOptimization_Explain">A value of disabled (0) will check to see if Lync (Skype for Business) or Teams is running to determine if Zoom can allocate HID devices. If either process is running, Zoom does not attempt to take control of HID devices.
+
+If the value is set to enabled (1), the check is to determine if HDX Media Optimization is active (using HID devices). If not, Zoom takes control of HID support.
+
+These options to force HID redirection are provided for evaluation in 5.10.6. A default value for this option will be determined for a future release.
+
+Enabled (1): Check if “HDX media optimization” is active and, if it is, do not force HID redirection.
+
+Disabled (0): Check if Skype for Business or Teams are running (the “lync.exe” process is running) and do not force HID redirection if they are.</string>
+      <string id="EnableVDIPluginAutoUpgrade_Policy">Enable VDI plugin auto upgrade</string>
+      <string id="EnableVDIPluginAutoUpgrade_Explain">The default value is disabled (0)
+
+This option is required to enable the VDI plugin auto-update feature.
+
+Adding the policy on the VM will enable the VDI plugin auto-update to install or upgrade VDI plugins if the VDI auto-update component has been installed on the thin client. This feature is currently only supported for Windows devices.
+
+Adding this policy to the Windows Thin Client can be used to DISABLE the auto-update feature for a specific device. An example would be to add the policy for managed devices to disable updates internally, while still allowing auto-update to update users' personal devices at home.
+
+Enabled (1): Enable plugin auto-update.
+
+Disabled (0): Disable plugin auto-update.</string>
+      <string id="AutoUpdatePluginVersion_Policy">Set auto update plugin version</string>
+      <string id="AutoUpdatePluginVersion_Part">Set auto update plugin version</string>
+      <string id="AutoUpdatePluginVersion_Explain">This option specifies the auto-upgrade plug-in version. The auto-update plugin will give priority to the specified version. If the specified version is invalid, the web server configuration should prevail.
+
+Example "5.9.6", plugin release version</string>
+      <string id="UpdatePluginLater_Policy">Update plugin later</string>
+      <string id="UpdatePluginLater_Part">Update plugin later options</string>
+      <string id="UpdatePluginLater_Explain">The default dialog displayed to the user does not include a button for “Later”. Adding this policy modifies the dialog and adds an additional Later button.
+
+Option 1 displays a "Later" button in the dialog when an action (install, update or downgrade) is required. Clicking Later closes the dialog. The next time the user connects, the same dialog will be presented if the VDI plugin management software detects an action is still required.
+
+Option 2 also displays a "Later" button but clicking Later for option 2 will wait until the user disconnects from their virtual desktop(s) and then perform the required action.
+
+(0) Default (plugin auto-update later option is disabled)
+
+(1) Enables Plugin AutoUpdate Later Option (5.11.6 VDI Zoom Meeting client or higher)
+
+(2) Selecting "Later" waits until the desktop is disconnected (5.13.0 VDI Zoom Meeting client or higher)</string>
+      <string id="DisableSyncDesktopVolumeToTerminal_Policy">Disable sync desktop volume to terminal</string>
+      <string id="DisableSyncDesktopVolumeToTerminal_Explain">This policy will sync changes made for the Virtual Desktop volume slider in the OS taskbar to the Thin Client device, if the VDI speaker output selection is configured as Same as system. This policy requires VDI version 5.14.10 or higher.
+
+Note: Changing the volume on the Thin Client directly will not sync to the Virtual Desktop and change the volume slider in the taskbar.
+
+(0) Sync volume changes made to the Virtual Desktop volume slider in the OS taskbar to the Thin Client device.
+
+(1) Volume changes are not synced (Default)</string>
+      <string id="DisableScreenshotOptimization_Policy">Disable screenshot optimization</string>
+      <string id="DisableScreenshotOptimization_Explain">(Beta) This policy can be used to offload screen capture commands to the plugin side, where the screenshot can capture video received by the VDI plugin. This requires VDI version 5.14.10 or higher.
+
+Currently, the default is disabled (1), but may be changed in a future release.
+
+0 - VDI Client Screenshot will be offloaded
+
+1 - (Default) Disable Screenshot offload</string>
+      <string id="PingServerFromThinClientOffloadConfRequest_Policy">Ping server from thin client offload conf request</string>
+      <string id="PingServerFromThinClientOffloadConfRequest_Explain">By default, the VDI virtual machine uses the plugin’s public IP address to determine and connect to the most suitable Zoom Servers.
+
+This requires the PingServerFromThinClient policy to be set to 1.
+
+This requires VDI version 5.14.10 or higher.
+
+(0) - Ping from VDI VM and use the plugin’s public IP address to select the most suitable Zoom Zone Center (Default)
+
+(1) - Ping from thin client.</string>
+      <string id="PhoneCallTipMsg_Policy">Phone call tip message</string>
+      <string id="PhoneCallTipMsg_Explain">This policy disables the audio quality popup message. This requires Zoom VDI client version 5.15.2 or higher
+
+(0) - (Default) "Poor network connection. Audio quality may be affected" notifications during phone calls will be displayed as needed.
+
+(1) - "Poor network connection. Audio quality may be affected" notifications during phone calls will be disabled.</string>
+      <string id="AutoUpdatePluginVersionWin_Policy">Auto update plugin version Win</string>
+      <string id="AutoUpdatePluginVersionWin_Part">Set auto update plugin version Win</string>
+      <string id="AutoUpdatePluginVersionWin_Explain">In order to distinguish Win version and Mac version in case of different hotfix version between Win and Mac, these 2 new register keys are created. If none of them are setup or all of them are set as empty string, AutoUpdatePluginVersion still works. If anyone of these new reg key is not empty, AutoUpdatePluginVersion will be skipped. (We plan to retire AutoUpdatePluginVersion after several release)</string>
+      <string id="AutoUpdatePluginVersionMac_Policy">Auto update plugin version Mac</string>
+      <string id="AutoUpdatePluginVersionMac_Part">Set auto update plugin version Mac</string>
+      <string id="AutoUpdatePluginVersionMac_Explain">In order to distinguish Win version and Mac version in case of different hotfix version between Win and Mac, these 2 new register keys are created. If none of them are setup or all of them are set as empty string, AutoUpdatePluginVersion still works. If anyone of these new reg key is not empty, AutoUpdatePluginVersion will be skipped. (We plan to retire AutoUpdatePluginVersion after several release)</string>
+      <string id="DisableGreenRoom_Policy">Disable Green Room</string>
+      <string id="DisableGreenRoom_Explain">0 - (Default) Enable GreenRoom
+
+1 - Disable GreenRoom</string>
+      <string id="PluginInstallPathSignatureCheck_Policy">Plugin install path signature check</string>
+      <string id="PluginInstallPathSignatureCheck_Explain">VDI 5.16.10 or later
+
+Applies to windows plugin only
+
+0 - Disable embedded signature verification for modules loaded from the installation path (default)
+
+1 - Enable embedded signature verification for all modules loaded (regardless of signature)</string>
+      <string id="ADMXMigrator_UnresolvedString">ADMX Migrator encountered a string that is not present in the source ADM string table.</string>
+      <string id="ADMXMigrator_NoSupportedOn">ADMX Migrator encountered a policy that does not have a supportedOn value.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="ShareSubscribeFps_Policy">
+        <dropdownList refId="ShareSubscribeFps_Part" defaultItem="1">Set share subscribe FPS</dropdownList>
+      </presentation>
+      <presentation id="ShareCaptureFps_Policy">
+        <decimalTextBox refId="ShareCaptureFps_Part" spinStep="1">Set share capture FPS</decimalTextBox>
+      </presentation>
+      <presentation id="UDPPortBegin_Policy">
+        <decimalTextBox refId="UDPPortBegin_Part" spinStep="1">Set UDP port begin</decimalTextBox>
+      </presentation>
+      <presentation id="UDPPortEnd_Policy">
+        <decimalTextBox refId="UDPPortEnd_Part" spinStep="1">Set UDP port end</decimalTextBox>
+      </presentation>
+      <presentation id="DisableBoostPowerScheme_Policy" />
+      <presentation id="FallbackMode_Policy">
+        <decimalTextBox refId="FallbackMode_Part" defaultValue="1" spinStep="1">Set fallback mode</decimalTextBox>
+      </presentation>
+      <presentation id="LogLevel_Policy">
+        <decimalTextBox refId="LogLevel_Part" spinStep="1">Set log level</decimalTextBox>
+      </presentation>
+      <presentation id="AllowEnableLog_Policy" />
+      <presentation id="LogReserveHours_Policy">
+        <decimalTextBox refId="LogReserveHours_Part" spinStep="1">Set log reserve hours</decimalTextBox>
+      </presentation>
+      <presentation id="LogReserveSize_Policy">
+        <decimalTextBox refId="LogReserveSize_Part" spinStep="1">Set log reserve size</decimalTextBox>
+      </presentation>
+      <presentation id="MaxLogFileSize_Policy">
+        <decimalTextBox refId="MaxLogFileSize_Part" spinStep="1">Set max log file size</decimalTextBox>
+      </presentation>
+      <presentation id="MaxLogFileCount_Policy">
+        <decimalTextBox refId="MaxLogFileCount_Part" spinStep="1">Set max log file count</decimalTextBox>
+      </presentation>
+      <presentation id="DisableUDPBridge_Policy" />
+      <presentation id="DisableICABridge_Policy" />
+      <presentation id="DisableMMRDirect_Policy" />
+      <presentation id="AudioAECLevel_Policy">
+        <decimalTextBox refId="AudioAECLevel_Part" defaultValue="1" spinStep="1">Set audio AEC level</decimalTextBox>
+      </presentation>
+      <presentation id="SortBuddyMaxCount_Policy">
+        <decimalTextBox refId="SortBuddyMaxCount_Part" spinStep="1">Set sort buddy max count</decimalTextBox>
+      </presentation>
+      <presentation id="PingServerFromThinClient_Policy" />
+      <presentation id="EnableDifferentVersionTip_Policy" />
+      <presentation id="ServiceUnavailableTipMsg_Policy">
+        <textBox refId="ServiceUnavailableTipMsg_Part">
+          <label>Set service unavailable tip message</label>
+        </textBox>
+      </presentation>
+      <presentation id="FallbackModeTipMsg_Policy">
+        <textBox refId="FallbackModeTipMsg_Part">
+          <label>Set fallback mode tip message</label>
+        </textBox>
+      </presentation>
+      <presentation id="IncompatibleTipMsg_Policy">
+        <textBox refId="IncompatibleTipMsg_Part">
+          <label>Set incompatible tip message</label>
+        </textBox>
+      </presentation>
+      <presentation id="MinPluginVersion_Policy">
+        <textBox refId="MinPluginVersion_Part">
+          <label>Set min plugin version</label>
+        </textBox>
+      </presentation>
+      <presentation id="DisableWallView7x7_Policy" />
+      <presentation id="ForceWallView3x3_Policy" />
+      <presentation id="AllowPluginDSCPMarking_Policy" />
+      <presentation id="DisableShareOffload_Policy" />
+      <presentation id="EnableShareAudioSound_Policy" />
+      <presentation id="EnableOptimizeForVideo_Policy" />
+      <presentation id="EnableWMIProvider_Policy" />
+      <presentation id="DSCPValueForAudio_Policy">
+        <decimalTextBox refId="DSCPValueForAudio_Part" spinStep="1">DSCP value for audio</decimalTextBox>
+      </presentation>
+      <presentation id="DSCPValueForVideo_Policy">
+        <decimalTextBox refId="DSCPValueForVideo_Part" spinStep="1">DSCP value for video</decimalTextBox>
+      </presentation>
+      <presentation id="GPOBandwidthOverrideWeb_Policy">
+        <decimalTextBox refId="GPOBandwidthOverrideWeb_Part" spinStep="1">GPO bandwidth override web</decimalTextBox>
+      </presentation>
+      <presentation id="DisableMMRDirect_Phone_Policy" />
+      <presentation id="DisableUDPBridge_Phone_Policy" />
+      <presentation id="DisableChannelBridge_Phone_Policy" />
+      <presentation id="DisableVDIToolFileTransfer_Policy" />
+      <presentation id="CheckHdxMediaOptimization_Policy" />
+      <presentation id="EnableVDIPluginAutoUpgrade_Policy" />
+      <presentation id="AutoUpdatePluginVersion_Policy">
+        <textBox refId="AutoUpdatePluginVersion_Part">
+          <label>Set auto update plugin version</label>
+        </textBox>
+      </presentation>
+      <presentation id="UpdatePluginLater_Policy">
+        <decimalTextBox refId="UpdatePluginLater_Part" spinStep="1">Update plugin later options</decimalTextBox>
+      </presentation>
+      <presentation id="DisableSyncDesktopVolumeToTerminal_Policy" />
+      <presentation id="DisableScreenshotOptimization_Policy" />
+      <presentation id="PingServerFromThinClientOffloadConfRequest_Policy" />
+      <presentation id="PhoneCallTipMsg_Policy" />
+      <presentation id="AutoUpdatePluginVersionWin_Policy">
+        <textBox refId="AutoUpdatePluginVersionWin_Part">
+          <label>Set auto update plugin version Win</label>
+        </textBox>
+      </presentation>
+      <presentation id="AutoUpdatePluginVersionMac_Policy">
+        <textBox refId="AutoUpdatePluginVersionMac_Part">
+          <label>Set auto update plugin version Mac</label>
+        </textBox>
+      </presentation>
+      <presentation id="DisableGreenRoom_Policy" />
+      <presentation id="PluginInstallPathSignatureCheck_Policy" />
+      <presentation id="HideAdvancedSettings_Policy" />
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

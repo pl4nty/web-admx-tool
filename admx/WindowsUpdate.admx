@@ -103,6 +103,13 @@
           <range ref="products:MicrosoftWindows" minVersionIndex="13"/>
         </or>
       </definition>
+
+      <!--At least Windows 11 Version 24H2-->
+      <definition name="WU_SUPPORTED_Win11_24H2" displayName="$(string.WU_SUPPORTED_Win11_24H2)">
+        <or>
+          <range ref="products:MicrosoftWindows" minVersionIndex="13"/>
+        </or>
+      </definition>
     </definitions>
   </supportedOn>
 
@@ -2872,6 +2879,163 @@
           <item displayName="$(string.ReceiveOptionalContentNeedUserApproval)">
             <value>
               <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="MaintenanceWindow"
+            class="Machine"
+            displayName="$(string.MaintenanceWindow_Title)"
+            explainText="$(string.MaintenanceWindow_Help)"
+            key="Software\Policies\Microsoft\Windows\WindowsUpdate\MaintenanceWindow"
+            presentation="$(presentation.MaintenanceWindow_Title)"
+            valueName="StartDate">
+      <parentCategory ref="WindowsUpdateExperience"/>
+      <supportedOn ref="WU_SUPPORTED_Win11_24H2"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <enum id="MaintenanceWindowUpdateActionID" valueName="UpdateActions" required="false">
+          <item displayName="$(string.MaintenanceWindowUpdateAction_DownloadInstallRestart)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MaintenanceWindowUpdateAction_InstallRestart)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MaintenanceWindowUpdateAction_RestartOnly)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+        <text id="MaintenanceWindowStartDateID" valueName="StartDate" />
+        <text id="MaintenanceWindowStartTimeID" valueName="StartTime" />
+        <decimal id="MaintenanceWindowDuration_Hours" valueName="DurationHours" />
+        <enum id="MaintenanceWindowRepeatScheduleOption" valueName="RepeatSchedule" required="false">
+          <item displayName="$(string.MaintenanceWindowRepeatSchedule_None)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MaintenanceWindowRepeatSchedule_Daily)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MaintenanceWindowRepeatSchedule_Weekly)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.MaintenanceWindowRepeatSchedule_Monthly)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+        <decimal id="MaintenanceWindowDailyFrequencyID" valueName="DailyFrequency" />
+        <decimal id="MaintenanceWindowWeeklyFrequencyID" valueName="WeeklyFrequency" />
+        <boolean id="MaintenanceWindowSunday" valueName="Sunday" />
+        <boolean id="MaintenanceWindowMonday" valueName="Monday" />
+        <boolean id="MaintenanceWindowTuesday" valueName="Tuesday" />
+        <boolean id="MaintenanceWindowWednesday" valueName="Wednesday" />
+        <boolean id="MaintenanceWindowThursday" valueName="Thursday" />
+        <boolean id="MaintenanceWindowFriday" valueName="Friday" />
+        <boolean id="MaintenanceWindowSaturday" valueName="Saturday" />
+        <enum id="MaintenanceWindowMonthlyScheduleID" valueName="MonthlySchedule" required="false">
+          <item displayName="$(string.MaintenanceWindowMonthlySchedule_MonthBased)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MaintenanceWindowMonthlySchedule_WeekBased)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+        <decimal id="MaintenanceWindowMonthsFrequencyID" valueName="MonthsFrequency" />
+        <decimal id="MaintenanceWindowDayOfMonthID" valueName="DayOfMonth" />
+        <enum id="MaintenanceWindowOccurrenceInMonth" valueName="OccurrenceInMonth" required="false">
+          <item displayName="$(string.MaintenanceWindowOccurrenceInMonth_First)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MaintenanceWindowOccurrenceInMonth_Second)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.MaintenanceWindowOccurrenceInMonth_Third)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.MaintenanceWindowOccurrenceInMonth_Fourth)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.MaintenanceWindowOccurrenceInMonth_Last)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+        <enum id="MaintenanceWindowDayOfTheWeek" valueName="DayOfTheWeek" required="false">
+          <item displayName="$(string.MaintenanceWindowDayOfTheWeek_Sunday)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MaintenanceWindowDayOfTheWeek_Monday)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MaintenanceWindowDayOfTheWeek_Tuesday)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.MaintenanceWindowDayOfTheWeek_Wednesday)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.MaintenanceWindowDayOfTheWeek_Thursday)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.MaintenanceWindowDayOfTheWeek_Friday)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+          <item displayName="$(string.MaintenanceWindowDayOfTheWeek_Saturday)">
+            <value>
+              <decimal value="6" />
+            </value>
+          </item>
+          <item displayName="$(string.MaintenanceWindowDayOfTheWeek_Weekdays)">
+            <value>
+              <decimal value="7" />
+            </value>
+          </item>
+          <item displayName="$(string.MaintenanceWindowDayOfTheWeek_Weekends)">
+            <value>
+              <decimal value="8" />
             </value>
           </item>
         </enum>

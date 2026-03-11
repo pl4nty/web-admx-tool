@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>enter display name here</displayName>
+  <description>enter description here</description>
+  <resources>
+    <stringTable>
+
+      <string id="SecureBootCategory">Secure Boot</string>
+      <string id="SecureBoot_MicrosoftUpdateManagedOptIn">Certificate Deployment via Controlled Feature Rollout</string>
+      <string id="SecureBoot_MicrosoftUpdateManagedOptIn_Help">For enterprises that desire assistance in deploying the new Secure Boot certificates to their devices, this setting can be enabled.
+
+ 
+
+Note: The device must be sending required diagnostic data to Microsoft to use this feature.
+
+ 
+
+For more information, see: https://aka.ms/GetSecureBoot </string>
+
+      <string id="SecureBoot_HighConfidenceOptOut">Automatic Certificate Deployment via Updates</string>
+      <string id="SecureBoot_HighConfidenceOptOut_Help">For devices where test results are available that indicate that the device can process the certificate updates successfully, the updates will be initiated automatically as part of the servicing updates. This policy is enabled by default. For enterprises that desire managing automatic update, use this policy to explicitly enable or disable the feature.
+
+ 
+
+For more information, see: https://aka.ms/GetSecureBoot </string>
+
+      <string id="SecureBoot_AvailableUpdatesPolicy">Enable Secure Boot Certificate Deployment</string>
+      <string id="SecureBoot_AvailableUpdatesPolicy_Help">This policy setting allows you to enable or disable the Secure Boot Certificate Deployment process on devices. When enabled, Windows will automatically begin the certificate deployment process to devices where this policy has been applied. 
+
+ 
+
+Note: This registry setting is not stored in a policy key, and this is considered a preference. Therefore, if the Group Policy Object that implements this setting is ever removed, this registry setting will remain. 
+
+ 
+
+Note: The Windows task that runs and processes this setting, runs every 12 hours. In some cases, the updates will be held until the system reboots to safely sequence the updates. 
+
+ 
+
+Note: Once the certificates are applied to the firmware, you cannot undo them from Windows. If clearing the certificates is necessary, it must be done from the firmware menu interface. 
+
+ 
+
+For more information, see: https://aka.ms/GetSecureBoot </string>
+
+      <string id="SUPPORTED_Windows8">At least Windows Server 2012, Windows 8 or Windows RT</string>  
+
+    </stringTable>
+
+  </resources>
+</policyDefinitionResources>

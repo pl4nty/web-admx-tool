@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0">
+  <displayName>Delivery Optimization GP</displayName>
+  <description>This file describes the Delivery Optimization GP settings</description>
+  <resources>
+    <stringTable>
+      <string id="DeliveryOptimizationCat">Delivery Optimization</string>
+      <string id="DownloadMode">Download Mode</string>
+      <string id="DownloadMode_Help">Specifies the method that Delivery Optimization can use to download content on behalf of various Microsoft products.
+
+0 = HTTP only, no peering
+1 = HTTP blended with peering behind the same NAT
+2 = HTTP blended with peering across a private group
+3 = HTTP blended with Internet peering
+99 = HTTP only, no peering, no use of DO cloud service
+100 = Bypass mode, deprecated in Windows 11</string>
+      <string id="DownloadMode_CdnOnly">HTTP only (0)</string>
+      <string id="DownloadMode_Lan">LAN (1)</string>
+      <string id="DownloadMode_Group">Group (2)</string>
+      <string id="DownloadMode_Internet">Internet (3)</string>
+      <string id="DownloadMode_Simple">Simple (99)</string>
+      <string id="DownloadMode_Bypass">Bypass (100)</string>
+      <string id="GroupId">Group ID</string>
+      <string id="GroupId_Help">Specifies an arbitrary group ID that the device belongs to. A GUID must be used.</string>
+      <string id="MaxCacheSize">Max Cache Size (percentage)</string>
+      <string id="MaxCacheSize_Help">Specifies the maximum cache size that Delivery Optimization can utilize, as a percentage of the available drive space.</string>
+      <string id="AbsoluteMaxCacheSize">Absolute Max Cache Size (in GB)</string>
+      <string id="AbsoluteMaxCacheSize_Help">Specifies the maximum size in GB of Delivery Optimization cache. This policy overrides the MaxCacheSize policy.</string>
+      <string id="MaxCacheAge">Max Cache Age (in seconds)</string>
+      <string id="MaxCacheAge_Help">Specifies the maximum time in seconds that each file is held in the Delivery Optimization cache after downloading successfully.</string>
+      <string id="MonthlyUploadDataCap">Monthly Upload Data Cap (in GB)</string>
+      <string id="MonthlyUploadDataCap_Help">Specifies the maximum bytes in GB that Delivery Optimization is allowed to upload to Internet peers in each calendar month.</string>
+      <string id="MinBackgroundQos">Minimum Background QoS (in KB/s)</string>
+      <string id="MinBackgroundQos_Help">Specifies the minimum download QoS (Quality of Service) in KiloBytes/sec for background downloads.</string>
+      <string id="ModifyCacheDrive">Modify Cache Drive</string>
+      <string id="ModifyCacheDrive_Help">Specifies the drive that Delivery Optimization should use for its cache. The drive location can be specified using environment variables, drive letter or using a full path.</string>
+      <string id="MaxBackgroundDownloadBandwidth">Maximum Background Download Bandwidth (in KB/s)</string>
+      <string id="MaxBackgroundDownloadBandwidth_Help">Specifies the maximum background download bandwidth in KiloBytes/second that the device can use across all concurrent download activities using Delivery Optimization.</string>
+      <string id="MaxForegroundDownloadBandwidth">Maximum Foreground Download Bandwidth (in KB/s)</string>
+      <string id="MaxForegroundDownloadBandwidth_Help">Specifies the maximum foreground download bandwidth in KiloBytes/second that the device can use across all concurrent download activities using Delivery Optimization.</string>
+      <string id="PercentageMaxBackgroundBandwidth">Maximum Background Download Bandwidth (percentage)</string>
+      <string id="PercentageMaxBackgroundBandwidth_Help">Specifies the maximum background download bandwidth that Delivery Optimization uses across all concurrent download activities as a percentage of available download bandwidth.</string>
+      <string id="PercentageMaxForegroundBandwidth">Maximum Foreground Download Bandwidth (percentage)</string>
+      <string id="PercentageMaxForegroundBandwidth_Help">Specifies the maximum foreground download bandwidth that Delivery Optimization uses across all concurrent download activities as a percentage of available download bandwidth.</string>
+      <string id="MinFileSizeToCache">Minimum P2P Content File Size (in MB)</string>
+      <string id="MinFileSizeToCache_Help">Specifies the minimum content file size in MB eligible to use P2P.</string>
+      <string id="AllowVPNPeerCaching">Enable P2P while the device connects via VPN</string>
+      <string id="AllowVPNPeerCaching_Help">Specifies whether the device, with an active VPN connection, is allowed to participate in P2P or not.</string>
+      <string id="MinRAMAllowedToPeer">Minimum RAM capacity (inclusive) required to enable use of P2P (in GB)</string>
+      <string id="MinRAMAllowedToPeer_Help">Specifies the minimum total RAM size in GB required to use P2P.</string>
+      <string id="MinDiskSizeAllowedToPeer">Minimum disk size allowed to use P2P (in GB)</string>
+      <string id="MinDiskSizeAllowedToPeer_Help">Specifies the required minimum total disk size in GB for the device to use P2P.</string>
+      <string id="MinBatteryPercentageAllowedToUpload">Allow uploads while the device is on battery while under set Battery level (percentage)</string>
+      <string id="MinBatteryPercentageAllowedToUpload_Help">Specifies the minimum battery level required for uploading to peers, while on battery power.</string>
+      <string id="CacheHost">Cache Server Hostname</string>
+      <string id="CacheHost_Help">Specifies one or more Microsoft Connected Cache servers that will be used by your client(s). One or more values can be added as either fully qualified domain names (FQDN) or IP addresses. To add multiple values, separate each FQDN or IP address by commas.</string>
+      <string id="CacheHostSource">Cache Server Hostname Source</string>
+      <string id="CacheHostSource_Help">Specifies how your client(s) can discover Microsoft Connected Cache servers dynamically.
+
+1 = DHCP Option 235
+2 = DHCP Option 235 Force</string>
+      <string id="CacheHostSource_DHCP">DHCP Option 235</string>
+      <string id="CacheHostSource_DHCP_Force">DHCP Option 235 Force</string>
+      <string id="DisallowCacheServerDownloadsOnVPN">Disallow downloads from Microsoft Connected Cache servers when the device connects via VPN</string>
+      <string id="DisallowCacheServerDownloadsOnVPN_Help">Specify to disallow downloads from Microsoft Connected Cache servers when the device connects via VPN. When unchecked the device is allowed to download from Microsoft Connected Cache when connected via VPN. Check the box to block these downloads.</string>
+      <string id="GroupIdSource">Select the source of Group IDs</string>
+      <string id="GroupIdSource_Help">Specifies the source of group ID used for peer selection.
+
+0 = Not Set
+1 = AD Site
+2 = Authenticated domain SID
+3 = DHCP Option ID
+4 = DNS Suffix
+5 = Entra ID Tenant ID</string>
+      <string id="GroupIdSource_Unset">Not Set (0)</string>
+      <string id="GroupIdSource_AD">AD Site (1)</string>
+      <string id="GroupIdSource_SID">Authenticated domain SID (2)</string>
+      <string id="GroupIdSource_DHCP">DHCP Option ID (3)</string>
+      <string id="GroupIdSource_DNS">DNS Suffix (4)</string>
+      <string id="GroupIdSource_AAD">AAD Tenant ID (5)</string>
+      <string id="DelayBackgroundDownloadFromHttp">Delay background download from http (in seconds)</string>
+      <string id="DelayBackgroundDownloadFromHttp_Help">For background downloads that use P2P, specifies the time to wait before starting to download from the HTTP source.</string>
+      <string id="DelayForegroundDownloadFromHttp">Delay Foreground download from http (in seconds)</string>
+      <string id="DelayForegroundDownloadFromHttp_Help">For foreground downloads that use P2P, specifies the time to wait before starting to download from the HTTP source.</string>
+      <string id="DelayCacheServerFallbackBackground">Delay Background download Cache Server fallback (in seconds)</string>
+      <string id="DelayCacheServerFallbackBackground_Help">For background downloads that use a cache server, specifies the time to wait before falling back to download from the original HTTP source.</string>
+      <string id="DelayCacheServerFallbackForeground">Delay Foreground download Cache Server fallback (in seconds)</string>
+      <string id="DelayCacheServerFallbackForeground_Help">For foreground downloads that use a cache server, specifies the time to wait before falling back to download from the original HTTP source.</string>
+      <string id="RestrictPeerSelectionBy">Select a method to restrict Peer Selection</string>
+      <string id="RestrictPeerSelectionBy_Help">Specifies to restrict peer selection using the selected method, in addition to the DownloadMode policy.
+
+0 = None
+1 = Subnet mask
+2 = Local discovery (DNS-SD)</string>
+      <string id="RestrictPeerSelectionBy_None">None</string>
+      <string id="RestrictPeerSelectionBy_Subnet">Subnet mask</string>
+      <string id="RestrictPeerSelectionBy_LinkLocal">Local discovery (DNS-SD)</string>
+      <string id="SetHoursToLimitBackgroundDownloadBandwidth">Set Business Hours to Limit Background Download Bandwidth</string>
+      <string id="SetHoursToLimitBackgroundDownloadBandwidth_Help">Specifies the maximum background download bandwidth that Delivery Optimization uses during and outside business hours across all concurrent download activities as a percentage of available download bandwidth.</string>
+      <string id="SetHoursToLimitForegroundDownloadBandwidth">Set Business Hours to Limit Foreground Download Bandwidth</string>
+      <string id="SetHoursToLimitForegroundDownloadBandwidth_Help">Specifies the maximum foreground download bandwidth that Delivery Optimization uses during and outside business hours across all concurrent download activities as a percentage of available download bandwidth.</string>
+      <string id="Time1AM">1 AM</string>
+      <string id="Time1PM">1 PM</string>
+      <string id="Time2AM">2 AM</string>
+      <string id="Time2PM">2 PM</string>
+      <string id="Time3AM">3 AM</string>
+      <string id="Time3PM">3 PM</string>
+      <string id="Time4AM">4 AM</string>
+      <string id="Time4PM">4 PM</string>
+      <string id="Time5AM">5 AM</string>
+      <string id="Time5PM">5 PM</string>
+      <string id="Time6AM">6 AM</string>
+      <string id="Time6PM">6 PM</string>
+      <string id="Time7AM">7 AM</string>
+      <string id="Time7PM">7 PM</string>
+      <string id="Time8AM">8 AM</string>
+      <string id="Time8PM">8 PM</string>
+      <string id="Time9AM">9 AM</string>
+      <string id="Time9PM">9 PM</string>
+      <string id="Time10AM">10 AM</string>
+      <string id="Time10PM">10 PM</string>
+      <string id="Time11AM">11 AM</string>
+      <string id="Time11PM">11 PM</string>
+      <string id="Time12AM">12 AM</string>
+      <string id="Time12PM">12 PM</string>
+      <string id="VpnKeywords">VPN Keywords</string>
+      <string id="VpnKeywords_Help">Specifies one or more keywords used to recognize VPN connections. To add multiple keywords, separate each by a comma.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="DownloadMode">
+        <dropdownList defaultItem="1" noSort="true" refId="DownloadMode">Download Mode:</dropdownList>
+      </presentation>
+      <presentation id="GroupId">
+        <textBox refId="GroupId">
+          <label>Group ID:</label>
+        </textBox>
+      </presentation>
+      <presentation id="MaxCacheSize">
+        <decimalTextBox defaultValue="20" refId="MaxCacheSize">Max Cache Size (Percentage):</decimalTextBox>
+      </presentation>
+      <presentation id="AbsoluteMaxCacheSize">
+        <decimalTextBox defaultValue="10" refId="AbsoluteMaxCacheSize">Absolute Max Cache Size (in GB):</decimalTextBox>
+      </presentation>
+      <presentation id="MaxCacheAge">
+        <decimalTextBox defaultValue="604800" refId="MaxCacheAge">Max Cache Age (in seconds):</decimalTextBox>
+      </presentation>
+      <presentation id="MonthlyUploadDataCap">
+        <decimalTextBox defaultValue="5120" refId="MonthlyUploadDataCap">Monthly Upload Data Cap (in GB):</decimalTextBox>
+      </presentation>
+      <presentation id="MinBackgroundQos">
+        <decimalTextBox defaultValue="20480" refId="MinBackgroundQos">Minimum Background QoS (in KB/s):</decimalTextBox>
+      </presentation>
+      <presentation id="ModifyCacheDrive">
+        <textBox refId="ModifyCacheDrive">
+          <label>Modify Cache Drive:</label>
+        </textBox>
+      </presentation>
+      <presentation id="MaxBackgroundDownloadBandwidth">
+        <decimalTextBox defaultValue="0" refId="MaxBackgroundDownloadBandwidth">Maximum Background Download Bandwidth (in KB/s):</decimalTextBox>
+      </presentation>
+      <presentation id="MaxForegroundDownloadBandwidth">
+        <decimalTextBox defaultValue="0" refId="MaxForegroundDownloadBandwidth">Maximum Foreground Download Bandwidth (in KB/s):</decimalTextBox>
+      </presentation>
+      <presentation id="PercentageMaxBackgroundBandwidth">
+        <decimalTextBox defaultValue="0" refId="PercentageMaxBackgroundBandwidth">Maximum Background Download Bandwidth (Percentage):</decimalTextBox>
+      </presentation>
+      <presentation id="PercentageMaxForegroundBandwidth">
+        <decimalTextBox defaultValue="0" refId="PercentageMaxForegroundBandwidth">Maximum Foreground Download Bandwidth (Percentage):</decimalTextBox>
+      </presentation>
+      <presentation id="MinFileSizeToCache">
+        <decimalTextBox defaultValue="100" refId="MinFileSizeToCache">Minimum P2P Content File Size (in MB):</decimalTextBox>
+      </presentation>
+      <presentation id="AllowVPNPeerCaching">
+        <checkBox defaultChecked="false" refId="AllowVPNPeerCaching">Enable P2P while the device connects via VPN</checkBox>
+      </presentation>
+      <presentation id="MinRAMAllowedToPeer">
+        <decimalTextBox defaultValue="4" refId="MinRAMAllowedToPeer">Minimum RAM capacity (inclusive) required to enable use of P2P (in GB):</decimalTextBox>
+      </presentation>
+      <presentation id="MinDiskSizeAllowedToPeer">
+        <decimalTextBox defaultValue="32" refId="MinDiskSizeAllowedToPeer">Minimum disk size allowed to use P2P (in GB):</decimalTextBox>
+      </presentation>
+      <presentation id="MinBatteryPercentageAllowedToUpload">
+        <decimalTextBox defaultValue="0" refId="MinBatteryPercentageAllowedToUpload">Minimum battery level (Percentage):</decimalTextBox>
+      </presentation>
+      <presentation id="CacheHost">
+        <textBox refId="CacheHost">
+          <label>Cache Server:</label>
+        </textBox>
+      </presentation>
+      <presentation id="CacheHostSource">
+        <dropdownList defaultItem="0" noSort="true" refId="CacheHostSource">Cache Server Hostname Source:</dropdownList>
+      </presentation>
+      <presentation id="DisallowCacheServerDownloadsOnVPN">
+        <checkBox defaultChecked="false" refId="DisallowCacheServerDownloadsOnVPN">Disallow download from MCC over VPN</checkBox>
+      </presentation>
+      <presentation id="GroupIdSource">
+        <dropdownList defaultItem="0" noSort="true" refId="GroupIdSource">Source of Group IDs:</dropdownList>
+      </presentation>
+      <presentation id="DelayBackgroundDownloadFromHttp">
+        <decimalTextBox defaultValue="0" refId="DelayBackgroundDownloadFromHttp">Delay background download from http (in secs):</decimalTextBox>
+      </presentation>
+      <presentation id="DelayForegroundDownloadFromHttp">
+        <decimalTextBox defaultValue="0" refId="DelayForegroundDownloadFromHttp">Delay Foreground download from http (in secs):</decimalTextBox>
+      </presentation>
+      <presentation id="DelayCacheServerFallbackBackground">
+        <decimalTextBox defaultValue="0" refId="DelayCacheServerFallbackBackground">Delay Background download Cache Server fallback (in secs):</decimalTextBox>
+      </presentation>
+      <presentation id="DelayCacheServerFallbackForeground">
+        <decimalTextBox defaultValue="0" refId="DelayCacheServerFallbackForeground">Delay Foreground download Cache Server fallback (in secs):</decimalTextBox>
+      </presentation>
+      <presentation id="RestrictPeerSelectionBy">
+        <dropdownList defaultItem="1" noSort="true" refId="RestrictPeerSelectionBy">Restrict Peer Selection By:</dropdownList>
+      </presentation>
+      <presentation id="VpnKeywords">
+        <textBox refId="VpnKeywords">
+          <label>VPN Keywords:</label>
+        </textBox>
+      </presentation>
+      <presentation id="SetHoursToLimitBackgroundDownloadBandwidth">
+        <text/>
+        <text>Set Business Hours to Limit Background Download Bandwidth:</text>
+        <dropdownList defaultItem="8" noSort="true" refId="SetHoursToLimitBackgroundDownloadBandwidthFrom">From:</dropdownList>
+        <dropdownList defaultItem="17" noSort="true" refId="SetHoursToLimitBackgroundDownloadBandwidthTo">To:</dropdownList>
+        <text/>
+        <text>Maximum Background Download Bandwidth (percentage) during Business Hours:</text>
+        <decimalTextBox defaultValue="0" refId="SetHoursToLimitBackgroundDownloadBandwidthIn"/>
+        <text/>
+        <text>Maximum Background Download Bandwidth (percentage) outside of Business Hours:</text>
+        <decimalTextBox defaultValue="0" refId="SetHoursToLimitBackgroundDownloadBandwidthOut"/>
+      </presentation>
+      <presentation id="SetHoursToLimitForegroundDownloadBandwidth">
+        <text/>
+        <text>Set Business Hours to Limit Foreground Download Bandwidth:</text>
+        <dropdownList defaultItem="8" noSort="true" refId="SetHoursToLimitForegroundDownloadBandwidthFrom">From:</dropdownList>
+        <dropdownList defaultItem="17" noSort="true" refId="SetHoursToLimitForegroundDownloadBandwidthTo">To:</dropdownList>
+        <text/>
+        <text>Maximum Foreground Download Bandwidth (percentage) during Business Hours:</text>
+        <decimalTextBox defaultValue="0" refId="SetHoursToLimitForegroundDownloadBandwidthIn"/>
+        <text/>
+        <text>Maximum Foreground Download Bandwidth (percentage) outside of Business Hours:</text>
+        <decimalTextBox defaultValue="0" refId="SetHoursToLimitForegroundDownloadBandwidthOut"/>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

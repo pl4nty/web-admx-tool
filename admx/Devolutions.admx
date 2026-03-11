@@ -533,6 +533,22 @@
 		</disabledValue>
     </policy>
     <policy 
+		name="POL_RDM_DISABLEASSISTANTRELATEDFEATURES"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEASSISTANTRELATEDFEATURES)"
+		explainText="$(string.POL_RDM_DISABLEASSISTANTRELATEDFEATURES_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableAssistantRelatedFeatures">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
 		name="POL_RDM_DISABLEAUTOFOCUSDASHBOARD"
 		class="Both"
 		displayName="$(string.POL_RDM_DISABLEAUTOFOCUSDASHBOARD)"
@@ -1141,22 +1157,6 @@
 		</disabledValue>
     </policy>
     <policy 
-		name="POL_RDM_DISABLEASSISTANTRELATEDFEATURES"
-		class="Both"
-		displayName="$(string.POL_RDM_DISABLEASSISTANTRELATEDFEATURES)"
-		explainText="$(string.POL_RDM_DISABLEASSISTANTRELATEDFEATURES_HELP)"
-		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
-		valueName="DisableAssistantRelatedFeatures">
-      <parentCategory ref="CAT_RDM_GENERAL" />
-      <supportedOn ref="SUPPORTED_WindowsVista" />
-		<enabledValue>
-			<decimal value="1" />
-		</enabledValue>
-		<disabledValue>
-        <decimal value="0" />
-		</disabledValue>
-    </policy>
-    <policy 
 		name="POL_RDM_DISABLERDPGATEWAYEDITIONINENTRY"
 		class="Both"
 		displayName="$(string.POL_RDM_DISABLERDPGATEWAYEDITIONINENTRY)"
@@ -1219,6 +1219,20 @@
 		<disabledValue>
         <decimal value="0" />
 		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_RDPLOGOFFWHENDISCONNECTING"
+		class="Both" 
+		displayName="$(string.POL_RDM_RDPLOGOFFWHENDISCONNECTING)"
+		explainText="$(string.POL_RDM_RDPLOGOFFWHENDISCONNECTING_HELP)"
+		presentation="$(presentation.INPUT_DEC_RDPLOGOFFWHENDISCONNECTING)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="RDPLogOffWhenDisconnecting">
+      <parentCategory ref="CAT_RDM_SESSION" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_RDPLOGOFFWHENDISCONNECTING" valueName="RDPLogOffWhenDisconnecting" maxValue="20000" />
+	</elements>
     </policy>
     <policy 
 		name="POL_RDM_DISABLEREVEALPASSWORDINMYACCOUNTSETTINGS"
@@ -1509,22 +1523,6 @@
 		</disabledValue>
     </policy>
     <policy 
-		name="POL_RDM_ENABLELEGACYCHROMEPROFILEHANDLING"
-		class="Both"
-		displayName="$(string.POL_RDM_ENABLELEGACYCHROMEPROFILEHANDLING)"
-		explainText="$(string.POL_RDM_ENABLELEGACYCHROMEPROFILEHANDLING_HELP)"
-		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
-		valueName="EnableLegacyChromeProfileHandling">
-      <parentCategory ref="CAT_RDM_SESSIONS" />
-      <supportedOn ref="SUPPORTED_WindowsVista" />
-		<enabledValue>
-			<decimal value="1" />
-		</enabledValue>
-		<disabledValue>
-        <decimal value="0" />
-		</disabledValue>
-    </policy>
-    <policy 
 		name="POL_RDM_ENABLEPOWERSHELLREMOTECONSOLEHOOKING"
 		class="Both"
 		displayName="$(string.POL_RDM_ENABLEPOWERSHELLREMOTECONSOLEHOOKING)"
@@ -1564,22 +1562,6 @@
 		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
 		valueName="ForceApplicationMFA">
       <parentCategory ref="CAT_RDM_SECURITY" />
-      <supportedOn ref="SUPPORTED_WindowsVista" />
-		<enabledValue>
-			<decimal value="1" />
-		</enabledValue>
-		<disabledValue>
-        <decimal value="0" />
-		</disabledValue>
-    </policy>
-    <policy 
-		name="POL_RDM_FORCECLEARCACHEONCLOSECHROME"
-		class="Both"
-		displayName="$(string.POL_RDM_FORCECLEARCACHEONCLOSECHROME)"
-		explainText="$(string.POL_RDM_FORCECLEARCACHEONCLOSECHROME_HELP)"
-		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
-		valueName="ForceClearCacheOnCloseChrome">
-      <parentCategory ref="CAT_RDM_GENERAL" />
       <supportedOn ref="SUPPORTED_WindowsVista" />
 		<enabledValue>
 			<decimal value="1" />
@@ -2265,6 +2247,34 @@
 		<disabledValue>
         <decimal value="0" />
 		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_SESSIONEVENTSEXECUTION"
+		class="Both" 
+		displayName="$(string.POL_RDM_SESSIONEVENTSEXECUTION)"
+		explainText="$(string.POL_RDM_SESSIONEVENTSEXECUTION_HELP)"
+		presentation="$(presentation.INPUT_DEC_SESSIONEVENTSEXECUTION)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="SessionEventsExecution">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_SESSIONEVENTSEXECUTION" valueName="SessionEventsExecution" maxValue="20000" />
+	</elements>
+    </policy>
+    <policy 
+		name="POL_RDM_SHOWFOLDERDETAILSASSELECTED"
+		class="Both" 
+		displayName="$(string.POL_RDM_SHOWFOLDERDETAILSASSELECTED)"
+		explainText="$(string.POL_RDM_SHOWFOLDERDETAILSASSELECTED_HELP)"
+		presentation="$(presentation.INPUT_DEC_SHOWFOLDERDETAILSASSELECTED)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="ShowFolderDetailsAsSelected">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_SHOWFOLDERDETAILSASSELECTED" valueName="ShowFolderDetailsAsSelected" maxValue="20000" />
+	</elements>
     </policy>
     <policy 
 		name="POL_RDM_SQLITEDEFAULTLOCATION"

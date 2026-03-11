@@ -269,5 +269,51 @@
         </enum>
       </elements>
     </policy>
+    <policy name="ForceOnlookerDetection" class="Machine" displayName="$(string.ForceOnlookerDetection_DisplayName)" explainText="$(string.ForceOnlookerDetection_ExplainText)" presentation="$(presentation.ForceOnlookerDetection)" key="Software\Policies\Microsoft\HumanPresence" valueName="ForceOnlookerDetection">
+      <parentCategory ref="HumanPresence" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2" />
+      <elements>
+        <enum id="ForceOnlookerDetectionDropdown" valueName="ForceOnlookerDetection" required="true">
+          <item displayName="$(string.ForceOnlookerDetection_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceOnlookerDetection_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceOnlookerDetection_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="ForceOnlookerDetectionAction" class="Machine" displayName="$(string.ForceOnlookerDetectionAction_DisplayName)" explainText="$(string.ForceOnlookerDetectionAction_ExplainText)" presentation="$(presentation.ForceOnlookerDetectionAction)" key="Software\Policies\Microsoft\HumanPresence" valueName="ForceOnlookerDetectionAction">
+      <parentCategory ref="HumanPresence" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2" />
+      <elements>
+        <enum id="ForceOnlookerDetectionActionDropdown" valueName="ForceOnlookerDetectionAction" required="true">
+          <item displayName="$(string.ForceOnlookerDetectionAction_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceOnlookerDetectionAction_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceOnlookerDetectionAction_3)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
   </policies>
 </policyDefinitions>
