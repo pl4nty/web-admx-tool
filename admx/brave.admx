@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--brave version: 145.1.87.192-->
+  <!--brave version: 146.1.88.127-->
   <policyNamespaces>
     <target namespace="BraveSoftware.Policies.Brave" prefix="brave" />
   </policyNamespaces>
@@ -39,6 +39,9 @@
     </category>
     <category displayName="$(string.ContentSettings_group)" name="ContentSettings_recommended">
       <parentCategory ref="brave_recommended" />
+    </category>
+    <category displayName="$(string.CryptographyCompliance_group)" name="CryptographyCompliance">
+      <parentCategory ref="brave" />
     </category>
     <category displayName="$(string.DefaultSearchProvider_group)" name="DefaultSearchProvider">
       <parentCategory ref="brave" />
@@ -744,6 +747,29 @@
         </enum>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.DefaultIdleDetectionSetting)" explainText="$(string.DefaultIdleDetectionSetting_Explain)" key="Software\Policies\BraveSoftware\Brave" name="DefaultIdleDetectionSetting" presentation="$(presentation.DefaultIdleDetectionSetting)">
+      <parentCategory ref="ContentSettings" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <enum id="DefaultIdleDetectionSetting" valueName="DefaultIdleDetectionSetting">
+          <item displayName="$(string.DefaultIdleDetectionSetting_AllowIdleDetection)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.DefaultIdleDetectionSetting_BlockIdleDetection)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.DefaultIdleDetectionSetting_AskIdleDetection)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.DefaultImagesSetting)" explainText="$(string.DefaultImagesSetting_Explain)" key="Software\Policies\BraveSoftware\Brave" name="DefaultImagesSetting" presentation="$(presentation.DefaultImagesSetting)">
       <parentCategory ref="ContentSettings" />
       <supportedOn ref="SUPPORTED_WIN7" />
@@ -1036,6 +1062,20 @@
         <list id="GeolocationBlockedForUrlsDesc" key="Software\Policies\BraveSoftware\Brave\GeolocationBlockedForUrls" valuePrefix="" />
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.IdleDetectionAllowedForUrls)" explainText="$(string.IdleDetectionAllowedForUrls_Explain)" key="Software\Policies\BraveSoftware\Brave" name="IdleDetectionAllowedForUrls" presentation="$(presentation.IdleDetectionAllowedForUrls)">
+      <parentCategory ref="ContentSettings" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <list id="IdleDetectionAllowedForUrlsDesc" key="Software\Policies\BraveSoftware\Brave\IdleDetectionAllowedForUrls" valuePrefix="" />
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.IdleDetectionBlockedForUrls)" explainText="$(string.IdleDetectionBlockedForUrls_Explain)" key="Software\Policies\BraveSoftware\Brave" name="IdleDetectionBlockedForUrls" presentation="$(presentation.IdleDetectionBlockedForUrls)">
+      <parentCategory ref="ContentSettings" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <list id="IdleDetectionBlockedForUrlsDesc" key="Software\Policies\BraveSoftware\Brave\IdleDetectionBlockedForUrls" valuePrefix="" />
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.ImagesAllowedForUrls)" explainText="$(string.ImagesAllowedForUrls_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ImagesAllowedForUrls" presentation="$(presentation.ImagesAllowedForUrls)">
       <parentCategory ref="ContentSettings" />
       <supportedOn ref="SUPPORTED_WIN7" />
@@ -1291,6 +1331,42 @@
         <text id="RegisteredProtocolHandlers" maxLength="1000000" valueName="RegisteredProtocolHandlers" />
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.PreferSlowCiphers)" explainText="$(string.PreferSlowCiphers_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PreferSlowCiphers" presentation="$(presentation.PreferSlowCiphers)">
+      <parentCategory ref="CryptographyCompliance" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <enum id="PreferSlowCiphers" valueName="PreferSlowCiphers">
+          <item displayName="$(string.PreferSlowCiphers_CNSA)">
+            <value>
+              <string>cnsa</string>
+            </value>
+          </item>
+          <item displayName="$(string.PreferSlowCiphers_Default)">
+            <value>
+              <string>default</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.PreferSlowKexAlgorithms)" explainText="$(string.PreferSlowKexAlgorithms_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PreferSlowKexAlgorithms" presentation="$(presentation.PreferSlowKexAlgorithms)">
+      <parentCategory ref="CryptographyCompliance" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <enum id="PreferSlowKexAlgorithms" valueName="PreferSlowKexAlgorithms">
+          <item displayName="$(string.PreferSlowKexAlgorithms_CNSA2_0)">
+            <value>
+              <string>cnsa2</string>
+            </value>
+          </item>
+          <item displayName="$(string.PreferSlowKexAlgorithms_Default)">
+            <value>
+              <string>default</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.DefaultSearchProviderAlternateURLs)" explainText="$(string.DefaultSearchProviderAlternateURLs_Explain)" key="Software\Policies\BraveSoftware\Brave" name="DefaultSearchProviderAlternateURLs" presentation="$(presentation.DefaultSearchProviderAlternateURLs)">
       <parentCategory ref="DefaultSearchProvider" />
       <supportedOn ref="SUPPORTED_WIN7" />
@@ -1493,24 +1569,6 @@
         </enum>
       </elements>
     </policy>
-    <policy class="Both" displayName="$(string.DefaultThirdPartyStoragePartitioningSetting)" explainText="$(string.DefaultThirdPartyStoragePartitioningSetting_Explain)" key="Software\Policies\BraveSoftware\Brave" name="DefaultThirdPartyStoragePartitioningSetting" presentation="$(presentation.DefaultThirdPartyStoragePartitioningSetting)">
-      <parentCategory ref="DeprecatedPolicies" />
-      <supportedOn ref="SUPPORTED_WIN7" />
-      <elements>
-        <enum id="DefaultThirdPartyStoragePartitioningSetting" valueName="DefaultThirdPartyStoragePartitioningSetting">
-          <item displayName="$(string.DefaultThirdPartyStoragePartitioningSetting_AllowPartitioning)">
-            <value>
-              <decimal value="1" />
-            </value>
-          </item>
-          <item displayName="$(string.DefaultThirdPartyStoragePartitioningSetting_BlockPartitioning)">
-            <value>
-              <decimal value="2" />
-            </value>
-          </item>
-        </enum>
-      </elements>
-    </policy>
     <policy class="Both" displayName="$(string.DefaultWindowPlacementSetting)" explainText="$(string.DefaultWindowPlacementSetting_Explain)" key="Software\Policies\BraveSoftware\Brave" name="DefaultWindowPlacementSetting" presentation="$(presentation.DefaultWindowPlacementSetting)">
       <parentCategory ref="DeprecatedPolicies" />
       <supportedOn ref="SUPPORTED_WIN7" />
@@ -1527,13 +1585,6 @@
             </value>
           </item>
         </enum>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.ThirdPartyStoragePartitioningBlockedForOrigins)" explainText="$(string.ThirdPartyStoragePartitioningBlockedForOrigins_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ThirdPartyStoragePartitioningBlockedForOrigins" presentation="$(presentation.ThirdPartyStoragePartitioningBlockedForOrigins)">
-      <parentCategory ref="DeprecatedPolicies" />
-      <supportedOn ref="SUPPORTED_WIN7" />
-      <elements>
-        <list id="ThirdPartyStoragePartitioningBlockedForOriginsDesc" key="Software\Policies\BraveSoftware\Brave\ThirdPartyStoragePartitioningBlockedForOrigins" valuePrefix="" />
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.WindowPlacementAllowedForUrls)" explainText="$(string.WindowPlacementAllowedForUrls_Explain)" key="Software\Policies\BraveSoftware\Brave" name="WindowPlacementAllowedForUrls" presentation="$(presentation.WindowPlacementAllowedForUrls)">
@@ -1725,16 +1776,6 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.PrivacySandboxAdTopicsEnabled)" explainText="$(string.PrivacySandboxAdTopicsEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PrivacySandboxAdTopicsEnabled" presentation="$(presentation.PrivacySandboxAdTopicsEnabled)" valueName="PrivacySandboxAdTopicsEnabled">
-      <parentCategory ref="DeprecatedPolicies" />
-      <supportedOn ref="SUPPORTED_WIN7" />
-      <enabledValue>
-        <decimal value="1" />
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0" />
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.PrivacySandboxFingerprintingProtectionEnabled)" explainText="$(string.PrivacySandboxFingerprintingProtectionEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PrivacySandboxFingerprintingProtectionEnabled" presentation="$(presentation.PrivacySandboxFingerprintingProtectionEnabled)" valueName="PrivacySandboxFingerprintingProtectionEnabled">
       <parentCategory ref="DeprecatedPolicies" />
       <supportedOn ref="SUPPORTED_WIN7" />
       <enabledValue>
@@ -2084,6 +2125,20 @@
             </value>
           </item>
         </enum>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.GeminiActOnWebAllowedForURLs)" explainText="$(string.GeminiActOnWebAllowedForURLs_Explain)" key="Software\Policies\BraveSoftware\Brave" name="GeminiActOnWebAllowedForURLs" presentation="$(presentation.GeminiActOnWebAllowedForURLs)">
+      <parentCategory ref="GenerativeAI" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <list id="GeminiActOnWebAllowedForURLsDesc" key="Software\Policies\BraveSoftware\Brave\GeminiActOnWebAllowedForURLs" valuePrefix="" />
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.GeminiActOnWebBlockedForURLs)" explainText="$(string.GeminiActOnWebBlockedForURLs_Explain)" key="Software\Policies\BraveSoftware\Brave" name="GeminiActOnWebBlockedForURLs" presentation="$(presentation.GeminiActOnWebBlockedForURLs)">
+      <parentCategory ref="GenerativeAI" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <list id="GeminiActOnWebBlockedForURLsDesc" key="Software\Policies\BraveSoftware\Brave\GeminiActOnWebBlockedForURLs" valuePrefix="" />
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.GeminiActOnWebSettings)" explainText="$(string.GeminiActOnWebSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="GeminiActOnWebSettings" presentation="$(presentation.GeminiActOnWebSettings)">
@@ -2491,6 +2546,23 @@
         <list id="LocalNetworkAccessBlockedForUrlsDesc" key="Software\Policies\BraveSoftware\Brave\LocalNetworkAccessBlockedForUrls" valuePrefix="" />
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessIpAddressSpaceOverrides)" explainText="$(string.LocalNetworkAccessIpAddressSpaceOverrides_Explain)" key="Software\Policies\BraveSoftware\Brave" name="LocalNetworkAccessIpAddressSpaceOverrides" presentation="$(presentation.LocalNetworkAccessIpAddressSpaceOverrides)">
+      <parentCategory ref="LocalNetworkAccessSettings" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <list id="LocalNetworkAccessIpAddressSpaceOverridesDesc" key="Software\Policies\BraveSoftware\Brave\LocalNetworkAccessIpAddressSpaceOverrides" valuePrefix="" />
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessPermissionsPolicyDefaultEnabled)" explainText="$(string.LocalNetworkAccessPermissionsPolicyDefaultEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="LocalNetworkAccessPermissionsPolicyDefaultEnabled" presentation="$(presentation.LocalNetworkAccessPermissionsPolicyDefaultEnabled)" valueName="LocalNetworkAccessPermissionsPolicyDefaultEnabled">
+      <parentCategory ref="LocalNetworkAccessSettings" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsTemporaryOptOut)" explainText="$(string.LocalNetworkAccessRestrictionsTemporaryOptOut_Explain)" key="Software\Policies\BraveSoftware\Brave" name="LocalNetworkAccessRestrictionsTemporaryOptOut" presentation="$(presentation.LocalNetworkAccessRestrictionsTemporaryOptOut)" valueName="LocalNetworkAccessRestrictionsTemporaryOptOut">
       <parentCategory ref="LocalNetworkAccessSettings" />
       <supportedOn ref="SUPPORTED_WIN7" />
@@ -2500,6 +2572,34 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAllowedForUrls)" explainText="$(string.LocalNetworkAllowedForUrls_Explain)" key="Software\Policies\BraveSoftware\Brave" name="LocalNetworkAllowedForUrls" presentation="$(presentation.LocalNetworkAllowedForUrls)">
+      <parentCategory ref="LocalNetworkAccessSettings" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <list id="LocalNetworkAllowedForUrlsDesc" key="Software\Policies\BraveSoftware\Brave\LocalNetworkAllowedForUrls" valuePrefix="" />
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkBlockedForUrls)" explainText="$(string.LocalNetworkBlockedForUrls_Explain)" key="Software\Policies\BraveSoftware\Brave" name="LocalNetworkBlockedForUrls" presentation="$(presentation.LocalNetworkBlockedForUrls)">
+      <parentCategory ref="LocalNetworkAccessSettings" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <list id="LocalNetworkBlockedForUrlsDesc" key="Software\Policies\BraveSoftware\Brave\LocalNetworkBlockedForUrls" valuePrefix="" />
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LoopbackNetworkAllowedForUrls)" explainText="$(string.LoopbackNetworkAllowedForUrls_Explain)" key="Software\Policies\BraveSoftware\Brave" name="LoopbackNetworkAllowedForUrls" presentation="$(presentation.LoopbackNetworkAllowedForUrls)">
+      <parentCategory ref="LocalNetworkAccessSettings" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <list id="LoopbackNetworkAllowedForUrlsDesc" key="Software\Policies\BraveSoftware\Brave\LoopbackNetworkAllowedForUrls" valuePrefix="" />
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LoopbackNetworkBlockedForUrls)" explainText="$(string.LoopbackNetworkBlockedForUrls_Explain)" key="Software\Policies\BraveSoftware\Brave" name="LoopbackNetworkBlockedForUrls" presentation="$(presentation.LoopbackNetworkBlockedForUrls)">
+      <parentCategory ref="LocalNetworkAccessSettings" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <list id="LoopbackNetworkBlockedForUrlsDesc" key="Software\Policies\BraveSoftware\Brave\LoopbackNetworkBlockedForUrls" valuePrefix="" />
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.CloudAPAuthEnabled)" explainText="$(string.CloudAPAuthEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="CloudAPAuthEnabled" presentation="$(presentation.CloudAPAuthEnabled)">
       <parentCategory ref="ActiveDirectoryManagement" />
@@ -2965,6 +3065,16 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.CORSNonWildcardRequestHeadersSupport)" explainText="$(string.CORSNonWildcardRequestHeadersSupport_Explain)" key="Software\Policies\BraveSoftware\Brave" name="CORSNonWildcardRequestHeadersSupport" presentation="$(presentation.CORSNonWildcardRequestHeadersSupport)" valueName="CORSNonWildcardRequestHeadersSupport">
+      <parentCategory ref="brave" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.CacheEncryptionEnabled)" explainText="$(string.CacheEncryptionEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="CacheEncryptionEnabled" presentation="$(presentation.CacheEncryptionEnabled)" valueName="CacheEncryptionEnabled">
       <parentCategory ref="brave" />
       <supportedOn ref="SUPPORTED_WIN7" />
       <enabledValue>
@@ -3492,6 +3602,16 @@
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.ForceEphemeralProfiles)" explainText="$(string.ForceEphemeralProfiles_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ForceEphemeralProfiles" presentation="$(presentation.ForceEphemeralProfiles)" valueName="ForceEphemeralProfiles">
+      <parentCategory ref="brave" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.ForceForegroundPriorityForAllTabs)" explainText="$(string.ForceForegroundPriorityForAllTabs_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ForceForegroundPriorityForAllTabs" presentation="$(presentation.ForceForegroundPriorityForAllTabs)" valueName="ForceForegroundPriorityForAllTabs">
       <parentCategory ref="brave" />
       <supportedOn ref="SUPPORTED_WIN7" />
       <enabledValue>
@@ -4932,6 +5052,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.XSLTEnabled)" explainText="$(string.XSLTEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="XSLTEnabled" presentation="$(presentation.XSLTEnabled)" valueName="XSLTEnabled">
+      <parentCategory ref="brave" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.AlwaysOpenPdfExternally)" explainText="$(string.AlwaysOpenPdfExternally_Explain)" key="Software\Policies\BraveSoftware\Brave\Recommended" name="AlwaysOpenPdfExternally_recommended" presentation="$(presentation.AlwaysOpenPdfExternally)" valueName="AlwaysOpenPdfExternally">
       <parentCategory ref="brave_recommended" />
       <supportedOn ref="SUPPORTED_WIN7" />
@@ -5916,6 +6046,24 @@
         </enum>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.DefaultThirdPartyStoragePartitioningSetting)" explainText="$(string.DefaultThirdPartyStoragePartitioningSetting_Explain)" key="Software\Policies\BraveSoftware\Brave" name="DefaultThirdPartyStoragePartitioningSetting" presentation="$(presentation.DefaultThirdPartyStoragePartitioningSetting)">
+      <parentCategory ref="RemovedPolicies" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <enum id="DefaultThirdPartyStoragePartitioningSetting" valueName="DefaultThirdPartyStoragePartitioningSetting">
+          <item displayName="$(string.DefaultThirdPartyStoragePartitioningSetting_AllowPartitioning)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.DefaultThirdPartyStoragePartitioningSetting_BlockPartitioning)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.FileHandlingAllowedForUrls)" explainText="$(string.FileHandlingAllowedForUrls_Explain)" key="Software\Policies\BraveSoftware\Brave" name="FileHandlingAllowedForUrls" presentation="$(presentation.FileHandlingAllowedForUrls)">
       <parentCategory ref="RemovedPolicies" />
       <supportedOn ref="SUPPORTED_WIN7" />
@@ -5991,6 +6139,13 @@
       <supportedOn ref="SUPPORTED_WIN7" />
       <elements>
         <list id="PluginsBlockedForUrlsDesc" key="Software\Policies\BraveSoftware\Brave\PluginsBlockedForUrls" valuePrefix="" />
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.ThirdPartyStoragePartitioningBlockedForOrigins)" explainText="$(string.ThirdPartyStoragePartitioningBlockedForOrigins_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ThirdPartyStoragePartitioningBlockedForOrigins" presentation="$(presentation.ThirdPartyStoragePartitioningBlockedForOrigins)">
+      <parentCategory ref="RemovedPolicies" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <elements>
+        <list id="ThirdPartyStoragePartitioningBlockedForOriginsDesc" key="Software\Policies\BraveSoftware\Brave\ThirdPartyStoragePartitioningBlockedForOrigins" valuePrefix="" />
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.DefaultSearchProviderIconURL)" explainText="$(string.DefaultSearchProviderIconURL_Explain)" key="Software\Policies\BraveSoftware\Brave" name="DefaultSearchProviderIconURL" presentation="$(presentation.DefaultSearchProviderIconURL)">
@@ -7303,6 +7458,16 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.CloudPrintWarningsSuppressed)" explainText="$(string.CloudPrintWarningsSuppressed_Explain)" key="Software\Policies\BraveSoftware\Brave" name="CloudPrintWarningsSuppressed" presentation="$(presentation.CloudPrintWarningsSuppressed)" valueName="CloudPrintWarningsSuppressed">
+      <parentCategory ref="RemovedPolicies" />
+      <supportedOn ref="SUPPORTED_WIN7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.PrivacySandboxFingerprintingProtectionEnabled)" explainText="$(string.PrivacySandboxFingerprintingProtectionEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PrivacySandboxFingerprintingProtectionEnabled" presentation="$(presentation.PrivacySandboxFingerprintingProtectionEnabled)" valueName="PrivacySandboxFingerprintingProtectionEnabled">
       <parentCategory ref="RemovedPolicies" />
       <supportedOn ref="SUPPORTED_WIN7" />
       <enabledValue>
