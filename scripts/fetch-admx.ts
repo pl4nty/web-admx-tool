@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { mkdirSync, existsSync, writeFileSync, rmSync, cpSync, readFileSync } from 'fs'
-import { join, resolve } from 'path'
+import { join, resolve, sep } from 'path'
 import { execSync } from 'child_process'
 import { unzipSync } from 'fflate'
 import { walkDir, runWithLimit } from '../src/admxUtils'
@@ -149,6 +149,8 @@ function placeFile(entryPath: string, data: Uint8Array | string, isOffice: boole
   const { dir, name } = resolveDest(entryPath, isOffice)
   mkdirSync(dir, { recursive: true })
   const dest = join(dir, name)
+  if (existsSync(dest) && (dest === ADMX_DIR || dest.startsWith(ADMX_DIR + sep)))
+    console.warn(`[warn] overwriting existing file: ${dest.slice(ROOT.length + 1)}`)
   if (typeof data === 'string') writeFileSync(dest, toUtf8(readFileSync(data)))
   else writeFileSync(dest, toUtf8(data))
   return /\.admx$/i.test(name) ? 'admx' : 'adml'
@@ -196,7 +198,6 @@ const sources: Source[] = [
   src(() => 'https://download.microsoft.com/download/72ea16a9-4cc9-4032-945d-3a56a483d034/WindowsNotepadAdminTemplates.cab'),
   src(() => msDownload(108428)),
   src(() => msDownload(49030, url => url.includes('x64')), true),
-  src(() => msDownload(55531)),
   src(() => msDownload(55319, url => /Security Baseline\.zip$/i.test(url))),
   src(() => 'https://web.archive.org/web/20200723045549/https://msdnshared.blob.core.windows.net/media/2016/10/MSS-legacy.zip'),
   src(() => githubRelease('microsoft', 'PowerToys', /GroupPolicyObjectFiles.*\.zip$/i)),
