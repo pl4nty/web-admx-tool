@@ -1,37 +1,41 @@
-.el-notification {
-  width: 500px !important;
-}
+@import "tailwindcss";
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+@custom-variant dark (&:where(.dark, .dark *));
 
-.router-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-
-:root {
-  --ep-color-primary: red;
-}
+a { text-decoration: none; color: inherit; }
 
 body {
-  font-family: Inter, 'Helvetica Neue', Helvetica, 'PingFang SC',
-  'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+  font-family: Inter, 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --el-font-size-base: 16px
 }
 
-a {
-  color: var(--ep-color-primary);
-}
+:root { --sidebar-width: 20rem; }
+.admx-main { min-width: 0; }
+@media (min-width: 1024px) { .admx-main { margin-left: var(--sidebar-width); } }
 
-code {
-  border-radius: 2px;
-  padding: 2px 4px;
-  background-color: var(--ep-color-primary-light-9);
-  color: var(--ep-color-primary);
+.admx-sidebar {
+  width: var(--sidebar-width);
+  transform: translateX(-100%);
+  transition: transform 0.2s ease;
 }
+body.sidebar-open .admx-sidebar { transform: translateX(0); }
+@media (min-width: 1024px) { .admx-sidebar { transform: translateX(0); } }
+
+.admx-sidebar-handle {
+  position: absolute; top: 0; right: 0; width: 6px; height: 100%;
+  cursor: col-resize; background: transparent;
+}
+.admx-sidebar-handle:hover { background: rgba(59, 130, 246, 0.15); }
+
+.admx-sidebar-overlay {
+  position: fixed; inset: 0; top: var(--header-height, 3.5rem); background: rgba(0, 0, 0, 0.35);
+  z-index: 20; display: none;
+}
+body.sidebar-open .admx-sidebar-overlay { display: block; }
+@media (min-width: 1024px) { .admx-sidebar-overlay { display: none !important; } }
+
+body.sidebar-resizing { cursor: col-resize; user-select: none; }
+
+code { border-radius: 2px; padding: 2px 4px; background-color: #f3f4f6; color: #1f2937; }
+.dark code { background-color: #374151; color: #e5e7eb; }

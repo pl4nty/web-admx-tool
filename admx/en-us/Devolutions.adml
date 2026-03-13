@@ -163,8 +163,6 @@
 	  <string id="POL_RDM_DISABLEREADWRITEOFFLINE_HELP">Disable the read/write offline option</string>
       <string id="POL_RDM_DISABLEREVEALPASSWORD">Disable reveal password</string>
 	  <string id="POL_RDM_DISABLEREVEALPASSWORD_HELP">Disable the reveal password feature</string>
-      <string id="POL_RDM_RDPLOGOFFWHENDISCONNECTING">RDP logoff when disconnecting</string>
-	  <string id="POL_RDM_RDPLOGOFFWHENDISCONNECTING_HELP">Controls whether RDP sessions automatically log off the current user when disconnecting</string>
       <string id="POL_RDM_DISABLEREVEALPASSWORDINMYACCOUNTSETTINGS">Disable reveal password in my account settings</string>
 	  <string id="POL_RDM_DISABLEREVEALPASSWORDINMYACCOUNTSETTINGS_HELP">Disable the reveal password option in 'my account settings' for all users, including administrators</string>
       <string id="POL_RDM_DISABLESENDERRORREPORTDIALOG">Disable send error report dialog</string>
@@ -267,6 +265,8 @@
 	  <string id="POL_RDM_HIDEBROWSEHOSTBUTTON_HELP">Remove the button used to manually browse for hosts</string>
       <string id="POL_RDM_HIDEDASHBOARD">Hide dashboard</string>
 	  <string id="POL_RDM_HIDEDASHBOARD_HELP">Permanently hide the dashboard</string>
+      <string id="POL_RDM_HIDEDEVOLUTIONSCONTACTSUPPORTFEATURES">Hide Devolutions contact support features</string>
+	  <string id="POL_RDM_HIDEDEVOLUTIONSCONTACTSUPPORTFEATURES_HELP">Removes features used to directly contact support ('Live chat', 'Submit a support ticket' and 'Survey feedback). This will not hide the 'Send error' or links to documentation/knowledge base.</string>
       <string id="POL_RDM_HIDENAVIGATIONPANE">Hide navigation pane</string>
 	  <string id="POL_RDM_HIDENAVIGATIONPANE_HELP">Permanently hide the navigation pane</string>
       <string id="POL_RDM_HIDEPORTINRDP">Hide port in RDP</string>
@@ -287,6 +287,8 @@
 	  <string id="POL_RDM_ONLYALLOWCREDENTIALSINPRIVATEVAULT_HELP">Only allow the creation of credentials when inside the user vault</string>
       <string id="POL_RDM_PROTECTDATAFROMSCREENCAPTURE">Protect data from screen capture</string>
 	  <string id="POL_RDM_PROTECTDATAFROMSCREENCAPTURE_HELP">Adds a layer of protection which prevents acquiring data from most RDM windows (including sensitive areas) with screen captures</string>
+      <string id="POL_RDM_RDPLOGOFFWHENDISCONNECTING">RDP logoff when disconnecting</string>
+	  <string id="POL_RDM_RDPLOGOFFWHENDISCONNECTING_HELP">Controls whether RDP sessions automatically log off the current user when disconnecting</string>
       <string id="POL_RDM_RESTRICTTODVLSDATASOURCE">Restrict to Devolutions Server data source</string>
 	  <string id="POL_RDM_RESTRICTTODVLSDATASOURCE_HELP">Restricts the creation of data source to the Devolutions Server type</string>
       <string id="POL_RDM_RESTRICTTOHUBBUSINESSDATASOURCE">Restrict to Hub Business data source</string>
@@ -359,11 +361,6 @@
  3 = Windows PowerShell (5.1)  
  4 = PowerShell 7</decimalTextBox>
             </presentation>
-	<presentation id="INPUT_DEC_RDPLOGOFFWHENDISCONNECTING">
-              <decimalTextBox refId="INPUT_DEC_RDPLOGOFFWHENDISCONNECTING" defaultValue="0" spinStep="1">0 = Disabled (no changes) 
- 1 = Enforce logging off user when disconnecting 
- 2 = Prevent logging off users when disconnecting</decimalTextBox>
-            </presentation>
 	<presentation id="INPUT_DEC_FORCECLOSEONIDLE">
               <decimalTextBox refId="INPUT_DEC_FORCECLOSEONIDLE" defaultValue="0" spinStep="1">Number of minutes:</decimalTextBox>
             </presentation>
@@ -383,6 +380,11 @@
               <decimalTextBox refId="INPUT_DEC_PROTECTDATAFROMSCREENCAPTURE" defaultValue="0" spinStep="1">0 = Disabled (no changes) 
  1 = Enable the screen capture protection 
  2 = Disable the screen capture protection</decimalTextBox>
+            </presentation>
+	<presentation id="INPUT_DEC_RDPLOGOFFWHENDISCONNECTING">
+              <decimalTextBox refId="INPUT_DEC_RDPLOGOFFWHENDISCONNECTING" defaultValue="0" spinStep="1">0 = Disabled (no changes) 
+ 1 = Enforce logging off user when disconnecting 
+ 2 = Prevent logging off users when disconnecting</decimalTextBox>
             </presentation>
 	<presentation id="INPUT_DEC_SESSIONEVENTSEXECUTION">
               <decimalTextBox refId="INPUT_DEC_SESSIONEVENTSEXECUTION" defaultValue="0" spinStep="1">

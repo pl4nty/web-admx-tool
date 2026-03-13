@@ -21,45 +21,64 @@
                     <minorVersion name="VisualStudio2022_13" displayName="$(string.VisualStudioProductName2022_13)" versionIndex="13"/>
                     <minorVersion name="VisualStudio2022_14_16" displayName="$(string.VisualStudioProductName2022_14_16)" versionIndex="1416"/>
                 </majorVersion>
+                <majorVersion name="VisualStudio2026" displayName="$(string.VisualStudioProductName2026)" versionIndex="18" />
             </product>
         </products>
         <definitions>
-            <definition name="VisualStudio2019AndHigher" displayName="$(string.VisualStudio2019AndHigher)">
-                <and>
-                    <reference ref="VisualStudio2019"/>
-                    <reference ref="VisualStudio2022"/>
-                </and>
-            </definition>
             <definition name="VisualStudio2017AndHigher" displayName="$(string.VisualStudio2017AndHigher)">
                 <and>
                     <reference ref="VisualStudio2017"/>
                     <reference ref="VisualStudio2019"/>
                     <reference ref="VisualStudio2022"/>
+                    <reference ref="VisualStudio2026"/>
+                </and>
+            </definition>
+            <definition name="VisualStudio2019AndHigher" displayName="$(string.VisualStudio2019AndHigher)">
+                <and>
+                    <reference ref="VisualStudio2019"/>
+                    <reference ref="VisualStudio2022"/>
+                    <reference ref="VisualStudio2026"/>
                 </and>
             </definition>
             <definition name="VisualStudio2022AndHigher" displayName="$(string.VisualStudio2022AndHigher)">
                 <and>
                     <reference ref="VisualStudio2022"/>
+                    <reference ref="VisualStudio2026"/>
                 </and>
             </definition>
             <definition name="VisualStudio2022_10AndHigher" displayName="$(string.VisualStudio2022_10AndHigher)">
                 <and>
                     <reference ref="VisualStudio2022_10"/>
+                    <reference ref="VisualStudio2022_12"/>
+                    <reference ref="VisualStudio2022_13"/>
+                    <reference ref="VisualStudio2022_14_16"/>
+                    <reference ref="VisualStudio2026"/>
                 </and>
             </definition>
             <definition name="VisualStudio2022_12AndHigher" displayName="$(string.VisualStudio2022_12AndHigher)">
                 <and>
                     <reference ref="VisualStudio2022_12"/>
+                    <reference ref="VisualStudio2022_13"/>
+                    <reference ref="VisualStudio2022_14_16"/>
+                    <reference ref="VisualStudio2026"/>
                 </and>
             </definition>
             <definition name="VisualStudio2022_13AndHigher" displayName="$(string.VisualStudio2022_13AndHigher)">
                 <and>
                     <reference ref="VisualStudio2022_13"/>
+                    <reference ref="VisualStudio2022_14_16"/>
+                    <reference ref="VisualStudio2026"/>
                 </and>
             </definition>
-             <definition name="VisualStudio2022_14_16_AndHigher" displayName="$(string.VisualStudio2022_14_16_AndHigher)">
+            <definition name="VisualStudio2022_14_16_AndHigher" displayName="$(string.VisualStudio2022_14_16_AndHigher)">
                 <and>
                     <reference ref="VisualStudio2022_14_16"/>
+                    <reference ref="VisualStudio2026"/>
+                </and>
+            </definition>
+            <definition name="VisualStudio2026AndHigher" displayName="$(string.VisualStudio2026AndHigher)">
+                <and>
+                    <reference ref="VisualStudio2026"/>
                 </and>
             </definition>
         </definitions>
@@ -436,6 +455,23 @@
           <text id="AvailableTabProducts_TextBox" valueName="AvailableTabProducts" expandable="true"/>
         </elements>
       </policy>
+
+       <policy
+            name="DisableMigrationDialog"
+            class="Machine"
+            displayName="$(string.DisableMigrationDialog_DisplayName)"
+            explainText="$(string.DisableMigrationDialog_Explain)"
+            key="SOFTWARE\Policies\Microsoft\VisualStudio\Setup"
+            valueName="DisableMigrationDialog">
+            <parentCategory ref="InstallandUpdateSettings" />
+            <supportedOn ref="VisualStudio2026_AndHigher" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
 
         <!-- LiveShare Settings -->
         <policy 

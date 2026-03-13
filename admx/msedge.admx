@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" ?>
+<?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 147.0.3890.0-->
+  <!--microsoft_edge version: 147.0.3901.1-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -1060,6 +1060,13 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.PdfLocalFileAccessAllowedForDomains)" explainText="$(string.PdfLocalFileAccessAllowedForDomains_Explain)" key="Software\Policies\Microsoft\Edge" name="PdfLocalFileAccessAllowedForDomains" presentation="$(presentation.PdfLocalFileAccessAllowedForDomains)">
+      <parentCategory ref="ContentSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7_V147"/>
+      <elements>
+        <list id="PdfLocalFileAccessAllowedForDomainsDesc" key="Software\Policies\Microsoft\Edge\PdfLocalFileAccessAllowedForDomains" valuePrefix=""/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.PluginsAllowedForUrls)" explainText="$(string.PluginsAllowedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="PluginsAllowedForUrls" presentation="$(presentation.PluginsAllowedForUrls)">
       <parentCategory ref="ContentSettings"/>

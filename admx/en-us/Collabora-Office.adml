@@ -26,6 +26,8 @@
 
       <string id="category_LibreOffice">Collabora Office</string>
       <string id="category_Common">Common</string>
+      <string id="name_BuiltInHelpNotInstalledPopUp">Warn if local help is not installed</string>
+      <string id="desc_BuiltInHelpNotInstalledPopUp">If checked, a pop-up is shown when local help is not installed</string>
 
       <string id="category_General">General</string>
       <string id="name_UseSystemFileDialog">Use System File Dialog</string>
@@ -159,6 +161,11 @@ Default value: Macros enabled</string>
       <string id="name_EnableExpertConfiguration">Enable Expert Configuration</string>
       <string id="desc_EnableExpertConfiguration">Determines if the user has access to the entire configuration via the Expert Configuration button.</string>
       <string id="name_SecureURL">Trusted file locations</string>
+
+      <string id="name_DisableExtensionInstallation">Disable extension installation</string>
+      <string id="desc_DisableExtensionInstallation">Disable the possibility to install extensions.</string>
+      <string id="name_DisableExtensionRemoval">Disable extension removal</string>
+      <string id="desc_DisableExtensionRemoval">Disable the possibility to remove installed extensions.</string>
 
       <string id="category_Filters">Disable file format filters</string>
 
@@ -770,6 +777,10 @@ Set paths in path lists have to be separated by spaces.</string>
         <checkBox refId="Value">Load user-specific settings with the document</checkBox>
         <checkBox refId="Final">Final</checkBox>
       </presentation>
+      <presentation id="BuiltInHelpNotInstalledPopUp">
+        <checkBox refId="Value">Warn when local help is not installed</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
       <presentation id="UseUserData">
         <checkBox refId="Value">Use user data for document properties</checkBox>
         <checkBox refId="Final">Final</checkBox>
@@ -1223,6 +1234,14 @@ Set paths in path lists have to be separated by spaces.</string>
         <textBox refId="Value">
           <label>Path list: </label>
         </textBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="DisableExtensionInstallation">
+        <checkBox refId="Value">Disable extension installation</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="DisableExtensionRemoval">
+        <checkBox refId="Value">Disable extension removal</checkBox>
         <checkBox refId="Final">Final</checkBox>
       </presentation>
       <presentation id="ADO_Rowset_XML">

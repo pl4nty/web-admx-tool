@@ -1221,20 +1221,6 @@
 		</disabledValue>
     </policy>
     <policy 
-		name="POL_RDM_RDPLOGOFFWHENDISCONNECTING"
-		class="Both" 
-		displayName="$(string.POL_RDM_RDPLOGOFFWHENDISCONNECTING)"
-		explainText="$(string.POL_RDM_RDPLOGOFFWHENDISCONNECTING_HELP)"
-		presentation="$(presentation.INPUT_DEC_RDPLOGOFFWHENDISCONNECTING)" 
-		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
-		valueName="RDPLogOffWhenDisconnecting">
-      <parentCategory ref="CAT_RDM_SESSION" />
-      <supportedOn ref="SUPPORTED_WindowsVista" />
-	<elements>
-        	<decimal id="INPUT_DEC_RDPLOGOFFWHENDISCONNECTING" valueName="RDPLogOffWhenDisconnecting" maxValue="20000" />
-	</elements>
-    </policy>
-    <policy 
 		name="POL_RDM_DISABLEREVEALPASSWORDINMYACCOUNTSETTINGS"
 		class="Both"
 		displayName="$(string.POL_RDM_DISABLEREVEALPASSWORDINMYACCOUNTSETTINGS)"
@@ -2047,6 +2033,22 @@
 		</disabledValue>
     </policy>
     <policy 
+		name="POL_RDM_HIDEDEVOLUTIONSCONTACTSUPPORTFEATURES"
+		class="Both"
+		displayName="$(string.POL_RDM_HIDEDEVOLUTIONSCONTACTSUPPORTFEATURES)"
+		explainText="$(string.POL_RDM_HIDEDEVOLUTIONSCONTACTSUPPORTFEATURES_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="HideDevolutionsContactSupportFeatures">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
 		name="POL_RDM_HIDENAVIGATIONPANE"
 		class="Both"
 		displayName="$(string.POL_RDM_HIDENAVIGATIONPANE)"
@@ -2198,6 +2200,20 @@
       <supportedOn ref="SUPPORTED_WindowsVista" />
 	<elements>
         	<decimal id="INPUT_DEC_PROTECTDATAFROMSCREENCAPTURE" valueName="ProtectDataFromScreenCapture" maxValue="20000" />
+	</elements>
+    </policy>
+    <policy 
+		name="POL_RDM_RDPLOGOFFWHENDISCONNECTING"
+		class="Both" 
+		displayName="$(string.POL_RDM_RDPLOGOFFWHENDISCONNECTING)"
+		explainText="$(string.POL_RDM_RDPLOGOFFWHENDISCONNECTING_HELP)"
+		presentation="$(presentation.INPUT_DEC_RDPLOGOFFWHENDISCONNECTING)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="RDPLogOffWhenDisconnecting">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_RDPLOGOFFWHENDISCONNECTING" valueName="RDPLogOffWhenDisconnecting" maxValue="20000" />
 	</elements>
     </policy>
     <policy 
