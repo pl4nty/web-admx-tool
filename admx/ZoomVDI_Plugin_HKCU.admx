@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="fullarmor" namespace="ZoomVDI_Plugin_HKCU" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <supersededAdm fileName="ZoomVDI_Plugin_HKCU.adm" />
+  <resources minRequiredRevision="1.0" />
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_WINXPSP2" displayName="$(string.SUPPORTED_WINXPSP2)" />
+      <definition name="SUPPORTED_NotSpecified" displayName="$(string.ADMXMigrator_NoSupportedOn)" />
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="ZoomUsCommunicationVDI" displayName="$(string.ZoomUsCommunicationVDI)" />
+    <category name="zoomvdiplugin" displayName="$(string.zoomvdiplugin)">
+      <parentCategory ref="ZoomUsCommunicationVDI" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="DisableUDPBridge_Policy" class="User" displayName="$(string.DisableUDPBridge_Policy)" explainText="$(string.DisableUDPBridge_Explain)" presentation="$(presentation.DisableUDPBridge_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="DisableUDPBridge">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableICABridge_Policy" class="User" displayName="$(string.DisableICABridge_Policy)" explainText="$(string.DisableICABridge_Explain)" presentation="$(presentation.DisableICABridge_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="DisableICABridge">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableMMRDirect_Policy" class="User" displayName="$(string.DisableMMRDirect_Policy)" explainText="$(string.DisableMMRDirect_Explain)" presentation="$(presentation.DisableMMRDirect_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="DisableMMRDirect">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="PingServerFromThinClient_Policy" class="User" displayName="$(string.PingServerFromThinClient_Policy)" explainText="$(string.PingServerFromThinClient_Explain)" presentation="$(presentation.PingServerFromThinClient_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="PingServerFromThinClient">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AllowPluginDSCPMarking_Policy" class="User" displayName="$(string.AllowPluginDSCPMarking_Policy)" explainText="$(string.AllowPluginDSCPMarking_Explain)" presentation="$(presentation.AllowPluginDSCPMarking_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="AllowPluginDSCPMarking">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableMMRDirect_Phone_Policy" class="User" displayName="$(string.DisableMMRDirect_Phone_Policy)" explainText="$(string.DisableMMRDirect_Phone_Explain)" presentation="$(presentation.DisableMMRDirect_Phone_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="DisableMMRDirect_Phone">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableUDPBridge_Phone_Policy" class="User" displayName="$(string.DisableUDPBridge_Phone_Policy)" explainText="$(string.DisableUDPBridge_Phone_Explain)" presentation="$(presentation.DisableUDPBridge_Phone_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="DisableUDPBridge_Phone">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableChannelBridge_Phone_Policy" class="User" displayName="$(string.DisableChannelBridge_Phone_Policy)" explainText="$(string.DisableChannelBridge_Phone_Explain)" presentation="$(presentation.DisableChannelBridge_Phone_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="DisableChannelBridge_Phone">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableVDIPluginAutoUpgrade_Policy" class="User" displayName="$(string.EnableVDIPluginAutoUpgrade_Policy)" explainText="$(string.EnableVDIPluginAutoUpgrade_Explain)" presentation="$(presentation.EnableVDIPluginAutoUpgrade_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="EnableVDIPluginAutoUpgrade">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="OfficeICA_Up_Policy" class="User" displayName="$(string.OfficeICA_Up_Policy)" explainText="$(string.ADMXMigrator_UnresolvedString)" presentation="$(presentation.OfficeICA_Up_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI\bandwidth\office\ica">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="up_Part" valueName="Up" required="true" minValue="800" />
+      </elements>
+    </policy>
+    <policy name="OfficeICA_Down_Policy" class="User" displayName="$(string.OfficeICA_Down_Policy)" explainText="$(string.ADMXMigrator_UnresolvedString)" presentation="$(presentation.OfficeICA_Down_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI\bandwidth\office\ica">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="down_Part" valueName="Down" required="true" minValue="800" />
+      </elements>
+    </policy>
+    <policy name="OfficeUDP_Up_Policy" class="User" displayName="$(string.OfficeUDP_Up_Policy)" explainText="$(string.ADMXMigrator_UnresolvedString)" presentation="$(presentation.OfficeUDP_Up_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI\bandwidth\office\udp">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="up_Part" valueName="Up" required="true" minValue="800" />
+      </elements>
+    </policy>
+    <policy name="OfficeUDP_Down_Policy" class="User" displayName="$(string.OfficeUDP_Down_Policy)" explainText="$(string.ADMXMigrator_UnresolvedString)" presentation="$(presentation.OfficeUDP_Down_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI\bandwidth\office\udp">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="down_Part" valueName="Down" required="true" minValue="800" />
+      </elements>
+    </policy>
+    <policy name="OfficeDirect_Up_Policy" class="User" displayName="$(string.OfficeDirect_Up_Policy)" explainText="$(string.ADMXMigrator_UnresolvedString)" presentation="$(presentation.OfficeDirect_Up_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI\bandwidth\office\direct">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="up_Part" valueName="Up" required="true" minValue="800" />
+      </elements>
+    </policy>
+    <policy name="OfficeDirect_Down_Policy" class="User" displayName="$(string.OfficeDirect_Down_Policy)" explainText="$(string.ADMXMigrator_UnresolvedString)" presentation="$(presentation.OfficeDirect_Down_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI\bandwidth\office\direct">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="down_Part" valueName="Down" required="true" minValue="800" />
+      </elements>
+    </policy>
+    <policy name="HomeICA_Up_Policy" class="User" displayName="$(string.HomeICA_Up_Policy)" explainText="$(string.ADMXMigrator_UnresolvedString)" presentation="$(presentation.HomeICA_Up_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI\bandwidth\home\ica">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="up_Part" valueName="Up" required="true" minValue="800" />
+      </elements>
+    </policy>
+    <policy name="HomeICA_Down_Policy" class="User" displayName="$(string.HomeICA_Down_Policy)" explainText="$(string.ADMXMigrator_UnresolvedString)" presentation="$(presentation.HomeICA_Down_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI\bandwidth\home\ica">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="down_Part" valueName="Down" required="true" minValue="800" />
+      </elements>
+    </policy>
+    <policy name="HomeUDP_Up_Policy" class="User" displayName="$(string.HomeUDP_Up_Policy)" explainText="$(string.ADMXMigrator_UnresolvedString)" presentation="$(presentation.HomeUDP_Up_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI\bandwidth\home\udp">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="up_Part" valueName="Up" required="true" minValue="800" />
+      </elements>
+    </policy>
+    <policy name="HomeUDP_Down_Policy" class="User" displayName="$(string.HomeUDP_Down_Policy)" explainText="$(string.ADMXMigrator_UnresolvedString)" presentation="$(presentation.HomeUDP_Down_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI\bandwidth\home\udp">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="down_Part" valueName="Down" required="true" minValue="800" />
+      </elements>
+    </policy>
+    <policy name="HomeDirect_Up_Policy" class="User" displayName="$(string.HomeDirect_Up_Policy)" explainText="$(string.ADMXMigrator_UnresolvedString)" presentation="$(presentation.HomeDirect_Up_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI\bandwidth\home\direct">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="up_Part" valueName="Up" required="true" minValue="800" />
+      </elements>
+    </policy>
+    <policy name="HomeDirect_Down_Policy" class="User" displayName="$(string.HomeDirect_Down_Policy)" explainText="$(string.ADMXMigrator_UnresolvedString)" presentation="$(presentation.HomeDirect_Down_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI\bandwidth\home\direct">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="down_Part" valueName="Down" required="true" minValue="800" />
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

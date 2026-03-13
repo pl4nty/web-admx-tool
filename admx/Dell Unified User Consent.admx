@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!--
+/* DELL PROPRIETARY INFORMATION
+*
+* This software contains the intellectual property of Dell Inc. Use of this software and the intellectual property
+* contained therein is expressly limited to the terms and conditions of the License Agreement under which it is
+* provided by or on behalf of Dell Inc. or its subsidiaries.
+*
+* Copyright 2025 Dell Inc. or its subsidiaries. All Rights Reserved.
+* 
+*  DELL INC. MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE SUITABILITY OF THE SOFTWARE, EITHER
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.  DELL SHALL NOT BE LIABLE FOR ANY DAMAGES * SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS
+* DERIVATIVES.
+*/
+-->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions" >
+
+	<policyNamespaces>
+	<target prefix="UCM" namespace="Dell.Policies.UCM" />
+    <using namespace="Dell.Policies" prefix="Dell"/>
+	</policyNamespaces>
+	<resources minRequiredRevision="1.0" fallbackCulture="en-US"/>
+	<supportedOn >
+		<definitions >
+			<definition name="SupportedOn_1" displayName="$(string.String_SupportedOn_Windows_10_Windows_2)" />
+			<definition name="SupportedOn_178" displayName="$(string.String_SupportedOn_Undefined_179)" />
+		</definitions>
+	</supportedOn>
+	<categories ><!--Storage for Category Definitions-->
+        
+		<category displayName="$(string.String_Dell_Telemetry)" name="Telemetry">
+		  <parentCategory ref="Dell:Cat_Dell"/>
+		  </category>
+	</categories>
+	<policies ><!--Storage for Policy Definitions-->
+		
+		<policy name="Policy_Enable_Telemetry_Consent_22" class="Machine" displayName="$(string.String_Policy_Enable_Telemetry_Consent_23)" explainText="$(string.String_Explain_When_this_setting_24)" key="SOFTWARE\Policies\Dell\Telemetry" valueName="TelemetryConsent" >
+			<parentCategory ref="Telemetry" />
+			<supportedOn ref="SupportedOn_1" />
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+	</policies>
+</policyDefinitions>

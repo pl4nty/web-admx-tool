@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName>ZoomVDI</displayName>
+  <description>ZoomVDI</description>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WINXPSP2">Microsoft Windows XP SP2 or later</string>
+      <string id="ZoomUsCommunicationVDI">Zoom VDI</string>
+      <string id="zoomvdiplugin">Zoom VDI Plugin Settings</string>
+      <string id="DisableUDPBridge_Policy">Disable UDP Bridge</string>
+      <string id="DisableUDPBridge_Explain">If your thin client cannot connect to the Virtual Desktop VM by UDP, setting this to enabled (1) may speed up the process of joining a meeting.
+
+Enabled (1): Cannot transfer data stream on UDP connection between VM and thin clientIf this is configured on the thin client, those settings will override the settings on the VM.
+
+Disabled (0): No restrictions</string>
+      <string id="DisableICABridge_Policy">Disable ICA Bridge</string>
+      <string id="DisableICABridge_Explain">If the MMR is inaccessible for the thin client, and the UDP connection from the thin client to the VM is not available, you will see the message "Zoom Plugin can not connect to the server according to your Zoom config and network status" and attempts to join or start meetings will fail when you set this value to enabled (1).
+
+If this is configured on the thin client those settings will override the settings on the VM.
+
+Enabled (1): Cannot transfer data stream on an ICA connection.
+
+Disabled (0): No restrictions</string>
+      <string id="DisableMMRDirect_Policy">Disable MMR direct</string>
+      <string id="DisableMMRDirect_Explain">If your network firewall has disabled the zoom connection process to Zoom MMRs on thin clients, setting this configuration to enabled (1) may speed up the procedure of joining a meeting.
+
+If this is configured on the thin client those settings will override the settings on the VM.
+
+Enabled (1): Cannot connect to an MMR on the thin client.
+
+Disabled (0): No restrictions</string>
+      <string id="PingServerFromThinClient_Policy">Ping server from thin client</string>
+      <string id="PingServerFromThinClient_Explain">Enabled (1): Ping from the VDI VM.
+
+Disabled (0): Ping from the VDI VM.</string>
+      <string id="AllowPluginDSCPMarking_Policy">Allow plugin DSCP marking</string>
+      <string id="AllowPluginDSCPMarking_Explain">DSCP marking must be enabled in the Zoom web portal for this to work on the plugin side.
+
+Enabled (1): Add DSCP Marking to the plugin traffic.
+
+Disabled (0): DSCP Marking is absent from plugin traffic (even if it is enabled on the account).</string>
+      <string id="DisableMMRDirect_Phone_Policy">Disable MMR direct phone</string>
+      <string id="DisableMMRDirect_Phone_Explain">If your network firewall prevents the zoom process from connecting to the Zoom Phone Server on the thin client, setting this registry option to enabled (1) may speed up Zoom Phone calls.
+
+If this is configured on the thin client, those settings will take override the settings on the virtual desktop.
+
+Enabled (1): Do not attempt to connect directly to the Zoom Phone Server from the thin client.
+
+Disabled (0): No restrictions</string>
+      <string id="DisableUDPBridge_Phone_Policy">Disable UDP bridge phone</string>
+      <string id="DisableUDPBridge_Phone_Explain">If your thin client cannot connect to the Virtual Desktop over UDP, setting this to enabled (1) may speed up the process of making a call.
+
+If this is configured on the thin client, the settings will override settings on the virtual desktop.
+
+Enabled (1): Prevent sending Zoom Phone audio over a UDP connection from the thin client to the virtual desktop.
+
+Disabled (0): No restrictions</string>
+      <string id="DisableChannelBridge_Phone_Policy">Disable channel bridge phone</string>
+      <string id="DisableChannelBridge_Phone_Explain">This option allows you to disable sending Zoom Phone audio over the protocol channel.
+
+If your configuration is expected to use Direct or UDP, setting this option to enabled (1) would prevent Zoom Phone from using the unintended media transport of the channel.</string>
+      <string id="EnableVDIPluginAutoUpgrade_Policy">Enable VDI plugin auto upgrade</string>
+      <string id="EnableVDIPluginAutoUpgrade_Explain">The default value is disabled (0)
+
+This option is required to enable the VDI plugin auto-update feature.
+
+Adding the policy on the VM will enable the VDI plugin auto-update to install or upgrade VDI plugins if the VDI auto-update component has been installed on the thin client. This feature is currently only supported for Windows devices.
+
+Adding this policy to the Windows Thin Client can be used to DISABLE the auto-update feature for a specific device. An example would be to add the policy for managed devices to disable updates internally, while still allowing auto-update to update users' personal devices at home.
+
+Enabled (1): Enable plugin auto-update.
+
+Disabled (0): Disable plugin auto-update.</string>
+      <string id="OfficeICA_Up_Policy">Office ICA Bandwidth Upper Limit</string>
+      <string id="OfficeICA_Down_Policy">Office ICA Bandwidth Lower Limit</string>
+      <string id="OfficeUDP_Up_Policy">Office UDP Bandwidth Upper Limit</string>
+      <string id="OfficeUDP_Down_Policy">Office UDP Bandwidth Lower Limit</string>
+      <string id="OfficeDirect_Up_Policy">Office Direct Bandwidth Upper Limit</string>
+      <string id="OfficeDirect_Down_Policy">Office Direct Bandwidth Lower Limit</string>
+      <string id="HomeICA_Up_Policy">Home ICA Bandwidth Upper Limit</string>
+      <string id="HomeICA_Down_Policy">Home ICA Bandwidth Lower Limit</string>
+      <string id="HomeUDP_Up_Policy">Home UDP Bandwidth Upper Limit</string>
+      <string id="HomeUDP_Down_Policy">Home UDP Bandwidth Lower Limit</string>
+      <string id="HomeDirect_Up_Policy">Home Direct Bandwidth Upper Limit</string>
+      <string id="HomeDirect_Down_Policy">Home Direct Bandwidth Lower Limit</string>
+      <string id="up_Policy">Bandwidth upper limit</string>
+      <string id="up_PART">Bandwidth upper limit</string>
+      <string id="up_EXPLAIN">Upper bandwidth limits in kbps</string>
+      <string id="down_Policy">Bandwidth lower limit</string>
+      <string id="down_PART">Bandwidth lower limit</string>
+      <string id="down_EXPLAIN">Lower bandwidth limits in kbps (minimum value is 800 Kbps)</string>
+      <string id="ADMXMigrator_UnresolvedString">ADMX Migrator encountered a string that is not present in the source ADM string table.</string>
+      <string id="ADMXMigrator_NoSupportedOn">ADMX Migrator encountered a policy that does not have a supportedOn value.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="DisableUDPBridge_Policy" />
+      <presentation id="DisableICABridge_Policy" />
+      <presentation id="DisableMMRDirect_Policy" />
+      <presentation id="PingServerFromThinClient_Policy" />
+      <presentation id="AllowPluginDSCPMarking_Policy" />
+      <presentation id="DisableMMRDirect_Phone_Policy" />
+      <presentation id="DisableUDPBridge_Phone_Policy" />
+      <presentation id="DisableChannelBridge_Phone_Policy" />
+      <presentation id="EnableVDIPluginAutoUpgrade_Policy" />
+      <presentation id="OfficeICA_Up_Policy">
+        <decimalTextBox refId="up_Part">up_Part</decimalTextBox>
+      </presentation>
+      <presentation id="OfficeICA_Down_Policy">
+        <decimalTextBox refId="down_Part">down_Part</decimalTextBox>
+      </presentation>
+      <presentation id="OfficeUDP_Up_Policy">
+        <decimalTextBox refId="up_Part">up_Part</decimalTextBox>
+      </presentation>
+      <presentation id="OfficeUDP_Down_Policy">
+        <decimalTextBox refId="down_Part">down_Part</decimalTextBox>
+      </presentation>
+      <presentation id="OfficeDirect_Up_Policy">
+        <decimalTextBox refId="up_Part">up_Part</decimalTextBox>
+      </presentation>
+      <presentation id="OfficeDirect_Down_Policy">
+        <decimalTextBox refId="down_Part">down_Part</decimalTextBox>
+      </presentation>
+      <presentation id="HomeICA_Up_Policy">
+        <decimalTextBox refId="up_Part">up_Part</decimalTextBox>
+      </presentation>
+      <presentation id="HomeICA_Down_Policy">
+        <decimalTextBox refId="down_Part">down_Part</decimalTextBox>
+      </presentation>
+      <presentation id="HomeUDP_Up_Policy">
+        <decimalTextBox refId="up_Part">up_Part</decimalTextBox>
+      </presentation>
+      <presentation id="HomeUDP_Down_Policy">
+        <decimalTextBox refId="down_Part">down_Part</decimalTextBox>
+      </presentation>
+      <presentation id="HomeDirect_Up_Policy">
+        <decimalTextBox refId="up_Part">up_Part</decimalTextBox>
+      </presentation>
+      <presentation id="HomeDirect_Down_Policy">
+        <decimalTextBox refId="down_Part">down_Part</decimalTextBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

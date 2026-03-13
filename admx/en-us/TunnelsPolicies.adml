@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0"
+  xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>Dev Tunnels</displayName>
+  <description>Manage features for Dev Tunnels.</description>
+  <resources>
+    <stringTable>
+      <string id="DevTunnelsProductName">Dev Tunnels</string>
+
+      <!-- Category Names -->
+      <string id="DevTunnelsCategoryName">Dev Tunnels</string>
+      
+      <string id="SUPPORTED_DevTunnelsCLI">Tunnel CLI 1.0.1249 or later; Visual Studio: 17.9.3 or later, Preview 17.10.0 or later; VSCode: 1.88.0-insider or later, stable 1.88.0 or later</string>
+
+      <!-- Tunnels -->
+      <string id="DevTunnels_RestrictedTenantAccess_DisplayName">Allow only selected Microsoft Entra tenant IDs</string>
+      <string id="DevTunnels_RestrictedTenantAccess_Explain">Users must authenticate within the given tenant list to access Dev Tunnels. When enabling this policy, multiple tenant IDs can be added by using a semicolon or a comma to separate each. This includes Dev Tunnels in Visual Studio, port forwarding built into Visual Studio Code, the devtunnel CLI, and the Visual Studio Code Remote - Tunnels extension.
+For more information, see: https://aka.ms/devtunnels/policies </string>
+      <string id="DevTunnels_DisableAnonymousAccess_DisplayName">Disable anonymous tunnel access</string>
+      <string id="DevTunnels_DisableAnonymousAccess_Explain">Disallow anonymous tunnel access. Enabling this policy will enforce users to select either private or organization for tunnel access. This includes Dev Tunnels in Visual Studio, port forwarding built into Visual Studio Code, the devtunnel CLI, and the Visual Studio Code Remote - Tunnels extension.
+For more information, see: https://aka.ms/devtunnels/policies </string>
+      <string id="DevTunnels_DisableDevTunnels_DisplayName">Disable Dev Tunnels</string>
+      <string id="DevTunnels_DisableDevTunnels_Explain">Disallow users from using the Dev Tunnels service. This includes Dev Tunnels in Visual Studio, port forwarding built into Visual Studio Code, the devtunnel CLI, and the Visual Studio Code Remote - Tunnels extension.
+For more information, see: https://aka.ms/devtunnels/policies </string>
+
+    </stringTable>
+    <presentationTable>
+
+      <!-- Tunnels Presentations -->
+      <presentation id="DevTunnels_RestrictedTenantAccess_PresentationId">
+        <textBox refId="DevTunnels_RestrictedTenantAccess_TextBox">
+          <label>Enter Allowed Tenant IDs:</label>
+        </textBox>
+        <text>Note: Enter Tenant IDs in format XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX, each separated by a semicolon or a comma.</text>
+        <text>Example: "a89cdb06-feb1-1c18-bbeb-ced80ac5fa9c; d80ccc58-4dd3-0d1b-c4ae-fb020b42960f"</text>
+        <text> </text>
+      </presentation>
+    </presentationTable>
+</resources>
+</policyDefinitionResources>

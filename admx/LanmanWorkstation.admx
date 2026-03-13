@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--  (c) 2006 Microsoft Corporation  -->
 <policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
   <policyNamespaces>
@@ -373,6 +373,23 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy
+        class="Machine"
+        displayName="$(string.Pol_DisabledSMBQUICServerExceptionList_Name)"
+        explainText="$(string.Pol_DisabledSMBQUICServerExceptionList_Help)"
+        key="Software\Policies\Microsoft\Windows\LanmanWorkstation"
+        name="Pol_DisabledSMBQUICServerExceptionList"
+        presentation="$(presentation.Pol_DisabledSMBQUICServerExceptionList)"
+        >
+      <parentCategory ref="Cat_LanmanWorkstation"/>
+      <supportedOn ref="SUPPORTED_Windows_Server_2025_Windows_11_0" />
+      <elements>
+        <multiText
+            id="MultiText_DisabledSMBQUICServerExceptionList"
+            valueName="DisabledSMBQUICServerExceptionList"
+            />
+      </elements>
     </policy>
   </policies>
 </policyDefinitions>

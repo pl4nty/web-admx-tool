@@ -9,58 +9,21 @@ on:
 
 jobs:
   main:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v4.2.2
-        with:
-          ref: ${{ github.head_ref }}
-      - name: EvergreenAdmx
-        # note conflicts - MDOP is partially superseded by Windows, and Windows ships an old winget version in-box
-        run: |
-          Invoke-WebRequest https://raw.githubusercontent.com/pl4nty/EvergreenAdmx/refs/heads/main/EvergreenAdmx.ps1 -OutFile $env:TEMP\EvergreenAdmx.ps1
-          & $env:TEMP\EvergreenAdmx.ps1 -Verbose -WorkingDirectory . -Include @(
-            "Windows 11"
-            "Microsoft Edge"
-            "Microsoft OneDrive"
-            "Microsoft Office"
-            "FSLogix"
-            "Adobe Acrobat"
-            "Adobe Reader"
-            "BIS-F"
-            "Citrix Workspace App"
-            "Google Chrome"
-            "Microsoft Desktop Optimization Pack"
-            "Mozilla Firefox"
-            "Zoom Desktop Client"
-            "Azure Virtual Desktop"
-            "Microsoft Winget"
-            "Brave Browser"
-            "Winget-AutoUpdate"
-            "Winget-AutoUpdate-aaS"
-            "Devolutions Remote Desktop Manager"
-            "Slack"
-            "MakeMeAdmin"
-          )
-      - uses: EndBug/add-and-commit@v9.1.4
-        with:
-          default_author: github_actions
-          message: Updated ADMX generated data
-
-  regenerate:
-    needs: main
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.2
         with:
-          ref: master
+          ref: ${{ github.head_ref }}
+      - uses: pnpm/action-setup@v4.3.0
       - uses: actions/setup-node@v4.2.0
         with:
-          cache: 'npm'
-      - name: admx2json
-        working-directory: admx
-        run: |
-          npm i xml2js
-          node ../src/utils/admx2json.js .
+          cache: 'pnpm'
+      - name: Install system dependencies
+        run: sudo apt-get update && sudo apt-get install -y p7zip-full
+      - name: Install npm dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Fetch ADMX and ADML files
+        run: npx tsx scripts/fetch-admx.ts
       - uses: EndBug/add-and-commit@v9.1.4
         with:
           default_author: github_actions

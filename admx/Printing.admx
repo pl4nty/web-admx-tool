@@ -1067,6 +1067,68 @@
     </policy>
     <policy
         class="Machine"
+        displayName="$(string.RequireIpps)"
+        explainText="$(string.RequireIpps_Help)"
+        key="Software\Policies\Microsoft\Windows NT\Printers\IPP"
+        name="RequireIppsPolicy"
+        valueName="RequireIpps"
+        >
+      <parentCategory ref="windows:Printers"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy
+        class="Machine"
+        displayName="$(string.IppTlsCertificatePolicy)"
+        explainText="$(string.IppTlsCertificatePolicy_Help)"
+        key="Software\Policies\Microsoft\Windows NT\Printers\IPP"
+        name="ConfigureIppTlsCertificatePolicy"
+        presentation="$(presentation.IppTlsCertificatePolicy)"
+      >
+      <parentCategory ref="windows:Printers"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2"/>
+      <elements>
+        <boolean id="SecurityFlagsBlockUnknownCA" valueName="SecurityFlagsBlockUnknownCA">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="SecurityFlagsBlockCertWrongUsage" valueName="SecurityFlagsBlockCertWrongUsage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="SecurityFlagsBlockCertCNInvalid" valueName="SecurityFlagsBlockCertCNInvalid">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="SecurityFlagsBlockCertDateInvalid" valueName="SecurityFlagsBlockCertDateInvalid">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy
+        class="Machine"
         displayName="$(string.RedirectionGuardPolicy)"
         explainText="$(string.RedirectionGuardPolicy_Help)"
         key="Software\Policies\Microsoft\Windows NT\Printers"
@@ -1109,10 +1171,10 @@
       >
       <parentCategory ref="windows:Printers"/>
       <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2"/>
-      <enabledValue> 
+      <enabledValue>
         <decimal value="1"/>
-      </enabledValue> 
-      <disabledValue> 
+      </enabledValue>
+      <disabledValue>
         <decimal value="0"/>
       </disabledValue>
     </policy>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--  (c) 2006 Microsoft Corporation  -->
 <policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
   <policyNamespaces>
@@ -181,17 +181,6 @@
     </policy>
     <!-- UseCloudTrustForOnPremAuth Policy -->
     <policy name="WHFB_UseCloudTrustForOnPremAuth" class="Machine" displayName="$(string.WHFB_UseCloudTrustForOnPremAuth)" explainText="$(string.WHFB_UseCloudTrustForOnPremAuthExplain)" key="SOFTWARE\Policies\Microsoft\PassportForWork" valueName="UseCloudTrustForOnPremAuth">
-        <parentCategory ref="MSPassportForWorkCategory" />
-        <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER" />
-        <enabledValue>
-          <decimal value="1" />
-        </enabledValue>
-        <disabledValue>
-          <decimal value="0" />
-        </disabledValue>
-    </policy>
-    <!-- DisablePostLogonCredentialCaching Policy -->
-    <policy name="WHFB_DisablePostLogonCredentialCaching" class="Machine" displayName="$(string.WHFB_DisablePostLogonCredentialCaching)" explainText="$(string.WHFB_DisablePostLogonCredentialCachingExplain)" key="SOFTWARE\Policies\Microsoft\PassportForWork" valueName="DisablePostLogonCredentialCaching">
         <parentCategory ref="MSPassportForWorkCategory" />
         <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER" />
         <enabledValue>

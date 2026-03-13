@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="secureboot" namespace="Microsoft.Policies.SecureBoot" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+    <using prefix="products" namespace="Microsoft.Policies.Products" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <supportedOn>  
+    <definitions>
+      <!-- We must make our own definition for Windows 8 without ARM -->  
+      <definition name="SUPPORTED_Windows8" displayName="$(string.SUPPORTED_Windows8)" />  
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="SecureBootCategory" displayName="$(string.SecureBootCategory)">
+      <parentCategory ref="windows:WindowsComponents" />
+    </category>
+  </categories>
+  <policies>
+
+    <policy name="SecureBoot_AvailableUpdatesPolicy"
+        class="Machine"
+        displayName="$(string.SecureBoot_AvailableUpdatesPolicy)"
+        explainText="$(string.SecureBoot_AvailableUpdatesPolicy_Help)"
+        key="SYSTEM\CurrentControlSet\Control\SecureBoot"
+        valueName="AvailableUpdatesPolicy">
+      <parentCategory ref="SecureBootCategory" />
+      <supportedOn ref="windows:SUPPORTED_Windows8" />
+
+      <enabledValue>
+        <decimal value="22852" />
+      </enabledValue>
+      <disabledValue>
+         <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="SecureBoot_HighConfidenceOptOut"
+        class="Machine"
+        displayName="$(string.SecureBoot_HighConfidenceOptOut)"
+        explainText="$(string.SecureBoot_HighConfidenceOptOut_Help)"
+        key="SYSTEM\CurrentControlSet\Control\SecureBoot"
+        valueName="HighConfidenceOptOut">
+      <parentCategory ref="SecureBootCategory" />
+      <supportedOn ref="windows:SUPPORTED_Windows8" />
+
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+         <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="SecureBoot_MicrosoftUpdateManagedOptIn"
+        class="Machine"
+        displayName="$(string.SecureBoot_MicrosoftUpdateManagedOptIn)"
+        explainText="$(string.SecureBoot_MicrosoftUpdateManagedOptIn_Help)"
+        key="SYSTEM\CurrentControlSet\Control\SecureBoot"
+        valueName="MicrosoftUpdateManagedOptIn">
+      <parentCategory ref="SecureBootCategory" />
+      <supportedOn ref="windows:SUPPORTED_Windows8" />
+
+      <enabledValue>
+        <decimal value="22852" />
+      </enabledValue>
+      <disabledValue>
+         <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+  </policies>
+</policyDefinitions>

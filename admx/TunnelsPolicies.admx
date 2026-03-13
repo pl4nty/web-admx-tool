@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0"
+    xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+    <policyNamespaces>
+        <target prefix="DevTunnels" namespace="Microsoft.Policies.DevTunnels" />
+        <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+    </policyNamespaces>
+    <resources minRequiredRevision="1.0" />
+    <supportedOn>
+        <definitions>
+            <definition name="SUPPORTED_DevTunnelsCLI" displayName="$(string.SUPPORTED_DevTunnelsCLI)" />
+        </definitions>
+    </supportedOn>
+    <categories>
+        <category name="DevTunnels" displayName="$(string.DevTunnelsCategoryName)" />
+    </categories>
+    <policies>
+        <!-- DevTunnels Settings -->
+        <policy 
+            name="RestrictedTenantAccess" 
+            class="Machine" 
+            displayName="$(string.DevTunnels_RestrictedTenantAccess_DisplayName)" 
+            explainText="$(string.DevTunnels_RestrictedTenantAccess_Explain)" 
+            presentation="$(presentation.DevTunnels_RestrictedTenantAccess_PresentationId)"
+            key="SOFTWARE\Policies\Microsoft\DevTunnels"
+            valueName="TenantsRestricted"> 
+            <parentCategory ref="DevTunnels" />
+            <supportedOn ref="SUPPORTED_DevTunnelsCLI" />
+            <elements>
+                <text id="DevTunnels_RestrictedTenantAccess_TextBox" valueName="AllowedTenantIdList" expandable="true" required="true" maxLength="150"/>   
+            </elements>
+        </policy>
+        <policy 
+            name="DisableAnonymousAccess" 
+            class="Machine" 
+            displayName="$(string.DevTunnels_DisableAnonymousAccess_DisplayName)"
+            explainText="$(string.DevTunnels_DisableAnonymousAccess_Explain)"
+            key="SOFTWARE\Policies\Microsoft\DevTunnels"
+            valueName="DisableAnonymousAccess">
+            <parentCategory ref="DevTunnels" />
+            <supportedOn ref="SUPPORTED_DevTunnelsCLI" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
+        <policy 
+            name="DisableDevTunnels" 
+            class="Machine" 
+            displayName="$(string.DevTunnels_DisableDevTunnels_DisplayName)"
+            explainText="$(string.DevTunnels_DisableDevTunnels_Explain)"
+            key="SOFTWARE\Policies\Microsoft\DevTunnels"
+            valueName="DisableDevTunnels">
+            <parentCategory ref="DevTunnels" />
+            <supportedOn ref="SUPPORTED_DevTunnelsCLI" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
+    </policies>
+</policyDefinitions>

@@ -350,6 +350,20 @@
           </or>
       </definition>
 
+      <!--At least Windows 11 25H2 -->
+      <definition name="SUPPORTED_Windows_11_0_25H2" displayName="$(string.SUPPORTED_Windows_11_0_25H2)">
+          <or>
+              <range ref="products:MicrosoftWindows" minVersionIndex="16"/>
+          </or>
+      </definition>
+
+      <!-- At least Windows 11 25H2 No Server Enterprise Education -->
+      <definition name="SUPPORTED_Windows_11_0_25H2_NOSERVER_ENTERPRISE_EDUCATION" displayName="$(string.SUPPORTED_Windows_11_0_25H2_NOSERVER_ENTERPRISE_EDUCATION)">
+          <or>
+              <range ref="products:MicrosoftWindows" minVersionIndex="16" maxVersionIndex="16"/>
+          </or>
+      </definition>
+
       <!-- At least Windows 11 No Server Enterprise with Sandbox -->
       <definition name="SUPPORTED_Windows_11_0_NOSERVER_ENTERPRISE_EDUCATION_PRO_SANDBOX" displayName="$(string.SUPPORTED_Windows_11_0_NOSERVER_ENTERPRISE_EDUCATION_PRO_SANDBOX)">
           <or>

@@ -1,0 +1,1504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <displayName>FSLogix</displayName>
+  <description>FSLogix Configuration</description>
+  <resources>
+    <stringTable>
+      <string id="CleanupInvalidSessions_Display">Clean-up Invalid Sessions</string>
+      <string id="CleanupInvalidSessions_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Cleans out registry keys in the HKEY_LOCAL_MACHINE hive that refer to a users SID.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Apps\CleanupInvalidSessions
+Type:  DWORD
+Values: 0 = Disabled, 1 = Enabled</string>
+      <string id="CleanupInvalidSessions_0_Enum">Disabled</string>
+      <string id="CleanupInvalidSessions_1_Enum">Enabled</string>
+      <string id="FSLogix_Category">FSLogix</string>
+      <string id="v2105_Definition">v2105 or later</string>
+      <string id="VHDCompactDisk_Display">VHD Compact Disk</string>
+      <string id="VHDCompactDisk_Explain">[ENABLED BY DEFAULT]
+
+NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Compacts the VHD disk during the sign-out operation and is designed to automatically decrease the Size On Disk of the user's container(s) depending on a pre-defined threshold.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Apps\VHDCompactDisk
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="VHDCompactDisk_0_Enum">Disabled</string>
+      <string id="VHDCompactDisk_1_Enum">Enabled</string>
+      <string id="v2210_Definition">v2210 or later</string>
+      <string id="RoamRecycleBin_Display">Roam Recycle Bin</string>
+      <string id="RoamRecycleBin_Explain">[ENABLED BY DEFAULT]
+
+NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Creates a redirection for the user's specific Recycle Bin into the VHD(x) container. Limited to the Recycle Bin on the System Drive only.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Apps\RoamRecycleBin
+Type:  DWORD
+Values: 0 = Disabled, 1 = Enabled</string>
+      <string id="RoamRecycleBin_0_Enum">Disabled</string>
+      <string id="RoamRecycleBin_1_Enum">Enabled</string>
+      <string id="CCDCacheDirectory_Display">Cache Directory</string>
+      <string id="CCDCacheDirectory_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Specifies the location of the local cache location.
+
+Registry Entry:  HKLM\SYSTEM\CurrentControlSet\Services\frxccd\Parameters\CacheDirectory
+Type:  REG_SZ</string>
+      <string id="CCD_Category">Cloud Cache Service</string>
+      <string id="CCDProxyDirectory_Display">Proxy Directory</string>
+      <string id="CCDProxyDirectory_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Specifies the location of the proxy disk location. This location must not be on a network path.
+
+Registry Entry:  HKLM\SYSTEM\CurrentControlSet\Services\frxccds\Parameters\ProxyDirectory
+Type:  REG_SZ</string>
+      <string id="CCDWriteCacheDirectory_Display">Write Cache Directory</string>
+      <string id="CCDWriteCacheDirectory_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Specifies the location of the write cache file location. This location must not be on a network path.
+
+Registry Entry:  HKLM\SYSTEM\CurrentControlSet\Services\frxccds\Parameters\WriteCacheDirectory
+Type:  REG_SZ</string>
+      <string id="LoggingADComputerGroupProcess_Display">AD Computer Group Process</string>
+      <string id="LoggingADComputerGroupProcess_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Enables logging of the AD Computer Group Processing.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Logging\AdsComputerGroup
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="LoggingADComputerGroupProcess_0_Enum">Disabled</string>
+      <string id="LoggingADComputerGroupProcess_1_Enum">Enabled</string>
+      <string id="Logging_Category">Logging</string>
+      <string id="LoggingDriverInterface_Display">Driver Interface</string>
+      <string id="LoggingDriverInterface_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Enables logging of the driver interface.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Logging\DriverInterface
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="LoggingDriverInterface_0_Enum">Disabled</string>
+      <string id="LoggingDriverInterface_1_Enum">Enabled</string>
+      <string id="LoggingEnabled_Display">Enabled</string>
+      <string id="LoggingEnabled_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Select how FSLogix should enable logging. All logs is the default setting.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Logging\LoggingEnabled
+Values:  0 = No Logs, 1 = Specific Logs, 2 = All Logs</string>
+      <string id="LoggingEnabled_0_Enum">Logging Disabled</string>
+      <string id="LoggingEnabled_1_Enum">Specific Logs Only</string>
+      <string id="LoggingEnabled_2_Enum">Enable All Logs</string>
+      <string id="LoggingFontVisibility_Display">Font Visibility</string>
+      <string id="LoggingFontVisibility_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Enables logging of the Font visibility setting.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Logging\Font
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="LoggingFontVisibility_0_Enum">Disabled</string>
+      <string id="LoggingFontVisibility_1_Enum">Enabled</string>
+      <string id="LoggingLogDirectory_Display">Log Directory</string>
+      <string id="LoggingLogDirectory_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Specifies the location where log files should be stored. Local and UNC paths are accepted. Default is %ProgramData%\FSLogix\Logs
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Logging\LogDir
+Type:  REG_SZ</string>
+      <string id="LoggingLogKeepingPeriod_Display">Log Keeping Period</string>
+      <string id="LoggingLogKeepingPeriod_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Specifies how many days worth of log files to keep before being cleaned up.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Logging\LogFileKeepingPeriod
+Type:  DWORD
+Values:  Min = 0, Max = 180</string>
+      <string id="LoggingNetwork_Display">Network</string>
+      <string id="LoggingNetwork_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Enables logging of the Network component.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Logging\Network
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="LoggingNetwork_0_Enum">Disabled</string>
+      <string id="LoggingNetwork_1_Enum">Enabled</string>
+      <string id="LoggingODFCContainer_Display">ODFC Container</string>
+      <string id="LoggingODFCContainer_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Enables logging of the ODFC Container.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Logging\ODFC
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="LoggingODFCContainer_0_Enum">Disabled</string>
+      <string id="LoggingODFCContainer_1_Enum">Enabled</string>
+      <string id="LoggingPrinterVisibility_Display">Printer Visibility</string>
+      <string id="LoggingPrinterVisibility_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Enables logging of the Printer visibility component.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Logging\Printer
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="LoggingPrinterVisibility_0_Enum">Disabled</string>
+      <string id="LoggingPrinterVisibility_1_Enum">Enabled</string>
+      <string id="LoggingProcessStart_Display">Process Start</string>
+      <string id="LoggingProcessStart_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Enables logging of the Start Process component.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Logging\ProcessStart
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="LoggingProcessStart_0_Enum">Disabled</string>
+      <string id="LoggingProcessStart_1_Enum">Enabled</string>
+      <string id="LoggingProfileContainer_Display">Profile Container</string>
+      <string id="LoggingProfileContainer_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Enables logging of the Profile Container.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Logging\Profile
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="LoggingProfileContainer_0_Enum">Disabled</string>
+      <string id="LoggingProfileContainer_1_Enum">Enabled</string>
+      <string id="LoggingRuleCompilation_Display">Rule Compilation</string>
+      <string id="LoggingRuleCompilation_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Enables logging Rule Compilation component.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Logging\RuleCompilation
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="LoggingRuleCompilation_0_Enum">Disabled</string>
+      <string id="LoggingRuleCompilation_1_Enum">Enabled</string>
+      <string id="LoggingRuleEditor_Display">Rule Editor</string>
+      <string id="LoggingRuleEditor_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Enables logging of the Rule Editor.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Logging\RuleEditor
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="LoggingRuleEditor_0_Enum">Disabled</string>
+      <string id="LoggingRuleEditor_1_Enum">Enabled</string>
+      <string id="LoggingSearchPlugin_Display">Search Plugin</string>
+      <string id="LoggingSearchPlugin_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Enables logging of the Search Plugin.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Logging\SearchPlugin
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="LoggingSearchPlugin_0_Enum">Disabled</string>
+      <string id="LoggingSearchPlugin_1_Enum">Enabled</string>
+      <string id="LoggingSearchRoaming_Display">Search Roaming</string>
+      <string id="LoggingSearchRoaming_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Enables logging of the Search Roam setting.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Logging\Search
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="LoggingSearchRoaming_0_Enum">Disabled</string>
+      <string id="LoggingSearchRoaming_1_Enum">Enabled</string>
+      <string id="LoggingServices_Display">Services</string>
+      <string id="LoggingServices_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Enables logging of the FSLogix services.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Logging\Service
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="LoggingServices_0_Enum">Disabled</string>
+      <string id="LoggingServices_1_Enum">Enabled</string>
+      <string id="OdfcAccessNetworkasComputer_Display">Access Network as Computer Object</string>
+      <string id="OdfcAccessNetworkasComputer_Explain">Attach as computer - folder must have permissions for computer objects.
+
+CAUTION:  Do not use this configuration setting unless your storage provider or architecture will NOT work with user-level permissions to the VHD(x) container locations. This setting will allow the virtual machine to access all the VHD(x) files on the storage provider creating a potential security risk.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\AccessNetworkAsComputerObject
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="OdfcAccessNetworkasComputer_0_Enum">Disabled</string>
+      <string id="OdfcAccessNetworkasComputer_1_Enum">Enabled</string>
+      <string id="ODFC_Category">ODFC Containers</string>
+      <string id="OdfcAttachedVHDSDDL_Display">Attached VHD SDDL</string>
+      <string id="OdfcAttachedVHDSDDL_Explain">SDDL string representing the ACLs to use when attaching the VHD.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\AttachVHDSDDL
+Type:  REG_SZ</string>
+      <string id="OdfcODFCEnabled_Display">Enabled</string>
+      <string id="OdfcODFCEnabled_Explain">Enables ODFC containers which changes the location of some Office based data.
+
+CAUTION: ODFC containers are designed to work with other roaming profie solutions. It is recommended to only use Profile containers when using FSLogix.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\Enabled
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="OdfcODFCEnabled_0_Enum">Disabled</string>
+      <string id="OdfcODFCEnabled_1_Enum">Enabled</string>
+      <string id="OdfcIncludeOfficeActivation_Display">Include Office Activation</string>
+      <string id="OdfcIncludeOfficeActivation_Explain">[ENABLED BY DEFAULT]
+
+Office activation data is redirected to the container.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\IncludeOfficeActivation
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="OdfcIncludeOfficeActivation_0_Enum">Disabled</string>
+      <string id="OdfcIncludeOfficeActivation_1_Enum">Enabled</string>
+      <string id="OdfcIncludeOneDrive_Display">Include OneDrive</string>
+      <string id="OdfcIncludeOneDrive_Explain">[ENABLED BY DEFAULT]
+
+OneDrive cache will be included in the ODFC Container.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\IncludeOneDrive
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="OdfcIncludeOneDrive_0_Enum">Disabled</string>
+      <string id="OdfcIncludeOneDrive_1_Enum">Enabled</string>
+      <string id="OdfcIncludeOneNote_Display">Include OneNote</string>
+      <string id="OdfcIncludeOneNote_Explain">OneNote local notebook cache will be included in the ODFC Container.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\IncludeOneNote
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="OdfcIncludeOneNote_0_Enum">Disabled</string>
+      <string id="OdfcIncludeOneNote_1_Enum">Enabled</string>
+      <string id="OdfcIncludeOneNoteUWP_Display">Include OneNote UWP</string>
+      <string id="OdfcIncludeOneNoteUWP_Explain">OneNote UWP notebook data will be included in the ODFC Container.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\IncludeOneNote_UWP
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="OdfcIncludeOneNoteUWP_0_Enum">Disabled</string>
+      <string id="OdfcIncludeOneNoteUWP_1_Enum">Enabled</string>
+      <string id="OdfcIncludeOutlook_Display">Include Outlook</string>
+      <string id="OdfcIncludeOutlook_Explain">[ENABLED BY DEFAULT]
+
+Outlook data files will be included in the ODFC Container.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\IncludeOutlook
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="OdfcIncludeOutlook_0_Enum">Disabled</string>
+      <string id="OdfcIncludeOutlook_1_Enum">Enabled</string>
+      <string id="OdfcIncludeOutlookPersonalization_Display">Include Outlook Personalization</string>
+      <string id="OdfcIncludeOutlookPersonalization_Explain">[ENABLED BY DEFAULT]
+
+Outlook personalization data will be included in the ODFC Container.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\IncludeOutlookPersonalization
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="OdfcIncludeOutlookPersonalization_0_Enum">Disabled</string>
+      <string id="OdfcIncludeOutlookPersonalization_1_Enum">Enabled</string>
+      <string id="OdfcIncludeSharepoint_Display">Include Sharepoint</string>
+      <string id="OdfcIncludeSharepoint_Explain">[ENABLED BY DEFAULT]
+
+Sharepoint data files will be included in the ODFC Container.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\IncludeSharepoint
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="OdfcIncludeSharepoint_0_Enum">Disabled</string>
+      <string id="OdfcIncludeSharepoint_1_Enum">Enabled</string>
+      <string id="OdfcIncludeSkype_Display">Include Skype</string>
+      <string id="OdfcIncludeSkype_Explain">[ENABLED BY DEFAULT]
+
+Skype for Business GAL (Global Address List) data files will be included in the ODFC Container.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\IncludeSkype
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="OdfcIncludeSkype_0_Enum">Disabled</string>
+      <string id="OdfcIncludeSkype_1_Enum">Enabled</string>
+      <string id="OdfcIncludeTeams_Display">Include Teams</string>
+      <string id="OdfcIncludeTeams_Explain">Teams data files will be included in the ODFC Container.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\IncludeTeams
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="OdfcIncludeTeams_0_Enum">Disabled</string>
+      <string id="OdfcIncludeTeams_1_Enum">Enabled</string>
+      <string id="OdfcIsDynamicVHD_Display">Is Dynamic (VHD)</string>
+      <string id="OdfcIsDynamicVHD_Explain">[ENABLED BY DEFAULT]
+
+VHD(x) containers will be dynamically allocated. VHD(x) file size will grow as data is added to the VHD(x). If disabled, VHD(x) containers that are auto-created will be fully allocated.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\IsDynamic
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="OdfcIsDynamicVHD_0_Enum">Disabled</string>
+      <string id="OdfcIsDynamicVHD_1_Enum">Enabled</string>
+      <string id="OdfcLockedRetryCount_Display">Locked Retry Count</string>
+      <string id="OdfcLockedRetryCount_Explain">Specifies the number of retries to perform when a VHD(x) file is locked (open by another process or computer). The default value is 12 retries which is the same as "Not Configured".
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\LockedRetryCount
+Type:  DWORD
+Values:  Min = 0, Max = 600</string>
+      <string id="OdfcLockedRetryInterval_Display">Locked Retry Interval</string>
+      <string id="OdfcLockedRetryInterval_Explain">Specifies the number of seconds to wait between retries. The default value is 5 seconds which is the same as "Not Configured".
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\LockedRetryInterval
+Type:  DWORD
+Values:  Min = 0, Max = 600</string>
+      <string id="OdfcMirrorLocalOSTToVHD_Display">Mirror Local OST To VHD</string>
+      <string id="OdfcMirrorLocalOSTToVHD_Explain">Sync existing local OST file (if any) to the VHD(x) when a new VHD(x) is created.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\MirrorLocalOSTToVHD
+Type:  DWORD
+Values:  0 = Do not mirror, 1 = Copy to VHD, 2 = Move to VHD</string>
+      <string id="OdfcMirrorLocalOSTToVHD_0_Enum">Do not mirror OST to VHD</string>
+      <string id="OdfcMirrorLocalOSTToVHD_1_Enum">Copy OST to VHD</string>
+      <string id="OdfcMirrorLocalOSTToVHD_2_Enum">Move OST to VHD</string>
+      <string id="OdfcNumberSessionVHDsToKeep_Display">Number Session VHD(s) To Keep</string>
+      <string id="OdfcNumberSessionVHDsToKeep_Explain">This setting is used when VHDAccessMode is set to '3'. This controls the number of session VHD(x) containers that are persisted. For example, if this is set to '2' and the user creates a 3rd session, a new session VHD(x) will be created and used and it will be deleted when the 3rd session ends. Th default value is 2 sessions which is the same as "Not Configured"
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\NumSessionVHDsToKeep
+Type:  DWORD
+Values:  Min = 0, Max = 10</string>
+      <string id="OdfcOutlookCachedMode_Display">Outlook Cached Mode</string>
+      <string id="OdfcOutlookCachedMode_Explain">When the ODFC Container is successfully attached, set Outlook to work in cached mode for the user. The setting change will only be effective for the specific user and for the length of the user session.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\OutlookCachedMode
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled (only if container is attached)</string>
+      <string id="OdfcOutlookCachedMode_0_Enum">Disabled</string>
+      <string id="OdfcOutlookCachedMode_1_Enum">Enabled</string>
+      <string id="OdfcOutlookFolderPath_Display">Outlook Folder Path</string>
+      <string id="OdfcOutlookFolderPath_Explain">Specifies the path to the user's Outlook data folder.
+
+Default value:  %userprofile%\AppData\Local\Microsoft\Outlook
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\OutlookFolderPath
+Type:  REG_SZ</string>
+      <string id="OdfcPreventLoginWithFailure_Display">Prevent Login With Failure</string>
+      <string id="OdfcPreventLoginWithFailure_Explain">Prevent user login when a failure occurs while attaching an FSLogix container.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\PreventLoginWithFailure
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="OdfcPreventLoginWithFailure_0_Enum">Disabled</string>
+      <string id="OdfcPreventLoginWithFailure_1_Enum">Enabled</string>
+      <string id="OdfcPreventLoginWithTempProfile_Display">Prevent Login With Temp Profile</string>
+      <string id="OdfcPreventLoginWithTempProfile_Explain">Prevent user login when a user receives a temporary Windows profile.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\PreventLoginWithTempProfile
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="OdfcPreventLoginWithTempProfile_0_Enum">Disabled</string>
+      <string id="OdfcPreventLoginWithTempProfile_1_Enum">Enabled</string>
+      <string id="OdfcReattachCount_Display">Reattach Count</string>
+      <string id="OdfcReattachCount_Explain">When a VHD(x) volume is detached unexpectedly, the FSLogix system will attempt to re-attach the volume. This value specifies how many times to retry. The default value is 60 retries which is the same as "Not Configured".
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\ReAttachRetryCount
+Type:  DWORD
+Values:  Min = 0, Max = 600</string>
+      <string id="OdfcReattachInterval_Display">Reattach Interval</string>
+      <string id="OdfcReattachInterval_Explain">When a VHD(x) volume is detached unexpectedly, the FSLogix system will attempt to reattach the volume. This value specifies the number of seconds to wait between retries. The default value is 10 seconds which is the same as "Not Configured".
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\ReAttachIntervalSeconds
+Type:  DWORD
+Values:  Min = 1, Max = 60</string>
+      <string id="OdfcRedirectType_Display">Redirect Type</string>
+      <string id="OdfcRedirectType_Explain">Configures legacy or FSLogix advanced redirection. The default is '2' which is the same as "Not Configured".
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\RedirectType
+Type:  DWORD
+Values:  Legacy = 1, FSLogix Redirection = 2</string>
+      <string id="OdfcRedirectType_0_Enum">Legacy Redirection</string>
+      <string id="OdfcRedirectType_1_Enum">FSLogix Redirection</string>
+      <string id="OdfcRefreshUserPolicy_Display">Refresh User Policy</string>
+      <string id="OdfcRefreshUserPolicy_Explain">If a GPO is configured for an Office product that is included in the ODFC container, there may be a conflict with a previous user setting. Standard behavior is for the GPO to be applied, but when the ODFC container is read, the GPO will be over-written by the setting in the  ODFC container. If the desire is for the GPO change to be universally applied, then enabling this setting should be done prior to the GPO update being applied. When this setting is enabled, the ODFC container will overwrite the previous user setting with the GPO setting.
+
+NOTE: There is a performance implication to enabling the RefreshUserPolicy. RefreshUserPolicy should only be enabled during a specific GPO and then should be set back to disabled.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\RefreshUserPolicy
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="OdfcRefreshUserPolicy_0_Enum">Disabled</string>
+      <string id="OdfcRefreshUserPolicy_1_Enum">Enabled</string>
+      <string id="OdfcRemoveOrphanedOSTFilesOnLogoff_Display">Remove Orphaned OST Files On Logoff</string>
+      <string id="OdfcRemoveOrphanedOSTFilesOnLogoff_Explain">Removes duplicate OST files.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\RemoveOrphanedOSTFilesOnLogoff
+Type: DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="OdfcRemoveOrphanedOSTFilesOnLogoff_0_Enum">Disabled</string>
+      <string id="OdfcRemoveOrphanedOSTFilesOnLogoff_1_Enum">Enabled</string>
+      <string id="OdfcRoamSearch_Display">Roam Search</string>
+      <string id="OdfcRoamSearch_Explain">Enable search roaming in legacy Windows Operating Systems.
+
+NOTE: Do not use this setting with Windows Server 2019 (or later) or Windows 10 (or later). Newer operating systems support per-user search.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\RoamSearch
+Type:  DWORD
+Values:  0 = Disabled, 1 = Single User Search, 2 = Multi-user Search</string>
+      <string id="OdfcRoamSearch_0_Enum">Disabled</string>
+      <string id="OdfcRoamSearch_1_Enum">Single-user Search</string>
+      <string id="OdfcRoamSearch_2_Enum">Multi-user Search</string>
+      <string id="OdfcSizeInMBs_Display">Size In MBs</string>
+      <string id="OdfcSizeInMBs_Explain">Specify the size for auto-created VHD(X) files. The default is 30,000 (30GB) which is the same as "Not Configured".
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\SizeInMBs
+Type:  DWORD
+Values:  Min = 500, Max = 1000000</string>
+      <string id="OdfcVHDAccessMode_Display">VHD Access Mode</string>
+      <string id="OdfcVHDAccessMode_Explain">Controls whether the VHD/X file should be accessed directly or whether a difference disk should be used. The default is Direct Access (0) which is the same as "Not Configured".
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\VHDAccessMode
+Type:  DWORD
+Values:  0 = Direct Access, 1 = DiffDisk on Network, 2 = Local DiffDisk, 3 = Unique Disk per Session</string>
+      <string id="OdfcVHDAccessMode_0_Enum">Direct Access</string>
+      <string id="OdfcVHDAccessMode_1_Enum">DiffDisk On Network</string>
+      <string id="OdfcVHDAccessMode_2_Enum">Local DiffDisk</string>
+      <string id="OdfcVHDAccessMode_3_Enum">Unique Disk per Session</string>
+      <string id="OdfcVHDLocations_Display">VHD Locations</string>
+      <string id="OdfcVHDLocations_Explain">Specifies the network location where the VHD(X) files are stored.
+
+Examples:
+- Sinlge location:  \\&lt;server fqdn&gt;\&lt;share name&gt;
+- Multiple locations: \\&lt;server 1 fqdn&gt;\&lt;share name&gt;;\\&lt;server 2 fqdn&gt;\&lt;share name&gt;
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\VHDLocations
+REG_SZ</string>
+      <string id="OdfcVHDXSectorSize_Display">VHDX Sector Size</string>
+      <string id="OdfcVHDXSectorSize_Explain">This setting is only applicable if the virtual disk type is VHDX. The default is the sytem default which is the same as "Not Configured".
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\VHDXSectorSize
+Type:  DWORD
+Values:  0 = System Default, 512, 4096</string>
+      <string id="OdfcVHDXSectorSize_0_Enum">512 bytes</string>
+      <string id="OdfcVHDXSectorSize_1_Enum">4 KB</string>
+      <string id="OdfcVolumeTypeVHDorVHDX_Display">Volume Type (VHD or VHDX)</string>
+      <string id="OdfcVolumeTypeVHDorVHDX_Explain">Specifies the type of virtual disk to auto-create. The default is VHD which is the same as "Not Configured".
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\VolumeType
+Type:  REG_SZ
+Values:  VHD, VHDX</string>
+      <string id="OdfcVolumeTypeVHDorVHDX_0_Enum">VHD</string>
+      <string id="OdfcVolumeTypeVHDorVHDX_1_Enum">VHDX</string>
+      <string id="OdfcVolumeWaitTimemilliseconds_Display">Volume Wait Time (milliseconds)</string>
+      <string id="OdfcVolumeWaitTimemilliseconds_Explain">Specifies the number of milliseconds to wait for the volume to be attached by the system. The default is 20000 (20 sec) which is the same as "Not Configured".
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\VolumeWaitTimeMS
+Type:  DWORD
+Values:  Min = 1000, Max = 1000000</string>
+      <string id="OdfcCCDLocations_Display">CCD Locations</string>
+      <string id="OdfcCCDLocations_Explain">CCDLocations are formatted using a type and a connectionString separated using a ; as the delimiter. The type will accept either smb or azure. The connectionString for smb type must include the full UNC path to the file share. The connectionString for azure type should be secured as per the documentation (https://aka.ms/fslogix). The strings are case sensitive.
+
+- CCDLocations using SMB:  type=smb,name="SMB Share 1",connectionString=\\&lt;server 1 fqdn&gt;\&lt;share name&gt;;type=smb,name="SMB Share 2"connectionString=\\&lt;server 2 fqdn&gt;\&lt;share name&gt;
+
+- CCDLocations using Azure (secure):  type=smb,name="SMB Share 1",connectionString=\\&lt;server 1 fqdn&gt;\&lt;share name&gt;;type=azure,name="Azure Blob 1",connectionString="|fslogix/stgacct1-connectionstring|"
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\CCDLocations
+Type:  REG_SZ</string>
+      <string id="ODFC_CCD_Category">Cloud Cache</string>
+      <string id="OdfcCCDMaxCacheSizeinMBs_Display">CCD Max Cache Size in MBs</string>
+      <string id="OdfcCCDMaxCacheSizeinMBs_Explain">CcdMaxCacheSizeInMBs specifies the maximum local cache size in megabytes, per user, during normal operation. Normal operation assumes that all Cloud Cache providers are available, and that storage performance is adequate to accept I/O at the rate necessary to accommodate profile utilization.
+
+CAUTION: Do not use this setting unless the performance and technical aspects to this setting are fully understood as this setting is a leading cause to poor performance and has limited use cases.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\CcdMaxCacheSizeInMBs
+Type:  DWORD
+Values: Min (No Limit) = 0, Max = 10000000</string>
+      <string id="OdfcCCDUnregisterTimeout_Display">CCD Unregister Timeout</string>
+      <string id="OdfcCCDUnregisterTimeout_Explain">CCD Unregister Timeout represents the number of seconds that a user's sign out will be delayed if the number of available providers is less than specified in Healthy Providers Required For Unregister.
+
+If CCD Unregsiter Timeout is set to 0, then the user sign out will be held until the number of providers specified in Healthy Providers Required For Unregister are available. NOTE: If CCDUnregisterTimeout is set to 0, and the number of providers specified in Healthy Providers Required For Unregister is not met, then the user's sign out may appear to the user as if the session is locked. The sign out may be held infinitely.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\CCDUnregisterTimeout
+Type:  DWORD
+Values:  Min = 0, Max = 10000000</string>
+      <string id="OdfcClearCacheOnForcedUnregister_Display">Clear Cache On Forced Unregister</string>
+      <string id="OdfcClearCacheOnForcedUnregister_Explain">If the desired behavior is for the local cache to be deleted, even if the data has not been flushed to a CCD Location, then Clear Cache On Forced Unregister should be set to Enabled.  Setting Clear Cache On Forced Unregister to Enabled may result in user data saved in the registry to be lost during the current session. It is important to understand that this data isn't recoverable if the local cache is cleared in this scenario. Verify that you understand the implications of changing the default value of this setting prior to making changes.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\ClearCacheOnForcedUnregister
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="OdfcClearCacheOnForcedUnregister_0_Enum">Disabled</string>
+      <string id="OdfcClearCacheOnForcedUnregister_1_Enum">Enabled</string>
+      <string id="OdfcClearCacheOnLogoff_Display">Clear Cache On Logoff</string>
+      <string id="OdfcClearCacheOnLogoff_Explain">By default, the Local Cache file won't be removed when the user sign out. If a user accesses a system where it's desirable to have the Local Cache file deleted when they sign out, set Clear Cache On Logoff to Enabled.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\ClearCacheOnLogoff
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="OdfcClearCacheOnLogoff_0_Enum">Disabled</string>
+      <string id="OdfcClearCacheOnLogoff_1_Enum">Enabled</string>
+      <string id="OdfcHealthyProvidersRequiredForRegister_Display">Healthy Providers Required For Register</string>
+      <string id="OdfcHealthyProvidersRequiredForRegister_Explain">This setting specifies the number of healthy CCD Locations required to allow a sign in. If using the default setting, users will always be allowed to sign in, even if no CCD Locations are available.
+
+If a user signs in with no available CCD Locations, FSLogix assumes that one or more CCD Locations will become available prior to the user signing out. If a CCD Locations does not become available during the time of the user session, then the user is prevented from signing out (discussed in Healthy Provider Required For Unregister).
+
+If it is desired to block a user from signing in and a minimum number of CCD Locations are not available, the Healthy Providers Required For Register may be set to the number of CCD Locations required for a sign in.
+
+If the minimum number of CCD Locations required for registration aren't available, then the sign in will fail. When setting Healthy Providers Required For Register to anything other than 0, then Prevent Login With Failure and/or Preven tLogin With Temp Profile should be used in order to create the desired user experience.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\HealthyProvidersRequiredForRegister
+Type:  DWORD
+Values:  Min = 0, Max = 4</string>
+      <string id="OdfcHealthyProvidersRequiredForUnregister_Display">Healthy Providers Required For Unregister</string>
+      <string id="OdfcHealthyProvidersRequiredForUnregister_Explain">This setting specifies the number of healthy CCD Locations required for a user to sign out. The default setting is 1, meaning that at least one remote CCD Location is required for the user to sign out.
+
+If the number of available CCD Locations, when a user attempts to sign out, is less than the number set for Healthy Providers Required For Unregister, the user's sign out will be prevented for the time specified in CCD Unregister Timeout.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\HealthyProvidersRequiredForUnregister
+Type:  DWORD
+Values:  Min = 0, Max = 4</string>
+      <string id="OdfcDiffDiskParentFolderPath_Display">Diff Disk Parent Folder Path</string>
+      <string id="OdfcDiffDiskParentFolderPath_Explain">Specifies the path where difference disks will be created (when ProfileType or VHDAccessMode is configured to use them).
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\DiffDiskParentFolderPath
+Type:  REG_SZ</string>
+      <string id="ODFC_ContainerandDirectoryNaming_Category">Container and Directory Naming</string>
+      <string id="OdfcFlipFlopProfileDirectoryName_Display">Flip Flop Profile Directory Name</string>
+      <string id="OdfcFlipFlopProfileDirectoryName_Explain">SID folder is created as %username%_%sid% instead of the default %sid%_%username%.
+
+NOTE:
+- This setting will OVERRIDE both SIDDirNameMatch and SIDDirNamePattern
+- This setting has NO EFFECT when NoProfileContainingFolder is enabled
+- NoProfileContainingFolder &gt; FlipFlopProfileDirectoryName &gt; (SIDDirNameMatch and SIDDirNamePattern)
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\FlipFlopProfileDirectoryName
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="OdfcFlipFlopProfileDirectoryName_0_Enum">Disabled</string>
+      <string id="OdfcFlipFlopProfileDirectoryName_1_Enum">Enabled</string>
+      <string id="OdfcNoProfileContainingFolder_Display">No Profile Containing Folder</string>
+      <string id="OdfcNoProfileContainingFolder_Explain">VHD(x) file is placed and used in the root VHDLocation rather than in a SID directory under VHDLocation
+
+NOTE:  This setting will override ANY OTHER setting related to container folders.
+
+- SIDDIRNameMatch has NO EFFECT when used in conjunction with this setting.
+- SIDDIRNamePattern has NO EFFECT when used in conjunction with this setting.
+- FlipFlopProfileDirectoryName has NO EFFECT when used in conjunction with this setting.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\NoProfileContainingFolder
+Type:  DWORD
+Values:  0 = Disable, 1 = Enabled</string>
+      <string id="OdfcNoProfileContainingFolder_0_Enum">Disabled</string>
+      <string id="OdfcNoProfileContainingFolder_1_Enum">Enabled</string>
+      <string id="OdfcSIDDirectoryNameMatch_Display">SID Directory Name Match</string>
+      <string id="OdfcSIDDirectoryNameMatch_Explain">Specifies a string pattern used when matching a Profile or ODFC container folder. Use this setting to define how FSLogix will attempt to locate a users Profile or ODFC container. FSLogix will use the VHDLocations or CCDLocations as the location where to search and this setting defines what to search.
+
+NOTE:  When using this configuration setting, be sure the SIDDIRNamePattern value matches this setting.
+
+- This setting has NO EFFECT when FlipFlopProfileDirectoryName is enabled.
+- This setting has NO EFFECT when NoProfileContainingFolder is enabled.
+- NoProfileContainingFolder &gt; FlipFlopProfileDirectoryName &gt; SIDDirNameMatch (this setting)
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\SIDDirNameMatch
+Type:  REG_SZ</string>
+      <string id="OdfcSIDDirectoryNamePattern_Display">SID Directory Name Pattern</string>
+      <string id="OdfcSIDDirectoryNamePattern_Explain">Specifies a string pattern used when creating a Profile or ODFC container folder. Use this setting to define how FSLogix will attempt to create a users Profile or ODFC container folder. FSLogix will use the VHDLocations or CCDLocations as the location where to create and this setting defines what to create.
+
+NOTE:  When using this configuration setting, be sure the SIDDIRNameMatch value matches this setting.
+
+- This setting has NO EFFECT when FlipFlopProfileDirectoryName is enabled.
+- This setting has NO EFFECT when NoProfileContainingFolder is enabled.
+- NoProfileContainingFolder &gt; FlipFlopProfileDirectoryName &gt; SIDDirNamePattern (this setting)
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\SIDDirNamePattern
+Type:  REG_SZ</string>
+      <string id="OdfcVHDNameMatch_Display">VHD Name Match</string>
+      <string id="OdfcVHDNameMatch_Explain">Specifies a string pattern used when matching a users ODFC container. Use this setting to define how FSLogix will attempt to locate a users ODFC container (VHD(x) file). FSLogix will use the VHDLocations or CCDLocations as the location where to search and this setting defines what to search.
+
+NOTE: When using this configuration setting, be sure the VHDNamePattern value matches this setting.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\VHDNameMatch
+Type:  REG_SZ</string>
+      <string id="OdfcVHDNamePattern_Display">VHD Name Pattern</string>
+      <string id="OdfcVHDNamePattern_Explain">Specifies a string pattern used when creating a users ODFC container. Use this setting to define how FSLogix will attempt to create a users ODFC container (VHD(x) file). FSLogix will use the VHDLocations or CCDLocations as the location where to search and this setting defines what to create.
+
+NOTE: When using this configuration setting, be sure the VHDNameMatch value matches this setting.
+
+Registry Entry:  HKLM\SOFTWARE\Policies\FSLogix\ODFC\VHDNamePattern
+Type: REG_SZ</string>
+      <string id="ProfilesAccessNetworkasComputer_Display">Access Network as Computer Object</string>
+      <string id="ProfilesAccessNetworkasComputer_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Attach as computer - folder must have permissions for computer objects
+
+CAUTION:  Do not use this configuration setting unless your storage provider or architecture will NOT work with user-level permissions to the VHD(x) container locations. This setting will allow the virtual machine to access all the VHD(x) files on the storage provider creating a potential security risk.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\AccessNetworkAsComputerObject
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="ProfilesAccessNetworkasComputer_0_Enum">Disabled</string>
+      <string id="ProfilesAccessNetworkasComputer_1_Enum">Enabled</string>
+      <string id="Profiles_Category">Profile Containers</string>
+      <string id="ProfilesAttachedVHDSDDL_Display">Attached VHD SDDL</string>
+      <string id="ProfilesAttachedVHDSDDL_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+SDDL string representing the ACLs to use when attaching the VHD.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\AttachVHDSDDL
+Type:  REG_SZ</string>
+      <string id="ProfilesCleanOutNotifications_Display">Clean Out Notifications</string>
+      <string id="ProfilesCleanOutNotifications_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+This setting cleans out stale entries created by the Windows Push Notification Platform (WPN) and Windows Notification Facility (WFN) which under some conditions leads to slow sign-ins. Only enable this setting if directed by a Microsoft Support Engineer.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\CleanOutNotifications
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="ProfilesCleanOutNotifications_0_Enum">Disabled</string>
+      <string id="ProfilesCleanOutNotifications_1_Enum">Enabled</string>
+      <string id="ProfilesDeleteLocalProfileWhenVHDShouldApply_Display">Delete Local Profile When VHD Should Apply</string>
+      <string id="ProfilesDeleteLocalProfileWhenVHDShouldApply_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+When the FSLogix Profiles system determines that a user should have a FSLogix profile but a local profile exists, the local profile WILL BE REMOVED and the user logged on with the FSLogix profile
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\DeleteLocalProfileWhenVHDShouldApply
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="ProfilesDeleteLocalProfileWhenVHDShouldApply_0_Enum">Disabled</string>
+      <string id="ProfilesDeleteLocalProfileWhenVHDShouldApply_1_Enum">Enabled</string>
+      <string id="ProfilesEnabled_Display">Enabled</string>
+      <string id="ProfilesEnabled_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Controls whether or not the Profiles feature is active
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\Enabled
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="ProfilesEnabled_0_Enum">Disabled</string>
+      <string id="ProfilesEnabled_1_Enum">Enabled</string>
+      <string id="ProfilesInstallAppxPackages_Display">Install Appx Packages</string>
+      <string id="ProfilesInstallAppxPackages_Explain">[ENABLED BY DEFAULT]
+
+NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+When enabled, this setting will read the AppxPackages.xml manifest file from the user's profile and install / re-register the list of applications.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\InstallAppxPackages
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="ProfilesInstallAppxPackages_0_Enum">Disabled</string>
+      <string id="ProfilesInstallAppxPackages_1_Enum">Enabled</string>
+      <string id="ProfilesIsDynamicVHD_Display">Is Dynamic (VHD)</string>
+      <string id="ProfilesIsDynamicVHD_Explain">[ENABLED BY DEFAULT]
+
+NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+VHD(x)s will be dynamically allocated. VHD(x) file size will grow as data is added to the VHD(x). If disabled, VHD(x)s that are auto-created will be fully allocated.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\IsDynamic
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="ProfilesIsDynamicVHD_0_Enum">Disabled</string>
+      <string id="ProfilesIsDynamicVHD_1_Enum">Enabled</string>
+      <string id="ProfilesKeepLocalDirectoryafterlogoff_Display">Keep Local Directory (after logoff)</string>
+      <string id="ProfilesKeepLocalDirectoryafterlogoff_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+The 'local_%username%' folder will be left on the system after logoff and will also be used again if the same user logs on again
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\KeepLocalDir
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="ProfilesKeepLocalDirectoryafterlogoff_0_Enum">Disabled</string>
+      <string id="ProfilesKeepLocalDirectoryafterlogoff_1_Enum">Enabled</string>
+      <string id="ProfilesLockedRetryCount_Display">Locked Retry Count</string>
+      <string id="ProfilesLockedRetryCount_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Specifies the number of retries to perform when a VHD(x) file is locked (open by another process or computer). The default value is 12 retries which is the same as "Not Configured".
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\LockedRetryCount
+Type:  DWORD
+Values:  Min = 0, Max = 600</string>
+      <string id="ProfilesLockedRetryInterval_Display">Locked Retry Interval</string>
+      <string id="ProfilesLockedRetryInterval_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Specifies the number of seconds to wait between retries. The default value is 5 seconds which is the same as "Not Configured".
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\LockedRetryInterval
+Type:  DWORD
+Values:  Min = 0, Max = 600</string>
+      <string id="ProfilesOutlookCachedMode_Display">Outlook Cached Mode</string>
+      <string id="ProfilesOutlookCachedMode_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+When the Profile Container is successfully attached, set Outlook to work in cached mode for the user. The setting change will only be effective for the specific user and for the length of the user session
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\OutlookCachedMode
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled (only if container is attached)</string>
+      <string id="ProfilesOutlookCachedMode_0_Enum">Disabled</string>
+      <string id="ProfilesOutlookCachedMode_1_Enum">Enabled</string>
+      <string id="ProfilesPreventLoginWithFailure_Display">Prevent Login With Failure</string>
+      <string id="ProfilesPreventLoginWithFailure_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Prevent user login when a failure occurs while attaching an FSLogix container
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\PreventLoginWithFailure
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="ProfilesPreventLoginWithFailure_0_Enum">Disabled</string>
+      <string id="ProfilesPreventLoginWithFailure_1_Enum">Enabled</string>
+      <string id="ProfilesPreventLoginWithTempProfile_Display">Prevent Login With Temp Profile</string>
+      <string id="ProfilesPreventLoginWithTempProfile_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Prevent user login when a user receives a temporary Windows profile
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\PreventLoginWithTempProfile
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="ProfilesPreventLoginWithTempProfile_0_Enum">Disabled</string>
+      <string id="ProfilesPreventLoginWithTempProfile_1_Enum">Enabled</string>
+      <string id="ProfilesProfileDirectorySDDL_Display">Profile Directory SDDL</string>
+      <string id="ProfilesProfileDirectorySDDL_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+SDDL string representing the ACLs to use when creating the profile directory.
+
+Registry Entry: HKLM\SOFTWARE\FSLogix\Profiles\ProfileDirSDDL
+Type: REG_SZ</string>
+      <string id="ProfilesProfileType_Display">Profile Type</string>
+      <string id="ProfilesProfileType_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Controls whether the VHD(x) file should be accessed directly, if a difference disk should be used, and if Read/Write or Read Only access should be used. The default value is Normal Profile.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\ProfileType
+Type:  DWORD
+Values:  0 = Normal direct-access profile, 1= Read-write profile, 2 = Read-only profile, 3 = Try for read-write profile and fallback to read-only</string>
+      <string id="ProfilesProfileType_0_Enum">Normal Profile</string>
+      <string id="ProfilesProfileType_1_Enum">Read / Write Profile</string>
+      <string id="ProfilesProfileType_2_Enum">Read Only Profile</string>
+      <string id="ProfilesProfileType_3_Enum">Read / Write profile - fallback to Read Only</string>
+      <string id="ProfilesReattachCount_Display">Reattach Count</string>
+      <string id="ProfilesReattachCount_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+When a VHD(x) volume is detached unexpectedly, the FSLogix system will attempt to re-attach the volume. This value specifies how many times to retry. The default value is 60 retries which is the same as "Not Configured".
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\ReAttachRetryCount
+Type:  DWORD
+Values:  Min = 0, Max = 600</string>
+      <string id="ProfilesReattachInterval_Display">Reattach Interval</string>
+      <string id="ProfilesReattachInterval_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+When a VHD(x) volume is detached unexpectedly, the FSLogix system will attempt to reattach the volume. This value specifies the number of seconds to wait between retries. The default value is 10 seconds which is the same as "Not Configured".
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\ReAttachIntervalSeconds
+Type:  DWORD
+Values:  Min = 1, Max = 60</string>
+      <string id="ProfilesRebootOnUserLogoff_Display">Reboot On User Logoff</string>
+      <string id="ProfilesRebootOnUserLogoff_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Reboots the machine when a user logs off
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\RebootOnUserLogoff
+Type:  DWORD
+Values:  0 = Disabled, 1 = Any user, 2 = Any FSLogix Profile user</string>
+      <string id="ProfilesRebootOnUserLogoff_0_Enum">Disabled</string>
+      <string id="ProfilesRebootOnUserLogoff_1_Enum">Reboot on any logoff</string>
+      <string id="ProfilesRebootOnUserLogoff_2_Enum">Reboot only on any FSLogix Profile logoff</string>
+      <string id="ProfilesRedirectType_Display">Redirect Type</string>
+      <string id="ProfilesRedirectType_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Configures legacy or FSLogix advanced redirection. The default is '2' which is the same as "Not Configured".
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\RedirectType
+Type:  DWORD
+Values:  Legacy = 1, FSLogix Redirection = 2</string>
+      <string id="ProfilesRedirectType_0_Enum">Legacy Redirection</string>
+      <string id="ProfilesRedirectType_1_Enum">FSLogix Redirection</string>
+      <string id="ProfilesRedirectionXMLSourceFolder_Display">Redirection XML Source Folder</string>
+      <string id="ProfilesRedirectionXMLSourceFolder_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Specifies the path to a folder containing the XML file. If the folder contains a redirections.xml, it will be copied to the local profile and immediately used.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\RedirXMLSourceFolder
+Type:  REG_SZ</string>
+      <string id="ProfilesRemoveOrphanedOSTFilesOnLogoff_Display">Remove Orphaned OST Files On Logoff</string>
+      <string id="ProfilesRemoveOrphanedOSTFilesOnLogoff_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Removes duplicate OST files
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\RemoveOrphanedOSTFilesOnLogoff
+Type: DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="ProfilesRemoveOrphanedOSTFilesOnLogoff_0_Enum">Disabled</string>
+      <string id="ProfilesRemoveOrphanedOSTFilesOnLogoff_1_Enum">Enabled</string>
+      <string id="ProfilesRoamIdentity_Display">Roam Identity</string>
+      <string id="ProfilesRoamIdentity_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Allows legacy roaming for credentials and tokens created by the Web Account Manager (WAM) system. Some Microsoft 365 applications may require authentication at every sign-in when disabled.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\RoamIdentity
+Type: DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="ProfilesRoamIdentity_0_Enum">Disabled</string>
+      <string id="ProfilesRoamIdentity_1_Enum">Enabled</string>
+      <string id="v2210HF1_Definition">v2210 HF1 or later</string>
+      <string id="ProfilesRoamSearch_Display">Roam Search</string>
+      <string id="ProfilesRoamSearch_Explain">NOTE:
+-  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+-  Do not use this setting with Windows Server 2019 (or later) or Windows 10 (or later). Newer operating systems support per-user search.
+
+Enable search roaming in legacy Windows Operating Systems
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\RoamSearch
+Type:  DWORD
+Values: 0 = Disabled, 1 = Single User Search, 2 = Multi-user Search</string>
+      <string id="ProfilesRoamSearch_0_Enum">Disabled</string>
+      <string id="ProfilesRoamSearch_1_Enum">Single-user Search</string>
+      <string id="ProfilesRoamSearch_2_Enum">Multi-user Search</string>
+      <string id="ProfilesRoamGroupPolicyState_Display">Roam Group Policy State</string>
+      <string id="ProfilesRoamGroupPolicyState_Explain">[ENABLED BY DEFAULT]
+ 
+NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+ 
+Roams the users Group Policy state with their profile and allows it to be processed asynchronously 
+ 
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Apps\GroupPolicyState
+Type:  DWORD
+Values: 0 = Disabled, 1 = Enabled</string>
+      <string id="ProfilesRoamGroupPolicyState_0_Enum">Disabled</string>
+      <string id="ProfilesRoamGroupPolicyState_1_Enum">Enabled</string>
+      <string id="v2210HF4_Definition">v2210 HF4 or later</string>
+      <string id="ProfilesSetTempFolderstoLocalPath_Display">Set Temp Folders to Local Path</string>
+      <string id="ProfilesSetTempFolderstoLocalPath_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Redirects the TEMP, TMP, and INetCache paths to the local drive
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\SetTempToLocalPath
+Type:  DWORD
+Values:  0 = No Action, 1 = Redirect TEMP and TMP to Local Disk, 2 = Redirect INetCache to Local Disk, 3 = Redirect TEMP, TMP, INetCache to Local Disk</string>
+      <string id="ProfilesSetTempFolderstoLocalPath_0_Enum">Take no action</string>
+      <string id="ProfilesSetTempFolderstoLocalPath_1_Enum">Redirect TEMP and TMP to local drive</string>
+      <string id="ProfilesSetTempFolderstoLocalPath_2_Enum">Redirect INetCache to local drive</string>
+      <string id="ProfilesSetTempFolderstoLocalPath_3_Enum">Redirect TEMP, TMP and INetCache to local drive</string>
+      <string id="ProfilesShutdownOnUserLogoff_Display">Shutdown On User Logoff</string>
+      <string id="ProfilesShutdownOnUserLogoff_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Shuts down the machine when a user logs off
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\ShutdownOnUserLogoff
+Type:  DWORD
+Values:  0 = Disabled, 1 = Any user, 2 = Any FSLogix Profile user</string>
+      <string id="ProfilesShutdownOnUserLogoff_0_Enum">Disabled</string>
+      <string id="ProfilesShutdownOnUserLogoff_1_Enum">Shutdown on any logoff</string>
+      <string id="ProfilesShutdownOnUserLogoff_2_Enum">Shutdown on any FSLogix Profile logoff</string>
+      <string id="ProfilesSIDDirectorySDDL_Display">SID Directory SDDL</string>
+      <string id="ProfilesSIDDirectorySDDL_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+SDDL string representing the ACLs to use when creating the SID container folder.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\SIDDirSDDL
+Type:  REG_SZ</string>
+      <string id="ProfilesSizeInMBs_Display">Size In MBs</string>
+      <string id="ProfilesSizeInMBs_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Specify the size for auto-created VHD(x) files.
+
+NOTE:  Default is 30,000 (30GB) which is the same as "Not Configured"
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\SizeInMBs
+Type:  DWORD
+Values:  Min = 500, Max = 1000000</string>
+      <string id="ProfilesVHDLocations_Display">VHD Locations</string>
+      <string id="ProfilesVHDLocations_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Specifies the network location where the VHD(X) files are stored.
+
+Examples:
+- Sinlge location:  \\&lt;server fqdn&gt;\&lt;share name&gt;
+- Multiple locations: \\&lt;server 1 fqdn&gt;\&lt;share name&gt;;\\&lt;server 2 fqdn&gt;\&lt;share name&gt;
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\VHDLocations
+REG_SZ</string>
+      <string id="ProfilesVHDXSectorSize_Display">VHDX Sector Size</string>
+      <string id="ProfilesVHDXSectorSize_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+This setting is only applicable if the virtual disk type is VHDX
+
+NOTE:  The default is the sytem default which is the same as "Not Configured"
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\VHDXSectorSize
+Type:  DWORD
+Values:  0 = System Default, 512, 4096</string>
+      <string id="ProfilesVHDXSectorSize_0_Enum">512 bytes</string>
+      <string id="ProfilesVHDXSectorSize_1_Enum">4 KB</string>
+      <string id="ProfilesVolumeWaitTimemilliseconds_Display">Volume Wait Time (milliseconds)</string>
+      <string id="ProfilesVolumeWaitTimemilliseconds_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Specifies the number of milliseconds to wait for the volume to be attached by the system. Default is 20,000 (20 seconds)
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\VolumeWaitTimeMS
+Type:  DWORD
+Values:  Min = 1000, Max = 1000000</string>
+      <string id="ProfilesCCDLocations_Display">CCD Locations</string>
+      <string id="ProfilesCCDLocations_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+CCDLocations are formatted using a type, name and a connectionString separated using a ; as the delimiter. The type will accept either smb or azure. The name is a free-form field used to describe the location. The connectionString for smb type must include the full UNC path to the file share. The connectionString for azure type should be secured as per the documentation (https://aka.ms/fslogix). The strings are case sensitive.
+
+- CCDLocations using SMB:  type=smb,name=""SMB Share 1"",connectionString=\\&lt;server 1 fqdn&gt;\&lt;share name&gt;;type=smb,name=""SMB Share 2""connectionString=\\&lt;server 2 fqdn&gt;\&lt;share name&gt;
+
+- CCDLocations using Azure (secure):  type=smb,name=""SMB Share 1"",connectionString=\\&lt;server 1 fqdn&gt;\&lt;share name&gt;;type=azure,name=""Azure Blob 1"",connectionString=""|fslogix/stgacct1-connectionstring|"
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\CCDLocations
+Type:  REG_SZ</string>
+      <string id="Profiles_CCD_Category">Cloud Cache</string>
+      <string id="ProfilesCCDMaxCacheSizeinMBs_Display">CCD Max Cache Size in MBs</string>
+      <string id="ProfilesCCDMaxCacheSizeinMBs_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+CcdMaxCacheSizeInMBs specifies the maximum local cache size in megabytes, per user, during normal operation. Normal operation assumes that all Cloud Cache providers are available, and that storage performance is adequate to accept I/O at the rate necessary to accommodate profile utilization.
+
+CAUTION: Do not use this setting unless the performance and technical aspects to this setting are fully understood as this setting is a leading cause to poor performance and has limited use cases.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\CcdMaxCacheSizeInMBs
+Type:  DWORD
+Values: Min (No Limit) = 0, Max = 1000000</string>
+      <string id="ProfilesCCDUnregisterTimeout_Display">CCD Unregister Timeout</string>
+      <string id="ProfilesCCDUnregisterTimeout_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+CCD Unregister Timeout represents the number of seconds that a user's sign out will be delayed if the number of available providers is less than specified in Healthy Providers Required For Unregister.
+
+If CCD Unregsiter Timeout is set to 0, then the user sign out will be held until the number of providers specified in Healthy Providers Required For Unregister are available. NOTE: If CCDUnregisterTimeout is set to 0, and the number of providers specified in Healthy Providers Required For Unregister is not met, then the user's sign out may appear to the user as if the session is locked. The sign out may be held infinitely.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\CCDUnregisterTimeout
+Type:  DWORD
+Values:  Min = 0, Max = 10000000</string>
+      <string id="ProfilesClearCacheonForcedUnregister_Display">Clear Cache on Forced Unregister</string>
+      <string id="ProfilesClearCacheonForcedUnregister_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+If the desired behavior is for the local cache to be deleted, even if the data has not been flushed to a CCD Location, then Clear Cache On Forced Unregister should be set to Enabled.  Setting Clear Cache On Forced Unregister to Enabled may result in user data saved in the registry to be lost during the current session. It is important to understand that this data isn't recoverable if the local cache is cleared in this scenario. Verify that you understand the implications of changing the default value of this setting prior to making changes.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\ClearCacheOnForcedUnregister
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="ProfilesClearCacheonForcedUnregister_0_Enum">Disabled</string>
+      <string id="ProfilesClearCacheonForcedUnregister_1_Enum">Enabled</string>
+      <string id="ProfilesClearCacheonLogoff_Display">Clear Cache on Logoff</string>
+      <string id="ProfilesClearCacheonLogoff_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+Clears the local cache during user sign out.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\ClearCacheOnLogoff
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="ProfilesClearCacheonLogoff_0_Enum">Disabled</string>
+      <string id="ProfilesClearCacheonLogoff_1_Enum">Enabled</string>
+      <string id="ProfilesHealthyProvidersRequiredForRegister_Display">Healthy Providers Required For Register</string>
+      <string id="ProfilesHealthyProvidersRequiredForRegister_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+This setting specifies the number of healthy CCD Locations required to allow a sign in. If using the default setting, users will always be allowed to sign in, even if no CCD Locations are available.
+
+If a user signs in with no available CCD Locations, FSLogix assumes that one or more CCD Locations will become available prior to the user signing out. If a CCD Locations does not become available during the time of the user session, then the user is prevented from signing out (discussed in Healthy Provider Required For Unregister).
+
+If it is desired to block a user from signing in and a minimum number of CCD Locations are not available, the Healthy Providers Required For Register may be set to the number of CCD Locations required for a sign in.
+
+If the minimum number of CCD Locations required for registration aren't available, then the sign in will fail. When setting Healthy Providers Required For Register to anything other than 0, then Prevent Login With Failure and/or Preven tLogin With Temp Profile should be used in order to create the desired user experience.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\HealthyProvidersRequiredForRegister
+Type:  DWORD
+Values:  Min = 0, Max = 4</string>
+      <string id="ProfilesHealthyProvidersRequiredForUnregister_Display">Healthy Providers Required For Unregister</string>
+      <string id="ProfilesHealthyProvidersRequiredForUnregister_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+This setting specifies the number of healthy CCD Locations required for a user to sign out. The default setting is 1, meaning that at least one remote CCD Location is required for the user to sign out.
+
+If the number of available CCD Locations, when a user attempts to sign out, is less than the number set for Healthy Providers Required For Unregister, the user's sign out will be prevented for the time specified in CCD Unregister Timeout.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\HealthyProvidersRequiredForUnregister
+Type:  DWORD
+Values:  Min = 0, Max = 4</string>
+      <string id="ProfilesDiffDiskParentFolderPath_Display">Diff Disk Parent Folder Path</string>
+      <string id="ProfilesDiffDiskParentFolderPath_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Specifies the path where difference disks will be created (when ProfileType or VHDAccessMode is configured to use them).
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\DiffDiskParentFolderPath
+Type:  REG_SZ</string>
+      <string id="Profiles_ContainerandDirectoryNaming_Category">Container and Directory Naming</string>
+      <string id="ProfilesFlipFlopProfileDirectoryName_Display">Flip Flop Profile Directory Name</string>
+      <string id="ProfilesFlipFlopProfileDirectoryName_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+SID folder is created as %username%_%sid% instead of the default %sid%_%username%.
+
+NOTE:
+- This setting will OVERRIDE both SIDDirNameMatch and SIDDirNamePattern
+- This setting has NO EFFECT when NoProfileContainingFolder is enabled
+- NoProfileContainingFolder &gt; FlipFlopProfileDirectoryName &gt; (SIDDirNameMatch and SIDDirNamePattern)
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\FlipFlopProfileDirectoryName
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="ProfilesFlipFlopProfileDirectoryName_0_Enum">Disabled</string>
+      <string id="ProfilesFlipFlopProfileDirectoryName_1_Enum">Enabled</string>
+      <string id="ProfilesNoProfileContainingFolder_Display">No Profile Containing Folder</string>
+      <string id="ProfilesNoProfileContainingFolder_Explain">NOTE:  Once this policy is Enabled or Disabled, setting it back to Not Configured has NO EFFECT.
+
+VHD(x) file is placed and used in the root VHDLocation rather than in a SID directory under VHDLocation
+
+NOTE:  This setting will override ANY OTHER setting related to container folders.
+
+- SIDDIRNameMatch has NO EFFECT when used in conjunction with this setting.
+- SIDDIRNamePattern has NO EFFECT when used in conjunction with this setting.
+- FlipFlopProfileDirectoryName has NO EFFECT when used in conjunction with this setting.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\NoProfileContainingFolder
+Type:  DWORD
+Values:  0 = Disabled, 1 = Enabled</string>
+      <string id="ProfilesNoProfileContainingFolder_0_Enum">Disabled</string>
+      <string id="ProfilesNoProfileContainingFolder_1_Enum">Enabled</string>
+      <string id="ProfilesSIDDirectoryNameMatch_Display">SID Directory Name Match</string>
+      <string id="ProfilesSIDDirectoryNameMatch_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Specifies a string pattern used when matching a Profile or ODFC container folder. Use this setting to define how FSLogix will attempt to locate a users Profile or ODFC container. FSLogix will use the VHDLocations or CCDLocations as the location where to search and this setting defines what to search.
+
+NOTE:  When using this configuration setting, be sure the SIDDIRNamePattern value matches this setting.
+
+- This setting has NO EFFECT when FlipFlopProfileDirectoryName is enabled.
+- This setting has NO EFFECT when NoProfileContainingFolder is enabled.
+- NoProfileContainingFolder &gt; FlipFlopProfileDirectoryName &gt; SIDDirNameMatch (this setting)
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\SIDDirNameMatch
+Type:  REG_SZ</string>
+      <string id="ProfilesSIDDirectoryNamePattern_Display">SID Directory Name Pattern</string>
+      <string id="ProfilesSIDDirectoryNamePattern_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Specifies a string pattern used when creating a Profile or ODFC container folder. Use this setting to define how FSLogix will attempt to create a users Profile or ODFC container folder. FSLogix will use the VHDLocations or CCDLocations as the location where to create and this setting defines what to create.
+
+NOTE:  When using this configuration setting, be sure the SIDDIRNameMatch value matches this setting.
+
+- This setting has NO EFFECT when FlipFlopProfileDirectoryName is enabled.
+- This setting has NO EFFECT when NoProfileContainingFolder is enabled.
+- NoProfileContainingFolder &gt; FlipFlopProfileDirectoryName &gt; SIDDirNamePattern (this setting)
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\SIDDirNamePattern
+Type:  REG_SZ</string>
+      <string id="ProfilesVHDNameMatch_Display">VHD Name Match</string>
+      <string id="ProfilesVHDNameMatch_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Specifies a string pattern used when matching a users Profile container. Use this setting to define how FSLogix will attempt to locate a users Profile container (VHD(x) file). FSLogix will use the VHDLocations or CCDLocations as the location where to search and this setting defines what to search.
+
+NOTE: When using this configuration setting, be sure the VHDNamePattern value matches this setting.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\VHDNameMatch
+Type:  REG_SZ</string>
+      <string id="ProfilesVHDNamePattern_Display">VHD Name Pattern</string>
+      <string id="ProfilesVHDNamePattern_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Specifies a string pattern used when creating a users Profile container. Use this setting to define how FSLogix will attempt to create a users Profile container (VHD(x) file). FSLogix will use the VHDLocations or CCDLocations as the location where to search and this setting defines what to create.
+
+NOTE: When using this configuration setting, be sure the VHDNameMatch value matches this setting.
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\VHDNamePattern
+Type: REG_SZ</string>
+      <string id="ProfilesVolumeTypeVHDorVHDX_Display">Volume Type (VHD or VHDX)</string>
+      <string id="ProfilesVolumeTypeVHDorVHDX_Explain">NOTE:  Once this policy is Enabled, only Disable will remove the registry value. Enabled to Not Configured will have NO EFFECT.
+
+Specifies the type of virtual disk to auto-create. Default is VHD. The default is VHD which is the same as "Not Configured"
+
+Registry Entry:  HKLM\SOFTWARE\FSLogix\Profiles\VolumeType
+Type:  REG_SZ
+Values:  VHD, VHDX</string>
+      <string id="ProfilesVolumeTypeVHDorVHDX_0_Enum">VHD</string>
+      <string id="ProfilesVolumeTypeVHDorVHDX_1_Enum">VHDX</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="CleanupInvalidSessions">
+        <dropdownList refId="CleanupInvalidSessions" />
+      </presentation>
+      <presentation id="VHDCompactDisk">
+        <dropdownList refId="VHDCompactDisk" />
+      </presentation>
+      <presentation id="RoamRecycleBin">
+        <dropdownList refId="RoamRecycleBin" />
+      </presentation>
+      <presentation id="CCDCacheDirectory">
+        <textBox refId="CCDCacheDirectory">
+          <label>Cache Directory</label>
+        </textBox>
+      </presentation>
+      <presentation id="CCDProxyDirectory">
+        <textBox refId="CCDProxyDirectory">
+          <label>Proxy Directory</label>
+        </textBox>
+      </presentation>
+      <presentation id="CCDWriteCacheDirectory">
+        <textBox refId="CCDWriteCacheDirectory">
+          <label>Write Cache Directory</label>
+        </textBox>
+      </presentation>
+      <presentation id="LoggingADComputerGroupProcess">
+        <dropdownList refId="LoggingADComputerGroupProcess" />
+      </presentation>
+      <presentation id="LoggingDriverInterface">
+        <dropdownList refId="LoggingDriverInterface" />
+      </presentation>
+      <presentation id="LoggingEnabled">
+        <dropdownList refId="LoggingEnabled" />
+      </presentation>
+      <presentation id="LoggingFontVisibility">
+        <dropdownList refId="LoggingFontVisibility" />
+      </presentation>
+      <presentation id="LoggingLogDirectory">
+        <textBox refId="LoggingLogDirectory">
+          <label>Log Directory</label>
+        </textBox>
+      </presentation>
+      <presentation id="LoggingLogKeepingPeriod">
+        <decimalTextBox refId="LoggingLogKeepingPeriod" defaultValue="2">Log Keeping Period</decimalTextBox>
+      </presentation>
+      <presentation id="LoggingNetwork">
+        <dropdownList refId="LoggingNetwork" />
+      </presentation>
+      <presentation id="LoggingODFCContainer">
+        <dropdownList refId="LoggingODFCContainer" />
+      </presentation>
+      <presentation id="LoggingPrinterVisibility">
+        <dropdownList refId="LoggingPrinterVisibility" />
+      </presentation>
+      <presentation id="LoggingProcessStart">
+        <dropdownList refId="LoggingProcessStart" />
+      </presentation>
+      <presentation id="LoggingProfileContainer">
+        <dropdownList refId="LoggingProfileContainer" />
+      </presentation>
+      <presentation id="LoggingRuleCompilation">
+        <dropdownList refId="LoggingRuleCompilation" />
+      </presentation>
+      <presentation id="LoggingRuleEditor">
+        <dropdownList refId="LoggingRuleEditor" />
+      </presentation>
+      <presentation id="LoggingSearchPlugin">
+        <dropdownList refId="LoggingSearchPlugin" />
+      </presentation>
+      <presentation id="LoggingSearchRoaming">
+        <dropdownList refId="LoggingSearchRoaming" />
+      </presentation>
+      <presentation id="LoggingServices">
+        <dropdownList refId="LoggingServices" />
+      </presentation>
+      <presentation id="OdfcAccessNetworkasComputer">
+        <dropdownList refId="OdfcAccessNetworkasComputer" />
+      </presentation>
+      <presentation id="OdfcAttachedVHDSDDL">
+        <textBox refId="OdfcAttachedVHDSDDL">
+          <label>Attached VHD SDDL</label>
+        </textBox>
+      </presentation>
+      <presentation id="OdfcODFCEnabled">
+        <dropdownList refId="OdfcODFCEnabled" />
+      </presentation>
+      <presentation id="OdfcIncludeOfficeActivation">
+        <dropdownList refId="OdfcIncludeOfficeActivation" />
+      </presentation>
+      <presentation id="OdfcIncludeOneDrive">
+        <dropdownList refId="OdfcIncludeOneDrive" />
+      </presentation>
+      <presentation id="OdfcIncludeOneNote">
+        <dropdownList refId="OdfcIncludeOneNote" />
+      </presentation>
+      <presentation id="OdfcIncludeOneNoteUWP">
+        <dropdownList refId="OdfcIncludeOneNoteUWP" />
+      </presentation>
+      <presentation id="OdfcIncludeOutlook">
+        <dropdownList refId="OdfcIncludeOutlook" />
+      </presentation>
+      <presentation id="OdfcIncludeOutlookPersonalization">
+        <dropdownList refId="OdfcIncludeOutlookPersonalization" />
+      </presentation>
+      <presentation id="OdfcIncludeSharepoint">
+        <dropdownList refId="OdfcIncludeSharepoint" />
+      </presentation>
+      <presentation id="OdfcIncludeSkype">
+        <dropdownList refId="OdfcIncludeSkype" />
+      </presentation>
+      <presentation id="OdfcIncludeTeams">
+        <dropdownList refId="OdfcIncludeTeams" />
+      </presentation>
+      <presentation id="OdfcIsDynamicVHD">
+        <dropdownList refId="OdfcIsDynamicVHD" />
+      </presentation>
+      <presentation id="OdfcLockedRetryCount">
+        <decimalTextBox refId="OdfcLockedRetryCount" defaultValue="12">Locked Retry Count</decimalTextBox>
+      </presentation>
+      <presentation id="OdfcLockedRetryInterval">
+        <decimalTextBox refId="OdfcLockedRetryInterval" defaultValue="5">Locked Retry Interval</decimalTextBox>
+      </presentation>
+      <presentation id="OdfcMirrorLocalOSTToVHD">
+        <dropdownList refId="OdfcMirrorLocalOSTToVHD" />
+      </presentation>
+      <presentation id="OdfcNumberSessionVHDsToKeep">
+        <decimalTextBox refId="OdfcNumberSessionVHDsToKeep" defaultValue="2">Number Session VHD(s) To Keep</decimalTextBox>
+      </presentation>
+      <presentation id="OdfcOutlookCachedMode">
+        <dropdownList refId="OdfcOutlookCachedMode" />
+      </presentation>
+      <presentation id="OdfcOutlookFolderPath">
+        <textBox refId="OdfcOutlookFolderPath">
+          <label>Outlook Folder Path</label>
+        </textBox>
+      </presentation>
+      <presentation id="OdfcPreventLoginWithFailure">
+        <dropdownList refId="OdfcPreventLoginWithFailure" />
+      </presentation>
+      <presentation id="OdfcPreventLoginWithTempProfile">
+        <dropdownList refId="OdfcPreventLoginWithTempProfile" />
+      </presentation>
+      <presentation id="OdfcReattachCount">
+        <decimalTextBox refId="OdfcReattachCount" defaultValue="60">Reattach Count</decimalTextBox>
+      </presentation>
+      <presentation id="OdfcReattachInterval">
+        <decimalTextBox refId="OdfcReattachInterval" defaultValue="10">Reattach Interval</decimalTextBox>
+      </presentation>
+      <presentation id="OdfcRedirectType">
+        <dropdownList refId="OdfcRedirectType" />
+      </presentation>
+      <presentation id="OdfcRefreshUserPolicy">
+        <dropdownList refId="OdfcRefreshUserPolicy" />
+      </presentation>
+      <presentation id="OdfcRemoveOrphanedOSTFilesOnLogoff">
+        <dropdownList refId="OdfcRemoveOrphanedOSTFilesOnLogoff" />
+      </presentation>
+      <presentation id="OdfcRoamSearch">
+        <dropdownList refId="OdfcRoamSearch" />
+      </presentation>
+      <presentation id="OdfcSizeInMBs">
+        <decimalTextBox refId="OdfcSizeInMBs" defaultValue="30000">Size In MBs</decimalTextBox>
+      </presentation>
+      <presentation id="OdfcVHDAccessMode">
+        <dropdownList refId="OdfcVHDAccessMode" />
+      </presentation>
+      <presentation id="OdfcVHDLocations">
+        <textBox refId="OdfcVHDLocations">
+          <label>VHD Locations</label>
+        </textBox>
+      </presentation>
+      <presentation id="OdfcVHDXSectorSize">
+        <dropdownList refId="OdfcVHDXSectorSize" />
+      </presentation>
+      <presentation id="OdfcVolumeTypeVHDorVHDX">
+        <dropdownList refId="OdfcVolumeTypeVHDorVHDX" />
+      </presentation>
+      <presentation id="OdfcVolumeWaitTimemilliseconds">
+        <decimalTextBox refId="OdfcVolumeWaitTimemilliseconds" defaultValue="20000">Volume Wait Time (milliseconds)</decimalTextBox>
+      </presentation>
+      <presentation id="OdfcCCDLocations">
+        <textBox refId="OdfcCCDLocations">
+          <label>CCD Locations</label>
+        </textBox>
+      </presentation>
+      <presentation id="OdfcCCDMaxCacheSizeinMBs">
+        <decimalTextBox refId="OdfcCCDMaxCacheSizeinMBs" defaultValue="0">CCD Max Cache Size in MBs</decimalTextBox>
+      </presentation>
+      <presentation id="OdfcCCDUnregisterTimeout">
+        <decimalTextBox refId="OdfcCCDUnregisterTimeout" defaultValue="0">CCD Unregister Timeout</decimalTextBox>
+      </presentation>
+      <presentation id="OdfcClearCacheOnForcedUnregister">
+        <dropdownList refId="OdfcClearCacheOnForcedUnregister" />
+      </presentation>
+      <presentation id="OdfcClearCacheOnLogoff">
+        <dropdownList refId="OdfcClearCacheOnLogoff" />
+      </presentation>
+      <presentation id="OdfcHealthyProvidersRequiredForRegister">
+        <decimalTextBox refId="OdfcHealthyProvidersRequiredForRegister" defaultValue="0">Healthy Providers Required For Register</decimalTextBox>
+      </presentation>
+      <presentation id="OdfcHealthyProvidersRequiredForUnregister">
+        <decimalTextBox refId="OdfcHealthyProvidersRequiredForUnregister">Healthy Providers Required For Unregister</decimalTextBox>
+      </presentation>
+      <presentation id="OdfcDiffDiskParentFolderPath">
+        <textBox refId="OdfcDiffDiskParentFolderPath">
+          <label>Diff Disk Parent Folder Path</label>
+        </textBox>
+      </presentation>
+      <presentation id="OdfcFlipFlopProfileDirectoryName">
+        <dropdownList refId="OdfcFlipFlopProfileDirectoryName" />
+      </presentation>
+      <presentation id="OdfcNoProfileContainingFolder">
+        <dropdownList refId="OdfcNoProfileContainingFolder" />
+      </presentation>
+      <presentation id="OdfcSIDDirectoryNameMatch">
+        <textBox refId="OdfcSIDDirectoryNameMatch">
+          <label>SID Directory Name Match</label>
+        </textBox>
+      </presentation>
+      <presentation id="OdfcSIDDirectoryNamePattern">
+        <textBox refId="OdfcSIDDirectoryNamePattern">
+          <label>SID Directory Name Pattern</label>
+        </textBox>
+      </presentation>
+      <presentation id="OdfcVHDNameMatch">
+        <textBox refId="OdfcVHDNameMatch">
+          <label>VHD Name Match</label>
+        </textBox>
+      </presentation>
+      <presentation id="OdfcVHDNamePattern">
+        <textBox refId="OdfcVHDNamePattern">
+          <label>VHD Name Pattern</label>
+        </textBox>
+      </presentation>
+      <presentation id="ProfilesAccessNetworkasComputer">
+        <dropdownList refId="ProfilesAccessNetworkasComputer" />
+      </presentation>
+      <presentation id="ProfilesAttachedVHDSDDL">
+        <textBox refId="ProfilesAttachedVHDSDDL">
+          <label>Attached VHD SDDL</label>
+        </textBox>
+      </presentation>
+      <presentation id="ProfilesCleanOutNotifications">
+        <dropdownList refId="ProfilesCleanOutNotifications" />
+      </presentation>
+      <presentation id="ProfilesDeleteLocalProfileWhenVHDShouldApply">
+        <dropdownList refId="ProfilesDeleteLocalProfileWhenVHDShouldApply" />
+      </presentation>
+      <presentation id="ProfilesEnabled">
+        <dropdownList refId="ProfilesEnabled" />
+      </presentation>
+      <presentation id="ProfilesInstallAppxPackages">
+        <dropdownList refId="ProfilesInstallAppxPackages" />
+      </presentation>
+      <presentation id="ProfilesIsDynamicVHD">
+        <dropdownList refId="ProfilesIsDynamicVHD" />
+      </presentation>
+      <presentation id="ProfilesKeepLocalDirectoryafterlogoff">
+        <dropdownList refId="ProfilesKeepLocalDirectoryafterlogoff" />
+      </presentation>
+      <presentation id="ProfilesLockedRetryCount">
+        <decimalTextBox refId="ProfilesLockedRetryCount" defaultValue="12">Locked Retry Count</decimalTextBox>
+      </presentation>
+      <presentation id="ProfilesLockedRetryInterval">
+        <decimalTextBox refId="ProfilesLockedRetryInterval" defaultValue="5">Locked Retry Interval</decimalTextBox>
+      </presentation>
+      <presentation id="ProfilesOutlookCachedMode">
+        <dropdownList refId="ProfilesOutlookCachedMode" />
+      </presentation>
+      <presentation id="ProfilesPreventLoginWithFailure">
+        <dropdownList refId="ProfilesPreventLoginWithFailure" />
+      </presentation>
+      <presentation id="ProfilesPreventLoginWithTempProfile">
+        <dropdownList refId="ProfilesPreventLoginWithTempProfile" />
+      </presentation>
+      <presentation id="ProfilesProfileDirectorySDDL">
+        <textBox refId="ProfilesProfileDirectorySDDL">
+          <label>Profile Directory SDDL</label>
+        </textBox>
+      </presentation>
+      <presentation id="ProfilesProfileType">
+        <dropdownList refId="ProfilesProfileType" />
+      </presentation>
+      <presentation id="ProfilesReattachCount">
+        <decimalTextBox refId="ProfilesReattachCount" defaultValue="60">Reattach Count</decimalTextBox>
+      </presentation>
+      <presentation id="ProfilesReattachInterval">
+        <decimalTextBox refId="ProfilesReattachInterval" defaultValue="10">Reattach Interval</decimalTextBox>
+      </presentation>
+      <presentation id="ProfilesRebootOnUserLogoff">
+        <dropdownList refId="ProfilesRebootOnUserLogoff" />
+      </presentation>
+      <presentation id="ProfilesRedirectType">
+        <dropdownList refId="ProfilesRedirectType" />
+      </presentation>
+      <presentation id="ProfilesRedirectionXMLSourceFolder">
+        <textBox refId="ProfilesRedirectionXMLSourceFolder">
+          <label>Redirection XML Source Folder</label>
+        </textBox>
+      </presentation>
+      <presentation id="ProfilesRemoveOrphanedOSTFilesOnLogoff">
+        <dropdownList refId="ProfilesRemoveOrphanedOSTFilesOnLogoff" />
+      </presentation>
+      <presentation id="ProfilesRoamIdentity">
+        <dropdownList refId="ProfilesRoamIdentity" />
+      </presentation>
+      <presentation id="ProfilesRoamSearch">
+        <dropdownList refId="ProfilesRoamSearch" />
+      </presentation>
+      <presentation id="ProfilesRoamGroupPolicyState">
+        <dropdownList refId="ProfilesRoamGroupPolicyState" />
+      </presentation>
+      <presentation id="ProfilesSetTempFolderstoLocalPath">
+        <dropdownList refId="ProfilesSetTempFolderstoLocalPath" />
+      </presentation>
+      <presentation id="ProfilesShutdownOnUserLogoff">
+        <dropdownList refId="ProfilesShutdownOnUserLogoff" />
+      </presentation>
+      <presentation id="ProfilesSIDDirectorySDDL">
+        <textBox refId="ProfilesSIDDirectorySDDL">
+          <label>SID Directory SDDL</label>
+        </textBox>
+      </presentation>
+      <presentation id="ProfilesSizeInMBs">
+        <decimalTextBox refId="ProfilesSizeInMBs" defaultValue="30000">Size In MBs</decimalTextBox>
+      </presentation>
+      <presentation id="ProfilesVHDLocations">
+        <textBox refId="ProfilesVHDLocations">
+          <label>VHD Locations</label>
+        </textBox>
+      </presentation>
+      <presentation id="ProfilesVHDXSectorSize">
+        <dropdownList refId="ProfilesVHDXSectorSize" />
+      </presentation>
+      <presentation id="ProfilesVolumeWaitTimemilliseconds">
+        <decimalTextBox refId="ProfilesVolumeWaitTimemilliseconds" defaultValue="20000">Volume Wait Time (milliseconds)</decimalTextBox>
+      </presentation>
+      <presentation id="ProfilesCCDLocations">
+        <textBox refId="ProfilesCCDLocations">
+          <label>CCD Locations</label>
+        </textBox>
+      </presentation>
+      <presentation id="ProfilesCCDMaxCacheSizeinMBs">
+        <decimalTextBox refId="ProfilesCCDMaxCacheSizeinMBs" defaultValue="0">CCD Max Cache Size in MBs</decimalTextBox>
+      </presentation>
+      <presentation id="ProfilesCCDUnregisterTimeout">
+        <decimalTextBox refId="ProfilesCCDUnregisterTimeout" defaultValue="0">CCD Unregister Timeout</decimalTextBox>
+      </presentation>
+      <presentation id="ProfilesClearCacheonForcedUnregister">
+        <dropdownList refId="ProfilesClearCacheonForcedUnregister" />
+      </presentation>
+      <presentation id="ProfilesClearCacheonLogoff">
+        <dropdownList refId="ProfilesClearCacheonLogoff" />
+      </presentation>
+      <presentation id="ProfilesHealthyProvidersRequiredForRegister">
+        <decimalTextBox refId="ProfilesHealthyProvidersRequiredForRegister" defaultValue="0">Healthy Providers Required For Register</decimalTextBox>
+      </presentation>
+      <presentation id="ProfilesHealthyProvidersRequiredForUnregister">
+        <decimalTextBox refId="ProfilesHealthyProvidersRequiredForUnregister">Healthy Providers Required For Unregister</decimalTextBox>
+      </presentation>
+      <presentation id="ProfilesDiffDiskParentFolderPath">
+        <textBox refId="ProfilesDiffDiskParentFolderPath">
+          <label>Diff Disk Parent Folder Path</label>
+        </textBox>
+      </presentation>
+      <presentation id="ProfilesFlipFlopProfileDirectoryName">
+        <dropdownList refId="ProfilesFlipFlopProfileDirectoryName" />
+      </presentation>
+      <presentation id="ProfilesNoProfileContainingFolder">
+        <dropdownList refId="ProfilesNoProfileContainingFolder" />
+      </presentation>
+      <presentation id="ProfilesSIDDirectoryNameMatch">
+        <textBox refId="ProfilesSIDDirectoryNameMatch">
+          <label>SID Directory Name Match</label>
+        </textBox>
+      </presentation>
+      <presentation id="ProfilesSIDDirectoryNamePattern">
+        <textBox refId="ProfilesSIDDirectoryNamePattern">
+          <label>SID Directory Name Pattern</label>
+        </textBox>
+      </presentation>
+      <presentation id="ProfilesVHDNameMatch">
+        <textBox refId="ProfilesVHDNameMatch">
+          <label>VHD Name Match</label>
+        </textBox>
+      </presentation>
+      <presentation id="ProfilesVHDNamePattern">
+        <textBox refId="ProfilesVHDNamePattern">
+          <label>VHD Name Pattern</label>
+        </textBox>
+      </presentation>
+      <presentation id="ProfilesVolumeTypeVHDorVHDX">
+        <dropdownList refId="ProfilesVolumeTypeVHDorVHDX" />
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

@@ -189,5 +189,15 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="EnableThemeFileRemoteResource" class="Machine" displayName="$(string.EnableThemeFileRemoteResource)" explainText="$(string.EnableThemeFileRemoteResource_Help)" key="Software\Policies\Microsoft\Windows\Themes" valueName="EnableThemeFileRemoteResource">
+        <parentCategory ref="windows:Desktop" />
+        <supportedOn ref="windows:SUPPORTED_Windows_11_0_22H2" />
+        <enabledValue>
+            <decimal value="1" />
+        </enabledValue>
+        <disabledValue>
+            <decimal value="0" />
+        </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

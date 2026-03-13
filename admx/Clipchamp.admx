@@ -1,0 +1,60 @@
+<policyDefinitions
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    revision="1.0"
+    schemaVersion="1.0"
+    xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions"
+>
+    <policyNamespaces>
+        <target
+            prefix="clipchamp"
+            namespace="Microsoft.Policies.Clipchamp"
+        />
+        <using
+            prefix="windows"
+            namespace="Microsoft.Policies.Windows"
+        />
+    </policyNamespaces>
+    <resources minRequiredRevision="1.0" />
+    <categories>
+        <category name="L_Clipchamp_GroupPolicyCategory" displayName="$(string.L_Clipchamp_GroupPolicyCategory)">
+            <parentCategory ref="windows:WindowsComponents" />
+        </category>
+    </categories>
+    <policies>
+        <policy
+            name="L_ClipchampEnabled"
+            class="Both"
+            displayName="$(string.L_ClipchampEnabled)"
+            explainText="$(string.L_ClipchampEnabledExplain)"
+            key="Software\Clipchamp"
+            valueName="ClipchampEnabled"
+        >
+            <parentCategory ref="L_Clipchamp_GroupPolicyCategory" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
+        <policy
+            name="L_ConsumerEnabled"
+            class="Both"
+            displayName="$(string.L_ConsumerEnabled)"
+            explainText="$(string.L_ConsumerEnabledExplain)"
+            key="Software\Clipchamp"
+            valueName="ConsumerEnabled"
+        >
+            <parentCategory ref="L_Clipchamp_GroupPolicyCategory" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
+    </policies>
+</policyDefinitions>
