@@ -145,7 +145,7 @@ function toUtf8(data: Uint8Array): Buffer {
   return Buffer.from(data)
 }
 
-function placeFile(entryPath: string, data: Uint8Array | string, isOffice: boolean): 'admx' | 'adml' {
+function placeFile(entryPath: string, data: Uint8Array | string, isOffice: boolean, collector?: string[]): 'admx' | 'adml' {
   const { dir, name } = resolveDest(entryPath, isOffice)
   mkdirSync(dir, { recursive: true })
   const dest = join(dir, name)
@@ -153,19 +153,21 @@ function placeFile(entryPath: string, data: Uint8Array | string, isOffice: boole
     console.warn(`[warn] overwriting existing file: ${dest.slice(ROOT.length + 1)}`)
   if (typeof data === 'string') writeFileSync(dest, toUtf8(readFileSync(data)))
   else writeFileSync(dest, toUtf8(data))
-  return /\.admx$/i.test(name) ? 'admx' : 'adml'
+  const type = /\.admx$/i.test(name) ? 'admx' : 'adml'
+  if (type === 'admx' && collector) collector.push(name.replace(/\.admx$/i, ''))
+  return type
 }
 
-function extractZip(buf: Buffer, isOffice: boolean) {
+function extractZip(buf: Buffer, isOffice: boolean, collector?: string[]) {
   const entries = unzipSync(new Uint8Array(buf), { filter: entry => IS_ADMX(entry.name.split('/').pop()!) })
   let admx = 0, adml = 0
   for (const [path, data] of Object.entries(entries))
-    placeFile(path, data, isOffice) === 'admx' ? admx++ : adml++
+    placeFile(path, data, isOffice, collector) === 'admx' ? admx++ : adml++
   return { admx, adml }
 }
 
 let tmpCounter = 0
-function extract7z(buf: Buffer, isOffice: boolean) {
+function extract7z(buf: Buffer, isOffice: boolean, collector?: string[]) {
   const tmp = join(ROOT, '.cache', `_tmp${tmpCounter++}`)
   if (existsSync(tmp)) rmSync(tmp, { recursive: true })
   mkdirSync(tmp, { recursive: true })
@@ -177,7 +179,7 @@ function extract7z(buf: Buffer, isOffice: boolean) {
     let admx = 0, adml = 0
     const base = join(tmp, 'x')
     for (const f of walkDir(base, IS_ADMX))
-      placeFile(f.slice(base.length + 1), f, isOffice) === 'admx' ? admx++ : adml++
+      placeFile(f.slice(base.length + 1), f, isOffice, collector) === 'admx' ? admx++ : adml++
     return { admx, adml }
   } finally {
     rmSync(tmp, { recursive: true, force: true })
@@ -278,31 +280,35 @@ const sources: Source[] = [
   ]),
 ]
 
-function downloadAndExtract(buf: Buffer, isOffice: boolean) {
+function downloadAndExtract(buf: Buffer, isOffice: boolean, collector?: string[]) {
   if (buf[0] === 0x50 && buf[1] === 0x4B) {
-    try { return extractZip(buf, isOffice) } catch { }
+    try { return extractZip(buf, isOffice, collector) } catch { }
   }
-  return extract7z(buf, isOffice)
+  return extract7z(buf, isOffice, collector)
 }
 
 async function fetchSource(source: Source, idx: number, total: number) {
   const urls = await source.getUrls()
   let admx = 0, adml = 0
+  const fileSlugToDownloadUrl: Record<string, string> = {}
   for (const url of urls) {
+    const urlCollector: string[] = []
     const pathname = new URL(url).pathname
     if (/\.(admx|adml)$/i.test(pathname)) {
-      placeFile(pathname.split('/').pop()!, await download(url), false) === 'admx' ? admx++ : adml++
+      placeFile(pathname.split('/').pop()!, await download(url), false, urlCollector) === 'admx' ? admx++ : adml++
       console.log(`[${idx + 1}/${total}] ${url}`)
+      for (const slug of urlCollector) fileSlugToDownloadUrl[slug] = url
       continue
     }
     const buf = await download(url)
     console.log(`[${idx + 1}/${total}] ${url} (${(buf.length / 1024 / 1024).toFixed(1)} MB)`)
-    const result = downloadAndExtract(buf, !!source.office)
+    const result = downloadAndExtract(buf, !!source.office, urlCollector)
     admx += result.admx; adml += result.adml
+    for (const slug of urlCollector) fileSlugToDownloadUrl[slug] = url
   }
   console.log(`  ${admx} ADMX, ${adml} ADML`)
   if ((admx === 0 || adml === 0) && !source.allowMissing) throw new Error('Missing ADMX or ADML files')
-  return { ok: true as const, admx, adml }
+  return { ok: true as const, admx, adml, fileSlugToDownloadUrl }
 }
 
 async function main() {
@@ -322,7 +328,22 @@ async function main() {
     }
   })
 
-  const ok = results.filter(r => r.ok) as { ok: true; admx: number; adml: number }[]
+  // Build download-sources mapping (fileSlug → actual download URL)
+  const downloadSources: Record<string, string> = {}
+  for (const result of results) {
+    if (result.ok) {
+      for (const [slug, url] of Object.entries(result.fileSlugToDownloadUrl)) {
+        downloadSources[slug] = url
+      }
+    }
+  }
+
+  const dataDir = join(ROOT, 'public', 'data')
+  mkdirSync(dataDir, { recursive: true })
+  writeFileSync(join(dataDir, 'download-sources.json'), JSON.stringify(downloadSources, null, 2))
+  console.log(`\nWrote download-sources.json (${Object.keys(downloadSources).length} entries)`)
+
+  const ok = results.filter(r => r.ok) as { ok: true; admx: number; adml: number; fileSlugToDownloadUrl: Record<string, string> }[]
   const failed = results.filter(r => !r.ok) as { ok: false; error: string }[]
   console.log(`\nDone: ${ok.length}/${results.length} succeeded`)
   if (ok.length) console.log(`Total: ${ok.reduce((s, r) => s + r.admx, 0)} ADMX, ${ok.reduce((s, r) => s + r.adml, 0)} ADML`)
