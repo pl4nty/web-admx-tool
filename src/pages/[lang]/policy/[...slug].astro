@@ -62,7 +62,15 @@ const linkify = (text: string) => String(text || '').replace(/(https?:\/\/[^\s<]
         <span>{namespace}</span><span>&bull;</span>
         <span class={policy.class === 'Machine' ? 'text-blue-600' : policy.class === 'User' ? 'text-green-600' : 'text-purple-600'}>{policy.class}</span>
       </div>
-      <h1 class="text-3xl font-bold mb-3 dark:text-white break-words">{policy.displayName || policy.name}</h1>
+      <div class="flex items-start justify-between gap-4 mb-3">
+        <h1 class="text-3xl font-bold dark:text-white break-words">{policy.displayName || policy.name}</h1>
+        {policy.downloadUrl && (
+          <a href={policy.downloadUrl} rel="noopener noreferrer" class="shrink-0 inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+            Download ADMX
+          </a>
+        )}
+      </div>
       {policy.explainText && <div class="prose dark:prose-invert max-w-none mb-6 text-gray-700 dark:text-gray-300"><p class="whitespace-pre-wrap" set:html={linkify(policy.explainText)} /></div>}
     </div>
 
@@ -133,19 +141,6 @@ const linkify = (text: string) => String(text || '').replace(/(https?:\/\/[^\s<]
             ))}
           </dd>
         </div>
-
-        {policy.downloadUrl && (
-          <div>
-            <dt class="font-medium text-gray-500 dark:text-gray-400">Download ADMX/ADML</dt>
-            <dd>
-              <a href={policy.downloadUrl} target="_blank" rel="noopener noreferrer"
-                class="inline-flex items-center gap-1.5 text-sm text-blue-600 dark:text-blue-400 hover:underline">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-                Download from vendor
-              </a>
-            </dd>
-          </div>
-        )}
       </dl>
     </div>
 
