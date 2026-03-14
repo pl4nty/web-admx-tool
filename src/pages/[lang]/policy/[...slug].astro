@@ -133,6 +133,19 @@ const linkify = (text: string) => String(text || '').replace(/(https?:\/\/[^\s<]
             ))}
           </dd>
         </div>
+
+        {policy.downloadUrl && (
+          <div>
+            <dt class="font-medium text-gray-500 dark:text-gray-400">Download ADMX/ADML</dt>
+            <dd>
+              <a href={policy.downloadUrl} target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 text-sm text-blue-600 dark:text-blue-400 hover:underline">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                Download from vendor
+              </a>
+            </dd>
+          </div>
+        )}
       </dl>
     </div>
 

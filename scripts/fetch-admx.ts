@@ -145,7 +145,7 @@ function toUtf8(data: Uint8Array): Buffer {
   return Buffer.from(data)
 }
 
-function placeFile(entryPath: string, data: Uint8Array | string, isOffice: boolean): 'admx' | 'adml' {
+function placeFile(entryPath: string, data: Uint8Array | string, isOffice: boolean, collector?: string[]): 'admx' | 'adml' {
   const { dir, name } = resolveDest(entryPath, isOffice)
   mkdirSync(dir, { recursive: true })
   const dest = join(dir, name)
@@ -153,19 +153,21 @@ function placeFile(entryPath: string, data: Uint8Array | string, isOffice: boole
     console.warn(`[warn] overwriting existing file: ${dest.slice(ROOT.length + 1)}`)
   if (typeof data === 'string') writeFileSync(dest, toUtf8(readFileSync(data)))
   else writeFileSync(dest, toUtf8(data))
-  return /\.admx$/i.test(name) ? 'admx' : 'adml'
+  const type = /\.admx$/i.test(name) ? 'admx' : 'adml'
+  if (type === 'admx' && collector) collector.push(name.replace(/\.admx$/i, ''))
+  return type
 }
 
-function extractZip(buf: Buffer, isOffice: boolean) {
+function extractZip(buf: Buffer, isOffice: boolean, collector?: string[]) {
   const entries = unzipSync(new Uint8Array(buf), { filter: entry => IS_ADMX(entry.name.split('/').pop()!) })
   let admx = 0, adml = 0
   for (const [path, data] of Object.entries(entries))
-    placeFile(path, data, isOffice) === 'admx' ? admx++ : adml++
+    placeFile(path, data, isOffice, collector) === 'admx' ? admx++ : adml++
   return { admx, adml }
 }
 
 let tmpCounter = 0
-function extract7z(buf: Buffer, isOffice: boolean) {
+function extract7z(buf: Buffer, isOffice: boolean, collector?: string[]) {
   const tmp = join(ROOT, '.cache', `_tmp${tmpCounter++}`)
   if (existsSync(tmp)) rmSync(tmp, { recursive: true })
   mkdirSync(tmp, { recursive: true })
@@ -177,132 +179,135 @@ function extract7z(buf: Buffer, isOffice: boolean) {
     let admx = 0, adml = 0
     const base = join(tmp, 'x')
     for (const f of walkDir(base, IS_ADMX))
-      placeFile(f.slice(base.length + 1), f, isOffice) === 'admx' ? admx++ : adml++
+      placeFile(f.slice(base.length + 1), f, isOffice, collector) === 'admx' ? admx++ : adml++
     return { admx, adml }
   } finally {
     rmSync(tmp, { recursive: true, force: true })
   }
 }
 
-type Source = { getUrls: () => Promise<string[]> | string[]; office?: boolean; allowMissing?: boolean }
-const src = (fn: () => Promise<string> | string, office?: boolean): Source =>
-  ({ getUrls: async () => [await fn()], ...(office ? { office: true } : {}) })
-const srcAll = (fn: () => Promise<string[]>): Source => ({ getUrls: fn })
+type Source = { getUrls: () => Promise<string[]> | string[]; office?: boolean; allowMissing?: boolean; downloadPage?: string }
+const src = (fn: () => Promise<string> | string, opts?: boolean | { office?: boolean; downloadPage?: string }): Source => {
+  const o = typeof opts === 'boolean' ? { office: opts } : (opts || {})
+  return { getUrls: async () => [await fn()], ...(o.office ? { office: true } : {}), downloadPage: o.downloadPage }
+}
+const srcAll = (fn: () => Promise<string[]>, downloadPage?: string): Source => ({ getUrls: fn, downloadPage })
 
 const sources: Source[] = [
-  src(() => 'https://dl.google.com/dl/edgedl/chrome/policy/policy_templates.zip'),
-  src(() => 'https://dl.google.com/update2/enterprise/googleupdateadmx.zip'),
-  src(() => 'https://brave-browser-downloads.s3.brave.com/latest/policy_templates.zip'),
-  src(() => 'https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/misc/ReaderADMTemplate.zip'),
-  src(() => 'https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/misc/AcrobatADMTemplate.zip'),
+  src(() => 'https://dl.google.com/dl/edgedl/chrome/policy/policy_templates.zip', { downloadPage: 'https://chromeenterprise.google/browser/download/' }),
+  src(() => 'https://dl.google.com/update2/enterprise/googleupdateadmx.zip', { downloadPage: 'https://support.google.com/a/answer/6350036' }),
+  src(() => 'https://brave-browser-downloads.s3.brave.com/latest/policy_templates.zip', { downloadPage: 'https://brave.com/enterprise/' }),
+  src(() => 'https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/misc/ReaderADMTemplate.zip', { downloadPage: 'https://www.adobe.com/devnet-docs/acrobatetk/tools/AdminGuide/gpo.html' }),
+  src(() => 'https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/misc/AcrobatADMTemplate.zip', { downloadPage: 'https://www.adobe.com/devnet-docs/acrobatetk/tools/AdminGuide/gpo.html' }),
   src(() => 'https://download.microsoft.com/download/72ea16a9-4cc9-4032-945d-3a56a483d034/WindowsNotepadAdminTemplates.cab'),
-  src(() => msDownload(108428)),
-  src(() => msDownload(49030, url => url.includes('x64')), true),
-  src(() => msDownload(55319, url => /Security Baseline\.zip$/i.test(url))),
+  src(() => msDownload(108428), { downloadPage: 'https://www.microsoft.com/en-us/download/details.aspx?id=108428' }),
+  src(() => msDownload(49030, url => url.includes('x64')), { office: true, downloadPage: 'https://www.microsoft.com/en-us/download/details.aspx?id=49030' }),
+  src(() => msDownload(55319, url => /Security Baseline\.zip$/i.test(url)), { downloadPage: 'https://www.microsoft.com/en-us/download/details.aspx?id=55319' }),
   src(() => 'https://web.archive.org/web/20200723045549/https://msdnshared.blob.core.windows.net/media/2016/10/MSS-legacy.zip'),
-  src(() => githubRelease('microsoft', 'PowerToys', /GroupPolicyObjectFiles.*\.zip$/i)),
-  { getUrls: async () => [await lenovoPolicyTemplateDownload()], allowMissing: true },
-  src(() => dellCommandUpdateDownload()),
+  src(() => githubRelease('microsoft', 'PowerToys', /GroupPolicyObjectFiles.*\.zip$/i), { downloadPage: 'https://github.com/microsoft/PowerToys/releases' }),
+  { getUrls: async () => [await lenovoPolicyTemplateDownload()], allowMissing: true, downloadPage: 'https://support.lenovo.com/us/en/solutions/ht037099' },
+  src(() => dellCommandUpdateDownload(), { downloadPage: 'https://www.dell.com/support/kbdoc/en-au/000177325/dell-command-update' }),
   src(async () => {
     const article = 'https://www.sparklabs.com/support/kb/article/deploy-viscosity-windows-under-a-gpo-group-policy-environment/'
     const html = await fetchText(article)
     const match = html.match(/href="(admx_templates_v[0-9-]+)"[^>]*>\s*admx_templates_v[0-9.]+\.zip/i)
     if (!match) throw new Error('No Viscosity ADMX templates link found')
     return new URL(match[1], article).href
-  }),
-  src(() => msDownload(105674)),
-  src(() => msDownload(104405)),
-  srcAll(() => msDownloadUrls(105938)),
-  src(() => githubRelease('mozilla', 'policy-templates', /\.zip$/i)),
-  src(() => githubRelease('microsoft', 'winget-cli', /DesktopAppInstallerPolicies\.zip/i)),
-  src(() => githubRelease('EUCweb', 'BIS-F')),
-  src(() => 'https://api.github.com/repos/CollaboraOnline/ADMX/zipball/master'),
-  src(() => githubRelease('Romanitho', 'Winget-AutoUpdate', /\.zip$/i)),
-  src(() => githubRelease('Weatherlights', 'Winget-AutoUpdate-Intune', /\.zip$/i)),
-  src(() => githubRelease('PSAppDeployToolkit', 'PSAppDeployToolkit', /PSAppDeployToolkit_ModuleOnly.zip/i)),
-  src(() => githubRelease('Harvester57', 'Security-ADMX')),
-  src(() => 'https://api.github.com/repos/pseymour/MakeMeAdmin/zipball/master'),
-  src(() => resolveRedirects('https://aka.ms/fslogix/download')),
-  src(() => resolveRedirects('https://aka.ms/avdgpo')),
+  }, { downloadPage: 'https://www.sparklabs.com/support/kb/article/deploy-viscosity-windows-under-a-gpo-group-policy-environment/' }),
+  src(() => msDownload(105674), { downloadPage: 'https://www.microsoft.com/en-us/download/details.aspx?id=105674' }),
+  src(() => msDownload(104405), { downloadPage: 'https://www.microsoft.com/en-us/download/details.aspx?id=104405' }),
+  srcAll(() => msDownloadUrls(105938), 'https://www.microsoft.com/en-us/download/details.aspx?id=105938'),
+  src(() => githubRelease('mozilla', 'policy-templates', /\.zip$/i), { downloadPage: 'https://github.com/mozilla/policy-templates/releases' }),
+  src(() => githubRelease('microsoft', 'winget-cli', /DesktopAppInstallerPolicies\.zip/i), { downloadPage: 'https://github.com/microsoft/winget-cli/releases' }),
+  src(() => githubRelease('EUCweb', 'BIS-F'), { downloadPage: 'https://github.com/EUCweb/BIS-F/releases' }),
+  src(() => 'https://api.github.com/repos/CollaboraOnline/ADMX/zipball/master', { downloadPage: 'https://github.com/CollaboraOnline/ADMX' }),
+  src(() => githubRelease('Romanitho', 'Winget-AutoUpdate', /\.zip$/i), { downloadPage: 'https://github.com/Romanitho/Winget-AutoUpdate/releases' }),
+  src(() => githubRelease('Weatherlights', 'Winget-AutoUpdate-Intune', /\.zip$/i), { downloadPage: 'https://github.com/Weatherlights/Winget-AutoUpdate-Intune/releases' }),
+  src(() => githubRelease('PSAppDeployToolkit', 'PSAppDeployToolkit', /PSAppDeployToolkit_ModuleOnly.zip/i), { downloadPage: 'https://github.com/PSAppDeployToolkit/PSAppDeployToolkit/releases' }),
+  src(() => githubRelease('Harvester57', 'Security-ADMX'), { downloadPage: 'https://github.com/Harvester57/Security-ADMX/releases' }),
+  src(() => 'https://api.github.com/repos/pseymour/MakeMeAdmin/zipball/master', { downloadPage: 'https://github.com/pseymour/MakeMeAdmin' }),
+  src(() => resolveRedirects('https://aka.ms/fslogix/download'), { downloadPage: 'https://aka.ms/fslogix/download' }),
+  src(() => resolveRedirects('https://aka.ms/avdgpo'), { downloadPage: 'https://aka.ms/avdgpo' }),
   src(async () => {
     const products = await fetchJson('https://edgeupdates.microsoft.com/api/products?view=enterprise')
     const policy = products.find((product: any) => product.Product === 'Policy')
     return policy.Releases.sort((a: any, b: any) => b.ProductVersion.localeCompare(a.ProductVersion))[0].Artifacts[0].Location
-  }),
+  }, { downloadPage: 'https://www.microsoft.com/en-us/edge/business/download' }),
   src(async () => {
     const data = await fetchJson('https://code.visualstudio.com/sha?build=stable')
     return data.products.find((product: any) => product.platform?.os === 'win32-x64-archive').url
-  }),
-  src(() => resolveRedirects('https://go.microsoft.com/fwlink/?linkid=844652')),
+  }, { downloadPage: 'https://code.visualstudio.com/docs/setup/enterprise' }),
+  src(() => resolveRedirects('https://go.microsoft.com/fwlink/?linkid=844652'), { downloadPage: 'https://go.microsoft.com/fwlink/?linkid=844652' }),
   src(async () => {
     const html = await fetchText('https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0065466',
       { 'User-Agent': 'Googlebot/2.1 (+http://www.google.com/bot.html)' })
     const urls = [...html.matchAll(/https:\/\/assets\.zoom\.us\/docs\/msi-templates\/Zoom_[\d.]+\.zip/g)]
     if (!urls.length) throw new Error('No Zoom link found')
     return urls[urls.length - 1][0]
-  }),
+  }, { downloadPage: 'https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0065466' }),
   src(async () => {
     const html = await fetchText('https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0064784',
       { 'User-Agent': 'Googlebot/2.1 (+http://www.google.com/bot.html)' })
     const urls = [...html.matchAll(/https:\/\/assets\.zoom\.us\/docs\/msi-templates\/Zoom_VDI_[\d.]+\.zip/g)]
     if (!urls.length) throw new Error('No Zoom VDI link found')
     return urls[urls.length - 1][0]
-  }),
+  }, { downloadPage: 'https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0064784' }),
   src(async () => {
     const html = await fetchText('https://support.1password.com/mobile-device-management/')
     const match = html.match(/https:\/\/c\.1password\.com\/dist\/1P\/win\d+\/1Password-admx-templates[-\d.]+\.zip/i)
     if (!match) throw new Error('No 1Password ADMX link found')
     return match[0]
-  }),
+  }, { downloadPage: 'https://support.1password.com/mobile-device-management/' }),
   src(async () => {
     const ini = await fetchText('https://devolutions.net/products.htm')
     const match = ini.match(/RDM7zX64\.Url=(https:\/\/[^\s]+)/i)
     if (!match) throw new Error('No RDM 7z URL found')
     return match[1]
-  }),
+  }, { downloadPage: 'https://devolutions.net/remote-desktop-manager/' }),
   src(async () => {
     const html = await fetchText('https://slack.com/intl/en-au/help/articles/11906214948755-Manage-desktop-app-configurations')
     const match = html.match(/href="(https:\/\/slack\.zendesk\.com\/hc\/[^"]*article_attachments\/[^"]*)"/)
     if (!match) throw new Error('No Slack ADMX attachment found')
     return match[1]
-  }),
+  }, { downloadPage: 'https://slack.com/intl/en-au/help/articles/11906214948755-Manage-desktop-app-configurations' }),
   src(async () => {
     const html = await fetchText('https://www.citrix.com/downloads/workspace-app/windows/workspace-app-for-windows-latest.html')
     const match = html.match(/\/\/downloads\.citrix\.com\/\d+\/CitrixWorkspace_ADMX_Files\.zip\?__gda__=[^"' ]+/)
     if (!match) throw new Error('No Citrix ADMX link found')
     return 'https:' + match[0].replace(/&amp;/g, '&')
-  }),
+  }, { downloadPage: 'https://www.citrix.com/downloads/workspace-app/windows/workspace-app-for-windows-latest.html' }),
   srcAll(async () => [
     'https://raw.githubusercontent.com/microsoft/WSL/master/intune/WSL.admx',
     'https://raw.githubusercontent.com/microsoft/WSL/master/intune/en-US/WSL.adml',
-  ]),
+  ], 'https://github.com/microsoft/WSL'),
 ]
 
-function downloadAndExtract(buf: Buffer, isOffice: boolean) {
+function downloadAndExtract(buf: Buffer, isOffice: boolean, collector?: string[]) {
   if (buf[0] === 0x50 && buf[1] === 0x4B) {
-    try { return extractZip(buf, isOffice) } catch { }
+    try { return extractZip(buf, isOffice, collector) } catch { }
   }
-  return extract7z(buf, isOffice)
+  return extract7z(buf, isOffice, collector)
 }
 
 async function fetchSource(source: Source, idx: number, total: number) {
   const urls = await source.getUrls()
   let admx = 0, adml = 0
+  const admxFiles: string[] = []
   for (const url of urls) {
     const pathname = new URL(url).pathname
     if (/\.(admx|adml)$/i.test(pathname)) {
-      placeFile(pathname.split('/').pop()!, await download(url), false) === 'admx' ? admx++ : adml++
+      placeFile(pathname.split('/').pop()!, await download(url), false, admxFiles) === 'admx' ? admx++ : adml++
       console.log(`[${idx + 1}/${total}] ${url}`)
       continue
     }
     const buf = await download(url)
     console.log(`[${idx + 1}/${total}] ${url} (${(buf.length / 1024 / 1024).toFixed(1)} MB)`)
-    const result = downloadAndExtract(buf, !!source.office)
+    const result = downloadAndExtract(buf, !!source.office, admxFiles)
     admx += result.admx; adml += result.adml
   }
   console.log(`  ${admx} ADMX, ${adml} ADML`)
   if ((admx === 0 || adml === 0) && !source.allowMissing) throw new Error('Missing ADMX or ADML files')
-  return { ok: true as const, admx, adml }
+  return { ok: true as const, admx, adml, admxFiles }
 }
 
 async function main() {
@@ -322,7 +327,24 @@ async function main() {
     }
   })
 
-  const ok = results.filter(r => r.ok) as { ok: true; admx: number; adml: number }[]
+  // Build download-sources mapping (fileSlug → downloadPage URL)
+  const downloadSources: Record<string, string> = {}
+  for (let i = 0; i < list.length; i++) {
+    const source = list[i]
+    const result = results[i]
+    if (result.ok && source.downloadPage) {
+      for (const slug of result.admxFiles) {
+        downloadSources[slug] = source.downloadPage
+      }
+    }
+  }
+
+  const dataDir = join(ROOT, 'public', 'data')
+  mkdirSync(dataDir, { recursive: true })
+  writeFileSync(join(dataDir, 'download-sources.json'), JSON.stringify(downloadSources, null, 2))
+  console.log(`\nWrote download-sources.json (${Object.keys(downloadSources).length} entries)`)
+
+  const ok = results.filter(r => r.ok) as { ok: true; admx: number; adml: number; admxFiles: string[] }[]
   const failed = results.filter(r => !r.ok) as { ok: false; error: string }[]
   console.log(`\nDone: ${ok.length}/${results.length} succeeded`)
   if (ok.length) console.log(`Total: ${ok.reduce((s, r) => s + r.admx, 0)} ADMX, ${ok.reduce((s, r) => s + r.adml, 0)} ADML`)

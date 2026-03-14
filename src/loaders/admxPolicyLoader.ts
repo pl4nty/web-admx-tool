@@ -133,8 +133,8 @@ export function admxPolicyLoader(): Loader {
               categories: resolved.categories,
               supportedOn: resolved.supportedOn,
               policies: resolved.policies.map((p: any) => {
-                const { csp, catalog } = enrichPolicy(p, slug, enrichment)
-                return { ...p, csp, catalog, namespace, fileSlug: slug, supportedOn: p.supportedOn || null }
+                const { csp, catalog, downloadUrl } = enrichPolicy(p, slug, enrichment)
+                return { ...p, csp, catalog, downloadUrl, namespace, fileSlug: slug, supportedOn: p.supportedOn || null }
               })
             }
           } catch (err) {
@@ -213,7 +213,7 @@ export function admxPolicyLoader(): Loader {
               parentCategory: pol.parentCategory || '', categoryPath: pol.categoryPath || [],
               elements: pol.elements || [], presentationElements: pol.presentationElements || [],
               enabledValue: pol.enabledValue || null, disabledValue: pol.disabledValue || null,
-              csp: pol.csp || null, catalog: pol.catalog || null,
+              csp: pol.csp || null, catalog: pol.catalog || null, downloadUrl: pol.downloadUrl || null,
               namespace, fileSlug: slug, lang: langKey, availableLangs,
             })
             if (searchDocs[langKey]) searchDocs[langKey].push({
