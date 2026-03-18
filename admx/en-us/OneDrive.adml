@@ -113,15 +113,24 @@ If you enable this setting, users who have more content than the value you speci
 If you disable or do not configure this setting, when users set up the sync app, all files will be selected to sync.</string>
 
       <!-- CustomSyncRootFolderName -->
-      <string id="CustomSyncRootFolderName">Customize OneDrive folder name on disk</string>
-      <string id="CustomSyncRootFolderName_help">This setting lets IT admins customize the local OneDrive Sync root name used on disk. If you shorten the folder name, this can help minimize path length issues for end users. Note that this change will not reflect for users who are already syncing files. Refer to the following article to learn how to bring this change to users who are already syncing files: https://support.microsoft.com/office/sync-files-with-onedrive-in-windows-615391c4-2bd3-4aae-a42a-858262e42a49
+      <string id="CustomSyncRootFolderName">Set a custom name for the OneDrive folder</string>
+      <string id="CustomSyncRootFolderName_help">This setting lets you customize the local OneDrive sync root folder name on users' computers. By default, the folder name is "OneDrive - {organization name}."  Shortening this name increases the available path length for nested folders and files. 
+If you enable this setting and provide a custom folder name, OneDrive will use that name when creating the sync root folder for new users. Users who are already syncing will need to unlink and relink their account for the change to take effect. To learn more, see https://learn.microsoft.com/en-us/sharepoint/use-group-policy. 
 
-If you enable this setting, OneDrive Sync will use the custom name you provide when creating the OneDrive Sync root folder on disk. Using a shorter name increases the available "path budget" for nested folders and file names, reducing the likelihood of max path-related errors.
+If you disable this setting, the folder name will revert to "OneDrive - {organization name}". Users who were using a custom folder name will need to unlink and relink their account for the change to take effect. 
 
-If you disable the GPO, the name will default to the original OneDrive folder name. Users will need to unlink and relink their account for the name change to take effect. If you do not configure this setting or if an empty value is provided, the name will remain the default value (no change from current behavior).
+If you do not configure this setting, the default folder name will be used. 
 
 Important:
-Unsupported characters for custom names for Windows and macOS can be found at: https://support.microsoft.com/office/restrictions-and-limitations-in-onedrive-and-sharepoint-64883a5d-228e-48f5-b3d2-eb39e07630fa#invalidcharacters For existing users, some applications rely on hard-coded local paths, so it is important to figure out a path forward to ensure a smooth transition for end users. End users should be educated that they should ensure all changes are synced before unlinking their account. Best practices: Change sync root folder name before setting up OneDrive for new users. Use as few characters as possible to minimize the likelihood of hitting max path errors. To further reduce the local path length, customize the default location for the OneDrive folder using the "Set the default location for the OneDrive folder" policy.</string>
+
+You must provide at least one character for the custom folder name.  
+
+The custom folder name cannot be "OneDrive". 
+
+The full OneDrive sync root folder path (for example, C:\Users\{alias}\OneDrive - {organization name}) cannot exceed 120 characters.  
+
+Custom folder names cannot contain characters that are invalid for Windows folders. For a list of unsupported characters, see https://support.microsoft.com/office/restrictions-and-limitations-in-onedrive-and-sharepoint-64883a5d-228e-48f5-b3d2-eb39e07630fa#invalidcharacters. 
+</string>
 
       <!-- Settings below control behavior of Files-On-Demand (Cloud Files) -->
       <string id="FilesOnDemandEnabled">Use OneDrive Files On-Demand</string>
@@ -269,7 +278,7 @@ If you disable or do not configure this setting, and the user set a preferred la
 
       <!-- AutoMountTeamSites -->
       <string id="AutoMountTeamSites">Configure team site libraries to sync automatically</string>
-      <string id="AutoMountTeamSites_help">This setting lets you specify SharePoint team site libraries to sync automatically the next time users sign in to the OneDrive sync app (OneDrive.exe). It may take up to 8 hours after a users signs in before the library begins to sync. To use the setting, you must enable OneDrive Files On-Demand, and the setting applies only for users on computers running Windows 10 (1709) Fall Creators Update or later. Do not enable this setting for the same library to more than 1,000 devices. To ensure a good sync experience, avoid enabling this feature on large libraries sets (For the most up to date guidance see https://learn.microsoft.com/en-us/sharepoint/use-group-policy#AutoMountTeamSites). This feature is not enabled for on-premises SharePoint sites.
+      <string id="AutoMountTeamSites_help">This setting lets you specify SharePoint team site libraries to sync automatically the next time users sign in to the OneDrive sync app (OneDrive.exe). It may take up to 8 hours after a users signs in before the library begins to sync. To use the setting, you must enable OneDrive Files On-Demand, and the setting applies only for users on computers running Windows 10 (1709) Fall Creators Update or later. Do not enable this setting for the same library to more than 1,000 devices. To ensure a good sync experience, avoid enabling this feature on large libraries sets (For the most up to date guidance see https://learn.microsoft.com/sharepoint/use-group-policy#AutoMountTeamSites). This feature is not enabled for on-premises SharePoint sites.
 
 If you enable this setting, the OneDrive sync app will automatically download the contents of the libraries you specified as online-only files the next time the user signs in. The user won't be able to stop syncing the libraries.
 
@@ -320,7 +329,7 @@ If you enable this setting, users will not be able to start syncing a OneDrive f
 
 If you disable or do not configure this setting, users will be able to sync OneDrive for Business and SharePoint libraries and folders that have been shared from external organizations.
 
-For more info about B2B Sync, see: https://learn.microsoft.com/en-us/sharepoint/b2b-sync</string>
+For more info about B2B Sync, see: https://learn.microsoft.com/sharepoint/b2b-sync</string>
 
       <!-- Allow OneDrive to disable permission inheritance within read-only folders -->
       <string id="PermitDisablePermissionInheritance">Allow OneDrive to disable Windows permission inheritance in folders synced read-only</string>
@@ -379,7 +388,7 @@ If you enable this setting, the sync client will not do its normal web proxy det
 
 If you disable or do not configure this setting, the sync client will detect if a web proxy is configured on your network and use it if so.
 
-For more info see https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/configure-proxy-server-settings</string>
+For more info see https://learn.microsoft.com/troubleshoot/windows-server/networking/configure-proxy-server-settings</string>
 
       <!-- EnableSyncAdminReports -->
       <string id="EnableSyncAdminReports">Enable sync health reporting for OneDrive</string>

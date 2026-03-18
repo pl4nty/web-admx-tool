@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 147.0.3901.1-->
+  <!--microsoft_edge version: 147.0.3912.10-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -114,6 +114,7 @@
       <definition displayName="$(string.OBSOLETE_WIN7_V97_V105)" name="OBSOLETE_WIN7_V97_V105"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V81_V136)" name="OBSOLETE_WIN7_V81_V136"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V110_V126)" name="OBSOLETE_WIN7_V110_V126"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V120_V146)" name="OBSOLETE_WIN7_V120_V146"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V77_V86)" name="OBSOLETE_WIN7_V77_V86"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V92_V139)" name="OBSOLETE_WIN7_V92_V139"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V118_V130)" name="OBSOLETE_WIN7_V118_V130"/>
@@ -1420,6 +1421,13 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.DefaultDownloadDirectory)" explainText="$(string.DefaultDownloadDirectory_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="DefaultDownloadDirectory_recommended" presentation="$(presentation.DefaultDownloadDirectory)">
+      <parentCategory ref="Downloads_recommended"/>
+      <supportedOn ref="SUPPORTED_WIN7_V147"/>
+      <elements>
+        <text id="DefaultDownloadDirectory" maxLength="1000000" valueName="DefaultDownloadDirectory"/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.ShowDownloadsInsecureWarningsEnabled)" explainText="$(string.ShowDownloadsInsecureWarningsEnabled_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="ShowDownloadsInsecureWarningsEnabled_recommended" presentation="$(presentation.ShowDownloadsInsecureWarningsEnabled)" valueName="ShowDownloadsInsecureWarningsEnabled">
       <parentCategory ref="Downloads_recommended"/>
@@ -5891,6 +5899,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.ForceForegroundPriorityForAllTabs)" explainText="$(string.ForceForegroundPriorityForAllTabs_Explain)" key="Software\Policies\Microsoft\Edge" name="ForceForegroundPriorityForAllTabs" presentation="$(presentation.ForceForegroundPriorityForAllTabs)" valueName="ForceForegroundPriorityForAllTabs">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V146"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.ForceGoogleSafeSearch)" explainText="$(string.ForceGoogleSafeSearch_Explain)" key="Software\Policies\Microsoft\Edge" name="ForceGoogleSafeSearch" presentation="$(presentation.ForceGoogleSafeSearch)" valueName="ForceGoogleSafeSearch">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V77"/>
@@ -7382,7 +7400,7 @@
     </policy>
     <policy class="Both" displayName="$(string.PostQuantumKeyAgreementEnabled)" explainText="$(string.PostQuantumKeyAgreementEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="PostQuantumKeyAgreementEnabled" presentation="$(presentation.PostQuantumKeyAgreementEnabled)" valueName="PostQuantumKeyAgreementEnabled">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V120"/>
+      <supportedOn ref="OBSOLETE_WIN7_V120_V146"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
