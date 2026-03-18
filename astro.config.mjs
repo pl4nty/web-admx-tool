@@ -94,6 +94,7 @@ const locales = {
 export default defineConfig({
   site: 'https://gpedit.tplant.com.au',
   integrations: [vue(), sitemap({
+    entryLimit: 20000, // Max is 50k or 50mb, we exceeded the latter
     i18n: {
       defaultLocale: 'en-us',
       locales,
