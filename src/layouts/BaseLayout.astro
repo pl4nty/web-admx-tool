@@ -82,7 +82,7 @@ const { title = 'ADMX Viewer', showSidebar = true, lang = 'en-us' } = Astro.prop
           </select>
 
           <select id="lang-selector"
-            class="text-xs sm:text-sm max-w-[7rem] border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white px-2 sm:px-2.5 py-1.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 cursor-pointer">
+            class="text-xs sm:text-sm border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white px-2 sm:px-2.5 py-1.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 cursor-pointer">
             <!-- Will be populated by JS -->
           </select>
 
@@ -263,7 +263,7 @@ const { title = 'ADMX Viewer', showSidebar = true, lang = 'en-us' } = Astro.prop
             const langs: string[] = picked.availableLangs || [], lang = urlLang()
             sessionStorage.setItem('admx:expand-target', `${ns}::${name}`)
             if (!langs.includes(lang)) sessionStorage.setItem('admx:notice', `No ${lang.toUpperCase()} translation for this policy. Redirected to English.`)
-            window.location.assign(policyUrl(ns, nm, langs, lang))
+            window.location.assign(policyUrl(ns, name, langs, lang))
           })
         })
       }
