@@ -1,14 +1,13 @@
 ---
----
-<script>
-  const params = new URLSearchParams(window.location.search)
-  const policy = params.get('Policy')
-  const lang = (params.get('Language') || navigator.language || 'en-us').toLowerCase()
+export const prerender = false
 
-  if (policy?.includes('::')) {
-    const sep = policy.indexOf('::')
-    window.location.replace(`/${lang}/policy/${policy.slice(0, sep)}/${policy.slice(sep + 2)}`)
-  } else {
-    window.location.replace(`/${lang}/`)
-  }
-</script>
+const params = Astro.url.searchParams
+const policy = params.get('Policy')
+const lang = (params.get('Language') || Astro.preferredLocale || 'en-us').toLowerCase()
+
+if (policy?.includes('::')) {
+  const sep = policy.indexOf('::')
+  return Astro.redirect(`/${lang}/policy/${policy.slice(0, sep)}/${policy.slice(sep + 2)}`)
+}
+return Astro.redirect(`/${lang}/`)
+---
