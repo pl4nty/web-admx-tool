@@ -1,56 +1,14 @@
 ---
-// This page handles legacy query-parameter links of the form:
-//   ?Policy=Namespace::PolicyName&Language=de-de&Category=...
-// It performs a client-side redirect to the canonical policy URL.
-// When no Policy param is present it falls back to the user's preferred
-// language (stored in localStorage) or Astro's default locale (en-us).
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ADMX Viewer – Redirecting…</title>
-</head>
-<body>
-  <script>
-    const params = new URLSearchParams(window.location.search)
-    const policyParam = params.get('Policy')
-    const langParam = params.get('Language')
+<script>
+  const params = new URLSearchParams(window.location.search)
+  const policy = params.get('Policy')
+  const lang = (params.get('Language') || navigator.language || 'en-us').toLowerCase()
 
-    let savedLang = 'en-us'
-    try { savedLang = localStorage.getItem('lang') || 'en-us' } catch (_) {}
-
-    // Validate a locale string: two-to-three letter subtags joined by hyphens,
-    // e.g. "en-us", "de-de", "zh-hans", "sr-cyrl-rs".
-    const isValidLang = (l) => /^[a-z]{2,3}(-[a-z0-9]{2,8})*$/.test(l)
-
-    // Validate namespace / policy name: alphanumeric, dots, underscores and hyphens only.
-    const isValidSegment = (s) => s.length > 0 && /^[\w.\-]+$/.test(s)
-
-    if (policyParam) {
-      const sep = policyParam.indexOf('::')
-      if (sep !== -1) {
-        const namespace = policyParam.slice(0, sep)
-        const policyName = policyParam.slice(sep + 2)
-        if (isValidSegment(namespace) && isValidSegment(policyName)) {
-          const rawLang = langParam ? langParam.toLowerCase() : savedLang
-          const lang = isValidLang(rawLang) ? rawLang : 'en-us'
-          window.location.replace(`/${lang}/policy/${namespace}/${policyName}`)
-        } else {
-          window.location.replace(`/${savedLang}/`)
-        }
-      } else {
-        // Malformed Policy param – go home
-        window.location.replace(`/${savedLang}/`)
-      }
-    } else {
-      window.location.replace(`/${savedLang}/`)
-    }
-  </script>
-  <noscript>
-    <meta http-equiv="refresh" content="0;url=/en-us/" />
-    <p>Redirecting… <a href="/en-us/">click here</a></p>
-  </noscript>
-</body>
-</html>
+  if (policy?.includes('::')) {
+    const sep = policy.indexOf('::')
+    window.location.replace(`/${lang}/policy/${policy.slice(0, sep)}/${policy.slice(sep + 2)}`)
+  } else {
+    window.location.replace(`/${lang}/`)
+  }
+</script>
