@@ -100,9 +100,7 @@ export default defineConfig({
       locales,
     },
   })],
-  redirects: {
-    '/': '/en-us/'
-  },
+
   build: {
     inlineStylesheets: 'auto',
     // Astro 5.x already optimizes chunk splitting
