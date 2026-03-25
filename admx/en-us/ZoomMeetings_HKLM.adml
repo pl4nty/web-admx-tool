@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<policyDefinitionResources revision="6.7" schemaVersion="1.0">
+<policyDefinitionResources revision="7.0" schemaVersion="1.0">
   <displayName>ZoomMeetings</displayName>
   <description>ZoomMeetings</description>
   <resources>
@@ -2395,6 +2395,43 @@ If this setting is enabled, the side panel in meeting will display dark mode.
 If this setting is disabled, the side panel appearance will follow setting.
 
 If this setting is not set, client will use default setting.</string>
+      <string id="GenerateDIDUsingMacAddress_Policy">Generate device ID based on MAC addresses to distinguish devices</string>
+      <string id="GenerateDIDUsingMacAddress_Policy_Recommend">Generate device ID based on MAC addresses to distinguish devices (Recommendation Setting)</string>
+      <string id="GenerateDIDUsingMacAddress_Explain">Default policy is disabled.
+If this policy is enabled, the client will generate device ID based on MAC addresses to distinguish devices.
+If this policy is disabled, the client will continue to use the default device ID generation method.
+If this policy is not set, the client will use the default setting.</string>
+      <string id="DisableInstallStandardClientInVDI_Policy">Prevent installation of standard clients in VDI environments.</string>
+      <string id="DisableInstallStandardClientInVDI_Explain">Default setting is disabled.
+
+If this setting is enabled, the installation of the standard client in a VDI environment will be blocked.
+
+If this setting is disabled, the standard client can be installed normally in a VDI environment.
+
+If this setting is not set, client will use default setting.</string>
+      <string id="EnableCrashEventLog_Policy">Control whether the Zoom client generates an event in Windows Event Log ("Event Viewer"-"Windows Logs"-"Application") when it crashes.</string>
+      <string id="EnableCrashEventLog_Explain">Default setting is disabled.
+
+If this setting is enabled, it generates an event in Windows Event Log ("Event Viewer"-"Windows Logs"-"Application") when the Zoom client crashes.
+
+If this setting is disabled, it will have no effect.
+
+If this setting is not set, client will use default setting.</string>
+      <string id="MemorySaverEnabled_Policy">Enable Memory Saver for WebView recycle behavior.</string>
+      <string id="MemorySaverEnabled_Policy_Recommend">Enable Memory Saver for WebView recycle behavior. (Recommendation Setting)</string>
+      <string id="MemorySaverEnabled_Explain">Default policy is enabled.
+If this policy is enabled, the client will apply Memory Saver behavior, and recycle level can be controlled by zPolicy_MemorySaverOptimization.
+If this policy is disabled, the client will not apply Memory Saver optimization behavior.
+If this policy is not set, client will use the default setting.</string>
+      <string id="MemorySaverOptimization_Policy">Set Memory Saver optimization level for WebView recycle behavior</string>
+      <string id="MemorySaverOptimization_Policy_Recommend">Set Memory Saver optimization level for WebView recycle behavior (Recommendation Setting)</string>
+      <string id="MemorySaverOptimization_Part">Set Memory Saver optimization level for WebView recycle behavior</string>
+      <string id="MemorySaverOptimization_Explain">Default policy is 2 (Default).
+If this policy is set to 1, the client will use Light optimization level.
+If this policy is set to 2, the client will use Default optimization level.
+If this policy is set to 3, the client will use Aggressive optimization level.
+If this policy is not set, is invalid, or is out of scope, the client will use the default setting.
+If zPolicy_MemorySaverEnabled is disabled, this policy will not take effect.</string>
       <string id="ADMXMigrator_UnresolvedString">ADMX Migrator encountered a string that is not present in the source ADM string table.</string>
       <string id="ADMXMigrator_NoSupportedOn">ADMX Migrator encountered a policy that does not have a supportedOn value.</string>
     </stringTable>
@@ -2550,6 +2587,13 @@ If this setting is not set, client will use default setting.</string>
       <presentation id="DisableDesktopScreenshot_Policy" />
       <presentation id="DatabaseJournalDeleteMode_Policy" />
       <presentation id="EnableAutoDetectedVoiceActivity_Policy" />
+      <presentation id="GenerateDIDUsingMacAddress_Policy" />
+      <presentation id="MemorySaverEnabled_Policy" />
+      <presentation id="MemorySaverOptimization_Policy">
+        <decimalTextBox refId="MemorySaverOptimization_Part" defaultValue="2" spinStep="1">Set Memory Saver optimization level for WebView recycle behavior</decimalTextBox>
+      </presentation>
+      <presentation id="DisableInstallStandardClientInVDI_Policy" />
+      <presentation id="EnableCrashEventLog_Policy" />
       <presentation id="AU2_EnableAutoUpdate_Policy" />
       <presentation id="AU2_SetUpdateChannel_Policy">
         <textBox refId="AU2_SetUpdateChannel_Part">
@@ -2973,6 +3017,11 @@ If this setting is not set, client will use default setting.</string>
       <presentation id="DisableDesktopScreenshot_Policy_Recommend" />
       <presentation id="DatabaseJournalDeleteMode_Policy_Recommend" />
       <presentation id="EnableAutoDetectedVoiceActivity_Policy_Recommend" />
+      <presentation id="GenerateDIDUsingMacAddress_Policy_Recommend" />
+      <presentation id="MemorySaverEnabled_Policy_Recommend" />
+      <presentation id="MemorySaverOptimization_Policy_Recommend">
+        <decimalTextBox refId="MemorySaverOptimization_Part" defaultValue="2" spinStep="1">Set Memory Saver optimization level for WebView recycle behavior</decimalTextBox>
+      </presentation>
       <presentation id="AU2_EnableAutoUpdate_Policy_Recommend" />
       <presentation id="AU2_SetUpdateChannel_Policy_Recommend">
         <textBox refId="AU2_SetUpdateChannel_Part">

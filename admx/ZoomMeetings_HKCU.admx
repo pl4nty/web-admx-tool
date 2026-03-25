@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<policyDefinitions revision="6.7" schemaVersion="1.0">
+<policyDefinitions revision="7.0" schemaVersion="1.0">
   <policyNamespaces>
-    <target prefix="fullarmor" namespace="ZoomMeetings_HKCU_6_7" />
+    <target prefix="fullarmor" namespace="ZoomMeetings_HKCU_7_0" />
     <using prefix="windows" namespace="Microsoft.Policies.Windows" />
   </policyNamespaces>
   <supersededAdm fileName="ZoomMeetings_HKCU.adm" />
-  <resources minRequiredRevision="6.7" />
+  <resources minRequiredRevision="7.0" />
   <supportedOn>
     <definitions>
       <definition name="SUPPORTED_WINXPSP2" displayName="$(string.SUPPORTED_WINXPSP2)" />
@@ -774,6 +774,53 @@
       </disabledValue>
     </policy>
     <policy name="EnableAutoDetectedVoiceActivity_Policy" class="User" displayName="$(string.EnableAutoDetectedVoiceActivity_Policy)" explainText="$(string.EnableAutoDetectedVoiceActivity_Explain)" presentation="$(presentation.EnableAutoDetectedVoiceActivity_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="EnableAutoDetectedVoiceActivity">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="GenerateDIDUsingMacAddress_Policy" class="User" displayName="$(string.GenerateDIDUsingMacAddress_Policy)" explainText="$(string.GenerateDIDUsingMacAddress_Explain)" presentation="$(presentation.GenerateDIDUsingMacAddress_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="GenerateDIDUsingMacAddress">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="MemorySaverEnabled_Policy" class="User" displayName="$(string.MemorySaverEnabled_Policy)" explainText="$(string.MemorySaverEnabled_Explain)" presentation="$(presentation.MemorySaverEnabled_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="MemorySaverEnabled">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="MemorySaverOptimization_Policy" class="User" displayName="$(string.MemorySaverOptimization_Policy)" explainText="$(string.MemorySaverOptimization_Explain)" presentation="$(presentation.MemorySaverOptimization_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="MemorySaverOptimization_Part" valueName="MemorySaverOptimization" required="true" minValue="1" maxValue="3" />
+      </elements>
+    </policy>
+    <policy name="DisableInstallStandardClientInVDI_Policy" class="User" displayName="$(string.DisableInstallStandardClientInVDI_Policy)" explainText="$(string.DisableInstallStandardClientInVDI_Explain)" presentation="$(presentation.DisableInstallStandardClientInVDI_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="DisableInstallStandardClientInVDI">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableCrashEventLog_Policy" class="User" displayName="$(string.EnableCrashEventLog_Policy)" explainText="$(string.EnableCrashEventLog_Explain)" presentation="$(presentation.EnableCrashEventLog_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="EnableCrashEventLog">
       <parentCategory ref="zoomgeneral" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
       <enabledValue>
@@ -3169,6 +3216,33 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy name="GenerateDIDUsingMacAddress_Policy_Recommend" class="User" displayName="$(string.GenerateDIDUsingMacAddress_Policy_Recommend)" explainText="$(string.GenerateDIDUsingMacAddress_Explain)" presentation="$(presentation.GenerateDIDUsingMacAddress_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="GenerateDIDUsingMacAddress">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="MemorySaverEnabled_Policy_Recommend" class="User" displayName="$(string.MemorySaverEnabled_Policy_Recommend)" explainText="$(string.MemorySaverEnabled_Explain)" presentation="$(presentation.MemorySaverEnabled_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="MemorySaverEnabled">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="MemorySaverOptimization_Policy_Recommend" class="User" displayName="$(string.MemorySaverOptimization_Policy_Recommend)" explainText="$(string.MemorySaverOptimization_Explain)" presentation="$(presentation.MemorySaverOptimization_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="MemorySaverOptimization_Part" valueName="MemorySaverOptimization" required="true" minValue="1" maxValue="3" />
+      </elements>
     </policy>
     <policy name="AU2_EnableAutoUpdate_Policy_Recommend" class="User" displayName="$(string.AU2_EnableAutoUpdate_Policy_Recommend)" explainText="$(string.AU2_EnableAutoUpdate_Explain)" presentation="$(presentation.AU2_EnableAutoUpdate_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Updates" valueName="AU2_EnableAutoUpdate">
       <parentCategory ref="zoomupdates_recommend" />

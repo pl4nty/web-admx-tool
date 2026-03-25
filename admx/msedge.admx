@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 147.0.3912.16-->
+  <!--microsoft_edge version: 148.0.3928.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -3440,6 +3440,29 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.ConfigureNTPFeedTabVisibility)" explainText="$(string.ConfigureNTPFeedTabVisibility_Explain)" key="Software\Policies\Microsoft\Edge" name="ConfigureNTPFeedTabVisibility" presentation="$(presentation.ConfigureNTPFeedTabVisibility)">
+      <parentCategory ref="Startup"/>
+      <supportedOn ref="SUPPORTED_WIN7_V147"/>
+      <elements>
+        <enum id="ConfigureNTPFeedTabVisibility" valueName="ConfigureNTPFeedTabVisibility">
+          <item displayName="$(string.ConfigureNTPFeedTabVisibility_EnableBothWorkDiscover)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.ConfigureNTPFeedTabVisibility_EnableOnlyWork)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.ConfigureNTPFeedTabVisibility_EnableOnlyDiscover)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.HomepageIsNewTabPage)" explainText="$(string.HomepageIsNewTabPage_Explain)" key="Software\Policies\Microsoft\Edge" name="HomepageIsNewTabPage" presentation="$(presentation.HomepageIsNewTabPage)" valueName="HomepageIsNewTabPage">
       <parentCategory ref="Startup"/>
       <supportedOn ref="SUPPORTED_WIN7_V77"/>
@@ -3641,6 +3664,24 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.SetNTPDefaultFeedTab)" explainText="$(string.SetNTPDefaultFeedTab_Explain)" key="Software\Policies\Microsoft\Edge" name="SetNTPDefaultFeedTab" presentation="$(presentation.SetNTPDefaultFeedTab)">
+      <parentCategory ref="Startup"/>
+      <supportedOn ref="SUPPORTED_WIN7_V147"/>
+      <elements>
+        <enum id="SetNTPDefaultFeedTab" valueName="SetNTPDefaultFeedTab">
+          <item displayName="$(string.SetNTPDefaultFeedTab_NTPDefaultFeedTabWork)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.SetNTPDefaultFeedTab_NTPDefaultFeedTabDiscover)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.ShowHomeButton)" explainText="$(string.ShowHomeButton_Explain)" key="Software\Policies\Microsoft\Edge" name="ShowHomeButton" presentation="$(presentation.ShowHomeButton)" valueName="ShowHomeButton">
       <parentCategory ref="Startup"/>
       <supportedOn ref="SUPPORTED_WIN7_V77"/>
@@ -3743,6 +3784,24 @@
       <supportedOn ref="SUPPORTED_WIN7_V77"/>
       <elements>
         <list id="RestoreOnStartupURLsDesc" key="Software\Policies\Microsoft\Edge\Recommended\RestoreOnStartupURLs" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.SetNTPDefaultFeedTab)" explainText="$(string.SetNTPDefaultFeedTab_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="SetNTPDefaultFeedTab_recommended" presentation="$(presentation.SetNTPDefaultFeedTab)">
+      <parentCategory ref="Startup_recommended"/>
+      <supportedOn ref="SUPPORTED_WIN7_V147"/>
+      <elements>
+        <enum id="SetNTPDefaultFeedTab" valueName="SetNTPDefaultFeedTab">
+          <item displayName="$(string.SetNTPDefaultFeedTab_NTPDefaultFeedTabWork)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.SetNTPDefaultFeedTab_NTPDefaultFeedTabDiscover)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+        </enum>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.ShowHomeButton)" explainText="$(string.ShowHomeButton_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="ShowHomeButton_recommended" presentation="$(presentation.ShowHomeButton)" valueName="ShowHomeButton">
@@ -6483,6 +6542,20 @@
             </value>
           </item>
         </enum>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.InPrivateModeUrlAllowlist)" explainText="$(string.InPrivateModeUrlAllowlist_Explain)" key="Software\Policies\Microsoft\Edge" name="InPrivateModeUrlAllowlist" presentation="$(presentation.InPrivateModeUrlAllowlist)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V147"/>
+      <elements>
+        <list id="InPrivateModeUrlAllowlistDesc" key="Software\Policies\Microsoft\Edge\InPrivateModeUrlAllowlist" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.InPrivateModeUrlBlocklist)" explainText="$(string.InPrivateModeUrlBlocklist_Explain)" key="Software\Policies\Microsoft\Edge" name="InPrivateModeUrlBlocklist" presentation="$(presentation.InPrivateModeUrlBlocklist)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V147"/>
+      <elements>
+        <list id="InPrivateModeUrlBlocklistDesc" key="Software\Policies\Microsoft\Edge\InPrivateModeUrlBlocklist" valuePrefix=""/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.InsecureFormsWarningsEnabled)" explainText="$(string.InsecureFormsWarningsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="InsecureFormsWarningsEnabled" presentation="$(presentation.InsecureFormsWarningsEnabled)" valueName="InsecureFormsWarningsEnabled">
