@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, watch } from 'vue'
+import { useRouter } from 'vue-router'
 import { policyUrl } from '../policyUrl'
 
 const props = defineProps({
@@ -8,12 +9,22 @@ const props = defineProps({
   activeTarget: { type: String, default: '' }
 })
 const emit = defineEmits(['navigate'])
+const router = useRouter()
 const expanded = ref(false)
 
 function toggleExpand() { expanded.value = !expanded.value }
 
 function policyHref(policy) {
   return policyUrl(policy?.namespace, policy?.policyName, policy?.availableLangs, props.lang)
+}
+
+function onPolicyClick(e, policy) {
+  e.preventDefault()
+  const ns = policy?.namespace
+  const name = policy?.policyName
+  if (ns && name) sessionStorage.setItem('admx:expand-target', `${ns}::${name}`)
+  emit('navigate')
+  router.push(policyHref(policy))
 }
 
 function nodeContainsTarget(node, target) {
@@ -53,7 +64,7 @@ watch(() => props.activeTarget, autoExpandFromTarget)
     <ul v-if="expanded" class="ml-4 border-l border-gray-200 dark:border-gray-600">
       <!-- Policies in this category -->
       <li v-for="pol in node.policies" :key="pol.name">
-        <a :href="policyHref(pol)" @click="emit('navigate')"
+        <a :href="policyHref(pol)" @click="onPolicyClick($event, pol)"
           class="flex items-center gap-1.5 px-2 py-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-sm cursor-pointer">
           <svg class="w-3.5 h-3.5 shrink-0" :class="pol.class === 'Machine' ? 'text-blue-500' : pol.class === 'User' ? 'text-green-600' : 'text-purple-500'" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clip-rule="evenodd"/>

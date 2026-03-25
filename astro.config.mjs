@@ -2,116 +2,15 @@ import { defineConfig } from 'astro/config';
 import vue from '@astrojs/vue';
 import tailwindcss from '@tailwindcss/vite';
 
-import sitemap from '@astrojs/sitemap';
-
-const locales = {
-  'en-us': 'en-US',
-  'af-za': 'af-ZA',
-  'am-et': 'am-ET',
-  'as-in': 'as-IN',
-  'az-latn-az': 'az-Latn-AZ',
-  'bg-bg': 'bg-BG',
-  'bn-in': 'bn-IN',
-  'bs-latn-ba': 'bs-Latn-BA',
-  'ca-es': 'ca-ES',
-  'ca-es-valencia': 'ca-ES-valencia',
-  'cs-cz': 'cs-CZ',
-  'cy-gb': 'cy-GB',
-  'da-dk': 'da-DK',
-  'de-de': 'de-DE',
-  'el-gr': 'el-GR',
-  'en-gb': 'en-GB',
-  'es-es': 'es-ES',
-  'es-mx': 'es-MX',
-  'et-ee': 'et-EE',
-  'eu-es': 'eu-ES',
-  'fa-ir': 'fa-IR',
-  'fi-fi': 'fi-FI',
-  'fil-ph': 'fil-PH',
-  'fr-ca': 'fr-CA',
-  'fr-fr': 'fr-FR',
-  'ga-ie': 'ga-IE',
-  'gd-gb': 'gd-GB',
-  'gl-es': 'gl-ES',
-  'gu-in': 'gu-IN',
-  'hi-in': 'hi-IN',
-  'hr-hr': 'hr-HR',
-  'hu-hu': 'hu-HU',
-  'hy-am': 'hy-AM',
-  'id-id': 'id-ID',
-  'is-is': 'is-IS',
-  'it-it': 'it-IT',
-  'ja-jp': 'ja-JP',
-  'ka-ge': 'ka-GE',
-  'kk-kz': 'kk-KZ',
-  'km-kh': 'km-KH',
-  'kn-in': 'kn-IN',
-  'ko-kr': 'ko-KR',
-  'kok-in': 'kok-IN',
-  'lb-lu': 'lb-LU',
-  'lo-la': 'lo-LA',
-  'lt-lt': 'lt-LT',
-  'lv-lv': 'lv-LV',
-  'mi-nz': 'mi-NZ',
-  'mk-mk': 'mk-MK',
-  'ml-in': 'ml-IN',
-  'mr-in': 'mr-IN',
-  'ms-my': 'ms-MY',
-  'mt-mt': 'mt-MT',
-  'nb-no': 'nb-NO',
-  'ne-np': 'ne-NP',
-  'nl-nl': 'nl-NL',
-  'nn-no': 'nn-NO',
-  'or-in': 'or-IN',
-  'pa-in': 'pa-IN',
-  'pl-pl': 'pl-PL',
-  'pt-br': 'pt-BR',
-  'pt-pt': 'pt-PT',
-  'quz-pe': 'quz-PE',
-  'ru-ru': 'ru-RU',
-  'ro-ro': 'ro-RO',
-  'sk-sk': 'sk-SK',
-  'sl-si': 'sl-SI',
-  'sq-al': 'sq-AL',
-  'sr-cyrl-ba': 'sr-Cyrl-BA',
-  'sr-cyrl-rs': 'sr-Cyrl-RS',
-  'sr-latn-rs': 'sr-Latn-RS',
-  'sv-se': 'sv-SE',
-  'ta-in': 'ta-IN',
-  'te-in': 'te-IN',
-  'th-th': 'th-TH',
-  'tr-tr': 'tr-TR',
-  'tt-ru': 'tt-RU',
-  'ug-cn': 'ug-CN',
-  'uk-ua': 'uk-UA',
-  'ur-pk': 'ur-PK',
-  'uz-latn-uz': 'uz-Latn-UZ',
-  'vi-vn': 'vi-VN',
-  'zh-hans': 'zh-Hans',
-  'zh-hant': 'zh-Hant'
-};
-
 export default defineConfig({
   site: 'https://gpedit.tplant.com.au',
-  integrations: [vue(), sitemap({
-    entryLimit: 20000, // Max is 50k or 50mb, we exceeded the latter
-    i18n: {
-      defaultLocale: 'en-us',
-      locales,
-    },
-  })],
-
+  integrations: [
+    vue({
+      appEntrypoint: '/src/app-setup'
+    })
+  ],
   build: {
     inlineStylesheets: 'auto',
-    // Astro 5.x already optimizes chunk splitting
-  },
-  i18n: {
-    defaultLocale: 'en-us',
-    locales: Object.keys(locales),
-    routing: {
-      prefixDefaultLocale: true,
-      redirectToDefaultLocale: false
-    }
   },
   vite: {
     plugins: [tailwindcss()],
@@ -125,3 +24,4 @@ export default defineConfig({
     }
   }
 });
+

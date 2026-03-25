@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref, watch, shallowRef } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import MiniSearch from 'minisearch'
 import { MINISEARCH_OPTS } from '../searchConfig'
 import { policyUrl } from '../policyUrl'
 
 const props = defineProps<{ lang?: string }>()
+const router = useRouter()
+const route = useRoute()
 const currentLang = ref('en-us')
 const query = ref('')
 const results = ref<any[]>([])
@@ -45,6 +48,10 @@ onMounted(async () => {
 })
 
 watch(query, search)
+watch(() => route.query.q, (newQ) => {
+  query.value = (newQ as string || '').trim()
+  search()
+})
 onBeforeUnmount(() => window.removeEventListener('popstate', syncFromUrl))
 
 const pagedResults = computed(() => results.value.slice((page.value - 1) * 20, page.value * 20))
@@ -54,9 +61,11 @@ function resultUrl(result: any) {
   return policyUrl(result.namespace || result.fileSlug, result.name, result.availableLangs, currentLang.value)
 }
 
-function onResultClick(result: any) {
+function onResultClick(e: Event, result: any) {
+  e.preventDefault()
   const ns = result.namespace || result.fileSlug
   if (ns && result.name) sessionStorage.setItem('admx:expand-target', `${ns}::${result.name}`)
+  router.push(resultUrl(result))
 }
 </script>
 
@@ -70,7 +79,7 @@ function onResultClick(result: any) {
     <div v-else-if="!results.length && query" class="text-gray-500">No results found.</div>
     <div v-else-if="!query" class="text-gray-500">Type a query in the search box above.</div>
     <div v-else class="space-y-3">
-      <a v-for="r in pagedResults" :key="`${r.fileSlug}-${r.name}`" :href="resultUrl(r)" @click="onResultClick(r)"
+      <a v-for="r in pagedResults" :key="`${r.fileSlug}-${r.name}`" :href="resultUrl(r)" @click="onResultClick($event, r)"
         class="block bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-green-800 dark:hover:border-green-600 transition-colors">
         <div class="font-medium text-gray-900 dark:text-white">{{ r.displayName || r.name }}</div>
         <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">

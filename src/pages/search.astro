@@ -1,6 +1,0 @@
----
-// Redirect old /search URLs to /en-us/search
-const q = Astro.url.searchParams.get('q');
-const target = q ? `/en-us/search?q=${encodeURIComponent(q)}` : '/en-us/search';
-return Astro.redirect(target);
----
