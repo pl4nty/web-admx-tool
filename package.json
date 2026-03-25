@@ -8,7 +8,8 @@
     "dev": "astro dev --host",
     "build": "pnpm run build:data && astro build",
     "build:data": "tsx scripts/fetch-admx.ts && tsx scripts/parse-ddf.ts && tsx scripts/enrich-graph.ts",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "test": "vitest run"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.1",
@@ -25,6 +26,7 @@
     "minisearch": "^7.2.0",
     "tailwindcss": "^4.2.1",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.1"
   }
 }
