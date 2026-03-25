@@ -76,13 +76,6 @@ export async function runWithLimit<T, R = void>(
   return results
 }
 
-export function getLanguagePaths() {
-  const dataDir = join(process.cwd(), 'public/data')
-  const languages: string[] = existsSync(join(dataDir, 'languages.json'))
-    ? JSON.parse(readFileSync(join(dataDir, 'languages.json'), 'utf8'))
-    : ['en-us']
-  return languages.map(lang => ({ params: { lang } }))
-}
 
 export function walkDir(dir: string, filter: (name: string) => boolean, results: string[] = []): string[] {
   if (!existsSync(dir)) return results

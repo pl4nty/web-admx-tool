@@ -36,6 +36,12 @@ function closeSidebar() {
   sidebarOpen.value = false
 }
 
+function onMainClick() {
+  if (window.innerWidth < 1024 && sidebarOpen.value) {
+    sidebarOpen.value = false
+  }
+}
+
 // Sidebar resize
 const sidebarResizing = ref(false)
 function onResizeStart(e: PointerEvent) {
@@ -432,7 +438,7 @@ onBeforeUnmount(() => {
     </aside>
 
     <!-- Main content -->
-    <main class="admx-main" @click="closeSidebar">
+    <main class="admx-main" @click="onMainClick">
       <router-view :lang="currentLang" />
     </main>
   </div>

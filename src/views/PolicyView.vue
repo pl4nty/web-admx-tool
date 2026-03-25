@@ -81,13 +81,13 @@ const catalogScope = computed(() => {
       : policyClass === 'Machine'
         ? 'Device only'
         : 'User only'
-  const color =
+  const colorClasses =
     scopeAvailability === 'both'
-      ? 'purple'
+      ? 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200'
       : policyClass === 'Machine'
-        ? 'blue'
-        : 'green'
-  return { scope, color }
+        ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
+        : 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
+  return { scope, colorClasses }
 })
 
 const title = computed(
@@ -335,7 +335,7 @@ watch([namespace, policyName, currentLang], loadPolicy)
               >
               <span
                 class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
-                :class="`bg-${catalogScope.color}-100 text-${catalogScope.color}-800 dark:bg-${catalogScope.color}-900 dark:text-${catalogScope.color}-200`"
+                :class="catalogScope.colorClasses"
                 >{{ catalogScope.scope }}</span
               >
             </dd>

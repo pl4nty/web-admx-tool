@@ -1,14 +1,11 @@
 <script setup lang="ts">
-const props = defineProps<{ lang?: string }>()
+import SearchResults from '../components/SearchResults.vue'
+
+defineProps<{ lang?: string }>()
 </script>
 
 <template>
   <div class="p-6">
-    <SearchResults :lang="props.lang" />
+    <SearchResults :lang="lang" />
   </div>
 </template>
-
-<script lang="ts">
-import SearchResults from '../components/SearchResults.vue'
-export default { components: { SearchResults } }
-</script>
