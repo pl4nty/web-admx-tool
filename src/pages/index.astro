@@ -1,13 +1,12 @@
 ---
-export const prerender = false
-
-const params = Astro.url.searchParams
-const policy = params.get('Policy')
-const lang = (params.get('Language') || Astro.preferredLocale || 'en-us').toLowerCase()
-
-if (policy?.includes('::')) {
-  const sep = policy.indexOf('::')
-  return Astro.redirect(`/${lang}/policy/${policy.slice(0, sep)}/${policy.slice(sep + 2)}`)
-}
-return Astro.redirect(`/${lang}/`)
+export const prerender = true
 ---
+
+<script>
+  import { getRedirectUrl } from '../redirectUtils'
+
+  const params = new URLSearchParams(window.location.search)
+  const preferredLocale = navigator.language?.toLowerCase()
+
+  window.location.replace(getRedirectUrl(params, preferredLocale))
+</script>
