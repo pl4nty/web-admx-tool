@@ -1,6 +1,11 @@
+import { supportedLocales } from './locales'
+
+const DEFAULT_LOCALE = 'en-us'
+
 export function getRedirectUrl(params: URLSearchParams, preferredLocale?: string): string {
   const policy = params.get('Policy')
-  const lang = (params.get('Language') || preferredLocale || 'en-us').toLowerCase()
+  const rawLang = (params.get('Language') || preferredLocale || DEFAULT_LOCALE).toLowerCase()
+  const lang = supportedLocales.has(rawLang) ? rawLang : DEFAULT_LOCALE
 
   if (policy?.includes('::')) {
     const sep = policy.indexOf('::')

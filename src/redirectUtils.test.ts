@@ -44,4 +44,18 @@ describe('getRedirectUrl', () => {
     expect(getRedirectUrl(new URLSearchParams('Policy=Cat::../../etc'))).toBe('/en-us/')
     expect(getRedirectUrl(new URLSearchParams('Policy=../Cat::Policy'))).toBe('/en-us/')
   })
+
+  it('falls back to en-us for unsupported preferredLocale', () => {
+    expect(getRedirectUrl(new URLSearchParams(), 'en-au')).toBe('/en-us/')
+  })
+
+  it('falls back to en-us for unsupported Language param', () => {
+    expect(getRedirectUrl(new URLSearchParams('Language=en-au'))).toBe('/en-us/')
+  })
+
+  it('falls back to en-us for unsupported locale in policy redirect', () => {
+    expect(getRedirectUrl(new URLSearchParams('Policy=Cat::PolicyName&Language=en-au'))).toBe(
+      '/en-us/policy/Cat/PolicyName'
+    )
+  })
 })
