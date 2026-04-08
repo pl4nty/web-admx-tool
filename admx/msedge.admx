@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 148.0.3943.0-->
+  <!--microsoft_edge version: 148.0.3956.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -28,6 +28,7 @@
       <definition displayName="$(string.SUPPORTED_WIN7_V145)" name="SUPPORTED_WIN7_V145"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V146)" name="SUPPORTED_WIN7_V146"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V147)" name="SUPPORTED_WIN7_V147"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V148)" name="SUPPORTED_WIN7_V148"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V77)" name="SUPPORTED_WIN7_V77"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V78)" name="SUPPORTED_WIN7_V78"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V79)" name="SUPPORTED_WIN7_V79"/>
@@ -1845,6 +1846,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.M365AuthPopupsInWorkEnabled)" explainText="$(string.M365AuthPopupsInWorkEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="M365AuthPopupsInWorkEnabled" presentation="$(presentation.M365AuthPopupsInWorkEnabled)" valueName="M365AuthPopupsInWorkEnabled">
+      <parentCategory ref="Identity"/>
+      <supportedOn ref="SUPPORTED_WIN7_V148"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.OneAuthAuthenticationEnforced)" explainText="$(string.OneAuthAuthenticationEnforced_Explain)" key="Software\Policies\Microsoft\Edge" name="OneAuthAuthenticationEnforced" presentation="$(presentation.OneAuthAuthenticationEnforced)" valueName="OneAuthAuthenticationEnforced">
       <parentCategory ref="Identity"/>
       <supportedOn ref="SUPPORTED_WIN7_V93"/>
@@ -2066,6 +2077,16 @@
     <policy class="Both" displayName="$(string.MAMEnabled)" explainText="$(string.MAMEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="MAMEnabled" presentation="$(presentation.MAMEnabled)" valueName="MAMEnabled">
       <parentCategory ref="Manageability"/>
       <supportedOn ref="SUPPORTED_WIN7_V89"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.MAMWithDeviceDLPEnabled)" explainText="$(string.MAMWithDeviceDLPEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="MAMWithDeviceDLPEnabled" presentation="$(presentation.MAMWithDeviceDLPEnabled)" valueName="MAMWithDeviceDLPEnabled">
+      <parentCategory ref="Manageability"/>
+      <supportedOn ref="SUPPORTED_WIN7_V147"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -3442,7 +3463,7 @@
     </policy>
     <policy class="Both" displayName="$(string.ConfigureNTPFeedTabVisibility)" explainText="$(string.ConfigureNTPFeedTabVisibility_Explain)" key="Software\Policies\Microsoft\Edge" name="ConfigureNTPFeedTabVisibility" presentation="$(presentation.ConfigureNTPFeedTabVisibility)">
       <parentCategory ref="Startup"/>
-      <supportedOn ref="SUPPORTED_WIN7_V147"/>
+      <supportedOn ref="SUPPORTED_WIN7_V148"/>
       <elements>
         <enum id="ConfigureNTPFeedTabVisibility" valueName="ConfigureNTPFeedTabVisibility">
           <item displayName="$(string.ConfigureNTPFeedTabVisibility_EnableBothWorkDiscover)">
@@ -3666,7 +3687,7 @@
     </policy>
     <policy class="Both" displayName="$(string.SetNTPDefaultFeedTab)" explainText="$(string.SetNTPDefaultFeedTab_Explain)" key="Software\Policies\Microsoft\Edge" name="SetNTPDefaultFeedTab" presentation="$(presentation.SetNTPDefaultFeedTab)">
       <parentCategory ref="Startup"/>
-      <supportedOn ref="SUPPORTED_WIN7_V147"/>
+      <supportedOn ref="SUPPORTED_WIN7_V148"/>
       <elements>
         <enum id="SetNTPDefaultFeedTab" valueName="SetNTPDefaultFeedTab">
           <item displayName="$(string.SetNTPDefaultFeedTab_NTPDefaultFeedTabWork)">
@@ -3788,7 +3809,7 @@
     </policy>
     <policy class="Both" displayName="$(string.SetNTPDefaultFeedTab)" explainText="$(string.SetNTPDefaultFeedTab_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="SetNTPDefaultFeedTab_recommended" presentation="$(presentation.SetNTPDefaultFeedTab)">
       <parentCategory ref="Startup_recommended"/>
-      <supportedOn ref="SUPPORTED_WIN7_V147"/>
+      <supportedOn ref="SUPPORTED_WIN7_V148"/>
       <elements>
         <enum id="SetNTPDefaultFeedTab" valueName="SetNTPDefaultFeedTab">
           <item displayName="$(string.SetNTPDefaultFeedTab_NTPDefaultFeedTabWork)">
@@ -4932,7 +4953,7 @@
     </policy>
     <policy class="Both" displayName="$(string.CopilotNewTabPageEnabled)" explainText="$(string.CopilotNewTabPageEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="CopilotNewTabPageEnabled" presentation="$(presentation.CopilotNewTabPageEnabled)" valueName="CopilotNewTabPageEnabled">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V147"/>
+      <supportedOn ref="SUPPORTED_WIN7_V148"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -4942,7 +4963,7 @@
     </policy>
     <policy class="Both" displayName="$(string.CopilotNewTabPageEnabled)" explainText="$(string.CopilotNewTabPageEnabled_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="CopilotNewTabPageEnabled_recommended" presentation="$(presentation.CopilotNewTabPageEnabled)" valueName="CopilotNewTabPageEnabled">
       <parentCategory ref="microsoft_edge_recommended"/>
-      <supportedOn ref="SUPPORTED_WIN7_V147"/>
+      <supportedOn ref="SUPPORTED_WIN7_V148"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -7018,6 +7039,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.M365LinksAutoOpenCopilotEnabled)" explainText="$(string.M365LinksAutoOpenCopilotEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="M365LinksAutoOpenCopilotEnabled" presentation="$(presentation.M365LinksAutoOpenCopilotEnabled)" valueName="M365LinksAutoOpenCopilotEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V148"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.MSAWebSiteSSOUsingThisProfileAllowed)" explainText="$(string.MSAWebSiteSSOUsingThisProfileAllowed_Explain)" key="Software\Policies\Microsoft\Edge" name="MSAWebSiteSSOUsingThisProfileAllowed" presentation="$(presentation.MSAWebSiteSSOUsingThisProfileAllowed)" valueName="MSAWebSiteSSOUsingThisProfileAllowed">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V93"/>
@@ -8178,6 +8209,16 @@
     <policy class="Both" displayName="$(string.SharedWorkerBlobURLFixEnabled)" explainText="$(string.SharedWorkerBlobURLFixEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="SharedWorkerBlobURLFixEnabled" presentation="$(presentation.SharedWorkerBlobURLFixEnabled)" valueName="SharedWorkerBlobURLFixEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V134"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.SharedWorkerExtendedLifetimeEnabled)" explainText="$(string.SharedWorkerExtendedLifetimeEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="SharedWorkerExtendedLifetimeEnabled" presentation="$(presentation.SharedWorkerExtendedLifetimeEnabled)" valueName="SharedWorkerExtendedLifetimeEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V148"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
