@@ -12,6 +12,7 @@
 			<definition name="Supported_1_109" displayName="$(string.Supported_1_109)" />
 			<definition name="Supported_1_110" displayName="$(string.Supported_1_110)" />
 			<definition name="Supported_1_112" displayName="$(string.Supported_1_112)" />
+			<definition name="Supported_1_113" displayName="$(string.Supported_1_113)" />
 			<definition name="Supported_1_67" displayName="$(string.Supported_1_67)" />
 			<definition name="Supported_1_96" displayName="$(string.Supported_1_96)" />
 			<definition name="Supported_1_99" displayName="$(string.Supported_1_99)" />
@@ -87,6 +88,42 @@
 			<supportedOn ref="Supported_1_107" />
 			<elements>
 		<multiText id="ChatToolsEligibleForAutoApproval" valueName="ChatToolsEligibleForAutoApproval" required="true" />
+			</elements>
+		</policy>
+		<policy name="Claude3PIntegration" class="Both" displayName="$(string.Claude3PIntegration)" explainText="$(string.Claude3PIntegration_github_copilot_chat_claudeAgent_enabled)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.Claude3PIntegration)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_113" />
+			<elements>
+		<boolean id="Claude3PIntegration" valueName="Claude3PIntegration">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
+		<policy name="CopilotNextEditSuggestions" class="Both" displayName="$(string.CopilotNextEditSuggestions)" explainText="$(string.CopilotNextEditSuggestions_github_copilot_nextEditSuggestions_enabled)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.CopilotNextEditSuggestions)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_99" />
+			<elements>
+		<boolean id="CopilotNextEditSuggestions" valueName="CopilotNextEditSuggestions">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
+		<policy name="CopilotReviewAgent" class="Both" displayName="$(string.CopilotReviewAgent)" explainText="$(string.CopilotReviewAgent_github_copilot_chat_reviewAgent_enabled)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.CopilotReviewAgent)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_104" />
+			<elements>
+		<boolean id="CopilotReviewAgent" valueName="CopilotReviewAgent">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
+		<policy name="CopilotReviewSelection" class="Both" displayName="$(string.CopilotReviewSelection)" explainText="$(string.CopilotReviewSelection_github_copilot_chat_reviewSelection_enabled)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.CopilotReviewSelection)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_104" />
+			<elements>
+		<boolean id="CopilotReviewSelection" valueName="CopilotReviewSelection">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
 			</elements>
 		</policy>
 		<policy name="DeprecatedEditModeHidden" class="Both" displayName="$(string.DeprecatedEditModeHidden)" explainText="$(string.DeprecatedEditModeHidden_chat_editMode_hidden)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.DeprecatedEditModeHidden)">
