@@ -222,6 +222,7 @@ const sources: Source[] = [
   src(() => githubRelease('Romanitho', 'Winget-AutoUpdate', /\.zip$/i)),
   src(() => githubRelease('Weatherlights', 'Winget-AutoUpdate-Intune', /\.zip$/i)),
   src(() => githubRelease('PSAppDeployToolkit', 'PSAppDeployToolkit', /PSAppDeployToolkit_ModuleOnly.zip/i)),
+  src(() => githubRelease('systmworks', 'Adobe-DC-ADMX')),
   src(() => githubRelease('Harvester57', 'Security-ADMX')),
   src(() => 'https://api.github.com/repos/pseymour/MakeMeAdmin/zipball/master'),
   src(() => resolveRedirects('https://aka.ms/fslogix/download')),
