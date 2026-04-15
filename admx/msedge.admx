@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 148.0.3956.0-->
+  <!--microsoft_edge version: 148.0.3967.8-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -5206,6 +5206,20 @@
         </enum>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.DeveloperToolsAvailabilityAllowlist)" explainText="$(string.DeveloperToolsAvailabilityAllowlist_Explain)" key="Software\Policies\Microsoft\Edge" name="DeveloperToolsAvailabilityAllowlist" presentation="$(presentation.DeveloperToolsAvailabilityAllowlist)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V148"/>
+      <elements>
+        <list id="DeveloperToolsAvailabilityAllowlistDesc" key="Software\Policies\Microsoft\Edge\DeveloperToolsAvailabilityAllowlist" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.DeveloperToolsAvailabilityBlocklist)" explainText="$(string.DeveloperToolsAvailabilityBlocklist_Explain)" key="Software\Policies\Microsoft\Edge" name="DeveloperToolsAvailabilityBlocklist" presentation="$(presentation.DeveloperToolsAvailabilityBlocklist)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V148"/>
+      <elements>
+        <list id="DeveloperToolsAvailabilityBlocklistDesc" key="Software\Policies\Microsoft\Edge\DeveloperToolsAvailabilityBlocklist" valuePrefix=""/>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.DiagnosticData)" explainText="$(string.DiagnosticData_Explain)" key="Software\Policies\Microsoft\Edge" name="DiagnosticData" presentation="$(presentation.DiagnosticData)">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V122"/>
@@ -7112,6 +7126,13 @@
       <supportedOn ref="SUPPORTED_WIN7_V77"/>
       <elements>
         <decimal id="MaxConnectionsPerProxy" maxValue="2000000000" minValue="0" valueName="MaxConnectionsPerProxy"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.MaxConnectionsPerProxyForWebSocket)" explainText="$(string.MaxConnectionsPerProxyForWebSocket_Explain)" key="Software\Policies\Microsoft\Edge" name="MaxConnectionsPerProxyForWebSocket" presentation="$(presentation.MaxConnectionsPerProxyForWebSocket)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V148"/>
+      <elements>
+        <decimal id="MaxConnectionsPerProxyForWebSocket" maxValue="256" minValue="6" valueName="MaxConnectionsPerProxyForWebSocket"/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.MediaRouterCastAllowAllIPs)" explainText="$(string.MediaRouterCastAllowAllIPs_Explain)" key="Software\Policies\Microsoft\Edge" name="MediaRouterCastAllowAllIPs" presentation="$(presentation.MediaRouterCastAllowAllIPs)" valueName="MediaRouterCastAllowAllIPs">
