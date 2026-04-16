@@ -13,6 +13,7 @@
 			<definition name="Supported_1_110" displayName="$(string.Supported_1_110)" />
 			<definition name="Supported_1_112" displayName="$(string.Supported_1_112)" />
 			<definition name="Supported_1_113" displayName="$(string.Supported_1_113)" />
+			<definition name="Supported_1_116" displayName="$(string.Supported_1_116)" />
 			<definition name="Supported_1_67" displayName="$(string.Supported_1_67)" />
 			<definition name="Supported_1_96" displayName="$(string.Supported_1_96)" />
 			<definition name="Supported_1_99" displayName="$(string.Supported_1_99)" />
@@ -36,6 +37,20 @@
 		</boolean>
 			</elements>
 		</policy>
+		<policy name="ChatAgentAllowedNetworkDomains" class="Both" displayName="$(string.ChatAgentAllowedNetworkDomains)" explainText="$(string.ChatAgentAllowedNetworkDomains_chat_agent_allowedNetworkDomains)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentAllowedNetworkDomains)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_116" />
+			<elements>
+		<multiText id="ChatAgentAllowedNetworkDomains" valueName="ChatAgentAllowedNetworkDomains" required="true" />
+			</elements>
+		</policy>
+		<policy name="ChatAgentDeniedNetworkDomains" class="Both" displayName="$(string.ChatAgentDeniedNetworkDomains)" explainText="$(string.ChatAgentDeniedNetworkDomains_chat_agent_deniedNetworkDomains)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentDeniedNetworkDomains)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_116" />
+			<elements>
+		<multiText id="ChatAgentDeniedNetworkDomains" valueName="ChatAgentDeniedNetworkDomains" required="true" />
+			</elements>
+		</policy>
 		<policy name="ChatAgentExtensionTools" class="Both" displayName="$(string.ChatAgentExtensionTools)" explainText="$(string.ChatAgentExtensionTools_chat_extensionToolsEnabled)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentExtensionTools)">
 			<parentCategory ref="interactiveSessionConfigurationTitle" />
 			<supportedOn ref="Supported_1_99" />
@@ -50,6 +65,15 @@
 			<supportedOn ref="Supported_1_99" />
 			<elements>
 		<boolean id="ChatAgentMode" valueName="ChatAgentMode">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
+		<policy name="ChatAgentNetworkFilter" class="Both" displayName="$(string.ChatAgentNetworkFilter)" explainText="$(string.ChatAgentNetworkFilter_chat_agent_networkFilter)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentNetworkFilter)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_116" />
+			<elements>
+		<boolean id="ChatAgentNetworkFilter" valueName="ChatAgentNetworkFilter">
 			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
 		</boolean>
 			</elements>
@@ -72,6 +96,15 @@
 			<item displayName="$(string.ChatMCP_chat_mcp_access_registry)"><value><string>registry</string></value></item>
 			<item displayName="$(string.ChatMCP_chat_mcp_access_any)"><value><string>all</string></value></item>
 		</enum>
+			</elements>
+		</policy>
+		<policy name="ChatPluginsEnabled" class="Both" displayName="$(string.ChatPluginsEnabled)" explainText="$(string.ChatPluginsEnabled_chat_plugins_enabled)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatPluginsEnabled)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_116" />
+			<elements>
+		<boolean id="ChatPluginsEnabled" valueName="ChatPluginsEnabled">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
 			</elements>
 		</policy>
 		<policy name="ChatToolsAutoApprove" class="Both" displayName="$(string.ChatToolsAutoApprove)" explainText="$(string.ChatToolsAutoApprove_autoApprove3_description)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatToolsAutoApprove)">
@@ -154,6 +187,16 @@
 			<supportedOn ref="Supported_1_99" />
 			<elements>
 		<text id="ExtensionGalleryServiceUrl" valueName="ExtensionGalleryServiceUrl" required="true" />
+			</elements>
+		</policy>
+		<policy name="ChatAgentSandboxEnabled" class="Both" displayName="$(string.ChatAgentSandboxEnabled)" explainText="$(string.ChatAgentSandboxEnabled_agentSandbox_enabledSetting)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentSandboxEnabled)">
+			<parentCategory ref="terminalIntegratedConfigurationTitle" />
+			<supportedOn ref="Supported_1_116" />
+			<elements>
+		<enum id="ChatAgentSandboxEnabled" valueName="ChatAgentSandboxEnabled">
+			<item displayName="$(string.ChatAgentSandboxEnabled_agentSandbox_enabledSetting_offDescription)"><value><string>off</string></value></item>
+			<item displayName="$(string.ChatAgentSandboxEnabled_agentSandbox_enabledSetting_onDescription)"><value><string>on</string></value></item>
+		</enum>
 			</elements>
 		</policy>
 		<policy name="ChatToolsTerminalEnableAutoApprove" class="Both" displayName="$(string.ChatToolsTerminalEnableAutoApprove)" explainText="$(string.ChatToolsTerminalEnableAutoApprove_autoApproveMode_description)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatToolsTerminalEnableAutoApprove)">

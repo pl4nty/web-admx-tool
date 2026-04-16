@@ -12,6 +12,7 @@
 			<string id="Supported_1_110">Visual Studio Code &gt;= 1.110</string>
 			<string id="Supported_1_112">Visual Studio Code &gt;= 1.112</string>
 			<string id="Supported_1_113">Visual Studio Code &gt;= 1.113</string>
+			<string id="Supported_1_116">Visual Studio Code &gt;= 1.116</string>
 			<string id="Supported_1_67">Visual Studio Code &gt;= 1.67</string>
 			<string id="Supported_1_96">Visual Studio Code &gt;= 1.96</string>
 			<string id="Supported_1_99">Visual Studio Code &gt;= 1.99</string>
@@ -22,10 +23,16 @@
 			<string id="Category_updateConfigurationTitle">Update</string>
 			<string id="BrowserChatTools">BrowserChatTools</string>
 			<string id="BrowserChatTools_browser_enableChatTools">When enabled, chat agents can use browser tools to open and interact with pages in the Integrated Browser.</string>
+			<string id="ChatAgentAllowedNetworkDomains">ChatAgentAllowedNetworkDomains</string>
+			<string id="ChatAgentAllowedNetworkDomains_chat_agent_allowedNetworkDomains">Allowed domains for network access by agent tools (fetch tool, integrated browser). Only takes effect when `#chat.agent.networkFilter#` is enabled. When `#chat.agent.sandbox.enabled#` is enabled, these also apply to the terminal sandbox. Supports wildcards like `*.example.com`. When both allowed and denied lists are empty, all domains are blocked. Denied domains (see `#chat.agent.deniedNetworkDomains#`) take precedence.</string>
+			<string id="ChatAgentDeniedNetworkDomains">ChatAgentDeniedNetworkDomains</string>
+			<string id="ChatAgentDeniedNetworkDomains_chat_agent_deniedNetworkDomains">Denied domains for network access by agent tools (fetch tool, integrated browser). Only takes effect when `#chat.agent.networkFilter#` is enabled. When `#chat.agent.sandbox.enabled#` is enabled, these also apply to the terminal sandbox. Takes precedence over `#chat.agent.allowedNetworkDomains#`. Supports wildcards like `*.example.com`.</string>
 			<string id="ChatAgentExtensionTools">ChatAgentExtensionTools</string>
 			<string id="ChatAgentExtensionTools_chat_extensionToolsEnabled">Enable using tools contributed by third-party extensions.</string>
 			<string id="ChatAgentMode">ChatAgentMode</string>
 			<string id="ChatAgentMode_chat_agent_enabled_description">When enabled, agent mode can be activated from chat and tools in agentic contexts with side effects can be used.</string>
+			<string id="ChatAgentNetworkFilter">ChatAgentNetworkFilter</string>
+			<string id="ChatAgentNetworkFilter_chat_agent_networkFilter">When enabled, network access by agent tools (fetch tool, integrated browser) is restricted according to `#chat.agent.allowedNetworkDomains#` and `#chat.agent.deniedNetworkDomains#`. When disabled, no network filtering is applied.</string>
 			<string id="ChatHooks">ChatHooks</string>
 			<string id="ChatHooks_chat_useHooks_description">Controls whether chat hooks are executed at strategic points during an agent's workflow. Hooks are loaded from the files configured in `#chat.hookFilesLocations#`.</string>
 			<string id="ChatMCP">ChatMCP</string>
@@ -33,6 +40,8 @@
 			<string id="ChatMCP_chat_mcp_access_none">No access to MCP servers.</string>
 			<string id="ChatMCP_chat_mcp_access_registry">Allows access to MCP servers installed from the registry that VS Code is connected to.</string>
 			<string id="ChatMCP_chat_mcp_access_any">Allow access to any installed MCP server.</string>
+			<string id="ChatPluginsEnabled">ChatPluginsEnabled</string>
+			<string id="ChatPluginsEnabled_chat_plugins_enabled">Enable agent plugin integration in chat.</string>
 			<string id="ChatToolsAutoApprove">ChatToolsAutoApprove</string>
 			<string id="ChatToolsAutoApprove_autoApprove3_description">Global auto approve also known as "YOLO mode" disables manual approval completely for all tools in all workspaces, allowing the agent to act fully autonomously. This is extremely dangerous and is *never* recommended, even containerized environments like Codespaces and Dev Containers have user keys forwarded into the container that could be compromised.
 
@@ -57,6 +66,10 @@ Note: This setting only controls tool approval and does not prevent the agent fr
 			<string id="AllowedExtensions_extensions_allowed_policy">Specify a list of extensions that are allowed to use. This helps maintain a secure and consistent development environment by restricting the use of unauthorized extensions. More information: https://aka.ms/vscode/enterprise/extensions/allowed</string>
 			<string id="ExtensionGalleryServiceUrl">ExtensionGalleryServiceUrl</string>
 			<string id="ExtensionGalleryServiceUrl_extensions_gallery_serviceUrl">Configure the Marketplace service URL to connect to</string>
+			<string id="ChatAgentSandboxEnabled">ChatAgentSandboxEnabled</string>
+			<string id="ChatAgentSandboxEnabled_agentSandbox_enabledSetting">Controls whether agent mode uses sandboxing to restrict what tools can do. When enabled, tools like the terminal are run in a sandboxed environment to limit access to the system.</string>
+			<string id="ChatAgentSandboxEnabled_agentSandbox_enabledSetting_offDescription">Disable sandboxing for agent mode tools.</string>
+			<string id="ChatAgentSandboxEnabled_agentSandbox_enabledSetting_onDescription">Enable sandboxing for agent mode tools.</string>
 			<string id="ChatToolsTerminalEnableAutoApprove">ChatToolsTerminalEnableAutoApprove</string>
 			<string id="ChatToolsTerminalEnableAutoApprove_autoApproveMode_description">Controls whether to allow auto approval in the run in terminal tool.</string>
 			<string id="EnableFeedback">EnableFeedback</string>
@@ -76,10 +89,14 @@ Note: This setting only controls tool approval and does not prevent the agent fr
 		</stringTable>
 		<presentationTable>
 			<presentation id="BrowserChatTools"><checkBox refId="BrowserChatTools">BrowserChatTools</checkBox></presentation>
+			<presentation id="ChatAgentAllowedNetworkDomains"><multiTextBox refId="ChatAgentAllowedNetworkDomains" /></presentation>
+			<presentation id="ChatAgentDeniedNetworkDomains"><multiTextBox refId="ChatAgentDeniedNetworkDomains" /></presentation>
 			<presentation id="ChatAgentExtensionTools"><checkBox refId="ChatAgentExtensionTools">ChatAgentExtensionTools</checkBox></presentation>
 			<presentation id="ChatAgentMode"><checkBox refId="ChatAgentMode">ChatAgentMode</checkBox></presentation>
+			<presentation id="ChatAgentNetworkFilter"><checkBox refId="ChatAgentNetworkFilter">ChatAgentNetworkFilter</checkBox></presentation>
 			<presentation id="ChatHooks"><checkBox refId="ChatHooks">ChatHooks</checkBox></presentation>
 			<presentation id="ChatMCP"><dropdownList refId="ChatMCP" /></presentation>
+			<presentation id="ChatPluginsEnabled"><checkBox refId="ChatPluginsEnabled">ChatPluginsEnabled</checkBox></presentation>
 			<presentation id="ChatToolsAutoApprove"><checkBox refId="ChatToolsAutoApprove">ChatToolsAutoApprove</checkBox></presentation>
 			<presentation id="ChatToolsEligibleForAutoApproval"><multiTextBox refId="ChatToolsEligibleForAutoApproval" /></presentation>
 			<presentation id="Claude3PIntegration"><checkBox refId="Claude3PIntegration">Claude3PIntegration</checkBox></presentation>
@@ -90,6 +107,7 @@ Note: This setting only controls tool approval and does not prevent the agent fr
 			<presentation id="McpGalleryServiceUrl"><textBox refId="McpGalleryServiceUrl"><label>McpGalleryServiceUrl:</label></textBox></presentation>
 			<presentation id="AllowedExtensions"><multiTextBox refId="AllowedExtensions" /></presentation>
 			<presentation id="ExtensionGalleryServiceUrl"><textBox refId="ExtensionGalleryServiceUrl"><label>ExtensionGalleryServiceUrl:</label></textBox></presentation>
+			<presentation id="ChatAgentSandboxEnabled"><dropdownList refId="ChatAgentSandboxEnabled" /></presentation>
 			<presentation id="ChatToolsTerminalEnableAutoApprove"><checkBox refId="ChatToolsTerminalEnableAutoApprove">ChatToolsTerminalEnableAutoApprove</checkBox></presentation>
 			<presentation id="EnableFeedback"><checkBox refId="EnableFeedback">EnableFeedback</checkBox></presentation>
 			<presentation id="TelemetryLevel"><dropdownList refId="TelemetryLevel" /></presentation>
