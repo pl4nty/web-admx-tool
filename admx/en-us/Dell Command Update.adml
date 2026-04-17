@@ -186,6 +186,20 @@
 			<string id="Policy_DropList_Element_Update_Settings_monthly_recurrence_last" >Last</string>
 			<string id="String_Policy_Enable_Ring_Deployment" >Enable Ring Deployment</string>
 			<string id="String_Policy_Enable_Ring_Deployment_text" >Enable Ring Deployment registry will be set</string>
+			<string id="String_Policy_LocalBlockedSWB_List">Local Blocked SWB List</string>
+			<string id="String_Policy_LocalBlockedSWB_List_Help">Please follow these guidelines when specifying SWB Release IDs to be locally blocked:
+
+• Enter each release ID on a separate line.
+• Only alphanumeric characters are allowed; spaces, special characters or symbols are not allowed.
+• Length must be between 5 and 6 characters.
+
+Example:
+A1B2C
+P23AB6
+XY789Z
+9Z8Y7</string>
+			<string id="String_Policy_Bandwidth_Throttle">Bandwidth Throttle</string>
+			<string id="String_Policy_Bandwidth_Throttle_Help">Configure the Bandwidth throttle to limit the maximum network speed for usage.</string>
 		</stringTable>
 		<presentationTable ><!--Storage for Presentation Definitions-->
 
@@ -260,5 +274,16 @@
 			<presentation id="Policy_Maximum_Retry_Attempts_dropdown" >
 				<dropdownList refId="Policy_DropList_Element_Maximum_Retry_Attempts" defaultItem="1" noSort="true">Select the number of retry attempts to install failed updates</dropdownList>
 			</presentation>
+			
+			<presentation id="Policy_LocalBlockedSWB_List">
+				<text> Enter Local Blocked SWB Release IDs (one per line):</text>
+				<multiTextBox refId="Policy_MultiTextBox_Element_Configure_LocalBlockedSWB_List"></multiTextBox>
+			</presentation>
+			<presentation id="Policy_Configure_Bandwidth_maximum_limit_placeholder" >
+
+				 <text>Maximum Speed (Mbps (1-999))</text>
+				<decimalTextBox refId="Maximum_Speed_Limit"></decimalTextBox>
+			</presentation>
+			
 		</presentationTable>
 	</resources></policyDefinitionResources>

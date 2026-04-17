@@ -864,6 +864,7 @@
 			</elements>
 		</policy>
 
+        
 		<policy name="Policy_Hardware_Drivers_157" class="Machine" displayName="$(string.String_Policy_Hardware_Drivers_158)" explainText="$(string.String_Explain_When_this_setting_159)" key="SOFTWARE\Policies\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\UpdateFilter\UpdateType" valueName="IsDriverSelected" >
 			<parentCategory ref="Cat_Update_Types_11" />
 			<supportedOn ref="SupportedOn_1" />
@@ -936,6 +937,52 @@
 
         </policy>
 		
+		<policy name="Policy_LocalBlockedSWB_List"
+				class="Machine"
+				displayName="$(string.String_Policy_LocalBlockedSWB_List)"
+				explainText="$(string.String_Policy_LocalBlockedSWB_List_Help)"
+				key="SOFTWARE\Policies\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\General"
+				presentation="$(presentation.Policy_LocalBlockedSWB_List)">
 
+			<parentCategory ref="DellCommandUpdate" />
+			<supportedOn ref="SupportedOn_1" />
+			
+			<elements>
+				<multiText id="Policy_MultiTextBox_Element_Configure_LocalBlockedSWB_List" key="SOFTWARE\Policies\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\General" valueName="LocalBlockedSWB" required="true" />
+			</elements>
+		</policy>
+		
+		<!--Bandwidth Throttle -->
+		<policy name="String_Policy_Bandwidth_Throttle" 
+		        class="Machine" 
+				displayName="$(string.String_Policy_Bandwidth_Throttle)" 
+				explainText="$(string.String_Policy_Bandwidth_Throttle_Help)" 
+				key="SOFTWARE\Policies\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\Schedule" 
+				presentation="$(presentation.Policy_Configure_Bandwidth_maximum_limit_placeholder)" >
+				
+				<parentCategory ref="Cat_Update_Settings_9" />
+				<supportedOn ref="SupportedOn_1" />
+				
+				<enabledList >
+					<item key="SOFTWARE\Policies\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\Schedule" valueName="ThrottleEnabled" >
+						<value >
+							<decimal value="1" />
+						</value>
+					</item>
+				</enabledList>
+	
+				<disabledList >
+					<item key="SOFTWARE\Policies\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\Schedule" valueName="ThrottleEnabled" >
+						<value >
+							<decimal value="0" />
+						</value>
+					</item>
+				</disabledList>
+				
+				<elements >
+					<decimal id="Maximum_Speed_Limit" valueName="ThrottleLimit" minValue="1" maxValue="999" required="true" />
+				</elements>
+		</policy>
+			
 	</policies>
 </policyDefinitions>
