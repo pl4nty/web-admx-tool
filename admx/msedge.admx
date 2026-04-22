@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 148.0.3967.8-->
+  <!--microsoft_edge version: 149.0.3984.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -4018,6 +4018,26 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.AllowBrowsingWithCopilot)" explainText="$(string.AllowBrowsingWithCopilot_Explain)" key="Software\Policies\Microsoft\Edge" name="AllowBrowsingWithCopilot" presentation="$(presentation.AllowBrowsingWithCopilot)" valueName="AllowBrowsingWithCopilot">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V148"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.AllowBrowsingWithCopilot)" explainText="$(string.AllowBrowsingWithCopilot_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="AllowBrowsingWithCopilot_recommended" presentation="$(presentation.AllowBrowsingWithCopilot)" valueName="AllowBrowsingWithCopilot">
+      <parentCategory ref="microsoft_edge_recommended"/>
+      <supportedOn ref="SUPPORTED_WIN7_V148"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.AllowDeletingBrowserHistory)" explainText="$(string.AllowDeletingBrowserHistory_Explain)" key="Software\Policies\Microsoft\Edge" name="AllowDeletingBrowserHistory" presentation="$(presentation.AllowDeletingBrowserHistory)" valueName="AllowDeletingBrowserHistory">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V77"/>
@@ -4651,6 +4671,20 @@
       <supportedOn ref="SUPPORTED_WIN7_V89"/>
       <elements>
         <text id="BrowsingDataLifetime" maxLength="1000000" valueName="BrowsingDataLifetime"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.BrowsingWithCopilotAllowList)" explainText="$(string.BrowsingWithCopilotAllowList_Explain)" key="Software\Policies\Microsoft\Edge" name="BrowsingWithCopilotAllowList" presentation="$(presentation.BrowsingWithCopilotAllowList)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V148"/>
+      <elements>
+        <list id="BrowsingWithCopilotAllowListDesc" key="Software\Policies\Microsoft\Edge\BrowsingWithCopilotAllowList" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.BrowsingWithCopilotBlockList)" explainText="$(string.BrowsingWithCopilotBlockList_Explain)" key="Software\Policies\Microsoft\Edge" name="BrowsingWithCopilotBlockList" presentation="$(presentation.BrowsingWithCopilotBlockList)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V148"/>
+      <elements>
+        <list id="BrowsingWithCopilotBlockListDesc" key="Software\Policies\Microsoft\Edge\BrowsingWithCopilotBlockList" valuePrefix=""/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.BuiltInAIAPIsEnabled)" explainText="$(string.BuiltInAIAPIsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="BuiltInAIAPIsEnabled" presentation="$(presentation.BuiltInAIAPIsEnabled)" valueName="BuiltInAIAPIsEnabled">
@@ -7125,7 +7159,7 @@
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V77"/>
       <elements>
-        <decimal id="MaxConnectionsPerProxy" maxValue="2000000000" minValue="0" valueName="MaxConnectionsPerProxy"/>
+        <decimal id="MaxConnectionsPerProxy" maxValue="256" minValue="6" valueName="MaxConnectionsPerProxy"/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.MaxConnectionsPerProxyForWebSocket)" explainText="$(string.MaxConnectionsPerProxyForWebSocket_Explain)" key="Software\Policies\Microsoft\Edge" name="MaxConnectionsPerProxyForWebSocket" presentation="$(presentation.MaxConnectionsPerProxyForWebSocket)">
