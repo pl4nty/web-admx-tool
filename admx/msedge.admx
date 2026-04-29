@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 149.0.3984.0-->
+  <!--microsoft_edge version: 149.0.3993.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -29,6 +29,7 @@
       <definition displayName="$(string.SUPPORTED_WIN7_V146)" name="SUPPORTED_WIN7_V146"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V147)" name="SUPPORTED_WIN7_V147"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V148)" name="SUPPORTED_WIN7_V148"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V149)" name="SUPPORTED_WIN7_V149"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V77)" name="SUPPORTED_WIN7_V77"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V78)" name="SUPPORTED_WIN7_V78"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V79)" name="SUPPORTED_WIN7_V79"/>
@@ -797,7 +798,7 @@
     </policy>
     <policy class="Both" displayName="$(string.DefaultThirdPartyStoragePartitioningSetting)" explainText="$(string.DefaultThirdPartyStoragePartitioningSetting_Explain)" key="Software\Policies\Microsoft\Edge" name="DefaultThirdPartyStoragePartitioningSetting" presentation="$(presentation.DefaultThirdPartyStoragePartitioningSetting)">
       <parentCategory ref="ContentSettings"/>
-      <supportedOn ref="OBSOLETE_WIN7_V115_V145"/>
+      <supportedOn ref="SUPPORTED_WIN7_V115"/>
       <elements>
         <enum id="DefaultThirdPartyStoragePartitioningSetting" valueName="DefaultThirdPartyStoragePartitioningSetting">
           <item displayName="$(string.DefaultThirdPartyStoragePartitioningSetting_AllowPartitioning)">
@@ -5014,6 +5015,13 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.CpuPerformanceTierOverride)" explainText="$(string.CpuPerformanceTierOverride_Explain)" key="Software\Policies\Microsoft\Edge" name="CpuPerformanceTierOverride" presentation="$(presentation.CpuPerformanceTierOverride)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V149"/>
+      <elements>
+        <decimal id="CpuPerformanceTierOverride" maxValue="4" minValue="0" valueName="CpuPerformanceTierOverride"/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.CrossOriginWebAssemblyModuleSharingEnabled)" explainText="$(string.CrossOriginWebAssemblyModuleSharingEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="CrossOriginWebAssemblyModuleSharingEnabled" presentation="$(presentation.CrossOriginWebAssemblyModuleSharingEnabled)" valueName="CrossOriginWebAssemblyModuleSharingEnabled">
       <parentCategory ref="microsoft_edge"/>

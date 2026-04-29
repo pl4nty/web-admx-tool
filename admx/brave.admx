@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--brave version: 147.1.91.111-->
+  <!--brave version: 148.1.91.121-->
   <policyNamespaces>
     <target namespace="BraveSoftware.Policies.Brave" prefix="brave"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -4020,7 +4020,14 @@
       <parentCategory ref="brave"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <elements>
-        <decimal id="MaxConnectionsPerProxy" maxValue="2000000000" minValue="0" valueName="MaxConnectionsPerProxy"/>
+        <decimal id="MaxConnectionsPerProxy" maxValue="256" minValue="6" valueName="MaxConnectionsPerProxy"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.MaxConnectionsPerProxyForWebSocket)" explainText="$(string.MaxConnectionsPerProxyForWebSocket_Explain)" key="Software\Policies\BraveSoftware\Brave" name="MaxConnectionsPerProxyForWebSocket" presentation="$(presentation.MaxConnectionsPerProxyForWebSocket)">
+      <parentCategory ref="brave"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <decimal id="MaxConnectionsPerProxyForWebSocket" maxValue="256" minValue="6" valueName="MaxConnectionsPerProxyForWebSocket"/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.MaxInvalidationFetchDelay)" explainText="$(string.MaxInvalidationFetchDelay_Explain)" key="Software\Policies\BraveSoftware\Brave" name="MaxInvalidationFetchDelay" presentation="$(presentation.MaxInvalidationFetchDelay)">
@@ -4649,6 +4656,16 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.SharedWorkerBlobURLFixEnabled)" explainText="$(string.SharedWorkerBlobURLFixEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SharedWorkerBlobURLFixEnabled" presentation="$(presentation.SharedWorkerBlobURLFixEnabled)" valueName="SharedWorkerBlobURLFixEnabled">
+      <parentCategory ref="brave"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.SharedWorkerExtendedLifetimeEnabled)" explainText="$(string.SharedWorkerExtendedLifetimeEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SharedWorkerExtendedLifetimeEnabled" presentation="$(presentation.SharedWorkerExtendedLifetimeEnabled)" valueName="SharedWorkerExtendedLifetimeEnabled">
       <parentCategory ref="brave"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
@@ -5949,62 +5966,6 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
-    <policy class="Both" displayName="$(string.ChromeFrameContentTypes)" explainText="$(string.ChromeFrameContentTypes_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ChromeFrameContentTypes" presentation="$(presentation.ChromeFrameContentTypes)">
-      <parentCategory ref="RemovedPolicies"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <list id="ChromeFrameContentTypesDesc" key="Software\Policies\BraveSoftware\Brave\ChromeFrameContentTypes" valuePrefix=""/>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.AdditionalLaunchParameters)" explainText="$(string.AdditionalLaunchParameters_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AdditionalLaunchParameters" presentation="$(presentation.AdditionalLaunchParameters)">
-      <parentCategory ref="RemovedPolicies"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <text id="AdditionalLaunchParameters" maxLength="1000000" valueName="AdditionalLaunchParameters"/>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.ChromeFrameRendererSettings)" explainText="$(string.ChromeFrameRendererSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ChromeFrameRendererSettings" presentation="$(presentation.ChromeFrameRendererSettings)">
-      <parentCategory ref="RemovedPolicies"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <enum id="ChromeFrameRendererSettings" valueName="ChromeFrameRendererSettings">
-          <item displayName="$(string.ChromeFrameRendererSettings_RenderInHost)">
-            <value>
-              <decimal value="0"/>
-            </value>
-          </item>
-          <item displayName="$(string.ChromeFrameRendererSettings_RenderInChromeFrame)">
-            <value>
-              <decimal value="1"/>
-            </value>
-          </item>
-        </enum>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.RenderInChromeFrameList)" explainText="$(string.RenderInChromeFrameList_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RenderInChromeFrameList" presentation="$(presentation.RenderInChromeFrameList)">
-      <parentCategory ref="RemovedPolicies"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <list id="RenderInChromeFrameListDesc" key="Software\Policies\BraveSoftware\Brave\RenderInChromeFrameList" valuePrefix=""/>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.RenderInHostList)" explainText="$(string.RenderInHostList_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RenderInHostList" presentation="$(presentation.RenderInHostList)">
-      <parentCategory ref="RemovedPolicies"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <list id="RenderInHostListDesc" key="Software\Policies\BraveSoftware\Brave\RenderInHostList" valuePrefix=""/>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.SkipMetadataCheck)" explainText="$(string.SkipMetadataCheck_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SkipMetadataCheck" presentation="$(presentation.SkipMetadataCheck)" valueName="SkipMetadataCheck">
-      <parentCategory ref="RemovedPolicies"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
     <policy class="Both" displayName="$(string.DefaultFileHandlingGuardSetting)" explainText="$(string.DefaultFileHandlingGuardSetting_Explain)" key="Software\Policies\BraveSoftware\Brave" name="DefaultFileHandlingGuardSetting" presentation="$(presentation.DefaultFileHandlingGuardSetting)">
       <parentCategory ref="RemovedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -6749,13 +6710,6 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
-    <policy class="Both" displayName="$(string.GCFUserDataDir)" explainText="$(string.GCFUserDataDir_Explain)" key="Software\Policies\BraveSoftware\Brave" name="GCFUserDataDir" presentation="$(presentation.GCFUserDataDir)">
-      <parentCategory ref="RemovedPolicies"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <text id="GCFUserDataDir" maxLength="1000000" valueName="GCFUserDataDir"/>
-      </elements>
-    </policy>
     <policy class="Both" displayName="$(string.HideWebStorePromo)" explainText="$(string.HideWebStorePromo_Explain)" key="Software\Policies\BraveSoftware\Brave" name="HideWebStorePromo" presentation="$(presentation.HideWebStorePromo)" valueName="HideWebStorePromo">
       <parentCategory ref="RemovedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -7151,16 +7105,6 @@
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.StricterMixedContentTreatmentEnabled)" explainText="$(string.StricterMixedContentTreatmentEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="StricterMixedContentTreatmentEnabled" presentation="$(presentation.StricterMixedContentTreatmentEnabled)" valueName="StricterMixedContentTreatmentEnabled">
-      <parentCategory ref="RemovedPolicies"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.SuppressChromeFrameTurndownPrompt)" explainText="$(string.SuppressChromeFrameTurndownPrompt_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SuppressChromeFrameTurndownPrompt" presentation="$(presentation.SuppressChromeFrameTurndownPrompt)" valueName="SuppressChromeFrameTurndownPrompt">
       <parentCategory ref="RemovedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
