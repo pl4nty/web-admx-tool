@@ -14,6 +14,7 @@
 			<definition name="Supported_1_112" displayName="$(string.Supported_1_112)" />
 			<definition name="Supported_1_113" displayName="$(string.Supported_1_113)" />
 			<definition name="Supported_1_116" displayName="$(string.Supported_1_116)" />
+			<definition name="Supported_1_118" displayName="$(string.Supported_1_118)" />
 			<definition name="Supported_1_67" displayName="$(string.Supported_1_67)" />
 			<definition name="Supported_1_96" displayName="$(string.Supported_1_96)" />
 			<definition name="Supported_1_99" displayName="$(string.Supported_1_99)" />
@@ -76,6 +77,13 @@
 		<boolean id="ChatAgentNetworkFilter" valueName="ChatAgentNetworkFilter">
 			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
 		</boolean>
+			</elements>
+		</policy>
+		<policy name="ChatApprovedAccountOrganizations" class="Both" displayName="$(string.ChatApprovedAccountOrganizations)" explainText="$(string.ChatApprovedAccountOrganizations_chat_approvedAccountOrganizations_policy_description)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatApprovedAccountOrganizations)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_118" />
+			<elements>
+		<multiText id="ChatApprovedAccountOrganizations" valueName="ChatApprovedAccountOrganizations" required="true" />
 			</elements>
 		</policy>
 		<policy name="ChatHooks" class="Both" displayName="$(string.ChatHooks)" explainText="$(string.ChatHooks_chat_useHooks_description)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatHooks)">
