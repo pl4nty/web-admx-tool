@@ -194,7 +194,7 @@ If you disable or do not configure this setting, the sync app will look first in
       <string id="PrioritizeSPO">SharePoint Online</string>
       <string id="PrioritizeSharePointOnPrem">SharePoint Server 2019</string>
 
-      <string id="SharePointOnPremOIDC">Enables OpenID Connect (OIDC) authentication for syncing content from an on-prem SharePoint Server using the OneDrive sync app</string>
+      <string id="SharePointOnPremOIDC">Enable OpenID Connect (OIDC) authentication for syncing content from an on-prem SharePoint Server using the OneDrive sync app</string>
       <string id="SharePointOnPremOIDC_help">When enabled, this setting allows the OneDrive sync app (OneDrive.exe) to authenticate requests to an on-premises SharePoint Server using OIDC authentication, if supported by the server. To use this setting, you must also enable "Specify SharePoint Server URL and organization name". This setting affects only OneDrive for Business sync functionality. It does not impact syncing team sites in SharePoint Online.
 
 If you enable this setting, you can select one of two options:
@@ -298,7 +298,7 @@ If you disable or do not configure this setting, syncing will pause automaticall
 
 If you enable this setting, syncing will continue when devices are on a metered network. OneDrive will not automatically pause syncing.
 
-If you disable or do not configure this setting, syncing will pause automatically when a metered network is detected and a notification will be displayed. Users can choose not to pause syncing by clicking "Sync Anyway" in the notification. When syncing is paused, uers can resume syncing by clicking the OneDrive cloud icon in the notification area of the taskbar and then clicking the alert at the top of the activity center.</string>
+If you disable or do not configure this setting, syncing will pause automatically when a metered network is detected and a notification will be displayed. Users can choose not to pause syncing by clicking "Sync Anyway" in the notification. When syncing is paused, users can resume syncing by clicking the OneDrive cloud icon in the notification area of the taskbar and then clicking the alert at the top of the activity center.</string>
 
       <!-- Local Mass Delete Threshold -->
       <string id="LocalMassDeleteFileDeleteThreshold">Prompt users when they delete multiple OneDrive files on their local computer</string>
@@ -399,7 +399,7 @@ If you enable this setting, the OneDrive sync app will report device and health 
 If you disable or do not configure this setting, OneDrive sync app device and health data will not appear in the OneDrive sync health dashboard.</string>
 
       <!-- Disable Get Feedback -->
-      <string id="EnableFeedbackAndSupport"> Allow users to contact Microsoft for feedback and support</string>
+      <string id="EnableFeedbackAndSupport">Allow users to contact Microsoft for feedback and support</string>
       <string id="EnableFeedbackAndSupport_help">This setting specifies whether users in your organization can communicate directly with Microsoft through user experiences in the sync app. Letting users share their thoughts helps us improve OneDrive.
 
 If you enable or do not configure this setting, users can use the experiences in the OneDrive sync app to contact Microsoft directly for feedback and support.
@@ -431,7 +431,7 @@ If you disable this setting, users will be unable to contact Microsoft for suppo
       </string>
 
       <!-- Disable auto configuration -->
-      <string id="DisableAutoConfig">Disable silently sign in users to the OneDrive sync app with an existing credential that is made available to Microsoft applications</string>
+      <string id="DisableAutoConfig">Prevent the sync app from automatically signing in users with existing credentials</string>
       <string id="DisableAutoConfig_help">This setting determines whether or not the Sync client can automatically sign in.
 
 If admins enable this setting (value 1), it prevents Sync from automatically signing with an existing AAD credential that is made available to Microsoft applications.
@@ -440,14 +440,14 @@ If admins disable (value 0) or do not configure this setting, Sync will automati
       </string>
 
       <!-- Disable New Account Detection -->
-      <string id="DisableNewAccountDetection">Disable a toast and activity center message to encourage a user to sign in OneDrive using an existing credential that is made available to Microsoft applications</string>
+      <string id="DisableNewAccountDetection">Hide toast and activity center notifications that prompt users to sign in to the OneDrive sync app with existing credentials</string>
       <string id="DisableNewAccountDetection_help">If admins enable this setting (value 1), the user won't see the toast and the activity center message about new accounts that can be used to sign-in with OneDrive.
 
 If admins disable (value 0) or do not configure this setting, the user will see the toast and the activity center message when OneDrive detects a new account on the device.
       </string>
         
       <!-- Enable Added Folder Hard-delete On Unmount -->
-      <string id="AddedFolderHardDeleteOnUnmount">Hard-deletes the contents of an added folder when unmounted</string>
+      <string id="AddedFolderHardDeleteOnUnmount">Hard-delete the contents of an added folder when unmounted</string>
       <string id="AddedFolderHardDeleteOnUnmount_help">This setting determines the behavior of the Sync client when encounters a request to unmount an added folder.
 
 If admins enable this setting (value 1), when an unmount of an Added Folder is received, the Sync client will hard-delete all the contents of the folder.
@@ -456,7 +456,7 @@ If admins disable (value 0) or do not configure this setting, Sync will by defau
       </string>
 
       <!-- Enable Added Folder Hard-delete On Permissions Loss -->
-      <string id="AddedFolderUnmountOnPermissionsLoss">Hard-deletes contents of an added folder when user loses permissions to the folder</string>
+      <string id="AddedFolderUnmountOnPermissionsLoss">Hard-delete the contents of an added folder when user loses permissions to the folder</string>
       <string id="AddedFolderUnmountOnPermissionsLoss_help">This setting determines the behavior of the Sync client when the user loses  permissions to an added folder.
 
 If admins enable this setting (value 1), when the Sync client detects that the user lost permissions to an Added Folder, the Sync client will hard-delete all the contents of the folder and the folder itself.
@@ -465,7 +465,7 @@ If admins disable (value 0) or do not configure this setting, Sync will by defau
       </string>
 
       <!-- Confirm shared file deletion prompt -->
-      <string id="SharedContentDeleteConfirmation">Prompt user to confirm when they delete shared content</string>
+      <string id="SharedContentDeleteConfirmation">Prompt users to confirm when they delete shared content</string>
       <string id="SharedContentDeleteConfirmation_help">When local synced files are deleted, which multiple users have access, a dialog appears informing the user that other users will no longer have access to that content, and asking them to confirm the action before OneDrive propagates deletes online. After confirming, deletes of other shared content for a short period of time do not cause additional confirmations. Other content continues to sync.
 
 Enable this setting to prevent users from hiding the confirmation dialog. Each time the user deletes shared content, their confirmation is required before the item is deleted for everyone online.
