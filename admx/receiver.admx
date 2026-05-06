@@ -2298,7 +2298,7 @@
             </value>
           </item>
         </enum>
-        <enum id="Part_Keyboard_Hotkey_Toggle_LOCALIME" valueName="HotKey14Shift">
+        <enum id="Part_Keyboard_Hotkey_Toggle_RelativeMouse" valueName="HotKey14Shift">
           <item displayName="$(string.unknown_688)">
             <value>
               <string>(none)</string>
@@ -2320,116 +2320,7 @@
             </value>
           </item>
         </enum>
-        <enum id="Part_Keyboard_Hotkey_Toggle_LOCALIME_Plus" valueName="HotKey14Char">
-          <item displayName="$(string.unknown_696)">
-            <value>
-              <string>(none)</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_698)">
-            <value>
-              <string>F1</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_700)">
-            <value>
-              <string>F10</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_702)">
-            <value>
-              <string>F11</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_704)">
-            <value>
-              <string>F12</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_706)">
-            <value>
-              <string>F2</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_708)">
-            <value>
-              <string>F3</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_710)">
-            <value>
-              <string>F4</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_712)">
-            <value>
-              <string>F5</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_714)">
-            <value>
-              <string>F6</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_716)">
-            <value>
-              <string>F7</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_718)">
-            <value>
-              <string>F8</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_720)">
-            <value>
-              <string>F9</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_722)">
-            <value>
-              <string>minus</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_724)">
-            <value>
-              <string>plus</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_726)">
-            <value>
-              <string>star</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_728)">
-            <value>
-              <string>tab</string>
-            </value>
-          </item>
-        </enum>
-        <enum id="Part_Keyboard_Hotkey_Toggle_RelativeMouse" valueName="HotKey15Shift">
-          <item displayName="$(string.unknown_688)">
-            <value>
-              <string>(none)</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_690)">
-            <value>
-              <string>Alt</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_692)">
-            <value>
-              <string>Ctrl</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_694)">
-            <value>
-              <string>Shift</string>
-            </value>
-          </item>
-        </enum>
-        <enum id="Part_Keyboard_Hotkey_Toggle_RelativeMouse_Plus" valueName="HotKey15Char">
+        <enum id="Part_Keyboard_Hotkey_Toggle_RelativeMouse_Plus" valueName="HotKey14Char">
           <item displayName="$(string.unknown_696)">
             <value>
               <string>(none)</string>
@@ -2752,16 +2643,6 @@
           </falseValue>
         </boolean>
       </elements>
-    </policy>
-    <policy name="Policy_LegacyDesktopViewer_Machine" class="Machine" displayName="$(string.Policy_LegacyDesktopViewer)" explainText="$(string.Explain_LegacyDesktopViewer)" presentation="$(presentation.Policy_LegacyDesktopViewer)" key="Software\Policies\Citrix\ICA Client\DesktopViewer" valueName="LegacyDesktopViewerEnabled">
-      <parentCategory ref="ClientEngine" />
-      <supportedOn ref="SUPPORTED_Platform" />
-      <enabledValue>
-        <string>True</string>
-      </enabledValue>
-      <disabledValue>
-        <string>False</string>
-      </disabledValue>
     </policy>
     <policy name="Policy_DesktopViewerToolbarOptions_Machine" class="Machine" displayName="$(string.Policy_DesktopViewerToolbarOptions)" explainText="$(string.Explain_DesktopViewerToolbarOptions)" presentation="$(presentation.Policy_DesktopViewerToolbarOptions)" key="Software\Policies\Citrix\ICA Client\Toolbar">
       <parentCategory ref="ClientEngine" />
@@ -3101,16 +2982,6 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
-    <policy name="Policy_HideSupportInfo" class="Machine" displayName="$(string.Policy_HideSupportInfo)" explainText="$(string.Explain_HideConfigChecker)" presentation="$(presentation.Policy_HideAdvancePreferencesOptions)" key="Software\Policies\Citrix" valueName="HideSupportInfo">
-      <parentCategory ref="AdvancePreferencesOptions" />
-      <supportedOn ref="SUPPORTED_NotSpecified" />
-      <enabledValue>
-        <decimal value="1" />
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0" />
-      </disabledValue>
-    </policy>
 	
     <policy name="Policy_HideDeletePassword" class="Machine" displayName="$(string.Policy_HideDeletePassword)" explainText="$(string.Explain_HideDeletePassword)" presentation="$(presentation.Policy_HideAdvancePreferencesOptions)" key="Software\Policies\Citrix" valueName="HideDeletePassword">
       <parentCategory ref="AdvancePreferencesOptions" />
@@ -3189,28 +3060,6 @@
 	
     <policy name="Policy_HideSendFeedback" class="Machine" displayName="$(string.Policy_HideSendFeedback)" explainText="$(string.Explain_HideSendFeedback)" presentation="$(presentation.Policy_HideTroubleshootingOptions)" key="Software\Policies\Citrix" valueName="HideSendFeedback">
       <parentCategory ref="TroubleShootingOptions" />
-      <supportedOn ref="SUPPORTED_NotSpecified" />
-      <enabledValue>
-        <decimal value="1" />
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0" />
-      </disabledValue>
-    </policy>
-	
-    <policy name="Policy_HideCitrixFiles" class="Machine" displayName="$(string.Policy_HideCitrixFiles)" explainText="$(string.Explain_HideCitrixFiles)" presentation="$(presentation.Policy_HideAdvancePreferencesOptions)" key="Software\Policies\Citrix" valueName="HideCitrixFiles">
-      <parentCategory ref="AdvancePreferencesOptions" />
-      <supportedOn ref="SUPPORTED_NotSpecified" />
-      <enabledValue>
-        <decimal value="1" />
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0" />
-      </disabledValue>
-    </policy>
-	
-    <policy name="Policy_HideCitrixCasting" class="Machine" displayName="$(string.Policy_HideCitrixCasting)" explainText="$(string.Explain_HideCitrixCasting)" presentation="$(presentation.Policy_HideAdvancePreferencesOptions)" key="Software\Policies\Citrix" valueName="HideCitrixCasting">
-      <parentCategory ref="AdvancePreferencesOptions" />
       <supportedOn ref="SUPPORTED_NotSpecified" />
       <enabledValue>
         <decimal value="1" />
@@ -5658,115 +5507,6 @@
             </value>
           </item>
         </enum>
-        <enum id="Part_Keyboard_Hotkey_Toggle_LOCALIME" valueName="HotKey14Shift">
-          <item displayName="$(string.unknown_1217)">
-            <value>
-              <string>(none)</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_1219)">
-            <value>
-              <string>Shift</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_1221)">
-            <value>
-              <string>Ctrl</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_1223)">
-            <value>
-              <string>Alt</string>
-            </value>
-          </item>
-        </enum>
-        <enum id="Part_Keyboard_Hotkey_Toggle_LOCALIME_Plus" valueName="HotKey14Char">
-          <item displayName="$(string.unknown_1225)">
-            <value>
-              <string>(none)</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_1227)">
-            <value>
-              <string>tab</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_1229)">
-            <value>
-              <string>star</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_1231)">
-            <value>
-              <string>plus</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_1233)">
-            <value>
-              <string>minus</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_1235)">
-            <value>
-              <string>F1</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_1237)">
-            <value>
-              <string>F2</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_1239)">
-            <value>
-              <string>F3</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_1241)">
-            <value>
-              <string>F4</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_1243)">
-            <value>
-              <string>F5</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_1245)">
-            <value>
-              <string>F6</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_1247)">
-            <value>
-              <string>F7</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_1249)">
-            <value>
-              <string>F8</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_1251)">
-            <value>
-              <string>F9</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_1253)">
-            <value>
-              <string>F10</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_1255)">
-            <value>
-              <string>F11</string>
-            </value>
-          </item>
-          <item displayName="$(string.unknown_1257)">
-            <value>
-              <string>F12</string>
-            </value>
-          </item>
-        </enum>
         <enum id="Part_Keyboard_Hotkey_Toggle_RelativeMouse" valueName="HotKey15Shift">
           <item displayName="$(string.unknown_1217)">
             <value>
@@ -6119,16 +5859,6 @@
           </falseValue>
         </boolean>
       </elements>
-    </policy>
-    <policy name="Policy_LegacyDesktopViewer_User" class="User" displayName="$(string.Policy_LegacyDesktopViewer)" explainText="$(string.Explain_LegacyDesktopViewer)" presentation="$(presentation.Policy_LegacyDesktopViewer)" key="Software\Policies\Citrix\ICA Client\DesktopViewer" valueName="LegacyDesktopViewerEnabled">
-      <parentCategory ref="ClientEngine" />
-      <supportedOn ref="SUPPORTED_Platform" />
-      <enabledValue>
-        <string>True</string>
-      </enabledValue>
-      <disabledValue>
-        <string>False</string>
-      </disabledValue>
     </policy>
     <policy name="Policy_DesktopViewerToolbarOptions_User" class="User" displayName="$(string.Policy_DesktopViewerToolbarOptions)" explainText="$(string.Explain_DesktopViewerToolbarOptions)" presentation="$(presentation.Policy_DesktopViewerToolbarOptions)" key="Software\Policies\Citrix\ICA Client\Toolbar">
       <parentCategory ref="ClientEngine" />

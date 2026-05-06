@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <policyDefinitionResources revision="1.0" schemaVersion="1.0">
   <displayName></displayName>
   <description></description>
@@ -659,8 +659,8 @@ Enable Citrix Workspace Update Policy:
 LTSR ONLY: 
 	True = Only LTSR updates will be available.
 	
-Migrate 32-bit application to system processor architecture (64-bit or ARM64):
-	When checked, the auto-updates upgrade Citrix Workspace from 32-bit to match the system processor architecture (64-bit or ARM64). By default, updates keep the current architecture.
+Migrate 32-bit application to a native 64-bit version on 64-bit operating systems:
+	When checked, the auto-updates upgrade Citrix Workspace from 32-bit to 64-bit application to ensure compatibility and optimal performance on 64-bit systems. By default, updates keep the current architecture.
 
 	  </string>
 	  <string id="AutoUpdate">Auto</string>
@@ -1187,8 +1187,6 @@ When Access Remote session in full screen only is selected, the key combination 
       <string id="Part_Keyboard_Hotkey_Ctrl_Shift_Esc_Plus">                      +</string>
       <string id="Part_Keyboard_Hotkey_Toggle_Latency_Reduction">Latency Reduction:</string>
       <string id="Part_Keyboard_Hotkey_Toggle_Latency_Reduction_Plus">                             +</string>
-	  <string id="Part_Keyboard_Hotkey_Toggle_LOCALIME">Generic IME Mode:</string>
-      <string id="Part_Keyboard_Hotkey_Toggle_LOCALIME_Plus">                             +</string>
       <string id="Part_Keyboard_Hotkey_Toggle_RelativeMouse">Relative Mouse:</string>
       <string id="Part_Keyboard_Hotkey_Toggle_RelativeMouse_Plus">                       +</string>
       <string id="Policy_PublishedApplications">Remote applications</string>
@@ -1223,8 +1221,6 @@ Session sharing is controlled by the SessionSharingKey that prevents application
       <string id="Policy_AllowLegacySessionSharing">Allow Legacy Session Sharing</string>
       <string id="Explain_AllowLegacySessionSharing">Allow session sharing for Program Neighborhood sessions</string>
       <string id="Part_AllowLegacySessionSharing_SessionSharing">AllowLegacySessionSharing</string>
-      <string id="Policy_LegacyDesktopViewer">Enable Legacy Desktop Viewer</string>
-      <string id="Explain_LegacyDesktopViewer">This policy controls whether to use the legacy Desktop Viewer.</string>
       <string id="Policy_DesktopViewerToolbarOptions">Desktop Viewer Toolbar Options</string>
       <string id="Explain_DesktopViewerToolbarOptions">This policy controls which toolbar options to show in Desktop Viewer.</string>
       <string id="Policy_ManageCsiNotifications_DisplayName">Manage Connection Strength Indicator Notifications</string>
@@ -1255,7 +1251,6 @@ When disabled, they will not receive these notifications.</string>
 	  
 	  <string id="Policy_HideSettings">Hide Settings</string>
 	  <string id="Policy_HideConfigChecker">Hide Configuration Checker</string>
-	  <string id="Policy_HideSupportInfo">Hide Support Info</string>
 	  <string id="Policy_HideDeletePassword">Hide Delete Saved Passwords</string>
 	  <string id="Policy_HideDataCollection">Hide Data Collection</string>
 	  <string id="Policy_HideLocalKeyboardLayoutSetting">Hide Local Keyboard Layout Setting</string>
@@ -1264,8 +1259,6 @@ When disabled, they will not receive these notifications.</string>
 	  <string id="Policy_HideAdvancedPreferences">Hide Advanced Preferences</string>
 	  <string id="Policy_HideTroubleshooting">Hide Troubleshooting</string>
 	  <string id="Policy_HideSendFeedback">Hide Send Feedback</string>
-	  <string id="Policy_HideCitrixFiles">Hide Citrix Files</string>
-	  <string id="Policy_HideCitrixCasting">Hide Citrix Casting</string>
 	  
 	  <string id="Policy_SmartcardRemovalAction_x86">Smartcard Removal Policy for x86 machine</string>
 	  <string id="Policy_SmartcardRemovalAction_AMD64">Smartcard Removal Policy for x64 machine</string>	  
@@ -1350,7 +1343,6 @@ Select Enabled to enable the default FTA.
 Select Disabled to disable the default FTA.
 When the 'Enable FTA' is disabled, setting this policy will take no effect. The policy will be treated as disabled.</string>
 	  <string id="Explain_HideConfigChecker">Use this to hide/unhide the Configuration Checker Dialog from Advanced Preferences</string>
-	  <string id="Explain_HideSupportInfo">Use this to hide/unhide the Support Info Dialog from Advanced Preferences</string>
 	  <string id="Explain_HideDeletePassword">Use this to hide/unhide the Delete Password Dialog from Advanced Preferences</string>
 	  <string id="Explain_HideDataCollection">Use this to hide/unhide the Data Collection Dialog from Advanced Preferences</string>
 	  <string id="Explain_HideLocalKeyboardLayoutSetting">Use this to hide/unhide the Local Keyboard Layout Setting Dialog from Advanced Preferences</string>
@@ -1359,8 +1351,6 @@ When the 'Enable FTA' is disabled, setting this policy will take no effect. The 
 	  <string id="Explain_HideTroubleshooting">Use this option to hide/unhide the Troubleshooting option from the Citrix Workspace app icon in the notification area</string>
 	  <string id="Explain_HideSendFeedback">Use this option to hide/unhide the Send Feedback option from Troubleshooting</string>
 	  <string id="Explain_HideDPIsettings">Use this to hide/unhide the DPI Settings from Advanced Preferences</string>
-	  <string id="Explain_HideCitrixFiles">Use this to hide/unhide the Citrix Files from Advanced Preferences</string>
-	  <string id="Explain_HideCitrixCasting">Use this to hide/unhide the Citrix Casting Dialog from Advanced Preferences</string>
 	  <string id="Explain_SmartCardRemovalAction_x86">Use this policy to control the behaviour for Smart Card Removal Action when User Authenticates to Citrix Web Interface 5.4 PNAgent Site with Smart Card through Windows Citrix Workspace app.
 This option enables the user to set the user session behaviour on removing the Smart Card from the client. 
 
@@ -1974,7 +1964,7 @@ Sample format to add vendor IDs and product IDs to the exclusion list:
 	  <presentation id="Policy_EnableAutoUpdatePolicy">
         <dropdownList refId="Part_EnableAutoUpdatePolicy" defaultItem="0">Enable Citrix Workspace Update Policy</dropdownList>
         <checkBox refId="Part_EnableAutoUpdatePolicy_version" defaultChecked="false">LTSR ONLY</checkBox>
-	    <checkBox refId="Part_EnableAutoUpdatePolicy_switchArchitecture" defaultChecked="false">Migrate 32-bit application to system processor architecture (64-bit or ARM64)</checkBox>
+	    <checkBox refId="Part_EnableAutoUpdatePolicy_switchArchitecture" defaultChecked="false">Migrate 32-bit application to a native 64-bit version on 64-bit operating systems</checkBox>
       </presentation>
 	  <presentation id="Policy_CheckAutoUpdatePolicy">
         <dropdownList refId="Part_CheckAutoUpdatePolicy" defaultItem="0">Delay Group</dropdownList>
@@ -2162,8 +2152,6 @@ Sample format to add vendor IDs and product IDs to the exclusion list:
         <dropdownList refId="Part_Keyboard_Hotkey_Ctrl_Alt_Plus" defaultItem="5">         +</dropdownList>
         <dropdownList refId="Part_Keyboard_Hotkey_Toggle_Latency_Reduction" defaultItem="2">Latency Reduction:</dropdownList>
         <dropdownList refId="Part_Keyboard_Hotkey_Toggle_Latency_Reduction_Plus" defaultItem="8">                             +</dropdownList>
-		<dropdownList refId="Part_Keyboard_Hotkey_Toggle_LOCALIME" defaultItem="3">Generic IME Mode:</dropdownList>
-        <dropdownList refId="Part_Keyboard_Hotkey_Toggle_LOCALIME_Plus" defaultItem="7">                             +</dropdownList>
         <dropdownList refId="Part_Keyboard_Hotkey_Toggle_RelativeMouse" defaultItem="2">Relative Mouse:</dropdownList>
         <dropdownList refId="Part_Keyboard_Hotkey_Toggle_RelativeMouse_Plus" defaultItem="4">                       +</dropdownList>
       </presentation>
@@ -2484,8 +2472,6 @@ Sample format to add vendor IDs and product IDs to the exclusion list:
         <dropdownList refId="Part_Keyboard_Hotkey_Ctrl_Alt_Plus" defaultItem="6">         +</dropdownList>
         <dropdownList refId="Part_Keyboard_Hotkey_Toggle_Latency_Reduction" defaultItem="2">Latency Reduction:</dropdownList>
         <dropdownList refId="Part_Keyboard_Hotkey_Toggle_Latency_Reduction_Plus" defaultItem="9">                             +</dropdownList>
-		<dropdownList refId="Part_Keyboard_Hotkey_Toggle_LOCALIME" defaultItem="1">Generic IME Mode:</dropdownList>
-        <dropdownList refId="Part_Keyboard_Hotkey_Toggle_LOCALIME_Plus" defaultItem="8">                             +</dropdownList>
         <dropdownList refId="Part_Keyboard_Hotkey_Toggle_RelativeMouse" defaultItem="2">Relative Mouse:</dropdownList>
         <dropdownList refId="Part_Keyboard_Hotkey_Toggle_RelativeMouse_Plus" defaultItem="4">                       +</dropdownList>
       </presentation>
@@ -2515,7 +2501,6 @@ Sample format to add vendor IDs and product IDs to the exclusion list:
       <presentation id="Policy_AllowLegacySessionSharing">
         <checkBox refId="Part_AllowLegacySessionSharing_SessionSharing" defaultChecked="true">AllowLegacySessionSharing</checkBox>
       </presentation>
-      <presentation id="Policy_LegacyDesktopViewer"/>
       <presentation id="Policy_DesktopViewerToolbarOptions">
         <checkBox refId="Part_DesktopViewerToolbarOptions_Usb" defaultChecked="true">USB Devices</checkBox>
         <checkBox refId="Part_DesktopViewerToolbarOptions_Connection" defaultChecked="true">Connection Strength Indicator</checkBox>

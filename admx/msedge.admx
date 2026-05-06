@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 149.0.3993.0-->
+  <!--microsoft_edge version: 149.0.4009.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -737,6 +737,24 @@
         </enum>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.DefaultLocalFontsSetting)" explainText="$(string.DefaultLocalFontsSetting_Explain)" key="Software\Policies\Microsoft\Edge" name="DefaultLocalFontsSetting" presentation="$(presentation.DefaultLocalFontsSetting)">
+      <parentCategory ref="ContentSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7_V149"/>
+      <elements>
+        <enum id="DefaultLocalFontsSetting" valueName="DefaultLocalFontsSetting">
+          <item displayName="$(string.DefaultLocalFontsSetting_BlockLocalFonts)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+          <item displayName="$(string.DefaultLocalFontsSetting_AskLocalFonts)">
+            <value>
+              <decimal value="3"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.DefaultNotificationsSetting)" explainText="$(string.DefaultNotificationsSetting_Explain)" key="Software\Policies\Microsoft\Edge" name="DefaultNotificationsSetting" presentation="$(presentation.DefaultNotificationsSetting)">
       <parentCategory ref="ContentSettings"/>
       <supportedOn ref="SUPPORTED_WIN7_V77"/>
@@ -1038,6 +1056,20 @@
       <supportedOn ref="OBSOLETE_WIN7_V80_V132"/>
       <elements>
         <list id="LegacySameSiteCookieBehaviorEnabledForDomainListDesc" key="Software\Policies\Microsoft\Edge\LegacySameSiteCookieBehaviorEnabledForDomainList" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalFontsAllowedForUrls)" explainText="$(string.LocalFontsAllowedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalFontsAllowedForUrls" presentation="$(presentation.LocalFontsAllowedForUrls)">
+      <parentCategory ref="ContentSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7_V149"/>
+      <elements>
+        <list id="LocalFontsAllowedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LocalFontsAllowedForUrls" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalFontsBlockedForUrls)" explainText="$(string.LocalFontsBlockedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalFontsBlockedForUrls" presentation="$(presentation.LocalFontsBlockedForUrls)">
+      <parentCategory ref="ContentSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7_V149"/>
+      <elements>
+        <list id="LocalFontsBlockedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LocalFontsBlockedForUrls" valuePrefix=""/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.NotificationsAllowedForUrls)" explainText="$(string.NotificationsAllowedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="NotificationsAllowedForUrls" presentation="$(presentation.NotificationsAllowedForUrls)">
@@ -6064,6 +6096,13 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.ForceForegroundPriorityForOrigins)" explainText="$(string.ForceForegroundPriorityForOrigins_Explain)" key="Software\Policies\Microsoft\Edge" name="ForceForegroundPriorityForOrigins" presentation="$(presentation.ForceForegroundPriorityForOrigins)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V149"/>
+      <elements>
+        <list id="ForceForegroundPriorityForOriginsDesc" key="Software\Policies\Microsoft\Edge\ForceForegroundPriorityForOrigins" valuePrefix=""/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.ForceGoogleSafeSearch)" explainText="$(string.ForceGoogleSafeSearch_Explain)" key="Software\Policies\Microsoft\Edge" name="ForceGoogleSafeSearch" presentation="$(presentation.ForceGoogleSafeSearch)" valueName="ForceGoogleSafeSearch">
       <parentCategory ref="microsoft_edge"/>
