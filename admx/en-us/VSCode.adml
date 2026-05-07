@@ -14,6 +14,7 @@
 			<string id="Supported_1_113">Visual Studio Code &gt;= 1.113</string>
 			<string id="Supported_1_116">Visual Studio Code &gt;= 1.116</string>
 			<string id="Supported_1_118">Visual Studio Code &gt;= 1.118</string>
+			<string id="Supported_1_119">Visual Studio Code &gt;= 1.119</string>
 			<string id="Supported_1_67">Visual Studio Code &gt;= 1.67</string>
 			<string id="Supported_1_96">Visual Studio Code &gt;= 1.96</string>
 			<string id="Supported_1_99">Visual Studio Code &gt;= 1.99</string>
@@ -25,9 +26,9 @@
 			<string id="BrowserChatTools">BrowserChatTools</string>
 			<string id="BrowserChatTools_browser_enableChatTools">When enabled, chat agents can use browser tools to open and interact with pages in the Integrated Browser.</string>
 			<string id="ChatAgentAllowedNetworkDomains">ChatAgentAllowedNetworkDomains</string>
-			<string id="ChatAgentAllowedNetworkDomains_chat_agent_allowedNetworkDomains">Allowed domains for network access by agent tools (fetch tool, integrated browser). Applies when `#chat.agent.networkFilter#` or `#chat.agent.sandbox.enabled#` is enabled. When `#chat.agent.sandbox.enabled#` is enabled, this also configures terminal sandbox networking. Supports wildcards like `*.example.com`. When both allowed and denied lists are empty, all domains are blocked. Denied domains (see `#chat.agent.deniedNetworkDomains#`) take precedence.</string>
+			<string id="ChatAgentAllowedNetworkDomains_chat_agent_allowedNetworkDomains">Allowed domains for network access by agent tools (fetch tool, integrated browser). Applies when `#chat.agent.networkFilter#` or `#chat.agent.sandbox.enabled#` is enabled. When `#chat.agent.sandbox.enabled#` is set to `allowNetwork`, all domains are allowed. Supports wildcards like `*.example.com`. When both allowed and denied lists are empty, all domains are blocked. Denied domains (see `#chat.agent.deniedNetworkDomains#`) take precedence.</string>
 			<string id="ChatAgentDeniedNetworkDomains">ChatAgentDeniedNetworkDomains</string>
-			<string id="ChatAgentDeniedNetworkDomains_chat_agent_deniedNetworkDomains">Denied domains for network access by agent tools (fetch tool, integrated browser). Applies when `#chat.agent.networkFilter#` or `#chat.agent.sandbox.enabled#` is enabled. When `#chat.agent.sandbox.enabled#` is enabled, this also configures terminal sandbox networking. Takes precedence over `#chat.agent.allowedNetworkDomains#`. Supports wildcards like `*.example.com`.</string>
+			<string id="ChatAgentDeniedNetworkDomains_chat_agent_deniedNetworkDomains">Denied domains for network access by agent tools (fetch tool, integrated browser). Applies when `#chat.agent.networkFilter#` or `#chat.agent.sandbox.enabled#` is enabled. This does not apply when `#chat.agent.sandbox.enabled#` is set to `allowNetwork`. Takes precedence over `#chat.agent.allowedNetworkDomains#`. Supports wildcards like `*.example.com`.</string>
 			<string id="ChatAgentExtensionTools">ChatAgentExtensionTools</string>
 			<string id="ChatAgentExtensionTools_chat_extensionToolsEnabled">Enable using tools contributed by third-party extensions.</string>
 			<string id="ChatAgentMode">ChatAgentMode</string>
@@ -61,6 +62,8 @@ Note: This setting only controls tool approval and does not prevent the agent fr
 			<string id="CopilotReviewAgent_github_copilot_chat_reviewAgent_enabled">Enables the code review agent.</string>
 			<string id="CopilotReviewSelection">CopilotReviewSelection</string>
 			<string id="CopilotReviewSelection_github_copilot_chat_reviewSelection_enabled">Enables code review on current selection.</string>
+			<string id="CopilotSessionSync">CopilotSessionSync</string>
+			<string id="CopilotSessionSync_chat_sessionSync_enabled_policy">Enable session sync to GitHub.com for cross-device Copilot session history. When disabled by organization policy, session data is kept local only.</string>
 			<string id="DeprecatedEditModeHidden">DeprecatedEditModeHidden</string>
 			<string id="DeprecatedEditModeHidden_chat_editMode_hidden">When enabled, hides the Edit mode from the chat mode picker.</string>
 			<string id="McpGalleryServiceUrl">McpGalleryServiceUrl</string>
@@ -73,6 +76,7 @@ Note: This setting only controls tool approval and does not prevent the agent fr
 			<string id="ChatAgentSandboxEnabled_agentSandbox_enabledSetting">Controls whether agent mode uses sandboxing to restrict what tools can do. When enabled, tools like the terminal are run in a sandboxed environment to limit access to the system.</string>
 			<string id="ChatAgentSandboxEnabled_agentSandbox_enabledSetting_offDescription">Disable sandboxing for agent mode tools.</string>
 			<string id="ChatAgentSandboxEnabled_agentSandbox_enabledSetting_onDescription">Enable sandboxing for agent mode tools.</string>
+			<string id="ChatAgentSandboxEnabled_agentSandbox_enabledSetting_allowNetworkDescription">Enable sandboxing for agent mode tools and allow all network domains.</string>
 			<string id="ChatToolsTerminalEnableAutoApprove">ChatToolsTerminalEnableAutoApprove</string>
 			<string id="ChatToolsTerminalEnableAutoApprove_autoApproveMode_description">Controls whether to allow auto approval in the run in terminal tool.</string>
 			<string id="EnableFeedback">EnableFeedback</string>
@@ -107,6 +111,7 @@ Note: This setting only controls tool approval and does not prevent the agent fr
 			<presentation id="CopilotNextEditSuggestions"><checkBox refId="CopilotNextEditSuggestions">CopilotNextEditSuggestions</checkBox></presentation>
 			<presentation id="CopilotReviewAgent"><checkBox refId="CopilotReviewAgent">CopilotReviewAgent</checkBox></presentation>
 			<presentation id="CopilotReviewSelection"><checkBox refId="CopilotReviewSelection">CopilotReviewSelection</checkBox></presentation>
+			<presentation id="CopilotSessionSync"><checkBox refId="CopilotSessionSync">CopilotSessionSync</checkBox></presentation>
 			<presentation id="DeprecatedEditModeHidden"><checkBox refId="DeprecatedEditModeHidden">DeprecatedEditModeHidden</checkBox></presentation>
 			<presentation id="McpGalleryServiceUrl"><textBox refId="McpGalleryServiceUrl"><label>McpGalleryServiceUrl:</label></textBox></presentation>
 			<presentation id="AllowedExtensions"><multiTextBox refId="AllowedExtensions" /></presentation>

@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--brave version: 148.1.92.16-->
+  <!--brave version: 148.1.92.29-->
   <policyNamespaces>
     <target namespace="BraveSoftware.Policies.Brave" prefix="brave"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -499,6 +499,16 @@
           </item>
         </enum>
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.EmailAliasesEnabled)" explainText="$(string.EmailAliasesEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="EmailAliasesEnabled" presentation="$(presentation.EmailAliasesEnabled)" valueName="EmailAliasesEnabled">
+      <parentCategory ref="BraveSoftware"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.TorDisabled)" explainText="$(string.TorDisabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="TorDisabled" presentation="$(presentation.TorDisabled)" valueName="TorDisabled">
       <parentCategory ref="BraveSoftware"/>

@@ -15,6 +15,7 @@
 			<definition name="Supported_1_113" displayName="$(string.Supported_1_113)" />
 			<definition name="Supported_1_116" displayName="$(string.Supported_1_116)" />
 			<definition name="Supported_1_118" displayName="$(string.Supported_1_118)" />
+			<definition name="Supported_1_119" displayName="$(string.Supported_1_119)" />
 			<definition name="Supported_1_67" displayName="$(string.Supported_1_67)" />
 			<definition name="Supported_1_96" displayName="$(string.Supported_1_96)" />
 			<definition name="Supported_1_99" displayName="$(string.Supported_1_99)" />
@@ -167,6 +168,15 @@
 		</boolean>
 			</elements>
 		</policy>
+		<policy name="CopilotSessionSync" class="Both" displayName="$(string.CopilotSessionSync)" explainText="$(string.CopilotSessionSync_chat_sessionSync_enabled_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.CopilotSessionSync)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_119" />
+			<elements>
+		<boolean id="CopilotSessionSync" valueName="CopilotSessionSync">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
 		<policy name="DeprecatedEditModeHidden" class="Both" displayName="$(string.DeprecatedEditModeHidden)" explainText="$(string.DeprecatedEditModeHidden_chat_editMode_hidden)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.DeprecatedEditModeHidden)">
 			<parentCategory ref="interactiveSessionConfigurationTitle" />
 			<supportedOn ref="Supported_1_112" />
@@ -204,6 +214,7 @@
 		<enum id="ChatAgentSandboxEnabled" valueName="ChatAgentSandboxEnabled">
 			<item displayName="$(string.ChatAgentSandboxEnabled_agentSandbox_enabledSetting_offDescription)"><value><string>off</string></value></item>
 			<item displayName="$(string.ChatAgentSandboxEnabled_agentSandbox_enabledSetting_onDescription)"><value><string>on</string></value></item>
+			<item displayName="$(string.ChatAgentSandboxEnabled_agentSandbox_enabledSetting_allowNetworkDescription)"><value><string>allowNetwork</string></value></item>
 		</enum>
 			</elements>
 		</policy>
