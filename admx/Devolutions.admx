@@ -453,6 +453,22 @@
 		</disabledValue>
     </policy>
     <policy 
+		name="POL_RDM_HIDECOPYYUBIKEY"
+		class="Both"
+		displayName="$(string.POL_RDM_HIDECOPYYUBIKEY)"
+		explainText="$(string.POL_RDM_HIDECOPYYUBIKEY_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="HideCopyYubiKey">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
 		name="POL_RDM_DISABLEADDON"
 		class="Both"
 		displayName="$(string.POL_RDM_DISABLEADDON)"
