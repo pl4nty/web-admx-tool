@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 149.0.4009.0-->
+  <!--microsoft_edge version: 149.0.4022.4-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -5007,6 +5007,16 @@
       <elements>
         <text id="ConfigureViewInFileExplorer" maxLength="1000000" valueName="ConfigureViewInFileExplorer"/>
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.CopilotAddressBarSuggestionsEnabled)" explainText="$(string.CopilotAddressBarSuggestionsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="CopilotAddressBarSuggestionsEnabled" presentation="$(presentation.CopilotAddressBarSuggestionsEnabled)" valueName="CopilotAddressBarSuggestionsEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V149"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.CopilotCDPPageContext)" explainText="$(string.CopilotCDPPageContext_Explain)" key="Software\Policies\Microsoft\Edge" name="CopilotCDPPageContext" presentation="$(presentation.CopilotCDPPageContext)" valueName="CopilotCDPPageContext">
       <parentCategory ref="microsoft_edge"/>
