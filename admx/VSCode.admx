@@ -207,6 +207,33 @@
 		<text id="ExtensionGalleryServiceUrl" valueName="ExtensionGalleryServiceUrl" required="true" />
 			</elements>
 		</policy>
+		<policy name="ChatAgentSandboxAllowAutoApprove" class="Both" displayName="$(string.ChatAgentSandboxAllowAutoApprove)" explainText="$(string.ChatAgentSandboxAllowAutoApprove_agentSandbox_allowAutoApprove)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentSandboxAllowAutoApprove)">
+			<parentCategory ref="terminalIntegratedConfigurationTitle" />
+			<supportedOn ref="Supported_1_116" />
+			<elements>
+		<boolean id="ChatAgentSandboxAllowAutoApprove" valueName="ChatAgentSandboxAllowAutoApprove">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
+		<policy name="ChatAgentSandboxAllowUnsandboxedCommands" class="Both" displayName="$(string.ChatAgentSandboxAllowUnsandboxedCommands)" explainText="$(string.ChatAgentSandboxAllowUnsandboxedCommands_agentSandbox_allowUnsandboxedCommands)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentSandboxAllowUnsandboxedCommands)">
+			<parentCategory ref="terminalIntegratedConfigurationTitle" />
+			<supportedOn ref="Supported_1_116" />
+			<elements>
+		<boolean id="ChatAgentSandboxAllowUnsandboxedCommands" valueName="ChatAgentSandboxAllowUnsandboxedCommands">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
+		<policy name="ChatAgentSandboxAutoApproveUnsandboxedCommands" class="Both" displayName="$(string.ChatAgentSandboxAutoApproveUnsandboxedCommands)" explainText="$(string.ChatAgentSandboxAutoApproveUnsandboxedCommands_agentSandbox_autoApproveUnsandboxedCommands)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentSandboxAutoApproveUnsandboxedCommands)">
+			<parentCategory ref="terminalIntegratedConfigurationTitle" />
+			<supportedOn ref="Supported_1_116" />
+			<elements>
+		<boolean id="ChatAgentSandboxAutoApproveUnsandboxedCommands" valueName="ChatAgentSandboxAutoApproveUnsandboxedCommands">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
 		<policy name="ChatAgentSandboxEnabled" class="Both" displayName="$(string.ChatAgentSandboxEnabled)" explainText="$(string.ChatAgentSandboxEnabled_agentSandbox_enabledSetting)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentSandboxEnabled)">
 			<parentCategory ref="terminalIntegratedConfigurationTitle" />
 			<supportedOn ref="Supported_1_116" />

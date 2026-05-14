@@ -72,6 +72,12 @@ Note: This setting only controls tool approval and does not prevent the agent fr
 			<string id="AllowedExtensions_extensions_allowed_policy">Specify a list of extensions that are allowed to use. This helps maintain a secure and consistent development environment by restricting the use of unauthorized extensions. More information: https://aka.ms/vscode/enterprise/extensions/allowed</string>
 			<string id="ExtensionGalleryServiceUrl">ExtensionGalleryServiceUrl</string>
 			<string id="ExtensionGalleryServiceUrl_extensions_gallery_serviceUrl">Configure the Marketplace service URL to connect to</string>
+			<string id="ChatAgentSandboxAllowAutoApprove">ChatAgentSandboxAllowAutoApprove</string>
+			<string id="ChatAgentSandboxAllowAutoApprove_agentSandbox_allowAutoApprove">Controls whether agent mode terminal commands that run inside the sandbox are auto-approved. When disabled, the run in terminal tool uses the existing approval flow. This applies only when `#chat.agent.sandbox.enabled#` is enabled.</string>
+			<string id="ChatAgentSandboxAllowUnsandboxedCommands">ChatAgentSandboxAllowUnsandboxedCommands</string>
+			<string id="ChatAgentSandboxAllowUnsandboxedCommands_agentSandbox_allowUnsandboxedCommands">Controls whether agent mode terminal commands can run outside the sandbox after user confirmation when a sandboxed command fails or when sandbox restrictions would block the command. This applies only when `#chat.agent.sandbox.enabled#` is enabled.</string>
+			<string id="ChatAgentSandboxAutoApproveUnsandboxedCommands">ChatAgentSandboxAutoApproveUnsandboxedCommands</string>
+			<string id="ChatAgentSandboxAutoApproveUnsandboxedCommands_agentSandbox_autoApproveUnsandboxedCommands">Controls whether agent mode terminal commands that run outside the sandbox are auto-approved. This applies only when both `#chat.agent.sandbox.enabled#` and `#chat.agent.sandbox.allowUnsandboxedCommands#` are enabled.</string>
 			<string id="ChatAgentSandboxEnabled">ChatAgentSandboxEnabled</string>
 			<string id="ChatAgentSandboxEnabled_agentSandbox_enabledSetting">Controls whether agent mode uses sandboxing to restrict what tools can do. When enabled, tools like the terminal are run in a sandboxed environment to limit access to the system.</string>
 			<string id="ChatAgentSandboxEnabled_agentSandbox_enabledSetting_offDescription">Disable sandboxing for agent mode tools.</string>
@@ -116,6 +122,9 @@ Note: This setting only controls tool approval and does not prevent the agent fr
 			<presentation id="McpGalleryServiceUrl"><textBox refId="McpGalleryServiceUrl"><label>McpGalleryServiceUrl:</label></textBox></presentation>
 			<presentation id="AllowedExtensions"><multiTextBox refId="AllowedExtensions" /></presentation>
 			<presentation id="ExtensionGalleryServiceUrl"><textBox refId="ExtensionGalleryServiceUrl"><label>ExtensionGalleryServiceUrl:</label></textBox></presentation>
+			<presentation id="ChatAgentSandboxAllowAutoApprove"><checkBox refId="ChatAgentSandboxAllowAutoApprove">ChatAgentSandboxAllowAutoApprove</checkBox></presentation>
+			<presentation id="ChatAgentSandboxAllowUnsandboxedCommands"><checkBox refId="ChatAgentSandboxAllowUnsandboxedCommands">ChatAgentSandboxAllowUnsandboxedCommands</checkBox></presentation>
+			<presentation id="ChatAgentSandboxAutoApproveUnsandboxedCommands"><checkBox refId="ChatAgentSandboxAutoApproveUnsandboxedCommands">ChatAgentSandboxAutoApproveUnsandboxedCommands</checkBox></presentation>
 			<presentation id="ChatAgentSandboxEnabled"><dropdownList refId="ChatAgentSandboxEnabled" /></presentation>
 			<presentation id="ChatToolsTerminalEnableAutoApprove"><checkBox refId="ChatToolsTerminalEnableAutoApprove">ChatToolsTerminalEnableAutoApprove</checkBox></presentation>
 			<presentation id="EnableFeedback"><checkBox refId="EnableFeedback">EnableFeedback</checkBox></presentation>
