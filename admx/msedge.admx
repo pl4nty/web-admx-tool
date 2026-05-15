@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 149.0.4022.4-->
+  <!--microsoft_edge version: 149.0.4022.8-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -5102,6 +5102,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.DataUrlInWebWorkerOpaqueOriginEnabled)" explainText="$(string.DataUrlInWebWorkerOpaqueOriginEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="DataUrlInWebWorkerOpaqueOriginEnabled" presentation="$(presentation.DataUrlInWebWorkerOpaqueOriginEnabled)" valueName="DataUrlInWebWorkerOpaqueOriginEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V149"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.DefaultBrowserSettingEnabled)" explainText="$(string.DefaultBrowserSettingEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="DefaultBrowserSettingEnabled" presentation="$(presentation.DefaultBrowserSettingEnabled)" valueName="DefaultBrowserSettingEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_ONLY_V77"/>
@@ -6107,11 +6117,11 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
-    <policy class="Both" displayName="$(string.ForceForegroundPriorityForOrigins)" explainText="$(string.ForceForegroundPriorityForOrigins_Explain)" key="Software\Policies\Microsoft\Edge" name="ForceForegroundPriorityForOrigins" presentation="$(presentation.ForceForegroundPriorityForOrigins)">
+    <policy class="Both" displayName="$(string.ForceForegroundPriorityForUrls)" explainText="$(string.ForceForegroundPriorityForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="ForceForegroundPriorityForUrls" presentation="$(presentation.ForceForegroundPriorityForUrls)">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V149"/>
       <elements>
-        <list id="ForceForegroundPriorityForOriginsDesc" key="Software\Policies\Microsoft\Edge\ForceForegroundPriorityForOrigins" valuePrefix=""/>
+        <list id="ForceForegroundPriorityForUrlsDesc" key="Software\Policies\Microsoft\Edge\ForceForegroundPriorityForUrls" valuePrefix=""/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.ForceGoogleSafeSearch)" explainText="$(string.ForceGoogleSafeSearch_Explain)" key="Software\Policies\Microsoft\Edge" name="ForceGoogleSafeSearch" presentation="$(presentation.ForceGoogleSafeSearch)" valueName="ForceGoogleSafeSearch">
