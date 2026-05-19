@@ -40,7 +40,7 @@ jobs:
     needs: main
     runs-on: ubuntu-latest
     container:
-      image: fstossesds/admx-lint
+      image: ghcr.io/harvester57/docker-admxlint:main
       options: --user root
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
