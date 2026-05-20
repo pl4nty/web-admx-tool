@@ -739,6 +739,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="DisableMyNotes_Policy" class="Machine" displayName="$(string.DisableMyNotes_Policy)" explainText="$(string.DisableMyNotes_Explain)" presentation="$(presentation.DisableMyNotes_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="DisableMyNotes">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="EnableNewSigninUI_Policy" class="Machine" displayName="$(string.EnableNewSigninUI_Policy)" explainText="$(string.EnableNewSigninUI_Explain)" presentation="$(presentation.EnableNewSigninUI_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="EnableNewSigninUI">
       <parentCategory ref="zoomgeneral" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
@@ -3174,6 +3184,16 @@
       </disabledValue>
     </policy>
     <policy name="DisableNewSetting_Policy_Recommend" class="Machine" displayName="$(string.DisableNewSetting_Policy_Recommend)" explainText="$(string.DisableNewSetting_Explain)" presentation="$(presentation.DisableNewSetting_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="DisableNewSetting">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableMyNotes_Policy_Recommend" class="Machine" displayName="$(string.DisableMyNotes_Policy_Recommend)" explainText="$(string.DisableMyNotes_Explain)" presentation="$(presentation.DisableMyNotes_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="DisableMyNotes">
       <parentCategory ref="zoomgeneral_recommend" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
       <enabledValue>

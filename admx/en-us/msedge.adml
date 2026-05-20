@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 149.0.4022.8--><displayName/><description/><resources><stringTable><string id="ApplicationGuard_group">Application Guard settings</string><string id="ApplicationGuardContainerProxy">Application Guard Container Proxy</string><string id="ApplicationGuardContainerProxy_Explain">Configures the proxy settings for Microsoft Edge Application Guard.
+<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 150.0.4041.0--><displayName/><description/><resources><stringTable><string id="ApplicationGuard_group">Application Guard settings</string><string id="ApplicationGuardContainerProxy">Application Guard Container Proxy</string><string id="ApplicationGuardContainerProxy_Explain">Configures the proxy settings for Microsoft Edge Application Guard.
 
 If you enable this policy, Microsoft Edge Application Guard ignores other sources of proxy configurations.
 
@@ -456,17 +456,17 @@ Policy options mapping:
 
 * BlockPopups (2) = Do not allow any site to show popups
 
-Use the preceding information when configuring this policy.</string><string id="DefaultPopupsSetting_AllowPopups">Allow all sites to show pop-ups</string><string id="DefaultPopupsSetting_BlockPopups">Do not allow any site to show popups</string><string id="DefaultThirdPartyStoragePartitioningSetting">Default setting for third-party storage partitioning (deprecated)</string><string id="DefaultThirdPartyStoragePartitioningSetting_Explain">DEPRECATED: This policy is deprecated. It is currently supported but will become obsolete in a future release.
+Use the preceding information when configuring this policy.</string><string id="DefaultPopupsSetting_AllowPopups">Allow all sites to show pop-ups</string><string id="DefaultPopupsSetting_BlockPopups">Do not allow any site to show popups</string><string id="DefaultThirdPartyStoragePartitioningSetting">Default setting for third-party storage partitioning (obsolete)</string><string id="DefaultThirdPartyStoragePartitioningSetting_Explain">OBSOLETE: This policy is obsolete and doesn't work after Microsoft Edge 145.
 
 This policy controls whether third-party storage partitioning is allowed by default.
 
-If this policy is set to 1 - AllowPartitioning, or unset, third-party storage partitioning is allowed by default. This default may be overridden for specific top-level origins by other means.
+If this policy is set to 1 - AllowPartitioning, or unset, third-party storage partitioning will be allowed by default. This default may be overridden for specific top-level origins by other means.
 
-If this policy is set to 2 - BlockPartitioning, third-party storage partitioning is disabled for all contexts.
+If this policy is set to 2 - BlockPartitioning, third-party storage partitioning will be disabled for all contexts.
 
 Use ThirdPartyStoragePartitioningBlockedForOrigins to disable third-party storage partitioning for specific top-level origins.
 
-This feature is removed starting in Microsoft Edge version 145. To ensure compatibility, use the requestStorageAccess method instead. For more information, see https://developer.mozilla.org/en-US/docs/Web/API/Document/requestStorageAccess.
+This feature has been removed starting in Microsoft Edge version 146. To ensure compatibility, use the requestStorageAccess method instead. For more information, see https://developer.mozilla.org/en-US/docs/Web/API/Document/requestStorageAccess.
 
 Policy options mapping:
 
@@ -6387,17 +6387,17 @@ However, some web applications maintain multiple long-lived connections (for exa
 
 To modify WebSocket request limits, see 'MaxConnectionsPerProxyForWebSocket' (Maximum number of concurrent connections to the proxy server for WebSocket requests).
 
-If you don't configure this policy, the default value of 32 is used.
+If you don't configure this policy, the default value of 128 is used.
 
 The value must be between 6 and 256:
 - Values lower than 6 are treated as 6.
-- Values higher than 256 are treated as 256 (99 in versions of Microsoft Edge 147 and earlier).
+- Values higher than 256 are treated as 256 (99 in versions of Microsoft Edge 148 and earlier).
 
 We recommend changing this value from the default only if required by your proxy server configuration.</string><string id="MaxConnectionsPerProxyForWebSocket">Maximum number of concurrent connections to the proxy server for WebSocket requests</string><string id="MaxConnectionsPerProxyForWebSocket_Explain">Specifies the maximum number of simultaneous connections to a proxy server for WebSocket requests.
 
 To configure limits for non-WebSocket requests, see the 'MaxConnectionsPerProxy' (Maximum number of concurrent connections to the proxy server for non-WebSocket requests) policy.
 
-If you don't configure this policy, the default value of 32 is used.
+If you don't configure this policy, the default value of 128 is used.
 
 Some web applications maintain multiple concurrent connections (for example, long-lived or hanging requests). Setting a value lower than the default may cause networking delays when many such applications are open.
 
