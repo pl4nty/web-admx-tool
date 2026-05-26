@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--brave version: 148.1.92.89-->
+  <!--brave version: 149.1.92.94-->
   <policyNamespaces>
     <target namespace="BraveSoftware.Policies.Brave" prefix="brave"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -97,9 +97,6 @@
     </category>
     <category displayName="$(string.Printing_group)" name="Printing_recommended">
       <parentCategory ref="brave_recommended"/>
-    </category>
-    <category displayName="$(string.PrivacySandbox_group)" name="PrivacySandbox">
-      <parentCategory ref="brave"/>
     </category>
     <category displayName="$(string.ProtectedContent_group)" name="ProtectedContent">
       <parentCategory ref="brave"/>
@@ -1823,6 +1820,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.PrivacySandboxPromptEnabled)" explainText="$(string.PrivacySandboxPromptEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PrivacySandboxPromptEnabled" presentation="$(presentation.PrivacySandboxPromptEnabled)" valueName="PrivacySandboxPromptEnabled">
+      <parentCategory ref="DeprecatedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.PrivacySandboxSiteEnabledAdsEnabled)" explainText="$(string.PrivacySandboxSiteEnabledAdsEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PrivacySandboxSiteEnabledAdsEnabled" presentation="$(presentation.PrivacySandboxSiteEnabledAdsEnabled)" valueName="PrivacySandboxSiteEnabledAdsEnabled">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -3253,7 +3260,24 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.CpuPerformanceTierOverride)" explainText="$(string.CpuPerformanceTierOverride_Explain)" key="Software\Policies\BraveSoftware\Brave" name="CpuPerformanceTierOverride" presentation="$(presentation.CpuPerformanceTierOverride)">
+      <parentCategory ref="brave"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <decimal id="CpuPerformanceTierOverride" maxValue="4" minValue="0" valueName="CpuPerformanceTierOverride"/>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.DNSInterceptionChecksEnabled)" explainText="$(string.DNSInterceptionChecksEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="DNSInterceptionChecksEnabled" presentation="$(presentation.DNSInterceptionChecksEnabled)" valueName="DNSInterceptionChecksEnabled">
+      <parentCategory ref="brave"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.DataUrlInWebWorkerOpaqueOriginEnabled)" explainText="$(string.DataUrlInWebWorkerOpaqueOriginEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="DataUrlInWebWorkerOpaqueOriginEnabled" presentation="$(presentation.DataUrlInWebWorkerOpaqueOriginEnabled)" valueName="DataUrlInWebWorkerOpaqueOriginEnabled">
       <parentCategory ref="brave"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
@@ -3672,6 +3696,13 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.ForceForegroundPriorityForUrls)" explainText="$(string.ForceForegroundPriorityForUrls_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ForceForegroundPriorityForUrls" presentation="$(presentation.ForceForegroundPriorityForUrls)">
+      <parentCategory ref="brave"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <list id="ForceForegroundPriorityForUrlsDesc" key="Software\Policies\BraveSoftware\Brave\ForceForegroundPriorityForUrls" valuePrefix=""/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.ForceGoogleSafeSearch)" explainText="$(string.ForceGoogleSafeSearch_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ForceGoogleSafeSearch" presentation="$(presentation.ForceGoogleSafeSearch)" valueName="ForceGoogleSafeSearch">
       <parentCategory ref="brave"/>
@@ -5796,16 +5827,6 @@
     </policy>
     <policy class="Both" displayName="$(string.PrintPreviewUseSystemDefaultPrinter)" explainText="$(string.PrintPreviewUseSystemDefaultPrinter_Explain)" key="Software\Policies\BraveSoftware\Brave\Recommended" name="PrintPreviewUseSystemDefaultPrinter_recommended" presentation="$(presentation.PrintPreviewUseSystemDefaultPrinter)" valueName="PrintPreviewUseSystemDefaultPrinter">
       <parentCategory ref="Printing_recommended"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.PrivacySandboxPromptEnabled)" explainText="$(string.PrivacySandboxPromptEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PrivacySandboxPromptEnabled" presentation="$(presentation.PrivacySandboxPromptEnabled)" valueName="PrivacySandboxPromptEnabled">
-      <parentCategory ref="PrivacySandbox"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
         <decimal value="1"/>
