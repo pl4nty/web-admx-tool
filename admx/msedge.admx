@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 150.0.4041.0-->
+  <!--microsoft_edge version: 150.0.4055.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -30,6 +30,7 @@
       <definition displayName="$(string.SUPPORTED_WIN7_V147)" name="SUPPORTED_WIN7_V147"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V148)" name="SUPPORTED_WIN7_V148"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V149)" name="SUPPORTED_WIN7_V149"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V150)" name="SUPPORTED_WIN7_V150"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V77)" name="SUPPORTED_WIN7_V77"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V78)" name="SUPPORTED_WIN7_V78"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V79)" name="SUPPORTED_WIN7_V79"/>
@@ -8569,6 +8570,16 @@
     <policy class="Both" displayName="$(string.StaticStorageQuotaEnabled)" explainText="$(string.StaticStorageQuotaEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="StaticStorageQuotaEnabled" presentation="$(presentation.StaticStorageQuotaEnabled)" valueName="StaticStorageQuotaEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V145"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.StrictMimetypeCheckForWorkerScriptsEnabled)" explainText="$(string.StrictMimetypeCheckForWorkerScriptsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="StrictMimetypeCheckForWorkerScriptsEnabled" presentation="$(presentation.StrictMimetypeCheckForWorkerScriptsEnabled)" valueName="StrictMimetypeCheckForWorkerScriptsEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V150"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
