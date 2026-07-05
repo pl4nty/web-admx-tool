@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 150.0.4055.0-->
+  <!--microsoft_edge version: 151.0.4119.1-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -31,6 +31,7 @@
       <definition displayName="$(string.SUPPORTED_WIN7_V148)" name="SUPPORTED_WIN7_V148"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V149)" name="SUPPORTED_WIN7_V149"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V150)" name="SUPPORTED_WIN7_V150"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V151)" name="SUPPORTED_WIN7_V151"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V77)" name="SUPPORTED_WIN7_V77"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V78)" name="SUPPORTED_WIN7_V78"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V79)" name="SUPPORTED_WIN7_V79"/>
@@ -1883,6 +1884,16 @@
     <policy class="Both" displayName="$(string.M365AuthPopupsInWorkEnabled)" explainText="$(string.M365AuthPopupsInWorkEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="M365AuthPopupsInWorkEnabled" presentation="$(presentation.M365AuthPopupsInWorkEnabled)" valueName="M365AuthPopupsInWorkEnabled">
       <parentCategory ref="Identity"/>
       <supportedOn ref="SUPPORTED_WIN7_V148"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.NonMicrosoftAccountSignInEnabled)" explainText="$(string.NonMicrosoftAccountSignInEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="NonMicrosoftAccountSignInEnabled" presentation="$(presentation.NonMicrosoftAccountSignInEnabled)" valueName="NonMicrosoftAccountSignInEnabled">
+      <parentCategory ref="Identity"/>
+      <supportedOn ref="SUPPORTED_WIN7_V150"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -3974,6 +3985,26 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.AddressBarClipboardSuggestEnabled)" explainText="$(string.AddressBarClipboardSuggestEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="AddressBarClipboardSuggestEnabled" presentation="$(presentation.AddressBarClipboardSuggestEnabled)" valueName="AddressBarClipboardSuggestEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V151"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.AddressBarClipboardSuggestEnabled)" explainText="$(string.AddressBarClipboardSuggestEnabled_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="AddressBarClipboardSuggestEnabled_recommended" presentation="$(presentation.AddressBarClipboardSuggestEnabled)" valueName="AddressBarClipboardSuggestEnabled">
+      <parentCategory ref="microsoft_edge_recommended"/>
+      <supportedOn ref="SUPPORTED_WIN7_V151"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.AddressBarEditingEnabled)" explainText="$(string.AddressBarEditingEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="AddressBarEditingEnabled" presentation="$(presentation.AddressBarEditingEnabled)" valueName="AddressBarEditingEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V98"/>
@@ -4105,6 +4136,16 @@
     <policy class="Both" displayName="$(string.AllowPopupsDuringPageUnload)" explainText="$(string.AllowPopupsDuringPageUnload_Explain)" key="Software\Policies\Microsoft\Edge" name="AllowPopupsDuringPageUnload" presentation="$(presentation.AllowPopupsDuringPageUnload)" valueName="AllowPopupsDuringPageUnload">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="OBSOLETE_WIN7_V78_V87"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.AllowSocketPoolSizeRandomizationForProxies)" explainText="$(string.AllowSocketPoolSizeRandomizationForProxies_Explain)" key="Software\Policies\Microsoft\Edge" name="AllowSocketPoolSizeRandomizationForProxies" presentation="$(presentation.AllowSocketPoolSizeRandomizationForProxies)" valueName="AllowSocketPoolSizeRandomizationForProxies">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V150"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -5176,6 +5217,11 @@
               <decimal value="2"/>
             </value>
           </item>
+          <item displayName="$(string.DefaultSensorsSetting_AskSensors)">
+            <value>
+              <decimal value="3"/>
+            </value>
+          </item>
         </enum>
       </elements>
     </policy>
@@ -5690,6 +5736,16 @@
     <policy class="Both" displayName="$(string.EdgeOpenInSidebarEnabled)" explainText="$(string.EdgeOpenInSidebarEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="EdgeOpenInSidebarEnabled" presentation="$(presentation.EdgeOpenInSidebarEnabled)" valueName="EdgeOpenInSidebarEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V122"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.EdgeReadingModeServiceBasedExtractionEnabled)" explainText="$(string.EdgeReadingModeServiceBasedExtractionEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="EdgeReadingModeServiceBasedExtractionEnabled" presentation="$(presentation.EdgeReadingModeServiceBasedExtractionEnabled)" valueName="EdgeReadingModeServiceBasedExtractionEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V151"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -7933,6 +7989,16 @@
     <policy class="Both" displayName="$(string.RestorePdfView)" explainText="$(string.RestorePdfView_Explain)" key="Software\Policies\Microsoft\Edge" name="RestorePdfView" presentation="$(presentation.RestorePdfView)" valueName="RestorePdfView">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V113"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.RestrictBackgroundFetchFromServiceWorkerEnabled)" explainText="$(string.RestrictBackgroundFetchFromServiceWorkerEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="RestrictBackgroundFetchFromServiceWorkerEnabled" presentation="$(presentation.RestrictBackgroundFetchFromServiceWorkerEnabled)" valueName="RestrictBackgroundFetchFromServiceWorkerEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V149"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>

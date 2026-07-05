@@ -10,11 +10,14 @@
 			<string id="Supported_1_107">Visual Studio Code &gt;= 1.107</string>
 			<string id="Supported_1_109">Visual Studio Code &gt;= 1.109</string>
 			<string id="Supported_1_110">Visual Studio Code &gt;= 1.110</string>
-			<string id="Supported_1_112">Visual Studio Code &gt;= 1.112</string>
 			<string id="Supported_1_113">Visual Studio Code &gt;= 1.113</string>
 			<string id="Supported_1_116">Visual Studio Code &gt;= 1.116</string>
 			<string id="Supported_1_118">Visual Studio Code &gt;= 1.118</string>
 			<string id="Supported_1_121">Visual Studio Code &gt;= 1.121</string>
+			<string id="Supported_1_122">Visual Studio Code &gt;= 1.122</string>
+			<string id="Supported_1_125">Visual Studio Code &gt;= 1.125</string>
+			<string id="Supported_1_126">Visual Studio Code &gt;= 1.126</string>
+			<string id="Supported_1_127">Visual Studio Code &gt;= 1.127</string>
 			<string id="Supported_1_67">Visual Studio Code &gt;= 1.67</string>
 			<string id="Supported_1_96">Visual Studio Code &gt;= 1.96</string>
 			<string id="Supported_1_99">Visual Studio Code &gt;= 1.99</string>
@@ -26,17 +29,25 @@
 			<string id="BrowserChatTools">BrowserChatTools</string>
 			<string id="BrowserChatTools_browser_enableChatTools">When enabled, chat agents can use browser tools to open and interact with pages in the Integrated Browser.</string>
 			<string id="ChatAgentAllowedNetworkDomains">ChatAgentAllowedNetworkDomains</string>
-			<string id="ChatAgentAllowedNetworkDomains_chat_agent_allowedNetworkDomains">Allowed domains for network access by agent tools (fetch tool, integrated browser). Applies when `#chat.agent.networkFilter#` or `#chat.agent.sandbox.enabled#` is enabled. When `#chat.agent.sandbox.enabled#` is set to `allowNetwork`, all domains are allowed. Supports wildcards like `*.example.com`. When both allowed and denied lists are empty, all domains are blocked. Denied domains (see `#chat.agent.deniedNetworkDomains#`) take precedence.</string>
+			<string id="ChatAgentAllowedNetworkDomains_chat_agent_allowedNetworkDomains">Allowed domains for network access by agent tools (fetch tool, integrated browser). Applies when `#chat.agent.networkFilter#` or `#chat.agent.sandbox.enabled#` is enabled. When `#chat.agent.sandbox.allowNetwork#` is enabled, all domains are allowed. Supports wildcards like `*.example.com`. When both allowed and denied lists are empty, all domains are blocked. Denied domains (see `#chat.agent.deniedNetworkDomains#`) take precedence.</string>
 			<string id="ChatAgentDeniedNetworkDomains">ChatAgentDeniedNetworkDomains</string>
-			<string id="ChatAgentDeniedNetworkDomains_chat_agent_deniedNetworkDomains">Denied domains for network access by agent tools (fetch tool, integrated browser). Applies when `#chat.agent.networkFilter#` or `#chat.agent.sandbox.enabled#` is enabled. This does not apply when `#chat.agent.sandbox.enabled#` is set to `allowNetwork`. Takes precedence over `#chat.agent.allowedNetworkDomains#`. Supports wildcards like `*.example.com`.</string>
+			<string id="ChatAgentDeniedNetworkDomains_chat_agent_deniedNetworkDomains">Denied domains for network access by agent tools (fetch tool, integrated browser). Applies when `#chat.agent.networkFilter#` or `#chat.agent.sandbox.enabled#` is enabled. This does not apply when `#chat.agent.sandbox.allowNetwork#` is enabled. Takes precedence over `#chat.agent.allowedNetworkDomains#`. Supports wildcards like `*.example.com`.</string>
 			<string id="ChatAgentExtensionTools">ChatAgentExtensionTools</string>
 			<string id="ChatAgentExtensionTools_chat_extensionToolsEnabled">Enable using tools contributed by third-party extensions.</string>
+			<string id="ChatAgentHostEnabled">ChatAgentHostEnabled</string>
+			<string id="ChatAgentHostEnabled_chat_agentHost_enabled">When enabled, some agents run in a separate agent host process.</string>
 			<string id="ChatAgentMode">ChatAgentMode</string>
 			<string id="ChatAgentMode_chat_agent_enabled_description">When enabled, agent mode can be activated from chat and tools in agentic contexts with side effects can be used.</string>
 			<string id="ChatAgentNetworkFilter">ChatAgentNetworkFilter</string>
 			<string id="ChatAgentNetworkFilter_chat_agent_networkFilter">When enabled, network access by agent tools (fetch tool, integrated browser) is restricted according to `#chat.agent.allowedNetworkDomains#` and `#chat.agent.deniedNetworkDomains#`. Domain filtering is also applied to those tools when `#chat.agent.sandbox.enabled#` is enabled.</string>
 			<string id="ChatApprovedAccountOrganizations">ChatApprovedAccountOrganizations</string>
 			<string id="ChatApprovedAccountOrganizations_chat_approvedAccountOrganizations_policy_description">Setting this policy to a non-empty list activates the Approved Account gate: all AI features are disabled until the user signs into a GitHub account whose organizations intersect this list AND the account-side policy data has resolved. Comparison is case-insensitive. Use '*' as a wildcard to accept any signed-in GitHub or GHE account (use this for GHE deployments where the organization list is not surfaced).</string>
+			<string id="ChatDefaultModel">ChatDefaultModel</string>
+			<string id="ChatDefaultModel_chat_defaultModel_policy">Sets the default chat model for new conversations. Accepts "auto", a model family name (such as "opus" or "gemini"), or a full model id. Users can still switch the model within a conversation.</string>
+			<string id="ChatEnabledPlugins">ChatEnabledPlugins</string>
+			<string id="ChatEnabledPlugins_chat_plugins_enabledPlugins_policy">Plugin enablement. Keys are plugin IDs in `{plugin}@{marketplace}` form; values enable or disable the plugin.</string>
+			<string id="ChatExtraMarketplaces">ChatExtraMarketplaces</string>
+			<string id="ChatExtraMarketplaces_chat_plugins_extraMarketplaces_policy">Additional plugin marketplaces to query. Keys are marketplace names; values are GitHub shorthand (`owner/repo[#ref]`) or Git URIs (`{url}[#ref]`).</string>
 			<string id="ChatHooks">ChatHooks</string>
 			<string id="ChatHooks_chat_useHooks_description">Controls whether chat hooks are executed at strategic points during an agent's workflow. Hooks are loaded from the files configured in `#chat.hookFilesLocations#`.</string>
 			<string id="ChatMCP">ChatMCP</string>
@@ -46,6 +57,8 @@
 			<string id="ChatMCP_chat_mcp_access_any">Allow access to any installed MCP server.</string>
 			<string id="ChatPluginsEnabled">ChatPluginsEnabled</string>
 			<string id="ChatPluginsEnabled_chat_plugins_enabled">Enable agent plugin integration in chat.</string>
+			<string id="ChatStrictMarketplaces">ChatStrictMarketplaces</string>
+			<string id="ChatStrictMarketplaces_chat_plugins_strictMarketplaces_policy">Allowlist of plugin marketplace sources. When set, only marketplaces matching an entry are trusted; an empty array blocks all marketplaces.</string>
 			<string id="ChatToolsAutoApprove">ChatToolsAutoApprove</string>
 			<string id="ChatToolsAutoApprove_autoApprove3_description">Global auto approve also known as "YOLO mode" disables manual approval completely for all tools in all workspaces, allowing the agent to act fully autonomously. This is extremely dangerous and is *never* recommended, even containerized environments like Codespaces and Dev Containers have user keys forwarded into the container that could be compromised.
 
@@ -55,34 +68,63 @@ Note: This setting only controls tool approval and does not prevent the agent fr
 			<string id="ChatToolsEligibleForAutoApproval">ChatToolsEligibleForAutoApproval</string>
 			<string id="ChatToolsEligibleForAutoApproval_chat_tools_eligibleForAutoApproval">Controls which tools are eligible for automatic approval. Tools set to 'false' will always present a confirmation and will never offer the option to auto-approve. The default behavior (or setting a tool to 'true') may result in the tool offering auto-approval options.</string>
 			<string id="Claude3PIntegration">Claude3PIntegration</string>
-			<string id="Claude3PIntegration_github_copilot_chat_claudeAgent_enabled">Enable Claude Agent sessions in VS Code. Start and resume agentic coding sessions powered by Anthropic Claude Agent SDK directly in the editor. Uses your existing Copilot subscription.</string>
+			<string id="Claude3PIntegration_chat_agentHost_claudeAgent_enabled_policy">Enable Claude Agent sessions in VS Code. Start and resume agentic coding sessions powered by Anthropic Claude Agent SDK directly in the editor. Uses your existing Copilot subscription.</string>
+			<string id="Codex3PIntegration">Codex3PIntegration</string>
+			<string id="Codex3PIntegration_chat_agentHost_codexAgent_enabled_policy">Enable Codex Agent sessions in VS Code. Start and resume agentic coding sessions powered by OpenAI Codex SDK. Uses your existing Copilot subscription.</string>
 			<string id="CopilotNextEditSuggestions">CopilotNextEditSuggestions</string>
 			<string id="CopilotNextEditSuggestions_github_copilot_nextEditSuggestions_enabled">Whether to enable next edit suggestions (NES). NES can propose a next edit based on your recent changes.</string>
+			<string id="CopilotOtelCaptureContent">CopilotOtelCaptureContent</string>
+			<string id="CopilotOtelCaptureContent_chat_agentHost_otel_captureContent_policy">Controls whether Copilot OpenTelemetry export captures prompt, response, and tool content.</string>
+			<string id="CopilotOtelEnabled">CopilotOtelEnabled</string>
+			<string id="CopilotOtelEnabled_chat_agentHost_otel_enabled_policy">Controls whether Copilot OpenTelemetry export is enabled. When managed, users cannot override the enterprise value.</string>
+			<string id="CopilotOtelEndpoint">CopilotOtelEndpoint</string>
+			<string id="CopilotOtelEndpoint_chat_agentHost_otel_otlpEndpoint_policy">Controls the enterprise-managed OTLP collector endpoint for Copilot OpenTelemetry export.</string>
+			<string id="CopilotOtelHeaders">CopilotOtelHeaders</string>
+			<string id="CopilotOtelHeaders_chat_agentHost_otel_headers_policy">Controls the enterprise-managed OTLP exporter headers for Copilot OpenTelemetry export.</string>
+			<string id="CopilotOtelOtlpProtocol">CopilotOtelOtlpProtocol</string>
+			<string id="CopilotOtelOtlpProtocol_chat_agentHost_otel_otlpProtocol_policy">Controls the enterprise-managed OTLP wire protocol (protobuf vs JSON) for Copilot OpenTelemetry export.</string>
+			<string id="CopilotOtelOutfile">CopilotOtelOutfile</string>
+			<string id="CopilotOtelOutfile_chat_agentHost_otel_outfile_policy">Prevents local file export when enterprise-managed Copilot OpenTelemetry export is configured.</string>
+			<string id="CopilotOtelProtocol">CopilotOtelProtocol</string>
+			<string id="CopilotOtelProtocol_chat_agentHost_otel_protocol_policy">Controls the enterprise-managed OTLP protocol for Copilot OpenTelemetry export.</string>
+			<string id="CopilotOtelProtocol_chat_agentHost_otel_protocol_policy_otlpHttp">Use OTLP over HTTP.</string>
+			<string id="CopilotOtelProtocol_chat_agentHost_otel_protocol_policy_otlpGrpc">Use OTLP over gRPC.</string>
+			<string id="CopilotOtelProtocol_chat_agentHost_otel_protocol_policy_console">Console exporter is not selected by enterprise managed settings.</string>
+			<string id="CopilotOtelProtocol_chat_agentHost_otel_protocol_policy_file">File exporter is not selected by enterprise managed settings.</string>
+			<string id="CopilotOtelResourceAttributes">CopilotOtelResourceAttributes</string>
+			<string id="CopilotOtelResourceAttributes_chat_agentHost_otel_resourceAttributes_policy">Controls the enterprise-managed OTel resource attributes for Copilot OpenTelemetry export.</string>
+			<string id="CopilotOtelServiceName">CopilotOtelServiceName</string>
+			<string id="CopilotOtelServiceName_chat_agentHost_otel_serviceName_policy">Controls the enterprise-managed OTel `service.name` resource attribute for Copilot OpenTelemetry export.</string>
 			<string id="CopilotReviewAgent">CopilotReviewAgent</string>
 			<string id="CopilotReviewAgent_github_copilot_chat_reviewAgent_enabled">Enables the code review agent.</string>
 			<string id="CopilotReviewSelection">CopilotReviewSelection</string>
 			<string id="CopilotReviewSelection_github_copilot_chat_reviewSelection_enabled">Enables code review on current selection.</string>
 			<string id="CopilotSessionSync">CopilotSessionSync</string>
 			<string id="CopilotSessionSync_chat_sessionSync_enabled_policy">Enable session sync to GitHub.com for cross-device Copilot session history. When disabled by organization policy, session data is kept local only.</string>
-			<string id="DeprecatedEditModeHidden">DeprecatedEditModeHidden</string>
-			<string id="DeprecatedEditModeHidden_chat_editMode_hidden">When enabled, hides the Edit mode from the chat mode picker.</string>
+			<string id="McpEnterpriseManagedAuthIdp">McpEnterpriseManagedAuthIdp</string>
+			<string id="McpEnterpriseManagedAuthIdp_mcp_enterpriseManagedAuth_idp_policy">The OAuth/OIDC IdP configuration used for enterprise-managed Model Context Protocol (MCP) server authentication.</string>
 			<string id="McpGalleryServiceUrl">McpGalleryServiceUrl</string>
 			<string id="McpGalleryServiceUrl_mcp_gallery_serviceUrl">Configure the MCP Gallery service URL to connect to</string>
 			<string id="AllowedExtensions">AllowedExtensions</string>
 			<string id="AllowedExtensions_extensions_allowed_policy">Specify a list of extensions that are allowed to use. This helps maintain a secure and consistent development environment by restricting the use of unauthorized extensions. More information: https://aka.ms/vscode/enterprise/extensions/allowed</string>
 			<string id="ExtensionGalleryServiceUrl">ExtensionGalleryServiceUrl</string>
 			<string id="ExtensionGalleryServiceUrl_extensions_gallery_serviceUrl">Configure the Marketplace service URL to connect to</string>
+			<string id="ExtensionsAutoUpdate">ExtensionsAutoUpdate</string>
+			<string id="ExtensionsAutoUpdate_extensions_autoUpdate">Controls the automatic update behavior of extensions. The updates are fetched from a Microsoft online service.</string>
+			<string id="ExtensionsAutoUpdate_extensions_autoUpdate_on">Download and install updates automatically only for enabled extensions.</string>
+			<string id="ExtensionsAutoUpdate_extensions_autoUpdate_off">Extensions are not automatically updated.</string>
+			<string id="ExtensionsAutoUpdateDelay">ExtensionsAutoUpdateDelay</string>
+			<string id="ExtensionsAutoUpdateDelay_extensions_autoUpdateDelay">Controls the delay in hours after an extension update is published before it is automatically installed. Only applies when `#extensions.autoUpdate#` is set to `on`. This delay helps avoid installing potentially problematic updates immediately after release.</string>
 			<string id="ChatAgentSandboxAllowAutoApprove">ChatAgentSandboxAllowAutoApprove</string>
 			<string id="ChatAgentSandboxAllowAutoApprove_agentSandbox_allowAutoApprove">Controls whether agent mode terminal commands that run inside the sandbox are auto-approved. When disabled, the run in terminal tool uses the existing approval flow. This applies only when `#chat.agent.sandbox.enabled#` is enabled.</string>
+			<string id="ChatAgentSandboxAllowNetwork">ChatAgentSandboxAllowNetwork</string>
+			<string id="ChatAgentSandboxAllowNetwork_agentSandbox_allowNetwork">When `#chat.agent.sandbox.enabled#` is enabled, controls whether to allow all network domains in the sandbox. When enabled, the sandbox preserves file system restrictions while relaxing all network restrictions.</string>
 			<string id="ChatAgentSandboxAllowUnsandboxedCommands">ChatAgentSandboxAllowUnsandboxedCommands</string>
 			<string id="ChatAgentSandboxAllowUnsandboxedCommands_agentSandbox_allowUnsandboxedCommands">Controls whether agent mode terminal commands can run outside the sandbox after user confirmation when a sandboxed command fails or when sandbox restrictions would block the command. This applies only when `#chat.agent.sandbox.enabled#` is enabled.</string>
-			<string id="ChatAgentSandboxAutoApproveUnsandboxedCommands">ChatAgentSandboxAutoApproveUnsandboxedCommands</string>
-			<string id="ChatAgentSandboxAutoApproveUnsandboxedCommands_agentSandbox_autoApproveUnsandboxedCommands">Controls whether agent mode terminal commands that run outside the sandbox are auto-approved. This applies only when both `#chat.agent.sandbox.enabled#` and `#chat.agent.sandbox.allowUnsandboxedCommands#` are enabled.</string>
 			<string id="ChatAgentSandboxEnabled">ChatAgentSandboxEnabled</string>
-			<string id="ChatAgentSandboxEnabled_agentSandbox_enabledSetting">Controls whether agent mode uses sandboxing to restrict what tools can do. When enabled, tools like the terminal are run in a sandboxed environment to limit access to the system.</string>
+			<string id="ChatAgentSandboxEnabled_agentSandbox_enabledSetting">Controls whether agent mode uses sandboxing to restrict what tools can do. When enabled, tools like the terminal are run in a sandboxed environment to limit access to the system. Use `#chat.agent.sandbox.allowNetwork#` to allow all network domains.</string>
 			<string id="ChatAgentSandboxEnabled_agentSandbox_enabledSetting_offDescription">Disable sandboxing for agent mode tools.</string>
 			<string id="ChatAgentSandboxEnabled_agentSandbox_enabledSetting_onDescription">Enable sandboxing for agent mode tools.</string>
-			<string id="ChatAgentSandboxEnabled_agentSandbox_enabledSetting_allowNetworkDescription">Enable sandboxing for agent mode tools and allow all network domains.</string>
 			<string id="ChatToolsTerminalEnableAutoApprove">ChatToolsTerminalEnableAutoApprove</string>
 			<string id="ChatToolsTerminalEnableAutoApprove_autoApproveMode_description">Controls whether to allow auto approval in the run in terminal tool.</string>
 			<string id="EnableFeedback">EnableFeedback</string>
@@ -105,26 +147,43 @@ Note: This setting only controls tool approval and does not prevent the agent fr
 			<presentation id="ChatAgentAllowedNetworkDomains"><multiTextBox refId="ChatAgentAllowedNetworkDomains" /></presentation>
 			<presentation id="ChatAgentDeniedNetworkDomains"><multiTextBox refId="ChatAgentDeniedNetworkDomains" /></presentation>
 			<presentation id="ChatAgentExtensionTools"><checkBox refId="ChatAgentExtensionTools">ChatAgentExtensionTools</checkBox></presentation>
+			<presentation id="ChatAgentHostEnabled"><checkBox refId="ChatAgentHostEnabled">ChatAgentHostEnabled</checkBox></presentation>
 			<presentation id="ChatAgentMode"><checkBox refId="ChatAgentMode">ChatAgentMode</checkBox></presentation>
 			<presentation id="ChatAgentNetworkFilter"><checkBox refId="ChatAgentNetworkFilter">ChatAgentNetworkFilter</checkBox></presentation>
 			<presentation id="ChatApprovedAccountOrganizations"><multiTextBox refId="ChatApprovedAccountOrganizations" /></presentation>
+			<presentation id="ChatDefaultModel"><textBox refId="ChatDefaultModel"><label>ChatDefaultModel:</label></textBox></presentation>
+			<presentation id="ChatEnabledPlugins"><multiTextBox refId="ChatEnabledPlugins" /></presentation>
+			<presentation id="ChatExtraMarketplaces"><multiTextBox refId="ChatExtraMarketplaces" /></presentation>
 			<presentation id="ChatHooks"><checkBox refId="ChatHooks">ChatHooks</checkBox></presentation>
 			<presentation id="ChatMCP"><dropdownList refId="ChatMCP" /></presentation>
 			<presentation id="ChatPluginsEnabled"><checkBox refId="ChatPluginsEnabled">ChatPluginsEnabled</checkBox></presentation>
+			<presentation id="ChatStrictMarketplaces"><multiTextBox refId="ChatStrictMarketplaces" /></presentation>
 			<presentation id="ChatToolsAutoApprove"><checkBox refId="ChatToolsAutoApprove">ChatToolsAutoApprove</checkBox></presentation>
 			<presentation id="ChatToolsEligibleForAutoApproval"><multiTextBox refId="ChatToolsEligibleForAutoApproval" /></presentation>
 			<presentation id="Claude3PIntegration"><checkBox refId="Claude3PIntegration">Claude3PIntegration</checkBox></presentation>
+			<presentation id="Codex3PIntegration"><checkBox refId="Codex3PIntegration">Codex3PIntegration</checkBox></presentation>
 			<presentation id="CopilotNextEditSuggestions"><checkBox refId="CopilotNextEditSuggestions">CopilotNextEditSuggestions</checkBox></presentation>
+			<presentation id="CopilotOtelCaptureContent"><checkBox refId="CopilotOtelCaptureContent">CopilotOtelCaptureContent</checkBox></presentation>
+			<presentation id="CopilotOtelEnabled"><checkBox refId="CopilotOtelEnabled">CopilotOtelEnabled</checkBox></presentation>
+			<presentation id="CopilotOtelEndpoint"><textBox refId="CopilotOtelEndpoint"><label>CopilotOtelEndpoint:</label></textBox></presentation>
+			<presentation id="CopilotOtelHeaders"><multiTextBox refId="CopilotOtelHeaders" /></presentation>
+			<presentation id="CopilotOtelOtlpProtocol"><textBox refId="CopilotOtelOtlpProtocol"><label>CopilotOtelOtlpProtocol:</label></textBox></presentation>
+			<presentation id="CopilotOtelOutfile"><textBox refId="CopilotOtelOutfile"><label>CopilotOtelOutfile:</label></textBox></presentation>
+			<presentation id="CopilotOtelProtocol"><dropdownList refId="CopilotOtelProtocol" /></presentation>
+			<presentation id="CopilotOtelResourceAttributes"><multiTextBox refId="CopilotOtelResourceAttributes" /></presentation>
+			<presentation id="CopilotOtelServiceName"><textBox refId="CopilotOtelServiceName"><label>CopilotOtelServiceName:</label></textBox></presentation>
 			<presentation id="CopilotReviewAgent"><checkBox refId="CopilotReviewAgent">CopilotReviewAgent</checkBox></presentation>
 			<presentation id="CopilotReviewSelection"><checkBox refId="CopilotReviewSelection">CopilotReviewSelection</checkBox></presentation>
 			<presentation id="CopilotSessionSync"><checkBox refId="CopilotSessionSync">CopilotSessionSync</checkBox></presentation>
-			<presentation id="DeprecatedEditModeHidden"><checkBox refId="DeprecatedEditModeHidden">DeprecatedEditModeHidden</checkBox></presentation>
+			<presentation id="McpEnterpriseManagedAuthIdp"><multiTextBox refId="McpEnterpriseManagedAuthIdp" /></presentation>
 			<presentation id="McpGalleryServiceUrl"><textBox refId="McpGalleryServiceUrl"><label>McpGalleryServiceUrl:</label></textBox></presentation>
 			<presentation id="AllowedExtensions"><multiTextBox refId="AllowedExtensions" /></presentation>
 			<presentation id="ExtensionGalleryServiceUrl"><textBox refId="ExtensionGalleryServiceUrl"><label>ExtensionGalleryServiceUrl:</label></textBox></presentation>
+			<presentation id="ExtensionsAutoUpdate"><dropdownList refId="ExtensionsAutoUpdate" /></presentation>
+			<presentation id="ExtensionsAutoUpdateDelay"><decimalTextBox refId="ExtensionsAutoUpdateDelay" defaultValue="2">ExtensionsAutoUpdateDelay</decimalTextBox></presentation>
 			<presentation id="ChatAgentSandboxAllowAutoApprove"><checkBox refId="ChatAgentSandboxAllowAutoApprove">ChatAgentSandboxAllowAutoApprove</checkBox></presentation>
+			<presentation id="ChatAgentSandboxAllowNetwork"><checkBox refId="ChatAgentSandboxAllowNetwork">ChatAgentSandboxAllowNetwork</checkBox></presentation>
 			<presentation id="ChatAgentSandboxAllowUnsandboxedCommands"><checkBox refId="ChatAgentSandboxAllowUnsandboxedCommands">ChatAgentSandboxAllowUnsandboxedCommands</checkBox></presentation>
-			<presentation id="ChatAgentSandboxAutoApproveUnsandboxedCommands"><checkBox refId="ChatAgentSandboxAutoApproveUnsandboxedCommands">ChatAgentSandboxAutoApproveUnsandboxedCommands</checkBox></presentation>
 			<presentation id="ChatAgentSandboxEnabled"><dropdownList refId="ChatAgentSandboxEnabled" /></presentation>
 			<presentation id="ChatToolsTerminalEnableAutoApprove"><checkBox refId="ChatToolsTerminalEnableAutoApprove">ChatToolsTerminalEnableAutoApprove</checkBox></presentation>
 			<presentation id="EnableFeedback"><checkBox refId="EnableFeedback">EnableFeedback</checkBox></presentation>

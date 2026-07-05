@@ -118,6 +118,16 @@ When disabled, the warning will be issued in this case.</string>
       <string id="desc_RemovePersonalInfoOnSaving">Specifies whether to remove personal information on saving.
 
 Default value: Do not remove</string>
+      <string id="name_KeepRedlineInfoOnSaving">Keep track changes information</string>
+      <string id="desc_KeepRedlineInfoOnSaving">Specifies whether to keep track changes information on saving if "Remove personal information on saving" is enabled.</string>
+      <string id="name_KeepDocUserInfoOnSaving">Keep document user information</string>
+      <string id="desc_KeepDocUserInfoOnSaving">Specifies whether to keep document user information on saving if "Remove personal information on saving" is enabled.</string>
+      <string id="name_KeepNoteAuthorDateInfoOnSaving">Keep author name and date of notes</string>
+      <string id="desc_KeepNoteAuthorDateInfoOnSaving">Specifies whether to keep note author and date information on saving if "Remove personal information on saving" is enabled.</string>
+      <string id="name_KeepDocVersionInfoOnSaving">Keep document version information</string>
+      <string id="desc_KeepDocVersionInfoOnSaving">Specifies whether to keep document version information on saving if "Remove personal information on saving" is enabled.</string>
+      <string id="name_KeepDocPrinterSettingsOnSaving">Keep printer settings</string>
+      <string id="desc_KeepDocPrinterSettingsOnSaving">Specifies whether to keep printer settings on saving if "Remove personal information on saving" is enabled.</string>
       <string id="name_RecommendPasswordProtection">Recommend password protection on saving</string>
       <string id="desc_RecommendPasswordProtection">Specifies whether to recommend password protection when saving documents.
 
@@ -125,6 +135,8 @@ Default value: Do not recommend</string>
       <string id="name_HyperlinksWithCtrlClick">Ctrl-click required to follow hyperlinks</string>
       <string id="desc_HyperlinksWithCtrlClick">Specifies whether Ctrl-click is required to follow hyperlinks.
 Default value: Ctrl-click</string>
+      <string id="name_BlockUntrustedRefererLinks">Block links from documents not among the trusted locations</string>
+      <string id="desc_BlockUntrustedRefererLinks">Specifies whether to block any links originating from documents that are not among the trusted locations.</string>
       <string id="name_WarnSaveOrSendDoc">Security warnings when saving or sending</string>
       <string id="desc_WarnSaveOrSendDoc">Specifies whether to warn when saving or sending documents with personal/hidden data.
 
@@ -540,16 +552,6 @@ When any part is set to take from LDAP, then its value is LDAP attribute; LDAP c
 
 When any part is set to take from LDAP, then its value is LDAP attribute; LDAP configuration backend settings determine how to connect to LDAP server.</string>
 
-      <string id="category_Paths">Paths</string>
-      <string id="name_AutoCorrect">Path of AutoCorrect files</string>
-      <string id="name_AutoText">Path of AutoText files</string>
-      <string id="name_Dictionary">Path of Dictionary files</string>
-      <string id="name_Gallery">Path of Gallery files</string>
-      <string id="name_Templates">Path of Template files</string>
-      <string id="name_MyDocuments">Path of My Documents folder</string>
-      <string id="name_Graphic">Path of Image files</string>
-      <string id="name_Backup">Path of Backup files</string>
-      <string id="name_Temp">Path of Temporary files</string>
 
       <string id="category_Passwords">Passwords</string>
       <string id="name_TrySystemCredentialsFirst">Use system credentials</string>
@@ -735,6 +737,36 @@ The following path variables can be used:
 Set paths in path lists have to be separated by spaces.</string>
       <string id="name_ViewerAppMode">Viewer mode</string>
       <string id="desc_ViewerAppMode">Disable all editing capabilities of the application and open all documents read-only.</string>
+      <string id="category_CommonHelp">Help</string>
+      <string id="category_Table">Table</string>
+      <string id="category_Jobs">Jobs</string>
+      <string id="name_LoadPrinter">Load printer settings with the document</string>
+      <string id="desc_LoadPrinter">Specifies if the printer settings will be loaded with the document.</string>
+      <string id="name_CheckDocumentEvents">Check Document Events</string>
+      <string id="desc_CheckDocumentEvents">Warn on load when a document binds an event to a macro</string>
+      <string id="name_HelpExtendedTip">Extended tips</string>
+      <string id="desc_HelpExtendedTip">Activates the extended help in tooltips</string>
+      <string id="name_UpdateCheckEnabled">Update check enabled</string>
+      <string id="desc_UpdateCheckEnabled">Enable automatic update check</string>
+      <string id="name_PDFExportFormFields">Export form fields as widgets</string>
+      <string id="desc_PDFExportFormFields">Specifies whether form fields are exported as widgets or only their fixed print representation is exported.</string>
+      <string id="name_PDFExportPlaceholders">Export placeholder fields to PDF</string>
+      <string id="desc_PDFExportPlaceholders">Specifies if placeholder fields are exported to PDF.</string>
+      <string id="name_PrintSinglePrintJob">Create single print jobs</string>
+      <string id="desc_PrintSinglePrintJob">Controls the print output to avoid problems with duplex printing and odd page numbers.</string>
+      <string id="name_AutoTextApplyNumbering">Bulleted and numbered lists</string>
+      <string id="desc_AutoTextApplyNumbering">Specifies whether a numbered or bulleted text is created automatically while typing.</string>
+      <string id="name_WordCompletionMinWordLen">Word completion minimum word length</string>
+      <string id="desc_WordCompletionMinWordLen">Sets the value for the minimum word length for word completion.</string>
+      <string id="name_TableNumberRecognition">Number recognition</string>
+      <string id="desc_TableNumberRecognition">Specifies whether numbers in a table are recognized or if they are saved in a text format.</string>
+      <string id="pdf_DefaultVersion">Default</string>
+      <string id="pdf_PDF_A_1">PDF/A-1</string>
+      <string id="pdf_PDF_A_2">PDF/A-2 (LibreOffice since 6.3)</string>
+      <string id="pdf_PDF_A_3">PDF/A-3 (LibreOffice since 6.4)</string>
+      <string id="pdf_PDF_1_4">PDF 1.4 (LibreOffice until 6.1)</string>
+      <string id="pdf_PDF_1_5">PDF 1.5 (LibreOffice since 6.1)</string>
+      <string id="pdf_PDF_1_6">PDF 1.6 (LibreOffice since 7.0)</string>
     </stringTable>
     <presentationTable>
       <presentation id="LDAPConfigBackendSettings">
@@ -810,108 +842,6 @@ Set paths in path lists have to be separated by spaces.</string>
       <presentation id="WarnAlienFormat">
         <checkBox refId="Value">Warn the user when saving in a format different from ODF or default</checkBox>
         <checkBox refId="Final">Final</checkBox>
-      </presentation>
-      <presentation id="AutoCorrect">
-        <text>WritePath of AutoCorrect files. It is the location where new user files are written.</text>
-        <textBox refId="WritePathValue">
-          <label>Path: </label>
-          <defaultValue>$(user)/autocorr</defaultValue>
-        </textBox>
-        <checkBox refId="WritePathFinal">Final</checkBox>
-        <text>UserPaths of AutoCorrect files</text>
-        <textBox refId="UserPathsValue">
-          <label>Path list: </label>
-          <defaultValue>$(inst)/share/autocorr $(user)/autocorr</defaultValue>
-        </textBox>
-        <checkBox refId="UserPathsFinal">Final</checkBox>
-      </presentation>
-      <presentation id="AutoText">
-        <text>WritePath of AutoText files. It is the location where new user files are written.</text>
-        <textBox refId="WritePathValue">
-          <label>Path: </label>
-          <defaultValue>$(user)/autotext</defaultValue>
-        </textBox>
-        <checkBox refId="WritePathFinal">Final</checkBox>
-        <text>UserPaths of AutoText files</text>
-        <textBox refId="UserPathsValue">
-          <label>Path list: </label>
-          <defaultValue>$(inst)/share/autotext/$(vlang) $(user)/autotext</defaultValue>
-        </textBox>
-        <checkBox refId="UserPathsFinal">Final</checkBox>
-      </presentation>
-      <presentation id="Dictionary">
-        <text>WritePath of Dictionary files. It is the location where new user files are written.</text>
-        <textBox refId="WritePathValue">
-          <label>Path: </label>
-          <defaultValue>$(user)/wordbook</defaultValue>
-        </textBox>
-        <checkBox refId="WritePathFinal">Final</checkBox>
-        <text>UserPaths of Dictionary files</text>
-        <textBox refId="UserPathsValue">
-          <label>Path list: </label>
-          <defaultValue>$(inst)/share/wordbook $(inst)/share/wordbook/$(vlang) $(user)/wordbook</defaultValue>
-        </textBox>
-        <checkBox refId="UserPathsFinal">Final</checkBox>
-      </presentation>
-      <presentation id="Gallery">
-        <text>WritePath of Gallery files. It is the location where new user files are written.</text>
-        <textBox refId="WritePathValue">
-          <label>Path: </label>
-          <defaultValue>$(user)/gallery</defaultValue>
-        </textBox>
-        <checkBox refId="WritePathFinal">Final</checkBox>
-        <text>UserPaths of Gallery files</text>
-        <textBox refId="UserPathsValue">
-          <label>Path list: </label>
-          <defaultValue>$(inst)/share/gallery $(user)/gallery</defaultValue>
-        </textBox>
-        <checkBox refId="UserPathsFinal">Final</checkBox>
-      </presentation>
-      <presentation id="Templates">
-        <text>WritePath of Templates files. It is the location where new user files are written.</text>
-        <textBox refId="WritePathValue">
-          <label>Path: </label>
-          <defaultValue>$(user)/template</defaultValue>
-        </textBox>
-        <checkBox refId="WritePathFinal">Final</checkBox>
-        <text>UserPaths of Templates files</text>
-        <textBox refId="UserPathsValue">
-          <label>Path list: </label>
-          <defaultValue>$(user)/template</defaultValue>
-        </textBox>
-        <checkBox refId="UserPathsFinal">Final</checkBox>
-      </presentation>
-      <presentation id="MyDocuments">
-        <text>Location of My Documents folder.</text>
-        <textBox refId="WritePathValue">
-          <label>Path: </label>
-          <defaultValue>$(work)</defaultValue>
-        </textBox>
-        <checkBox refId="WritePathFinal">Final</checkBox>
-      </presentation>
-      <presentation id="Graphic">
-        <text>WritePath of Image files. It is the location where new user files are written.</text>
-        <textBox refId="WritePathValue">
-          <label>Path: </label>
-          <defaultValue>$(user)/gallery</defaultValue>
-        </textBox>
-        <checkBox refId="WritePathFinal">Final</checkBox>
-      </presentation>
-      <presentation id="Backup">
-        <text>WritePath of Backup files. It is the location where new user files are written.</text>
-        <textBox refId="WritePathValue">
-          <label>Path: </label>
-          <defaultValue>$(user)/backup</defaultValue>
-        </textBox>
-        <checkBox refId="WritePathFinal">Final</checkBox>
-      </presentation>
-      <presentation id="Temp">
-        <text>WritePath of Temporary files. It is the location where new user files are written.</text>
-        <textBox refId="WritePathValue">
-          <label>Path: </label>
-          <defaultValue>$(temp)</defaultValue>
-        </textBox>
-        <checkBox refId="WritePathFinal">Final</checkBox>
       </presentation>
       <presentation id="UseSystemFileDialog">
         <checkBox refId="Value">Use System File Dialog</checkBox>
@@ -1193,12 +1123,36 @@ Set paths in path lists have to be separated by spaces.</string>
         <checkBox refId="Value" defaultItem="0">Remove personal information on saving</checkBox>
         <checkBox refId="Final">Final</checkBox>
       </presentation>
+      <presentation id="KeepRedlineInfoOnSaving">
+        <checkBox refId="Value" defaultItem="0">Keep track changes information</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="KeepDocUserInfoOnSaving">
+        <checkBox refId="Value" defaultItem="0">Keep document user information</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="KeepNoteAuthorDateInfoOnSaving">
+        <checkBox refId="Value" defaultItem="0">Keep author name and date of notes</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="KeepDocVersionInfoOnSaving">
+        <checkBox refId="Value" defaultItem="0">Keep document version information</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="KeepDocPrinterSettingsOnSaving">
+        <checkBox refId="Value" defaultItem="0">Keep printer settings</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
       <presentation id="RecommendPasswordProtection">
         <checkBox refId="Value" defaultItem="0">Recommend password protection on saving</checkBox>
         <checkBox refId="Final">Final</checkBox>
       </presentation>
       <presentation id="HyperlinksWithCtrlClick">
         <checkBox refId="Value" defaultItem="0">Ctrl-click required to follow hyperlinks</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="BlockUntrustedRefererLinks">
+        <checkBox refId="Value" defaultItem="0">Block links from documents not among the trusted locations</checkBox>
         <checkBox refId="Final">Final</checkBox>
       </presentation>
       <presentation id="WarnSaveOrSendDoc">
@@ -2085,7 +2039,7 @@ Set paths in path lists have to be separated by spaces.</string>
         <checkBox refId="Final">Final</checkBox>
       </presentation>
       <presentation id="SelectPDFExport">
-        <checkBox refId="Value">Export all the PDF as PDF/A</checkBox>
+        <dropdownList refId="Value" defaultItem="0">PDF version: </dropdownList>
         <checkBox refId="Final">Final</checkBox>
       </presentation>
       <presentation id="TrySystemCredentialsFirst">
@@ -2134,6 +2088,48 @@ Set paths in path lists have to be separated by spaces.</string>
       </presentation>
       <presentation id="ViewerAppMode">
         <checkBox refId="Value">Enable Viewer mode</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="LoadPrinter">
+        <checkBox refId="Value">Load printer settings with the document</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="CheckDocumentEvents">
+        <checkBox refId="Value">Check document events</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="HelpExtendedTip">
+        <checkBox refId="Value">Extended Tips</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="UpdateCheckEnabled">
+        <checkBox refId="Value">Enable update check</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="PDFExportFormFields">
+        <checkBox refId="Value">Export form fields as widgets</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="PDFExportPlaceholders">
+        <checkBox refId="Value">Export placeholder fields to PDF</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="PrintSinglePrintJob">
+        <checkBox refId="Value">Create single print jobs</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="AutoTextApplyNumbering">
+        <checkBox refId="Value">Create bulleted and numbered lists while type</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="TableNumberRecognition">
+        <checkBox refId="Value">Recognize numbers in tables</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="WordCompletionMinWordLen">
+        <textBox refId="WordCompletionMinWordLenValue">
+          <label>Min Words: </label>
+        </textBox>
         <checkBox refId="Final">Final</checkBox>
       </presentation>
     </presentationTable>

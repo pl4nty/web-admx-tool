@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<policyDefinitions revision="7.10" schemaVersion="1.0">
+<policyDefinitions revision="7.12" schemaVersion="1.0">
   <policyNamespaces>
     <target prefix="firefox" namespace="Mozilla.Policies.Firefox"/>
     <using prefix="Mozilla" namespace="Mozilla.Policies"/>
   </policyNamespaces>
-  <resources minRequiredRevision="7.10"/>
+  <resources minRequiredRevision="7.12"/>
   <supportedOn>
     <definitions>
       <definition name="UNSUPPORTED" displayName="$(string.UNSUPPORTED)"/>
@@ -89,6 +89,7 @@
       <definition name="SUPPORTED_FF14902_ONLY" displayName="$(string.SUPPORTED_FF14902_ONLY)"/>
       <definition name="SUPPORTED_FF150_ONLY" displayName="$(string.SUPPORTED_FF150_ONLY)"/>
       <definition name="SUPPORTED_FF151_ONLY" displayName="$(string.SUPPORTED_FF151_ONLY)"/>
+      <definition name="SUPPORTED_FF152_ONLY" displayName="$(string.SUPPORTED_FF152_ONLY)"/>
     </definitions>
   </supportedOn>
   <categories>
@@ -4748,6 +4749,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy name="FirefoxHome_Weather" class="Both" displayName="$(string.FirefoxHome_Weather)" explainText="$(string.FirefoxHome_Weather_Explain)" key="Software\Policies\Mozilla\Firefox\FirefoxHome" valueName="Weather">
+      <parentCategory ref="FirefoxHome"/>
+      <supportedOn ref="SUPPORTED_FF152_ONLY"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy name="FirefoxHome_Locked" class="Both" displayName="$(string.FirefoxHome_Locked)" explainText="$(string.FirefoxHome_Locked_Explain)" key="Software\Policies\Mozilla\Firefox\FirefoxHome" valueName="Locked">
       <parentCategory ref="FirefoxHome"/>
       <supportedOn ref="SUPPORTED_FF68"/>
@@ -5100,6 +5111,24 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy name="DefaultSerialGuardSetting" class="Both" displayName="$(string.DefaultSerialGuardSetting)" explainText="$(string.DefaultSerialGuardSetting_Explain)" key="Software\Policies\Mozilla\Firefox" presentation="$(presentation.DefaultSerialGuardSetting)">
+      <parentCategory ref="firefox"/>
+      <supportedOn ref="SUPPORTED_FF151_ONLY"/>
+      <elements>
+        <enum id="DefaultSerialGuardSetting" valueName="DefaultSerialGuardSetting">
+          <item displayName="$(string.DefaultSerialGuardSetting_2)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+          <item displayName="$(string.DefaultSerialGuardSetting_3)">
+            <value>
+              <decimal value="3"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
     </policy>
     <policy name="XSLTEnabled" class="Both" displayName="$(string.XSLTEnabled)" explainText="$(string.XSLTEnabled_Explain)" key="Software\Policies\Mozilla\Firefox" valueName="XSLTEnabled">
       <parentCategory ref="firefox"/>

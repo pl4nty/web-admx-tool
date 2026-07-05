@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--brave version: 149.1.93.14-->
+  <!--brave version: 150.1.94.34-->
   <policyNamespaces>
     <target namespace="BraveSoftware.Policies.Brave" prefix="brave"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -242,6 +242,16 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.BraveGlobalPrivacyControlEnabled)" explainText="$(string.BraveGlobalPrivacyControlEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="BraveGlobalPrivacyControlEnabled" presentation="$(presentation.BraveGlobalPrivacyControlEnabled)" valueName="BraveGlobalPrivacyControlEnabled">
+      <parentCategory ref="BraveSoftware"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.BraveLocalAIEnabled)" explainText="$(string.BraveLocalAIEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="BraveLocalAIEnabled" presentation="$(presentation.BraveLocalAIEnabled)" valueName="BraveLocalAIEnabled">
       <parentCategory ref="BraveSoftware"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
@@ -1209,6 +1219,16 @@
         <list id="PreciseGeolocationAllowedForUrlsDesc" key="Software\Policies\BraveSoftware\Brave\PreciseGeolocationAllowedForUrls" valuePrefix=""/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.RestrictYouTubeCookiesDeletion)" explainText="$(string.RestrictYouTubeCookiesDeletion_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RestrictYouTubeCookiesDeletion" presentation="$(presentation.RestrictYouTubeCookiesDeletion)" valueName="RestrictYouTubeCookiesDeletion">
+      <parentCategory ref="ContentSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.SensorsAllowedForUrls)" explainText="$(string.SensorsAllowedForUrls_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SensorsAllowedForUrls" presentation="$(presentation.SensorsAllowedForUrls)">
       <parentCategory ref="ContentSettings"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -1783,6 +1803,23 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.RoamingProfileLocation)" explainText="$(string.RoamingProfileLocation_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RoamingProfileLocation" presentation="$(presentation.RoamingProfileLocation)">
+      <parentCategory ref="DeprecatedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <text id="RoamingProfileLocation" maxLength="1000000" valueName="RoamingProfileLocation"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.RoamingProfileSupportEnabled)" explainText="$(string.RoamingProfileSupportEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RoamingProfileSupportEnabled" presentation="$(presentation.RoamingProfileSupportEnabled)" valueName="RoamingProfileSupportEnabled">
+      <parentCategory ref="DeprecatedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.SigninAllowed)" explainText="$(string.SigninAllowed_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SigninAllowed" presentation="$(presentation.SigninAllowed)" valueName="SigninAllowed">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -2126,6 +2163,13 @@
         </enum>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.ChromeSuggestionsSettings)" explainText="$(string.ChromeSuggestionsSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ChromeSuggestionsSettings" presentation="$(presentation.ChromeSuggestionsSettings)">
+      <parentCategory ref="GenerativeAI"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <decimal id="ChromeSuggestionsSettings" maxValue="2000000000" minValue="0" valueName="ChromeSuggestionsSettings"/>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.CreateThemesSettings)" explainText="$(string.CreateThemesSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="CreateThemesSettings" presentation="$(presentation.CreateThemesSettings)">
       <parentCategory ref="GenerativeAI"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -2222,6 +2266,24 @@
         </enum>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.GeminiSparkSettings)" explainText="$(string.GeminiSparkSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="GeminiSparkSettings" presentation="$(presentation.GeminiSparkSettings)">
+      <parentCategory ref="GenerativeAI"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="GeminiSparkSettings" valueName="GeminiSparkSettings">
+          <item displayName="$(string.GeminiSparkSettings_Enabled)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.GeminiSparkSettings_Disabled)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.GenAILocalFoundationalModelSettings)" explainText="$(string.GenAILocalFoundationalModelSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="GenAILocalFoundationalModelSettings" presentation="$(presentation.GenAILocalFoundationalModelSettings)">
       <parentCategory ref="GenerativeAI"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -2297,6 +2359,24 @@
             </value>
           </item>
           <item displayName="$(string.SearchContentSharingSettings_Disabled)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.SmartTabSharingSettings)" explainText="$(string.SmartTabSharingSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SmartTabSharingSettings" presentation="$(presentation.SmartTabSharingSettings)">
+      <parentCategory ref="GenerativeAI"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="SmartTabSharingSettings" valueName="SmartTabSharingSettings">
+          <item displayName="$(string.SmartTabSharingSettings_Allowed)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.SmartTabSharingSettings_Disabled)">
             <value>
               <decimal value="1"/>
             </value>
@@ -2753,6 +2833,16 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.AllowFileSelectionDialogs)" explainText="$(string.AllowFileSelectionDialogs_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AllowFileSelectionDialogs" presentation="$(presentation.AllowFileSelectionDialogs)" valueName="AllowFileSelectionDialogs">
+      <parentCategory ref="brave"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.AllowSocketPoolSizeRandomizationForProxies)" explainText="$(string.AllowSocketPoolSizeRandomizationForProxies_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AllowSocketPoolSizeRandomizationForProxies" presentation="$(presentation.AllowSocketPoolSizeRandomizationForProxies)" valueName="AllowSocketPoolSizeRandomizationForProxies">
       <parentCategory ref="brave"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
@@ -4516,6 +4606,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.RestrictBackgroundFetchFromServiceWorkerEnabled)" explainText="$(string.RestrictBackgroundFetchFromServiceWorkerEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RestrictBackgroundFetchFromServiceWorkerEnabled" presentation="$(presentation.RestrictBackgroundFetchFromServiceWorkerEnabled)" valueName="RestrictBackgroundFetchFromServiceWorkerEnabled">
+      <parentCategory ref="brave"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.RestrictCoreSharingOnRenderer)" explainText="$(string.RestrictCoreSharingOnRenderer_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RestrictCoreSharingOnRenderer" presentation="$(presentation.RestrictCoreSharingOnRenderer)" valueName="RestrictCoreSharingOnRenderer">
       <parentCategory ref="brave"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -4539,23 +4639,6 @@
       <elements>
         <text id="RestrictSigninToPattern" maxLength="1000000" valueName="RestrictSigninToPattern"/>
       </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.RoamingProfileLocation)" explainText="$(string.RoamingProfileLocation_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RoamingProfileLocation" presentation="$(presentation.RoamingProfileLocation)">
-      <parentCategory ref="brave"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <text id="RoamingProfileLocation" maxLength="1000000" valueName="RoamingProfileLocation"/>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.RoamingProfileSupportEnabled)" explainText="$(string.RoamingProfileSupportEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RoamingProfileSupportEnabled" presentation="$(presentation.RoamingProfileSupportEnabled)" valueName="RoamingProfileSupportEnabled">
-      <parentCategory ref="brave"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.SSLErrorOverrideAllowed)" explainText="$(string.SSLErrorOverrideAllowed_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SSLErrorOverrideAllowed" presentation="$(presentation.SSLErrorOverrideAllowed)" valueName="SSLErrorOverrideAllowed">
       <parentCategory ref="brave"/>

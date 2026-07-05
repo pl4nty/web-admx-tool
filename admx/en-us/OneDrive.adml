@@ -447,21 +447,21 @@ If admins disable (value 0) or do not configure this setting, the user will see 
       </string>
         
       <!-- Enable Added Folder Hard-delete On Unmount -->
-      <string id="AddedFolderHardDeleteOnUnmount">Hard-delete the contents of an added folder when unmounted</string>
-      <string id="AddedFolderHardDeleteOnUnmount_help">This setting determines the behavior of the Sync client when encounters a request to unmount an added folder.
+      <string id="AddedFolderHardDeleteOnUnmount">Hard-delete the contents of a folder shortcut when unmounted</string>
+      <string id="AddedFolderHardDeleteOnUnmount_help">This setting determines the behavior of the Sync client when it encounters a request to unmount a folder shortcut (a folder added to OneDrive via "Add shortcut to OneDrive").
 
-If admins enable this setting (value 1), when an unmount of an Added Folder is received, the Sync client will hard-delete all the contents of the folder.
+If you enable this setting, when an unmount of a folder shortcut is received, the Sync client will hard-delete all the contents of the folder.
 
-If admins disable (value 0) or do not configure this setting, Sync will by default move the contents of the unmounted folder to the recycle-bin.
+If you disable or do not configure this setting, Sync will by default move the contents of the unmounted folder to the recycle bin.
       </string>
 
       <!-- Enable Added Folder Hard-delete On Permissions Loss -->
-      <string id="AddedFolderUnmountOnPermissionsLoss">Hard-delete the contents of an added folder when user loses permissions to the folder</string>
-      <string id="AddedFolderUnmountOnPermissionsLoss_help">This setting determines the behavior of the Sync client when the user loses  permissions to an added folder.
+      <string id="AddedFolderUnmountOnPermissionsLoss">Hard-delete the contents of a folder shortcut when user loses permissions to the folder</string>
+      <string id="AddedFolderUnmountOnPermissionsLoss_help">This setting determines the behavior of the Sync client when the user loses permissions to a folder shortcut (a folder added to OneDrive via "Add shortcut to OneDrive").
 
-If admins enable this setting (value 1), when the Sync client detects that the user lost permissions to an Added Folder, the Sync client will hard-delete all the contents of the folder and the folder itself.
+If you enable this setting, when the Sync client detects that the user lost permissions to a folder shortcut, the Sync client will hard-delete all the contents of the folder and the folder itself.
 
-If admins disable (value 0) or do not configure this setting, Sync will by default mark the folder in error and prompt the user to remove it. When the user confirms the removals, the contents of the folder are moved to the recycle-bin.
+If you disable or do not configure this setting, Sync will by default mark the folder in error and prompt the user to remove it. When the user confirms the removal, the contents of the folder are moved to the recycle bin.
       </string>
 
       <!-- Confirm shared file deletion prompt -->
