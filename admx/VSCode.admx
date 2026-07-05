@@ -11,11 +11,14 @@
 			<definition name="Supported_1_107" displayName="$(string.Supported_1_107)" />
 			<definition name="Supported_1_109" displayName="$(string.Supported_1_109)" />
 			<definition name="Supported_1_110" displayName="$(string.Supported_1_110)" />
-			<definition name="Supported_1_112" displayName="$(string.Supported_1_112)" />
 			<definition name="Supported_1_113" displayName="$(string.Supported_1_113)" />
 			<definition name="Supported_1_116" displayName="$(string.Supported_1_116)" />
 			<definition name="Supported_1_118" displayName="$(string.Supported_1_118)" />
 			<definition name="Supported_1_121" displayName="$(string.Supported_1_121)" />
+			<definition name="Supported_1_122" displayName="$(string.Supported_1_122)" />
+			<definition name="Supported_1_125" displayName="$(string.Supported_1_125)" />
+			<definition name="Supported_1_126" displayName="$(string.Supported_1_126)" />
+			<definition name="Supported_1_127" displayName="$(string.Supported_1_127)" />
 			<definition name="Supported_1_67" displayName="$(string.Supported_1_67)" />
 			<definition name="Supported_1_96" displayName="$(string.Supported_1_96)" />
 			<definition name="Supported_1_99" displayName="$(string.Supported_1_99)" />
@@ -62,6 +65,15 @@
 		</boolean>
 			</elements>
 		</policy>
+		<policy name="ChatAgentHostEnabled" class="Both" displayName="$(string.ChatAgentHostEnabled)" explainText="$(string.ChatAgentHostEnabled_chat_agentHost_enabled)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentHostEnabled)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_126" />
+			<elements>
+		<boolean id="ChatAgentHostEnabled" valueName="ChatAgentHostEnabled">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
 		<policy name="ChatAgentMode" class="Both" displayName="$(string.ChatAgentMode)" explainText="$(string.ChatAgentMode_chat_agent_enabled_description)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentMode)">
 			<parentCategory ref="interactiveSessionConfigurationTitle" />
 			<supportedOn ref="Supported_1_99" />
@@ -85,6 +97,27 @@
 			<supportedOn ref="Supported_1_118" />
 			<elements>
 		<multiText id="ChatApprovedAccountOrganizations" valueName="ChatApprovedAccountOrganizations" required="true" />
+			</elements>
+		</policy>
+		<policy name="ChatDefaultModel" class="Both" displayName="$(string.ChatDefaultModel)" explainText="$(string.ChatDefaultModel_chat_defaultModel_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatDefaultModel)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_127" />
+			<elements>
+		<text id="ChatDefaultModel" valueName="ChatDefaultModel" required="true" />
+			</elements>
+		</policy>
+		<policy name="ChatEnabledPlugins" class="Both" displayName="$(string.ChatEnabledPlugins)" explainText="$(string.ChatEnabledPlugins_chat_plugins_enabledPlugins_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatEnabledPlugins)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_122" />
+			<elements>
+		<multiText id="ChatEnabledPlugins" valueName="ChatEnabledPlugins" required="true" />
+			</elements>
+		</policy>
+		<policy name="ChatExtraMarketplaces" class="Both" displayName="$(string.ChatExtraMarketplaces)" explainText="$(string.ChatExtraMarketplaces_chat_plugins_extraMarketplaces_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatExtraMarketplaces)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_122" />
+			<elements>
+		<multiText id="ChatExtraMarketplaces" valueName="ChatExtraMarketplaces" required="true" />
 			</elements>
 		</policy>
 		<policy name="ChatHooks" class="Both" displayName="$(string.ChatHooks)" explainText="$(string.ChatHooks_chat_useHooks_description)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatHooks)">
@@ -116,6 +149,13 @@
 		</boolean>
 			</elements>
 		</policy>
+		<policy name="ChatStrictMarketplaces" class="Both" displayName="$(string.ChatStrictMarketplaces)" explainText="$(string.ChatStrictMarketplaces_chat_plugins_strictMarketplaces_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatStrictMarketplaces)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_122" />
+			<elements>
+		<multiText id="ChatStrictMarketplaces" valueName="ChatStrictMarketplaces" required="true" />
+			</elements>
+		</policy>
 		<policy name="ChatToolsAutoApprove" class="Both" displayName="$(string.ChatToolsAutoApprove)" explainText="$(string.ChatToolsAutoApprove_autoApprove3_description)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatToolsAutoApprove)">
 			<parentCategory ref="interactiveSessionConfigurationTitle" />
 			<supportedOn ref="Supported_1_99" />
@@ -132,11 +172,20 @@
 		<multiText id="ChatToolsEligibleForAutoApproval" valueName="ChatToolsEligibleForAutoApproval" required="true" />
 			</elements>
 		</policy>
-		<policy name="Claude3PIntegration" class="Both" displayName="$(string.Claude3PIntegration)" explainText="$(string.Claude3PIntegration_github_copilot_chat_claudeAgent_enabled)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.Claude3PIntegration)">
+		<policy name="Claude3PIntegration" class="Both" displayName="$(string.Claude3PIntegration)" explainText="$(string.Claude3PIntegration_chat_agentHost_claudeAgent_enabled_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.Claude3PIntegration)">
 			<parentCategory ref="interactiveSessionConfigurationTitle" />
 			<supportedOn ref="Supported_1_113" />
 			<elements>
 		<boolean id="Claude3PIntegration" valueName="Claude3PIntegration">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
+		<policy name="Codex3PIntegration" class="Both" displayName="$(string.Codex3PIntegration)" explainText="$(string.Codex3PIntegration_chat_agentHost_codexAgent_enabled_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.Codex3PIntegration)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_126" />
+			<elements>
+		<boolean id="Codex3PIntegration" valueName="Codex3PIntegration">
 			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
 		</boolean>
 			</elements>
@@ -148,6 +197,78 @@
 		<boolean id="CopilotNextEditSuggestions" valueName="CopilotNextEditSuggestions">
 			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
 		</boolean>
+			</elements>
+		</policy>
+		<policy name="CopilotOtelCaptureContent" class="Both" displayName="$(string.CopilotOtelCaptureContent)" explainText="$(string.CopilotOtelCaptureContent_chat_agentHost_otel_captureContent_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.CopilotOtelCaptureContent)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_127" />
+			<elements>
+		<boolean id="CopilotOtelCaptureContent" valueName="CopilotOtelCaptureContent">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
+		<policy name="CopilotOtelEnabled" class="Both" displayName="$(string.CopilotOtelEnabled)" explainText="$(string.CopilotOtelEnabled_chat_agentHost_otel_enabled_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.CopilotOtelEnabled)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_127" />
+			<elements>
+		<boolean id="CopilotOtelEnabled" valueName="CopilotOtelEnabled">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
+		<policy name="CopilotOtelEndpoint" class="Both" displayName="$(string.CopilotOtelEndpoint)" explainText="$(string.CopilotOtelEndpoint_chat_agentHost_otel_otlpEndpoint_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.CopilotOtelEndpoint)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_127" />
+			<elements>
+		<text id="CopilotOtelEndpoint" valueName="CopilotOtelEndpoint" required="true" />
+			</elements>
+		</policy>
+		<policy name="CopilotOtelHeaders" class="Both" displayName="$(string.CopilotOtelHeaders)" explainText="$(string.CopilotOtelHeaders_chat_agentHost_otel_headers_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.CopilotOtelHeaders)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_127" />
+			<elements>
+		<multiText id="CopilotOtelHeaders" valueName="CopilotOtelHeaders" required="true" />
+			</elements>
+		</policy>
+		<policy name="CopilotOtelOtlpProtocol" class="Both" displayName="$(string.CopilotOtelOtlpProtocol)" explainText="$(string.CopilotOtelOtlpProtocol_chat_agentHost_otel_otlpProtocol_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.CopilotOtelOtlpProtocol)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_127" />
+			<elements>
+		<text id="CopilotOtelOtlpProtocol" valueName="CopilotOtelOtlpProtocol" required="true" />
+			</elements>
+		</policy>
+		<policy name="CopilotOtelOutfile" class="Both" displayName="$(string.CopilotOtelOutfile)" explainText="$(string.CopilotOtelOutfile_chat_agentHost_otel_outfile_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.CopilotOtelOutfile)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_127" />
+			<elements>
+		<text id="CopilotOtelOutfile" valueName="CopilotOtelOutfile" required="true" />
+			</elements>
+		</policy>
+		<policy name="CopilotOtelProtocol" class="Both" displayName="$(string.CopilotOtelProtocol)" explainText="$(string.CopilotOtelProtocol_chat_agentHost_otel_protocol_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.CopilotOtelProtocol)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_127" />
+			<elements>
+		<enum id="CopilotOtelProtocol" valueName="CopilotOtelProtocol">
+			<item displayName="$(string.CopilotOtelProtocol_chat_agentHost_otel_protocol_policy_otlpHttp)"><value><string>otlp-http</string></value></item>
+			<item displayName="$(string.CopilotOtelProtocol_chat_agentHost_otel_protocol_policy_otlpGrpc)"><value><string>otlp-grpc</string></value></item>
+			<item displayName="$(string.CopilotOtelProtocol_chat_agentHost_otel_protocol_policy_console)"><value><string>console</string></value></item>
+			<item displayName="$(string.CopilotOtelProtocol_chat_agentHost_otel_protocol_policy_file)"><value><string>file</string></value></item>
+		</enum>
+			</elements>
+		</policy>
+		<policy name="CopilotOtelResourceAttributes" class="Both" displayName="$(string.CopilotOtelResourceAttributes)" explainText="$(string.CopilotOtelResourceAttributes_chat_agentHost_otel_resourceAttributes_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.CopilotOtelResourceAttributes)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_127" />
+			<elements>
+		<multiText id="CopilotOtelResourceAttributes" valueName="CopilotOtelResourceAttributes" required="true" />
+			</elements>
+		</policy>
+		<policy name="CopilotOtelServiceName" class="Both" displayName="$(string.CopilotOtelServiceName)" explainText="$(string.CopilotOtelServiceName_chat_agentHost_otel_serviceName_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.CopilotOtelServiceName)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_127" />
+			<elements>
+		<text id="CopilotOtelServiceName" valueName="CopilotOtelServiceName" required="true" />
 			</elements>
 		</policy>
 		<policy name="CopilotReviewAgent" class="Both" displayName="$(string.CopilotReviewAgent)" explainText="$(string.CopilotReviewAgent_github_copilot_chat_reviewAgent_enabled)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.CopilotReviewAgent)">
@@ -177,13 +298,11 @@
 		</boolean>
 			</elements>
 		</policy>
-		<policy name="DeprecatedEditModeHidden" class="Both" displayName="$(string.DeprecatedEditModeHidden)" explainText="$(string.DeprecatedEditModeHidden_chat_editMode_hidden)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.DeprecatedEditModeHidden)">
+		<policy name="McpEnterpriseManagedAuthIdp" class="Both" displayName="$(string.McpEnterpriseManagedAuthIdp)" explainText="$(string.McpEnterpriseManagedAuthIdp_mcp_enterpriseManagedAuth_idp_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.McpEnterpriseManagedAuthIdp)">
 			<parentCategory ref="interactiveSessionConfigurationTitle" />
-			<supportedOn ref="Supported_1_112" />
+			<supportedOn ref="Supported_1_122" />
 			<elements>
-		<boolean id="DeprecatedEditModeHidden" valueName="DeprecatedEditModeHidden">
-			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
-		</boolean>
+		<multiText id="McpEnterpriseManagedAuthIdp" valueName="McpEnterpriseManagedAuthIdp" required="true" />
 			</elements>
 		</policy>
 		<policy name="McpGalleryServiceUrl" class="Both" displayName="$(string.McpGalleryServiceUrl)" explainText="$(string.McpGalleryServiceUrl_mcp_gallery_serviceUrl)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.McpGalleryServiceUrl)">
@@ -207,11 +326,37 @@
 		<text id="ExtensionGalleryServiceUrl" valueName="ExtensionGalleryServiceUrl" required="true" />
 			</elements>
 		</policy>
+		<policy name="ExtensionsAutoUpdate" class="Both" displayName="$(string.ExtensionsAutoUpdate)" explainText="$(string.ExtensionsAutoUpdate_extensions_autoUpdate)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ExtensionsAutoUpdate)">
+			<parentCategory ref="extensionsConfigurationTitle" />
+			<supportedOn ref="Supported_1_125" />
+			<elements>
+		<enum id="ExtensionsAutoUpdate" valueName="ExtensionsAutoUpdate">
+			<item displayName="$(string.ExtensionsAutoUpdate_extensions_autoUpdate_on)"><value><string>on</string></value></item>
+			<item displayName="$(string.ExtensionsAutoUpdate_extensions_autoUpdate_off)"><value><string>off</string></value></item>
+		</enum>
+			</elements>
+		</policy>
+		<policy name="ExtensionsAutoUpdateDelay" class="Both" displayName="$(string.ExtensionsAutoUpdateDelay)" explainText="$(string.ExtensionsAutoUpdateDelay_extensions_autoUpdateDelay)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ExtensionsAutoUpdateDelay)">
+			<parentCategory ref="extensionsConfigurationTitle" />
+			<supportedOn ref="Supported_1_125" />
+			<elements>
+		<decimal id="ExtensionsAutoUpdateDelay" valueName="ExtensionsAutoUpdateDelay" />
+			</elements>
+		</policy>
 		<policy name="ChatAgentSandboxAllowAutoApprove" class="Both" displayName="$(string.ChatAgentSandboxAllowAutoApprove)" explainText="$(string.ChatAgentSandboxAllowAutoApprove_agentSandbox_allowAutoApprove)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentSandboxAllowAutoApprove)">
 			<parentCategory ref="terminalIntegratedConfigurationTitle" />
 			<supportedOn ref="Supported_1_116" />
 			<elements>
 		<boolean id="ChatAgentSandboxAllowAutoApprove" valueName="ChatAgentSandboxAllowAutoApprove">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
+		<policy name="ChatAgentSandboxAllowNetwork" class="Both" displayName="$(string.ChatAgentSandboxAllowNetwork)" explainText="$(string.ChatAgentSandboxAllowNetwork_agentSandbox_allowNetwork)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentSandboxAllowNetwork)">
+			<parentCategory ref="terminalIntegratedConfigurationTitle" />
+			<supportedOn ref="Supported_1_127" />
+			<elements>
+		<boolean id="ChatAgentSandboxAllowNetwork" valueName="ChatAgentSandboxAllowNetwork">
 			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
 		</boolean>
 			</elements>
@@ -225,15 +370,6 @@
 		</boolean>
 			</elements>
 		</policy>
-		<policy name="ChatAgentSandboxAutoApproveUnsandboxedCommands" class="Both" displayName="$(string.ChatAgentSandboxAutoApproveUnsandboxedCommands)" explainText="$(string.ChatAgentSandboxAutoApproveUnsandboxedCommands_agentSandbox_autoApproveUnsandboxedCommands)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentSandboxAutoApproveUnsandboxedCommands)">
-			<parentCategory ref="terminalIntegratedConfigurationTitle" />
-			<supportedOn ref="Supported_1_116" />
-			<elements>
-		<boolean id="ChatAgentSandboxAutoApproveUnsandboxedCommands" valueName="ChatAgentSandboxAutoApproveUnsandboxedCommands">
-			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
-		</boolean>
-			</elements>
-		</policy>
 		<policy name="ChatAgentSandboxEnabled" class="Both" displayName="$(string.ChatAgentSandboxEnabled)" explainText="$(string.ChatAgentSandboxEnabled_agentSandbox_enabledSetting)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentSandboxEnabled)">
 			<parentCategory ref="terminalIntegratedConfigurationTitle" />
 			<supportedOn ref="Supported_1_116" />
@@ -241,7 +377,6 @@
 		<enum id="ChatAgentSandboxEnabled" valueName="ChatAgentSandboxEnabled">
 			<item displayName="$(string.ChatAgentSandboxEnabled_agentSandbox_enabledSetting_offDescription)"><value><string>off</string></value></item>
 			<item displayName="$(string.ChatAgentSandboxEnabled_agentSandbox_enabledSetting_onDescription)"><value><string>on</string></value></item>
-			<item displayName="$(string.ChatAgentSandboxEnabled_agentSandbox_enabledSetting_allowNetworkDescription)"><value><string>allowNetwork</string></value></item>
 		</enum>
 			</elements>
 		</policy>

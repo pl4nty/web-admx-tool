@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<policyDefinitionResources revision="7.0" schemaVersion="1.0">
+<policyDefinitionResources revision="7.1" schemaVersion="1.0">
   <displayName>ZoomMeetings</displayName>
   <description>ZoomMeetings</description>
   <resources>
@@ -2000,6 +2000,8 @@ If this policy is invalid or empty, the client will use "18801-19800" as the def
 
 The format of this string should be "port-port", for example: "18801-19800".
 
+For Zoom Mesh Windows Firewall rules, the configured range must start at port 2000 or higher and span fewer than 5120 ports; otherwise, the firewall rule will not be added.
+
 If this policy is not set, client will use the default setting.</string>
       <string id="EnableGuestMesh_Policy">Allows users to join an external Webinar as a guest through another account's local Zoom Mesh-enabled network</string>
       <string id="EnableGuestMesh_Policy_Recommend">Allows users to join an external Webinar as a guest through another account's local Zoom Mesh-enabled network (Recommendation Setting)</string>
@@ -2410,7 +2412,7 @@ If this policy is not set, client will use the default setting.</string>
       <string id="MemorySaverOptimization_Policy">Set Memory Saver optimization level for WebView recycle behavior</string>
       <string id="MemorySaverOptimization_Policy_Recommend">Set Memory Saver optimization level for WebView recycle behavior (Recommendation Setting)</string>
       <string id="MemorySaverOptimization_Part">Set Memory Saver optimization level for WebView recycle behavior</string>
-      <string id="MemorySaverOptimization_Explain">Default policy is 2 (Default).
+      <string id="MemorySaverOptimization_Explain">Default policy is 3 (Default).
 If this policy is set to 1, the client will use Light optimization level.
 If this policy is set to 2, the client will use Default optimization level.
 If this policy is set to 3, the client will use Aggressive optimization level.
@@ -2424,6 +2426,24 @@ If this policy is disabled, the client will disable the My Notes feature.
 If this policy is not set, client will use the default setting.</string>
       <string id="ADMXMigrator_UnresolvedString">ADMX Migrator encountered a string that is not present in the source ADM string table.</string>
       <string id="ADMXMigrator_NoSupportedOn">ADMX Migrator encountered a policy that does not have a supportedOn value.</string>
+      <string id="EnableForceMaximumCameraSizeForSending_Policy">Prevent camera restart during video sending</string>
+      <string id="EnableForceMaximumCameraSizeForSending_Policy_Recommend">Prevent camera restart during video sending (Recommendation Setting)</string>
+      <string id="EnableForceMaximumCameraSizeForSending_Explain">Default policy is disabled.
+If this policy is enabled, the client will keep the maximum camera capture size while sending video to avoid camera restart when higher video resolution is requested during a meeting.
+If this policy is disabled, the client may adjust the camera capture size as needed during video sending.
+If this policy is not set, client will use the default setting.</string>
+      <string id="ForceEnableWebViewRecycle_Policy">Force enable WebView recycle behavior</string>
+      <string id="ForceEnableWebViewRecycle_Policy_Recommend">Force enable WebView recycle behavior (Recommendation Setting)</string>
+      <string id="ForceEnableWebViewRecycle_Explain">Default policy is disabled.
+If this policy is enabled, the client will force WebView recycle behavior to reclaim memory from supported WebView-based tabs according to the configured recycle rules.
+If this policy is disabled, the client will not force WebView recycle behavior and will use the normal Memory Saver and WebView recycle settings.
+If this policy is not set, client will use the default setting.</string>
+      <string id="V4RetryForV6TlsError_Policy">Enable IPv4 retry for IPv6 TLS errors</string>
+      <string id="V4RetryForV6TlsError_Policy_Recommend">Enable IPv4 retry for IPv6 TLS errors (Recommendation Setting)</string>
+      <string id="V4RetryForV6TlsError_Explain">Default policy is disabled.
+If this policy is enabled, when the client resolves both IPv4 and IPv6 addresses and the IPv6 TLS connection fails, the client will retry the connection using IPv4.
+If this policy is disabled, the client will not perform this IPv4 retry for IPv6 TLS errors.
+If this policy is not set, client will use the default setting.</string>
     </stringTable>
     <presentationTable>
       <presentation id="EnableClientAutoUpdate_Policy" />
@@ -2856,6 +2876,9 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="OptimizeSlideControlWithOfficeAPI_Policy" />
       <presentation id="DisableWindowsMeshUAC_Policy" />
       <presentation id="EnableAutoFraming_Policy" />
+      <presentation id="EnableForceMaximumCameraSizeForSending_Policy" />
+      <presentation id="V4RetryForV6TlsError_Policy" />
+      <presentation id="ForceEnableWebViewRecycle_Policy" />
       <presentation id="EnableClientAutoUpdate_Policy_Recommend" />
       <presentation id="DisableCreatingDesktopShortcut_Policy_Recommend" />
       <presentation id="AutoStartAfterReboot_Policy_Recommend" />
@@ -3284,6 +3307,9 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="OptimizeSlideControlWithOfficeAPI_Policy_Recommend" />
       <presentation id="DisableWindowsMeshUAC_Policy_Recommend" />
       <presentation id="EnableAutoFraming_Policy_Recommend" />
+      <presentation id="EnableForceMaximumCameraSizeForSending_Policy_Recommend" />
+      <presentation id="V4RetryForV6TlsError_Policy_Recommend" />
+      <presentation id="ForceEnableWebViewRecycle_Policy_Recommend" />
     </presentationTable>
   </resources>
 </policyDefinitionResources>

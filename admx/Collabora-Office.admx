@@ -65,9 +65,6 @@
     <category name="UserProfile" displayName="$(string.UserProfile)">
       <parentCategory ref="Common" />
     </category>
-    <category name="Paths" displayName="$(string.category_Paths)">
-      <parentCategory ref="Common" />
-    </category>
     <category name="Passwords" displayName="$(string.category_Passwords)">
       <parentCategory ref="Common" />
     </category>
@@ -89,6 +86,9 @@
     <category name="Infobars" displayName="$(string.category_Infobars)">
       <parentCategory ref="Common" />
     </category>
+    <category name="CommonHelp" displayName="$(string.category_CommonHelp)">
+      <parentCategory ref="Common" />
+    </category>
     <category name="Writer" displayName="$(string.category_Writer)">
       <parentCategory ref="LibreOffice" />
     </category>
@@ -105,6 +105,9 @@
       <parentCategory ref="Writer" />
     </category>
     <category name="AutoText" displayName="$(string.category_AutoText)">
+      <parentCategory ref="Writer" />
+    </category>
+    <category name="WriterTable" displayName="$(string.category_Table)">
       <parentCategory ref="Writer" />
     </category>
     <category name="Forms" displayName="$(string.category_Forms)">
@@ -139,6 +142,9 @@
     </category>
     <category name="ImpressDefaultTemplate" displayName="$(string.DefaultTemplate)">
       <parentCategory ref="Impress" />
+    </category>
+    <category name="Jobs" displayName="$(string.category_Jobs)">
+      <parentCategory ref="LibreOffice" />
     </category>
   </categories>
   <policies>
@@ -425,246 +431,6 @@
           </value>
         </item>
       </disabledList>
-    </policy>
-    <policy name="AutoCorrect" class="Both" displayName="$(string.name_AutoCorrect)" explainText="$(string.PathListExplain)" presentation="$(presentation.AutoCorrect)" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['AutoCorrect']\WritePath">
-      <parentCategory ref="Paths" />
-      <supportedOn ref="supported_LibreOffice_5_3_49" />
-      <enabledList>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\AutoCorrect" valueName="Value">
-          <value>
-            <string></string>
-          </value>
-        </item>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\AutoCorrect" valueName="Final">
-          <value>
-            <decimal value="1" />
-          </value>
-        </item>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\AutoCorrect" valueName="Nil">
-          <value>
-            <decimal value="1" />
-          </value>
-        </item>
-      </enabledList>
-      <elements>
-        <text id="WritePathValue" valueName="Value" required="true" />
-        <boolean id="WritePathFinal" valueName="Final" />
-        <text id="UserPathsValue" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['AutoCorrect']\UserPaths" valueName="Value" required="true" />
-        <boolean id="UserPathsFinal" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['AutoCorrect']\UserPaths" valueName="Final" />
-      </elements>
-    </policy>
-    <policy name="AutoText" class="Both" displayName="$(string.name_AutoText)" explainText="$(string.PathListExplain)" presentation="$(presentation.AutoText)" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['AutoText']\WritePath">
-      <parentCategory ref="Paths" />
-      <supportedOn ref="supported_LibreOffice_5_3_49" />
-      <enabledList>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\AutoText" valueName="Value">
-          <value>
-            <string></string>
-          </value>
-        </item>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\AutoText" valueName="Final">
-          <value>
-            <decimal value="1" />
-          </value>
-        </item>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\AutoText" valueName="Nil">
-          <value>
-            <decimal value="1" />
-          </value>
-        </item>
-      </enabledList>
-      <elements>
-        <text id="WritePathValue" valueName="Value" required="true" />
-        <boolean id="WritePathFinal" valueName="Final" />
-        <text id="UserPathsValue" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['AutoText']\UserPaths" valueName="Value" required="true" />
-        <boolean id="UserPathsFinal" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['AutoText']\UserPaths" valueName="Final" />
-      </elements>
-    </policy>
-    <policy name="Dictionary" class="Both" displayName="$(string.name_Dictionary)" explainText="$(string.PathListExplain)" presentation="$(presentation.Dictionary)" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Dictionary']\WritePath">
-      <parentCategory ref="Paths" />
-      <supportedOn ref="supported_LibreOffice_5_3_49" />
-      <enabledList>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Dictionary" valueName="Value">
-          <value>
-            <string></string>
-          </value>
-        </item>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Dictionary" valueName="Final">
-          <value>
-            <decimal value="1" />
-          </value>
-        </item>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Dictionary" valueName="Nil">
-          <value>
-            <decimal value="1" />
-          </value>
-        </item>
-      </enabledList>
-      <elements>
-        <text id="WritePathValue" valueName="Value" required="true" />
-        <boolean id="WritePathFinal" valueName="Final" />
-        <text id="UserPathsValue" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Dictionary']\UserPaths" valueName="Value" required="true" />
-        <boolean id="UserPathsFinal" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Dictionary']\UserPaths" valueName="Final" />
-      </elements>
-    </policy>
-    <policy name="Gallery" class="Both" displayName="$(string.name_Gallery)" explainText="$(string.PathListExplain)" presentation="$(presentation.Gallery)" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Gallery']\WritePath">
-      <parentCategory ref="Paths" />
-      <supportedOn ref="supported_LibreOffice_5_3_49" />
-      <enabledList>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Gallery" valueName="Value">
-          <value>
-            <string></string>
-          </value>
-        </item>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Gallery" valueName="Final">
-          <value>
-            <decimal value="1" />
-          </value>
-        </item>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Gallery" valueName="Nil">
-          <value>
-            <decimal value="1" />
-          </value>
-        </item>
-      </enabledList>
-      <elements>
-        <text id="WritePathValue" valueName="Value" required="true" />
-        <boolean id="WritePathFinal" valueName="Final" />
-        <text id="UserPathsValue" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Gallery']\UserPaths" valueName="Value" required="true" />
-        <boolean id="UserPathsFinal" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Gallery']\UserPaths" valueName="Final" />
-      </elements>
-    </policy>
-    <policy name="Templates" class="Both" displayName="$(string.name_Templates)" explainText="$(string.PathListExplain)" presentation="$(presentation.Templates)" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Template']\WritePath">
-      <parentCategory ref="Paths" />
-      <supportedOn ref="supported_LibreOffice_5_3_49" />
-      <enabledList>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Template" valueName="Value">
-          <value>
-            <string></string>
-          </value>
-        </item>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Template" valueName="Final">
-          <value>
-            <decimal value="1" />
-          </value>
-        </item>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Template" valueName="Nil">
-          <value>
-            <decimal value="1" />
-          </value>
-        </item>
-      </enabledList>
-      <elements>
-        <text id="WritePathValue" valueName="Value" required="true" />
-        <boolean id="WritePathFinal" valueName="Final" />
-        <text id="UserPathsValue" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Template']\UserPaths" valueName="Value" required="true" />
-        <boolean id="UserPathsFinal" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Template']\UserPaths" valueName="Final" />
-      </elements>
-    </policy>
-    <policy name="MyDocuments" class="Both" displayName="$(string.name_MyDocuments)" explainText="$(string.PathListExplain)" presentation="$(presentation.MyDocuments)" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Work']\WritePath">
-      <parentCategory ref="Paths" />
-      <supportedOn ref="supported_LibreOffice_5_3_49" />
-      <enabledList>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Info\WorkPathChanged" valueName="Value">
-          <value>
-            <string>true</string>
-          </value>
-        </item>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Work" valueName="Value">
-          <value>
-            <string></string>
-          </value>
-        </item>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Work" valueName="Final">
-          <value>
-            <decimal value="1" />
-          </value>
-        </item>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Work" valueName="Nil">
-          <value>
-            <decimal value="1" />
-          </value>
-        </item>
-      </enabledList>
-      <elements>
-        <text id="WritePathValue" valueName="Value" required="true" />
-        <boolean id="WritePathFinal" valueName="Final" />
-      </elements>
-    </policy>
-    <policy name="Graphic" class="Both" displayName="$(string.name_Graphic)" explainText="$(string.PathListExplain)" presentation="$(presentation.Graphic)" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Graphic']\WritePath">
-      <parentCategory ref="Paths" />
-      <supportedOn ref="supported_LibreOffice_5_3_49" />
-      <enabledList>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Graphic" valueName="Value">
-          <value>
-            <string></string>
-          </value>
-        </item>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Graphic" valueName="Final">
-          <value>
-            <decimal value="1" />
-          </value>
-        </item>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Graphic" valueName="Nil">
-          <value>
-            <decimal value="1" />
-          </value>
-        </item>
-      </enabledList>
-      <elements>
-        <text id="WritePathValue" valueName="Value" required="true" />
-        <boolean id="WritePathFinal" valueName="Final" />
-      </elements>
-    </policy>
-    <policy name="Backup" class="Both" displayName="$(string.name_Backup)" explainText="$(string.PathListExplain)" presentation="$(presentation.Backup)" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Backup']\WritePath">
-      <parentCategory ref="Paths" />
-      <supportedOn ref="supported_LibreOffice_5_3_49" />
-      <enabledList>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Backup" valueName="Value">
-          <value>
-            <string></string>
-          </value>
-        </item>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Backup" valueName="Final">
-          <value>
-            <decimal value="1" />
-          </value>
-        </item>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Backup" valueName="Nil">
-          <value>
-            <decimal value="1" />
-          </value>
-        </item>
-      </enabledList>
-      <elements>
-        <text id="WritePathValue" valueName="Value" required="true" />
-        <boolean id="WritePathFinal" valueName="Final" />
-      </elements>
-    </policy>
-    <policy name="Temp" class="Both" displayName="$(string.name_Temp)" explainText="$(string.PathListExplain)" presentation="$(presentation.Temp)" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Temp']\WritePath">
-      <parentCategory ref="Paths" />
-      <supportedOn ref="supported_LibreOffice_5_3_49" />
-      <enabledList>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Temp" valueName="Value">
-          <value>
-            <string></string>
-          </value>
-        </item>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Temp" valueName="Final">
-          <value>
-            <decimal value="1" />
-          </value>
-        </item>
-        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Temp" valueName="Nil">
-          <value>
-            <decimal value="1" />
-          </value>
-        </item>
-      </enabledList>
-      <elements>
-        <text id="WritePathValue" valueName="Value" required="true" />
-        <boolean id="WritePathFinal" valueName="Final" />
-      </elements>
     </policy>
     <policy name="SymbolStyle" class="Both" displayName="$(string.name_SymbolStyle)" explainText="$(string.desc_SymbolStyle)" presentation="$(presentation.SymbolStyle)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Misc\SymbolStyle">
       <parentCategory ref="View" />
@@ -1318,18 +1084,47 @@
         <boolean id="Final" valueName="Final" />
       </elements>
     </policy>
-    <policy name="SelectPDFExport" class="Both" displayName="$(string.name_SelectPDFExport)" explainText="$(string.desc_SelectPDFExport)" presentation="$(presentation.SelectPDFExport)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Filter\PDF\SelectPDFVersion">
+    <policy name="SelectPDFExport" class="Both" displayName="$(string.name_SelectPDFExport)" explainText="$(string.desc_SelectPDFExport)" presentation="$(presentation.SelectPDFExport)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Filter\PDF\Export\SelectPdfVersion">
       <parentCategory ref="PDFExport" />
       <supportedOn ref="supported_LibreOffice_4_2" />
       <elements>
-        <boolean id="Value" valueName="Value">
-          <trueValue>
-            <string>true</string>
-          </trueValue>
-          <falseValue>
-            <string>false</string>
-          </falseValue>
-        </boolean>
+        <enum id="Value" valueName="Value">
+          <item displayName="$(string.pdf_DefaultVersion)">
+            <value>
+              <string>0</string>
+            </value>
+          </item>
+          <item displayName="$(string.pdf_PDF_A_1)">
+            <value>
+              <string>1</string>
+            </value>
+          </item>
+          <item displayName="$(string.pdf_PDF_A_2)">
+            <value>
+              <string>2</string>
+            </value>
+          </item>
+          <item displayName="$(string.pdf_PDF_A_3)">
+            <value>
+              <string>3</string>
+            </value>
+          </item>
+          <item displayName="$(string.pdf_PDF_1_4)">
+            <value>
+              <string>14</string>
+            </value>
+          </item>
+          <item displayName="$(string.pdf_PDF_1_5)">
+            <value>
+              <string>15</string>
+            </value>
+          </item>
+          <item displayName="$(string.pdf_PDF_1_6)">
+            <value>
+              <string>16</string>
+            </value>
+          </item>
+        </enum>
         <boolean id="Final" valueName="Final" />
       </elements>
     </policy>
@@ -2702,6 +2497,81 @@
         <boolean id="Final" valueName="Final" />
       </elements>
     </policy>
+    <policy name="KeepRedlineInfoOnSaving" class="Both" displayName="$(string.name_KeepRedlineInfoOnSaving)" explainText="$(string.desc_KeepRedlineInfoOnSaving)" presentation="$(presentation.KeepRedlineInfoOnSaving)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Security\Scripting\KeepRedlineInfoOnSaving">
+      <parentCategory ref="Security" />
+      <supportedOn ref="supported_LibreOffice_7_0" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="KeepDocUserInfoOnSaving" class="Both" displayName="$(string.name_KeepDocUserInfoOnSaving)" explainText="$(string.desc_KeepDocUserInfoOnSaving)" presentation="$(presentation.KeepDocUserInfoOnSaving)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Security\Scripting\KeepDocUserInfoOnSaving">
+      <parentCategory ref="Security" />
+      <supportedOn ref="supported_LibreOffice_7_0" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="KeepNoteAuthorDateInfoOnSaving" class="Both" displayName="$(string.name_KeepNoteAuthorDateInfoOnSaving)" explainText="$(string.desc_KeepNoteAuthorDateInfoOnSaving)" presentation="$(presentation.KeepNoteAuthorDateInfoOnSaving)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Security\Scripting\KeepNoteAuthorDateInfoOnSaving">
+      <parentCategory ref="Security" />
+      <supportedOn ref="supported_LibreOffice_7_0" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="KeepDocVersionInfoOnSaving" class="Both" displayName="$(string.name_KeepDocVersionInfoOnSaving)" explainText="$(string.desc_KeepDocVersionInfoOnSaving)" presentation="$(presentation.KeepDocVersionInfoOnSaving)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Security\Scripting\KeepDocVersionInfoOnSaving">
+      <parentCategory ref="Security" />
+      <supportedOn ref="supported_LibreOffice_7_0" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="KeepDocPrinterSettingsOnSaving" class="Both" displayName="$(string.name_KeepDocPrinterSettingsOnSaving)" explainText="$(string.desc_KeepDocPrinterSettingsOnSaving)" presentation="$(presentation.KeepDocPrinterSettingsOnSaving)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Security\Scripting\KeepDocPrinterSettingsOnSaving">
+      <parentCategory ref="Security" />
+      <supportedOn ref="supported_LibreOffice_7_0" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
     <policy name="RecommendPasswordProtection" class="Both" displayName="$(string.name_RecommendPasswordProtection)" explainText="$(string.desc_RecommendPasswordProtection)" presentation="$(presentation.RecommendPasswordProtection)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Security\Scripting\RecommendPasswordProtection">
       <parentCategory ref="Security" />
       <supportedOn ref="supported_LibreOffice_4_2" />
@@ -2720,6 +2590,21 @@
     <policy name="HyperlinksWithCtrlClick" class="Both" displayName="$(string.name_HyperlinksWithCtrlClick)" explainText="$(string.desc_HyperlinksWithCtrlClick)" presentation="$(presentation.HyperlinksWithCtrlClick)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Security\Scripting\HyperlinksWithCtrlClick">
       <parentCategory ref="Security" />
       <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="BlockUntrustedRefererLinks" class="Both" displayName="$(string.name_BlockUntrustedRefererLinks)" explainText="$(string.desc_BlockUntrustedRefererLinks)" presentation="$(presentation.BlockUntrustedRefererLinks)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Security\Scripting\BlockUntrustedRefererLinks">
+      <parentCategory ref="Security" />
+      <supportedOn ref="supported_LibreOffice_7_0" />
       <elements>
         <boolean id="Value" valueName="Value">
           <trueValue>
@@ -5896,6 +5781,167 @@
           </trueValue>
           <falseValue>
             <string>true</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="LoadPrinter" class="Both" displayName="$(string.name_LoadPrinter)" explainText="$(string.desc_LoadPrinter)" presentation="$(presentation.LoadPrinter)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Save\Document\LoadPrinter">
+      <parentCategory ref="LoadandSave" />
+      <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="CheckDocumentEvents" class="Both" displayName="$(string.name_CheckDocumentEvents)" explainText="$(string.desc_CheckDocumentEvents)" presentation="$(presentation.CheckDocumentEvents)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Security\Scripting\CheckDocumentEvents">
+      <parentCategory ref="Security" />
+      <supportedOn ref="supported_LibreOffice_7_0" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="HelpExtendedTip" class="Both" displayName="$(string.name_HelpExtendedTip)" explainText="$(string.desc_HelpExtendedTip)" presentation="$(presentation.HelpExtendedTip)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Help\ExtendedTip">
+      <parentCategory ref="CommonHelp" />
+      <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="UpdateCheckEnabled" class="Both" displayName="$(string.name_UpdateCheckEnabled)" explainText="$(string.desc_UpdateCheckEnabled)" presentation="$(presentation.UpdateCheckEnabled)" key="Software\Policies\LibreOffice\org.openoffice.Office.Jobs\Jobs\UpdateCheck\Arguments\AutoCheckEnabled">
+      <parentCategory ref="Jobs" />
+      <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Jobs\Jobs\UpdateCheck\Arguments\AutoCheckEnabled" valueName="Value">
+              <value>
+                <string>true</string>
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Jobs\Jobs\UpdateCheck\Arguments\AutoCheckEnabled" valueName="Type">
+              <value>
+                <string>xs:boolean</string>
+              </value>
+            </item>
+          </trueList>
+          <falseList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Jobs\Jobs\UpdateCheck\Arguments\AutoCheckEnabled" valueName="Value">
+              <value>
+                <string>false</string>
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Jobs\Jobs\UpdateCheck\Arguments\AutoCheckEnabled" valueName="Type">
+              <value>
+                <string>xs:boolean</string>
+              </value>
+            </item>
+          </falseList>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="PDFExportFormFields" class="Both" displayName="$(string.name_PDFExportFormFields)" explainText="$(string.desc_PDFExportFormFields)" presentation="$(presentation.PDFExportFormFields)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Filter\PDF\Export\ExportFormFields">
+      <parentCategory ref="PDFExport" />
+      <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="PDFExportPlaceholders" class="Both" displayName="$(string.name_PDFExportPlaceholders)" explainText="$(string.desc_PDFExportPlaceholders)" presentation="$(presentation.PDFExportPlaceholders)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Filter\PDF\Export\ExportPlaceholders">
+      <parentCategory ref="PDFExport" />
+      <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="WriterPrintSinglePrintJob" class="Both" displayName="$(string.name_PrintSinglePrintJob)" explainText="$(string.desc_PrintSinglePrintJob)" presentation="$(presentation.PrintSinglePrintJob)" key="Software\Policies\LibreOffice\org.openoffice.Office.Writer\Print\Output\SinglePrintJob">
+      <parentCategory ref="WriterPrint" />
+      <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="AutoTextApplyNumbering" class="Both" displayName="$(string.name_AutoTextApplyNumbering)" explainText="$(string.desc_AutoTextApplyNumbering)" presentation="$(presentation.AutoTextApplyNumbering)" key="Software\Policies\LibreOffice\org.openoffice.Office.Writer\AutoFunction\Format\ByInput\ApplyNumbering\Enable">
+      <parentCategory ref="AutoText" />
+      <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="WordCompletionMinWordLen" class="Both" displayName="$(string.name_WordCompletionMinWordLen)" explainText="$(string.desc_WordCompletionMinWordLen)" presentation="$(presentation.WordCompletionMinWordLen)" key="Software\Policies\LibreOffice\org.openoffice.Office.Writer\AutoFunction\Completion\MinWordLen">
+      <parentCategory ref="AutoText" />
+      <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <text id="WordCompletionMinWordLenValue" key="Software\Policies\LibreOffice\org.openoffice.Office.Writer\AutoFunction\Completion\MinWordLen" valueName="Value" />
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="TableNumberRecognition" class="Both" displayName="$(string.name_TableNumberRecognition)" explainText="$(string.desc_TableNumberRecognition)" presentation="$(presentation.TableNumberRecognition)" key="Software\Policies\LibreOffice\org.openoffice.Office.Writer\Table\Input\NumberRecognition">
+      <parentCategory ref="WriterTable" />
+      <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
           </falseValue>
         </boolean>
         <boolean id="Final" valueName="Final" />

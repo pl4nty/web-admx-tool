@@ -127,6 +127,20 @@
 	</elements>
     </policy>
     <policy 
+		name="POL_RDM_CYBERARKENFORCEIDLESESSION"
+		class="Both" 
+		displayName="$(string.POL_RDM_CYBERARKENFORCEIDLESESSION)"
+		explainText="$(string.POL_RDM_CYBERARKENFORCEIDLESESSION_HELP)"
+		presentation="$(presentation.INPUT_DEC_CYBERARKENFORCEIDLESESSION)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="CyberArkEnforceIdleSession">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_CYBERARKENFORCEIDLESESSION" valueName="CyberArkEnforceIdleSession" maxValue="20000" />
+	</elements>
+    </policy>
+    <policy 
 		name="POL_RDM_CYBERARKKEEPAUTHENTICATEDSESSIONSALIVE"
 		class="Both" 
 		displayName="$(string.POL_RDM_CYBERARKKEEPAUTHENTICATEDSESSIONSALIVE)"
@@ -453,22 +467,6 @@
 		</disabledValue>
     </policy>
     <policy 
-		name="POL_RDM_HIDECOPYYUBIKEY"
-		class="Both"
-		displayName="$(string.POL_RDM_HIDECOPYYUBIKEY)"
-		explainText="$(string.POL_RDM_HIDECOPYYUBIKEY_HELP)"
-		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
-		valueName="HideCopyYubiKey">
-      <parentCategory ref="CAT_RDM_UI" />
-      <supportedOn ref="SUPPORTED_WindowsVista" />
-		<enabledValue>
-			<decimal value="1" />
-		</enabledValue>
-		<disabledValue>
-        <decimal value="0" />
-		</disabledValue>
-    </policy>
-    <policy 
 		name="POL_RDM_DISABLEADDON"
 		class="Both"
 		displayName="$(string.POL_RDM_DISABLEADDON)"
@@ -572,22 +570,6 @@
 		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
 		valueName="DisableAutoFocusDashboard">
       <parentCategory ref="CAT_RDM_UI" />
-      <supportedOn ref="SUPPORTED_WindowsVista" />
-		<enabledValue>
-			<decimal value="1" />
-		</enabledValue>
-		<disabledValue>
-        <decimal value="0" />
-		</disabledValue>
-    </policy>
-    <policy 
-		name="POL_RDM_DISABLEAUTOUPDATE"
-		class="Both"
-		displayName="$(string.POL_RDM_DISABLEAUTOUPDATE)"
-		explainText="$(string.POL_RDM_DISABLEAUTOUPDATE_HELP)"
-		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
-		valueName="DisableAutoUpdate">
-      <parentCategory ref="CAT_RDM_GENERAL" />
       <supportedOn ref="SUPPORTED_WindowsVista" />
 		<enabledValue>
 			<decimal value="1" />
@@ -1557,6 +1539,34 @@
 		</disabledValue>
     </policy>
     <policy 
+		name="POL_RDM_ENFORCEAUTOUPDATEFREQUENCY"
+		class="Both" 
+		displayName="$(string.POL_RDM_ENFORCEAUTOUPDATEFREQUENCY)"
+		explainText="$(string.POL_RDM_ENFORCEAUTOUPDATEFREQUENCY_HELP)"
+		presentation="$(presentation.INPUT_DEC_ENFORCEAUTOUPDATEFREQUENCY)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="EnforceAutoUpdateFrequency">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_ENFORCEAUTOUPDATEFREQUENCY" valueName="EnforceAutoUpdateFrequency" maxValue="20000" />
+	</elements>
+    </policy>
+    <policy 
+		name="POL_RDM_ENFORCEAUTOUPDATERELEASECHANNEL"
+		class="Both" 
+		displayName="$(string.POL_RDM_ENFORCEAUTOUPDATERELEASECHANNEL)"
+		explainText="$(string.POL_RDM_ENFORCEAUTOUPDATERELEASECHANNEL_HELP)"
+		presentation="$(presentation.INPUT_DEC_ENFORCEAUTOUPDATERELEASECHANNEL)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="EnforceAutoUpdateReleaseChannel">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_ENFORCEAUTOUPDATERELEASECHANNEL" valueName="EnforceAutoUpdateReleaseChannel" maxValue="20000" />
+	</elements>
+    </policy>
+    <policy 
 		name="POL_RDM_FORCEAPPLICATIONMFA"
 		class="Both"
 		displayName="$(string.POL_RDM_FORCEAPPLICATIONMFA)"
@@ -1905,70 +1915,6 @@
 		</disabledValue>
     </policy>
     <policy 
-		name="POL_RDM_FORCEUPDATINGALLUPDATE"
-		class="Both"
-		displayName="$(string.POL_RDM_FORCEUPDATINGALLUPDATE)"
-		explainText="$(string.POL_RDM_FORCEUPDATINGALLUPDATE_HELP)"
-		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
-		valueName="ForceUpdatingAllUpdate">
-      <parentCategory ref="CAT_RDM_GENERAL" />
-      <supportedOn ref="SUPPORTED_WindowsVista" />
-		<enabledValue>
-			<decimal value="1" />
-		</enabledValue>
-		<disabledValue>
-        <decimal value="0" />
-		</disabledValue>
-    </policy>
-    <policy 
-		name="POL_RDM_FORCEUPDATINGALLUPDATEANDBETA"
-		class="Both"
-		displayName="$(string.POL_RDM_FORCEUPDATINGALLUPDATEANDBETA)"
-		explainText="$(string.POL_RDM_FORCEUPDATINGALLUPDATEANDBETA_HELP)"
-		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
-		valueName="ForceUpdatingAllUpdateAndBeta">
-      <parentCategory ref="CAT_RDM_GENERAL" />
-      <supportedOn ref="SUPPORTED_WindowsVista" />
-		<enabledValue>
-			<decimal value="1" />
-		</enabledValue>
-		<disabledValue>
-        <decimal value="0" />
-		</disabledValue>
-    </policy>
-    <policy 
-		name="POL_RDM_FORCEUPDATINGMAJORUPDATE"
-		class="Both"
-		displayName="$(string.POL_RDM_FORCEUPDATINGMAJORUPDATE)"
-		explainText="$(string.POL_RDM_FORCEUPDATINGMAJORUPDATE_HELP)"
-		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
-		valueName="ForceUpdatingMajorUpdate">
-      <parentCategory ref="CAT_RDM_GENERAL" />
-      <supportedOn ref="SUPPORTED_WindowsVista" />
-		<enabledValue>
-			<decimal value="1" />
-		</enabledValue>
-		<disabledValue>
-        <decimal value="0" />
-		</disabledValue>
-    </policy>
-    <policy 
-		name="POL_RDM_FORCEUPDATINGONCEAMONTH"
-		class="Both"
-		displayName="$(string.POL_RDM_FORCEUPDATINGONCEAMONTH)"
-		explainText="$(string.POL_RDM_FORCEUPDATINGONCEAMONTH_HELP)"
-		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
-		valueName="ForceUpdatingOnceAMonth">
-      <parentCategory ref="CAT_RDM_GENERAL" />
-      <supportedOn ref="SUPPORTED_WindowsVista" />
-		<enabledValue>
-			<decimal value="1" />
-		</enabledValue>
-		<disabledValue>
-        <decimal value="0" />
-		</disabledValue>
-    </policy>
-    <policy 
 		name="POL_RDM_FORCEUSERSPECIFICSETTINGSMIGRATION"
 		class="Both"
 		displayName="$(string.POL_RDM_FORCEUSERSPECIFICSETTINGSMIGRATION)"
@@ -2024,6 +1970,22 @@
 		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
 		valueName="HideBrowseHostButton">
       <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_HIDECOPYYUBIKEY"
+		class="Both"
+		displayName="$(string.POL_RDM_HIDECOPYYUBIKEY)"
+		explainText="$(string.POL_RDM_HIDECOPYYUBIKEY_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="HideCopyYubiKey">
+      <parentCategory ref="CAT_RDM_UI" />
       <supportedOn ref="SUPPORTED_WindowsVista" />
 		<enabledValue>
 			<decimal value="1" />
@@ -2189,6 +2151,20 @@
 		</disabledValue>
     </policy>
     <policy 
+		name="POL_RDM_NONMODALEDIT"
+		class="Both" 
+		displayName="$(string.POL_RDM_NONMODALEDIT)"
+		explainText="$(string.POL_RDM_NONMODALEDIT_HELP)"
+		presentation="$(presentation.INPUT_DEC_NONMODALEDIT)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="NonModalEdit">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_NONMODALEDIT" valueName="NonModalEdit" maxValue="20000" />
+	</elements>
+    </policy>
+    <policy 
 		name="POL_RDM_ONLYALLOWCREDENTIALSINPRIVATEVAULT"
 		class="Both"
 		displayName="$(string.POL_RDM_ONLYALLOWCREDENTIALSINPRIVATEVAULT)"
@@ -2216,6 +2192,20 @@
       <supportedOn ref="SUPPORTED_WindowsVista" />
 	<elements>
         	<decimal id="INPUT_DEC_PROTECTDATAFROMSCREENCAPTURE" valueName="ProtectDataFromScreenCapture" maxValue="20000" />
+	</elements>
+    </policy>
+    <policy 
+		name="POL_RDM_QUICKCONNECTCONFIRMATIONPROMPTHANDLING"
+		class="Both" 
+		displayName="$(string.POL_RDM_QUICKCONNECTCONFIRMATIONPROMPTHANDLING)"
+		explainText="$(string.POL_RDM_QUICKCONNECTCONFIRMATIONPROMPTHANDLING_HELP)"
+		presentation="$(presentation.INPUT_DEC_QUICKCONNECTCONFIRMATIONPROMPTHANDLING)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="QuickConnectConfirmationPromptHandling">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_QUICKCONNECTCONFIRMATIONPROMPTHANDLING" valueName="QuickConnectConfirmationPromptHandling" maxValue="20000" />
 	</elements>
     </policy>
     <policy 

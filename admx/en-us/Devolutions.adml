@@ -14,7 +14,7 @@
       <string id="POL_RDM_ALLOWSYNCALLVAULTSBACKGROUND">Allow sync all vaults (background)</string>
 	  <string id="POL_RDM_ALLOWSYNCALLVAULTSBACKGROUND_HELP">Allow sync all vaults in background</string>
       <string id="POL_RDM_ALWAYSPROMPTFORPASSPHRASE">Always prompt for passphrase</string>
-	  <string id="POL_RDM_ALWAYSPROMPTFORPASSPHRASE_HELP">Force the user to always be prompted for the passphrase while connecting to data source that is protected by a shared passphrase security provider</string>
+	  <string id="POL_RDM_ALWAYSPROMPTFORPASSPHRASE_HELP">Force the user to always be prompted for the passphrase while connecting to a workspace that is protected by a shared passphrase security provider</string>
       <string id="POL_RDM_APPLICATION2FAMODE">Application 2FA mode</string>
 	  <string id="POL_RDM_APPLICATION2FAMODE_HELP">Force an application two factor authentication mode (check against all configured methods or prompt for selection on use)</string>
       <string id="POL_RDM_APPLYFORCEDPASSWORDTEMPLATEINPASSWORDGENERATORTOOL">Apply forced password template in password generator tool</string>
@@ -25,6 +25,8 @@
 	  <string id="POL_RDM_CLIPBOARDCOPYMETHOD_HELP">Force a clipboard copy method</string>
       <string id="POL_RDM_CONFIRMSESSIONSOPENONCOUNTGREATERTHAN">Confirm sessions open on count greater than</string>
 	  <string id="POL_RDM_CONFIRMSESSIONSOPENONCOUNTGREATERTHAN_HELP">Prompts for confirmation before opening multiple sessions when the number of opened sessions is greater than the specified number</string>
+      <string id="POL_RDM_CYBERARKENFORCEIDLESESSION">CyberArk Terminate idle cloud sessions</string>
+	  <string id="POL_RDM_CYBERARKENFORCEIDLESESSION_HELP">Enforces CyberArk cloud idle session timeout</string>
       <string id="POL_RDM_CYBERARKKEEPAUTHENTICATEDSESSIONSALIVE">CyberArk Keep authenticated sessions alive</string>
 	  <string id="POL_RDM_CYBERARKKEEPAUTHENTICATEDSESSIONSALIVE_HELP">Keeps CyberArk authenticated sessions alive</string>
       <string id="POL_RDM_DASHBOARDAUTOFOCUSITEMONTABSELECT">Dashboard Auto Focus Item on Tab Select</string>
@@ -67,8 +69,6 @@
 	  <string id="POL_RDM_DEFAULTPOWERSHELLVERSION_HELP">Select the default PowerShell version used</string>
       <string id="POL_RDM_DISABLEABOUT">Disable about</string>
 	  <string id="POL_RDM_DISABLEABOUT_HELP">Disable the about menu</string>
-      <string id="POL_RDM_HIDECOPYYUBIKEY">Hide Copy YubiKey</string>
-	  <string id="POL_RDM_HIDECOPYYUBIKEY_HELP">Hide the Copy to YubiKey button</string>
       <string id="POL_RDM_DISABLEADDON">Disable add-on (deprecated)</string>
 	  <string id="POL_RDM_DISABLEADDON_HELP">Disable the add-on creation and the add-on manager. Deprecated, use DisableAddOnEntries and DisableAddOnManager instead</string>
       <string id="POL_RDM_DISABLEADDONENTRIES">Disable add-on entries</string>
@@ -83,8 +83,6 @@
 	  <string id="POL_RDM_DISABLEASSISTANTRELATEDFEATURES_HELP">Disable all features related to AI Assistant</string>
       <string id="POL_RDM_DISABLEAUTOFOCUSDASHBOARD">Disable auto-focus dashboard</string>
 	  <string id="POL_RDM_DISABLEAUTOFOCUSDASHBOARD_HELP">Disable the auto-focus of the dashboard when selecting an entry</string>
-      <string id="POL_RDM_DISABLEAUTOUPDATE">Disable auto-update</string>
-	  <string id="POL_RDM_DISABLEAUTOUPDATE_HELP">Disable the application automatic update check</string>
       <string id="POL_RDM_DISABLECACHING">Disable caching</string>
 	  <string id="POL_RDM_DISABLECACHING_HELP">Disable caching</string>
       <string id="POL_RDM_DISABLECUSTOMIMAGE">Disable custom image</string>
@@ -99,8 +97,8 @@
 	  <string id="POL_RDM_DISABLEEXECUTESCRIPTSVIATERMINAL_HELP">Disable execute scripts via terminal</string>
       <string id="POL_RDM_DISABLEEXPORTVAULTMENUS">Disable export vault menus</string>
 	  <string id="POL_RDM_DISABLEEXPORTVAULTMENUS_HELP">Disable export vault menus in export menus</string>
-      <string id="POL_RDM_DISABLEFILEDATASOURCES">Disable file data sources</string>
-	  <string id="POL_RDM_DISABLEFILEDATASOURCES_HELP">Disable the menu File->Data sources</string>
+      <string id="POL_RDM_DISABLEFILEDATASOURCES">Disable file workspaces</string>
+	  <string id="POL_RDM_DISABLEFILEDATASOURCES_HELP">Disable the menu File->Workspaces</string>
       <string id="POL_RDM_DISABLEFILEOPTIONS">Disable file options</string>
 	  <string id="POL_RDM_DISABLEFILEOPTIONS_HELP">Disable the menu File->Options</string>
       <string id="POL_RDM_DISABLEFILETRANSFERFORSSH">Disable file transfer for SSH</string>
@@ -205,6 +203,10 @@
 	  <string id="POL_RDM_ENABLEPOWERSHELLREMOTECONSOLEHOOKING_HELP">Enable PowerShell remote console API hooking</string>
       <string id="POL_RDM_ENABLERDPHOOKING">Enable RDP hooking</string>
 	  <string id="POL_RDM_ENABLERDPHOOKING_HELP">Enable RDP API hooking</string>
+      <string id="POL_RDM_ENFORCEAUTOUPDATEFREQUENCY">Enforce auto-update frequency</string>
+	  <string id="POL_RDM_ENFORCEAUTOUPDATEFREQUENCY_HELP">Enforce the auto-update on startup to update at a specific frequency</string>
+      <string id="POL_RDM_ENFORCEAUTOUPDATERELEASECHANNEL">Enforce auto-update release channel</string>
+	  <string id="POL_RDM_ENFORCEAUTOUPDATERELEASECHANNEL_HELP">Enforce the auto-update on startup to update either to the current stable or beta release</string>
       <string id="POL_RDM_FORCEAPPLICATIONMFA">Force application MFA</string>
 	  <string id="POL_RDM_FORCEAPPLICATIONMFA_HELP">Force multiple factor authentication on the application login</string>
       <string id="POL_RDM_FORCECLEARCACHEONCLOSEMSEDGE">Force clear cache on close (MSEdge)</string>
@@ -249,14 +251,6 @@
 	  <string id="POL_RDM_FORCESYSTEMPROXY_HELP">Force proxy settings to 'system'</string>
       <string id="POL_RDM_FORCETREEVIEWCOLLAPSEATLAUNCH">Force tree view collapse at launch</string>
 	  <string id="POL_RDM_FORCETREEVIEWCOLLAPSEATLAUNCH_HELP">Forces the main tree view to load with all nodes collapsed at application launch.</string>
-      <string id="POL_RDM_FORCEUPDATINGALLUPDATE">Force updating all update</string>
-	  <string id="POL_RDM_FORCEUPDATINGALLUPDATE_HELP">Force updating all available updates (does not include betas)</string>
-      <string id="POL_RDM_FORCEUPDATINGALLUPDATEANDBETA">Force updating all update and beta</string>
-	  <string id="POL_RDM_FORCEUPDATINGALLUPDATEANDBETA_HELP">Force updating all available updates and betas</string>
-      <string id="POL_RDM_FORCEUPDATINGMAJORUPDATE">Force updating major update</string>
-	  <string id="POL_RDM_FORCEUPDATINGMAJORUPDATE_HELP">Force updating only major updates</string>
-      <string id="POL_RDM_FORCEUPDATINGONCEAMONTH">Force updating once a month</string>
-	  <string id="POL_RDM_FORCEUPDATINGONCEAMONTH_HELP">Force updating once a month</string>
       <string id="POL_RDM_FORCEUSERSPECIFICSETTINGSMIGRATION">Force user specific settings migration</string>
 	  <string id="POL_RDM_FORCEUSERSPECIFICSETTINGSMIGRATION_HELP">Force 'user specific settings' migration</string>
       <string id="POL_RDM_FORCEWINDOWSCREDENTIALSANDCURRENTLYLOGGEDONUSERNAMEANDDOMAIN">Force Windows credentials and currently logged on username and domain</string>
@@ -265,6 +259,8 @@
 	  <string id="POL_RDM_FORCEWINDOWSHELLO_HELP">Force Windows Hello authentication on the application login</string>
       <string id="POL_RDM_HIDEBROWSEHOSTBUTTON">Hide browse host button</string>
 	  <string id="POL_RDM_HIDEBROWSEHOSTBUTTON_HELP">Remove the button used to manually browse for hosts</string>
+      <string id="POL_RDM_HIDECOPYYUBIKEY">Hide Copy YubiKey</string>
+	  <string id="POL_RDM_HIDECOPYYUBIKEY_HELP">Hide the Copy to YubiKey button</string>
       <string id="POL_RDM_HIDEDASHBOARD">Hide dashboard</string>
 	  <string id="POL_RDM_HIDEDASHBOARD_HELP">Permanently hide the dashboard</string>
       <string id="POL_RDM_HIDEDEVOLUTIONSCONTACTSUPPORTFEATURES">Hide Devolutions contact support features</string>
@@ -285,24 +281,28 @@
 	  <string id="POL_RDM_LOCKNAVIGATIONPANE_HELP">Disable closing or hiding the navigation pane (it is always visible)</string>
       <string id="POL_RDM_NOINTERNETCONNECTION">No internet connection</string>
 	  <string id="POL_RDM_NOINTERNETCONNECTION_HELP">Disable certain features requiring an internet connection, such as telemetry, automatic favicon fetching and checking for add-on updates.</string>
+      <string id="POL_RDM_NONMODALEDIT">Non-modal edit</string>
+	  <string id="POL_RDM_NONMODALEDIT_HELP">Controls non-modal (detached) connection editing</string>
       <string id="POL_RDM_ONLYALLOWCREDENTIALSINPRIVATEVAULT">Only allow credentials in user vault</string>
 	  <string id="POL_RDM_ONLYALLOWCREDENTIALSINPRIVATEVAULT_HELP">Only allow the creation of credentials when inside the user vault</string>
       <string id="POL_RDM_PROTECTDATAFROMSCREENCAPTURE">Protect data from screen capture</string>
 	  <string id="POL_RDM_PROTECTDATAFROMSCREENCAPTURE_HELP">Adds a layer of protection which prevents acquiring data from most RDM windows (including sensitive areas) with screen captures</string>
+      <string id="POL_RDM_QUICKCONNECTCONFIRMATIONPROMPTHANDLING">Quick connect confirmation prompt handling</string>
+	  <string id="POL_RDM_QUICKCONNECTCONFIRMATIONPROMPTHANDLING_HELP">Disable the quick connect confirmation window and always close connection</string>
       <string id="POL_RDM_RDPLOGOFFWHENDISCONNECTING">RDP logoff when disconnecting</string>
 	  <string id="POL_RDM_RDPLOGOFFWHENDISCONNECTING_HELP">Controls whether RDP sessions automatically log off the current user when disconnecting</string>
-      <string id="POL_RDM_RESTRICTTODVLSDATASOURCE">Restrict to Devolutions Server data source</string>
-	  <string id="POL_RDM_RESTRICTTODVLSDATASOURCE_HELP">Restricts the creation of data source to the Devolutions Server type</string>
-      <string id="POL_RDM_RESTRICTTOHUBBUSINESSDATASOURCE">Restrict to Hub Business data source</string>
-	  <string id="POL_RDM_RESTRICTTOHUBBUSINESSDATASOURCE_HELP">Restricts the creation of data source to the Hub Business type</string>
-      <string id="POL_RDM_RESTRICTTOHUBPERSONALDATASOURCE">Restrict to Hub Personal data source</string>
-	  <string id="POL_RDM_RESTRICTTOHUBPERSONALDATASOURCE_HELP">Restricts the creation of data source to the Hub Personal type</string>
+      <string id="POL_RDM_RESTRICTTODVLSDATASOURCE">Restrict to Devolutions Server workspace</string>
+	  <string id="POL_RDM_RESTRICTTODVLSDATASOURCE_HELP">Restricts the creation of a workspace to the Devolutions Server type</string>
+      <string id="POL_RDM_RESTRICTTOHUBBUSINESSDATASOURCE">Restrict to Devolutions Cloud workspace</string>
+	  <string id="POL_RDM_RESTRICTTOHUBBUSINESSDATASOURCE_HELP">Restricts the creation of a workspace to the Devolutions Cloud type</string>
+      <string id="POL_RDM_RESTRICTTOHUBPERSONALDATASOURCE">Restrict to Hub Personal workspace</string>
+	  <string id="POL_RDM_RESTRICTTOHUBPERSONALDATASOURCE_HELP">Restricts the creation of a workspace to the Hub Personal type</string>
       <string id="POL_RDM_SESSIONEVENTSEXECUTION">Session events execution</string>
 	  <string id="POL_RDM_SESSIONEVENTSEXECUTION_HELP">Forces the session events settings to the specified value</string>
       <string id="POL_RDM_SHOWFOLDERDETAILSASSELECTED">Show Folder Details as Selected</string>
 	  <string id="POL_RDM_SHOWFOLDERDETAILSASSELECTED_HELP">Force the Show folder details as selected setting</string>
       <string id="POL_RDM_SQLITEDEFAULTLOCATION">SQLite default location</string>
-	  <string id="POL_RDM_SQLITEDEFAULTLOCATION_HELP">Set the default path for new local data sources when using SQLite</string>
+	  <string id="POL_RDM_SQLITEDEFAULTLOCATION_HELP">Set the default path for new local workspaces when using SQLite</string>
       <string id="SUPPORTED_WindowsVista">At least Microsoft Windows Vista</string>
     </stringTable>
     <presentationTable>
@@ -327,6 +327,12 @@
             </presentation>
 	<presentation id="INPUT_DEC_CONFIRMSESSIONSOPENONCOUNTGREATERTHAN">
               <decimalTextBox refId="INPUT_DEC_CONFIRMSESSIONSOPENONCOUNTGREATERTHAN" defaultValue="0" spinStep="1">Session count must be greater than:</decimalTextBox>
+            </presentation>
+	<presentation id="INPUT_DEC_CYBERARKENFORCEIDLESESSION">
+              <decimalTextBox refId="INPUT_DEC_CYBERARKENFORCEIDLESESSION" defaultValue="0" spinStep="1">
+ 0 = Not configured
+ 1 = Enabled
+ 2 = Disabled</decimalTextBox>
             </presentation>
 	<presentation id="INPUT_DEC_CYBERARKKEEPAUTHENTICATEDSESSIONSALIVE">
               <decimalTextBox refId="INPUT_DEC_CYBERARKKEEPAUTHENTICATEDSESSIONSALIVE" defaultValue="0" spinStep="1">
@@ -363,6 +369,21 @@
  3 = Windows PowerShell (5.1)  
  4 = PowerShell 7</decimalTextBox>
             </presentation>
+	<presentation id="INPUT_DEC_ENFORCEAUTOUPDATEFREQUENCY">
+              <decimalTextBox refId="INPUT_DEC_ENFORCEAUTOUPDATEFREQUENCY" defaultValue="0" spinStep="1">
+ 0 = Not configured
+ 1 = Once a month
+ 2 = Once a week
+ 3 = Once a day
+ 4 = Manual checks only</decimalTextBox>
+            </presentation>
+	<presentation id="INPUT_DEC_ENFORCEAUTOUPDATERELEASECHANNEL">
+              <decimalTextBox refId="INPUT_DEC_ENFORCEAUTOUPDATERELEASECHANNEL" defaultValue="0" spinStep="1">
+ 0 = Not configured
+ 1 = Current
+ 2 = Beta
+ 3 = Extended maintenance</decimalTextBox>
+            </presentation>
 	<presentation id="INPUT_DEC_FORCECLOSEONIDLE">
               <decimalTextBox refId="INPUT_DEC_FORCECLOSEONIDLE" defaultValue="0" spinStep="1">Number of minutes:</decimalTextBox>
             </presentation>
@@ -378,10 +399,21 @@
 	<presentation id="INPUT_DEC_LIMITENTRIESLAUNCHEDINASINGLEACTION">
               <decimalTextBox refId="INPUT_DEC_LIMITENTRIESLAUNCHEDINASINGLEACTION" defaultValue="0" spinStep="1">Session count must be equal or smaller than:</decimalTextBox>
             </presentation>
+	<presentation id="INPUT_DEC_NONMODALEDIT">
+              <decimalTextBox refId="INPUT_DEC_NONMODALEDIT" defaultValue="0" spinStep="1">
+ 0 = Disabled
+ 1 = Enabled (force-enabled for all users)
+ 2 = Allowed (user must enable the option — default)</decimalTextBox>
+            </presentation>
 	<presentation id="INPUT_DEC_PROTECTDATAFROMSCREENCAPTURE">
               <decimalTextBox refId="INPUT_DEC_PROTECTDATAFROMSCREENCAPTURE" defaultValue="0" spinStep="1">0 = Disabled (no changes) 
  1 = Enable the screen capture protection 
  2 = Disable the screen capture protection</decimalTextBox>
+            </presentation>
+	<presentation id="INPUT_DEC_QUICKCONNECTCONFIRMATIONPROMPTHANDLING">
+              <decimalTextBox refId="INPUT_DEC_QUICKCONNECTCONFIRMATIONPROMPTHANDLING" defaultValue="0" spinStep="1">
+ 0 = Not configured
+ 1= Always close the connection</decimalTextBox>
             </presentation>
 	<presentation id="INPUT_DEC_RDPLOGOFFWHENDISCONNECTING">
               <decimalTextBox refId="INPUT_DEC_RDPLOGOFFWHENDISCONNECTING" defaultValue="0" spinStep="1">0 = Disabled (no changes) 

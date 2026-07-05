@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<policyDefinitions revision="7.0" schemaVersion="1.0">
+<policyDefinitions revision="7.1" schemaVersion="1.0">
   <policyNamespaces>
-    <target prefix="fullarmor" namespace="ZoomMeetings_HKCU_7_0" />
+    <target prefix="fullarmor" namespace="ZoomMeetings_HKCU_7_1" />
     <using prefix="windows" namespace="Microsoft.Policies.Windows" />
   </policyNamespaces>
   <supersededAdm fileName="ZoomMeetings_HKCU.adm" />
-  <resources minRequiredRevision="7.0" />
+  <resources minRequiredRevision="7.1" />
   <supportedOn>
     <definitions>
       <definition name="SUPPORTED_WINXPSP2" displayName="$(string.SUPPORTED_WINXPSP2)" />
@@ -831,6 +831,26 @@
       </disabledValue>
     </policy>
     <policy name="EnableCrashEventLog_Policy" class="User" displayName="$(string.EnableCrashEventLog_Policy)" explainText="$(string.EnableCrashEventLog_Explain)" presentation="$(presentation.EnableCrashEventLog_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="EnableCrashEventLog">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="V4RetryForV6TlsError_Policy" class="User" displayName="$(string.V4RetryForV6TlsError_Policy)" explainText="$(string.V4RetryForV6TlsError_Explain)" presentation="$(presentation.V4RetryForV6TlsError_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="V4RetryForV6TlsError">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="ForceEnableWebViewRecycle_Policy" class="User" displayName="$(string.ForceEnableWebViewRecycle_Policy)" explainText="$(string.ForceEnableWebViewRecycle_Explain)" presentation="$(presentation.ForceEnableWebViewRecycle_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="ForceEnableWebViewRecycle">
       <parentCategory ref="zoomgeneral" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
       <enabledValue>
@@ -2487,6 +2507,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="EnableForceMaximumCameraSizeForSending_Policy" class="User" displayName="$(string.EnableForceMaximumCameraSizeForSending_Policy)" explainText="$(string.EnableForceMaximumCameraSizeForSending_Explain)" presentation="$(presentation.EnableForceMaximumCameraSizeForSending_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Meetings" valueName="EnableForceMaximumCameraSizeForSending">
+      <parentCategory ref="zoommeetings" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="EnableClientAutoUpdate_Policy_Recommend" class="User" displayName="$(string.EnableClientAutoUpdate_Policy_Recommend)" explainText="$(string.EnableClientAutoUpdate_Explain)" presentation="$(presentation.EnableClientAutoUpdate_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="EnableClientAutoUpdate">
       <parentCategory ref="zoomgeneral_recommend" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
@@ -3263,6 +3293,26 @@
       <elements>
         <decimal id="MemorySaverOptimization_Part" valueName="MemorySaverOptimization" required="true" minValue="1" maxValue="3" />
       </elements>
+    </policy>
+    <policy name="V4RetryForV6TlsError_Policy_Recommend" class="User" displayName="$(string.V4RetryForV6TlsError_Policy_Recommend)" explainText="$(string.V4RetryForV6TlsError_Explain)" presentation="$(presentation.V4RetryForV6TlsError_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="V4RetryForV6TlsError">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="ForceEnableWebViewRecycle_Policy_Recommend" class="User" displayName="$(string.ForceEnableWebViewRecycle_Policy_Recommend)" explainText="$(string.ForceEnableWebViewRecycle_Explain)" presentation="$(presentation.ForceEnableWebViewRecycle_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="ForceEnableWebViewRecycle">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
     </policy>
     <policy name="AU2_EnableAutoUpdate_Policy_Recommend" class="User" displayName="$(string.AU2_EnableAutoUpdate_Policy_Recommend)" explainText="$(string.AU2_EnableAutoUpdate_Explain)" presentation="$(presentation.AU2_EnableAutoUpdate_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Updates" valueName="AU2_EnableAutoUpdate">
       <parentCategory ref="zoomupdates_recommend" />
@@ -4902,6 +4952,16 @@
       </disabledValue>
     </policy>
     <policy name="EnableAutoFraming_Policy_Recommend" class="User" displayName="$(string.EnableAutoFraming_Policy_Recommend)" explainText="$(string.EnableAutoFraming_Explain)" presentation="$(presentation.EnableAutoFraming_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Meetings" valueName="EnableAutoFraming">
+      <parentCategory ref="zoommeetings_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableForceMaximumCameraSizeForSending_Policy_Recommend" class="User" displayName="$(string.EnableForceMaximumCameraSizeForSending_Policy_Recommend)" explainText="$(string.EnableForceMaximumCameraSizeForSending_Explain)" presentation="$(presentation.EnableForceMaximumCameraSizeForSending_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Meetings" valueName="EnableForceMaximumCameraSizeForSending">
       <parentCategory ref="zoommeetings_recommend" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
       <enabledValue>
