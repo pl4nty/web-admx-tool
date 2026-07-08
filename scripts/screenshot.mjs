@@ -5,10 +5,11 @@ const base = (process.env.BASE_URL || 'http://localhost:4321').replace(/\/$/, ''
 const outDir = process.env.SHOT_DIR || 'screenshots';
 mkdirSync(outDir, { recursive: true });
 
-// Pages that exercise the layout, category tree and search UI.
+// One shot of the homepage (layout + category tree) and one of a policy
+// detail page (the policy view that most changes are likely to affect).
 const targets = [
   { name: 'home', path: '/en-us/' },
-  { name: 'search', path: '/en-us/search/' },
+  { name: 'policy', path: '/en-us/policy/Microsoft.Policies.ControlPanel/ForceClassicControlPanel/' },
 ];
 
 const browser = await chromium.launch();

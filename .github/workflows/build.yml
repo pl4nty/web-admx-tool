@@ -76,10 +76,10 @@ jobs:
           archive: false
           retention-days: 7
 
-      - name: Upload search screenshot
+      - name: Upload policy screenshot
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          path: screenshots/search.png
+          path: screenshots/policy.png
           archive: false
           retention-days: 7
 
@@ -97,7 +97,7 @@ jobs:
               '',
               'The site built successfully. Download the artifacts from this run to preview the changes:',
               '',
-              `- 📸 [**Screenshots**](${runUrl}) — \`home.png\` and \`search.png\` artifacts`,
+              `- 📸 [**Screenshots**](${runUrl}) — \`home.png\` and \`policy.png\` artifacts`,
               `- 🌐 [**Built site**](${runUrl}) — \`dist\` artifact (open \`index.html\` or serve locally for a live preview)`,
               '',
               `<sub>Updated for commit ${context.sha.slice(0, 7)} · [view run](${runUrl})</sub>`,
