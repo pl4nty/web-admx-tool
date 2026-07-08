@@ -258,13 +258,7 @@ const sources: Source[] = [
     if (!urls.length) throw new Error('No Zoom VDI link found')
     return urls[urls.length - 1][0]
   }),
-  // 1Password no longer publishes a downloadable ADMX zip: their MDM docs now only
-  // describe generating templates locally via the desktop app CLI
-  // (`1password --write-admx-templates=...`) and the old c.1password.com CDN URLs 404.
-  // The installers (1PasswordSetup .msi/.msixbundle) don't bundle static templates
-  // either - the native module synthesises the XML at runtime - so there's nothing to
-  // fetch here. admx/1Password.admx (+ en-us/1Password.adml) are maintained manually.
-  // Restore a src(...) here if 1Password starts hosting a fetchable zip again.
+  // 1Password ADMX are now generated dynamically with `1Password --write-admx-templates=.`
   src(async () => {
     const ini = await fetchText('https://devolutions.net/products.htm')
     const match = ini.match(/RDM7zX64\.Url=(https:\/\/[^\s]+)/i)
