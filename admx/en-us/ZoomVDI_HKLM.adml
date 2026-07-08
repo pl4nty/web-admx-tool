@@ -9,11 +9,15 @@
       <string id="zoomvdiclient">Zoom VDI Client Settings</string>
       <string id="ShareSubscribeFps_Policy">Set share subscribe FPS</string>
       <string id="ShareSubscribeFps_Part">Set share subscribe FPS</string>
-      <string id="ShareSubscribeFps_Explain">This is a user-defined subscribing sharing frame rate.
+      <string id="ShareSubscribeFps_Explain">If the ShareSubscribeFps registry entry is not set, the default value when viewing shared content is 5.
 
-It can be 1 or 5.</string>
-      <string id="ShareSubscribeFps_Set_To_1">1</string>
-      <string id="ShareSubscribeFps_Set_To_5">5</string>
+If the registry entry is set:
+
+when value &lt; 3, the frame rate is 1
+
+when 3&lt;=value &lt; 15, the frame rate is 5
+
+when value &gt;= 15, the frame rate is 25</string>
       <string id="ShareCaptureFps_Policy">Set share capture FPS</string>
       <string id="ShareCaptureFps_Part">Set share capture FPS</string>
       <string id="ShareCaptureFps_Explain">This is a user-defined screen capture frame rate.
@@ -154,9 +158,11 @@ Advanced AEC offers higher-quality audio than Simple AEC, but it will use more C
 
 (x) Company buddies will be sorted if the number is less than or equal to the value set.</string>
       <string id="PingServerFromThinClient_Policy">Ping server from thin client</string>
-      <string id="PingServerFromThinClient_Explain">Enabled (1): Ping from the VDI VM.
+      <string id="PingServerFromThinClient_Explain">Enabled (1): Ping from the thin client.
 
-Disabled (0): Ping from the VDI VM.</string>
+Disabled (0): Ping from the VDI VM.
+
+Customers need to ask zoom to Enable choose ZC by ip_for_zc.</string>
       <string id="EnableDifferentVersionTip_Policy">Enable different version tip</string>
       <string id="EnableDifferentVersionTip_Explain">This enables or disables an error message display when the VDI client and VDI plugin versions do not match.
 
@@ -304,7 +310,7 @@ Enabled (1): Check if “HDX media optimization” is active and, if it is, do n
 
 Disabled (0): Check if Skype for Business or Teams are running (the “lync.exe” process is running) and do not force HID redirection if they are.</string>
       <string id="EnableVDIPluginAutoUpgrade_Policy">Enable VDI plugin auto upgrade</string>
-      <string id="EnableVDIPluginAutoUpgrade_Explain">The default value is disabled (0)
+      <string id="EnableVDIPluginAutoUpgrade_Explain">The default value on the VM is enabled (1) starting from Zoom VDI client version 7.0.10. Earlier versions defaulted to disabled (0).
 
 This option is required to enable the VDI plugin auto-update feature.
 
@@ -312,7 +318,7 @@ Adding the policy on the VM will enable the VDI plugin auto-update to install or
 
 Adding this policy to the Windows Thin Client can be used to DISABLE the auto-update feature for a specific device. An example would be to add the policy for managed devices to disable updates internally, while still allowing auto-update to update users' personal devices at home.
 
-Enabled (1): Enable plugin auto-update.
+Enabled (1): (Default on VM) Enable plugin auto-update.
 
 Disabled (0): Disable plugin auto-update.</string>
       <string id="AutoUpdatePluginVersion_Policy">Set auto update plugin version</string>
@@ -322,17 +328,13 @@ Disabled (0): Disable plugin auto-update.</string>
 Example "5.9.6", plugin release version</string>
       <string id="UpdatePluginLater_Policy">Update plugin later</string>
       <string id="UpdatePluginLater_Part">Update plugin later options</string>
-      <string id="UpdatePluginLater_Explain">The default dialog displayed to the user does not include a button for “Later”. Adding this policy modifies the dialog and adds an additional Later button.
+      <string id="UpdatePluginLater_Explain">(0) Plugin auto-update later option is disabled.
 
-Option 1 displays a "Later" button in the dialog when an action (install, update or downgrade) is required. Clicking Later closes the dialog. The next time the user connects, the same dialog will be presented if the VDI plugin management software detects an action is still required.
+(1) Include the Later option, which closes the dialog. The next time the user connects, the same dialog will be presented if the VDI plugin management software detects an action is still required. This policy requires Zoom VDI client version 5.11.6 or higher.
 
-Option 2 also displays a "Later" button but clicking Later for option 2 will wait until the user disconnects from their virtual desktop(s) and then perform the required action.
+(2) Default. Include the Later option, which waits until the user disconnects from their virtual desktop(s) and then performs the update. This policy requires the Zoom VDI client version version 5.13.0 or higher.
 
-(0) Default (plugin auto-update later option is disabled)
-
-(1) Enables Plugin AutoUpdate Later Option (5.11.6 VDI Zoom Meeting client or higher)
-
-(2) Selecting "Later" waits until the desktop is disconnected (5.13.0 VDI Zoom Meeting client or higher)</string>
+(3) Same as option 2, but disables the "OK" button in the dialog. This policy requires the Zoom VDI client version 6.4.10 or higher.</string>
       <string id="DisableSyncDesktopVolumeToTerminal_Policy">Disable sync desktop volume to terminal</string>
       <string id="DisableSyncDesktopVolumeToTerminal_Explain">This policy will sync changes made for the Virtual Desktop volume slider in the OS taskbar to the Thin Client device, if the VDI speaker output selection is configured as Same as system. This policy requires VDI version 5.14.10 or higher.
 
@@ -349,16 +351,6 @@ Currently, the default is disabled (1), but may be changed in a future release.
 0 - VDI Client Screenshot will be offloaded
 
 1 - (Default) Disable Screenshot offload</string>
-      <string id="PingServerFromThinClientOffloadConfRequest_Policy">Ping server from thin client offload conf request</string>
-      <string id="PingServerFromThinClientOffloadConfRequest_Explain">By default, the VDI virtual machine uses the plugin’s public IP address to determine and connect to the most suitable Zoom Servers.
-
-This requires the PingServerFromThinClient policy to be set to 1.
-
-This requires VDI version 5.14.10 or higher.
-
-(0) - Ping from VDI VM and use the plugin’s public IP address to select the most suitable Zoom Zone Center (Default)
-
-(1) - Ping from thin client.</string>
       <string id="PhoneCallTipMsg_Policy">Phone call tip message</string>
       <string id="PhoneCallTipMsg_Explain">This policy disables the audio quality popup message. This requires Zoom VDI client version 5.15.2 or higher
 
@@ -375,20 +367,81 @@ This requires VDI version 5.14.10 or higher.
       <string id="DisableGreenRoom_Explain">0 - (Default) Enable GreenRoom
 
 1 - Disable GreenRoom</string>
-      <string id="PluginInstallPathSignatureCheck_Policy">Plugin install path signature check</string>
-      <string id="PluginInstallPathSignatureCheck_Explain">VDI 5.16.10 or later
+      <string id="EnableVDIPluginAutoUpdateOptOut_Policy">Enable VDI Plugin Auto Update Opt Out</string>
+      <string id="EnableVDIPluginAutoUpdateOptOut_Explain">VDI 5.17.10 or later
 
-Applies to windows plugin only
+0 - Default
 
-0 - Disable embedded signature verification for modules loaded from the installation path (default)
+1 - Enabled
 
-1 - Enable embedded signature verification for all modules loaded (regardless of signature)</string>
+By setting EnableVDIPluginAutoUpdateOptOut=1 in VM side, customers can have "Opt Out" option in VDI plugin auto update.
+
+("Opt Out" button will show in plugin auto update dialog)</string>
+      <string id="EnableVDIPluginAutoUpdateProgress_Policy">Enable VDI Plugin Auto Update Progress</string>
+      <string id="EnableVDIPluginAutoUpdateProgress_Explain">0 - Default
+
+1 - Enabled, plugin MSI installation/uninstallation from plugin auto update will show MSI progress dialog
+
+Added in 5.17.10
+
+From 5.17.10 by default plugin MSI installation/uninstallation from plugin auto update will not show MSI progress dialog.
+
+By setting EnableVDIPluginAutoUpdateProgress=1 in VM side, customers can see MSI progress dialog.</string>
+      <string id="VDIPluginAutoUpdateDescription_Policy">VDI plugin auto update description</string>
+      <string id="VDIPluginAutoUpdateDescription_Part">VDI plugin auto update description</string>
+      <string id="VDIPluginAutoUpdateDescription_Explain">Empty string - Default, it will pick default descriptions in plugin auto update dialog. Size limitation is 1024.</string>
+      <string id="ForceSilentVDIPluginUpdate_Policy">Force silent VDI plugin update</string>
+      <string id="ForceSilentVDIPluginUpdate_Explain">0 - Default: plugin auto update dialog shows up
+
+1 - Everything during plugin auto update will be running in silent mode for both VM and TC side.</string>
+      <string id="DisableRemoteControlVdiByod_Policy">Disable remote control VDI BYOD</string>
+      <string id="DisableRemoteControlVdiByod_Explain">0 - (Default) Do not turn off remote control on BYOD devices
+
+1 - Turn off remote control on BYOD devices</string>
+      <string id="VDIPluginOptOutDescription_Policy">VDI Plugin Opt Out Description</string>
+      <string id="VDIPluginOptOutDescription_Part">VDI Plugin Opt Out Description</string>
+      <string id="VDIPluginOptOutDescription_Explain">VDI 6.2.10 or later
+
+If any of following special marks found, it will pick up default description.  &lt;, &gt;, {, }, [, ], %, /, \, “, ' @, $, &amp;, *,#</string>
+      <string id="CheckHIDControl_Policy">Check HID Control</string>
+      <string id="CheckHIDControl_Explain">0 (Default) - Check if Microsoft Teams is installed. If installed, Zoom will share access for HID device.
+
+1 - Do not check for Microsoft Teams and automatically utilize and not share the HID device.
+
+Supported in VDI Client 6.3.10 and higher as well as 6.1.16 and 6.2.12 hotfixes and is specific to VDI Client only.
+
+Check HID device control - checks conditions before enabling HID for Zoom VDI Client.
+
+The purpose of this flag is to let Zoom VDI Client share HID devices with other applications.
+
+Prior to this policy, the Zoom VDI client would always give up control from HID device in case it detected other competitive meeting apps (ex. MS Teams VDI 2.0) would be running in parallel in VM machine.
+
+When this policy is enabled (this is set to 1), the Zoom VDI client can share HID devices with other application (MS Teams VDI 2.0).
+
+This policy will only toggle HID share control only with MS Teams VDI 2.0. This policy will have no effect on MS Teams 1.0 or Skype For Business</string>
+      <string id="EnableQRCodePairing_Policy">Enable QR Code Pairing</string>
+      <string id="EnableQRCodePairing_Explain">From 6.5.12.
+
+0 - Do not display the MQTT QR code in AVD environment if plugin is not connected.
+
+1 - (default) Display the MQTT pairing QR code in AVD environment if plugin is not connected.</string>
+      <string id="SetUpWaitingTimeUpperBoundInSeconds_Policy">Set Up Waiting Time Upper Bound in Seconds</string>
+      <string id="SetUpWaitingTimeUpperBoundInSeconds_Part">Set Up Waiting Time Upper Bound in Seconds</string>
+      <string id="SetUpWaitingTimeUpperBoundInSeconds_Explain">240 (Default)
+
+Valid range: 240 – 172,800
+
+Introduced in version 6.5.10.
+
+By default, after startup, the Zoom Client waits a random amount of time between 60 and 240 seconds before initiating the auto-update process. If the client is restarted, the timer resets and starts over from zero.
+
+This registry setting allows customers to configure the upper bound of that random delay. The valid range is from 240 seconds (4 minutes) to 172,800 seconds (48 hours). With this setting applied, the Zoom Client will wait a random amount of time between 60 seconds and the configured upper bound before starting the auto-update process.</string>
       <string id="ADMXMigrator_UnresolvedString">ADMX Migrator encountered a string that is not present in the source ADM string table.</string>
       <string id="ADMXMigrator_NoSupportedOn">ADMX Migrator encountered a policy that does not have a supportedOn value.</string>
     </stringTable>
     <presentationTable>
       <presentation id="ShareSubscribeFps_Policy">
-        <dropdownList refId="ShareSubscribeFps_Part" defaultItem="1">Set share subscribe FPS</dropdownList>
+        <decimalTextBox refId="ShareSubscribeFps_Part" spinStep="1">Set share subscribe FPS</decimalTextBox>
       </presentation>
       <presentation id="ShareCaptureFps_Policy">
         <decimalTextBox refId="ShareCaptureFps_Part" spinStep="1">Set share capture FPS</decimalTextBox>
@@ -485,7 +538,6 @@ Applies to windows plugin only
       </presentation>
       <presentation id="DisableSyncDesktopVolumeToTerminal_Policy" />
       <presentation id="DisableScreenshotOptimization_Policy" />
-      <presentation id="PingServerFromThinClientOffloadConfRequest_Policy" />
       <presentation id="PhoneCallTipMsg_Policy" />
       <presentation id="AutoUpdatePluginVersionWin_Policy">
         <textBox refId="AutoUpdatePluginVersionWin_Part">
@@ -498,8 +550,25 @@ Applies to windows plugin only
         </textBox>
       </presentation>
       <presentation id="DisableGreenRoom_Policy" />
-      <presentation id="PluginInstallPathSignatureCheck_Policy" />
       <presentation id="HideAdvancedSettings_Policy" />
+      <presentation id="EnableVDIPluginAutoUpdateOptOut_Policy" />
+      <presentation id="EnableVDIPluginAutoUpdateProgress_Policy" />
+      <presentation id="VDIPluginAutoUpdateDescription_Policy">
+        <textBox refId="VDIPluginAutoUpdateDescription_Part">
+          <label>VDI plugin auto update description</label>
+        </textBox>
+      </presentation>
+      <presentation id="ForceSilentVDIPluginUpdate_Policy" />
+      <presentation id="DisableRemoteControlVdiByod_Policy" />
+      <presentation id="VDIPluginOptOutDescription_Policy">
+        <textBox refId="VDIPluginOptOutDescription_Part">
+          <label>VDI Plugin Opt Out Description</label>
+        </textBox>
+      </presentation>
+      <presentation id="CheckHIDControl_Policy" />
+      <presentation id="SetUpWaitingTimeUpperBoundInSeconds_Policy">
+        <decimalTextBox refId="SetUpWaitingTimeUpperBoundInSeconds_Part" spinStep="1">Set Up Waiting Time Upper Bound in Seconds</decimalTextBox>
+      </presentation>
     </presentationTable>
   </resources>
 </policyDefinitionResources>

@@ -4851,6 +4851,26 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="L_DisableWPM" class="User" displayName="$(string.L_DisableWPMTitle)" explainText="$(string.L_DisableWPMExplain)" key="software\policies\microsoft\office\16.0\word\coauthoring" valueName="disablewpm">
+      <parentCategory ref="L_Coauthoring" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_SkipOpenDueToLongLocalPath" class="User" displayName="$(string.L_SkipOpenDueToLongLocalPathTitle)" explainText="$(string.L_SkipOpenDueToLongLocalPathExplain)" key="software\policies\microsoft\office\16.0\word" valueName="skipopenduetolonglocalpath">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="L_DisableWarningOnIncludeFieldsUpdate" class="User" displayName="$(string.L_DisableWarningOnIncludeFieldsUpdateTitle)" explainText="$(string.L_DisableWarningOnIncludeFieldsUpdateExplain)" key="software\policies\microsoft\office\16.0\word\security" valueName="disablewarningonincludefieldsupdate">
       <parentCategory ref="L_Security" />
       <supportedOn ref="windows:SUPPORTED_Windows7" />

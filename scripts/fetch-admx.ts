@@ -38,6 +38,10 @@ async function resolveRedirects(url: string): Promise<string> {
 async function githubRelease(owner: string, repo: string, asset?: RegExp): Promise<string> {
   const releases = await fetchJson(`https://api.github.com/repos/${owner}/${repo}/releases`)
   const latest = releases.find((release: any) => !release.draft && !release.prerelease) || releases[0]
+  if (!latest) {
+    const repoInfo = await fetchJson(`https://api.github.com/repos/${owner}/${repo}`)
+    return `https://api.github.com/repos/${owner}/${repo}/zipball/${repoInfo.default_branch}`
+  }
   if (asset) {
     const match = latest.assets.find((entry: any) => asset.test(entry.name))
     if (match) return match.browser_download_url
@@ -135,7 +139,13 @@ function resolveDest(entryPath: string, isOffice: boolean): { dir: string; name:
   return { dir: langDir('en-us'), name: fileName }
 }
 
-const IS_ADMX = (name: string) => /\.admx$/i.test(name) || /\.adml\d*$/i.test(name)
+// Some sources also ship a merged/combined template alongside the split ones we
+// want (Adobe's AdobeDC.admx is the x86+x64 files merged; Zoom's ZoomVDI_Combined_*
+// merge the per-scope files). Skip the merged variants in favour of the split ones.
+const IS_MERGED_TEMPLATE = (name: string) =>
+  /^AdobeDC\.adm[lx]$/i.test(name) || /^ZoomVDI_Combined_HK(CU|LM)\.adm[lx]$/i.test(name)
+const IS_ADMX = (name: string) =>
+  (/\.admx$/i.test(name) || /\.adml\d*$/i.test(name)) && !IS_MERGED_TEMPLATE(name)
 
 function toUtf8(data: Uint8Array): Buffer {
   if (data[0] === 0xFF && data[1] === 0xFE)
@@ -173,7 +183,10 @@ function extract7z(buf: Buffer, isOffice: boolean, collector?: string[]) {
   mkdirSync(tmp, { recursive: true })
   try {
     writeFileSync(join(tmp, 'a'), buf)
-    execSync(`7z x -y -o"${tmp}/x" "${tmp}/a" > /dev/null 2>&1`, { timeout: 120_000 })
+    // 7z can exit non-zero on partial failures (e.g. NTFS reparse-point entries in
+    // self-extracting installers) while still extracting the ADMX/ADML we need, so
+    // ignore its exit code and rely on the file walk below to determine success.
+    try { execSync(`7z x -y -o"${tmp}/x" "${tmp}/a" > /dev/null 2>&1`, { timeout: 120_000 }) } catch { }
     for (const f of walkDir(join(tmp, 'x'), n => /\.zip$/i.test(n) || /^\[\d+\]$/.test(n)))
       try { execSync(`7z x -y -o"${f}_x" "${f}" -ir!*.admx -ir!*.adml -ir!*.zip -ir![0] > /dev/null 2>&1`, { timeout: 60_000 }) } catch { }
     let admx = 0, adml = 0
@@ -208,7 +221,7 @@ const sources: Source[] = [
   src(async () => {
     const article = 'https://www.sparklabs.com/support/kb/article/deploy-viscosity-windows-under-a-gpo-group-policy-environment/'
     const html = await fetchText(article)
-    const match = html.match(/href="(admx_templates_v[0-9-]+)"[^>]*>\s*admx_templates_v[0-9.]+\.zip/i)
+    const match = html.match(/href="([^"]*\/admx_templates_v[0-9.-]+)"/i)
     if (!match) throw new Error('No Viscosity ADMX templates link found')
     return new URL(match[1], article).href
   }),
@@ -247,16 +260,11 @@ const sources: Source[] = [
   src(async () => {
     const html = await fetchText('https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0064784',
       { 'User-Agent': 'Googlebot/2.1 (+http://www.google.com/bot.html)' })
-    const urls = [...html.matchAll(/https:\/\/assets\.zoom\.us\/docs\/msi-templates\/Zoom_VDI_[\d.]+\.zip/g)]
+    const urls = [...html.matchAll(/https:\/\/assets\.zoom\.us\/docs\/msi-templates\/Zoom_VDI_ADMX_[\d.]+\.zip/g)]
     if (!urls.length) throw new Error('No Zoom VDI link found')
     return urls[urls.length - 1][0]
   }),
-  src(async () => {
-    const html = await fetchText('https://support.1password.com/mobile-device-management/')
-    const match = html.match(/https:\/\/c\.1password\.com\/dist\/1P\/win\d+\/1Password-admx-templates[-\d.]+\.zip/i)
-    if (!match) throw new Error('No 1Password ADMX link found')
-    return match[0]
-  }),
+  // 1Password ADMX are now generated dynamically with `1Password --write-admx-templates=.`
   src(async () => {
     const ini = await fetchText('https://devolutions.net/products.htm')
     const match = ini.match(/RDM7zX64\.Url=(https:\/\/[^\s]+)/i)

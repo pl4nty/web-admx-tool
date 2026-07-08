@@ -545,6 +545,16 @@
         <decimal value="1" />
       </disabledValue>
     </policy>
+    <policy name="L_BlockInsecureProtocolsInExcelWorksheetFunctions" class="User" displayName="$(string.L_BlockInsecureProtocolsInExcelWorksheetFunctions)" explainText="$(string.L_BlockInsecureProtocolsInExcelWorksheetFunctionsExplain)" key="software\policies\microsoft\office\16.0\excel\security" valueName="blockinsecureprotocolworksheetfunctions">
+      <parentCategory ref="L_Security" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="L_DeterminewhethertoforceencryptedExcel" class="User" Area="Security Baseline" AreaCategory="Macros" displayName="$(string.L_DeterminewhethertoforceencryptedExcel)" explainText="$(string.L_DeterminewhethertoforceencryptedExcelExplain)" presentation="$(presentation.L_DeterminewhethertoforceencryptedExcel)" key="software\policies\microsoft\office\16.0\excel\security">
       <parentCategory ref="L_Security" />
       <supportedOn ref="windows:SUPPORTED_Windows7" />
