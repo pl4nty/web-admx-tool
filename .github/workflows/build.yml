@@ -1,0 +1,104 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+# Cancel superseded runs for the same ref (e.g. a Renovate branch that gets rebased).
+concurrency:
+  group: build-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write # to post/update the screenshot preview comment
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@0e279bb959325dab635dd2c09392533439d90093 # v6.0.8
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Test
+        run: pnpm test
+
+      # The committed admx/ ADMX+ADML files are enough to build the site, so this
+      # skips the network-heavy `build:data` step and catches build regressions
+      # (e.g. from dependency bumps) directly.
+      - name: Build site
+        run: pnpm exec astro build
+        env:
+          NODE_ENV: production
+
+      - name: Upload built site
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: dist
+          path: dist
+          retention-days: 7
+
+      - name: Install Playwright Chromium
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Screenshot preview
+        run: |
+          pnpm preview --port 4321 &
+          PREVIEW_PID=$!
+          for i in $(seq 1 30); do
+            curl -sf -o /dev/null http://localhost:4321/en-us/ && break
+            sleep 1
+          done
+          BASE_URL=http://localhost:4321 pnpm screenshot
+          kill "$PREVIEW_PID" 2>/dev/null || true
+
+      - name: Upload screenshots
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: screenshots
+          path: screenshots
+          retention-days: 7
+
+      - name: Comment preview links on PR
+        # Skip on fork PRs, where GITHUB_TOKEN is read-only and cannot comment.
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+        with:
+          script: |
+            const marker = '<!-- build-preview -->';
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const body = [
+              marker,
+              '### 🔎 Build preview',
+              '',
+              'The site built successfully. Download the artifacts from this run to preview the changes:',
+              '',
+              `- 📸 [**Screenshots**](${runUrl}) — \`screenshots\` artifact (home + search pages)`,
+              `- 🌐 [**Built site**](${runUrl}) — \`dist\` artifact (open \`index.html\` or serve locally for a live preview)`,
+              '',
+              `<sub>Updated for commit ${context.sha.slice(0, 7)} · [view run](${runUrl})</sub>`,
+            ].join('\n');
+
+            const { owner, repo } = context.repo;
+            const issue_number = context.issue.number;
+            const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number });
+            const existing = comments.find(c => c.body && c.body.includes(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
+            } else {
+              await github.rest.issues.createComment({ owner, repo, issue_number, body });
+            }
