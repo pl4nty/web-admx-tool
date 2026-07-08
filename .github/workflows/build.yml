@@ -46,7 +46,7 @@ jobs:
           NODE_ENV: production
 
       - name: Upload built site
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: dist
           path: dist
@@ -66,11 +66,21 @@ jobs:
           BASE_URL=http://localhost:4321 pnpm screenshot
           kill "$PREVIEW_PID" 2>/dev/null || true
 
-      - name: Upload screenshots
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+      # `archive: false` uploads each screenshot as an individual (non-zipped)
+      # file, so it can be viewed/downloaded directly. It only supports one file
+      # per step, and the file name becomes the artifact name.
+      - name: Upload home screenshot
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: screenshots
-          path: screenshots
+          path: screenshots/home.png
+          archive: false
+          retention-days: 7
+
+      - name: Upload search screenshot
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          path: screenshots/search.png
+          archive: false
           retention-days: 7
 
       - name: Comment preview links on PR
@@ -87,7 +97,7 @@ jobs:
               '',
               'The site built successfully. Download the artifacts from this run to preview the changes:',
               '',
-              `- 📸 [**Screenshots**](${runUrl}) — \`screenshots\` artifact (home + search pages)`,
+              `- 📸 [**Screenshots**](${runUrl}) — \`home.png\` and \`search.png\` artifacts`,
               `- 🌐 [**Built site**](${runUrl}) — \`dist\` artifact (open \`index.html\` or serve locally for a live preview)`,
               '',
               `<sub>Updated for commit ${context.sha.slice(0, 7)} · [view run](${runUrl})</sub>`,
