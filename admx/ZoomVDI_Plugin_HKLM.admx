@@ -109,6 +109,43 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="AllowDowngrade_Policy" class="Machine" displayName="$(string.AllowDowngrade_Policy)" explainText="$(string.AllowDowngrade_Explain)" presentation="$(presentation.AllowDowngrade_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="AllowDowngrade">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="PluginLabel_Policy" class="Machine" displayName="$(string.PluginLabel_Policy)" explainText="$(string.PluginLabel_Explain)" presentation="$(presentation.PluginLabel_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <text id="PluginLabel_Part" valueName="PluginLabel" />
+      </elements>
+    </policy>
+    <policy name="EnableVDIPluginMgmtAutoUpdate_Policy" class="Machine" displayName="$(string.EnableVDIPluginMgmtAutoUpdate_Policy)" explainText="$(string.EnableVDIPluginMgmtAutoUpdate_Explain)" presentation="$(presentation.EnableVDIPluginMgmtAutoUpdate_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="EnableVDIPluginMgmtAutoUpdate">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableVDIPluginMgmtAutoDiagnose_Policy" class="Machine" displayName="$(string.EnableVDIPluginMgmtAutoDiagnose_Policy)" explainText="$(string.EnableVDIPluginMgmtAutoDiagnose_Explain)" presentation="$(presentation.EnableVDIPluginMgmtAutoDiagnose_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="EnableVDIPluginMgmtAutoDiagnose">
+      <parentCategory ref="zoomvdiplugin" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="OfficeICA_Up_Policy" class="Machine" displayName="$(string.OfficeICA_Up_Policy)" explainText="$(string.ADMXMigrator_UnresolvedString)" presentation="$(presentation.OfficeICA_Up_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI\bandwidth\office\ica">
       <parentCategory ref="zoomvdiplugin" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />

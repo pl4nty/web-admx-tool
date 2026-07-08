@@ -228,6 +228,9 @@
     <category name="L_miscellaneous437" displayName="$(string.L_miscellaneous437)">
       <parentCategory ref="L_MicrosoftOfficeSystem" />
     </category>
+    <category name="L_WritingAssistance" displayName="$(string.L_WritingAssistance)">
+      <parentCategory ref="L_MicrosoftOfficeSystem" />
+    </category>
     <category name="L_WorkflowCache" displayName="$(string.L_WorkflowCache)">
       <parentCategory ref="L_miscellaneous437" />
     </category>
@@ -19731,8 +19734,88 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
-    <policy name="L_WritingAssistantAdminChoiceAdminChoice" class="User" displayName="$(string.L_WritingAssistantAdminChoiceAdminChoice)" explainText="$(string.L_WritingAssistantAdminChoiceAdminChoiceExplain)" key="software\policies\microsoft\office\16.0\common\general" valueName="writingassistantadminchoice">
-      <parentCategory ref="L_miscellaneous437" />
+    <policy name="L_WritingAssistantAdminChoiceAdminChoice" class="User" displayName="$(string.L_WritingAssistantAdminChoiceAdminChoice)" explainText="$(string.L_WritingAssistantAdminChoiceAdminChoiceExplain)" key="software\policies\microsoft\office\16.0\writingassistant" valueName="writingassistantadminchoice">
+      <parentCategory ref="L_WritingAssistance" />
+      <supportedOn ref="windows:SUPPORTED_Windows10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_WritingAssistantInstallAndStartupAdminChoice" class="User" displayName="$(string.L_WritingAssistantInstallAndStartupAdminChoice)" explainText="$(string.L_WritingAssistantInstallAndStartupAdminChoiceExplain)" presentation="$(presentation.L_WritingAssistantInstallAndStartupAdminChoice)" key="software\policies\microsoft\office\16.0\writingassistant">
+      <parentCategory ref="L_WritingAssistance" />
+      <supportedOn ref="windows:SUPPORTED_Windows10_0" />
+      <elements>
+        <enum id="L_WritingAssistantInstallAndStartupAdminChoiceEnum" valueName="writingassistantinstallandstartupadminchoice">
+          <item displayName="$(string.L_WritingAssistantInstallAndStartupAdminChoice_NotInstalled)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_WritingAssistantInstallAndStartupAdminChoice_InstalledWithoutStartup)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_WritingAssistantInstallAndStartupAdminChoice_InstalledWithoutStartupUserChangeAllowed)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_WritingAssistantInstallAndStartupAdminChoice_InstalledWithStartup)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_WritingAssistantInstallAndStartupAdminChoice_InstalledWithStartupUserChangeAllowed)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_WritingAssistantFirstRunExperienceAdminChoice" class="User" displayName="$(string.L_WritingAssistantFirstRunExperienceAdminChoice)" explainText="$(string.L_WritingAssistantFirstRunExperienceAdminChoiceExplain)" presentation="$(presentation.L_WritingAssistantFirstRunExperienceAdminChoice)" key="software\policies\microsoft\office\16.0\writingassistant">
+      <parentCategory ref="L_WritingAssistance" />
+      <supportedOn ref="windows:SUPPORTED_Windows10_0" />
+      <elements>
+        <enum id="L_WritingAssistantFirstRunExperienceAdminChoiceDropID" valueName="writingassistantfirstrunexperienceadminchoice">
+          <item displayName="$(string.L_WritingAssistantFirstRunExperienceAdminChoiceSkip)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_WritingAssistantFirstRunExperienceAdminChoiceInformationalOnly)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_WritingAssistantFirstRunExperienceAdminChoiceApprovalRequired)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_WritingAssistantAdminBlockedApps" class="User" displayName="$(string.L_WritingAssistantAdminBlockedApps)" explainText="$(string.L_WritingAssistantAdminBlockedAppsExplain)" presentation="$(presentation.L_WritingAssistantAdminBlockedApps)" key="software\policies\microsoft\office\16.0\writingassistant\adminblockedapps">
+      <parentCategory ref="L_WritingAssistance" />
+      <supportedOn ref="windows:SUPPORTED_Windows10_0" />
+      <elements>
+        <list id="L_WritingAssistantAdminBlockedAppsListId" />
+      </elements>
+    </policy>
+    <policy name="L_WritingAssistantAdminBlockedUrls" class="User" displayName="$(string.L_WritingAssistantAdminBlockedUrls)" explainText="$(string.L_WritingAssistantAdminBlockedUrlsExplain)" presentation="$(presentation.L_WritingAssistantAdminBlockedUrls)" key="software\policies\microsoft\office\16.0\writingassistant\adminblockedurls">
+      <parentCategory ref="L_WritingAssistance" />
+      <supportedOn ref="windows:SUPPORTED_Windows10_0" />
+      <elements>
+        <list id="L_WritingAssistantAdminBlockedUrlsListId" />
+      </elements>
+    </policy>
+    <policy name="L_WritingAssistantAdminBlocklistLocked" class="User" displayName="$(string.L_WritingAssistantAdminBlocklistLocked)" explainText="$(string.L_WritingAssistantAdminBlocklistLockedExplain)" key="software\policies\microsoft\office\16.0\writingassistant" valueName="adminblocklistlocked">
+      <parentCategory ref="L_WritingAssistance" />
       <supportedOn ref="windows:SUPPORTED_Windows10_0" />
       <enabledValue>
         <decimal value="1" />

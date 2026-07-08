@@ -4,7 +4,7 @@
   <description>Microsoft Office 2016</description>
   <resources>
     <stringTable>
-      <string id="L_Version">16.0.5536.1000</string>
+      <string id="L_Version">16.0.5550.1000</string>
       <string id="L_RelyonCSSforfontformatting">Rely on CSS for font formatting</string>
       <string id="L_RelyonCSSforfontformattingExplain">This policy setting allows you to rely on CSS for font formatting.
 
@@ -3976,6 +3976,7 @@ If you disable or do not configure this policy setting, no maximum limit will be
       <string id="L_empty418">
       </string>
       <string id="L_miscellaneous437">Miscellaneous</string>
+      <string id="L_WritingAssistance">Writing Assistance</string>
       <string id="L_exprwdexe80">exprwd.exe</string>
       <string id="L_visioexe47">visio.exe</string>
       <string id="L_pathcolon250">Path:</string>
@@ -7067,21 +7068,61 @@ If you don’t set this policy, the feature will operate in the default mode, wh
       <string id="L_ConfigureGetDiagnostics_Disabled">Disabled</string>
       <string id="L_ConfigureGetDiagnostics_EnableUploadToMSFT">Upload diagnostic logs to Microsoft</string>
       <string id="L_ConfigureGetDiagnostics_EnableLocalArchive">Capture diagnostic logs in a local archive, dont upload logs to Microsoft</string>
-      <string id="L_WritingAssistantAdminChoiceAdminChoice">Enable Writing Assistant</string>
-      <string id="L_WritingAssistantAdminChoiceAdminChoiceExplain">This policy setting controls whether users can use the Writing Assistant feature.
+      <string id="L_WritingAssistantAdminChoiceAdminChoice">Enable Writing Assistance</string>
+      <string id="L_WritingAssistantAdminChoiceAdminChoiceExplain">This policy setting controls whether users can use the Writing Assistance feature.
       
-If you enable or don’t configure this policy setting, users will be allowed to use Writing Assistant and it will be enabled by default (unless the users disabled it).
+If you enable or don’t configure this policy setting, users will be allowed to use Writing Assistance and it will be enabled by default (unless the users disabled it).
 
-If you disable this policy setting, users won't see Writing Assistant by default.
+If you disable this policy setting, users won't see Writing Assistance by default.
 
 Note: This policy setting only applies to subscription versions of Office, such as Microsoft 365 Apps for Enterprise.
+      </string>
+      <string id="L_WritingAssistantInstallAndStartupAdminChoice">Configure Writing Assistance installation and startup</string>
+      <string id="L_WritingAssistantInstallAndStartupAdminChoiceExplain">This policy setting controls whether Writing Assistance is not installed, installed without launching automatically at startup and locked off, installed without launching automatically at startup but still user-controllable, installed and allowed to launch automatically at startup and locked on, or installed with startup on by default but still user-controllable.
+
+If you enable this policy setting, choose one of the following options:
+- Not installed: Writing Assistance is removed and should not appear in Start.
+- Installed, don't launch at startup: Writing Assistance remains installed, but automatic startup launches are blocked and users cannot turn startup back on.
+- Installed, don't launch at startup by default (users can enable): Writing Assistance remains installed, automatic startup launches are off by default, and users can turn startup on later.
+- Installed, launch at startup: Writing Assistance remains installed, automatic startup launches are allowed, and users cannot turn startup off.
+- Installed, launch at startup by default (users can disable): Writing Assistance remains installed, automatic startup launches are on by default, and users can turn startup off later.
+
+If you disable or don't configure this policy setting, Writing Assistance follows its default install and startup behavior, and users can control startup themselves.
+
+Note: This policy setting only applies to subscription versions of Office, such as Microsoft 365 Apps for Enterprise.
+      </string>
+      <string id="L_WritingAssistantInstallAndStartupAdminChoice_NotInstalled">Not installed</string>
+      <string id="L_WritingAssistantInstallAndStartupAdminChoice_InstalledWithoutStartup">Installed, don't launch at startup</string>
+      <string id="L_WritingAssistantInstallAndStartupAdminChoice_InstalledWithoutStartupUserChangeAllowed">Installed, don't launch at startup by default (users can enable)</string>
+      <string id="L_WritingAssistantInstallAndStartupAdminChoice_InstalledWithStartup">Installed, launch at startup</string>
+      <string id="L_WritingAssistantInstallAndStartupAdminChoice_InstalledWithStartupUserChangeAllowed">Installed, launch at startup by default (users can disable)</string>
+      <string id="L_WritingAssistantFirstRunExperienceAdminChoice">Writing Assistance First Run Experience Mode</string>
+      <string id="L_WritingAssistantFirstRunExperienceAdminChoiceExplain">This policy setting controls the Writing Assistance first run experience (FRE).If you enable this policy setting, choose one of the following options:Skip FRE entirely - Writing Assistance marks the first run experience as completed without showing it.Informational only - Writing Assistance shows the first run experience once without requiring user approval or sign-in. The experience is marked completed immediately, uses Next on page 1 and Okay on page 2, removes No Thanks, and is still completed if the user dismisses it.Approval required - Writing Assistance keeps the existing approval-required first run experience behavior.If you disable or don’t configure this policy setting, Writing Assistance uses the existing default first run experience behavior.Note: This policy setting only applies to subscription versions of Office, such as Microsoft 365 Apps for Enterprise.</string>
+      <string id="L_WritingAssistantFirstRunExperienceAdminChoiceSkip">Skip FRE entirely</string>
+      <string id="L_WritingAssistantFirstRunExperienceAdminChoiceInformationalOnly">Informational only</string>
+      <string id="L_WritingAssistantFirstRunExperienceAdminChoiceApprovalRequired">Approval required</string>
+      <string id="L_WritingAssistantAdminBlockedApps">Apps blocked by Writing Assistance admin policy</string>
+      <string id="L_WritingAssistantAdminBlockedAppsExplain">This policy setting allows administrators to specify a list of applications where Writing Assistance will be blocked.
+If you enable this policy setting, enter one application executable name per line (e.g., notepad.exe). Writing Assistance will be disabled in those applications.
+If you disable or do not configure this policy setting, Writing Assistance will not be blocked by this policy in any application.
+      </string>
+      <string id="L_WritingAssistantAdminBlockedUrls">Web pages blocked by Writing Assistance admin policy</string>
+      <string id="L_WritingAssistantAdminBlockedUrlsExplain">This policy setting allows administrators to specify a list of web page URL patterns where Writing Assistance will be blocked.
+If you enable this policy setting, enter one URL pattern per line (e.g., example.com). Writing Assistance will be disabled on pages matching those patterns.
+If you disable or do not configure this policy setting, Writing Assistance will not be blocked by this policy on any web page.
+      </string>
+      <string id="L_WritingAssistantAdminBlocklistLocked">Lock Writing Assistance admin blocklist</string>
+      <string id="L_WritingAssistantAdminBlocklistLockedExplain">This policy setting controls whether users can modify the admin-managed Writing Assistance blocklist.
+If you enable this policy setting (or do not configure it), the admin blocklist is locked and users cannot remove entries from it.
+If you disable this policy setting, users can remove individual entries from the admin-provided blocklist.
       </string>
       <string id="L_DisableLastMileInAppMessaging">Disable Last-Mile In-App Messages</string>
       <string id="L_DisableLastMileInAppMessagingExplain">This policy setting prevents Office from displaying bizbar messages to the user about last-mile (environmental) issues affecting their experience.
 
 If you disable or don’t configure this policy setting, Office will display last-mile messages by default as they are encountered.
 
-If you enable this policy setting, Office will not display the configured last-mile in-app messages when they are encountered.</string>
+If you enable this policy setting, Office will not display the configured last-mile in-app messages when they are encountered
+      </string>
     </stringTable>
     <presentationTable>
       <presentation id="L_RestrictActiveXInstall">
@@ -9438,6 +9479,18 @@ Important: You should only include hosts that you know and trust.​
       </presentation>
       <presentation id="L_ConfigureGetDiagnosticsDisplay">
         <dropdownList refId="L_ConfigureGetDiagnosticsEnum" noSort="true" defaultItem="1">Configure Get Diagnostics:</dropdownList>
+      </presentation>
+      <presentation id="L_WritingAssistantInstallAndStartupAdminChoice">
+        <dropdownList refId="L_WritingAssistantInstallAndStartupAdminChoiceEnum" noSort="true" defaultItem="3">Configure Writing Assistance Install and Startup Behavior</dropdownList>
+      </presentation>
+      <presentation id="L_WritingAssistantFirstRunExperienceAdminChoice">
+        <dropdownList refId="L_WritingAssistantFirstRunExperienceAdminChoiceDropID" noSort="true" defaultItem="2">Configure Writing Assistance First Run Experience Mode</dropdownList>
+      </presentation>
+      <presentation id="L_WritingAssistantAdminBlockedApps">
+        <listBox refId="L_WritingAssistantAdminBlockedAppsListId">Blocked application names (e.g., notepad.exe)</listBox>
+      </presentation>
+      <presentation id="L_WritingAssistantAdminBlockedUrls">
+        <listBox refId="L_WritingAssistantAdminBlockedUrlsListId">Blocked URL patterns (e.g., example.com)</listBox>
       </presentation>
       <presentation id="L_AllowedHateContentGeneralUser">
         <decimalTextBox refId="L_AllowedHateContentGeneralUserDecimal" defaultValue="2">Allowed severity of hate content</decimalTextBox>
