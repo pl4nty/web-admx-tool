@@ -139,7 +139,13 @@ function resolveDest(entryPath: string, isOffice: boolean): { dir: string; name:
   return { dir: langDir('en-us'), name: fileName }
 }
 
-const IS_ADMX = (name: string) => /\.admx$/i.test(name) || /\.adml\d*$/i.test(name)
+// Some sources also ship a merged/combined template alongside the split ones we
+// want (Adobe's AdobeDC.admx is the x86+x64 files merged; Zoom's ZoomVDI_Combined_*
+// merge the per-scope files). Skip the merged variants in favour of the split ones.
+const IS_MERGED_TEMPLATE = (name: string) =>
+  /^AdobeDC\.adm[lx]$/i.test(name) || /^ZoomVDI_Combined_HK(CU|LM)\.adm[lx]$/i.test(name)
+const IS_ADMX = (name: string) =>
+  (/\.admx$/i.test(name) || /\.adml\d*$/i.test(name)) && !IS_MERGED_TEMPLATE(name)
 
 function toUtf8(data: Uint8Array): Buffer {
   if (data[0] === 0xFF && data[1] === 0xFE)
