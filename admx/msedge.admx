@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 151.0.4129.8-->
+  <!--microsoft_edge version: 152.0.4148.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -32,6 +32,7 @@
       <definition displayName="$(string.SUPPORTED_WIN7_V149)" name="SUPPORTED_WIN7_V149"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V150)" name="SUPPORTED_WIN7_V150"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V151)" name="SUPPORTED_WIN7_V151"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V152)" name="SUPPORTED_WIN7_V152"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V77)" name="SUPPORTED_WIN7_V77"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V78)" name="SUPPORTED_WIN7_V78"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V79)" name="SUPPORTED_WIN7_V79"/>
@@ -7151,6 +7152,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.LaunchEdgeOnWindowsStartupEnabled)" explainText="$(string.LaunchEdgeOnWindowsStartupEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="LaunchEdgeOnWindowsStartupEnabled" presentation="$(presentation.LaunchEdgeOnWindowsStartupEnabled)" valueName="LaunchEdgeOnWindowsStartupEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V152"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.LiveCaptionsAllowed)" explainText="$(string.LiveCaptionsAllowed_Explain)" key="Software\Policies\Microsoft\Edge" name="LiveCaptionsAllowed" presentation="$(presentation.LiveCaptionsAllowed)" valueName="LiveCaptionsAllowed">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V103"/>
@@ -7724,6 +7735,16 @@
     <policy class="Both" displayName="$(string.ProactiveAuthEnabled)" explainText="$(string.ProactiveAuthEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="ProactiveAuthEnabled" presentation="$(presentation.ProactiveAuthEnabled)" valueName="ProactiveAuthEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="OBSOLETE_WIN7_V77_V90"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.ProcessIsolationEnabled)" explainText="$(string.ProcessIsolationEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="ProcessIsolationEnabled" presentation="$(presentation.ProcessIsolationEnabled)" valueName="ProcessIsolationEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V151"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
