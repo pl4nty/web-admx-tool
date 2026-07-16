@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--brave version: 150.1.94.66-->
+  <!--brave version: 151.1.94.70-->
   <policyNamespaces>
     <target namespace="BraveSoftware.Policies.Brave" prefix="brave"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -595,6 +595,20 @@
         <list id="AutoSelectCertificateForUrlsDesc" key="Software\Policies\BraveSoftware\Brave\AutoSelectCertificateForUrls" valuePrefix=""/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.AutomaticDownloadsAllowedForUrls)" explainText="$(string.AutomaticDownloadsAllowedForUrls_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AutomaticDownloadsAllowedForUrls" presentation="$(presentation.AutomaticDownloadsAllowedForUrls)">
+      <parentCategory ref="ContentSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <list id="AutomaticDownloadsAllowedForUrlsDesc" key="Software\Policies\BraveSoftware\Brave\AutomaticDownloadsAllowedForUrls" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.AutomaticDownloadsBlockedForUrls)" explainText="$(string.AutomaticDownloadsBlockedForUrls_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AutomaticDownloadsBlockedForUrls" presentation="$(presentation.AutomaticDownloadsBlockedForUrls)">
+      <parentCategory ref="ContentSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <list id="AutomaticDownloadsBlockedForUrlsDesc" key="Software\Policies\BraveSoftware\Brave\AutomaticDownloadsBlockedForUrls" valuePrefix=""/>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.AutomaticFullscreenAllowedForUrls)" explainText="$(string.AutomaticFullscreenAllowedForUrls_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AutomaticFullscreenAllowedForUrls" presentation="$(presentation.AutomaticFullscreenAllowedForUrls)">
       <parentCategory ref="ContentSettings"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -653,6 +667,29 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.DefaultAutomaticDownloadsSetting)" explainText="$(string.DefaultAutomaticDownloadsSetting_Explain)" key="Software\Policies\BraveSoftware\Brave" name="DefaultAutomaticDownloadsSetting" presentation="$(presentation.DefaultAutomaticDownloadsSetting)">
+      <parentCategory ref="ContentSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="DefaultAutomaticDownloadsSetting" valueName="DefaultAutomaticDownloadsSetting">
+          <item displayName="$(string.DefaultAutomaticDownloadsSetting_AllowAutomaticDownloads)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.DefaultAutomaticDownloadsSetting_BlockAutomaticDownloads)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+          <item displayName="$(string.DefaultAutomaticDownloadsSetting_AskAutomaticDownloads)">
+            <value>
+              <decimal value="3"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.DefaultClipboardSetting)" explainText="$(string.DefaultClipboardSetting_Explain)" key="Software\Policies\BraveSoftware\Brave" name="DefaultClipboardSetting" presentation="$(presentation.DefaultClipboardSetting)">
       <parentCategory ref="ContentSettings"/>
@@ -939,6 +976,11 @@
           <item displayName="$(string.DefaultSensorsSetting_BlockSensors)">
             <value>
               <decimal value="2"/>
+            </value>
+          </item>
+          <item displayName="$(string.DefaultSensorsSetting_AskSensors)">
+            <value>
+              <decimal value="3"/>
             </value>
           </item>
         </enum>
@@ -2400,6 +2442,47 @@
             </value>
           </item>
           <item displayName="$(string.TabCompareSettings_Disabled)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.ThirdPartyAiChatSettings)" explainText="$(string.ThirdPartyAiChatSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ThirdPartyAiChatSettings" presentation="$(presentation.ThirdPartyAiChatSettings)">
+      <parentCategory ref="GenerativeAI"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="ThirdPartyAiChatSettings" valueName="ThirdPartyAiChatSettings">
+          <item displayName="$(string.ThirdPartyAiChatSettings_Allowed)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.ThirdPartyAiChatSettings_Disabled)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.VoiceTypingSettings)" explainText="$(string.VoiceTypingSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="VoiceTypingSettings" presentation="$(presentation.VoiceTypingSettings)">
+      <parentCategory ref="GenerativeAI"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="VoiceTypingSettings" valueName="VoiceTypingSettings">
+          <item displayName="$(string.VoiceTypingSettings_Allowed)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.VoiceTypingSettings_AllowedWithoutLogging)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.VoiceTypingSettings_Disabled)">
             <value>
               <decimal value="2"/>
             </value>
@@ -4420,6 +4503,16 @@
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.PrefetchWithServiceWorkerEnabled)" explainText="$(string.PrefetchWithServiceWorkerEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PrefetchWithServiceWorkerEnabled" presentation="$(presentation.PrefetchWithServiceWorkerEnabled)" valueName="PrefetchWithServiceWorkerEnabled">
+      <parentCategory ref="brave"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.ProcessIsolationEnabled)" explainText="$(string.ProcessIsolationEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ProcessIsolationEnabled" presentation="$(presentation.ProcessIsolationEnabled)" valueName="ProcessIsolationEnabled">
       <parentCategory ref="brave"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
