@@ -42,7 +42,7 @@ jobs:
     needs: main
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/harvester57/docker-admxlint:main
+      image: ghcr.io/harvester57/docker-admxlint:main@sha256:7de10f47763da65a4026dfafe0b302a1f7b36810828ec07ce5df1e1bd3b8ccc8
       options: --user root
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
