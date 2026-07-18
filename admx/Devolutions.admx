@@ -1283,6 +1283,22 @@
 		</disabledValue>
     </policy>
     <policy 
+		name="POL_RDM_DISABLESMARTCARDKERBCERTIFICATELOGON"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLESMARTCARDKERBCERTIFICATELOGON)"
+		explainText="$(string.POL_RDM_DISABLESMARTCARDKERBCERTIFICATELOGON_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableSmartCardKerbCertificateLogon">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
 		name="POL_RDM_DISABLETOOLSADDONMANAGER"
 		class="Both"
 		displayName="$(string.POL_RDM_DISABLETOOLSADDONMANAGER)"
