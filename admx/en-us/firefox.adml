@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<policyDefinitionResources revision="7.12" schemaVersion="1.0">
+<policyDefinitionResources xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" revision="8.0" schemaVersion="1.0">
   <displayName/>
   <description/>
   <resources>
@@ -88,6 +88,8 @@
       <string id="SUPPORTED_FF150_ONLY">Firefox 150 or later</string>
       <string id="SUPPORTED_FF151_ONLY">Firefox 151 or later</string>
       <string id="SUPPORTED_FF152_ONLY">Firefox 152 or later</string>
+      <string id="SUPPORTED_FF153_ONLY">Firefox 153 or later</string>
+      <string id="SUPPORTED_FF154_ONLY">Firefox 154 or later</string>
       <string id="firefox">Firefox</string>
       <string id="Permissions_group">Permissions</string>
       <string id="Camera_group">Camera</string>
@@ -479,7 +481,8 @@ If this policy is not configured or disabled, in private browsing, cookies are r
       <string id="Cookies_Behavior_Reject">Reject all cookies</string>
       <string id="Cookies_Behavior_LimitForeign">Reject third party cookies for sites you haven't visited</string>
       <string id="Cookies_Behavior_RejectTracker">Reject cookies for known trackers</string>
-      <string id="Cookies_Behavior_RejectTrackerAndPartitionForeign">Reject cookies for known trackers and partition third-party cookies (Total Cookie Protection)</string>
+      <string id="Cookies_Behavior_PartitionForeign">Partition third-party cookies (Total Cookie Protection)</string>
+      <string id="Cookies_Behavior_RejectTrackerAndPartitionForeign">Reject cookies for known trackers and partition third-party cookies (Deprecated - use Partition third-party cookies)</string>
       <string id="Camera_Allow_Explain">If this policy is enabled, access to the camera is always allowed for the origins indicated.
 
 If this policy is disabled or not configured, the default camera policy is followed.</string>
@@ -753,6 +756,12 @@ If this policy is disabled or not configured, the start page defaults to the pre
 If this policy is disabled, the home button will not appear on the toolbar by default.
 
 If this policy is not configured, Firefox will determine whether or not the home button appears on the toolbar by default.</string>
+      <string id="Homepage_NewTabOnRestore">Also open a new tab when restoring previous windows and tabs</string>
+      <string id="Homepage_NewTabOnRestore_Explain">If this policy is enabled, a new tab is also opened when restoring previous windows and tabs.
+
+If this policy is disabled, a new tab is not opened when restoring previous windows and tabs.
+
+If this policy is not configured, the Firefox default applies (Firefox may enable this on its own).</string>
       <string id="PasswordManagerEnabled">Password Manager</string>
       <string id="PasswordManagerEnabled_Explain">If this policy is disabled, the password manager is not available via preferences.
 
@@ -1354,6 +1363,10 @@ This policy cannot be used to enable restore on platforms or in configurations w
       <string id="DisableRemoteImprovements_Explain">If this policy is enabled, Firefox will not apply performance, stability, and feature changes between updates.
 
 If this policy is disabled or not configured, Firefox will apply performance, stability, and feature changes between updates.</string>
+      <string id="DisableRemoteSettingsAndAcceptSecurityConsequences">Disable Remote Settings and accept security consequences</string>
+      <string id="DisableRemoteSettingsAndAcceptSecurityConsequences_Explain">If this policy is enabled, Remote Settings updates are disabled and Firefox will no longer receive updated data such as blocklists.
+
+If this policy is disabled or not configured, Remote Settings updates are enabled.</string>
       <string id="IPProtectionAvailable">IP Protection (VPN) Availability</string>
       <string id="IPProtectionAvailable_Explain">If this policy is disabled, the built-in VPN (IP Protection) is not available to users.
 
@@ -1583,9 +1596,8 @@ https://github.com/mozilla/policy-templates/blob/master/README.md#preferences.</
         </textBox>
       </presentation>
       <presentation id="HomepageURL">
-        <text>URL:</text>
         <textBox refId="HomepageURL">
-          <label/>
+          <label>URL:</label>
         </textBox>
         <checkBox refId="HomepageLocked">Don't allow the homepage to be changed.</checkBox>
       </presentation>
@@ -1596,23 +1608,18 @@ https://github.com/mozilla/policy-templates/blob/master/README.md#preferences.</
         <dropdownList refId="StartPage"/>
       </presentation>
       <presentation id="Bookmark">
-        <text>Title:</text>
         <textBox refId="BookmarkTitle">
-          <label/>
+          <label>Title:</label>
         </textBox>
-        <text>URL:</text>
         <textBox refId="BookmarkURL">
-          <label/>
+          <label>URL:</label>
         </textBox>
-        <text>Favicon URL:</text>
         <textBox refId="BookmarkFavicon">
-          <label/>
+          <label>Favicon URL:</label>
         </textBox>
-        <text>Placement:</text>
-        <dropdownList refId="BookmarkPlacement"/>
-        <text>Folder name:</text>
+        <dropdownList refId="BookmarkPlacement">Placement:</dropdownList>
         <textBox refId="BookmarkFolder">
-          <label/>
+          <label>Folder name:</label>
         </textBox>
       </presentation>
       <presentation id="SearchEngine">
@@ -1658,17 +1665,14 @@ https://github.com/mozilla/policy-templates/blob/master/README.md#preferences.</
         <dropdownList refId="SSLVersion" defaultItem="3"/>
       </presentation>
       <presentation id="SupportMenu">
-        <text>Title:</text>
         <textBox refId="SupportMenuTitle">
-          <label/>
+          <label>Title:</label>
         </textBox>
-        <text>URL:</text>
         <textBox refId="SupportMenuURL">
-          <label/>
+          <label>URL:</label>
         </textBox>
-        <text>Access key:</text>
         <textBox refId="SupportMenuAccessKey">
-          <label/>
+          <label>Access key:</label>
         </textBox>
       </presentation>
       <presentation id="Preferences_String">
@@ -1743,9 +1747,8 @@ https://github.com/mozilla/policy-templates/blob/master/README.md#preferences.</
         </textBox>
       </presentation>
       <presentation id="Proxy_SOCKSProxy">
-        <text>Host including port:</text>
         <textBox refId="Proxy_SOCKSProxy">
-          <label/>
+          <label>Host including port:</label>
         </textBox>
         <text>SOCKS Version:</text>
         <dropdownList refId="Proxy_SOCKSVersion"/>
@@ -1756,9 +1759,8 @@ https://github.com/mozilla/policy-templates/blob/master/README.md#preferences.</
         </textBox>
       </presentation>
       <presentation id="Proxy_Passthrough">
-        <text>No proxy for</text>
         <textBox refId="Proxy_Passthrough">
-          <label/>
+          <label>No proxy for</label>
         </textBox>
         <text>Example: .mozilla.org, .net.nz, 192.168.1.0/24</text>
         <text>Connections to localhost, 127.0.0.1/8, and ::1 are never proxied.</text>

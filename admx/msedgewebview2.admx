@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 152.0.4148.0-->
+  <!--microsoft_edge version: 152.0.4167.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.WebView2" prefix="microsoft_edge_webview2"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -45,6 +45,13 @@
       <supportedOn ref="SUPPORTED_WIN7_V121"/>
       <elements>
         <list explicitValue="true" id="ChannelSearchKindDesc" key="Software\Policies\Microsoft\Edge\WebView2\ChannelSearchKind"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.DowngradeVersion)" explainText="$(string.DowngradeVersion_Explain)" key="Software\Policies\Microsoft\Edge\WebView2" name="DowngradeVersion" presentation="$(presentation.DowngradeVersion)">
+      <parentCategory ref="WebView2LoaderOverrideSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7_V149"/>
+      <elements>
+        <list explicitValue="true" id="DowngradeVersionDesc" key="Software\Policies\Microsoft\Edge\WebView2\DowngradeVersion"/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.ReleaseChannelPreference)" explainText="$(string.ReleaseChannelPreference_Explain)" key="Software\Policies\Microsoft\Edge\WebView2" name="ReleaseChannelPreference" presentation="$(presentation.ReleaseChannelPreference)">

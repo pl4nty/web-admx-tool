@@ -870,6 +870,23 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="EnableWebRequestRateLimit_Server_Policy" class="Machine" displayName="$(string.EnableWebRequestRateLimit_Server_Policy)" explainText="$(string.EnableWebRequestRateLimit_Server_Explain)" presentation="$(presentation.EnableWebRequestRateLimit_Server_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="EnableWebRequestRateLimit_Server">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="WebRequestRateLimit_ClientMode_Policy" class="Machine" displayName="$(string.WebRequestRateLimit_ClientMode_Policy)" explainText="$(string.WebRequestRateLimit_ClientMode_Explain)" presentation="$(presentation.WebRequestRateLimit_ClientMode_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="WebRequestRateLimit_ClientMode_Part" valueName="WebRequestRateLimit_ClientMode" required="true" minValue="0" maxValue="3" />
+      </elements>
+    </policy>
     <policy name="AU2_EnableAutoUpdate_Policy" class="Machine" displayName="$(string.AU2_EnableAutoUpdate_Policy)" explainText="$(string.AU2_EnableAutoUpdate_Explain)" presentation="$(presentation.AU2_EnableAutoUpdate_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Updates" valueName="AU2_EnableAutoUpdate">
       <parentCategory ref="zoomupdates" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
@@ -3333,6 +3350,23 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy name="EnableWebRequestRateLimit_Server_Policy_Recommend" class="Machine" displayName="$(string.EnableWebRequestRateLimit_Server_Policy_Recommend)" explainText="$(string.EnableWebRequestRateLimit_Server_Explain)" presentation="$(presentation.EnableWebRequestRateLimit_Server_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="EnableWebRequestRateLimit_Server">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="WebRequestRateLimit_ClientMode_Policy_Recommend" class="Machine" displayName="$(string.WebRequestRateLimit_ClientMode_Policy_Recommend)" explainText="$(string.WebRequestRateLimit_ClientMode_Explain)" presentation="$(presentation.WebRequestRateLimit_ClientMode_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="WebRequestRateLimit_ClientMode_Part" valueName="WebRequestRateLimit_ClientMode" required="true" minValue="0" maxValue="3" />
+      </elements>
     </policy>
     <policy name="AU2_EnableAutoUpdate_Policy_Recommend" class="Machine" displayName="$(string.AU2_EnableAutoUpdate_Policy_Recommend)" explainText="$(string.AU2_EnableAutoUpdate_Explain)" presentation="$(presentation.AU2_EnableAutoUpdate_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Updates" valueName="AU2_EnableAutoUpdate">
       <parentCategory ref="zoomupdates_recommend" />

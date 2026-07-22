@@ -2460,6 +2460,19 @@ If this policy is not set, client will use the default setting.</string>
 If this policy is enabled, when the client resolves both IPv4 and IPv6 addresses and the IPv6 TLS connection fails, the client will retry the connection using IPv4.
 If this policy is disabled, the client will not perform this IPv4 retry for IPv6 TLS errors.
 If this policy is not set, client will use the default setting.</string>
+      <string id="EnableWebRequestRateLimit_Server_Policy">Enable server-driven passive rate limiting for web requests</string>
+      <string id="EnableWebRequestRateLimit_Server_Policy_Recommend">Enable server-driven passive rate limiting for web requests (Recommendation Setting)</string>
+      <string id="EnableWebRequestRateLimit_Server_Explain">Default policy is disabled.
+If this policy is enabled, the client will enable server-driven passive rate limiting for web requests and report related rate limit telemetry.
+If this policy is disabled, the client will not enable server-driven passive rate limiting for web requests.
+If this policy is not set, client will use the default setting.</string>
+      <string id="WebRequestRateLimit_ClientMode_Policy">Set the client mode for web request rate limiting</string>
+      <string id="WebRequestRateLimit_ClientMode_Policy_Recommend">Set the client mode for web request rate limiting (Recommendation Setting)</string>
+      <string id="WebRequestRateLimit_ClientMode_Explain">Default setting is 1.
+If this policy is set, the client will use the specified mode for web request rate limiting.
+The value range is 0 to 3: 0 disables client-side web request rate limiting, 1 enables telemetry only, 2 enables rate limiting without telemetry, and 3 enables both telemetry and rate limiting.
+If this policy is not set, client will use the default setting.</string>
+      <string id="WebRequestRateLimit_ClientMode_Part">Set the client mode for web request rate limiting</string>
     </stringTable>
     <presentationTable>
       <presentation id="EnableClientAutoUpdate_Policy" />
@@ -2897,6 +2910,10 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="EnableForceMaximumCameraSizeForSending_Policy" />
       <presentation id="V4RetryForV6TlsError_Policy" />
       <presentation id="ForceEnableWebViewRecycle_Policy" />
+      <presentation id="EnableWebRequestRateLimit_Server_Policy" />
+      <presentation id="WebRequestRateLimit_ClientMode_Policy">
+        <decimalTextBox refId="WebRequestRateLimit_ClientMode_Part" defaultValue="1" spinStep="1">Set the client mode for web request rate limiting</decimalTextBox>
+      </presentation>
       <presentation id="EnableClientAutoUpdate_Policy_Recommend" />
       <presentation id="DisableCreatingDesktopShortcut_Policy_Recommend" />
       <presentation id="AutoStartAfterReboot_Policy_Recommend" />
@@ -3328,6 +3345,10 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="EnableForceMaximumCameraSizeForSending_Policy_Recommend" />
       <presentation id="V4RetryForV6TlsError_Policy_Recommend" />
       <presentation id="ForceEnableWebViewRecycle_Policy_Recommend" />
+      <presentation id="EnableWebRequestRateLimit_Server_Policy_Recommend" />
+      <presentation id="WebRequestRateLimit_ClientMode_Policy_Recommend">
+        <decimalTextBox refId="WebRequestRateLimit_ClientMode_Part" defaultValue="1" spinStep="1">Set the client mode for web request rate limiting</decimalTextBox>
+      </presentation>
     </presentationTable>
   </resources>
 </policyDefinitionResources>
