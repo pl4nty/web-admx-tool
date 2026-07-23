@@ -19,6 +19,7 @@
 			<definition name="Supported_1_125" displayName="$(string.Supported_1_125)" />
 			<definition name="Supported_1_126" displayName="$(string.Supported_1_126)" />
 			<definition name="Supported_1_127" displayName="$(string.Supported_1_127)" />
+			<definition name="Supported_1_130" displayName="$(string.Supported_1_130)" />
 			<definition name="Supported_1_67" displayName="$(string.Supported_1_67)" />
 			<definition name="Supported_1_96" displayName="$(string.Supported_1_96)" />
 			<definition name="Supported_1_99" displayName="$(string.Supported_1_99)" />
@@ -92,6 +93,13 @@
 		</boolean>
 			</elements>
 		</policy>
+		<policy name="ChatAllowedMcpServers" class="Both" displayName="$(string.ChatAllowedMcpServers)" explainText="$(string.ChatAllowedMcpServers_chat_mcp_allowedServers_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAllowedMcpServers)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_130" />
+			<elements>
+		<multiText id="ChatAllowedMcpServers" valueName="ChatAllowedMcpServers" required="true" />
+			</elements>
+		</policy>
 		<policy name="ChatApprovedAccountOrganizations" class="Both" displayName="$(string.ChatApprovedAccountOrganizations)" explainText="$(string.ChatApprovedAccountOrganizations_chat_approvedAccountOrganizations_policy_description)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatApprovedAccountOrganizations)">
 			<parentCategory ref="interactiveSessionConfigurationTitle" />
 			<supportedOn ref="Supported_1_118" />
@@ -104,6 +112,13 @@
 			<supportedOn ref="Supported_1_127" />
 			<elements>
 		<text id="ChatDefaultModel" valueName="ChatDefaultModel" required="true" />
+			</elements>
+		</policy>
+		<policy name="ChatDeniedMcpServers" class="Both" displayName="$(string.ChatDeniedMcpServers)" explainText="$(string.ChatDeniedMcpServers_chat_mcp_deniedServers_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatDeniedMcpServers)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_130" />
+			<elements>
+		<multiText id="ChatDeniedMcpServers" valueName="ChatDeniedMcpServers" required="true" />
 			</elements>
 		</policy>
 		<policy name="ChatEnabledPlugins" class="Both" displayName="$(string.ChatEnabledPlugins)" explainText="$(string.ChatEnabledPlugins_chat_plugins_enabledPlugins_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatEnabledPlugins)">

@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--brave version: 151.1.94.83-->
+  <!--brave version: 151.1.94.91-->
   <policyNamespaces>
     <target namespace="BraveSoftware.Policies.Brave" prefix="brave"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -302,6 +302,16 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.BraveRewardsDisabled)" explainText="$(string.BraveRewardsDisabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="BraveRewardsDisabled" presentation="$(presentation.BraveRewardsDisabled)" valueName="BraveRewardsDisabled">
+      <parentCategory ref="BraveSoftware"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.BraveSearchResultAdsEnabled)" explainText="$(string.BraveSearchResultAdsEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="BraveSearchResultAdsEnabled" presentation="$(presentation.BraveSearchResultAdsEnabled)" valueName="BraveSearchResultAdsEnabled">
       <parentCategory ref="BraveSoftware"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>

@@ -18,6 +18,7 @@
 			<string id="Supported_1_125">Visual Studio Code &gt;= 1.125</string>
 			<string id="Supported_1_126">Visual Studio Code &gt;= 1.126</string>
 			<string id="Supported_1_127">Visual Studio Code &gt;= 1.127</string>
+			<string id="Supported_1_130">Visual Studio Code &gt;= 1.130</string>
 			<string id="Supported_1_67">Visual Studio Code &gt;= 1.67</string>
 			<string id="Supported_1_96">Visual Studio Code &gt;= 1.96</string>
 			<string id="Supported_1_99">Visual Studio Code &gt;= 1.99</string>
@@ -40,10 +41,14 @@
 			<string id="ChatAgentMode_chat_agent_enabled_description">When enabled, agent mode can be activated from chat and tools in agentic contexts with side effects can be used.</string>
 			<string id="ChatAgentNetworkFilter">ChatAgentNetworkFilter</string>
 			<string id="ChatAgentNetworkFilter_chat_agent_networkFilter">When enabled, network access by agent tools (fetch tool, integrated browser) is restricted according to `#chat.agent.allowedNetworkDomains#` and `#chat.agent.deniedNetworkDomains#`. Domain filtering is also applied to those tools when `#chat.agent.sandbox.enabled#` is enabled.</string>
+			<string id="ChatAllowedMcpServers">ChatAllowedMcpServers</string>
+			<string id="ChatAllowedMcpServers_chat_mcp_allowedServers_policy">Allowlist of Model Context Protocol servers. When set, only servers matching an entry may be installed or run; omit entirely to allow all servers (subject to the deny list).</string>
 			<string id="ChatApprovedAccountOrganizations">ChatApprovedAccountOrganizations</string>
 			<string id="ChatApprovedAccountOrganizations_chat_approvedAccountOrganizations_policy_description">Setting this policy to a non-empty list activates the Approved Account gate: all AI features are disabled until the user signs into a GitHub account whose organizations intersect this list AND the account-side policy data has resolved. Comparison is case-insensitive. Use '*' as a wildcard to accept any signed-in GitHub or GHE account (use this for GHE deployments where the organization list is not surfaced).</string>
 			<string id="ChatDefaultModel">ChatDefaultModel</string>
 			<string id="ChatDefaultModel_chat_defaultModel_policy">Sets the default chat model for new conversations. Accepts "auto", a model family name (such as "opus" or "gemini"), or a full model id. Users can still switch the model within a conversation.</string>
+			<string id="ChatDeniedMcpServers">ChatDeniedMcpServers</string>
+			<string id="ChatDeniedMcpServers_chat_mcp_deniedServers_policy">Denylist of Model Context Protocol servers. Servers matching any entry are blocked from being installed or run, even if they also match the allow list; deny rules always take precedence.</string>
 			<string id="ChatEnabledPlugins">ChatEnabledPlugins</string>
 			<string id="ChatEnabledPlugins_chat_plugins_enabledPlugins_policy">Plugin enablement. Keys are plugin IDs in `{plugin}@{marketplace}` form; values enable or disable the plugin.</string>
 			<string id="ChatExtraMarketplaces">ChatExtraMarketplaces</string>
@@ -150,8 +155,10 @@ Note: This setting only controls tool approval and does not prevent the agent fr
 			<presentation id="ChatAgentHostEnabled"><checkBox refId="ChatAgentHostEnabled">ChatAgentHostEnabled</checkBox></presentation>
 			<presentation id="ChatAgentMode"><checkBox refId="ChatAgentMode">ChatAgentMode</checkBox></presentation>
 			<presentation id="ChatAgentNetworkFilter"><checkBox refId="ChatAgentNetworkFilter">ChatAgentNetworkFilter</checkBox></presentation>
+			<presentation id="ChatAllowedMcpServers"><multiTextBox refId="ChatAllowedMcpServers" /></presentation>
 			<presentation id="ChatApprovedAccountOrganizations"><multiTextBox refId="ChatApprovedAccountOrganizations" /></presentation>
 			<presentation id="ChatDefaultModel"><textBox refId="ChatDefaultModel"><label>ChatDefaultModel:</label></textBox></presentation>
+			<presentation id="ChatDeniedMcpServers"><multiTextBox refId="ChatDeniedMcpServers" /></presentation>
 			<presentation id="ChatEnabledPlugins"><multiTextBox refId="ChatEnabledPlugins" /></presentation>
 			<presentation id="ChatExtraMarketplaces"><multiTextBox refId="ChatExtraMarketplaces" /></presentation>
 			<presentation id="ChatHooks"><checkBox refId="ChatHooks">ChatHooks</checkBox></presentation>
