@@ -45,31 +45,6 @@ jobs:
         env:
           NODE_ENV: production
 
-      # The build emits root-absolute URLs (/_astro/..., /data/...), hydrates via
-      # ES modules and fetches /data/*.json at runtime, so opening index.html over
-      # file:// can never work — assets resolve against the filesystem root and the
-      # null origin blocks both module scripts and fetch. Ship the how-to-serve
-      # note inside the artifact, where someone who hit a blank page will look.
-      - name: Add serve instructions to build output
-        run: |
-          cat > dist/README.md <<'EOF'
-          # Previewing this build
-
-          This is a static site, but it must be served over HTTP — opening
-          `index.html` directly from disk (`file://`) will show a blank or broken
-          page, because the asset URLs are absolute, the scripts are ES modules,
-          and the sidebar/search fetch JSON at runtime. All three are blocked
-          under `file://`.
-
-          From this folder, run whichever you have:
-
-              npx serve .
-              python3 -m http.server 4321
-              php -S localhost:4321
-
-          Then open the URL it prints (e.g. <http://localhost:4321/en-us/>).
-          EOF
-
       - name: Upload built site
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
@@ -123,7 +98,7 @@ jobs:
               'The site built successfully. Download the artifacts from this run to preview the changes:',
               '',
               `- 📸 [**Screenshots**](${runUrl}) — \`home.png\` and \`policy.png\` artifacts`,
-              `- 🌐 [**Built site**](${runUrl}) — \`dist\` artifact. Unzip it and serve it over HTTP (\`npx serve .\` or \`python3 -m http.server 4321\`), then open <http://localhost:4321/en-us/>. Opening \`index.html\` straight from disk won't work — see the \`README.md\` in the artifact.`,
+              `- 🌐 [**Built site**](${runUrl}) — \`dist\` artifact. Unzip it and serve it over HTTP (\`npx serve .\` or \`python3 -m http.server 4321\`), then open <http://localhost:4321/en-us/>.`,
               '',
               `<sub>Updated for commit ${context.sha.slice(0, 7)} · [view run](${runUrl})</sub>`,
             ].join('\n');
