@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import RegistryValues from '@/components/RegistryValues.astro';
-import { formatPolicyValue, registryPath, describeListValueNames } from '@/policyFormat';
+import { formatPolicyValue, describeListValueNames } from '@/policyFormat';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -168,22 +168,20 @@ const linkify = (text: string) => String(text || '').replace(/(https?:\/\/[^\s<]
             <div class="border-t border-gray-200 dark:border-gray-700 pt-4 first:border-t-0 first:pt-0">
               <h3 class="font-medium text-gray-900 dark:text-white mb-1 break-words">{elemLabel(elem)}</h3>
 
-              {elemKey(elem) && (
-                <p class="text-sm text-gray-500 dark:text-gray-400">
-                  Registry Key: <span class="font-mono text-gray-900 dark:text-white break-all">{elemKey(elem)}</span>
-                  {elem.key && policy.key && elem.key !== policy.key && <span class="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200">differs from policy key</span>}
-                </p>
-              )}
-              {elem.valueName
-                ? <p class="text-sm text-gray-500 dark:text-gray-400">Value Name: <span class="font-mono text-gray-900 dark:text-white break-all">{elem.valueName}</span></p>
-                : elem.type === 'list' && <p class="text-sm text-gray-500 dark:text-gray-400">{describeListValueNames(elem)}</p>}
-              {elem.valueName && elemKey(elem) && (
-                <p class="text-sm text-gray-500 dark:text-gray-400">Full Path: <span class="font-mono text-gray-900 dark:text-white break-all">{registryPath(elemKey(elem), elem.valueName)}</span></p>
-              )}
-
-              {elem.type && <p class="text-sm text-gray-500 dark:text-gray-400">Type: <span class="font-mono">{elem.type}</span></p>}
-              {elem.required !== undefined && <p class="text-sm text-gray-500 dark:text-gray-400">Required: <span class="font-mono">{String(elem.required)}</span></p>}
-              {elemDefault(elem) && <p class="text-sm text-gray-500 dark:text-gray-400">Default: <span class="font-mono">{elemDefault(elem)}</span></p>}
+              <div class="space-y-1.5">
+                {elemKey(elem) && (
+                  <p class="text-sm text-gray-500 dark:text-gray-400">
+                    Registry Key: <span class="font-mono text-gray-900 dark:text-white break-all">{elemKey(elem)}</span>
+                    {elem.key && policy.key && elem.key !== policy.key && <span class="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200">differs from policy key</span>}
+                  </p>
+                )}
+                {elem.valueName
+                  ? <p class="text-sm text-gray-500 dark:text-gray-400">Value Name: <span class="font-mono text-gray-900 dark:text-white break-all">{elem.valueName}</span></p>
+                  : elem.type === 'list' && <p class="text-sm text-gray-500 dark:text-gray-400">{describeListValueNames(elem)}</p>}
+                {elem.type && <p class="text-sm text-gray-500 dark:text-gray-400">Type: <span class="font-mono">{elem.type}</span></p>}
+                {elem.required !== undefined && <p class="text-sm text-gray-500 dark:text-gray-400">Required: <span class="font-mono">{String(elem.required)}</span></p>}
+                {elemDefault(elem) && <p class="text-sm text-gray-500 dark:text-gray-400">Default: <span class="font-mono">{elemDefault(elem)}</span></p>}
+              </div>
 
               {elem.type === 'enum' && elem.items?.length > 0 && (
                 <div class="mt-2 text-sm text-gray-600 dark:text-gray-300">
@@ -201,7 +199,7 @@ const linkify = (text: string) => String(text || '').replace(/(https?:\/\/[^\s<]
               {elem.type === 'boolean' && (
                 <div class="mt-2 text-sm text-gray-600 dark:text-gray-300 space-y-2">
                   {(elem.trueValue || elem.falseValue || (!elem.trueList?.length && !elem.falseList?.length)) && (
-                    <div>
+                    <div class="space-y-1.5">
                       <div class="flex flex-wrap gap-2"><span class="font-medium">True:</span><span class="font-mono">{fmtVal(elem.trueValue)}</span></div>
                       <div class="flex flex-wrap gap-2"><span class="font-medium">False:</span><span class="font-mono">{fmtVal(elem.falseValue)}</span></div>
                     </div>
@@ -211,19 +209,19 @@ const linkify = (text: string) => String(text || '').replace(/(https?:\/\/[^\s<]
                 </div>
               )}
               {(elem.type === 'decimal' || elem.type === 'longDecimal') && (
-                <div class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                <div class="mt-1.5 space-y-1.5 text-sm text-gray-600 dark:text-gray-300">
                   {elem.minValue !== undefined && <div>Min: <span class="font-mono">{elem.minValue}</span></div>}
                   {elem.maxValue !== undefined && <div>Max: <span class="font-mono">{elem.maxValue}</span></div>}
                 </div>
               )}
               {(elem.type === 'text' || elem.type === 'multiText') && (
-                <div class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                <div class="mt-1.5 space-y-1.5 text-sm text-gray-600 dark:text-gray-300">
                   {elem.maxLength !== undefined && <div>Max length: <span class="font-mono">{elem.maxLength}</span></div>}
                   {elem.expandable !== undefined && <div>Expandable: <span class="font-mono">{String(elem.expandable)}</span></div>}
                 </div>
               )}
               {elem.type === 'list' && (
-                <div class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                <div class="mt-1.5 space-y-1.5 text-sm text-gray-600 dark:text-gray-300">
                   {elem.explicitValue !== undefined && <div>Explicit values: <span class="font-mono">{String(elem.explicitValue)}</span></div>}
                   {elem.additive !== undefined && <div>Additive: <span class="font-mono">{String(elem.additive)}</span></div>}
                   {elem.valuePrefix && <div>Value prefix: <span class="font-mono">{elem.valuePrefix}</span></div>}
