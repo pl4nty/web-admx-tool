@@ -47,9 +47,12 @@ function resolvePresentationRef(ref: string | undefined, presentations: Record<s
 
 function parseValue(node: any): PolicyValue | null {
   if (!node) return null
-  if (node.decimal) return { type: 'decimal', value: parseInt(node.decimal.value) }
-  if (node.string) return { type: 'string', value: node.string._text || node.string || '' }
-  if (node.delete) return { type: 'delete' }
+  // Self-closing tags parse to '', so test for presence rather than truthiness —
+  // <delete /> and <string /> are both meaningful but falsy.
+  if (node.decimal !== undefined) return { type: 'decimal', value: parseInt(node.decimal?.value) }
+  if (node.longDecimal !== undefined) return { type: 'decimal', value: parseInt(node.longDecimal?.value) }
+  if (node.string !== undefined) return { type: 'string', value: node.string?._text ?? (typeof node.string === 'string' ? node.string : '') }
+  if (node.delete !== undefined) return { type: 'delete' }
   return null
 }
 

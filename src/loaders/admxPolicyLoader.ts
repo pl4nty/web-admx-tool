@@ -213,6 +213,7 @@ export function admxPolicyLoader(): Loader {
               parentCategory: pol.parentCategory || '', categoryPath: pol.categoryPath || [],
               elements: pol.elements || [], presentationElements: pol.presentationElements || [],
               enabledValue: pol.enabledValue || null, disabledValue: pol.disabledValue || null,
+              enabledList: pol.enabledList || null, disabledList: pol.disabledList || null,
               csp: pol.csp || null, catalog: pol.catalog || null, downloadUrl: pol.downloadUrl || null,
               namespace, fileSlug: slug, lang: langKey, availableLangs,
             })

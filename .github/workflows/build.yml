@@ -98,7 +98,7 @@ jobs:
               'The site built successfully. Download the artifacts from this run to preview the changes:',
               '',
               `- 📸 [**Screenshots**](${runUrl}) — \`home.png\` and \`policy.png\` artifacts`,
-              `- 🌐 [**Built site**](${runUrl}) — \`dist\` artifact (open \`index.html\` or serve locally for a live preview)`,
+              `- 🌐 [**Built site**](${runUrl}) — \`dist\` artifact. Unzip it and serve it over HTTP (\`npx serve .\` or \`python3 -m http.server 4321\`), then open <http://localhost:4321/en-us/>.`,
               '',
               `<sub>Updated for commit ${context.sha.slice(0, 7)} · [view run](${runUrl})</sub>`,
             ].join('\n');

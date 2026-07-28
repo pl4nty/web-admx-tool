@@ -1,0 +1,26 @@
+---
+import { formatPolicyValue, registryPath } from '@/policyFormat';
+
+interface Props {
+  label: string;
+  items: any[];
+  fallbackKey?: string;
+}
+
+const { label, items = [], fallbackKey = '' } = Astro.props;
+---
+
+{items.length > 0 && (
+  <div>
+    <div class="font-medium text-gray-700 dark:text-gray-200">{label}</div>
+    <ul class="mt-1 space-y-1">
+      {items.map((item: any) => (
+        <li class="text-sm flex flex-wrap items-baseline gap-x-2">
+          <span class="font-mono break-all text-gray-900 dark:text-white">{registryPath(item.key || fallbackKey, item.valueName)}</span>
+          <span class="text-gray-400 dark:text-gray-500">=</span>
+          <span class="font-mono text-xs px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-700">{formatPolicyValue(item.value)}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
