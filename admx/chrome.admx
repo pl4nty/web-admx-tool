@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--chrome version: 150.0.7871.187-->
+  <!--chrome version: 151.0.7922.72-->
   <policyNamespaces>
     <target namespace="Google.Policies.Chrome" prefix="chrome"/>
     <using namespace="Google.Policies" prefix="Google"/>
@@ -276,6 +276,20 @@
         <list id="AutoSelectCertificateForUrlsDesc" key="Software\Policies\Google\Chrome\AutoSelectCertificateForUrls" valuePrefix=""/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.AutomaticDownloadsAllowedForUrls)" explainText="$(string.AutomaticDownloadsAllowedForUrls_Explain)" key="Software\Policies\Google\Chrome" name="AutomaticDownloadsAllowedForUrls" presentation="$(presentation.AutomaticDownloadsAllowedForUrls)">
+      <parentCategory ref="ContentSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <list id="AutomaticDownloadsAllowedForUrlsDesc" key="Software\Policies\Google\Chrome\AutomaticDownloadsAllowedForUrls" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.AutomaticDownloadsBlockedForUrls)" explainText="$(string.AutomaticDownloadsBlockedForUrls_Explain)" key="Software\Policies\Google\Chrome" name="AutomaticDownloadsBlockedForUrls" presentation="$(presentation.AutomaticDownloadsBlockedForUrls)">
+      <parentCategory ref="ContentSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <list id="AutomaticDownloadsBlockedForUrlsDesc" key="Software\Policies\Google\Chrome\AutomaticDownloadsBlockedForUrls" valuePrefix=""/>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.AutomaticFullscreenAllowedForUrls)" explainText="$(string.AutomaticFullscreenAllowedForUrls_Explain)" key="Software\Policies\Google\Chrome" name="AutomaticFullscreenAllowedForUrls" presentation="$(presentation.AutomaticFullscreenAllowedForUrls)">
       <parentCategory ref="ContentSettings"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -334,6 +348,29 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.DefaultAutomaticDownloadsSetting)" explainText="$(string.DefaultAutomaticDownloadsSetting_Explain)" key="Software\Policies\Google\Chrome" name="DefaultAutomaticDownloadsSetting" presentation="$(presentation.DefaultAutomaticDownloadsSetting)">
+      <parentCategory ref="ContentSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="DefaultAutomaticDownloadsSetting" valueName="DefaultAutomaticDownloadsSetting">
+          <item displayName="$(string.DefaultAutomaticDownloadsSetting_AllowAutomaticDownloads)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.DefaultAutomaticDownloadsSetting_BlockAutomaticDownloads)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+          <item displayName="$(string.DefaultAutomaticDownloadsSetting_AskAutomaticDownloads)">
+            <value>
+              <decimal value="3"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.DefaultClipboardSetting)" explainText="$(string.DefaultClipboardSetting_Explain)" key="Software\Policies\Google\Chrome" name="DefaultClipboardSetting" presentation="$(presentation.DefaultClipboardSetting)">
       <parentCategory ref="ContentSettings"/>
@@ -620,6 +657,11 @@
           <item displayName="$(string.DefaultSensorsSetting_BlockSensors)">
             <value>
               <decimal value="2"/>
+            </value>
+          </item>
+          <item displayName="$(string.DefaultSensorsSetting_AskSensors)">
+            <value>
+              <decimal value="3"/>
             </value>
           </item>
         </enum>
@@ -2071,6 +2113,47 @@
             </value>
           </item>
           <item displayName="$(string.TabCompareSettings_Disabled)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.ThirdPartyAiChatSettings)" explainText="$(string.ThirdPartyAiChatSettings_Explain)" key="Software\Policies\Google\Chrome" name="ThirdPartyAiChatSettings" presentation="$(presentation.ThirdPartyAiChatSettings)">
+      <parentCategory ref="GenerativeAI"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="ThirdPartyAiChatSettings" valueName="ThirdPartyAiChatSettings">
+          <item displayName="$(string.ThirdPartyAiChatSettings_Allowed)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.ThirdPartyAiChatSettings_Disabled)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.VoiceTypingSettings)" explainText="$(string.VoiceTypingSettings_Explain)" key="Software\Policies\Google\Chrome" name="VoiceTypingSettings" presentation="$(presentation.VoiceTypingSettings)">
+      <parentCategory ref="GenerativeAI"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="VoiceTypingSettings" valueName="VoiceTypingSettings">
+          <item displayName="$(string.VoiceTypingSettings_Allowed)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.VoiceTypingSettings_AllowedWithoutLogging)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.VoiceTypingSettings_Disabled)">
             <value>
               <decimal value="2"/>
             </value>
@@ -4091,6 +4174,16 @@
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.PrefetchWithServiceWorkerEnabled)" explainText="$(string.PrefetchWithServiceWorkerEnabled_Explain)" key="Software\Policies\Google\Chrome" name="PrefetchWithServiceWorkerEnabled" presentation="$(presentation.PrefetchWithServiceWorkerEnabled)" valueName="PrefetchWithServiceWorkerEnabled">
+      <parentCategory ref="googlechrome"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.ProcessIsolationEnabled)" explainText="$(string.ProcessIsolationEnabled_Explain)" key="Software\Policies\Google\Chrome" name="ProcessIsolationEnabled" presentation="$(presentation.ProcessIsolationEnabled)" valueName="ProcessIsolationEnabled">
       <parentCategory ref="googlechrome"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
