@@ -21,6 +21,7 @@
 			<definition name="Supported_1_127" displayName="$(string.Supported_1_127)" />
 			<definition name="Supported_1_130" displayName="$(string.Supported_1_130)" />
 			<definition name="Supported_1_131" displayName="$(string.Supported_1_131)" />
+			<definition name="Supported_1_132" displayName="$(string.Supported_1_132)" />
 			<definition name="Supported_1_67" displayName="$(string.Supported_1_67)" />
 			<definition name="Supported_1_96" displayName="$(string.Supported_1_96)" />
 			<definition name="Supported_1_99" displayName="$(string.Supported_1_99)" />
@@ -67,15 +68,6 @@
 		</boolean>
 			</elements>
 		</policy>
-		<policy name="ChatAgentHostEnabled" class="Both" displayName="$(string.ChatAgentHostEnabled)" explainText="$(string.ChatAgentHostEnabled_chat_agentHost_enabled)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentHostEnabled)">
-			<parentCategory ref="interactiveSessionConfigurationTitle" />
-			<supportedOn ref="Supported_1_126" />
-			<elements>
-		<boolean id="ChatAgentHostEnabled" valueName="ChatAgentHostEnabled">
-			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
-		</boolean>
-			</elements>
-		</policy>
 		<policy name="ChatAgentMode" class="Both" displayName="$(string.ChatAgentMode)" explainText="$(string.ChatAgentMode_chat_agent_enabled_description)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentMode)">
 			<parentCategory ref="interactiveSessionConfigurationTitle" />
 			<supportedOn ref="Supported_1_99" />
@@ -99,6 +91,24 @@
 			<supportedOn ref="Supported_1_130" />
 			<elements>
 		<multiText id="ChatAllowedMcpServers" valueName="ChatAllowedMcpServers" required="true" />
+			</elements>
+		</policy>
+		<policy name="ChatAllowManagedHooksOnly" class="Both" displayName="$(string.ChatAllowManagedHooksOnly)" explainText="$(string.ChatAllowManagedHooksOnly_chat_hooks_allowManagedOnly_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAllowManagedHooksOnly)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_132" />
+			<elements>
+		<boolean id="ChatAllowManagedHooksOnly" valueName="ChatAllowManagedHooksOnly">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
+		<policy name="ChatAllowManagedMcpServersOnly" class="Both" displayName="$(string.ChatAllowManagedMcpServersOnly)" explainText="$(string.ChatAllowManagedMcpServersOnly_chat_mcp_allowManagedServersOnly_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAllowManagedMcpServersOnly)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_132" />
+			<elements>
+		<boolean id="ChatAllowManagedMcpServersOnly" valueName="ChatAllowManagedMcpServersOnly">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
 			</elements>
 		</policy>
 		<policy name="ChatApprovedAccountOrganizations" class="Both" displayName="$(string.ChatApprovedAccountOrganizations)" explainText="$(string.ChatApprovedAccountOrganizations_chat_approvedAccountOrganizations_policy_description)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatApprovedAccountOrganizations)">
@@ -170,6 +180,15 @@
 			<supportedOn ref="Supported_1_122" />
 			<elements>
 		<multiText id="ChatStrictMarketplaces" valueName="ChatStrictMarketplaces" required="true" />
+			</elements>
+		</policy>
+		<policy name="ChatStrictPluginOnlyCustomization" class="Both" displayName="$(string.ChatStrictPluginOnlyCustomization)" explainText="$(string.ChatStrictPluginOnlyCustomization_chat_customizations_strictPluginOnlyCustomization_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatStrictPluginOnlyCustomization)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_132" />
+			<elements>
+		<boolean id="ChatStrictPluginOnlyCustomization" valueName="ChatStrictPluginOnlyCustomization">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
 			</elements>
 		</policy>
 		<policy name="ChatToolsAutoApprove" class="Both" displayName="$(string.ChatToolsAutoApprove)" explainText="$(string.ChatToolsAutoApprove_autoApprove3_description)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatToolsAutoApprove)">

@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 152.0.4181.1-->
+  <!--microsoft_edge version: 152.0.4191.7-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -4556,6 +4556,16 @@
         <list id="AutoplayAllowlistDesc" key="Software\Policies\Microsoft\Edge\AutoplayAllowlist" valuePrefix=""/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.BackForwardCacheForWebSocketsAllowed)" explainText="$(string.BackForwardCacheForWebSocketsAllowed_Explain)" key="Software\Policies\Microsoft\Edge" name="BackForwardCacheForWebSocketsAllowed" presentation="$(presentation.BackForwardCacheForWebSocketsAllowed)" valueName="BackForwardCacheForWebSocketsAllowed">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V152"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.BackgroundModeEnabled)" explainText="$(string.BackgroundModeEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="BackgroundModeEnabled" presentation="$(presentation.BackgroundModeEnabled)" valueName="BackgroundModeEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V77"/>
@@ -8459,16 +8469,6 @@
     <policy class="Both" displayName="$(string.ShowDownloadsToolbarButton)" explainText="$(string.ShowDownloadsToolbarButton_Explain)" key="Software\Policies\Microsoft\Edge" name="ShowDownloadsToolbarButton" presentation="$(presentation.ShowDownloadsToolbarButton)" valueName="ShowDownloadsToolbarButton">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V114"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.ShowHistoryThumbnails)" explainText="$(string.ShowHistoryThumbnails_Explain)" key="Software\Policies\Microsoft\Edge" name="ShowHistoryThumbnails" presentation="$(presentation.ShowHistoryThumbnails)" valueName="ShowHistoryThumbnails">
-      <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V117"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>

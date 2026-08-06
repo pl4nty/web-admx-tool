@@ -20,6 +20,7 @@
 			<string id="Supported_1_127">Visual Studio Code &gt;= 1.127</string>
 			<string id="Supported_1_130">Visual Studio Code &gt;= 1.130</string>
 			<string id="Supported_1_131">Visual Studio Code &gt;= 1.131</string>
+			<string id="Supported_1_132">Visual Studio Code &gt;= 1.132</string>
 			<string id="Supported_1_67">Visual Studio Code &gt;= 1.67</string>
 			<string id="Supported_1_96">Visual Studio Code &gt;= 1.96</string>
 			<string id="Supported_1_99">Visual Studio Code &gt;= 1.99</string>
@@ -36,14 +37,16 @@
 			<string id="ChatAgentDeniedNetworkDomains_chat_agent_deniedNetworkDomains">Denied domains for network access by agent tools (fetch tool, integrated browser). Applies when `#chat.agent.networkFilter#` or `#chat.agent.sandbox.enabled#` is enabled. This does not apply when `#chat.agent.sandbox.allowNetwork#` is enabled. Takes precedence over `#chat.agent.allowedNetworkDomains#`. Supports wildcards like `*.example.com`.</string>
 			<string id="ChatAgentExtensionTools">ChatAgentExtensionTools</string>
 			<string id="ChatAgentExtensionTools_chat_extensionToolsEnabled">Enable using tools contributed by third-party extensions.</string>
-			<string id="ChatAgentHostEnabled">ChatAgentHostEnabled</string>
-			<string id="ChatAgentHostEnabled_chat_agentHost_enabled">When enabled, some agents run in a separate agent host process.</string>
 			<string id="ChatAgentMode">ChatAgentMode</string>
 			<string id="ChatAgentMode_chat_agent_enabled_description">When enabled, agent mode can be activated from chat and tools in agentic contexts with side effects can be used.</string>
 			<string id="ChatAgentNetworkFilter">ChatAgentNetworkFilter</string>
 			<string id="ChatAgentNetworkFilter_chat_agent_networkFilter">When enabled, network access by agent tools (fetch tool, integrated browser) is restricted according to `#chat.agent.allowedNetworkDomains#` and `#chat.agent.deniedNetworkDomains#`. Domain filtering is also applied to those tools when `#chat.agent.sandbox.enabled#` is enabled.</string>
 			<string id="ChatAllowedMcpServers">ChatAllowedMcpServers</string>
 			<string id="ChatAllowedMcpServers_chat_mcp_allowedServers_policy">Allowlist of Model Context Protocol servers. When set, only servers matching an entry may be installed or run; omit entirely to allow all servers (subject to the deny list).</string>
+			<string id="ChatAllowManagedHooksOnly">ChatAllowManagedHooksOnly</string>
+			<string id="ChatAllowManagedHooksOnly_chat_hooks_allowManagedOnly_policy">Allows hooks only from enterprise-managed sources and plugins force-enabled by policy.</string>
+			<string id="ChatAllowManagedMcpServersOnly">ChatAllowManagedMcpServersOnly</string>
+			<string id="ChatAllowManagedMcpServersOnly_chat_mcp_allowManagedServersOnly_policy">Use only the enterprise-managed MCP allowlist when deciding which servers may run.</string>
 			<string id="ChatApprovedAccountOrganizations">ChatApprovedAccountOrganizations</string>
 			<string id="ChatApprovedAccountOrganizations_chat_approvedAccountOrganizations_policy_description">Setting this policy to a non-empty list activates the Approved Account gate: all AI features are disabled until the user signs into a GitHub account whose organizations intersect this list AND the account-side policy data has resolved. Comparison is case-insensitive. Use '*' as a wildcard to accept any signed-in GitHub or GHE account (use this for GHE deployments where the organization list is not surfaced).</string>
 			<string id="ChatDefaultModel">ChatDefaultModel</string>
@@ -53,18 +56,20 @@
 			<string id="ChatEnabledPlugins">ChatEnabledPlugins</string>
 			<string id="ChatEnabledPlugins_chat_plugins_enabledPlugins_policy">Plugin enablement. Keys are plugin IDs in `{plugin}@{marketplace}` form; values enable or disable the plugin.</string>
 			<string id="ChatExtraMarketplaces">ChatExtraMarketplaces</string>
-			<string id="ChatExtraMarketplaces_chat_plugins_extraMarketplaces_policy">Additional plugin marketplaces to query. Keys are marketplace names; values are GitHub shorthand (`owner/repo[#ref]`) or Git URIs (`{url}[#ref]`).</string>
+			<string id="ChatExtraMarketplaces_chat_plugins_extraMarketplaces_policy">Additional plugin marketplaces to query. Keys are marketplace names; values are GitHub shorthand (`owner/repo[#ref]`) or Git URIs (`{url}[#ref]`), optionally with an enterprise-managed auto-update override.</string>
 			<string id="ChatHooks">ChatHooks</string>
-			<string id="ChatHooks_chat_useHooks_description">Controls whether chat hooks are executed at strategic points during an agent's workflow. Hooks are loaded from the files configured in `#chat.hookFilesLocations#`.</string>
+			<string id="ChatHooks_chat_useHooks_description">Controls whether chat hooks are executed at strategic points during an agent's workflow. Hooks are loaded from the files configured in `#chat.hookFilesLocations#`. This setting is only used by the Local agent harness.</string>
 			<string id="ChatMCP">ChatMCP</string>
 			<string id="ChatMCP_chat_mcp_access">Controls access to installed Model Context Protocol servers.</string>
 			<string id="ChatMCP_chat_mcp_access_none">No access to MCP servers.</string>
-			<string id="ChatMCP_chat_mcp_access_registry">Allows access to MCP servers installed from the registry that VS Code is connected to.</string>
+			<string id="ChatMCP_chat_mcp_access_registry">Allows access to MCP servers listed in the registry that VS Code is connected to.</string>
 			<string id="ChatMCP_chat_mcp_access_any">Allow access to any installed MCP server.</string>
 			<string id="ChatPluginsEnabled">ChatPluginsEnabled</string>
 			<string id="ChatPluginsEnabled_chat_plugins_enabled">Enable agent plugin integration in chat.</string>
 			<string id="ChatStrictMarketplaces">ChatStrictMarketplaces</string>
 			<string id="ChatStrictMarketplaces_chat_plugins_strictMarketplaces_policy">Allowlist of plugin marketplace sources. When set, only marketplaces matching an entry are trusted; an empty array blocks all marketplaces.</string>
+			<string id="ChatStrictPluginOnlyCustomization">ChatStrictPluginOnlyCustomization</string>
+			<string id="ChatStrictPluginOnlyCustomization_chat_customizations_strictPluginOnlyCustomization_policy">Blocks standalone user and workspace skills, agents, hooks, instructions, and MCP servers while keeping eligible plugin customizations available.</string>
 			<string id="ChatToolsAutoApprove">ChatToolsAutoApprove</string>
 			<string id="ChatToolsAutoApprove_autoApprove3_description">Global auto approve also known as "YOLO mode" disables manual approval completely for all tools in all workspaces, allowing the agent to act fully autonomously. This is extremely dangerous and is *never* recommended, even containerized environments like Codespaces and Dev Containers have user keys forwarded into the container that could be compromised.
 
@@ -155,10 +160,11 @@ Note: This setting only controls tool approval and does not prevent the agent fr
 			<presentation id="ChatAgentAllowedNetworkDomains"><multiTextBox refId="ChatAgentAllowedNetworkDomains" /></presentation>
 			<presentation id="ChatAgentDeniedNetworkDomains"><multiTextBox refId="ChatAgentDeniedNetworkDomains" /></presentation>
 			<presentation id="ChatAgentExtensionTools"><checkBox refId="ChatAgentExtensionTools">ChatAgentExtensionTools</checkBox></presentation>
-			<presentation id="ChatAgentHostEnabled"><checkBox refId="ChatAgentHostEnabled">ChatAgentHostEnabled</checkBox></presentation>
 			<presentation id="ChatAgentMode"><checkBox refId="ChatAgentMode">ChatAgentMode</checkBox></presentation>
 			<presentation id="ChatAgentNetworkFilter"><checkBox refId="ChatAgentNetworkFilter">ChatAgentNetworkFilter</checkBox></presentation>
 			<presentation id="ChatAllowedMcpServers"><multiTextBox refId="ChatAllowedMcpServers" /></presentation>
+			<presentation id="ChatAllowManagedHooksOnly"><checkBox refId="ChatAllowManagedHooksOnly">ChatAllowManagedHooksOnly</checkBox></presentation>
+			<presentation id="ChatAllowManagedMcpServersOnly"><checkBox refId="ChatAllowManagedMcpServersOnly">ChatAllowManagedMcpServersOnly</checkBox></presentation>
 			<presentation id="ChatApprovedAccountOrganizations"><multiTextBox refId="ChatApprovedAccountOrganizations" /></presentation>
 			<presentation id="ChatDefaultModel"><textBox refId="ChatDefaultModel"><label>ChatDefaultModel:</label></textBox></presentation>
 			<presentation id="ChatDeniedMcpServers"><multiTextBox refId="ChatDeniedMcpServers" /></presentation>
@@ -168,6 +174,7 @@ Note: This setting only controls tool approval and does not prevent the agent fr
 			<presentation id="ChatMCP"><dropdownList refId="ChatMCP" /></presentation>
 			<presentation id="ChatPluginsEnabled"><checkBox refId="ChatPluginsEnabled">ChatPluginsEnabled</checkBox></presentation>
 			<presentation id="ChatStrictMarketplaces"><multiTextBox refId="ChatStrictMarketplaces" /></presentation>
+			<presentation id="ChatStrictPluginOnlyCustomization"><checkBox refId="ChatStrictPluginOnlyCustomization">ChatStrictPluginOnlyCustomization</checkBox></presentation>
 			<presentation id="ChatToolsAutoApprove"><checkBox refId="ChatToolsAutoApprove">ChatToolsAutoApprove</checkBox></presentation>
 			<presentation id="ChatToolsEligibleForAutoApproval"><multiTextBox refId="ChatToolsEligibleForAutoApproval" /></presentation>
 			<presentation id="Claude3PIntegration"><checkBox refId="Claude3PIntegration">Claude3PIntegration</checkBox></presentation>
