@@ -372,6 +372,18 @@ If you enable this setting, the sync app doesn't upload new files that match the
 
 If you disable or do not configure this setting, the sync app uploads all supported files in all synced folders.</string>
 
+      <!-- EnableODIgnoreFolderListFromGPO -->
+      <string id="EnableODIgnoreFolderListFromGPO">Exclude specific kinds of folders from being uploaded</string>
+      <string id="EnableODIgnoreFolderListFromGPO_help">This setting lets you enter keywords to prevent the OneDrive sync app (OneDrive.exe) from uploading certain folders to OneDrive or SharePoint. You can only enter complete names, such as "PowerShell".
+
+If you enable this setting, the sync app doesn't upload new folders that match the keywords you specified. New files in existing folders that match the keywords won't be uploaded.
+
+No errors appear for the skipped folders, and the folders remain in the local OneDrive folder. 
+
+The OneDrive sync app must be restarted after this setting is enabled for the setting to take effect.
+
+If you disable or do not configure this setting, the sync app uploads all supported folders.</string>
+
       <!-- Disable First Delete Dialog -->
       <string id="DisableFirstDeleteDialog">Hide the "Deleted files are removed everywhere" reminder</string>
       <string id="DisableFirstDeleteDialog_help">When a user deletes local files from a synced location, a warning message appears that the files will no longer be available across all the user's devices and on the web. This setting lets you hide the warning message.
@@ -615,14 +627,14 @@ Click "Show", and then enter a friendly name to identify the library in the Valu
 
       <presentation id="EnableODIgnoreListFromGPO_Pres">
         <text>To specify keywords, select "Show," and then enter the keywords in the Value field.</text>
-        <text>For example, enter "*.pst" to block all files with the .pst extension. Enter "expense*" to block files that have names beginning with "expense". Enter "*sales*" to block all files that have "sales" in their name. Keywords aren't case sensitive. For example, if you enter "icons.JPEG," it will also block "icons.jpeg." </text>
+        <text>For example, enter "*.pst" to block all files with the .pst extension. Enter "expense*" to block files that have names beginning with "expense". Enter "*sales*" to block all files that have "sales" in their name. Keywords aren't case sensitive. For example, if you enter "icons.JPEG," it will also block "icons.jpeg." </text>
         <text> </text>
         <listBox refId="EnableODIgnoreListFromGPOListBox">Keywords: </listBox>
       </presentation>
 
       <presentation id="EnableODIgnoreFolderListFromGPO_Pres">
         <text>To specify keywords, select "Show," and then enter the keywords in the Value field.</text>
-        <text>For example, enter "foo" to block all folders named "foo". Enter "expense*" to block folders that have names beginning with "expense". Enter "*sales*" to block all folders that have "sales" in their name. Keywords aren't case sensitive. For example, if you enter "ICONS," it will also block "icons". </text>
+        <text>For example, enter "foo" to block all folders named "foo". Keywords aren't case sensitive. For example, if you enter "ICONS," it will also block "icons". </text>
         <text> </text>
         <listBox refId="EnableODIgnoreFolderListFromGPOListBox">Keywords: </listBox>
       </presentation>

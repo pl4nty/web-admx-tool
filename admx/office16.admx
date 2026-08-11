@@ -357,6 +357,9 @@
     <category name="L_AIContentSafetySpecificTextToTable" displayName="$(string.L_AIContentSafetySpecificTextToTable)">
       <parentCategory ref="L_AIContentSafetySpecific" />
     </category>
+    <category name="L_Copilot" displayName="$(string.L_Copilot)">
+      <parentCategory ref="L_MicrosoftOfficemachine" />
+    </category>
   </categories>
   <policies>
     <policy name="L_RestrictActiveXInstall" class="Machine" Area="Security Baseline" AreaCategory="ActiveX" displayName="$(string.L_RestrictActiveXInstall)" explainText="$(string.L_RestrictActiveXInstallExplain)" presentation="$(presentation.L_RestrictActiveXInstall)" key="software\microsoft\internet explorer\main\featurecontrol\feature_restrict_activexinstall">
@@ -18047,6 +18050,13 @@
         <decimal id="L_DeferUpdateDaysID" valueName="deferupdatedays" minValue="0" maxValue="14" />
       </elements>
     </policy>
+    <policy name="L_MaxStaleDays" class="Machine" displayName="$(string.L_MaxStaleDays)" explainText="$(string.L_MaxStaleDaysExplain)" presentation="$(presentation.L_MaxStaleDays)" key="software\policies\microsoft\office\16.0\common\officeupdate">
+      <parentCategory ref="L_Updates" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_MaxStaleDaysID" valueName="maxstaledays" minValue="1" maxValue="90" />
+      </elements>
+    </policy>
     <policy name="L_HideUpdateNotifications" class="Machine" displayName="$(string.L_HideUpdateNotifications)" explainText="$(string.L_HideUpdateNotificationsExplain)" key="software\policies\microsoft\office\16.0\common\officeupdate" valueName="hideupdatenotifications">
       <parentCategory ref="L_Updates" />
       <supportedOn ref="windows:SUPPORTED_Windows7" />
@@ -19827,6 +19837,63 @@
     <policy name="L_DisableLastMileInAppMessaging" class="User" displayName="$(string.L_DisableLastMileInAppMessaging)" explainText="$(string.L_DisableLastMileInAppMessagingExplain)" key="software\policies\microsoft\office\16.0\common\fileio" valueName="disablelastmileinappmessaging">
       <parentCategory ref="L_miscellaneous437" />
       <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_CopilotDeviceReadEnabled" class="Machine" displayName="$(string.L_CopilotDeviceReadEnabled)" explainText="$(string.L_CopilotDeviceReadEnabledExplain)" key="software\policies\microsoft\office\16.0\common" valueName="copilotdevicereadenabled">
+      <parentCategory ref="L_Copilot" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_CopilotDeviceSearchEnabled" class="Machine" displayName="$(string.L_CopilotDeviceSearchEnabled)" explainText="$(string.L_CopilotDeviceSearchEnabledExplain)" key="software\policies\microsoft\office\16.0\common" valueName="copilotdevicesearchenabled">
+      <parentCategory ref="L_Copilot" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_CopilotDeviceWriteEnabled" class="Machine" displayName="$(string.L_CopilotDeviceWriteEnabled)" explainText="$(string.L_CopilotDeviceWriteEnabledExplain)" key="software\policies\microsoft\office\16.0\common" valueName="copilotdevicewriteenabled">
+      <parentCategory ref="L_Copilot" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_CopilotDeviceFileUploadEnabled" class="Machine" displayName="$(string.L_CopilotDeviceFileUploadEnabled)" explainText="$(string.L_CopilotDeviceFileUploadEnabledExplain)" key="software\policies\microsoft\office\16.0\common" valueName="copilotdevicefileuploadenabled">
+      <parentCategory ref="L_Copilot" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_CopilotDeviceBlockedFilePaths" class="Machine" displayName="$(string.L_CopilotDeviceBlockedFilePaths)" explainText="$(string.L_CopilotDeviceBlockedFilePathsExplain)" presentation="$(presentation.L_CopilotDeviceBlockedFilePaths)" key="software\policies\microsoft\office\16.0\common\copilot\blockedfilepaths">
+      <parentCategory ref="L_Copilot" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <elements>
+        <list id="L_CopilotDeviceBlockedFilePathsList" />
+      </elements>
+    </policy>
+    <policy name="L_CopilotDeviceCodeTabPreInstall" class="Machine" displayName="$(string.L_CopilotDeviceCodeTabPreInstall)" explainText="$(string.L_CopilotDeviceCodeTabPreInstallExplain)" key="software\policies\microsoft\office\16.0\common" valueName="copilotdevicecodetabpreinstall">
+      <parentCategory ref="L_Copilot" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>

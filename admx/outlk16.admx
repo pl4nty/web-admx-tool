@@ -6879,5 +6879,23 @@
         <decimal value="1" />
       </disabledValue>
     </policy>
+    <policy name="L_NewOutlookForWindowsCloudType" class="User" displayName="$(string.L_NewOutlookForWindowsCloudType)" explainText="$(string.L_NewOutlookForWindowsCloudTypeExplain)" presentation="$(presentation.L_NewOutlookForWindowsCloudType)" key="software\policies\microsoft\office\16.0\outlook">
+      <parentCategory ref="L_Other" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_NewOutlookForWindowsCloudTypeDropID" valueName="newoutlookforwindowscloudtype">
+          <item displayName="$(string.L_NewOutlookForWindowsCloudTypeGccHigh)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_NewOutlookForWindowsCloudTypeDod)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
   </policies>
 </policyDefinitions>

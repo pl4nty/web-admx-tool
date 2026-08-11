@@ -419,6 +419,13 @@
             <list id="EnableODIgnoreListFromGPOListBox" key="Software\Policies\Microsoft\OneDrive\EnableODIgnoreListFromGPO" additive="true"/>
         </elements>
     </policy>
+    <policy name="EnableODIgnoreFolderListFromGPO" class="Machine" displayName="$(string.EnableODIgnoreFolderListFromGPO)" explainText="$(string.EnableODIgnoreFolderListFromGPO_help)" presentation="$(presentation.EnableODIgnoreFolderListFromGPO_Pres)" key="SOFTWARE\Policies\Microsoft\OneDrive">
+        <parentCategory ref="OneDriveNGSC" />
+        <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS3" />
+        <elements>
+            <list id="EnableODIgnoreFolderListFromGPOListBox" key="Software\Policies\Microsoft\OneDrive\EnableODIgnoreFolderListFromGPO" additive="true"/>
+        </elements>
+    </policy>
     <policy name="IgnoreWebProxy" class="Machine" displayName="$(string.IgnoreWebProxy)" explainText="$(string.IgnoreWebProxy_help)" key="SOFTWARE\Policies\Microsoft\OneDrive" valueName="IgnoreWebProxy">
         <parentCategory ref="OneDriveNGSC" />
         <supportedOn ref="windows:SUPPORTED_Windows7" />

@@ -4,7 +4,7 @@
   <description>Microsoft Office 2016</description>
   <resources>
     <stringTable>
-      <string id="L_Version">16.0.5550.1000</string>
+      <string id="L_Version">16.0.5567.1000</string>
       <string id="L_RelyonCSSforfontformatting">Rely on CSS for font formatting</string>
       <string id="L_RelyonCSSforfontformattingExplain">This policy setting allows you to rely on CSS for font formatting.
 
@@ -4416,6 +4416,18 @@ Note: If you have also specified a deadline for updates to be installed, the dea
 If you disable or don’t configure this policy setting, Office will download and apply updates as soon as Office detects that updates are available.
 
 Note: This policy setting only applies to subscription versions of Office, such as Microsoft 365 Apps for enterprise, and to subscription versions of Project and Visio.</string>
+      <string id="L_MaxStaleDays">Maximum days of stale Office allowed before Windows Update remediation</string>
+      <string id="L_MaxStaleDaysExplain">This policy setting controls the maximum number of days an Office installation can go without being updated before it becomes eligible for Windows Update remediation.
+
+This policy setting does not automatically update users. It only sets the staleness threshold that the Windows Update remediation logic uses when deciding which older Office installations to update.
+
+If you enable this policy setting, you can specify a value from 1 to 3 months. Office installations that have not been updated within the configured number of months will be considered eligible for Windows Update remediation.
+
+If you disable this policy setting, Windows Update remediation will use the default staleness threshold determined by Office.
+
+If you do not configure this policy setting, Windows Update remediation will use the default staleness threshold determined by Office.
+
+Note: This policy setting only applies to Office products that are installed by using Click-to-Run.</string>
       <string id="L_VLtoSubscription">Upgrade Office 2019 to Microsoft 365 Apps for enterprise</string>
       <string id="L_VLtoSubscriptionExplain">This policy setting allows you to upgrade volume licensed versions of Office Professional Plus 2019 to Microsoft 365 Apps for enterprise.
 
@@ -7123,6 +7135,44 @@ If you disable or don’t configure this policy setting, Office will display las
 
 If you enable this policy setting, Office will not display the configured last-mile in-app messages when they are encountered
       </string>
+      <string id="L_Copilot">Microsoft 365 Copilot</string>
+      <string id="L_CopilotDeviceReadEnabled">Allow Copilot to Read Device Content and Information</string>
+      <string id="L_CopilotDeviceReadEnabledExplain">This policy setting controls whether Copilot can read local files, answer questions, and troubleshoot issues on the user's PC.
+Note: Copilot will not make changes to the device.
+If you enable or do not configure this policy setting, Copilot can read local files and device info to assist the user.
+If you disable this policy setting, Copilot cannot read the local files and operates cloud-only.
+For more information, see https://aka.ms/copilot-device-tools
+Note: This policy setting only applies to subscription versions of Microsoft 365 Copilot on Windows and macOS desktop apps.</string>
+      <string id="L_CopilotDeviceSearchEnabled">Allow Copilot to Search Files on This Device</string>
+      <string id="L_CopilotDeviceSearchEnabledExplain">This policy setting controls whether Copilot can search for files on the PC.
+If you enable or do not configure this policy setting, Copilot can search for files on the device.
+If you disable this policy setting, Copilot cannot search for files; other read features remain available.
+For more information, see https://aka.ms/copilot-device-tools
+Note: This policy setting only applies to subscription versions of Microsoft 365 Copilot on Windows and macOS desktop apps.</string>
+      <string id="L_CopilotDeviceWriteEnabled">Allow Copilot to Modify Files on This Device</string>
+      <string id="L_CopilotDeviceWriteEnabledExplain">This policy setting controls whether Copilot can move, copy, rename, or create files. Each change is proposed for approval before it runs.
+If you enable this policy setting, Copilot can change files with user approval, subject to blocked folders.
+If you disable or do not configure this policy setting, Copilot cannot change any files.
+For more information, see https://aka.ms/copilot-device-tools
+Note: This policy setting only applies to subscription versions of Microsoft 365 Copilot on Windows and macOS desktop apps.</string>
+      <string id="L_CopilotDeviceFileUploadEnabled">Allow Copilot to Upload Local Files to Microsoft 365</string>
+      <string id="L_CopilotDeviceFileUploadEnabledExplain">This policy setting controls whether Copilot can send a local file from the device to the Microsoft 365 service so it can understand the file's contents. The file stays within the Microsoft 365 service boundary. It is off by default because the file leaves the device.
+If you enable this policy setting, Copilot can send local files to Microsoft 365 for processing, subject to the cloud isCopilotFileUploadEnabled policy.
+If you disable or do not configure this policy setting, local files are not sent off the device from the Code Tab / device tools.
+For more information, see https://aka.ms/copilot-device-tools
+Note: This policy setting only applies to subscription versions of Microsoft 365 Copilot on Windows and macOS desktop apps.</string>
+      <string id="L_CopilotDeviceBlockedFilePaths">Block Folders for Copilot Device Access</string>
+      <string id="L_CopilotDeviceBlockedFilePathsExplain">This policy setting allows administrators to define which folders (local or network) Copilot cannot access.
+If you enable this policy setting, Copilot is blocked from accessing the folders listed in this policy.
+If you disable or don't configure this policy setting, only built-in protections for system/network locations apply.
+For more information, see https://aka.ms/copilot-device-tools
+Note: This policy setting only applies to subscription versions of Microsoft 365 Copilot on Windows and macOS desktop apps.</string>
+      <string id="L_CopilotDeviceCodeTabPreInstall">Preinstall Copilot Code Tab Components</string>
+      <string id="L_CopilotDeviceCodeTabPreInstallExplain">This policy setting controls whether Code Tab client components are installed when the Copilot app starts. Code Tab UX web components, the local runtime, and coding session components are downloaded and installed silently when the Copilot app launches, ensuring that Code Tab is ready for use without waiting for a first-use installation.
+If you enable this policy setting, the Code Tab client components are downloaded and installed silently when the Copilot app launches, so the Code Tab is ready for first use.
+If you disable or don't configure this policy setting, Code Tab client components are installed when the user first opens Code Tab.
+For more information, see https://aka.ms/copilot-device-tools
+Note: This policy setting only applies to subscription versions of Microsoft 365 Copilot on Windows and macOS desktop apps.</string>
     </stringTable>
     <presentationTable>
       <presentation id="L_RestrictActiveXInstall">
@@ -9370,6 +9420,9 @@ If you enable this policy setting, Office will not display the configured last-m
       <presentation id="L_DeferUpdateDays">
         <decimalTextBox refId="L_DeferUpdateDaysID">Days:</decimalTextBox>
       </presentation>
+      <presentation id="L_MaxStaleDays">
+        <decimalTextBox refId="L_MaxStaleDaysID">Days:</decimalTextBox>
+      </presentation>
       <presentation id="L_OnlineRepair">
         <checkBox refId="L_FallBackToCDN">Use Office CDN (if needed)</checkBox>
         <textBox refId="L_LocalODTPath">
@@ -9683,6 +9736,9 @@ Important: You should only include hosts that you know and trust.​
       </presentation>
       <presentation id="L_AllowedSelfHarmContentSpecificTextToTableMachine">
         <decimalTextBox refId="L_AllowedSelfHarmContentSpecificTextToTableMachineDecimal" defaultValue="2">Allowed severity of self-harm content</decimalTextBox>
+      </presentation>
+      <presentation id="L_CopilotDeviceBlockedFilePaths">
+        <listBox refId="L_CopilotDeviceBlockedFilePathsList">Blocked folders:</listBox>
       </presentation>
     </presentationTable>
   </resources>

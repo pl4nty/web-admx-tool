@@ -1112,7 +1112,7 @@ If you disable or do not configure this policy setting, a URL for S/MIME certifi
 
 If you enable this policy setting, you will be able to set the maximum number of Exchange accounts allowed per Outlook profile.
 
-If you disable or do not configure this policy setting, the default maximum number of Exchange accounts allowed per Outlook profile is 10.</string><string id="L_UserDefined">User Defined</string><string id="L_Usesecondarycalendar">Enable alternate calendar</string><string id="L_UsesystemDefault">Use system Default</string><string id="L_UsethefollowingFormatEditorforemailmessages">Use the following format for e-mail messages:</string><string id="L_Usethemesfont">Use theme's font</string><string id="L_Usethisencodingforoutgoingmessages">Use this encoding for outgoing messages:</string><string id="L_Usethisresponsewhenyouproposenewmeetingtimes">Use this response when you propose new meeting times</string><string id="L_Useusersfontonrepliesandfwds">Use user's font on replies and forwards</string><string id="L_Version">16.0.5522.1000</string><string id="L_VietnameseWindows">Vietnamese (Windows)</string><string id="L_Waitxxxsecondsbeforemarkingitemsasread">Wait xxx seconds before marking items as read:</string><string id="L_warning">Warning</string><string id="L_WeatherServiceUrl">Weather Service URL</string><string id="L_WeatherServiceUrlExplain">This policy setting allows you to configure the weather service URL for Outlook.
+If you disable or do not configure this policy setting, the default maximum number of Exchange accounts allowed per Outlook profile is 10.</string><string id="L_UserDefined">User Defined</string><string id="L_Usesecondarycalendar">Enable alternate calendar</string><string id="L_UsesystemDefault">Use system Default</string><string id="L_UsethefollowingFormatEditorforemailmessages">Use the following format for e-mail messages:</string><string id="L_Usethemesfont">Use theme's font</string><string id="L_Usethisencodingforoutgoingmessages">Use this encoding for outgoing messages:</string><string id="L_Usethisresponsewhenyouproposenewmeetingtimes">Use this response when you propose new meeting times</string><string id="L_Useusersfontonrepliesandfwds">Use user's font on replies and forwards</string><string id="L_Version">16.0.5567.1000</string><string id="L_VietnameseWindows">Vietnamese (Windows)</string><string id="L_Waitxxxsecondsbeforemarkingitemsasread">Wait xxx seconds before marking items as read:</string><string id="L_warning">Warning</string><string id="L_WeatherServiceUrl">Weather Service URL</string><string id="L_WeatherServiceUrlExplain">This policy setting allows you to configure the weather service URL for Outlook.
 
 If you enable this policy setting, you must enter your desired weather service URL.
 
@@ -1532,7 +1532,19 @@ For more information about which connected experiences are affected, see https:/
 If you disable or don’t configure this policy setting, all connected experiences that analyze your content can process email messages with S/MIME encryption.
 
 Note: This policy setting only applies to Microsoft 365 Apps for enterprise.
-      </string></stringTable>
+      </string><string id="L_NewOutlookForWindowsCloudType">Select the cloud environment for the new Outlook application</string><string id="L_NewOutlookForWindowsCloudTypeExplain">
+This policy controls which Microsoft 365 cloud the new Outlook application will load from.
+
+If you don't enable this policy, new Outlook will load from the Commercial cloud.
+
+If you enable this policy, you must select one of these options:
+
+- GCC High: new Outlook will load from the GCC High cloud
+
+- DoD: new Outlook will load from the DoD cloud
+
+Note: This policy only applies to customers in GCC High and DoD.
+      </string><string id="L_NewOutlookForWindowsCloudTypeDropID">Select the cloud environment:</string><string id="L_NewOutlookForWindowsCloudTypeGccHigh">GCC High</string><string id="L_NewOutlookForWindowsCloudTypeDod">DoD</string></stringTable>
     <presentationTable>
       <presentation id="L_HitHighlightingcolor">
         <dropdownList refId="L_BackgroundColorcolon" noSort="true" defaultItem="7">Background Color:</dropdownList>
@@ -2314,6 +2326,10 @@ Note: This policy setting only applies to Microsoft 365 Apps for enterprise.
       </presentation>
       <presentation id="L_MailTipsBarDisplayOption">
         <dropdownList refId="L_MailTipsBarDisplayOptions" noSort="true" defaultItem="0">
+        </dropdownList>
+      </presentation>
+      <presentation id="L_NewOutlookForWindowsCloudType">
+        <dropdownList refId="L_NewOutlookForWindowsCloudTypeDropID" noSort="true" defaultItem="0">
         </dropdownList>
       </presentation>
     </presentationTable>
