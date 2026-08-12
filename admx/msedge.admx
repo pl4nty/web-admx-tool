@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 152.0.4191.7-->
+  <!--microsoft_edge version: 153.0.4210.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -33,6 +33,7 @@
       <definition displayName="$(string.SUPPORTED_WIN7_V150)" name="SUPPORTED_WIN7_V150"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V151)" name="SUPPORTED_WIN7_V151"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V152)" name="SUPPORTED_WIN7_V152"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V153)" name="SUPPORTED_WIN7_V153"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V77)" name="SUPPORTED_WIN7_V77"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V78)" name="SUPPORTED_WIN7_V78"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V79)" name="SUPPORTED_WIN7_V79"/>
@@ -2214,6 +2215,13 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.HttpHeaderInjection)" explainText="$(string.HttpHeaderInjection_Explain)" key="Software\Policies\Microsoft\Edge" name="HttpHeaderInjection" presentation="$(presentation.HttpHeaderInjection)">
+      <parentCategory ref="Network"/>
+      <supportedOn ref="SUPPORTED_WIN7_V153"/>
+      <elements>
+        <text id="HttpHeaderInjection" maxLength="1000000" valueName="HttpHeaderInjection"/>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.IPv6ReachabilityOverrideEnabled)" explainText="$(string.IPv6ReachabilityOverrideEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="IPv6ReachabilityOverrideEnabled" presentation="$(presentation.IPv6ReachabilityOverrideEnabled)" valueName="IPv6ReachabilityOverrideEnabled">
       <parentCategory ref="Network"/>
       <supportedOn ref="SUPPORTED_WIN7_V132"/>
@@ -3067,6 +3075,20 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.PacMyIpAddressIPv4ProbeAddress)" explainText="$(string.PacMyIpAddressIPv4ProbeAddress_Explain)" key="Software\Policies\Microsoft\Edge" name="PacMyIpAddressIPv4ProbeAddress" presentation="$(presentation.PacMyIpAddressIPv4ProbeAddress)">
+      <parentCategory ref="Proxy"/>
+      <supportedOn ref="SUPPORTED_WIN7_V153"/>
+      <elements>
+        <text id="PacMyIpAddressIPv4ProbeAddress" maxLength="1000000" valueName="PacMyIpAddressIPv4ProbeAddress"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.PacMyIpAddressIPv6ProbeAddress)" explainText="$(string.PacMyIpAddressIPv6ProbeAddress_Explain)" key="Software\Policies\Microsoft\Edge" name="PacMyIpAddressIPv6ProbeAddress" presentation="$(presentation.PacMyIpAddressIPv6ProbeAddress)">
+      <parentCategory ref="Proxy"/>
+      <supportedOn ref="SUPPORTED_WIN7_V153"/>
+      <elements>
+        <text id="PacMyIpAddressIPv6ProbeAddress" maxLength="1000000" valueName="PacMyIpAddressIPv6ProbeAddress"/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.ProxyBypassList)" explainText="$(string.ProxyBypassList_Explain)" key="Software\Policies\Microsoft\Edge" name="ProxyBypassList" presentation="$(presentation.ProxyBypassList)">
       <parentCategory ref="Proxy"/>
