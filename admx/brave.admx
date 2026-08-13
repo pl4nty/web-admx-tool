@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--brave version: 151.1.95.45-->
+  <!--brave version: 151.1.95.62-->
   <policyNamespaces>
     <target namespace="BraveSoftware.Policies.Brave" prefix="brave"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -311,16 +311,6 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
-    <policy class="Both" displayName="$(string.BraveSearchResultAdsEnabled)" explainText="$(string.BraveSearchResultAdsEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="BraveSearchResultAdsEnabled" presentation="$(presentation.BraveSearchResultAdsEnabled)" valueName="BraveSearchResultAdsEnabled">
-      <parentCategory ref="BraveSoftware"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
     <policy class="Both" displayName="$(string.BraveShieldsDisabledForUrls)" explainText="$(string.BraveShieldsDisabledForUrls_Explain)" key="Software\Policies\BraveSoftware\Brave" name="BraveShieldsDisabledForUrls" presentation="$(presentation.BraveShieldsDisabledForUrls)">
       <parentCategory ref="BraveSoftware"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -518,6 +508,16 @@
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.EmailAliasesEnabled)" explainText="$(string.EmailAliasesEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="EmailAliasesEnabled" presentation="$(presentation.EmailAliasesEnabled)" valueName="EmailAliasesEnabled">
+      <parentCategory ref="BraveSoftware"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.PsstEnabled)" explainText="$(string.PsstEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PsstEnabled" presentation="$(presentation.PsstEnabled)" valueName="PsstEnabled">
       <parentCategory ref="BraveSoftware"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
