@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--brave version: 151.1.95.62-->
+  <!--brave version: 152.1.95.67-->
   <policyNamespaces>
     <target namespace="BraveSoftware.Policies.Brave" prefix="brave"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -1845,6 +1845,16 @@
         </enum>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.PdfViewerOutOfProcessIframeEnabled)" explainText="$(string.PdfViewerOutOfProcessIframeEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PdfViewerOutOfProcessIframeEnabled" presentation="$(presentation.PdfViewerOutOfProcessIframeEnabled)" valueName="PdfViewerOutOfProcessIframeEnabled">
+      <parentCategory ref="DeprecatedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.PromotionalTabsEnabled)" explainText="$(string.PromotionalTabsEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PromotionalTabsEnabled" presentation="$(presentation.PromotionalTabsEnabled)" valueName="PromotionalTabsEnabled">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -2261,6 +2271,29 @@
             </value>
           </item>
           <item displayName="$(string.DevToolsGenAiSettings_Disabled)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.FindAndFillWithGeminiSettings)" explainText="$(string.FindAndFillWithGeminiSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="FindAndFillWithGeminiSettings" presentation="$(presentation.FindAndFillWithGeminiSettings)">
+      <parentCategory ref="GenerativeAI"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="FindAndFillWithGeminiSettings" valueName="FindAndFillWithGeminiSettings">
+          <item displayName="$(string.FindAndFillWithGeminiSettings_Allowed)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.FindAndFillWithGeminiSettings_AllowedWithoutLogging)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.FindAndFillWithGeminiSettings_Disabled)">
             <value>
               <decimal value="2"/>
             </value>
@@ -3122,6 +3155,16 @@
         <list id="AutoplayAllowlistDesc" key="Software\Policies\BraveSoftware\Brave\AutoplayAllowlist" valuePrefix=""/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.BackForwardCacheForWebSocketsAllowed)" explainText="$(string.BackForwardCacheForWebSocketsAllowed_Explain)" key="Software\Policies\BraveSoftware\Brave" name="BackForwardCacheForWebSocketsAllowed" presentation="$(presentation.BackForwardCacheForWebSocketsAllowed)" valueName="BackForwardCacheForWebSocketsAllowed">
+      <parentCategory ref="brave"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.BackgroundModeEnabled)" explainText="$(string.BackgroundModeEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="BackgroundModeEnabled" presentation="$(presentation.BackgroundModeEnabled)" valueName="BackgroundModeEnabled">
       <parentCategory ref="brave"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -3365,16 +3408,6 @@
       <elements>
         <list id="ClearBrowsingDataOnExitListDesc" key="Software\Policies\BraveSoftware\Brave\ClearBrowsingDataOnExitList" valuePrefix=""/>
       </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.ClickToCallEnabled)" explainText="$(string.ClickToCallEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ClickToCallEnabled" presentation="$(presentation.ClickToCallEnabled)" valueName="ClickToCallEnabled">
-      <parentCategory ref="brave"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.CloudManagementEnrollmentMandatory)" explainText="$(string.CloudManagementEnrollmentMandatory_Explain)" key="Software\Policies\BraveSoftware\Brave" name="CloudManagementEnrollmentMandatory" presentation="$(presentation.CloudManagementEnrollmentMandatory)" valueName="CloudManagementEnrollmentMandatory">
       <parentCategory ref="brave"/>
@@ -4462,16 +4495,6 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.PdfUseSkiaRendererEnabled)" explainText="$(string.PdfUseSkiaRendererEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PdfUseSkiaRendererEnabled" presentation="$(presentation.PdfUseSkiaRendererEnabled)" valueName="PdfUseSkiaRendererEnabled">
-      <parentCategory ref="brave"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.PdfViewerOutOfProcessIframeEnabled)" explainText="$(string.PdfViewerOutOfProcessIframeEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="PdfViewerOutOfProcessIframeEnabled" presentation="$(presentation.PdfViewerOutOfProcessIframeEnabled)" valueName="PdfViewerOutOfProcessIframeEnabled">
       <parentCategory ref="brave"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
@@ -5706,6 +5729,13 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.HttpHeaderInjection)" explainText="$(string.HttpHeaderInjection_Explain)" key="Software\Policies\BraveSoftware\Brave" name="HttpHeaderInjection" presentation="$(presentation.HttpHeaderInjection)">
+      <parentCategory ref="Network"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <text id="HttpHeaderInjection" maxLength="1000000" valueName="HttpHeaderInjection"/>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.IPv6ReachabilityOverrideEnabled)" explainText="$(string.IPv6ReachabilityOverrideEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="IPv6ReachabilityOverrideEnabled" presentation="$(presentation.IPv6ReachabilityOverrideEnabled)" valueName="IPv6ReachabilityOverrideEnabled">
       <parentCategory ref="Network"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -6642,6 +6672,16 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.ClearSiteDataOnExit)" explainText="$(string.ClearSiteDataOnExit_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ClearSiteDataOnExit" presentation="$(presentation.ClearSiteDataOnExit)" valueName="ClearSiteDataOnExit">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.ClickToCallEnabled)" explainText="$(string.ClickToCallEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ClickToCallEnabled" presentation="$(presentation.ClickToCallEnabled)" valueName="ClickToCallEnabled">
       <parentCategory ref="RemovedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
