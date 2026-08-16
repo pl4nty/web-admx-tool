@@ -426,6 +426,26 @@
             <list id="EnableODIgnoreFolderListFromGPOListBox" key="Software\Policies\Microsoft\OneDrive\EnableODIgnoreFolderListFromGPO" additive="true"/>
         </elements>
     </policy>
+    <policy name="DisableDefaultODIgnoreList" class="Machine" displayName="$(string.DisableDefaultODIgnoreList)" explainText="$(string.DisableDefaultODIgnoreList_help)" key="SOFTWARE\Policies\Microsoft\OneDrive" valueName="DisableDefaultODIgnoreList">
+        <parentCategory ref="OneDriveNGSC" />
+        <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS3" />
+        <enabledValue>
+            <decimal value="1" />
+        </enabledValue>
+        <disabledValue>
+            <decimal value="0" />
+        </disabledValue>
+    </policy>
+    <policy name="DisableChangesToODIgnoreList" class="Machine" displayName="$(string.DisableChangesToODIgnoreList)" explainText="$(string.DisableChangesToODIgnoreList_help)" key="SOFTWARE\Policies\Microsoft\OneDrive" valueName="DisableChangesToODIgnoreList">
+        <parentCategory ref="OneDriveNGSC" />
+        <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS3" />
+        <enabledValue>
+            <decimal value="1" />
+        </enabledValue>
+        <disabledValue>
+            <decimal value="0" />
+        </disabledValue>
+    </policy>
     <policy name="IgnoreWebProxy" class="Machine" displayName="$(string.IgnoreWebProxy)" explainText="$(string.IgnoreWebProxy_help)" key="SOFTWARE\Policies\Microsoft\OneDrive" valueName="IgnoreWebProxy">
         <parentCategory ref="OneDriveNGSC" />
         <supportedOn ref="windows:SUPPORTED_Windows7" />
