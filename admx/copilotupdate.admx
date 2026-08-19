@@ -1,0 +1,146 @@
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <policyNamespaces>
+    <target namespace="Microsoft.Policies.CopilotUpdate" prefix="copilotupdate"/>
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <supportedOn>
+    <definitions>
+      <definition name="Sup_EdgeUpdate1_3_251_9"
+          displayName="$(string.Sup_EdgeUpdate1_3_251_9)" />
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="Cat_MicrosoftCopilot"
+        displayName="$(string.Cat_MicrosoftCopilot)" />
+  </categories>
+  <policies>
+
+    <policy name="Pol_AllowInstallationMicrosoftCopilot" class="Machine"
+        displayName="$(string.Pol_AllowInstallation)"
+        explainText="$(string.Explain_InstallMicrosoftCopilot)"
+        presentation="$(presentation.Pol_AllowInstallation)"
+        key="Software\Policies\Microsoft\EdgeUpdate">
+      <parentCategory ref="Cat_MicrosoftCopilot" />
+      <supportedOn ref="Sup_EdgeUpdate1_3_251_9" />
+      <elements>
+        <enum id="Part_InstallPolicy"
+             valueName="Install{C50565E9-CCCF-44B4-BA15-5AC5C6569197}" required="true">
+          <item displayName="$(string.Name_InstallsEnabled)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.Name_InstallsDisabled)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          
+          <item displayName="$(string.Name_ForceInstallsMachine)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <policy name="Pol_UpdatePolicyMicrosoftCopilot" class="Machine"
+        displayName="$(string.Pol_UpdatePolicy)"
+        explainText="$(string.Explain_AutoUpdateMicrosoftCopilot)"
+        presentation="$(presentation.Pol_UpdatePolicy)"
+        key="Software\Policies\Microsoft\EdgeUpdate">
+      <parentCategory ref="Cat_MicrosoftCopilot" />
+      <supportedOn ref="Sup_EdgeUpdate1_3_251_9" />
+      <elements>
+        <enum id="Part_UpdatePolicy"
+             valueName="Update{C50565E9-CCCF-44B4-BA15-5AC5C6569197}" required="true">
+          <item displayName="$(string.Name_CopilotUpdatesEnabled)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.Name_UpdatesDisabled)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+
+    <policy name="Pol_UninstallMicrosoftCopilot" class="Machine"
+        displayName="$(string.Pol_UninstallCopilot)"
+        explainText="$(string.Explain_UninstallMicrosoftCopilot)"
+        presentation="$(presentation.Pol_UninstallCopilot)"
+        key="Software\Policies\Microsoft\EdgeUpdate"
+        valueName="Uninstall{C50565E9-CCCF-44B4-BA15-5AC5C6569197}">
+      <parentCategory ref="Cat_MicrosoftCopilot" />
+      <supportedOn ref="Sup_EdgeUpdate1_3_251_9" />
+      <elements>
+        <enum id="Part_UninstallCopilotPolicy"
+             valueName="Uninstall{C50565E9-CCCF-44B4-BA15-5AC5C6569197}" required="true">
+          <item displayName="$(string.Name_UninstallEdgeEnabledAndKeepData)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.Name_UninstallEdgeEnabledAndDeleteData)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.Name_UninstallEdgeDisabled)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.Name_UninstallEdgeNotConfigured)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+
+    <policy name="Pol_CopilotUnificationAllowedMicrosoftCopilot" class="Machine"
+        displayName="$(string.Pol_CopilotUnificationAllowed)"
+        explainText="$(string.Explain_CopilotUnificationAllowedMicrosoftCopilot)"
+        key="Software\Policies\Microsoft\EdgeUpdate"
+        valueName="CopilotUnificationAllowed{C50565E9-CCCF-44B4-BA15-5AC5C6569197}">
+      <parentCategory ref="Cat_MicrosoftCopilot" />
+      <supportedOn ref="Sup_EdgeUpdate1_3_251_9" />
+      <enabledValue><decimal value="1" /></enabledValue>
+      <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+
+    <policy name="Pol_TargetChannelMicrosoftCopilot" class="Machine"
+        displayName="$(string.Pol_TargetChannel)"
+        explainText="$(string.Explain_TargetChannelMicrosoftCopilot)"
+        presentation="$(presentation.Pol_TargetChannel)"
+        key="Software\Policies\Microsoft\EdgeUpdate">
+      <parentCategory ref="Cat_MicrosoftCopilot" />
+      <supportedOn ref="Sup_EdgeUpdate1_3_251_9" />
+      <elements>
+        <enum id="Part_TargetChannel" key="Software\Policies\Microsoft\EdgeUpdate"
+            valueName="TargetChannel{C50565E9-CCCF-44B4-BA15-5AC5C6569197}">
+          <item displayName="$(string.TargetChannel_Stable_DropDown)">
+            <value>
+              <string>stable</string>
+            </value>
+          </item>
+          <item displayName="$(string.TargetChannel_Beta_DropDown)">
+            <value>
+              <string>beta</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

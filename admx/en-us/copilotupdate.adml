@@ -1,0 +1,104 @@
+
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+
+  <displayName>
+  </displayName>
+  <description>
+  </description>
+
+  <resources>
+    <stringTable>
+      <string id="Sup_EdgeUpdate1_3_251_9">Microsoft Edge Update 1.3.251.9 and later</string>
+      <string id="Pol_AllowInstallation">Allow installation</string>
+      <string id="Name_InstallsEnabled">Always allow Installs (recommended)</string>
+      <string id="Name_InstallsDisabled">Installs disabled</string>
+      <string id="Name_ForceInstallsMachine">Force Installs (Machine-Wide)</string>
+      <string id="Pol_UpdatePolicy">Update policy override</string>
+      <string id="Name_CopilotUpdatesEnabled">Always allow updates</string>
+      <string id="Name_UpdatesDisabled">Updates disabled</string>
+      <string id="Pol_UninstallCopilot">Specify uninstall behavior for Copilot</string>
+      <string id="Name_UninstallEdgeEnabledAndKeepData">Enabled</string>
+      <string id="Name_UninstallEdgeEnabledAndDeleteData">Enabled and delete user data</string>
+      <string id="Name_UninstallEdgeDisabled">Disabled</string>
+      <string id="Name_UninstallEdgeNotConfigured">Not Configured</string>
+      <string id="Pol_CopilotUnificationAllowed">Allow Copilot Unification</string>
+      <string id="Pol_TargetChannel">Target Channel override</string>
+      <string id="TargetChannel_Stable_DropDown">Stable</string>
+      <string id="TargetChannel_Beta_DropDown">Beta</string>
+      <string id="Cat_MicrosoftCopilot">Microsoft Copilot Update</string>
+      <string id="Explain_InstallMicrosoftCopilot">Lets you specify whether Copilot can be installed using Microsoft Edge Update.
+
+If you enable (1) this policy, users can install Copilot through Microsoft Edge Update.
+
+If you disable (0) this policy (or set it to 'Installs disabled'), users can't install Copilot through Microsoft Edge Update.
+
+If you set the policy to Force Installs (Machine-Wide) (5), Copilot will be installed to all machines where Microsoft Edge Update is preinstalled. Requires Microsoft Edge Update 1.3.251.9 or higher.
+
+If you don't configure this policy, users can install Copilot through Microsoft Edge Update.</string>
+      <string id="Explain_AutoUpdateMicrosoftCopilot">Lets you specify whether or not automatic updates are enabled for Microsoft Copilot.
+Automatic updates are enabled by default. Disabling automatic updates prevents Microsoft Copilot from receiving the latest features, quality improvements, and security updates.
+
+If you enable this policy, Microsoft Edge Update handles Copilot updates according to how you configure the following options:
+Always allow updates (1): Updates are automatically downloaded and applied
+Updates disabled (0): Updates are never downloaded or applied
+
+If you don't enable this policy, updates are automatically downloaded and applied.</string>
+      <string id="Explain_UninstallMicrosoftCopilot">You can specify whether Copilot (stable channel) is uninstalled, or is blocked from being uninstalled, on domain-joined devices.
+
+If this policy is set to 'Enabled', Copilot is automatically uninstalled on all devices where this policy is deployed. User data is kept on the device. Copilot will be uninstalled the next time Microsoft Edge Update automatically checks for updates.
+
+If this policy is set to 'Enabled and delete user data' (Setting '2'), Copilot is automatically uninstalled on all devices where this policy is deployed, and user data are deleted from the device.
+
+If this policy is set to 'Disabled' (Setting '3'), all users are prevented from uninstalling Copilot where this policy is deployed.
+
+If the policy is 'Not configured' (default setting), all users are able to uninstall Copilot if they choose to do so.
+
+This policy is available only on Windows instances that are joined to a Microsoft® Active Directory® domain.
+
+If Copilot needs to be reinstalled:
+
+You can set the 'Install' Policy to Force Installs (Machine-Wide) to reinstall Copilot.
+
+If you set the Install policy to Force Installs (Machine-Wide), and also set the Uninstall policy to Enabled, the Force Installs (Machine-Wide) policy will override the Uninstall policy.</string>
+      <string id="Explain_CopilotUnificationAllowedMicrosoftCopilot">Lets you specify whether the Microsoft Copilot and Microsoft 365 Copilot applications can be unified using Microsoft Edge Update.
+
+If you enable (1) this policy, the Microsoft Copilot and Microsoft 365 Copilot applications will be unified the next time Microsoft Edge Update automatically checks for updates.
+
+If you disable (0) this policy, or don't configure this policy, the Microsoft Copilot and Microsoft 365 Copilot applications will be unified according to the standard rollout.
+
+This policy is supported only on Windows devices that are joined to a Microsoft® Active Directory® domain.</string>
+      <string id="Explain_TargetChannelMicrosoftCopilot">Specifies which Copilot update channel to use.
+
+This policy controls which update channel Copilot will follow.
+
+If you enable this policy, Copilot will be updated to the channel you configure:
+Stable: Updated to the latest stable version.
+Beta: Updated to the latest beta version.
+
+If you disable or don't configure this policy, Copilot will update to the latest version available for the stable channel.
+
+This policy is supported only on Windows devices that are joined to a Microsoft® Active Directory® domain.</string>
+    </stringTable>
+    <presentationTable>
+
+      <presentation id="Pol_AllowInstallation">
+        <dropdownList refId="Part_InstallPolicy"
+            defaultItem="0">Install Policy</dropdownList>
+      </presentation>
+      <presentation id="Pol_UpdatePolicy">
+        <dropdownList refId="Part_UpdatePolicy"
+            defaultItem="0">Update Policy</dropdownList>
+      </presentation>
+      <presentation id="Pol_UninstallCopilot">
+        <dropdownList refId="Part_UninstallCopilotPolicy"
+            defaultItem="0"></dropdownList>
+      </presentation>
+      <presentation id="Pol_TargetChannel" >
+        <dropdownList refId="Part_TargetChannel"
+            defaultItem="0">Target Channel
+        </dropdownList>
+      </presentation>
+
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

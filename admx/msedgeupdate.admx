@@ -80,10 +80,6 @@
         displayName="$(string.Cat_MicrosoftEdgeCanary)">
       <parentCategory ref="Cat_Applications" />
     </category>
-    <category name="Cat_MicrosoftCopilot"
-        displayName="$(string.Cat_MicrosoftCopilot)">
-      <parentCategory ref="Cat_Applications" />
-    </category>
   </categories>
 
   <policies>
@@ -1150,31 +1146,6 @@
           <item displayName="$(string.Name_UpdatesDisabled)">
             <value>
               <decimal value="0" />
-            </value>
-          </item>
-        </enum>
-      </elements>
-    </policy>
-
-
-    <policy name="Pol_TargetChannelMicrosoftCopilot" class="Machine"
-        displayName="$(string.Pol_TargetChannel)"
-        explainText="$(string.Explain_TargetChannelMicrosoftCopilot)"
-        presentation="$(presentation.Pol_TargetChannel)"
-        key="Software\Policies\Microsoft\EdgeUpdate">
-      <parentCategory ref="Cat_MicrosoftCopilot" />
-      <supportedOn ref="Sup_EdgeUpdate1_3_251_9" />
-      <elements>
-        <enum id="Part_TargetChannel" key="Software\Policies\Microsoft\EdgeUpdate"
-            valueName="TargetChannel{C50565E9-CCCF-44B4-BA15-5AC5C6569197}">
-          <item displayName="$(string.TargetChannel_Stable_DropDown)">
-            <value>
-              <string>stable</string>
-            </value>
-          </item>
-          <item displayName="$(string.TargetChannel_Beta_DropDown)">
-            <value>
-              <string>beta</string>
             </value>
           </item>
         </enum>
