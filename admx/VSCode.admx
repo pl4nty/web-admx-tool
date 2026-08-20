@@ -22,6 +22,7 @@
 			<definition name="Supported_1_130" displayName="$(string.Supported_1_130)" />
 			<definition name="Supported_1_131" displayName="$(string.Supported_1_131)" />
 			<definition name="Supported_1_132" displayName="$(string.Supported_1_132)" />
+			<definition name="Supported_1_134" displayName="$(string.Supported_1_134)" />
 			<definition name="Supported_1_67" displayName="$(string.Supported_1_67)" />
 			<definition name="Supported_1_96" displayName="$(string.Supported_1_96)" />
 			<definition name="Supported_1_99" displayName="$(string.Supported_1_99)" />
@@ -130,6 +131,15 @@
 			<supportedOn ref="Supported_1_130" />
 			<elements>
 		<multiText id="ChatDeniedMcpServers" valueName="ChatDeniedMcpServers" required="true" />
+			</elements>
+		</policy>
+		<policy name="ChatEditorPreferCopilotHarness" class="Both" displayName="$(string.ChatEditorPreferCopilotHarness)" explainText="$(string.ChatEditorPreferCopilotHarness_chat_editor_preferCopilotHarness_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatEditorPreferCopilotHarness)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_134" />
+			<elements>
+		<boolean id="ChatEditorPreferCopilotHarness" valueName="ChatEditorPreferCopilotHarness">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
 			</elements>
 		</policy>
 		<policy name="ChatEnabledPlugins" class="Both" displayName="$(string.ChatEnabledPlugins)" explainText="$(string.ChatEnabledPlugins_chat_plugins_enabledPlugins_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatEnabledPlugins)">
