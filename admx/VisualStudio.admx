@@ -24,6 +24,7 @@
                 </majorVersion>
                 <majorVersion name="VisualStudio2026" displayName="$(string.VisualStudioProductName2026)" versionIndex="18">
                     <minorVersion name="VisualStudio2026_7" displayName="$(string.VisualStudioProductName2026_7)" versionIndex="7"/>
+                    <minorVersion name="VisualStudio2026_10" displayName="$(string.VisualStudioProductName2026_10)" versionIndex="10"/>
                 </majorVersion>
             </product>
         </products>
@@ -92,6 +93,11 @@
                 <and>
                     <reference ref="VisualStudio2022_14_31"/>
                     <reference ref="VisualStudio2026_7"/>
+                </and>
+            </definition>
+            <definition name="VisualStudio2026_10AndHigher" displayName="$(string.VisualStudio2026_10AndHigher)">
+                <and>
+                    <reference ref="VisualStudio2026_10"/>
                 </and>
             </definition>
         </definitions>
@@ -706,6 +712,23 @@
             valueName="DisableMCP">
             <parentCategory ref="CopilotSettings" />
             <supportedOn ref="VisualStudio2022_14_31AndHigher_Or_2026_7AndHigher" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
+        <!-- Bring your own key -->
+        <policy
+            name="DisableBringYourOwnKeyNoAuth"
+            class="Machine"
+            displayName="$(string.DisableBringYourOwnKeyNoAuth_DisplayName)"
+            explainText="$(string.DisableBringYourOwnKeyNoAuth_Explain)"
+            key="SOFTWARE\Policies\Microsoft\VisualStudio\Copilot"
+            valueName="DisableBringYourOwnKeyNoAuth">
+            <parentCategory ref="CopilotSettings" />
+            <supportedOn ref="VisualStudio2026_10AndHigher" />
             <enabledValue>
                 <decimal value="1" />
             </enabledValue>
