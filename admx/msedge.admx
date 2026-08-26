@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 153.0.4224.0-->
+  <!--microsoft_edge version: 153.0.4234.2-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -100,6 +100,7 @@
       <definition displayName="$(string.OBSOLETE_WIN7_V79_V92)" name="OBSOLETE_WIN7_V79_V92"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V110_V125)" name="OBSOLETE_WIN7_V110_V125"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V117_V140)" name="OBSOLETE_WIN7_V117_V140"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V86_V152)" name="OBSOLETE_WIN7_V86_V152"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V95_V109)" name="OBSOLETE_WIN7_V95_V109"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V138_V144)" name="OBSOLETE_WIN7_V138_V144"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V79_V85)" name="OBSOLETE_WIN7_V79_V85"/>
@@ -110,6 +111,7 @@
       <definition displayName="$(string.OBSOLETE_WIN7_V85_V109)" name="OBSOLETE_WIN7_V85_V109"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V91_V125)" name="OBSOLETE_WIN7_V91_V125"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V99_V117)" name="OBSOLETE_WIN7_V99_V117"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V78_V152)" name="OBSOLETE_WIN7_V78_V152"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V107_V133)" name="OBSOLETE_WIN7_V107_V133"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V80_V94)" name="OBSOLETE_WIN7_V80_V94"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V86_V94)" name="OBSOLETE_WIN7_V86_V94"/>
@@ -137,6 +139,7 @@
       <definition displayName="$(string.OBSOLETE_WIN7_V109_V114)" name="OBSOLETE_WIN7_V109_V114"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V93_V105)" name="OBSOLETE_WIN7_V93_V105"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V97_V121)" name="OBSOLETE_WIN7_V97_V121"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V121_V152)" name="OBSOLETE_WIN7_V121_V152"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V115_V145)" name="OBSOLETE_WIN7_V115_V145"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V81_V88)" name="OBSOLETE_WIN7_V81_V88"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V80_V132)" name="OBSOLETE_WIN7_V80_V132"/>
@@ -3153,7 +3156,7 @@
     </policy>
     <policy class="Both" displayName="$(string.RelatedWebsiteSetsEnabled)" explainText="$(string.RelatedWebsiteSetsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="RelatedWebsiteSetsEnabled" presentation="$(presentation.RelatedWebsiteSetsEnabled)" valueName="RelatedWebsiteSetsEnabled">
       <parentCategory ref="RelatedWebsiteSets"/>
-      <supportedOn ref="SUPPORTED_WIN7_V121"/>
+      <supportedOn ref="OBSOLETE_WIN7_V121_V152"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -3163,7 +3166,7 @@
     </policy>
     <policy class="Both" displayName="$(string.RelatedWebsiteSetsOverrides)" explainText="$(string.RelatedWebsiteSetsOverrides_Explain)" key="Software\Policies\Microsoft\Edge" name="RelatedWebsiteSetsOverrides" presentation="$(presentation.RelatedWebsiteSetsOverrides)">
       <parentCategory ref="RelatedWebsiteSets"/>
-      <supportedOn ref="SUPPORTED_WIN7_V121"/>
+      <supportedOn ref="OBSOLETE_WIN7_V121_V152"/>
       <elements>
         <text id="RelatedWebsiteSetsOverrides" maxLength="1000000" valueName="RelatedWebsiteSetsOverrides"/>
       </elements>
@@ -4932,7 +4935,7 @@
     </policy>
     <policy class="Both" displayName="$(string.CollectionsServicesAndExportsBlockList)" explainText="$(string.CollectionsServicesAndExportsBlockList_Explain)" key="Software\Policies\Microsoft\Edge" name="CollectionsServicesAndExportsBlockList" presentation="$(presentation.CollectionsServicesAndExportsBlockList)">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V86"/>
+      <supportedOn ref="OBSOLETE_WIN7_V86_V152"/>
       <elements>
         <list id="CollectionsServicesAndExportsBlockListDesc" key="Software\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList" valuePrefix=""/>
       </elements>
@@ -5698,7 +5701,7 @@
     </policy>
     <policy class="Both" displayName="$(string.EdgeCollectionsEnabled)" explainText="$(string.EdgeCollectionsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="EdgeCollectionsEnabled" presentation="$(presentation.EdgeCollectionsEnabled)" valueName="EdgeCollectionsEnabled">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V78"/>
+      <supportedOn ref="OBSOLETE_WIN7_V78_V152"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
