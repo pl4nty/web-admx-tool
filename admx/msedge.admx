@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 154.0.4238.0-->
+  <!--microsoft_edge version: 154.0.4251.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -296,6 +296,9 @@
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.RelatedWebsiteSets_group)" name="RelatedWebsiteSets">
+      <parentCategory ref="microsoft_edge"/>
+    </category>
+    <category displayName="$(string.Relaunch_group)" name="Relaunch">
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.ScarewareBlocker_group)" name="ScarewareBlocker">
@@ -3169,6 +3172,45 @@
       <supportedOn ref="OBSOLETE_WIN7_V121_V152"/>
       <elements>
         <text id="RelatedWebsiteSetsOverrides" maxLength="1000000" valueName="RelatedWebsiteSetsOverrides"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.RelaunchFastIfOutdated)" explainText="$(string.RelaunchFastIfOutdated_Explain)" key="Software\Policies\Microsoft\Edge" name="RelaunchFastIfOutdated" presentation="$(presentation.RelaunchFastIfOutdated)">
+      <parentCategory ref="Relaunch"/>
+      <supportedOn ref="SUPPORTED_WIN7_V141"/>
+      <elements>
+        <decimal id="RelaunchFastIfOutdated" maxValue="2000000000" minValue="7" valueName="RelaunchFastIfOutdated"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.RelaunchNotification)" explainText="$(string.RelaunchNotification_Explain)" key="Software\Policies\Microsoft\Edge" name="RelaunchNotification" presentation="$(presentation.RelaunchNotification)">
+      <parentCategory ref="Relaunch"/>
+      <supportedOn ref="SUPPORTED_WIN7_V77"/>
+      <elements>
+        <enum id="RelaunchNotification" valueName="RelaunchNotification">
+          <item displayName="$(string.RelaunchNotification_Recommended)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.RelaunchNotification_Required)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.RelaunchNotificationPeriod)" explainText="$(string.RelaunchNotificationPeriod_Explain)" key="Software\Policies\Microsoft\Edge" name="RelaunchNotificationPeriod" presentation="$(presentation.RelaunchNotificationPeriod)">
+      <parentCategory ref="Relaunch"/>
+      <supportedOn ref="SUPPORTED_WIN7_V77"/>
+      <elements>
+        <decimal id="RelaunchNotificationPeriod" maxValue="2000000000" minValue="3600000" valueName="RelaunchNotificationPeriod"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.RelaunchWindow)" explainText="$(string.RelaunchWindow_Explain)" key="Software\Policies\Microsoft\Edge" name="RelaunchWindow" presentation="$(presentation.RelaunchWindow)">
+      <parentCategory ref="Relaunch"/>
+      <supportedOn ref="SUPPORTED_WIN7_V93"/>
+      <elements>
+        <text id="RelaunchWindow" maxLength="1000000" valueName="RelaunchWindow"/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.ScarewareBlockerAllowListDomains)" explainText="$(string.ScarewareBlockerAllowListDomains_Explain)" key="Software\Policies\Microsoft\Edge" name="ScarewareBlockerAllowListDomains" presentation="$(presentation.ScarewareBlockerAllowListDomains)">
@@ -7952,45 +7994,6 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.RelaunchFastIfOutdated)" explainText="$(string.RelaunchFastIfOutdated_Explain)" key="Software\Policies\Microsoft\Edge" name="RelaunchFastIfOutdated" presentation="$(presentation.RelaunchFastIfOutdated)">
-      <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V141"/>
-      <elements>
-        <decimal id="RelaunchFastIfOutdated" maxValue="2000000000" minValue="7" valueName="RelaunchFastIfOutdated"/>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.RelaunchNotification)" explainText="$(string.RelaunchNotification_Explain)" key="Software\Policies\Microsoft\Edge" name="RelaunchNotification" presentation="$(presentation.RelaunchNotification)">
-      <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V77"/>
-      <elements>
-        <enum id="RelaunchNotification" valueName="RelaunchNotification">
-          <item displayName="$(string.RelaunchNotification_Recommended)">
-            <value>
-              <decimal value="1"/>
-            </value>
-          </item>
-          <item displayName="$(string.RelaunchNotification_Required)">
-            <value>
-              <decimal value="2"/>
-            </value>
-          </item>
-        </enum>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.RelaunchNotificationPeriod)" explainText="$(string.RelaunchNotificationPeriod_Explain)" key="Software\Policies\Microsoft\Edge" name="RelaunchNotificationPeriod" presentation="$(presentation.RelaunchNotificationPeriod)">
-      <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V77"/>
-      <elements>
-        <decimal id="RelaunchNotificationPeriod" maxValue="2000000000" minValue="3600000" valueName="RelaunchNotificationPeriod"/>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.RelaunchWindow)" explainText="$(string.RelaunchWindow_Explain)" key="Software\Policies\Microsoft\Edge" name="RelaunchWindow" presentation="$(presentation.RelaunchWindow)">
-      <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V93"/>
-      <elements>
-        <text id="RelaunchWindow" maxLength="1000000" valueName="RelaunchWindow"/>
-      </elements>
     </policy>
     <policy class="Both" displayName="$(string.RemoteDebuggingAllowed)" explainText="$(string.RemoteDebuggingAllowed_Explain)" key="Software\Policies\Microsoft\Edge" name="RemoteDebuggingAllowed" presentation="$(presentation.RemoteDebuggingAllowed)" valueName="RemoteDebuggingAllowed">
       <parentCategory ref="microsoft_edge"/>
