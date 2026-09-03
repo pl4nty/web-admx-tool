@@ -23,6 +23,7 @@
 			<definition name="Supported_1_131" displayName="$(string.Supported_1_131)" />
 			<definition name="Supported_1_132" displayName="$(string.Supported_1_132)" />
 			<definition name="Supported_1_134" displayName="$(string.Supported_1_134)" />
+			<definition name="Supported_1_136" displayName="$(string.Supported_1_136)" />
 			<definition name="Supported_1_67" displayName="$(string.Supported_1_67)" />
 			<definition name="Supported_1_96" displayName="$(string.Supported_1_96)" />
 			<definition name="Supported_1_99" displayName="$(string.Supported_1_99)" />
@@ -350,6 +351,25 @@
 		<boolean id="DictationEnabled" valueName="DictationEnabled">
 			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
 		</boolean>
+			</elements>
+		</policy>
+		<policy name="DictationLLMCleanup" class="Both" displayName="$(string.DictationLLMCleanup)" explainText="$(string.DictationLLMCleanup_dictation_experimental_llmCleanup_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.DictationLLMCleanup)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_136" />
+			<elements>
+		<boolean id="DictationLLMCleanup" valueName="DictationLLMCleanup">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
+		<policy name="DictationModel" class="Both" displayName="$(string.DictationModel)" explainText="$(string.DictationModel_dictation_model_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.DictationModel)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_136" />
+			<elements>
+		<enum id="DictationModel" valueName="DictationModel">
+			<item displayName="$(string.DictationModel_dictation_model_nemotronMultilingual_policy)"><value><string>nemotron-3.5-asr-streaming-0.6b</string></value></item>
+			<item displayName="$(string.DictationModel_dictation_model_mai_policy)"><value><string>mai</string></value></item>
+		</enum>
 			</elements>
 		</policy>
 		<policy name="McpEnterpriseManagedAuthIdp" class="Both" displayName="$(string.McpEnterpriseManagedAuthIdp)" explainText="$(string.McpEnterpriseManagedAuthIdp_mcp_enterpriseManagedAuth_idp_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.McpEnterpriseManagedAuthIdp)">

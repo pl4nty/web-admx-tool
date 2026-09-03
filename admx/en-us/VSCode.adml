@@ -22,6 +22,7 @@
 			<string id="Supported_1_131">Visual Studio Code &gt;= 1.131</string>
 			<string id="Supported_1_132">Visual Studio Code &gt;= 1.132</string>
 			<string id="Supported_1_134">Visual Studio Code &gt;= 1.134</string>
+			<string id="Supported_1_136">Visual Studio Code &gt;= 1.136</string>
 			<string id="Supported_1_67">Visual Studio Code &gt;= 1.67</string>
 			<string id="Supported_1_96">Visual Studio Code &gt;= 1.96</string>
 			<string id="Supported_1_99">Visual Studio Code &gt;= 1.99</string>
@@ -117,6 +118,12 @@ Note: This setting only controls tool approval and does not prevent the agent fr
 			<string id="CopilotSessionSync_chat_sessionSync_enabled_policy">Enable session sync to GitHub.com for cross-device Copilot session history. When disabled by organization policy, session data is kept local only.</string>
 			<string id="DictationEnabled">DictationEnabled</string>
 			<string id="DictationEnabled_dictation_enabled_policy">Controls whether dictation is available across the product (chat input, editor, and terminal).</string>
+			<string id="DictationLLMCleanup">DictationLLMCleanup</string>
+			<string id="DictationLLMCleanup_dictation_experimental_llmCleanup_policy">Controls whether final dictation transcripts are sent to a language model for cleanup.</string>
+			<string id="DictationModel">DictationModel</string>
+			<string id="DictationModel_dictation_model_policy">Controls the transcription model used for dictation.</string>
+			<string id="DictationModel_dictation_model_nemotronMultilingual_policy">Use the on-device transcription model. Audio does not leave the device.</string>
+			<string id="DictationModel_dictation_model_mai_policy">Use the cloud transcription service. Audio is streamed to the service.</string>
 			<string id="McpEnterpriseManagedAuthIdp">McpEnterpriseManagedAuthIdp</string>
 			<string id="McpEnterpriseManagedAuthIdp_mcp_enterpriseManagedAuth_idp_policy">The OAuth/OIDC IdP configuration used for enterprise-managed Model Context Protocol (MCP) server authentication.</string>
 			<string id="McpGalleryServiceUrl">McpGalleryServiceUrl</string>
@@ -197,6 +204,8 @@ Note: This setting only controls tool approval and does not prevent the agent fr
 			<presentation id="CopilotReviewSelection"><checkBox refId="CopilotReviewSelection">CopilotReviewSelection</checkBox></presentation>
 			<presentation id="CopilotSessionSync"><checkBox refId="CopilotSessionSync">CopilotSessionSync</checkBox></presentation>
 			<presentation id="DictationEnabled"><checkBox refId="DictationEnabled">DictationEnabled</checkBox></presentation>
+			<presentation id="DictationLLMCleanup"><checkBox refId="DictationLLMCleanup">DictationLLMCleanup</checkBox></presentation>
+			<presentation id="DictationModel"><dropdownList refId="DictationModel" /></presentation>
 			<presentation id="McpEnterpriseManagedAuthIdp"><multiTextBox refId="McpEnterpriseManagedAuthIdp" /></presentation>
 			<presentation id="McpGalleryServiceUrl"><textBox refId="McpGalleryServiceUrl"><label>McpGalleryServiceUrl:</label></textBox></presentation>
 			<presentation id="AllowedExtensions"><multiTextBox refId="AllowedExtensions" /></presentation>

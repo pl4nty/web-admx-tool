@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--brave version: 152.1.96.35-->
+  <!--brave version: 153.1.96.39-->
   <policyNamespaces>
     <target namespace="BraveSoftware.Policies.Brave" prefix="brave"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -1610,16 +1610,6 @@
         <text id="DefaultSearchProviderSuggestURLPostParams" maxLength="1000000" valueName="DefaultSearchProviderSuggestURLPostParams"/>
       </elements>
     </policy>
-    <policy class="Both" displayName="$(string.IPFSEnabled)" explainText="$(string.IPFSEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="IPFSEnabled" presentation="$(presentation.IPFSEnabled)" valueName="IPFSEnabled">
-      <parentCategory ref="DeprecatedPolicies"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
     <policy class="Both" displayName="$(string.DefaultMediaStreamSetting)" explainText="$(string.DefaultMediaStreamSetting_Explain)" key="Software\Policies\BraveSoftware\Brave" name="DefaultMediaStreamSetting" presentation="$(presentation.DefaultMediaStreamSetting)">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -1668,23 +1658,6 @@
       <supportedOn ref="SUPPORTED_WIN7"/>
       <elements>
         <list id="WindowPlacementBlockedForUrlsDesc" key="Software\Policies\BraveSoftware\Brave\WindowPlacementBlockedForUrls" valuePrefix=""/>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.FirstPartySetsEnabled)" explainText="$(string.FirstPartySetsEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="FirstPartySetsEnabled" presentation="$(presentation.FirstPartySetsEnabled)" valueName="FirstPartySetsEnabled">
-      <parentCategory ref="DeprecatedPolicies"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.FirstPartySetsOverrides)" explainText="$(string.FirstPartySetsOverrides_Explain)" key="Software\Policies\BraveSoftware\Brave" name="FirstPartySetsOverrides" presentation="$(presentation.FirstPartySetsOverrides)">
-      <parentCategory ref="DeprecatedPolicies"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <text id="FirstPartySetsOverrides" maxLength="1000000" valueName="FirstPartySetsOverrides"/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.AutoFillEnabled)" explainText="$(string.AutoFillEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AutoFillEnabled" presentation="$(presentation.AutoFillEnabled)" valueName="AutoFillEnabled">
@@ -2021,23 +1994,6 @@
         </enum>
       </elements>
     </policy>
-    <policy class="Both" displayName="$(string.RelatedWebsiteSetsEnabled)" explainText="$(string.RelatedWebsiteSetsEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RelatedWebsiteSetsEnabled" presentation="$(presentation.RelatedWebsiteSetsEnabled)" valueName="RelatedWebsiteSetsEnabled">
-      <parentCategory ref="DeprecatedPolicies"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.RelatedWebsiteSetsOverrides)" explainText="$(string.RelatedWebsiteSetsOverrides_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RelatedWebsiteSetsOverrides" presentation="$(presentation.RelatedWebsiteSetsOverrides)">
-      <parentCategory ref="DeprecatedPolicies"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <text id="RelatedWebsiteSetsOverrides" maxLength="1000000" valueName="RelatedWebsiteSetsOverrides"/>
-      </elements>
-    </policy>
     <policy class="Both" displayName="$(string.RemoteAccessHostClientDomain)" explainText="$(string.RemoteAccessHostClientDomain_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RemoteAccessHostClientDomain" presentation="$(presentation.RemoteAccessHostClientDomain)">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -2053,6 +2009,16 @@
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.SafeBrowsingEnabled)" explainText="$(string.SafeBrowsingEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SafeBrowsingEnabled" presentation="$(presentation.SafeBrowsingEnabled)" valueName="SafeBrowsingEnabled">
+      <parentCategory ref="DeprecatedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.IPFSEnabled)" explainText="$(string.IPFSEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="IPFSEnabled" presentation="$(presentation.IPFSEnabled)" valueName="IPFSEnabled">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
@@ -2271,29 +2237,6 @@
             </value>
           </item>
           <item displayName="$(string.DevToolsGenAiSettings_Disabled)">
-            <value>
-              <decimal value="2"/>
-            </value>
-          </item>
-        </enum>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.FindAndFillWithGeminiSettings)" explainText="$(string.FindAndFillWithGeminiSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="FindAndFillWithGeminiSettings" presentation="$(presentation.FindAndFillWithGeminiSettings)">
-      <parentCategory ref="GenerativeAI"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <enum id="FindAndFillWithGeminiSettings" valueName="FindAndFillWithGeminiSettings">
-          <item displayName="$(string.FindAndFillWithGeminiSettings_Allowed)">
-            <value>
-              <decimal value="0"/>
-            </value>
-          </item>
-          <item displayName="$(string.FindAndFillWithGeminiSettings_AllowedWithoutLogging)">
-            <value>
-              <decimal value="1"/>
-            </value>
-          </item>
-          <item displayName="$(string.FindAndFillWithGeminiSettings_Disabled)">
             <value>
               <decimal value="2"/>
             </value>
@@ -4895,16 +4838,6 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
-    <policy class="Both" displayName="$(string.SharedClipboardEnabled)" explainText="$(string.SharedClipboardEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SharedClipboardEnabled" presentation="$(presentation.SharedClipboardEnabled)" valueName="SharedClipboardEnabled">
-      <parentCategory ref="brave"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
     <policy class="Both" displayName="$(string.SharedWorkerBlobURLFixEnabled)" explainText="$(string.SharedWorkerBlobURLFixEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SharedWorkerBlobURLFixEnabled" presentation="$(presentation.SharedWorkerBlobURLFixEnabled)" valueName="SharedWorkerBlobURLFixEnabled">
       <parentCategory ref="brave"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -6460,6 +6393,23 @@
         </enum>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.FirstPartySetsEnabled)" explainText="$(string.FirstPartySetsEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="FirstPartySetsEnabled" presentation="$(presentation.FirstPartySetsEnabled)" valueName="FirstPartySetsEnabled">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.FirstPartySetsOverrides)" explainText="$(string.FirstPartySetsOverrides_Explain)" key="Software\Policies\BraveSoftware\Brave" name="FirstPartySetsOverrides" presentation="$(presentation.FirstPartySetsOverrides)">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <text id="FirstPartySetsOverrides" maxLength="1000000" valueName="FirstPartySetsOverrides"/>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.TabOrganizerSettings)" explainText="$(string.TabOrganizerSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="TabOrganizerSettings" presentation="$(presentation.TabOrganizerSettings)">
       <parentCategory ref="RemovedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -7354,6 +7304,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.SharedClipboardEnabled)" explainText="$(string.SharedClipboardEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SharedClipboardEnabled" presentation="$(presentation.SharedClipboardEnabled)" valueName="SharedClipboardEnabled">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.SpellcheckLanguageBlacklist)" explainText="$(string.SpellcheckLanguageBlacklist_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SpellcheckLanguageBlacklist" presentation="$(presentation.SpellcheckLanguageBlacklist)">
       <parentCategory ref="RemovedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -7742,6 +7702,23 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.RelatedWebsiteSetsEnabled)" explainText="$(string.RelatedWebsiteSetsEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RelatedWebsiteSetsEnabled" presentation="$(presentation.RelatedWebsiteSetsEnabled)" valueName="RelatedWebsiteSetsEnabled">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.RelatedWebsiteSetsOverrides)" explainText="$(string.RelatedWebsiteSetsOverrides_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RelatedWebsiteSetsOverrides" presentation="$(presentation.RelatedWebsiteSetsOverrides)">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <text id="RelatedWebsiteSetsOverrides" maxLength="1000000" valueName="RelatedWebsiteSetsOverrides"/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.RemoteAccessClientFirewallTraversal)" explainText="$(string.RemoteAccessClientFirewallTraversal_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RemoteAccessClientFirewallTraversal" presentation="$(presentation.RemoteAccessClientFirewallTraversal)" valueName="RemoteAccessClientFirewallTraversal">
       <parentCategory ref="RemovedPolicies"/>
