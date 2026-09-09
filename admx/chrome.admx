@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--chrome version: 152.0.7977.83-->
+  <!--chrome version: 153.0.8010.37-->
   <policyNamespaces>
     <target namespace="Google.Policies.Chrome" prefix="chrome"/>
     <using namespace="Google.Policies" prefix="Google"/>
@@ -1331,23 +1331,6 @@
         <list id="WindowPlacementBlockedForUrlsDesc" key="Software\Policies\Google\Chrome\WindowPlacementBlockedForUrls" valuePrefix=""/>
       </elements>
     </policy>
-    <policy class="Both" displayName="$(string.FirstPartySetsEnabled)" explainText="$(string.FirstPartySetsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="FirstPartySetsEnabled" presentation="$(presentation.FirstPartySetsEnabled)" valueName="FirstPartySetsEnabled">
-      <parentCategory ref="DeprecatedPolicies"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.FirstPartySetsOverrides)" explainText="$(string.FirstPartySetsOverrides_Explain)" key="Software\Policies\Google\Chrome" name="FirstPartySetsOverrides" presentation="$(presentation.FirstPartySetsOverrides)">
-      <parentCategory ref="DeprecatedPolicies"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <text id="FirstPartySetsOverrides" maxLength="1000000" valueName="FirstPartySetsOverrides"/>
-      </elements>
-    </policy>
     <policy class="Both" displayName="$(string.AutoFillEnabled)" explainText="$(string.AutoFillEnabled_Explain)" key="Software\Policies\Google\Chrome" name="AutoFillEnabled" presentation="$(presentation.AutoFillEnabled)" valueName="AutoFillEnabled">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -1682,23 +1665,6 @@
         </enum>
       </elements>
     </policy>
-    <policy class="Both" displayName="$(string.RelatedWebsiteSetsEnabled)" explainText="$(string.RelatedWebsiteSetsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="RelatedWebsiteSetsEnabled" presentation="$(presentation.RelatedWebsiteSetsEnabled)" valueName="RelatedWebsiteSetsEnabled">
-      <parentCategory ref="DeprecatedPolicies"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.RelatedWebsiteSetsOverrides)" explainText="$(string.RelatedWebsiteSetsOverrides_Explain)" key="Software\Policies\Google\Chrome" name="RelatedWebsiteSetsOverrides" presentation="$(presentation.RelatedWebsiteSetsOverrides)">
-      <parentCategory ref="DeprecatedPolicies"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <text id="RelatedWebsiteSetsOverrides" maxLength="1000000" valueName="RelatedWebsiteSetsOverrides"/>
-      </elements>
-    </policy>
     <policy class="Both" displayName="$(string.RemoteAccessHostClientDomain)" explainText="$(string.RemoteAccessHostClientDomain_Explain)" key="Software\Policies\Google\Chrome" name="RemoteAccessHostClientDomain" presentation="$(presentation.RemoteAccessHostClientDomain)">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -1932,29 +1898,6 @@
             </value>
           </item>
           <item displayName="$(string.DevToolsGenAiSettings_Disabled)">
-            <value>
-              <decimal value="2"/>
-            </value>
-          </item>
-        </enum>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.FindAndFillWithGeminiSettings)" explainText="$(string.FindAndFillWithGeminiSettings_Explain)" key="Software\Policies\Google\Chrome" name="FindAndFillWithGeminiSettings" presentation="$(presentation.FindAndFillWithGeminiSettings)">
-      <parentCategory ref="GenerativeAI"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <enum id="FindAndFillWithGeminiSettings" valueName="FindAndFillWithGeminiSettings">
-          <item displayName="$(string.FindAndFillWithGeminiSettings_Allowed)">
-            <value>
-              <decimal value="0"/>
-            </value>
-          </item>
-          <item displayName="$(string.FindAndFillWithGeminiSettings_AllowedWithoutLogging)">
-            <value>
-              <decimal value="1"/>
-            </value>
-          </item>
-          <item displayName="$(string.FindAndFillWithGeminiSettings_Disabled)">
             <value>
               <decimal value="2"/>
             </value>
@@ -4556,16 +4499,6 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
-    <policy class="Both" displayName="$(string.SharedClipboardEnabled)" explainText="$(string.SharedClipboardEnabled_Explain)" key="Software\Policies\Google\Chrome" name="SharedClipboardEnabled" presentation="$(presentation.SharedClipboardEnabled)" valueName="SharedClipboardEnabled">
-      <parentCategory ref="googlechrome"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
     <policy class="Both" displayName="$(string.SharedWorkerBlobURLFixEnabled)" explainText="$(string.SharedWorkerBlobURLFixEnabled_Explain)" key="Software\Policies\Google\Chrome" name="SharedWorkerBlobURLFixEnabled" presentation="$(presentation.SharedWorkerBlobURLFixEnabled)" valueName="SharedWorkerBlobURLFixEnabled">
       <parentCategory ref="googlechrome"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -6121,6 +6054,23 @@
         </enum>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.FirstPartySetsEnabled)" explainText="$(string.FirstPartySetsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="FirstPartySetsEnabled" presentation="$(presentation.FirstPartySetsEnabled)" valueName="FirstPartySetsEnabled">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.FirstPartySetsOverrides)" explainText="$(string.FirstPartySetsOverrides_Explain)" key="Software\Policies\Google\Chrome" name="FirstPartySetsOverrides" presentation="$(presentation.FirstPartySetsOverrides)">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <text id="FirstPartySetsOverrides" maxLength="1000000" valueName="FirstPartySetsOverrides"/>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.TabOrganizerSettings)" explainText="$(string.TabOrganizerSettings_Explain)" key="Software\Policies\Google\Chrome" name="TabOrganizerSettings" presentation="$(presentation.TabOrganizerSettings)">
       <parentCategory ref="RemovedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -7015,6 +6965,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.SharedClipboardEnabled)" explainText="$(string.SharedClipboardEnabled_Explain)" key="Software\Policies\Google\Chrome" name="SharedClipboardEnabled" presentation="$(presentation.SharedClipboardEnabled)" valueName="SharedClipboardEnabled">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.SpellcheckLanguageBlacklist)" explainText="$(string.SpellcheckLanguageBlacklist_Explain)" key="Software\Policies\Google\Chrome" name="SpellcheckLanguageBlacklist" presentation="$(presentation.SpellcheckLanguageBlacklist)">
       <parentCategory ref="RemovedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -7403,6 +7363,23 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.RelatedWebsiteSetsEnabled)" explainText="$(string.RelatedWebsiteSetsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="RelatedWebsiteSetsEnabled" presentation="$(presentation.RelatedWebsiteSetsEnabled)" valueName="RelatedWebsiteSetsEnabled">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.RelatedWebsiteSetsOverrides)" explainText="$(string.RelatedWebsiteSetsOverrides_Explain)" key="Software\Policies\Google\Chrome" name="RelatedWebsiteSetsOverrides" presentation="$(presentation.RelatedWebsiteSetsOverrides)">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <text id="RelatedWebsiteSetsOverrides" maxLength="1000000" valueName="RelatedWebsiteSetsOverrides"/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.RemoteAccessClientFirewallTraversal)" explainText="$(string.RemoteAccessClientFirewallTraversal_Explain)" key="Software\Policies\Google\Chrome" name="RemoteAccessClientFirewallTraversal" presentation="$(presentation.RemoteAccessClientFirewallTraversal)" valueName="RemoteAccessClientFirewallTraversal">
       <parentCategory ref="RemovedPolicies"/>
