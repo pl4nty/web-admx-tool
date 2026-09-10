@@ -24,6 +24,7 @@
 			<definition name="Supported_1_132" displayName="$(string.Supported_1_132)" />
 			<definition name="Supported_1_134" displayName="$(string.Supported_1_134)" />
 			<definition name="Supported_1_136" displayName="$(string.Supported_1_136)" />
+			<definition name="Supported_1_137" displayName="$(string.Supported_1_137)" />
 			<definition name="Supported_1_67" displayName="$(string.Supported_1_67)" />
 			<definition name="Supported_1_96" displayName="$(string.Supported_1_96)" />
 			<definition name="Supported_1_99" displayName="$(string.Supported_1_99)" />
@@ -38,6 +39,15 @@
 		<category displayName="$(string.Category_updateConfigurationTitle)" name="updateConfigurationTitle"><parentCategory ref="Application" /></category>
 	</categories>
 	<policies>
+		<policy name="AgentsVoice" class="Both" displayName="$(string.AgentsVoice)" explainText="$(string.AgentsVoice_agents_voice_enabled)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.AgentsVoice)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_137" />
+			<elements>
+		<boolean id="AgentsVoice" valueName="AgentsVoice">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
 		<policy name="BrowserChatTools" class="Both" displayName="$(string.BrowserChatTools)" explainText="$(string.BrowserChatTools_browser_enableChatTools)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.BrowserChatTools)">
 			<parentCategory ref="interactiveSessionConfigurationTitle" />
 			<supportedOn ref="Supported_1_110" />
@@ -66,6 +76,15 @@
 			<supportedOn ref="Supported_1_99" />
 			<elements>
 		<boolean id="ChatAgentExtensionTools" valueName="ChatAgentExtensionTools">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
+		<policy name="ChatAgentHostCustomTerminalTool" class="Both" displayName="$(string.ChatAgentHostCustomTerminalTool)" explainText="$(string.ChatAgentHostCustomTerminalTool_chat_agentHost_customTerminalTool_enabled_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentHostCustomTerminalTool)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_137" />
+			<elements>
+		<boolean id="ChatAgentHostCustomTerminalTool" valueName="ChatAgentHostCustomTerminalTool">
 			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
 		</boolean>
 			</elements>
@@ -391,6 +410,16 @@
 			<supportedOn ref="Supported_1_96" />
 			<elements>
 		<multiText id="AllowedExtensions" valueName="AllowedExtensions" required="true" />
+			</elements>
+		</policy>
+		<policy name="ExtensionGalleryAuthProvider" class="Both" displayName="$(string.ExtensionGalleryAuthProvider)" explainText="$(string.ExtensionGalleryAuthProvider_extensions_gallery_authProvider)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ExtensionGalleryAuthProvider)">
+			<parentCategory ref="extensionsConfigurationTitle" />
+			<supportedOn ref="Supported_1_137" />
+			<elements>
+		<enum id="ExtensionGalleryAuthProvider" valueName="ExtensionGalleryAuthProvider">
+			<item displayName="$(string.ExtensionGalleryAuthProvider_extensions_gallery_authProvider_github)"><value><string>github</string></value></item>
+			<item displayName="$(string.ExtensionGalleryAuthProvider_extensions_gallery_authProvider_microsoft)"><value><string>microsoft</string></value></item>
+		</enum>
 			</elements>
 		</policy>
 		<policy name="ExtensionGalleryServiceUrl" class="Both" displayName="$(string.ExtensionGalleryServiceUrl)" explainText="$(string.ExtensionGalleryServiceUrl_extensions_gallery_serviceUrl)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ExtensionGalleryServiceUrl)">

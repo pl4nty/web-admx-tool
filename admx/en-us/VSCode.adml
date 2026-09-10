@@ -23,6 +23,7 @@
 			<string id="Supported_1_132">Visual Studio Code &gt;= 1.132</string>
 			<string id="Supported_1_134">Visual Studio Code &gt;= 1.134</string>
 			<string id="Supported_1_136">Visual Studio Code &gt;= 1.136</string>
+			<string id="Supported_1_137">Visual Studio Code &gt;= 1.137</string>
 			<string id="Supported_1_67">Visual Studio Code &gt;= 1.67</string>
 			<string id="Supported_1_96">Visual Studio Code &gt;= 1.96</string>
 			<string id="Supported_1_99">Visual Studio Code &gt;= 1.99</string>
@@ -31,18 +32,28 @@
 			<string id="Category_terminalIntegratedConfigurationTitle">Integrated Terminal</string>
 			<string id="Category_telemetryConfigurationTitle">Telemetry</string>
 			<string id="Category_updateConfigurationTitle">Update</string>
+			<string id="AgentsVoice">AgentsVoice</string>
+			<string id="AgentsVoice_agents_voice_enabled">Enable the Voice Mode panel in the chat view for voice-driven coding conversations.</string>
 			<string id="BrowserChatTools">BrowserChatTools</string>
 			<string id="BrowserChatTools_browser_enableChatTools">When enabled, chat agents can use browser tools to open and interact with pages in the Integrated Browser.</string>
 			<string id="ChatAgentAllowedNetworkDomains">ChatAgentAllowedNetworkDomains</string>
-			<string id="ChatAgentAllowedNetworkDomains_chat_agent_allowedNetworkDomains">Allowed domains for network access by agent tools (fetch tool, integrated browser). Applies when `#chat.agent.networkFilter#` or `#chat.agent.sandbox.enabled#` is enabled. When `#chat.agent.sandbox.allowNetwork#` is enabled, all domains are allowed. Supports wildcards like `*.example.com`. When both allowed and denied lists are empty, all domains are blocked. Denied domains (see `#chat.agent.deniedNetworkDomains#`) take precedence.</string>
+			<string id="ChatAgentAllowedNetworkDomains_chat_agent_allowedNetworkDomains">Allowed domains for network access by agent tools (fetch tool, integrated browser). Applies when `#chat.agent.networkFilter#` or `#chat.agent.sandbox.enabled#` is enabled. When `#chat.agent.sandbox.allowNetwork#` is enabled, all domains are allowed. Supports wildcards like `*.example.com`. When both allowed and denied lists are empty, all domains are blocked. Denied domains (see `#chat.agent.deniedNetworkDomains#`) take precedence.
+
+Changes may not take full effect until VS Code is restarted.</string>
 			<string id="ChatAgentDeniedNetworkDomains">ChatAgentDeniedNetworkDomains</string>
-			<string id="ChatAgentDeniedNetworkDomains_chat_agent_deniedNetworkDomains">Denied domains for network access by agent tools (fetch tool, integrated browser). Applies when `#chat.agent.networkFilter#` or `#chat.agent.sandbox.enabled#` is enabled. This does not apply when `#chat.agent.sandbox.allowNetwork#` is enabled. Takes precedence over `#chat.agent.allowedNetworkDomains#`. Supports wildcards like `*.example.com`.</string>
+			<string id="ChatAgentDeniedNetworkDomains_chat_agent_deniedNetworkDomains">Denied domains for network access by agent tools (fetch tool, integrated browser). Applies when `#chat.agent.networkFilter#` or `#chat.agent.sandbox.enabled#` is enabled. This does not apply when `#chat.agent.sandbox.allowNetwork#` is enabled. Takes precedence over `#chat.agent.allowedNetworkDomains#`. Supports wildcards like `*.example.com`.
+
+Changes may not take full effect until VS Code is restarted.</string>
 			<string id="ChatAgentExtensionTools">ChatAgentExtensionTools</string>
 			<string id="ChatAgentExtensionTools_chat_extensionToolsEnabled">Enable using tools contributed by third-party extensions.</string>
+			<string id="ChatAgentHostCustomTerminalTool">ChatAgentHostCustomTerminalTool</string>
+			<string id="ChatAgentHostCustomTerminalTool_chat_agentHost_customTerminalTool_enabled_policy">Enable the Agent Host custom terminal tool override for Copilot SDK sessions.</string>
 			<string id="ChatAgentMode">ChatAgentMode</string>
 			<string id="ChatAgentMode_chat_agent_enabled_description">When enabled, agent mode can be activated from chat and tools in agentic contexts with side effects can be used.</string>
 			<string id="ChatAgentNetworkFilter">ChatAgentNetworkFilter</string>
-			<string id="ChatAgentNetworkFilter_chat_agent_networkFilter">When enabled, network access by agent tools (fetch tool, integrated browser) is restricted according to `#chat.agent.allowedNetworkDomains#` and `#chat.agent.deniedNetworkDomains#`. Domain filtering is also applied to those tools when `#chat.agent.sandbox.enabled#` is enabled.</string>
+			<string id="ChatAgentNetworkFilter_chat_agent_networkFilter">When enabled, network access by agent tools (fetch tool, integrated browser) is restricted according to `#chat.agent.allowedNetworkDomains#` and `#chat.agent.deniedNetworkDomains#`. Domain filtering is also applied to those tools when `#chat.agent.sandbox.enabled#` is enabled.
+
+Changes may not take full effect until VS Code is restarted.</string>
 			<string id="ChatAllowedMcpServers">ChatAllowedMcpServers</string>
 			<string id="ChatAllowedMcpServers_chat_mcp_allowedServers_policy">Allowlist of Model Context Protocol servers. When set, only servers matching an entry may be installed or run; omit entirely to allow all servers (subject to the deny list).</string>
 			<string id="ChatAllowManagedHooksOnly">ChatAllowManagedHooksOnly</string>
@@ -130,6 +141,10 @@ Note: This setting only controls tool approval and does not prevent the agent fr
 			<string id="McpGalleryServiceUrl_mcp_gallery_serviceUrl">Configure the MCP Gallery service URL to connect to</string>
 			<string id="AllowedExtensions">AllowedExtensions</string>
 			<string id="AllowedExtensions_extensions_allowed_policy">Specify a list of extensions that are allowed to use. This helps maintain a secure and consistent development environment by restricting the use of unauthorized extensions. More information: https://aka.ms/vscode/enterprise/extensions/allowed</string>
+			<string id="ExtensionGalleryAuthProvider">ExtensionGalleryAuthProvider</string>
+			<string id="ExtensionGalleryAuthProvider_extensions_gallery_authProvider">Configure the authentication provider for the Extensions Marketplace</string>
+			<string id="ExtensionGalleryAuthProvider_extensions_gallery_authProvider_github">Authenticate to the Extensions Marketplace using GitHub.</string>
+			<string id="ExtensionGalleryAuthProvider_extensions_gallery_authProvider_microsoft">Authenticate to the Extensions Marketplace using a Microsoft (Entra ID) account.</string>
 			<string id="ExtensionGalleryServiceUrl">ExtensionGalleryServiceUrl</string>
 			<string id="ExtensionGalleryServiceUrl_extensions_gallery_serviceUrl">Configure the Marketplace service URL to connect to</string>
 			<string id="ExtensionsAutoUpdate">ExtensionsAutoUpdate</string>
@@ -166,10 +181,12 @@ Note: This setting only controls tool approval and does not prevent the agent fr
 			<string id="UpdateMode_default">Enable automatic update checks. Code will check for updates automatically and periodically.</string>
 		</stringTable>
 		<presentationTable>
+			<presentation id="AgentsVoice"><checkBox refId="AgentsVoice">AgentsVoice</checkBox></presentation>
 			<presentation id="BrowserChatTools"><checkBox refId="BrowserChatTools">BrowserChatTools</checkBox></presentation>
 			<presentation id="ChatAgentAllowedNetworkDomains"><multiTextBox refId="ChatAgentAllowedNetworkDomains" /></presentation>
 			<presentation id="ChatAgentDeniedNetworkDomains"><multiTextBox refId="ChatAgentDeniedNetworkDomains" /></presentation>
 			<presentation id="ChatAgentExtensionTools"><checkBox refId="ChatAgentExtensionTools">ChatAgentExtensionTools</checkBox></presentation>
+			<presentation id="ChatAgentHostCustomTerminalTool"><checkBox refId="ChatAgentHostCustomTerminalTool">ChatAgentHostCustomTerminalTool</checkBox></presentation>
 			<presentation id="ChatAgentMode"><checkBox refId="ChatAgentMode">ChatAgentMode</checkBox></presentation>
 			<presentation id="ChatAgentNetworkFilter"><checkBox refId="ChatAgentNetworkFilter">ChatAgentNetworkFilter</checkBox></presentation>
 			<presentation id="ChatAllowedMcpServers"><multiTextBox refId="ChatAllowedMcpServers" /></presentation>
@@ -209,6 +226,7 @@ Note: This setting only controls tool approval and does not prevent the agent fr
 			<presentation id="McpEnterpriseManagedAuthIdp"><multiTextBox refId="McpEnterpriseManagedAuthIdp" /></presentation>
 			<presentation id="McpGalleryServiceUrl"><textBox refId="McpGalleryServiceUrl"><label>McpGalleryServiceUrl:</label></textBox></presentation>
 			<presentation id="AllowedExtensions"><multiTextBox refId="AllowedExtensions" /></presentation>
+			<presentation id="ExtensionGalleryAuthProvider"><dropdownList refId="ExtensionGalleryAuthProvider" /></presentation>
 			<presentation id="ExtensionGalleryServiceUrl"><textBox refId="ExtensionGalleryServiceUrl"><label>ExtensionGalleryServiceUrl:</label></textBox></presentation>
 			<presentation id="ExtensionsAutoUpdate"><dropdownList refId="ExtensionsAutoUpdate" /></presentation>
 			<presentation id="ExtensionsAutoUpdateDelay"><decimalTextBox refId="ExtensionsAutoUpdateDelay" defaultValue="12">ExtensionsAutoUpdateDelay</decimalTextBox></presentation>
