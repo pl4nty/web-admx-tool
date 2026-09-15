@@ -511,6 +511,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="DistributedShareMode_Policy" class="Machine" displayName="$(string.DistributedShareMode_Policy)" explainText="$(string.DistributedShareMode_Explain)" presentation="$(presentation.DistributedShareMode_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\VDI" valueName="DistributedShareMode">
+      <parentCategory ref="zoomvdiclient" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="SetUpWaitingTimeUpperBoundInSeconds_Policy" class="Machine" displayName="$(string.SetUpWaitingTimeUpperBoundInSeconds_Policy)" explainText="$(string.SetUpWaitingTimeUpperBoundInSeconds_Explain)" presentation="$(presentation.SetUpWaitingTimeUpperBoundInSeconds_Policy)" key="SOFTWARE\Policies\Zoom\Zoom Meetings\General">
       <parentCategory ref="zoomvdiclient" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />

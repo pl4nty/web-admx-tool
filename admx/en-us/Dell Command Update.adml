@@ -6,7 +6,7 @@
 * contained therein is expressly limited to the terms and conditions of the License Agreement under which it is
 * provided by or on behalf of Dell Inc. or its subsidiaries.
 *
-* Copyright 2023-2025 Dell Inc. or its subsidiaries. All Rights Reserved.
+* Copyright 2023-2026 Dell Inc. or its subsidiaries. All Rights Reserved.
 * 
 *  DELL INC. MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE SUITABILITY OF THE SOFTWARE, EITHER
 * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY,
@@ -200,6 +200,12 @@ XY789Z
 9Z8Y7</string>
 			<string id="String_Policy_Bandwidth_Throttle">Bandwidth Throttle</string>
 			<string id="String_Policy_Bandwidth_Throttle_Help">Configure the Bandwidth throttle to limit the maximum network speed for usage.</string>
+			<string id="String_Policy_Enable_Scheduler_Retry">Randomized Scheduler Retry on Failed Updates</string>
+			<string id="String_Explain_Enable_Scheduler_Retry">Enable retry for scheduled updates which have failed. Retry interval will be randomized within a given range configured by the randomized retry interval. The maximum number of retries is configured by the retry count.</string>
+			<string id="String_Policy_Scheduler_Retry_Count">Retry Count for Randomized Retry</string>
+			<string id="String_Explain_Scheduler_Retry_Count">Sets the maximum number of retry attempts for the randomized retry feature. Valid range: 1-3. Default: 1. Applies only when randomized retry is enabled.</string>
+			<string id="String_Policy_Scheduler_Max_Retry_Interval">Randomized Retry Interval</string>
+			<string id="String_Explain_Scheduler_Max_Retry_Interval">Sets the randomized retry interval (in hours) within which retry attempts are scheduled. Valid range: 1-8. Default: 1. The randomized interval will not be less than 30 minutes. Applies only when randomized retry is enabled.</string>
 		</stringTable>
 		<presentationTable ><!--Storage for Presentation Definitions-->
 
@@ -283,6 +289,14 @@ XY789Z
 
 				 <text>Maximum Speed (Mbps (1-999))</text>
 				<decimalTextBox refId="Maximum_Speed_Limit"></decimalTextBox>
+			</presentation>
+
+			<presentation id="Policy_Scheduler_Retry_Count" >
+				<decimalTextBox refId="Scheduler_Retry_Count" defaultValue="1">Retry Count for Randomized Retry (1-3):</decimalTextBox>
+			</presentation>
+
+			<presentation id="Policy_Scheduler_Max_Retry_Interval" >
+				<decimalTextBox refId="Scheduler_Max_Retry_Interval" defaultValue="1">Randomized Retry Interval (1-8):</decimalTextBox>
 			</presentation>
 			
 		</presentationTable>

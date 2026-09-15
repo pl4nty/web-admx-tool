@@ -425,6 +425,12 @@ This policy will only toggle HID share control only with MS Teams VDI 2.0. This 
 0 - Do not display the MQTT QR code in AVD environment if plugin is not connected.
 
 1 - (default) Display the MQTT pairing QR code in AVD environment if plugin is not connected.</string>
+      <string id="DistributedShareMode_Policy">Distributed share mode</string>
+      <string id="DistributedShareMode_Explain">0 - Disable distributed share (default)
+
+1 - Enable distributed share
+
+Receive shared content directly from the server.</string>
       <string id="SetUpWaitingTimeUpperBoundInSeconds_Policy">Set Up Waiting Time Upper Bound in Seconds</string>
       <string id="SetUpWaitingTimeUpperBoundInSeconds_Part">Set Up Waiting Time Upper Bound in Seconds</string>
       <string id="SetUpWaitingTimeUpperBoundInSeconds_Explain">240 (Default)
@@ -566,6 +572,7 @@ This registry setting allows customers to configure the upper bound of that rand
         </textBox>
       </presentation>
       <presentation id="CheckHIDControl_Policy" />
+      <presentation id="DistributedShareMode_Policy" />
       <presentation id="SetUpWaitingTimeUpperBoundInSeconds_Policy">
         <decimalTextBox refId="SetUpWaitingTimeUpperBoundInSeconds_Part" spinStep="1">Set Up Waiting Time Upper Bound in Seconds</decimalTextBox>
       </presentation>

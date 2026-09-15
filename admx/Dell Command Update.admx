@@ -983,6 +983,33 @@
 					<decimal id="Maximum_Speed_Limit" valueName="ThrottleLimit" minValue="1" maxValue="999" required="true" />
 				</elements>
 		</policy>
-			
+
+		<policy name="Policy_Enable_Scheduler_Retry" class="Machine" displayName="$(string.String_Policy_Enable_Scheduler_Retry)" explainText="$(string.String_Explain_Enable_Scheduler_Retry)" key="SOFTWARE\Policies\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\Schedule" valueName="SchedulerRetryEnabled" >
+			<parentCategory ref="Cat_Update_Settings_9" />
+			<supportedOn ref="SupportedOn_1" />
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="Policy_Scheduler_Retry_Count" class="Machine" displayName="$(string.String_Policy_Scheduler_Retry_Count)" explainText="$(string.String_Explain_Scheduler_Retry_Count)" key="SOFTWARE\Policies\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\Schedule" presentation="$(presentation.Policy_Scheduler_Retry_Count)" >
+			<parentCategory ref="Cat_Update_Settings_9" />
+			<supportedOn ref="SupportedOn_1" />
+			<elements >
+				<decimal id="Scheduler_Retry_Count" valueName="SchedulerRetryCount" minValue="1" maxValue="3" required="true" />
+			</elements>
+		</policy>
+
+		<policy name="Policy_Scheduler_Max_Retry_Interval" class="Machine" displayName="$(string.String_Policy_Scheduler_Max_Retry_Interval)" explainText="$(string.String_Explain_Scheduler_Max_Retry_Interval)" key="SOFTWARE\Policies\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\Schedule" presentation="$(presentation.Policy_Scheduler_Max_Retry_Interval)" >
+			<parentCategory ref="Cat_Update_Settings_9" />
+			<supportedOn ref="SupportedOn_1" />
+			<elements >
+				<decimal id="Scheduler_Max_Retry_Interval" valueName="SchedulerMaxRetryInterval" minValue="1" maxValue="8" required="true" />
+			</elements>
+		</policy>
+
 	</policies>
 </policyDefinitions>
