@@ -127,6 +127,20 @@
 	</elements>
     </policy>
     <policy 
+		name="POL_RDM_CREDENTIALPROMPTDOMAINFIELD"
+		class="Both" 
+		displayName="$(string.POL_RDM_CREDENTIALPROMPTDOMAINFIELD)"
+		explainText="$(string.POL_RDM_CREDENTIALPROMPTDOMAINFIELD_HELP)"
+		presentation="$(presentation.INPUT_DEC_CREDENTIALPROMPTDOMAINFIELD)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="CredentialPromptDomainField">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_CREDENTIALPROMPTDOMAINFIELD" valueName="CredentialPromptDomainField" maxValue="3" />
+	</elements>
+    </policy>
+    <policy 
 		name="POL_RDM_CYBERARKENFORCEIDLESESSION"
 		class="Both" 
 		displayName="$(string.POL_RDM_CYBERARKENFORCEIDLESESSION)"
@@ -205,6 +219,22 @@
 		explainText="$(string.POL_RDM_DASHBOARDHIDEALLATTACHMENTSPANELS_HELP)"
 		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
 		valueName="DashboardHideAllAttachmentsPanels">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DASHBOARDHIDEALLAUTOMATIONPANELS"
+		class="Both"
+		displayName="$(string.POL_RDM_DASHBOARDHIDEALLAUTOMATIONPANELS)"
+		explainText="$(string.POL_RDM_DASHBOARDHIDEALLAUTOMATIONPANELS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DashboardHideAllAutomationPanels">
       <parentCategory ref="CAT_RDM_UI" />
       <supportedOn ref="SUPPORTED_WindowsVista" />
 		<enabledValue>
@@ -691,6 +721,22 @@
 		</disabledValue>
     </policy>
     <policy 
+		name="POL_RDM_DISABLEFEEDBACKPROMPTS"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEFEEDBACKPROMPTS)"
+		explainText="$(string.POL_RDM_DISABLEFEEDBACKPROMPTS_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableFeedbackPrompts">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
 		name="POL_RDM_DISABLEFILEDATASOURCES"
 		class="Both"
 		displayName="$(string.POL_RDM_DISABLEFILEDATASOURCES)"
@@ -1155,6 +1201,22 @@
 		</disabledValue>
     </policy>
     <policy 
+		name="POL_RDM_DISABLEQUICKSTART"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLEQUICKSTART)"
+		explainText="$(string.POL_RDM_DISABLEQUICKSTART_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableQuickStart">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
 		name="POL_RDM_DISABLERDPGATEWAYEDITIONINENTRY"
 		class="Both"
 		displayName="$(string.POL_RDM_DISABLERDPGATEWAYEDITIONINENTRY)"
@@ -1411,44 +1473,12 @@
 		</disabledValue>
     </policy>
     <policy 
-		name="POL_RDM_DISABLETOOLSRDMAGENT"
-		class="Both"
-		displayName="$(string.POL_RDM_DISABLETOOLSRDMAGENT)"
-		explainText="$(string.POL_RDM_DISABLETOOLSRDMAGENT_HELP)"
-		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
-		valueName="DisableToolsRDMAgent">
-      <parentCategory ref="CAT_RDM_UI" />
-      <supportedOn ref="SUPPORTED_WindowsVista" />
-		<enabledValue>
-			<decimal value="1" />
-		</enabledValue>
-		<disabledValue>
-        <decimal value="0" />
-		</disabledValue>
-    </policy>
-    <policy 
 		name="POL_RDM_DISABLETOOLSWINGETCONSOLE"
 		class="Both"
 		displayName="$(string.POL_RDM_DISABLETOOLSWINGETCONSOLE)"
 		explainText="$(string.POL_RDM_DISABLETOOLSWINGETCONSOLE_HELP)"
 		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
 		valueName="DisableToolsWingetConsole">
-      <parentCategory ref="CAT_RDM_UI" />
-      <supportedOn ref="SUPPORTED_WindowsVista" />
-		<enabledValue>
-			<decimal value="1" />
-		</enabledValue>
-		<disabledValue>
-        <decimal value="0" />
-		</disabledValue>
-    </policy>
-    <policy 
-		name="POL_RDM_DISABLETOPPANE"
-		class="Both"
-		displayName="$(string.POL_RDM_DISABLETOPPANE)"
-		explainText="$(string.POL_RDM_DISABLETOPPANE_HELP)"
-		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
-		valueName="DisableTopPane">
       <parentCategory ref="CAT_RDM_UI" />
       <supportedOn ref="SUPPORTED_WindowsVista" />
 		<enabledValue>
@@ -1661,6 +1691,20 @@
 		</disabledValue>
     </policy>
     <policy 
+		name="POL_RDM_FORCEDEVOLUTIONSSENDREGION"
+		class="Both" 
+		displayName="$(string.POL_RDM_FORCEDEVOLUTIONSSENDREGION)"
+		explainText="$(string.POL_RDM_FORCEDEVOLUTIONSSENDREGION_HELP)"
+		presentation="$(presentation.INPUT_DEC_FORCEDEVOLUTIONSSENDREGION)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="ForceDevolutionsSendRegion">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_FORCEDEVOLUTIONSSENDREGION" valueName="ForceDevolutionsSendRegion" maxValue="2" />
+	</elements>
+    </policy>
+    <policy 
 		name="POL_RDM_FORCEDISABLEALLSESSIONEVENTS"
 		class="Both"
 		displayName="$(string.POL_RDM_FORCEDISABLEALLSESSIONEVENTS)"
@@ -1809,6 +1853,22 @@
 		explainText="$(string.POL_RDM_FORCELOGIN_HELP)"
 		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
 		valueName="ForceLogin">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_FORCEOFFLINEMODEENHANCEDSECURITY"
+		class="Both"
+		displayName="$(string.POL_RDM_FORCEOFFLINEMODEENHANCEDSECURITY)"
+		explainText="$(string.POL_RDM_FORCEOFFLINEMODEENHANCEDSECURITY_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="ForceOfflineModeEnhancedSecurity">
       <parentCategory ref="CAT_RDM_SECURITY" />
       <supportedOn ref="SUPPORTED_WindowsVista" />
 		<enabledValue>
@@ -2177,7 +2237,7 @@
       <parentCategory ref="CAT_RDM_SESSIONS" />
       <supportedOn ref="SUPPORTED_WindowsVista" />
 	<elements>
-        	<decimal id="INPUT_DEC_NONMODALEDIT" valueName="NonModalEdit" maxValue="20000" />
+        	<decimal id="INPUT_DEC_NONMODALEDIT" valueName="NonModalEdit" maxValue="2" />
 	</elements>
     </policy>
     <policy 
@@ -2261,22 +2321,6 @@
 		explainText="$(string.POL_RDM_RESTRICTTOHUBBUSINESSDATASOURCE_HELP)"
 		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
 		valueName="RestrictToHubBusinessDataSource">
-      <parentCategory ref="CAT_RDM_GENERAL" />
-      <supportedOn ref="SUPPORTED_WindowsVista" />
-		<enabledValue>
-			<decimal value="1" />
-		</enabledValue>
-		<disabledValue>
-        <decimal value="0" />
-		</disabledValue>
-    </policy>
-    <policy 
-		name="POL_RDM_RESTRICTTOHUBPERSONALDATASOURCE"
-		class="Both"
-		displayName="$(string.POL_RDM_RESTRICTTOHUBPERSONALDATASOURCE)"
-		explainText="$(string.POL_RDM_RESTRICTTOHUBPERSONALDATASOURCE_HELP)"
-		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
-		valueName="RestrictToHubPersonalDataSource">
       <parentCategory ref="CAT_RDM_GENERAL" />
       <supportedOn ref="SUPPORTED_WindowsVista" />
 		<enabledValue>
