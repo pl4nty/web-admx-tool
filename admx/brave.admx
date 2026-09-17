@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--brave version: 153.1.97.35-->
+  <!--brave version: 154.1.97.39-->
   <policyNamespaces>
     <target namespace="BraveSoftware.Policies.Brave" prefix="brave"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -102,6 +102,9 @@
       <parentCategory ref="brave"/>
     </category>
     <category displayName="$(string.Proxy_group)" name="Proxy">
+      <parentCategory ref="brave"/>
+    </category>
+    <category displayName="$(string.Relaunch_group)" name="Relaunch">
       <parentCategory ref="brave"/>
     </category>
     <category displayName="$(string.RemoteAccess_group)" name="RemoteAccess">
@@ -3081,6 +3084,13 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.AutofillSettings)" explainText="$(string.AutofillSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AutofillSettings" presentation="$(presentation.AutofillSettings)">
+      <parentCategory ref="brave"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <text id="AutofillSettings" maxLength="1000000" valueName="AutofillSettings"/>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.AutoplayAllowed)" explainText="$(string.AutoplayAllowed_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AutoplayAllowed" presentation="$(presentation.AutoplayAllowed)" valueName="AutoplayAllowed">
       <parentCategory ref="brave"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -4606,45 +4616,6 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
-    <policy class="Both" displayName="$(string.RelaunchFastIfOutdated)" explainText="$(string.RelaunchFastIfOutdated_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RelaunchFastIfOutdated" presentation="$(presentation.RelaunchFastIfOutdated)">
-      <parentCategory ref="brave"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <decimal id="RelaunchFastIfOutdated" maxValue="2000000000" minValue="7" valueName="RelaunchFastIfOutdated"/>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.RelaunchNotification)" explainText="$(string.RelaunchNotification_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RelaunchNotification" presentation="$(presentation.RelaunchNotification)">
-      <parentCategory ref="brave"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <enum id="RelaunchNotification" valueName="RelaunchNotification">
-          <item displayName="$(string.RelaunchNotification_Recommended)">
-            <value>
-              <decimal value="1"/>
-            </value>
-          </item>
-          <item displayName="$(string.RelaunchNotification_Required)">
-            <value>
-              <decimal value="2"/>
-            </value>
-          </item>
-        </enum>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.RelaunchNotificationPeriod)" explainText="$(string.RelaunchNotificationPeriod_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RelaunchNotificationPeriod" presentation="$(presentation.RelaunchNotificationPeriod)">
-      <parentCategory ref="brave"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <decimal id="RelaunchNotificationPeriod" maxValue="2000000000" minValue="3600000" valueName="RelaunchNotificationPeriod"/>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.RelaunchWindow)" explainText="$(string.RelaunchWindow_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RelaunchWindow" presentation="$(presentation.RelaunchWindow)">
-      <parentCategory ref="brave"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <text id="RelaunchWindow" maxLength="1000000" valueName="RelaunchWindow"/>
-      </elements>
-    </policy>
     <policy class="Both" displayName="$(string.RemoteDebuggingAllowed)" explainText="$(string.RemoteDebuggingAllowed_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RemoteDebuggingAllowed" presentation="$(presentation.RemoteDebuggingAllowed)" valueName="RemoteDebuggingAllowed">
       <parentCategory ref="brave"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -5999,6 +5970,45 @@
       <supportedOn ref="SUPPORTED_WIN7"/>
       <elements>
         <decimal id="EnableProxyOverrideRulesForAllUsers" maxValue="2000000000" minValue="0" valueName="EnableProxyOverrideRulesForAllUsers"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.RelaunchFastIfOutdated)" explainText="$(string.RelaunchFastIfOutdated_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RelaunchFastIfOutdated" presentation="$(presentation.RelaunchFastIfOutdated)">
+      <parentCategory ref="Relaunch"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <decimal id="RelaunchFastIfOutdated" maxValue="2000000000" minValue="7" valueName="RelaunchFastIfOutdated"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.RelaunchNotification)" explainText="$(string.RelaunchNotification_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RelaunchNotification" presentation="$(presentation.RelaunchNotification)">
+      <parentCategory ref="Relaunch"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="RelaunchNotification" valueName="RelaunchNotification">
+          <item displayName="$(string.RelaunchNotification_Recommended)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.RelaunchNotification_Required)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.RelaunchNotificationPeriod)" explainText="$(string.RelaunchNotificationPeriod_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RelaunchNotificationPeriod" presentation="$(presentation.RelaunchNotificationPeriod)">
+      <parentCategory ref="Relaunch"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <decimal id="RelaunchNotificationPeriod" maxValue="2000000000" minValue="3600000" valueName="RelaunchNotificationPeriod"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.RelaunchWindow)" explainText="$(string.RelaunchWindow_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RelaunchWindow" presentation="$(presentation.RelaunchWindow)">
+      <parentCategory ref="Relaunch"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <text id="RelaunchWindow" maxLength="1000000" valueName="RelaunchWindow"/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.RemoteAccessHostAllowClientPairing)" explainText="$(string.RemoteAccessHostAllowClientPairing_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RemoteAccessHostAllowClientPairing" presentation="$(presentation.RemoteAccessHostAllowClientPairing)" valueName="RemoteAccessHostAllowClientPairing">
