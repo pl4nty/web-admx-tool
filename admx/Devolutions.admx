@@ -641,6 +641,22 @@
 		</disabledValue>
     </policy>
     <policy 
+		name="POL_RDM_DISABLECUSTOMSERVERROLES"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLECUSTOMSERVERROLES)"
+		explainText="$(string.POL_RDM_DISABLECUSTOMSERVERROLES_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableCustomServerRoles">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
 		name="POL_RDM_DISABLECYBERARKPASSWORDRETRIEVAL"
 		class="Both"
 		displayName="$(string.POL_RDM_DISABLECYBERARKPASSWORDRETRIEVAL)"
