@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<policyDefinitionResources revision="7.1" schemaVersion="1.0">
+<policyDefinitionResources revision="7.2" schemaVersion="1.0">
   <displayName>ZoomMeetings</displayName>
   <description>ZoomMeetings</description>
   <resources>
@@ -1819,15 +1819,6 @@ If this policy is enabled, client will disable in-meeting whiteboard.
 If this policy is disabled, client will enable in-meeting whiteboard.
 
 If this policy is not set, client will use the default setting.</string>
-      <string id="HideSelfView_Policy">Set to hide self view in the meeting</string>
-      <string id="HideSelfView_Policy_Recommend">Set to hide self view in the meeting (Recommendation Setting)</string>
-      <string id="HideSelfView_Explain">Default policy is disabled.
-
-If this policy is enabled, client will hide self view in the meeting.
-
-If this policy is disabled, client will not hide self view in the meeting.
-
-If this policy is not set, client will use the default setting.</string>
       <string id="PreproxyDetectPolicy_Policy">Set up to use the different policy to do proxy pre-detection</string>
       <string id="PreproxyDetectPolicy_Policy_Recommend">Set up to use the different policy to do proxy pre-detection (Recommendation Setting)</string>
       <string id="PreproxyDetectPolicy_Part">Set up to use the different policy to do proxy pre-detection</string>
@@ -2437,8 +2428,8 @@ If zPolicy_MemorySaverEnabled is disabled, this policy will not take effect.</st
       <string id="DisableMyNotes_Policy">Disable the My Notes feature</string>
       <string id="DisableMyNotes_Policy_Recommend">Disable the My Notes feature (Recommendation Setting)</string>
       <string id="DisableMyNotes_Explain">Default policy is disabled.
-If this policy is enabled, the client will enable the My Notes feature.
-If this policy is disabled, the client will disable the My Notes feature.
+If this policy is enabled, the client will disable the My Notes feature.
+If this policy is disabled, the client will enable the My Notes feature.
 If this policy is not set, client will use the default setting.</string>
       <string id="ADMXMigrator_UnresolvedString">ADMX Migrator encountered a string that is not present in the source ADM string table.</string>
       <string id="ADMXMigrator_NoSupportedOn">ADMX Migrator encountered a policy that does not have a supportedOn value.</string>
@@ -2473,6 +2464,78 @@ If this policy is set, the client will use the specified mode for web request ra
 The value range is 0 to 3: 0 disables client-side web request rate limiting, 1 enables telemetry only, 2 enables rate limiting without telemetry, and 3 enables both telemetry and rate limiting.
 If this policy is not set, client will use the default setting.</string>
       <string id="WebRequestRateLimit_ClientMode_Part">Set the client mode for web request rate limiting</string>
+      <string id="AlwaysUseDarkThemeForMeetings_Policy">Always use a dark theme for meetings</string>
+      <string id="AlwaysUseDarkThemeForMeetings_Policy_Recommend">Always use a dark theme for meetings (Recommendation Setting)</string>
+      <string id="AlwaysUseDarkThemeForMeetings_Explain">Default policy is enabled.
+If this policy is enabled, the client will always use a dark theme for in-meeting surfaces.
+If this policy is disabled, the client will not force a dark meeting theme and will follow the user appearance preference where supported.
+If this policy is not set, client will use the default setting.</string>
+      <string id="AutoStartPhoneMyNotes_Policy">Enable auto-start for Zoom Phone My Notes</string>
+      <string id="AutoStartPhoneMyNotes_Policy_Recommend">Enable auto-start for Zoom Phone My Notes (Recommendation Setting)</string>
+      <string id="AutoStartPhoneMyNotes_Explain">Default policy is disabled.
+If this policy is enabled, the client will automatically start Zoom Phone My Notes.
+If this policy is disabled, the client will not automatically start Zoom Phone My Notes.
+If this policy is not set, client will use the default setting.</string>
+      <string id="DisableWebinarAttendeeAudio_Policy">Disable computer audio for webinar attendees</string>
+      <string id="DisableWebinarAttendeeAudio_Policy_Recommend">Disable computer audio for webinar attendees (Recommendation Setting)</string>
+      <string id="DisableWebinarAttendeeAudio_Explain">Default policy is disabled.
+If this policy is enabled, the client will disable computer audio for webinar attendees.
+If this policy is disabled, the client will not disable computer audio for webinar attendees.
+If this policy is not set, client will use the default setting.</string>
+      <string id="EnableAsyncProxyResolve_Policy">Enable asynchronous proxy resolution</string>
+      <string id="EnableAsyncProxyResolve_Policy_Recommend">Enable asynchronous proxy resolution (Recommendation Setting)</string>
+      <string id="EnableAsyncProxyResolve_Explain">Default policy is disabled.
+If this policy is enabled, the client will resolve proxy settings asynchronously.
+If this policy is disabled, the client will not use asynchronous proxy resolution.
+If this policy is not set, client will use the default setting.</string>
+      <string id="EnableBatchProxyResolveViaAsync_Policy">Enable batch proxy resolution through the async path</string>
+      <string id="EnableBatchProxyResolveViaAsync_Policy_Recommend">Enable batch proxy resolution through the async path (Recommendation Setting)</string>
+      <string id="EnableBatchProxyResolveViaAsync_Explain">Default policy is disabled.
+If this policy is enabled, the client will resolve multiple proxy requests in a batch through the asynchronous proxy path.
+If this policy is disabled, the client will not use batch proxy resolution through the asynchronous path.
+If this policy is not set, client will use the default setting.</string>
+      <string id="EnableHandleRedirectProxy_Policy">Enable handling of redirect proxy</string>
+      <string id="EnableHandleRedirectProxy_Policy_Recommend">Enable handling of redirect proxy (Recommendation Setting)</string>
+      <string id="EnableHandleRedirectProxy_Explain">Default policy is disabled.
+If this policy is enabled, the client will handle redirect proxy during proxy resolution.
+If this policy is disabled, the client will not handle redirect proxy during proxy resolution.
+If this policy is not set, client will use the default setting.</string>
+      <string id="EnableNewHomePage_Policy">Enable the new home page</string>
+      <string id="EnableNewHomePage_Policy_Recommend">Enable the new home page (Recommendation Setting)</string>
+      <string id="EnableNewHomePage_Explain">Default policy is enabled.
+If this policy is enabled, the client will use the new home page.
+If this policy is disabled, the client will not use the new home page.
+If this policy is not set, client will use the default setting.</string>
+      <string id="EnableSharedCameraAmongZoomApps_Policy">Enable sharing the camera among Zoom apps</string>
+      <string id="EnableSharedCameraAmongZoomApps_Policy_Recommend">Enable sharing the camera among Zoom apps (Recommendation Setting)</string>
+      <string id="EnableSharedCameraAmongZoomApps_Explain">Default policy is disabled.
+If this policy is enabled, the client will allow Zoom apps to share the camera through the unified camera setting.
+If this policy is disabled, the client will not enable sharing the camera among Zoom apps.
+If this policy is not set, client will use the default setting.</string>
+      <string id="EnableWinZSafeChecker_Policy">Set whether zSafeChecker is allowed to run</string>
+      <string id="EnableWinZSafeChecker_Policy_Recommend">Set whether zSafeChecker is allowed to run (Recommendation Setting)</string>
+      <string id="EnableWinZSafeChecker_Explain">Default setting is 0.
+If this policy is set to 0, the client will allow zSafeChecker.exe to run.
+If this policy is set to 1, the client will skip the Program Files folder when running zSafeChecker.exe.
+If this policy is set to 2, the client will disallow zSafeChecker.exe from running.
+The value range is 0 to 2.
+If this policy is not set, client will use the default setting.</string>
+      <string id="EnableWinZSafeChecker_Part">Set whether zSafeChecker is allowed to run</string>
+      <string id="SelfViewMode_Policy">Set the default self-view option</string>
+      <string id="SelfViewMode_Policy_Recommend">Set the default self-view option (Recommendation Setting)</string>
+      <string id="SelfViewMode_Explain">Default setting is 0.
+If this policy is set to 0, the client will show self view in the gallery.
+If this policy is set to 1, the client will hide self view in the meeting.
+If this policy is set to 2, the client will float self view over the gallery.
+The value range is 0 to 2.
+If this policy is not set, client will use the default setting.</string>
+      <string id="SelfViewMode_Part">Set the default self-view option</string>
+      <string id="SetMultipleSSOVanityUrl_Policy">Set multiple SSO vanity URLs</string>
+      <string id="SetMultipleSSOVanityUrl_Policy_Recommend">Set multiple SSO vanity URLs (Recommendation Setting)</string>
+      <string id="SetMultipleSSOVanityUrl_Explain">Default setting is empty.
+If this policy is set, the client will use the specified SSO vanity URLs and users can select from them.
+If this policy is not set, client will use the default setting.</string>
+      <string id="SetMultipleSSOVanityUrl_Part">Set multiple SSO vanity URLs</string>
     </stringTable>
     <presentationTable>
       <presentation id="EnableClientAutoUpdate_Policy" />
@@ -2851,7 +2914,6 @@ If this policy is not set, client will use the default setting.</string>
         </textBox>
       </presentation>
       <presentation id="DisableInMeetingWhiteBoard_Policy" />
-      <presentation id="HideSelfView_Policy" />
       <presentation id="SetVideoRenderingPostProcessing_Policy">
         <decimalTextBox refId="SetVideoRenderingPostProcessing_Part" defaultValue="0" spinStep="1">Set to enable video rendering post processing</decimalTextBox>
       </presentation>
@@ -2913,6 +2975,25 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="EnableWebRequestRateLimit_Server_Policy" />
       <presentation id="WebRequestRateLimit_ClientMode_Policy">
         <decimalTextBox refId="WebRequestRateLimit_ClientMode_Part" defaultValue="1" spinStep="1">Set the client mode for web request rate limiting</decimalTextBox>
+      </presentation>
+      <presentation id="AlwaysUseDarkThemeForMeetings_Policy" />
+      <presentation id="AutoStartPhoneMyNotes_Policy" />
+      <presentation id="DisableWebinarAttendeeAudio_Policy" />
+      <presentation id="EnableAsyncProxyResolve_Policy" />
+      <presentation id="EnableBatchProxyResolveViaAsync_Policy" />
+      <presentation id="EnableHandleRedirectProxy_Policy" />
+      <presentation id="EnableNewHomePage_Policy" />
+      <presentation id="EnableSharedCameraAmongZoomApps_Policy" />
+      <presentation id="EnableWinZSafeChecker_Policy">
+        <decimalTextBox refId="EnableWinZSafeChecker_Part" defaultValue="0" spinStep="1">Set whether zSafeChecker is allowed to run</decimalTextBox>
+      </presentation>
+      <presentation id="SelfViewMode_Policy">
+        <decimalTextBox refId="SelfViewMode_Part" defaultValue="0" spinStep="1">Set the default self-view option</decimalTextBox>
+      </presentation>
+      <presentation id="SetMultipleSSOVanityUrl_Policy">
+        <textBox refId="SetMultipleSSOVanityUrl_Part">
+          <label>Set multiple SSO vanity URLs</label>
+        </textBox>
       </presentation>
       <presentation id="EnableClientAutoUpdate_Policy_Recommend" />
       <presentation id="DisableCreatingDesktopShortcut_Policy_Recommend" />
@@ -3286,7 +3367,6 @@ If this policy is not set, client will use the default setting.</string>
         </textBox>
       </presentation>
       <presentation id="DisableInMeetingWhiteBoard_Policy_Recommend" />
-      <presentation id="HideSelfView_Policy_Recommend" />
       <presentation id="SetVideoRenderingPostProcessing_Policy_Recommend">
         <decimalTextBox refId="SetVideoRenderingPostProcessing_Part" defaultValue="0" spinStep="1">Set to enable video rendering post processing</decimalTextBox>
       </presentation>
@@ -3348,6 +3428,25 @@ If this policy is not set, client will use the default setting.</string>
       <presentation id="EnableWebRequestRateLimit_Server_Policy_Recommend" />
       <presentation id="WebRequestRateLimit_ClientMode_Policy_Recommend">
         <decimalTextBox refId="WebRequestRateLimit_ClientMode_Part" defaultValue="1" spinStep="1">Set the client mode for web request rate limiting</decimalTextBox>
+      </presentation>
+      <presentation id="AlwaysUseDarkThemeForMeetings_Policy_Recommend" />
+      <presentation id="AutoStartPhoneMyNotes_Policy_Recommend" />
+      <presentation id="DisableWebinarAttendeeAudio_Policy_Recommend" />
+      <presentation id="EnableAsyncProxyResolve_Policy_Recommend" />
+      <presentation id="EnableBatchProxyResolveViaAsync_Policy_Recommend" />
+      <presentation id="EnableHandleRedirectProxy_Policy_Recommend" />
+      <presentation id="EnableNewHomePage_Policy_Recommend" />
+      <presentation id="EnableSharedCameraAmongZoomApps_Policy_Recommend" />
+      <presentation id="EnableWinZSafeChecker_Policy_Recommend">
+        <decimalTextBox refId="EnableWinZSafeChecker_Part" defaultValue="0" spinStep="1">Set whether zSafeChecker is allowed to run</decimalTextBox>
+      </presentation>
+      <presentation id="SelfViewMode_Policy_Recommend">
+        <decimalTextBox refId="SelfViewMode_Part" defaultValue="0" spinStep="1">Set the default self-view option</decimalTextBox>
+      </presentation>
+      <presentation id="SetMultipleSSOVanityUrl_Policy_Recommend">
+        <textBox refId="SetMultipleSSOVanityUrl_Part">
+          <label>Set multiple SSO vanity URLs</label>
+        </textBox>
       </presentation>
     </presentationTable>
   </resources>

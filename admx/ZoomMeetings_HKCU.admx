@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<policyDefinitions revision="7.1" schemaVersion="1.0">
+<policyDefinitions revision="7.2" schemaVersion="1.0">
   <policyNamespaces>
-    <target prefix="fullarmor" namespace="ZoomMeetings_HKCU_7_1" />
+    <target prefix="fullarmor" namespace="ZoomMeetings_HKCU_7_2" />
     <using prefix="windows" namespace="Microsoft.Policies.Windows" />
   </policyNamespaces>
   <supersededAdm fileName="ZoomMeetings_HKCU.adm" />
-  <resources minRequiredRevision="7.1" />
+  <resources minRequiredRevision="7.2" />
   <supportedOn>
     <definitions>
       <definition name="SUPPORTED_WINXPSP2" displayName="$(string.SUPPORTED_WINXPSP2)" />
@@ -875,6 +875,70 @@
       <supportedOn ref="SUPPORTED_WINXPSP2" />
       <elements>
         <decimal id="WebRequestRateLimit_ClientMode_Part" valueName="WebRequestRateLimit_ClientMode" required="true" minValue="0" maxValue="3" />
+      </elements>
+    </policy>
+    <policy name="AutoStartPhoneMyNotes_Policy" class="User" displayName="$(string.AutoStartPhoneMyNotes_Policy)" explainText="$(string.AutoStartPhoneMyNotes_Explain)" presentation="$(presentation.AutoStartPhoneMyNotes_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="AutoStartPhoneMyNotes">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableAsyncProxyResolve_Policy" class="User" displayName="$(string.EnableAsyncProxyResolve_Policy)" explainText="$(string.EnableAsyncProxyResolve_Explain)" presentation="$(presentation.EnableAsyncProxyResolve_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="EnableAsyncProxyResolve">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableBatchProxyResolveViaAsync_Policy" class="User" displayName="$(string.EnableBatchProxyResolveViaAsync_Policy)" explainText="$(string.EnableBatchProxyResolveViaAsync_Explain)" presentation="$(presentation.EnableBatchProxyResolveViaAsync_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="EnableBatchProxyResolveViaAsync">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableHandleRedirectProxy_Policy" class="User" displayName="$(string.EnableHandleRedirectProxy_Policy)" explainText="$(string.EnableHandleRedirectProxy_Explain)" presentation="$(presentation.EnableHandleRedirectProxy_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="EnableHandleRedirectProxy">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableNewHomePage_Policy" class="User" displayName="$(string.EnableNewHomePage_Policy)" explainText="$(string.EnableNewHomePage_Explain)" presentation="$(presentation.EnableNewHomePage_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="EnableNewHomePage">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableWinZSafeChecker_Policy" class="User" displayName="$(string.EnableWinZSafeChecker_Policy)" explainText="$(string.EnableWinZSafeChecker_Explain)" presentation="$(presentation.EnableWinZSafeChecker_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="EnableWinZSafeChecker_Part" valueName="EnableWinZSafeChecker" required="true" minValue="0" maxValue="2" />
+      </elements>
+    </policy>
+    <policy name="SetMultipleSSOVanityUrl_Policy" class="User" displayName="$(string.SetMultipleSSOVanityUrl_Policy)" explainText="$(string.SetMultipleSSOVanityUrl_Explain)" presentation="$(presentation.SetMultipleSSOVanityUrl_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <text id="SetMultipleSSOVanityUrl_Part" valueName="SetMultipleSSOVanityUrl" />
       </elements>
     </policy>
     <policy name="AU2_EnableAutoUpdate_Policy" class="User" displayName="$(string.AU2_EnableAutoUpdate_Policy)" explainText="$(string.AU2_EnableAutoUpdate_Explain)" presentation="$(presentation.AU2_EnableAutoUpdate_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Updates" valueName="AU2_EnableAutoUpdate">
@@ -2254,16 +2318,6 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
-    <policy name="HideSelfView_Policy" class="User" displayName="$(string.HideSelfView_Policy)" explainText="$(string.HideSelfView_Explain)" presentation="$(presentation.HideSelfView_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Meetings" valueName="HideSelfView">
-      <parentCategory ref="zoommeetings" />
-      <supportedOn ref="SUPPORTED_WINXPSP2" />
-      <enabledValue>
-        <decimal value="1" />
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0" />
-      </disabledValue>
-    </policy>
     <policy name="SetVideoRenderingPostProcessing_Policy" class="User" displayName="$(string.SetVideoRenderingPostProcessing_Policy)" explainText="$(string.SetVideoRenderingPostProcessing_Explain)" presentation="$(presentation.SetVideoRenderingPostProcessing_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Meetings">
       <parentCategory ref="zoommeetings" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
@@ -2533,6 +2587,43 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy name="AlwaysUseDarkThemeForMeetings_Policy" class="User" displayName="$(string.AlwaysUseDarkThemeForMeetings_Policy)" explainText="$(string.AlwaysUseDarkThemeForMeetings_Explain)" presentation="$(presentation.AlwaysUseDarkThemeForMeetings_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Meetings" valueName="AlwaysUseDarkThemeForMeetings">
+      <parentCategory ref="zoommeetings" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableWebinarAttendeeAudio_Policy" class="User" displayName="$(string.DisableWebinarAttendeeAudio_Policy)" explainText="$(string.DisableWebinarAttendeeAudio_Explain)" presentation="$(presentation.DisableWebinarAttendeeAudio_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Meetings" valueName="DisableWebinarAttendeeAudio">
+      <parentCategory ref="zoommeetings" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableSharedCameraAmongZoomApps_Policy" class="User" displayName="$(string.EnableSharedCameraAmongZoomApps_Policy)" explainText="$(string.EnableSharedCameraAmongZoomApps_Explain)" presentation="$(presentation.EnableSharedCameraAmongZoomApps_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Meetings" valueName="EnableSharedCameraAmongZoomApps">
+      <parentCategory ref="zoommeetings" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SelfViewMode_Policy" class="User" displayName="$(string.SelfViewMode_Policy)" explainText="$(string.SelfViewMode_Explain)" presentation="$(presentation.SelfViewMode_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Meetings">
+      <parentCategory ref="zoommeetings" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="SelfViewMode_Part" valueName="SelfViewMode" required="true" minValue="0" maxValue="2" />
+      </elements>
     </policy>
     <policy name="EnableClientAutoUpdate_Policy_Recommend" class="User" displayName="$(string.EnableClientAutoUpdate_Policy_Recommend)" explainText="$(string.EnableClientAutoUpdate_Explain)" presentation="$(presentation.EnableClientAutoUpdate_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="EnableClientAutoUpdate">
       <parentCategory ref="zoomgeneral_recommend" />
@@ -3346,6 +3437,70 @@
       <supportedOn ref="SUPPORTED_WINXPSP2" />
       <elements>
         <decimal id="WebRequestRateLimit_ClientMode_Part" valueName="WebRequestRateLimit_ClientMode" required="true" minValue="0" maxValue="3" />
+      </elements>
+    </policy>
+    <policy name="AutoStartPhoneMyNotes_Policy_Recommend" class="User" displayName="$(string.AutoStartPhoneMyNotes_Policy_Recommend)" explainText="$(string.AutoStartPhoneMyNotes_Explain)" presentation="$(presentation.AutoStartPhoneMyNotes_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="AutoStartPhoneMyNotes">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableAsyncProxyResolve_Policy_Recommend" class="User" displayName="$(string.EnableAsyncProxyResolve_Policy_Recommend)" explainText="$(string.EnableAsyncProxyResolve_Explain)" presentation="$(presentation.EnableAsyncProxyResolve_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="EnableAsyncProxyResolve">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableBatchProxyResolveViaAsync_Policy_Recommend" class="User" displayName="$(string.EnableBatchProxyResolveViaAsync_Policy_Recommend)" explainText="$(string.EnableBatchProxyResolveViaAsync_Explain)" presentation="$(presentation.EnableBatchProxyResolveViaAsync_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="EnableBatchProxyResolveViaAsync">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableHandleRedirectProxy_Policy_Recommend" class="User" displayName="$(string.EnableHandleRedirectProxy_Policy_Recommend)" explainText="$(string.EnableHandleRedirectProxy_Explain)" presentation="$(presentation.EnableHandleRedirectProxy_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="EnableHandleRedirectProxy">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableNewHomePage_Policy_Recommend" class="User" displayName="$(string.EnableNewHomePage_Policy_Recommend)" explainText="$(string.EnableNewHomePage_Explain)" presentation="$(presentation.EnableNewHomePage_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="EnableNewHomePage">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableWinZSafeChecker_Policy_Recommend" class="User" displayName="$(string.EnableWinZSafeChecker_Policy_Recommend)" explainText="$(string.EnableWinZSafeChecker_Explain)" presentation="$(presentation.EnableWinZSafeChecker_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="EnableWinZSafeChecker_Part" valueName="EnableWinZSafeChecker" required="true" minValue="0" maxValue="2" />
+      </elements>
+    </policy>
+    <policy name="SetMultipleSSOVanityUrl_Policy_Recommend" class="User" displayName="$(string.SetMultipleSSOVanityUrl_Policy_Recommend)" explainText="$(string.SetMultipleSSOVanityUrl_Explain)" presentation="$(presentation.SetMultipleSSOVanityUrl_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <text id="SetMultipleSSOVanityUrl_Part" valueName="SetMultipleSSOVanityUrl" />
       </elements>
     </policy>
     <policy name="AU2_EnableAutoUpdate_Policy_Recommend" class="User" displayName="$(string.AU2_EnableAutoUpdate_Policy_Recommend)" explainText="$(string.AU2_EnableAutoUpdate_Explain)" presentation="$(presentation.AU2_EnableAutoUpdate_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Updates" valueName="AU2_EnableAutoUpdate">
@@ -4725,16 +4880,6 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
-    <policy name="HideSelfView_Policy_Recommend" class="User" displayName="$(string.HideSelfView_Policy_Recommend)" explainText="$(string.HideSelfView_Explain)" presentation="$(presentation.HideSelfView_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Meetings" valueName="HideSelfView">
-      <parentCategory ref="zoommeetings_recommend" />
-      <supportedOn ref="SUPPORTED_WINXPSP2" />
-      <enabledValue>
-        <decimal value="1" />
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0" />
-      </disabledValue>
-    </policy>
     <policy name="SetVideoRenderingPostProcessing_Policy_Recommend" class="User" displayName="$(string.SetVideoRenderingPostProcessing_Policy_Recommend)" explainText="$(string.SetVideoRenderingPostProcessing_Explain)" presentation="$(presentation.SetVideoRenderingPostProcessing_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Meetings">
       <parentCategory ref="zoommeetings_recommend" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
@@ -5004,6 +5149,43 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy name="AlwaysUseDarkThemeForMeetings_Policy_Recommend" class="User" displayName="$(string.AlwaysUseDarkThemeForMeetings_Policy_Recommend)" explainText="$(string.AlwaysUseDarkThemeForMeetings_Explain)" presentation="$(presentation.AlwaysUseDarkThemeForMeetings_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Meetings" valueName="AlwaysUseDarkThemeForMeetings">
+      <parentCategory ref="zoommeetings_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableWebinarAttendeeAudio_Policy_Recommend" class="User" displayName="$(string.DisableWebinarAttendeeAudio_Policy_Recommend)" explainText="$(string.DisableWebinarAttendeeAudio_Explain)" presentation="$(presentation.DisableWebinarAttendeeAudio_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Meetings" valueName="DisableWebinarAttendeeAudio">
+      <parentCategory ref="zoommeetings_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableSharedCameraAmongZoomApps_Policy_Recommend" class="User" displayName="$(string.EnableSharedCameraAmongZoomApps_Policy_Recommend)" explainText="$(string.EnableSharedCameraAmongZoomApps_Explain)" presentation="$(presentation.EnableSharedCameraAmongZoomApps_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Meetings" valueName="EnableSharedCameraAmongZoomApps">
+      <parentCategory ref="zoommeetings_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SelfViewMode_Policy_Recommend" class="User" displayName="$(string.SelfViewMode_Policy_Recommend)" explainText="$(string.SelfViewMode_Explain)" presentation="$(presentation.SelfViewMode_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Meetings">
+      <parentCategory ref="zoommeetings_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <elements>
+        <decimal id="SelfViewMode_Part" valueName="SelfViewMode" required="true" minValue="0" maxValue="2" />
+      </elements>
     </policy>
   </policies>
 </policyDefinitions>
