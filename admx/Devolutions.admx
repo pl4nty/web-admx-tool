@@ -99,6 +99,20 @@
 	</elements>
     </policy>
     <policy 
+		name="POL_RDM_CLEARCLIPBOARDDELAY"
+		class="Both" 
+		displayName="$(string.POL_RDM_CLEARCLIPBOARDDELAY)"
+		explainText="$(string.POL_RDM_CLEARCLIPBOARDDELAY_HELP)"
+		presentation="$(presentation.INPUT_DEC_CLEARCLIPBOARDDELAY)" 
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" 
+		valueName="ClearClipboardDelay">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	<elements>
+        	<decimal id="INPUT_DEC_CLEARCLIPBOARDDELAY" valueName="ClearClipboardDelay" maxValue="300" />
+	</elements>
+    </policy>
+    <policy 
 		name="POL_RDM_CLIPBOARDCOPYMETHOD"
 		class="Both" 
 		displayName="$(string.POL_RDM_CLIPBOARDCOPYMETHOD)"
@@ -1368,6 +1382,22 @@
 		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
 		valueName="DisableSmartCardKerbCertificateLogon">
       <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue>
+        <decimal value="0" />
+		</disabledValue>
+    </policy>
+    <policy 
+		name="POL_RDM_DISABLETOPPANE"
+		class="Both"
+		displayName="$(string.POL_RDM_DISABLETOPPANE)"
+		explainText="$(string.POL_RDM_DISABLETOPPANE_HELP)"
+		key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager"
+		valueName="DisableTopPane">
+      <parentCategory ref="CAT_RDM_UI" />
       <supportedOn ref="SUPPORTED_WindowsVista" />
 		<enabledValue>
 			<decimal value="1" />

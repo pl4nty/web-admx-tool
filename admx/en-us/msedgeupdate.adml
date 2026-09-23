@@ -8,11 +8,12 @@
 
   <resources>
     <stringTable>
-      <string id="Name_ECSCommunicationEnabled">Enable communication and download experiments</string>
+      <string id="Name_ECSCommunicationEnabled">Retrieve configurations and experiments</string>
       <string id="Sup_EdgeUpdate1_3_133_3">Microsoft Edge Update 1.3.133.3 and later</string>
       <string id="Part_UninstallEdgePolicy">Uninstall Microsoft Edge Policy</string>
       <string id="Pol_ProxyMode">Choose how to specify proxy server settings</string>
       <string id="Name_ForceInstallsMachine">Force Installs (Machine-Wide)</string>
+      <string id="Name_ECSConfigurationsOnly">Retrieve configurations only</string>
       <string id="Name_ManualUpdatesOnly">Manual updates only</string>
       <string id="Pol_EdgePreview">Allow users in the Windows Insider Program to be enrolled in Edge Preview</string>
       <string id="TargetChannel_Stable_DropDown">Stable</string>
@@ -24,17 +25,21 @@
       <string id="TargetChannel_Dev_DropDown">Dev</string>
       <string id="Sup_EdgeUpdate1_3_145_1">Microsoft Edge Update 1.3.145.1 and later</string>
       <string id="Pol_ECSControl">Control updater's communication with the Experimentation and Configuration Service</string>
-      <string id="Explain_ECSControl">In Microsoft Edge Update, the Experimentation and Configuration Service is used to deploy experimentation payload.
+      <string id="Explain_ECSControl">In Microsoft Edge Update, the Experimentation and Configuration Service is used to deploy experimentation and configuration payloads.
 
-Experimentation payload consists of a list of early in development features that Microsoft is enabling for testing and feedback.
+Experimentation payload consists of a list of early-in-development features that Microsoft is enabling for testing and feedback.
 
-If you enable (1) this policy, experimentation payload is downloaded from the Experimentation and Configuration Service.
+Configuration payload consists of a list of recommended settings that Microsoft wants to deploy to optimize the user experience.
 
-If you disable (0) this policy, communication with the Experimentation and Configuration Service is stopped completely.
+If you set this policy to 'FullMode' (1), the full payload is downloaded from the Experimentation and Configuration Service. This includes both the experimentation and configuration payloads.
 
-If you don't configure this policy, on a managed device the behavior is same as policy 'disabled'.
+If you set this policy to 'ConfigurationsOnlyMode' (2), only the configuration payload is downloaded.
 
-If you don't configure this policy, on an unmanaged device the behavior is same as policy 'enabled'.</string>
+If you set this policy to 'RestrictedMode' (0), communication with the Experimentation and Configuration Service is stopped completely.
+
+If you don't configure this policy, on a managed device the behavior is the same as policy 'ConfigurationsOnlyMode'.
+
+If you don't configure this policy, on a device that isn't managed through domain policy or device management, the behavior is the same as policy 'FullMode'.</string>
       <string id="Name_InstallsDisabled">Installs disabled</string>
       <string id="Pol_TargetChannel">Target Channel override</string>
       <string id="Pol_AllowInstallation">Allow installation</string>

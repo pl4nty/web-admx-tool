@@ -21,6 +21,8 @@
 	  <string id="POL_RDM_APPLYFORCEDPASSWORDTEMPLATEINPASSWORDGENERATORTOOL_HELP">Apply forced password template in password generator tool</string>
       <string id="POL_RDM_CHECKFORSERVERCERTIFICATEREVOCATION">Check for server certificate revocation</string>
 	  <string id="POL_RDM_CHECKFORSERVERCERTIFICATEREVOCATION_HELP">Check for server certificate revocation</string>
+      <string id="POL_RDM_CLEARCLIPBOARDDELAY">Clear clipboard delay</string>
+	  <string id="POL_RDM_CLEARCLIPBOARDDELAY_HELP">Force the delay, in seconds, after which a copied value is automatically cleared from the clipboard</string>
       <string id="POL_RDM_CLIPBOARDCOPYMETHOD">Clipboard copy method</string>
 	  <string id="POL_RDM_CLIPBOARDCOPYMETHOD_HELP">Force a clipboard copy method</string>
       <string id="POL_RDM_CONFIRMSESSIONSOPENONCOUNTGREATERTHAN">Confirm sessions open on count greater than</string>
@@ -183,6 +185,8 @@
 	  <string id="POL_RDM_DISABLESESSIONRECORDING_HELP">Disable the session recording feature</string>
       <string id="POL_RDM_DISABLESMARTCARDKERBCERTIFICATELOGON">Disable Kerberos certificate logon for smart cards</string>
 	  <string id="POL_RDM_DISABLESMARTCARDKERBCERTIFICATELOGON_HELP">Stop requesting a Kerberos certificate logon for smart card certificate + PIN RDP sessions. It is requested by default; enable this policy to fall back to the standard Windows credential path.</string>
+      <string id="POL_RDM_DISABLETOPPANE">Disable top pane</string>
+	  <string id="POL_RDM_DISABLETOPPANE_HELP">Hide the ribbon, menu, toolbar, and quick action toolbar.</string>
       <string id="POL_RDM_DISABLETOOLSADDONMANAGER">Disable tools add-on manager</string>
 	  <string id="POL_RDM_DISABLETOOLSADDONMANAGER_HELP">Disable the add-on manager in the tools menu</string>
       <string id="POL_RDM_DISABLETOOLSCHOCOLATEYCONSOLE">Disable tools Chocolatey console</string>
@@ -329,6 +333,11 @@
               <decimalTextBox refId="INPUT_DEC_CHECKFORSERVERCERTIFICATEREVOCATION" defaultValue="0" spinStep="1">0 = Disabled (no changes) 
  1 = Enable check for certificate  
  2 = Disable check for certificate</decimalTextBox>
+            </presentation>
+	<presentation id="INPUT_DEC_CLEARCLIPBOARDDELAY">
+              <decimalTextBox refId="INPUT_DEC_CLEARCLIPBOARDDELAY" defaultValue="0" spinStep="1">
+ 0 = Not configured (the user option applies)
+ 10-300 = Force clearing the clipboard after the specified number of seconds</decimalTextBox>
             </presentation>
 	<presentation id="INPUT_DEC_CLIPBOARDCOPYMETHOD">
               <decimalTextBox refId="INPUT_DEC_CLIPBOARDCOPYMETHOD" defaultValue="0" spinStep="1">0 = Disabled (no changes) 

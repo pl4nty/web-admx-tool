@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--chrome version: 153.0.8010.53-->
+  <!--chrome version: 154.0.8037.58-->
   <policyNamespaces>
     <target namespace="Google.Policies.Chrome" prefix="chrome"/>
     <using namespace="Google.Policies" prefix="Google"/>
@@ -99,6 +99,9 @@
       <parentCategory ref="googlechrome"/>
     </category>
     <category displayName="$(string.Proxy_group)" name="Proxy">
+      <parentCategory ref="googlechrome"/>
+    </category>
+    <category displayName="$(string.Relaunch_group)" name="Relaunch">
       <parentCategory ref="googlechrome"/>
     </category>
     <category displayName="$(string.RemoteAccess_group)" name="RemoteAccess">
@@ -2742,6 +2745,13 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.AutofillSettings)" explainText="$(string.AutofillSettings_Explain)" key="Software\Policies\Google\Chrome" name="AutofillSettings" presentation="$(presentation.AutofillSettings)">
+      <parentCategory ref="googlechrome"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <text id="AutofillSettings" maxLength="1000000" valueName="AutofillSettings"/>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.AutoplayAllowed)" explainText="$(string.AutoplayAllowed_Explain)" key="Software\Policies\Google\Chrome" name="AutoplayAllowed" presentation="$(presentation.AutoplayAllowed)" valueName="AutoplayAllowed">
       <parentCategory ref="googlechrome"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -4267,45 +4277,6 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
-    <policy class="Both" displayName="$(string.RelaunchFastIfOutdated)" explainText="$(string.RelaunchFastIfOutdated_Explain)" key="Software\Policies\Google\Chrome" name="RelaunchFastIfOutdated" presentation="$(presentation.RelaunchFastIfOutdated)">
-      <parentCategory ref="googlechrome"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <decimal id="RelaunchFastIfOutdated" maxValue="2000000000" minValue="7" valueName="RelaunchFastIfOutdated"/>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.RelaunchNotification)" explainText="$(string.RelaunchNotification_Explain)" key="Software\Policies\Google\Chrome" name="RelaunchNotification" presentation="$(presentation.RelaunchNotification)">
-      <parentCategory ref="googlechrome"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <enum id="RelaunchNotification" valueName="RelaunchNotification">
-          <item displayName="$(string.RelaunchNotification_Recommended)">
-            <value>
-              <decimal value="1"/>
-            </value>
-          </item>
-          <item displayName="$(string.RelaunchNotification_Required)">
-            <value>
-              <decimal value="2"/>
-            </value>
-          </item>
-        </enum>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.RelaunchNotificationPeriod)" explainText="$(string.RelaunchNotificationPeriod_Explain)" key="Software\Policies\Google\Chrome" name="RelaunchNotificationPeriod" presentation="$(presentation.RelaunchNotificationPeriod)">
-      <parentCategory ref="googlechrome"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <decimal id="RelaunchNotificationPeriod" maxValue="2000000000" minValue="3600000" valueName="RelaunchNotificationPeriod"/>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.RelaunchWindow)" explainText="$(string.RelaunchWindow_Explain)" key="Software\Policies\Google\Chrome" name="RelaunchWindow" presentation="$(presentation.RelaunchWindow)">
-      <parentCategory ref="googlechrome"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <text id="RelaunchWindow" maxLength="1000000" valueName="RelaunchWindow"/>
-      </elements>
-    </policy>
     <policy class="Both" displayName="$(string.RemoteDebuggingAllowed)" explainText="$(string.RemoteDebuggingAllowed_Explain)" key="Software\Policies\Google\Chrome" name="RemoteDebuggingAllowed" presentation="$(presentation.RemoteDebuggingAllowed)" valueName="RemoteDebuggingAllowed">
       <parentCategory ref="googlechrome"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -5660,6 +5631,45 @@
       <supportedOn ref="SUPPORTED_WIN7"/>
       <elements>
         <decimal id="EnableProxyOverrideRulesForAllUsers" maxValue="2000000000" minValue="0" valueName="EnableProxyOverrideRulesForAllUsers"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.RelaunchFastIfOutdated)" explainText="$(string.RelaunchFastIfOutdated_Explain)" key="Software\Policies\Google\Chrome" name="RelaunchFastIfOutdated" presentation="$(presentation.RelaunchFastIfOutdated)">
+      <parentCategory ref="Relaunch"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <decimal id="RelaunchFastIfOutdated" maxValue="2000000000" minValue="7" valueName="RelaunchFastIfOutdated"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.RelaunchNotification)" explainText="$(string.RelaunchNotification_Explain)" key="Software\Policies\Google\Chrome" name="RelaunchNotification" presentation="$(presentation.RelaunchNotification)">
+      <parentCategory ref="Relaunch"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="RelaunchNotification" valueName="RelaunchNotification">
+          <item displayName="$(string.RelaunchNotification_Recommended)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.RelaunchNotification_Required)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.RelaunchNotificationPeriod)" explainText="$(string.RelaunchNotificationPeriod_Explain)" key="Software\Policies\Google\Chrome" name="RelaunchNotificationPeriod" presentation="$(presentation.RelaunchNotificationPeriod)">
+      <parentCategory ref="Relaunch"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <decimal id="RelaunchNotificationPeriod" maxValue="2000000000" minValue="3600000" valueName="RelaunchNotificationPeriod"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.RelaunchWindow)" explainText="$(string.RelaunchWindow_Explain)" key="Software\Policies\Google\Chrome" name="RelaunchWindow" presentation="$(presentation.RelaunchWindow)">
+      <parentCategory ref="Relaunch"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <text id="RelaunchWindow" maxLength="1000000" valueName="RelaunchWindow"/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.RemoteAccessHostAllowClientPairing)" explainText="$(string.RemoteAccessHostAllowClientPairing_Explain)" key="Software\Policies\Google\Chrome" name="RemoteAccessHostAllowClientPairing" presentation="$(presentation.RemoteAccessHostAllowClientPairing)" valueName="RemoteAccessHostAllowClientPairing">

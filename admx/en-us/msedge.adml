@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 155.0.4273.0--><displayName/><description/><resources><stringTable><string id="ApplicationGuard_group">Application Guard settings</string><string id="ApplicationGuardContainerProxy">Application Guard Container Proxy</string><string id="ApplicationGuardContainerProxy_Explain">Configures the proxy settings for Microsoft Edge Application Guard.
+<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 156.0.4285.0--><displayName/><description/><resources><stringTable><string id="ApplicationGuard_group">Application Guard settings</string><string id="ApplicationGuardContainerProxy">Application Guard Container Proxy</string><string id="ApplicationGuardContainerProxy_Explain">Configures the proxy settings for Microsoft Edge Application Guard.
 
 If you enable this policy, Microsoft Edge Application Guard ignores other sources of proxy configurations.
 
@@ -1456,7 +1456,7 @@ Example value:
 chrome-extension://abcdefghijklmnopabcdefghijklmnop/
 chrome-extension://bcdefghijklmnopabcdefghijklmnopa/</string><string id="ExtensionExtendedBackgroundLifetimeForPortConnectionsToUrlsDesc">Configure a list of origins that grant an extended background lifetime to connecting extensions.</string><string id="ExtensionInstallBlocklist">Control which extensions cannot be installed</string><string id="ExtensionInstallBlocklist_Explain">Lets you specify which extensions the users CANNOT install. Extensions already installed will be disabled if blocked, without a way for the user to enable them. After a disabled extension is removed from the blocklist it will automatically get re-enabled.
 
-A blocklist value of '*' means all extensions are blocked unless they are explicitly listed in the allowlist.
+A blocklist value of '*' means all extensions are blocked by default. Extensions that are explicitly listed in the allowlist are allowed if they are signed (packed). All unpacked extensions are blocked.
 
 If this policy isn't set, the user can install any extension in Microsoft Edge.
 
@@ -1814,7 +1814,11 @@ If you enable this policy or don't configure it, users can sign in to Microsoft 
 
 If you disable this policy, users can't sign in to Microsoft Edge with non-Microsoft accounts. Related sign-in entry points and code paths are hidden and disabled, regardless of related feature flag settings.
 
-Users can still sign in with Microsoft accounts.</string><string id="OneAuthAuthenticationEnforced">OneAuth Authentication Flow Enforced for signin</string><string id="OneAuthAuthenticationEnforced_Explain">This policy allows users to decide whether to use the OneAuth library for sign-in and token fetch in Microsoft Edge on Windows 10 RS3 and later.
+Users can still sign in with Microsoft accounts.</string><string id="OneAuthAuthenticationEnforced">OneAuth Authentication Flow Enforced for signin (deprecated)</string><string id="OneAuthAuthenticationEnforced_Explain">DEPRECATED: This policy is deprecated. It is currently supported but will become obsolete in a future release.
+
+Microsoft Edge will use OneAuth for sign-in on Windows without requiring this policy. The policy is deprecated starting in version 155 and is planned to become obsolete in version 161. No configuration change or replacement policy is needed to continue using OneAuth.
+
+This policy allows users to decide whether to use the OneAuth library for sign-in and token fetch in Microsoft Edge on Windows 10 RS3 and later.
 
 If you disable or don't configure this policy, sign-in process uses Windows Account Manager. Microsoft Edge would be able to use accounts you signed in to Windows, Microsoft Office, or other Microsoft applications for sign in, without the need for a password. Or, you can provide valid account and password to sign in, which are stored in Windows Account Manager for future usage. You can investigate all accounts stored in Windows Account Manager through Windows Settings -&gt; Accounts -&gt; Email and accounts page.
 
@@ -6434,7 +6438,7 @@ If you enable this policy, Microsoft Edge will launch visibly automatically when
 
 If you disable this policy, Microsoft Edge will never launch visibly automatically when Windows starts.
 
-If you don't configure this policy, users will have an option to select whether or not they want Microsoft Edge to launch automatically when Windows starts.</string><string id="LiveCaptionsAllowed">Live captions allowed</string><string id="LiveCaptionsAllowed_Explain">Allow users to turn the Live captions feature on or off.
+If you don't configure this policy, Microsoft Edge won't launch automatically when Windows starts by default. Users are periodically shown an opt-in banner to turn it on, and can enable or disable automatic launch anytime from settings.</string><string id="LiveCaptionsAllowed">Live captions allowed</string><string id="LiveCaptionsAllowed_Explain">Allow users to turn the Live captions feature on or off.
 
 Live captions is an accessibility feature that converts speech from the audio that plays in Microsoft Edge into text and shows this text in a separate window. The entire process happens on the device and no audio or caption text ever leaves the device.
 
@@ -7237,7 +7241,7 @@ If you disable this policy, users can receive related matches in Find on Page on
 
 Note: This policy is obsolete. The associated cloud service is discontinued, so the feature and policy aren't supported on any versions of Microsoft Edge.</string><string id="RemoteDebuggingAllowed">Allow remote debugging</string><string id="RemoteDebuggingAllowed_Explain">Controls whether users can use remote debugging.
 
-If you enable or don't configure this policy, users can use remote debugging by specifying --remote-debug-port and --remote-debugging-pipe command line switches.
+If you enable or don't configure this policy, users can use remote debugging by specifying --remote-debugging-port and --remote-debugging-pipe command line switches on desktop platforms, or by enabling the USB debugging system setting on Android.
 
 If you disable this policy, users aren't allowed to use remote debugging.</string><string id="RendererAppContainerEnabled">Enable renderer in app container</string><string id="RendererAppContainerEnabled_Explain">Launches Renderer processes into an App Container for
 more security benefits.
