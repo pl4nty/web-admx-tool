@@ -22,6 +22,10 @@
       <definition name="supported_LibreOffice_6_4" displayName="$(string.supported_LibreOffice_6_4)" />
       <definition name="supported_LibreOffice_7_0" displayName="$(string.supported_LibreOffice_7_0)" />
       <definition name="supported_CO_24_04_11" displayName="$(string.supported_CO_24_04_11)" />
+      <definition name="supported_CO_22_05" displayName="$(string.supported_CO_22_05)" />
+      <definition name="supported_CO_24_04" displayName="$(string.supported_CO_24_04)" />
+      <definition name="supported_CO_25_04" displayName="$(string.supported_CO_25_04)" />
+      <definition name="supported_LibreOffice_26_8" displayName="$(string.supported_LibreOffice_26_8)" />
     </definitions>
   </supportedOn>
   <categories>
@@ -53,6 +57,9 @@
     <category name="Localization" displayName="$(string.category_Localization)">
       <parentCategory ref="Common" />
     </category>
+    <category name="WritingAids" displayName="$(string.category_WritingAids)">
+      <parentCategory ref="Common" />
+    </category>
     <category name="Security" displayName="$(string.category_Security)">
       <parentCategory ref="Common" />
     </category>
@@ -63,6 +70,9 @@
       <parentCategory ref="Common" />
     </category>
     <category name="UserProfile" displayName="$(string.UserProfile)">
+      <parentCategory ref="Common" />
+    </category>
+    <category name="Paths" displayName="$(string.category_Paths)">
       <parentCategory ref="Common" />
     </category>
     <category name="Passwords" displayName="$(string.category_Passwords)">
@@ -241,7 +251,7 @@
         <boolean id="Final" valueName="Final" />
       </elements>
     </policy>
-    <policy name="AutoSave" class="Both" displayName="$(string.name_AutoSave)" explainText="$(string.desc_AutoSave)" presentation="$(presentation.AutoSave)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Save\Document\AutoSave">
+    <policy name="AutoSave" class="Both" displayName="$(string.name_AutoSave)" explainText="$(string.desc_AutoSave)" presentation="$(presentation.AutoSave)" key="Software\Policies\LibreOffice\org.openoffice.Office.Recovery\AutoSave\Enabled">
       <parentCategory ref="LoadandSave" />
       <supportedOn ref="supported_LibreOffice_4_2" />
       <elements>
@@ -256,7 +266,7 @@
         <boolean id="Final" valueName="Final" />
         <decimal id="AutoSaveTimeIntervallValue" key="Software\Policies\LibreOffice\org.openoffice.Office.Recovery\AutoSave\TimeIntervall" valueName="Value" minValue="1" maxValue="60" storeAsText="true" />
         <boolean id="AutoSaveTimeIntervallFinal" key="Software\Policies\LibreOffice\org.openoffice.Office.Recovery\AutoSave\TimeIntervall" valueName="Final" />
-        <boolean id="AutoSavePromptValue" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Save\Document\AutoSavePrompt" valueName="Value">
+        <boolean id="AutoSavePromptValue" key="Software\Policies\LibreOffice\org.openoffice.Office.Recovery\AutoSave\UserAutoSaveEnabled" valueName="Value">
           <trueValue>
             <string>true</string>
           </trueValue>
@@ -264,7 +274,7 @@
             <string>false</string>
           </falseValue>
         </boolean>
-        <boolean id="AutoSavePromptFinal" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Save\Document\AutoSavePrompt" valueName="Final" />
+        <boolean id="AutoSavePromptFinal" key="Software\Policies\LibreOffice\org.openoffice.Office.Recovery\AutoSave\UserAutoSaveEnabled" valueName="Final" />
       </elements>
     </policy>
     <policy name="RecoveryInfo" class="Both" displayName="$(string.name_RecoveryInfo)" explainText="$(string.desc_RecoveryInfo)" presentation="$(presentation.RecoveryInfo)" key="Software\Policies\LibreOffice\org.openoffice.Office.Recovery\RecoveryInfo\Enabled">
@@ -435,6 +445,352 @@
         </item>
       </disabledList>
     </policy>
+    <policy name="AutoCorrect" class="Both" displayName="$(string.name_AutoCorrect)" explainText="$(string.PathListExplain)" presentation="$(presentation.AutoCorrect)" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['AutoCorrect']\WritePath">
+      <parentCategory ref="Paths" />
+      <supportedOn ref="supported_LibreOffice_5_3_49" />
+      <enabledList>
+        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\AutoCorrect" valueName="Value">
+          <value>
+            <string></string>
+          </value>
+        </item>
+        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\AutoCorrect" valueName="Nil">
+          <value>
+            <decimal value="1" />
+          </value>
+        </item>
+      </enabledList>
+      <elements>
+        <text id="WritePathValue" valueName="Value" required="true" />
+        <boolean id="WritePathFinal" valueName="Final">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          <trueList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\AutoCorrect" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+          </trueList>
+          <falseList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\AutoCorrect" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+          </falseList>
+        </boolean>
+        <text id="UserPathsValue" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['AutoCorrect']\UserPaths" valueName="Value" required="true" />
+        <boolean id="UserPathsFinal" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['AutoCorrect']\UserPaths" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="AutoText" class="Both" displayName="$(string.name_AutoText)" explainText="$(string.PathListExplain)" presentation="$(presentation.AutoText)" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['AutoText']\WritePath">
+      <parentCategory ref="Paths" />
+      <supportedOn ref="supported_LibreOffice_5_3_49" />
+      <enabledList>
+        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\AutoText" valueName="Value">
+          <value>
+            <string></string>
+          </value>
+        </item>
+        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\AutoText" valueName="Nil">
+          <value>
+            <decimal value="1" />
+          </value>
+        </item>
+      </enabledList>
+      <elements>
+        <text id="WritePathValue" valueName="Value" required="true" />
+        <boolean id="WritePathFinal" valueName="Final">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          <trueList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\AutoText" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+          </trueList>
+          <falseList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\AutoText" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+          </falseList>
+        </boolean>
+        <text id="UserPathsValue" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['AutoText']\UserPaths" valueName="Value" required="true" />
+        <boolean id="UserPathsFinal" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['AutoText']\UserPaths" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="Dictionary" class="Both" displayName="$(string.name_Dictionary)" explainText="$(string.PathListExplain)" presentation="$(presentation.Dictionary)" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Dictionary']\WritePath">
+      <parentCategory ref="Paths" />
+      <supportedOn ref="supported_LibreOffice_5_3_49" />
+      <enabledList>
+        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Dictionary" valueName="Value">
+          <value>
+            <string></string>
+          </value>
+        </item>
+        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Dictionary" valueName="Nil">
+          <value>
+            <decimal value="1" />
+          </value>
+        </item>
+      </enabledList>
+      <elements>
+        <text id="WritePathValue" valueName="Value" required="true" />
+        <boolean id="WritePathFinal" valueName="Final">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          <trueList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Dictionary" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+          </trueList>
+          <falseList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Dictionary" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+          </falseList>
+        </boolean>
+        <text id="UserPathsValue" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Dictionary']\UserPaths" valueName="Value" required="true" />
+        <boolean id="UserPathsFinal" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Dictionary']\UserPaths" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="Gallery" class="Both" displayName="$(string.name_Gallery)" explainText="$(string.PathListExplain)" presentation="$(presentation.Gallery)" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Gallery']\WritePath">
+      <parentCategory ref="Paths" />
+      <supportedOn ref="supported_LibreOffice_5_3_49" />
+      <enabledList>
+        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Gallery" valueName="Value">
+          <value>
+            <string></string>
+          </value>
+        </item>
+        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Gallery" valueName="Nil">
+          <value>
+            <decimal value="1" />
+          </value>
+        </item>
+      </enabledList>
+      <elements>
+        <text id="WritePathValue" valueName="Value" required="true" />
+        <boolean id="WritePathFinal" valueName="Final">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          <trueList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Gallery" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+          </trueList>
+          <falseList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Gallery" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+          </falseList>
+        </boolean>
+        <text id="UserPathsValue" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Gallery']\UserPaths" valueName="Value" required="true" />
+        <boolean id="UserPathsFinal" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Gallery']\UserPaths" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="Templates" class="Both" displayName="$(string.name_Templates)" explainText="$(string.PathListExplain)" presentation="$(presentation.Templates)" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Template']\WritePath">
+      <parentCategory ref="Paths" />
+      <supportedOn ref="supported_LibreOffice_5_3_49" />
+      <enabledList>
+        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Template" valueName="Value">
+          <value>
+            <string></string>
+          </value>
+        </item>
+        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Template" valueName="Nil">
+          <value>
+            <decimal value="1" />
+          </value>
+        </item>
+      </enabledList>
+      <elements>
+        <text id="WritePathValue" valueName="Value" required="true" />
+        <boolean id="WritePathFinal" valueName="Final">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          <trueList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Template" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+          </trueList>
+          <falseList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Template" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+          </falseList>
+        </boolean>
+        <text id="UserPathsValue" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Template']\UserPaths" valueName="Value" required="true" />
+        <boolean id="UserPathsFinal" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Template']\UserPaths" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="MyDocuments" class="Both" displayName="$(string.name_MyDocuments)" explainText="$(string.PathListExplain)" presentation="$(presentation.MyDocuments)" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Work']\WritePath">
+      <parentCategory ref="Paths" />
+      <supportedOn ref="supported_LibreOffice_5_3_49" />
+      <enabledList>
+        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Work" valueName="Value">
+          <value>
+            <string></string>
+          </value>
+        </item>
+        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Work" valueName="Nil">
+          <value>
+            <decimal value="1" />
+          </value>
+        </item>
+      </enabledList>
+      <elements>
+        <text id="WritePathValue" valueName="Value" required="true" />
+        <boolean id="WritePathFinal" valueName="Final">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          <trueList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Work" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+          </trueList>
+          <falseList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Work" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+          </falseList>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="Graphic" class="Both" displayName="$(string.name_Graphic)" explainText="$(string.PathListExplain)" presentation="$(presentation.Graphic)" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Graphic']\WritePath">
+      <parentCategory ref="Paths" />
+      <supportedOn ref="supported_LibreOffice_5_3_49" />
+      <enabledList>
+        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Graphic" valueName="Value">
+          <value>
+            <string></string>
+          </value>
+        </item>
+        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Graphic" valueName="Nil">
+          <value>
+            <decimal value="1" />
+          </value>
+        </item>
+      </enabledList>
+      <elements>
+        <text id="WritePathValue" valueName="Value" required="true" />
+        <boolean id="WritePathFinal" valueName="Final">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          <trueList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Graphic" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+          </trueList>
+          <falseList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Graphic" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+          </falseList>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="Backup" class="Both" displayName="$(string.name_Backup)" explainText="$(string.PathListExplain)" presentation="$(presentation.Backup)" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Backup']\WritePath">
+      <parentCategory ref="Paths" />
+      <supportedOn ref="supported_LibreOffice_5_3_49" />
+      <enabledList>
+        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Backup" valueName="Value">
+          <value>
+            <string></string>
+          </value>
+        </item>
+        <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Backup" valueName="Nil">
+          <value>
+            <decimal value="1" />
+          </value>
+        </item>
+      </enabledList>
+      <elements>
+        <text id="WritePathValue" valueName="Value" required="true" />
+        <boolean id="WritePathFinal" valueName="Final">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          <trueList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Backup" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+          </trueList>
+          <falseList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Path\Current\Backup" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+          </falseList>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="Temp" class="Both" displayName="$(string.name_Temp)" explainText="$(string.PathListExplain)" presentation="$(presentation.Temp)" key="Software\Policies\LibreOffice\org.openoffice.Office.Paths\Paths\org.openoffice.Office.Paths:NamedPath['Temp']\WritePath">
+      <parentCategory ref="Paths" />
+      <supportedOn ref="supported_LibreOffice_5_3_49" />
+      <elements>
+        <text id="WritePathValue" valueName="Value" required="true" />
+        <boolean id="WritePathFinal" valueName="Final" />
+      </elements>
+    </policy>
     <policy name="SymbolStyle" class="Both" displayName="$(string.name_SymbolStyle)" explainText="$(string.desc_SymbolStyle)" presentation="$(presentation.SymbolStyle)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Misc\SymbolStyle">
       <parentCategory ref="View" />
       <supportedOn ref="supported_LibreOffice_4_2" />
@@ -445,14 +801,14 @@
               <string>auto</string>
             </value>
           </item>
-          <item displayName="$(string.default)">
+          <item displayName="$(string.colibre)">
             <value>
-              <string>default</string>
+              <string>colibre</string>
             </value>
           </item>
-          <item displayName="$(string.tango)">
+          <item displayName="$(string.colibre_dark)">
             <value>
-              <string>tango</string>
+              <string>colibre_dark</string>
             </value>
           </item>
           <item displayName="$(string.breeze)">
@@ -460,9 +816,19 @@
               <string>breeze</string>
             </value>
           </item>
-          <item displayName="$(string.oxygen)">
+          <item displayName="$(string.breeze_dark)">
             <value>
-              <string>oxygen</string>
+              <string>breeze_dark</string>
+            </value>
+          </item>
+          <item displayName="$(string.elementary)">
+            <value>
+              <string>elementary</string>
+            </value>
+          </item>
+          <item displayName="$(string.karasa_jaga)">
+            <value>
+              <string>karasa_jaga</string>
             </value>
           </item>
           <item displayName="$(string.sifr)">
@@ -470,14 +836,19 @@
               <string>sifr</string>
             </value>
           </item>
-          <item displayName="$(string.galaxy)">
+          <item displayName="$(string.sifr_dark)">
             <value>
-              <string>galaxy</string>
+              <string>sifr_dark</string>
             </value>
           </item>
-          <item displayName="$(string.hicontrast)">
+          <item displayName="$(string.sukapura)">
             <value>
-              <string>hicontrast</string>
+              <string>sukapura</string>
+            </value>
+          </item>
+          <item displayName="$(string.sukapura_dark)">
+            <value>
+              <string>sukapura_dark</string>
             </value>
           </item>
         </enum>
@@ -777,36 +1148,6 @@
         <boolean id="Final" valueName="Final" />
       </elements>
     </policy>
-    <policy name="UseOpenGL" class="Both" displayName="$(string.name_UseOpenGL)" explainText="$(string.desc_UseOpenGL)" presentation="$(presentation.UseOpenGL)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\VCL\UseOpenGL">
-      <parentCategory ref="View" />
-      <supportedOn ref="supported_LibreOffice_5_0" />
-      <elements>
-        <boolean id="Value" valueName="Value">
-          <trueValue>
-            <string>true</string>
-          </trueValue>
-          <falseValue>
-            <string>false</string>
-          </falseValue>
-        </boolean>
-        <boolean id="Final" valueName="Final" />
-      </elements>
-    </policy>
-    <policy name="ForceOpenGL" class="Both" displayName="$(string.name_ForceOpenGL)" explainText="$(string.desc_ForceOpenGL)" presentation="$(presentation.ForceOpenGL)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\VCL\ForceOpenGL">
-      <parentCategory ref="View" />
-      <supportedOn ref="supported_LibreOffice_5_0" />
-      <elements>
-        <boolean id="Value" valueName="Value">
-          <trueValue>
-            <string>true</string>
-          </trueValue>
-          <falseValue>
-            <string>false</string>
-          </falseValue>
-        </boolean>
-        <boolean id="Final" valueName="Final" />
-      </elements>
-    </policy>
     <policy name="UseSkia" class="Both" displayName="$(string.name_UseSkia)" explainText="$(string.desc_UseSkia)" presentation="$(presentation.UseSkia)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\VCL\UseSkia">
       <parentCategory ref="View" />
       <supportedOn ref="supported_LibreOffice_7_0" />
@@ -852,9 +1193,9 @@
         <boolean id="Final" valueName="Final" />
       </elements>
     </policy>
-    <policy name="CollectUsageInformation" class="Both" displayName="$(string.name_CollectUsageInformation)" explainText="$(string.desc_CollectUsageInformation)" presentation="$(presentation.CollectUsageInformation)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Misc\CollectUsageInformation">
-      <parentCategory ref="General" />
-      <supportedOn ref="supported_LibreOffice_5_1" />
+    <policy name="ForceSkiaGPU" class="Both" displayName="$(string.name_ForceSkiaGPU)" explainText="$(string.desc_ForceSkiaGPU)" presentation="$(presentation.ForceSkiaGPU)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\VCL\ForceSkiaGPU">
+      <parentCategory ref="View" />
+      <supportedOn ref="supported_LibreOffice_26_8" />
       <elements>
         <boolean id="Value" valueName="Value">
           <trueValue>
@@ -942,52 +1283,7 @@
         <boolean id="Final" valueName="Final" />
       </elements>
     </policy>
-    <policy name="EnableATToolSupport" class="Both" displayName="$(string.name_EnableATToolSupport)" explainText="$(string.desc_EnableATToolSupport)" presentation="$(presentation.EnableATToolSupport)" key="Software\Policies\LibreOffice\org.openoffice.VCL\Settings\org.openoffice.VCL:ConfigurableSettings['Accessibility']\EnableATToolSupport">
-      <parentCategory ref="Accessibility" />
-      <supportedOn ref="supported_LibreOffice_4_2" />
-      <elements>
-        <boolean id="Value" valueName="Value">
-          <trueValue>
-            <string>true</string>
-          </trueValue>
-          <falseValue>
-            <string>false</string>
-          </falseValue>
-        </boolean>
-        <boolean id="Final" valueName="Final" />
-      </elements>
-    </policy>
     <policy name="IsSelectionInReadonly" class="Both" displayName="$(string.name_IsSelectionInReadonly)" explainText="$(string.desc_IsSelectionInReadonly)" presentation="$(presentation.IsSelectionInReadonly)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Accessibility\IsSelectionInReadonly">
-      <parentCategory ref="Accessibility" />
-      <supportedOn ref="supported_LibreOffice_4_2" />
-      <elements>
-        <boolean id="Value" valueName="Value">
-          <trueValue>
-            <string>true</string>
-          </trueValue>
-          <falseValue>
-            <string>false</string>
-          </falseValue>
-        </boolean>
-        <boolean id="Final" valueName="Final" />
-      </elements>
-    </policy>
-    <policy name="IsAllowAnimatedGraphics" class="Both" displayName="$(string.name_IsAllowAnimatedGraphics)" explainText="$(string.desc_IsAllowAnimatedGraphics)" presentation="$(presentation.IsAllowAnimatedGraphics)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Accessibility\IsAllowAnimatedGraphics">
-      <parentCategory ref="Accessibility" />
-      <supportedOn ref="supported_LibreOffice_4_2" />
-      <elements>
-        <boolean id="Value" valueName="Value">
-          <trueValue>
-            <string>true</string>
-          </trueValue>
-          <falseValue>
-            <string>false</string>
-          </falseValue>
-        </boolean>
-        <boolean id="Final" valueName="Final" />
-      </elements>
-    </policy>
-    <policy name="IsAllowAnimatedText" class="Both" displayName="$(string.name_IsAllowAnimatedText)" explainText="$(string.desc_IsAllowAnimatedText)" presentation="$(presentation.IsAllowAnimatedText)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Accessibility\IsAllowAnimatedText">
       <parentCategory ref="Accessibility" />
       <supportedOn ref="supported_LibreOffice_4_2" />
       <elements>
@@ -1017,21 +1313,6 @@
         <boolean id="Final" valueName="Final" />
         <decimal id="HelpTipsDisappearValue" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Accessibility\HelpTipSeconds" valueName="Value" minValue="1" maxValue="99" storeAsText="true" />
         <boolean id="HelpTipsDisappearFinal" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Accessibility\HelpTipSeconds" valueName="Final" />
-      </elements>
-    </policy>
-    <policy name="AutoDetectSystemHC" class="Both" displayName="$(string.name_AutoDetectSystemHC)" explainText="$(string.desc_AutoDetectSystemHC)" presentation="$(presentation.AutoDetectSystemHC)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Accessibility\AutoDetectSystemHC">
-      <parentCategory ref="Accessibility" />
-      <supportedOn ref="supported_LibreOffice_4_2" />
-      <elements>
-        <boolean id="Value" valueName="Value">
-          <trueValue>
-            <string>true</string>
-          </trueValue>
-          <falseValue>
-            <string>false</string>
-          </falseValue>
-        </boolean>
-        <boolean id="Final" valueName="Final" />
       </elements>
     </policy>
     <policy name="IsAutomaticFontColor" class="Both" displayName="$(string.name_IsAutomaticFontColor)" explainText="$(string.desc_IsAutomaticFontColor)" presentation="$(presentation.IsAutomaticFontColor)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Accessibility\IsAutomaticFontColor">
@@ -1090,7 +1371,6 @@
     <policy name="FontPair_0" class="Both" displayName="$(string.name_FontPair_0)" explainText="$(string.desc_FontPair)" presentation="$(presentation.FontPair)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_0/#fuse">
       <parentCategory ref="FontSubstitutions" />
       <supportedOn ref="supported_LibreOffice_4_2" />
-      <!-- ??? -->
       <elements>
         <boolean id="Always" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_0/#fuse\Always" valueName="Value">
           <trueValue>
@@ -1110,13 +1390,53 @@
         </boolean>
         <text id="ReplaceFont" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_0/#fuse\ReplaceFont" valueName="Value" />
         <text id="SubstituteFont" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_0/#fuse\SubstituteFont" valueName="Value" />
-        <boolean id="Final" valueName="Final" />
+        <boolean id="Final" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_0/#fuse\Always" valueName="Final">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          <trueList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_0/#fuse\OnScreenOnly" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_0/#fuse\ReplaceFont" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_0/#fuse\SubstituteFont" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+          </trueList>
+          <falseList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_0/#fuse\OnScreenOnly" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_0/#fuse\ReplaceFont" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_0/#fuse\SubstituteFont" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+          </falseList>
+        </boolean>
       </elements>
     </policy>
     <policy name="FontPair_1" class="Both" displayName="$(string.name_FontPair_1)" explainText="$(string.desc_FontPair)" presentation="$(presentation.FontPair)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_1/#fuse">
       <parentCategory ref="FontSubstitutions" />
       <supportedOn ref="supported_LibreOffice_4_2" />
-      <!-- ??? -->
       <elements>
         <boolean id="Always" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_1/#fuse\Always" valueName="Value">
           <trueValue>
@@ -1136,13 +1456,53 @@
         </boolean>
         <text id="ReplaceFont" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_1/#fuse\ReplaceFont" valueName="Value" />
         <text id="SubstituteFont" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_1/#fuse\SubstituteFont" valueName="Value" />
-        <boolean id="Final" valueName="Final" />
+        <boolean id="Final" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_1/#fuse\Always" valueName="Final">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          <trueList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_1/#fuse\OnScreenOnly" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_1/#fuse\ReplaceFont" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_1/#fuse\SubstituteFont" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+          </trueList>
+          <falseList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_1/#fuse\OnScreenOnly" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_1/#fuse\ReplaceFont" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_1/#fuse\SubstituteFont" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+          </falseList>
+        </boolean>
       </elements>
     </policy>
     <policy name="FontPair_2" class="Both" displayName="$(string.name_FontPair_2)" explainText="$(string.desc_FontPair)" presentation="$(presentation.FontPair)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_2/#fuse">
       <parentCategory ref="FontSubstitutions" />
       <supportedOn ref="supported_LibreOffice_4_2" />
-      <!-- ??? -->
       <elements>
         <boolean id="Always" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_2/#fuse\Always" valueName="Value">
           <trueValue>
@@ -1162,13 +1522,53 @@
         </boolean>
         <text id="ReplaceFont" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_2/#fuse\ReplaceFont" valueName="Value" />
         <text id="SubstituteFont" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_2/#fuse\SubstituteFont" valueName="Value" />
-        <boolean id="Final" valueName="Final" />
+        <boolean id="Final" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_2/#fuse\Always" valueName="Final">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          <trueList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_2/#fuse\OnScreenOnly" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_2/#fuse\ReplaceFont" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_2/#fuse\SubstituteFont" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+          </trueList>
+          <falseList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_2/#fuse\OnScreenOnly" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_2/#fuse\ReplaceFont" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_2/#fuse\SubstituteFont" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+          </falseList>
+        </boolean>
       </elements>
     </policy>
     <policy name="FontPair_3" class="Both" displayName="$(string.name_FontPair_3)" explainText="$(string.desc_FontPair)" presentation="$(presentation.FontPair)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_3/#fuse">
       <parentCategory ref="FontSubstitutions" />
       <supportedOn ref="supported_LibreOffice_4_2" />
-      <!-- ??? -->
       <elements>
         <boolean id="Always" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_3/#fuse\Always" valueName="Value">
           <trueValue>
@@ -1188,13 +1588,53 @@
         </boolean>
         <text id="ReplaceFont" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_3/#fuse\ReplaceFont" valueName="Value" />
         <text id="SubstituteFont" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_3/#fuse\SubstituteFont" valueName="Value" />
-        <boolean id="Final" valueName="Final" />
+        <boolean id="Final" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_3/#fuse\Always" valueName="Final">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          <trueList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_3/#fuse\OnScreenOnly" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_3/#fuse\ReplaceFont" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_3/#fuse\SubstituteFont" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+          </trueList>
+          <falseList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_3/#fuse\OnScreenOnly" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_3/#fuse\ReplaceFont" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_3/#fuse\SubstituteFont" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+          </falseList>
+        </boolean>
       </elements>
     </policy>
     <policy name="FontPair_4" class="Both" displayName="$(string.name_FontPair_4)" explainText="$(string.desc_FontPair)" presentation="$(presentation.FontPair)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_4/#fuse">
       <parentCategory ref="FontSubstitutions" />
       <supportedOn ref="supported_LibreOffice_4_2" />
-      <!-- ??? -->
       <elements>
         <boolean id="Always" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_4/#fuse\Always" valueName="Value">
           <trueValue>
@@ -1214,13 +1654,53 @@
         </boolean>
         <text id="ReplaceFont" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_4/#fuse\ReplaceFont" valueName="Value" />
         <text id="SubstituteFont" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_4/#fuse\SubstituteFont" valueName="Value" />
-        <boolean id="Final" valueName="Final" />
+        <boolean id="Final" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_4/#fuse\Always" valueName="Final">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          <trueList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_4/#fuse\OnScreenOnly" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_4/#fuse\ReplaceFont" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_4/#fuse\SubstituteFont" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+          </trueList>
+          <falseList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_4/#fuse\OnScreenOnly" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_4/#fuse\ReplaceFont" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_4/#fuse\SubstituteFont" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+          </falseList>
+        </boolean>
       </elements>
     </policy>
     <policy name="FontPair_5" class="Both" displayName="$(string.name_FontPair_5)" explainText="$(string.desc_FontPair)" presentation="$(presentation.FontPair)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_5/#fuse">
       <parentCategory ref="FontSubstitutions" />
       <supportedOn ref="supported_LibreOffice_4_2" />
-      <!-- ??? -->
       <elements>
         <boolean id="Always" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_5/#fuse\Always" valueName="Value">
           <trueValue>
@@ -1240,13 +1720,53 @@
         </boolean>
         <text id="ReplaceFont" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_5/#fuse\ReplaceFont" valueName="Value" />
         <text id="SubstituteFont" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_5/#fuse\SubstituteFont" valueName="Value" />
-        <boolean id="Final" valueName="Final" />
+        <boolean id="Final" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_5/#fuse\Always" valueName="Final">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          <trueList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_5/#fuse\OnScreenOnly" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_5/#fuse\ReplaceFont" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_5/#fuse\SubstituteFont" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+          </trueList>
+          <falseList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_5/#fuse\OnScreenOnly" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_5/#fuse\ReplaceFont" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_5/#fuse\SubstituteFont" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+          </falseList>
+        </boolean>
       </elements>
     </policy>
     <policy name="FontPair_6" class="Both" displayName="$(string.name_FontPair_6)" explainText="$(string.desc_FontPair)" presentation="$(presentation.FontPair)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_6/#fuse">
       <parentCategory ref="FontSubstitutions" />
       <supportedOn ref="supported_LibreOffice_4_2" />
-      <!-- ??? -->
       <elements>
         <boolean id="Always" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_6/#fuse\Always" valueName="Value">
           <trueValue>
@@ -1266,13 +1786,53 @@
         </boolean>
         <text id="ReplaceFont" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_6/#fuse\ReplaceFont" valueName="Value" />
         <text id="SubstituteFont" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_6/#fuse\SubstituteFont" valueName="Value" />
-        <boolean id="Final" valueName="Final" />
+        <boolean id="Final" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_6/#fuse\Always" valueName="Final">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          <trueList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_6/#fuse\OnScreenOnly" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_6/#fuse\ReplaceFont" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_6/#fuse\SubstituteFont" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+          </trueList>
+          <falseList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_6/#fuse\OnScreenOnly" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_6/#fuse\ReplaceFont" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_6/#fuse\SubstituteFont" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+          </falseList>
+        </boolean>
       </elements>
     </policy>
     <policy name="FontPair_7" class="Both" displayName="$(string.name_FontPair_7)" explainText="$(string.desc_FontPair)" presentation="$(presentation.FontPair)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_7/#fuse">
       <parentCategory ref="FontSubstitutions" />
       <supportedOn ref="supported_LibreOffice_4_2" />
-      <!-- ??? -->
       <elements>
         <boolean id="Always" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_7/#fuse\Always" valueName="Value">
           <trueValue>
@@ -1292,13 +1852,53 @@
         </boolean>
         <text id="ReplaceFont" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_7/#fuse\ReplaceFont" valueName="Value" />
         <text id="SubstituteFont" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_7/#fuse\SubstituteFont" valueName="Value" />
-        <boolean id="Final" valueName="Final" />
+        <boolean id="Final" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_7/#fuse\Always" valueName="Final">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          <trueList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_7/#fuse\OnScreenOnly" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_7/#fuse\ReplaceFont" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_7/#fuse\SubstituteFont" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+          </trueList>
+          <falseList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_7/#fuse\OnScreenOnly" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_7/#fuse\ReplaceFont" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_7/#fuse\SubstituteFont" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+          </falseList>
+        </boolean>
       </elements>
     </policy>
     <policy name="FontPair_8" class="Both" displayName="$(string.name_FontPair_8)" explainText="$(string.desc_FontPair)" presentation="$(presentation.FontPair)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_8/#fuse">
       <parentCategory ref="FontSubstitutions" />
       <supportedOn ref="supported_LibreOffice_4_2" />
-      <!-- ??? -->
       <elements>
         <boolean id="Always" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_8/#fuse\Always" valueName="Value">
           <trueValue>
@@ -1318,13 +1918,53 @@
         </boolean>
         <text id="ReplaceFont" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_8/#fuse\ReplaceFont" valueName="Value" />
         <text id="SubstituteFont" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_8/#fuse\SubstituteFont" valueName="Value" />
-        <boolean id="Final" valueName="Final" />
+        <boolean id="Final" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_8/#fuse\Always" valueName="Final">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          <trueList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_8/#fuse\OnScreenOnly" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_8/#fuse\ReplaceFont" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_8/#fuse\SubstituteFont" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+          </trueList>
+          <falseList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_8/#fuse\OnScreenOnly" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_8/#fuse\ReplaceFont" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_8/#fuse\SubstituteFont" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+          </falseList>
+        </boolean>
       </elements>
     </policy>
     <policy name="FontPair_9" class="Both" displayName="$(string.name_FontPair_9)" explainText="$(string.desc_FontPair)" presentation="$(presentation.FontPair)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_9/#fuse">
       <parentCategory ref="FontSubstitutions" />
       <supportedOn ref="supported_LibreOffice_4_2" />
-      <!-- ??? -->
       <elements>
         <boolean id="Always" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_9/#fuse\Always" valueName="Value">
           <trueValue>
@@ -1344,7 +1984,48 @@
         </boolean>
         <text id="ReplaceFont" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_9/#fuse\ReplaceFont" valueName="Value" />
         <text id="SubstituteFont" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_9/#fuse\SubstituteFont" valueName="Value" />
-        <boolean id="Final" valueName="Final" />
+        <boolean id="Final" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_9/#fuse\Always" valueName="Final">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          <trueList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_9/#fuse\OnScreenOnly" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_9/#fuse\ReplaceFont" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_9/#fuse\SubstituteFont" valueName="Final">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+          </trueList>
+          <falseList>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_9/#fuse\OnScreenOnly" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_9/#fuse\ReplaceFont" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+            <item key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Font\Substitution\FontPairs\_9/#fuse\SubstituteFont" valueName="Final">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+          </falseList>
+        </boolean>
       </elements>
     </policy>
     <policy name="SelectPDFExport" class="Both" displayName="$(string.name_SelectPDFExport)" explainText="$(string.desc_SelectPDFExport)" presentation="$(presentation.SelectPDFExport)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Filter\PDF\Export\SelectPdfVersion">
@@ -1372,9 +2053,9 @@
               <string>3</string>
             </value>
           </item>
-          <item displayName="$(string.pdf_PDF_1_4)">
+          <item displayName="$(string.pdf_PDF_A_4)">
             <value>
-              <string>14</string>
+              <string>4</string>
             </value>
           </item>
           <item displayName="$(string.pdf_PDF_1_5)">
@@ -1385,6 +2066,16 @@
           <item displayName="$(string.pdf_PDF_1_6)">
             <value>
               <string>16</string>
+            </value>
+          </item>
+          <item displayName="$(string.pdf_PDF_1_7)">
+            <value>
+              <string>17</string>
+            </value>
+          </item>
+          <item displayName="$(string.pdf_PDF_2_0)">
+            <value>
+              <string>20</string>
             </value>
           </item>
         </enum>
@@ -2440,6 +3131,388 @@
             </valueList>
           </item>
         </enum>
+        <text id="HomePhoneValue" key="Software\Policies\LibreOffice\org.openoffice.UserProfile\Data\homephone" valueName="Value" />
+        <enum id="HomePhoneFlags" key="Software\Policies\LibreOffice\org.openoffice.UserProfile\Data\homephone" valueName="Dummy">
+          <item displayName="$(string.ValueFlagsNone)">
+            <value>
+              <decimal value="0"/>
+            </value>
+            <valueList defaultKey="Software\Policies\LibreOffice\org.openoffice.UserProfile\Data\homephone">
+              <item valueName="Final">
+                <value>
+                  <decimal value="0"/>
+                </value>
+              </item>
+              <item valueName="External">
+                <value>
+                  <decimal value="0"/>
+                </value>
+              </item>
+              <item valueName="ExternalBackend">
+                <value>
+                  <delete/>
+                </value>
+              </item>
+            </valueList>
+          </item>
+          <item displayName="$(string.ValueFlagsFinal)">
+            <value>
+              <decimal value="1"/>
+            </value>
+            <valueList defaultKey="Software\Policies\LibreOffice\org.openoffice.UserProfile\Data\homephone">
+              <item valueName="Final">
+                <value>
+                  <decimal value="1"/>
+                </value>
+              </item>
+              <item valueName="External">
+                <value>
+                  <decimal value="0"/>
+                </value>
+              </item>
+              <item valueName="ExternalBackend">
+                <value>
+                  <delete/>
+                </value>
+              </item>
+            </valueList>
+          </item>
+          <item displayName="$(string.ValueFlagsExternalLDAP)">
+            <value>
+              <decimal value="2"/>
+            </value>
+            <valueList defaultKey="Software\Policies\LibreOffice\org.openoffice.UserProfile\Data\homephone">
+              <item valueName="Final">
+                <value>
+                  <decimal value="1"/>
+                </value>
+              </item>
+              <item valueName="External">
+                <value>
+                  <decimal value="1"/>
+                </value>
+              </item>
+              <item valueName="ExternalBackend">
+                <value>
+                  <string>com.sun.star.configuration.backend.LdapUserProfileBe</string>
+                </value>
+              </item>
+            </valueList>
+          </item>
+          <item displayName="$(string.ValueFlagsExternalWin)">
+            <value>
+              <decimal value="3"/>
+            </value>
+            <valueList defaultKey="Software\Policies\LibreOffice\org.openoffice.UserProfile\Data\homephone">
+              <item valueName="Final">
+                <value>
+                  <decimal value="1"/>
+                </value>
+              </item>
+              <item valueName="External">
+                <value>
+                  <decimal value="1"/>
+                </value>
+              </item>
+              <item valueName="ExternalBackend">
+                <value>
+                  <string>com.sun.star.configuration.backend.WinUserInfoBe homephone</string>
+                </value>
+              </item>
+            </valueList>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="UPMail" class="Both" displayName="$(string.UPMail)" explainText="$(string.desc_UPMail)" presentation="$(presentation.UPMail)" key="Software\Policies\LibreOffice\org.openoffice.UserProfile\Data\mail">
+      <parentCategory ref="UserProfile" />
+      <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <text id="MailValue" valueName="Value" />
+        <enum id="MailFlags" valueName="Dummy">
+          <item displayName="$(string.ValueFlagsNone)">
+            <value>
+              <decimal value="0"/>
+            </value>
+            <valueList defaultKey="Software\Policies\LibreOffice\org.openoffice.UserProfile\Data\mail">
+              <item valueName="Final">
+                <value>
+                  <decimal value="0"/>
+                </value>
+              </item>
+              <item valueName="External">
+                <value>
+                  <decimal value="0"/>
+                </value>
+              </item>
+              <item valueName="ExternalBackend">
+                <value>
+                  <delete/>
+                </value>
+              </item>
+            </valueList>
+          </item>
+          <item displayName="$(string.ValueFlagsFinal)">
+            <value>
+              <decimal value="1"/>
+            </value>
+            <valueList defaultKey="Software\Policies\LibreOffice\org.openoffice.UserProfile\Data\mail">
+              <item valueName="Final">
+                <value>
+                  <decimal value="1"/>
+                </value>
+              </item>
+              <item valueName="External">
+                <value>
+                  <decimal value="0"/>
+                </value>
+              </item>
+              <item valueName="ExternalBackend">
+                <value>
+                  <delete/>
+                </value>
+              </item>
+            </valueList>
+          </item>
+          <item displayName="$(string.ValueFlagsExternalLDAP)">
+            <value>
+              <decimal value="2"/>
+            </value>
+            <valueList defaultKey="Software\Policies\LibreOffice\org.openoffice.UserProfile\Data\mail">
+              <item valueName="Final">
+                <value>
+                  <decimal value="1"/>
+                </value>
+              </item>
+              <item valueName="External">
+                <value>
+                  <decimal value="1"/>
+                </value>
+              </item>
+              <item valueName="ExternalBackend">
+                <value>
+                  <string>com.sun.star.configuration.backend.LdapUserProfileBe</string>
+                </value>
+              </item>
+            </valueList>
+          </item>
+          <item displayName="$(string.ValueFlagsExternalWin)">
+            <value>
+              <decimal value="3"/>
+            </value>
+            <valueList defaultKey="Software\Policies\LibreOffice\org.openoffice.UserProfile\Data\mail">
+              <item valueName="Final">
+                <value>
+                  <decimal value="1"/>
+                </value>
+              </item>
+              <item valueName="External">
+                <value>
+                  <decimal value="1"/>
+                </value>
+              </item>
+              <item valueName="ExternalBackend">
+                <value>
+                  <string>com.sun.star.configuration.backend.WinUserInfoBe mail</string>
+                </value>
+              </item>
+            </valueList>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="UPTitle" class="Both" displayName="$(string.UPTitle)" explainText="$(string.desc_UPTitle)" presentation="$(presentation.UPTitle)" key="Software\Policies\LibreOffice\org.openoffice.UserProfile\Data\title">
+      <parentCategory ref="UserProfile" />
+      <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <text id="TitleValue" valueName="Value" />
+        <enum id="TitleFlags" valueName="Dummy">
+          <item displayName="$(string.ValueFlagsNone)">
+            <value>
+              <decimal value="0"/>
+            </value>
+            <valueList defaultKey="Software\Policies\LibreOffice\org.openoffice.UserProfile\Data\title">
+              <item valueName="Final">
+                <value>
+                  <decimal value="0"/>
+                </value>
+              </item>
+              <item valueName="External">
+                <value>
+                  <decimal value="0"/>
+                </value>
+              </item>
+              <item valueName="ExternalBackend">
+                <value>
+                  <delete/>
+                </value>
+              </item>
+            </valueList>
+          </item>
+          <item displayName="$(string.ValueFlagsFinal)">
+            <value>
+              <decimal value="1"/>
+            </value>
+            <valueList defaultKey="Software\Policies\LibreOffice\org.openoffice.UserProfile\Data\title">
+              <item valueName="Final">
+                <value>
+                  <decimal value="1"/>
+                </value>
+              </item>
+              <item valueName="External">
+                <value>
+                  <decimal value="0"/>
+                </value>
+              </item>
+              <item valueName="ExternalBackend">
+                <value>
+                  <delete/>
+                </value>
+              </item>
+            </valueList>
+          </item>
+          <item displayName="$(string.ValueFlagsExternalLDAP)">
+            <value>
+              <decimal value="2"/>
+            </value>
+            <valueList defaultKey="Software\Policies\LibreOffice\org.openoffice.UserProfile\Data\title">
+              <item valueName="Final">
+                <value>
+                  <decimal value="1"/>
+                </value>
+              </item>
+              <item valueName="External">
+                <value>
+                  <decimal value="1"/>
+                </value>
+              </item>
+              <item valueName="ExternalBackend">
+                <value>
+                  <string>com.sun.star.configuration.backend.LdapUserProfileBe</string>
+                </value>
+              </item>
+            </valueList>
+          </item>
+          <item displayName="$(string.ValueFlagsExternalWin)">
+            <value>
+              <decimal value="3"/>
+            </value>
+            <valueList defaultKey="Software\Policies\LibreOffice\org.openoffice.UserProfile\Data\title">
+              <item valueName="Final">
+                <value>
+                  <decimal value="1"/>
+                </value>
+              </item>
+              <item valueName="External">
+                <value>
+                  <decimal value="1"/>
+                </value>
+              </item>
+              <item valueName="ExternalBackend">
+                <value>
+                  <string>com.sun.star.configuration.backend.WinUserInfoBe title</string>
+                </value>
+              </item>
+            </valueList>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="UPPosition" class="Both" displayName="$(string.UPPosition)" explainText="$(string.desc_UPPosition)" presentation="$(presentation.UPPosition)" key="Software\Policies\LibreOffice\org.openoffice.UserProfile\Data\position">
+      <parentCategory ref="UserProfile" />
+      <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <text id="PositionValue" valueName="Value" />
+        <enum id="PositionFlags" valueName="Dummy">
+          <item displayName="$(string.ValueFlagsNone)">
+            <value>
+              <decimal value="0"/>
+            </value>
+            <valueList defaultKey="Software\Policies\LibreOffice\org.openoffice.UserProfile\Data\position">
+              <item valueName="Final">
+                <value>
+                  <decimal value="0"/>
+                </value>
+              </item>
+              <item valueName="External">
+                <value>
+                  <decimal value="0"/>
+                </value>
+              </item>
+              <item valueName="ExternalBackend">
+                <value>
+                  <delete/>
+                </value>
+              </item>
+            </valueList>
+          </item>
+          <item displayName="$(string.ValueFlagsFinal)">
+            <value>
+              <decimal value="1"/>
+            </value>
+            <valueList defaultKey="Software\Policies\LibreOffice\org.openoffice.UserProfile\Data\position">
+              <item valueName="Final">
+                <value>
+                  <decimal value="1"/>
+                </value>
+              </item>
+              <item valueName="External">
+                <value>
+                  <decimal value="0"/>
+                </value>
+              </item>
+              <item valueName="ExternalBackend">
+                <value>
+                  <delete/>
+                </value>
+              </item>
+            </valueList>
+          </item>
+          <item displayName="$(string.ValueFlagsExternalLDAP)">
+            <value>
+              <decimal value="2"/>
+            </value>
+            <valueList defaultKey="Software\Policies\LibreOffice\org.openoffice.UserProfile\Data\position">
+              <item valueName="Final">
+                <value>
+                  <decimal value="1"/>
+                </value>
+              </item>
+              <item valueName="External">
+                <value>
+                  <decimal value="1"/>
+                </value>
+              </item>
+              <item valueName="ExternalBackend">
+                <value>
+                  <string>com.sun.star.configuration.backend.LdapUserProfileBe</string>
+                </value>
+              </item>
+            </valueList>
+          </item>
+          <item displayName="$(string.ValueFlagsExternalWin)">
+            <value>
+              <decimal value="3"/>
+            </value>
+            <valueList defaultKey="Software\Policies\LibreOffice\org.openoffice.UserProfile\Data\position">
+              <item valueName="Final">
+                <value>
+                  <decimal value="1"/>
+                </value>
+              </item>
+              <item valueName="External">
+                <value>
+                  <decimal value="1"/>
+                </value>
+              </item>
+              <item valueName="ExternalBackend">
+                <value>
+                  <string>com.sun.star.configuration.backend.WinUserInfoBe position</string>
+                </value>
+              </item>
+            </valueList>
+          </item>
+        </enum>
       </elements>
     </policy>
     <policy name="WriterSaveAsFormat" class="Both" displayName="$(string.SaveAsFormat)" explainText="$(string.desc_SaveAsFormat)" presentation="$(presentation.WriterSaveAsFormat)" key="Software\Policies\LibreOffice\org.openoffice.Setup\Office\Factories\org.openoffice.Setup:Factory['com.sun.star.text.TextDocument']\ooSetupFactoryDefaultFilter">
@@ -2464,7 +3537,7 @@
           </item>
           <item displayName="$(string.rtf)">
             <value>
-              <string>RTF</string>
+              <string>Rich Text Format</string>
             </value>
           </item>
         </enum>
@@ -2655,7 +3728,7 @@
       <parentCategory ref="History" />
       <supportedOn ref="supported_LibreOffice_4_2" />
       <elements>
-        <decimal id="Value" valueName="Value" minValue="0" maxValue="1000" storeAsText="true" />
+        <decimal id="Value" valueName="Value" minValue="0" maxValue="100" storeAsText="true" />
         <boolean id="Final" valueName="Final" />
       </elements>
     </policy>
@@ -2691,6 +3764,81 @@
         <boolean id="Final" valueName="Final" />
       </elements>
     </policy>
+    <policy name="IsSpellAuto" class="Both" displayName="$(string.name_IsSpellAuto)" explainText="$(string.desc_IsSpellAuto)" presentation="$(presentation.IsSpellAuto)" key="Software\Policies\LibreOffice\org.openoffice.Office.Linguistic\SpellChecking\IsSpellAuto">
+      <parentCategory ref="WritingAids" />
+      <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="IsSpellUpperCase" class="Both" displayName="$(string.name_IsSpellUpperCase)" explainText="$(string.desc_IsSpellUpperCase)" presentation="$(presentation.IsSpellUpperCase)" key="Software\Policies\LibreOffice\org.openoffice.Office.Linguistic\SpellChecking\IsSpellUpperCase">
+      <parentCategory ref="WritingAids" />
+      <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="IsSpellWithDigits" class="Both" displayName="$(string.name_IsSpellWithDigits)" explainText="$(string.desc_IsSpellWithDigits)" presentation="$(presentation.IsSpellWithDigits)" key="Software\Policies\LibreOffice\org.openoffice.Office.Linguistic\SpellChecking\IsSpellWithDigits">
+      <parentCategory ref="WritingAids" />
+      <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="IsSpellSpecial" class="Both" displayName="$(string.name_IsSpellSpecial)" explainText="$(string.desc_IsSpellSpecial)" presentation="$(presentation.IsSpellSpecial)" key="Software\Policies\LibreOffice\org.openoffice.Office.Linguistic\SpellChecking\IsSpellSpecial">
+      <parentCategory ref="WritingAids" />
+      <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="GrammarIsAutoCheck" class="Both" displayName="$(string.name_GrammarIsAutoCheck)" explainText="$(string.desc_GrammarIsAutoCheck)" presentation="$(presentation.GrammarIsAutoCheck)" key="Software\Policies\LibreOffice\org.openoffice.Office.Linguistic\GrammarChecking\IsAutoCheck">
+      <parentCategory ref="WritingAids" />
+      <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
     <policy name="UILocale" class="Both" displayName="$(string.name_UILocale)" explainText="$(string.desc_UILocale)" presentation="$(presentation.UILocale)" key="Software\Policies\LibreOffice\org.openoffice.Office.Linguistic\General\UILocale">
       <parentCategory ref="Localization" />
       <supportedOn ref="supported_LibreOffice_4_2" />
@@ -2699,7 +3847,7 @@
         <boolean id="Final" valueName="Final" />
       </elements>
     </policy>
-    <policy name="Locale" class="Both" displayName="$(string.name_Locale)" explainText="$(string.desc_Locale)" presentation="$(presentation.Locale)" key="Software\Policies\LibreOffice\org.openoffice.Setup\L10N\Locale">
+    <policy name="Locale" class="Both" displayName="$(string.name_Locale)" explainText="$(string.desc_Locale)" presentation="$(presentation.Locale)" key="Software\Policies\LibreOffice\org.openoffice.Setup\L10N\ooSetupSystemLocale">
       <parentCategory ref="Localization" />
       <supportedOn ref="supported_LibreOffice_4_2" />
       <elements>
@@ -5806,7 +6954,7 @@
             </value>
           </item>
         </enum>
-        <boolean id="ODFFinal" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Formula\Load\ODFRecalcMode" valueName="Final" />
+        <boolean id="ODFFinal" key="Software\Policies\LibreOffice\org.openoffice.Office.Calc\Formula\Load\ODFRecalcMode" valueName="Final" />
       </elements>
     </policy>
     <policy name="EmptyMergedCells" class="Both" displayName="$(string.name_EmptyMergedCells)" explainText="$(string.desc_EmptyMergedCells)" presentation="$(presentation.EmptyMergedCells)" key="Software\Policies\LibreOffice\org.openoffice.Office.Calc\Compatibility\MergeCells\EmptyMergedCells">
@@ -5869,7 +7017,7 @@
         <boolean id="Final" valueName="Final" />
       </elements>
     </policy>
-    <policy name="AllSheets" class="Both" displayName="$(string.name_AllSheets)" explainText="$(string.desc_AllSheets)" presentation="$(presentation.AllSheets)" key="Software\Policies\LibreOffice\org.openoffice.Office.Calc\Print\Page\AllSheets">
+    <policy name="AllSheets" class="Both" displayName="$(string.name_AllSheets)" explainText="$(string.desc_AllSheets)" presentation="$(presentation.AllSheets)" key="Software\Policies\LibreOffice\org.openoffice.Office.Calc\Print\Other\AllSheets">
       <parentCategory ref="CalcPrint" />
       <supportedOn ref="supported_LibreOffice_4_2" />
       <elements>
@@ -6157,21 +7305,6 @@
         <boolean id="Final" valueName="Final" />
       </elements>
     </policy>
-    <policy name="WriterPrintSinglePrintJob" class="Both" displayName="$(string.name_PrintSinglePrintJob)" explainText="$(string.desc_PrintSinglePrintJob)" presentation="$(presentation.PrintSinglePrintJob)" key="Software\Policies\LibreOffice\org.openoffice.Office.Writer\Print\Output\SinglePrintJob">
-      <parentCategory ref="WriterPrint" />
-      <supportedOn ref="supported_LibreOffice_4_2" />
-      <elements>
-        <boolean id="Value" valueName="Value">
-          <trueValue>
-            <string>true</string>
-          </trueValue>
-          <falseValue>
-            <string>false</string>
-          </falseValue>
-        </boolean>
-        <boolean id="Final" valueName="Final" />
-      </elements>
-    </policy>
     <policy name="AutoTextApplyNumbering" class="Both" displayName="$(string.name_AutoTextApplyNumbering)" explainText="$(string.desc_AutoTextApplyNumbering)" presentation="$(presentation.AutoTextApplyNumbering)" key="Software\Policies\LibreOffice\org.openoffice.Office.Writer\AutoFunction\Format\ByInput\ApplyNumbering\Enable">
       <parentCategory ref="AutoText" />
       <supportedOn ref="supported_LibreOffice_4_2" />
@@ -6205,6 +7338,344 @@
           </trueValue>
           <falseValue>
             <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="ProxyType" class="Both" displayName="$(string.name_ProxyType)" explainText="$(string.desc_ProxyType)" presentation="$(presentation.ProxyType)" key="Software\Policies\LibreOffice\org.openoffice.Inet\Settings\ooInetProxyType">
+      <parentCategory ref="Security" />
+      <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <enum id="Value" valueName="Value">
+          <item displayName="$(string.proxy_none)">
+            <value>
+              <string>0</string>
+            </value>
+          </item>
+          <item displayName="$(string.proxy_system)">
+            <value>
+              <string>1</string>
+            </value>
+          </item>
+          <item displayName="$(string.proxy_manual)">
+            <value>
+              <string>2</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="AllowInsecureProtocols" class="Both" displayName="$(string.name_AllowInsecureProtocols)" explainText="$(string.desc_AllowInsecureProtocols)" presentation="$(presentation.AllowInsecureProtocols)" key="Software\Policies\LibreOffice\org.openoffice.Office.Security\Net\AllowInsecureProtocols">
+      <parentCategory ref="Security" />
+      <supportedOn ref="supported_CO_24_04" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="DisableActiveContent" class="Both" displayName="$(string.name_DisableActiveContent)" explainText="$(string.desc_DisableActiveContent)" presentation="$(presentation.DisableActiveContent)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Security\Scripting\DisableActiveContent">
+      <parentCategory ref="Security" />
+      <supportedOn ref="supported_CO_24_04" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="DisableOLEAutomation" class="Both" displayName="$(string.name_DisableOLEAutomation)" explainText="$(string.desc_DisableOLEAutomation)" presentation="$(presentation.DisableOLEAutomation)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Security\Scripting\DisableOLEAutomation">
+      <parentCategory ref="Security" />
+      <supportedOn ref="supported_CO_25_04" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="DisablePythonRuntime" class="Both" displayName="$(string.name_DisablePythonRuntime)" explainText="$(string.desc_DisablePythonRuntime)" presentation="$(presentation.DisablePythonRuntime)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Security\Scripting\DisablePythonRuntime">
+      <parentCategory ref="Security" />
+      <supportedOn ref="supported_CO_25_04" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="AllowedDocumentEventURLs" class="Both" displayName="$(string.name_AllowedDocumentEventURLs)" explainText="$(string.desc_AllowedDocumentEventURLs)" presentation="$(presentation.AllowedDocumentEventURLs)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Security\Scripting\AllowedDocumentEventURLs">
+      <parentCategory ref="Security" />
+      <supportedOn ref="supported_CO_22_05" />
+      <elements>
+        <text id="Value" valueName="Value" />
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="LoadExoticFileFormats" class="Both" displayName="$(string.name_LoadExoticFileFormats)" explainText="$(string.desc_LoadExoticFileFormats)" presentation="$(presentation.LoadExoticFileFormats)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Security\LoadExoticFileFormats">
+      <parentCategory ref="Security" />
+      <supportedOn ref="supported_LibreOffice_6_4" />
+      <elements>
+        <enum id="Value" valueName="Value">
+          <item displayName="$(string.exotic_refuse)">
+            <value>
+              <string>0</string>
+            </value>
+          </item>
+          <item displayName="$(string.exotic_ask)">
+            <value>
+              <string>1</string>
+            </value>
+          </item>
+          <item displayName="$(string.exotic_load)">
+            <value>
+              <string>2</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="TSAURLs" class="Both" displayName="$(string.name_TSAURLs)" explainText="$(string.desc_TSAURLs)" presentation="$(presentation.TSAURLs)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Security\Scripting\TSAURLs">
+      <parentCategory ref="Security" />
+      <supportedOn ref="supported_LibreOffice_5_0" />
+      <elements>
+        <text id="Value" valueName="Value" />
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="PasswordPolicy" class="Both" displayName="$(string.name_PasswordPolicy)" explainText="$(string.desc_PasswordPolicy)" presentation="$(presentation.PasswordPolicy)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Security\Scripting\PasswordPolicy">
+      <parentCategory ref="Security" />
+      <supportedOn ref="supported_CO_24_04" />
+      <elements>
+        <text id="Value" valueName="Value" />
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="PasswordUseStorage" class="Both" displayName="$(string.name_PasswordUseStorage)" explainText="$(string.desc_PasswordUseStorage)" presentation="$(presentation.PasswordUseStorage)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Passwords\UseStorage">
+      <parentCategory ref="Passwords" />
+      <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>true</string>
+          </trueValue>
+          <falseValue>
+            <string>false</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="AuthenticateUsingSystemCredentials" class="Both" displayName="$(string.name_AuthenticateUsingSystemCredentials)" explainText="$(string.desc_AuthenticateUsingSystemCredentials)" presentation="$(presentation.AuthenticateUsingSystemCredentials)" key="Software\Policies\LibreOffice\org.openoffice.Office.Common\Passwords\AuthenticateUsingSystemCredentials">
+      <parentCategory ref="Passwords" />
+      <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <text id="Value" valueName="Value" />
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="CalcUpdateLink" class="Both" displayName="$(string.name_CalcUpdateLink)" explainText="$(string.desc_CalcUpdateLink)" presentation="$(presentation.CalcUpdateLink)" key="Software\Policies\LibreOffice\org.openoffice.Office.Calc\Content\Update\Link">
+      <parentCategory ref="Calc" />
+      <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <enum id="Value" valueName="Value">
+          <item displayName="$(string.link_always)">
+            <value>
+              <string>0</string>
+            </value>
+          </item>
+          <item displayName="$(string.link_never)">
+            <value>
+              <string>1</string>
+            </value>
+          </item>
+          <item displayName="$(string.link_onrequest)">
+            <value>
+              <string>2</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="WriterUpdateLink" class="Both" displayName="$(string.name_WriterUpdateLink)" explainText="$(string.desc_WriterUpdateLink)" presentation="$(presentation.WriterUpdateLink)" key="Software\Policies\LibreOffice\org.openoffice.Office.Writer\Content\Update\Link">
+      <parentCategory ref="Writer" />
+      <supportedOn ref="supported_LibreOffice_4_2" />
+      <elements>
+        <enum id="Value" valueName="Value">
+          <item displayName="$(string.link_never)">
+            <value>
+              <string>0</string>
+            </value>
+          </item>
+          <item displayName="$(string.link_onrequest)">
+            <value>
+              <string>1</string>
+            </value>
+          </item>
+          <item displayName="$(string.link_always)">
+            <value>
+              <string>2</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="EPUB" class="Both" displayName="$(string.name_EPUB)" explainText="$(string.desc_EPUB)" presentation="$(presentation.EPUB)" key="Software\Policies\LibreOffice\org.openoffice.TypeDetection.Filter\Filters\org.openoffice.TypeDetection.Filter:Filter['EPUB']\Enabled">
+      <parentCategory ref="Filters" />
+      <supportedOn ref="supported_LibreOffice_6_4" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>false</string>
+          </trueValue>
+          <falseValue>
+            <string>true</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="Microsoft_Multiplan" class="Both" displayName="$(string.name_Microsoft_Multiplan)" explainText="$(string.desc_Microsoft_Multiplan)" presentation="$(presentation.Microsoft_Multiplan)" key="Software\Policies\LibreOffice\org.openoffice.TypeDetection.Filter\Filters\org.openoffice.TypeDetection.Filter:Filter['Microsoft Multiplan']\Enabled">
+      <parentCategory ref="Filters" />
+      <supportedOn ref="supported_LibreOffice_6_4" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>false</string>
+          </trueValue>
+          <falseValue>
+            <string>true</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="PocketWord_File" class="Both" displayName="$(string.name_PocketWord_File)" explainText="$(string.desc_PocketWord_File)" presentation="$(presentation.PocketWord_File)" key="Software\Policies\LibreOffice\org.openoffice.TypeDetection.Filter\Filters\org.openoffice.TypeDetection.Filter:Filter['PocketWord File']\Enabled">
+      <parentCategory ref="Filters" />
+      <supportedOn ref="supported_LibreOffice_6_4" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>false</string>
+          </trueValue>
+          <falseValue>
+            <string>true</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="writer_globaldocument_StarOffice_XML_Writer" class="Both" displayName="$(string.name_writer_globaldocument_StarOffice_XML_Writer)" explainText="$(string.desc_writer_globaldocument_StarOffice_XML_Writer)" presentation="$(presentation.writer_globaldocument_StarOffice_XML_Writer)" key="Software\Policies\LibreOffice\org.openoffice.TypeDetection.Filter\Filters\org.openoffice.TypeDetection.Filter:Filter['writer_globaldocument_StarOffice_XML_Writer']\Enabled">
+      <parentCategory ref="Filters" />
+      <supportedOn ref="supported_LibreOffice_6_4" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>false</string>
+          </trueValue>
+          <falseValue>
+            <string>true</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="writer_web_StarOffice_XML_Writer" class="Both" displayName="$(string.name_writer_web_StarOffice_XML_Writer)" explainText="$(string.desc_writer_web_StarOffice_XML_Writer)" presentation="$(presentation.writer_web_StarOffice_XML_Writer)" key="Software\Policies\LibreOffice\org.openoffice.TypeDetection.Filter\Filters\org.openoffice.TypeDetection.Filter:Filter['writer_web_StarOffice_XML_Writer']\Enabled">
+      <parentCategory ref="Filters" />
+      <supportedOn ref="supported_LibreOffice_6_4" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>false</string>
+          </trueValue>
+          <falseValue>
+            <string>true</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="XHTML_Calc_File" class="Both" displayName="$(string.name_XHTML_Calc_File)" explainText="$(string.desc_XHTML_Calc_File)" presentation="$(presentation.XHTML_Calc_File)" key="Software\Policies\LibreOffice\org.openoffice.TypeDetection.Filter\Filters\org.openoffice.TypeDetection.Filter:Filter['XHTML Calc File']\Enabled">
+      <parentCategory ref="Filters" />
+      <supportedOn ref="supported_LibreOffice_6_4" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>false</string>
+          </trueValue>
+          <falseValue>
+            <string>true</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="XHTML_Draw_File" class="Both" displayName="$(string.name_XHTML_Draw_File)" explainText="$(string.desc_XHTML_Draw_File)" presentation="$(presentation.XHTML_Draw_File)" key="Software\Policies\LibreOffice\org.openoffice.TypeDetection.Filter\Filters\org.openoffice.TypeDetection.Filter:Filter['XHTML Draw File']\Enabled">
+      <parentCategory ref="Filters" />
+      <supportedOn ref="supported_LibreOffice_6_4" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>false</string>
+          </trueValue>
+          <falseValue>
+            <string>true</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="XHTML_Impress_File" class="Both" displayName="$(string.name_XHTML_Impress_File)" explainText="$(string.desc_XHTML_Impress_File)" presentation="$(presentation.XHTML_Impress_File)" key="Software\Policies\LibreOffice\org.openoffice.TypeDetection.Filter\Filters\org.openoffice.TypeDetection.Filter:Filter['XHTML Impress File']\Enabled">
+      <parentCategory ref="Filters" />
+      <supportedOn ref="supported_LibreOffice_6_4" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>false</string>
+          </trueValue>
+          <falseValue>
+            <string>true</string>
+          </falseValue>
+        </boolean>
+        <boolean id="Final" valueName="Final" />
+      </elements>
+    </policy>
+    <policy name="XHTML_Writer_File" class="Both" displayName="$(string.name_XHTML_Writer_File)" explainText="$(string.desc_XHTML_Writer_File)" presentation="$(presentation.XHTML_Writer_File)" key="Software\Policies\LibreOffice\org.openoffice.TypeDetection.Filter\Filters\org.openoffice.TypeDetection.Filter:Filter['XHTML Writer File']\Enabled">
+      <parentCategory ref="Filters" />
+      <supportedOn ref="supported_LibreOffice_6_4" />
+      <elements>
+        <boolean id="Value" valueName="Value">
+          <trueValue>
+            <string>false</string>
+          </trueValue>
+          <falseValue>
+            <string>true</string>
           </falseValue>
         </boolean>
         <boolean id="Final" valueName="Final" />

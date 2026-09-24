@@ -34,10 +34,8 @@
       <string id="desc_UseSystemFileDialog">Determines if Windows' file and folder picker should be used. If false, the built-in platform independent file/folder picker implementations will be used.</string>
       <string id="name_AllowOverrideLocking">Allow override document locking</string>
       <string id="desc_AllowOverrideLocking">Specifies whether the user is allowed to override the document locking mechanism in LibreOffice/Collabora Office. If disabled and the document is already opened by another user, the current user can open a document only as a copy or in read only mode.</string>
-      <string id="name_CollectUsageInformation">Help improve LibreOffice</string>
-      <string id="desc_CollectUsageInformation">Collect usage data and send it to The Document Foundation</string>
       <string id="name_ShowTipOfTheDay">Show Tip of the Day</string>
-      <string id="desc_ShowTipOfTheDay">Show "Tip of the Day" dialog on startup</string>
+      <string id="desc_ShowTipOfTheDay">Show "Tip of the Day" dialog on startup. This setting only takes effect in Collabora Office Classic and LibreOffice.</string>
 
       <string id="category_LDAPConfigBackend">LDAP configuration backend</string>
       <string id="name_LDAPConfigBackendSettings">LDAP User Directory</string>
@@ -45,7 +43,9 @@
 
 Note that the password to bind to LDAP server is stored unencrypted in client system's registry; you should use a restricted search account (only able to perform LDAP searches).
 
-User unique attribute must correspond to the logged on user's Windows user name without domain.</string>
+User unique attribute must correspond to the logged on user's Windows user name without domain.
+
+This setting only takes effect in Collabora Office Classic and LibreOffice.</string>
 
       <string id="category_ProductName">Product name</string>
       <string id="name_ooName">Product name (ooName)</string>
@@ -102,10 +102,21 @@ When disabled, the warning will be issued in this case.</string>
       <string id="desc_DefaultLocale_CJK">Specifies the default document language - Chinese, Japanese, Korean.</string>
       <string id="name_DefaultLocale_CTL">Default document language (CTL)</string>
       <string id="desc_DefaultLocale_CTL">Specifies the default document language - complex text layout (e.g. Arabic, Indian etc., scripts).</string>
+      <string id="category_WritingAids">Writing Aids</string>
+      <string id="name_IsSpellAuto">Check spelling as you type</string>
+      <string id="desc_IsSpellAuto">Specifies whether spelling is checked automatically while typing (Tools - Options - Languages and Locales - Writing Aids - Check spelling as you type).</string>
+      <string id="name_IsSpellUpperCase">Check uppercase words</string>
+      <string id="desc_IsSpellUpperCase">Specifies whether words written in capital letters are included in the spelling check.</string>
+      <string id="name_IsSpellWithDigits">Check words with numbers</string>
+      <string id="desc_IsSpellWithDigits">Specifies whether words that contain numbers as well as letters are included in the spelling check.</string>
+      <string id="name_IsSpellSpecial">Check special regions</string>
+      <string id="desc_IsSpellSpecial">Specifies whether headers, footers and frames are included in the spelling check.</string>
+      <string id="name_GrammarIsAutoCheck">Check grammar as you type</string>
+      <string id="desc_GrammarIsAutoCheck">Specifies whether grammar is checked automatically while typing, using the installed grammar checkers.</string>
       <string id="name_UILocale">User interface language</string>
       <string id="desc_UILocale">Specifies the user interface (UI) language. An empty string means: use the desktop's UI language if possible.</string>
       <string id="name_Locale">Locale</string>
-      <string id="desc_Locale">Contains the user's desktop locale setting.</string>
+      <string id="desc_Locale">Specifies the locale setting (Tools - Options - Languages and Locales - General), for example en-US or de-DE. When empty, the locale of the operating system is used.</string>
       <string id="name_ooSetupCurrency">Currency</string>
       <string id="desc_ooSetupCurrency">Indicates the currency settings defined by the user. By default, this label is empty and the currency defined by system locale.</string>
       <string id="name_DecimalSeparatorAsLocale">Decimal separator as locale</string>
@@ -175,9 +186,9 @@ Default value: Macros enabled</string>
       <string id="name_SecureURL">Trusted file locations</string>
 
       <string id="name_DisableExtensionInstallation">Disable extension installation</string>
-      <string id="desc_DisableExtensionInstallation">Disable the possibility to install extensions.</string>
+      <string id="desc_DisableExtensionInstallation">Disable the possibility to install extensions. This setting only takes effect in Collabora Office Classic and LibreOffice.</string>
       <string id="name_DisableExtensionRemoval">Disable extension removal</string>
-      <string id="desc_DisableExtensionRemoval">Disable the possibility to remove installed extensions.</string>
+      <string id="desc_DisableExtensionRemoval">Disable the possibility to remove installed extensions. This setting only takes effect in Collabora Office Classic and LibreOffice.</string>
 
       <string id="category_Filters">Disable file format filters</string>
 
@@ -240,7 +251,7 @@ Default value: Macros enabled</string>
       <string id="name_Lotus">Lotus 1-2-3</string>
       <string id="desc_Lotus">Disable the import filter for Lotus 1-2-3 file format.</string>
       <string id="name_LotusWordPro">Lotus WordPro Document</string>
-      <string id="desc_LotusWordPro">Disable the import filter for Lotus WordPro Document file format.</string>
+      <string id="desc_LotusWordPro">Disable the import filter for Lotus WordPro Document file format. This setting only takes effect in Collabora Office Classic and LibreOffice.</string>
       <string id="name_MET__OS2_Metafile">MET - OS/2 Metafile</string>
       <string id="desc_MET__OS2_Metafile">Disable the import filter for MET - OS/2 Metafile file format.</string>
       <string id="name_MS_Excel_2003_XML_Orcus">Microsoft Excel 2003 XML</string>
@@ -374,9 +385,9 @@ Default value: Macros enabled</string>
       <string id="name_SYLK">SYLK</string>
       <string id="desc_SYLK">Disable the import filter for SYLK file format.</string>
       <string id="name_StarOffice_XML_Base_Report">ODF Database Report</string>
-      <string id="desc_StarOffice_XML_Base_Report">Disable the import filter for ODF Database Report file format.</string>
+      <string id="desc_StarOffice_XML_Base_Report">Disable the import filter for ODF Database Report file format. This setting only takes effect in Collabora Office Classic and LibreOffice.</string>
       <string id="name_StarOffice_XML_Base_Report_Chart">OpenOffice.org 1.0 Report Chart</string>
-      <string id="desc_StarOffice_XML_Base_Report_Chart">Disable the import filter for OpenOffice.org 1.0 Report Chart file format.</string>
+      <string id="desc_StarOffice_XML_Base_Report_Chart">Disable the import filter for OpenOffice.org 1.0 Report Chart file format. This setting only takes effect in Collabora Office Classic and LibreOffice.</string>
       <string id="name_StarOffice_Drawing">Legacy StarOffice Drawing</string>
       <string id="desc_StarOffice_Drawing">Disable the import filter for Legacy StarOffice Drawing file format.</string>
       <string id="name_StarOffice_Presentation">Legacy StarOffice Presentation</string>
@@ -386,7 +397,7 @@ Default value: Macros enabled</string>
       <string id="name_StarOffice_Writer">Legacy StarOffice Text Document</string>
       <string id="desc_StarOffice_Writer">Disable the import filter for Legacy StarOffice Text Document file format.</string>
       <string id="name_StarOffice_XML_Base">ODF Database</string>
-      <string id="desc_StarOffice_XML_Base">Disable the import filter for ODF Database file format.</string>
+      <string id="desc_StarOffice_XML_Base">Disable the import filter for ODF Database file format. This setting only takes effect in Collabora Office Classic and LibreOffice.</string>
       <string id="name_StarOffice_XML_Calc">OpenOffice.org 1.0 Spreadsheet</string>
       <string id="desc_StarOffice_XML_Calc">Disable the import filter for OpenOffice.org 1.0 Spreadsheet file format.</string>
       <string id="name_StarOffice_XML_Chart">OpenOffice.org 1.0 Chart</string>
@@ -538,19 +549,43 @@ Default value: Macros enabled</string>
       <string id="UPUserName">User name</string>
       <string id="desc_UPUserName">User name
 
-When it is set to take from LDAP, then its value is LDAP attribute holding user name; LDAP configuration backend settings determine how to connect to LDAP server.</string>
+When it is set to take from LDAP, then its value is LDAP attribute holding user name; LDAP configuration backend settings determine how to connect to LDAP server. Taking the value from LDAP only works in Collabora Office Classic and LibreOffice.</string>
       <string id="UPCompanyName">Company name</string>
       <string id="desc_UPCompanyName">Company name
 
-When it is set to take from LDAP, then its value is LDAP attribute holding company name; LDAP configuration backend settings determine how to connect to LDAP server.</string>
+When it is set to take from LDAP, then its value is LDAP attribute holding company name; LDAP configuration backend settings determine how to connect to LDAP server. Taking the value from LDAP only works in Collabora Office Classic and LibreOffice.</string>
       <string id="UPAddress">Address</string>
       <string id="desc_UPAddress">Address
 
-When any part is set to take from LDAP, then its value is LDAP attribute; LDAP configuration backend settings determine how to connect to LDAP server.</string>
+When any part is set to take from LDAP, then its value is LDAP attribute; LDAP configuration backend settings determine how to connect to LDAP server. Taking the value from LDAP only works in Collabora Office Classic and LibreOffice.</string>
       <string id="UPTelephone">Telephone/Fax</string>
       <string id="desc_UPTelephone">Telephone/Fax
 
-When any part is set to take from LDAP, then its value is LDAP attribute; LDAP configuration backend settings determine how to connect to LDAP server.</string>
+When any part is set to take from LDAP, then its value is LDAP attribute; LDAP configuration backend settings determine how to connect to LDAP server. Taking the value from LDAP only works in Collabora Office Classic and LibreOffice.</string>
+      <string id="UPMail">E-mail address</string>
+      <string id="desc_UPMail">E-mail address
+
+When it is set to take from LDAP, then its value is LDAP attribute holding e-mail address; LDAP configuration backend settings determine how to connect to LDAP server. Taking the value from LDAP only works in Collabora Office Classic and LibreOffice.</string>
+      <string id="UPTitle">Title</string>
+      <string id="desc_UPTitle">Title
+
+When it is set to take from LDAP, then its value is LDAP attribute holding title; LDAP configuration backend settings determine how to connect to LDAP server. Taking the value from LDAP only works in Collabora Office Classic and LibreOffice.</string>
+      <string id="UPPosition">Position</string>
+      <string id="desc_UPPosition">Position
+
+When it is set to take from LDAP, then its value is LDAP attribute holding position; LDAP configuration backend settings determine how to connect to LDAP server. Taking the value from LDAP only works in Collabora Office Classic and LibreOffice.
+
+Note: "From Windows" leaves this field empty, as the Windows backend never fills it.</string>
+      <string id="category_Paths">Paths</string>
+      <string id="name_AutoCorrect">Path of AutoCorrect files</string>
+      <string id="name_AutoText">Path of AutoText files</string>
+      <string id="name_Dictionary">Path of Dictionary files</string>
+      <string id="name_Gallery">Path of Gallery files</string>
+      <string id="name_Templates">Path of Template files</string>
+      <string id="name_MyDocuments">Path of My Documents folder</string>
+      <string id="name_Graphic">Path of Image files</string>
+      <string id="name_Backup">Path of Backup files</string>
+      <string id="name_Temp">Path of Temporary files</string>
 
 
       <string id="category_Passwords">Passwords</string>
@@ -559,27 +594,28 @@ When any part is set to take from LDAP, then its value is LDAP attribute; LDAP c
 
       <string id="category_View">View</string>
       <string id="name_SymbolStyle">Icon style</string>
-      <string id="desc_SymbolStyle">Specifies which style of the symbols is used for the toolbars, menus, etc.: "Automatic" means chosen according to the desktop; "Default" means the LibreOffice default theme; other possible values are the names of the various icon themes ("Breeze", "Oxygen", "Sifr", etc.).</string>
+      <string id="desc_SymbolStyle">Specifies the icon theme of the toolbars, menus, etc. "Automatic" means chosen according to the desktop, the default is Colibre. Collabora Office supports only Colibre and Colibre (dark), the other icon themes only take effect in Collabora Office Classic and LibreOffice.</string>
       <string id="auto">Automatic</string>
-      <string id="default">Default</string>
-      <string id="tango">Tango</string>
+      <string id="colibre">Colibre</string>
+      <string id="colibre_dark">Colibre (dark)</string>
       <string id="breeze">Breeze</string>
-      <string id="oxygen">Oxygen</string>
+      <string id="breeze_dark">Breeze (dark)</string>
+      <string id="elementary">Elementary</string>
+      <string id="karasa_jaga">Karasa Jaga</string>
       <string id="sifr">Sifr</string>
-      <string id="galaxy">Galaxy</string>
-      <string id="hicontrast">Hicontrast</string>
+      <string id="sifr_dark">Sifr (dark)</string>
+      <string id="sukapura">Sukapura</string>
+      <string id="sukapura_dark">Sukapura (dark)</string>
       <string id="small">Small</string>
       <string id="large">Large</string>
-      <string id="name_UseOpenGL">Use OpenGL</string>
-      <string id="desc_UseOpenGL">Specifies if OpenGL rendering should be used in VCL backends supporting it.</string>
-      <string id="name_ForceOpenGL">Force OpenGL</string>
-      <string id="desc_ForceOpenGL">Specifies if OpenGL rendering should be used in VCL backends supporting it. This one forces the use of OpenGL even if the blacklist would block the OpenGL driver.</string>
       <string id="name_UseSkia">UseSkia</string>
-      <string id="desc_UseSkia">Specifies if Skia rendering should be used in VCL backends supporting it.</string>
+      <string id="desc_UseSkia">Specifies if Skia rendering should be used in VCL backends supporting it. This setting only takes effect in Collabora Office Classic and LibreOffice.</string>
       <string id="name_ForceSkia">Force Skia</string>
-      <string id="desc_ForceSkia">Specifies if Skia rendering should be used in VCL backends supporting it. This one forces the use of Skia even if the blacklist would block the Skia driver.</string>
+      <string id="desc_ForceSkia">Specifies if Skia rendering should be used in VCL backends supporting it. This one forces the use of Skia even if the blacklist would block the Skia driver. This setting only takes effect in Collabora Office Classic and LibreOffice.</string>
       <string id="name_ForceSkiaRaster">Force Skia Raster</string>
-      <string id="desc_ForceSkiaRaster">Specifies if Skia Raster rendering should be used in VCL backends supporting it. This one forces the use of Skia Raster even if the blacklist would block the Skia driver.</string>
+      <string id="desc_ForceSkiaRaster">Specifies if Skia Raster rendering should be used in VCL backends supporting it. This one forces the use of Skia Raster even if the blacklist would block the Skia driver. This setting only takes effect in Collabora Office Classic and LibreOffice 26.2 or older.</string>
+      <string id="name_ForceSkiaGPU">Force Skia GPU</string>
+      <string id="desc_ForceSkiaGPU">Specifies if Skia hardware acceleration should be used in VCL backends supporting it. This one forces the use of Skia hardware acceleration instead of Skia software rendering. This setting only takes effect in LibreOffice.</string>
 
       <string id="category_UserInterface">User Interface</string>
       <string id="name_ToolbarModeWriter">User interface of Writer</string>
@@ -590,7 +626,9 @@ When any part is set to take from LDAP, then its value is LDAP attribute; LDAP c
 
 The policy supplies the value for users who have not picked a user interface themselves. A user who changes the user interface later keeps that choice, because the setting stored in the user profile takes precedence over the policy.
 
-Only the Standard Toolbar and the notebookbar based layouts can be applied this way. Single Toolbar and Sidebar are not offered, because their toolbar and sidebar arrangement is only built when the user switches to them from within the application.</string>
+Only the Standard Toolbar and the notebookbar based layouts can be applied this way. Single Toolbar and Sidebar are not offered, because their toolbar and sidebar arrangement is only built when the user switches to them from within the application.
+
+The notebookbar based layouts only take effect in Collabora Office Classic and LibreOffice. Collabora Office only has the Standard Toolbar.</string>
       <string id="toolbarmode_Default">Standard Toolbar</string>
       <string id="toolbarmode_Tabbed">Tabbed</string>
       <string id="toolbarmode_TabbedCompact">Tabbed Compact</string>
@@ -604,18 +642,10 @@ Only the Standard Toolbar and the notebookbar based layouts can be applied this 
       <string id="desc_PrinterWarnings">Printer warnings</string>
 
       <string id="category_Accessibility">Accessibility</string>
-      <string id="name_EnableATToolSupport">Support assistive technology tools</string>
-      <string id="desc_EnableATToolSupport">Support assistive technology tools</string>
       <string id="name_IsSelectionInReadonly">Use text selections cursor in read-only text documents</string>
       <string id="desc_IsSelectionInReadonly">Indicates whether the cursor is displayed in read-only texts.</string>
-      <string id="name_IsAllowAnimatedGraphics">Allow animated graphics</string>
-      <string id="desc_IsAllowAnimatedGraphics">Indicates whether to allow the graphical animation in all applications, i.e. animated GIFs and objects in Impress during presentation, animated graphical previews (Gallery, Insert - Image..., Animation Tool in Impress).</string>
-      <string id="name_IsAllowAnimatedText">Allow animated text</string>
-      <string id="desc_IsAllowAnimatedText">Indicates whether to allow all textual animation like blinking and scrolling in all applications.</string>
       <string id="name_HelpTipsDisappear">Help tips disappear after...</string>
       <string id="desc_HelpTipsDisappear">Enables or disables the automatic time out of help tips. You can specify a duration (n) of 1 to 99 seconds. If this option is          disabled, press the Esc key to dismiss the help tip.</string>
-      <string id="name_AutoDetectSystemHC">Automatically detect high contrast mode of operating system</string>
-      <string id="desc_AutoDetectSystemHC">Enables the automatic detection of a high contrast mode set for your desktop. Some OS' do not provide this option explicitly, but allow the user to choose a color scheme that is HC-compliant implicitly, which is recognized if the option is set.</string>
       <string id="name_IsAutomaticFontColor">Use automatic font color for screen display</string>
       <string id="desc_IsAutomaticFontColor">Overrides all text color attributes set in a document for display only.</string>
       <string id="name_IsForPagePreviews">Use system colors for page previews</string>
@@ -763,13 +793,11 @@ Set paths in path lists have to be separated by spaces.</string>
       <string id="name_HelpExtendedTip">Extended tips</string>
       <string id="desc_HelpExtendedTip">Activates the extended help in tooltips</string>
       <string id="name_UpdateCheckEnabled">Update check enabled</string>
-      <string id="desc_UpdateCheckEnabled">Enable automatic update check</string>
+      <string id="desc_UpdateCheckEnabled">Enable automatic update check. This setting only takes effect in Collabora Office Classic and LibreOffice.</string>
       <string id="name_PDFExportFormFields">Export form fields as widgets</string>
       <string id="desc_PDFExportFormFields">Specifies whether form fields are exported as widgets or only their fixed print representation is exported.</string>
       <string id="name_PDFExportPlaceholders">Export placeholder fields to PDF</string>
       <string id="desc_PDFExportPlaceholders">Specifies if placeholder fields are exported to PDF.</string>
-      <string id="name_PrintSinglePrintJob">Create single print jobs</string>
-      <string id="desc_PrintSinglePrintJob">Controls the print output to avoid problems with duplex printing and odd page numbers.</string>
       <string id="name_AutoTextApplyNumbering">Bulleted and numbered lists</string>
       <string id="desc_AutoTextApplyNumbering">Specifies whether a numbered or bulleted text is created automatically while typing.</string>
       <string id="name_WordCompletionMinWordLen">Word completion minimum word length</string>
@@ -780,9 +808,82 @@ Set paths in path lists have to be separated by spaces.</string>
       <string id="pdf_PDF_A_1">PDF/A-1</string>
       <string id="pdf_PDF_A_2">PDF/A-2 (LibreOffice since 6.3)</string>
       <string id="pdf_PDF_A_3">PDF/A-3 (LibreOffice since 6.4)</string>
-      <string id="pdf_PDF_1_4">PDF 1.4 (LibreOffice until 6.1)</string>
+      <string id="pdf_PDF_A_4">PDF/A-4</string>
       <string id="pdf_PDF_1_5">PDF 1.5 (LibreOffice since 6.1)</string>
       <string id="pdf_PDF_1_6">PDF 1.6 (LibreOffice since 7.0)</string>
+      <string id="pdf_PDF_1_7">PDF 1.7</string>
+      <string id="pdf_PDF_2_0">PDF 2.0</string>
+
+      <string id="supported_CO_22_05">Collabora Office 22.05 or higher</string>
+      <string id="supported_CO_24_04">Collabora Office 24.04 or higher</string>
+      <string id="supported_CO_25_04">Collabora Office 25.04 or higher</string>
+      <string id="supported_LibreOffice_26_8">LibreOffice 26.8 or higher</string>
+
+      <string id="proxy_none">None</string>
+      <string id="proxy_system">System</string>
+      <string id="proxy_manual">Manual</string>
+      <string id="exotic_refuse">Refuse to load</string>
+      <string id="exotic_ask">Ask the user</string>
+      <string id="exotic_load">Always load</string>
+      <string id="link_always">Always</string>
+      <string id="link_never">Never</string>
+      <string id="link_onrequest">On request</string>
+      <string id="name_ProxyType">Proxy configuration</string>
+      <string id="desc_ProxyType">Specifies how the proxy server for network connections is selected.
+
+None: connect directly, without a proxy.
+System: use the proxy settings of the operating system.
+Manual: use the proxy servers specified in the application settings.</string>
+      <string id="name_AllowInsecureProtocols">Allow insecure network protocols</string>
+      <string id="desc_AllowInsecureProtocols">Specifies whether unencrypted network protocols such as HTTP, SMTP and FTP may be used. If disabled, only encrypted connections are made.</string>
+      <string id="name_DisableActiveContent">Disable active content</string>
+      <string id="desc_DisableActiveContent">Specifies whether active content in documents is disabled. If enabled, embedded OLE objects are not activated and DDE links are not updated.</string>
+      <string id="name_DisableOLEAutomation">Disable OLE Automation</string>
+      <string id="desc_DisableOLEAutomation">Specifies whether the OLE Automation interface is disabled. If enabled, other applications cannot control Collabora Office through OLE Automation.</string>
+      <string id="name_DisablePythonRuntime">Disable the Python runtime</string>
+      <string id="desc_DisablePythonRuntime">Specifies whether the Python runtime is disabled. If enabled, macros, scripts and extensions written in Python do not work.</string>
+      <string id="name_AllowedDocumentEventURLs">Macros allowed to run from document events</string>
+      <string id="desc_AllowedDocumentEventURLs">List of script URLs that document events (for example opening a document) are allowed to call. An entry can be a full script URL, the beginning of one, or a regular expression, for example:
+    vnd.sun.star.script:Standard.Module1.Main?language=Basic&amp;location=user
+    vnd.sun.star.script:Standard.Module1
+    .*location=application.*
+
+Separate the entries with spaces. If this policy is not set, all document event URLs are allowed.</string>
+      <string id="name_LoadExoticFileFormats">Loading of rarely used file formats</string>
+      <string id="desc_LoadExoticFileFormats">Specifies how files in rarely used legacy formats are handled when they are opened.</string>
+      <string id="name_TSAURLs">Time stamping authority URLs</string>
+      <string id="desc_TSAURLs">List of Time Stamping Authority (TSA) servers that can be selected when signing a PDF export. Separate the URLs with spaces.</string>
+      <string id="name_PasswordPolicy">Password policy</string>
+      <string id="desc_PasswordPolicy">Regular expression that a password must match when the user sets a password to protect or encrypt a document. A password that does not match is refused.
+
+For example, the following policy requires at least eight characters, including at least one uppercase letter, one lowercase letter and one digit:
+    ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$</string>
+      <string id="name_PasswordUseStorage">Save passwords persistently</string>
+      <string id="desc_PasswordUseStorage">Specifies whether passwords for web connections can be saved persistently in the user profile.</string>
+      <string id="name_AuthenticateUsingSystemCredentials">URLs accessed with system credentials</string>
+      <string id="desc_AuthenticateUsingSystemCredentials">List of URLs that are accessed with the system credentials of the user. Separate the URLs with spaces.</string>
+      <string id="name_CalcUpdateLink">Update links when loading</string>
+      <string id="desc_CalcUpdateLink">Specifies whether links to external data in spreadsheets are updated when a document is loaded.</string>
+      <string id="name_WriterUpdateLink">Update links when loading</string>
+      <string id="desc_WriterUpdateLink">Specifies whether links to other documents in text documents are updated when a document is loaded.</string>
+      <string id="name_EPUB">EPUB Document</string>
+      <string id="desc_EPUB">Disable the export filter for EPUB Document file format.</string>
+      <string id="name_Microsoft_Multiplan">Microsoft Multiplan</string>
+      <string id="desc_Microsoft_Multiplan">Disable the import filter for Microsoft Multiplan file format.</string>
+      <string id="name_PocketWord_File">Pocket Word</string>
+      <string id="desc_PocketWord_File">Disable the import filter for Pocket Word file format.</string>
+      <string id="name_writer_globaldocument_StarOffice_XML_Writer">OpenOffice.org 1.0 Text Document (from Master Document)</string>
+      <string id="desc_writer_globaldocument_StarOffice_XML_Writer">Disable the filter that saves master documents in OpenOffice.org 1.0 Text Document file format.</string>
+      <string id="name_writer_web_StarOffice_XML_Writer">OpenOffice.org 1.0 Text Document (from HTML Document)</string>
+      <string id="desc_writer_web_StarOffice_XML_Writer">Disable the filter that saves HTML documents in OpenOffice.org 1.0 Text Document file format.</string>
+      <string id="name_XHTML_Calc_File">XHTML (Calc)</string>
+      <string id="desc_XHTML_Calc_File">Disable the export filter for XHTML (Calc) file format.</string>
+      <string id="name_XHTML_Draw_File">XHTML (Draw)</string>
+      <string id="desc_XHTML_Draw_File">Disable the export filter for XHTML (Draw) file format.</string>
+      <string id="name_XHTML_Impress_File">XHTML (Impress)</string>
+      <string id="desc_XHTML_Impress_File">Disable the export filter for XHTML (Impress) file format.</string>
+      <string id="name_XHTML_Writer_File">XHTML (Writer)</string>
+      <string id="desc_XHTML_Writer_File">Disable the export filter for XHTML (Writer) file format.</string>
     </stringTable>
     <presentationTable>
       <presentation id="LDAPConfigBackendSettings">
@@ -859,6 +960,108 @@ Set paths in path lists have to be separated by spaces.</string>
         <checkBox refId="Value">Warn the user when saving in a format different from ODF or default</checkBox>
         <checkBox refId="Final">Final</checkBox>
       </presentation>
+      <presentation id="AutoCorrect">
+        <text>WritePath of AutoCorrect files. It is the location where new user files are written.</text>
+        <textBox refId="WritePathValue">
+          <label>Path: </label>
+          <defaultValue>$(user)/autocorr</defaultValue>
+        </textBox>
+        <checkBox refId="WritePathFinal">Final</checkBox>
+        <text>UserPaths of AutoCorrect files</text>
+        <textBox refId="UserPathsValue">
+          <label>Path list: </label>
+          <defaultValue>$(inst)/share/autocorr $(user)/autocorr</defaultValue>
+        </textBox>
+        <checkBox refId="UserPathsFinal">Final</checkBox>
+      </presentation>
+      <presentation id="AutoText">
+        <text>WritePath of AutoText files. It is the location where new user files are written.</text>
+        <textBox refId="WritePathValue">
+          <label>Path: </label>
+          <defaultValue>$(user)/autotext</defaultValue>
+        </textBox>
+        <checkBox refId="WritePathFinal">Final</checkBox>
+        <text>UserPaths of AutoText files</text>
+        <textBox refId="UserPathsValue">
+          <label>Path list: </label>
+          <defaultValue>$(inst)/share/autotext/$(vlang) $(user)/autotext</defaultValue>
+        </textBox>
+        <checkBox refId="UserPathsFinal">Final</checkBox>
+      </presentation>
+      <presentation id="Dictionary">
+        <text>WritePath of Dictionary files. It is the location where new user files are written.</text>
+        <textBox refId="WritePathValue">
+          <label>Path: </label>
+          <defaultValue>$(user)/wordbook</defaultValue>
+        </textBox>
+        <checkBox refId="WritePathFinal">Final</checkBox>
+        <text>UserPaths of Dictionary files</text>
+        <textBox refId="UserPathsValue">
+          <label>Path list: </label>
+          <defaultValue>$(inst)/share/wordbook $(inst)/share/wordbook/$(vlang) $(user)/wordbook</defaultValue>
+        </textBox>
+        <checkBox refId="UserPathsFinal">Final</checkBox>
+      </presentation>
+      <presentation id="Gallery">
+        <text>WritePath of Gallery files. It is the location where new user files are written.</text>
+        <textBox refId="WritePathValue">
+          <label>Path: </label>
+          <defaultValue>$(user)/gallery</defaultValue>
+        </textBox>
+        <checkBox refId="WritePathFinal">Final</checkBox>
+        <text>UserPaths of Gallery files</text>
+        <textBox refId="UserPathsValue">
+          <label>Path list: </label>
+          <defaultValue>$(inst)/share/gallery $(user)/gallery</defaultValue>
+        </textBox>
+        <checkBox refId="UserPathsFinal">Final</checkBox>
+      </presentation>
+      <presentation id="Templates">
+        <text>WritePath of Templates files. It is the location where new user files are written.</text>
+        <textBox refId="WritePathValue">
+          <label>Path: </label>
+          <defaultValue>$(user)/template</defaultValue>
+        </textBox>
+        <checkBox refId="WritePathFinal">Final</checkBox>
+        <text>UserPaths of Templates files</text>
+        <textBox refId="UserPathsValue">
+          <label>Path list: </label>
+          <defaultValue>$(user)/template</defaultValue>
+        </textBox>
+        <checkBox refId="UserPathsFinal">Final</checkBox>
+      </presentation>
+      <presentation id="MyDocuments">
+        <text>Location of My Documents folder.</text>
+        <textBox refId="WritePathValue">
+          <label>Path: </label>
+          <defaultValue>$(work)</defaultValue>
+        </textBox>
+        <checkBox refId="WritePathFinal">Final</checkBox>
+      </presentation>
+      <presentation id="Graphic">
+        <text>WritePath of Image files. It is the location where new user files are written.</text>
+        <textBox refId="WritePathValue">
+          <label>Path: </label>
+          <defaultValue>$(user)/gallery</defaultValue>
+        </textBox>
+        <checkBox refId="WritePathFinal">Final</checkBox>
+      </presentation>
+      <presentation id="Backup">
+        <text>WritePath of Backup files. It is the location where new user files are written.</text>
+        <textBox refId="WritePathValue">
+          <label>Path: </label>
+          <defaultValue>$(user)/backup</defaultValue>
+        </textBox>
+        <checkBox refId="WritePathFinal">Final</checkBox>
+      </presentation>
+      <presentation id="Temp">
+        <text>WritePath of Temporary files. It is the location where new user files are written.</text>
+        <textBox refId="WritePathValue">
+          <label>Path: </label>
+          <defaultValue>$(temp)</defaultValue>
+        </textBox>
+        <checkBox refId="WritePathFinal">Final</checkBox>
+      </presentation>
       <presentation id="UseSystemFileDialog">
         <checkBox refId="Value">Use System File Dialog</checkBox>
         <checkBox refId="Final">Final</checkBox>
@@ -866,10 +1069,6 @@ Set paths in path lists have to be separated by spaces.</string>
       <presentation id="AllowOverrideLocking">
         <checkBox refId="Value">Enable or disable override locking</checkBox>
         <checkBox refId="Final">Prevent the user from changing this setting</checkBox>
-      </presentation>
-      <presentation id="CollectUsageInformation">
-        <checkBox refId="Value">Collect usage data and send it to The Document Foundation</checkBox>
-        <checkBox refId="Final">Final</checkBox>
       </presentation>
       <presentation id="ShowTipOfTheDay">
         <checkBox refId="Value">Show Tip of the Day</checkBox>
@@ -922,14 +1121,36 @@ Set paths in path lists have to be separated by spaces.</string>
         <dropdownList refId="AddressCountryFlags" noSort="true" defaultItem="0">Flags: </dropdownList>
       </presentation>
       <presentation id="UPTelephone">
+        <textBox refId="HomePhoneValue">
+          <label>Phone (home): </label>
+        </textBox>
+        <dropdownList refId="HomePhoneFlags" noSort="true" defaultItem="0">Flags: </dropdownList>
         <textBox refId="TelephoneValue">
-          <label>Telephone: </label>
+          <label>Phone (work): </label>
         </textBox>
         <dropdownList refId="TelephoneFlags" noSort="true" defaultItem="0">Flags: </dropdownList>
         <textBox refId="FaxValue">
           <label>Fax: </label>
         </textBox>
         <dropdownList refId="FaxFlags" noSort="true" defaultItem="0">Flags: </dropdownList>
+      </presentation>
+      <presentation id="UPMail">
+        <textBox refId="MailValue">
+          <label>E-mail address: </label>
+        </textBox>
+        <dropdownList refId="MailFlags" noSort="true" defaultItem="0">Flags: </dropdownList>
+      </presentation>
+      <presentation id="UPTitle">
+        <textBox refId="TitleValue">
+          <label>Title: </label>
+        </textBox>
+        <dropdownList refId="TitleFlags" noSort="true" defaultItem="0">Flags: </dropdownList>
+      </presentation>
+      <presentation id="UPPosition">
+        <textBox refId="PositionValue">
+          <label>Position: </label>
+        </textBox>
+        <dropdownList refId="PositionFlags" noSort="true" defaultItem="0">Flags: </dropdownList>
       </presentation>
       <presentation id="WriterSaveAsFormat">
         <text>Always save in this document format.</text>
@@ -1107,6 +1328,26 @@ Set paths in path lists have to be separated by spaces.</string>
         <textBox refId="Value">
           <label>Language code: </label>
         </textBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="IsSpellAuto">
+        <checkBox refId="Value">Check spelling as you type</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="IsSpellUpperCase">
+        <checkBox refId="Value">Check uppercase words</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="IsSpellWithDigits">
+        <checkBox refId="Value">Check words with numbers</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="IsSpellSpecial">
+        <checkBox refId="Value">Check special regions</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="GrammarIsAutoCheck">
+        <checkBox refId="Value">Check grammar as you type</checkBox>
         <checkBox refId="Final">Final</checkBox>
       </presentation>
       <presentation id="UILocale">
@@ -1974,14 +2215,6 @@ Set paths in path lists have to be separated by spaces.</string>
         <checkBox refId="Value">Allow use of OpenCL</checkBox>
         <checkBox refId="Final">Final</checkBox>
       </presentation>
-      <presentation id="UseOpenGL">
-        <checkBox refId="Value">Use OpenGL for all rendering</checkBox>
-        <checkBox refId="Final">Final</checkBox>
-      </presentation>
-      <presentation id="ForceOpenGL">
-        <checkBox refId="Value">Force OpenGL even if blacklisted</checkBox>
-        <checkBox refId="Final">Final</checkBox>
-      </presentation>
       <presentation id="UseSkia">
         <checkBox refId="Value">Use Skia for all rendering</checkBox>
         <checkBox refId="Final">Final</checkBox>
@@ -1994,6 +2227,10 @@ Set paths in path lists have to be separated by spaces.</string>
         <checkBox refId="Value">Force Skia Raster even if blacklisted</checkBox>
         <checkBox refId="Final">Final</checkBox>
       </presentation>
+      <presentation id="ForceSkiaGPU">
+        <checkBox refId="Value">Force Skia hardware acceleration</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
       <presentation id="ConvertToGreyscales">
         <checkBox refId="Value">Convert colors to grayscale</checkBox>
         <checkBox refId="Final">Final</checkBox>
@@ -2003,20 +2240,8 @@ Set paths in path lists have to be separated by spaces.</string>
         <checkBox refId="Value">Transparency</checkBox>
         <checkBox refId="Final">Final</checkBox>
       </presentation>
-      <presentation id="EnableATToolSupport">
-        <checkBox refId="Value">Support assistive technology tools</checkBox>
-        <checkBox refId="Final">Final</checkBox>
-      </presentation>
       <presentation id="IsSelectionInReadonly">
         <checkBox refId="Value">Use text selections cursor in read-only text documents</checkBox>
-        <checkBox refId="Final">Final</checkBox>
-      </presentation>
-      <presentation id="IsAllowAnimatedGraphics">
-        <checkBox refId="Value">Allow animated graphics</checkBox>
-        <checkBox refId="Final">Final</checkBox>
-      </presentation>
-      <presentation id="IsAllowAnimatedText">
-        <checkBox refId="Value">Allow animated text</checkBox>
         <checkBox refId="Final">Final</checkBox>
       </presentation>
       <presentation id="HelpTipsDisappear">
@@ -2024,10 +2249,6 @@ Set paths in path lists have to be separated by spaces.</string>
         <checkBox refId="Final">Final</checkBox>
         <decimalTextBox refId="HelpTipsDisappearValue" defaultValue="4" spin="true">seconds</decimalTextBox>
         <checkBox refId="HelpTipsDisappearFinal">Final</checkBox>
-      </presentation>
-      <presentation id="AutoDetectSystemHC">
-        <checkBox refId="Value">Automatically detect high contrast mode of operating system</checkBox>
-        <checkBox refId="Final">Final</checkBox>
       </presentation>
       <presentation id="IsAutomaticFontColor">
         <checkBox refId="Value">Use automatic font color for screen display</checkBox>
@@ -2133,10 +2354,6 @@ Set paths in path lists have to be separated by spaces.</string>
         <checkBox refId="Value">Export placeholder fields to PDF</checkBox>
         <checkBox refId="Final">Final</checkBox>
       </presentation>
-      <presentation id="PrintSinglePrintJob">
-        <checkBox refId="Value">Create single print jobs</checkBox>
-        <checkBox refId="Final">Final</checkBox>
-      </presentation>
       <presentation id="AutoTextApplyNumbering">
         <checkBox refId="Value">Create bulleted and numbered lists while type</checkBox>
         <checkBox refId="Final">Final</checkBox>
@@ -2149,6 +2366,102 @@ Set paths in path lists have to be separated by spaces.</string>
         <textBox refId="WordCompletionMinWordLenValue">
           <label>Min Words: </label>
         </textBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="ProxyType">
+        <dropdownList refId="Value" defaultItem="1">Proxy configuration: </dropdownList>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="AllowInsecureProtocols">
+        <checkBox refId="Value" defaultItem="1">Allow insecure network protocols</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="DisableActiveContent">
+        <checkBox refId="Value" defaultItem="0">Disable active content</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="DisableOLEAutomation">
+        <checkBox refId="Value" defaultItem="0">Disable OLE Automation</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="DisablePythonRuntime">
+        <checkBox refId="Value" defaultItem="0">Disable the Python runtime</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="AllowedDocumentEventURLs">
+        <textBox refId="Value">
+          <label>Script URL list: </label>
+        </textBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="LoadExoticFileFormats">
+        <dropdownList refId="Value" defaultItem="0">Rarely used file formats: </dropdownList>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="TSAURLs">
+        <textBox refId="Value">
+          <label>TSA URL list: </label>
+        </textBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="PasswordPolicy">
+        <textBox refId="Value">
+          <label>Regular expression: </label>
+        </textBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="PasswordUseStorage">
+        <checkBox refId="Value" defaultItem="0">Save passwords persistently</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="AuthenticateUsingSystemCredentials">
+        <textBox refId="Value">
+          <label>URL list: </label>
+        </textBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="CalcUpdateLink">
+        <dropdownList refId="Value" defaultItem="2">Update links: </dropdownList>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="WriterUpdateLink">
+        <dropdownList refId="Value" defaultItem="1">Update links: </dropdownList>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="EPUB">
+        <checkBox refId="Value">Disable EPUB Document</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="Microsoft_Multiplan">
+        <checkBox refId="Value">Disable Microsoft Multiplan</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="PocketWord_File">
+        <checkBox refId="Value">Disable Pocket Word</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="writer_globaldocument_StarOffice_XML_Writer">
+        <checkBox refId="Value">Disable OpenOffice.org 1.0 Text Document (from Master Document)</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="writer_web_StarOffice_XML_Writer">
+        <checkBox refId="Value">Disable OpenOffice.org 1.0 Text Document (from HTML Document)</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="XHTML_Calc_File">
+        <checkBox refId="Value">Disable XHTML (Calc)</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="XHTML_Draw_File">
+        <checkBox refId="Value">Disable XHTML (Draw)</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="XHTML_Impress_File">
+        <checkBox refId="Value">Disable XHTML (Impress)</checkBox>
+        <checkBox refId="Final">Final</checkBox>
+      </presentation>
+      <presentation id="XHTML_Writer_File">
+        <checkBox refId="Value">Disable XHTML (Writer)</checkBox>
         <checkBox refId="Final">Final</checkBox>
       </presentation>
     </presentationTable>
