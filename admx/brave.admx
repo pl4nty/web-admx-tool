@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--brave version: 154.1.98.33-->
+  <!--brave version: 155.1.98.36-->
   <policyNamespaces>
     <target namespace="BraveSoftware.Policies.Brave" prefix="brave"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -2128,6 +2128,16 @@
         <list id="ExtensionInstallTypeBlocklistDesc" key="Software\Policies\BraveSoftware\Brave\ExtensionInstallTypeBlocklist" valuePrefix=""/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.ExtensionReviewPromptsEnabled)" explainText="$(string.ExtensionReviewPromptsEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ExtensionReviewPromptsEnabled" presentation="$(presentation.ExtensionReviewPromptsEnabled)" valueName="ExtensionReviewPromptsEnabled">
+      <parentCategory ref="Extensions"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.ExtensionSettings)" explainText="$(string.ExtensionSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ExtensionSettings" presentation="$(presentation.ExtensionSettings)">
       <parentCategory ref="Extensions"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -2451,6 +2461,29 @@
           <item displayName="$(string.ThirdPartyAiChatSettings_Disabled)">
             <value>
               <decimal value="1"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.TryOnYouSettings)" explainText="$(string.TryOnYouSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="TryOnYouSettings" presentation="$(presentation.TryOnYouSettings)">
+      <parentCategory ref="GenerativeAI"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="TryOnYouSettings" valueName="TryOnYouSettings">
+          <item displayName="$(string.TryOnYouSettings_Allowed)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.TryOnYouSettings_AllowedWithoutDataCollection)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.TryOnYouSettings_Disabled)">
+            <value>
+              <decimal value="2"/>
             </value>
           </item>
         </enum>
@@ -3119,6 +3152,16 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.BackgroundModeEnabled)" explainText="$(string.BackgroundModeEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="BackgroundModeEnabled" presentation="$(presentation.BackgroundModeEnabled)" valueName="BackgroundModeEnabled">
+      <parentCategory ref="brave"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.BackgroundTabFreezingEnabled)" explainText="$(string.BackgroundTabFreezingEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="BackgroundTabFreezingEnabled" presentation="$(presentation.BackgroundTabFreezingEnabled)" valueName="BackgroundTabFreezingEnabled">
       <parentCategory ref="brave"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
@@ -4321,16 +4364,6 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.NTPFooterManagementNoticeEnabled)" explainText="$(string.NTPFooterManagementNoticeEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="NTPFooterManagementNoticeEnabled" presentation="$(presentation.NTPFooterManagementNoticeEnabled)" valueName="NTPFooterManagementNoticeEnabled">
-      <parentCategory ref="brave"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.NTPMiddleSlotAnnouncementVisible)" explainText="$(string.NTPMiddleSlotAnnouncementVisible_Explain)" key="Software\Policies\BraveSoftware\Brave" name="NTPMiddleSlotAnnouncementVisible" presentation="$(presentation.NTPMiddleSlotAnnouncementVisible)" valueName="NTPMiddleSlotAnnouncementVisible">
       <parentCategory ref="brave"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
@@ -7022,6 +7055,16 @@
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.MutationEventsEnabled)" explainText="$(string.MutationEventsEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="MutationEventsEnabled" presentation="$(presentation.MutationEventsEnabled)" valueName="MutationEventsEnabled">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.NTPMiddleSlotAnnouncementVisible)" explainText="$(string.NTPMiddleSlotAnnouncementVisible_Explain)" key="Software\Policies\BraveSoftware\Brave" name="NTPMiddleSlotAnnouncementVisible" presentation="$(presentation.NTPMiddleSlotAnnouncementVisible)" valueName="NTPMiddleSlotAnnouncementVisible">
       <parentCategory ref="RemovedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
