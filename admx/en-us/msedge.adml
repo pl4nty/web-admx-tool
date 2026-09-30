@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 156.0.4285.0--><displayName/><description/><resources><stringTable><string id="ApplicationGuard_group">Application Guard settings</string><string id="ApplicationGuardContainerProxy">Application Guard Container Proxy</string><string id="ApplicationGuardContainerProxy_Explain">Configures the proxy settings for Microsoft Edge Application Guard.
+<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 156.0.4301.0--><displayName/><description/><resources><stringTable><string id="ApplicationGuard_group">Application Guard settings</string><string id="ApplicationGuardContainerProxy">Application Guard Container Proxy</string><string id="ApplicationGuardContainerProxy_Explain">Configures the proxy settings for Microsoft Edge Application Guard.
 
 If you enable this policy, Microsoft Edge Application Guard ignores other sources of proxy configurations.
 
@@ -4033,7 +4033,11 @@ This policy is available only on Windows instances that are joined to a Microsof
 Example value:
 
 exe
-txt</string><string id="AutoOpenFileTypesDesc">List of file types that should be automatically opened on download</string><string id="AutofillAddressEnabled">Enable AutoFill for addresses</string><string id="AutofillAddressEnabled_Explain">Enables the AutoFill feature and allows users to autocomplete address information in web forms through previously stored information.
+txt</string><string id="AutoOpenFileTypesDesc">List of file types that should be automatically opened on download</string><string id="AutofillAddressEnabled">Enable AutoFill for addresses (deprecated)</string><string id="AutofillAddressEnabled_Explain">DEPRECATED: This policy is deprecated. It is currently supported but will become obsolete in a future release.
+
+This policy is deprecated. Use the 'AutofillSettings' (Block AutoFill data types for specific sites) policy instead. To keep the current behavior of disabling AutoFill for addresses, configure 'AutofillSettings' with &quot;url_pattern&quot; set to &quot;*&quot; and &quot;blocked_types&quot; set to [&quot;contact_info&quot;, &quot;identity_docs&quot;, &quot;travel&quot;].
+
+Enables the AutoFill feature and allows users to autocomplete address information in web forms through previously stored information.
 
 If you have enabled or not configured this policy, users manage AutoFill for addresses in Microsoft Edge settings. AutoFill allows users to complete address fields in web forms using previously saved information.
 
@@ -4041,7 +4045,11 @@ If you have disabled this policy, Microsoft Edge doesn't suggest, fill in, or sa
 
 If you disable this policy, then 'EdgeAutofillMlEnabled' (Machine learning powered autofill suggestions) is turned off.
 
-If you disable this policy, all activities for all web forms are stopped, except payment and password forms. No further entries are saved, and Microsoft Edge doesn't suggest or AutoFill any previous entries.</string><string id="AutofillCreditCardEnabled">Enable AutoFill for payment instruments</string><string id="AutofillCreditCardEnabled_Explain">Enables Microsoft Edge's AutoFill feature and lets users auto complete payment instruments like credit or debit cards in web forms using previously stored information. Includes suggesting new payment instruments like Buy Now Pay Later (BNPL) in web forms and Express Checkout.
+If you disable this policy, all activities for all web forms are stopped, except payment and password forms. No further entries are saved, and Microsoft Edge doesn't suggest or AutoFill any previous entries.</string><string id="AutofillCreditCardEnabled">Enable AutoFill for payment instruments (deprecated)</string><string id="AutofillCreditCardEnabled_Explain">DEPRECATED: This policy is deprecated. It is currently supported but will become obsolete in a future release.
+
+This policy is deprecated. Use the 'AutofillSettings' (Block AutoFill data types for specific sites) policy instead. To keep the current behavior of disabling AutoFill for payment instruments, configure 'AutofillSettings' with &quot;url_pattern&quot; set to &quot;*&quot; and &quot;blocked_types&quot; set to [&quot;payments&quot;].
+
+Enables Microsoft Edge's AutoFill feature and lets users auto complete payment instruments like credit or debit cards in web forms using previously stored information. Includes suggesting new payment instruments like Buy Now Pay Later (BNPL) in web forms and Express Checkout.
 
 If you enable this policy or don't configure it, users can control AutoFill for payment instruments.
 
@@ -5980,13 +5988,13 @@ If you don't configure this policy, the home page setting is imported at first r
 
 You can set this policy as a recommendation. This option means that Microsoft Edge imports the home page setting on first run, but users can select or clear the **home page** option during manual import.
 
-**Note**: This policy currently manages importing from Internet Explorer (on Windows 7, 8, and 10).</string><string id="ImportOnEachLaunch">Allow import of data from other browsers on each Microsoft Edge launch</string><string id="ImportOnEachLaunch_Explain">If you enable this policy, users will see a prompt to import their browsing data from other browsers on each Microsoft Edge launch.
+**Note**: This policy currently manages importing from Internet Explorer (on Windows 7, 8, and 10).</string><string id="ImportOnEachLaunch">Allow import of data from Chrome on each Microsoft Edge launch</string><string id="ImportOnEachLaunch_Explain">If you enable this policy, users may see a prompt to import their browsing data from Chrome to Microsoft Edge. If a user gives consent, supported browsing data is imported from Chrome on each Microsoft Edge launch.
 
-If you disable this policy, users will never see a prompt to import their browsing data from other browsers on each Microsoft Edge launch.
+This policy applies to profiles that aren't signed in and profiles signed in with a Microsoft account (MSA). It doesn't apply to profiles signed in with a Microsoft Entra ID account.
 
-If the policy is left unconfigured, users can activate this feature from a Microsoft Edge prompt or from the Settings page.
+If you disable this policy, users won't be prompted to import their browsing data from Chrome on each Microsoft Edge launch.
 
-Note: A similar policy named 'AutoImportAtFirstRun' (Automatically import another browser's data and settings at first run) exists. This policy should be used if you want to import supported data from other browsers only once while setting up your device.</string><string id="ImportOpenTabs">Allow importing of open tabs</string><string id="ImportOpenTabs_Explain">Allows users to import open and pinned tabs from another browser into Microsoft Edge.
+If you don't configure this policy, users can enable this feature from a Microsoft Edge prompt or from Settings.</string><string id="ImportOpenTabs">Allow importing of open tabs</string><string id="ImportOpenTabs_Explain">Allows users to import open and pinned tabs from another browser into Microsoft Edge.
 
 If you enable this policy, the **Open tabs** check box is automatically selected in the **Import browser data** dialog box.
 
