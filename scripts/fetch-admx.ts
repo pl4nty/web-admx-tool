@@ -63,19 +63,6 @@ async function msDownload(id: number, fileFilter?: (url: string) => boolean, las
   return url
 }
 
-async function citrixWorkspaceDownload(): Promise<string> {
-  const listUrl = 'https://www.citrix.com/downloads/workspace-app/windows/'
-  const listHtml = await fetchText(listUrl)
-  const pages = [...listHtml.matchAll(/href="(\/downloads\/workspace-app\/windows\/[^"]+\.html)"[^>]*>\s*Citrix Workspace app ([\d.]+) for Windows/g)]
-  if (!pages.length) throw new Error('No Citrix Workspace app release page found')
-  const key = (v: string) => v.split('.').map(n => n.padStart(6, '0')).join('.')
-  const [, page] = pages.sort((a, b) => key(b[2]).localeCompare(key(a[2])))[0]
-  const html = await fetchText(new URL(page, listUrl).href)
-  const match = html.match(/\/\/downloads\.citrix\.com\/\d+\/CitrixWorkspace_ADMX_Files\.zip\?__gda__=[^"' ]+/)
-  if (!match) throw new Error('No Citrix ADMX link found')
-  return 'https:' + match[0].replace(/&amp;/g, '&')
-}
-
 async function lenovoPolicyTemplateDownload(): Promise<string> {
   const pageUrl = 'https://support.lenovo.com/us/en/solutions/ht037099-download-thinkvantage-technologies-administrator-tools'
   const pageHtml = await fetchText(pageUrl)
@@ -227,7 +214,6 @@ const sources: Source[] = [
   src(() => 'https://download.microsoft.com/download/72ea16a9-4cc9-4032-945d-3a56a483d034/WindowsNotepadAdminTemplates.cab'),
   src(() => msDownload(108847)), // Windows 11 2026 Update (26H2)
   src(() => msDownload(49030, url => url.includes('x64')), true),
-  // The toolkit appends new baselines to the end; filter to Windows 11 so a newer Edge/M365/Server baseline isn't picked.
   src(() => msDownload(55319, url => /Windows 11 .*Security Baseline\.zip$/i.test(url), true)),
   src(() => 'https://web.archive.org/web/20200723045549/https://msdnshared.blob.core.windows.net/media/2016/10/MSS-legacy.zip'),
   src(() => githubRelease('microsoft', 'PowerToys', /GroupPolicyObjectFiles.*\.zip$/i)),
@@ -292,7 +278,18 @@ const sources: Source[] = [
     if (!match) throw new Error('No Slack ADMX attachment found')
     return match[1]
   }),
-  src(() => citrixWorkspaceDownload()),
+  src(async () => {
+    const listUrl = 'https://www.citrix.com/downloads/workspace-app/windows/'
+    const listHtml = await fetchText(listUrl)
+    const pages = [...listHtml.matchAll(/href="(\/downloads\/workspace-app\/windows\/[^"]+\.html)"[^>]*>\s*Citrix Workspace app ([\d.]+) for Windows/g)]
+    if (!pages.length) throw new Error('No Citrix Workspace app release page found')
+    const key = (v: string) => v.split('.').map(n => n.padStart(6, '0')).join('.')
+    const [, page] = pages.sort((a, b) => key(b[2]).localeCompare(key(a[2])))[0]
+    const html = await fetchText(new URL(page, listUrl).href)
+    const match = html.match(/\/\/downloads\.citrix\.com\/\d+\/CitrixWorkspace_ADMX_Files\.zip\?__gda__=[^"' ]+/)
+    if (!match) throw new Error('No Citrix ADMX link found')
+    return 'https:' + match[0].replace(/&amp;/g, '&')
+  }),
   srcAll(async () => [
     'https://raw.githubusercontent.com/microsoft/WSL/master/intune/WSL.admx',
     'https://raw.githubusercontent.com/microsoft/WSL/master/intune/en-US/WSL.adml',
