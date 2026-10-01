@@ -25,6 +25,7 @@
 			<definition name="Supported_1_134" displayName="$(string.Supported_1_134)" />
 			<definition name="Supported_1_136" displayName="$(string.Supported_1_136)" />
 			<definition name="Supported_1_137" displayName="$(string.Supported_1_137)" />
+			<definition name="Supported_1_140" displayName="$(string.Supported_1_140)" />
 			<definition name="Supported_1_67" displayName="$(string.Supported_1_67)" />
 			<definition name="Supported_1_96" displayName="$(string.Supported_1_96)" />
 			<definition name="Supported_1_99" displayName="$(string.Supported_1_99)" />
@@ -269,6 +270,15 @@
 			<supportedOn ref="Supported_1_127" />
 			<elements>
 		<boolean id="CopilotOtelCaptureContent" valueName="CopilotOtelCaptureContent">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
+		<policy name="CopilotOtelCaptureIdentity" class="Both" displayName="$(string.CopilotOtelCaptureIdentity)" explainText="$(string.CopilotOtelCaptureIdentity_chat_agentHost_otel_captureIdentity_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.CopilotOtelCaptureIdentity)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_140" />
+			<elements>
+		<boolean id="CopilotOtelCaptureIdentity" valueName="CopilotOtelCaptureIdentity">
 			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
 		</boolean>
 			</elements>
