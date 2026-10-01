@@ -266,6 +266,17 @@
       </disabledValue>
     </policy>
 
+    <policy name="EnableWindowsRestore" class="Machine" displayName="$(string.EnableWindowsRestore)" explainText="$(string.EnableWindowsRestore_Help)" key="Software\Microsoft\Windows\CurrentVersion\WindowsBackupAndRestore\NodeValues" valueName="EnableWindowsRestore">
+      <parentCategory ref="SettingSync" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
   </policies>
 </policyDefinitions>
 

@@ -152,5 +152,25 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="DisableGetStarted" class="Machine" displayName="$(string.DisableGetStartedContent)" explainText="$(string.DisableGetStartedContent_Help)" key="Software\Policies\Microsoft\Windows\CloudContent" valueName="DisableGetStarted">
+      <parentCategory ref="CloudContent" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableCopilotPinScreen" class="Machine" displayName="$(string.DisableCopilotPinScreenContent)" explainText="$(string.DisableCopilotPinScreenContent_Help)" key="Software\Policies\Microsoft\Windows\CloudContent" valueName="DisableCopilotPinScreen">
+      <parentCategory ref="CloudContent" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

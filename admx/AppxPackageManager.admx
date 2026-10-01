@@ -138,7 +138,7 @@
     </policy>
     <policy name="RemoveDefaultMicrosoftStorePackages" class="Machine" displayName="$(string.RemoveDefaultMicrosoftStorePackages)" explainText="$(string.RemoveDefaultMicrosoftStorePackagesExplanation)" presentation="$(presentation.RemoveDefaultMicrosoftStorePackages)" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages" valueName="Enabled">
       <parentCategory ref="AppxDeployment" />
-      <supportedOn ref="windows:SUPPORTED_Windows_11_0_25H2_NOSERVER_ENTERPRISE_EDUCATION" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2_NOSERVER_ENTERPRISE_EDUCATION" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>
@@ -346,7 +346,84 @@
             <decimal value="0" />
           </falseValue>
         </boolean>
+        <multiText id="DynamicRemovalList" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages" valueName="DynamicRemovalList" required="false" />
       </elements>
+    </policy>
+    <policy name="EnableMsixAllowedZones" class="Machine" displayName="$(string.EnableMsixAllowedZones)" explainText="$(string.EnableMsixAllowedZonesExplanation)" presentation="$(presentation.MsixAllowedZones)" key="Software\Policies\Microsoft\Windows\Appx\" valueName="EnableMsixAllowedZones">
+      <parentCategory ref="AppxDeployment" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2" />
+      <elements>
+      <enum id="LocalMachine" key="Software\Policies\Microsoft\Windows\Appx\MsixAllowedZones" valueName="LocalMachine" required="false">
+          <item displayName="$(string.ZoneBlocked)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ZoneAllowed)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+        <enum id="Intranet" key="Software\Policies\Microsoft\Windows\Appx\MsixAllowedZones" valueName="Intranet">
+          <item displayName="$(string.ZoneBlocked)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ZoneAllowed)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+        <enum id="TrustedSites" key="Software\Policies\Microsoft\Windows\Appx\MsixAllowedZones" valueName="TrustedSites">
+          <item displayName="$(string.ZoneBlocked)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ZoneAllowed)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+        <enum id="Internet" key="Software\Policies\Microsoft\Windows\Appx\MsixAllowedZones" valueName="Internet">
+          <item displayName="$(string.ZoneBlocked)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ZoneAllowed)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+        <enum id="UntrustedSites" key="Software\Policies\Microsoft\Windows\Appx\MsixAllowedZones" valueName="UntrustedSites">
+          <item displayName="$(string.ZoneBlocked)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ZoneAllowed)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="EnableMsixSmartScreenCheck" class="Machine" displayName="$(string.EnableMsixSmartScreenCheck)" explainText="$(string.EnableMsixSmartScreenCheckExplanation)" key="Software\Policies\Microsoft\Windows\Appx\" valueName="EnableMsixSmartScreenCheck">
+      <parentCategory ref="AppxDeployment" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
     </policy>
   </policies>
 </policyDefinitions>

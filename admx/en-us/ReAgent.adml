@@ -13,6 +13,13 @@
     If you enable or do not configure this policy setting, the items "Use a system image you created earlier to recover your computer" and "Reinstall Windows" (or "Return your computer to factory condition") appears on the "Advanced recovery methods" page of Recovery (in Control Panel) and will allow the user to restore the computer to the original state or from a user-created system image. This is the default setting.
 
     If you disable this policy setting, the items "Use a system image you created earlier to recover your computer" and "Reinstall Windows" (or "Return your computer to factory condition") in Recovery (in Control Panel) will be unavailable. However, with this policy setting disabled, users can still restore the computer to the original state or from a user-created system image by restarting the computer and accessing the System Recovery Options menu, if it is available.</string>
+      <string id="AllowTrustedOfflineScan">Allow offline scan from trusted Windows Recovery Environment</string>
+      <string id="AllowTrustedOfflineScan_help">    Requirements: Windows 10
+    Description: This policy setting controls whether offline scan should be allowed from a trusted Windows Recovery Environment.
+
+    If you enable this policy setting, offline scan will execute without prompting for BitLocker recovery key, as long as the Windows Recovery Environment is trusted by BitLocker.
+
+    If you disable or do not configure this policy setting, offline scan will prompt the user for BitLocker recovery key to unlock the OS volume. If user skips unlock the OS volume, offline scan will not execute. This is the default setting.</string>
     </stringTable>
   </resources>
 </policyDefinitionResources>

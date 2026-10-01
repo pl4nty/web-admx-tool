@@ -37,7 +37,17 @@
     </policy>
     <policy name="DisableShareAppPromotions" class="Machine" displayName="$(string.DisableShareAppPromotions)" explainText="$(string.DisableShareAppPromotions_Help)" key="Software\Policies\Microsoft\Windows\ShareSheet" valueName="DisableShareAppPromotions">
       <parentCategory ref="Sharing" />
-      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableInlineCompose" class="Machine" displayName="$(string.DisableInlineCompose)" explainText="$(string.DisableInlineCompose)" key="Software\Policies\Microsoft\Windows\ShareSheet" valueName="DisableInlineCompose">
+      <parentCategory ref="Sharing" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>

@@ -24,19 +24,19 @@
       <parentCategory ref="Ipv6Transition" />
       <supportedOn ref="windows:SUPPORTED_Windows7" />
       <elements>
-        <enum id="StateSelect" valueName="ISATAP_State" required="true">      
+        <enum id="StateSelect" valueName="ISATAP_State" required="true">
         <item displayName="$(string.DefaultState)">
           <value>
           <string>Default</string>
           </value>
         </item>
-        
+
         <item displayName="$(string.EnabledState)">
           <value>
           <string>Enabled</string>
           </value>
         </item>
-        
+
         <item displayName="$(string.DisabledState)">
           <value>
           <string>Disabled</string>
@@ -58,19 +58,19 @@
       <parentCategory ref="Ipv6Transition" />
       <supportedOn ref="windows:SUPPORTED_Windows7" />
       <elements>
-        <enum id="StateSelect" valueName="6to4_State" required="true">      
+        <enum id="StateSelect" valueName="6to4_State" required="true">
         <item displayName="$(string.DefaultState)">
           <value>
           <string>Default</string>
           </value>
         </item>
-        
+
         <item displayName="$(string.EnabledState)">
           <value>
           <string>Enabled</string>
           </value>
         </item>
-        
+
         <item displayName="$(string.DisabledState)">
           <value>
           <string>Disabled</string>
@@ -100,7 +100,7 @@
       <parentCategory ref="Ipv6Transition" />
       <supportedOn ref="windows:SUPPORTED_Windows7" />
       <elements>
-        <enum id="StateSelect" valueName="Teredo_State" required="true">      
+        <enum id="StateSelect" valueName="Teredo_State" required="true">
         <item displayName="$(string.DefaultState)">
           <value>
           <string>Default</string>
@@ -118,7 +118,7 @@
           <string>Client</string>
           </value>
         </item>
-        
+
         <item displayName="$(string.TeredoEnterpriseClient)">
           <value>
           <string>Enterprise Client</string>
@@ -151,17 +151,17 @@
         <decimal id="TeredoClientPortBox" valueName="Teredo_ClientPort" required="true" minValue="0" maxValue="65535" />
       </elements>
     </policy>
-    
+
     <policy name="Teredo_Default_Qualified" clientExtension="{cdeafc3d-948d-49dd-ab12-e578ba4af7aa}" class="Machine" displayName="$(string.Teredo_Default_Qualified)" explainText="$(string.Teredo_Default_Qualified_Help)" presentation="$(presentation.StateSelection)" key="Software\Policies\Microsoft\Windows\TCPIP\v6Transition">
       <parentCategory ref="Ipv6Transition" />
       <supportedOn ref="windows:SUPPORTED_Windows7" />
       <elements>
-        <enum id="StateSelect" valueName="Teredo_DefaultQualified" required="true">      
+        <enum id="StateSelect" valueName="Teredo_DefaultQualified" required="true">
         <item displayName="$(string.EnabledState)">
           <value>
           <string>Enabled</string>
           </value>
-        </item>       
+        </item>
         </enum>
       </elements>
     </policy>
@@ -169,7 +169,7 @@
       <parentCategory ref="Ipv6Transition" />
       <supportedOn ref="windows:SUPPORTED_Windows7" />
       <elements>
-        <enum id="StateSelect" valueName="IPHTTPS_ClientState" required="true">      
+        <enum id="StateSelect" valueName="IPHTTPS_ClientState" required="true">
         <item displayName="$(string.DefaultState)">
           <value>
           <decimal value="0" />
@@ -202,6 +202,36 @@
     <policy name="IP_Stateless_Autoconfiguration_Limits_State" class="Machine" displayName="$(string.IP_Stateless_Autoconfiguration_Limits_State)" explainText="$(string.IP_Stateless_Autoconfiguration_Limits_Help)" key="System\CurrentControlSet\Services\Tcpip\Parameters" valueName="EnableIPAutoConfigurationLimits">
       <parentCategory ref="Parameters" />
       <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="IPxlatCfg_01_PermitNonCellularCLAT" class="Machine" displayName="$(string.IPxlatCfg_PermitNonCellularCLAT)" explainText="$(string.IPxlatCfg_PermitNonCellularCLAT_Help)" key="Software\Policies\Microsoft\Windows\TCPIP\v6Transition\IPxlatCfgSvc" valueName="PermitNonCellularCLAT">
+      <parentCategory ref="Ipv6Transition" />
+      <supportedOn ref="windows:SUPPORTED_Windows11" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="IPxlatCfg_02_GetPrefixInfoFromRA" class="Machine" displayName="$(string.IPxlatCfg_GetPrefixInfoFromRA)" explainText="$(string.IPxlatCfg_GetPrefixInfoFromRA_Help)" key="Software\Policies\Microsoft\Windows\TCPIP\v6Transition\IPxlatCfgSvc" valueName="GetPrefixInfoFromRA">
+      <parentCategory ref="Ipv6Transition" />
+      <supportedOn ref="windows:SUPPORTED_Windows11" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="IPxlatCfg_03_GetPrefixInfoFromDNS" class="Machine" displayName="$(string.IPxlatCfg_GetPrefixInfoFromDNS)" explainText="$(string.IPxlatCfg_GetPrefixInfoFromDNS_Help)" key="Software\Policies\Microsoft\Windows\TCPIP\v6Transition\IPxlatCfgSvc" valueName="GetPrefixInfoFromDNS">
+      <parentCategory ref="Ipv6Transition" />
+      <supportedOn ref="windows:SUPPORTED_Windows11" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>

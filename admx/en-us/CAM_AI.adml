@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>CAM (Capability Access Manager) AI Policies</displayName>
+  <description>Policies related to AI capabilities and their consent management.</description>
+  <resources>
+    <stringTable>
+      <string id="AIConsent">AI Consent</string>
+      <string id="WindowsAI">Windows AI</string>
+      <string id="UserInControl">User in Control</string>
+      <string id="ForceEnable">Force Enable</string>
+      <string id="ForceDisable">Force Disable</string>
+      <string id="AgentConsentDuration_Name">Agent Consent Duration</string>
+      <string id="AgentConsentDuration_Explain">Specifies how long, in hours, an “Allow” consent response for agent capabilities remains valid before the user is prompted again.
+
+If this policy is enabled, the value must be from 1 (1 hour) to 8760 (1 year). The configured value is used as the default expiration time for all “Allow” consent responses for agent capabilities.
+
+If this policy is not configured, or if the value is outside the allowed range, the default is 720 hours (30 days).</string>
+      <string id="ConfigureAgentConnectors_Name">Configure Agent Connectors</string>
+      <string id="ConfigureAgentConnectors_Explain">Enable or Disable Agent Connectors.</string>
+      <string id="AgentConnectorAccessPolicy_Name">Agent Connector Access Policy</string>
+      <string id="AgentConnectorAccessPolicy_Explain">This policy setting allows you to define a list of allowed connections between MCP hosts and MCP servers.
+
+The format of this list will be a JSON string that adheres to the schema at https://go.microsoft.com/fwlink/?LinkId=2363700.
+
+If this policy is not configured, the MCP host may connect to any MCP server with user consent.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="ConfigureAgentConnectors">
+        <dropdownList refId="ConfigureAgentConnectors_Enum" noSort="true" defaultItem="0"> Configure Agent Connectors: </dropdownList>
+      </presentation>
+      <presentation id="AgentConsentDuration">
+        <decimalTextBox refId="AgentConsentDuration_Value" defaultValue="720"> Consent duration (hours): </decimalTextBox>
+      </presentation>
+      <presentation id="AgentConnectorAccessPolicy">
+        <textBox refId="AgentConnectorAccessPolicy_Name">
+          <label>Configure allowed MCP Host/Server connections:</label>
+        </textBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

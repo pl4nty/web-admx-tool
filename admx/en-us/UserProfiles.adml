@@ -77,6 +77,14 @@ If you disable or do not configure this policy setting, the system does not cons
 Note: This policy setting and related policy settings in this folder define the system's response when roaming user profiles are slow to download. To adjust the time within which the user must respond to this notice in operating systems earlier than Microsoft Windows Vista, use the "Timeout for dialog boxes" policy setting.
 
 Important: If the "Do not detect slow network connections" setting is enabled, this policy setting is ignored. Also, if the "Delete cached copies of roaming profiles" policy setting is enabled, there is no local copy of the roaming profile to load when the system detects a slow connection.</string>
+      <string id="AllowNonStandardUserProfilePaths">Allow user profile registry hives and AppData from non-standard paths</string>
+      <string id="AllowNonStandardUserProfilePaths_Help">This policy setting controls whether user profile registry hives and AppData folder locations are allowed to accept non-standard path formats.
+
+If you enable this policy setting, user profile locations accept a wider range of file path formats.
+
+If you disable or do not configure this policy setting, user profile locations accept only standard Windows folder paths.
+
+Note: Enabling this setting can expose the system to security risks. Enable it only if a specific application in your organization requires it, and only after evaluating all the risks for your environment.</string>
       <string id="ExcludeDirectories">Exclude directories in roaming profile</string>
       <string id="ExcludeDirectories_Help">This policy setting lets you exclude folders that are normally included in the user's profile. As a result, these folders do not need to be stored by the network server on which the profile resides and do not follow users to other computers.
 

@@ -484,6 +484,16 @@ If you enable this setting user access to Windows Update scan, download and ins
 Once enabled user access to pause updates is removed.
       </string>
 
+      <string id="MaxPauseDays_Title">Configure the maximum number of days that updates can be paused</string>
+      <string id="MaxPauseDays_Help">This policy controls the maximum number of days that end users can pause updates.
+
+Supported values are 1-35. The default value is 35 (days).
+
+When the policy is configured, users can only pause updates up until the end of the time period specified by the policy. Once the configured limit is reached, users can no longer extend the pause.
+
+If the policy is disabled or not configured, the default pause behavior applies - enabling users to continuously pause updates for up to 35 days at a time. This policy does not disable the Pause updates entirely. To remove access to Pause updates, use the "Remove access to 'Pause updates' feature" policy.
+      </string>
+
       <string id="ActiveHoursMaxRange_Title">Specify active hours range for auto-restarts</string>
       <string id="ActiveHoursMaxRange_Help">Enable this policy to specify the maximum number of hours from the start time that users can set their active hours.
 
@@ -718,80 +728,78 @@ When the policy is configured
       <string id="ReceiveOptionalContentWithAutoApproval">Automatically receive optional updates (including CFRs)</string>
       <string id="ReceiveOptionalLCUWithAutoApproval">Automatically receive optional updates</string>
       <string id="ReceiveOptionalContentNeedUserApproval">Users can select which optional updates to receive</string>
+
       <string id="MaintenanceWindow_Title">Configure maintenance windows for automatic updates</string>
-      <string id="MaintenanceWindow_Help">This policy allows you to configure maintenance windows during which Windows Update operations can be performed.
+      <string id="MaintenanceWindow_Help">Enable this policy to specify repeatable maintenance windows for the device to perform specified update actions.
 
-Enable this policy to specify repeatable maintenance windows for the device to perform specified update actions:
+When this policy is enabled, Windows Update will only perform the specified update action during the configured maintenance window. Specified update actions outside maintenance window will be deferred until the next maintenance window begins.
 
-• Update Actions: Select which update actions are allowed during maintenance windows:
+• Update Actions: Select which update actions are only allowed during maintenance window. If an update action is not selected, that action can happen outside of maintenance window.
     - Download, install, and restart: Complete update cycle including download, installation, and system restart
-    - Install and restart: Install already downloaded updates and restart the system
+    - Install and restart: Install already downloaded updates and restart the device
     - Restart only: Only perform a system restart for pending updates
 
 • Basic Schedule Configuration:
-    - Start Date: Specify the initial date when maintenance window begins (format: yyyy-mm-dd, example: 2025-10-30)
-    - Start Time: Set the time when maintenance window starts (format: hh:mm, example: 23:30 for 11:30 PM)
-    - Duration: Define how long maintenance window remains open (in hours, example: 2 for a 2-hour window)
+    - Start Date: Specify the initial date when the first maintenance window begins (format: yyyy-mm-dd, example: 2025-10-30)
+      * Start Date field only takes effect if Recurring schedule is set to “None”
+    - Start Time: Set the time when the maintenance window starts (format: hh:mm, example: 23:30 for 11:30 PM)
+    - Duration: Define how long each maintenance window lasts in hours (example: 2 for a 2-hour window)
 
 • Recurring Schedule Options:
-    - None: One-time maintenance window on the specified start date only
-    - Daily: Maintenance window repeats every day or at specified day intervals
-    - Weekly: Maintenance window repeats weekly on selected days of the week
-    - Monthly: Maintenance window repeats monthly on specific dates or weekday occurrences
-
-• Daily Schedule Settings (when Daily is selected):
-    - Days Interval: Specify how many days are between each maintenance window (example: 1 for daily, 2 for every other day)
+    - No repeat: One-time maintenance window on the specified start date only
+    - Daily: Maintenance window will be repeated every day
+    - Weekly: Maintenance window will be repeated weekly on selected days of the week
+    - Monthly: Maintenance window will be repeated monthly on a specific day
 
 • Weekly Schedule Settings (when Weekly is selected):
-    - Weeks Interval: Specify how many weeks are between each maintenance window (example: 1 for weekly, 2 for bi-weekly)
-    - Weekday Selection: Choose which days of the week the maintenance window occurs.
-        * Sunday through Saturday: Check boxes to select specific weekdays for the maintenance window
+    - Day of the week Selection: Choose which days of the week the maintenance window occurs:
+        * Sunday through Saturday: Check boxes to select specific day(s) of the week for the maintenance window
 
 • Monthly Schedule Settings (when Monthly is selected):
     - Monthly Schedule Type:
-        * Month-based: Maintenance window occurs on a specific day of the month
-        * Week-based: Maintenance window occurs on a specific weekday occurrence within the month
-    - Months Interval: Specify how many months are between each maintenance window (example: 1 for monthly, 3 for quarterly)
-    - Day of Month: When using month-based scheduling, specify which day of the month (1-31)
-    - Occurrence in Month: When using week-based scheduling, select which occurrence (First, Second, Third, Fourth, or Last)
+        * Date-based: Maintenance window occurs on a specific day of the month (example: 15th day of each month)
+        * Week-based:  Maintenance window occurs on a specific weekday occurrence within the month (example: 2nd Tuesday of each month)
+        * Last day of the month: Maintenance window occurs on the last day of the month
+    - Day of Month: When using date-based scheduling, specify which day of the month (1-28)
+    - Occurrence in Month: When using week-based scheduling, select which week of the month (First, Second, Third, Fourth, or Last)
     - Day of the Week: When using week-based scheduling, select which day of the week (Sunday through Saturday)
 
 Examples of Monthly Configurations:
-    - Month-based: "3rd day of every month" = Day of Month: 3, Months Interval: 1
-    - Week-based: "Second Tuesday of every month" = Occurrence: Second, Day of Week: Tuesday, Months Interval: 1
-    - Week-based: "Last Friday of every quarter" = Occurrence: Last, Day of Week: Friday, Months Interval: 3
+    - Date-based: "3rd day of every month" = Day of Month: 3
+    - Week-based: "Second Tuesday of every month" = Occurrence: Second, Day of Week: Tuesday
+    - Week-based: "Last Friday of every month" = Occurrence: Last, Day of Week: Friday
+    - Last day of the month: "Last day of every month"
 
-When this policy is enabled, Windows Update will only perform the specified update actions during the configured maintenance windows. Specified update actions outside these windows will be deferred until the next maintenance window begins.
+After a non-repeating maintenance window occurs, the next maintenance window must be scheduled in 3 months. If the start date of a non-repeating maintenance window is more than 3 months in the past, this policy will be disregarded, and updates will be scheduled according to default settings.
 
 If you disable or do not configure this policy, Windows Update will follow its default scheduling behavior.</string>
-      <!-- MaintenanceWindowUpdateActionID dropdown options -->
-      <string id="MaintenanceWindowUpdateAction_DownloadInstallRestart">Download, install, and restart</string>
-      <string id="MaintenanceWindowUpdateAction_InstallRestart">Install and restart</string>
-      <string id="MaintenanceWindowUpdateAction_RestartOnly">Restart only</string>
+      <!-- MaintenanceWindowUpdateActionsID dropdown options -->
+      <string id="MaintenanceWindowUpdateActions_DownloadInstallRestart">Download, install, and restart</string>
+      <string id="MaintenanceWindowUpdateActions_InstallRestart">Install and restart</string>
+      <string id="MaintenanceWindowUpdateActions_RestartOnly">Restart only</string>
       <!-- MaintenanceWindowRepeatScheduleOption dropdown options -->
-      <string id="MaintenanceWindowRepeatSchedule_None">None</string>
+      <string id="MaintenanceWindowRepeatSchedule_NoRepeat">No repeat</string>
       <string id="MaintenanceWindowRepeatSchedule_Daily">Daily</string>
       <string id="MaintenanceWindowRepeatSchedule_Weekly">Weekly</string>
       <string id="MaintenanceWindowRepeatSchedule_Monthly">Monthly</string>
       <!-- MaintenanceWindowMonthlyScheduleID dropdown options -->
-      <string id="MaintenanceWindowMonthlySchedule_MonthBased">Month-based</string>
+      <string id="MaintenanceWindowMonthlySchedule_MonthBased">Date-based</string>
       <string id="MaintenanceWindowMonthlySchedule_WeekBased">Week-based</string>
-      <!-- MaintenanceWindowOccurrenceInMonth dropdown options -->
-      <string id="MaintenanceWindowOccurrenceInMonth_First">First</string>
-      <string id="MaintenanceWindowOccurrenceInMonth_Second">Second</string>
-      <string id="MaintenanceWindowOccurrenceInMonth_Third">Third</string>
-      <string id="MaintenanceWindowOccurrenceInMonth_Fourth">Fourth</string>
-      <string id="MaintenanceWindowOccurrenceInMonth_Last">Last</string>
-      <!-- MaintenanceWindowDayOfTheWeek dropdown options -->
-      <string id="MaintenanceWindowDayOfTheWeek_Sunday">Sunday</string>
-      <string id="MaintenanceWindowDayOfTheWeek_Monday">Monday</string>
-      <string id="MaintenanceWindowDayOfTheWeek_Tuesday">Tuesday</string>
-      <string id="MaintenanceWindowDayOfTheWeek_Wednesday">Wednesday</string>
-      <string id="MaintenanceWindowDayOfTheWeek_Thursday">Thursday</string>
-      <string id="MaintenanceWindowDayOfTheWeek_Friday">Friday</string>
-      <string id="MaintenanceWindowDayOfTheWeek_Saturday">Saturday</string>
-      <string id="MaintenanceWindowDayOfTheWeek_Weekdays">Weekdays</string>
-      <string id="MaintenanceWindowDayOfTheWeek_Weekends">Weekends</string>
+      <string id="MaintenanceWindowMonthlySchedule_LastDay">Last day of the month</string>
+      <!-- MaintenanceWindowMonthlyWeekBasedOccurrenceInMonth dropdown options -->
+      <string id="MaintenanceWindowMonthlyWeekBasedOccurrenceInMonth_First">First</string>
+      <string id="MaintenanceWindowMonthlyWeekBasedOccurrenceInMonth_Second">Second</string>
+      <string id="MaintenanceWindowMonthlyWeekBasedOccurrenceInMonth_Third">Third</string>
+      <string id="MaintenanceWindowMonthlyWeekBasedOccurrenceInMonth_Fourth">Fourth</string>
+      <string id="MaintenanceWindowMonthlyWeekBasedOccurrenceInMonth_Last">Last</string>
+      <!-- MaintenanceWindowMonthlyWeekBasedDayOfTheWeek dropdown options -->
+      <string id="MaintenanceWindowMonthlyWeekBasedDayOfTheWeek_Sunday">Sunday</string>
+      <string id="MaintenanceWindowMonthlyWeekBasedDayOfTheWeek_Monday">Monday</string>
+      <string id="MaintenanceWindowMonthlyWeekBasedDayOfTheWeek_Tuesday">Tuesday</string>
+      <string id="MaintenanceWindowMonthlyWeekBasedDayOfTheWeek_Wednesday">Wednesday</string>
+      <string id="MaintenanceWindowMonthlyWeekBasedDayOfTheWeek_Thursday">Thursday</string>
+      <string id="MaintenanceWindowMonthlyWeekBasedDayOfTheWeek_Friday">Friday</string>
+      <string id="MaintenanceWindowMonthlyWeekBasedDayOfTheWeek_Saturday">Saturday</string>
     </stringTable>
 
     <presentationTable>
@@ -895,6 +903,10 @@ If you disable or do not configure this policy, Windows Update will follow its d
         <dropdownList refId="AutoRestartDeadline" noSort="true" defaultItem="5">Quality Updates (days): </dropdownList>
         <dropdownList refId="AutoRestartDeadlineForFeatureUpdates" noSort="true" defaultItem="5">Feature Updates (days): </dropdownList>
       </presentation>
+      <presentation id="MaxPauseDays_Title">
+        <text>Specify how many days users can pause updates for:</text>
+        <decimalTextBox refId="SetMaxPauseDays" noSort="true" defaultValue="35">Max pause days: </decimalTextBox>
+      </presentation>
       <presentation id="ActiveHoursMaxRange_Title">
         <text>Specify the max active hours range:</text>
         <dropdownList refId="ActiveHoursMaxRange" noSort="true" defaultItem="10">Max range: </dropdownList>
@@ -950,34 +962,30 @@ If you disable or do not configure this policy, Windows Update will follow its d
       </presentation>
       <presentation id="MaintenanceWindow_Title">
         <text>Maintenance Window:</text>
-        <dropdownList refId="MaintenanceWindowUpdateActionID" noSort="true" defaultItem="0">Update actions only allowed inside the maintenance window:</dropdownList>
+        <dropdownList refId="MaintenanceWindowUpdateActionsID" noSort="true" defaultItem="1">Update actions only allowed inside the maintenance window:</dropdownList>
         <textBox refId="MaintenanceWindowStartDateID">
             <label>Start date (Format: yyyy-mm-dd example: 2025-10-30)</label>
         </textBox>
         <textBox refId="MaintenanceWindowStartTimeID">
             <label>Start time (Format: hh:mm example: 23:30 for 11:30 PM)</label>
         </textBox>
-        <decimalTextBox refId="MaintenanceWindowDuration_Hours" defaultValue="2">Duration (hours):</decimalTextBox>
-        <dropdownList refId="MaintenanceWindowRepeatScheduleOption" noSort="true" defaultItem="0">Select repeat schedule:</dropdownList>
-        <text>The following settings are only required and applicable if Daily is selected:</text>
-        <decimalTextBox refId="MaintenanceWindowDailyFrequencyID" defaultValue="1"> Days interval (days):</decimalTextBox>
+        <decimalTextBox refId="MaintenanceWindowDurationHoursID" defaultValue="2">Duration (hours):</decimalTextBox>
+        <dropdownList refId="MaintenanceWindowRepeatScheduleOptionID" noSort="true" defaultItem="1">Select repeat schedule:</dropdownList>
         <text>The following settings are only required and applicable if Weekly is selected:</text>
-        <decimalTextBox refId="MaintenanceWindowWeeklyFrequencyID" defaultValue="1">Weeks interval (weeks):</decimalTextBox>
-        <checkBox refId="MaintenanceWindowSunday" defaultChecked="true">Sunday</checkBox>
-        <checkBox refId="MaintenanceWindowMonday" defaultChecked="false">Monday</checkBox>
-        <checkBox refId="MaintenanceWindowTuesday" defaultChecked="false">Tuesday</checkBox>
-        <checkBox refId="MaintenanceWindowWednesday" defaultChecked="false">Wednesday</checkBox>
-        <checkBox refId="MaintenanceWindowThursday" defaultChecked="false">Thursday</checkBox>
-        <checkBox refId="MaintenanceWindowFriday" defaultChecked="false">Friday</checkBox>
-        <checkBox refId="MaintenanceWindowSaturday" defaultChecked="false">Saturday</checkBox>
-        <text> The following settings are only required and applicable if Monthly is selected:</text>
-        <dropdownList refId="MaintenanceWindowMonthlyScheduleID" noSort="true" defaultItem="0">Monthly Schedule Type:</dropdownList>
-        <decimalTextBox refId="MaintenanceWindowMonthsFrequencyID" defaultValue="1">Months Interval (months):</decimalTextBox>
-        <text>The following settings are only required and applicable if Month-based type is selected:</text>
-        <decimalTextBox refId="MaintenanceWindowDayOfMonthID" defaultValue="1">Day of the Month:</decimalTextBox>
+        <checkBox refId="MaintenanceWindowWeeklySundayID" defaultChecked="false">Sunday</checkBox>
+        <checkBox refId="MaintenanceWindowWeeklyMondayID" defaultChecked="false">Monday</checkBox>
+        <checkBox refId="MaintenanceWindowWeeklyTuesdayID" defaultChecked="false">Tuesday</checkBox>
+        <checkBox refId="MaintenanceWindowWeeklyWednesdayID" defaultChecked="false">Wednesday</checkBox>
+        <checkBox refId="MaintenanceWindowWeeklyThursdayID" defaultChecked="false">Thursday</checkBox>
+        <checkBox refId="MaintenanceWindowWeeklyFridayID" defaultChecked="false">Friday</checkBox>
+        <checkBox refId="MaintenanceWindowWeeklySaturdayID" defaultChecked="false">Saturday</checkBox>
+        <text>The following settings are only required and applicable if Monthly is selected:</text>
+        <dropdownList refId="MaintenanceWindowMonthlyScheduleID" noSort="true" defaultItem="1">Monthly Schedule Type:</dropdownList>
+        <text>The following settings are only required and applicable if Date-based type is selected:</text>
+        <decimalTextBox refId="MaintenanceWindowMonthlyMonthBasedDayOfMonthID" defaultValue="1">Day of the Month:</decimalTextBox>
         <text>The following settings are only required and applicable if Week-based type is selected:</text>
-        <dropdownList refId="MaintenanceWindowOccurrenceInMonth" noSort="true" defaultItem="0">Occurrence in Month</dropdownList>
-        <dropdownList refId="MaintenanceWindowDayOfTheWeek" noSort="true" defaultItem="0">Day of the Week</dropdownList>
+        <dropdownList refId="MaintenanceWindowMonthlyWeekBasedOccurrenceInMonthID" noSort="true" defaultItem="1">Occurrence in Month</dropdownList>
+        <dropdownList refId="MaintenanceWindowMonthlyWeekBasedDayOfTheWeekID" noSort="true" defaultItem="1">Day of the Week</dropdownList>
       </presentation>
     </presentationTable>
   </resources>

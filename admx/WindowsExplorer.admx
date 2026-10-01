@@ -808,6 +808,21 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="AllowAllCopyFGDDestinations"
+            class="Machine"
+            displayName="$(string.AllowAllCopyFGDDestinations_DisplayName)"
+            explainText="$(string.AllowAllCopyFGDDestinations_Help)"
+            key="Software\Policies\Microsoft\Windows\Explorer"
+            valueName="AllowAllCopyFGDDestinations">
+      <parentCategory ref="windows:WindowsExplorer" />
+      <supportedOn ref="windows:SUPPORTED_Windows8" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="DisableMotWOnInsecurePathCopy"
             class="Machine"
             displayName="$(string.DisableMotWOnInsecurePathCopy_DisplayName)"

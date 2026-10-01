@@ -61,6 +61,28 @@ async function msDownload(id: number, fileFilter?: (url: string) => boolean): Pr
   return (fileFilter ? urls.find(fileFilter) : urls[0])!
 }
 
+// Pick the newest "Windows 11 vXXHX Security Baseline.zip" from the Security Compliance Toolkit.
+async function windowsSecurityBaselineDownload(): Promise<string> {
+  const version = (url: string) => decodeURIComponent(url).match(/Windows 11 v(\d\d)H(\d) Security Baseline\.zip$/i)
+  const urls = (await msDownloadUrls(55319)).filter(url => version(url))
+  if (!urls.length) throw new Error('No Windows 11 security baseline found')
+  const key = (url: string) => { const [, year, half] = version(url)!; return Number(year) * 10 + Number(half) }
+  return urls.sort((a, b) => key(b) - key(a))[0]
+}
+
+async function citrixWorkspaceDownload(): Promise<string> {
+  const listUrl = 'https://www.citrix.com/downloads/workspace-app/windows/'
+  const listHtml = await fetchText(listUrl)
+  const pages = [...listHtml.matchAll(/href="(\/downloads\/workspace-app\/windows\/[^"]+\.html)"[^>]*>\s*Citrix Workspace app ([\d.]+) for Windows/g)]
+  if (!pages.length) throw new Error('No Citrix Workspace app release page found')
+  const key = (v: string) => v.split('.').map(n => n.padStart(6, '0')).join('.')
+  const [, page] = pages.sort((a, b) => key(b[2]).localeCompare(key(a[2])))[0]
+  const html = await fetchText(new URL(page, listUrl).href)
+  const match = html.match(/\/\/downloads\.citrix\.com\/\d+\/CitrixWorkspace_ADMX_Files\.zip\?__gda__=[^"' ]+/)
+  if (!match) throw new Error('No Citrix ADMX link found')
+  return 'https:' + match[0].replace(/&amp;/g, '&')
+}
+
 async function lenovoPolicyTemplateDownload(): Promise<string> {
   const pageUrl = 'https://support.lenovo.com/us/en/solutions/ht037099-download-thinkvantage-technologies-administrator-tools'
   const pageHtml = await fetchText(pageUrl)
@@ -140,10 +162,9 @@ function resolveDest(entryPath: string, isOffice: boolean): { dir: string; name:
 }
 
 // Some sources also ship a merged/combined template alongside the split ones we
-// want (Adobe's AdobeDC.admx is the x86+x64 files merged; Zoom's ZoomVDI_Combined_*
-// merge the per-scope files). Skip the merged variants in favour of the split ones.
-const IS_MERGED_TEMPLATE = (name: string) =>
-  /^AdobeDC\.adm[lx]$/i.test(name) || /^ZoomVDI_Combined_HK(CU|LM)\.adm[lx]$/i.test(name)
+// want (Zoom's ZoomVDI_Combined_* merge the per-scope files). Skip the merged
+// variants in favour of the split ones.
+const IS_MERGED_TEMPLATE = (name: string) => /^ZoomVDI_Combined_HK(CU|LM)\.adm[lx]$/i.test(name)
 const IS_ADMX = (name: string) =>
   (/\.admx$/i.test(name) || /\.adml\d*$/i.test(name)) && !IS_MERGED_TEMPLATE(name)
 
@@ -211,9 +232,9 @@ const sources: Source[] = [
   src(() => 'https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/misc/ReaderADMTemplate.zip'),
   src(() => 'https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/misc/AcrobatADMTemplate.zip'),
   src(() => 'https://download.microsoft.com/download/72ea16a9-4cc9-4032-945d-3a56a483d034/WindowsNotepadAdminTemplates.cab'),
-  src(() => msDownload(108428)),
+  src(() => msDownload(108847)), // Windows 11 2026 Update (26H2)
   src(() => msDownload(49030, url => url.includes('x64')), true),
-  src(() => msDownload(55319, url => /Security Baseline\.zip$/i.test(url))),
+  src(() => windowsSecurityBaselineDownload()),
   src(() => 'https://web.archive.org/web/20200723045549/https://msdnshared.blob.core.windows.net/media/2016/10/MSS-legacy.zip'),
   src(() => githubRelease('microsoft', 'PowerToys', /GroupPolicyObjectFiles.*\.zip$/i)),
   { getUrls: async () => [await lenovoPolicyTemplateDownload()], allowMissing: true },
@@ -277,12 +298,7 @@ const sources: Source[] = [
     if (!match) throw new Error('No Slack ADMX attachment found')
     return match[1]
   }),
-  src(async () => {
-    const html = await fetchText('https://www.citrix.com/downloads/workspace-app/windows/workspace-app-for-windows-latest.html')
-    const match = html.match(/\/\/downloads\.citrix\.com\/\d+\/CitrixWorkspace_ADMX_Files\.zip\?__gda__=[^"' ]+/)
-    if (!match) throw new Error('No Citrix ADMX link found')
-    return 'https:' + match[0].replace(/&amp;/g, '&')
-  }),
+  src(() => citrixWorkspaceDownload()),
   srcAll(async () => [
     'https://raw.githubusercontent.com/microsoft/WSL/master/intune/WSL.admx',
     'https://raw.githubusercontent.com/microsoft/WSL/master/intune/en-US/WSL.adml',

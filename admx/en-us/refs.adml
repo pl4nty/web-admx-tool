@@ -14,11 +14,48 @@ Disabling this setting will disallow creation of new developer volumes, existing
 If this setting is not configured the default policy is to enable developer volumes while allowing antivirus filter to attach on a deveveloper volume.  Further, if not configured, a local administrator can choose to not have antivirus filter attached to a developer volume.
 
 A reboot is required for this setting to take effect.</string>
+      <string id="ModeOff">Off</string>
+      <string id="ModeAudit">Audit only</string>
+      <string id="ModeBlock">Block</string>
+      <string id="BlockExternalBusMount">Control mounting ReFS volumes on USB and IEEE 1394 disks</string>
+      <string id="BlockExternalBusMountText">Controls whether ReFS volumes are allowed to mount on disks attached by USB or IEEE 1394. ReFS is not a supported configuration on hot-pluggable or removable disks.
+
+Block refuses the mount and records an event in the System log.
+
+Audit only allows the mount and records the same event, so the effect of enabling this policy can be assessed before it is enforced.
+
+Off performs no auditing and no blocking.
+
+For a Storage Spaces volume the check applies to the physical disks backing the pool, not to the space itself.
+
+If this policy setting is not configured, the local setting on this computer is used. If no local setting exists, the default behavior for this version of Windows is used.
+
+ReFS reads this setting when it loads, so a restart is required before a change applies. The setting is then evaluated each time a volume mounts, so a volume that is already mounted keeps its current state until it is dismounted and mounted again.</string>
+      <string id="BlockHotplugMount">Control mounting ReFS volumes on hot-pluggable disks</string>
+      <string id="BlockHotplugMountText">Controls whether ReFS volumes are allowed to mount on disks that the storage stack reports as hot-pluggable, whatever bus they are attached by. ReFS is not a supported configuration on hot-pluggable or removable disks.
+
+Block refuses the mount and records an event in the System log.
+
+Audit only allows the mount and records the same event, so the effect of enabling this policy can be assessed before it is enforced.
+
+Off performs no auditing and no blocking.
+
+For a Storage Spaces volume the check applies to the physical disks backing the pool, not to the space itself.
+
+If this policy setting is not configured, the local setting on this computer is used. If no local setting exists, the default behavior for this version of Windows is used.
+
+ReFS reads this setting when it loads, so a restart is required before a change applies. The setting is then evaluated each time a volume mounts, so a volume that is already mounted keeps its current state until it is dismounted and mounted again.</string>
     </stringTable>
 
     <presentationTable>
       <presentation id="EnableDevDriveOptions">
         <checkBox refId="DevDriveAllowAntivirusFilter" defaultChecked="true">Let antivirus filter protect dev drives</checkBox>
+      </presentation>
+      <presentation id="BlockExternalBusMountOptions">
+        <dropdownList refId="BlockExternalBusMountMode" defaultItem="0">Action for ReFS volumes on USB or IEEE 1394 disks</dropdownList>
+      </presentation>
+      <presentation id="BlockHotplugMountOptions">
+        <dropdownList refId="BlockHotplugMountMode" defaultItem="0">Action for ReFS volumes on hot-pluggable disks</dropdownList>
       </presentation>
     </presentationTable>
   </resources>

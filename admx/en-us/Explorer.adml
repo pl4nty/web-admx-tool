@@ -37,10 +37,22 @@ Note: Enabling this policy setting does not prevent the user from being able to 
       <string id="DisableRoamedProfileInit_Help">This policy setting allows administrators who have configured roaming profile in conjunction with Delete Cached Roaming Profile Group Policy setting to ensure that Explorer will not reinitialize default program associations and other settings to default values. 
 
 If you enable this policy setting on a machine that does not contain all programs installed in the same manner as it was on the machine on which the user had last logged on, unexpected behavior could occur. </string>
-      <string id="DisableGraphRecentItems">Turn off account-based insights, recent, favorite, and recommended files in File Explorer</string>
-      <string id="DisableGraphRecentItems_Help">Turning off this setting will prevent File Explorer from requesting cloud file metadata and displaying it in the homepage and other views in File Explorer. Any insights and files available based on account activity will be stopped in views such as Recent, Recommended, Favorites, Details pane, etc.</string>
+      <string id="DisableGraphRecentItems">Show files based on your account and cloud provider activity</string>
+      <string id="DisableGraphRecentItems_Help">Turning off this setting will prevent File Explorer from requesting cloud file metadata and displaying it in the homepage and other views in File Explorer. Any insights and files based on account or cloud provider activity will be stopped in views such as Recent, Recommended, Favorites, Shared, etc.</string>
       <string id="DisableAdvancedSettingsSourceIntegration">Turn off Advanced Settings source integration in File Explorer</string>
       <string id="DisableAdvancedSettingsSourceIntegration_Help">Disabling Advanced Settings source integration will prevent File Explorer from showing repository information from the Advanced Settings sytem component</string>
+      <string id="DisableFileExplorerPrelaunch">Disable File Explorer feature to prelaunch a window in the background</string>
+      <string id="DisableFileExplorerPrelaunch_Help">This policy prevents users from enabling the Prelaunch feature in File Explorer, which creates a window in the background to accelerate the launch experience and improve responsiveness.</string>
+      <string id="MakePrintScreenKeyYieldable">Make Print Screen key yieldable</string>
+      <string id="MakePrintScreenKeyYieldable_Help">This policy setting determines whether the Print Screen key can be yielded to other applications.
+
+If you enable this policy setting, the print Screen key can be intercepted by applications, allowing them to override the default screenshot functionality.
+
+If you disable this policy setting, the print Screen key will retain its legacy behavior for taking screenshots and cannot be intercepted by applications.
+
+If this policy is not configured, the print Screen key can be intercepted by applications, allowing them to override the default screenshot functionality, same as the enabled behaviour.
+
+Note: This setting may require a system restart to take effect.</string>
     </stringTable>
     <presentationTable>
       <presentation id="AdminInfoUrl">

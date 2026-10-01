@@ -44,6 +44,17 @@ Note: Once the certificates are applied to the firmware, you cannot undo them fr
 
 For more information, see: https://aka.ms/GetSecureBoot </string>
 
+      <string id="LimitSecureBootRequiredServiceData">Limit Secure Boot Required Service Data</string>
+      <string id="LimitSecureBootRequiredServiceData_Help">This policy setting controls whether the operating system emits the daily Secure Boot required service data event. The event contains information about the device's Secure Boot configuration and firmware variable state, and is normally sent regardless of the Allow Telemetry diagnostic data level because it is classified as security-required.
+
+ 
+
+By enabling this policy setting, the daily Secure Boot required service data event will not be emitted. This is intended for enterprises operating under the Windows Restricted Traffic Limited Functionality Baseline.
+
+ 
+
+If you disable or do not configure this policy setting, the operating system continues to emit the Secure Boot required service data event according to the existing telemetry permission rules.</string>
+
       <string id="SUPPORTED_Windows8">At least Windows Server 2012, Windows 8 or Windows RT</string>  
 
     </stringTable>

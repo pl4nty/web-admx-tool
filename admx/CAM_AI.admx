@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+   <target prefix="windowsai" namespace="Microsoft.Policies.WindowsAI" />
+   <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+   <using prefix="windowscopilot" namespace="Microsoft.Policies.WindowsCopilot" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="WindowsAI" displayName="$(string.WindowsAI)">
+      <parentCategory ref="windowscopilot:WindowsAI" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="ConfigureAgentConnectors"
+            class="Machine"
+            displayName="$(string.ConfigureAgentConnectors_Name)"
+            explainText="$(string.ConfigureAgentConnectors_Explain)"
+            presentation="$(presentation.ConfigureAgentConnectors)"
+            key="Software\Policies\Microsoft\Windows\WindowsAI">
+      <parentCategory ref="windowscopilot:WindowsAI" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
+      <elements>
+        <enum id="ConfigureAgentConnectors_Enum" valueName="ConfigureAgentConnectors">
+          <item displayName="$(string.UserInControl)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceEnable)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceDisable)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="AgentConsentDuration"
+            class="Machine"
+            displayName="$(string.AgentConsentDuration_Name)"
+            explainText="$(string.AgentConsentDuration_Explain)"
+            presentation="$(presentation.AgentConsentDuration)"
+            key="Software\Policies\Microsoft\Windows\WindowsAI">
+      <parentCategory ref="windowscopilot:WindowsAI" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER_ENTERPRISE_EDUCATION_PRO_SANDBOX"/>
+      <elements>
+        <decimal id="AgentConsentDuration_Value" valueName="AgentConsentDuration" minValue="1" maxValue="8760" />
+      </elements>
+    </policy>
+    <policy name="AgentConnectorAccessPolicy"
+            class="Machine"
+            displayName="$(string.AgentConnectorAccessPolicy_Name)"
+            explainText="$(string.AgentConnectorAccessPolicy_Explain)"
+            presentation="$(presentation.AgentConnectorAccessPolicy)"
+            key="Software\Policies\Microsoft\Windows\WindowsAI">
+      <parentCategory ref="windowscopilot:WindowsAI" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
+      <elements>
+        <text id="AgentConnectorAccessPolicy_Name" valueName="AgentConnectorAccessPolicy" />
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

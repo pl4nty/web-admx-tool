@@ -22,5 +22,15 @@
         <decimal value="1" />
       </disabledValue>
     </policy>
+    <policy name="AllowTrustedOfflineScan" class="Machine" displayName="$(string.AllowTrustedOfflineScan)" explainText="$(string.AllowTrustedOfflineScan_help)" key="SOFTWARE\Policies\Microsoft\Windows\WinRE" valueName="AllowTrustedOfflineScan">
+      <parentCategory ref="WinRE" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

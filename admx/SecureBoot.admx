@@ -71,5 +71,22 @@
       </disabledValue>
     </policy>
 
+    <policy name="LimitSecureBootRequiredServiceData"
+        class="Machine"
+        displayName="$(string.LimitSecureBootRequiredServiceData)"
+        explainText="$(string.LimitSecureBootRequiredServiceData_Help)"
+        key="SYSTEM\CurrentControlSet\Control\SecureBoot"
+        valueName="LimitSecureBootRequiredServiceData">
+      <parentCategory ref="SecureBootCategory" />
+      <supportedOn ref="windows:SUPPORTED_Windows_6_3" />
+      <!-- "Enabled" here means we are limiting Secure Boot required service data. -->
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+         <decimal value="0" />
+      </disabledValue>
+    </policy>
+
   </policies>
 </policyDefinitions>

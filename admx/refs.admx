@@ -38,5 +38,47 @@
         </boolean>
       </elements>
     </policy>
+    <policy name="BlockExternalBusMount" class="Machine"
+    displayName="$(string.BlockExternalBusMount)"
+    explainText="$(string.BlockExternalBusMountText)"
+    presentation="$(presentation.BlockExternalBusMountOptions)"
+    key="System\CurrentControlSet\Policies">
+      <parentCategory ref="filesys:Filesystem" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_22H2" />
+      <elements>
+        <enum id="BlockExternalBusMountMode" valueName="RefsExternalBusMountPolicy" required="true">
+          <item displayName="$(string.ModeOff)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.ModeAudit)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.ModeBlock)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="BlockHotplugMount" class="Machine"
+    displayName="$(string.BlockHotplugMount)"
+    explainText="$(string.BlockHotplugMountText)"
+    presentation="$(presentation.BlockHotplugMountOptions)"
+    key="System\CurrentControlSet\Policies">
+      <parentCategory ref="filesys:Filesystem" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_22H2" />
+      <elements>
+        <enum id="BlockHotplugMountMode" valueName="RefsHotplugMountPolicy" required="true">
+          <item displayName="$(string.ModeOff)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.ModeAudit)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.ModeBlock)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
   </policies>
 </policyDefinitions>

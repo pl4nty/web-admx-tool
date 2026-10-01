@@ -13,6 +13,28 @@
         
         If you disable this property setting, Camera devices will be disabled.
             </string>
+            <string id="L_ConfigureCameraOptions_Name">Configure Camera Options</string>
+            <string id="L_ConfigureCameraOptions_Explain">
+        This policy setting allows you to control the behavior of Camera devices on the machine.
+
+        If you enable this policy setting, you can select one of the following modes:
+        
+         AutoShare: Camera devices will be shared among multiple applications, allowing them to access the camera simultaneously. 
+                    This mode is useful for scenarios where multiple applications need to use the camera at the same time.
+
+          SafeMode: Camera devices will be auto-shared and operate in a restricted mode, limiting their functionality and access to certain features. 
+                    This mode is designed to enhance reliability of the camera.
+
+        If you disable or do not configure this policy setting, Camera devices will function in their default
+        mode without any restrictions.
+            </string>
+            <string id="ConfigureCameraOptions_AutoShare">AutoShare</string>
+            <string id="ConfigureCameraOptions_SafeMode">SafeMode</string> 
         </stringTable>
+        <presentationTable>
+            <presentation id="ConfigureCameraOptions">
+              <dropdownList refId="ConfigureCameraOptions_Dropdown" noSort="true" defaultItem="0">Configure Camera Opitons:</dropdownList>
+            </presentation>
+        </presentationTable>
     </resources>
 </policyDefinitionResources>

@@ -82,12 +82,12 @@ If you disable or do not configure this policy setting, the Event Log uses the f
 
 If you enable this policy setting, you can configure the maximum log file size to be between 1 megabyte (1024 kilobytes) and 2 terabytes (2147483647 kilobytes), in kilobyte increments.
 
-If you disable or do not configure this policy setting, the maximum size of the log file will be set to the locally configured value. This value can be changed by the local administrator using the Log Properties dialog, and it defaults to 1 megabyte.</string>
+If you disable or do not configure this policy setting, the maximum size of the log file will be set to the locally configured value. This value can be changed by the local administrator using the Log Properties dialog, and it defaults to 20 megabytes.</string>
       <string id="Channel_LogMaxSizeSecurity_Help">This policy setting specifies the maximum size of the log file in kilobytes.
 
 If you enable this policy setting, you can configure the maximum log file size to be between 20 megabytes (20480 kilobytes) and 2 terabytes (2147483647 kilobytes), in kilobyte increments.
 
-If you disable or do not configure this policy setting, the maximum size of the log file will be set to the locally configured value. This value can be changed by the local administrator using the Log Properties dialog, and it defaults to 20 megabytes.</string>
+If you disable or do not configure this policy setting, the maximum size of the log file will be set to the locally configured value. This value can be changed by the local administrator using the Log Properties dialog, and it defaults to 40 megabytes.</string>
       <string id="ChannelName_Help">Configuration Settings for log</string>
       <string id="EventLog_Application">Application</string>
       <string id="EventLog_Security">Security</string>
@@ -174,16 +174,16 @@ This setting does not control access to individual logs. Once a remote connectio
         </textBox>
       </presentation>
       <presentation id="Channel_LogMaxSize_1">
-        <decimalTextBox refId="Channel_LogMaxSize" defaultValue="1024">Maximum Log Size (KB)</decimalTextBox>
+        <decimalTextBox refId="Channel_LogMaxSize" defaultValue="20480">Maximum Log Size (KB)</decimalTextBox>
       </presentation>
       <presentation id="Channel_LogMaxSize_2">
-        <decimalTextBox refId="Channel_LogMaxSize" defaultValue="20480">Maximum Log Size (KB)</decimalTextBox>
+        <decimalTextBox refId="Channel_LogMaxSize" defaultValue="40960">Maximum Log Size (KB)</decimalTextBox>
       </presentation>
       <presentation id="Channel_LogMaxSize_3">
         <decimalTextBox refId="Channel_LogMaxSize" defaultValue="1024">Maximum Log Size (KB)</decimalTextBox>
       </presentation>
       <presentation id="Channel_LogMaxSize_4">
-        <decimalTextBox refId="Channel_LogMaxSize" defaultValue="1024">Maximum Log Size (KB)</decimalTextBox>
+        <decimalTextBox refId="Channel_LogMaxSize" defaultValue="20480">Maximum Log Size (KB)</decimalTextBox>
       </presentation>
       <presentation id="Service_RpcAccess_Remote">
         <dropdownList refId="RpcAccess_Remote_Setting" noSort="true" defaultItem="0">Pick one of the following settings:</dropdownList>

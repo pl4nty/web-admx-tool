@@ -342,5 +342,25 @@
                 </enum>
             </elements>
         </policy>
+        <policy name="DisableTaskbarPosition" class="Both" displayName="$(string.DisableTaskbarPosition)" explainText="$(string.DisableTaskbarPosition_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="DisableTaskbarPosition">
+            <parentCategory ref="windows:StartMenu" />
+            <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER_ENTERPRISE_EDUCATION_PRO_SANDBOX" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
+        <policy name="DisableTaskbarSize" class="Both" displayName="$(string.DisableTaskbarSize)" explainText="$(string.DisableTaskbarSize_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="DisableTaskbarSize">
+            <parentCategory ref="windows:StartMenu" />
+            <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER_ENTERPRISE_EDUCATION_PRO_SANDBOX" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
     </policies>
 </policyDefinitions>

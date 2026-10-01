@@ -12,6 +12,35 @@
 
       If you enabled or do not configure this policy, the new auditing logs will be generated. If you disable the policy, the new logs are not generated.
       </string>
+      <string id="EnhancedMachineBlockingWithAllowListId">NTLM Enhanced Blocking</string>
+      <string id="EnhancedMachineBlockingWithAllowListId_Explained">This policy setting allows the NTLM security package to block NTLM authentication requests based on the new, enhanced blocking policies at the Machine level.
+
+      These enhanced blocking policies allow you to block NTLM authentication based on new criteria, such as the type of the account, the role of the device, or the type of application.
+
+      If the overall policy is set to "Disabled" or "Not Configured", the subsettings below will not take effect. If the overall policy is set to "Enabled", the subpolicies below will take effect based on their configuration.
+
+      Unless configured, all policies are set to "Audit" mode. Policies that are set to "Audit" will log a warning about the NTLM request that could be blocked, but will not block it. Multiple policies that are marked as "Audit" can be enabled at the same time, and they will be logged in an unified event log.
+
+      If any policy is marked as "Enabled", the NTLM authentication request will be blocked if it matches the criteria of the policy. If multiple policies are marked as "Enabled", the NTLM authentication request will be blocked if it matches the criteria of any of the policies. An event log will be generated for the first policy that blocks the NTLM authentication. 
+
+      In scenarios where there are both "Audit" and "Enabled" policies, the "Enabled" policy will take precedence.
+
+      All of the enhanced blocking policies outlined here share the same allow list, which specifies the accounts, devices, and applications that are allowed to use NTLM authentication. The allow list can contain a series of target names or SPNs to allow the authentication. 
+
+      For more information, please visit aka.ms/ntlmlogandblock.
+      </string>
+      <string id="Disabled">Disabled</string>
+      <string id="Audit">Audit</string>
+      <string id="Enabled">Enabled</string>
     </stringTable>
+    <presentationTable>
+      <presentation id="EnhancedMachineBlockingWithAllowListId">
+        <dropdownList refId="DomainSingleSignOnDropDown" defaultItem="0" noSort="true">Block NTLM for Domain Accounts Single Sign-On</dropdownList>
+        <dropdownList refId="DomainControllerAuthDropDown" defaultItem="0" noSort="true">Block NTLM for Domain Controllers</dropdownList>
+        <dropdownList refId="MachineBindingDropDown" defaultItem="0" noSort="true">Block NTLM when Machine binding fails</dropdownList>
+        <dropdownList refId="BlockAllDropDown" defaultItem="0" noSort="true">Block all NTLM authentication</dropdownList>
+        <multiTextBox refId="EnhancedMachineBlockingWithAllowListBox">Specify the allow list for enhanced blocking policies:</multiTextBox>
+      </presentation>
+    </presentationTable>
   </resources>
 </policyDefinitionResources>

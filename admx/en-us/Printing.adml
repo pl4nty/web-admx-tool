@@ -497,6 +497,22 @@ If you disable this setting or do not configure it, there are not any restrictio
 
 For more information, please see https://learn.microsoft.com/en-us/windows-hardware/drivers/print/windows-protected-print-mode
       </string>
+      <string id="WindowsReadyPrintDriverRanking">Configure Windows Ready Print driver ranking</string>
+      <string id="WindowsReadyPrintDriverRanking_Help">
+Determines whether Windows Ready Print driver ranking is enabled on this computer.
+
+When enabled, Windows will prefer the Microsoft IPP Class Driver for printers that support the Internet Printing Protocol (IPP). This applies to both network-connected IPP printers and USB-connected printers that support IPP over USB.
+
+If you enable this setting, Windows will prioritize the Microsoft IPP Class Driver during automatic driver selection for eligible printers.
+
+If you disable this setting, Windows will use the default driver selection behavior.
+
+If you do not configure this setting, the local administrator setting will be used instead. If neither setting is configured, Windows Ready Print driver ranking is enabled by default.
+
+Note: This Group Policy setting takes precedence over the local administrator setting. This setting only affects automatic driver selection during initial printer setup. Existing printer installations are not changed. A full uninstall and reinstallation of a printer is required for a change in this setting to take effect.
+
+For more information, see https://go.microsoft.com/fwlink/?linkid=2364024.
+      </string>
     </stringTable>
     <presentationTable>
       <presentation id="CustomizedSupportUrl">
