@@ -1040,7 +1040,7 @@
         valueName="RpcAuthnLevelPrivacyEnabled"
       >
       <parentCategory ref="windows:Printers"/>
-      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -1168,6 +1168,23 @@
         name="ConfigureWindowsProtectedPrint"
         valueName="WindowsProtectedPrintGroupPolicyState"
         clientExtension="{9F02E2F5-5A41-4D1A-B473-4617E84BC957}"
+      >
+      <parentCategory ref="windows:Printers"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy
+        class="Machine"
+        displayName="$(string.WindowsReadyPrintDriverRanking)"
+        explainText="$(string.WindowsReadyPrintDriverRanking_Help)"
+        key="Software\Policies\Microsoft\Windows NT\Printers\DriverRanking"
+        name="ConfigureWindowsReadyPrintDriverRanking"
+        valueName="UseWindowsReadyPrintDriverRankingGroupPolicy"
       >
       <parentCategory ref="windows:Printers"/>
       <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2"/>

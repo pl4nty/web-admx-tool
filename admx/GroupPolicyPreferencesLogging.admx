@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="pref" namespace="Microsoft.Policies.PreferencesLogging" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+    <using prefix="GroupPolicy" namespace="Microsoft.Policies.GroupPolicy" />
+  </policyNamespaces>
+  <supersededAdm fileName="preferences.adm" />
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="CSE_Logging" displayName="$(string.CSE_Logging)" explainText="$(string.CSE_Logging_Help)">
+      <parentCategory ref="GroupPolicy:PolicyPolicies" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="CSE_Applications_Logging" class="Machine" displayName="$(string.CSE_Applications_Logging)" explainText="$(string.CSE_Applications_Logging_Help)" presentation="$(presentation.CSE_Applications_Logging)" key="Software\Policies\Microsoft\Windows\Group Policy\{F9C77450-3A41-477E-9310-9ACD617BD9E3}">
+      <parentCategory ref="CSE_Logging" />
+      <supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNET" />
+      <elements>
+        <enum id="CSE_LOGLEVEL" valueName="LogLevel">
+          <item displayName="$(string.CSE_LOGLEVEL_INFORMATION)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_WARNINGS)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_ERRORS)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_NONE)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="CSE_TRACELEVEL" valueName="TraceLevel">
+          <item displayName="$(string.CSE_TRACELEVELVERBOSE)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_TRACELEVELNORMAL)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <text id="CSE_TRACEFILEPATHUSER" valueName="TraceFilePathUser" expandable="true" />
+        <text id="CSE_TRACEFILEPATHMACHINE" valueName="TraceFilePathMachine" expandable="true" />
+        <text id="CSE_TRACEFILEPATHPLANNING" valueName="TraceFilePathPlanning" expandable="true" />
+        <decimal id="CSE_TRACEFILEMAXSIZE" valueName="TraceFileMaxSize" maxValue="16384" />
+      </elements>
+    </policy>
+    <policy name="CSE_DataSources_Logging" class="Machine" displayName="$(string.CSE_DataSources_Logging)" explainText="$(string.CSE_DataSources_Logging_Help)" presentation="$(presentation.CSE_DataSources_Logging)" key="Software\Policies\Microsoft\Windows\Group Policy\{728EE579-943C-4519-9EF7-AB56765798ED}">
+      <parentCategory ref="CSE_Logging" />
+      <supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNET" />
+      <elements>
+        <enum id="CSE_LOGLEVEL" valueName="LogLevel">
+          <item displayName="$(string.CSE_LOGLEVEL_INFORMATION)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_WARNINGS)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_ERRORS)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_NONE)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="CSE_TRACELEVEL" valueName="TraceLevel">
+          <item displayName="$(string.CSE_TRACELEVELVERBOSE)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_TRACELEVELNORMAL)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <text id="CSE_TRACEFILEPATHUSER" valueName="TraceFilePathUser" expandable="true" />
+        <text id="CSE_TRACEFILEPATHMACHINE" valueName="TraceFilePathMachine" expandable="true" />
+        <text id="CSE_TRACEFILEPATHPLANNING" valueName="TraceFilePathPlanning" expandable="true" />
+        <decimal id="CSE_TRACEFILEMAXSIZE" valueName="TraceFileMaxSize" maxValue="16384" />
+      </elements>
+    </policy>
+    <policy name="CSE_Devices_Logging" class="Machine" displayName="$(string.CSE_Devices_Logging)" explainText="$(string.CSE_Devices_Logging_Help)" presentation="$(presentation.CSE_Devices_Logging)" key="Software\Policies\Microsoft\Windows\Group Policy\{1A6364EB-776B-4120-ADE1-B63A406A76B5}">
+      <parentCategory ref="CSE_Logging" />
+      <supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNET" />
+      <elements>
+        <enum id="CSE_LOGLEVEL" valueName="LogLevel">
+          <item displayName="$(string.CSE_LOGLEVEL_INFORMATION)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_WARNINGS)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_ERRORS)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_NONE)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="CSE_TRACELEVEL" valueName="TraceLevel">
+          <item displayName="$(string.CSE_TRACELEVELVERBOSE)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_TRACELEVELNORMAL)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <text id="CSE_TRACEFILEPATHUSER" valueName="TraceFilePathUser" expandable="true" />
+        <text id="CSE_TRACEFILEPATHMACHINE" valueName="TraceFilePathMachine" expandable="true" />
+        <text id="CSE_TRACEFILEPATHPLANNING" valueName="TraceFilePathPlanning" expandable="true" />
+        <decimal id="CSE_TRACEFILEMAXSIZE" valueName="TraceFileMaxSize" maxValue="16384" />
+      </elements>
+    </policy>
+    <policy name="CSE_Drives_Logging" class="Machine" displayName="$(string.CSE_Drives_Logging)" explainText="$(string.CSE_Drives_Logging_Help)" presentation="$(presentation.CSE_Drives_Logging)" key="Software\Policies\Microsoft\Windows\Group Policy\{5794DAFD-BE60-433f-88A2-1A31939AC01F}">
+      <parentCategory ref="CSE_Logging" />
+      <supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNET" />
+      <elements>
+        <enum id="CSE_LOGLEVEL" valueName="LogLevel">
+          <item displayName="$(string.CSE_LOGLEVEL_INFORMATION)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_WARNINGS)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_ERRORS)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_NONE)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="CSE_TRACELEVEL" valueName="TraceLevel">
+          <item displayName="$(string.CSE_TRACELEVELVERBOSE)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_TRACELEVELNORMAL)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <text id="CSE_TRACEFILEPATHUSER" valueName="TraceFilePathUser" expandable="true" />
+        <text id="CSE_TRACEFILEPATHMACHINE" valueName="TraceFilePathMachine" expandable="true" />
+        <text id="CSE_TRACEFILEPATHPLANNING" valueName="TraceFilePathPlanning" expandable="true" />
+        <decimal id="CSE_TRACEFILEMAXSIZE" valueName="TraceFileMaxSize" maxValue="16384" />
+      </elements>
+    </policy>
+    <policy name="CSE_Environment_Logging" class="Machine" displayName="$(string.CSE_Environment_Logging)" explainText="$(string.CSE_Environment_Logging_Help)" presentation="$(presentation.CSE_Environment_Logging)" key="Software\Policies\Microsoft\Windows\Group Policy\{0E28E245-9368-4853-AD84-6DA3BA35BB75}">
+      <parentCategory ref="CSE_Logging" />
+      <supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNET" />
+      <elements>
+        <enum id="CSE_LOGLEVEL" valueName="LogLevel">
+          <item displayName="$(string.CSE_LOGLEVEL_INFORMATION)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_WARNINGS)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_ERRORS)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_NONE)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="CSE_TRACELEVEL" valueName="TraceLevel">
+          <item displayName="$(string.CSE_TRACELEVELVERBOSE)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_TRACELEVELNORMAL)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <text id="CSE_TRACEFILEPATHUSER" valueName="TraceFilePathUser" expandable="true" />
+        <text id="CSE_TRACEFILEPATHMACHINE" valueName="TraceFilePathMachine" expandable="true" />
+        <text id="CSE_TRACEFILEPATHPLANNING" valueName="TraceFilePathPlanning" expandable="true" />
+        <decimal id="CSE_TRACEFILEMAXSIZE" valueName="TraceFileMaxSize" maxValue="16384" />
+      </elements>
+    </policy>
+    <policy name="CSE_Files_Logging" class="Machine" displayName="$(string.CSE_Files_Logging)" explainText="$(string.CSE_Files_Logging_Help)" presentation="$(presentation.CSE_Files_Logging)" key="Software\Policies\Microsoft\Windows\Group Policy\{7150F9BF-48AD-4da4-A49C-29EF4A8369BA}">
+      <parentCategory ref="CSE_Logging" />
+      <supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNET" />
+      <elements>
+        <enum id="CSE_LOGLEVEL" valueName="LogLevel">
+          <item displayName="$(string.CSE_LOGLEVEL_INFORMATION)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_WARNINGS)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_ERRORS)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_NONE)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="CSE_TRACELEVEL" valueName="TraceLevel">
+          <item displayName="$(string.CSE_TRACELEVELVERBOSE)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_TRACELEVELNORMAL)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <text id="CSE_TRACEFILEPATHUSER" valueName="TraceFilePathUser" expandable="true" />
+        <text id="CSE_TRACEFILEPATHMACHINE" valueName="TraceFilePathMachine" expandable="true" />
+        <text id="CSE_TRACEFILEPATHPLANNING" valueName="TraceFilePathPlanning" expandable="true" />
+        <decimal id="CSE_TRACEFILEMAXSIZE" valueName="TraceFileMaxSize" maxValue="16384" />
+      </elements>
+    </policy>
+    <policy name="CSE_FolderOptions_Logging" class="Machine" displayName="$(string.CSE_FolderOptions_Logging)" explainText="$(string.CSE_FolderOptions_Logging_Help)" presentation="$(presentation.CSE_FolderOptions_Logging)" key="Software\Policies\Microsoft\Windows\Group Policy\{A3F3E39B-5D83-4940-B954-28315B82F0A8}">
+      <parentCategory ref="CSE_Logging" />
+      <supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNET" />
+      <elements>
+        <enum id="CSE_LOGLEVEL" valueName="LogLevel">
+          <item displayName="$(string.CSE_LOGLEVEL_INFORMATION)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_WARNINGS)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_ERRORS)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_NONE)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="CSE_TRACELEVEL" valueName="TraceLevel">
+          <item displayName="$(string.CSE_TRACELEVELVERBOSE)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_TRACELEVELNORMAL)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <text id="CSE_TRACEFILEPATHUSER" valueName="TraceFilePathUser" expandable="true" />
+        <text id="CSE_TRACEFILEPATHMACHINE" valueName="TraceFilePathMachine" expandable="true" />
+        <text id="CSE_TRACEFILEPATHPLANNING" valueName="TraceFilePathPlanning" expandable="true" />
+        <decimal id="CSE_TRACEFILEMAXSIZE" valueName="TraceFileMaxSize" maxValue="16384" />
+      </elements>
+    </policy>
+    <policy name="CSE_Folders_Logging" class="Machine" displayName="$(string.CSE_Folders_Logging)" explainText="$(string.CSE_Folders_Logging_Help)" presentation="$(presentation.CSE_Folders_Logging)" key="Software\Policies\Microsoft\Windows\Group Policy\{6232C319-91AC-4931-9385-E70C2B099F0E}">
+      <parentCategory ref="CSE_Logging" />
+      <supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNET" />
+      <elements>
+        <enum id="CSE_LOGLEVEL" valueName="LogLevel">
+          <item displayName="$(string.CSE_LOGLEVEL_INFORMATION)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_WARNINGS)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_ERRORS)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_NONE)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="CSE_TRACELEVEL" valueName="TraceLevel">
+          <item displayName="$(string.CSE_TRACELEVELVERBOSE)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_TRACELEVELNORMAL)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <text id="CSE_TRACEFILEPATHUSER" valueName="TraceFilePathUser" expandable="true" />
+        <text id="CSE_TRACEFILEPATHMACHINE" valueName="TraceFilePathMachine" expandable="true" />
+        <text id="CSE_TRACEFILEPATHPLANNING" valueName="TraceFilePathPlanning" expandable="true" />
+        <decimal id="CSE_TRACEFILEMAXSIZE" valueName="TraceFileMaxSize" maxValue="16384" />
+      </elements>
+    </policy>
+    <policy name="CSE_IniFiles_Logging" class="Machine" displayName="$(string.CSE_IniFiles_Logging)" explainText="$(string.CSE_IniFiles_Logging_Help)" presentation="$(presentation.CSE_IniFiles_Logging)" key="Software\Policies\Microsoft\Windows\Group Policy\{74EE6C03-5363-4554-B161-627540339CAB}">
+      <parentCategory ref="CSE_Logging" />
+      <supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNET" />
+      <elements>
+        <enum id="CSE_LOGLEVEL" valueName="LogLevel">
+          <item displayName="$(string.CSE_LOGLEVEL_INFORMATION)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_WARNINGS)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_ERRORS)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_NONE)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="CSE_TRACELEVEL" valueName="TraceLevel">
+          <item displayName="$(string.CSE_TRACELEVELVERBOSE)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_TRACELEVELNORMAL)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <text id="CSE_TRACEFILEPATHUSER" valueName="TraceFilePathUser" expandable="true" />
+        <text id="CSE_TRACEFILEPATHMACHINE" valueName="TraceFilePathMachine" expandable="true" />
+        <text id="CSE_TRACEFILEPATHPLANNING" valueName="TraceFilePathPlanning" expandable="true" />
+        <decimal id="CSE_TRACEFILEMAXSIZE" valueName="TraceFileMaxSize" maxValue="16384" />
+      </elements>
+    </policy>
+    <policy name="CSE_Internet_Logging" class="Machine" displayName="$(string.CSE_Internet_Logging)" explainText="$(string.CSE_Internet_Logging_Help)" presentation="$(presentation.CSE_Internet_Logging)" key="Software\Policies\Microsoft\Windows\Group Policy\{E47248BA-94CC-49c4-BBB5-9EB7F05183D0}">
+      <parentCategory ref="CSE_Logging" />
+      <supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNET" />
+      <elements>
+        <enum id="CSE_LOGLEVEL" valueName="LogLevel">
+          <item displayName="$(string.CSE_LOGLEVEL_INFORMATION)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_WARNINGS)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_ERRORS)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_NONE)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="CSE_TRACELEVEL" valueName="TraceLevel">
+          <item displayName="$(string.CSE_TRACELEVELVERBOSE)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_TRACELEVELNORMAL)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <text id="CSE_TRACEFILEPATHUSER" valueName="TraceFilePathUser" expandable="true" />
+        <text id="CSE_TRACEFILEPATHMACHINE" valueName="TraceFilePathMachine" expandable="true" />
+        <text id="CSE_TRACEFILEPATHPLANNING" valueName="TraceFilePathPlanning" expandable="true" />
+        <decimal id="CSE_TRACEFILEMAXSIZE" valueName="TraceFileMaxSize" maxValue="16384" />
+      </elements>
+    </policy>
+    <policy name="CSE_LocalUsersAndGroups_Logging" class="Machine" displayName="$(string.CSE_LocalUsersAndGroups_Logging)" explainText="$(string.CSE_LocalUsersAndGroups_Logging_Help)" presentation="$(presentation.CSE_LocalUsersAndGroups_Logging)" key="Software\Policies\Microsoft\Windows\Group Policy\{17D89FEC-5C44-4972-B12D-241CAEF74509}">
+      <parentCategory ref="CSE_Logging" />
+      <supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNET" />
+      <elements>
+        <enum id="CSE_LOGLEVEL" valueName="LogLevel">
+          <item displayName="$(string.CSE_LOGLEVEL_INFORMATION)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_WARNINGS)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_ERRORS)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_NONE)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="CSE_TRACELEVEL" valueName="TraceLevel">
+          <item displayName="$(string.CSE_TRACELEVELVERBOSE)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_TRACELEVELNORMAL)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <text id="CSE_TRACEFILEPATHUSER" valueName="TraceFilePathUser" expandable="true" />
+        <text id="CSE_TRACEFILEPATHMACHINE" valueName="TraceFilePathMachine" expandable="true" />
+        <text id="CSE_TRACEFILEPATHPLANNING" valueName="TraceFilePathPlanning" expandable="true" />
+        <decimal id="CSE_TRACEFILEMAXSIZE" valueName="TraceFileMaxSize" maxValue="16384" />
+      </elements>
+    </policy>
+    <policy name="CSE_NetworkOptions_Logging" class="Machine" displayName="$(string.CSE_NetworkOptions_Logging)" explainText="$(string.CSE_NetworkOptions_Logging_Help)" presentation="$(presentation.CSE_NetworkOptions_Logging)" key="Software\Policies\Microsoft\Windows\Group Policy\{3A0DBA37-F8B2-4356-83DE-3E90BD5C261F}">
+      <parentCategory ref="CSE_Logging" />
+      <supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNET" />
+      <elements>
+        <enum id="CSE_LOGLEVEL" valueName="LogLevel">
+          <item displayName="$(string.CSE_LOGLEVEL_INFORMATION)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_WARNINGS)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_ERRORS)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_NONE)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="CSE_TRACELEVEL" valueName="TraceLevel">
+          <item displayName="$(string.CSE_TRACELEVELVERBOSE)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_TRACELEVELNORMAL)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <text id="CSE_TRACEFILEPATHUSER" valueName="TraceFilePathUser" expandable="true" />
+        <text id="CSE_TRACEFILEPATHMACHINE" valueName="TraceFilePathMachine" expandable="true" />
+        <text id="CSE_TRACEFILEPATHPLANNING" valueName="TraceFilePathPlanning" expandable="true" />
+        <decimal id="CSE_TRACEFILEMAXSIZE" valueName="TraceFileMaxSize" maxValue="16384" />
+      </elements>
+    </policy>
+    <policy name="CSE_NetShares_Logging" class="Machine" displayName="$(string.CSE_NetShares_Logging)" explainText="$(string.CSE_NetShares_Logging_Help)" presentation="$(presentation.CSE_NetShares_Logging)" key="Software\Policies\Microsoft\Windows\Group Policy\{6A4C88C6-C502-4f74-8F60-2CB23EDC24E2}">
+      <parentCategory ref="CSE_Logging" />
+      <supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNET" />
+      <elements>
+        <enum id="CSE_LOGLEVEL" valueName="LogLevel">
+          <item displayName="$(string.CSE_LOGLEVEL_INFORMATION)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_WARNINGS)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_ERRORS)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_NONE)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="CSE_TRACELEVEL" valueName="TraceLevel">
+          <item displayName="$(string.CSE_TRACELEVELVERBOSE)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_TRACELEVELNORMAL)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <text id="CSE_TRACEFILEPATHUSER" valueName="TraceFilePathUser" expandable="true" />
+        <text id="CSE_TRACEFILEPATHMACHINE" valueName="TraceFilePathMachine" expandable="true" />
+        <text id="CSE_TRACEFILEPATHPLANNING" valueName="TraceFilePathPlanning" expandable="true" />
+        <decimal id="CSE_TRACEFILEMAXSIZE" valueName="TraceFileMaxSize" maxValue="16384" />
+      </elements>
+    </policy>
+    <policy name="CSE_PowerOptions_Logging" class="Machine" displayName="$(string.CSE_PowerOptions_Logging)" explainText="$(string.CSE_PowerOptions_Logging_Help)" presentation="$(presentation.CSE_PowerOptions_Logging)" key="Software\Policies\Microsoft\Windows\Group Policy\{E62688F0-25FD-4c90-BFF5-F508B9D2E31F}">
+      <parentCategory ref="CSE_Logging" />
+      <supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNET" />
+      <elements>
+        <enum id="CSE_LOGLEVEL" valueName="LogLevel">
+          <item displayName="$(string.CSE_LOGLEVEL_INFORMATION)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_WARNINGS)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_ERRORS)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_NONE)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="CSE_TRACELEVEL" valueName="TraceLevel">
+          <item displayName="$(string.CSE_TRACELEVELVERBOSE)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_TRACELEVELNORMAL)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <text id="CSE_TRACEFILEPATHUSER" valueName="TraceFilePathUser" expandable="true" />
+        <text id="CSE_TRACEFILEPATHMACHINE" valueName="TraceFilePathMachine" expandable="true" />
+        <text id="CSE_TRACEFILEPATHPLANNING" valueName="TraceFilePathPlanning" expandable="true" />
+        <decimal id="CSE_TRACEFILEMAXSIZE" valueName="TraceFileMaxSize" maxValue="16384" />
+      </elements>
+    </policy>
+    <policy name="CSE_Printers_Logging" class="Machine" displayName="$(string.CSE_Printers_Logging)" explainText="$(string.CSE_Printers_Logging_Help)" presentation="$(presentation.CSE_Printers_Logging)" key="Software\Policies\Microsoft\Windows\Group Policy\{BC75B1ED-5833-4858-9BB8-CBF0B166DF9D}">
+      <parentCategory ref="CSE_Logging" />
+      <supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNET" />
+      <elements>
+        <enum id="CSE_LOGLEVEL" valueName="LogLevel">
+          <item displayName="$(string.CSE_LOGLEVEL_INFORMATION)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_WARNINGS)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_ERRORS)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_NONE)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="CSE_TRACELEVEL" valueName="TraceLevel">
+          <item displayName="$(string.CSE_TRACELEVELVERBOSE)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_TRACELEVELNORMAL)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <text id="CSE_TRACEFILEPATHUSER" valueName="TraceFilePathUser" expandable="true" />
+        <text id="CSE_TRACEFILEPATHMACHINE" valueName="TraceFilePathMachine" expandable="true" />
+        <text id="CSE_TRACEFILEPATHPLANNING" valueName="TraceFilePathPlanning" expandable="true" />
+        <decimal id="CSE_TRACEFILEMAXSIZE" valueName="TraceFileMaxSize" maxValue="16384" />
+      </elements>
+    </policy>
+    <policy name="CSE_RegionalOptions_Logging" class="Machine" displayName="$(string.CSE_RegionalOptions_Logging)" explainText="$(string.CSE_RegionalOptions_Logging_Help)" presentation="$(presentation.CSE_RegionalOptions_Logging)" key="Software\Policies\Microsoft\Windows\Group Policy\{E5094040-C46C-4115-B030-04FB2E545B00}">
+      <parentCategory ref="CSE_Logging" />
+      <supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNET" />
+      <elements>
+        <enum id="CSE_LOGLEVEL" valueName="LogLevel">
+          <item displayName="$(string.CSE_LOGLEVEL_INFORMATION)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_WARNINGS)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_ERRORS)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_NONE)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="CSE_TRACELEVEL" valueName="TraceLevel">
+          <item displayName="$(string.CSE_TRACELEVELVERBOSE)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_TRACELEVELNORMAL)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <text id="CSE_TRACEFILEPATHUSER" valueName="TraceFilePathUser" expandable="true" />
+        <text id="CSE_TRACEFILEPATHMACHINE" valueName="TraceFilePathMachine" expandable="true" />
+        <text id="CSE_TRACEFILEPATHPLANNING" valueName="TraceFilePathPlanning" expandable="true" />
+        <decimal id="CSE_TRACEFILEMAXSIZE" valueName="TraceFileMaxSize" maxValue="16384" />
+      </elements>
+    </policy>
+    <policy name="CSE_PrefRegistry_Logging" class="Machine" displayName="$(string.CSE_PrefRegistry_Logging)" explainText="$(string.CSE_PrefRegistry_Logging_Help)" presentation="$(presentation.CSE_PrefRegistry_Logging)" key="Software\Policies\Microsoft\Windows\Group Policy\{B087BE9D-ED37-454f-AF9C-04291E351182}">
+      <parentCategory ref="CSE_Logging" />
+      <supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNET" />
+      <elements>
+        <enum id="CSE_LOGLEVEL" valueName="LogLevel">
+          <item displayName="$(string.CSE_LOGLEVEL_INFORMATION)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_WARNINGS)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_ERRORS)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_NONE)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="CSE_TRACELEVEL" valueName="TraceLevel">
+          <item displayName="$(string.CSE_TRACELEVELVERBOSE)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_TRACELEVELNORMAL)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <text id="CSE_TRACEFILEPATHUSER" valueName="TraceFilePathUser" expandable="true" />
+        <text id="CSE_TRACEFILEPATHMACHINE" valueName="TraceFilePathMachine" expandable="true" />
+        <text id="CSE_TRACEFILEPATHPLANNING" valueName="TraceFilePathPlanning" expandable="true" />
+        <decimal id="CSE_TRACEFILEMAXSIZE" valueName="TraceFileMaxSize" maxValue="16384" />
+      </elements>
+    </policy>
+    <policy name="CSE_ScheduledTasks_Logging" class="Machine" displayName="$(string.CSE_ScheduledTasks_Logging)" explainText="$(string.CSE_ScheduledTasks_Logging_Help)" presentation="$(presentation.CSE_ScheduledTasks_Logging)" key="Software\Policies\Microsoft\Windows\Group Policy\{AADCED64-746C-4633-A97C-D61349046527}">
+      <parentCategory ref="CSE_Logging" />
+      <supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNET" />
+      <elements>
+        <enum id="CSE_LOGLEVEL" valueName="LogLevel">
+          <item displayName="$(string.CSE_LOGLEVEL_INFORMATION)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_WARNINGS)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_ERRORS)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_NONE)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="CSE_TRACELEVEL" valueName="TraceLevel">
+          <item displayName="$(string.CSE_TRACELEVELVERBOSE)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_TRACELEVELNORMAL)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <text id="CSE_TRACEFILEPATHUSER" valueName="TraceFilePathUser" expandable="true" />
+        <text id="CSE_TRACEFILEPATHMACHINE" valueName="TraceFilePathMachine" expandable="true" />
+        <text id="CSE_TRACEFILEPATHPLANNING" valueName="TraceFilePathPlanning" expandable="true" />
+        <decimal id="CSE_TRACEFILEMAXSIZE" valueName="TraceFileMaxSize" maxValue="16384" />
+      </elements>
+    </policy>
+    <policy name="CSE_Services_Logging" class="Machine" displayName="$(string.CSE_Services_Logging)" explainText="$(string.CSE_Services_Logging_Help)" presentation="$(presentation.CSE_Services_Logging)" key="Software\Policies\Microsoft\Windows\Group Policy\{91FBB303-0CD5-4055-BF42-E512A681B325}">
+      <parentCategory ref="CSE_Logging" />
+      <supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNET" />
+      <elements>
+        <enum id="CSE_LOGLEVEL" valueName="LogLevel">
+          <item displayName="$(string.CSE_LOGLEVEL_INFORMATION)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_WARNINGS)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_ERRORS)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_NONE)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="CSE_TRACELEVEL" valueName="TraceLevel">
+          <item displayName="$(string.CSE_TRACELEVELVERBOSE)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_TRACELEVELNORMAL)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <text id="CSE_TRACEFILEPATHUSER" valueName="TraceFilePathUser" expandable="true" />
+        <text id="CSE_TRACEFILEPATHMACHINE" valueName="TraceFilePathMachine" expandable="true" />
+        <text id="CSE_TRACEFILEPATHPLANNING" valueName="TraceFilePathPlanning" expandable="true" />
+        <decimal id="CSE_TRACEFILEMAXSIZE" valueName="TraceFileMaxSize" maxValue="16384" />
+      </elements>
+    </policy>
+    <policy name="CSE_Shortcuts_Logging" class="Machine" displayName="$(string.CSE_Shortcuts_Logging)" explainText="$(string.CSE_Shortcuts_Logging_Help)" presentation="$(presentation.CSE_Shortcuts_Logging)" key="Software\Policies\Microsoft\Windows\Group Policy\{C418DD9D-0D14-4efb-8FBF-CFE535C8FAC7}">
+      <parentCategory ref="CSE_Logging" />
+      <supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNET" />
+      <elements>
+        <enum id="CSE_LOGLEVEL" valueName="LogLevel">
+          <item displayName="$(string.CSE_LOGLEVEL_INFORMATION)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_WARNINGS)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_ERRORS)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_NONE)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="CSE_TRACELEVEL" valueName="TraceLevel">
+          <item displayName="$(string.CSE_TRACELEVELVERBOSE)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_TRACELEVELNORMAL)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <text id="CSE_TRACEFILEPATHUSER" valueName="TraceFilePathUser" expandable="true" />
+        <text id="CSE_TRACEFILEPATHMACHINE" valueName="TraceFilePathMachine" expandable="true" />
+        <text id="CSE_TRACEFILEPATHPLANNING" valueName="TraceFilePathPlanning" expandable="true" />
+        <decimal id="CSE_TRACEFILEMAXSIZE" valueName="TraceFileMaxSize" maxValue="16384" />
+      </elements>
+    </policy>
+    <policy name="CSE_StartMenu_Logging" class="Machine" displayName="$(string.CSE_StartMenu_Logging)" explainText="$(string.CSE_StartMenu_Logging_Help)" presentation="$(presentation.CSE_StartMenu_Logging)" key="Software\Policies\Microsoft\Windows\Group Policy\{E4F48E54-F38D-4884-BFB9-D4D2E5729C18}">
+      <parentCategory ref="CSE_Logging" />
+      <supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNET" />
+      <elements>
+        <enum id="CSE_LOGLEVEL" valueName="LogLevel">
+          <item displayName="$(string.CSE_LOGLEVEL_INFORMATION)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_WARNINGS)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_ERRORS)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_LOGLEVEL_NONE)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="CSE_TRACELEVEL" valueName="TraceLevel">
+          <item displayName="$(string.CSE_TRACELEVELVERBOSE)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.CSE_TRACELEVELNORMAL)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <text id="CSE_TRACEFILEPATHUSER" valueName="TraceFilePathUser" expandable="true" />
+        <text id="CSE_TRACEFILEPATHPLANNING" valueName="TraceFilePathPlanning" expandable="true" />
+        <decimal id="CSE_TRACEFILEMAXSIZE" valueName="TraceFileMaxSize" maxValue="16384" />
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

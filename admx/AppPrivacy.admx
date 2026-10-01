@@ -402,6 +402,58 @@
         <multiText id="LetAppsAccessNotifications_ForceDenyTheseApps_List" valueName="LetAppsAccessNotifications_ForceDenyTheseApps" />
       </elements>
     </policy>
+    <policy name="LetAppsAccessPasskeys" class="Machine" displayName="$(string.LetAppsAccessPasskeys_Name)" explainText="$(string.LetAppsAccessPasskeys_Explain)" presentation="$(presentation.LetAppsAccessPasskeys)" key="Software\Policies\Microsoft\Windows\AppPrivacy">
+      <parentCategory ref="AppPrivacy" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <elements>
+        <enum id="LetAppsAccessPasskeys_Enum" valueName="LetAppsAccessPasskeys">
+          <item displayName="$(string.UserInControl)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceAllow)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceDeny)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+        <multiText id="LetAppsAccessPasskeys_UserInControlOfTheseApps_List" valueName="LetAppsAccessPasskeys_UserInControlOfTheseApps" />
+        <multiText id="LetAppsAccessPasskeys_ForceAllowTheseApps_List" valueName="LetAppsAccessPasskeys_ForceAllowTheseApps" />
+        <multiText id="LetAppsAccessPasskeys_ForceDenyTheseApps_List" valueName="LetAppsAccessPasskeys_ForceDenyTheseApps" />
+      </elements>
+    </policy>
+    <policy name="LetAppsAccessPasskeysEnumeration" class="Machine" displayName="$(string.LetAppsAccessPasskeysEnumeration_Name)" explainText="$(string.LetAppsAccessPasskeysEnumeration_Explain)" presentation="$(presentation.LetAppsAccessPasskeysEnumeration)" key="Software\Policies\Microsoft\Windows\AppPrivacy">
+      <parentCategory ref="AppPrivacy" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <elements>
+        <enum id="LetAppsAccessPasskeysEnumeration_Enum" valueName="LetAppsAccessPasskeysEnumeration">
+          <item displayName="$(string.UserInControl)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceAllow)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceDeny)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+        <multiText id="LetAppsAccessPasskeysEnumeration_UserInControlOfTheseApps_List" valueName="LetAppsAccessPasskeysEnumeration_UserInControlOfTheseApps" />
+        <multiText id="LetAppsAccessPasskeysEnumeration_ForceAllowTheseApps_List" valueName="LetAppsAccessPasskeysEnumeration_ForceAllowTheseApps" />
+        <multiText id="LetAppsAccessPasskeysEnumeration_ForceDenyTheseApps_List" valueName="LetAppsAccessPasskeysEnumeration_ForceDenyTheseApps" />
+      </elements>
+    </policy>
     <policy name="LetAppsAccessPhone" class="Machine" displayName="$(string.LetAppsAccessPhone_Name)" explainText="$(string.LetAppsAccessPhone_Explain)" presentation="$(presentation.LetAppsAccessPhone)" key="Software\Policies\Microsoft\Windows\AppPrivacy">
       <parentCategory ref="AppPrivacy" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
@@ -680,6 +732,32 @@
         <multiText id="LetAppsAccessBackgroundSpatialPerception_UserInControlOfTheseApps_List" valueName="LetAppsAccessBackgroundSpatialPerception_UserInControlOfTheseApps" />
         <multiText id="LetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps_List" valueName="LetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps" />
         <multiText id="LetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps_List" valueName="LetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps" />
+      </elements>
+    </policy>
+    <policy name="LetAppsAccessForegroundText" class="Machine" displayName="$(string.LetAppsAccessForegroundText_Name)" explainText="$(string.LetAppsAccessForegroundText_Explain)" presentation="$(presentation.LetAppsAccessForegroundText)" key="Software\Policies\Microsoft\Windows\AppPrivacy">
+      <parentCategory ref="AppPrivacy" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_25H2" />
+      <elements>
+        <enum id="LetAppsAccessForegroundText_Enum" valueName="LetAppsAccessForegroundText">
+          <item displayName="$(string.UserInControl)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceAllow)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceDeny)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+        <multiText id="LetAppsAccessForegroundText_UserInControlOfTheseApps_List" valueName="LetAppsAccessForegroundText_UserInControlOfTheseApps" />
+        <multiText id="LetAppsAccessForegroundText_ForceAllowTheseApps_List" valueName="LetAppsAccessForegroundText_ForceAllowTheseApps" />
+        <multiText id="LetAppsAccessForegroundText_ForceDenyTheseApps_List" valueName="LetAppsAccessForegroundText_ForceDenyTheseApps" />
       </elements>
     </policy>
   </policies>

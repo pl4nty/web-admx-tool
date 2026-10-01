@@ -1228,8 +1228,8 @@
         Please follow the device control policy rules xml schema to fill out the policy rules data.
         Alternatively you could use a file path containing the XML rules data.
     </string>
-    <string id="Root_PlatformUpdateChannel">Select the channel for Microsoft Defender monthly platform updates</string>
-    <string id="Root_PlatformUpdateChannel_Explain">Enable this policy to specify when devices receive Microsoft Defender platform updates during the monthly gradual rollout.​
+    <string id="Root_PlatformUpdateChannel">Select the channel for Microsoft Defender monthly platform updates [to be deprecated]</string>
+    <string id="Root_PlatformUpdateChannel_Explain">[to be deprecated] Enable this policy to specify when devices receive Microsoft Defender platform updates during the monthly gradual rollout.​
 
         Beta Channel: Devices set to this channel will be the first to receive new updates. Select Beta Channel to participate in identifying and reporting issues to Microsoft. Devices in the Windows Insider Program are subscribed to this channel by default. For use in (manual) test environments only and a limited number of devices.
         Current Channel (Preview): Devices set to this channel will be offered updates earliest during the monthly gradual release cycle. Suggested for pre-production/validation environments.
@@ -1239,8 +1239,8 @@
 
         If you disable or do not configure this policy, the device will stay up to date automatically during the gradual release cycle. Suitable for most devices.
     </string>
-    <string id="Root_EngineUpdateChannel">Select the channel for Microsoft Defender monthly engine updates</string>
-    <string id="Root_EngineUpdateChannel_Explain">Enable this policy to specify when devices receive Microsoft Defender engine updates during the monthly gradual rollout.​
+    <string id="Root_EngineUpdateChannel">Select the channel for Microsoft Defender monthly engine updates [to be deprecated]</string>
+    <string id="Root_EngineUpdateChannel_Explain">[to be deprecated] Enable this policy to specify when devices receive Microsoft Defender engine updates during the monthly gradual rollout.​
 
         Beta Channel: Devices set to this channel will be the first to receive new updates. Select Beta Channel to participate in identifying and reporting issues to Microsoft. Devices in the Windows Insider Program are subscribed to this channel by default. For use in (manual) test environments only and a limited number of devices.
         Current Channel (Preview): Devices set to this channel will be offered updates earliest during the monthly gradual release cycle. Suggested for pre-production/validation environments.
@@ -1264,6 +1264,22 @@
     <string id="Root_UpdateChannel_Dropdown_Staged">Current Channel (Staged)</string>
     <string id="Root_UpdateChannel_Dropdown_Broad">Current Channel (Broad)</string>
     <string id="Root_UpdateChannel_Dropdown_Delayed">Critical - Time delay</string>
+    <string id="Root_DeploymentChannel">Select the Microsoft Defender safe deployment channel</string>
+    <string id="Root_DeploymentChannel_Explain">Enable this policy to specify when devices receive Microsoft Defender binary updates.​
+
+        Validation Channel: Devices set to this channel are the first to receive new monthly binary (platform and engine) updates. The likelihood of new issues occurring is higher, so add only devices with the highest risk tolerance to this channel (recommended for 1% or less of devices in your environment).
+        Release Channel - Early: The release channel is appropriate for most of your production environment. Devices set to this channel are offered updates earliest in the release channel. Distribute devices across early, fast and broad depending on their risk tolerance. Add devices in the earlier channels to surface issues sooner and avoid impacting the rest of your environment.
+        Release Channel - Fast: The release channel is appropriate for most of your production environment. Devices are offered updates later during the gradual release cycle. Distribute devices across early, fast and broad depending on their risk tolerance. Use devices in the earlier channels to surface issues sooner and avoid impacting the rest of your environment.
+        Release Channel - Broad: The release channel is appropriate for most of your production environment. Devices in this channel receive updates at the end of the gradual release cycle. Distribute devices across early, fast and broad depending on their risk tolerance. Use devices in the earlier channels to surface issues sooner and avoid impacting the rest of your environment.
+        Delayed Channel: Devices in this channel are offered updates approximately 48 hours after the devices in the release channel (broad). Use this channel for critical infrastructure and high value assets (~1% or less of devices).
+
+        If you don't configure this policy, devices are added to the release channel. Microsoft determines whether devices receive updates earlier or later within the release channel.
+    </string>
+    <string id="Root_DeploymentChannel_Dropdown_Validation">Validation Channel</string>
+    <string id="Root_DeploymentChannel_Dropdown_Early">Release Channel - Early</string>
+    <string id="Root_DeploymentChannel_Dropdown_Fast">Release Channel - Fast</string>
+    <string id="Root_DeploymentChannel_Dropdown_Broad">Release Channel - Broad</string>
+    <string id="Root_DeploymentChannel_Dropdown_Delayed">Delayed Channel</string>
     <string id="MpEngine_DisableGradualRelease">Disable gradual rollout of Microsoft Defender updates.</string>
     <string id="MpEngine_DisableGradualRelease_Explain">Enable this policy to disable gradual rollout of Defender updates.
 
@@ -1575,6 +1591,9 @@
     </presentation>
     <presentation id="SecurityIntelligenceUpdateChannelsDropDown">
     <dropdownList refId="UpdateChannelsDropDown" noSort="true" defaultItem="0">Select the channel for Microsoft Defender daily security intelligence updates:</dropdownList>
+    </presentation>
+    <presentation id="DeploymentChannelsDropDown">
+    <dropdownList refId="DeploymentChannelsDropDown" noSort="true" defaultItem="0">Select the Microsoft Defender safe deployment channel:</dropdownList>
     </presentation>
     <presentation id="DeviceControlDefaultEnforcementDropDown">
     <dropdownList refId="DeviceControlDefaultEnforcementDropDown" noSort="true" defaultItem="0">Select Device Control Default Enforcement Policy</dropdownList>

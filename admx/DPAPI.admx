@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="dpapi" namespace="Microsoft.Policies.DPAPI" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="DPAPI" displayName="$(string.DPAPI)">
+      <parentCategory ref="windows:System" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="DomainBackupKeyRotationPeriod"
+            class="Machine" 
+            displayName="$(string.DomainBackupKeyRotationPeriod)" 
+            explainText="$(string.DomainBackupKeyRotationPeriod_Explain)"
+            presentation="$(presentation.DPAPI_DomainBackupKeyRotationPeriod_Presentation)"
+            key="Software\Policies\Microsoft\Windows\DPAPI">
+      <parentCategory ref="DPAPI" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_SERVER" />
+      <elements>
+        <decimal id="DPAPI_DomainBackupKeyRotationPeriod_Prompt" valueName="DomainBackupKeyRotationPeriod" minValue="0" maxValue="18262" />
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

@@ -15,7 +15,7 @@
         name="LogEnhancedNtlmAudits" 
         class="Machine" 
         displayName="$(string.EnhancedAuditsId)" 
-        explainText="$(string.EnhancedAuditsId_Explain)" 
+        explainText="$(string.EnhancedAuditsId_Explain)"
         key="Software\Microsoft\Windows\CurrentVersion\Policies\System\NTLM\Parameters"
         valueName="LogEnhancedAuditEvents"
         >
@@ -27,6 +27,103 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy 
+        name="BlockNtlm" 
+        class="Machine" 
+        displayName="$(string.EnhancedMachineBlockingWithAllowListId)" 
+        explainText="$(string.EnhancedMachineBlockingWithAllowListId_Explained)" 
+        presentation="$(presentation.EnhancedMachineBlockingWithAllowListId)"
+        key="Software\Microsoft\Windows\CurrentVersion\Policies\System\NTLM\Parameters"
+        valueName="EnhancedNtlmBlocks"
+        >
+      <parentCategory ref="NTLM" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <enum
+          id="DomainSingleSignOnDropDown"
+          valueName="BlockDomainAccountSSO">
+            <item displayName="$(string.Audit)">
+                <value>
+                    <decimal value="1"/>
+                </value>
+            </item>
+            <item displayName="$(string.Enabled)">
+                <value>
+                    <decimal value="2"/>
+                </value>
+            </item>
+            <item displayName="$(string.Disabled)">
+                <value>
+                    <decimal value="0"/>
+                </value>
+            </item>
+        </enum>
+        <enum
+          id="DomainControllerAuthDropDown"
+          valueName="BlockDomainControllerAuth">
+            <item displayName="$(string.Audit)">
+                <value>
+                    <decimal value="1"/>
+                </value>
+            </item>
+            <item displayName="$(string.Enabled)">
+                <value>
+                    <decimal value="2"/>
+                </value>
+            </item>
+            <item displayName="$(string.Disabled)">
+                <value>
+                    <decimal value="0"/>
+                </value>
+            </item>
+        </enum>
+        <enum
+          id="MachineBindingDropDown"
+          valueName="EnforceMachineBinding">
+            <item displayName="$(string.Audit)">
+                <value>
+                    <decimal value="1"/>
+                </value>
+            </item>
+            <item displayName="$(string.Enabled)">
+                <value>
+                    <decimal value="2"/>
+                </value>
+            </item>
+            <item displayName="$(string.Disabled)">
+                <value>
+                    <decimal value="0"/>
+                </value>
+            </item>
+        </enum>
+        <enum
+          id="BlockAllDropDown"
+          valueName="BlockAll">
+            <item displayName="$(string.Audit)">
+                <value>
+                    <decimal value="1"/>
+                </value>
+            </item>
+            <item displayName="$(string.Enabled)">
+                <value>
+                    <decimal value="2"/>
+                </value>
+            </item>
+            <item displayName="$(string.Disabled)">
+                <value>
+                    <decimal value="0"/>
+                </value>
+            </item>
+        </enum>
+        <multiText id="EnhancedMachineBlockingWithAllowListBox" valueName="EnhancedMachineBlockingAllowList" />
+      </elements>
     </policy>
   </policies>
 </policyDefinitions>

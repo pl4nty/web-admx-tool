@@ -504,6 +504,12 @@ If you enable this policy setting, file shortcut icons are allowed to be obtaine
 If you disable or do not configure this policy setting, file shortcut icons that use remote paths are prevented from being displayed.
 
 Note: Allowing the use of remote paths in file shortcut icons can expose users’ computers to security risks.</string>
+      <string id="AllowAllCopyFGDDestinations_DisplayName">Allow file group descriptor operations to write to any destination path</string>
+      <string id="AllowAllCopyFGDDestinations_Help">This policy setting determines whether path traversal containment checks are enforced when writing files received via clipboard or drag-drop file group descriptors (CFSTR_FILEDESCRIPTOR).
+
+If you enable this policy setting, path traversal containment checks are not enforced and files may be written to any path reachable by the destination folder. Enable this policy only if the default behavior breaks a required workflow.
+
+If you disable or do not configure this policy setting, file group descriptor operations enforce path containment and reject file names that attempt to escape the destination folder via relative path components.</string>
       <string id="DisableMotWOnInsecurePathCopy_DisplayName">Do not apply the Mark of the Web tag to files copied from insecure sources</string>
       <string id="DisableMotWOnInsecurePathCopy_Help">This policy setting determines the application of the Mark of the Web tag to files sourced from insecure locations.
 

@@ -166,6 +166,45 @@ If you disable this policy setting, IP Stateless Autoconfiguration Limits will b
 
 </string>
 
+      <string id="IPxlatCfg_PermitNonCellularCLAT">Set CLAT Permit</string>
+      <string id="IPxlatCfg_PermitNonCellularCLAT_Help">This policy setting allows you to permit or disable the customer-side translator for 464XLAT (CLAT) globally for non-cellular interfaces.
+
+If you enable this policy setting, CLAT is globally permitted and can be enabled on network interfaces.
+
+If you disable this policy setting, CLAT is globally disallowed and cannot be enabled.
+
+If you do not configure this policy setting, the local host setting is used.
+
+No reboots or service restarts are required for this policy setting to take effect.
+
+</string>
+
+      <string id="IPxlatCfg_GetPrefixInfoFromRA">Set CLAT Get Prefix Information from RA</string>
+      <string id="IPxlatCfg_GetPrefixInfoFromRA_Help">This policy setting allows router advertisements (RA) to be used as a prefix information source for non-cellular CLAT.
+
+If you enable this policy setting, CLAT will be allowed to discover NAT64 prefixes via RA. If both NAT64 prefix discovery methods are enabled, the order of precedence is (RA, DNS).
+
+If you disable this policy setting, CLAT will not be allowed to discover NAT64 prefixes via RA.
+
+If you do not configure this policy setting, the local host setting is used.
+
+A reboot is required for this policy setting to take effect.
+
+</string>
+
+      <string id="IPxlatCfg_GetPrefixInfoFromDNS">Set CLAT Get Prefix Information from DNS</string>
+      <string id="IPxlatCfg_GetPrefixInfoFromDNS_Help">This policy setting allows DNS to be used as a prefix information source for non-cellular CLAT.
+
+If you enable this policy setting, CLAT will be allowed to discover NAT64 prefixes via DNS. If both NAT64 prefix discovery methods are enabled, the order of precedence is (RA, DNS).
+
+If you disable this policy setting, CLAT will not be allowed to discover NAT64 prefixes via DNS.
+
+If you do not configure this policy setting, the local host setting is used.
+
+A reboot is required for this policy setting to take effect.
+
+</string>
+
 </stringTable>
 
 <presentationTable>

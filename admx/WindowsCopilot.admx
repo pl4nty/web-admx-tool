@@ -212,15 +212,32 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
-    <policy name="DisableRecallDataProviders" class="User" displayName="$(string.DisableRecallDataProviders)" explainText="$(string.DisableRecallDataProviders_Help)" key="SOFTWARE\Policies\Microsoft\Windows\WindowsAI" valueName="DisableRecallDataProviders">
+    <policy name="OnDeviceRegistryLoggingLevel" class="Machine" displayName="$(string.OnDeviceRegistryLoggingLevel_Name)" explainText="$(string.OnDeviceRegistryLoggingLevel_Explain)" presentation="$(presentation.OnDeviceRegistryLoggingLevel)" key="Software\Policies\Microsoft\Windows\WindowsAI">
       <parentCategory ref="WindowsAI" />
-      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER_ENTERPRISE_EDUCATION" />
-      <enabledValue>
-        <decimal value="1" />
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0" />
-      </disabledValue>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <elements>
+        <enum id="OnDeviceRegistryLoggingLevel_Enum" valueName="OnDeviceRegistryLoggingLevel">
+          <item displayName="$(string.OnDeviceRegistryLoggingLevel_Option0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.OnDeviceRegistryLoggingLevel_Option1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.OnDeviceRegistryLoggingLevel_Option2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="RemoveMicrosoftCopilotApp" class="Both" displayName="$(string.RemoveMicrosoftCopilotApp)" explainText="$(string.RemoveMicrosoftCopilotApp_Help)" key="Software\Policies\Microsoft\Windows\WindowsAI" valueName="RemoveMicrosoftCopilotApp">
+      <parentCategory ref="WindowsAI" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER_ENTERPRISE_EDUCATION_PRO_SANDBOX" />
     </policy>
   </policies>
 </policyDefinitions>

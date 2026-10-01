@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" revision="1.0" schemaVersion="1.0">
+  <displayName>Group Policy Preference Logging Policies</displayName>
+  <description></description>
+  <resources>
+    <stringTable>
+      <string id="CSE_Applications_Logging">Configure Applications preference logging and tracing</string>
+      <string id="CSE_Applications_Logging_Help">This policy setting allows you to configure the level of detail recorded by event logging for the Applications preference extension, and to turn on tracing for the Applications extension. Logging and tracing provide diagnostic information for troubleshooting.
+
+If you enable this policy setting, you can configure event logging and turn on tracing for the Applications extension for client computers.
+
+If you disable or do not configure this policy setting, by default event logging for this extension includes only warnings and errors, and tracing for this extension is turned off.
+
+Notes:
+
+1. User Configuration tracing: To perform tracing for items in this preference extension listed under User Configuration, you must provide a path in the "User trace" box to the location where a user trace file can be created on the client computer, and you must turn on the "Tracing" option. If there are no preference items under User Configuration in this extension, no user trace file is created.
+
+2. Computer Configuration tracing: This preference extension is available under User Configuration only, so computer configuration tracing is not applicable.
+
+3. Group Policy Modeling query tracing: To perform tracing for items in this preference extension when you perform a Group Policy Modeling query, you must provide a path in the "Planning trace" box to the location where a planning trace file can be created on the computer where you run modeling, and you must turn on the "Tracing" option. If you are not performing Group Policy Modeling or there are no preference items in this extension, no planning trace file is created.
+</string>
+      <string id="CSE_DataSources_Logging">Configure Data Sources preference logging and tracing</string>
+      <string id="CSE_DataSources_Logging_Help">This policy setting allows you to configure the level of detail recorded by event logging for the Data Sources preference extension, and to turn on tracing for the Data Sources extension. Logging and tracing provide diagnostic information for troubleshooting.
+
+If you enable this policy setting, you can configure event logging and turn on tracing for the Data Sources extension for client computers.
+
+If you disable or do not configure this policy setting, by default event logging for this extension includes only warnings and errors, and tracing for this extension is turned off.
+
+Security caution: 
+Secure the configured network share with minimum required permissions only. Do not use broad access (e.g., Any standard account or Everyone with Full Control), as this may result in unauthorized access to logging and tracing data
+
+Notes:
+
+1. User Configuration tracing: To perform tracing for items in this preference extension listed under User Configuration, you must provide a path in the "User trace" box to the location where a user trace file can be created on the client computer, and you must turn on the "Tracing" option. If there are no preference items under User Configuration in this extension, no user trace file is created.
+
+2. Computer Configuration tracing: This preference extension is available under User Configuration only, so computer configuration tracing is not applicable.
+
+3. Group Policy Modeling query tracing: To perform tracing for items in this preference extension when you perform a Group Policy Modeling query, you must provide a path in the "Planning trace" box to the location where a planning trace file can be created on the computer where you run modeling, and you must turn on the "Tracing" option. If you are not performing Group Policy Modeling or there are no preference items in this extension, no planning trace file is created.</string>
+      <string id="CSE_Devices_Logging">Configure Devices preference logging and tracing</string>
+      <string id="CSE_Devices_Logging_Help">This policy setting allows you to configure the level of detail recorded by event logging for the Devices preference extension, and to turn on tracing for the Devices extension. Logging and tracing provide diagnostic information for troubleshooting.
+
+If you enable this policy setting, you can configure event logging and turn on tracing for the Devices extension for client computers.
+
+If you disable or do not configure this policy setting, by default event logging for this extension includes only warnings and errors, and tracing for this extension is turned off.
+
+Security caution: 
+Secure the configured network share with minimum required permissions only. Do not use broad access (e.g., Any standard account or Everyone with Full Control), as this may result in unauthorized access to logging and tracing data
+
+Notes:
+
+1. User Configuration tracing: To perform tracing for items in this preference extension listed under User Configuration, you must provide a path in the "User trace" box to the location where a user trace file can be created on the client computer, and you must turn on the "Tracing" option. If there are no preference items under User Configuration in this extension, no user trace file is created.
+
+2. Computer Configuration tracing: This preference extension is available under User Configuration only, so computer configuration tracing is not applicable.
+
+3. Group Policy Modeling query tracing: To perform tracing for items in this preference extension when you perform a Group Policy Modeling query, you must provide a path in the "Planning trace" box to the location where a planning trace file can be created on the computer where you run modeling, and you must turn on the "Tracing" option. If you are not performing Group Policy Modeling or there are no preference items in this extension, no planning trace file is created.</string>
+      <string id="CSE_Drives_Logging">Configure Drive Maps preference logging and tracing</string>
+      <string id="CSE_Drives_Logging_Help">This policy setting allows you to configure the level of detail recorded by event logging for the Drive Maps preference extension, and to turn on tracing for the Drive Maps extension. Logging and tracing provide diagnostic information for troubleshooting.
+
+If you enable this policy setting, you can configure event logging and turn on tracing for the Drive Maps extension for client computers.
+
+If you disable or do not configure this policy setting, by default event logging for this extension includes only warnings and errors, and tracing for this extension is turned off.
+
+Security caution: 
+Secure the configured network share with minimum required permissions only. Do not use broad access (e.g., Any standard account or Everyone with Full Control), as this may result in unauthorized access to logging and tracing data
+
+Notes:
+
+1. User Configuration tracing: To perform tracing for items in this preference extension listed under User Configuration, you must provide a path in the "User trace" box to the location where a user trace file can be created on the client computer, and you must turn on the "Tracing" option. If there are no preference items under User Configuration in this extension, no user trace file is created.
+
+2. Computer Configuration tracing: This preference extension is available under User Configuration only, so computer configuration tracing is not applicable.
+
+3. Group Policy Modeling query tracing: To perform tracing for items in this preference extension when you perform a Group Policy Modeling query, you must provide a path in the "Planning trace" box to the location where a planning trace file can be created on the computer where you run modeling, and you must turn on the "Tracing" option. If you are not performing Group Policy Modeling or there are no preference items in this extension, no planning trace file is created.</string>
+      <string id="CSE_Environment_Logging">Configure Environment preference logging and tracing</string>
+      <string id="CSE_Environment_Logging_Help">This policy setting allows you to configure the level of detail recorded by event logging for the Environment preference extension, and to turn on tracing for the Environment extension. Logging and tracing provide diagnostic information for troubleshooting.
+
+If you enable this policy setting, you can configure event logging and turn on tracing for the Environment extension for client computers.
+
+If you disable or do not configure this policy setting, by default event logging for this extension includes only warnings and errors, and tracing for this extension is turned off.
+
+Security caution: 
+Secure the configured network share with minimum required permissions only. Do not use broad access (e.g., Any standard account or Everyone with Full Control), as this may result in unauthorized access to logging and tracing data
+
+Notes:
+
+1. User Configuration tracing: To perform tracing for items in this preference extension listed under User Configuration, you must provide a path in the "User trace" box to the location where a user trace file can be created on the client computer, and you must turn on the "Tracing" option. If there are no preference items under User Configuration in this extension, no user trace file is created.
+
+2. Computer Configuration tracing: This preference extension is available under User Configuration only, so computer configuration tracing is not applicable.
+
+3. Group Policy Modeling query tracing: To perform tracing for items in this preference extension when you perform a Group Policy Modeling query, you must provide a path in the "Planning trace" box to the location where a planning trace file can be created on the computer where you run modeling, and you must turn on the "Tracing" option. If you are not performing Group Policy Modeling or there are no preference items in this extension, no planning trace file is created.</string>
+      <string id="CSE_Files_Logging">Configure Files preference logging and tracing</string>
+      <string id="CSE_Files_Logging_Help">This policy setting allows you to configure the level of detail recorded by event logging for the Files preference extension, and to turn on tracing for the Files extension. Logging and tracing provide diagnostic information for troubleshooting.
+
+If you enable this policy setting, you can configure event logging and turn on tracing for the Files extension for client computers.
+
+If you disable or do not configure this policy setting, by default event logging for this extension includes only warnings and errors, and tracing for this extension is turned off.
+
+Security caution: 
+Secure the configured network share with minimum required permissions only. Do not use broad access (e.g., Any standard account or Everyone with Full Control), as this may result in unauthorized access to logging and tracing data
+
+Notes:
+
+1. User Configuration tracing: To perform tracing for items in this preference extension listed under User Configuration, you must provide a path in the "User trace" box to the location where a user trace file can be created on the client computer, and you must turn on the "Tracing" option. If there are no preference items under User Configuration in this extension, no user trace file is created.
+
+2. Computer Configuration tracing: This preference extension is available under User Configuration only, so computer configuration tracing is not applicable.
+
+3. Group Policy Modeling query tracing: To perform tracing for items in this preference extension when you perform a Group Policy Modeling query, you must provide a path in the "Planning trace" box to the location where a planning trace file can be created on the computer where you run modeling, and you must turn on the "Tracing" option. If you are not performing Group Policy Modeling or there are no preference items in this extension, no planning trace file is created.</string>
+      <string id="CSE_FolderOptions_Logging">Configure Folder Options preference logging and tracing</string>
+      <string id="CSE_FolderOptions_Logging_Help">This policy setting allows you to configure the level of detail recorded by event logging for the Folder Options preference extension, and to turn on tracing for the Folder Options extension. Logging and tracing provide diagnostic information for troubleshooting.
+
+If you enable this policy setting, you can configure event logging and turn on tracing for the Folder Options extension for client computers.
+
+If you disable or do not configure this policy setting, by default event logging for this extension includes only warnings and errors, and tracing for this extension is turned off.
+
+Security caution: 
+Secure the configured network share with minimum required permissions only. Do not use broad access (e.g., Any standard account or Everyone with Full Control), as this may result in unauthorized access to logging and tracing data
+
+Notes:
+
+1. User Configuration tracing: To perform tracing for items in this preference extension listed under User Configuration, you must provide a path in the "User trace" box to the location where a user trace file can be created on the client computer, and you must turn on the "Tracing" option. If there are no preference items under User Configuration in this extension, no user trace file is created.
+
+2. Computer Configuration tracing: This preference extension is available under User Configuration only, so computer configuration tracing is not applicable.
+
+3. Group Policy Modeling query tracing: To perform tracing for items in this preference extension when you perform a Group Policy Modeling query, you must provide a path in the "Planning trace" box to the location where a planning trace file can be created on the computer where you run modeling, and you must turn on the "Tracing" option. If you are not performing Group Policy Modeling or there are no preference items in this extension, no planning trace file is created.</string>
+      <string id="CSE_Folders_Logging">Configure Folders preference logging and tracing</string>
+      <string id="CSE_Folders_Logging_Help">This policy setting allows you to configure the level of detail recorded by event logging for the Folders preference extension, and to turn on tracing for the Folders extension. Logging and tracing provide diagnostic information for troubleshooting.
+
+If you enable this policy setting, you can configure event logging and turn on tracing for the Folders extension for client computers.
+
+If you disable or do not configure this policy setting, by default event logging for this extension includes only warnings and errors, and tracing for this extension is turned off.
+
+Security caution: 
+Secure the configured network share with minimum required permissions only. Do not use broad access (e.g., Any standard account or Everyone with Full Control), as this may result in unauthorized access to logging and tracing data
+
+Notes:
+
+1. User Configuration tracing: To perform tracing for items in this preference extension listed under User Configuration, you must provide a path in the "User trace" box to the location where a user trace file can be created on the client computer, and you must turn on the "Tracing" option. If there are no preference items under User Configuration in this extension, no user trace file is created.
+
+2. Computer Configuration tracing: This preference extension is available under User Configuration only, so computer configuration tracing is not applicable.
+
+3. Group Policy Modeling query tracing: To perform tracing for items in this preference extension when you perform a Group Policy Modeling query, you must provide a path in the "Planning trace" box to the location where a planning trace file can be created on the computer where you run modeling, and you must turn on the "Tracing" option. If you are not performing Group Policy Modeling or there are no preference items in this extension, no planning trace file is created.</string>
+      <string id="CSE_IniFiles_Logging">Configure Ini Files preference logging and tracing</string>
+      <string id="CSE_IniFiles_Logging_Help">This policy setting allows you to configure the level of detail recorded by event logging for the Ini Files preference extension, and to turn on tracing for the Ini Files extension. Logging and tracing provide diagnostic information for troubleshooting.
+
+If you enable this policy setting, you can configure event logging and turn on tracing for the Ini Files extension for client computers.
+
+If you disable or do not configure this policy setting, by default event logging for this extension includes only warnings and errors, and tracing for this extension is turned off.
+
+Security caution: 
+Secure the configured network share with minimum required permissions only. Do not use broad access (e.g., Any standard account or Everyone with Full Control), as this may result in unauthorized access to logging and tracing data
+
+Notes:
+
+1. User Configuration tracing: To perform tracing for items in this preference extension listed under User Configuration, you must provide a path in the "User trace" box to the location where a user trace file can be created on the client computer, and you must turn on the "Tracing" option. If there are no preference items under User Configuration in this extension, no user trace file is created.
+
+2. Computer Configuration tracing: This preference extension is available under User Configuration only, so computer configuration tracing is not applicable.
+
+3. Group Policy Modeling query tracing: To perform tracing for items in this preference extension when you perform a Group Policy Modeling query, you must provide a path in the "Planning trace" box to the location where a planning trace file can be created on the computer where you run modeling, and you must turn on the "Tracing" option. If you are not performing Group Policy Modeling or there are no preference items in this extension, no planning trace file is created.</string>
+      <string id="CSE_Internet_Logging">Configure Internet Settings preference logging and tracing</string>
+      <string id="CSE_Internet_Logging_Help">This policy setting allows you to configure the level of detail recorded by event logging for the Internet preference extension, and to turn on tracing for the Internet extension. Logging and tracing provide diagnostic information for troubleshooting.
+
+If you enable this policy setting, you can configure event logging and turn on tracing for the Internet extension for client computers.
+
+If you disable or do not configure this policy setting, by default event logging for this extension includes only warnings and errors, and tracing for this extension is turned off.
+
+Security caution: 
+Secure the configured network share with minimum required permissions only. Do not use broad access (e.g., Any standard account or Everyone with Full Control), as this may result in unauthorized access to logging and tracing data
+
+Notes:
+
+1. User Configuration tracing: To perform tracing for items in this preference extension listed under User Configuration, you must provide a path in the "User trace" box to the location where a user trace file can be created on the client computer, and you must turn on the "Tracing" option. If there are no preference items under User Configuration in this extension, no user trace file is created.
+
+2. Computer Configuration tracing: This preference extension is available under User Configuration only, so computer configuration tracing is not applicable.
+
+3. Group Policy Modeling query tracing: To perform tracing for items in this preference extension when you perform a Group Policy Modeling query, you must provide a path in the "Planning trace" box to the location where a planning trace file can be created on the computer where you run modeling, and you must turn on the "Tracing" option. If you are not performing Group Policy Modeling or there are no preference items in this extension, no planning trace file is created.</string>
+      <string id="CSE_LocalUsersAndGroups_Logging">Configure Local Users and Groups preference logging and tracing</string>
+      <string id="CSE_LocalUsersAndGroups_Logging_Help">This policy setting allows you to configure the level of detail recorded by event logging for the Local User and Local Group preference extension, and to turn on tracing for the Local User and Local Group extension. Logging and tracing provide diagnostic information for troubleshooting.
+
+If you enable this policy setting, you can configure event logging and turn on tracing for the Local User and Local Group extension for client computers.
+
+If you disable or do not configure this policy setting, by default event logging for this extension includes only warnings and errors, and tracing for this extension is turned off.
+
+Security caution: 
+Secure the configured network share with minimum required permissions only. Do not use broad access (e.g., Any standard account or Everyone with Full Control), as this may result in unauthorized access to logging and tracing data
+
+Notes:
+
+1. User Configuration tracing: To perform tracing for items in this preference extension listed under User Configuration, you must provide a path in the "User trace" box to the location where a user trace file can be created on the client computer, and you must turn on the "Tracing" option. If there are no preference items under User Configuration in this extension, no user trace file is created.
+
+2. Computer Configuration tracing: This preference extension is available under User Configuration only, so computer configuration tracing is not applicable.
+
+3. Group Policy Modeling query tracing: To perform tracing for items in this preference extension when you perform a Group Policy Modeling query, you must provide a path in the "Planning trace" box to the location where a planning trace file can be created on the computer where you run modeling, and you must turn on the "Tracing" option. If you are not performing Group Policy Modeling or there are no preference items in this extension, no planning trace file is created.</string>
+      <string id="CSE_NetworkOptions_Logging">Configure Network Options preference logging and tracing</string>
+      <string id="CSE_NetworkOptions_Logging_Help">This policy setting allows you to configure the level of detail recorded by event logging for the Network Options preference extension, and to turn on tracing for the Network Options extension. Logging and tracing provide diagnostic information for troubleshooting.
+
+If you enable this policy setting, you can configure event logging and turn on tracing for the Network Options extension for client computers.
+
+If you disable or do not configure this policy setting, by default event logging for this extension includes only warnings and errors, and tracing for this extension is turned off.
+
+Security caution: 
+Secure the configured network share with minimum required permissions only. Do not use broad access (e.g., Any standard account or Everyone with Full Control), as this may result in unauthorized access to logging and tracing data
+
+Notes:
+
+1. User Configuration tracing: To perform tracing for items in this preference extension listed under User Configuration, you must provide a path in the "User trace" box to the location where a user trace file can be created on the client computer, and you must turn on the "Tracing" option. If there are no preference items under User Configuration in this extension, no user trace file is created.
+
+2. Computer Configuration tracing: This preference extension is available under User Configuration only, so computer configuration tracing is not applicable.
+
+3. Group Policy Modeling query tracing: To perform tracing for items in this preference extension when you perform a Group Policy Modeling query, you must provide a path in the "Planning trace" box to the location where a planning trace file can be created on the computer where you run modeling, and you must turn on the "Tracing" option. If you are not performing Group Policy Modeling or there are no preference items in this extension, no planning trace file is created.</string>
+      <string id="CSE_NetShares_Logging">Configure Network Shares preference logging and tracing</string>
+      <string id="CSE_NetShares_Logging_Help">This policy setting allows you to configure the level of detail recorded by event logging for the Network Shares preference extension, and to turn on tracing for the Network Shares extension. Logging and tracing provide diagnostic information for troubleshooting.
+
+If you enable this policy setting, you can configure event logging and turn on tracing for the Network Shares extension for client computers.
+
+If you disable or do not configure this policy setting, by default event logging for this extension includes only warnings and errors, and tracing for this extension is turned off.
+
+Security caution: 
+Secure the configured network share with minimum required permissions only. Do not use broad access (e.g., Any standard account or Everyone with Full Control), as this may result in unauthorized access to logging and tracing data
+
+Notes:
+
+1. User Configuration tracing: To perform tracing for items in this preference extension listed under User Configuration, you must provide a path in the "User trace" box to the location where a user trace file can be created on the client computer, and you must turn on the "Tracing" option. If there are no preference items under User Configuration in this extension, no user trace file is created.
+
+2. Computer Configuration tracing: This preference extension is available under User Configuration only, so computer configuration tracing is not applicable.
+
+3. Group Policy Modeling query tracing: To perform tracing for items in this preference extension when you perform a Group Policy Modeling query, you must provide a path in the "Planning trace" box to the location where a planning trace file can be created on the computer where you run modeling, and you must turn on the "Tracing" option. If you are not performing Group Policy Modeling or there are no preference items in this extension, no planning trace file is created.</string>
+      <string id="CSE_PowerOptions_Logging">Configure Power Options preference logging and tracing</string>
+      <string id="CSE_PowerOptions_Logging_Help">This policy setting allows you to configure the level of detail recorded by event logging for the Power Options preference extension, and to turn on tracing for the Power Options extension. Logging and tracing provide diagnostic information for troubleshooting.
+
+If you enable this policy setting, you can configure event logging and turn on tracing for the Power Options extension for client computers.
+
+If you disable or do not configure this policy setting, by default event logging for this extension includes only warnings and errors, and tracing for this extension is turned off.
+
+Security caution: 
+Secure the configured network share with minimum required permissions only. Do not use broad access (e.g., Any standard account or Everyone with Full Control), as this may result in unauthorized access to logging and tracing data
+
+Notes:
+
+1. User Configuration tracing: To perform tracing for items in this preference extension listed under User Configuration, you must provide a path in the "User trace" box to the location where a user trace file can be created on the client computer, and you must turn on the "Tracing" option. If there are no preference items under User Configuration in this extension, no user trace file is created.
+
+2. Computer Configuration tracing: This preference extension is available under User Configuration only, so computer configuration tracing is not applicable.
+
+3. Group Policy Modeling query tracing: To perform tracing for items in this preference extension when you perform a Group Policy Modeling query, you must provide a path in the "Planning trace" box to the location where a planning trace file can be created on the computer where you run modeling, and you must turn on the "Tracing" option. If you are not performing Group Policy Modeling or there are no preference items in this extension, no planning trace file is created.</string>
+      <string id="CSE_Printers_Logging">Configure Printers preference logging and tracing</string>
+      <string id="CSE_Printers_Logging_Help">This policy setting allows you to configure the level of detail recorded by event logging for the Printers preference extension, and to turn on tracing for the Printers extension. Logging and tracing provide diagnostic information for troubleshooting.
+
+If you enable this policy setting, you can configure event logging and turn on tracing for the Printers extension for client computers.
+
+If you disable or do not configure this policy setting, by default event logging for this extension includes only warnings and errors, and tracing for this extension is turned off.
+
+Security caution: 
+Secure the configured network share with minimum required permissions only. Do not use broad access (e.g., Any standard account or Everyone with Full Control), as this may result in unauthorized access to logging and tracing data
+
+Notes:
+
+1. User Configuration tracing: To perform tracing for items in this preference extension listed under User Configuration, you must provide a path in the "User trace" box to the location where a user trace file can be created on the client computer, and you must turn on the "Tracing" option. If there are no preference items under User Configuration in this extension, no user trace file is created.
+
+2. Computer Configuration tracing: This preference extension is available under User Configuration only, so computer configuration tracing is not applicable.
+
+3. Group Policy Modeling query tracing: To perform tracing for items in this preference extension when you perform a Group Policy Modeling query, you must provide a path in the "Planning trace" box to the location where a planning trace file can be created on the computer where you run modeling, and you must turn on the "Tracing" option. If you are not performing Group Policy Modeling or there are no preference items in this extension, no planning trace file is created.</string>
+      <string id="CSE_RegionalOptions_Logging">Configure Regional Options preference logging and tracing</string>
+      <string id="CSE_RegionalOptions_Logging_Help">This policy setting allows you to configure the level of detail recorded by event logging for the Regional Options preference extension, and to turn on tracing for the Regional Options extension. Logging and tracing provide diagnostic information for troubleshooting.
+
+If you enable this policy setting, you can configure event logging and turn on tracing for the Regional Options extension for client computers.
+
+If you disable or do not configure this policy setting, by default event logging for this extension includes only warnings and errors, and tracing for this extension is turned off.
+
+Security caution: 
+Secure the configured network share with minimum required permissions only. Do not use broad access (e.g., Any standard account or Everyone with Full Control), as this may result in unauthorized access to logging and tracing data
+
+Notes:
+
+1. User Configuration tracing: To perform tracing for items in this preference extension listed under User Configuration, you must provide a path in the "User trace" box to the location where a user trace file can be created on the client computer, and you must turn on the "Tracing" option. If there are no preference items under User Configuration in this extension, no user trace file is created.
+
+2. Computer Configuration tracing: This preference extension is available under User Configuration only, so computer configuration tracing is not applicable.
+
+3. Group Policy Modeling query tracing: To perform tracing for items in this preference extension when you perform a Group Policy Modeling query, you must provide a path in the "Planning trace" box to the location where a planning trace file can be created on the computer where you run modeling, and you must turn on the "Tracing" option. If you are not performing Group Policy Modeling or there are no preference items in this extension, no planning trace file is created.</string>
+      <string id="CSE_PrefRegistry_Logging">Configure Registry preference logging and tracing</string>
+      <string id="CSE_PrefRegistry_Logging_Help">This policy setting allows you to configure the level of detail recorded by event logging for the Registry preference extension, and to turn on tracing for the Registry extension. Logging and tracing provide diagnostic information for troubleshooting.
+
+If you enable this policy setting, you can configure event logging and turn on tracing for the Registry extension for client computers.
+
+If you disable or do not configure this policy setting, by default event logging for this extension includes only warnings and errors, and tracing for this extension is turned off.
+
+Security caution: 
+Secure the configured network share with minimum required permissions only. Do not use broad access (e.g., Any standard account or Everyone with Full Control), as this may result in unauthorized access to logging and tracing data
+
+Notes:
+
+1. User Configuration tracing: To perform tracing for items in this preference extension listed under User Configuration, you must provide a path in the "User trace" box to the location where a user trace file can be created on the client computer, and you must turn on the "Tracing" option. If there are no preference items under User Configuration in this extension, no user trace file is created.
+
+2. Computer Configuration tracing: This preference extension is available under User Configuration only, so computer configuration tracing is not applicable.
+
+3. Group Policy Modeling query tracing: To perform tracing for items in this preference extension when you perform a Group Policy Modeling query, you must provide a path in the "Planning trace" box to the location where a planning trace file can be created on the computer where you run modeling, and you must turn on the "Tracing" option. If you are not performing Group Policy Modeling or there are no preference items in this extension, no planning trace file is created.</string>
+      <string id="CSE_ScheduledTasks_Logging">Configure Scheduled Tasks preference logging and tracing</string>
+      <string id="CSE_ScheduledTasks_Logging_Help">This policy setting allows you to configure the level of detail recorded by event logging for the Scheduled Tasks preference extension, and to turn on tracing for the Scheduled Tasks extension. Logging and tracing provide diagnostic information for troubleshooting.
+
+If you enable this policy setting, you can configure event logging and turn on tracing for the Scheduled Tasks extension for client computers.
+
+If you disable or do not configure this policy setting, by default event logging for this extension includes only warnings and errors, and tracing for this extension is turned off.
+
+Security caution: 
+Secure the configured network share with minimum required permissions only. Do not use broad access (e.g., Any standard account or Everyone with Full Control), as this may result in unauthorized access to logging and tracing data
+
+Notes:
+
+1. User Configuration tracing: To perform tracing for items in this preference extension listed under User Configuration, you must provide a path in the "User trace" box to the location where a user trace file can be created on the client computer, and you must turn on the "Tracing" option. If there are no preference items under User Configuration in this extension, no user trace file is created.
+
+2. Computer Configuration tracing: This preference extension is available under User Configuration only, so computer configuration tracing is not applicable.
+
+3. Group Policy Modeling query tracing: To perform tracing for items in this preference extension when you perform a Group Policy Modeling query, you must provide a path in the "Planning trace" box to the location where a planning trace file can be created on the computer where you run modeling, and you must turn on the "Tracing" option. If you are not performing Group Policy Modeling or there are no preference items in this extension, no planning trace file is created.</string>
+      <string id="CSE_Services_Logging">Configure Services preference logging and tracing</string>
+      <string id="CSE_Services_Logging_Help">This policy setting allows you to configure the level of detail recorded by event logging for the Services preference extension, and to turn on tracing for the Services extension. Logging and tracing provide diagnostic information for troubleshooting.
+
+If you enable this policy setting, you can configure event logging and turn on tracing for the Services extension for client computers.
+
+If you disable or do not configure this policy setting, by default event logging for this extension includes only warnings and errors, and tracing for this extension is turned off.
+
+Security caution: 
+Secure the configured network share with minimum required permissions only. Do not use broad access (e.g., Any standard account or Everyone with Full Control), as this may result in unauthorized access to logging and tracing data
+
+Notes:
+
+1. User Configuration tracing: To perform tracing for items in this preference extension listed under User Configuration, you must provide a path in the "User trace" box to the location where a user trace file can be created on the client computer, and you must turn on the "Tracing" option. If there are no preference items under User Configuration in this extension, no user trace file is created.
+
+2. Computer Configuration tracing: This preference extension is available under User Configuration only, so computer configuration tracing is not applicable.
+
+3. Group Policy Modeling query tracing: To perform tracing for items in this preference extension when you perform a Group Policy Modeling query, you must provide a path in the "Planning trace" box to the location where a planning trace file can be created on the computer where you run modeling, and you must turn on the "Tracing" option. If you are not performing Group Policy Modeling or there are no preference items in this extension, no planning trace file is created.</string>
+      <string id="CSE_Shortcuts_Logging">Configure Shortcuts preference logging and tracing</string>
+      <string id="CSE_Shortcuts_Logging_Help">This policy setting allows you to configure the level of detail recorded by event logging for the Shortcuts preference extension, and to turn on tracing for the Shortcuts extension. Logging and tracing provide diagnostic information for troubleshooting.
+
+If you enable this policy setting, you can configure event logging and turn on tracing for the Shortcuts extension for client computers.
+
+If you disable or do not configure this policy setting, by default event logging for this extension includes only warnings and errors, and tracing for this extension is turned off.
+
+Security caution: 
+Secure the configured network share with minimum required permissions only. Do not use broad access (e.g., Any standard account or Everyone with Full Control), as this may result in unauthorized access to logging and tracing data
+
+Notes:
+
+1. User Configuration tracing: To perform tracing for items in this preference extension listed under User Configuration, you must provide a path in the "User trace" box to the location where a user trace file can be created on the client computer, and you must turn on the "Tracing" option. If there are no preference items under User Configuration in this extension, no user trace file is created.
+
+2. Computer Configuration tracing: This preference extension is available under User Configuration only, so computer configuration tracing is not applicable.
+
+3. Group Policy Modeling query tracing: To perform tracing for items in this preference extension when you perform a Group Policy Modeling query, you must provide a path in the "Planning trace" box to the location where a planning trace file can be created on the computer where you run modeling, and you must turn on the "Tracing" option. If you are not performing Group Policy Modeling or there are no preference items in this extension, no planning trace file is created.</string>
+      <string id="CSE_StartMenu_Logging">Configure Start Menu preference logging and tracing</string>
+      <string id="CSE_StartMenu_Logging_Help">This policy setting allows you to configure the level of detail recorded by event logging for the Start Menu preference extension, and to turn on tracing for the Start Menu extension. Logging and tracing provide diagnostic information for troubleshooting.
+
+If you enable this policy setting, you can configure event logging and turn on tracing for the Start Menu extension for client computers.
+
+If you disable or do not configure this policy setting, by default event logging for this extension includes only warnings and errors, and tracing for this extension is turned off.
+
+Security caution: 
+Secure the configured network share with minimum required permissions only. Do not use broad access (e.g., Any standard account or Everyone with Full Control), as this may result in unauthorized access to logging and tracing data
+
+Notes:
+
+1. User Configuration tracing: To perform tracing for items in this preference extension listed under User Configuration, you must provide a path in the "User trace" box to the location where a user trace file can be created on the client computer, and you must turn on the "Tracing" option. If there are no preference items under User Configuration in this extension, no user trace file is created.
+
+2. Computer Configuration tracing: This preference extension is available under User Configuration only, so computer configuration tracing is not applicable.
+
+3. Group Policy Modeling query tracing: To perform tracing for items in this preference extension when you perform a Group Policy Modeling query, you must provide a path in the "Planning trace" box to the location where a planning trace file can be created on the computer where you run modeling, and you must turn on the "Tracing" option. If you are not performing Group Policy Modeling or there are no preference items in this extension, no planning trace file is created.</string>
+      <string id="CSE_NOCHANGES">Process even if the Group Policy objects have not changed</string>
+      <string id="CSE_NOBACKGROUND">Do not apply during periodic background processing</string>
+      <string id="CSE_ALLOWSLOWLINK">Allow processing across a slow network connection</string>
+      <string id="CSE_TRACELEVEL">Tracing</string>
+      <string id="CSE_TRACEFILEPATHUSER">User trace</string>
+      <string id="CSE_TRACEFILEPATHMACHINE">Computer trace</string>
+      <string id="CSE_TRACEFILEPATH">Trace file</string>
+      <string id="CSE_TRACEFILEPATHPLANNING">Planning trace</string>
+      <string id="CSE_TRACEFILEMAXSIZE">Maximum size of trace file (KB)</string>
+      <string id="CSE_TRACELEVELNORMAL">Off</string>
+      <string id="CSE_TRACELEVELVERBOSE">On</string>
+      <string id="CSE_BACKGROUNDPRIORTYLEVEL">Background priority</string>
+      <string id="CSE_PRILEVEL_NORMAL">Normal</string>
+      <string id="CSE_PRILEVEL_BELOWNORMAL">Below Normal</string>
+      <string id="CSE_PRILEVEL_LOWEST">Lowest</string>
+      <string id="CSE_PRILEVEL_IDLE">Idle</string>
+      <string id="CSE_LOGLEVEL">Event logging</string>
+      <string id="CSE_LOGLEVEL_INFORMATION">Informational, Warnings and Errors</string>
+      <string id="CSE_LOGLEVEL_WARNINGS">Warnings and Errors</string>
+      <string id="CSE_LOGLEVEL_ERRORS">Errors Only</string>
+      <string id="CSE_LOGLEVEL_NONE">None</string>
+      <string id="CSE_Logging">Logging and tracing</string>
+      <string id="CSE_Logging_Help">Allows you to configure the logging and tracing for Preference components.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="CSE_Applications_Logging">
+        <dropdownList refId="CSE_LOGLEVEL" noSort="true" defaultItem="1">Event logging</dropdownList>
+        <dropdownList refId="CSE_TRACELEVEL" noSort="true" defaultItem="1">Tracing</dropdownList>
+        <textBox refId="CSE_TRACEFILEPATHUSER">
+          <label>User trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\User.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHMACHINE">
+          <label>Computer trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Computer.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHPLANNING">
+          <label>Planning trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Planning.log</defaultValue>
+        </textBox>
+        <decimalTextBox refId="CSE_TRACEFILEMAXSIZE" defaultValue="1024">Maximum size of trace file (KB)</decimalTextBox>
+      </presentation>
+      <presentation id="CSE_DataSources_Logging">
+        <dropdownList refId="CSE_LOGLEVEL" noSort="true" defaultItem="1">Event logging</dropdownList>
+        <dropdownList refId="CSE_TRACELEVEL" noSort="true" defaultItem="1">Tracing</dropdownList>
+        <textBox refId="CSE_TRACEFILEPATHUSER">
+          <label>User trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\User.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHMACHINE">
+          <label>Computer trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Computer.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHPLANNING">
+          <label>Planning trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Planning.log</defaultValue>
+        </textBox>
+        <decimalTextBox refId="CSE_TRACEFILEMAXSIZE" defaultValue="1024">Maximum size of trace file (KB)</decimalTextBox>
+      </presentation>
+      <presentation id="CSE_Devices_Logging">
+        <dropdownList refId="CSE_LOGLEVEL" noSort="true" defaultItem="1">Event logging</dropdownList>
+        <dropdownList refId="CSE_TRACELEVEL" noSort="true" defaultItem="1">Tracing</dropdownList>
+        <textBox refId="CSE_TRACEFILEPATHUSER">
+          <label>User trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\User.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHMACHINE">
+          <label>Computer trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Computer.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHPLANNING">
+          <label>Planning trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Planning.log</defaultValue>
+        </textBox>
+        <decimalTextBox refId="CSE_TRACEFILEMAXSIZE" defaultValue="1024">Maximum size of trace file (KB)</decimalTextBox>
+      </presentation>
+      <presentation id="CSE_Drives_Logging">
+        <dropdownList refId="CSE_LOGLEVEL" noSort="true" defaultItem="1">Event logging</dropdownList>
+        <dropdownList refId="CSE_TRACELEVEL" noSort="true" defaultItem="1">Tracing</dropdownList>
+        <textBox refId="CSE_TRACEFILEPATHUSER">
+          <label>User trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\User.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHMACHINE">
+          <label>Computer trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Computer.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHPLANNING">
+          <label>Planning trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Planning.log</defaultValue>
+        </textBox>
+        <decimalTextBox refId="CSE_TRACEFILEMAXSIZE" defaultValue="1024">Maximum size of trace file (KB)</decimalTextBox>
+      </presentation>
+      <presentation id="CSE_Environment_Logging">
+        <dropdownList refId="CSE_LOGLEVEL" noSort="true" defaultItem="1">Event logging</dropdownList>
+        <dropdownList refId="CSE_TRACELEVEL" noSort="true" defaultItem="1">Tracing</dropdownList>
+        <textBox refId="CSE_TRACEFILEPATHUSER">
+          <label>User trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\User.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHMACHINE">
+          <label>Computer trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Computer.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHPLANNING">
+          <label>Planning trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Planning.log</defaultValue>
+        </textBox>
+        <decimalTextBox refId="CSE_TRACEFILEMAXSIZE" defaultValue="1024">Maximum size of trace file (KB)</decimalTextBox>
+      </presentation>
+      <presentation id="CSE_Files_Logging">
+        <dropdownList refId="CSE_LOGLEVEL" noSort="true" defaultItem="1">Event logging</dropdownList>
+        <dropdownList refId="CSE_TRACELEVEL" noSort="true" defaultItem="1">Tracing</dropdownList>
+        <textBox refId="CSE_TRACEFILEPATHUSER">
+          <label>User trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\User.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHMACHINE">
+          <label>Computer trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Computer.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHPLANNING">
+          <label>Planning trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Planning.log</defaultValue>
+        </textBox>
+        <decimalTextBox refId="CSE_TRACEFILEMAXSIZE" defaultValue="1024">Maximum size of trace file (KB)</decimalTextBox>
+      </presentation>
+      <presentation id="CSE_FolderOptions_Logging">
+        <dropdownList refId="CSE_LOGLEVEL" noSort="true" defaultItem="1">Event logging</dropdownList>
+        <dropdownList refId="CSE_TRACELEVEL" noSort="true" defaultItem="1">Tracing</dropdownList>
+        <textBox refId="CSE_TRACEFILEPATHUSER">
+          <label>User trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\User.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHMACHINE">
+          <label>Computer trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Computer.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHPLANNING">
+          <label>Planning trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Planning.log</defaultValue>
+        </textBox>
+        <decimalTextBox refId="CSE_TRACEFILEMAXSIZE" defaultValue="1024">Maximum size of trace file (KB)</decimalTextBox>
+      </presentation>
+      <presentation id="CSE_Folders_Logging">
+        <dropdownList refId="CSE_LOGLEVEL" noSort="true" defaultItem="1">Event logging</dropdownList>
+        <dropdownList refId="CSE_TRACELEVEL" noSort="true" defaultItem="1">Tracing</dropdownList>
+        <textBox refId="CSE_TRACEFILEPATHUSER">
+          <label>User trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\User.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHMACHINE">
+          <label>Computer trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Computer.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHPLANNING">
+          <label>Planning trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Planning.log</defaultValue>
+        </textBox>
+        <decimalTextBox refId="CSE_TRACEFILEMAXSIZE" defaultValue="1024">Maximum size of trace file (KB)</decimalTextBox>
+      </presentation>
+      <presentation id="CSE_IniFiles_Logging">
+        <dropdownList refId="CSE_LOGLEVEL" noSort="true" defaultItem="1">Event logging</dropdownList>
+        <dropdownList refId="CSE_TRACELEVEL" noSort="true" defaultItem="1">Tracing</dropdownList>
+        <textBox refId="CSE_TRACEFILEPATHUSER">
+          <label>User trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\User.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHMACHINE">
+          <label>Computer trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Computer.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHPLANNING">
+          <label>Planning trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Planning.log</defaultValue>
+        </textBox>
+        <decimalTextBox refId="CSE_TRACEFILEMAXSIZE" defaultValue="1024">Maximum size of trace file (KB)</decimalTextBox>
+      </presentation>
+      <presentation id="CSE_Internet_Logging">
+        <dropdownList refId="CSE_LOGLEVEL" noSort="true" defaultItem="1">Event logging</dropdownList>
+        <dropdownList refId="CSE_TRACELEVEL" noSort="true" defaultItem="1">Tracing</dropdownList>
+        <textBox refId="CSE_TRACEFILEPATHUSER">
+          <label>User trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\User.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHMACHINE">
+          <label>Computer trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Computer.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHPLANNING">
+          <label>Planning trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Planning.log</defaultValue>
+        </textBox>
+        <decimalTextBox refId="CSE_TRACEFILEMAXSIZE" defaultValue="1024">Maximum size of trace file (KB)</decimalTextBox>
+      </presentation>
+      <presentation id="CSE_LocalUsersAndGroups_Logging">
+        <dropdownList refId="CSE_LOGLEVEL" noSort="true" defaultItem="1">Event logging</dropdownList>
+        <dropdownList refId="CSE_TRACELEVEL" noSort="true" defaultItem="1">Tracing</dropdownList>
+        <textBox refId="CSE_TRACEFILEPATHUSER">
+          <label>User trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\User.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHMACHINE">
+          <label>Computer trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Computer.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHPLANNING">
+          <label>Planning trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Planning.log</defaultValue>
+        </textBox>
+        <decimalTextBox refId="CSE_TRACEFILEMAXSIZE" defaultValue="1024">Maximum size of trace file (KB)</decimalTextBox>
+      </presentation>
+      <presentation id="CSE_NetworkOptions_Logging">
+        <dropdownList refId="CSE_LOGLEVEL" noSort="true" defaultItem="1">Event logging</dropdownList>
+        <dropdownList refId="CSE_TRACELEVEL" noSort="true" defaultItem="1">Tracing</dropdownList>
+        <textBox refId="CSE_TRACEFILEPATHUSER">
+          <label>User trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\User.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHMACHINE">
+          <label>Computer trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Computer.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHPLANNING">
+          <label>Planning trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Planning.log</defaultValue>
+        </textBox>
+        <decimalTextBox refId="CSE_TRACEFILEMAXSIZE" defaultValue="1024">Maximum size of trace file (KB)</decimalTextBox>
+      </presentation>
+      <presentation id="CSE_NetShares_Logging">
+        <dropdownList refId="CSE_LOGLEVEL" noSort="true" defaultItem="1">Event logging</dropdownList>
+        <dropdownList refId="CSE_TRACELEVEL" noSort="true" defaultItem="1">Tracing</dropdownList>
+        <textBox refId="CSE_TRACEFILEPATHUSER">
+          <label>User trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\User.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHMACHINE">
+          <label>Computer trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Computer.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHPLANNING">
+          <label>Planning trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Planning.log</defaultValue>
+        </textBox>
+        <decimalTextBox refId="CSE_TRACEFILEMAXSIZE" defaultValue="1024">Maximum size of trace file (KB)</decimalTextBox>
+      </presentation>
+      <presentation id="CSE_PowerOptions_Logging">
+        <dropdownList refId="CSE_LOGLEVEL" noSort="true" defaultItem="1">Event logging</dropdownList>
+        <dropdownList refId="CSE_TRACELEVEL" noSort="true" defaultItem="1">Tracing</dropdownList>
+        <textBox refId="CSE_TRACEFILEPATHUSER">
+          <label>User trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\User.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHMACHINE">
+          <label>Computer trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Computer.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHPLANNING">
+          <label>Planning trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Planning.log</defaultValue>
+        </textBox>
+        <decimalTextBox refId="CSE_TRACEFILEMAXSIZE" defaultValue="1024">Maximum size of trace file (KB)</decimalTextBox>
+      </presentation>
+      <presentation id="CSE_Printers_Logging">
+        <dropdownList refId="CSE_LOGLEVEL" noSort="true" defaultItem="1">Event logging</dropdownList>
+        <dropdownList refId="CSE_TRACELEVEL" noSort="true" defaultItem="1">Tracing</dropdownList>
+        <textBox refId="CSE_TRACEFILEPATHUSER">
+          <label>User trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\User.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHMACHINE">
+          <label>Computer trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Computer.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHPLANNING">
+          <label>Planning trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Planning.log</defaultValue>
+        </textBox>
+        <decimalTextBox refId="CSE_TRACEFILEMAXSIZE" defaultValue="1024">Maximum size of trace file (KB)</decimalTextBox>
+      </presentation>
+      <presentation id="CSE_RegionalOptions_Logging">
+        <dropdownList refId="CSE_LOGLEVEL" noSort="true" defaultItem="1">Event logging</dropdownList>
+        <dropdownList refId="CSE_TRACELEVEL" noSort="true" defaultItem="1">Tracing</dropdownList>
+        <textBox refId="CSE_TRACEFILEPATHUSER">
+          <label>User trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\User.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHMACHINE">
+          <label>Computer trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Computer.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHPLANNING">
+          <label>Planning trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Planning.log</defaultValue>
+        </textBox>
+        <decimalTextBox refId="CSE_TRACEFILEMAXSIZE" defaultValue="1024">Maximum size of trace file (KB)</decimalTextBox>
+      </presentation>
+      <presentation id="CSE_PrefRegistry_Logging">
+        <dropdownList refId="CSE_LOGLEVEL" noSort="true" defaultItem="1">Event logging</dropdownList>
+        <dropdownList refId="CSE_TRACELEVEL" noSort="true" defaultItem="1">Tracing</dropdownList>
+        <textBox refId="CSE_TRACEFILEPATHUSER">
+          <label>User trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\User.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHMACHINE">
+          <label>Computer trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Computer.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHPLANNING">
+          <label>Planning trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Planning.log</defaultValue>
+        </textBox>
+        <decimalTextBox refId="CSE_TRACEFILEMAXSIZE" defaultValue="1024">Maximum size of trace file (KB)</decimalTextBox>
+      </presentation>
+      <presentation id="CSE_ScheduledTasks_Logging">
+        <dropdownList refId="CSE_LOGLEVEL" noSort="true" defaultItem="1">Event logging</dropdownList>
+        <dropdownList refId="CSE_TRACELEVEL" noSort="true" defaultItem="1">Tracing</dropdownList>
+        <textBox refId="CSE_TRACEFILEPATHUSER">
+          <label>User trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\User.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHMACHINE">
+          <label>Computer trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Computer.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHPLANNING">
+          <label>Planning trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Planning.log</defaultValue>
+        </textBox>
+        <decimalTextBox refId="CSE_TRACEFILEMAXSIZE" defaultValue="1024">Maximum size of trace file (KB)</decimalTextBox>
+      </presentation>
+      <presentation id="CSE_Services_Logging">
+        <dropdownList refId="CSE_LOGLEVEL" noSort="true" defaultItem="1">Event logging</dropdownList>
+        <dropdownList refId="CSE_TRACELEVEL" noSort="true" defaultItem="1">Tracing</dropdownList>
+        <textBox refId="CSE_TRACEFILEPATHUSER">
+          <label>User trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\User.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHMACHINE">
+          <label>Computer trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Computer.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHPLANNING">
+          <label>Planning trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Planning.log</defaultValue>
+        </textBox>
+        <decimalTextBox refId="CSE_TRACEFILEMAXSIZE" defaultValue="1024">Maximum size of trace file (KB)</decimalTextBox>
+      </presentation>
+      <presentation id="CSE_Shortcuts_Logging">
+        <dropdownList refId="CSE_LOGLEVEL" noSort="true" defaultItem="1">Event logging</dropdownList>
+        <dropdownList refId="CSE_TRACELEVEL" noSort="true" defaultItem="1">Tracing</dropdownList>
+        <textBox refId="CSE_TRACEFILEPATHUSER">
+          <label>User trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\User.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHMACHINE">
+          <label>Computer trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Computer.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHPLANNING">
+          <label>Planning trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Planning.log</defaultValue>
+        </textBox>
+        <decimalTextBox refId="CSE_TRACEFILEMAXSIZE" defaultValue="1024">Maximum size of trace file (KB)</decimalTextBox>
+      </presentation>
+      <presentation id="CSE_StartMenu_Logging">
+        <dropdownList refId="CSE_LOGLEVEL" noSort="true" defaultItem="1">Event logging</dropdownList>
+        <dropdownList refId="CSE_TRACELEVEL" noSort="true" defaultItem="1">Tracing</dropdownList>
+        <textBox refId="CSE_TRACEFILEPATHUSER">
+          <label>User trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\User.log</defaultValue>
+        </textBox>
+        <textBox refId="CSE_TRACEFILEPATHPLANNING">
+          <label>Planning trace</label>
+          <defaultValue>%COMMONAPPDATA%\GroupPolicy\Preference\Trace\Planning.log</defaultValue>
+        </textBox>
+        <decimalTextBox refId="CSE_TRACEFILEMAXSIZE" defaultValue="1024">Maximum size of trace file (KB)</decimalTextBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

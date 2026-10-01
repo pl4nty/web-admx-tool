@@ -401,6 +401,39 @@
                 </enum>
             </elements>
         </policy>
+        <policy name="Root_DeploymentChannel" class="Machine" displayName="$(string.Root_DeploymentChannel)" explainText="$(string.Root_DeploymentChannel_Explain)" key="Software\Policies\Microsoft\Windows Defender" presentation="$(presentation.DeploymentChannelsDropDown)">
+            <parentCategory ref="AntiSpywareDefender" />
+            <supportedOn ref="windows:SUPPORTED_Windows7" />
+            <elements>
+                <enum id="DeploymentChannelsDropDown" valueName="DeploymentChannel" required="true">
+                    <item displayName="$(string.Root_DeploymentChannel_Dropdown_Validation)">
+                        <value>
+                            <decimal value="10" />
+                        </value>
+                    </item>
+                    <item displayName="$(string.Root_DeploymentChannel_Dropdown_Early)">
+                        <value>
+                            <decimal value="20" />
+                        </value>
+                    </item>
+                    <item displayName="$(string.Root_DeploymentChannel_Dropdown_Fast)">
+                        <value>
+                            <decimal value="30" />
+                        </value>
+                    </item>
+                    <item displayName="$(string.Root_DeploymentChannel_Dropdown_Broad)">
+                        <value>
+                            <decimal value="40" />
+                        </value>
+                    </item>
+                    <item displayName="$(string.Root_DeploymentChannel_Dropdown_Delayed)">
+                        <value>
+                            <decimal value="50" />
+                        </value>
+                    </item>
+                </enum>
+            </elements>
+        </policy>
         <policy name="Exclusions_Extensions" class="Machine" displayName="$(string.Exclusions_Extensions)" explainText="$(string.Exclusions_Extensions_Explain)" key="Software\Policies\Microsoft\Windows Defender\Exclusions" valueName="Exclusions_Extensions" presentation="$(presentation.Exclusions_Extensions)">
             <parentCategory ref="Exclusions" />
             <supportedOn ref="windows:SUPPORTED_Windows8" />

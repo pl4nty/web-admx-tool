@@ -10,9 +10,9 @@
       <string id="AppxDeploymentAllowAllTrustedApps">Allow all trusted apps to install</string>
       <string id="AppxDeploymentAllowAllTrustedAppsExplanation">This policy setting allows you to manage the installation of trusted line-of-business (LOB) or developer-signed packaged Microsoft Store apps.
 
-If you enable this policy setting, you can install any LOB or developer-signed packaged Microsoft Store app (which must be signed with a certificate chain that can be successfully validated by the local computer).
+If you enable or do not configure this policy setting, you can install any LOB or developer-signed packaged Microsoft Store app (which must be signed with a certificate chain that can be successfully validated by the local computer).
 
-If you disable or do not configure this policy setting, you cannot install LOB or developer-signed packaged Microsoft Store apps.</string>
+If you disable this policy setting, you cannot install LOB or developer-signed packaged Microsoft Store apps.</string>
       <string id="AllowAutomaticAppArchiving">Archive infrequently used apps</string>
       <string id="AllowAutomaticAppArchivingExplanation">This policy setting controls whether the system can archive infrequently used apps.
 
@@ -128,15 +128,37 @@ If you enable this policy, the selected Microsoft Store apps in the provided lis
 
 Unselected apps in the list will not be removed.
 
-Default is 'disabled' (key not present).
-
-If the policy is disabled or not configured, no Default Microsoft Store packages will be removed from the system.
-
 * This is a headless app (no UI)
 
 ** This app is the default handler for a common file type or protocol. Removing this app might result in a degraded user experience. We do not recommend removing this app.
+
+If you enable this policy, you can also remove an app by entering the app's package family name(e.g., Microsoft.WindowsCalculator_8wekyb3d8bbwe) in the dynamic list under "Specify additional package family names to remove.".
+
+If this policy is enabled, reinstallation of a previously removed app requires de-selecting the app from the provided list or removing the app's package family name from the dynamic list.
+
+You cannot remove Windows System components via the dynamic app removal list.
+
+Validation of package family names in the dynamic app removal list occurs upon user login, not at policy configuration time.
+
+Default is 'disabled' (key not present).
+
+If the policy is disabled or not configured, no Default apps will be removed from the system.
       </string>
       <string id="RemoveDefaultMicrosoftStorePackagesDescription">Removes Default Microsoft Store packages from the system.</string>
+      <string id="EnableMsixAllowedZones">Enable Allowed Zones for MSIX Packages</string>
+      <string id="EnableMsixAllowedZonesExplanation">This policy controls whether MSIX packages originating from specific URL Zones are allowed to install. A package's origin is determined by its URI and whether a Mart-of-the-Web (MotW) is present. If multiple URIs are involved, all of them are considered;
+
+If you enable this policy, users will be able to install MSIX packages according to the configuration for each zone.
+
+If you disable or do not configure this policy, users will be able to install MSIX packages from any zone except for Untrusted.</string>
+      <string id="ZoneAllowed">Allow</string>
+      <string id="ZoneBlocked">Block</string>
+      <string id="EnableMsixSmartScreenCheck">Enable Microsoft SmartScreen checks for MSIX Packages</string>
+      <string id="EnableMsixSmartScreenCheckExplanation">This policy controls whether Microsoft SmartScreen check is performed when installing MSIX packages from specific URL zones.
+
+If you enable or do not configure this policy, the package URI will be evaluated with Microsoft SmartScreen before installation. This check is only done for packages that come from the internet.
+
+If you disable, Microsoft SmartScreen will not be consulted before installing a package.</string>
     </stringTable>
     <presentationTable>
       <presentation id="ConfigureMSIXAuthenticationAuthorizedDomains">
@@ -174,6 +196,14 @@ If the policy is disabled or not configured, no Default Microsoft Store packages
         <checkBox refId="XboxIdentityProvider" defaultChecked="true">Xbox Identity Provider *</checkBox>
         <checkBox refId="XboxSpeechToTextOverlay" defaultChecked="true">Xbox Speech To Text Overlay *</checkBox>
         <checkBox refId="XboxTCUI" defaultChecked="true">Xbox TCUI *</checkBox>
+        <multiTextBox refId="DynamicRemovalList">Specify additional package family names to remove</multiTextBox>
+      </presentation>
+      <presentation id="MsixAllowedZones">
+        <dropdownList refId="LocalMachine" noSort="true" defaultItem="1">Local Machine</dropdownList>
+        <dropdownList refId="Intranet" noSort="true" defaultItem="1">Intranet</dropdownList>
+        <dropdownList refId="TrustedSites" noSort="true" defaultItem="1">Trusted Sites</dropdownList>
+        <dropdownList refId="Internet" noSort="true" defaultItem="1">Internet</dropdownList>
+        <dropdownList refId="UntrustedSites" noSort="true" defaultItem="0">Untrusted Sites</dropdownList>
       </presentation>
     </presentationTable>
   </resources>

@@ -49,10 +49,10 @@ Note: Nonadministrators (excluding Network Configuration Operators) do not have 
 Tip: To open the Advanced TCP/IP Setting dialog box, in the Network Connections folder, right-click a connection icon, and click Properties. For remote access connections, click the Networking tab.  In the "Components checked are used by this connection" box, click Internet Protocol (TCP/IP), click the Properties button, and then click the Advanced button.
 
 Note: Changing this setting from Enabled to Not Configured does not enable the Advanced button until the user logs off.</string>
-      <string id="NC_AllowNetBridge_NLA">Prohibit installation and configuration of Network Bridge on your DNS domain network</string>
+      <string id="NC_AllowNetBridge_NLA">Prohibit installation and configuration of Network Bridge on your network.</string>
       <string id="NC_AllowNetBridge_NLA_Help">Determines whether a user can install and configure the Network Bridge.
 
-Important: This settings is location aware. It only applies when a computer is connected to the same DNS domain network it was connected to when the setting was refreshed on that computer. If a computer is connected to a DNS domain network other than the one it was connected to when the setting was refreshed, this setting does not apply.
+Important: This setting is location aware on AD domain-joined devices. It only applies when a computer is connected to the same DNS domain network it was connected to when the setting was refreshed on that computer. If a computer is connected to a DNS domain network other than the one it was connected to when the setting was refreshed, this setting doesn't apply. On Entra-joined devices, this setting will apply to all networks.
 
 The Network Bridge allows users to create a layer 2 MAC bridge, enabling them to connect two or more network segements together. This connection appears in the Network Connections folder.
 

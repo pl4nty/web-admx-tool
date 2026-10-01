@@ -440,5 +440,15 @@
         </enum>
       </elements>
     </policy>
+    <policy name="AllowNonStandardUserProfilePaths" class="Machine" displayName="$(string.AllowNonStandardUserProfilePaths)" explainText="$(string.AllowNonStandardUserProfilePaths_Help)" key="Software\Policies\Microsoft\Windows\System" valueName="AllowNonStandardUserProfilePaths">
+      <parentCategory ref="UserProfiles" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_20H1" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

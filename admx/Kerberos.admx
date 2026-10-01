@@ -295,5 +295,15 @@
             <multiText id="DmsaRealmsList" key="Software\Microsoft\Windows\CurrentVersion\Policies\System\Kerberos\Parameters" valueName="DmsaRealms" />
         </elements>
     </policy>
+    <policy name="EnableTryIPSPN" class="Machine" displayName="$(string.EnableTryIPSPN)" explainText="$(string.EnableTryIPSPN_explain)" key="Software\Microsoft\Windows\CurrentVersion\Policies\System\Kerberos\Parameters" valueName="TryIPSPN">
+        <parentCategory ref="kerberos" />
+        <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2" />
+        <enabledValue>
+          <decimal value="1" />
+        </enabledValue>
+        <disabledValue>
+          <decimal value="0" />
+        </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

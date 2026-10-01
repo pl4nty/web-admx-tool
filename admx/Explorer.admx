@@ -94,5 +94,25 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="DisableFileExplorerPrelaunch" class="Machine" displayName="$(string.DisableFileExplorerPrelaunch)" explainText="$(string.DisableFileExplorerPrelaunch_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="DisableFileExplorerPrelaunch">
+      <parentCategory ref="windows:WindowsExplorer" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_22H2_NOSERVER" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="MakePrintScreenKeyYieldable" class="Machine" displayName="$(string.MakePrintScreenKeyYieldable)" explainText="$(string.MakePrintScreenKeyYieldable_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="MakePrintScreenKeyYieldable">
+      <parentCategory ref="windows:WindowsExplorer" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

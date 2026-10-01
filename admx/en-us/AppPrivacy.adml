@@ -235,6 +235,36 @@ If you disable or do not configure this policy setting, employees in your organi
 
 If an app is open when this Group Policy object is applied on a device, employees must restart the app or device for the policy changes to be applied to the app.
       </string>
+      <string id="LetAppsAccessPasskeys_Name">Let Windows apps access passkeys</string>
+      <string id="LetAppsAccessPasskeys_Explain">This policy setting specifies whether apps can access passkeys.
+
+You can specify either a default setting for all apps or a per-app setting by specifying a Package Family Name. You can get the Package Family Name for an app by using the Get-AppPackage Windows PowerShell cmdlet. A per-app setting overrides the default setting.
+
+If you choose the "User is in control" option, employees in your organization can decide whether apps can access passkeys by using Settings &gt; Privacy on the device.
+
+If you choose the "Force Allow" option, apps are allowed to access passkeys and employees in your organization cannot change it.
+
+If you choose the "Force Deny" option, apps are not allowed to access passkeys and employees in your organization cannot change it.
+
+If you disable or do not configure this policy setting, employees in your organization can decide whether apps can access passkeys by using Settings &gt; Privacy on the device.
+
+If an app is open when this Group Policy object is applied on a device, employees must restart the app or device for the policy changes to be applied to the app.
+      </string>
+      <string id="LetAppsAccessPasskeysEnumeration_Name">Let Windows apps autofill passkeys</string>
+      <string id="LetAppsAccessPasskeysEnumeration_Explain">This policy setting specifies whether apps can autofill passkeys.
+
+You can specify either a default setting for all apps or a per-app setting by specifying a Package Family Name. You can get the Package Family Name for an app by using the Get-AppPackage Windows PowerShell cmdlet. A per-app setting overrides the default setting.
+
+If you choose the "User is in control" option, employees in your organization can decide whether apps can autofill passkeys by using Settings &gt; Privacy on the device.
+
+If you choose the "Force Allow" option, apps are allowed to autofill passkeys and employees in your organization cannot change it.
+
+If you choose the "Force Deny" option, apps are not allowed to autofill passkeys and employees in your organization cannot change it.
+
+If you disable or do not configure this policy setting, employees in your organization can decide whether apps can autofill passkeys by using Settings &gt; Privacy on the device.
+
+If an app is open when this Group Policy object is applied on a device, employees must restart the app or device for the policy changes to be applied to the app.
+      </string>
       <string id="LetAppsAccessPhone_Name">Let Windows apps make phone calls</string>
       <string id="LetAppsAccessPhone_Explain">This policy setting specifies whether Windows apps can make phone calls.
 
@@ -394,6 +424,20 @@ If you choose the "Force Allow" option, Windows apps are allowed to access user 
 If you choose the "Force Deny" option, Windows apps are not allowed to access user movements while the apps are running in the background and employees in your organization cannot change it.
 
 If you disable or do not configure this policy setting, employees in your organization can decide whether Windows apps can access the user's movements while the apps are running in the background by using Settings &gt; Privacy on the device.
+
+If an app is open when this Group Policy object is applied on a device, employees must restart the app or device for the policy changes to be applied to the app.
+      </string>
+      <string id="LetAppsAccessForegroundText_Name">Let Windows apps access text content from foreground applications</string>
+      <string id="LetAppsAccessForegroundText_Explain">This policy setting specifies whether Windows apps can access text content from foreground applications.
+You can specify either a default setting for all apps or a per-app setting by specifying a Package Family Name. You can get the Package Family Name for an app by using the Get-AppPackage Windows PowerShell cmdlet. A per-app setting overrides the default setting.
+
+If you choose the "User is in control" option, employees in your organization can decide whether Windows apps can access text content from foreground applications by using Settings &gt; Privacy on the device.
+
+If you choose the "Force Allow" option, Windows apps are allowed to access text content from foreground applications and employees in your organization cannot change it.
+
+If you choose the "Force Deny" option, Windows apps are not allowed to access text content from foreground applications and employees in your organization cannot change it.
+
+If you disable or do not configure this policy setting, employees in your organization can decide whether Windows apps can access text content from foreground applications by using Settings &gt; Privacy on the device.
 
 If an app is open when this Group Policy object is applied on a device, employees must restart the app or device for the policy changes to be applied to the app.
       </string>
@@ -620,6 +664,33 @@ If an app is open when this Group Policy object is applied on a device, employee
         <multiTextBox refId="LetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps_List"/>
         <text>Force deny these specific apps (use Package Family Names):</text>
         <multiTextBox refId="LetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps_List"/>
+      </presentation>
+      <presentation id="LetAppsAccessForegroundText">
+        <dropdownList refId="LetAppsAccessForegroundText_Enum" noSort="true" defaultItem="0">Default for all apps:</dropdownList>
+        <text>Put user in control of these specific apps (use Package Family Names):</text>
+        <multiTextBox refId="LetAppsAccessForegroundText_UserInControlOfTheseApps_List"/>
+        <text>Force allow these specific apps (use Package Family Names):</text>
+        <multiTextBox refId="LetAppsAccessForegroundText_ForceAllowTheseApps_List"/>
+        <text>Force deny these specific apps (use Package Family Names):</text>
+        <multiTextBox refId="LetAppsAccessForegroundText_ForceDenyTheseApps_List"/>
+      </presentation>
+      <presentation id="LetAppsAccessPasskeys">
+        <dropdownList refId="LetAppsAccessPasskeys_Enum" noSort="true" defaultItem="0">Default for all apps:</dropdownList>
+        <text>Put user in control of these specific apps (use Package Family Names):</text>
+        <multiTextBox refId="LetAppsAccessPasskeys_UserInControlOfTheseApps_List"/>
+        <text>Force allow these specific apps (use Package Family Names):</text>
+        <multiTextBox refId="LetAppsAccessPasskeys_ForceAllowTheseApps_List"/>
+        <text>Force deny these specific apps (use Package Family Names):</text>
+        <multiTextBox refId="LetAppsAccessPasskeys_ForceDenyTheseApps_List"/>
+      </presentation>
+      <presentation id="LetAppsAccessPasskeysEnumeration">
+        <dropdownList refId="LetAppsAccessPasskeysEnumeration_Enum" noSort="true" defaultItem="0">Default for all apps:</dropdownList>
+        <text>Put user in control of these specific apps (use Package Family Names):</text>
+        <multiTextBox refId="LetAppsAccessPasskeysEnumeration_UserInControlOfTheseApps_List"/>
+        <text>Force allow these specific apps (use Package Family Names):</text>
+        <multiTextBox refId="LetAppsAccessPasskeysEnumeration_ForceAllowTheseApps_List"/>
+        <text>Force deny these specific apps (use Package Family Names):</text>
+        <multiTextBox refId="LetAppsAccessPasskeysEnumeration_ForceDenyTheseApps_List"/>
       </presentation>
     </presentationTable>
   </resources>

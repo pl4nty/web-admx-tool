@@ -303,6 +303,18 @@ Note: Some PCs may not be compatible with this policy if the system firmware ena
       </string>
       <string id="DisableExternalDMAUnderLock_Name">Disable new DMA devices when this computer is locked</string>
 
+      <string id="DisableWinRETrust_Help">This policy setting controls whether BitLocker trusts Windows Recovery Environment (WinRE).
+
+When BitLocker trusts WinRE, WinRE can access the BitLocker-protected operating system volume without requiring the BitLocker recovery key. This supports recovery operations that need access to the operating system volume.
+
+Important: Enabling this policy changes recovery behavior. If you enable this policy setting, BitLocker doesn't trust WinRE. The BitLocker recovery key is required for any WinRE operation that needs to access the BitLocker-protected operating system volume. Recovery operations that rely on WinRE access to the operating system volume might require user or administrator intervention and might not complete automatically, including Startup Repair, Quick Machine Recovery, Push-button Recovery, and MDM-initiated remote reset or wipe using the RemoteWipe CSP.
+
+If you disable or don't configure this policy setting, BitLocker trusts a validated WinRE image so that WinRE can access the BitLocker-protected operating system volume without the recovery key.
+
+This policy setting is enforced only when BitLocker or device encryption is enabled.</string>
+
+      <string id="DisableWinRETrust_Name">Disable BitLocker trust of Windows Recovery Environment (WinRE)</string>
+
       <string id="FVEOSCategory">Operating System Drives</string>
       <string id="FVEFDVCategory">Fixed Data Drives</string>
       <string id="FVERDVCategory">Removable Data Drives</string>

@@ -144,18 +144,21 @@ Important: This setting applies to devices in the European Economic Area (EEA) o
 
         When the policy is disabled, users will have Settings agentic search experience available on their device.
       </string>
-      <string id="DisableRecallDataProviders">Disable Recall data providers</string>
-      <string id="DisableRecallDataProviders_Help">This policy setting allows you to control whether the Recall is showing user's additional activity details delivered by available App Actions providers.
+      <string id="OnDeviceRegistryLoggingLevel_Name">On-Device Registry Logging Level</string>
+      <string id="OnDeviceRegistryLoggingLevel_Explain">This policy setting allows you to configure the logging level for on-device registry operations.</string>
+      <string id="OnDeviceRegistryLoggingLevel_Option0">Error or higher</string>
+      <string id="OnDeviceRegistryLoggingLevel_Option1">Information or higher</string>
+      <string id="OnDeviceRegistryLoggingLevel_Option2">Debug or higher</string>
+      <string id="RemoveMicrosoftCopilotApp">Remove Microsoft Copilot App</string>
+      <string id="RemoveMicrosoftCopilotApp_Help">This policy setting allows you to uninstall Microsoft Copilot for users in a targeted way. It will apply to devices/users that meet the below conditions:
 
-        By default, additional activity details from available providers is shown in Recall.
+• Microsoft 365 Copilot and Microsoft Copilot are both installed
 
-        If this policy isn't configured, end users will receive supplemental snapshot details from App Actions providers.
+• The Microsoft Copilot app was not installed by the user
 
-        If this policy is disabled, end users won't receive supplemental snapshot details from App Actions providers.
-
-        If the policy is enabled, end users will receive supplemental snapshot details from App Actions providers.
-
-        Important: This setting applies to Enterprise and Education client SKUs only. When configuring this policy setting, changes will not take effect until the Recall app restarts. </string>
+• The Microsoft Copilot app was not launched in the last 28 days
+ 
+If this policy is enabled, the Microsoft Copilot app will be uninstalled. Users can still re-install if they choose to. </string>
     </stringTable>
     <presentationTable>
       <presentation id="SetCopilotHardwareKey">
@@ -185,6 +188,9 @@ Important: This setting applies to devices in the European Economic Area (EEA) o
       </presentation>
       <presentation id="SetMaximumStorageDurationForRecallSnapshots">
         <dropdownList refId="SetMaximumStorageDuration_Text" noSort="true" defaultItem="0">Select maximum storage duration:</dropdownList>
+      </presentation>
+      <presentation id="OnDeviceRegistryLoggingLevel">
+        <dropdownList refId="OnDeviceRegistryLoggingLevel_Enum" noSort="true" defaultItem="0"> On-Device Registry Logging Level: </dropdownList>
       </presentation>
     </presentationTable>
   </resources>

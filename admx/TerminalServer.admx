@@ -312,9 +312,19 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="TS_MICROSOFT_ENTRA_ID_AUTHENTICATION_ENFORCEMENT_POLICY" class="Machine" displayName="$(string.TS_MICROSOFT_ENTRA_ID_AUTHENTICATION_ENFORCEMENT_POLICY)" explainText="$(string.TS_MICROSOFT_ENTRA_ID_AUTHENTICATION_ENFORCEMENT_EXPLAIN)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="EnableMicrosoftEntraIdAuthenticationEnforcement">
+      <parentCategory ref="TS_SECURITY" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="TS_DISCONNECT_ON_LOCK_POLICY" class="Machine" displayName="$(string.TS_DISCONNECT_ON_LOCK_POLICY)" explainText="$(string.TS_DISCONNECT_ON_LOCK_POLICY_EXPLAIN)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="fDisconnectOnLockLegacy">
       <parentCategory ref="TS_SECURITY" />
-      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_22H2_SERVER" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>
@@ -324,7 +334,7 @@
     </policy>
       <policy name="TS_DISCONNECT_ON_LOCK_AAD_POLICY" class="Machine" displayName="$(string.TS_DISCONNECT_ON_LOCK_AAD_POLICY)" explainText="$(string.TS_DISCONNECT_ON_LOCK_AAD_POLICY_EXPLAIN)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="fDisconnectOnLockMicrosoftIdentity">
       <parentCategory ref="TS_SECURITY" />
-      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_22H2_SERVER" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>
@@ -1937,9 +1947,17 @@
       <supportedOn ref="TS_SUPPORTED_Vista_SP1" />
       <elements>
         <text id="TRUSTED_CERTIFICATE_THUMBPRINTS" valueName="TrustedCertThumbprints" required="true" />
+        <boolean id="DISABLE_SHA1_THUMBPRINTS" valueName="DisableSHA1CertThumbprints">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
       </elements>
     </policy>
-    <policy name="TS_CLIENT_TRUSTED_CERTIFICATE_THUMBPRINTS_2" class="User" displayName="$(string.TS_CLIENT_TRUSTED_CERTIFICATE_THUMBPRINTS)" explainText="$(string.TS_CLIENT_TRUSTED_CERTIFICATE_THUMBPRINTS_USER_EXPLAIN)" presentation="$(presentation.TS_TRUSTED_CERTIFICATE_THUMBPRINTS_1)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services">
+    <policy name="TS_CLIENT_TRUSTED_CERTIFICATE_THUMBPRINTS_2" class="User" displayName="$(string.TS_CLIENT_TRUSTED_CERTIFICATE_THUMBPRINTS)" explainText="$(string.TS_CLIENT_TRUSTED_CERTIFICATE_THUMBPRINTS_USER_EXPLAIN)" presentation="$(presentation.TS_TRUSTED_CERTIFICATE_THUMBPRINTS_2)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services">
       <parentCategory ref="TS_CLIENT" />
       <supportedOn ref="TS_SUPPORTED_Vista_SP1" />
       <elements>

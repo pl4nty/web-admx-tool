@@ -21,6 +21,24 @@
             <decimal value="0" />
         </disabledValue>
     </policy>
-    </policies>
+    <policy name="ConfigureCameraOptions" class="Machine" displayName="$(string.L_ConfigureCameraOptions_Name)" explainText="$(string.L_ConfigureCameraOptions_Explain)" presentation="$(presentation.ConfigureCameraOptions)" key="software\Policies\Microsoft\Camera" valueName="ConfigureCameraOptions">
+      <parentCategory ref="L_Camera_GroupPolicyCategory" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2" />
+      <elements>
+        <enum id="ConfigureCameraOptions_Dropdown" valueName="ConfigureCameraOptions">
+          <item displayName="$(string.ConfigureCameraOptions_AutoShare)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ConfigureCameraOptions_SafeMode)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+  </policies>
 </policyDefinitions>
 

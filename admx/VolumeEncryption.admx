@@ -253,6 +253,18 @@
       </disabledValue>
     </policy>
 
+    <policy name="DisableWinRETrust_Name" class="Machine" displayName="$(string.DisableWinRETrust_Name)" explainText="$(string.DisableWinRETrust_Help)" key="Software\Policies\Microsoft\FVE" valueName="DisableWinRETrust">
+      <parentCategory ref="FVEOSCategory" />
+       <supportedOn ref="windows:SUPPORTED_Windows_6_3" />
+
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
     <policy name="PrebootRecoveryInfo_Name" class="Machine" displayName="$(string.PrebootRecoveryInfo_Name)" explainText="$(string.PrebootRecoveryInfo_Help)" presentation="$(presentation.PrebootRecoveryInfo)" key="Software\Policies\Microsoft\FVE">
       <parentCategory ref="FVEOSCategory" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />
