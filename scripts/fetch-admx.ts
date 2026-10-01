@@ -56,18 +56,11 @@ async function msDownloadUrls(id: number): Promise<string[]> {
   return [JSON.parse(match[1]).dlcDetailsView.downloadFile].flat().map((file: any) => file.url)
 }
 
-async function msDownload(id: number, fileFilter?: (url: string) => boolean): Promise<string> {
-  const urls = await msDownloadUrls(id)
-  return (fileFilter ? urls.find(fileFilter) : urls[0])!
-}
-
-// Pick the newest "Windows 11 vXXHX Security Baseline.zip" from the Security Compliance Toolkit.
-async function windowsSecurityBaselineDownload(): Promise<string> {
-  const version = (url: string) => decodeURIComponent(url).match(/Windows 11 v(\d\d)H(\d) Security Baseline\.zip$/i)
-  const urls = (await msDownloadUrls(55319)).filter(url => version(url))
-  if (!urls.length) throw new Error('No Windows 11 security baseline found')
-  const key = (url: string) => { const [, year, half] = version(url)!; return Number(year) * 10 + Number(half) }
-  return urls.sort((a, b) => key(b) - key(a))[0]
+async function msDownload(id: number, fileFilter?: (url: string) => boolean, last = false): Promise<string> {
+  const urls = (await msDownloadUrls(id)).filter(fileFilter ?? (() => true))
+  const url = urls[last ? urls.length - 1 : 0]
+  if (!url) throw new Error(`No matching file in MS download ${id}`)
+  return url
 }
 
 async function citrixWorkspaceDownload(): Promise<string> {
@@ -234,7 +227,8 @@ const sources: Source[] = [
   src(() => 'https://download.microsoft.com/download/72ea16a9-4cc9-4032-945d-3a56a483d034/WindowsNotepadAdminTemplates.cab'),
   src(() => msDownload(108847)), // Windows 11 2026 Update (26H2)
   src(() => msDownload(49030, url => url.includes('x64')), true),
-  src(() => windowsSecurityBaselineDownload()),
+  // The toolkit appends new baselines to the end; filter to Windows 11 so a newer Edge/M365/Server baseline isn't picked.
+  src(() => msDownload(55319, url => /Windows 11 .*Security Baseline\.zip$/i.test(url), true)),
   src(() => 'https://web.archive.org/web/20200723045549/https://msdnshared.blob.core.windows.net/media/2016/10/MSS-legacy.zip'),
   src(() => githubRelease('microsoft', 'PowerToys', /GroupPolicyObjectFiles.*\.zip$/i)),
   { getUrls: async () => [await lenovoPolicyTemplateDownload()], allowMissing: true },
