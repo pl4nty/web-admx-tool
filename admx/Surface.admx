@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2015 Microsoft Corporation  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+   	<target namespace="Surface.Policies" prefix="Surface" />
+  </policyNamespaces>
+ <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="SurfaceCategory" displayName="$(string.SurfaceCategory)">
+    </category>
+    <category name="Surface_DiagnosticData" displayName="$(string.Surface_DiagnosticData)">
+      <parentCategory ref="SurfaceCategory" />
+    </category>
+    <category name="Surface_PrivacyScreen" displayName="$(string.Surface_PrivacyScreen)">
+      <parentCategory ref="SurfaceCategory" />
+    </category>
+  </categories>
+  <policies>    
+    <policy name="SurfaceDiagnosticDataSetting" class="Machine" displayName="$(string.SurfaceDiagnosticDataSetting)" explainText="$(string.SurfaceDiagnosticDataSetting_Help)" presentation="$(presentation.SurfaceDiagnosticData_Presentation)" key="Software\Policies\Surface" valueName="SurfaceDiagnosticDataSetting">
+      <parentCategory ref="Surface_DiagnosticData" />
+      <supportedOn ref="SUPPORTED_Windows_10_0_20H1_NOSERVER" />
+        <elements>
+        <enum id="SurfaceDiagnosticDataSetting" valueName="SurfaceDiagnosticDataSetting" required="true">
+          <item displayName="$(string.SurfaceDiagnosticDataSetting_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>           
+          <item displayName="$(string.SurfaceDiagnosticDataSetting_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="EndUserSurfaceDiagnosticDataSettingManagement" class="Machine" displayName="$(string.EndUserSurfaceDiagnosticDataSettingManagement)" explainText="$(string.EndUserSurfaceDiagnosticDataSettingManagement_Help)" key="Software\Policies\Surface" valueName="EndUserSurfaceDiagnosticDataSettingManagement">
+      <parentCategory ref="Surface_DiagnosticData" />
+      <supportedOn ref="SUPPORTED_Windows_10_0_20H1_NOSERVER" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SurfaceIntegratedPrivacyScreenSetting" class="Machine" displayName="$(string.SurfaceIntegratedPrivacyScreenSetting_Name)" explainText="$(string.SurfaceIntegratedPrivacyScreenSetting_Explain)" presentation="$(presentation.SurfaceIntegratedPrivacyScreenSetting)" key="Software\Policies\Surface" valueName="SurfaceDisplayPrivacySetting">
+      <parentCategory ref="Surface_PrivacyScreen" />
+      <supportedOn ref="SUPPORTED_Windows_10_0_20H1_NOSERVER" />
+      <elements>
+        <enum id="SurfaceIntegratedPrivacyScreenSetting_Enum" valueName="SurfaceIntegratedPrivacyScreenSetting">
+          <item displayName="$(string.DefaultOff)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.DefaultOn)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceOn)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+ </policies>
+</policyDefinitions>

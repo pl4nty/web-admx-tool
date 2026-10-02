@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2015 Microsoft Corporation  -->
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName>enter display name here</displayName>
+  <description>enter description here</description>
+  <resources>
+    <stringTable>
+      <string id="SurfaceCategory">Surface</string>
+      <string id="Surface_DiagnosticData">Surface Diagnostic Data</string>
+      <string id="Surface_PrivacyScreen">Surface Integrated Privacy Screen</string>
+      <string id="SUPPORTED_Windows_10_0_20H1_NOSERVER">At least Windows 10 Version 2004</string>
+      <string id="SurfaceDiagnosticDataSetting">Surface Diagnostic Data Setting</string>
+      <string id="SurfaceDiagnosticDataSetting_0">Surface Diagnostic Data Disabled</string>
+      <string id="SurfaceDiagnosticDataSetting_1">Send Required Surface Diagnostic Data</string>
+      <string id="SurfaceDiagnosticDataSetting_Help">By configuring this policy setting, you can choose what diagnostic data is collected from Surface products. This policy setting applies only to Surface diagnostic data and does not affect data collected by Windows or third-party applications. 
+
+As part of using Surface products, sending required diagnostic data to Microsoft helps us keep Surface products secure, up to date, and working as expected. Surface products remain secure and will operate normally no matter which options you choose. 
+
+Options:
+
+ -Send Required Surface Diagnostic Data: Allows required Surface diagnostic data.
+ -Surface Diagnostic Data Disabled (Not Recommended): Blocks Surface diagnostic data transmission. The policy must be enabled and this option must be selected to configure to this setting.
+
+When this policy is Enabled, the diagnostic data setting is enforced by policy and overrides user configuration in the Surface app. To allow users to modify this setting, configure the "End User Surface Diagnostic Data Setting Management" policy setting.
+
+When this policy is Disabled or Not Configured, the diagnostic data setting is not enforced and is managed locally through the Surface app. Required diagnostic data is sent after the user is notified through an app notification, and users can choose whether to send optional diagnostic data through the Surface app.
+
+Note: The policy may not fully apply until after a device restart.
+      </string>
+      <string id="EndUserSurfaceDiagnosticDataSettingManagement">End User Surface Diagnostic Data Setting Management</string>
+      <string id="EndUserSurfaceDiagnosticDataSettingManagement_1">Enable End User Surface Diagnostic Data Setting Management</string>
+      <string id="EndUserSurfaceDiagnosticDataSettingManagement_2">Disable End User Surface Diagnostic Data Setting Management</string>
+      <string id="EndUserSurfaceDiagnosticDataSettingManagement_Help">By configuring this policy, you determine whether users can override the diagnostic data setting enforced by the "Surface Diagnostic Data Setting" policy. When "Surface Diagnostic Data Setting" is configured, it overrides the user’s selection in the Surface app unless user override is allowed. This policy applies only to Surface diagnostic data.
+
+Options:
+ -Enabled: Users can override the "Surface Diagnostic Data Setting" policy in the Surface app.
+ -Disabled or Not Configured: Diagnostic data is managed by the "Surface Diagnostic Data Setting" policy, which overrides any user-configured settings in the Surface app. 
+
+When the "Surface Diagnostic Data Setting" policy is Disabled or Not Configured, the diagnostic data setting is not enforced by policy and is managed locally through the Surface app. The Surface product sends required diagnostic data after user notification through the Surface app, and users can choose whether to send optional diagnostic data.
+
+Note: The policy may not fully apply until after a device restart.
+      </string>
+
+      <string id="SurfaceIntegratedPrivacyScreenSetting_Name">Surface Display Privacy Setting</string>
+      <string id="SurfaceIntegratedPrivacyScreenSetting_Explain">By configuring this policy setting, you can manage the Integrated Privacy Screen feature on supported Surface for Business devices. The privacy screen helps protect sensitive information from visual hacking by limiting side-angle viewing of the device display.
+
+When this policy is enabled, you can specify whether the privacy screen is turned on or off by default and whether end users can change the setting. The policy applies only to eligible Surface for Business devices that have the Integrated Privacy Screen.
+
+Options:
+
+Off by Default (User Can Change):
+
+The privacy screen is disabled by default, but users may turn it on if desired using either the Surface App toggle or the F1 key. The last user-selected state will persist after reboot or wake.
+
+On by default (User Can Change):
+
+The privacy screen is enabled by default, but users can turn it off if desired using either the Surface App toggle or the F1 key. The last user-selected state will persist after reboot or wake.
+
+Force On (Locked):
+
+The privacy screen is enabled by default and users cannot disable it. The Surface App toggle will be grayed out and the F1 key invocation will not work. Users will be notified that this setting is managed by their organization’s IT administrator.
+      </string>
+
+      <string id="DefaultOff">Off by default</string>
+      <string id="DefaultOn">On by default</string>  
+      <string id="ForceOn">Force On</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="SurfaceDiagnosticData_Presentation">
+        <dropdownList refId="SurfaceDiagnosticDataSetting" noSort="true" defaultItem="1"></dropdownList>
+      </presentation>
+      <presentation id="SurfaceIntegratedPrivacyScreenSetting">
+        <dropdownList refId="SurfaceIntegratedPrivacyScreenSetting_Enum" noSort="true" defaultItem="0">Surface Display Privacy Setting:</dropdownList>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>
