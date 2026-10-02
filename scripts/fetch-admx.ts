@@ -290,6 +290,12 @@ const sources: Source[] = [
     if (!match) throw new Error('No Citrix ADMX link found')
     return 'https:' + match[0].replace(/&amp;/g, '&')
   }),
+  src(async () => {
+    const html = await fetchText('https://learn.microsoft.com/en-us/surface/surface-admx-policy-management-overview')
+    const match = html.match(/href="(https:\/\/download\.microsoft\.com\/[^"]*Surface[^"]*ADMX[^"]*\.zip)"/i)
+    if (!match) throw new Error('No Surface ADMX link found')
+    return match[1]
+  }),
   srcAll(async () => [
     'https://raw.githubusercontent.com/microsoft/WSL/master/intune/WSL.admx',
     'https://raw.githubusercontent.com/microsoft/WSL/master/intune/en-US/WSL.adml',
