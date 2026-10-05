@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref, watch, shallowRef } from 'vue'
-import MiniSearch from 'minisearch'
-import { MINISEARCH_OPTS } from '../searchConfig'
+import type MiniSearch from 'minisearch'
+import { loadSearchIndex } from '../searchIndex'
 import { policyUrl } from '../policyUrl'
 
 const props = defineProps<{ lang?: string }>()
@@ -16,9 +16,7 @@ async function loadIndex(lang: string) {
   if (loading.value || index.value) return
   loading.value = true
   try {
-    const res = await fetch(`/data/search-${lang}.json`)
-    if (!res.ok) throw new Error(`HTTP ${res.status}`)
-    index.value = MiniSearch.loadJS(await res.json(), MINISEARCH_OPTS)
+    index.value = await loadSearchIndex(lang)
   } catch (err) {
     console.error('Failed to load search index:', err)
   } finally {
@@ -28,7 +26,7 @@ async function loadIndex(lang: string) {
 
 function search() {
   page.value = 1
-  results.value = query.value && index.value ? index.value.search(query.value, { limit: 200 }) : []
+  results.value = query.value && index.value ? index.value.search(query.value).slice(0, 200) : []
 }
 
 function syncFromUrl() {
