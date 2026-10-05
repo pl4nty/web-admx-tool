@@ -145,8 +145,10 @@ function resolveDest(entryPath: string, isOffice: boolean): { dir: string; name:
 // want (Zoom's ZoomVDI_Combined_* merge the per-scope files). Skip the merged
 // variants in favour of the split ones.
 const IS_MERGED_TEMPLATE = (name: string) => /^ZoomVDI_Combined_HK(CU|LM)\.adm[lx]$/i.test(name)
+// macOS-built zips carry AppleDouble resource forks (`__MACOSX/._Foo.admx`) that are not XML
+const IS_APPLEDOUBLE = (name: string) => name.startsWith('._')
 const IS_ADMX = (name: string) =>
-  (/\.admx$/i.test(name) || /\.adml\d*$/i.test(name)) && !IS_MERGED_TEMPLATE(name)
+  (/\.admx$/i.test(name) || /\.adml\d*$/i.test(name)) && !IS_MERGED_TEMPLATE(name) && !IS_APPLEDOUBLE(name)
 
 function toUtf8(data: Uint8Array): Buffer {
   if (data[0] === 0xFF && data[1] === 0xFE)
@@ -188,7 +190,7 @@ function extract7z(buf: Buffer, isOffice: boolean, collector?: string[]) {
     // self-extracting installers) while still extracting the ADMX/ADML we need, so
     // ignore its exit code and rely on the file walk below to determine success.
     try { execSync(`7z x -y -o"${tmp}/x" "${tmp}/a" > /dev/null 2>&1`, { timeout: 120_000 }) } catch { }
-    for (const f of walkDir(join(tmp, 'x'), n => /\.zip$/i.test(n) || /^\[\d+\]$/.test(n)))
+    for (const f of walkDir(join(tmp, 'x'), n => /\.(zip|msi)$/i.test(n) || /^\[\d+\]$/.test(n)))
       try { execSync(`7z x -y -o"${f}_x" "${f}" -ir!*.admx -ir!*.adml -ir!*.zip -ir![0] > /dev/null 2>&1`, { timeout: 60_000 }) } catch { }
     let admx = 0, adml = 0
     const base = join(tmp, 'x')
@@ -304,7 +306,8 @@ const sources: Source[] = [
 
 function downloadAndExtract(buf: Buffer, isOffice: boolean, collector?: string[]) {
   if (buf[0] === 0x50 && buf[1] === 0x4B) {
-    try { return extractZip(buf, isOffice, collector) } catch { }
+    // Fall through to 7z when the zip only wraps nested archives (e.g. an MSI)
+    try { const result = extractZip(buf, isOffice, collector); if (result.admx) return result } catch { }
   }
   return extract7z(buf, isOffice, collector)
 }
