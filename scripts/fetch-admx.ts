@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { mkdirSync, existsSync, writeFileSync, rmSync, cpSync, readFileSync } from 'fs'
-import { join, resolve } from 'path'
+import { join, resolve, sep } from 'path'
 import { execSync } from 'child_process'
 import { unzipSync } from 'fflate'
 import { walkDir, runWithLimit } from '../src/admxUtils'
@@ -156,39 +156,29 @@ function toUtf8(data: Uint8Array): Buffer {
   return Buffer.from(data)
 }
 
-// Sources download concurrently, so when several ship the same file (e.g. the
-// security baseline and MSS-legacy.zip both contain MSS-legacy.adml) the last to
-// finish would win. Resolve by source order instead: the later source wins.
-const writtenBy = new Map<string, number>()
-
-function placeFile(entryPath: string, data: Uint8Array | string, isOffice: boolean, rank: number, collector?: string[]): 'admx' | 'adml' {
+function placeFile(entryPath: string, data: Uint8Array | string, isOffice: boolean, collector?: string[]): 'admx' | 'adml' {
   const { dir, name } = resolveDest(entryPath, isOffice)
-  const dest = join(dir, name)
-  const type = /\.admx$/i.test(name) ? 'admx' : 'adml'
-  const previous = writtenBy.get(dest)
-  if (previous !== undefined && previous !== rank) {
-    const [winner, loser] = previous > rank ? [previous, rank] : [rank, previous]
-    console.warn(`[warn] ${dest.slice(ROOT.length + 1)} is shipped by sources ${loser + 1} and ${winner + 1}; using ${winner + 1}`)
-    if (previous > rank) return type
-  }
-  writtenBy.set(dest, rank)
   mkdirSync(dir, { recursive: true })
+  const dest = join(dir, name)
+  if (existsSync(dest) && (dest === ADMX_DIR || dest.startsWith(ADMX_DIR + sep)))
+    console.warn(`[warn] overwriting existing file: ${dest.slice(ROOT.length + 1)}`)
   if (typeof data === 'string') writeFileSync(dest, toUtf8(readFileSync(data)))
   else writeFileSync(dest, toUtf8(data))
+  const type = /\.admx$/i.test(name) ? 'admx' : 'adml'
   if (type === 'admx' && collector) collector.push(name.replace(/\.admx$/i, ''))
   return type
 }
 
-function extractZip(buf: Buffer, isOffice: boolean, rank: number, collector?: string[]) {
+function extractZip(buf: Buffer, isOffice: boolean, collector?: string[]) {
   const entries = unzipSync(new Uint8Array(buf), { filter: entry => IS_ADMX(entry.name.split('/').pop()!) })
   let admx = 0, adml = 0
   for (const [path, data] of Object.entries(entries))
-    placeFile(path, data, isOffice, rank, collector) === 'admx' ? admx++ : adml++
+    placeFile(path, data, isOffice, collector) === 'admx' ? admx++ : adml++
   return { admx, adml }
 }
 
 let tmpCounter = 0
-function extract7z(buf: Buffer, isOffice: boolean, rank: number, collector?: string[]) {
+function extract7z(buf: Buffer, isOffice: boolean, collector?: string[]) {
   const tmp = join(ROOT, '.cache', `_tmp${tmpCounter++}`)
   if (existsSync(tmp)) rmSync(tmp, { recursive: true })
   mkdirSync(tmp, { recursive: true })
@@ -203,7 +193,7 @@ function extract7z(buf: Buffer, isOffice: boolean, rank: number, collector?: str
     let admx = 0, adml = 0
     const base = join(tmp, 'x')
     for (const f of walkDir(base, IS_ADMX))
-      placeFile(f.slice(base.length + 1), f, isOffice, rank, collector) === 'admx' ? admx++ : adml++
+      placeFile(f.slice(base.length + 1), f, isOffice, collector) === 'admx' ? admx++ : adml++
     return { admx, adml }
   } finally {
     rmSync(tmp, { recursive: true, force: true })
@@ -311,11 +301,11 @@ const sources: Source[] = [
   ]),
 ]
 
-function downloadAndExtract(buf: Buffer, isOffice: boolean, rank: number, collector?: string[]) {
+function downloadAndExtract(buf: Buffer, isOffice: boolean, collector?: string[]) {
   if (buf[0] === 0x50 && buf[1] === 0x4B) {
-    try { return extractZip(buf, isOffice, rank, collector) } catch { }
+    try { return extractZip(buf, isOffice, collector) } catch { }
   }
-  return extract7z(buf, isOffice, rank, collector)
+  return extract7z(buf, isOffice, collector)
 }
 
 async function fetchSource(source: Source, idx: number, total: number) {
@@ -326,14 +316,14 @@ async function fetchSource(source: Source, idx: number, total: number) {
     const urlCollector: string[] = []
     const pathname = new URL(url).pathname
     if (/\.(admx|adml)$/i.test(pathname)) {
-      placeFile(pathname.split('/').pop()!, await download(url), false, idx, urlCollector) === 'admx' ? admx++ : adml++
+      placeFile(pathname.split('/').pop()!, await download(url), false, urlCollector) === 'admx' ? admx++ : adml++
       console.log(`[${idx + 1}/${total}] ${url}`)
       for (const slug of urlCollector) fileSlugToDownloadUrl[slug] = url
       continue
     }
     const buf = await download(url)
     console.log(`[${idx + 1}/${total}] ${url} (${(buf.length / 1024 / 1024).toFixed(1)} MB)`)
-    const result = downloadAndExtract(buf, !!source.office, idx, urlCollector)
+    const result = downloadAndExtract(buf, !!source.office, urlCollector)
     admx += result.admx; adml += result.adml
     for (const slug of urlCollector) fileSlugToDownloadUrl[slug] = url
   }
