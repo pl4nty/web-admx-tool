@@ -122,8 +122,8 @@ const { title = 'ADMX Viewer', showSidebar = true, lang = 'en-us' } = Astro.prop
   </div>
 
   <script>
-    import MiniSearch from 'minisearch'
-    import { MINISEARCH_OPTS } from '../searchConfig'
+    import type MiniSearch from 'minisearch'
+    import { loadSearchIndex } from '../searchIndex'
     import { policyUrl } from '../policyUrl'
 
     const $ = (id: string) => document.getElementById(id)
@@ -238,9 +238,7 @@ const { title = 'ADMX Viewer', showSidebar = true, lang = 'en-us' } = Astro.prop
       const initialQuery = new URL(window.location.href).searchParams.get('q')
       if (initialQuery) searchInput.value = initialQuery
 
-      fetch(`/data/search-${urlLang()}.json`).then(r => r.ok ? r.json() : null).then(data => {
-        if (data) searchIndex = MiniSearch.loadJS(data, MINISEARCH_OPTS)
-      }).catch(() => {})
+      loadSearchIndex(urlLang()).then(index => { searchIndex = index }).catch(() => {})
 
       const close = () => { dropdown!.classList.add('hidden'); dropdown!.innerHTML = '' }
       const escapeHtml = (text: string) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
@@ -248,7 +246,8 @@ const { title = 'ADMX Viewer', showSidebar = true, lang = 'en-us' } = Astro.prop
       const render = () => {
         const query = searchInput!.value.trim()
         if (!query || !searchIndex) { close(); return }
-        const hits = searchIndex.search(query, { limit: 8 })
+        // MiniSearch has no result limit option, so cap rendered hits here
+        const hits = searchIndex.search(query).slice(0, 8)
         if (!hits.length) { close(); return }
         dropdown!.innerHTML = hits.map(hit => {
           const ns = escapeHtml(hit.namespace || ''), name = escapeHtml(hit.name || '')
@@ -268,11 +267,16 @@ const { title = 'ADMX Viewer', showSidebar = true, lang = 'en-us' } = Astro.prop
         })
       }
 
-      searchInput.addEventListener('input', render)
+      // Searching 13k+ policies takes tens of ms per query, so only run it once typing pauses
+      let renderTimer: ReturnType<typeof setTimeout> | undefined
+      searchInput.addEventListener('input', () => {
+        clearTimeout(renderTimer)
+        renderTimer = setTimeout(render, 150)
+      })
       searchInput.addEventListener('focus', render)
       document.addEventListener('click', (e) => { if (!searchForm.contains(e.target as Node)) close() })
       searchForm.addEventListener('submit', (e) => {
-        e.preventDefault(); close()
+        e.preventDefault(); clearTimeout(renderTimer); close()
         const query = searchInput.value.trim()
         window.location.assign(`/${urlLang()}/search${query ? `?q=${encodeURIComponent(query)}` : ''}`)
       })
