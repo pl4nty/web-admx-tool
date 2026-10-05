@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="Password Manager XP" namespace="CPLab.Policies.PasswordManagerXP" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <supersededAdm fileName="pwdmgr.adm" />
+  <resources minRequiredRevision="1.0" />
+  <supportedOn>
+    <definitions>
+      <definition name="SupportedText" displayName="$(string.SupportedText)" />
+      <definition name="SUPPORTED_NotSpecified" displayName="$(string.ADMXMigrator_NoSupportedOn)" />
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="CPLab" displayName="$(string.CPLab)" />
+    <category name="PwdMgr" displayName="$(string.PwdMgr)">
+      <parentCategory ref="CPLab" />
+    </category>
+    <category name="PwdMgr_Restrictions" displayName="$(string.PwdMgr_Restrictions)">
+      <parentCategory ref="PwdMgr" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="RegKeyPath" class="User" displayName="$(string.RegKeyPath)" explainText="$(string.RegKeyPath_Help)" presentation="$(presentation.RegKeyPath)" key="Software\Policies\CP Lab\Password Manager XP">
+      <parentCategory ref="PwdMgr" />
+      <supportedOn ref="SupportedText" />
+      <elements>
+        <text id="RegKeyPathLabel" valueName="RegKeyPath" required="true" />
+      </elements>
+    </policy>
+    <policy name="DBLocations" class="User" displayName="$(string.DBLocations)" explainText="$(string.DBLocations_Help)" presentation="$(presentation.DBLocations)" key="Software\Policies\CP Lab\Password Manager XP">
+      <parentCategory ref="PwdMgr" />
+      <supportedOn ref="SupportedText" />
+      <elements>
+        <list id="DBFolders" key="Software\Policies\CP Lab\Password Manager XP\DBLocations" valuePrefix="DBFolder" />
+        <boolean id="DisableUserLocations" valueName="DisableUserLocations" />
+      </elements>
+    </policy>
+    <policy name="AutoBackupFolder" class="User" displayName="$(string.AutoBackupFolder)" explainText="$(string.AutoBackupFolder_Help)" presentation="$(presentation.AutoBackupFolder)" key="Software\Policies\CP Lab\Password Manager XP">
+      <parentCategory ref="PwdMgr" />
+      <supportedOn ref="SupportedText" />
+      <elements>
+        <text id="AutoBackupFolderLabel" valueName="AutoBackupFolder" required="true" />
+      </elements>
+    </policy>
+    <policy name="DisableAutoBackup" class="User" displayName="$(string.DisableAutoBackup)" explainText="$(string.DisableAutoBackup_Help)" presentation="$(presentation.DisableAutoBackup)" key="Software\Policies\CP Lab\Password Manager XP" valueName="DisableAutoBackup">
+      <parentCategory ref="PwdMgr" />
+      <supportedOn ref="SupportedText" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DbFileNameTemplate" class="User" displayName="$(string.DbFileNameTemplate)" explainText="$(string.DbFileNameTemplate_Help)" presentation="$(presentation.DbFileNameTemplate)" key="Software\Policies\CP Lab\Password Manager XP">
+      <parentCategory ref="PwdMgr" />
+      <supportedOn ref="SupportedText" />
+      <elements>
+        <text id="DbFileNameTemplate" valueName="DbFileNameTemplate" required="true" />
+      </elements>
+    </policy>
+    <policy name="HideRestrictionsPage" class="User" displayName="$(string.HideRestrictionsPage)" explainText="$(string.HideRestrictionsPage_Help)" presentation="$(presentation.HideRestrictionsPage)" key="Software\Policies\CP Lab\Password Manager XP" valueName="HideRestrictionsPage">
+      <parentCategory ref="PwdMgr_Restrictions" />
+      <supportedOn ref="SupportedText" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="HideLocationsPage" class="User" displayName="$(string.HideLocationsPage)" explainText="$(string.HideLocationsPage_Help)" presentation="$(presentation.HideLocationsPage)" key="Software\Policies\CP Lab\Password Manager XP" valueName="HideLocationsPage">
+      <parentCategory ref="PwdMgr_Restrictions" />
+      <supportedOn ref="SupportedText" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="HideBackupPage" class="User" displayName="$(string.HideBackupPage)" explainText="$(string.HideBackupPage_Help)" presentation="$(presentation.HideBackupPage)" key="Software\Policies\CP Lab\Password Manager XP" valueName="HideBackupPage">
+      <parentCategory ref="PwdMgr_Restrictions" />
+      <supportedOn ref="SupportedText" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableRemWizard" class="User" displayName="$(string.DisableRemWizard)" explainText="$(string.DisableRemWizard_Help)" presentation="$(presentation.DisableRemWizard)" key="Software\Policies\CP Lab\Password Manager XP" valueName="DisableRemWizard">
+      <parentCategory ref="PwdMgr_Restrictions" />
+      <supportedOn ref="SupportedText" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableRestore" class="User" displayName="$(string.DisableRestore)" explainText="$(string.DisableRestore_Help)" presentation="$(presentation.DisableRestore)" key="Software\Policies\CP Lab\Password Manager XP" valueName="DisableRestore">
+      <parentCategory ref="PwdMgr_Restrictions" />
+      <supportedOn ref="SupportedText" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableBackup" class="User" displayName="$(string.DisableBackup)" explainText="$(string.DisableBackup_Help)" presentation="$(presentation.DisableBackup)" key="Software\Policies\CP Lab\Password Manager XP" valueName="DisableBackup">
+      <parentCategory ref="PwdMgr_Restrictions" />
+      <supportedOn ref="SupportedText" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableOptions" class="User" displayName="$(string.DisableOptions)" explainText="$(string.DisableOptions_Help)" presentation="$(presentation.DisableOptions)" key="Software\Policies\CP Lab\Password Manager XP" valueName="DisableOptions">
+      <parentCategory ref="PwdMgr_Restrictions" />
+      <supportedOn ref="SupportedText" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableDBCreate" class="User" displayName="$(string.DisableDBCreate)" explainText="$(string.DisableDBCreate_Help)" presentation="$(presentation.DisableDBCreate)" key="Software\Policies\CP Lab\Password Manager XP" valueName="DisableDBCreate">
+      <parentCategory ref="PwdMgr_Restrictions" />
+      <supportedOn ref="SupportedText" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableDBProps" class="User" displayName="$(string.DisableDBProps)" explainText="$(string.DisableDBProps_Help)" presentation="$(presentation.DisableDBProps)" key="Software\Policies\CP Lab\Password Manager XP" valueName="DisableDBProps">
+      <parentCategory ref="PwdMgr_Restrictions" />
+      <supportedOn ref="SupportedText" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableDBFolder" class="User" displayName="$(string.DisableDBFolder)" explainText="$(string.DisableDBFolder_Help)" presentation="$(presentation.DisableDBFolder)" key="Software\Policies\CP Lab\Password Manager XP" valueName="DisableDBFolder">
+      <parentCategory ref="PwdMgr_Restrictions" />
+      <supportedOn ref="SupportedText" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>

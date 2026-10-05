@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-16"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="spw14" namespace="spw14.Office.Microsoft.Policies.Windows" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <supersededAdm fileName="spw14" />
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="L_Groove" displayName="$(string.L_Groove)" />
+    <category name="L_GrooveMangager" displayName="$(string.L_GrooveMangager)">
+      <parentCategory ref="L_Groove" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="L_GrooveAccountConfigurationCodeRequired" class="User" displayName="$(string.L_GrooveAccountConfigurationCodeRequired)" explainText="$(string.L_GrooveAccountConfigurationCodeRequiredExplain)" key="software\policies\microsoft\office\groove" valueName="configurationcoderequired">
+      <parentCategory ref="L_Groove" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_GrooveSiteClientOnly" class="User" displayName="$(string.L_GrooveSiteClientOnly)" explainText="$(string.L_GrooveSiteClientOnlyExplain)" key="software\policies\microsoft\office\groove" valueName="prohibitgrooveworkspaces">
+      <parentCategory ref="L_Groove" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_GrooveManagerValidLinkSecurity" class="User" displayName="$(string.L_GrooveManagerValidLinkSecurity)" explainText="$(string.L_GrooveManagerValidLinkSecurityExplain)" key="software\policies\microsoft\office\groove" valueName="grvmanagervalidlinksec">
+      <parentCategory ref="L_Groove" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_EnableIPv6" class="User" displayName="$(string.L_EnableIPv6)" explainText="$(string.L_EnableIPv6Explain)" key="software\policies\microsoft\office\groove" valueName="enableipv6">
+      <parentCategory ref="L_Groove" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_PreferIPv4" class="User" displayName="$(string.L_PreferIPv4)" explainText="$(string.L_PreferIPv4Explain)" key="software\policies\microsoft\office\groove" valueName="preferipv4">
+      <parentCategory ref="L_Groove" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_GrooveManagerServerNamePolicy" class="User" displayName="$(string.L_GrooveManagerServerNamePolicy)" explainText="$(string.L_GrooveManagerServerNameExplain)" presentation="$(presentation.L_GrooveManagerServerNamePolicy)" key="software\policies\microsoft\office\groove\manager">
+      <parentCategory ref="L_GrooveMangager" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_Empty" valueName="servername" />
+      </elements>
+    </policy>
+    <policy name="L_DeCommissionedRelayList" class="User" displayName="$(string.L_DeCommissionedRelayList)" explainText="$(string.L_DeCommissionedRelayListExplain)" presentation="$(presentation.L_DeCommissionedRelayList)" key="software\policies\microsoft\office\groove">
+      <parentCategory ref="L_Groove" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_DeCommissionedRelayListID" valueName="decommissionedrelaylist" />
+      </elements>
+    </policy>
+    <policy name="L_SetMaximumNumberOfProxyConnectionFailures" class="User" displayName="$(string.L_SetMaximumNumberOfProxyConnectionFailures)" explainText="$(string.L_SetMaximumNumberOfProxyConnectionFailuresExplain)" presentation="$(presentation.L_SetMaximumNumberOfProxyConnectionFailures)" key="software\policies\microsoft\office\groove">
+      <parentCategory ref="L_Groove" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <decimal id="L_SetMaximumNumberOfProxyConnectionFailuresSpinID" valueName="maxproxyserverfailovercount" minValue="0" maxValue="10" />
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

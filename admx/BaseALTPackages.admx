@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2019 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="packages" namespace="BaseALT.Policies.Packages" />
+    <using prefix="system" namespace="BaseALT.Policies.System" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+
+  <categories>
+    <category name="ALT_Packages" displayName="$(string.ALT_Packages)" explainText="$(string.ALT_Packages_Help)">
+      <parentCategory ref="system:ALT_System" />
+    </category>
+  </categories>
+
+  <policies>
+    <policy class="Machine" displayName="$(string.packages_install)" explainText="$(string.packages_install_help)" key="Software\BaseALT\Policies\Packages" name="InstallPackagesMachine" presentation="$(presentation.InstallPackagesMachine)">
+      <parentCategory ref="ALT_Packages"/>
+      <supportedOn ref="system:SUPPORTED_AltP10"/>
+      <elements>
+        <list id="InstallPackagesList" key="Software\BaseALT\Policies\Packages\Install" additive="true"/>
+      </elements>
+    </policy>
+
+    <policy class="User" displayName="$(string.packages_install)" explainText="$(string.packages_install_help)" key="Software\BaseALT\Policies\Packages" name="InstallPackagesUser" presentation="$(presentation.InstallPackagesUser)">
+      <parentCategory ref="ALT_Packages"/>
+      <supportedOn ref="system:SUPPORTED_AltP10"/>
+      <elements>
+        <list id="InstallPackagesList" key="Software\BaseALT\Policies\Packages\Install" additive="true"/>
+      </elements>
+    </policy>
+
+    <policy class="Machine" displayName="$(string.packages_remove)" explainText="$(string.packages_remove_help)" key="Software\BaseALT\Policies\Packages" name="RemovePackagesMachine" presentation="$(presentation.RemovePackagesMachine)">
+      <parentCategory ref="ALT_Packages"/>
+      <supportedOn ref="system:SUPPORTED_AltP10"/>
+      <elements>
+        <list id="RemovePackagesList" key="Software\BaseALT\Policies\Packages\Remove" additive="true"/>
+      </elements>
+    </policy>
+
+    <policy class="User" displayName="$(string.packages_remove)" explainText="$(string.packages_remove_help)" key="Software\BaseALT\Policies\Packages" name="RemovePackagesUser" presentation="$(presentation.RemovePackagesUser)">
+      <parentCategory ref="ALT_Packages"/>
+      <supportedOn ref="system:SUPPORTED_AltP10"/>
+      <elements>
+        <list id="RemovePackagesList" key="Software\BaseALT\Policies\Packages\Remove" additive="true"/>
+      </elements>
+    </policy>
+
+    <policy class="Machine" displayName="$(string.sync_packages_work_machine)" explainText="$(string.sync_packages_work_machine_help)" key="Software\BaseALT\Policies\Packages" name="SyncPackagesWorkMachine" valueName="Sync" >
+      <parentCategory ref="ALT_Packages"/>
+      <supportedOn ref="system:SUPPORTED_AltP10"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+
+    <policy class="User" displayName="$(string.sync_packages_work_user)" explainText="$(string.sync_packages_work_user_help)" key="Software\BaseALT\Policies\Packages" name="SyncPackagesWorkUser" valueName="Sync">
+      <parentCategory ref="ALT_Packages"/>
+      <supportedOn ref="system:SUPPORTED_AltP10"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+
+  </policies>
+</policyDefinitions>

@@ -1,0 +1,53 @@
+﻿<!-- Copyright (c) Dell Inc. 2015. All rights reserved. -->
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName>
+  </displayName>
+  <description>
+  </description>
+  <resources>
+    <stringTable>
+      <string id="cname_ThermalManagement">Gerenciamento térmico</string>
+      <string id="ThermalSettings">Configurações do gerenciamento térmico</string>
+	  <string id="SUPPORTED_DCPM">Dell Command | Power Manager</string>	  
+	  <string id="expl_ThermalSettings">Selecione uma configuração térmica:	
+Selecione uma opção na lista suspensa para definir uma configuração térmica. As configurações disponíveis são Otimizado, Frio, Silencioso e Alto Desempenho. 
+
+Selecione as Configurações térmicas que você gostaria de ocultar:
+Selecione uma ou mais configurações para impedir que estejam disponíveis dentro da interface gráfica.
+Nota: A interface gráfica não ocultará uma configuração se estiver selecionada como a configuração atual.
+
+Nota: Selecionar "Não configurado" ou "Desativado" terá o mesmo efeito.
+
+	  </string>
+	  <!-- Note: The thermal setting 'Balanced' has been renamed to 'Optimized', the change does not apply to string id's or refId's in the adm templates -->
+	  <string id="TModeBalanced">Otimizado</string>
+	  <string id="TModeCool">Temperatura mais baixa</string>
+	  <string id="TModeQuiet">Silencioso</string>
+	  <string id="TModeUltra">Ultradesempenho</string>	
+	  <string id="TModeNone">Controlado pelo usuário</string>	  	 
+	  <string id="TMFeatureEnablement">Feature Enablement</string>
+	  <string id="expl_TMFeatureEnablement">Selecionar essa opção não afetará as configurações de gerenciamento térmico existentes.
+Nota: Selecionar "Não configurado" ou "Desativado" terá o mesmo efeito.
+	  </string>	
+  </stringTable>
+    
+    <presentationTable>	  
+	
+	  <presentation id="pol_DisableThermalFeature">
+        <checkBox refId="TMDisabled">Ocultar o recurso Gerenciamento térmico da interface do usuário</checkBox>
+      </presentation>
+	  
+     <presentation id="pol_ThermalModes">			
+		<dropdownList refId="TMMode" defaultItem="0" noSort="true">Selecione uma configuração térmica:</dropdownList>		
+		<text></text>	
+		<text>Selecione as Configurações térmicas que você gostaria de ocultar:</text>
+        <checkBox refId="TMModeBalanced">Otimizado</checkBox>
+		<checkBox refId="TMModeCool">Temperatura mais baixa</checkBox>
+	    <checkBox refId="TMModeQuiet">Silencioso</checkBox>
+	    <checkBox refId="TMModeUltra">Ultradesempenho</checkBox>
+		
+      </presentation>
+	  
+    </presentationTable>
+	</resources>
+</policyDefinitionResources>

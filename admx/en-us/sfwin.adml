@@ -1,0 +1,292 @@
+<policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<displayName>ShareFile</displayName>
+	<description></description>
+	<resources>
+		<stringTable>
+			<string id="CATEGORY_SHAREFILE_NAME">ShareFile</string>
+			<string id="CATEGORY_SHAREFILE_DESC"></string>
+			<string id="CATEGORY_SFWIN_NAME">ShareFile for Windows</string>
+			<string id="CATEGORY_SFWIN_DESC"></string>
+			<string id="CATEGORY_USER_REDIRECTED_FOLDERS_NAME">Folder Redirection</string>
+			<string id="CATEGORY_USER_REDIRECTED_FOLDERS_DESC">Policies for redirecting specific Windows user folders to ShareFile.</string>
+			<string id="POLICY_ENABLE_APP_NAME">Enable Application</string>
+			<string id="POLICY_ENABLE_APP_DESC">If Enabled Application is unchecked, ShareFile will exit before mounting any drives or displaying any UI.</string>
+			<string id="POLICY_UPLOAD_EXCLUDED_NAME">Excluded from Upload</string>
+			<string id="POLICY_UPLOAD_EXCLUDED_DESC">File extensions that will not be saved back to ShareFile. These files can still be read and edited locally.</string>
+			<string id="POLICY_MOUNT_POINT_NAME1">Mount Point 1</string>
+			<string id="POLICY_MOUNT_POINT_NAME2">Mount Point 2</string>
+			<string id="POLICY_MOUNT_POINT_NAME3">Mount Point 3</string>
+			<string id="POLICY_MOUNT_POINT_NAME4">Mount Point 4</string>
+			<string id="POLICY_MOUNT_POINT_NAME5">Mount Point 5</string>
+			<string id="POLICY_MOUNT_POINT_NAME6">Mount Point 6</string>
+			<string id="POLICY_MOUNT_POINT_NAME7">Mount Point 7</string>
+			<string id="POLICY_MOUNT_POINT_NAME8">Mount Point 8</string>
+			<string id="POLICY_MOUNT_POINT_NAME9">Mount Point 9</string>
+			<string id="POLICY_MOUNT_POINT_NAME10">Mount Point 10</string>
+			<string id="POLICY_MOUNT_POINT_DESC">This policy specifies a ShareFile folder to mount as a network drive or folder.
+
+Local path may be a drive letter or a folder on an existing drive. If that folder does not exist, it will be created.
+
+To create a local path or change the drive letter to the root of the account (default view) use a single '\' character for the ShareFile Path.
+Set the Local Path to the drive letter (X:) when changing the default drive letter.
+
+Examples:
+	C:\Users\username\Documents\ShareFile
+			
+Specify the ShareFile folder by the path to that folder, separated by the '\' character.
+
+Examples:
+	%shared%\Sales
+	%personalcloud%
+	%personal%
+	%favorites%
+	%sharepoint%
+	%office365%
+	%networkshares%
+	\
+	Favorites
+	Personal Folders\Files
+	Shared Folders\Departments\Sales
+	Network Shares\N Drive
+	SharePoint\SP Name
+	Personal Cloud\Box
+	Personal Cloud\Dropbox
+	Personal Cloud\Google Drive
+	Personal Cloud\OneDrive
+
+For SharePoint Online and OneDrive for Business:
+	Office 365\'name of your connector'</string>
+			<string id="POLICY_ENABLE_ONPREM_CONNECTORS_NAME">Enable On-Premises Connectors</string>
+			<string id="POLICY_ENABLE_ONPREM_CONNECTORS_DESC">If Enable Connectors is unchecked, the following connectors will not be visible in ShareFile:
+
+Network Share
+SharePoint
+Documentum</string>
+			<string id="POLICY_ENABLE_PERSONAL_CLOUD_CONNECTORS_NAME">Enable Personal Cloud Connectors</string>
+			<string id="POLICY_ENABLE_PERSONAL_CLOUD_CONNECTORS_DESC">If Enable Connectors is unchecked, the following connectors will not be visible in ShareFile:
+
+Dropbox
+Box
+OneDrive
+Google Drive
+Office365
+SharePoint365
+OneDriveBusiness365
+Personal Cloud</string>
+			<string id="POLICY_ACCOUNT">Account</string>
+      		<string id="POLICY_ACCOUNT_HELP">This policy configures the account to use for ShareFile. Enter the full account name. Example: company.domain.com </string>
+			<string id="POLICY_CACHE_SIZE">Cache Size</string>
+			<string id="POLICY_CACHE_SIZE_HELP">This policy controls how much disk space (in megabytes) to use for cached files. The minimum cache size is 256 MB and the maximum is 9999 MB.
+			</string>
+			<string id="POLICY_DELETE_CACHE">Delete Cache on Exit</string>
+			<string id="POLICY_DELETE_CACHE_HELP">If Delete Cache on Exit is checked, downloaded file contents will be removed when the application exits.</string>
+			<string id="POLICY_ENABLE_AUTO_UPDATE">Enable Auto-Update</string>
+			<string id="POLICY_ENABLE_AUTO_UPDATE_HELP">"Disabled": ShareFile will not automatically update to the latest version. 
+
+"Enabled": Users with local admin rights will be able to automatically update to the latest version. 
+
+"Enabled Including Non-Admins": Users without local admin rights will also be able to automatically update to the latest version.</string>
+			<string id="POLICY_ENABLE_AUTO_UPDATE_MODE_DISABLED">Disabled</string>
+			<string id="POLICY_ENABLE_AUTO_UPDATE_MODE_ENABLED">Enabled</string>
+			<string id="POLICY_ENABLE_AUTO_UPDATE_MODE_ENABLED_NONADMINS">Enabled Including Non-Admins</string>
+			<string id="POLICY_CACHE_LOCATION">Cache Location</string>
+			<string id="POLICY_CACHE_LOCATION_HELP">This policy configures the location of the file content cache. By default, AppData\Local\ShareFile\ShareFile for Windows\PartCache. If a custom path is set, that folder must already exist.
+			</string>			
+			<string id="POLICY_LOGSFOLDER_SIZE">Maximum Log Size</string>
+			<string id="POLICY_LOGSFOLDER_SIZE_HELP">This policy controls how much disk space (in megabytes) will be used for application logs. </string>
+			<string id="POLICY_DISABLE_TUTORIAL">Disable Tutorial</string>
+			<string id="POLICY_DISABLE_TUTORIAL_HELP">If Disable Tutorial is checked, ShareFile will not show the tutorial on the initial login of the user.</string>
+			<string id="POLICY_ENABLE_OFFLINEACCESS">Enable Offline Access</string>
+			<string id="POLICY_ENABLE_OFFLINEACCESS_HELP">If Enable Offline Access is unchecked, users will not be able to mark folders or files to be available while not connected to the internet.</string>
+			<string id="POLICY_PREFETCH_METADATA">Prefetch Metadata</string>
+			<string id="POLICY_PREFETCH_METADATA_HELP">If this policy is enabled, ShareFile will preload its filesystem structure. This will improve responsiveness at the expense of some CPU, memory, disk, and network usage.</string>
+			<string id="POLICY_CACHE_MODE">Cache Mode</string>
+			<string id="POLICY_CACHE_MODE_HELP">Default: ShareFile will choose a cache mode appropriate for the environment where it is executing.
+
+Immediate: ShareFile reads and writes directly to and from its cache. This mode uses the least memory, but may be slow if the application cache is not on the local disk.
+
+Queued: ShareFile retains some data in memory and writes to its cache in the background. This mode is recommended if the application cache is stored on a network location.</string>
+			<string id="POLICY_CACHE_MODE_DEFAULT">Default</string>
+			<string id="POLICY_CACHE_MODE_IMMEDIATE">Immediate</string>
+			<string id="POLICY_CACHE_MODE_QUEUED">Queued</string>
+			<string id="POLICY_ENABLE_AUTOCHECKOUT">Enable Auto Check-out</string>
+			<string id="POLICY_ENABLE_AUTOCHECKOUT_HELP">If this policy is enabled, ShareFile will automatically check-out the Microsoft Office files when they are opened. The files will also be automatically checked-in after they are closed.
+			
+If not configured, the user will need to right click on a file to check out.
+			
+Prompt user: ShareFile will ask for user's confirmation before checking out the file.
+
+Auto Check-out: ShareFile will automatically check-out the file.</string>
+			<string id="POLICY_AUTOCHECKOUT_MODE_PROMPT">Prompt user</string>
+			<string id="POLICY_AUTOCHECKOUT_MODE_AUTO">Auto Check-out</string>
+			<string id="POLICY_ENABLE_CLEARCACHEONLOGOUT">Enable Clear Cache on Logout</string>
+			<string id="POLICY_ENABLE_CLEARCACHEONLOGOUT_HELP">If this policy is enabled, ShareFile will clear cached metadata and content when users are logged-out. Log out can happen if the user's token gets revoked or expired, or the device gets remotely wiped, or when the user choose to explicitly log out.</string>
+			<string id="POLICY_FORCED_OFFLINE_ACCESS">Forced Offline Sync Folders</string>
+			<string id="POLICY_FORCED_OFFLINE_ACCESS_HELP">This policy configures additional ShareFile folders to sync. (i.e. Personal Folders or Shared Folders)
+
+If enabled, the user won't be able to deselect the folders specified in this policy.
+
+Folders can be either explicit folder Ids, full folder paths, or aliases.
+
+Folder Ids can be retrieved from the account web page's Get Direct Link action of the folder.
+The folder Id consists of alpha-numerical characters that begins with 'fo'.
+Example: fof8e4ee-ee90-127e-849f-88a3263323eb
+
+Folder paths are the full folder path starting with a '\' character.
+Examples:
+\Personal Folders\Data
+\Shared Folders\Groups\Names
+
+Folder aliases are placeholders for specific top level folders:
+Examples:
+%personal%
+%shared%\Groups
+%favorites%\Folder
+
+Any folders configured in this policy cannot be removed by the ShareFile user.</string>
+			<string id="POLICY_REDIRECT_DOWNLOADS_NAME">Redirect Downloads Folder</string>
+			<string id="POLICY_REDIRECT_DOWNLOADS_DESC">Redirect user's Downloads folder to ShareFile.</string>
+			<string id="POLICY_REDIRECT_DESKTOP_NAME">Redirect Desktop Folder</string>
+			<string id="POLICY_REDIRECT_DESKTOP_DESC">Redirect user's Desktop folder to ShareFile.</string>
+			<string id="POLICY_REDIRECT_CONTACTS_NAME">Redirect Contacts Folder</string>
+			<string id="POLICY_REDIRECT_CONTACTS_DESC">Redirect user's Contacts folder to ShareFile.</string>
+			<string id="POLICY_REDIRECT_DOCUMENTS_NAME">Redirect Documents Folder</string>
+			<string id="POLICY_REDIRECT_DOCUMENTS_DESC">Redirect user's Documents folder to ShareFile.</string>
+			<string id="POLICY_REDIRECT_FAVORITES_NAME">Redirect Favorites Folder</string>
+			<string id="POLICY_REDIRECT_FAVORITES_DESC">Redirect user's Favorites folder to ShareFile.</string>
+			<string id="POLICY_REDIRECT_LINKS_NAME">Redirect Links Folder</string>
+			<string id="POLICY_REDIRECT_LINKS_DESC">Redirect user's Links folder to ShareFile.</string>
+			<string id="POLICY_REDIRECT_MUSIC_NAME">Redirect Music Folder</string>
+			<string id="POLICY_REDIRECT_MUSIC_DESC">Redirect user's Music folder to ShareFile.</string>
+			<string id="POLICY_REDIRECT_PICTURES_NAME">Redirect Pictures Folder</string>
+			<string id="POLICY_REDIRECT_PICTURES_DESC">Redirect user's Pictures folder to ShareFile.</string>
+			<string id="POLICY_REDIRECT_SAVEDGAMES_NAME">Redirect Saved Games Folder</string>
+			<string id="POLICY_REDIRECT_SAVEDGAMES_DESC">Redirect user's Saved Games folder to ShareFile.</string>
+			<string id="POLICY_REDIRECT_VIDEOS_NAME">Redirect Videos Folder</string>
+			<string id="POLICY_REDIRECT_VIDEOS_DESC">Redirect user's Videos folder to ShareFile.</string>
+			<string id="POLICY_REDIRECTION_BACKUP_FOLDER_NAME">Redirection Backup Folder Settings</string>
+			<string id="POLICY_REDIRECTION_BACKUP_FOLDER_DESC">Set the root folder for backups of local folders that have been redirected. Also control how frequently the backup folder is cleaned up, and for how long to keep backed up files around.</string>
+			<string id="POLICY_ONPREM_CONNECTOR_REFRESH_FREQUENCY_NAME">On-Premises Connector Refresh Frequency</string>
+			<string id="POLICY_ONPREM_CONNECTOR_REFRESH_FREQUENCY_DESC">Configure the frequency, in seconds, for refreshing directory contents for On-Premises connector folders (such as the Network Share connector).
+
+Default polling frequency value is 30 seconds; a range can be set from 5 seconds to 3600 seconds (1 hour).  Shorter frequencies will incur greater resource utilization.</string>
+			<string id="POLICY_ENABLE_ANALYTICS">Analytics</string>
+			<string id="POLICY_ENABLE_ANALYTICS_HELP">This policy controls whether analytics are allowed to be collected while ShareFile is running. By default, analytics are collected, but they can be disabled by unchecking the setting in this policy.</string>
+			<string id="POLICY_DESKTOP_COEDITING">Office Co-Editing</string>
+			<string id="POLICY_DESKTOP_COEDITING_HELP">This policy controls whether desktop co-editing of Microsoft Office files is allowed. 
+Note that to function correctly, this feature must also be enabled for your ShareFile account.
+
+If not configured by policy, then this feature is enabled by default.
+</string>
+			<string id="POLICY_RECYCLE_DELETED_LOCAL_ITEMS">Recycle Deleted Local Items</string>
+			<string id="POLICY_RECYCLE_DELETED_LOCAL_ITEMS_HELP">This policy configures the behavior for deleting local files. Deleted files that haven't been uploaded are placed in the recycle bin instead of being permanently deleted. These files can then later be restored to the user's Recovery folder if needed.
+
+If not configured by policy, then this feature is enabled by default.
+			</string>
+	</stringTable>
+		<presentationTable>
+			<presentation id="POLICY_ENABLE_ONPREM_CONNECTORS">
+				<checkBox refId="BOOL_ENABLE_ONPREM_CONNECTORS" defaultChecked="true">Enable Connectors</checkBox>
+			</presentation>
+			<presentation id="POLICY_ENABLE_PERSONAL_CLOUD_CONNECTORS">
+				<checkBox refId="BOOL_ENABLE_PERSONAL_CLOUD_CONNECTORS" defaultChecked="true">Enable Connectors</checkBox>
+			</presentation>
+			<presentation id="POLICY_ENABLE_APP">
+				<checkBox refId="BOOL_ENABLE_APP" defaultChecked="true">Enable Application</checkBox>
+			</presentation>
+			<presentation id="POLICY_UPLOAD_EXCLUDED">
+				<multiTextBox refId="MULTITXT_UPLOAD_EXCLUDED">Excluded File Extensions</multiTextBox>				
+			</presentation>
+			<presentation id="POLICY_MOUNT_POINT">
+				<textBox refId="TXT_MOUNT_POINT_LOCAL">
+					<label>Local Path</label>
+				</textBox>
+				<textBox refId="TXT_MOUNT_POINT_SHAREFILE">
+					<label>ShareFile Path</label>
+				</textBox>
+				<textBox refId="TXT_MOUNT_POINT_DISPLAYNAME">
+					<label>Display Name</label>
+				</textBox>
+			</presentation>
+      		<presentation id="POLICY_ACCOUNT">
+        		<textBox refId="TXT_ACCOUNT">
+          			<label>Account</label>
+          			<defaultValue/>
+        		</textBox>
+      		</presentation>
+			<presentation id="POLICY_CACHE_SIZE">
+				<decimalTextBox refId="NUM_CACHE_SIZE" defaultValue="256" minValue="256" maxValue="999" spinStep="8">Cache Size</decimalTextBox>
+			</presentation>
+			<presentation id="POLICY_DELETE_CACHE">
+				<checkBox refId="BOOL_DELETE_CACHE" defaultChecked="false">Delete Cache on Exit</checkBox>
+			</presentation>
+			<presentation id="POLICY_CACHE_LOCATION">
+				<textBox refId="TXT_CACHE_LOCATION">
+					<label>Cache Location</label>
+					<defaultValue/>
+				</textBox>
+			</presentation>
+			<presentation id="POLICY_ENABLE_AUTO_UPDATE">
+				<dropdownList refId="ENUM_AUTO_UPDATE_MODE" noSort="true" defaultItem="0">Auto-Update Mode</dropdownList>
+			</presentation>
+			<presentation id="POLICY_LOGSFOLDER_SIZE">
+				<decimalTextBox refId="NUM_LOGSFOLDER_SIZE" defaultValue="100" minValue="100" maxValue="1024" spinStep="25">Maximum Log Size</decimalTextBox>
+			</presentation>
+			<presentation id="POLICY_DISABLE_TUTORIAL">
+				<checkBox refId="BOOL_DISABLE_TUTORIAL" defaultChecked="true">Disable Tutorial</checkBox>
+			</presentation>
+			<presentation id="POLICY_ENABLE_OFFLINEACCESS">
+				<checkBox refId="BOOL_ENABLE_OFFLINEACCESS" defaultChecked="true">Enable Offline Access</checkBox>
+			</presentation>
+			<presentation id="POLICY_PREFETCH_METADATA">
+				<checkBox refId="BOOL_PREFETCH_METADATA" defaultChecked="true">Prefetch Metadata</checkBox>
+			</presentation>
+			<presentation id="POLICY_CACHE_MODE">
+				<dropdownList refId="ENUM_CACHE_MODE" defaultItem="0">Cache Mode</dropdownList> 
+			</presentation>
+			<presentation id="POLICY_AUTOCHECKOUT_MODE">
+				<dropdownList refId="ENUM_AUTOCHECKOUT_MODE" defaultItem="0">Enable Auto Check-out</dropdownList> 
+			</presentation>
+			<presentation id="POLICY_ENABLE_CLEARCACHEONLOGOUT">
+				<checkBox refId="BOOL_ENABLE_CLEARCACHEONLOGOUT" defaultChecked="false">Clear Cache on Logout</checkBox>
+			</presentation>
+			<presentation id="POLICY_FORCED_OFFLINE_ACCESS">
+				<multiTextBox refId="MULTITEXT_FORCED_OFFLINE_ACCESS">Folders</multiTextBox>
+			</presentation>
+						<presentation id="POLICY_FOLDER_REDIRECT">
+				<textBox refId="TXT_REDIRECT_PATH">
+					<label>Folder Location</label>
+					<defaultValue/>
+				</textBox>
+				<checkBox refId="BOOL_REDIRECT_MOVE_CONTENTS" defaultChecked="false">Move Existing Content To New Location</checkBox>
+			</presentation>
+			<presentation id="POLICY_REDIRECTION_BACKUP_FOLDER">
+				<textBox refId="TXT_BACKUP_PATH">
+					<label>Backup Folder Location</label>
+					<defaultValue/>
+				</textBox>
+				<text> </text>
+				<text>Minimum amount of time to store backed up items. Items older than this period of time will be deleted from the backup location during cleanup. Set to 0 to never delete backups.</text>
+				<decimalTextBox refId="NUM_RETENTION_PERIOD" defaultValue="72">
+					Retention period (hours)
+				</decimalTextBox>
+				<text>The time interval for how frequently the backup location should be cleaned out.</text>
+				<decimalTextBox refId="NUM_CLEANUP_INTERVAL" defaultValue="1">
+					Cleanup interval (hours)
+				</decimalTextBox>
+			</presentation>
+			<presentation id="POLICY_ONPREM_CONNECTOR_REFRESH_FREQUENCY">
+				<decimalTextBox refId="NUM_ONPREM_CONNECTOR_REFRESH_FREQUENCY" defaultValue="30" minValue="5" maxValue="3600" spinStep="5">Refresh frequency (seconds)</decimalTextBox>
+			</presentation>
+			<presentation id="POLICY_ENABLE_ANALYTICS">
+				<checkBox refId="BOOL_ENABLE_ANALYTICS" defaultChecked="true">Enable Analytics</checkBox>
+			</presentation>
+			<presentation id="POLICY_DESKTOP_COEDITING">
+				<checkBox refId="BOOL_DESKTOP_COEDITING" defaultChecked="true">Enable Office Co-Editing</checkBox>
+			</presentation>
+			<presentation id="POLICY_RECYCLE_DELETED_LOCAL_ITEMS">
+				<checkBox refId="BOOL_RECYCLE_DELETED_LOCAL_ITEMS" defaultChecked="false">Recycle Deleted Local Items</checkBox>
+			</presentation>
+		</presentationTable>
+	</resources>
+</policyDefinitionResources>

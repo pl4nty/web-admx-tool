@@ -1,0 +1,1610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2023 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="networkmanager" namespace="BaseALT.Policies.NetworkManager" />
+    <using prefix="system" namespace="BaseALT.Policies.System" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <policies>
+    <policy class="Machine" displayName="$(string.org-freedesktop-NetworkManager-checkpoint-rollback)"
+        explainText="$(string.org-freedesktop-NetworkManager-checkpoint-rollback_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.checkpoint-rollback"
+        valuename="org.freedesktop.NetworkManager.checkpoint-rollback"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.checkpoint-rollback" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopNetworkManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.NetworkManager.checkpoint-rollback">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-NetworkManager-checkpoint-rollback-user)"
+        explainText="$(string.org-freedesktop-NetworkManager-checkpoint-rollback-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.checkpoint-rollback-user"
+        valuename="org.freedesktop.NetworkManager.checkpoint-rollback"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-user-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.checkpoint-rollback" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-NetworkManager-enable-disable-connectivity-check)"
+        explainText="$(string.org-freedesktop-NetworkManager-enable-disable-connectivity-check_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.enable-disable-connectivity-check"
+        valuename="org.freedesktop.NetworkManager.enable-disable-connectivity-check"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.enable-disable-connectivity-check" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopNetworkManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.NetworkManager.enable-disable-connectivity-check">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-NetworkManager-enable-disable-connectivity-check-user)"
+        explainText="$(string.org-freedesktop-NetworkManager-enable-disable-connectivity-check-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.enable-disable-connectivity-check-user"
+        valuename="org.freedesktop.NetworkManager.enable-disable-connectivity-check"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-user-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.enable-disable-connectivity-check" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-NetworkManager-enable-disable-network)"
+        explainText="$(string.org-freedesktop-NetworkManager-enable-disable-network_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.enable-disable-network"
+        valuename="org.freedesktop.NetworkManager.enable-disable-network"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.enable-disable-network" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopNetworkManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.NetworkManager.enable-disable-network">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-NetworkManager-enable-disable-network-user)"
+        explainText="$(string.org-freedesktop-NetworkManager-enable-disable-network-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.enable-disable-network-user"
+        valuename="org.freedesktop.NetworkManager.enable-disable-network"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-user-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.enable-disable-network" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-NetworkManager-enable-disable-statistics)"
+        explainText="$(string.org-freedesktop-NetworkManager-enable-disable-statistics_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.enable-disable-statistics"
+        valuename="org.freedesktop.NetworkManager.enable-disable-statistics"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.enable-disable-statistics" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopNetworkManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.NetworkManager.enable-disable-statistics">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-NetworkManager-enable-disable-statistics-user)"
+        explainText="$(string.org-freedesktop-NetworkManager-enable-disable-statistics-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.enable-disable-statistics-user"
+        valuename="org.freedesktop.NetworkManager.enable-disable-statistics"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-user-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.enable-disable-statistics" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-NetworkManager-enable-disable-wifi)"
+        explainText="$(string.org-freedesktop-NetworkManager-enable-disable-wifi_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.enable-disable-wifi"
+        valuename="org.freedesktop.NetworkManager.enable-disable-wifi"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.enable-disable-wifi" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopNetworkManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.NetworkManager.enable-disable-wifi">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-NetworkManager-enable-disable-wifi-user)"
+        explainText="$(string.org-freedesktop-NetworkManager-enable-disable-wifi-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.enable-disable-wifi-user"
+        valuename="org.freedesktop.NetworkManager.enable-disable-wifi"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-user-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.enable-disable-wifi" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-NetworkManager-enable-disable-wimax)"
+        explainText="$(string.org-freedesktop-NetworkManager-enable-disable-wimax_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.enable-disable-wimax"
+        valuename="org.freedesktop.NetworkManager.enable-disable-wimax"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.enable-disable-wimax" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopNetworkManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.NetworkManager.enable-disable-wimax">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-NetworkManager-enable-disable-wimax-user)"
+        explainText="$(string.org-freedesktop-NetworkManager-enable-disable-wimax-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.enable-disable-wimax-user"
+        valuename="org.freedesktop.NetworkManager.enable-disable-wimax"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-user-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.enable-disable-wimax" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-NetworkManager-enable-disable-wwan)"
+        explainText="$(string.org-freedesktop-NetworkManager-enable-disable-wwan_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.enable-disable-wwan"
+        valuename="org.freedesktop.NetworkManager.enable-disable-wwan"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.enable-disable-wwan" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopNetworkManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.NetworkManager.enable-disable-wwan">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-NetworkManager-enable-disable-wwan-user)"
+        explainText="$(string.org-freedesktop-NetworkManager-enable-disable-wwan-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.enable-disable-wwan-user"
+        valuename="org.freedesktop.NetworkManager.enable-disable-wwan"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-user-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.enable-disable-wwan" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-NetworkManager-network-control)"
+        explainText="$(string.org-freedesktop-NetworkManager-network-control_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.network-control"
+        valuename="org.freedesktop.NetworkManager.network-control"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.network-control" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopNetworkManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.NetworkManager.network-control">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-NetworkManager-network-control-user)"
+        explainText="$(string.org-freedesktop-NetworkManager-network-control-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.network-control-user"
+        valuename="org.freedesktop.NetworkManager.network-control"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-user-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.network-control" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-NetworkManager-reload)"
+        explainText="$(string.org-freedesktop-NetworkManager-reload_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.reload"
+        valuename="org.freedesktop.NetworkManager.reload"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.reload" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopNetworkManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.NetworkManager.reload">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-NetworkManager-reload-user)"
+        explainText="$(string.org-freedesktop-NetworkManager-reload-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.reload-user"
+        valuename="org.freedesktop.NetworkManager.reload"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-user-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.reload" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-NetworkManager-settings-modify-global-dns)"
+        explainText="$(string.org-freedesktop-NetworkManager-settings-modify-global-dns_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.settings.modify.global-dns"
+        valuename="org.freedesktop.NetworkManager.settings.modify.global-dns"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.settings.modify.global-dns" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopNetworkManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.NetworkManager.settings.modify.global-dns">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-NetworkManager-settings-modify-global-dns-user)"
+        explainText="$(string.org-freedesktop-NetworkManager-settings-modify-global-dns-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.settings.modify.global-dns-user"
+        valuename="org.freedesktop.NetworkManager.settings.modify.global-dns"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-user-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.settings.modify.global-dns" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-NetworkManager-settings-modify-hostname)"
+        explainText="$(string.org-freedesktop-NetworkManager-settings-modify-hostname_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.settings.modify.hostname"
+        valuename="org.freedesktop.NetworkManager.settings.modify.hostname"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.settings.modify.hostname" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopNetworkManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.NetworkManager.settings.modify.hostname">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-NetworkManager-settings-modify-hostname-user)"
+        explainText="$(string.org-freedesktop-NetworkManager-settings-modify-hostname-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.settings.modify.hostname-user"
+        valuename="org.freedesktop.NetworkManager.settings.modify.hostname"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-user-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.settings.modify.hostname" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-NetworkManager-settings-modify-own)"
+        explainText="$(string.org-freedesktop-NetworkManager-settings-modify-own_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.settings.modify.own"
+        valuename="org.freedesktop.NetworkManager.settings.modify.own"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.settings.modify.own" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopNetworkManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.NetworkManager.settings.modify.own">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-NetworkManager-settings-modify-own-user)"
+        explainText="$(string.org-freedesktop-NetworkManager-settings-modify-own-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.settings.modify.own-user"
+        valuename="org.freedesktop.NetworkManager.settings.modify.own"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-user-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.settings.modify.own" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-NetworkManager-settings-modify-system)"
+        explainText="$(string.org-freedesktop-NetworkManager-settings-modify-system_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.settings.modify.system"
+        valuename="org.freedesktop.NetworkManager.settings.modify.system"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.settings.modify.system" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopNetworkManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.NetworkManager.settings.modify.system">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-NetworkManager-settings-modify-system-user)"
+        explainText="$(string.org-freedesktop-NetworkManager-settings-modify-system-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.settings.modify.system-user"
+        valuename="org.freedesktop.NetworkManager.settings.modify.system"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-user-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.settings.modify.system" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-NetworkManager-sleep-wake)"
+        explainText="$(string.org-freedesktop-NetworkManager-sleep-wake_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.sleep-wake"
+        valuename="org.freedesktop.NetworkManager.sleep-wake"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.sleep-wake" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopNetworkManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.NetworkManager.sleep-wake">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-NetworkManager-sleep-wake-user)"
+        explainText="$(string.org-freedesktop-NetworkManager-sleep-wake-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.sleep-wake-user"
+        valuename="org.freedesktop.NetworkManager.sleep-wake"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-user-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.sleep-wake" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-NetworkManager-wifi-scan)"
+        explainText="$(string.org-freedesktop-NetworkManager-wifi-scan_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.wifi.scan"
+        valuename="org.freedesktop.NetworkManager.wifi.scan"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.wifi.scan" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopNetworkManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.NetworkManager.wifi.scan">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-NetworkManager-wifi-scan-user)"
+        explainText="$(string.org-freedesktop-NetworkManager-wifi-scan-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.wifi.scan-user"
+        valuename="org.freedesktop.NetworkManager.wifi.scan"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-user-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.wifi.scan" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-NetworkManager-wifi-share-open)"
+        explainText="$(string.org-freedesktop-NetworkManager-wifi-share-open_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.wifi.share.open"
+        valuename="org.freedesktop.NetworkManager.wifi.share.open"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.wifi.share.open" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopNetworkManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.NetworkManager.wifi.share.open">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-NetworkManager-wifi-share-open-user)"
+        explainText="$(string.org-freedesktop-NetworkManager-wifi-share-open-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.wifi.share.open-user"
+        valuename="org.freedesktop.NetworkManager.wifi.share.open"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-user-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.wifi.share.open" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-NetworkManager-wifi-share-protected)"
+        explainText="$(string.org-freedesktop-NetworkManager-wifi-share-protected_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.wifi.share.protected"
+        valuename="org.freedesktop.NetworkManager.wifi.share.protected"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.wifi.share.protected" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopNetworkManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.NetworkManager.wifi.share.protected">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-NetworkManager-wifi-share-protected-user)"
+        explainText="$(string.org-freedesktop-NetworkManager-wifi-share-protected-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.NetworkManager.wifi.share.protected-user"
+        valuename="org.freedesktop.NetworkManager.wifi.share.protected"
+        presentation="$(presentation.org-freedesktop-NetworkManager-polkit-user-pr)">
+      <parentCategory ref="system:ALT_NetworkManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopNetworkManager_setter" valueName="org.freedesktop.NetworkManager.wifi.share.protected" required="true">
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-NetworkManager-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

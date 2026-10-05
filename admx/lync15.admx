@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-16"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="lync15" namespace="lync15.Office.Microsoft.Policies.Windows" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <supersededAdm fileName="lync15" />
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="L_Lync" displayName="$(string.L_Lync)" />
+    <category name="L_LyncConfiguration" displayName="$(string.L_LyncConfiguration)">
+      <parentCategory ref="L_Lync" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="L_PolicyConfigurationMode" class="Machine" displayName="$(string.L_PolicyConfigurationMode)" explainText="$(string.L_ExplainText_ConfigurationMode)" presentation="$(presentation.L_PolicyConfigurationMode)" key="software\policies\microsoft\office\15.0\lync" valueName="configurationmode">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <text id="L_ServerAddressInternal_VALUE" key="software\policies\microsoft\office\15.0\lync" valueName="serveraddressinternal" required="true" />
+        <text id="L_ServerAddressExternal_VALUE" key="software\policies\microsoft\office\15.0\lync" valueName="serveraddressexternal" required="true" />
+      </elements>
+    </policy>
+    <policy name="L_PolicyEnableSIPHighSecurityMode" class="Machine" displayName="$(string.L_PolicyEnableSIPHighSecurityMode)" explainText="$(string.L_ExplainText_EnableSIPHighSecurityMode)" presentation="$(presentation.L_PolicyEnableSIPHighSecurityMode)" key="software\policies\microsoft\office\15.0\lync" valueName="enablesiphighsecuritymode">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_PolicySipCompression" class="Machine" displayName="$(string.L_PolicySipCompression)" explainText="$(string.L_ExplainText_SipCompression)" presentation="$(presentation.L_PolicySipCompression)" key="software\policies\microsoft\office\15.0\lync">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_PolicySipCompression" valueName="sipcompression">
+          <item displayName="$(string.L_SipCompressionVal0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_SipCompressionVal1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_SipCompressionVal2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_SipCompressionVal3)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_PolicyPreventRun" class="Machine" displayName="$(string.L_PolicyPreventRun)" explainText="$(string.L_ExplainText_PreventRun)" presentation="$(presentation.L_PolicyPreventRun)" key="software\policies\microsoft\office\15.0\lync" valueName="preventrun">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_PolicySavePassword" class="Machine" displayName="$(string.L_PolicySavePassword)" explainText="$(string.L_ExplainText_SavePassword)" presentation="$(presentation.L_PolicySavePassword)" key="software\policies\microsoft\office\15.0\lync" valueName="savepassword">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_PolicyDisableNTCredentials" class="Machine" displayName="$(string.L_PolicyDisableNTCredentials)" explainText="$(string.L_ExplainText_DisableNTCredentials)" presentation="$(presentation.L_PolicyDisableNTCredentials)" key="software\policies\microsoft\office\15.0\lync" valueName="disablentcredentials">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_PolicyDisableHttpConnect" class="Machine" displayName="$(string.L_PolicyDisableHttpConnect)" explainText="$(string.L_ExplainText_DisableHttpConnect)" presentation="$(presentation.L_PolicyDisableHttpConnect)" key="software\policies\microsoft\office\15.0\lync" valueName="disablehttpconnect">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_PolicyDisableServerCheck" class="Machine" displayName="$(string.L_PolicyDisableServerCheck)" explainText="$(string.L_ExplainText_DisableServerCheck)" presentation="$(presentation.L_PolicyDisableServerCheck)" key="software\policies\microsoft\office\15.0\lync" valueName="disableservercheck">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_PolicyConfiguredServerCheckValues" class="Machine" displayName="$(string.L_PolicyConfiguredServerCheckValues)" explainText="$(string.L_ExplainText_ConfiguredServerCheckValues)" presentation="$(presentation.L_PolicyConfiguredServerCheckValues)" key="software\policies\microsoft\office\15.0\lync">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_ConfiguredServerCheckValues_VALUE" valueName="configuredservercheckvalues" required="true" />
+      </elements>
+    </policy>
+    <policy name="L_PolicyEnableBitsForGalDownload" class="Machine" displayName="$(string.L_PolicyEnableBitsForGalDownload)" explainText="$(string.L_ExplainText_EnableBitsForGalDownload)" presentation="$(presentation.L_PolicyEnableBitsForGalDownload)" key="software\policies\microsoft\office\15.0\lync" valueName="enablebitsforgaldownload">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_PolicyDisableAutomaticSendTracing" class="Machine" displayName="$(string.L_PolicyDisableAutomaticSendTracing)" explainText="$(string.L_ExplainText_DisableAutomaticSendTracing)" presentation="$(presentation.L_PolicyDisableAutomaticSendTracing)" key="software\policies\microsoft\office\15.0\lync" valueName="disableautomaticsendtracing">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_PolicyTrustModelData" class="Machine" displayName="$(string.L_PolicyTrustModelData)" explainText="$(string.L_ExplainText_TrustModelData)" presentation="$(presentation.L_PolicyTrustModelData)" key="software\policies\microsoft\office\15.0\lync">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_TrustModelData_VALUE" valueName="trustmodeldata" required="true" />
+      </elements>
+    </policy>
+    <policy name="L_PolicyGalDownloadInitialDelay" class="Machine" displayName="$(string.L_PolicyGalDownloadInitialDelay)" explainText="$(string.L_ExplainText_GalDownloadInitialDelay)" presentation="$(presentation.L_PolicyGalDownloadInitialDelay)" key="software\policies\microsoft\office\15.0\lync">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_GalDownloadInitialDelay_VALUE" valueName="galdownloadinitialdelay" minValue="0" required="true" />
+      </elements>
+    </policy>
+    <policy name="L_PolicyConfigurationMode_1" class="User" displayName="$(string.L_PolicyConfigurationMode)" explainText="$(string.L_ExplainText_ConfigurationMode)" presentation="$(presentation.L_PolicyConfigurationMode_1)" key="software\policies\microsoft\office\15.0\lync" valueName="configurationmode">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <text id="L_ServerAddressInternal_VALUE" key="software\policies\microsoft\office\15.0\lync" valueName="serveraddressinternal" required="true" />
+        <text id="L_ServerAddressExternal_VALUE" key="software\policies\microsoft\office\15.0\lync" valueName="serveraddressexternal" required="true" />
+      </elements>
+    </policy>
+    <policy name="L_PolicyEnableSIPHighSecurityMode_1" class="User" displayName="$(string.L_PolicyEnableSIPHighSecurityMode)" explainText="$(string.L_ExplainText_EnableSIPHighSecurityMode)" presentation="$(presentation.L_PolicyEnableSIPHighSecurityMode_1)" key="software\policies\microsoft\office\15.0\lync" valueName="enablesiphighsecuritymode">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_PolicySipCompression_1" class="User" displayName="$(string.L_PolicySipCompression)" explainText="$(string.L_ExplainText_SipCompression)" presentation="$(presentation.L_PolicySipCompression_1)" key="software\policies\microsoft\office\15.0\lync">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_PolicySipCompression" valueName="sipcompression">
+          <item displayName="$(string.L_SipCompressionVal0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_SipCompressionVal1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_SipCompressionVal2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_SipCompressionVal3)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_PolicyPreventRun_1" class="User" displayName="$(string.L_PolicyPreventRun)" explainText="$(string.L_ExplainText_PreventRun)" presentation="$(presentation.L_PolicyPreventRun_1)" key="software\policies\microsoft\office\15.0\lync" valueName="preventrun">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_PolicySavePassword_1" class="User" displayName="$(string.L_PolicySavePassword)" explainText="$(string.L_ExplainText_SavePassword)" presentation="$(presentation.L_PolicySavePassword_1)" key="software\policies\microsoft\office\15.0\lync" valueName="savepassword">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_PolicyDisableNTCredentials_1" class="User" displayName="$(string.L_PolicyDisableNTCredentials)" explainText="$(string.L_ExplainText_DisableNTCredentials)" presentation="$(presentation.L_PolicyDisableNTCredentials_1)" key="software\policies\microsoft\office\15.0\lync" valueName="disablentcredentials">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_PolicyDisableHttpConnect_1" class="User" displayName="$(string.L_PolicyDisableHttpConnect)" explainText="$(string.L_ExplainText_DisableHttpConnect)" presentation="$(presentation.L_PolicyDisableHttpConnect_1)" key="software\policies\microsoft\office\15.0\lync" valueName="disablehttpconnect">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_PolicyDisableServerCheck_1" class="User" displayName="$(string.L_PolicyDisableServerCheck)" explainText="$(string.L_ExplainText_DisableServerCheck)" presentation="$(presentation.L_PolicyDisableServerCheck_1)" key="software\policies\microsoft\office\15.0\lync" valueName="disableservercheck">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_PolicyConfiguredServerCheckValues_1" class="User" displayName="$(string.L_PolicyConfiguredServerCheckValues)" explainText="$(string.L_ExplainText_ConfiguredServerCheckValues)" presentation="$(presentation.L_PolicyConfiguredServerCheckValues_1)" key="software\policies\microsoft\office\15.0\lync">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_ConfiguredServerCheckValues_VALUE" valueName="configuredservercheckvalues" required="true" />
+      </elements>
+    </policy>
+    <policy name="L_PolicyEnableBitsForGalDownload_1" class="User" displayName="$(string.L_PolicyEnableBitsForGalDownload)" explainText="$(string.L_ExplainText_EnableBitsForGalDownload)" presentation="$(presentation.L_PolicyEnableBitsForGalDownload_1)" key="software\policies\microsoft\office\15.0\lync" valueName="enablebitsforgaldownload">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_PolicyDisableAutomaticSendTracing_1" class="User" displayName="$(string.L_PolicyDisableAutomaticSendTracing)" explainText="$(string.L_ExplainText_DisableAutomaticSendTracing)" presentation="$(presentation.L_PolicyDisableAutomaticSendTracing)" key="software\policies\microsoft\office\15.0\lync" valueName="disableautomaticsendtracing">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_PolicyTrustModelData_1" class="User" displayName="$(string.L_PolicyTrustModelData)" explainText="$(string.L_ExplainText_TrustModelData)" presentation="$(presentation.L_PolicyTrustModelData_1)" key="software\policies\microsoft\office\15.0\lync">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_TrustModelData_VALUE" valueName="trustmodeldata" required="true" />
+      </elements>
+    </policy>
+    <policy name="L_PolicyGalDownloadInitialDelay_1" class="User" displayName="$(string.L_PolicyGalDownloadInitialDelay)" explainText="$(string.L_ExplainText_GalDownloadInitialDelay)" presentation="$(presentation.L_PolicyGalDownloadInitialDelay_1)" key="software\policies\microsoft\office\15.0\lync">
+      <parentCategory ref="L_LyncConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_GalDownloadInitialDelay_VALUE" valueName="galdownloadinitialdelay" minValue="0" required="true" />
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

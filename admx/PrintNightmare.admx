@@ -1,0 +1,25 @@
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="fullarmor" namespace="FullArmor.Policies.64DD26A9_D7EE_4C90_99F4_F2E8D9DA2757" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <supersededAdm fileName="" />
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="CAT_CC62BA78_7C56_48BC_BFB1_3B4A6B9375BB" displayName="$(string.CAT_CC62BA78_7C56_48BC_BFB1_3B4A6B9375BB)">
+      <parentCategory ref="windows:Printers" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="POL_0F5609EA_BBB4_43FB_839A_231E44CEDD71" class="Machine" displayName="$(string.POL_0F5609EA_BBB4_43FB_839A_231E44CEDD71)" explainText="$(string.POL_0F5609EA_BBB4_43FB_839A_231E44CEDD71_Help)" presentation="$(presentation.POL_0F5609EA_BBB4_43FB_839A_231E44CEDD71)" key="Software\Policies\Microsoft\Windows NT\Printers\PointAndPrint" valueName="RestrictDriverInstallationToAdministrators">
+      <parentCategory ref="CAT_CC62BA78_7C56_48BC_BFB1_3B4A6B9375BB" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+	<enabledValue >
+				<decimal value="1" />
+	</enabledValue>
+	<disabledValue >
+				<decimal value="0" />
+	</disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>

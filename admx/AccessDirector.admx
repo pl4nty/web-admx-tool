@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	Policy Definition template file
+	Product: Access Director
+	Version: 2.5.0
+	Revision: 1.1.0
+
+	(c) 2015 NoLightPeople
+	(w) http://nolightpeople.com
+	(t) http://twitter.com/nolightpeople/
+-->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+	<policyNamespaces>
+		<target prefix="accessdirector" namespace="accessdirector.Microsoft.Policies.Windows" />
+		<using prefix="windows" namespace="Microsoft.Policies.Windows" />
+	</policyNamespaces>
+	<resources minRequiredRevision="1.0" />
+	<categories>
+		<!-- Categories -->
+		<category name="AccessDirectorCategory" displayName="$(string.AccessDirectorCategory)" explainText="$(string.AccessDirectorCategory_help)">
+			<parentCategory ref="windows:AccessDirector" />
+		</category>
+		<category name="AccessDirectorAdvancedCategory" displayName="$(string.AccessDirectorAdvancedCategory)" explainText="$(string.AccessDirectorAdvancedCategory_help)">
+			<parentCategory ref="AccessDirectorCategory" />
+		</category>
+		<category name="AccessDirectorAuditCategory" displayName="$(string.AccessDirectorAuditCategory)" explainText="$(string.AccessDirectorAuditCategory_help)">
+			<parentCategory ref="AccessDirectorCategory" />
+		</category>
+		<category name="AccessDirectorConnectorCategory" displayName="$(string.AccessDirectorConnectorCategory)" explainText="$(string.AccessDirectorConnectorCategory_help)">
+			<parentCategory ref="AccessDirectorCategory" />
+		</category>
+		<category name="AccessDirectorLocalizationCategory" displayName="$(string.AccessDirectorLocalizationCategory)" explainText="$(string.AccessDirectorLocalizationCategory_help)">
+			<parentCategory ref="AccessDirectorCategory" />
+		</category>
+	</categories>
+
+	<policies>
+		<!-- Standard Settings -->
+		<policy name="AccessGroup" class="Machine" displayName="$(string.AccessGroup)" explainText="$(string.AccessGroup_help)" presentation="$(presentation.AccessGroupPrompt)" key="Software\Policies\NoLightPeople\Access Director">
+			<parentCategory ref="AccessDirectorCategory" />
+			<supportedOn ref="windows:SUPPORTED_Windows7" />
+			<elements>
+				<text id="AccessGroupPrompt" valueName="AccessGroup" required="true" />
+			</elements>
+		</policy>
+		<policy name="AccessPeriod" class="Machine" displayName="$(string.AccessPeriod)" explainText="$(string.AccessPeriod_help)" presentation="$(presentation.AccessPeriodPrompt)" key="Software\Policies\NoLightPeople\Access Director">
+			<parentCategory ref="AccessDirectorCategory" />
+			<supportedOn ref="windows:SUPPORTED_Windows7" />
+			<elements>
+				<enum id="AccessPeriodPrompt" valueName="AccessPeriod" required="true">
+					<item displayName="$(string.AccessPeriodT-01)">
+						<value>
+							<decimal value="60" />
+						</value>
+					</item>
+					<item displayName="$(string.AccessPeriodT-02)">
+						<value>
+							<decimal value="120" />
+						</value>
+					</item>
+					<item displayName="$(string.AccessPeriodT-05)">
+						<value>
+							<decimal value="300" />
+						</value>
+					</item>
+					<item displayName="$(string.AccessPeriodT-10)">
+						<value>
+							<decimal value="600" />
+						</value>
+					</item>
+					<item displayName="$(string.AccessPeriodT-15)">
+						<value>
+							<decimal value="900" />
+						</value>
+					</item>
+					<item displayName="$(string.AccessPeriodT-20)">
+						<value>
+							<decimal value="1200" />
+						</value>
+					</item>
+					<item displayName="$(string.AccessPeriodT-30)">
+						<value>
+							<decimal value="1800" />
+						</value>
+					</item>
+					<item displayName="$(string.AccessPeriodT-60)">
+						<value>
+							<decimal value="3600" />
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+		<policy name="Identity" class="Machine" displayName="$(string.Identity)" explainText="$(string.Identity_help)" presentation="$(presentation.IdentityPrompt)" key="Software\Policies\NoLightPeople\Access Director">
+			<parentCategory ref="AccessDirectorCategory" />
+			<supportedOn ref="windows:SUPPORTED_Windows7" />
+			<elements>
+				<enum id="IdentityPrompt" valueName="Identity" required="true">
+					<item displayName="$(string.IdentityType1)">
+						<value>
+							<decimal value="1" />
+						</value>
+					</item>
+					<item displayName="$(string.IdentityType2)">
+						<value>
+							<decimal value="2" />
+						</value>
+					</item>
+					<item displayName="$(string.IdentityType3)">
+						<value>
+							<decimal value="3" />
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+
+		<!-- Advanced Settings -->
+		<policy name="AssignPrivilegesAtLogin " class="Machine" displayName="$(string.AssignPrivilegesAtLogin)" explainText="$(string.AssignPrivilegesAtLogin_help)" key="Software\Policies\NoLightPeople\Access Director" valueName="ElevateAtLogin">
+			<parentCategory ref="AccessDirectorAdvancedCategory" />
+			<supportedOn ref="windows:SUPPORTED_Windows7" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		<policy name="VerboseLogging" class="Machine" displayName="$(string.VerboseLogging)" explainText="$(string.VerboseLogging_help)" key="Software\Policies\NoLightPeople\Access Director" valueName="VerboseLogging">
+			<parentCategory ref="AccessDirectorAdvancedCategory" />
+			<supportedOn ref="windows:SUPPORTED_Windows7" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		<policy name="Resuscitate" class="Machine" displayName="$(string.Resuscitate)" explainText="$(string.Resuscitate_help)" presentation="$(presentation.ResuscitatePrompt)" key="Software\Policies\NoLightPeople\Access Director">
+			<parentCategory ref="AccessDirectorAdvancedCategory" />
+			<supportedOn ref="windows:SUPPORTED_Windows7" />
+			<elements>
+				<enum id="ResuscitatePrompt" valueName="Resuscitate" required="true">
+					<item displayName="$(string.ResuscitateLevel1)">
+						<value>
+							<decimal value="1" />
+						</value>
+					</item>
+					<item displayName="$(string.ResuscitateLevel2)">
+						<value>
+							<decimal value="2" />
+						</value>
+					</item>
+					<item displayName="$(string.ResuscitateLevel3)">
+						<value>
+							<decimal value="3" />
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+		<policy name="UserConfig" class="Machine" displayName="$(string.UserConfig)" explainText="$(string.UserConfig_help)" presentation="$(presentation.UserConfigPrompt)" key="Software\Policies\NoLightPeople\Access Director">
+			<parentCategory ref="AccessDirectorAdvancedCategory" />
+			<supportedOn ref="windows:SUPPORTED_Windows7" />
+			<elements>
+				<enum id="UserConfigPrompt" valueName="UserConfig" required="true">
+					<item displayName="$(string.UserConfigLevel1)">
+						<value>
+							<decimal value="1" />
+						</value>
+					</item>
+					<item displayName="$(string.UserConfigLevel2)">
+						<value>
+							<decimal value="2" />
+						</value>
+					</item>
+					<item displayName="$(string.UserConfigLevel3)">
+						<value>
+							<decimal value="3" />
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+		<!--	
+		<policy name="AccessPeriod" class="Machine" displayName="$(string.AccessPeriod)" explainText="$(string.AccessPeriod_help)" presentation="$(presentation.AccessPeriodPrompt)" key="Software\Policies\NoLightPeople\Access Director">
+			<parentCategory ref="AccessDirectorAdvancedCategory" />
+			<supportedOn ref="windows:SUPPORTED_Windows7" />
+			<elements>
+				<decimal id="AccessPeriodPrompt" minValue="60" maxValue="3600" valueName="AccessPeriod" required="true" />
+			</elements>
+		</policy>
+		-->
+
+		<!-- Audit Settings -->
+		<policy name="Audit" class="Machine" displayName="$(string.Audit)" explainText="$(string.Audit_help)" key="Software\Policies\NoLightPeople\Access Director" valueName="Audit">
+			<parentCategory ref="AccessDirectorAuditCategory" />
+			<supportedOn ref="windows:SUPPORTED_Windows7" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>		
+		<policy name="AuditRFE" class="Machine" displayName="$(string.AuditRFE)" explainText="$(string.AuditRFE_help)" key="Software\Policies\NoLightPeople\Access Director" valueName="AuditRFE">
+			<parentCategory ref="AccessDirectorAuditCategory" />
+			<supportedOn ref="windows:SUPPORTED_Windows7" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>	
+		<policy name="AuditURL" class="Machine" displayName="$(string.AuditURL)" explainText="$(string.AuditURL_help)" presentation="$(presentation.AuditURLPrompt)" key="Software\Policies\NoLightPeople\Access Director">
+			<parentCategory ref="AccessDirectorAuditCategory" />
+			<supportedOn ref="windows:SUPPORTED_Windows7" />
+			<elements>
+				<text id="AuditURLPrompt" valueName="AuditURL" required="true" />
+			</elements>
+		</policy>
+		<policy name="AuditRefresh" class="Machine" displayName="$(string.AuditRefresh)" explainText="$(string.AuditRefresh_help)" presentation="$(presentation.AuditRefreshPrompt)" key="Software\Policies\NoLightPeople\Access Director">
+			<parentCategory ref="AccessDirectorAuditCategory" />
+			<supportedOn ref="windows:SUPPORTED_Windows7" />
+			<elements>
+				<decimal id="AuditRefreshPrompt" minValue="60" maxValue="3600" valueName="AuditRefresh" required="true" />
+			</elements>
+		</policy>
+
+		<!-- Connector Settings -->
+		<policy name="Connector" class="Machine" displayName="$(string.Connector)" explainText="$(string.Connector_help)" key="Software\Policies\NoLightPeople\Access Director" valueName="Connector">
+			<parentCategory ref="AccessDirectorConnectorCategory" />
+			<supportedOn ref="windows:SUPPORTED_Windows7" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>		
+		<policy name="ConnectorURL" class="Machine" displayName="$(string.ConnectorURL)" explainText="$(string.ConnectorURL_help)" presentation="$(presentation.ConnectorURLPrompt)" key="Software\Policies\NoLightPeople\Access Director">
+			<parentCategory ref="AccessDirectorConnectorCategory" />
+			<supportedOn ref="windows:SUPPORTED_Windows7" />
+			<elements>
+				<text id="ConnectorURLPrompt" valueName="ConnectorURL" required="true" />
+			</elements>
+		</policy>
+		<policy name="ConnecterRefresh" class="Machine" displayName="$(string.ConnecterRefresh)" explainText="$(string.ConnecterRefresh_help)" presentation="$(presentation.ConnecterRefreshPrompt)" key="Software\Policies\NoLightPeople\Access Director">
+			<parentCategory ref="AccessDirectorConnectorCategory" />
+			<supportedOn ref="windows:SUPPORTED_Windows7" />
+			<elements>
+				<decimal id="ConnecterRefreshPrompt" minValue="60" maxValue="3600" valueName="ConnecterRefresh" required="true" />
+			</elements>
+		</policy>
+    <policy name="ConnecterRefreshInterval" class="Machine" displayName="$(string.ConnecterRefreshInterval)" explainText="$(string.ConnecterRefreshInterval_help)" presentation="$(presentation.ConnecterRefreshIntervalPrompt)" key="Software\Policies\NoLightPeople\Access Director">
+      <parentCategory ref="AccessDirectorConnectorCategory" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="ConnecterRefreshIntervalPrompt" valueName="ConnecterRefreshInterval" required="true">
+          <item displayName="$(string.ConnecterRefreshIntervalT-01)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ConnecterRefreshIntervalT-02)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.ConnecterRefreshIntervalT-03)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.ConnecterRefreshIntervalT-04)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.ConnecterRefreshIntervalT-05)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+          <item displayName="$(string.ConnecterRefreshIntervalT-06)">
+            <value>
+              <decimal value="6" />
+            </value>
+          </item>
+          <item displayName="$(string.ConnecterRefreshIntervalT-07)">
+            <value>
+              <decimal value="7" />
+            </value>
+          </item>
+          <item displayName="$(string.ConnecterRefreshIntervalT-14)">
+            <value>
+              <decimal value="14" />
+            </value>
+          </item>         
+        </enum>
+      </elements>
+    </policy>
+    
+		<!-- Localization Settings -->
+		<policy name="PreferredUIReference" class="Machine" displayName="$(string.PreferredUIReference)" explainText="$(string.PreferredUIReference_help)" presentation="$(presentation.PreferredUIReferencePrompt)" key="Software\Policies\NoLightPeople\Access Director">
+			<parentCategory ref="AccessDirectorLocalizationCategory" />
+			<supportedOn ref="windows:SUPPORTED_Windows7" />
+			<elements>
+				<enum id="PreferredUIReferencePrompt" valueName="PreferredUIReference" required="true">
+					<item displayName="$(string.UIRef01)">
+						<value>
+							<string>1</string>
+						</value>
+					</item>
+					<item displayName="$(string.UIRef02)">
+						<value>
+							<string>2</string>
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+		<policy name="PreferredUILanguage" class="Machine" displayName="$(string.PreferredUILanguage)" explainText="$(string.PreferredUILanguage_help)" presentation="$(presentation.PreferredUILanguagePrompt)" key="Software\Policies\NoLightPeople\Access Director">
+			<parentCategory ref="AccessDirectorLocalizationCategory" />
+			<supportedOn ref="windows:SUPPORTED_Windows7" />
+			<elements>
+				<enum id="PreferredUILanguagePrompt" valueName="PreferredUILanguage" required="true">
+					<item displayName="$(string.UILang01)">
+						<value>
+							<string>en-US</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang02)">
+						<value>
+							<string>ja-JP</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang03)">
+						<value>
+							<string>ko-KR</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang04)">
+						<value>
+							<string>de-DE</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang05)">
+						<value>
+							<string>zh-CN</string>
+						</value>
+					</item>
+				  <!--
+					<item displayName="$(string.UILang06)">
+						<value>
+							<string>CN</string>
+						</value>
+					</item>
+				  -->
+					<item displayName="$(string.UILang07)">
+						<value>
+							<string>fr-FR</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang08)">
+						<value>
+							<string>es-ES</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang09)">
+						<value>
+							<string>it-IT</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang10)">
+						<value>
+							<string>sv-SE</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang11)">
+						<value>
+							<string>nl-NL</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang12)">
+						<value>
+							<string>pt-BR</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang13)">
+						<value>
+							<string>fi-FI</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang14)">
+						<value>
+							<string>nb-NO</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang15)">
+						<value>
+							<string>da-DK</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang16)">
+						<value>
+							<string>hu-HU</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang17)">
+						<value>
+							<string>pl-PL</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang18)">
+						<value>
+							<string>ru-RU</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang19)">
+						<value>
+							<string>cs-CZ</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang20)">
+						<value>
+							<string>el-GR</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang21)">
+						<value>
+							<string>pt-PT</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang22)">
+						<value>
+							<string>tr-TR</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang23)">
+						<value>
+							<string>ar-SA</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang24)">
+						<value>
+							<string>he-IL</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang25)">
+						<value>
+							<string>sk-SK</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang26)">
+						<value>
+							<string>sl-SI</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang27)">
+						<value>
+							<string>ro-RO</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang28)">
+						<value>
+							<string>hr-HR</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang29)">
+						<value>
+							<string>bg-BG</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang30)">
+						<value>
+							<string>et-EE</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang31)">
+						<value>
+							<string>lt-LT</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang32)">
+						<value>
+							<string>lv-LV</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang33)">
+						<value>
+							<string>th-TH</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang34)">
+						<value>
+							<string>zh-HK</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang35)">
+						<value>
+							<string>zh-TW</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang36)">
+						<value>
+							<string>sr-Latn-CS</string>
+						</value>
+					</item>
+					<item displayName="$(string.UILang37)">
+						<value>
+							<string>uk-UA</string>
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+
+	</policies>
+</policyDefinitions>

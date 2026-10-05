@@ -1,0 +1,3490 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2023 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="login" namespace="BaseALT.Policies.Login1" />
+    <using prefix="system" namespace="BaseALT.Policies.System" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <policies>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-attach-device)"
+        explainText="$(string.org-freedesktop-login1-attach-device_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.attach-device"
+        valuename="org.freedesktop.login1.attach-device"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.attach-device" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.attach-device">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-attach-device)"
+        explainText="$(string.org-freedesktop-login1-attach-device-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.attach-device-user"
+        valuename="org.freedesktop.login1.attach-device"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.attach-device" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-chvt)"
+        explainText="$(string.org-freedesktop-login1-chvt_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.chvt"
+        valuename="org.freedesktop.login1.chvt"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.chvt" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.chvt">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-chvt)"
+        explainText="$(string.org-freedesktop-login1-chvt-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.chvt-user"
+        valuename="org.freedesktop.login1.chvt"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.chvt" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-flush-devices)"
+        explainText="$(string.org-freedesktop-login1-flush-devices_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.flush-devices"
+        valuename="org.freedesktop.login1.flush-devices"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.flush-devices" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.flush-devices">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-flush-devices)"
+        explainText="$(string.org-freedesktop-login1-flush-devices-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.flush-devices-user"
+        valuename="org.freedesktop.login1.flush-devices"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.flush-devices" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-halt)"
+        explainText="$(string.org-freedesktop-login1-halt_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.halt"
+        valuename="org.freedesktop.login1.halt"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.halt" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.halt">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-halt)"
+        explainText="$(string.org-freedesktop-login1-halt-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.halt-user"
+        valuename="org.freedesktop.login1.halt"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.halt" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-halt-ignore-inhibit)"
+        explainText="$(string.org-freedesktop-login1-halt-ignore-inhibit_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.halt-ignore-inhibit"
+        valuename="org.freedesktop.login1.halt-ignore-inhibit"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.halt-ignore-inhibit" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.halt-ignore-inhibit">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-halt-ignore-inhibit)"
+        explainText="$(string.org-freedesktop-login1-halt-ignore-inhibit-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.halt-ignore-inhibit-user"
+        valuename="org.freedesktop.login1.halt-ignore-inhibit"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.halt-ignore-inhibit" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-halt-multiple-sessions)"
+        explainText="$(string.org-freedesktop-login1-halt-multiple-sessions_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.halt-multiple-sessions"
+        valuename="org.freedesktop.login1.halt-multiple-sessions"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.halt-multiple-sessions" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.halt-multiple-sessions">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-halt-multiple-sessions)"
+        explainText="$(string.org-freedesktop-login1-halt-multiple-sessions-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.halt-multiple-sessions-user"
+        valuename="org.freedesktop.login1.halt-multiple-sessions"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.halt-multiple-sessions" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-hibernate)"
+        explainText="$(string.org-freedesktop-login1-hibernate_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.hibernate"
+        valuename="org.freedesktop.login1.hibernate"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.hibernate" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.hibernate">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-hibernate)"
+        explainText="$(string.org-freedesktop-login1-hibernate-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.hibernate-user"
+        valuename="org.freedesktop.login1.hibernate"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.hibernate" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-hibernate-ignore-inhibit)"
+        explainText="$(string.org-freedesktop-login1-hibernate-ignore-inhibit_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.hibernate-ignore-inhibit"
+        valuename="org.freedesktop.login1.hibernate-ignore-inhibit"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.hibernate-ignore-inhibit" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.hibernate-ignore-inhibit">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-hibernate-ignore-inhibit)"
+        explainText="$(string.org-freedesktop-login1-hibernate-ignore-inhibit-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.hibernate-ignore-inhibit-user"
+        valuename="org.freedesktop.login1.hibernate-ignore-inhibit"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.hibernate-ignore-inhibit" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-hibernate-multiple-sessions)"
+        explainText="$(string.org-freedesktop-login1-hibernate-multiple-sessions_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.hibernate-multiple-sessions"
+        valuename="org.freedesktop.login1.hibernate-multiple-sessions"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.hibernate-multiple-sessions" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.hibernate-multiple-sessions">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-hibernate-multiple-sessions)"
+        explainText="$(string.org-freedesktop-login1-hibernate-multiple-sessions-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.hibernate-multiple-sessions-user"
+        valuename="org.freedesktop.login1.hibernate-multiple-sessions"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.hibernate-multiple-sessions" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-inhibit-block-idle)"
+        explainText="$(string.org-freedesktop-login1-inhibit-block-idle_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.inhibit-block-idle"
+        valuename="org.freedesktop.login1.inhibit-block-idle"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.inhibit-block-idle" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.inhibit-block-idle">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-inhibit-block-idle)"
+        explainText="$(string.org-freedesktop-login1-inhibit-block-idle-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.inhibit-block-idle-user"
+        valuename="org.freedesktop.login1.inhibit-block-idle"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.inhibit-block-idle" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-inhibit-block-shutdown)"
+        explainText="$(string.org-freedesktop-login1-inhibit-block-shutdown_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.inhibit-block-shutdown"
+        valuename="org.freedesktop.login1.inhibit-block-shutdown"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.inhibit-block-shutdown" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.inhibit-block-shutdown">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-inhibit-block-shutdown)"
+        explainText="$(string.org-freedesktop-login1-inhibit-block-shutdown-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.inhibit-block-shutdown-user"
+        valuename="org.freedesktop.login1.inhibit-block-shutdown"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.inhibit-block-shutdown" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-inhibit-block-sleep)"
+        explainText="$(string.org-freedesktop-login1-inhibit-block-sleep_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.inhibit-block-sleep"
+        valuename="org.freedesktop.login1.inhibit-block-sleep"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.inhibit-block-sleep" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.inhibit-block-sleep">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-inhibit-block-sleep)"
+        explainText="$(string.org-freedesktop-login1-inhibit-block-sleep-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.inhibit-block-sleep-user"
+        valuename="org.freedesktop.login1.inhibit-block-sleep"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.inhibit-block-sleep" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-inhibit-delay-shutdown)"
+        explainText="$(string.org-freedesktop-login1-inhibit-delay-shutdown_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.inhibit-delay-shutdown"
+        valuename="org.freedesktop.login1.inhibit-delay-shutdown"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.inhibit-delay-shutdown" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.inhibit-delay-shutdown">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-inhibit-delay-shutdown)"
+        explainText="$(string.org-freedesktop-login1-inhibit-delay-shutdown-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.inhibit-delay-shutdown-user"
+        valuename="org.freedesktop.login1.inhibit-delay-shutdown"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.inhibit-delay-shutdown" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-inhibit-delay-sleep)"
+        explainText="$(string.org-freedesktop-login1-inhibit-delay-sleep_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.inhibit-delay-sleep"
+        valuename="org.freedesktop.login1.inhibit-delay-sleep"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.inhibit-delay-sleep" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.inhibit-delay-sleep">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-inhibit-delay-sleep)"
+        explainText="$(string.org-freedesktop-login1-inhibit-delay-sleep-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.inhibit-delay-sleep-user"
+        valuename="org.freedesktop.login1.inhibit-delay-sleep"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.inhibit-delay-sleep" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-inhibit-handle-hibernate-key)"
+        explainText="$(string.org-freedesktop-login1-inhibit-handle-hibernate-key_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.inhibit-handle-hibernate-key"
+        valuename="org.freedesktop.login1.inhibit-handle-hibernate-key"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.inhibit-handle-hibernate-key" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="inhibit-handle-hibernate-key">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-inhibit-handle-hibernate-key)"
+        explainText="$(string.org-freedesktop-login1-inhibit-handle-hibernate-key-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org-freedesktop-login1-inhibit-handle-hibernate-key-user"
+        valuename="org.freedesktop.login1.inhibit-handle-hibernate-key"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.inhibit-handle-hibernate-key" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-inhibit-handle-lid-switch)"
+        explainText="$(string.org-freedesktop-login1-inhibit-handle-lid-switch_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.inhibit-handle-lid-switch"
+        valuename="org.freedesktop.login1.inhibit-handle-lid-switch"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.inhibit-handle-lid-switch" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.inhibit-handle-lid-switch">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-inhibit-handle-lid-switch)"
+        explainText="$(string.org-freedesktop-login1-inhibit-handle-lid-switch-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.inhibit-handle-lid-switch-user"
+        valuename="org.freedesktop.login1.inhibit-handle-lid-switch"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.inhibit-handle-lid-switch" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-inhibit-handle-power-key)"
+        explainText="$(string.org-freedesktop-login1-inhibit-handle-power-key_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.inhibit-handle-power-key"
+        valuename="org.freedesktop.login1.inhibit-handle-power-key"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.inhibit-handle-power-key" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.inhibit-handle-power-key">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-inhibit-handle-power-key)"
+        explainText="$(string.org-freedesktop-login1-inhibit-handle-power-key-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.inhibit-handle-power-key-user"
+        valuename="org.freedesktop.login1.inhibit-handle-power-key"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.inhibit-handle-power-key" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-inhibit-handle-reboot-key)"
+        explainText="$(string.org-freedesktop-login1-inhibit-handle-reboot-key_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.inhibit-handle-reboot-key"
+        valuename="org.freedesktop.login1.inhibit-handle-reboot-key"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.inhibit-handle-reboot-key" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.inhibit-handle-reboot-key">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-inhibit-handle-reboot-key)"
+        explainText="$(string.org-freedesktop-login1-inhibit-handle-reboot-key-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.inhibit-handle-reboot-key-user"
+        valuename="org.freedesktop.login1.inhibit-handle-reboot-key"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.inhibit-handle-reboot-key" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-inhibit-handle-suspend-key)"
+        explainText="$(string.org-freedesktop-login1-inhibit-handle-suspend-key_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.inhibit-handle-suspend-key"
+        valuename="org.freedesktop.login1.inhibit-handle-suspend-key"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.inhibit-handle-suspend-key" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.inhibit-handle-suspend-key">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-inhibit-handle-suspend-key)"
+        explainText="$(string.org-freedesktop-login1-inhibit-handle-suspend-key-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.inhibit-handle-suspend-key-user"
+        valuename="org.freedesktop.login1.inhibit-handle-suspend-key"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.inhibit-handle-suspend-key" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-lock-sessions)"
+        explainText="$(string.org-freedesktop-login1-lock-sessions_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.lock-sessions"
+        valuename="org.freedesktop.login1.lock-sessions"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.lock-sessions" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.lock-sessions">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-lock-sessions)"
+        explainText="$(string.org-freedesktop-login1-lock-sessions-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.lock-sessions-user"
+        valuename="org.freedesktop.login1.lock-sessions"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.lock-sessions" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-manage)"
+        explainText="$(string.org-freedesktop-login1-manage_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.manage"
+        valuename="org.freedesktop.login1.manage"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.manage" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.manage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-manage)"
+        explainText="$(string.org-freedesktop-login1-manage-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.manage-user"
+        valuename="org.freedesktop.login1.manage"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.manage" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-power-off)"
+        explainText="$(string.org-freedesktop-login1-power-off_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.power-off"
+        valuename="org.freedesktop.login1.power-off"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.power-off" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.power-off">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-power-off)"
+        explainText="$(string.org-freedesktop-login1-power-off-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.power-off-user"
+        valuename="org.freedesktop.login1.power-off"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.power-off" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-power-off-ignore-inhibit)"
+        explainText="$(string.org-freedesktop-login1-power-off-ignore-inhibit_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.power-off-ignore-inhibit"
+        valuename="org.freedesktop.login1.power-off-ignore-inhibit"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.power-off-ignore-inhibit" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.power-off-ignore-inhibit">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-power-off-ignore-inhibit)"
+        explainText="$(string.org-freedesktop-login1-power-off-ignore-inhibit-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.power-off-ignore-inhibit-user"
+        valuename="org.freedesktop.login1.power-off-ignore-inhibit"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.power-off-ignore-inhibit" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-power-off-multiple-sessions)"
+        explainText="$(string.org-freedesktop-login1-power-off-multiple-sessions_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.power-off-multiple-sessions"
+        valuename="org.freedesktop.login1.power-off-multiple-sessions"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.power-off-multiple-sessions" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.power-off-multiple-sessions">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-power-off-multiple-sessions)"
+        explainText="$(string.org-freedesktop-login1-power-off-multiple-sessions-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.power-off-multiple-sessions-user"
+        valuename="org.freedesktop.login1.power-off-multiple-sessions"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.power-off-multiple-sessions" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-reboot)"
+        explainText="$(string.org-freedesktop-login1-reboot_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.reboot"
+        valuename="org.freedesktop.login1.reboot"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.reboot" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.reboot">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-reboot)"
+        explainText="$(string.org-freedesktop-login1-reboot-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.reboot-user"
+        valuename="org.freedesktop.login1.reboot"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.reboot" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-reboot-ignore-inhibit)"
+        explainText="$(string.org-freedesktop-login1-reboot-ignore-inhibit_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.reboot-ignore-inhibit"
+        valuename="org.freedesktop.login1.reboot-ignore-inhibit"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.reboot-ignore-inhibit" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.reboot-ignore-inhibit">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-reboot-ignore-inhibit)"
+        explainText="$(string.org-freedesktop-login1-reboot-ignore-inhibit-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.reboot-ignore-inhibit-user"
+        valuename="org.freedesktop.login1.reboot-ignore-inhibit"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.reboot-ignore-inhibit" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-reboot-multiple-sessions)"
+        explainText="$(string.org-freedesktop-login1-reboot-multiple-sessions_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.reboot-multiple-sessions"
+        valuename="org.freedesktop.login1.reboot-multiple-sessions"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.reboot-multiple-sessions" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.reboot-multiple-sessions">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-reboot-multiple-sessions)"
+        explainText="$(string.org-freedesktop-login1-reboot-multiple-sessions-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.reboot-multiple-sessions-user"
+        valuename="org.freedesktop.login1.reboot-multiple-sessions"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.reboot-multiple-sessions" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-set-reboot-parameter)"
+        explainText="$(string.org-freedesktop-login1-set-reboot-parameter_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.set-reboot-parameter"
+        valuename="org.freedesktop.login1.set-reboot-parameter"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.set-reboot-parameter" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.set-reboot-parameter">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-set-reboot-parameter)"
+        explainText="$(string.org-freedesktop-login1-set-reboot-parameter-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.set-reboot-parameter-user"
+        valuename="org.freedesktop.login1.set-reboot-parameter"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.set-reboot-parameter" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-set-reboot-to-boot-loader-entry)"
+        explainText="$(string.org-freedesktop-login1-set-reboot-to-boot-loader-entry_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.set-reboot-to-boot-loader-entry"
+        valuename="org.freedesktop.login1.set-reboot-to-boot-loader-entry"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.set-reboot-to-boot-loader-entry" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.set-reboot-to-boot-loader-entry">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-set-reboot-to-boot-loader-entry)"
+        explainText="$(string.org-freedesktop-login1-set-reboot-to-boot-loader-entry-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.set-reboot-to-boot-loader-entry-user"
+        valuename="org.freedesktop.login1.set-reboot-to-boot-loader-entry"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.set-reboot-to-boot-loader-entry" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-set-reboot-to-boot-loader-menu)"
+        explainText="$(string.org-freedesktop-login1-set-reboot-to-boot-loader-menu_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.set-reboot-to-boot-loader-menu"
+        valuename="org.freedesktop.login1.set-reboot-to-boot-loader-menu"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.set-reboot-to-boot-loader-menu" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.set-reboot-to-boot-loader-menu">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-set-reboot-to-boot-loader-menu)"
+        explainText="$(string.org-freedesktop-login1-set-reboot-to-boot-loader-menu-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.set-reboot-to-boot-loader-menu-user"
+        valuename="org.freedesktop.login1.set-reboot-to-boot-loader-menu"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.set-reboot-to-boot-loader-menu" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-set-reboot-to-firmware-setup)"
+        explainText="$(string.org-freedesktop-login1-set-reboot-to-firmware-setup_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.set-reboot-to-firmware-setup"
+        valuename="org.freedesktop.login1.set-reboot-to-firmware-setup"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.set-reboot-to-firmware-setup" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.set-reboot-to-firmware-setup">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-set-reboot-to-firmware-setup)"
+        explainText="$(string.org-freedesktop-login1-set-reboot-to-firmware-setup-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.set-reboot-to-firmware-setup-user"
+        valuename="org.freedesktop.login1.set-reboot-to-firmware-setup"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.set-reboot-to-firmware-setup" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-set-self-linger)"
+        explainText="$(string.org-freedesktop-login1-set-self-linger_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.set-self-linger"
+        valuename="org.freedesktop.login1.set-self-linger"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.set-self-linger" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.set-self-linger">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-set-self-linger)"
+        explainText="$(string.org-freedesktop-login1-set-self-linger-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.set-self-linger-user"
+        valuename="org.freedesktop.login1.set-self-linger"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.set-self-linger" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-set-user-linger)"
+        explainText="$(string.org-freedesktop-login1-set-user-linger_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.set-user-linger"
+        valuename="org.freedesktop.login1.set-user-linger"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.set-user-linger" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.set-user-linger">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-set-user-linger)"
+        explainText="$(string.org-freedesktop-login1-set-user-linger-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.set-user-linger-user"
+        valuename="org.freedesktop.login1.set-user-linger"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.set-user-linger" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-set-wall-message)"
+        explainText="$(string.org-freedesktop-login1-set-wall-message_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.set-wall-message"
+        valuename="org.freedesktop.login1.set-wall-message"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.set-wall-message" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.set-wall-message">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-set-wall-message)"
+        explainText="$(string.org-freedesktop-login1-set-wall-message-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.set-wall-message-user"
+        valuename="org.freedesktop.login1.set-wall-message"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.set-wall-message" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-suspend)"
+        explainText="$(string.org-freedesktop-login1-suspend_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.suspend"
+        valuename="org.freedesktop.login1.suspend"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.suspend" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.suspend">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-suspend)"
+        explainText="$(string.org-freedesktop-login1-suspend-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.suspend-user"
+        valuename="org.freedesktop.login1.suspend"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.suspend" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-suspend-ignore-inhibit)"
+        explainText="$(string.org-freedesktop-login1-suspend-ignore-inhibit_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.suspend-ignore-inhibit"
+        valuename="org.freedesktop.login1.suspend-ignore-inhibit"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.suspend-ignore-inhibit" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.suspend-ignore-inhibit">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-suspend-ignore-inhibit)"
+        explainText="$(string.org-freedesktop-login1-suspend-ignore-inhibit-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.suspend-ignore-inhibit-user"
+        valuename="org.freedesktop.login1.suspend-ignore-inhibit"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.suspend-ignore-inhibit" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-login1-suspend-multiple-sessions)"
+        explainText="$(string.org-freedesktop-login1-suspend-multiple-sessions_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.suspend-multiple-sessions"
+        valuename="org.freedesktop.login1.suspend-multiple-sessions"
+        presentation="$(presentation.org-freedesktop-Login1-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.suspend-multiple-sessions" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopLogin_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.login1.suspend-multiple-sessions">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-login1-suspend-multiple-sessions)"
+        explainText="$(string.org-freedesktop-login1-suspend-multiple-sessions-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.login1.suspend-multiple-sessions-user"
+        valuename="org.freedesktop.login1.suspend-multiple-sessions"
+        presentation="$(presentation.org-freedesktop-Login1-user-pr)">
+      <parentCategory ref="system:ALT_LoginPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopLogin_setter" valueName="org.freedesktop.login1.suspend-multiple-sessions" required="true">
+          <item displayName="$(string.org-freedesktop-login-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-login-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

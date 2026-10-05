@@ -1,0 +1,149 @@
+<!-- Copyright (c) Dell Inc. 2015. All rights reserved. -->
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+     <target prefix="DellBattery" namespace="Dell.DCPM.Policies.Battery" />
+     <using prefix="Dell" namespace="Dell.DCPM.Policies" />
+	 <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_DCPM" displayName="$(string.SUPPORTED_DCPM)">
+      </definition>
+    </definitions>
+  </supportedOn>
+  <categories>
+	<category name="Battery" displayName="$(string.cname_Battery)">
+      <parentCategory ref="Dell:DCPM" />
+    </category>
+  </categories>
+	
+  <policies>	
+	<policy name="BatterySettings" class="Machine" displayName="$(string.BatterySettings)" explainText="$(string.pol_BatterySettings)" presentation="$(presentation.pol_BatterySettings)" key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="BatterySettingsGroup" >
+      <parentCategory ref="Battery" />
+      <supportedOn ref="SUPPORTED_DCPM" />
+	  <enabledValue>
+        <string>True</string>
+      </enabledValue>
+      <disabledValue>
+        <string>False</string>
+      </disabledValue>
+	  <enabledList>
+        <item key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="BIPolicyVersion">
+          <value>
+            <string>1.0.0</string>
+          </value>
+        </item>        
+      </enabledList>
+      <elements>
+		<boolean id="BIRestrictChargeModeStandard" valueName="BIRestrictChargeModeStandard" required="false">
+			<trueValue>
+				<decimal value="1"/>
+			</trueValue>
+			<falseValue>
+				<decimal value="0"/>
+			</falseValue>
+		</boolean>
+		<boolean id="BIRestrictChargeModeExpress" valueName="BIRestrictChargeModeExpress" required="false">
+			<trueValue>
+				<decimal value="1"/>
+			</trueValue>
+			<falseValue>
+				<decimal value="0"/>
+			</falseValue>
+		</boolean>
+		<boolean id="BIRestrictChargeModeAdaptive" valueName="BIRestrictChargeModeAdaptive" required="false">
+			<trueValue>
+				<decimal value="1"/>
+			</trueValue>
+			<falseValue>
+				<decimal value="0"/>
+			</falseValue>
+		</boolean>
+
+		<boolean id="BIRestrictChargeModeCustom" valueName="BIRestrictChargeModeCustom" required="false">
+			<trueValue>
+				<decimal value="1"/>
+			</trueValue>
+			<falseValue>
+				<decimal value="0"/>
+			</falseValue>
+		</boolean>
+	
+		
+		<boolean id="BIRestrictChargeModePrimarilyAC" valueName="BIRestrictChargeModePrimarilyAC" required="false">
+			<trueValue>
+				<decimal value="1"/>
+			</trueValue>
+			<falseValue>
+				<decimal value="0"/>
+			</falseValue>
+		</boolean>
+
+    
+        <enum id="BIChargeMode"  valueName="BIChargeMode" required="true">
+		 <item displayName="$(string.None)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.StandardChargeMode)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ExpressChargeMode)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.PrimarilyACUseChargeMode)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+		  <item displayName="$(string.AdaptiveChargeMode)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+		  <item displayName="$(string.CustomChargeMode)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+		  <item displayName="$(string.ReadOnly)">
+            <value>
+              <decimal value="6" />
+            </value>
+          </item>
+        </enum>
+		<decimal id="BICustomChargeStartValue" valueName="BICustomChargeStartValue" maxValue="100" />
+	    <decimal id="BICustomChargeStopValue" valueName="BICustomChargeStopValue" maxValue="100" />
+      </elements>
+    </policy>
+  
+    <policy name="OrderBatteryLinkPolicy" class="Machine" displayName="$(string.cname_OrderBatteryLinkPolicy)" explainText="$(string.expl_OrderBatteryLinkPolicy)" presentation="$(presentation.pol_OrderBatteryLinkPolicy)" key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="OrderBatteryLinkGroup" >
+      <parentCategory ref="Battery" />
+      <supportedOn ref="SUPPORTED_DCPM" />
+      <enabledValue>
+        <string>True</string>
+      </enabledValue>
+      <disabledValue>
+        <string>False</string>
+      </disabledValue>
+	  <enabledList>
+        <item key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="BIPolicyVersion">
+          <value>
+            <string>1.0.0</string>
+          </value>
+        </item>         
+      </enabledList>
+      <elements>
+        <text id="OrderBatteryLink" valueName="BIOrderBattery" required="false" />
+      </elements>
+    </policy>
+  
+  </policies>
+</policyDefinitions>
+  

@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target namespace="Google.Policies.Chrome" prefix="chrome"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition displayName="$(string.SUPPORTED_WINXPSP2)" name="SUPPORTED_WINXPSP2"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category displayName="$(string.ecosia)" name="ecosia"/>
+    <category displayName="$(string.googlechrome)" name="googlechrome">
+      <parentCategory ref="ecosia"/>
+    </category>
+    <category displayName="$(string.DefaultSearchProvider_group)" name="DefaultSearchProvider">
+      <parentCategory ref="googlechrome"/>
+    </category>
+  </categories>
+  <policies>
+    <policy class="Both" displayName="$(string.DefaultSearchProviderEnabled)" explainText="$(string.DefaultSearchProviderEnabled_Explain)" key="Software\Policies\Google\Chrome" name="DefaultSearchProviderEnabled" presentation="$(presentation.DefaultSearchProviderEnabled)" valueName="DefaultSearchProviderEnabled">
+      <parentCategory ref="DefaultSearchProvider"/>
+      <supportedOn ref="SUPPORTED_WINXPSP2"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.DefaultSearchProviderName)" explainText="$(string.DefaultSearchProviderName_Explain)" key="Software\Policies\Google\Chrome" name="DefaultSearchProviderName" presentation="$(presentation.DefaultSearchProviderName)">
+      <parentCategory ref="DefaultSearchProvider"/>
+      <supportedOn ref="SUPPORTED_WINXPSP2"/>
+      <elements>
+        <text id="DefaultSearchProviderName" maxLength="1000000" valueName="DefaultSearchProviderName"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.DefaultSearchProviderKeyword)" explainText="$(string.DefaultSearchProviderKeyword_Explain)" key="Software\Policies\Google\Chrome" name="DefaultSearchProviderKeyword" presentation="$(presentation.DefaultSearchProviderKeyword)">
+      <parentCategory ref="DefaultSearchProvider"/>
+      <supportedOn ref="SUPPORTED_WINXPSP2"/>
+      <elements>
+        <text id="DefaultSearchProviderKeyword" maxLength="1000000" valueName="DefaultSearchProviderKeyword"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.DefaultSearchProviderSearchURL)" explainText="$(string.DefaultSearchProviderSearchURL_Explain)" key="Software\Policies\Google\Chrome" name="DefaultSearchProviderSearchURL" presentation="$(presentation.DefaultSearchProviderSearchURL)">
+      <parentCategory ref="DefaultSearchProvider"/>
+      <supportedOn ref="SUPPORTED_WINXPSP2"/>
+      <elements>
+        <text id="DefaultSearchProviderSearchURL" maxLength="1000000" valueName="DefaultSearchProviderSearchURL"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.DefaultSearchProviderSuggestURL)" explainText="$(string.DefaultSearchProviderSuggestURL_Explain)" key="Software\Policies\Google\Chrome" name="DefaultSearchProviderSuggestURL" presentation="$(presentation.DefaultSearchProviderSuggestURL)">
+      <parentCategory ref="DefaultSearchProvider"/>
+      <supportedOn ref="SUPPORTED_WINXPSP2"/>
+      <elements>
+        <text id="DefaultSearchProviderSuggestURL" maxLength="1000000" valueName="DefaultSearchProviderSuggestURL"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.DefaultSearchProviderIconURL)" explainText="$(string.DefaultSearchProviderIconURL_Explain)" key="Software\Policies\Google\Chrome" name="DefaultSearchProviderIconURL" presentation="$(presentation.DefaultSearchProviderIconURL)">
+      <parentCategory ref="DefaultSearchProvider"/>
+      <supportedOn ref="SUPPORTED_WINXPSP2"/>
+      <elements>
+        <text id="DefaultSearchProviderIconURL" maxLength="1000000" valueName="DefaultSearchProviderIconURL"/>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

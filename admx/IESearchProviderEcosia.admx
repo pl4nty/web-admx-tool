@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="11.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target namespace="Ecosia.Policies.Ecosia.InternetExplorer" prefix="ie" />
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="11.0" />
+  <supportedOn>
+    <definitions>
+      <!--At least Internet Explorer 7.0-->
+      <definition name="SUPPORTED_IE7" displayName="$(string.SUPPORTED_IE7)">
+        <or>
+          <range ref="products:InternetExplorer" minVersionIndex="7"/>
+        </or>
+      </definition>
+    </definitions>
+  </supportedOn>
+
+  <categories>
+    <category displayName="$(string.Ecosia)" name="ecosia"/>
+    <category displayName="$(string.InternetExplorer)" name="InternetExplorer">
+      <parentCategory ref="ecosia"/>
+    </category>
+  </categories>
+  <policies>
+    <policy name="AddSearchProvider" class="Both" displayName="$(string.AddSearchProvider)" explainText="$(string.IE_ExplainAddSearchProvider)" key="Software\Policies\Microsoft\Internet Explorer\Infodelivery\Restrictions" valueName="AddPolicySearchProviders">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="NoSearchProvider" class="Both" displayName="$(string.NoSearchProvider)" explainText="$(string.IE_ExplainNoSearchProvider)" key="Software\Policies\Microsoft\Internet Explorer\Infodelivery\Restrictions" valueName="NoChangeDefaultSearchProvider">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SpecificSearchProvider" class="Both" displayName="$(string.SpecificSearchProvider)" explainText="$(string.IE_ExplainSpecificSearchProvider)" key="Software\Policies\Microsoft\Internet Explorer\Infodelivery\Restrictions" valueName="UsePolicySearchProvidersOnly">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="PopulateSearchProviderList" class="Both" displayName="$(string.PopulateSearchProviderList)" explainText="$(string.IE_Explain_PopulateSearchProviderList)"  key="Software\Policies\Microsoft\Internet Explorer\SearchScopes">
+      <parentCategory ref="InternetExplorer" />
+			<supportedOn ref="SUPPORTED_IE7"/>
+      <enabledList>
+        <item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes" valueName="Version">
+            <value>
+                <decimal value="3" />
+            </value>
+        </item>
+        <item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{1D3E32CF-5E42-49D6-B5E5-7F361D6342A4}" valueName="DisplayName">
+            <value>
+                <string>Ecosia</string>
+            </value>
+        </item>
+        <item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{1D3E32CF-5E42-49D6-B5E5-7F361D6342A4}" valueName="URL">
+            <value>
+                <string>https://www.ecosia.org/search?q={searchTerms}&amp;addon=iegpo&amp;tt=gpotest</string>
+            </value>
+        </item>
+        <item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{1D3E32CF-5E42-49D6-B5E5-7F361D6342A4}" valueName="SuggestionsURL">
+            <value>
+                <string>http://api.bing.com/qsml.aspx?query={searchTerms}&amp;maxwidth={ie:maxWidth}&amp;rowheight={ie:rowHeight}&amp;sectionHeight={ie:sectionHeight}&amp;market={language}</string>
+            </value>
+        </item>
+        <item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{1D3E32CF-5E42-49D6-B5E5-7F361D6342A4}" valueName="FaviconURL">
+            <value>
+                <string>https://cdn.ecosia.org/assets/images/ico/favicon.ico</string>
+            </value>
+        </item>
+      </enabledList>
+      </policy>
+  </policies>
+</policyDefinitions>

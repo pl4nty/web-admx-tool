@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Version 7.15.0 -->
+<policyDefinitions revision="501.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="licensing" namespace="RealVNC.Policies.viewer_licensing" />
+    <using prefix="realvnc" namespace="RealVNC.Policies.realvnc" />
+  </policyNamespaces>
+  <resources minRequiredRevision="501.0" />
+  <categories>
+    <category name="Licensing" displayName="$(string.RealVNC_licensing_category)" explainText="$(string.RealVNC_licensing_category_help)">
+      <parentCategory ref="realvnc:RealVNC" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="RealVNC_vncviewer_license" class="User" displayName="$(string.RealVNC_vncviewer_license)" explainText="$(string.RealVNC_vncviewer_license_help)" presentation="$(presentation.RealVNC_vncviewer_license)" key="Software\Policies\RealVNC\licenses\vncviewer">
+      <parentCategory ref="Licensing" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <elements>
+        <text id="Value" valueName="vnc.lic" maxLength="10240"/>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

@@ -1,0 +1,729 @@
+<!-- Copyright (c) Dell Inc. 2015. All rights reserved. -->
+ <policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="DellPeakshift" namespace="Dell.DCPM.Policies.PeakShift" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+    <using prefix="Dell" namespace="Dell.DCPM.Policies" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_DCPM" displayName="$(string.SUPPORTED_DCPM)">
+      </definition>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="PeakShift" displayName="$(string.PeakShift)">
+      <parentCategory ref="Dell:DCPM" />
+    </category>	
+	<category name="ConfigureDay" displayName="$(string.ConfigDaySettings)">
+      <parentCategory ref="PeakShift" />
+    </category>
+  </categories>
+  <policies>
+	<policy name="PSFeatureEnablement" class="Machine" displayName="$(string.PSFeatureEnablement)" explainText="$(string.expl_PSFeatureEnablement)" presentation="$(presentation.expl_PSFeatureEnablement)" key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="PSFeatureEnablementGroup" >
+		<parentCategory ref="PeakShift" />
+		<supportedOn ref="SUPPORTED_DCPM" />
+		<enabledValue>
+        <string>True</string>
+      </enabledValue>
+        <disabledValue>
+        <string>False</string>
+      </disabledValue>
+	  <enabledList>
+        <item key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="PSPolicyVersion">
+          <value>
+            <string>1.0.0</string>
+          </value>
+        </item>        
+      </enabledList>
+		<elements>
+		  <enum id="PSFeatureEnablement"  valueName="PSFeatureEnablement" required="false">
+			<item  displayName="$(string.PSFeatureOn)">
+				<value>
+					<decimal value="0" />
+				</value>
+			</item>
+			<item  displayName="$(string.PSFeatureOff)">
+				<value>
+					<decimal value="1" />
+				</value>
+			</item>
+			<item  displayName="$(string.PSFeatureRemove)">
+				<value>
+					<decimal value="2" />
+				</value>
+			</item>
+			
+		</enum>
+	  </elements>
+    </policy>
+
+    <policy name="Monday" class="Machine" displayName="$(string.Monday)" explainText="$(string.expl_DayMon)" presentation="$(presentation.expl_DayMon)" key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="PSMonGroup" >
+      <parentCategory ref="ConfigureDay" />
+      <supportedOn ref="SUPPORTED_DCPM" />
+	  <enabledValue>
+        <string>True</string>
+      </enabledValue>
+      <disabledValue>
+        <string>False</string>
+      </disabledValue>
+	  <enabledList>
+        <item key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="PSPolicyVersion">
+          <value>
+            <string>1.0.0</string>
+          </value>
+        </item>         
+      </enabledList>
+      <elements>
+       <decimal id="PSMondayOnBatteryHour" valueName="PSMondayOnBatteryHour" required="true" maxValue="23"/>
+	   <enum id="PSMondayOnBatteryMin"  valueName="PSMondayOnBatteryMin" required="true">
+          <item displayName="$(string.MinZero)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MinFifteen)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MinThirty)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+		  <item displayName="$(string.MinFortyFive)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      
+	  <decimal id="PSMondayOnPowerNoChargeHour" valueName="PSMondayOnPowerNoChargeHour" required="true" maxValue="23" />
+	   <enum id="PSMondayOnPowerNoChargeMin"  valueName="PSMondayOnPowerNoChargeMin" required="true">
+          <item displayName="$(string.MinZero)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MinFifteen)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MinThirty)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+		  <item displayName="$(string.MinFortyFive)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+
+	   <decimal id="PSMondayOnPowerWithChargeHour" valueName="PSMondayOnPowerWithChargeHour" required="true" maxValue="23" />
+	   <enum id="PSMondayOnPowerWithChargeMin"  valueName="PSMondayOnPowerWithChargeMin" required="true">
+          <item displayName="$(string.MinZero)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MinFifteen)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MinThirty)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+		  <item displayName="$(string.MinFortyFive)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      
+	  </elements>
+    </policy>
+	
+	<policy name="Tuesday" class="Machine" displayName="$(string.Tuesday)" explainText="$(string.expl_DayTue)" presentation="$(presentation.expl_DayTue)" key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="PSTueGroup" >
+      <parentCategory ref="ConfigureDay" />
+      <supportedOn ref="SUPPORTED_DCPM" />
+	  <enabledValue>
+        <string>True</string>
+      </enabledValue>
+      <disabledValue>
+        <string>False</string>
+      </disabledValue>
+	  <enabledList>
+        <item key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="PSPolicyVersion">
+          <value>
+            <string>1.0.0</string>
+          </value>
+        </item>        
+      </enabledList>
+      <elements>
+       <decimal id="PSTuesdayOnBatteryHour" valueName="PSTuesdayOnBatteryHour" required="true" maxValue="23" />
+	   <enum id="PSTuesdayOnBatteryMin"  valueName="PSTuesdayOnBatteryMin" required="true">
+          <item displayName="$(string.MinZero)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MinFifteen)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MinThirty)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+		  <item displayName="$(string.MinFortyFive)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+       <decimal id="PSTuesdayOnPowerNoChargeHour" valueName="PSTuesdayOnPowerNoChargeHour" required="true" maxValue="23" />
+	   <enum id="PSTuesdayOnPowerNoChargeMin"  valueName="PSTuesdayOnPowerNoChargeMin" required="true">
+          <item displayName="$(string.MinZero)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MinFifteen)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MinThirty)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+		  <item displayName="$(string.MinFortyFive)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+
+	   <decimal id="PSTuesdayOnPowerWithChargeHour" valueName="PSTuesdayOnPowerWithChargeHour" required="true" maxValue="23" />
+	   <enum id="PSTuesdayOnPowerWithChargeMin"  valueName="PSTuesdayOnPowerWithChargeMin" required="true">
+          <item displayName="$(string.MinZero)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MinFifteen)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MinThirty)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+		  <item displayName="$(string.MinFortyFive)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      
+	  </elements>
+    </policy>
+	
+	<policy name="Wednesday" class="Machine" displayName="$(string.Wednesday)" explainText="$(string.expl_DayWed)" presentation="$(presentation.expl_DayWed)" key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="PSWedGroup" >
+      <parentCategory ref="ConfigureDay" />
+      <supportedOn ref="SUPPORTED_DCPM" />
+	  <enabledValue>
+        <string>True</string>
+      </enabledValue>
+      <disabledValue>
+        <string>False</string>
+      </disabledValue>
+	  <enabledList>
+        <item key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="PSPolicyVersion">
+          <value>
+            <string>1.0.0</string>
+          </value>
+        </item>         
+      </enabledList>
+      <elements>
+       <decimal id="PSWednesdayOnBatteryHour" valueName="PSWednesdayOnBatteryHour" required="true" maxValue="23" />
+	   <enum id="PSWednesdayOnBatteryMin"  valueName="PSWednesdayOnBatteryMin" required="true">
+          <item displayName="$(string.MinZero)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MinFifteen)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MinThirty)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+		  <item displayName="$(string.MinFortyFive)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+       <decimal id="PSWednesdayOnPowerNoChargeHour" valueName="PSWednesdayOnPowerNoChargeHour" required="true" maxValue="23" />
+	   <enum id="PSWednesdayOnPowerNoChargeMin"  valueName="PSWednesdayOnPowerNoChargeMin" required="true">
+          <item displayName="$(string.MinZero)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MinFifteen)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MinThirty)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+		  <item displayName="$(string.MinFortyFive)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+
+	   <decimal id="PSWednesdayOnPowerWithChargeHour" valueName="PSWednesdayOnPowerWithChargeHour" required="true" maxValue="23" />
+	   <enum id="PSWednesdayOnPowerWithChargeMin"  valueName="PSWednesdayOnPowerWithChargeMin" required="true">
+          <item displayName="$(string.MinZero)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MinFifteen)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MinThirty)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+		  <item displayName="$(string.MinFortyFive)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      
+	  </elements>
+    </policy>
+	
+	<policy name="Thursday" class="Machine" displayName="$(string.Thursday)" explainText="$(string.expl_DayThur)" presentation="$(presentation.expl_DayThur)" key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="PSThuGroup" >
+      <parentCategory ref="ConfigureDay" />
+      <supportedOn ref="SUPPORTED_DCPM" />
+	  <enabledValue>
+        <string>True</string>
+      </enabledValue>
+      <disabledValue>
+        <string>False</string>
+      </disabledValue>
+	  <enabledList>
+        <item key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="PSPolicyVersion">
+          <value>
+            <string>1.0.0</string>
+          </value>
+        </item>         
+      </enabledList>
+      <elements>
+       <decimal id="PSThursdayOnBatteryHour" valueName="PSThursdayOnBatteryHour" required="true" maxValue="23" />
+	   <enum id="PSThursdayOnBatteryMin"  valueName="PSThursdayOnBatteryMin" required="true">
+          <item displayName="$(string.MinZero)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MinFifteen)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MinThirty)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+		  <item displayName="$(string.MinFortyFive)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+       <decimal id="PSThursdayOnPowerNoChargeHour" valueName="PSThursdayOnPowerNoChargeHour" required="true" maxValue="23" />
+	   <enum id="PSThursdayOnPowerNoChargeMin"  valueName="PSThursdayOnPowerNoChargeMin" required="true">
+          <item displayName="$(string.MinZero)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MinFifteen)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MinThirty)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+		  <item displayName="$(string.MinFortyFive)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+
+	   <decimal id="PSThursdayOnPowerWithChargeHour" valueName="PSThursdayOnPowerWithChargeHour" required="true" maxValue="23" />
+	   <enum id="PSThursdayOnPowerWithChargeMin"  valueName="PSThursdayOnPowerWithChargeMin" required="true">
+          <item displayName="$(string.MinZero)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MinFifteen)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MinThirty)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+		  <item displayName="$(string.MinFortyFive)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      
+	  </elements>
+    </policy>
+	
+	<policy name="Friday" class="Machine" displayName="$(string.Friday)" explainText="$(string.expl_DayFri)" presentation="$(presentation.expl_DayFri)" key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="PSFriGroup" >
+      <parentCategory ref="ConfigureDay" />
+      <supportedOn ref="SUPPORTED_DCPM" />
+	  <enabledValue>
+        <string>True</string>
+      </enabledValue>
+      <disabledValue>
+        <string>False</string>
+      </disabledValue>
+	  <enabledList>
+        <item key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="PSPolicyVersion">
+          <value>
+            <string>1.0.0</string>
+          </value>
+        </item>         
+      </enabledList>
+      <elements>
+       <decimal id="PSFridayOnBatteryHour" valueName="PSFridayOnBatteryHour" required="true" maxValue="23" />
+	   <enum id="PSFridayOnBatteryMin"  valueName="PSFridayOnBatteryMin" required="true">
+          <item displayName="$(string.MinZero)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MinFifteen)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MinThirty)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+		  <item displayName="$(string.MinFortyFive)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+		
+       <decimal id="PSFridayOnPowerNoChargeHour" valueName="PSFridayOnPowerNoChargeHour" required="true" maxValue="23" />
+	   <enum id="PSFridayOnPowerNoChargeMin"  valueName="PSFridayOnPowerNoChargeMin" required="true">
+          <item displayName="$(string.MinZero)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MinFifteen)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MinThirty)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+		  <item displayName="$(string.MinFortyFive)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+
+	   <decimal id="PSFridayOnPowerWithChargeHour" valueName="PSFridayOnPowerWithChargeHour" required="true" maxValue="23" />
+	   <enum id="PSFridayOnPowerWithChargeMin"  valueName="PSFridayOnPowerWithChargeMin" required="true">
+          <item displayName="$(string.MinZero)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MinFifteen)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MinThirty)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+		  <item displayName="$(string.MinFortyFive)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      
+	  </elements>
+    </policy>
+	
+	<policy name="Saturday" class="Machine" displayName="$(string.Saturday)" explainText="$(string.expl_DaySat)" presentation="$(presentation.expl_DaySat)" key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="PSSatGroup">
+      <parentCategory ref="ConfigureDay" />
+      <supportedOn ref="SUPPORTED_DCPM" />
+	  <enabledValue>
+        <string>True</string>
+      </enabledValue>
+      <disabledValue>
+        <string>False</string>
+      </disabledValue>
+	  <enabledList>
+        <item key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="PSPolicyVersion">
+          <value>
+            <string>1.0.0</string>
+          </value>
+        </item>        
+      </enabledList>
+      <elements>
+       <decimal id="PSSaturdayOnBatteryHour" valueName="PSSaturdayOnBatteryHour" required="true" maxValue="23" />
+	   <enum id="PSSaturdayOnBatteryMin"  valueName="PSSaturdayOnBatteryMin" required="true">
+          <item displayName="$(string.MinZero)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MinFifteen)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MinThirty)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+		  <item displayName="$(string.MinFortyFive)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+       <decimal id="PSSaturdayOnPowerNoChargeHour" valueName="PSSaturdayOnPowerNoChargeHour" required="true" maxValue="23" />
+	   <enum id="PSSaturdayOnPowerNoChargeMin"  valueName="PSSaturdayOnPowerNoChargeMin" required="true">
+          <item displayName="$(string.MinZero)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MinFifteen)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MinThirty)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+		  <item displayName="$(string.MinFortyFive)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+
+	   <decimal id="PSSaturdayOnPowerWithChargeHour" valueName="PSSaturdayOnPowerWithChargeHour" required="true" maxValue="23" />
+	   <enum id="PSSaturdayOnPowerWithChargeMin"  valueName="PSSaturdayOnPowerWithChargeMin" required="true">
+          <item displayName="$(string.MinZero)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MinFifteen)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MinThirty)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+		  <item displayName="$(string.MinFortyFive)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      
+	  </elements>
+    </policy>
+	
+	<policy name="Sunday" class="Machine" displayName="$(string.Sunday)" explainText="$(string.expl_DaySun)" presentation="$(presentation.expl_DaySun)" key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="PSSunGroup">
+      <parentCategory ref="ConfigureDay" />
+      <supportedOn ref="SUPPORTED_DCPM" />
+	  <enabledValue>
+        <string>True</string>
+      </enabledValue>
+      <disabledValue>
+        <string>False</string>
+      </disabledValue>
+	  <enabledList>
+        <item key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="PSPolicyVersion">
+          <value>
+            <string>1.0.0</string>
+          </value>
+        </item>         
+      </enabledList>
+      <elements>
+       <decimal id="PSSundayOnBatteryHour" valueName="PSSundayOnBatteryHour" required="true" maxValue="23" />
+	   <enum id="PSSundayOnBatteryMin"  valueName="PSSundayOnBatteryMin" required="true">
+          <item displayName="$(string.MinZero)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MinFifteen)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MinThirty)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+		  <item displayName="$(string.MinFortyFive)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+       <decimal id="PSSundayOnPowerNoChargeHour" valueName="PSSundayOnPowerNoChargeHour" required="true" maxValue="23" />
+	   <enum id="PSSundayOnPowerNoChargeMin"  valueName="PSSundayOnPowerNoChargeMin" required="true">
+          <item displayName="$(string.MinZero)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MinFifteen)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MinThirty)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+		  <item displayName="$(string.MinFortyFive)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+
+	   <decimal id="PSSundayOnPowerWithChargeHour" valueName="PSSundayOnPowerWithChargeHour" required="true" maxValue="23" />
+	   <enum id="PSSundayOnPowerWithChargeMin"  valueName="PSSundayOnPowerWithChargeMin" required="true">
+          <item displayName="$(string.MinZero)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MinFifteen)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MinThirty)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+		  <item displayName="$(string.MinFortyFive)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      
+	  </elements>
+    </policy>
+	
+	<policy name="RestoreACPowerThreshold" class="Machine" displayName="$(string.RestoreACPowerThreshold)" explainText="$(string.expl_RestoreACPowerThreshold)" presentation="$(presentation.expl_RestoreACPowerThreshold)" key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="PSRestorePowerThresholdGroup" >
+      <parentCategory ref="PeakShift" />
+      <supportedOn ref="SUPPORTED_DCPM" />
+	  <enabledValue>
+        <string>True</string>
+      </enabledValue>
+      <disabledValue>
+        <string>False</string>
+      </disabledValue>
+	  <enabledList>
+        <item key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="PSPolicyVersion">
+          <value>
+            <string>1.0.0</string>
+          </value>
+        </item>         
+      </enabledList>
+      <elements>
+	   <decimal id="PSRestorePowerThresholdLimitMin" valueName="PSRestorePowerThresholdLimitMin" required="true" maxValue="100" />
+	   <decimal id="PSRestorePowerThresholdLimitMax" valueName="PSRestorePowerThresholdLimitMax" required="true" maxValue="100" />
+	   <decimal id="PSRestorePowerThreshold" valueName="PSRestorePowerThreshold" required="true" maxValue="100" />	   
+      </elements>
+    </policy>	
+  </policies>
+</policyDefinitions>
+
+
+
+
+

@@ -1,0 +1,52 @@
+<!-- Copyright (c) Dell Inc. 2015. All rights reserved. -->
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+     <target prefix="DellGeneral" namespace="Dell.DCPM.Policies.General" />
+     <using prefix="Dell" namespace="Dell.DCPM.Policies" />
+	 <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_DCPM" displayName="$(string.SUPPORTED_DCPM)">
+      </definition>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="DellInc" displayName="$(string.Dell)">
+      <parentCategory ref="windows:System" />
+    </category>
+    <category name="DCPM" displayName="$(string.cname_DCPM)">
+      <parentCategory ref="Dell:DellInc" />
+    </category>
+  </categories>
+ <policies>
+  <policy name="ProductFeedbackLinkPolicy" class="Machine" displayName="$(string.cname_ProductFeedbackLinkPolicy)" explainText="$(string.expl_ProductFeedbackLinkPolicy)" presentation="$(presentation.pol_ProductFeedbackLinkPolicy)" key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="GNProductFeedbackLinkGroup" >
+      <parentCategory ref="Dell:DCPM" />
+      <supportedOn ref="SUPPORTED_DCPM" />
+      <enabledValue>
+        <string>True</string>
+      </enabledValue>
+      <disabledValue>
+        <string>False</string>
+      </disabledValue>
+	  <enabledList>
+        <item key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="GNPolicyVersion">
+          <value>
+            <string>1.0.0</string>
+          </value>
+        </item>        
+      </enabledList>
+      <elements>
+        <boolean id="HideProductFeedbackLink" valueName="GNProductFeedbackLinkHidden" required="false">
+          <trueValue>
+            <string>True</string>
+          </trueValue>
+          <falseValue>
+            <string>False</string>
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

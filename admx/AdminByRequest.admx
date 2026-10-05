@@ -1,0 +1,307 @@
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="ABR" namespace="ABR.Policies.ABR" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <categories>
+    <category name="ABR" displayName="$(string.ABR_HEADER)" />
+  </categories>
+  <policies>
+    <policy name="ABR_OPTION_02A" class="Machine" explainText="$(string.ABR_ENABLE_INFO)" displayName="$(string.ABR_ENABLE)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" valueName="EnableSessions">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <enabledValue>
+         <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+         <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="ABR_OPTION_01A" class="Machine" explainText="$(string.ABR_ENABLE_APPS_INFO)" displayName="$(string.ABR_ENABLE_APPS)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" valueName="EnableAppElevations">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <enabledValue>
+         <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+         <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="ABR_OPTION_02B" class="Machine" explainText="$(string.ABR_AUTO_APPROVE_INFO)" displayName="$(string.ABR_AUTO_APPROVE)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" valueName="AutoApprove">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <enabledValue>
+         <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+         <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="ABR_OPTION_01B" class="Machine" explainText="$(string.ABR_AUTO_APPROVE_APPS_INFO)" displayName="$(string.ABR_AUTO_APPROVE_APPS)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" valueName="AutoApproveApps">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <enabledValue>
+         <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+         <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="ABR_OPTION_02C" class="Machine" explainText="$(string.ABR_REQUIRE_REASON_INFO)" displayName="$(string.ABR_REQUIRE_REASON)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" valueName="RequireReason">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <enabledValue>
+         <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+         <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="ABR_OPTION_01C" class="Machine" explainText="$(string.ABR_REQUIRE_REASON_APPS_INFO)" displayName="$(string.ABR_REQUIRE_REASON_APPS)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" valueName="RequireAppReason">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <enabledValue>
+         <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+         <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="ABR_OPTION_03A" class="Machine" explainText="$(string.ABR_ADMIN_MINUTES_INFO)" displayName="$(string.ABR_ADMIN_MINUTES)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" presentation="$(presentation.ABR_ADMIN_MINUTES_PRESENTATION)">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <elements>
+        <enum id="ABR_ADMIN_MINUTES_DROPDOWN" valueName="AdminMinutes">
+          <item displayName="$(string.ABR_ADMIN_MINUTES_DEFAULT)">
+            <value>
+              <delete />
+            </value>
+          </item>
+          <item displayName="$(string.ABR_ADMIN_MINUTES_5)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+          <item displayName="$(string.ABR_ADMIN_MINUTES_10)">
+            <value>
+              <decimal value="10" />
+            </value>
+          </item>
+          <item displayName="$(string.ABR_ADMIN_MINUTES_15)">
+            <value>
+              <decimal value="15" />
+            </value>
+          </item>
+          <item displayName="$(string.ABR_ADMIN_MINUTES_30)">
+            <value>
+              <decimal value="30" />
+            </value>
+          </item>
+          <item displayName="$(string.ABR_ADMIN_MINUTES_60)">
+            <value>
+              <decimal value="60" />
+            </value>
+          </item>
+          <item displayName="$(string.ABR_ADMIN_MINUTES_120)">
+            <value>
+              <decimal value="120" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="ABR_OPTION_03B" class="Machine" explainText="$(string.ABR_LANGUAGE_INFO)" displayName="$(string.ABR_LANGUAGE)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" presentation="$(presentation.ABR_LANGUAGE_PRESENTATION)">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <elements>
+        <enum id="ABR_LANGUAGE_DROPDOWN" valueName="Language">
+          <item displayName="$(string.ABR_LANGUAGE_AUTO)">
+            <value>
+             <delete />
+            </value>
+          </item>
+          <item displayName="$(string.ABR_LANGUAGE_EN)">
+            <value>
+              <string>EN</string>
+            </value>
+          </item>
+          <item displayName="$(string.ABR_LANGUAGE_ES)">
+            <value>
+              <string>ES</string>
+            </value>
+          </item>
+          <item displayName="$(string.ABR_LANGUAGE_DE)">
+            <value>
+              <string>DE</string>
+            </value>
+          </item>
+          <item displayName="$(string.ABR_LANGUAGE_FR)">
+            <value>
+              <string>FR</string>
+            </value>
+          </item>
+          <item displayName="$(string.ABR_LANGUAGE_DA)">
+            <value>
+              <string>DA</string>
+            </value>
+          </item>
+          <item displayName="$(string.ABR_LANGUAGE_SV)">
+            <value>
+              <string>SV</string>
+            </value>
+          </item>
+          <item displayName="$(string.ABR_LANGUAGE_NN)">
+            <value>
+              <string>NN</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="ABR_OPTION_04" class="Machine" explainText="$(string.ABR_ENABLE_UAC_INFO)" displayName="$(string.ABR_ENABLE_UAC)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" valueName="EnableUAC">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <enabledValue>
+         <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+         <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="ABR_OPTION_05" class="Machine" explainText="$(string.ABR_COMPANY_NAME_INFO)" displayName="$(string.ABR_COMPANY_NAME)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" presentation="$(presentation.ABR_COMPANY_NAME_PRESENTATION)">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <elements>
+         <text id="ABR_COMPANY_NAME_CAPTION" valueName="CompanyName" />
+      </elements>
+    </policy>
+    <policy name="ABR_OPTION_06" class="Machine" explainText="$(string.ABR_DESKTOP_ICON_INFO)" displayName="$(string.ABR_DESKTOP_ICON)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" valueName="DesktopIcon">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <enabledValue>
+         <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+         <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="ABR_OPTION_07" class="Machine" explainText="$(string.ABR_DESKTOP_ICON_NAME_INFO)" displayName="$(string.ABR_DESKTOP_ICON_NAME)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" presentation="$(presentation.ABR_DESKTOP_ICON_NAME_PRESENTATION)">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <elements>
+         <text id="ABR_DESKTOP_ICON_NAME_CAPTION" valueName="IconName" />
+      </elements>
+    </policy>
+    <policy name="ABR_OPTION_08" class="Machine" explainText="$(string.ABR_CLEAN_ADMINS_GROUP_INFO)" displayName="$(string.ABR_CLEAN_ADMINS_GROUP)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" valueName="CleanAdminsGroup">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <enabledValue>
+         <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+         <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="ABR_OPTION_09" class="Machine" explainText="$(string.ABR_LOG_FILE_INFO)" displayName="$(string.ABR_LOG_FILE)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" presentation="$(presentation.ABR_LOG_FILE_PRESENTATION)">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <elements>
+         <text id="ABR_LOG_FILE_CAPTION" valueName="LogFile" />
+      </elements>
+    </policy>
+    <policy name="ABR_OPTION_10" class="Machine" explainText="$(string.ABR_LEARNING_MODE_INFO)" displayName="$(string.ABR_LEARNING_MODE)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" valueName="LearningMode">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <enabledValue>
+         <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+         <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="ABR_OPTION_14" class="Machine" explainText="$(string.ABR_SHOW_INSTRUCTIONS_INFO)" displayName="$(string.ABR_SHOW_INSTRUCTIONS)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" valueName="ShowInstructions">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <enabledValue>
+         <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+         <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="ABR_OPTION_15" class="Machine" explainText="$(string.ABR_SHOW_RUNAS_GFX_INFO)" displayName="$(string.ABR_SHOW_RUNAS_GFX)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" valueName="ShowRunAsGfx">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <enabledValue>
+         <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+         <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="ABR_OPTION_16" class="Machine" explainText="$(string.ABR_INSTRUCTION_HEADER_INFO)" displayName="$(string.ABR_INSTRUCTION_HEADER)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" presentation="$(presentation.ABR_INSTRUCTION_HEADER_PRESENTATION)">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <elements>
+         <text id="ABR_INSTRUCTION_HEADER_CAPTION" valueName="InstructionHeader" />
+      </elements>
+    </policy>
+    <policy name="ABR_OPTION_17" class="Machine" explainText="$(string.ABR_INSTRUCTIONS_INFO)" displayName="$(string.ABR_INSTRUCTIONS)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" presentation="$(presentation.ABR_INSTRUCTIONS_PRESENTATION)">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <elements>
+         <text id="ABR_INSTRUCTIONS_CAPTION" valueName="Instructions" />
+      </elements>
+    </policy>
+
+    <policy name="ABR_OPTION_20" class="Machine" explainText="$(string.ABR_USER_GROUPS_INFO)" displayName="$(string.ABR_USER_GROUPS)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" presentation="$(presentation.ABR_USER_GROUPS_PRESENTATION)">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <elements>
+         <text id="ABR_USER_GROUPS_CAPTION" valueName="UserGroups" />
+      </elements>
+    </policy>
+    <policy name="ABR_OPTION_21" class="Machine" explainText="$(string.ABR_USER_OUS_INFO)" displayName="$(string.ABR_USER_OUS)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" presentation="$(presentation.ABR_USER_OUS_PRESENTATION)">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <elements>
+         <text id="ABR_USER_OUS_CAPTION" valueName="UserOUs" />
+      </elements>
+    </policy>
+    <policy name="ABR_OPTION_22" class="Machine" explainText="$(string.ABR_COMPUTER_GROUPS_INFO)" displayName="$(string.ABR_COMPUTER_GROUPS)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" presentation="$(presentation.ABR_COMPUTER_GROUPS_PRESENTATION)">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <elements>
+         <text id="ABR_COMPUTER_GROUPS_CAPTION" valueName="ComputerGroups" />
+      </elements>
+    </policy>
+    <policy name="ABR_OPTION_23" class="Machine" explainText="$(string.ABR_COMPUTER_OUS_INFO)" displayName="$(string.ABR_COMPUTER_OUS)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" presentation="$(presentation.ABR_COMPUTER_OUS_PRESENTATION)">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <elements>
+         <text id="ABR_COMPUTER_OUS_CAPTION" valueName="ComputerOUs" />
+      </elements>
+    </policy>
+
+    <policy name="ABR_OPTION_30" class="Machine" explainText="$(string.ABR_SERVER_LOG_ADMIN_LOGINS_INFO)" displayName="$(string.ABR_SERVER_LOG_ADMIN_LOGINS)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" valueName="LogAdminLogins">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <enabledValue>
+         <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+         <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="ABR_OPTION_31" class="Machine" explainText="$(string.ABR_SERVER_REQUEST_GROUP_INFO)" displayName="$(string.ABR_SERVER_REQUEST_GROUP)" key="SOFTWARE\FastTrack Software\Admin By Request\Policies" presentation="$(presentation.ABR_SERVER_REQUEST_GROUP_PRESENTATION)">
+      <parentCategory ref="ABR" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <elements>
+         <text id="ABR_SERVER_REQUEST_GROUP_CAPTION" valueName="AccessRequestGroup" />
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>
+

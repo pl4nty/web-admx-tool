@@ -1,0 +1,131 @@
+<!-- Copyright (c) Dell Inc. 2015. All rights reserved. -->
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+     <target prefix="DellThermalManagement" namespace="Dell.DCPM.Policies.Thermal" />
+     <using prefix="Dell" namespace="Dell.DCPM.Policies" />
+	 <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+    <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_DCPM" displayName="$(string.SUPPORTED_DCPM)">
+      </definition>
+    </definitions>
+  </supportedOn>
+  <categories>
+	<category name="ThermalManagement" displayName="$(string.cname_ThermalManagement)">
+      <parentCategory ref="Dell:DCPM" />
+    </category>
+  </categories>
+	
+  <policies>	
+  
+  <policy name="TMFeatureEnablement" class="Machine" displayName="$(string.TMFeatureEnablement)" explainText="$(string.expl_TMFeatureEnablement)" presentation="$(presentation.pol_DisableThermalFeature)" key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="TMFeatureEnablementGroup" >
+      <parentCategory ref="ThermalManagement" />
+      <supportedOn ref="SUPPORTED_DCPM" />
+	  <enabledValue>
+        <string>True</string>
+      </enabledValue>
+      <disabledValue>
+        <string>False</string>
+      </disabledValue>
+	  <enabledList>
+        <item key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="TMPolicyVersion">
+          <value>
+            <string>1.0.0</string>
+          </value>
+        </item>        
+      </enabledList>
+      <elements>
+		<boolean id="TMDisabled"  valueName="TMDisabled" required="false">
+			<trueValue>
+				<string>True</string> 
+			</trueValue>
+			<falseValue>
+				<string>False</string> 
+			</falseValue>  
+		</boolean>
+      </elements>
+    </policy>
+  
+	<policy name="ThermalModes" class="Machine" displayName="$(string.ThermalSettings)" explainText="$(string.expl_ThermalSettings)" presentation="$(presentation.pol_ThermalModes)" key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="TMSettingsGroup">
+      <parentCategory ref="ThermalManagement" />
+      <supportedOn ref="SUPPORTED_DCPM" />
+	  <enabledValue>
+        <string>True</string>
+      </enabledValue>
+      <disabledValue>
+        <string>False</string>
+      </disabledValue>
+	  <enabledList>
+        <item key="SOFTWARE\Policies\Dell\CommandPowerManager" valueName="TMPolicyVersion">
+          <value>
+            <string>1.0.0</string>
+          </value>
+        </item>        
+      </enabledList>
+      <elements>
+		 <enum id="TMMode"  valueName="TMMode" required="true">
+		   <item displayName="$(string.TModeNone)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.TModeBalanced)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.TModeCool)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.TModeQuiet)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+		  <item displayName="$(string.TModeUltra)">
+            <value>
+              <decimal value="8" />
+            </value>
+          </item>
+        </enum>		
+      	<boolean id="TMModeBalanced" valueName="TMModeBalanced" required="false">
+			<trueValue>
+				<decimal value="1"/>
+			</trueValue>
+			<falseValue>
+				<decimal value="0"/>
+			</falseValue>
+		</boolean>
+		<boolean id="TMModeCool" valueName="TMModeCool" required="false">
+			<trueValue>
+				<decimal value="1"/>
+			</trueValue>
+			<falseValue>
+				<decimal value="0"/>
+			</falseValue>
+		</boolean>
+		<boolean id="TMModeQuiet" valueName="TMModeQuiet" required="false">
+			<trueValue>
+				<decimal value="1"/>
+			</trueValue>
+			<falseValue>
+				<decimal value="0"/>
+			</falseValue>
+		</boolean>
+		<boolean id="TMModeUltra" valueName="TMModeUltra" required="false">
+			<trueValue>
+				<decimal value="1"/>
+			</trueValue>
+			<falseValue>
+				<decimal value="0"/>
+			</falseValue>
+		</boolean>
+	  </elements>
+    </policy>
+  </policies>
+</policyDefinitions>
+  

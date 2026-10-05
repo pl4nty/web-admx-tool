@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="assptb" namespace="FreeYourNet.Policies.ASSPToolbar" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <supersededAdm fileName="ASSPToolbar.adm" />
+  <resources minRequiredRevision="1.0" />
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_OLXP" displayName="$(string.SUPPORTED_OLXP)" />
+      <definition name="SUPPORTED_ASSP1517" displayName="$(string.SUPPORTED_ASSP1517)" />
+      <definition name="SUPPORTED_ASSP14X" displayName="$(string.SUPPORTED_ASSP14X)" />
+      <definition name="SUPPORTED_ASSP15X" displayName="$(string.SUPPORTED_ASSP15X)" />
+      <definition name="SUPPORTED_ASSP212" displayName="$(string.SUPPORTED_ASSP212)" />
+      <definition name="SUPPORTED_ASSPTB25X" displayName="$(string.SUPPORTED_ASSPTB25X)" />
+      <definition name="SUPPORTED_ASSPTB20X_OR_21X" displayName="$(string.SUPPORTED_ASSPTB20X_OR_21X)" />
+      <definition name="SUPPORTED_OL2007_OR_EARLIER" displayName="$(string.SUPPORTED_OL2007_OR_EARLIER)" />
+      <definition name="SUPPORTED_OL2007" displayName="$(string.SUPPORTED_OL2007)" />
+      <definition name="SUPPORTED_NotSpecified" displayName="$(string.ADMXMigrator_NoSupportedOn)" />
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="Category_ASSP_Toolbar" displayName="$(string.Category_ASSP_Toolbar)" />
+    <category name="Category_ASSP_Config" displayName="$(string.Category_ASSP_Config)">
+      <parentCategory ref="Category_ASSP_Toolbar" />
+    </category>
+    <category name="Category_Toolbar_Config" displayName="$(string.Category_Toolbar_Config)">
+      <parentCategory ref="Category_ASSP_Toolbar" />
+    </category>
+    <category name="Category_Outlook_Config" displayName="$(string.Category_Outlook_Config)">
+      <parentCategory ref="Category_ASSP_Toolbar" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="ASSPDomainName_EditText" class="User" displayName="$(string.ASSPDomainName_EditText)" explainText="$(string.ASSPDomainName_Help)" presentation="$(presentation.ASSPDomainName_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_ASSP_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <elements>
+        <text id="ASSPDomainName_EditText" valueName="ASSPDomainName" required="true" />
+      </elements>
+    </policy>
+    <policy name="ASSPSpamAddress_EditText" class="User" displayName="$(string.ASSPSpamAddress_EditText)" explainText="$(string.ASSPSpamAddress_Help)" presentation="$(presentation.ASSPSpamAddress_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_ASSP_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <elements>
+        <text id="ASSPSpamAddress_EditText" valueName="ASSPSpamAddress" required="true" />
+      </elements>
+    </policy>
+    <policy name="ASSPNotSpamAddress_EditText" class="User" displayName="$(string.ASSPNotSpamAddress_EditText)" explainText="$(string.ASSPNotSpamAddress_Help)" presentation="$(presentation.ASSPNotSpamAddress_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_ASSP_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <elements>
+        <text id="ASSPNotSpamAddress_EditText" valueName="ASSPNotSpamAddress" required="true" />
+      </elements>
+    </policy>
+    <policy name="ASSPWhitelistAddress_EditText" class="User" displayName="$(string.ASSPWhitelistAddress_EditText)" explainText="$(string.ASSPWhitelistAddress_Help)" presentation="$(presentation.ASSPWhitelistAddress_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_ASSP_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <elements>
+        <text id="ASSPWhitelistAddress_EditText" valueName="ASSPWhitelistAddress" required="true" />
+      </elements>
+    </policy>
+    <policy name="ASSPNotWhitelistAddress_EditText" class="User" displayName="$(string.ASSPNotWhitelistAddress_EditText)" explainText="$(string.ASSPNotWhitelistAddress_Help)" presentation="$(presentation.ASSPNotWhitelistAddress_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_ASSP_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <elements>
+        <text id="ASSPNotWhitelistAddress_EditText" valueName="ASSPNotWhitelistAddress" required="true" />
+      </elements>
+    </policy>
+    <policy name="ASSPBlacklistAddress_EditText" class="User" displayName="$(string.ASSPBlacklistAddress_EditText)" explainText="$(string.ASSPBlacklistAddress_Help)" presentation="$(presentation.ASSPBlacklistAddress_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_ASSP_Config" />
+      <supportedOn ref="SUPPORTED_ASSP1517" />
+      <elements>
+        <text id="ASSPBlacklistAddress_EditText" valueName="ASSPBlacklistAddress" required="true" />
+      </elements>
+    </policy>
+    <policy name="ASSPNotBlacklistAddress_EditText" class="User" displayName="$(string.ASSPNotBlacklistAddress_EditText)" explainText="$(string.ASSPNotBlacklistAddress_Help)" presentation="$(presentation.ASSPNotBlacklistAddress_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_ASSP_Config" />
+      <supportedOn ref="SUPPORTED_ASSP1517" />
+      <elements>
+        <text id="ASSPNotBlacklistAddress_EditText" valueName="ASSPNotBlacklistAddress" required="true" />
+      </elements>
+    </policy>
+    <policy name="ASSPPersBlacklistAddress_EditText" class="User" displayName="$(string.ASSPPersBlacklistAddress_EditText)" explainText="$(string.ASSPPersBlacklistAddress_Help)" presentation="$(presentation.ASSPPersBlacklistAddress_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_ASSP_Config" />
+      <supportedOn ref="SUPPORTED_ASSP212" />
+      <elements>
+        <text id="ASSPPersBlacklistAddress_EditText" valueName="ASSPPersBlacklistAddress" required="true" />
+      </elements>
+    </policy>
+    <policy name="ASSPNotPersBlacklistAddress_EditText" class="User" displayName="$(string.ASSPNotPersBlacklistAddress_EditText)" explainText="$(string.ASSPNotPersBlacklistAddress_Help)" presentation="$(presentation.ASSPNotPersBlacklistAddress_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_ASSP_Config" />
+      <supportedOn ref="SUPPORTED_ASSP212" />
+      <elements>
+        <text id="ASSPNotPersBlacklistAddress_EditText" valueName="ASSPNotPersBlacklistAddress" required="true" />
+      </elements>
+    </policy>
+    <policy name="ASSPRedlistAddress_EditText" class="User" displayName="$(string.ASSPRedlistAddress_EditText)" explainText="$(string.ASSPRedlistAddress_Help)" presentation="$(presentation.ASSPRedlistAddress_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_ASSP_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <elements>
+        <text id="ASSPRedlistAddress_EditText" valueName="ASSPRedlistAddress" required="true" />
+      </elements>
+    </policy>
+    <policy name="ASSPNotRedlistAddress_EditText" class="User" displayName="$(string.ASSPNotRedlistAddress_EditText)" explainText="$(string.ASSPNotRedlistAddress_Help)" presentation="$(presentation.ASSPNotRedlistAddress_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_ASSP_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <elements>
+        <text id="ASSPNotRedlistAddress_EditText" valueName="ASSPNotRedlistAddress" required="true" />
+      </elements>
+    </policy>
+    <policy name="ASSPSpamLoversAddress_EditText" class="User" displayName="$(string.ASSPSpamLoversAddress_EditText)" explainText="$(string.ASSPSpamLoversAddress_Help)" presentation="$(presentation.ASSPSpamLoversAddress_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_ASSP_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <elements>
+        <text id="ASSPSpamLoversAddress_EditText" valueName="ASSPSpamLoversAddress" required="true" />
+      </elements>
+    </policy>
+    <policy name="ASSPNotSpamLoversAddress_EditText" class="User" displayName="$(string.ASSPNotSpamLoversAddress_EditText)" explainText="$(string.ASSPNotSpamLoversAddress_Help)" presentation="$(presentation.ASSPNotSpamLoversAddress_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_ASSP_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <elements>
+        <text id="ASSPNotSpamLoversAddress_EditText" valueName="ASSPNotSpamLoversAddress" required="true" />
+      </elements>
+    </policy>
+    <policy name="ASSPNoProcessingAddress_EditText" class="User" displayName="$(string.ASSPNoProcessingAddress_EditText)" explainText="$(string.ASSPNoProcessingAddress_Help)" presentation="$(presentation.ASSPNoProcessingAddress_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_ASSP_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <elements>
+        <text id="ASSPNoProcessingAddress_EditText" valueName="ASSPNoProcessingAddress" required="true" />
+      </elements>
+    </policy>
+    <policy name="ASSPNotNoProcessingAddress_EditText" class="User" displayName="$(string.ASSPNotNoProcessingAddress_EditText)" explainText="$(string.ASSPNotNoProcessingAddress_Help)" presentation="$(presentation.ASSPNotNoProcessingAddress_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_ASSP_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <elements>
+        <text id="ASSPNotNoProcessingAddress_EditText" valueName="ASSPNotNoProcessingAddress" required="true" />
+      </elements>
+    </policy>
+    <policy name="ASSPAnalyseAddress_EditText" class="User" displayName="$(string.ASSPAnalyseAddress_EditText)" explainText="$(string.ASSPAnalyseAddress_Help)" presentation="$(presentation.ASSPAnalyseAddress_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_ASSP_Config" />
+      <supportedOn ref="SUPPORTED_ASSP14X" />
+      <elements>
+        <text id="ASSPAnalyseAddress_EditText" valueName="ASSPAnalyseAddress" required="true" />
+      </elements>
+    </policy>
+    <policy name="ASSPBlockReportAddress_EditText" class="User" displayName="$(string.ASSPBlockReportAddress_EditText)" explainText="$(string.ASSPBlockReportAddress_Help)" presentation="$(presentation.ASSPBlockReportAddress_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_ASSP_Config" />
+      <supportedOn ref="SUPPORTED_ASSP15X" />
+      <elements>
+        <text id="ASSPBlockReportAddress_EditText" valueName="ASSPBlockReportAddress" required="true" />
+      </elements>
+    </policy>
+    <policy name="ASSPHelpAddress_EditText" class="User" displayName="$(string.ASSPHelpAddress_EditText)" explainText="$(string.ASSPHelpAddress_Help)" presentation="$(presentation.ASSPHelpAddress_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_ASSP_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <elements>
+        <text id="ASSPHelpAddress_EditText" valueName="ASSPHelpAddress" required="true" />
+      </elements>
+    </policy>
+    <policy name="SerialNumber_EditText" class="User" displayName="$(string.SerialNumber_EditText)" explainText="$(string.SerialNumber_Help)" presentation="$(presentation.SerialNumber_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar\Registration">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_ASSPTB25X" />
+      <elements>
+        <text id="SerialNumber_EditText" valueName="SerialNumber" required="true" />
+      </elements>
+    </policy>
+    <policy name="ReleaseCode_EditText" class="User" displayName="$(string.ReleaseCode_EditText)" explainText="$(string.ReleaseCode_Help)" presentation="$(presentation.ReleaseCode_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar\Registration">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_ASSPTB25X" />
+      <elements>
+        <text id="ReleaseCode_EditText" valueName="ReleaseCode" required="true" />
+      </elements>
+    </policy>
+    <policy name="LicenceKey_EditText" class="User" displayName="$(string.LicenceKey_EditText)" explainText="$(string.LicenceKey_Help)" presentation="$(presentation.LicenceKey_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar\Registration">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_ASSPTB20X_OR_21X" />
+      <elements>
+        <text id="LicenceKey_EditText" valueName="Key" required="true" />
+      </elements>
+    </policy>
+    <policy name="WhitelistingOnOff_Bool" class="User" displayName="$(string.WhitelistingOnOff_Bool)" explainText="$(string.WhitelistingOnOff_Help)" presentation="$(presentation.WhitelistingOnOff_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar" valueName="AllowWhitelisting">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="BlacklistingOnOff_Bool" class="User" displayName="$(string.BlacklistingOnOff_Bool)" explainText="$(string.BlacklistingOnOff_Help)" presentation="$(presentation.BlacklistingOnOff_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar" valueName="AllowBlacklisting">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_ASSP1517" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="PersBlacklistingOnOff_Bool" class="User" displayName="$(string.PersBlacklistingOnOff_Bool)" explainText="$(string.PersBlacklistingOnOff_Help)" presentation="$(presentation.PersBlacklistingOnOff_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar" valueName="AllowPersBlacklisting">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_ASSP212" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="RedlistingOnOff_Bool" class="User" displayName="$(string.RedlistingOnOff_Bool)" explainText="$(string.RedlistingOnOff_Help)" presentation="$(presentation.RedlistingOnOff_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar" valueName="AllowRedlisting">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SpamLoversOnOff_Bool" class="User" displayName="$(string.SpamLoversOnOff_Bool)" explainText="$(string.SpamLoversOnOff_Help)" presentation="$(presentation.SpamLoversOnOff_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar" valueName="AllowSpamLovers">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="NoProcessingOnOff_Bool" class="User" displayName="$(string.NoProcessingOnOff_Bool)" explainText="$(string.NoProcessingOnOff_Help)" presentation="$(presentation.NoProcessingOnOff_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar" valueName="AllowNoProcessing">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AnalyseAddressOnOff_Bool" class="User" displayName="$(string.AnalyseAddressOnOff_Bool)" explainText="$(string.AnalyseAddressOnOff_Help)" presentation="$(presentation.AnalyseAddressOnOff_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar" valueName="AllowAnalyseAddress">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_ASSP14X" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="BlockReportAddressOnOff_Bool" class="User" displayName="$(string.BlockReportAddressOnOff_Bool)" explainText="$(string.BlockReportAddressOnOff_Help)" presentation="$(presentation.BlockReportAddressOnOff_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar" valueName="AllowBlockReportAddress">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_ASSP15X" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="HelpAddressOnOff_Bool" class="User" displayName="$(string.HelpAddressOnOff_Bool)" explainText="$(string.HelpAddressOnOff_Help)" presentation="$(presentation.HelpAddressOnOff_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar" valueName="AllowHelpAddress">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="OptionsOnOff_Bool" class="User" displayName="$(string.OptionsOnOff_Bool)" explainText="$(string.OptionsOnOff_Help)" presentation="$(presentation.OptionsOnOff_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar" valueName="AllowOptions">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="HelpOnOff_Bool" class="User" displayName="$(string.HelpOnOff_Bool)" explainText="$(string.HelpOnOff_Help)" presentation="$(presentation.HelpOnOff_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar" valueName="AllowHelp">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="StartupUpdateCheckOnOff_Bool" class="User" displayName="$(string.StartupUpdateCheckOnOff_Bool)" explainText="$(string.StartupUpdateCheckOnOff_Help)" presentation="$(presentation.StartupUpdateCheckOnOff_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar" valueName="AllowStartupUpdateCheck">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="UpdateOnOff_Bool" class="User" displayName="$(string.UpdateOnOff_Bool)" explainText="$(string.UpdateOnOff_Help)" presentation="$(presentation.UpdateOnOff_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar" valueName="AllowUpdate">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="ToolbarShowCaptionsOnOff_Bool" class="User" displayName="$(string.ToolbarShowCaptionsOnOff_Bool)" explainText="$(string.ToolbarShowCaptionsOnOff_Help)" presentation="$(presentation.ToolbarShowCaptionsOnOff_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar" valueName="ToolbarShowCaptions">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_OL2007_OR_EARLIER" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="ProcessSpamList_Bool" class="User" displayName="$(string.ProcessSpamList_Bool)" explainText="$(string.ProcessSpamList_Help)" presentation="$(presentation.ProcessSpamList_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <elements>
+        <enum id="ProcessSpamList_Desc" valueName="DeleteSpam" required="true">
+          <item displayName="$(string.ProcessSpamList_NoAction)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ProcessSpamList_Delete)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ProcessSpamList_MoveToFolder)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="MoveSpamToFolder_EditText" class="User" displayName="$(string.MoveSpamToFolder_EditText)" explainText="$(string.MoveSpamToFolder_Help)" presentation="$(presentation.MoveSpamToFolder_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <elements>
+        <text id="MoveSpamToFolder_EditText" valueName="OutlookMoveSpamToFolder" />
+      </elements>
+    </policy>
+    <policy name="ProcessNotSpamList_Bool" class="User" displayName="$(string.ProcessNotSpamList_Bool)" explainText="$(string.ProcessNotSpamList_Help)" presentation="$(presentation.ProcessNotSpamList_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <elements>
+        <enum id="ProcessNotSpamList_Desc" valueName="ProcessNotSpam" required="true">
+          <item displayName="$(string.ProcessNotSpamList_NoAction)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ProcessNotSpamList_MoveToInbox)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="StripSpamSubjectPrefix_EditText" class="User" displayName="$(string.StripSpamSubjectPrefix_EditText)" explainText="$(string.StripSpamSubjectPrefix_Help)" presentation="$(presentation.StripSpamSubjectPrefix_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <elements>
+        <text id="StripSpamSubjectPrefix_EditText" valueName="StripSpamSubjectPrefix" />
+      </elements>
+    </policy>
+    <policy name="ForwardNotSpamToOrigRecipientOnOff_Bool" class="User" displayName="$(string.ForwardNotSpamToOrigRecipientOnOff_Bool)" explainText="$(string.ForwardNotSpamToOrigRecipientOnOff_Help)" presentation="$(presentation.ForwardNotSpamToOrigRecipientOnOff_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar" valueName="ForwardNotSpamToOrigRecipient">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_ASSP14X" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AskConfirmReportsOnOff_Bool" class="User" displayName="$(string.AskConfirmReportsOnOff_Bool)" explainText="$(string.AskConfirmReportsOnOff_Help)" presentation="$(presentation.AskConfirmReportsOnOff_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar" valueName="AskConfirmReports">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DeleteAfterSendOnOff_Bool" class="User" displayName="$(string.DeleteAfterSendOnOff_Bool)" explainText="$(string.DeleteAfterSendOnOff_Help)" presentation="$(presentation.DeleteAfterSendOnOff_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar" valueName="DeleteAfterSend">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AckReportsOnOff_Bool" class="User" displayName="$(string.AckReportsOnOff_Bool)" explainText="$(string.AckReportsOnOff_Help)" presentation="$(presentation.AckReportsOnOff_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar" valueName="AckReports">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="UserIsASSPAdminOnOff_Bool" class="User" displayName="$(string.UserIsASSPAdminOnOff_Bool)" explainText="$(string.UserIsASSPAdminOnOff_Help)" presentation="$(presentation.UserIsASSPAdminOnOff_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar" valueName="UserIsASSPAdmin">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_ASSP15X" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="UpdateInfoSource_EditText" class="User" displayName="$(string.UpdateInfoSource_EditText)" explainText="$(string.UpdateInfoSource_Help)" presentation="$(presentation.UpdateInfoSource_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_Toolbar_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <elements>
+        <text id="UpdateInfoSource_EditText" valueName="UpdateInfoSource" required="true" />
+      </elements>
+    </policy>
+    <policy name="OutlookAccount_EditText" class="User" displayName="$(string.OutlookAccount_EditText)" explainText="$(string.OutlookAccount_Help)" presentation="$(presentation.OutlookAccount_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_Outlook_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <elements>
+        <text id="OutlookAccount_EditText" valueName="OutlookAccount" />
+      </elements>
+    </policy>
+    <policy name="OutlookRuleOnOff_Bool" class="User" displayName="$(string.OutlookRuleOnOff_Bool)" explainText="$(string.OutlookRuleOnOff_Help)" presentation="$(presentation.OutlookRuleOnOff_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar" valueName="OutlookRuleEnable">
+      <parentCategory ref="Category_Outlook_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="OutlookRuleName_EditText" class="User" displayName="$(string.OutlookRuleName_EditText)" explainText="$(string.OutlookRuleName_Help)" presentation="$(presentation.OutlookRuleName_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_Outlook_Config" />
+      <supportedOn ref="SUPPORTED_OL2007" />
+      <elements>
+        <text id="OutlookRuleName_EditText" valueName="OutlookRuleName" />
+      </elements>
+    </policy>
+    <policy name="OutlookRuleProcessFolders_EditText" class="User" displayName="$(string.OutlookRuleProcessFolders_EditText)" explainText="$(string.OutlookRuleProcessFolders_Help)" presentation="$(presentation.OutlookRuleProcessFolders_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_Outlook_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <elements>
+        <text id="OutlookRuleProcessFolders_EditText" valueName="OutlookRuleProcessFolders" />
+      </elements>
+    </policy>
+    <policy name="OutlookRuleFolder_EditText" class="User" displayName="$(string.OutlookRuleFolder_EditText)" explainText="$(string.OutlookRuleFolder_Help)" presentation="$(presentation.OutlookRuleFolder_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_Outlook_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <elements>
+        <text id="OutlookRuleFolder_EditText" valueName="OutlookRuleFolder" />
+      </elements>
+    </policy>
+    <policy name="OutlookRuleHeaderStrings_EditText" class="User" displayName="$(string.OutlookRuleHeaderStrings_EditText)" explainText="$(string.OutlookRuleHeaderStrings_Help)" presentation="$(presentation.OutlookRuleHeaderStrings_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_Outlook_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <elements>
+        <text id="OutlookRuleHeaderStrings_EditText" valueName="OutlookRuleHeaderStrings" />
+      </elements>
+    </policy>
+    <policy name="OutlookRuleSubjectStrings_EditText" class="User" displayName="$(string.OutlookRuleSubjectStrings_EditText)" explainText="$(string.OutlookRuleSubjectStrings_Help)" presentation="$(presentation.OutlookRuleSubjectStrings_EditText)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar">
+      <parentCategory ref="Category_Outlook_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <elements>
+        <text id="OutlookRuleSubjectStrings_EditText" valueName="OutlookRuleSubjectStrings" />
+      </elements>
+    </policy>
+    <policy name="OutlookRuleStopAfterProcessingOnOff_Bool" class="User" displayName="$(string.OutlookRuleStopAfterProcessingOnOff_Bool)" explainText="$(string.OutlookRuleStopAfterProcessingOnOff_Help)" presentation="$(presentation.OutlookRuleStopAfterProcessingOnOff_Bool)" key="SOFTWARE\Policies\FreeYourNet\ASSPToolbar" valueName="OutlookRuleStopAfterProcessing">
+      <parentCategory ref="Category_Outlook_Config" />
+      <supportedOn ref="SUPPORTED_OLXP" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>

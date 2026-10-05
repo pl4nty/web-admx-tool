@@ -1,0 +1,1137 @@
+<?xml version="1.0" encoding="utf-16"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="onent15" namespace="onent15.Office.Microsoft.Policies.Windows" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <supersededAdm fileName="onent15" />
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="L_MicrosoftOfficeOneNote" displayName="$(string.L_MicrosoftOfficeOneNote)" />
+    <category name="L_OneNoteOptions" displayName="$(string.L_OneNoteOptions)">
+      <parentCategory ref="L_MicrosoftOfficeOneNote" />
+    </category>
+    <category name="L_Display" displayName="$(string.L_Display)">
+      <parentCategory ref="L_OneNoteOptions" />
+    </category>
+    <category name="L_Editing" displayName="$(string.L_Editing)">
+      <parentCategory ref="L_OneNoteOptions" />
+    </category>
+    <category name="L_Pen" displayName="$(string.L_Pen)">
+      <parentCategory ref="L_OneNoteOptions" />
+    </category>
+    <category name="L_Email" displayName="$(string.L_Email)">
+      <parentCategory ref="L_OneNoteOptions" />
+    </category>
+    <category name="L_Security" displayName="$(string.L_Security)">
+      <parentCategory ref="L_OneNoteOptions" />
+    </category>
+    <category name="L_Cryptography" displayName="$(string.L_Cryptography)">
+      <parentCategory ref="L_Security" />
+    </category>
+    <category name="L_NoteFlags" displayName="$(string.L_NoteFlags)">
+      <parentCategory ref="L_OneNoteOptions" />
+    </category>
+    <category name="L_AudioandVideo" displayName="$(string.L_AudioandVideo)">
+      <parentCategory ref="L_OneNoteOptions" />
+    </category>
+    <category name="L_Save" displayName="$(string.L_Save)">
+      <parentCategory ref="L_OneNoteOptions" />
+    </category>
+    <category name="L_Password" displayName="$(string.L_Password)">
+      <parentCategory ref="L_OneNoteOptions" />
+    </category>
+    <category name="L_Backup" displayName="$(string.L_Backup)">
+      <parentCategory ref="L_OneNoteOptions" />
+    </category>
+    <category name="L_SendToOneNote" displayName="$(string.L_SendToOneNote)">
+      <parentCategory ref="L_OneNoteOptions" />
+    </category>
+    <category name="L_Addins" displayName="$(string.L_Addins)">
+      <parentCategory ref="L_OneNoteOptions" />
+    </category>
+    <category name="L_Spelling" displayName="$(string.L_Spelling)">
+      <parentCategory ref="L_OneNoteOptions" />
+    </category>
+    <category name="L_VersionsAndRecyleBin" displayName="$(string.L_VersionsAndRecyleBin)">
+      <parentCategory ref="L_OneNoteOptions" />
+    </category>
+    <category name="L_Other" displayName="$(string.L_Other)">
+      <parentCategory ref="L_OneNoteOptions" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="L_Pagetabsappearontheleft" class="User" displayName="$(string.L_Pagetabsappearontheleft)" explainText="$(string.L_RightUncheckstheoptionPagetabsappearontheleftLeftCheckstheop)" presentation="$(presentation.L_Pagetabsappearontheleft)" key="software\policies\microsoft\office\15.0\onenote\options\other">
+      <parentCategory ref="L_Display" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_Specifylocationofthepagetabcontrol" valueName="pagetabsonleft">
+          <item displayName="$(string.L_Right)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Left)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Verticalscrollbarappearsonleft" class="User" displayName="$(string.L_Verticalscrollbarappearsonleft)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\15.0\onenote\options\other" valueName="vertscrollbaronleft">
+      <parentCategory ref="L_Display" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_ShowNoteContainers" class="User" displayName="$(string.L_ShowNoteContainers)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\15.0\onenote\options\other" valueName="shownotecontainers">
+      <parentCategory ref="L_Display" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Navigationbarappearsontheright" class="User" displayName="$(string.L_Navigationbarappearsontheright)" explainText="$(string.L_NavigationbarappearsontherightExplain)" key="software\policies\microsoft\office\15.0\onenote\options\other" valueName="navbaronleft">
+      <parentCategory ref="L_Display" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_TurnOffLinkCreationWith" class="User" displayName="$(string.L_TurnOffLinkCreationWith)" explainText="$(string.L_TurnOffLinkCreationWithExplain)" key="software\policies\microsoft\office\15.0\onenote\options\editing" valueName="wikilink">
+      <parentCategory ref="L_Editing" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Turnoffautocalculator" class="User" displayName="$(string.L_Turnoffautocalculator)" explainText="$(string.L_TurnoffautocalculatorExplain)" key="software\policies\microsoft\office\15.0\onenote\options\editing" valueName="autocalculate">
+      <parentCategory ref="L_Editing" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_ShowPasteOptionsbuttons" class="User" displayName="$(string.L_ShowPasteOptionsbuttons)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\15.0\onenote\options\other" valueName="pasteooui">
+      <parentCategory ref="L_Editing" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_AutoNumberingRecognition" class="User" displayName="$(string.L_AutoNumberingRecognition)" explainText="$(string.L_ChecksUncheckstheoptionApplynumberingtolistsautomatically)" key="software\policies\microsoft\office\15.0\onenote\options\editing" valueName="numbering auto reco">
+      <parentCategory ref="L_Editing" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_AutoBulletRecognition" class="User" displayName="$(string.L_AutoBulletRecognition)" explainText="$(string.L_ChecksUncheckstheoptionApplybulletstolistsautomatically)" key="software\policies\microsoft\office\15.0\onenote\options\editing" valueName="bullet auto reco">
+      <parentCategory ref="L_Editing" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DefaultFontName" class="User" displayName="$(string.L_DefaultFontName)" explainText="$(string.L_SpecifiesthevalueintheoptionFont)" presentation="$(presentation.L_DefaultFontName)" key="software\policies\microsoft\office\15.0\onenote\options\editing">
+      <parentCategory ref="L_Editing" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_Font" valueName="defaultfontface" />
+      </elements>
+    </policy>
+    <policy name="L_DefaultFontSize" class="User" displayName="$(string.L_DefaultFontSize)" explainText="$(string.L_SpecifiesthevalueintheoptionSize)" presentation="$(presentation.L_DefaultFontSize)" key="software\policies\microsoft\office\15.0\onenote\options\editing">
+      <parentCategory ref="L_Editing" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_FontSize" valueName="defaultfontsize" />
+      </elements>
+    </policy>
+    <policy name="L_AutoKeyboardSwitching" class="User" displayName="$(string.L_AutoKeyboardSwitching)" explainText="$(string.L_CheckUncheckstheoptionSwitchkeyboardsautomatically)" key="software\policies\microsoft\office\15.0\onenote\options\language" valueName="autokeyboard">
+      <parentCategory ref="L_Editing" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_IncludelinktosourcewhenpastingfromtheInternet" class="User" displayName="$(string.L_IncludelinktosourcewhenpastingfromtheInternet)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\15.0\onenote\options\editing" valueName="pasteincludeurl">
+      <parentCategory ref="L_Editing" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisableScratchout" class="User" displayName="$(string.L_DisableScratchout)" explainText="$(string.L_DisableScratchoutExplain)" key="software\policies\microsoft\office\15.0\onenote\options\pen" valueName="disablescratchout">
+      <parentCategory ref="L_Pen" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Createallnewpageswithrulelines" class="User" displayName="$(string.L_Createallnewpageswithrulelines)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\15.0\onenote\options\pen" valueName="userulelines">
+      <parentCategory ref="L_Pen" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Usepenpressuresensitivity" class="User" displayName="$(string.L_Usepenpressuresensitivity)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\15.0\onenote\options\pen" valueName="inkpressure">
+      <parentCategory ref="L_Pen" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_AutomaticallyswitchbetweenPenandSelectionTool" class="User" displayName="$(string.L_AutomaticallyswitchbetweenPenandSelectionTool)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\15.0\onenote\options\pen" valueName="automodeswitch">
+      <parentCategory ref="L_Pen" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_ShowTabletPCInputPanelonOneNotepages" class="User" displayName="$(string.L_ShowTabletPCInputPanelonOneNotepages)" explainText="$(string.L_ChecktodisplayInputPanel)" key="software\policies\microsoft\office\15.0\onenote\options\pen" valueName="showtabletpcinputpanel">
+      <parentCategory ref="L_Pen" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_AttachEmbeddedFilesToTheEmail" class="User" displayName="$(string.L_AttachEmbeddedFilesToTheEmail)" explainText="$(string.L_AttachEmbeddedFilesToTheEmailExplain)" key="software\policies\microsoft\office\15.0\onenote\options" valueName="email embedded files">
+      <parentCategory ref="L_Email" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_AllowOneNoteemailattachments" class="User" displayName="$(string.L_AllowOneNoteemailattachments)" explainText="$(string.L_ChecksUncheckstheoptionAttachacopyoftheoriginalnotesasaOneNo)" key="software\policies\microsoft\office\15.0\onenote\options" valueName="email attachment">
+      <parentCategory ref="L_Email" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_AddsignaturetoOneNoteemailmessages" class="User" displayName="$(string.L_AddsignaturetoOneNoteemailmessages)" explainText="$(string.L_ChecksUncheckstheoptionAddthefollowingsignaturetoemailmessag)" key="software\policies\microsoft\office\15.0\onenote\options\other" valueName="emailsignature">
+      <parentCategory ref="L_Email" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_UsethissignatureforOneNoteemail" class="User" displayName="$(string.L_UsethissignatureforOneNoteemail)" explainText="$(string.L_SetsthevalueintheoptionAddthefollowingsignaturetoemailmessag)" presentation="$(presentation.L_UsethissignatureforOneNoteemail)" key="software\policies\microsoft\office\15.0\onenote\options\other">
+      <parentCategory ref="L_Email" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_EntersignaturetouseforOneNoteemail" valueName="signature" />
+      </elements>
+    </policy>
+    <policy name="L_Copyitemswhenmovingthem" class="User" displayName="$(string.L_Copyitemswhenmovingthem)" explainText="$(string.L_CopyitemswhenmovingthemExplain)" key="software\policies\microsoft\office\15.0\onenote\options\other" valueName="duplicatenoteflag">
+      <parentCategory ref="L_NoteFlags" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_ShowDimmedTaggedNotesInTheTagsSummaryTaskPane" class="User" displayName="$(string.L_ShowDimmedTaggedNotesInTheTagsSummaryTaskPane)" explainText="$(string.L_ShowDimmedTaggedNotesInTheTagsSummaryTaskPaneExplain)" key="software\policies\microsoft\office\15.0\onenote\options\other" valueName="showinactivenoteflag">
+      <parentCategory ref="L_NoteFlags" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Disableaudosearch" class="User" displayName="$(string.L_Disableaudosearch)" explainText="$(string.L_DisableaudosearchExplain)" key="software\policies\microsoft\office\15.0\onenote\options\other" valueName="enableaudiosearch">
+      <parentCategory ref="L_AudioandVideo" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisableLinkedAudiofeature" class="User" displayName="$(string.L_DisableLinkedAudiofeature)" explainText="$(string.L_DisableLinkedAudiofeatureExplain)" key="software\policies\microsoft\office\15.0\onenote\options\audio" valueName="disablerecording">
+      <parentCategory ref="L_AudioandVideo" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Specifynumberofbitstosamplewhenrecording" class="User" displayName="$(string.L_Specifynumberofbitstosamplewhenrecording)" explainText="$(string.L_SpecifynumberofbitstosamplewhenrecordingExplain)" presentation="$(presentation.L_Specifynumberofbitstosamplewhenrecording)" key="software\policies\microsoft\office\15.0\onenote\options\audio">
+      <parentCategory ref="L_AudioandVideo" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_Bits" valueName="defaultbitdepth" minValue="8" maxValue="48" />
+      </elements>
+    </policy>
+    <policy name="L_Specifyratetosampleaudiobitssecond" class="User" displayName="$(string.L_Specifyratetosampleaudiobitssecond)" explainText="$(string.L_SpecifyratetosampleaudiobitssecondExplain)" presentation="$(presentation.L_Specifyratetosampleaudiobitssecond)" key="software\policies\microsoft\office\15.0\onenote\options\audio">
+      <parentCategory ref="L_AudioandVideo" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_BitsSecond" valueName="defaultsamplerate" minValue="8" maxValue="192" />
+      </elements>
+    </policy>
+    <policy name="L_Specifynumberofchannelstorecord" class="User" displayName="$(string.L_Specifynumberofchannelstorecord)" explainText="$(string.L_SpecifynumberofchannelstorecordExplain)" presentation="$(presentation.L_Specifynumberofchannelstorecord)" key="software\policies\microsoft\office\15.0\onenote\options\audio">
+      <parentCategory ref="L_AudioandVideo" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_Channels12" valueName="defaultchannels" minValue="1" maxValue="2" />
+      </elements>
+    </policy>
+    <policy name="L_Rewindfromstartofparagraphbythefollowingnumberofseconds" class="User" displayName="$(string.L_Rewindfromstartofparagraphbythefollowingnumberofseconds)" explainText="$(string.L_SetsthevalueinthecorrespondingUIoption)" presentation="$(presentation.L_Rewindfromstartofparagraphbythefollowingnumberofseconds)" key="software\policies\microsoft\office\15.0\onenote\options\audio">
+      <parentCategory ref="L_AudioandVideo" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_Rewindfromstartofparagraphbysec" valueName="rewind" minValue="0" maxValue="999" />
+      </elements>
+    </policy>
+    <policy name="L_ChoosedefaultcodectobeusedforVideonotebook" class="User" displayName="$(string.L_ChoosedefaultcodectobeusedforVideonotebook)" explainText="$(string.L_ChoosedefaultcodectobeusedforVideonotebookExplain)" presentation="$(presentation.L_ChoosedefaultcodectobeusedforVideonotebook)" key="software\policies\microsoft\office\15.0\onenote\options\audio">
+      <parentCategory ref="L_AudioandVideo" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_ChoosetheWindowsMediaVideo8codec" valueName="videocaptureprofile">
+          <item displayName="$(string.L_ColorPocketPcs150kbps)">
+            <value>
+              <string>Windows Media Video 8 for Color Pocket PCs (150 Kbps)</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_DialupModemsorSinglechannel)">
+            <value>
+              <string>Windows Media Video 8 for Dial-up Modems or Single-channel ISDN (28.8 to 56 Kbps)</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_LANCableModemorXDSL)">
+            <value>
+              <string>Windows Media Video 8 for LAN, Cable Modem, or xDSL (100 to 768 Kbps)</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_DialupModemsorLAN)">
+            <value>
+              <string>Windows Media Video 8 for Dial-up Modems or LAN (28.8 to 100 Kbps)</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_DialupModems288kbps)">
+            <value>
+              <string>Windows Media Video 8 for Dial-up Modems (28.8 Kbps)</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_DialupModems56kbps)">
+            <value>
+              <string>Windows Media Video 8 for Dial-up Modems (56 Kbps)</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_LocalAreaNetwork100kbps)">
+            <value>
+              <string>Windows Media Video 8 for Local Area Network (100 Kbps)</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_LocalAreaNetwork256kbps)">
+            <value>
+              <string>Windows Media Video 8 for Local Area Network (256 Kbps)</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_LocalAreaNetwork384kbps)">
+            <value>
+              <string>Windows Media Video 8 for Local Area Network (384 Kbps)</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_BroadbandNTSC700kbps)">
+            <value>
+              <string>Windows Media Video 8 for Broadband (NTSC, 700 Kbps)</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_BroadbandNTSC1400kbps)">
+            <value>
+              <string>Windows Media Video 8 for Broadband (NTSC, 1400 Kbps)</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_BroadbandPAL384kbps)">
+            <value>
+              <string>Windows Media Video 8 for Broadband (PAL, 384 Kbps)</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_BroadbandPAL700kbps)">
+            <value>
+              <string>Windows Media Video 8 for Broadband (PAL, 700 Kbps)</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_SetCNGCipherAlgorithm" class="User" displayName="$(string.L_SetCNGCipherAlgorithm)" explainText="$(string.L_SetCNGCipherAlgorithmExplain)" presentation="$(presentation.L_SetCNGCipherAlgorithm)" key="software\policies\microsoft\office\15.0\onenote\security\crypto">
+      <parentCategory ref="L_Cryptography" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_SetCNGCipherAlgorithmID" valueName="cipheralgorithm" required="true" />
+      </elements>
+    </policy>
+    <policy name="L_ConfigureCNGCipherChainingMode" class="User" displayName="$(string.L_ConfigureCNGCipherChainingMode)" explainText="$(string.L_ConfigureCNGCipherChainingModeExplain)" presentation="$(presentation.L_ConfigureCNGCipherChainingMode)" key="software\policies\microsoft\office\15.0\onenote\security\crypto">
+      <parentCategory ref="L_Cryptography" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_ConfigureCNGCipherChainingModeDropID" valueName="cipherchaining">
+          <item displayName="$(string.L_ConfigureCNGCipherChainingModeStr1)">
+            <value>
+              <string>ChainingModeCBC</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_ConfigureCNGCipherChainingModeStr2)">
+            <value>
+              <string>ChainingModeCFB</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_SetCNGCipherKeyLength" class="User" displayName="$(string.L_SetCNGCipherKeyLength)" explainText="$(string.L_SetCNGCipherKeyLengthExplain)" presentation="$(presentation.L_SetCNGCipherKeyLength)" key="software\policies\microsoft\office\15.0\onenote\security\crypto">
+      <parentCategory ref="L_Cryptography" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_SetCNGCipherKeyLengthSpinID" valueName="cipherkeybits" minValue="0" maxValue="1000000" />
+      </elements>
+    </policy>
+    <policy name="L_SpecifyEncryptionCompatibility" class="User" displayName="$(string.L_SpecifyEncryptionCompatibility)" explainText="$(string.L_SpecifyEncryptionCompatibilityExplain)" presentation="$(presentation.L_SpecifyEncryptionCompatibility)" key="software\policies\microsoft\office\15.0\onenote\security\crypto">
+      <parentCategory ref="L_Cryptography" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_SpecifyEncryptionCompatibilityDropID" valueName="compatmode">
+          <item displayName="$(string.L_SpecifyEncryptionCompatibilityStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_SpecifyEncryptionCompatibilityStr2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_SpecifyEncryptionCompatibilityStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_SetParametersForCNGContext" class="User" displayName="$(string.L_SetParametersForCNGContext)" explainText="$(string.L_SetParametersForCNGContextExplain)" presentation="$(presentation.L_SetParametersForCNGContext)" key="software\policies\microsoft\office\15.0\onenote\security\crypto">
+      <parentCategory ref="L_Cryptography" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_SetParametersForCNGContextID" valueName="context" required="true" />
+      </elements>
+    </policy>
+    <policy name="L_SpecifyCNGHashAlgorithm" class="User" displayName="$(string.L_SpecifyCNGHashAlgorithm)" explainText="$(string.L_SpecifyCNGHashAlgorithmExplain)" presentation="$(presentation.L_SpecifyCNGHashAlgorithm)" key="software\policies\microsoft\office\15.0\onenote\security\crypto">
+      <parentCategory ref="L_Cryptography" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_SpecifyCNGHashAlgorithmDropID" valueName="hashalgorithm">
+          <item displayName="$(string.L_SpecifyCNGHashAlgorithmStr1)">
+            <value>
+              <string>SHA1</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_SpecifyCNGHashAlgorithmStr2)">
+            <value>
+              <string>SHA256</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_SpecifyCNGHashAlgorithmStr3)">
+            <value>
+              <string>SHA384</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_SpecifyCNGHashAlgorithmStr4)">
+            <value>
+              <string>SHA512</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_SetCNGPasswordSpinCount" class="User" displayName="$(string.L_SetCNGPasswordSpinCount)" explainText="$(string.L_SetCNGPasswordSpinCountExplain)" presentation="$(presentation.L_SetCNGPasswordSpinCount)" key="software\policies\microsoft\office\15.0\onenote\security\crypto">
+      <parentCategory ref="L_Cryptography" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_SetCNGPasswordSpinCountSpinID" valueName="passwordspincount" minValue="0" maxValue="10000000" />
+      </elements>
+    </policy>
+    <policy name="L_SpecifyCNGRandomNumberGeneratorAlgorithm" class="User" displayName="$(string.L_SpecifyCNGRandomNumberGeneratorAlgorithm)" explainText="$(string.L_SpecifyCNGRandomNumberGeneratorAlgorithmExplain)" presentation="$(presentation.L_SpecifyCNGRandomNumberGeneratorAlgorithm)" key="software\policies\microsoft\office\15.0\onenote\security\crypto">
+      <parentCategory ref="L_Cryptography" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_SpecifyCNGRandomNumberGeneratorAlgorithmID" valueName="rngalgorithm" required="true" />
+      </elements>
+    </policy>
+    <policy name="L_SpecifyCNGSaltLength" class="User" displayName="$(string.L_SpecifyCNGSaltLength)" explainText="$(string.L_SpecifyCNGSaltLengthExplain)" presentation="$(presentation.L_SpecifyCNGSaltLength)" key="software\policies\microsoft\office\15.0\onenote\security\crypto">
+      <parentCategory ref="L_Cryptography" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_SpecifyCNGSaltLengthSpinID" valueName="saltbytes" minValue="0" maxValue="5000" />
+      </elements>
+    </policy>
+    <policy name="L_NotebookRoot" class="User" displayName="$(string.L_NotebookRoot)" explainText="$(string.L_NotebookRootExplain)" presentation="$(presentation.L_NotebookRoot)" key="software\policies\microsoft\office\15.0\onenote\options\save">
+      <parentCategory ref="L_Save" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_empty1" valueName="notebook root" />
+      </elements>
+    </policy>
+    <policy name="L_Locationofunfilednotessection" class="User" displayName="$(string.L_Locationofunfilednotessection)" explainText="$(string.L_LocationofunfilednotessectionExplain)" presentation="$(presentation.L_Locationofunfilednotessection)" key="software\policies\microsoft\office\15.0\onenote\options\paths">
+      <parentCategory ref="L_Save" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_OpenSideNotesinthissection" valueName="unfilednotessection" />
+      </elements>
+    </policy>
+    <policy name="L_LocationofBackupFolder" class="User" displayName="$(string.L_LocationofBackupFolder)" explainText="$(string.L_SetsthevalueinthecorrespondingUIoption)" presentation="$(presentation.L_LocationofBackupFolder)" key="software\policies\microsoft\office\15.0\onenote\options\paths">
+      <parentCategory ref="L_Save" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_BackupFolder" valueName="backupfolderpath" />
+      </elements>
+    </policy>
+    <policy name="L_Percentageofunuseddiskspacetoallowinsections" class="User" displayName="$(string.L_Percentageofunuseddiskspacetoallowinsections)" explainText="$(string.L_SetsthevalueintheoptionPercentageofunusedspacetoallowinsecti)" presentation="$(presentation.L_Percentageofunuseddiskspacetoallowinsections)" key="software\policies\microsoft\office\15.0\onenote\options\save">
+      <parentCategory ref="L_Save" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_EnterPercentage" valueName="percentfreespacebeforeoptimize" minValue="0" maxValue="100" />
+      </elements>
+    </policy>
+    <policy name="L_EnableabilitytooptimizeOneNotefiles" class="User" displayName="$(string.L_EnableabilitytooptimizeOneNotefiles)" explainText="$(string.L_ChecksUncheckstheoptionOptimizesectionsafterOneNotehasbeenin)" presentation="$(presentation.L_EnableabilitytooptimizeOneNotefiles)" key="software\policies\microsoft\office\15.0\onenote\options\save">
+      <parentCategory ref="L_Save" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <boolean id="L_ChecktoenableabilitytooptimizeOneNotefiles" valueName="enableoptimizesections">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <decimal id="L_OptimizeOneNotefilesatthisintervalmin" valueName="optimizesectionsintervalminutes" minValue="0" maxValue="32767" />
+      </elements>
+    </policy>
+    <policy name="L_Disallowsaddonsaccesstopass" class="User" displayName="$(string.L_Disallowsaddonsaccesstopass)" explainText="$(string.L_DisallowsaddonsaccesstopassExplain)" key="software\policies\microsoft\office\15.0\onenote\security" valueName="allowaddinaccesstoencryptedfiles">
+      <parentCategory ref="L_Password" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Disablepasswordprotectedsections" class="User" displayName="$(string.L_Disablepasswordprotectedsections)" explainText="$(string.L_DisablepasswordprotectedsectionsExplain)" key="software\policies\microsoft\office\15.0\onenote\general" valueName="passwordprotectiondisabled">
+      <parentCategory ref="L_Password" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_LockpasswordprotectedsectionsassoonasInavigateawayfromthem" class="User" displayName="$(string.L_LockpasswordprotectedsectionsassoonasInavigateawayfromthem)" explainText="$(string.L_LockpasswordprotectedsectionsassoonasInavigateawayfromthemExplain)" key="software\policies\microsoft\office\15.0\onenote\security" valueName="locksectionsimmediately">
+      <parentCategory ref="L_Password" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Lockpasswordprotectedsectionsafteruserhasntworkedonthemforatime" class="User" displayName="$(string.L_Lockpasswordprotectedsectionsafteruserhasntworkedonthemforatime)" explainText="$(string.L_LockpasswordprotectedsectionsafteruserhasntworkedonthemforatimeExplain)" presentation="$(presentation.L_Lockpasswordprotectedsectionsafteruserhasntworkedonthemforatime)" key="software\policies\microsoft\office\15.0\onenote\security">
+      <parentCategory ref="L_Password" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <boolean id="L_Checktolocksections" valueName="lockidlesections">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <enum id="L_Timeintervalminutestolockpasswordprotectedsections" valueName="passwordtimeout">
+          <item displayName="$(string.L_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_5)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+          <item displayName="$(string.L_10)">
+            <value>
+              <decimal value="10" />
+            </value>
+          </item>
+          <item displayName="$(string.L_15)">
+            <value>
+              <decimal value="15" />
+            </value>
+          </item>
+          <item displayName="$(string.L_30)">
+            <value>
+              <decimal value="30" />
+            </value>
+          </item>
+          <item displayName="$(string.L_60)">
+            <value>
+              <decimal value="60" />
+            </value>
+          </item>
+          <item displayName="$(string.L_120)">
+            <value>
+              <decimal value="120" />
+            </value>
+          </item>
+          <item displayName="$(string.L_240)">
+            <value>
+              <decimal value="240" />
+            </value>
+          </item>
+          <item displayName="$(string.L_480)">
+            <value>
+              <decimal value="480" />
+            </value>
+          </item>
+          <item displayName="$(string.L_720)">
+            <value>
+              <decimal value="720" />
+            </value>
+          </item>
+          <item displayName="$(string.L_1440)">
+            <value>
+              <decimal value="1440" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Automaticallybackupmynotebook" class="User" displayName="$(string.L_Automaticallybackupmynotebook)" explainText="$(string.L_ChecksUncheckstheoptionAutomaticallybackupmynotebookatthefol)" presentation="$(presentation.L_Automaticallybackupmynotebook)" key="software\policies\microsoft\office\15.0\onenote\options\save">
+      <parentCategory ref="L_Backup" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <boolean id="L_Checktoenableautomaticbackup" valueName="backupenableautobackup">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <enum id="L_Automaticallybackupatthisintervalmin" valueName="backupruneveryxminutes">
+          <item displayName="$(string.L_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_3)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_4)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.L_5)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+          <item displayName="$(string.L_10)">
+            <value>
+              <decimal value="10" />
+            </value>
+          </item>
+          <item displayName="$(string.L_15)">
+            <value>
+              <decimal value="15" />
+            </value>
+          </item>
+          <item displayName="$(string.L_30)">
+            <value>
+              <decimal value="30" />
+            </value>
+          </item>
+          <item displayName="$(string.L_60)">
+            <value>
+              <decimal value="60" />
+            </value>
+          </item>
+          <item displayName="$(string.L_120)">
+            <value>
+              <decimal value="120" />
+            </value>
+          </item>
+          <item displayName="$(string.L_180)">
+            <value>
+              <decimal value="180" />
+            </value>
+          </item>
+          <item displayName="$(string.L_240)">
+            <value>
+              <decimal value="240" />
+            </value>
+          </item>
+          <item displayName="$(string.L_300)">
+            <value>
+              <decimal value="300" />
+            </value>
+          </item>
+          <item displayName="$(string.L_360)">
+            <value>
+              <decimal value="360" />
+            </value>
+          </item>
+          <item displayName="$(string.L_480)">
+            <value>
+              <decimal value="480" />
+            </value>
+          </item>
+          <item displayName="$(string.L_720)">
+            <value>
+              <decimal value="720" />
+            </value>
+          </item>
+          <item displayName="$(string.L_960)">
+            <value>
+              <decimal value="960" />
+            </value>
+          </item>
+          <item displayName="$(string.L_1440)">
+            <value>
+              <decimal value="1440" />
+            </value>
+          </item>
+          <item displayName="$(string.L_2880)">
+            <value>
+              <decimal value="2880" />
+            </value>
+          </item>
+          <item displayName="$(string.L_4320)">
+            <value>
+              <decimal value="4320" />
+            </value>
+          </item>
+          <item displayName="$(string.L_5760)">
+            <value>
+              <decimal value="5760" />
+            </value>
+          </item>
+          <item displayName="$(string.L_7200)">
+            <value>
+              <decimal value="7200" />
+            </value>
+          </item>
+          <item displayName="$(string.L_8640)">
+            <value>
+              <decimal value="8640" />
+            </value>
+          </item>
+          <item displayName="$(string.L_10080)">
+            <value>
+              <decimal value="10080" />
+            </value>
+          </item>
+          <item displayName="$(string.L_20160)">
+            <value>
+              <decimal value="20160" />
+            </value>
+          </item>
+          <item displayName="$(string.L_30240)">
+            <value>
+              <decimal value="30240" />
+            </value>
+          </item>
+          <item displayName="$(string.L_40320)">
+            <value>
+              <decimal value="40320" />
+            </value>
+          </item>
+          <item displayName="$(string.L_50400)">
+            <value>
+              <decimal value="50400" />
+            </value>
+          </item>
+          <item displayName="$(string.L_60480)">
+            <value>
+              <decimal value="60480" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Numberofbackupcopiestokeep" class="User" displayName="$(string.L_Numberofbackupcopiestokeep)" explainText="$(string.L_SetsthevalueinthecorrespondingUIoption)" presentation="$(presentation.L_Numberofbackupcopiestokeep)" key="software\policies\microsoft\office\15.0\onenote\options\save">
+      <parentCategory ref="L_Backup" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_numberofbackupcopiestokeep2" valueName="backupnumberofbackupstokeep" minValue="0" maxValue="1000" />
+      </elements>
+    </policy>
+    <policy name="L_DisableOutlooksendemailtoOneNoteoption" class="User" displayName="$(string.L_DisableOutlooksendemailtoOneNoteoption)" explainText="$(string.L_DisableOutlooksendemailtoOneNoteoptionExplain)" key="software\policies\microsoft\office\15.0\onenote\options\outlookandweb" valueName="disablesendemailtoonenote">
+      <parentCategory ref="L_SendToOneNote" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisableOneNoteCOMAPI" class="User" displayName="$(string.L_DisableOneNoteCOMAPI)" explainText="$(string.L_DisableOneNoteCOMAPIExplain)" key="software\policies\microsoft\office\15.0\onenote\security" valueName="disablecomapi">
+      <parentCategory ref="L_Addins" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisableinstalledOneNoteaddins" class="User" displayName="$(string.L_DisableinstalledOneNoteaddins)" explainText="$(string.L_DisableinstalledOneNoteaddinsExplain)" key="software\policies\microsoft\office\15.0\onenote\security" valueName="disablealladdins">
+      <parentCategory ref="L_Addins" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_OneNoteSpellingOptions" class="User" displayName="$(string.L_OneNoteSpellingOptions)" explainText="$(string.L_OneNoteSpellingOptionsExplain)" presentation="$(presentation.L_OneNoteSpellingOptions)" key="software\policies\microsoft\shared tools\proofing tools\1.0\office">
+      <parentCategory ref="L_Spelling" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_empty11" valueName="onenotespellingoptions">
+          <item displayName="$(string.L_nospellchecking)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_checkspellingasyoutypelower)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_hidespllingerrors)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_checkspellingbuthideerrors)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_TurnOffVersionsAndNotebookRecycleBinInSharedNotebooks" class="User" displayName="$(string.L_TurnOffVersionsAndNotebookRecycleBinInSharedNotebooks)" explainText="$(string.L_TurnOffVersionsAndNotebookRecycleBinInSharedNotebooksExplain)" key="software\policies\microsoft\office\15.0\onenote\options\versions" valueName="enablehistory">
+      <parentCategory ref="L_VersionsAndRecyleBin" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DoNotPruneVersionsOverTime" class="User" displayName="$(string.L_DoNotPruneVersionsOverTime)" explainText="$(string.L_DoNotPruneVersionsOverTimeExplain)" key="software\policies\microsoft\office\15.0\onenote\options\versions" valueName="pruneversionsovertime">
+      <parentCategory ref="L_VersionsAndRecyleBin" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DaysOfAllVersions" class="User" displayName="$(string.L_DaysOfAllVersions)" explainText="$(string.L_DaysOfAllVersionsExplain)" presentation="$(presentation.L_DaysOfAllVersions)" key="software\policies\microsoft\office\15.0\onenote\options\versions">
+      <parentCategory ref="L_VersionsAndRecyleBin" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_DaysOfAllVersionsSpinID" valueName="daysofallversions" minValue="0" maxValue="365" />
+      </elements>
+    </policy>
+    <policy name="L_DaysOfHourlyVersionsNotToPruneAfterDaysBack" class="User" displayName="$(string.L_DaysOfHourlyVersionsNotToPruneAfterDaysBack)" explainText="$(string.L_DaysOfHourlyVersionsNotToPruneAfterDaysBackExplain)" presentation="$(presentation.L_DaysOfHourlyVersionsNotToPruneAfterDaysBack)" key="software\policies\microsoft\office\15.0\onenote\options\versions">
+      <parentCategory ref="L_VersionsAndRecyleBin" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_DaysOfHourlyVersionsNotToPruneAfterDaysBackSpinID" valueName="daysofhourlyversions" minValue="0" maxValue="365" />
+      </elements>
+    </policy>
+    <policy name="L_MaximumNumberOfOncePerDayVersionHistoryItemsKept" class="User" displayName="$(string.L_MaximumNumberOfOncePerDayVersionHistoryItemsKept)" explainText="$(string.L_MaximumNumberOfOncePerDayVersionHistoryItemsKeptExplain)" presentation="$(presentation.L_MaximumNumberOfOncePerDayVersionHistoryItemsKept)" key="software\policies\microsoft\office\15.0\onenote\options\versions">
+      <parentCategory ref="L_VersionsAndRecyleBin" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_MaximumNumberOfOncePerDayVersionHistoryItemsKeptSpinID" valueName="maxuniquedayversions" minValue="0" maxValue="365" />
+      </elements>
+    </policy>
+    <policy name="L_DaysBackToKeepInVersionHistory" class="User" displayName="$(string.L_DaysBackToKeepInVersionHistory)" explainText="$(string.L_DaysBackToKeepInVersionHistoryExplain)" presentation="$(presentation.L_DaysBackToKeepInVersionHistory)" key="software\policies\microsoft\office\15.0\onenote\options\versions">
+      <parentCategory ref="L_VersionsAndRecyleBin" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_DaysBackToKeepInVersionHistorySpinID" valueName="deleteallversionsafter" minValue="0" maxValue="365" />
+      </elements>
+    </policy>
+    <policy name="L_DaysBackToKeepItemsInRecycleBin" class="User" displayName="$(string.L_DaysBackToKeepItemsInRecycleBin)" explainText="$(string.L_DaysBackToKeepItemsInRecycleBinExplain)" presentation="$(presentation.L_DaysBackToKeepItemsInRecycleBin)" key="software\policies\microsoft\office\15.0\onenote\options\versions">
+      <parentCategory ref="L_VersionsAndRecyleBin" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_DaysBackToKeepItemsInRecycleBinSpinID" valueName="daystokeeprecycleditems" minValue="0" maxValue="365" />
+      </elements>
+    </policy>
+    <policy name="L_SetUNCIntervalToPollForChangesOnFileServers" class="User" displayName="$(string.L_SetUNCIntervalToPollForChangesOnFileServers)" explainText="$(string.L_SetUNCIntervalToPollForChangesOnFileServersExplain)" presentation="$(presentation.L_SetUNCIntervalToPollForChangesOnFileServers)" key="software\policies\microsoft\office\15.0\onenote\options\save">
+      <parentCategory ref="L_Other" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_SetUNCIntervalToPollForChangesOnFileServersSpinID" valueName="folderpollinterval" minValue="1" maxValue="3600" />
+      </elements>
+    </policy>
+    <policy name="L_TurnOffOneNoteAutoLinkedNoteTaking" class="User" displayName="$(string.L_TurnOffOneNoteAutoLinkedNoteTaking)" explainText="$(string.L_TurnOffOneNoteAutoLinkedNoteTakingExplain)" key="software\policies\microsoft\office\15.0\onenote\options\linkednotes" valueName="autolink">
+      <parentCategory ref="L_Other" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisableOCR" class="User" displayName="$(string.L_DisableOCR)" explainText="$(string.L_DisableOCRExplain)" key="software\policies\microsoft\office\15.0\onenote\options\other" valueName="disableocr">
+      <parentCategory ref="L_Other" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_EmbeddedFilesBlockedExtensions" class="User" displayName="$(string.L_EmbeddedFilesBlockedExtensions)" explainText="$(string.L_EmbeddedFilesBlockedExtensionsExplain)" presentation="$(presentation.L_EmbeddedFilesBlockedExtensions)" key="software\policies\microsoft\office\15.0\onenote\options\embeddedfileopenoptions">
+      <parentCategory ref="L_Other" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_empty12" valueName="blockedextensions" />
+      </elements>
+    </policy>
+    <policy name="L_Loadanotebookonfirstboot" class="User" displayName="$(string.L_Loadanotebookonfirstboot)" explainText="$(string.L_LoadanotebookonfirstbootExplain)" presentation="$(presentation.L_Loadanotebookonfirstboot)" key="software\policies\microsoft\office\15.0\onenote\options\other">
+      <parentCategory ref="L_Other" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_empty13" valueName="addnotebooks" />
+      </elements>
+    </policy>
+    <policy name="L_Disableembeddedfiles" class="User" displayName="$(string.L_Disableembeddedfiles)" explainText="$(string.L_DisableembeddedfilesExplain)" key="software\policies\microsoft\office\15.0\onenote\options" valueName="disableembeddedfiles">
+      <parentCategory ref="L_Other" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisableOneNotescreenclippingnotifications" class="User" displayName="$(string.L_DisableOneNotescreenclippingnotifications)" explainText="$(string.L_DisableOneNotescreenclippingnotificationsExplain)" key="software\policies\microsoft\office\15.0\onenote\options\other" valueName="disablescreenclippingballoon">
+      <parentCategory ref="L_Other" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisableOneNoteScreenClippings" class="User" displayName="$(string.L_DisableOneNoteScreenClippings)" explainText="$(string.L_DisableOneNoteScreenClippingsExplain)" key="software\policies\microsoft\office\15.0\onenote\options\other" valueName="disablescreenclippings">
+      <parentCategory ref="L_Other" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Numberofdaysbeforewarningthatserveris" class="User" displayName="$(string.L_Numberofdaysbeforewarningthatserveris)" explainText="$(string.L_NumberofdaysbeforewarningthatserverisExplain)" presentation="$(presentation.L_Numberofdaysbeforewarningthatserveris)" key="software\policies\microsoft\office\15.0\onenote\options\synchronization">
+      <parentCategory ref="L_Other" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_empty14" valueName="inaccessibleserverdaysbeforewarn" minValue="0" maxValue="30" />
+      </elements>
+    </policy>
+    <policy name="L_SharePointsyncinterval" class="User" displayName="$(string.L_SharePointsyncinterval)" explainText="$(string.L_SharePointsyncintervalExplain)" presentation="$(presentation.L_SharePointsyncinterval)" key="software\policies\microsoft\office\15.0\onenote\options\save">
+      <parentCategory ref="L_Other" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_empty15" valueName="sharepointsyncinterval" minValue="10" maxValue="604800" />
+      </elements>
+    </policy>
+    <policy name="L_DefaultunitofmeasurementusedinOneNote" class="User" displayName="$(string.L_DefaultunitofmeasurementusedinOneNote)" explainText="$(string.L_SetsthevalueintheoptionMeasurementunits)" presentation="$(presentation.L_DefaultunitofmeasurementusedinOneNote)" key="software\policies\microsoft\office\15.0\onenote\options\other">
+      <parentCategory ref="L_Other" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_Specifydefaultunitofmeasurement" valueName="measurementunit">
+          <item displayName="$(string.L_Inch)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Centimeter)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Millimeter)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Point)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Pica)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_AddOneNoteicontonotificationarea" class="User" displayName="$(string.L_AddOneNoteicontonotificationarea)" explainText="$(string.L_ChecksUncheckstheoptionPlaceOneNoteiconinthenotificationarea)" key="software\policies\microsoft\office\15.0\onenote\options\other" valueName="runsystemtrayapp">
+      <parentCategory ref="L_Other" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_NotebookPresence" class="User" displayName="$(string.L_NotebookPresence)" explainText="$(string.L_NotebookPresenceExplain)" key="software\policies\microsoft\office\15.0\onenote\options" valueName="disablepresence">
+      <parentCategory ref="L_Other" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_BlockAllUnmanagedAddins" class="User" displayName="$(string.L_BlockAllUnmanagedAddins)" explainText="$(string.L_BlockAllUnmanagedAddinsExplainText)" key="software\policies\microsoft\office\15.0\onenote\resiliency" valueName="restricttolist">
+      <parentCategory ref="L_Addins" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_ListOfManagedAddins" class="User" displayName="$(string.L_ListOfManagedAddins)" explainText="$(string.L_ListOfManagedAddinsExplainText)" presentation="$(presentation.L_ListOfManagedAddins)" key="software\policies\microsoft\office\15.0\onenote\resiliency\addinlist">
+      <parentCategory ref="L_Addins" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledList>
+        <item key="software\policies\microsoft\office\15.0\onenote\resiliency\addinlist" valueName="policyon">
+          <value>
+            <decimal value="1" />
+          </value>
+        </item>
+      </enabledList>
+      <disabledList>
+        <item key="software\policies\microsoft\office\15.0\onenote\resiliency\addinlist" valueName="policyon">
+          <value>
+            <delete />
+          </value>
+        </item>
+      </disabledList>
+      <elements>
+        <list id="L_ListOfManagedAddins2" explicitValue="true" />
+      </elements>
+    </policy>
+    <policy name="L_SpecifyEmbeddedFileSizeLimit" class="User" displayName="$(string.L_EmbeddedFileSizeLimit)" explainText="$(string.L_EmbeddedFileSizeLimitExplainText)" presentation="$(presentation.L_EmbeddedFileSizeLimitPresentation)" key="software\policies\microsoft\office\15.0\onenote\general">
+      <parentCategory ref="L_Other" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_EmbeddedFileSizeLimit" valueName="insertedfilesdisallowembeddingsizethreshold" minValue="10485760" maxValue="2147483648" />
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-16"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="spd14" namespace="spd14.Office.Microsoft.Policies.Windows" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <supersededAdm fileName="spd14" />
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="L_MicrosoftOfficeSharePointDesigner" displayName="$(string.L_MicrosoftOfficeSharePointDesigner)" />
+    <category name="L_Disableitemsinuserinterface" displayName="$(string.L_Disableitemsinuserinterface)">
+      <parentCategory ref="L_MicrosoftOfficeSharePointDesigner" />
+    </category>
+    <category name="L_Predefined" displayName="$(string.L_Predefined)">
+      <parentCategory ref="L_Disableitemsinuserinterface" />
+    </category>
+    <category name="L_Custom" displayName="$(string.L_Custom)">
+      <parentCategory ref="L_Disableitemsinuserinterface" />
+    </category>
+    <category name="L_DefaultAuthoringOptions" displayName="$(string.L_DefaultAuthoringOptions)">
+      <parentCategory ref="L_MicrosoftOfficeSharePointDesigner" />
+    </category>
+    <category name="L_DownloadingFrameworkComponents" displayName="$(string.L_DownloadingFrameworkComponents)">
+      <parentCategory ref="L_MicrosoftOfficeSharePointDesigner" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="L_Disablecommandbarbuttonsandmenuitems" class="User" displayName="$(string.L_Disablecommandbarbuttonsandmenuitems)" explainText="$(string.L_DisablestheassociatedcommandsintheUI)" presentation="$(presentation.L_Disablecommandbarbuttonsandmenuitems)" key="software\policies\microsoft\office\14.0\sharepoint designer\disabledcmdbaritemscheckboxes">
+      <parentCategory ref="L_Predefined" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <boolean id="L_WebComponents" valueName="fpwebpagecomponent">
+          <trueValue>
+            <string>7716</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_ViewToolbarsCustomize" valueName="viewtoolbarscustomize">
+          <trueValue>
+            <string>797</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_InsertComponentHitCounter" valueName="insertcomphitcounter">
+          <trueValue>
+            <string>4207</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_InsertComponentMarquee" valueName="insertcompmarquee">
+          <trueValue>
+            <string>4208</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_InsertComponentConfirmationField" valueName="insertcompconfirmationfield">
+          <trueValue>
+            <string>4211</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_InsertComponentSearchForm" valueName="insertcompsearchform">
+          <trueValue>
+            <string>4209</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_InsertAdvancedJavaApplet" valueName="insertadvjavaapplet">
+          <trueValue>
+            <string>4303</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_InsertAdvancedPlugIn" valueName="insertadvplugin">
+          <trueValue>
+            <string>4304</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_InsertAdvancedActiveXControl" valueName="insertadvactivexcontrol">
+          <trueValue>
+            <string>4305</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_FormatPosition" valueName="formatposition">
+          <trueValue>
+            <string>4220</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_FormatSharedBorders" valueName="formatsharedborders">
+          <trueValue>
+            <string>4221</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_FormatPageTransition" valueName="formatpagetransitions">
+          <trueValue>
+            <string>4264</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_ToolsAddIns" valueName="toolsaddins">
+          <trueValue>
+            <string>7056</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_ToolsApplicationOptions" valueName="toolsoptions">
+          <trueValue>
+            <string>15210</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_ToolsWebSettings" valueName="toolswebsettings">
+          <trueValue>
+            <string>4228</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_ListCreateWorkflow" valueName="listcreateworkflow">
+          <trueValue>
+            <string>18378</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_FlyoutAnchorCreateCustomActionMenu" valueName="flyoutanchorcreatecustomactionmenu">
+          <trueValue>
+            <string>18380</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_WorkflowVisioImport" valueName="workflowvisioimport">
+          <trueValue>
+            <string>19077</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_WorkflowVisioExport" valueName="workflowvisioexport">
+          <trueValue>
+            <string>19078</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_NewWorkflow" valueName="newworkflow">
+          <trueValue>
+            <string>20774</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_CreateListWorkflowGallery" valueName="createlistworkflowgallery">
+          <trueValue>
+            <string>19070</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_CreateWorkflowTemplate" valueName="createworkflowtemplate">
+          <trueValue>
+            <string>19072</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_CreateSiteWorkflow" valueName="createsiteworkflow">
+          <trueValue>
+            <string>19071</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_DeployTemplateGlobally" valueName="deploytemplateglobally">
+          <trueValue>
+            <string>21626</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_FlyoutNewDocumentLibraryContent" valueName="flyoutnewdocumentlibrarycontent">
+          <trueValue>
+            <string>18031</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_disablecommandbarbuttonsandmenuitems0" class="User" displayName="$(string.L_disablecommandbarbuttonsandmenuitems0)" explainText="$(string.L_SpecifytheIDforacommandbartodisable)" presentation="$(presentation.L_disablecommandbarbuttonsandmenuitems0)" key="software\policies\microsoft\office\14.0\sharepoint designer\disabledcmdbaritemslist">
+      <parentCategory ref="L_Custom" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <list id="L_EnteracommandbarIDtodisable" valuePrefix="TCID" />
+      </elements>
+    </policy>
+    <policy name="L_DefaultCSSSchema" class="User" displayName="$(string.L_DefaultCSSSchema)" explainText="$(string.L_DefaultCSSSchemaExplain)" presentation="$(presentation.L_DefaultCSSSchema)" key="software\policies\microsoft\office\14.0\sharepoint designer\restrictions">
+      <parentCategory ref="L_DefaultAuthoringOptions" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="L_Empty" valueName="cssschemapath">
+          <item displayName="$(string.L_CSS1)">
+            <value>
+              <string>CSS10.XML</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_CSS2)">
+            <value>
+              <string>CSS20.XML</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_CSS21)">
+            <value>
+              <string>CSS21.XML</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_CSSIE6)">
+            <value>
+              <string>CSS-IE60.XML</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_DefaultDoctype" class="User" displayName="$(string.L_DefaultDoctype)" explainText="$(string.L_DefaultDoctypeExplain)" presentation="$(presentation.L_DefaultDoctype)" key="software\policies\microsoft\office\14.0\sharepoint designer\restrictions">
+      <parentCategory ref="L_DefaultAuthoringOptions" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="L_empty1" valueName="defaultdoctype">
+          <item displayName="$(string.L_None)">
+            <value>
+              <string>
+              </string>
+            </value>
+          </item>
+          <item displayName="$(string.L_HTML401Frameset)">
+            <value>
+              <string>-//W3C//DTD HTML 4.01 Frameset//EN</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_HTML401Transitional)">
+            <value>
+              <string>-//W3C//DTD HTML 4.01 Transitional//EN</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_HTML401Strict)">
+            <value>
+              <string>-//W3C//DTD HTML 4.01//EN</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_XHTML10Frameset)">
+            <value>
+              <string>-//W3C//DTD XHTML 1.0 Frameset//EN</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_XHTML10Transitional)">
+            <value>
+              <string>-//W3C//DTD XHTML 1.0 Transitional//EN</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_XHTML10Strict)">
+            <value>
+              <string>-//W3C//DTD XHTML 1.0 Strict//EN</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_XHTML11)">
+            <value>
+              <string>-//W3C//DTD XHTML 1.1//EN</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_DefaultNewPageTypeOnSharePoint" class="User" displayName="$(string.L_DefaultNewPageTypeOnSharePoint)" explainText="$(string.L_DefaultNewPageTypeOnSharePointExplain)" presentation="$(presentation.L_DefaultNewPageTypeOnSharePoint)" key="software\policies\microsoft\office\14.0\sharepoint designer">
+      <parentCategory ref="L_DefaultAuthoringOptions" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="L_empty2" valueName="new wss page type">
+          <item displayName="$(string.L_HTML)">
+            <value>
+              <string>[HTML]</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_ASPX)">
+            <value>
+              <string>[ASPX]</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_CSS)">
+            <value>
+              <string>[CSS]</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_XML)">
+            <value>
+              <string>[XML]</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_TextFile)">
+            <value>
+              <string>[TEXT]</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_DefaultSecondarySchema" class="User" displayName="$(string.L_DefaultSecondarySchema)" explainText="$(string.L_DefaultSecondarySchemaExplain)" presentation="$(presentation.L_DefaultSecondarySchema)" key="software\policies\microsoft\office\14.0\sharepoint designer\restrictions">
+      <parentCategory ref="L_DefaultAuthoringOptions" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="L_empty3" valueName="htmlschemapath">
+          <item displayName="$(string.L_HTML401Strict)">
+            <value>
+              <string>HTML_401.xsd</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_HTML401Transitional)">
+            <value>
+              <string>html_transitional_401.xsd</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_HTML401Frameset)">
+            <value>
+              <string>html_frameset_401.xsd</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_XHTML10Strict)">
+            <value>
+              <string>xhtml_strict-11.xsd</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_XHTML10Transitional)">
+            <value>
+              <string>xhtml_transitional.xsd</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_XHTML10Frameset)">
+            <value>
+              <string>xhtml_frameset.xsd</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_XHTML11)">
+            <value>
+              <string>xhtml_strict-11.xsd</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_InternetExplorer302)">
+            <value>
+              <string>ie3_2nav3_0.xsd</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_InternetExplorer40)">
+            <value>
+              <string>N4.XSD</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_InternetExplorer50)">
+            <value>
+              <string>IE5_0.XSD</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_InternetExplorer60)">
+            <value>
+              <string>IE6_0.XSD</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_DefaultNewPageType" class="User" displayName="$(string.L_DefaultNewPageType)" explainText="$(string.L_DefaultNewPageTypeExplain)" presentation="$(presentation.L_DefaultNewPageType)" key="software\policies\microsoft\office\14.0\sharepoint designer">
+      <parentCategory ref="L_DefaultAuthoringOptions" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="L_empty4" valueName="new page type">
+          <item displayName="$(string.L_HTML)">
+            <value>
+              <string>[HTML]</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_ASPX)">
+            <value>
+              <string>[ASPX]</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_CSS)">
+            <value>
+              <string>[CSS]</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_XML)">
+            <value>
+              <string>[XML]</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_TextFile)">
+            <value>
+              <string>[TEXT]</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Hidemissingcomponentdownloadhyperlinks" class="User" displayName="$(string.L_Hidemissingcomponentdownloadhyperlinks)" explainText="$(string.L_HidemissingcomponentdownloadhyperlinksExplain)" key="software\policies\microsoft\office\14.0\common" valueName="disablemissingcomponenthyperlinks">
+      <parentCategory ref="L_DownloadingFrameworkComponents" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_SetdownloadlocationforNET35framework" class="User" displayName="$(string.L_SetdownloadlocationforNET35framework)" explainText="$(string.L_SetdownloadlocationforNET35frameworkExplain)" presentation="$(presentation.L_SetdownloadlocationforNET35framework)" key="software\policies\microsoft\office\14.0\common">
+      <parentCategory ref="L_DownloadingFrameworkComponents" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_empty5" valueName="missingframeworkredirect" />
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

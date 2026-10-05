@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2025 BaseALT, Ltd.  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" revision="1.0" schemaVersion="1.0">
+  <displayName>ALT Operating System LAPS Policy Definitions</displayName>
+  <description>This file contains policy definitions for managing LAPS on the Alt operating system.</description>
+
+  <resources>
+    <stringTable>
+
+    <string id="LAPS_PasswordSettings">Password Settings</string>
+    <string id="LAPS_PasswordSettings_Help">This policy allows you to configure the complexity, length, and expiration date of passwords.
+
+
+The "Password Complexity" parameter — the characters that can be used when creating a new password.
+
+Default: "Uppercase letters, lowercase letters, numbers, special characters."
+
+
+Password Length — the number of characters in the password.
+
+Minimum: 8 characters;
+
+Maximum: 64 characters;
+
+Default: 14 characters.
+
+
+
+Password expiration date in days
+
+Minimum: 1 day;
+
+Maximum: 365 days;
+
+Default: 30 days.
+
+
+    </string>
+    <string id="LAPS_AdminName">Administrator Account Name</string>
+    <string id="LAPS_AdminName_Help">This policy allows you to specify the name of the local account whose password will be managed.
+
+If the policy is enabled, LAPS will manage the password for the local account with this name.
+
+If the policy is disabled or not configured, LAPS will manage the local administrator password - root.
+    </string>
+    <string id="LAPS_ADPasswordEncryptionEnabled">Password encryption</string>
+    <string id="LAPS_ADPasswordEncryptionEnabled_Help">This policy allows you to enable encryption of the managed password before sending it to Active Directory.
+
+The password will not be encrypted if:
+
+1) the password is not configured to be backed up to Active Directory;
+
+2) the Active Directory domain functional level is lower than Windows Server 2016.
+
+If the policy is disabled, the managed account password is not encrypted.
+
+If the policy is not configured, the managed account password is encrypted.
+    </string>
+    <string id="LAPS_ADPasswordEncryptionPrincipal">Password Decryption</string>
+    <string id="LAPS_ADPasswordEncryptionPrincipal_Help">This policy allows you to specify a user or group that is allowed to decrypt encrypted passwords.
+
+The policy setting has no effect if password encryption is not enabled.
+
+Note 1:
+
+When encrypting for a group or user without administrative rights, the "All extended rights" security property must be enabled.
+
+Configuring an organizational unit with target computers:
+ADMC -> Organizational Unit -> Properties -> Security -> Add -> Target Group/User;
+ADMC -> Organizational Unit -> Properties -> Security -> Target Group/User -> Child Objects: Computer -> "All extended rights" checkbox;
+
+Or configuring a computer:
+ADMC -> "Computer" Object -> Properties -> Security -> SELF -> "This object" -> "All extended rights" checkbox;
+
+If the policy is enabled, encrypted passwords can be decrypted by the specified group or user.
+
+If the policy is disabled or not configured, encrypted passwords can only be decrypted by the Domain Admins group.
+
+Note 2:
+
+The string stored in this setting is a security identifier in string form or the full name of the user or group.
+
+Examples:
+
+- S-1-5-21-2127521184-1604012920-1887927527-35197
+- LAPSAdmins
+- lapsuser
+
+        </string>
+        <string id="LAPS_ADEncryptedPasswordHistorySize">Encrypted Password History Size</string>
+        <string id="LAPS_ADEncryptedPasswordHistorySize_Help">The policy allows you to configure the size of the number of encrypted passwords stored in Active Directory.
+
+Configuring this parameter has no effect if:
+
+1) the password is not configured to be backed up to Active Directory;
+
+2) password encryption is not enabled.
+
+The valid range for the number of stored passwords is 0 - 12;
+
+If the policy is enabled, the specified number of old passwords will be stored in Active Directory.
+
+If the policy is disabled or not configured, no old passwords will be stored in Active Directory.
+        </string>
+
+        <string id="LAPS_BackupDirectory">Password Backup</string>
+        <string id="LAPS_BackupDirectory_Help">This policy allows you to specify how the local administrator account password is backed up.
+
+Available options:
+
+Disabled - Backup is disabled
+Active Directory - Backup the password to Active Directory
+
+If this option is set to "Backup password to Active Directory" and the managed device is not joined to Active Directory, the local administrator password will not be backed up.
+
+If the policy is disabled or not configured, the local administrator password is not managed.
+
+        </string>
+
+        <string id="LAPS_DontAllowPwdExpirationBehindPolicy">Password Expiration</string>
+        <string id="LAPS_DontAllowPwdExpirationBehindPolicy_Help">This policy allows you to enable the use of the password expiration period specified by the Password Options group policy.
+
+If the policy is enabled or not configured, the password is not allowed to expire beyond the value specified by the Password Options policy. If an expiration is detected, the password is immediately changed and the password expiration is set according to the policy.
+
+If the policy is disabled, the password expiration can be greater than the value specified by the Password Options policy.
+
+        </string>
+        <string id="LAPS_PostAuthenticationActions">Post Authentication Actions</string>
+        <string id="LAPS_PostAuthenticationActions_Help">This policy allows you to configure automatic actions performed after logging in to an account managed by LAPS.
+
+Grace Period — the time (in hours) during which no actions are performed after logging in;
+
+If the value is greater than 0, when the LAPS mechanism is started, a check is made for the expiration of the specified interval; if it is exceeded, the specified actions are applied;
+
+If the value is 0, no actions are performed;
+
+If the policy is not configured, the default value of 24 hours is applied.
+
+Post Login Actions:
+
+Reset Password — after the grace period ends, LAPS changes the account password;
+
+Reset password and logout (default behavior if policy is not configured) - LAPS changes the password and terminates all active interactive user sessions (local and RDP);
+
+Reset password and reboot device - LAPS changes the password and immediately reboots the computer.
+
+Notes:
+
+
+By default, if policy is not configured, "Reset password and logout" occurs after 24 hours.
+
+        </string>
+
+
+        <string id="LAPS_PwdComplexity_Item_1">Uppercase letters</string>
+        <string id="LAPS_PwdComplexity_Item_2">Uppercase and lowercase letters</string>
+        <string id="LAPS_PwdComplexity_Item_3">Uppercase letters, lowercase letters, numbers</string>
+        <string id="LAPS_PwdComplexity_Item_4">Uppercase letters, lowercase letters, numbers, special characters</string>
+        <string id="LAPS_BackupDirectoryDisabled">Disabled</string>
+        <string id="LAPS_BackupDirectoryAD">Active Directory</string>
+        <string id="PostAuthenticationActions_Item0">Disabled - do nothing</string>
+        <string id="PostAuthenticationActions_Item1">Reset password</string>
+        <string id="PostAuthenticationActions_Item3">Reset password and sign out of managed account</string>
+        <string id="PostAuthenticationActions_Item5">Reset password and reboot device</string>
+
+        </stringTable>
+    <presentationTable>
+        <presentation id="LAPS_PasswordSettings">
+            <dropdownList refId="LAPS_PasswordComplexity" defaultItem="3">Password Complexity:</dropdownList>
+            <decimalTextBox refId="LAPS_PasswordLength" defaultValue="14">Password Length:</decimalTextBox>
+            <decimalTextBox refId="LAPS_PasswordAgeDays" defaultValue="30">Password age (in days):</decimalTextBox>
+        </presentation>
+        <presentation id="LAPS_AdminName">
+            <textBox refId="TEXT_AdminAccountName">
+            <label>Local account name:</label>
+            </textBox>
+        </presentation>
+        <presentation id="LAPS_ADPasswordEncryptionPrincipal">
+            <textBox refId="TEXT_ADPasswordEncryptionPrincipal">
+            <label>Group/user name or ID:</label>
+            </textBox>
+        </presentation>
+        <presentation id="LAPS_ADEncryptedPasswordHistorySize">
+            <decimalTextBox refId="LAPS_ADEncryptedPasswordHistorySize_INT" defaultValue="0">Log size encrypted passwords:</decimalTextBox>
+        </presentation>
+        <presentation id="LAPS_BackupDirectory">
+            <dropdownList refId="LAPS_BackupDirectory" defaultItem="0">Backup:</dropdownList>
+        </presentation>
+        <presentation id="LAPS_PostAuthenticationActions">
+            <decimalTextBox refId="LAPS_PostAuthenticationResetDelay_INT" defaultValue="24">Grace Period (hours):</decimalTextBox>
+            <dropdownList refId="LAPS_PostAuthenticationActions" defaultItem="2">Action:</dropdownList>
+        </presentation>
+    </presentationTable>
+    </resources>
+</policyDefinitionResources>

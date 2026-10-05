@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2023 BaseALT, Ltd.  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" revision="1.0" schemaVersion="1.0">
+  <displayName>ALT DisplayManager policies definitions</displayName>
+  <description> Defining DisplayManager policies for the ALT operating system.</description>
+  <resources>
+    <stringTable>
+
+      <string id="org-freedesktop-DisplayManager-AccountsService-ModifyAny">Permission to set properties of any user</string>
+      <string id="org-freedesktop-DisplayManager-AccountsService-ModifyAny_help">The policy restricts the ability to set properties of any user
+
+Disabled/Unconfigured — restrictions are defined by system parameters.
+
+Enabled — restriction with defined rights;
+
+Possible values:
+
+"No" — set restriction with action denial (user is not allowed to perform the action);
+
+"Yes" — remove the restriction (the user can perform the action without any authentication);
+
+"Auth_self" — the user must enter his/her password for authentication. Note, this level of restriction is not sufficient for most multi-user applications, "Auth_admin" is usually recommended;
+
+"Auth_admin" — the user must enter the administrator password at each request. Requires authentication of the user with administrator privileges;
+
+"Auth_self_keep" — similar to "Auth_self", but authorization is maintained for a short period of time (e.g., five minutes). Note, this level of restriction is insufficient for most multi-user applications, "Auth_admin_keep" is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but authorization is maintained for a short period of time (e.g., five minutes);
+
+Note: the possession of administrative rights in a PolicyKit context is determined by its rules. By default, Alt asks for the password of a user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-DisplayManager-AccountsService-ModifyAny-user">Permission to set properties of any user</string>
+      <string id="org-freedesktop-DisplayManager-AccountsService-ModifyAny-user_help">The policy restricts the ability to set properties of any user
+
+Disabled/Unconfigured — restrictions are defined by system parameters.
+
+Enabled — restriction with defined rights;
+
+Possible values:
+
+"No" — set restriction with action denial (user is not allowed to perform the action);
+
+"Yes" — remove the restriction (the user can perform the action without any authentication);
+
+"Auth_self" — the user must enter his/her password for authentication. Note, this level of restriction is not sufficient for most multi-user applications, "Auth_admin" is usually recommended;
+
+"Auth_admin" — the user must enter the administrator password at each request. Requires authentication of the user with administrator privileges;
+
+"Auth_self_keep" — similar to "Auth_self", but authorization is maintained for a short period of time (e.g., five minutes). Note, this level of restriction is insufficient for most multi-user applications, "Auth_admin_keep" is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but authorization is maintained for a short period of time (e.g., five minutes);
+
+Note: the possession of administrative rights in a PolicyKit context is determined by its rules. By default, Alt asks for the password of a user in the "wheel" group.
+
+      </string>
+      <string id="org-freedesktop-DisplayManager-AccountsService-ModifyOwn">Permission to set properties of own user</string>
+      <string id="org-freedesktop-DisplayManager-AccountsService-ModifyOwn_help">The policy restricts the ability to set properties of own user
+
+Disabled/Unconfigured — restrictions are defined by system parameters.
+
+Enabled — restriction with defined rights;
+
+Possible values:
+
+"No" — set restriction with action denial (user is not allowed to perform the action);
+
+"Yes" — remove the restriction (the user can perform the action without any authentication);
+
+"Auth_self" — the user must enter his/her password for authentication. Note, this level of restriction is not sufficient for most multi-user applications, "Auth_admin" is usually recommended;
+
+"Auth_admin" — the user must enter the administrator password at each request. Requires authentication of the user with administrator privileges;
+
+"Auth_self_keep" — similar to "Auth_self", but authorization is maintained for a short period of time (e.g., five minutes). Note, this level of restriction is insufficient for most multi-user applications, "Auth_admin_keep" is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but authorization is maintained for a short period of time (e.g., five minutes);
+
+Note: the possession of administrative rights in a PolicyKit context is determined by its rules. By default, Alt asks for the password of a user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-DisplayManager-AccountsService-ModifyOwn-user">Permission to set properties of own user</string>
+      <string id="org-freedesktop-DisplayManager-AccountsService-ModifyOwn-user_help">The policy restricts the ability to set properties of own user
+
+Disabled/Unconfigured — restrictions are defined by system parameters.
+
+Enabled — restriction with defined rights;
+
+Possible values:
+
+"No" — set restriction with action denial (user is not allowed to perform the action);
+
+"Yes" — remove the restriction (the user can perform the action without any authentication);
+
+"Auth_self" — the user must enter his/her password for authentication. Note, this level of restriction is not sufficient for most multi-user applications, "Auth_admin" is usually recommended;
+
+"Auth_admin" — the user must enter the administrator password at each request. Requires authentication of the user with administrator privileges;
+
+"Auth_self_keep" — similar to "Auth_self", but authorization is maintained for a short period of time (e.g., five minutes). Note, this level of restriction is insufficient for most multi-user applications, "Auth_admin_keep" is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but authorization is maintained for a short period of time (e.g., five minutes);
+
+Note: the possession of administrative rights in a PolicyKit context is determined by its rules. By default, Alt asks for the password of a user in the "wheel" group.
+
+      </string>
+      <string id="org-freedesktop-DisplayManager-AccountsService-ReadAny">Permission to set properties of any user</string>
+      <string id="org-freedesktop-DisplayManager-AccountsService-ReadAny_help">The policy restricts the ability to set properties of any user
+
+Disabled/Unconfigured — restrictions are defined by system parameters.
+
+Enabled — restriction with defined rights;
+
+Possible values:
+
+"No" — set restriction with action denial (user is not allowed to perform the action);
+
+"Yes" — remove the restriction (the user can perform the action without any authentication);
+
+"Auth_self" — the user must enter his/her password for authentication. Note, this level of restriction is not sufficient for most multi-user applications, "Auth_admin" is usually recommended;
+
+"Auth_admin" — the user must enter the administrator password at each request. Requires authentication of the user with administrator privileges;
+
+"Auth_self_keep" — similar to "Auth_self", but authorization is maintained for a short period of time (e.g., five minutes). Note, this level of restriction is insufficient for most multi-user applications, "Auth_admin_keep" is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but authorization is maintained for a short period of time (e.g., five minutes);
+
+Note: the possession of administrative rights in a PolicyKit context is determined by its rules. By default, Alt asks for the password of a user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-DisplayManager-AccountsService-ReadAny-user">Permission to set properties of any user</string>
+      <string id="org-freedesktop-DisplayManager-AccountsService-ReadAny-user_help">The policy restricts the ability to set properties of any user
+
+Disabled/Unconfigured — restrictions are defined by system parameters.
+
+Enabled — restriction with defined rights;
+
+Possible values:
+
+"No" — set restriction with action denial (user is not allowed to perform the action);
+
+"Yes" — remove the restriction (the user can perform the action without any authentication);
+
+"Auth_self" — the user must enter his/her password for authentication. Note, this level of restriction is not sufficient for most multi-user applications, "Auth_admin" is usually recommended;
+
+"Auth_admin" — the user must enter the administrator password at each request. Requires authentication of the user with administrator privileges;
+
+"Auth_self_keep" — similar to "Auth_self", but authorization is maintained for a short period of time (e.g., five minutes). Note, this level of restriction is insufficient for most multi-user applications, "Auth_admin_keep" is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but authorization is maintained for a short period of time (e.g., five minutes);
+
+Note: the possession of administrative rights in a PolicyKit context is determined by its rules. By default, Alt asks for the password of a user in the "wheel" group.
+
+
+
+      </string>
+      <string id="displaymanager-greeter-background">Greeter background</string>
+      <string id="displaymanager-greeter-background_help">The policy allows to set the Greeter background by specifying the path to the image.
+
+Examples of paths:
+
+/usr/share/wallpapers/image.png — local path to the image;
+
+smb://computername/share/image.png — Linux path to the image in the shared directory on the server;
+
+\\computername\share\image.png — Windows path to the image in the shared directory on the server.
+
+In LightDM, background changes are supported for the following welcome screens:
+
+— lightdm-gtk-greeter;
+— lightdm-kde-greeter;
+— slick-greeter.
+
+Note: A backup copy of the GDM configuration is created automatically. Restoration occurs when you specify "backup" in the path field.
+      </string>
+
+      <string id="org-freedesktop-displaymanager-No">No</string>
+      <string id="org-freedesktop-displaymanager-Yes">Yes</string>
+      <string id="org-freedesktop-displaymanager-Auth-self">Auth_self</string>
+      <string id="org-freedesktop-displaymanager-Auth-admin">Auth_admin</string>
+      <string id="org-freedesktop-displaymanager-Auth-self-keep">Auth_self_keep</string>
+      <string id="org-freedesktop-displaymanager-Auth-admin-keep">Auth_admin_keep</string>
+
+
+
+    </stringTable>
+    <presentationTable>
+      <presentation id="org-freedesktop-DisplayManagerPolkit-pr">
+       <dropdownList noSort="true" defaultItem="1" refId="OrgFreedesktopDisplayManager_setter">Restriction Options:</dropdownList>
+       <checkBox refId="OrgFreedesktopDisplayManager_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="org-freedesktop-DisplayManagerPolkit-user-pr">
+       <dropdownList noSort="true" defaultItem="1" refId="OrgFreedesktopDisplayManager_setter">Restriction Options:</dropdownList>
+      </presentation>
+      <presentation id="DisplayManager_GreeterBackground-pr">
+        <textBox refId="DisplayManager_GreeterBackground_setter">
+          <label>Path to image:</label>
+        </textBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>
+
+
+
+

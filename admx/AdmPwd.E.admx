@@ -1,0 +1,156 @@
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="admpwd" namespace="Microsoft.Services.AdmPwd" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <supersededAdm fileName="" />
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_WindowsVista" displayName="$(string.SUPPORTED_WindowsVista)" />
+      <definition name="SUPPORTED_Windows7" displayName="$(string.SUPPORTED_Windows7)" />
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="CAT_AdmPwd" displayName="$(string.CAT_AdmPwd)" />
+    <category name="CAT_AdmPwd_ManagedClients" displayName="$(string.CAT_AdmPwd_ManagedClients)">
+      <parentCategory ref="CAT_AdmPwd" />
+    </category>
+    <category name="CAT_AdmPwd_AdminTools" displayName="$(string.CAT_AdmPwd_AdminTools)">
+      <parentCategory ref="CAT_AdmPwd" />  
+    </category>
+  </categories>
+  <policies>
+    <!--Managed clients-->
+    <policy name="POL_AdmPwd_Enabled" class="Machine" displayName="$(string.POL_AdmPwd_Enabled)" explainText="$(string.POL_AdmPwd_Enabled_Help)" key="Software\Policies\Microsoft Services\AdmPwd" valueName="AdmPwdEnabled" clientExtension="{D76B9641-3288-4f75-942D-087DE603E3EA}">
+      <parentCategory ref="CAT_AdmPwd_ManagedClients" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+    </policy>
+    <policy name="POL_AdmPwd" class="Machine" displayName="$(string.POL_AdmPwd)" explainText="$(string.POL_AdmPwd_Help)" presentation="$(presentation.POL_AdmPwd)" key="Software\Policies\Microsoft Services\AdmPwd" clientExtension="{D76B9641-3288-4f75-942D-087DE603E3EA}">
+      <parentCategory ref="CAT_AdmPwd_ManagedClients" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="ELM_AdmPwd_PasswordComplexity" key="Software\Policies\Microsoft Services\AdmPwd" valueName="PasswordComplexity">
+          <item displayName="$(string.ITM_AdmPwd_PwdComplexity_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ITM_AdmPwd_PwdComplexity_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.ITM_AdmPwd_PwdComplexity_3)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.ITM_AdmPwd_PwdComplexity_4)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+        </enum>
+        <decimal id="ELM_AdmPwd_PasswordLength" key="Software\Policies\Microsoft Services\AdmPwd" valueName="PasswordLength" minValue="8" maxValue="127" clientExtension="{D76B9641-3288-4f75-942D-087DE603E3EA}" />
+        <decimal id="ELM_AdmPwd_PasswordAge" key="Software\Policies\Microsoft Services\AdmPwd" valueName="PasswordAge" clientExtension="{D76B9641-3288-4f75-942D-087DE603E3EA}" />
+      </elements>
+    </policy>
+
+    <policy name="POL_AdmPwd_MaxPwdAge" class="Machine" displayName="$(string.POL_AdmPwd_MaxPwdAge)" explainText="$(string.POL_AdmPwd_MaxPwdAge_Help)" presentation="$(presentation.POL_AdmPwd_MaxPwdAge)" key="Software\Policies\Microsoft Services\AdmPwd" clientExtension="{D76B9641-3288-4f75-942D-087DE603E3EA}">
+      <parentCategory ref="CAT_AdmPwd_ManagedClients" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+      <elements>
+        <decimal id="ELM_AdmPwd_MaxPwdAge" key="Software\Policies\Microsoft Services\AdmPwd" valueName="MaxPasswordAge" minValue="1" clientExtension="{D76B9641-3288-4f75-942D-087DE603E3EA}" />
+      </elements>
+    </policy>
+
+    <policy name="POL_AdmPwd_LogLevel" class="Machine" displayName="$(string.POL_AdmPwd_LogLevel)" explainText="$(string.POL_AdmPwd_LogLevel_Help)" presentation="$(presentation.POL_AdmPwd_LogLevel)" key="Software\Policies\Microsoft Services\AdmPwd" clientExtension="{D76B9641-3288-4f75-942D-087DE603E3EA}">
+      <parentCategory ref="CAT_AdmPwd_ManagedClients" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="ELM_AdmPwd_LogLevel" key="Software\Policies\Microsoft Services\AdmPwd" valueName="LogLevel">
+          <item displayName="$(string.ITM_AdmPwd_LogLevel_Errors)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ITM_AdmPwd_LogLevel_ErrorsWarnings)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ITM_AdmPwd_LogLevel_AllEvents)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="POL_AdmPwd_AdminName" class="Machine" displayName="$(string.POL_AdmPwd_AdminName)" explainText="$(string.POL_AdmPwd_AdminName_Help)" presentation="$(presentation.POL_AdmPwd_AdminName)" key="Software\Policies\Microsoft Services\AdmPwd" clientExtension="{D76B9641-3288-4f75-942D-087DE603E3EA}">
+      <parentCategory ref="CAT_AdmPwd_ManagedClients" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="TXT_AdminAccountName" key="Software\Policies\Microsoft Services\AdmPwd" valueName="AdminAccountName" maxLength="64" clientExtension="{D76B9641-3288-4f75-942D-087DE603E3EA}" required="true" />
+      </elements>
+    </policy>
+    <policy name="POL_AdmPwd_KeyString" class="Machine" displayName="$(string.POL_AdmPwd_KeyString)" explainText="$(string.POL_AdmPwd_KeyString_Help)" presentation="$(presentation.POL_AdmPwd_KeyString)" key="Software\Policies\Microsoft Services\AdmPwd" valueName="PwdEncryptionEnabled" clientExtension="{D76B9641-3288-4f75-942D-087DE603E3EA}">
+      <parentCategory ref="CAT_AdmPwd_ManagedClients" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="TXT_KeyString" key="Software\Policies\Microsoft Services\AdmPwd" valueName="EncryptionKey" clientExtension="{D76B9641-3288-4f75-942D-087DE603E3EA}" required="false" />
+        <text id="TXT_LegacyKeyString" key="Software\Policies\Microsoft Services\AdmPwd" valueName="PublicKey" clientExtension="{D76B9641-3288-4f75-942D-087DE603E3EA}" required="false" />
+      </elements>
+    </policy>
+    <policy name="POL_AdmPwd_ClientReporting" class="Machine" displayName="$(string.POL_AdmPwd_ClientReporting)" explainText="$(string.POL_AdmPwd_ClientReporting_Help)" presentation="$(presentation.POL_AdmPwd_ClientReporting)" key="Software\Policies\Microsoft Services\AdmPwd" valueName="ReportingEnabled" clientExtension="{D76B9641-3288-4f75-942D-087DE603E3EA}">
+      <parentCategory ref="CAT_AdmPwd_ManagedClients" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="TXT_ReportServer" key="Software\Policies\Microsoft Services\AdmPwd" valueName="ReportingHost" clientExtension="{D76B9641-3288-4f75-942D-087DE603E3EA}" required="true" />
+        <decimal id="ELM_ReportServerPort" key="Software\Policies\Microsoft Services\AdmPwd" valueName="ReportingPort" minValue="1" maxValue="65534" clientExtension="{D76B9641-3288-4f75-942D-087DE603E3EA}" />
+      </elements>
+    </policy>
+    <policy name="POL_AdmPwd_PasswordHistory" class="Machine" displayName="$(string.POL_AdmPwd_PasswordHistory)" explainText="$(string.POL_AdmPwd_PasswordHistory_Help)" key="Software\Policies\Microsoft Services\AdmPwd" valueName="PwdHistoryEnabled" clientExtension="{D76B9641-3288-4f75-942D-087DE603E3EA}">
+      <parentCategory ref="CAT_AdmPwd_ManagedClients" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+    </policy>
+    <policy name="POL_AdmPwd_BuiltinAccountState" class="Machine" displayName="$(string.POL_AdmPwd_BuiltinAccountState)" explainText="$(string.POL_AdmPwd_BuiltinAccountState_Help)" key="Software\Policies\Microsoft Services\AdmPwd" valueName="BuiltInAdminState" clientExtension="{D76B9641-3288-4f75-942D-087DE603E3EA}">
+      <parentCategory ref="CAT_AdmPwd_ManagedClients" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_AdmPwd_DontAllowPwdExpirationBehindPolicy" class="Machine" displayName="$(string.POL_AdmPwd_DontAllowPwdExpirationBehindPolicy)" explainText="$(string.POL_AdmPwd_DontAllowPwdExpirationBehindPolicy_Help)" key="Software\Policies\Microsoft Services\AdmPwd" valueName="PwdExpirationProtectionEnabled" clientExtension="{D76B9641-3288-4f75-942D-087DE603E3EA}">
+      <parentCategory ref="CAT_AdmPwd_ManagedClients" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+    </policy>
+    <policy name="POL_AdmPwd_DontAllowManualPasswordChanges" class="Machine" displayName="$(string.POL_AdmPwd_DontAllowManualPasswordChanges)" explainText="$(string.POL_AdmPwd_DontAllowManualPasswordChanges_Help)" key="Software\Policies\Microsoft Services\AdmPwd" valueName="ManualPasswordChangeProtectionEnabled" clientExtension="{D76B9641-3288-4f75-942D-087DE603E3EA}">
+      <parentCategory ref="CAT_AdmPwd_ManagedClients" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    
+    <!--Admin tools-->
+    <policy name="POL_AdmPwd_UseSharedSPN" class="Machine" displayName="$(string.POL_AdmPwd_UseSharedSPN)" explainText="$(string.POL_AdmPwd_UseSharedSPN_Help)" key="Software\Policies\Microsoft Services\AdmPwd" valueName="UseSharedSPN">
+      <parentCategory ref="CAT_AdmPwd_AdminTools" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+    </policy>
+    <policy name="POL_AdmPwd_PDSList" class="Machine" displayName="$(string.POL_AdmPwd_PDSList)" explainText="$(string.POL_AdmPwd_PDSList_Help)" key="Software\Policies\Microsoft Services\AdmPwd" presentation="$(presentation.POL_AdmPwd_PDSList)">
+      <parentCategory ref="CAT_AdmPwd_AdminTools" />
+      <supportedOn ref="SUPPORTED_Windows7" />
+      <elements>
+        <multiText id="MULTI_TXT_PDSList" valueName="PDSList" required="true" />
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

@@ -1,0 +1,538 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+    <displayName/>
+    <description/>
+    <resources>
+
+<stringTable>
+<string id="SUPPORTED_WINXPSP2">Microsoft Windows XP SP2 or later</string>
+<string id="ietab">IE Tab</string>
+<string id="EndUserControlGroup">User Lockdown</string>
+<string id="LicenseGroup">License (Required)</string>
+<string id="GeneralSettings">Settings</string>
+
+<string id="LicenseeName">Licensee Name</string>
+<string id="LicenseeName_Explain">
+This is the "Licensee Name" that is associated with the IE Tab license.
+
+You must supply valid license information for the Group Policy features to work. Learn more about IE Tab licensing here:
+
+http://www.ietab.net/license
+
+</string>
+
+<string id="LicenseKey">License Key</string>
+<string id="LicenseKey_Explain">
+This is the "License Key" that is associated with the IE Tab license.
+
+You must supply valid license information for the Group Policy features to work. Learn more about IE Tab licensing here:
+
+http://www.ietab.net/license
+</string>
+
+<string id="AutoURLFile">Auto URL file location</string>
+<string id="AutoURLFile_Explain">
+Supply a URL that points to a file that has a list of additional Auto URLs to use.  May be a file:// or http:// URL.
+
+The file format is simple:  One Auto URL per line.  Auto URL exceptions may be supplied in the file by prefixing the line with x/, as in x/*ietab.net*
+
+These Auto URLs are appended to the list of other Auto URLs that have been supplied by group policy.
+
+</string>
+
+<string id="AllowChangeAutoURLs">Allow Change: List of Auto URLs</string>
+<string id="AllowChangeAutoURLs_Explain">
+If you enable this setting, users can change the set of Auto URLs.  If administrative URLs are supplied, the user's Auto URLs will override them.
+
+If you disable this setting, users cannot change the set of Auto URLs and only the administrative Auto URLs will apply.
+
+If this setting is not set, users can change the set of Auto URLs and override the administrative Auto URLs.
+</string>
+
+<string id="AllowChangeAutoURLExceptions">Allow Change: Auto URL Exceptions</string>
+<string id="AllowChangeAutoURLExceptions_Explain">
+If you enable this setting, users can change the set of Auto URL exceptions.  If administrative URL exceptions are supplied, the user's Auto URL exceptions will override them.
+
+If you disable this setting, users cannot change the set of Auto URL exceptions and only the administrative Auto URL exceptions will apply.
+
+If this setting is not enabled or disabled, users can change the set of Auto URL exceptions and override the administrative Auto URLs.
+</string>
+
+<string id="AllowChangeEnableAutoURLs">Allow Change: Enable Auto URLs</string>
+<string id="AllowChangeEnableAutoURLs_Explain">
+If you enable this setting, the end-user can change the "Enable Auto URLs" setting.
+
+If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="AllowChangeCookieSync">Allow Change: Enable cookie sync</string>
+<string id="AllowChangeCookieSync_Explain">
+If you enable this setting, the end-user can change the "Enable cookie sync" setting.
+
+If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="AllowChangeSessionShare">Allow Change: Enable session sharing between tabs</string>
+<string id="AllowChangeSessionShare_Explain">
+If you enable this setting, the end-user can change the "Enable session sharing between tabs" setting.
+
+If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+
+<string id="AllowChangeFavicon">Allow Change: Replace IE Tab icon with current site icon</string>
+<string id="AllowChangeFavicon_Explain">
+If you enable this setting, the end-user can change the "Replace IE Tab icon with current site icon" setting.
+
+If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="AllowChangeBeforeUnload">Allow Change: Enable beforeunload checking</string>
+<string id="AllowChangeBeforeUnload_Explain">
+If you enable this setting, the end-user can change the "Enable beforeunload checking" setting.
+
+If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="AllowChangeEnableDirectInvoke">Allow Change: Enable DirectInvoke</string>
+<string id="AllowChangeEnableDirectInvoke_Explain">
+If you enable this setting, the end-user can change the "Enable Direct Invoke" setting.
+
+If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="AllowChangeOpenPopupsWithChrome">Allow Change: Open pop-up windows with Chrome</string>
+<string id="AllowChangeOpenPopupsWithChrome_Explain">
+If you enable this setting, the end-user can change the "Open pop-up windows with Chrome" setting.
+
+If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="AllowChangeIEDialogs">Allow Change: Open pop-up dialog windows with IE</string>
+<string id="AllowChangeIEDialogs_Explain">
+If you enable this setting, the end-user can change the "Open pop-up dialog windows with IE" setting.
+
+If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="AllowChangeUseFullWindowPopups">Allow Change: Use full-window pop-ups</string>
+<string id="AllowChangeUseFullWindowPopups_Explain">
+If you enable this setting, the end-user can change the "Use full-window pop-ups" setting.
+
+If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="AllowChangeOpenPopupsInTab">Allow Change: Always open pop-ups in a new tab</string>
+<string id="AllowChangeOpenPopupsInTab_Explain">
+If you enable this setting, the end-user can change the "Always open pop-ups in a new tab" setting.
+
+If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="AllowChangeOnlyOpenAutoURLs">Allow Change: Only open Auto URLs</string>
+<string id="AllowChangeOnlyOpenAutoURLs_Explain">
+If you enable this setting, the end-user can change the "Only open Auto URLs" setting.
+
+If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="AllowChangeNeverOpenExceptions">Allow Change: Never open Auto URL Exceptions</string>
+<string id="AllowChangeNeverOpenExceptions_Explain">
+If you enable this setting, the end-user can change the "Never open Auto URL Exceptions" setting.
+
+If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="AllowChangeShowStatusText">Allow Change: Show status text</string>
+<string id="AllowChangeShowStatusText_Explain">
+If you enable this setting, the end-user can change the "Show status text" setting.
+
+If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="AllowChangeScriptUrlMitigation">Allow Change: Enable script url mitigation</string>
+<string id="AllowChangeScriptUrlMitigation_Explain">
+If you enable this setting, the end-user can change the "Enable script url mitigation" setting.
+
+If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="AllowChangeSpellCheck">Allow Change: Enable spell-check in text boxes</string>
+<string id="AllowChangeSpellCheck_Explain">
+If you enable this setting, the end-user can change the "Enable spell-check in text boxes" setting.
+
+If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="AllowChangeIETabHeader">Allow Change: Enable IE Tab request header</string>
+<string id="AllowChangeIETabHeader_Explain">
+If you enable this setting, the end-user can change the "Enable IE Tab request header" setting.
+
+If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="AllowChangeThreadedPopups">Allow Change: Enable threaded popup windows</string>
+<string id="AllowChangeThreadedPopups_Explain">
+If you enable this setting, the end-user can change the "Enable threaded popup windows" setting.
+
+If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="AllowChangeEnableDEPPolicy">Allow Change: Enable DEP Policy</string>
+<string id="AllowChangeEnableDEPPolicy_Explain">
+If you enable this setting, the end-user can change the "Enable DEP Policy" setting.
+
+If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="AllowChangeEnableATLDEPWorkaround">Allow Change: ATL DEP Workaround</string>
+<string id="AllowChangeEnableATLDEPWorkaround_Explain">
+If you enable this setting, the end-user can change the "ATL DEP Workaround" setting.
+
+If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="AllowChangeIECompatibilityMode">Allow Change: IE compatibility mode</string>
+<string id="AllowChangeIECompatibilityMode_Explain">
+If you enable this setting, the end-user can change the "IE compatibility mode" setting.
+
+If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="AllowChangeHideAddressBar">Allow Change: Hide the IE Tab address bar</string>
+<string id="AllowChangeHideAddressBar_Explain">
+    If you enable this setting, the end-user can change the "Hide Address Bar" setting.
+
+    If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="AllowChangeOpenInNewTab">Allow Change: Open in New Tab</string>
+<string id="AllowChangeOpenInNewTab_Explain">
+    If you enable this setting, the end-user can change the "Open in New Tab" setting.
+
+    If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="AllowChangeNewPointerMode">Allow Change: New pointer mode</string>
+<string id="AllowChangeNewPointerMode_Explain">
+    If you enable this setting, the end-user can change the "Enable new pointer mode" setting.
+
+    If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="AllowChangeShowContextMenu">Allow Change: Enable the IE Tab right-click menu</string>
+<string id="AllowChangeShowContextMenu_Explain">
+    If you enable this setting, the end-user can change the "Enable the IE Tab right-click menu" option.
+
+    If you disable this setting, the user can not change the setting.  By default the user CAN change the setting.
+</string>
+
+<string id="ShowIntroPage">Show the intro page for new installs</string>
+<string id="ShowIntroPage_Explain">
+If you enable this setting, an intro page will be shown one time after IE Tab is installed.
+
+If you disable this setting, the intro page will not be shown.
+
+If you do not configure this setting, then by default the intro page will be shown.
+</string>
+<string id="HideAddressBar">Hide the IE Tab address bar</string>
+<string id="HideAddressBar_Explain">
+If you enable this setting, the IE Tab address bar will always be hidden.
+
+If you disable this setting, or do not set a value, the IE Tab address bar will be visible.
+</string>
+
+<string id="EnableAutoURLs">Enable Auto URLs</string>
+<string id="EnableAutoURLs_Explain">
+If you enable this setting, Auto URLs will be enabled.
+
+If you disable this setting, all Auto URLs will be disabled, including administrative Auto URLs.
+
+</string>
+
+<string id="CookieSync">Enable cookie sync</string>
+<string id="CookieSync_Explain">
+If you enable this setting, cookies for the current URL will be passed from Chrome to IE Tab when IE Tab is first opened.
+
+If you disable this setting, cookies will not be shared between Chrome and IE Tab.  By default, this setting is disabled.
+
+</string>
+
+<string id="SessionShare">Enable session sharing between tabs</string>
+<string id="SessionShare_Explain">
+If you enable this setting, session cookies will be persisted by the extension and shared between tabs.  All session cookies will be stored in memory until Chrome and/or the extension are restarted.  And changes to session cookies in one tab will be sent to other tabs.
+
+Enable this setting so the user does not need to log back in when using session-based authentication.
+
+If you disable this setting, session cookies will not be persisted and a new set of session cookies will be used eveyr time a new IE Tab is opened.
+
+By default, this setting is disabled.
+
+</string>
+
+<string id="Favicon">Replace IE Tab icon with current site icon</string>
+<string id="Favicon_Explain">
+If you enable this setting, IE Tab will use the icon of the currently loaded site as the tab's icon.
+
+If you disable this setting, IE Tab will use the default IE Tab product icon for the tab.  By default, this setting is disabled.
+
+</string>
+
+<string id="BeforeUnload">Enable beforeunload checking</string>
+<string id="BeforeUnload_Explain">
+If you enable this setting, IE Tab will check the current page for beforeunload or onbeforeunload event handlers before unloading the page.
+
+If you disable this setting, IE Tab will not invoke beforeunload before unloading the page.  For legacy reasons this setting is disabled by default.
+
+</string>
+
+<string id="EnableDirectInvoke">Enable DirectInvoke for Sharepoint</string>
+<string id="EnableDirectInvoke_Explain">
+If you enable this setting, DirectInvoke will be enabled which will allow Sharepoint files to be opened directly from the editing application.
+
+If you disable this setting, DirectInvoke will not be enabled and Sharepoint files will sometimes be downloaded instead of invoked directly.
+
+</string>
+
+<string id="OpenPopupsWithChrome">Open pop-up windows with Chrome</string>
+<string id="OpenPopupsWithChrome_Explain">
+If you enable this setting, then pop-up windows will be opened in a Chrome window with IE Tab running inside it.
+
+If you disable this setting, then pop-up windows will be opened in an IE pop-up window.
+
+</string>
+
+<string id="IEDialogs">Open pop-up dialog windows with IE</string>
+<string id="IEDialogs_Explain">
+If you enable this setting, then pop-up dialog windows will be shown with IE instead of IE Tab.  This is sometimes desirable for maximum compatibility but it may result in a loss of session / authentication information when a dialog window is opened.  This affects pages displayed with showModalDialog or showModelessDialog.
+
+If you disable this setting, then pop-up dialog windows will be shown with IE Tab and not Internet Explorer.
+
+This setting is enabled by default.
+</string>
+
+<string id="UseFullWindowPopups">Use full-window pop-ups</string>
+<string id="UseFullWindowPopups_Explain">
+If you enable this setting, then a full-size Chrome window (with address bar) will always be used when IE Tab opens pop-up windows.  Note: This option will have no effect if "Always open pop-ups in a new tab" is enabled.
+
+If you disable this setting, then pop-up windows may open without an address bar.
+
+</string>
+
+<string id="OpenPopupsInTab">Always open pop-ups in a new tab</string>
+<string id="OpenPopupsInTab_Explain">
+If you enable this setting, then all pop-ups that are opened from a page shown in IE Tab will be opened in a new tab instead of a pop-up window.  Note:  This has no effect if the "Open pop-ups with Chrome" option is not checked.  In that case, all pop-ups are opened in a separate IE window.
+
+If you disable this setting, then pop-up windows will open in a separate window.
+</string>
+
+<string id="AllowApiPrompt">Enable API prompts</string>
+<string id="AllowApiPrompt_Explain">
+If you enable this setting, a web page can prompt the user for access to the IE Tab API.  The IE Tab API allows a web site to query version information about IE Tab and open specific web sites with IE Tab.
+
+If you disable this setting, a web page can only use the IE Tab API if the page is included in the API whitelist.
+
+By default web sites CAN prompt the user for API access.
+</string>
+
+
+<string id="OnlyOpenAutoURLs">Restrict IE Tab to only opening Auto URLs</string>
+<string id="OnlyOpenAutoURLs_Explain">
+If you enable this setting, then IE Tab can only be used with URLs that are Auto URLs.  If a link is clicked while in IE Tab and that URL is not an Auto URL, then the URL will be opened in Chrome instead of IE Tab.
+
+If you disable this setting, then any URL can be loaded in IE Tab, and links that are clicked within IE Tab will open within IE Tab.
+
+</string>
+
+<string id="NeverOpenExceptions">Never open Auto URL Exceptions</string>
+<string id="NeverOpenExceptions_Explain">
+If you enable this setting, then IE Tab will never open a URL that matches an Auto URL Exception filter.  If a link is clicked while in IE Tab and that URL turns out to be an Auto URL Exception, then the URL will be opened in Chrome instead of IE Tab.
+
+Note that the "Only open Auto URLs" feature is a superset of this functionality.
+
+If you disable this setting, then if IE Tab is already open and a URL that matches an Auto URL exception is navigated (e.g. by a link), then IE Tab will open the URL in IE Tab.
+
+</string>
+
+<string id="ShowStatusText">Show status text for progress and links</string>
+<string id="ShowStatusText_Explain">
+If you enable this setting, then IE Tab will show a small status window at the bottom of the window.  This status window will show the actual URL for links when the mouse is hovered over the URL.  It will also show download status indicators.
+
+If you disable this setting, the status text will not be shown, which is the default behavior.
+
+</string>
+
+<string id="ScriptUrlMitigation">Enable script url mitigation</string>
+<string id="ScriptUrlMitigation_Explain">
+If you enable this setting, then IE Tab will enable script url mitigation.  You can read more about this feature here: https://msdn.microsoft.com/en-us/library/dd565656(v=vs.85).aspx.  And here: https://msdn.microsoft.com/en-us/library/ee330735(v=vs.85).aspx
+
+If you disable this setting, then IE Tab will not use IE's script URL mitigation feature.
+
+</string>
+
+<string id="SpellCheck">Enable spell-check in text boxes</string>
+<string id="SpellCheck_Explain">
+If you enable this setting, then IE Tab will will enable spell checking in text boxes in Windows 8 or greater.  This feature is not available in earlier versions of Windows.
+
+If you disable this setting, then IE Tab will not enable spell checking.
+
+</string>
+
+<string id="IETabHeader">Enable the IE Tab request header</string>
+<string id="IETabHeader_Explain">
+If you enable this setting, then IE Tab will will include a custom header with all HTTP(s) requests.  The header will look like this:  "X-IETab: 1".  You might want to enable this if you need your proxy or firewall to allow IE Tab requests while blocking IE requests.
+
+If you disable this setting, then IE Tab will not include the custom X-IETab header.
+
+</string>
+
+<string id="ThreadedPopups">Enable threaded popup windows</string>
+<string id="ThreadedPopups_Explain">
+If you enable this setting, then IE Tab will use multi-threaded popup windows.  This may fix some issues where the comaptibility mode / view is not correct in popup windows or the script is encountering a permission denied error when popup windows are closed.
+
+If you disable this setting, then IE Tab will not use multi-threaded popup windows.
+
+</string>
+
+<string id="OpenInNewTab">Enable the 'Open in New Tab' context menu item</string>
+<string id="OpenInNewTab_Explain">
+If you enable this setting, then the right-click context menu in an IE Tab window will include the 'Open in New Tab' option enabled.
+
+If you disable this setting, then the 'OPen in New Tab' option will be disabled.  This option is disabled by default.
+
+</string>
+
+<string id="NewPointerMode">New pointer mode</string>
+<string id="NewPointerMode_Explain">
+If you enable this setting, then IE Tab will use a new pointer mode feature that fixes some drop-down menus in newer web sites.
+
+If you disable this setting, then the feature will be disabled.  This feature is disabled by default.
+
+</string>
+
+<string id="InterceptRedirects">Check redirects for URL exceptions</string>
+<string id="InterceptRedirects_Explain">
+If you enable this option then IE Tab will examine redirect URLs and if a redirect URL is not an Auto URL and "Never Open Auto URLs" is enabled then it will instead open the URL in Chrome.
+</string>
+
+<string id="OptimizeDirectInvoke">Optimize DirectInvoke downloads</string>
+<string id="OptimizeDirectInvoke_Explain">
+If you enable the Sharepoint DirectInvoke feature then there is a default mode for launching documents for editing.  This mode may be ideal on some systems, but it may also result in a double-download which may cause problems with some web servers.
+
+In that case you can turn on Optimize DirectInvoke downloads and IE Tab will use a new optimized mode to avoid the double download requests.
+</string>
+
+<string id="ShowContextMenu">Enable the IE Tab right-click options in Chrome</string>
+<string id="ShowContextMenu_Explain">
+If you enable this setting, then when you are on a page opened in Chrome the right-click context menu will include options to open the page in IE Tab.
+
+If you disable this setting, then the Chrome context menu will not include IE Tab options.  This option is enabled by default.
+
+</string>
+
+<string id="EnableDEPPolicy">Enable DEP Policy</string>
+<string id="EnableDEPPolicy_Explain">
+If you enable this setting, then DEP (Data Execution Prevention) will be enabled for the IE Tab Helper process.  It is recommended that this setting be enabled, which will match the DEP behavior found in Internet Explorer.
+
+If you disable this setting, DEP will not be enabled for the IE Tab Helper process.
+
+</string>
+
+<string id="EnableATLDEPWorkaround">Enable ATL DEP Workaround</string>
+<string id="EnableATLDEPWorkaround_Explain">
+If you enable this setting, the ATL Thunk DEP workaround will be enabled for the IE Tab Helper process.  This provides backwards compatibility for many older ActiveX controls that might cause a crash when DEP is enabled.  This setting should be enabled to most closely match the behavior of Internet Explorer.
+
+If you disable this setting, then ATL Thunk emulation will not be enabled and some older ActiveX controls might crash.
+
+</string>
+
+<string id="AutoURLs">Configure the list of Auto URL filters</string>
+<string id="AutoURLs_Explain">
+Allows you to specify a list of URL filters that will force URLs to be opened by IE Tab automatically.
+
+URL filters can be specified using strings with wildcard characters '*'.  The entire URL must match the filter.
+
+Auto URLs can also be specified using javascript-style regular expressions.  This is done by prefixing the string with "r/".  The remainder of the string is the regular expression.  For example, the following two Auto URL filters are identical:
+
+http://www.google.com/*
+
+r/http:\/\/www\.google\.com\/.*
+</string>
+
+
+<string id="AutoURLExceptions">Configure the list of Auto URL exceptions</string>
+<string id="AutoURLExceptions_Explain">
+Auto URL exceptions provide a simple way to specify exceptions to the set of Auto URL filters.
+
+If a URL matches an Auto URL filter, it will normally be opened by IE Tab automatically.
+
+But only if the URL does NOT match an Auto URL exception.  The format for Auto URL exceptions is the same as the format for Auto URLs.
+</string>
+
+<string id="ApiWhitelist">Configure the whitelist of URLs with API access</string>
+<string id="ApiWhitelist_Explain">
+The IE Tab API can be made available to trusted sites.  This API can be used by a web page to open another page with IE Tab or gather information about the IE Tab installation.
+
+Access is granted to URLs that match the filters in this list.  Just like Auto URLs, URL filters can be specified using strings with wildcard characters '*'.  The entire URL must match the filter.
+
+Auto URLs can also be specified using javascript-style regular expressions.  This is done by prefixing the string with "r/".  The remainder of the string is the regular expression.  For example, the following two Auto URL filters are identical:
+
+http://www.google.com/*
+
+r/http:\/\/www\.google\.com\/.*
+
+</string>
+
+<string id="IECompatibilityMode">Set the IE compatibility mode</string>
+<string id="IECompatibilityMode_Explain">
+Select the compatibility mode that IE Tab uses.  By default, IE Tab will run in IE7 standards compatibility mode.
+
+You can read more about these options at the IE Tab team blog:  http://blogs.msdn.com/b/ie/archive/2009/03/10/more-ie8-extensibility-improvements.aspx
+</string>
+<string id="IE8S">IE 8 Standards Mode</string>
+<string id="IE8F">IE 8 Forced Standards Mode</string>
+<string id="IE9S">IE 9 Standards Mode</string>
+<string id="IE9F">IE 9 Forced Standards Mode</string>
+<string id="IE10S">IE 10 Standards Mode</string>
+<string id="IE10F">IE 10 Forced Standards Mode</string>
+<string id="IE11S">IE 11 Standards Mode</string>
+<string id="IE11F">IE 11 Forced Standards Mode</string>
+
+</stringTable>
+
+
+        <presentationTable>
+            <presentation id="AutoURLs">
+                <listBox refId="AutoURLsDesc">List of URLs to automatically open with IE Tab
+                </listBox>
+            </presentation>
+            <presentation id="AutoURLExceptions">
+                <listBox refId="AutoURLExceptionsDesc">List of exceptions to the list of Auto URLs
+                </listBox>
+            </presentation>
+            <presentation id="ApiWhitelist">
+                <listBox refId="ApiWhitelistDesc">List of URLs that can use the IE Tab API
+
+                </listBox>
+            </presentation>
+            <presentation id="IECompatibilityMode">
+                <dropdownList noSort="true" refId="IECompatibilityMode">IE Compatibility Mode</dropdownList>
+            </presentation>
+            <presentation id="LicenseeName">
+                <textBox refId="LicenseeName">
+                    <label>Licensee Name:</label>
+                </textBox>
+            </presentation>
+            <presentation id="LicenseKey">
+                <textBox refId="LicenseKey">
+                    <label>License Key:</label>
+                </textBox>
+            </presentation>
+            <presentation id="AutoURLFile">
+                <textBox refId="AutoURLFile">
+                    <label>URL with list of additional Auto URLs to use:</label>
+                </textBox>
+            </presentation>
+        </presentationTable>
+    </resources>
+</policyDefinitionResources>

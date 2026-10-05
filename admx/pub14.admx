@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-16"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="pub14" namespace="pub14.Office.Microsoft.Policies.Windows" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <supersededAdm fileName="pub14" />
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="L_MicrosoftOfficePublisher" displayName="$(string.L_MicrosoftOfficePublisher)" />
+    <category name="L_PubOptions" displayName="$(string.L_PubOptions)">
+      <parentCategory ref="L_MicrosoftOfficePublisher" />
+    </category>
+    <category name="L_Advanced" displayName="$(string.L_Advanced)">
+      <parentCategory ref="L_PubOptions" />
+    </category>
+    <category name="L_ComplexScripts" displayName="$(string.L_ComplexScripts)">
+      <parentCategory ref="L_PubOptions" />
+    </category>
+    <category name="L_General" displayName="$(string.L_General)">
+      <parentCategory ref="L_PubOptions" />
+    </category>
+    <category name="L_Proofing" displayName="$(string.L_Proofing)">
+      <parentCategory ref="L_PubOptions" />
+    </category>
+    <category name="L_OptionsCustomizeRibbon" displayName="$(string.L_OptionsCustomizeRibbon)">
+      <parentCategory ref="L_PubOptions" />
+    </category>
+    <category name="L_Save" displayName="$(string.L_Save)">
+      <parentCategory ref="L_PubOptions" />
+    </category>
+    <category name="L_Security" displayName="$(string.L_Security)">
+      <parentCategory ref="L_MicrosoftOfficePublisher" />
+    </category>
+    <category name="L_TrustCenter" displayName="$(string.L_TrustCenter)">
+      <parentCategory ref="L_Security" />
+    </category>
+    <category name="L_Disableitemsinuserinterface" displayName="$(string.L_Disableitemsinuserinterface)">
+      <parentCategory ref="L_MicrosoftOfficePublisher" />
+    </category>
+    <category name="L_Predefined" displayName="$(string.L_Predefined)">
+      <parentCategory ref="L_Disableitemsinuserinterface" />
+    </category>
+    <category name="L_Custom" displayName="$(string.L_Custom)">
+      <parentCategory ref="L_Disableitemsinuserinterface" />
+    </category>
+    <category name="L_Miscellaneous" displayName="$(string.L_Miscellaneous)">
+      <parentCategory ref="L_MicrosoftOfficePublisher" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="L_DisplayDeveloperTab" class="User" displayName="$(string.L_DisplayDeveloperTab)" explainText="$(string.L_DisplayDeveloperTabExplain)" key="software\policies\microsoft\office\14.0\publisher\preferences" valueName="developertools">
+      <parentCategory ref="L_OptionsCustomizeRibbon" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_ShowTheNewTemplateGalleryWhenStartingPublisher" class="User" displayName="$(string.L_ShowTheNewTemplateGalleryWhenStartingPublisher)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\14.0\publisher\preferences" valueName="usestartupdlg">
+      <parentCategory ref="L_General" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <string>1</string>
+      </enabledValue>
+      <disabledValue>
+        <string>0</string>
+      </disabledValue>
+    </policy>
+    <policy name="L_TurnOffDragPreview" class="User" displayName="$(string.L_TurnOffDragPreview)" explainText="$(string.L_TurnOffDragPreviewExplain)" key="software\policies\microsoft\office\14.0\publisher\preferences" valueName="uselegacydrag">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_SetMaximumNumberOfMRUItemsToDisplay" class="User" displayName="$(string.L_SetMaximumNumberOfMRUItemsToDisplay)" explainText="$(string.L_SetMaximumNumberOfMRUItemsToDisplayExplain)" presentation="$(presentation.L_SetMaximumNumberOfMRUItemsToDisplay)" key="software\policies\microsoft\office\14.0\publisher\file mru">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <decimal id="L_SetMaximumNumberOfMRUItemsToDisplaySpinID" valueName="max display" minValue="0" maxValue="25" />
+      </elements>
+    </policy>
+    <policy name="L_UseXPSEnhancedPrintPath" class="User" displayName="$(string.L_UseXPSEnhancedPrintPath)" explainText="$(string.L_UseXPSEnhancedPrintPathExplain)" key="software\policies\microsoft\office\14.0\publisher\preferences" valueName="enablexpsprintpathprinting">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <string>1</string>
+      </enabledValue>
+      <disabledValue>
+        <string>0</string>
+      </disabledValue>
+    </policy>
+    <policy name="L_AutomaticallysubstitutefontformissingEAchars" class="User" displayName="$(string.L_AutomaticallysubstitutefontformissingEAchars)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\14.0\publisher\preferences" valueName="usefontlinking">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <string>1</string>
+      </enabledValue>
+      <disabledValue>
+        <string>0</string>
+      </disabledValue>
+    </policy>
+    <policy name="L_SetDefaultTextFlowDirection" class="User" displayName="$(string.L_SetDefaultTextFlowDirection)" explainText="$(string.L_SetDefaultTextFlowDirectionExplain)" presentation="$(presentation.L_SetDefaultTextFlowDirection)" key="software\policies\microsoft\office\14.0\publisher\preferences">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="L_SetDefaultTextFlowDirectionDropID" valueName="defaulttextflow">
+          <item displayName="$(string.L_SetDefaultTextFlowDirectionStr1)">
+            <value>
+              <string>1</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_SetDefaultTextFlowDirectionStr2)">
+            <value>
+              <string>256</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_AutomaticallySwitchKeyboard" class="User" displayName="$(string.L_AutomaticallySwitchKeyboard)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\14.0\publisher\preferences" valueName="autokeybd">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <string>1</string>
+      </enabledValue>
+      <disabledValue>
+        <string>0</string>
+      </disabledValue>
+    </policy>
+    <policy name="L_AllowTextToBeDraggedAndDropped" class="User" displayName="$(string.L_AllowTextToBeDraggedAndDropped)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\14.0\publisher\preferences" valueName="textdragndrop">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <string>1</string>
+      </enabledValue>
+      <disabledValue>
+        <string>0</string>
+      </disabledValue>
+    </policy>
+    <policy name="L_Whenselectingautomaticallyselectentireword" class="User" displayName="$(string.L_Whenselectingautomaticallyselectentireword)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\14.0\publisher\preferences" valueName="autowordsel">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <string>1</string>
+      </enabledValue>
+      <disabledValue>
+        <string>0</string>
+      </disabledValue>
+    </policy>
+    <policy name="L_Whenformattingautomaticallyformatentireword" class="User" displayName="$(string.L_Whenformattingautomaticallyformatentireword)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\14.0\publisher\preferences" valueName="autowordformat">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <string>1</string>
+      </enabledValue>
+      <disabledValue>
+        <string>0</string>
+      </disabledValue>
+    </policy>
+    <policy name="L_UseChinesefontsizes" class="User" displayName="$(string.L_UseChinesefontsizes)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\14.0\publisher\preferences" valueName="prcfontsizes">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <string>1</string>
+      </enabledValue>
+      <disabledValue>
+        <string>0</string>
+      </disabledValue>
+    </policy>
+    <policy name="L_AutomaticallyHyphenateInNewTextBoxes" class="User" displayName="$(string.L_AutomaticallyHyphenateInNewTextBoxes)" explainText="$(string.L_ChecksUncheckstheoptionAutomaticallyhyphenateinnewtextboxes)" key="software\policies\microsoft\office\14.0\publisher\preferences" valueName="defautohyph">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <string>1</string>
+      </enabledValue>
+      <disabledValue>
+        <string>0</string>
+      </disabledValue>
+    </policy>
+    <policy name="L_ShowScreenTipsonobjects" class="User" displayName="$(string.L_ShowScreenTipsonobjects)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\14.0\publisher\preferences" valueName="showobjecttooltips">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <string>1</string>
+      </enabledValue>
+      <disabledValue>
+        <string>0</string>
+      </disabledValue>
+    </policy>
+    <policy name="L_Enableincrementalpublishtoweb" class="User" displayName="$(string.L_Enableincrementalpublishtoweb)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\14.0\publisher\internet" valueName="incrementalupload">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <string>1</string>
+      </enabledValue>
+      <disabledValue>
+        <string>0</string>
+      </disabledValue>
+    </policy>
+    <policy name="L_Sendentirepublicationasasingle" class="User" displayName="$(string.L_Sendentirepublicationasasingle)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\14.0\publisher\internet" valueName="emailasimg">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <string>1</string>
+      </enabledValue>
+      <disabledValue>
+        <string>0</string>
+      </disabledValue>
+    </policy>
+    <policy name="L_Promptuserwhenreapplyingastyle" class="User" displayName="$(string.L_Promptuserwhenreapplyingastyle)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\14.0\publisher\preferences" valueName="prompttoupdatestyle">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <string>1</string>
+      </enabledValue>
+      <disabledValue>
+        <string>0</string>
+      </disabledValue>
+    </policy>
+    <policy name="L_SaveAutoRecoverinfoevery" class="User" displayName="$(string.L_SaveAutoRecoverinfoevery)" explainText="$(string.L_SaveAutoRecoverinfoeveryExplain)" presentation="$(presentation.L_SaveAutoRecoverinfoevery)" key="software\policies\microsoft\office\14.0\publisher\preferences">
+      <parentCategory ref="L_Save" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_SaveAutoRecoverinfoeveryID" valueName="autorecoversaveinterval" required="true" expandable="false" />
+      </elements>
+    </policy>
+    <policy name="L_Allowbackgroundsaves" class="User" displayName="$(string.L_Allowbackgroundsaves)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\14.0\publisher\preferences" valueName="backgroundsave">
+      <parentCategory ref="L_Save" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <string>1</string>
+      </enabledValue>
+      <disabledValue>
+        <string>0</string>
+      </disabledValue>
+    </policy>
+    <policy name="L_PublisherAutomationSecurityLevel" class="User" displayName="$(string.L_PublisherAutomationSecurityLevel)" explainText="$(string.L_PublisherAutomationSecurityLevelExplain)" presentation="$(presentation.L_PublisherAutomationSecurityLevel)" key="software\policies\microsoft\office\common\security">
+      <parentCategory ref="L_Security" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="L_Empty" valueName="automationsecuritypublisher">
+          <item displayName="$(string.L_LowEnabled)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ByUIPrompted)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Highdisabled)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Preventfatallycorruptfilesfromopening" class="User" displayName="$(string.L_Preventfatallycorruptfilesfromopening)" explainText="$(string.L_PreventfatallycorruptfilesfromopeningExplain)" key="software\policies\microsoft\office\14.0\publisher" valueName="promptforbadfiles">
+      <parentCategory ref="L_Security" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_TurnOffDEPPub" class="User" displayName="$(string.L_TurnOffDEPPub)" explainText="$(string.L_TurnOffDEPPubExplain)" key="software\policies\microsoft\office\14.0\publisher\security" valueName="enabledep">
+      <parentCategory ref="L_TrustCenter" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_RequirethatApplicationExtensionsaresigned" class="User" displayName="$(string.L_RequirethatApplicationExtensionsaresigned)" explainText="$(string.L_RequirethatApplicationExtensionsaresignedExplain)" key="software\policies\microsoft\office\14.0\publisher\security" valueName="requireaddinsig">
+      <parentCategory ref="L_TrustCenter" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisableTrustBarNotificationforunsigned" class="User" displayName="$(string.L_DisableTrustBarNotificationforunsigned)" explainText="$(string.L_DisableTrustBarNotificationforunsignedExplain)" key="software\policies\microsoft\office\14.0\publisher\security" valueName="notbpromptunsignedaddin">
+      <parentCategory ref="L_TrustCenter" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Disableallapplicationextensions" class="User" displayName="$(string.L_Disableallapplicationextensions)" explainText="$(string.L_DisableallapplicationextensionsExplain)" key="software\policies\microsoft\office\14.0\publisher\security" valueName="disablealladdins">
+      <parentCategory ref="L_TrustCenter" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_VBAWarningsPolicy" class="User" displayName="$(string.L_VBAWarningsPolicy)" explainText="$(string.L_VBAWarningsExplain)" presentation="$(presentation.L_VBAWarningsPolicy)" key="software\policies\microsoft\office\14.0\publisher\security">
+      <parentCategory ref="L_TrustCenter" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="L_empty0" valueName="vbawarnings">
+          <item displayName="$(string.L_DisableAllWithNotification)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_DisableAllExceptDigitallySignedMacros)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_DisableAllWithoutNotification)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.L_EnableAllMacros)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Checkspellingasyoutype" class="User" displayName="$(string.L_Checkspellingasyoutype)" explainText="$(string.L_CheckspellingasyoutypeExplain)" presentation="$(presentation.L_Checkspellingasyoutype)" key="software\policies\microsoft\shared tools\proofing tools\1.0\office">
+      <parentCategory ref="L_Proofing" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="L_CheckspellingasyoutypeDropID" valueName="publisherspellingoptions">
+          <item displayName="$(string.L_CheckspellingasyoutypeStr1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_CheckspellingasyoutypeStr2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_CheckspellingasyoutypeStr3)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Disablecommandbarbuttonsandmenuitems" class="User" displayName="$(string.L_Disablecommandbarbuttonsandmenuitems)" explainText="$(string.L_DisablecommandbarbuttonsandmenuitemsExplain)" presentation="$(presentation.L_Disablecommandbarbuttonsandmenuitems)" key="software\policies\microsoft\office\14.0\publisher\disabledcmdbaritemscheckboxes">
+      <parentCategory ref="L_Predefined" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <boolean id="L_FilePublishtoWeb" valueName="filepublishtoweb">
+          <trueValue>
+            <string>9339</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_FileWebPagePreview" valueName="filewebpagepreview">
+          <trueValue>
+            <string>3655</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_FileSendEmailSendthisPage" valueName="filesendemailsendthispage">
+          <trueValue>
+            <string>3739</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_FileSendEmailEmailPreview" valueName="filesendemailemailpreview">
+          <trueValue>
+            <string>9418</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_ToolsMacro" valueName="toolsmacro">
+          <trueValue>
+            <string>12557</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_ToolsMacroMacros" valueName="toolsmacromacros">
+          <trueValue>
+            <string>186</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_ToolsMacroSecurity" valueName="toolsmacrosecurity">
+          <trueValue>
+            <string>3627</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_ToolsMacroVisualBasicEditor" valueName="toolsmacrovisualbasiceditor">
+          <trueValue>
+            <string>1695</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_ToolsAddIns" valueName="toolsaddins">
+          <trueValue>
+            <string>943</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_ToolsCustomize" valueName="toolscustomize">
+          <trueValue>
+            <string>21609</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_PubOptions1" valueName="toolsoptions">
+          <trueValue>
+            <string>11323</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_disablecommandbarbuttonsandmenuitems2" class="User" displayName="$(string.L_disablecommandbarbuttonsandmenuitems2)" explainText="$(string.L_SpecifytheIDforacommandbaritem)" presentation="$(presentation.L_disablecommandbarbuttonsandmenuitems2)" key="software\policies\microsoft\office\14.0\publisher\disabledcmdbaritemslist">
+      <parentCategory ref="L_Custom" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <list id="L_EnteracommandbarIDtodisable" valuePrefix="TCID" />
+      </elements>
+    </policy>
+    <policy name="L_Promptusertosetupprinter" class="User" displayName="$(string.L_Promptusertosetupprinter)" explainText="$(string.L_PromptusertosetupprinterExplain)" key="software\policies\microsoft\office\14.0\publisher\preferences" valueName="showprintersetup">
+      <parentCategory ref="L_Miscellaneous" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <string>1</string>
+      </enabledValue>
+      <disabledValue>
+        <string>0</string>
+      </disabledValue>
+    </policy>
+    <policy name="L_DefaultPublisherdirection" class="User" displayName="$(string.L_DefaultPublisherdirection)" explainText="$(string.L_Specifiesthedefaultlayoutorientation)" presentation="$(presentation.L_DefaultPublisherdirection)" key="software\policies\microsoft\office\14.0\publisher\preferences">
+      <parentCategory ref="L_ComplexScripts" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="L_defaultpublisherdirection3" valueName="defaultrtl">
+          <item displayName="$(string.L_lefttoright3)">
+            <value>
+              <string>0</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_righttoleft4)">
+            <value>
+              <string>1</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_UseSequenceChecking" class="User" displayName="$(string.L_UseSequenceChecking)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\14.0\publisher\preferences" valueName="seqcheck">
+      <parentCategory ref="L_ComplexScripts" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <string>1</string>
+      </enabledValue>
+      <disabledValue>
+        <string>0</string>
+      </disabledValue>
+    </policy>
+    <policy name="L_Usetypeandreplace" class="User" displayName="$(string.L_Usetypeandreplace)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\14.0\publisher\preferences" valueName="typereplace">
+      <parentCategory ref="L_ComplexScripts" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <string>1</string>
+      </enabledValue>
+      <disabledValue>
+        <string>0</string>
+      </disabledValue>
+    </policy>
+    <policy name="L_AdddoublequotesinHebrewalphabetnumbering" class="User" displayName="$(string.L_AdddoublequotesinHebrewalphabetnumbering)" explainText="$(string.L_CheckedAddsdoublequotationmarkstoHebrewnumberingUncheckedDoe)" key="software\policies\microsoft\office\14.0\publisher\preferences" valueName="dubquohebalpnum">
+      <parentCategory ref="L_Miscellaneous" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <string>1</string>
+      </enabledValue>
+      <disabledValue>
+        <string>0</string>
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>

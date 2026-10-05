@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2023 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="token" namespace="BaseALT.Policies.Token" />
+    <using prefix="system" namespace="BaseALT.Policies.System" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <policies>
+    <policy class="Machine" displayName="$(string.org-debian-pcsc-lite-access_pcsc)"
+        explainText="$(string.org-debian-pcsc-lite-access_pcsc_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.debian.pcsc-lite.access_pcsc"
+        valuename="org.debian.pcsc-lite.access_pcsc"
+        presentation="$(presentation.org-debian-pcsc-lite-pr)">
+      <parentCategory ref="system:ALT_TokenPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgDebianPcscLite_setter" valueName="org.debian.pcsc-lite.access_pcsc" required="true">
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgDebianPcscLite_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.debian.pcsc-lite.access_pcsc">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-debian-pcsc-lite-access_pcsc-user)"
+        explainText="$(string.org-debian-pcsc-lite-access_pcsc-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.debian.pcsc-lite.access_pcsc-user"
+        valuename="org.debian.pcsc-lite.access_pcsc"
+        presentation="$(presentation.org-debian-pcsc-lite-user-pr)">
+      <parentCategory ref="system:ALT_TokenPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgDebianPcscLite_setter" valueName="org.debian.pcsc-lite.access_pcsc" required="true">
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-debian-pcsc-lite-access_card)"
+        explainText="$(string.org-debian-pcsc-lite-access_card_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.debian.pcsc-lite.access_card"
+        valuename="org.debian.pcsc-lite.access_card"
+        presentation="$(presentation.org-debian-pcsc-lite-pr)">
+      <parentCategory ref="system:ALT_TokenPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgDebianPcscLite_setter" valueName="org.debian.pcsc-lite.access_card" required="true">
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgDebianPcscLite_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.debian.pcsc-lite.access_card">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-debian-pcsc-lite-access_card-user)"
+        explainText="$(string.org-debian-pcsc-lite-access_card-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.debian.pcsc-lite.access_card-user"
+        valuename="org.debian.pcsc-lite.access_card"
+        presentation="$(presentation.org-debian-pcsc-lite-user-pr)">
+      <parentCategory ref="system:ALT_TokenPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgDebianPcscLite_setter" valueName="org.debian.pcsc-lite.access_card" required="true">
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-debian-pcsc-lite-polkit-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

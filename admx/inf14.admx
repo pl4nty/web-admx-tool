@@ -1,0 +1,982 @@
+<?xml version="1.0" encoding="utf-16"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="inf14" namespace="inf14.Office.Microsoft.Policies.Windows" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <supersededAdm fileName="inf14" />
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="L_MicrosoftOfficeInfoPathmachine" displayName="$(string.L_MicrosoftOfficeInfoPathmachine)" />
+    <category name="L_Security" displayName="$(string.L_Security)">
+      <parentCategory ref="L_MicrosoftOfficeInfoPathmachine" />
+    </category>
+    <category name="L_MicrosoftOfficeInfoPath" displayName="$(string.L_MicrosoftOfficeInfoPath)" />
+    <category name="L_InfoPathOptions" displayName="$(string.L_InfoPathOptions)">
+      <parentCategory ref="L_MicrosoftOfficeInfoPath" />
+    </category>
+    <category name="L_General" displayName="$(string.L_General)">
+      <parentCategory ref="L_InfoPathOptions" />
+    </category>
+    <category name="L_Design" displayName="$(string.L_Design)">
+      <parentCategory ref="L_InfoPathOptions" />
+    </category>
+    <category name="L_SpellingGrammar" displayName="$(string.L_SpellingGrammar)">
+      <parentCategory ref="L_InfoPathOptions" />
+    </category>
+    <category name="L_EAFind" displayName="$(string.L_EAFind)">
+      <parentCategory ref="L_InfoPathOptions" />
+    </category>
+    <category name="L_Ink" displayName="$(string.L_Ink)">
+      <parentCategory ref="L_InfoPathOptions" />
+    </category>
+    <category name="L_Advanced" displayName="$(string.L_Advanced)">
+      <parentCategory ref="L_InfoPathOptions" />
+    </category>
+    <category name="L_Offline" displayName="$(string.L_Offline)">
+      <parentCategory ref="L_Advanced" />
+    </category>
+    <category name="L_Disableitemsinuserinterface" displayName="$(string.L_Disableitemsinuserinterface)">
+      <parentCategory ref="L_MicrosoftOfficeInfoPath" />
+    </category>
+    <category name="L_Predefined" displayName="$(string.L_Predefined)">
+      <parentCategory ref="L_Disableitemsinuserinterface" />
+    </category>
+    <category name="L_Custom" displayName="$(string.L_Custom)">
+      <parentCategory ref="L_Disableitemsinuserinterface" />
+    </category>
+    <category name="L_security6" displayName="$(string.L_security6)">
+      <parentCategory ref="L_MicrosoftOfficeInfoPath" />
+    </category>
+    <category name="L_TrustCenter" displayName="$(string.L_TrustCenter)">
+      <parentCategory ref="L_security6" />
+    </category>
+    <category name="L_TrustedLocations" displayName="$(string.L_TrustedLocations)">
+      <parentCategory ref="L_TrustCenter" />
+    </category>
+    <category name="L_EMailFormsCategory" displayName="$(string.L_EMailFormsCategory)">
+      <parentCategory ref="L_MicrosoftOfficeInfoPath" />
+    </category>
+    <category name="L_Miscellaneous" displayName="$(string.L_Miscellaneous)">
+      <parentCategory ref="L_MicrosoftOfficeInfoPath" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="L_InfoPathAPTCAAssemblyAllowableList" class="Machine" displayName="$(string.L_InfoPathAPTCAAssemblyAllowableList)" explainText="$(string.L_InfoPathAPTCAAssemblyAllowableListExplain)" presentation="$(presentation.L_InfoPathAPTCAAssemblyAllowableList)" key="software\policies\microsoft\office\14.0\infopath\security\aptca">
+      <parentCategory ref="L_Security" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <list id="L_Empty" explicitValue="true" />
+      </elements>
+    </policy>
+    <policy name="L_MicrosoftIEFeatureControlOptin" class="Machine" displayName="$(string.L_MicrosoftIEFeatureControlOptin)" explainText="$(string.L_MicrosoftIEFeatureControlOptinExplain)" presentation="$(presentation.L_MicrosoftIEFeatureControlOptin)" key="software\policies\microsoft\office\14.0\infopath\security">
+      <parentCategory ref="L_Security" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="L_empty0" valueName="iefeaturecontrols">
+          <item displayName="$(string.L_None)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_InfopathexeandPropertyPanel)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_InfPropPanand3rdparty)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_InfoPathAPTCAAssemblyAllowableListEnforcement" class="Machine" displayName="$(string.L_InfoPathAPTCAAssemblyAllowableListEnforcement)" explainText="$(string.L_InfoPathAPTCAAssemblyAllowableListEnforcementExplain)" key="software\policies\microsoft\office\14.0\infopath\security" valueName="aptca_allowlist">
+      <parentCategory ref="L_Security" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Recentlyusedfilelist" class="User" displayName="$(string.L_Recentlyusedfilelist)" explainText="$(string.L_SetsthenumberofentriesinthefilelistintheFilemenu)" presentation="$(presentation.L_Recentlyusedfilelist)" key="software\policies\microsoft\office\14.0\infopath\designer file mru">
+      <parentCategory ref="L_General" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <decimal id="L_RecentlyusedfilelistSpinID1" key="software\policies\microsoft\office\14.0\infopath\designer file mru" valueName="max display" minValue="0" maxValue="50" />
+        <decimal id="L_RecentlyusedfilelistSpinID2" key="software\policies\microsoft\office\14.0\infopath\filler file mru" valueName="max display" minValue="0" maxValue="50" />
+      </elements>
+    </policy>
+    <policy name="L_Entertextdirectionfornewforms" class="User" displayName="$(string.L_Entertextdirectionfornewforms)" explainText="$(string.L_EntertextdirectionfornewformsExplain)" presentation="$(presentation.L_Entertextdirectionfornewforms)" key="software\policies\microsoft\office\14.0\infopath\designer">
+      <parentCategory ref="L_Design" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="L_DirectionColon" valueName="bidirtlform">
+          <item displayName="$(string.L_LefttoRight)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_RighttoLeft2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Hidespellingerrors" class="User" displayName="$(string.L_Hidespellingerrors)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\14.0\infopath\proofing" valueName="hidespellingerrors">
+      <parentCategory ref="L_SpellingGrammar" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Matchfullhalfwidthforms" class="User" displayName="$(string.L_Matchfullhalfwidthforms)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\14.0\infopath\fe" valueName="eqbyte">
+      <parentCategory ref="L_EAFind" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Matchminusdashcho" class="User" displayName="$(string.L_Matchminusdashcho)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\14.0\infopath\fe" valueName="eqminus">
+      <parentCategory ref="L_EAFind" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Matchchoonusedforvowels" class="User" displayName="$(string.L_Matchchoonusedforvowels)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\14.0\infopath\fe" valueName="eqlongvowel">
+      <parentCategory ref="L_EAFind" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_SetEAlinebreaking" class="User" displayName="$(string.L_SetEAlinebreaking)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" presentation="$(presentation.L_SetEAlinebreaking)" key="software\policies\microsoft\office\14.0\infopath\designer\fe">
+      <parentCategory ref="L_EAFind" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="L_SelectEAlinebreakingbehavior" valueName="linebreaking">
+          <item displayName="$(string.L_Normal)">
+            <value>
+              <string>normal</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_Strict)">
+            <value>
+              <string>strict</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_InkEntry" class="User" displayName="$(string.L_InkEntry)" explainText="$(string.L_InkEntryExplain)" key="software\policies\microsoft\office\14.0\infopath\editorcommon" valueName="inkentry">
+      <parentCategory ref="L_Ink" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisplaywarningdialogthatuserisenteringtextinInkentrymode" class="User" displayName="$(string.L_DisplaywarningdialogthatuserisenteringtextinInkentrymode)" explainText="$(string.L_DisplaywarningdialogthatuserisenteringtextinInkentrymodeExplain)" key="software\policies\microsoft\office\14.0\infopath\editorcommon" valueName="inkentryprompt">
+      <parentCategory ref="L_Ink" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Entermillisecondsbeforerecognizinghandwriting" class="User" displayName="$(string.L_Entermillisecondsbeforerecognizinghandwriting)" explainText="$(string.L_EntermillisecondsbeforerecognizinghandwritingExplain)" presentation="$(presentation.L_Entermillisecondsbeforerecognizinghandwriting)" key="software\policies\microsoft\office\14.0\infopath\editorcommon">
+      <parentCategory ref="L_Ink" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <decimal id="L_Waitmilliseconds010000" valueName="inkentrydelaytime" minValue="0" maxValue="10000" />
+      </elements>
+    </policy>
+    <policy name="L_Displayashadedinkguideforhandwriting" class="User" displayName="$(string.L_Displayashadedinkguideforhandwriting)" explainText="$(string.L_DisplayashadedinkguideforhandwritingExplain)" key="software\policies\microsoft\office\14.0\infopath\editorcommon" valueName="inkentryguide">
+      <parentCategory ref="L_Ink" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_EnableAutoRecover" class="User" displayName="$(string.L_EnableAutoRecover)" explainText="$(string.L_EnableAutoRecoverExplain)" key="software\policies\microsoft\office\14.0\infopath" valueName="enableautorecover">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_AutoRecoverInterval" class="User" displayName="$(string.L_AutoRecoverInterval)" explainText="$(string.L_AutoRecoverIntervalExplain)" presentation="$(presentation.L_AutoRecoverInterval)" key="software\policies\microsoft\office\14.0\infopath">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <decimal id="L_empty1" valueName="autorecoverinterval" minValue="0" maxValue="10" />
+      </elements>
+    </policy>
+    <policy name="L_DisableCommonLanguageRuntimeerrorswhenfillingoutforms" class="User" displayName="$(string.L_DisableCommonLanguageRuntimeerrorswhenfillingoutforms)" explainText="$(string.L_DisableCommonLanguageRuntimeerrorswhenfillingoutformsExplain)" key="software\policies\microsoft\office\14.0\infopath\form debugging" valueName="showexceptionsdialog">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Offlinedatacachedperformtemplate" class="User" displayName="$(string.L_Offlinedatacachedperformtemplate)" explainText="$(string.L_OfflinedatacachedperformtemplateExplain)" presentation="$(presentation.L_Offlinedatacachedperformtemplate)" key="software\policies\microsoft\office\14.0\infopath\editor\offline">
+      <parentCategory ref="L_Offline" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <decimal id="L_Numberofbytescolon" valueName="maxcachedsolutionsize" />
+      </elements>
+    </policy>
+    <policy name="L_OfflineModecachesize" class="User" displayName="$(string.L_OfflineModecachesize)" explainText="$(string.L_OfflineModecachesizeExplain)" presentation="$(presentation.L_OfflineModecachesize)" key="software\policies\microsoft\office\14.0\infopath\editor\offline">
+      <parentCategory ref="L_Offline" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <decimal id="L_numberofbytescolon2" valueName="maxcachesize" />
+      </elements>
+    </policy>
+    <policy name="L_OfflineModestatus" class="User" displayName="$(string.L_OfflineModestatus)" explainText="$(string.L_OfflineModestatusexplain)" presentation="$(presentation.L_OfflineModestatus)" key="software\policies\microsoft\office\14.0\infopath\editor\offline">
+      <parentCategory ref="L_Offline" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="L_offlinemodestatus3" valueName="cachedmodestatus">
+          <item displayName="$(string.L_Disabled)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Enabledinuse)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Enablednotinuse)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Disablecommandbarbuttonsandmenuitems" class="User" displayName="$(string.L_Disablecommandbarbuttonsandmenuitems)" explainText="$(string.L_DisablestheassociatedcommandsintheUI)" presentation="$(presentation.L_Disablecommandbarbuttonsandmenuitems)" key="software\policies\microsoft\office\14.0\infopath\disabledcmdbaritemscheckboxes">
+      <parentCategory ref="L_Predefined" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <boolean id="L_FilePrint" valueName="fileprint">
+          <trueValue>
+            <string>4</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_FileSendtoMailRecipient" valueName="sendtomailrecipient">
+          <trueValue>
+            <string>2188</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_FilePrintPreview" valueName="fileprintpreview">
+          <trueValue>
+            <string>109</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_FilePageSetup" valueName="filepagesetup">
+          <trueValue>
+            <string>11186</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_InsertHyperlink" valueName="fileinserthyperlink">
+          <trueValue>
+            <string>1576</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_ToolsSetLanguage" valueName="toolssetlanguage">
+          <trueValue>
+            <string>790</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_InfoPathOptions4" valueName="toolsoptions">
+          <trueValue>
+            <string>11323</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_PrintDefault" valueName="printdefault">
+          <trueValue>
+            <string>2521</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_Disableshortcutkeys" class="User" displayName="$(string.L_Disableshortcutkeys)" explainText="$(string.L_Disablestheassociatedshortcutkeys)" presentation="$(presentation.L_Disableshortcutkeys)" key="software\policies\microsoft\office\14.0\infopath\disabledshortcutkeyscheckboxes">
+      <parentCategory ref="L_Predefined" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <boolean id="L_PrintShortcutCtrlP" valueName="print">
+          <trueValue>
+            <string>80,8</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_PrintPreviewShortcutCtrlf2" valueName="printpreview">
+          <trueValue>
+            <string>113,8</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_InsertHyperlinkShortcutCtrlK" valueName="inserthyperlink">
+          <trueValue>
+            <string>75,8</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_disablecommandbarbuttonsandmenuitems5" class="User" displayName="$(string.L_disablecommandbarbuttonsandmenuitems5)" explainText="$(string.L_SpecifytheIDforacommandbartodisable)" presentation="$(presentation.L_disablecommandbarbuttonsandmenuitems5)" key="software\policies\microsoft\office\14.0\infopath\disabledcmdbaritemslist">
+      <parentCategory ref="L_Custom" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <list id="L_EnteracommandbarIDtodisable" valuePrefix="TCID" />
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc01" class="User" displayName="$(string.L_TrustedLoc01)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc01)" key="software\policies\microsoft\office\14.0\infopath\security\trusted locations\location1">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_Pathcolon01" valueName="path" expandable="true" />
+        <text id="L_Datecolon01" valueName="date" />
+        <text id="L_Descriptioncolon01" valueName="description" />
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc02" class="User" displayName="$(string.L_TrustedLoc02)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc02)" key="software\policies\microsoft\office\14.0\infopath\security\trusted locations\location2">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_Pathcolon02" valueName="path" expandable="true" />
+        <text id="L_Datecolon02" valueName="date" />
+        <text id="L_Descriptioncolon02" valueName="description" />
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc03" class="User" displayName="$(string.L_TrustedLoc03)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc03)" key="software\policies\microsoft\office\14.0\infopath\security\trusted locations\location3">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_Pathcolon03" valueName="path" expandable="true" />
+        <text id="L_Datecolon03" valueName="date" />
+        <text id="L_Descriptioncolon03" valueName="description" />
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc04" class="User" displayName="$(string.L_TrustedLoc04)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc04)" key="software\policies\microsoft\office\14.0\infopath\security\trusted locations\location4">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_Pathcolon04" valueName="path" expandable="true" />
+        <text id="L_Datecolon04" valueName="date" />
+        <text id="L_Descriptioncolon04" valueName="description" />
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc05" class="User" displayName="$(string.L_TrustedLoc05)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc05)" key="software\policies\microsoft\office\14.0\infopath\security\trusted locations\location5">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_Pathcolon05" valueName="path" expandable="true" />
+        <text id="L_Datecolon05" valueName="date" />
+        <text id="L_Descriptioncolon05" valueName="description" />
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc06" class="User" displayName="$(string.L_TrustedLoc06)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc06)" key="software\policies\microsoft\office\14.0\infopath\security\trusted locations\location6">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_Pathcolon06" valueName="path" expandable="true" />
+        <text id="L_Datecolon06" valueName="date" />
+        <text id="L_Descriptioncolon06" valueName="description" />
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc07" class="User" displayName="$(string.L_TrustedLoc07)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc07)" key="software\policies\microsoft\office\14.0\infopath\security\trusted locations\location7">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_Pathcolon07" valueName="path" expandable="true" />
+        <text id="L_Datecolon07" valueName="date" />
+        <text id="L_Descriptioncolon07" valueName="description" />
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc08" class="User" displayName="$(string.L_TrustedLoc08)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc08)" key="software\policies\microsoft\office\14.0\infopath\security\trusted locations\location8">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_Pathcolon08" valueName="path" expandable="true" />
+        <text id="L_Datecolon08" valueName="date" />
+        <text id="L_Descriptioncolon08" valueName="description" />
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc09" class="User" displayName="$(string.L_TrustedLoc09)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc09)" key="software\policies\microsoft\office\14.0\infopath\security\trusted locations\location9">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_Pathcolon09" valueName="path" expandable="true" />
+        <text id="L_Datecolon09" valueName="date" />
+        <text id="L_Descriptioncolon09" valueName="description" />
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc10" class="User" displayName="$(string.L_TrustedLoc10)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc10)" key="software\policies\microsoft\office\14.0\infopath\security\trusted locations\location10">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_Pathcolon10" valueName="path" expandable="true" />
+        <text id="L_Datecolon10" valueName="date" />
+        <text id="L_Descriptioncolon10" valueName="description" />
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc11" class="User" displayName="$(string.L_TrustedLoc11)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc11)" key="software\policies\microsoft\office\14.0\infopath\security\trusted locations\location11">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_Pathcolon11" valueName="path" expandable="true" />
+        <text id="L_Datecolon11" valueName="date" />
+        <text id="L_Descriptioncolon11" valueName="description" />
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc12" class="User" displayName="$(string.L_TrustedLoc12)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc12)" key="software\policies\microsoft\office\14.0\infopath\security\trusted locations\location12">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_Pathcolon12" valueName="path" expandable="true" />
+        <text id="L_Datecolon12" valueName="date" />
+        <text id="L_Descriptioncolon12" valueName="description" />
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc13" class="User" displayName="$(string.L_TrustedLoc13)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc13)" key="software\policies\microsoft\office\14.0\infopath\security\trusted locations\location13">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_Pathcolon13" valueName="path" expandable="true" />
+        <text id="L_Datecolon13" valueName="date" />
+        <text id="L_Descriptioncolon13" valueName="description" />
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc14" class="User" displayName="$(string.L_TrustedLoc14)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc14)" key="software\policies\microsoft\office\14.0\infopath\security\trusted locations\location14">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_Pathcolon14" valueName="path" expandable="true" />
+        <text id="L_Datecolon14" valueName="date" />
+        <text id="L_Descriptioncolon14" valueName="description" />
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc15" class="User" displayName="$(string.L_TrustedLoc15)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc15)" key="software\policies\microsoft\office\14.0\infopath\security\trusted locations\location15">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_Pathcolon15" valueName="path" expandable="true" />
+        <text id="L_Datecolon15" valueName="date" />
+        <text id="L_Descriptioncolon15" valueName="description" />
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc16" class="User" displayName="$(string.L_TrustedLoc16)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc16)" key="software\policies\microsoft\office\14.0\infopath\security\trusted locations\location16">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_Pathcolon16" valueName="path" expandable="true" />
+        <text id="L_Datecolon16" valueName="date" />
+        <text id="L_Descriptioncolon16" valueName="description" />
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc17" class="User" displayName="$(string.L_TrustedLoc17)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc17)" key="software\policies\microsoft\office\14.0\infopath\security\trusted locations\location17">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_Pathcolon17" valueName="path" expandable="true" />
+        <text id="L_Datecolon17" valueName="date" />
+        <text id="L_Descriptioncolon17" valueName="description" />
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc18" class="User" displayName="$(string.L_TrustedLoc18)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc18)" key="software\policies\microsoft\office\14.0\infopath\security\trusted locations\location18">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_Pathcolon18" valueName="path" expandable="true" />
+        <text id="L_Datecolon18" valueName="date" />
+        <text id="L_Descriptioncolon18" valueName="description" />
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc19" class="User" displayName="$(string.L_TrustedLoc19)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc19)" key="software\policies\microsoft\office\14.0\infopath\security\trusted locations\location19">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_Pathcolon19" valueName="path" expandable="true" />
+        <text id="L_Datecolon19" valueName="date" />
+        <text id="L_Descriptioncolon19" valueName="description" />
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc20" class="User" displayName="$(string.L_TrustedLoc20)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc20)" key="software\policies\microsoft\office\14.0\infopath\security\trusted locations\location20">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_Pathcolon20" valueName="path" expandable="true" />
+        <text id="L_Datecolon20" valueName="date" />
+        <text id="L_Descriptioncolon20" valueName="description" />
+      </elements>
+    </policy>
+    <policy name="L_DisableTrustedLoc" class="User" displayName="$(string.L_DisableTrustedLoc)" explainText="$(string.L_DisableTrustedLocExplain)" key="software\policies\microsoft\office\14.0\infopath\security\trusted locations" valueName="alllocationsdisabled">
+      <parentCategory ref="L_TrustCenter" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_BlockCrossDomainDataFormRetrieval" class="User" displayName="$(string.L_BlockCrossDomainDataFormRetrieval)" explainText="$(string.L_BlockCrossDomainDataFormRetrievalExplain)" key="software\policies\microsoft\office\14.0\infopath\security" valueName="crossdomaindataconnectionwarnings">
+      <parentCategory ref="L_TrustCenter" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="2" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Disableallapplicationextensions" class="User" displayName="$(string.L_Disableallapplicationextensions)" explainText="$(string.L_DisableallapplicationextensionsExplain)" key="software\policies\microsoft\office\14.0\infopath\security" valueName="disablealladdins">
+      <parentCategory ref="L_TrustCenter" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_RequirethatApplicationExtensionsaresigned" class="User" displayName="$(string.L_RequirethatApplicationExtensionsaresigned)" explainText="$(string.L_RequirethatApplicationExtensionsaresignedExplain)" key="software\policies\microsoft\office\14.0\infopath\security" valueName="requireaddinsig">
+      <parentCategory ref="L_TrustCenter" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisableTrustBarNotificationforunsigned" class="User" displayName="$(string.L_DisableTrustBarNotificationforunsigned)" explainText="$(string.L_DisableTrustBarNotificationforunsignedExplain)" key="software\policies\microsoft\office\14.0\infopath\security" valueName="notbpromptunsignedaddin">
+      <parentCategory ref="L_TrustCenter" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_TurnOffDEPInf" class="User" displayName="$(string.L_TurnOffDEPInf)" explainText="$(string.L_TurnOffDEPInfExplain)" key="software\policies\microsoft\office\14.0\infopath\security" valueName="enabledep">
+      <parentCategory ref="L_TrustCenter" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_RunManagedCodeFromInternet" class="User" displayName="$(string.L_RunManagedCodeFromInternet)" explainText="$(string.L_RunManagedCodeFromInternetExplain)" key="software\policies\microsoft\office\14.0\infopath\security" valueName="runmanagedcodefrominternet">
+      <parentCategory ref="L_security6" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_ControlBehaviorforWindowsSharePointServerGradualUpgrade" class="User" displayName="$(string.L_ControlBehaviorforWindowsSharePointServerGradualUpgrade)" explainText="$(string.L_ControlBehaviorforWindowsSharePointServerGradualUpgradeExplain)" presentation="$(presentation.L_ControlBehaviorforWindowsSharePointServerGradualUpgrade)" key="software\policies\microsoft\office\14.0\infopath\security">
+      <parentCategory ref="L_security6" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="L_empty7" valueName="gradualupgraderedirection">
+          <item displayName="$(string.L_Allowredirectionstoanylocation)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_AllowredirectionstoIntranetonly)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Blockallredirections)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_DisableopeningofsolutionsfromtheInternetsecurityzone" class="User" displayName="$(string.L_DisableopeningofsolutionsfromtheInternetsecurityzone)" explainText="$(string.L_CheckedDisplaysanerroriftheuserattemptstoopenanInfoPathsolut)" key="software\policies\microsoft\office\14.0\infopath\security" valueName="allowinternetsolutions">
+      <parentCategory ref="L_security6" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Disablefullytrustedsolutionsfullaccesstomachine" class="User" displayName="$(string.L_Disablefullytrustedsolutionsfullaccesstomachine)" explainText="$(string.L_DisablesEnablestheoptionAllowfullytrustedformstohaveaccessto)" key="software\policies\microsoft\office\14.0\infopath\security" valueName="runfulltrustsolutions">
+      <parentCategory ref="L_security6" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_AllowtheuseofActiveXCustomControlsinInfoPathforms" class="User" displayName="$(string.L_AllowtheuseofActiveXCustomControlsinInfoPathforms)" explainText="$(string.L_AllowtheuseofActiveXCustomControlsinInfoPathformsExplain)" key="software\policies\microsoft\office\14.0\infopath" valueName="enableactivexcontrols">
+      <parentCategory ref="L_security6" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Allowfiletypesasattachmentstoforms" class="User" displayName="$(string.L_Allowfiletypesasattachmentstoforms)" explainText="$(string.L_AllowfiletypesasattachmentstoformsExplain)" presentation="$(presentation.L_Allowfiletypesasattachmentstoforms)" key="software\policies\microsoft\office\14.0\infopath\security">
+      <parentCategory ref="L_security6" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_FileTypes" valueName="unsafefiletypesremove" />
+      </elements>
+    </policy>
+    <policy name="L_Blockspecificfiletypesasattachmentstoforms" class="User" displayName="$(string.L_Blockspecificfiletypesasattachmentstoforms)" explainText="$(string.L_BlockspecificfiletypesasattachmentstoformsExplain)" presentation="$(presentation.L_Blockspecificfiletypesasattachmentstoforms)" key="software\policies\microsoft\office\14.0\infopath\security">
+      <parentCategory ref="L_security6" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_filetypes8" valueName="unsafefiletypesadd" />
+      </elements>
+    </policy>
+    <policy name="L_Preventusersfromallowingunsafefiletypestobeattachedtoforms" class="User" displayName="$(string.L_Preventusersfromallowingunsafefiletypestobeattachedtoforms)" explainText="$(string.L_PreventusersfromallowingunsafefiletypestobeattachedtoformsExplain)" key="software\policies\microsoft\office\14.0\infopath\security" valueName="disallowattachmentcustomization">
+      <parentCategory ref="L_security6" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Displayawarningthataformisdigitallysigned" class="User" displayName="$(string.L_Displayawarningthataformisdigitallysigned)" explainText="$(string.L_DisplayawarningthataformisdigitallysignedExplain)" key="software\policies\microsoft\office\14.0\infopath\security" valueName="signaturewarning">
+      <parentCategory ref="L_security6" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_BeaconingUIPolicy" class="User" displayName="$(string.L_BeaconingUIPolicy)" explainText="$(string.L_BeaconingUIExplain)" presentation="$(presentation.L_BeaconingUIPolicy)" key="software\policies\microsoft\office\14.0\infopath\security">
+      <parentCategory ref="L_security6" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="L_BeaconingUIPart" valueName="infopathbeaconingui">
+          <item displayName="$(string.L_BeaconNever)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_BeaconAlways)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_BeaconSome)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_ActiveXBeaconingUIPolicy" class="User" displayName="$(string.L_ActiveXBeaconingUIPolicy)" explainText="$(string.L_ActiveXBeaconingUIExplain)" presentation="$(presentation.L_ActiveXBeaconingUIPolicy)" key="software\policies\microsoft\office\14.0\infopath\security">
+      <parentCategory ref="L_security6" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="L_ActiveXBeaconingUIPart" valueName="editoractivexbeaconingui">
+          <item displayName="$(string.L_ActiveXBeaconNever)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ActiveXBeaconAlways)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ActiveXBeaconSome)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_ControlbehaviorwhenopeningInfoPathemailformsconta" class="User" displayName="$(string.L_ControlbehaviorwhenopeningInfoPathemailformsconta)" explainText="$(string.L_ControlbehaviorwhenopeningInfoPathemailformscontaExplain)" presentation="$(presentation.L_ControlbehaviorwhenopeningInfoPathemailformsconta)" key="software\policies\microsoft\office\14.0\infopath\security">
+      <parentCategory ref="L_EMailFormsCategory" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="L_empty9" valueName="emailformsruncodeandscript">
+          <item displayName="$(string.L_Runwithoutprompting)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Promptbeforerunning)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Neverrun)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_FormTemplatePolicy" class="User" displayName="$(string.L_FormTemplatePolicy)" explainText="$(string.L_FormTemplateExplain)" key="software\policies\microsoft\office\14.0\infopath\deployment" valueName="mailxsnwithxml">
+      <parentCategory ref="L_EMailFormsCategory" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisableCacheXSNPolicy" class="User" displayName="$(string.L_DisableCacheXSNPolicy)" explainText="$(string.L_DisableCacheXSNExplain)" key="software\policies\microsoft\office\14.0\infopath\deployment" valueName="cachemailxsn">
+      <parentCategory ref="L_EMailFormsCategory" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisableEmailFormsPolicy" class="User" displayName="$(string.L_DisableEmailFormsPolicy)" explainText="$(string.L_DisableEmailFormsExplain)" key="software\policies\microsoft\office\14.0\infopath" valueName="disableinfopath2003emailforms">
+      <parentCategory ref="L_EMailFormsCategory" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_RestrictedEmailFormsPolicy" class="User" displayName="$(string.L_RestrictedEmailFormsPolicy)" explainText="$(string.L_RestrictedEmailFormsExplain)" key="software\policies\microsoft\office\14.0\infopath\security" valueName="enablerestrictedemailforms">
+      <parentCategory ref="L_EMailFormsCategory" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisableInternetEmailFormsPolicy" class="User" displayName="$(string.L_DisableInternetEmailFormsPolicy)" explainText="$(string.L_DisableInternetEmailFormsExplain)" key="software\policies\microsoft\office\14.0\infopath\security" valueName="enableinternetemailforms">
+      <parentCategory ref="L_EMailFormsCategory" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisableIntranetEmailFormsPolicy" class="User" displayName="$(string.L_DisableIntranetEmailFormsPolicy)" explainText="$(string.L_DisableIntranetEmailFormsExplain)" key="software\policies\microsoft\office\14.0\infopath\security" valueName="enableintranetemailforms">
+      <parentCategory ref="L_EMailFormsCategory" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisableFullTrustEmailFormsPolicy" class="User" displayName="$(string.L_DisableFullTrustEmailFormsPolicy)" explainText="$(string.L_DisableFullTrustEmailFormsExplain)" key="software\policies\microsoft\office\14.0\infopath\security" valueName="enablefulltrustemailforms">
+      <parentCategory ref="L_EMailFormsCategory" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisableOutlookEmailFormsPolicy" class="User" displayName="$(string.L_DisableOutlookEmailFormsPolicy)" explainText="$(string.L_DisableOutlookEmailFormsExplain)" key="software\policies\microsoft\office\14.0\outlook\options\mail" valueName="disableinfopathforms">
+      <parentCategory ref="L_EMailFormsCategory" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisableExporttoExcelEmailFormsPolicy" class="User" displayName="$(string.L_DisableExporttoExcelEmailFormsPolicy)" explainText="$(string.L_DisableExporttoExcelEmailFormsExplain)" key="software\policies\microsoft\office\14.0\outlook\options\infopath" valueName="disableexporttoexcel">
+      <parentCategory ref="L_EMailFormsCategory" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisableMergeEmailFormsPolicy" class="User" displayName="$(string.L_DisableMergeEmailFormsPolicy)" explainText="$(string.L_DisableMergeEmailFormsExplain)" key="software\policies\microsoft\office\14.0\outlook\options\infopath" valueName="disablemergeininfopath">
+      <parentCategory ref="L_EMailFormsCategory" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisableExportEmailFormsPolicy" class="User" displayName="$(string.L_DisableExportEmailFormsPolicy)" explainText="$(string.L_DisableExportEmailFormsExplain)" key="software\policies\microsoft\office\14.0\outlook\options\infopath" valueName="disableexportinfopathforms">
+      <parentCategory ref="L_EMailFormsCategory" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_EmailFormsBeaconingUI" class="User" displayName="$(string.L_EmailFormsBeaconingUI)" explainText="$(string.L_EmailFormsBeaconingUIExplain)" presentation="$(presentation.L_EmailFormsBeaconingUI)" key="software\policies\microsoft\office\14.0\infopath\security">
+      <parentCategory ref="L_Miscellaneous" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="L_empty11" valueName="emailformsbeaconingui">
+          <item displayName="$(string.L_NeverShowUI)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_AlwaysshowUI)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ShowUIifXSNisinInternetZone)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_URLoflocationwhereTemplatepartsareStored" class="User" displayName="$(string.L_URLoflocationwhereTemplatepartsareStored)" explainText="$(string.L_URLoflocationwhereTemplatepartsareStoredExplain)" presentation="$(presentation.L_URLoflocationwhereTemplatepartsareStored)" key="software\policies\microsoft\office\14.0\infopath\designer">
+      <parentCategory ref="L_Miscellaneous" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="L_EnterURL" valueName="ipcustomcontrolsfolder" />
+      </elements>
+    </policy>
+    <policy name="L_DisableMicrosoftOfficeInfoPathEditiorControl" class="User" displayName="$(string.L_DisableMicrosoftOfficeInfoPathEditiorControl)" explainText="$(string.L_DisablehostingtheMicrosoftOfficeInfoPathEditior)" key="software\policies\microsoft\office\14.0\infopath\editor\activexcontrol" valueName="disable">
+      <parentCategory ref="L_Miscellaneous" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_TurnOffInfoPathDesignermode" class="User" displayName="$(string.L_TurnOffInfoPathDesignermode)" explainText="$(string.L_TurnOffInfoPathDesignermodeExplain)" key="software\policies\microsoft\office\14.0\infopath\designer" valueName="disabledesigner">
+      <parentCategory ref="L_Miscellaneous" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Allowuserstoturnonandoffprintingofbackgroundcolors" class="User" displayName="$(string.L_Allowuserstoturnonandoffprintingofbackgroundcolors)" explainText="$(string.L_YesDisablestheoptionPrintbackgroundcolorsinGeneraltaboftheTo)" presentation="$(presentation.L_Allowuserstoturnonandoffprintingofbackgroundcolors)" key="software\policies\microsoft\office\14.0\infopath\internet explorer\main">
+      <parentCategory ref="L_Miscellaneous" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="L_allowuserstoturnonandoffprintingofbackgroundcolors15" valueName="print_background">
+          <item displayName="$(string.L_Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

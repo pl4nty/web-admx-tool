@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+	<policyNamespaces>
+		<target prefix="hidedrives" namespace="HideDrives" />
+		<using prefix="windows" namespace="Microsoft.Policies.Windows" />
+	</policyNamespaces>
+	<resources minRequiredRevision="1.0" />
+	<categories>
+		<category name="WindowsComponents" displayName="$(string.WindowsComponents)" />
+		<category name="WindowsExplorer" displayName="$(string.WindowsExplorer)">
+		<parentCategory ref="WindowsComponents" />
+		</category>
+	</categories>
+	<policies>
+		<policy name="NoDrives" class="User" displayName="$(string.NoDrives)" explainText="$(string.NoDrives_Help)" presentation="$(presentation.NoDrives)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer">
+			<parentCategory ref="windows:WindowsExplorer" />
+			<supportedOn ref="windows:SUPPORTED_Win2k" />
+			<elements>
+				<enum id="NoDrivesDropdown" valueName="NoDrives" required="true">
+					<item displayName="$(string.ALLDrives)">
+						<value>
+							<decimal value="67108863" />
+						</value>
+					</item>
+					<item displayName="$(string.RestNoDrives)">
+						<value>
+							<decimal value="0" />
+						</value>
+					</item>
+					#insert the drives you want to hide here
+					#what goes after string. must exist in the matching adml file
+					<item displayName="$(string.ABDEGPROnly)">
+						<value>
+							<decimal value="163931" />
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+			<policy name="NoViewOnDrive" class="User" displayName="$(string.NoViewOnDrive)" explainText="$(string.NoViewOnDrive_Help)" presentation="$(presentation.NoViewOnDrive)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer">
+			<parentCategory ref="windows:WindowsExplorer" />
+			<supportedOn ref="windows:SUPPORTED_Win2k" />
+			<elements>
+				<enum id="NoDrivesDropdown" valueName="NoViewOnDrive" required="true">
+					<item displayName="$(string.ALLDrives)">
+						<value>
+							<decimal value="67108863" />
+						</value>
+					</item>
+					<item displayName="$(string.RestNoDrives)">
+						<value>
+							<decimal value="0" />
+						</value>
+					</item>
+					#insert the drives you want to prevent access to here
+					#what goes after string. must exist in the matching adml file
+					<item displayName="$(string.ABDEGPROnly)">
+						<value>
+							<decimal value="163931" />
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+	</policies>
+</policyDefinitions>

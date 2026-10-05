@@ -1,0 +1,858 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2023 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="modemmanager" namespace="BaseALT.Policies.ModemManager1" />
+    <using prefix="system" namespace="BaseALT.Policies.System" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <policies>
+    <policy class="Machine" displayName="$(string.org-freedesktop-ModemManager1-Contacts)"
+        explainText="$(string.org-freedesktop-ModemManager1-Contacts_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.ModemManager1.Contacts"
+        valuename="org.freedesktop.ModemManager1.Contacts"
+        presentation="$(presentation.org-freedesktop-ModemManager1-pr)">
+      <parentCategory ref="system:ALT_ModemManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopModemManager_setter" valueName="org.freedesktop.ModemManager1.Contacts" required="true">
+          <item displayName="$(string.org-freedesktop-modemmanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopModemManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.ModemManager1.Contacts">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-ModemManager1-Contacts)"
+        explainText="$(string.org-freedesktop-ModemManager1-Contacts-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.ModemManager1.Contacts-user"
+        valuename="org.freedesktop.ModemManager1.Contacts"
+        presentation="$(presentation.org-freedesktop-ModemManager1-user-pr)">
+      <parentCategory ref="system:ALT_ModemManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopModemManager_setter" valueName="org.freedesktop.ModemManager1.Contacts" required="true">
+          <item displayName="$(string.org-freedesktop-modemmanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-ModemManager1-Control)"
+        explainText="$(string.org-freedesktop-ModemManager1-Control_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.ModemManager1.Control"
+        valuename="org.freedesktop.ModemManager1.Control"
+        presentation="$(presentation.org-freedesktop-ModemManager1-pr)">
+      <parentCategory ref="system:ALT_ModemManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopModemManager_setter" valueName="org.freedesktop.ModemManager1.Control" required="true">
+          <item displayName="$(string.org-freedesktop-modemmanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopModemManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.ModemManager1.Control">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-ModemManager1-Control)"
+        explainText="$(string.org-freedesktop-ModemManager1-Control-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.ModemManager1.Control-user"
+        valuename="org.freedesktop.ModemManager1.Control"
+        presentation="$(presentation.org-freedesktop-ModemManager1-user-pr)">
+      <parentCategory ref="system:ALT_ModemManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopModemManager_setter" valueName="org.freedesktop.ModemManager1.Control" required="true">
+          <item displayName="$(string.org-freedesktop-modemmanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-ModemManager1-Device-Control)"
+        explainText="$(string.org-freedesktop-ModemManager1-Device-Control_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.ModemManager1.Device.Control"
+        valuename="org.freedesktop.ModemManager1.Device.Control"
+        presentation="$(presentation.org-freedesktop-ModemManager1-pr)">
+      <parentCategory ref="system:ALT_ModemManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopModemManager_setter" valueName="org.freedesktop.ModemManager1.Device.Control" required="true">
+          <item displayName="$(string.org-freedesktop-modemmanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopModemManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.ModemManager1.Device.Control">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-ModemManager1-Device-Control)"
+        explainText="$(string.org-freedesktop-ModemManager1-Device-Control-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.ModemManager1.Device.Control-user"
+        valuename="org.freedesktop.ModemManager1.Device.Control"
+        presentation="$(presentation.org-freedesktop-ModemManager1-user-pr)">
+      <parentCategory ref="system:ALT_ModemManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopModemManager_setter" valueName="org.freedesktop.ModemManager1.Device.Control" required="true">
+          <item displayName="$(string.org-freedesktop-modemmanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-ModemManager1-Firmware)"
+        explainText="$(string.org-freedesktop-ModemManager1-Firmware_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.ModemManager1.Firmware"
+        valuename="org.freedesktop.ModemManager1.Device.Firmware"
+        presentation="$(presentation.org-freedesktop-ModemManager1-pr)">
+      <parentCategory ref="system:ALT_ModemManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopModemManager_setter" valueName="org.freedesktop.ModemManager1.Firmware" required="true">
+          <item displayName="$(string.org-freedesktop-modemmanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopModemManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.ModemManager1.Firmware">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-ModemManager1-Firmware)"
+        explainText="$(string.org-freedesktop-ModemManager1-Firmware-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.ModemManager1.Firmware-user"
+        valuename="org.freedesktop.ModemManager1.Device.Firmware"
+        presentation="$(presentation.org-freedesktop-ModemManager1-user-pr)">
+      <parentCategory ref="system:ALT_ModemManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopModemManager_setter" valueName="org.freedesktop.ModemManager1.Firmware" required="true">
+          <item displayName="$(string.org-freedesktop-modemmanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-ModemManager1-Location)"
+        explainText="$(string.org-freedesktop-ModemManager1-Location_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.ModemManager1.Location"
+        valuename="org.freedesktop.ModemManager1.Location"
+        presentation="$(presentation.org-freedesktop-ModemManager1-pr)">
+      <parentCategory ref="system:ALT_ModemManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopModemManager_setter" valueName="org.freedesktop.ModemManager1.Location" required="true">
+          <item displayName="$(string.org-freedesktop-modemmanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopModemManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.ModemManager1.Location">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-ModemManager1-Location)"
+        explainText="$(string.org-freedesktop-ModemManager1-Location-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.ModemManager1.Location-user"
+        valuename="org.freedesktop.ModemManager1.Location"
+        presentation="$(presentation.org-freedesktop-ModemManager1-user-pr)">
+      <parentCategory ref="system:ALT_ModemManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopModemManager_setter" valueName="org.freedesktop.ModemManager1.Location" required="true">
+          <item displayName="$(string.org-freedesktop-modemmanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-ModemManager1-Messaging)"
+        explainText="$(string.org-freedesktop-ModemManager1-Messaging_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.ModemManager1.Messaging"
+        valuename="org.freedesktop.ModemManager1.Messaging"
+        presentation="$(presentation.org-freedesktop-ModemManager1-pr)">
+      <parentCategory ref="system:ALT_ModemManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopModemManager_setter" valueName="org.freedesktop.ModemManager1.Messaging" required="true">
+          <item displayName="$(string.org-freedesktop-modemmanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopModemManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.ModemManager1.Messaging">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-ModemManager1-Messaging)"
+        explainText="$(string.org-freedesktop-ModemManager1-Messaging-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.ModemManager1.Messaging-user"
+        valuename="org.freedesktop.ModemManager1.Messaging"
+        presentation="$(presentation.org-freedesktop-ModemManager1-user-pr)">
+      <parentCategory ref="system:ALT_ModemManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopModemManager_setter" valueName="org.freedesktop.ModemManager1.Messaging" required="true">
+          <item displayName="$(string.org-freedesktop-modemmanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-ModemManager1-Time)"
+        explainText="$(string.org-freedesktop-ModemManager1-Time_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.ModemManager1.Time"
+        valuename="org.freedesktop.ModemManager1.Time"
+        presentation="$(presentation.org-freedesktop-ModemManager1-pr)">
+      <parentCategory ref="system:ALT_ModemManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopModemManager_setter" valueName="org.freedesktop.ModemManager1.Time" required="true">
+          <item displayName="$(string.org-freedesktop-modemmanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopModemManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.ModemManager1.Time">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-ModemManager1-Time)"
+        explainText="$(string.org-freedesktop-ModemManager1-Time-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.ModemManager1.Time-user"
+        valuename="org.freedesktop.ModemManager1.Time"
+        presentation="$(presentation.org-freedesktop-ModemManager1-user-pr)">
+      <parentCategory ref="system:ALT_ModemManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopModemManager_setter" valueName="org.freedesktop.ModemManager1.Time" required="true">
+          <item displayName="$(string.org-freedesktop-modemmanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-ModemManager1-USSD)"
+        explainText="$(string.org-freedesktop-ModemManager1-USSD_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.ModemManager1.USSD"
+        valuename="org.freedesktop.ModemManager1.USSD"
+        presentation="$(presentation.org-freedesktop-ModemManager1-pr)">
+      <parentCategory ref="system:ALT_ModemManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopModemManager_setter" valueName="org.freedesktop.ModemManager1.USSD" required="true">
+          <item displayName="$(string.org-freedesktop-modemmanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopModemManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.ModemManager1.USSD">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-ModemManager1-USSD)"
+        explainText="$(string.org-freedesktop-ModemManager1-USSD-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.ModemManager1.USSDUser"
+        valuename="org.freedesktop.ModemManager1.USSD"
+        presentation="$(presentation.org-freedesktop-ModemManager1-user-pr)">
+      <parentCategory ref="system:ALT_ModemManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopModemManager_setter" valueName="org.freedesktop.ModemManager1.USSD" required="true">
+          <item displayName="$(string.org-freedesktop-modemmanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-ModemManager1-Voice)"
+        explainText="$(string.org-freedesktop-ModemManager1-Voice_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.ModemManager1.Voice"
+        valuename="org.freedesktop.ModemManager1.Voice"
+        presentation="$(presentation.org-freedesktop-ModemManager1-pr)">
+      <parentCategory ref="system:ALT_ModemManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopModemManager_setter" valueName="org.freedesktop.ModemManager1.Voice" required="true">
+          <item displayName="$(string.org-freedesktop-modemmanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopModemManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.ModemManager1.Voice">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-ModemManager1-Voice)"
+        explainText="$(string.org-freedesktop-ModemManager1-Voice-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.ModemManager1.VoiceUser"
+        valuename="org.freedesktop.ModemManager1.Voice"
+        presentation="$(presentation.org-freedesktop-ModemManager1-user-pr)">
+      <parentCategory ref="system:ALT_ModemManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopModemManager_setter" valueName="org.freedesktop.ModemManager1.Voice" required="true">
+          <item displayName="$(string.org-freedesktop-modemmanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-modemmanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

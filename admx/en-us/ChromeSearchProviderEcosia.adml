@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName />
+  <description />
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WINXPSP2">Microsoft Windows XP SP2 or later</string>
+      <string id="ecosia">Ecosia</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="DefaultSearchProvider_group">Default search provider</string>
+      <string id="DefaultSearchProviderEnabled">Enable the default search provider</string>
+      <string id="DefaultSearchProviderEnabled_Explain">Enables the use of a default search provider.
+
+If you enable this setting, a default search is performed when the user types text in the omnibox that is not a URL.
+
+You can specify the default search provider to be used by setting the rest of the default search policies. If these are left empty, the user can choose the default provider.
+
+If you disable this setting, no search is performed when the user enters non-URL text in the omnibox.
+
+If you enable or disable this setting, users cannot change or override this setting in Google Chrome.
+
+If this policy is left not set, the default search provider is enabled, and the user will be able to set the search provider list.
+
+This policy is not available on Windows instances that are not joined
+to an Active Directory domain.</string>
+      <string id="DefaultSearchProviderName">Default search provider name</string>
+      <string id="DefaultSearchProviderName_Explain">Specifies the name of the default search provider. If left empty or not set, the host name specified by the search URL will be used.
+
+This policy is only considered if the 'DefaultSearchProviderEnabled' policy is enabled.</string>
+      <string id="DefaultSearchProviderKeyword">Default search provider keyword</string>
+      <string id="DefaultSearchProviderKeyword_Explain">Specifies the keyword, which is the shortcut used in the omnibox to trigger the search for this provider.
+This policy is optional. If not set, no keyword will activate the search provider.
+
+This policy is only considered if the 'DefaultSearchProviderEnabled' policy is enabled.</string>
+      <string id="DefaultSearchProviderSearchURL">Default search provider search URL</string>
+      <string id="DefaultSearchProviderSearchURL_Explain">Specifies the URL of the search engine used when doing a default search. The URL should contain the string '{searchTerms}', which will be replaced at query time by the terms the user is searching for.
+
+Google's search URL can be specified as: '{google:baseURL}search?q={searchTerms}&amp;{google:RLZ}{google:originalQueryForSuggestion}{google:assistedQueryStats}{google:searchFieldtrialParameter}{google:searchClient}{google:sourceId}{google:instantExtendedEnabledParameter}ie={inputEncoding}'.
+
+This option must be set when the 'DefaultSearchProviderEnabled' policy is enabled and will only be respected if this is the case.</string>
+      <string id="DefaultSearchProviderSuggestURL">Default search provider suggest URL</string>
+      <string id="DefaultSearchProviderSuggestURL_Explain">Specifies the URL of the search engine used to provide search suggestions. The URL should contain the string '{searchTerms}', which will be replaced at query time by the text the user has entered so far.
+
+This policy is optional. If not set, no suggest URL will be used.
+
+Google's suggest URL can be specified as: '{google:baseURL}complete/search?output=chrome&amp;q={searchTerms}'.
+
+This policy is only respected if the 'DefaultSearchProviderEnabled' policy is enabled.</string>
+      <string id="DefaultSearchProviderInstantURL">Default search provider instant URL</string>
+      <string id="DefaultSearchProviderInstantURL_Explain">Specifies the URL of the search engine used to provide instant results. The URL should contain the string '{searchTerms}', which will be replaced at query time by the text the user has entered so far.
+
+This policy is optional. If not set, no instant search results will be provided.
+
+Google's instant results URL can be specified as: '{google:baseURL}suggest?q={searchTerms}'.
+
+This policy is only respected if the 'DefaultSearchProviderEnabled' policy is enabled.</string>
+      <string id="DefaultSearchProviderIconURL">Default search provider icon</string>
+      <string id="DefaultSearchProviderIconURL_Explain">Specifies the favorite icon URL of the default search provider.
+
+This policy is optional. If not set, no icon will be present for the search provider.
+
+This policy is only respected if the 'DefaultSearchProviderEnabled' policy is enabled.</string>
+      <string id="DefaultSearchProviderEncodings">Default search provider encodings</string>
+      <string id="DefaultSearchProviderEncodings_Explain">Specifies the character encodings supported by the search provider. Encodings are code page names like UTF-8, GB2312, and ISO-8859-1. They are tried in the order provided.
+
+This policy is optional. If not set, the default will be used which is UTF-8.
+
+This policy is only respected if the 'DefaultSearchProviderEnabled' policy is enabled.</string>
+      <string id="DefaultSearchProviderEncodingsDesc">Default search provider encodings</string>
+      <string id="DefaultSearchProviderAlternateURLs">List of alternate URLs for the default search provider</string>
+      <string id="DefaultSearchProviderAlternateURLs_Explain">Specifies a list of alternate URLs that can be used to extract search terms from the search engine. The URLs should contain the string '{searchTerms}', which will be used to extract the search terms.
+
+This policy is optional. If not set, no alternate urls will be used to extract search terms.
+
+This policy is only respected if the 'DefaultSearchProviderEnabled' policy is enabled.</string>
+      <string id="DefaultSearchProviderAlternateURLsDesc">List of alternate URLs for the default search provider</string>
+      <string id="DefaultSearchProviderSearchTermsReplacementKey">Parameter controlling search term placement for the default search provider</string>
+      <string id="DefaultSearchProviderSearchTermsReplacementKey_Explain">If this policy is set and a search URL suggested from the omnibox contains this parameter in the query string or in the fragment identifier, then the suggestion will show the search terms and search provider instead of the raw search URL.
+
+This policy is optional. If not set, no search term replacement will be performed.
+
+This policy is only respected if the 'DefaultSearchProviderEnabled' policy is enabled.</string>
+      <string id="DefaultSearchProviderImageURL">Parameter providing search-by-image feature for the default search provider</string>
+      <string id="DefaultSearchProviderImageURL_Explain">Specifies the URL of the search engine used to provide image search. Search requests will be sent using the GET method. If the DefaultSearchProviderImageURLPostParams policy is set then image search requests will use the POST method instead.
+
+This policy is optional. If not set, no image search will be used.
+
+This policy is only respected if the 'DefaultSearchProviderEnabled' policy is enabled.</string>
+      <string id="DefaultSearchProviderNewTabURL">Default search provider new tab page URL</string>
+      <string id="DefaultSearchProviderNewTabURL_Explain">Specifies the URL that a search engine uses to provide a new tab page.
+
+This policy is optional. If not set, no new tab page will be provided.
+
+This policy is only respected if the 'DefaultSearchProviderEnabled' policy is enabled.</string>
+      <string id="DefaultSearchProviderSearchURLPostParams">Parameters for search URL which uses POST</string>
+      <string id="DefaultSearchProviderSearchURLPostParams_Explain">Specifies the parameters used when searching a URL with POST. It consists of comma-separated name/value pairs. If a value is a template parameter, like {searchTerms} in above example, it will be replaced with real search terms data.
+
+This policy is optional. If not set, search request will be sent using the GET method.
+
+This policy is only respected if the 'DefaultSearchProviderEnabled' policy is enabled.</string>
+      <string id="DefaultSearchProviderSuggestURLPostParams">Parameters for suggest URL which uses POST</string>
+      <string id="DefaultSearchProviderSuggestURLPostParams_Explain">Specifies the parameters used when doing suggestion search with POST. It consists of comma-separated name/value pairs. If a value is a template parameter, like {searchTerms} in above example, it will be replaced with real search terms data.
+
+This policy is optional. If not set, suggest search request will be sent using the GET method.
+
+This policy is only respected if the 'DefaultSearchProviderEnabled' policy is enabled.</string>
+      <string id="DefaultSearchProviderInstantURLPostParams">Parameters for instant URL which uses POST</string>
+      <string id="DefaultSearchProviderInstantURLPostParams_Explain">Specifies the parameters used when doing instant search with POST. It consists of comma-separated name/value pairs. If a value is a template parameter, like {searchTerms} in above example, it will be replaced with real search terms data.
+
+This policy is optional. If not set, instant search request will be sent using the GET method.
+
+This policy is only respected if the 'DefaultSearchProviderEnabled' policy is enabled.</string>
+      <string id="DefaultSearchProviderImageURLPostParams">Parameters for image URL which uses POST</string>
+      <string id="DefaultSearchProviderImageURLPostParams_Explain">Specifies the parameters used when doing image search with POST. It consists of comma-separated name/value pairs. If a value is a template parameter, like {imageThumbnail} in above example, it will be replaced with real image thumbnail data.
+
+This policy is optional. If not set, image search request will be sent using the GET method.
+
+This policy is only respected if the 'DefaultSearchProviderEnabled' policy is enabled.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="DefaultSearchProviderEnabled" />
+      <presentation id="DefaultSearchProviderName">
+        <textBox refId="DefaultSearchProviderName">
+          <label>Default search provider name</label>
+          <defaultValue>Ecosia</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="DefaultSearchProviderKeyword">
+        <textBox refId="DefaultSearchProviderKeyword">
+          <label>Default search provider keyword</label>
+          <defaultValue>ecosia</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="DefaultSearchProviderSearchURL">
+        <textBox refId="DefaultSearchProviderSearchURL">
+          <label>Default search provider search URL</label>
+          <defaultValue>https://www.ecosia.org/search?q={searchTerms}&amp;addon=chromegpo</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="DefaultSearchProviderSuggestURL">
+        <textBox refId="DefaultSearchProviderSuggestURL">
+          <label>Default search provider suggest URL</label>
+          <defaultValue>https://ac.ecosia.org?q={searchTerms}&amp;mkt={language}&amp;type=list</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="DefaultSearchProviderIconURL">
+        <textBox refId="DefaultSearchProviderIconURL">
+          <label>Default search provider icon</label>
+          <defaultValue>https://cdn.ecosia.org/assets/images/ico/favicon.ico</defaultValue>
+        </textBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

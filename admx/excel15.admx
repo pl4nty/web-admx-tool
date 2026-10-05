@@ -1,0 +1,2740 @@
+<?xml version="1.0" encoding="utf-16"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="excel15" namespace="excel15.Office.Microsoft.Policies.Windows" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <supersededAdm fileName="excel15" />
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="L_MicrosoftOfficeExcel" displayName="$(string.L_MicrosoftOfficeExcel)" />
+    <category name="L_FileTab" displayName="$(string.L_FileTab)">
+      <parentCategory ref="L_MicrosoftOfficeExcel" />
+    </category>
+    <category name="L_CheckAccessibility" displayName="$(string.L_CheckAccessibility)">
+      <parentCategory ref="L_FileTab" />
+    </category>
+    <category name="L_ExcelOptions" displayName="$(string.L_ExcelOptions)">
+      <parentCategory ref="L_MicrosoftOfficeExcel" />
+    </category>
+    <category name="L_OptionsCustomizeRibbon" displayName="$(string.L_OptionsCustomizeRibbon)">
+      <parentCategory ref="L_ExcelOptions" />
+    </category>
+    <category name="L_OptionsGeneral" displayName="$(string.L_OptionsGeneral)">
+      <parentCategory ref="L_ExcelOptions" />
+    </category>
+    <category name="L_Formulas" displayName="$(string.L_Formulas)">
+      <parentCategory ref="L_ExcelOptions" />
+    </category>
+    <category name="L_Proofing" displayName="$(string.L_Proofing)">
+      <parentCategory ref="L_ExcelOptions" />
+    </category>
+    <category name="L_AutocorrectOptions" displayName="$(string.L_AutocorrectOptions)">
+      <parentCategory ref="L_Proofing" />
+    </category>
+    <category name="L_Save" displayName="$(string.L_Save)">
+      <parentCategory ref="L_ExcelOptions" />
+    </category>
+    <category name="L_Security" displayName="$(string.L_Security)">
+      <parentCategory ref="L_ExcelOptions" />
+    </category>
+    <category name="L_Cryptography" displayName="$(string.L_Cryptography)">
+      <parentCategory ref="L_Security" />
+    </category>
+    <category name="L_TrustCenter" displayName="$(string.L_TrustCenter)">
+      <parentCategory ref="L_Security" />
+    </category>
+    <category name="L_ProtectedView" displayName="$(string.L_ProtectedView)">
+      <parentCategory ref="L_TrustCenter" />
+    </category>
+    <category name="L_FileBlockSettings" displayName="$(string.L_FileBlockSettings)">
+      <parentCategory ref="L_TrustCenter" />
+    </category>
+    <category name="L_TrustedLocations" displayName="$(string.L_TrustedLocations)">
+      <parentCategory ref="L_TrustCenter" />
+    </category>
+    <category name="L_Advanced" displayName="$(string.L_Advanced)">
+      <parentCategory ref="L_ExcelOptions" />
+    </category>
+    <category name="L_WebOptions" displayName="$(string.L_WebOptions)">
+      <parentCategory ref="L_Advanced" />
+    </category>
+    <category name="L_General" displayName="$(string.L_General)">
+      <parentCategory ref="L_WebOptions" />
+    </category>
+    <category name="L_Customizableerrormessages" displayName="$(string.L_Customizableerrormessages)">
+      <parentCategory ref="L_MicrosoftOfficeExcel" />
+    </category>
+    <category name="L_DataRecovery" displayName="$(string.L_DataRecovery)">
+      <parentCategory ref="L_MicrosoftOfficeExcel" />
+    </category>
+    <category name="L_Disableitemsinuserinterface" displayName="$(string.L_Disableitemsinuserinterface)">
+      <parentCategory ref="L_MicrosoftOfficeExcel" />
+    </category>
+    <category name="L_Predefined" displayName="$(string.L_Predefined)">
+      <parentCategory ref="L_Disableitemsinuserinterface" />
+    </category>
+    <category name="L_Custom" displayName="$(string.L_Custom)">
+      <parentCategory ref="L_Disableitemsinuserinterface" />
+    </category>
+    <category name="L_miscellaneous168" displayName="$(string.L_miscellaneous168)">
+      <parentCategory ref="L_MicrosoftOfficeExcel" />
+    </category>
+    <category name="L_ServerSettings" displayName="$(string.L_ServerSettings)">
+      <parentCategory ref="L_miscellaneous168" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="L_StopCheckingAltTextAccessibilityInformation" class="User" displayName="$(string.L_StopCheckingAltTextAccessibilityInformation)" explainText="$(string.L_StopCheckingAltTextAccessibilityInformationExplain)" key="software\policies\microsoft\office\15.0\excel\accchecker" valueName="alttext">
+      <parentCategory ref="L_CheckAccessibility" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_StopCheckingTableHeaderAccessibilityInformation" class="User" displayName="$(string.L_StopCheckingTableHeaderAccessibilityInformation)" explainText="$(string.L_StopCheckingTableHeaderAccessibilityInformationExplain)" key="software\policies\microsoft\office\15.0\excel\accchecker" valueName="tableheaders">
+      <parentCategory ref="L_CheckAccessibility" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_StopCheckingToEnsureWorkbooksAllowProgrammaticAccess" class="User" displayName="$(string.L_StopCheckingToEnsureWorkbooksAllowProgrammaticAccess)" explainText="$(string.L_StopCheckingToEnsureWorkbooksAllowProgrammaticAccessExplain)" key="software\policies\microsoft\office\15.0\excel\accchecker" valueName="programmaticaccess">
+      <parentCategory ref="L_CheckAccessibility" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_StopCheckingForMergedCells" class="User" displayName="$(string.L_StopCheckingForMergedCells)" explainText="$(string.L_StopCheckingForMergedCellsExplain)" key="software\policies\microsoft\office\15.0\excel\accchecker" valueName="mergedcells">
+      <parentCategory ref="L_CheckAccessibility" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_StopCheckingToEnsureHyperlinkTextIsMeaningful" class="User" displayName="$(string.L_StopCheckingToEnsureHyperlinkTextIsMeaningful)" explainText="$(string.L_StopCheckingToEnsureHyperlinkTextIsMeaningfulExplain)" key="software\policies\microsoft\office\15.0\excel\accchecker" valueName="meaningfulhyperlinks">
+      <parentCategory ref="L_CheckAccessibility" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_StopCheckingToEnsureNonDefaultSheetNames" class="User" displayName="$(string.L_StopCheckingToEnsureNonDefaultSheetNames)" explainText="$(string.L_StopCheckingToEnsureNonDefaultSheetNamesExplain)" key="software\policies\microsoft\office\15.0\excel\accchecker" valueName="sheetnames">
+      <parentCategory ref="L_CheckAccessibility" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_StopCheckingForBlankTableRowsUsedAsFormatting" class="User" displayName="$(string.L_StopCheckingForBlankTableRowsUsedAsFormatting)" explainText="$(string.L_StopCheckingForBlankTableRowsUsedAsFormattingExplain)" key="software\policies\microsoft\office\15.0\excel\accchecker" valueName="blanktablerows">
+      <parentCategory ref="L_CheckAccessibility" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisplayDeveloperTab" class="User" displayName="$(string.L_DisplayDeveloperTab)" explainText="$(string.L_DisplayDeveloperTabExplain)" key="software\policies\microsoft\office\15.0\excel\options" valueName="developertools">
+      <parentCategory ref="L_OptionsCustomizeRibbon" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisableLivePreview" class="User" displayName="$(string.L_DisableLivePreview)" explainText="$(string.L_DisableLivePreviewsExplain)" key="software\policies\microsoft\office\15.0\excel\options" valueName="livepreview">
+      <parentCategory ref="L_OptionsGeneral" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_WindowsinTaskbar" class="User" displayName="$(string.L_WindowsinTaskbar)" explainText="$(string.L_Whenmultipleworkbooksareopensimult)" key="software\policies\microsoft\office\15.0\excel\options" valueName="showwindowsintaskbar">
+      <parentCategory ref="L_OptionsGeneral" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DefaultSheets" class="User" displayName="$(string.L_DefaultSheets)" explainText="$(string.L_Specifiestheinitialnumberofworksheetstocreateinanewworkbook)" presentation="$(presentation.L_DefaultSheets)" key="software\policies\microsoft\office\15.0\excel\options">
+      <parentCategory ref="L_OptionsGeneral" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_Sheetsinnewworkbook" valueName="defsheets" minValue="1" maxValue="255" />
+      </elements>
+    </policy>
+    <policy name="L_Font" class="User" displayName="$(string.L_Font)" explainText="$(string.L_SpecifiestheStandardfontfontnameandsize)" presentation="$(presentation.L_Font)" key="software\policies\microsoft\office\15.0\excel\options">
+      <parentCategory ref="L_OptionsGeneral" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_NameSize" valueName="font" />
+      </elements>
+    </policy>
+    <policy name="L_AllowSelectionFloaties" class="User" displayName="$(string.L_AllowSelectionFloaties)" explainText="$(string.L_AllowSelectionFloatiesExplain)" key="software\policies\microsoft\office\15.0\common\toolbars\excel" valueName="allowselectionfloaties">
+      <parentCategory ref="L_OptionsGeneral" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_R1C1referencestyle" class="User" displayName="$(string.L_R1C1referencestyle)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="frefa1_4_1">
+      <parentCategory ref="L_Formulas" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Includenewrowsandcolumnsinlist" class="User" displayName="$(string.L_Includenewrowsandcolumnsinlist)" explainText="$(string.L_AutoCorrectOptionsExplain)" key="software\policies\microsoft\office\15.0\excel\options" valueName="autoexpandlistrange">
+      <parentCategory ref="L_AutocorrectOptions" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Internetandnetworkpathsashyperlinks" class="User" displayName="$(string.L_Internetandnetworkpathsashyperlinks)" explainText="$(string.L_InternetandnetworkpathsashyperlinksExplain)" key="software\policies\microsoft\office\15.0\excel\options" valueName="autohyperlink">
+      <parentCategory ref="L_AutocorrectOptions" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_KeepLastAutoSavedVersions" class="User" displayName="$(string.L_KeepLastAutoSavedVersions)" explainText="$(string.L_KeepLastAutoSavedVersionsExplain)" key="software\policies\microsoft\office\15.0\excel\options" valueName="keepunsavedchanges">
+      <parentCategory ref="L_Save" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Defaultfilelocation" class="User" displayName="$(string.L_Defaultfilelocation)" explainText="$(string.L_DefaultfilelocationExplain)" presentation="$(presentation.L_Defaultfilelocation)" key="software\policies\microsoft\office\15.0\excel\options">
+      <parentCategory ref="L_Save" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_defaultfilelocation0" valueName="defaultpath" required="true" expandable="true" />
+      </elements>
+    </policy>
+    <policy name="L_SaveExcelfilesas" class="User" displayName="$(string.L_SaveExcelfilesas)" explainText="$(string.L_SaveExcelfilesasExplain)" presentation="$(presentation.L_SaveExcelfilesas)" key="software\policies\microsoft\office\15.0\excel\options">
+      <parentCategory ref="L_Save" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_saveexcelfilesas1" valueName="defaultformat">
+          <item displayName="$(string.L_ExcelWorkbookxls)">
+            <value>
+              <decimal value="51" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelMacroEnabledWorkbook)">
+            <value>
+              <decimal value="52" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelBinaryWorkbook)">
+            <value>
+              <decimal value="50" />
+            </value>
+          </item>
+          <item displayName="$(string.L_WebPagehtmhtml)">
+            <value>
+              <decimal value="44" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Excel972003Workbook)">
+            <value>
+              <decimal value="56" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Excel5095Workbookxls)">
+            <value>
+              <decimal value="39" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ODS)">
+            <value>
+              <decimal value="60" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Promptforworkbookproperties" class="User" displayName="$(string.L_Promptforworkbookproperties)" explainText="$(string.L_ChecksUnchecksthecorrespondingUIoption)" key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="fpromptsuminfo_65_1">
+      <parentCategory ref="L_Save" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_SaveAutoRecoverinfo" class="User" displayName="$(string.L_SaveAutoRecoverinfo)" explainText="$(string.L_saveautorecoverinfoexplain)" key="software\policies\microsoft\office\15.0\excel\options" valueName="autorecoverenabled">
+      <parentCategory ref="L_Save" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_AutoRecovertime" class="User" displayName="$(string.L_AutoRecovertime)" explainText="$(string.L_AutorecovertimeExplain)" presentation="$(presentation.L_AutoRecovertime)" key="software\policies\microsoft\office\15.0\excel\options">
+      <parentCategory ref="L_Save" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_SaveAutoRecoverinfoevery" valueName="autorecovertime" minValue="1" maxValue="120" />
+      </elements>
+    </policy>
+    <policy name="L_AutoRecoversavelocation" class="User" displayName="$(string.L_AutoRecoversavelocation)" explainText="$(string.L_AutorecoversavelocationExplain)" presentation="$(presentation.L_AutoRecoversavelocation)" key="software\policies\microsoft\office\15.0\excel\options">
+      <parentCategory ref="L_Save" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_autorecoversavelocation2" valueName="autorecoverpath" expandable="true" />
+      </elements>
+    </policy>
+    <policy name="L_AutoRecoverdelay" class="User" displayName="$(string.L_AutoRecoverdelay)" explainText="$(string.L_AutorecoverdelayExplain)" presentation="$(presentation.L_AutoRecoverdelay)" key="software\policies\microsoft\office\15.0\excel\options">
+      <parentCategory ref="L_Save" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_SecondsofidletimebeforeAutoRecoverstarts" valueName="autorecoverdelay" minValue="1" maxValue="600" />
+      </elements>
+    </policy>
+    <policy name="L_DisableAutoRepublish" class="User" displayName="$(string.L_DisableAutoRepublish)" explainText="$(string.L_DisableAutoRepublishExplain)" key="software\policies\microsoft\office\15.0\excel\options" valueName="disableautorepublish">
+      <parentCategory ref="L_Save" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DoNotShowAutoRepublishWarningAlert" class="User" displayName="$(string.L_DoNotShowAutoRepublishWarningAlert)" explainText="$(string.L_DoNotShowAutoRepublishWarningAlertExplain)" key="software\policies\microsoft\office\15.0\excel\options" valueName="disableautorepublishwarning">
+      <parentCategory ref="L_Save" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_TurnOffFileFormatCompatiblityDialogForODS" class="User" displayName="$(string.L_TurnOffFileFormatCompatiblityDialogForODS)" explainText="$(string.L_TurnOffFileFormatCompatiblityDialogForODSExplain)" key="software\policies\microsoft\office\15.0\excel\options" valueName="disablesaveaslosswarningopendocumentspreadsheet">
+      <parentCategory ref="L_Save" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_PerformFileValidationOnPivotCaches" class="User" displayName="$(string.L_PerformFileValidationOnPivotCaches)" explainText="$(string.L_PerformFileValidationOnPivotCachesExplain)" presentation="$(presentation.L_PerformFileValidationOnPivotCaches)" key="software\policies\microsoft\office\15.0\excel\security\filevalidation">
+      <parentCategory ref="L_Security" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_PerformFileValidationOnPivotCachesDropID" valueName="pivotoptions">
+          <item displayName="$(string.L_PerformFileValidationOnPivotCachesStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_PerformFileValidationOnPivotCachesStr2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_PerformFileValidationOnPivotCachesStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_OpenFilesOnLocalIntranetUNCInProtectedView" class="User" displayName="$(string.L_OpenFilesOnLocalIntranetUNCInProtectedView)" explainText="$(string.L_OpenFilesOnLocalIntranetUNCInProtectedViewExplain)" key="software\policies\microsoft\office\15.0\excel\security\protectedview" valueName="disableintranetcheck">
+      <parentCategory ref="L_ProtectedView" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DoNotOpenFilesInUnsafeLocationsInProtectedView" class="User" displayName="$(string.L_DoNotOpenFilesInUnsafeLocationsInProtectedView)" explainText="$(string.L_DoNotOpenFilesInUnsafeLocationsInProtectedViewExplain)" key="software\policies\microsoft\office\15.0\excel\security\protectedview" valueName="disableunsafelocationsinpv">
+      <parentCategory ref="L_ProtectedView" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DoNotOpenFilesFromTheInternetZoneInProtectedView" class="User" displayName="$(string.L_DoNotOpenFilesFromTheInternetZoneInProtectedView)" explainText="$(string.L_DoNotOpenFilesFromTheInternetZoneInProtectedViewExplain)" key="software\policies\microsoft\office\15.0\excel\security\protectedview" valueName="disableinternetfilesinpv">
+      <parentCategory ref="L_ProtectedView" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_TurnOffProtectedViewForAttachmentsOpenedFromOutlook" class="User" displayName="$(string.L_TurnOffProtectedViewForAttachmentsOpenedFromOutlook)" explainText="$(string.L_TurnOffProtectedViewForAttachmentsOpenedFromOutlookExplain)" key="software\policies\microsoft\office\15.0\excel\security\protectedview" valueName="disableattachmentsinpv">
+      <parentCategory ref="L_ProtectedView" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_SetDocumentBehaviorIfFileValidationFails" class="User" displayName="$(string.L_SetDocumentBehaviorIfFileValidationFails)" explainText="$(string.L_SetDocumentBehaviorIfFileValidationFailsExplain)" presentation="$(presentation.L_SetDocumentBehaviorIfFileValidationFails)" key="software\policies\microsoft\office\15.0\excel\security\filevalidation">
+      <parentCategory ref="L_ProtectedView" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_SetDocumentBehaviorIfFileValidationFailsDropID" valueName="openinprotectedview">
+          <item displayName="$(string.L_SetDocumentBehaviorIfFileValidationFailsStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_SetDocumentBehaviorIfFileValidationFailsStr2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="L_SetDocumentBehaviorIfFileValidationFailsStr3" key="software\policies\microsoft\office\15.0\excel\security\filevalidation" valueName="disableeditfrompv">
+          <trueValue>
+            <decimal value="0" />
+          </trueValue>
+          <falseValue>
+            <decimal value="1" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_TurnOffFileValidation" class="User" displayName="$(string.L_TurnOffFileValidation)" explainText="$(string.L_TurnOffFileValidationExplain)" key="software\policies\microsoft\office\15.0\excel\security\filevalidation" valueName="enableonload">
+      <parentCategory ref="L_Security" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DeterminewhethertoforceencryptedExcel" class="User" displayName="$(string.L_DeterminewhethertoforceencryptedExcel)" explainText="$(string.L_DeterminewhethertoforceencryptedExcelExplain)" presentation="$(presentation.L_DeterminewhethertoforceencryptedExcel)" key="software\policies\microsoft\office\15.0\excel\security">
+      <parentCategory ref="L_Security" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_DeterminewhethertoforceencryptedExcelDropID" valueName="excelbypassencryptedmacroscan">
+          <item displayName="$(string.L_DeterminewhethertoforceencryptedExcelStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_DeterminewhethertoforceencryptedExcelStr2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_DeterminewhethertoforceencryptedExcelStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Forcefileextenstionstomatch" class="User" displayName="$(string.L_Forcefileextenstionstomatch)" explainText="$(string.L_ForcefileextenstionstomatchExplain)" presentation="$(presentation.L_Forcefileextenstionstomatch)" key="software\policies\microsoft\office\15.0\excel\security">
+      <parentCategory ref="L_Security" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_Empty" valueName="extensionhardening">
+          <item displayName="$(string.L_Allowdifferent)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Allowdifferentbutwarn)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Alwaysmatchfiletype)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_SetCNGCipherAlgorithm" class="User" displayName="$(string.L_SetCNGCipherAlgorithm)" explainText="$(string.L_SetCNGCipherAlgorithmExplain)" presentation="$(presentation.L_SetCNGCipherAlgorithm)" key="software\policies\microsoft\office\15.0\excel\security\crypto">
+      <parentCategory ref="L_Cryptography" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_SetCNGCipherAlgorithmID" valueName="cipheralgorithm" required="true" />
+      </elements>
+    </policy>
+    <policy name="L_ConfigureCNGCipherChainingMode" class="User" displayName="$(string.L_ConfigureCNGCipherChainingMode)" explainText="$(string.L_ConfigureCNGCipherChainingModeExplain)" presentation="$(presentation.L_ConfigureCNGCipherChainingMode)" key="software\policies\microsoft\office\15.0\excel\security\crypto">
+      <parentCategory ref="L_Cryptography" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_ConfigureCNGCipherChainingModeDropID" valueName="cipherchaining">
+          <item displayName="$(string.L_ConfigureCNGCipherChainingModeStr1)">
+            <value>
+              <string>ChainingModeCBC</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_ConfigureCNGCipherChainingModeStr2)">
+            <value>
+              <string>ChainingModeCFB</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_SetCNGCipherKeyLength" class="User" displayName="$(string.L_SetCNGCipherKeyLength)" explainText="$(string.L_SetCNGCipherKeyLengthExplain)" presentation="$(presentation.L_SetCNGCipherKeyLength)" key="software\policies\microsoft\office\15.0\excel\security\crypto">
+      <parentCategory ref="L_Cryptography" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_SetCNGCipherKeyLengthSpinID" valueName="cipherkeybits" minValue="0" maxValue="1000000" />
+      </elements>
+    </policy>
+    <policy name="L_SpecifyEncryptionCompatibility" class="User" displayName="$(string.L_SpecifyEncryptionCompatibility)" explainText="$(string.L_SpecifyEncryptionCompatibilityExplain)" presentation="$(presentation.L_SpecifyEncryptionCompatibility)" key="software\policies\microsoft\office\15.0\excel\security\crypto">
+      <parentCategory ref="L_Cryptography" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_SpecifyEncryptionCompatibilityDropID" valueName="compatmode">
+          <item displayName="$(string.L_SpecifyEncryptionCompatibilityStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_SpecifyEncryptionCompatibilityStr2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_SpecifyEncryptionCompatibilityStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_SetParametersForCNGContext" class="User" displayName="$(string.L_SetParametersForCNGContext)" explainText="$(string.L_SetParametersForCNGContextExplain)" presentation="$(presentation.L_SetParametersForCNGContext)" key="software\policies\microsoft\office\15.0\excel\security\crypto">
+      <parentCategory ref="L_Cryptography" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_SetParametersForCNGContextID" valueName="context" required="true" />
+      </elements>
+    </policy>
+    <policy name="L_SpecifyCNGHashAlgorithm" class="User" displayName="$(string.L_SpecifyCNGHashAlgorithm)" explainText="$(string.L_SpecifyCNGHashAlgorithmExplain)" presentation="$(presentation.L_SpecifyCNGHashAlgorithm)" key="software\policies\microsoft\office\15.0\excel\security\crypto">
+      <parentCategory ref="L_Cryptography" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_SpecifyCNGHashAlgorithmDropID" valueName="hashalgorithm">
+          <item displayName="$(string.L_SpecifyCNGHashAlgorithmStr1)">
+            <value>
+              <string>SHA1</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_SpecifyCNGHashAlgorithmStr2)">
+            <value>
+              <string>SHA256</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_SpecifyCNGHashAlgorithmStr3)">
+            <value>
+              <string>SHA384</string>
+            </value>
+          </item>
+          <item displayName="$(string.L_SpecifyCNGHashAlgorithmStr4)">
+            <value>
+              <string>SHA512</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_UseNewKeyOnPasswordChange" class="User" displayName="$(string.L_UseNewKeyOnPasswordChange)" explainText="$(string.L_UseNewKeyOnPasswordChangeExplain)" key="software\policies\microsoft\office\15.0\excel\security\crypto" valueName="newkeyonpwdchange">
+      <parentCategory ref="L_Cryptography" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_SetCNGPasswordSpinCount" class="User" displayName="$(string.L_SetCNGPasswordSpinCount)" explainText="$(string.L_SetCNGPasswordSpinCountExplain)" presentation="$(presentation.L_SetCNGPasswordSpinCount)" key="software\policies\microsoft\office\15.0\excel\security\crypto">
+      <parentCategory ref="L_Cryptography" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_SetCNGPasswordSpinCountSpinID" valueName="passwordspincount" minValue="0" maxValue="10000000" />
+      </elements>
+    </policy>
+    <policy name="L_SpecifyCNGRandomNumberGeneratorAlgorithm" class="User" displayName="$(string.L_SpecifyCNGRandomNumberGeneratorAlgorithm)" explainText="$(string.L_SpecifyCNGRandomNumberGeneratorAlgorithmExplain)" presentation="$(presentation.L_SpecifyCNGRandomNumberGeneratorAlgorithm)" key="software\policies\microsoft\office\15.0\excel\security\crypto">
+      <parentCategory ref="L_Cryptography" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_SpecifyCNGRandomNumberGeneratorAlgorithmID" valueName="rngalgorithm" required="true" />
+      </elements>
+    </policy>
+    <policy name="L_SpecifyCNGSaltLength" class="User" displayName="$(string.L_SpecifyCNGSaltLength)" explainText="$(string.L_SpecifyCNGSaltLengthExplain)" presentation="$(presentation.L_SpecifyCNGSaltLength)" key="software\policies\microsoft\office\15.0\excel\security\crypto">
+      <parentCategory ref="L_Cryptography" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_SpecifyCNGSaltLengthSpinID" valueName="saltbytes" minValue="0" maxValue="5000" />
+      </elements>
+    </policy>
+    <policy name="L_TurnOffTrustedDocumentsOnTheNetwork" class="User" displayName="$(string.L_TurnOffTrustedDocumentsOnTheNetwork)" explainText="$(string.L_TurnOffTrustedDocumentsOnTheNetworkExplain)" key="software\policies\microsoft\office\15.0\excel\security\trusted documents" valueName="disablenetworktrusteddocuments">
+      <parentCategory ref="L_TrustCenter" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_SetMaximumNumberOfTrustedDocuments" class="User" displayName="$(string.L_SetMaximumNumberOfTrustedDocuments)" explainText="$(string.L_SetMaximumNumberOfTrustedDocumentsExplain)" presentation="$(presentation.L_SetMaximumNumberOfTrustedDocuments)" key="software\policies\microsoft\office\15.0\excel\security\trusted documents">
+      <parentCategory ref="L_TrustCenter" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_SetMaximumNumberOfTrustedDocumentsSpinID" valueName="maxtrusteddocuments" minValue="0" maxValue="20000" />
+      </elements>
+    </policy>
+    <policy name="L_SetMaximumNumberOfTrustRecordsToPreserve" class="User" displayName="$(string.L_SetMaximumNumberOfTrustRecordsToPreserve)" explainText="$(string.L_SetMaximumNumberOfTrustRecordsToPreserveExplain)" presentation="$(presentation.L_SetMaximumNumberOfTrustRecordsToPreserve)" key="software\policies\microsoft\office\15.0\excel\security\trusted documents">
+      <parentCategory ref="L_TrustCenter" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_SetMaximumNumberOfTrustRecordsToPreserveSpinID" valueName="maxpreservetrusteddocuments" minValue="0" maxValue="20000" />
+      </elements>
+    </policy>
+    <policy name="L_VBAWarningsPolicy" class="User" displayName="$(string.L_VBAWarningsPolicy)" explainText="$(string.L_VBAWarningsExplain)" presentation="$(presentation.L_VBAWarningsPolicy)" key="software\policies\microsoft\office\15.0\excel\security">
+      <parentCategory ref="L_TrustCenter" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_empty4" valueName="vbawarnings">
+          <item displayName="$(string.L_DisableAllWithNotification)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_DisableAllExceptDigitallySignedMacros)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_DisableAllWithoutNotification)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.L_EnableAllMacros)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_StoremacroinPersonalMacroWorkbookbydefault" class="User" displayName="$(string.L_StoremacroinPersonalMacroWorkbookbydefault)" explainText="$(string.L_StoreMacroinpersonalmacroExplain)" key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="fglobalsheet_37_1">
+      <parentCategory ref="L_TrustCenter" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_TrustaccesstoVisualBasicProject" class="User" displayName="$(string.L_TrustaccesstoVisualBasicProject)" explainText="$(string.L_TrustAccessToVisualBasicProjectExplain)" key="software\policies\microsoft\office\15.0\excel\security" valueName="accessvbom">
+      <parentCategory ref="L_TrustCenter" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Disableallapplicationextensions" class="User" displayName="$(string.L_Disableallapplicationextensions)" explainText="$(string.L_DisableallapplicationextensionsExplain)" key="software\policies\microsoft\office\15.0\excel\security" valueName="disablealladdins">
+      <parentCategory ref="L_TrustCenter" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_RequirethatApplicationExtensionsaresigned" class="User" displayName="$(string.L_RequirethatApplicationExtensionsaresigned)" explainText="$(string.L_RequirethatApplicationExtensionsaresignedExplain)" key="software\policies\microsoft\office\15.0\excel\security" valueName="requireaddinsig">
+      <parentCategory ref="L_TrustCenter" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisableTrustBarNotificationforunsigned" class="User" displayName="$(string.L_DisableTrustBarNotificationforunsigned)" explainText="$(string.L_DisableTrustBarNotificationforunsignedExplain)" key="software\policies\microsoft\office\15.0\excel\security" valueName="notbpromptunsignedaddin">
+      <parentCategory ref="L_TrustCenter" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_TurnOffTrustedDocuments" class="User" displayName="$(string.L_TurnOffTrustedDocuments)" explainText="$(string.L_TurnOffTrustedDocumentsExplain)" key="software\policies\microsoft\office\15.0\excel\security\trusted documents" valueName="disabletrusteddocuments">
+      <parentCategory ref="L_TrustCenter" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_BlockMacroExecutionFromInternet" class="User" displayName="$(string.L_BlockMacroExecutionFromInternet)" explainText="$(string.L_BlockMacroExecutionFromInternetExplain)" key="software\policies\microsoft\office\15.0\excel\security" valueName="blockcontentexecutionfrominternet">
+      <parentCategory ref="L_TrustCenter" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_SetDefaultFileBlockBehavior" class="User" displayName="$(string.L_SetDefaultFileBlockBehavior)" explainText="$(string.L_SetDefaultFileBlockBehaviorExplain)" presentation="$(presentation.L_SetDefaultFileBlockBehavior)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_SetDefaultFileBlockBehaviorDropID" valueName="openinprotectedview">
+          <item displayName="$(string.L_SetDefaultFileBlockBehaviorStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_SetDefaultFileBlockBehaviorStr2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_SetDefaultFileBlockBehaviorStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Excel2007AndLaterWorkbooksandTemplates" class="User" displayName="$(string.L_Excel2007AndLaterWorkbooksandTemplates)" explainText="$(string.L_ExcelFileBlockExplain)" presentation="$(presentation.L_Excel2007AndLaterWorkbooksandTemplates)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_Excel2007AndLaterWorkbooksandTemplatesDropID" valueName="xlsxandxltxfiles">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr4)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr5)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr6)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Excel2007AndLaterMacroEnabledWorkbooksAndTemplates" class="User" displayName="$(string.L_Excel2007AndLaterMacroEnabledWorkbooksAndTemplates)" explainText="$(string.L_ExcelFileBlockExplain)" presentation="$(presentation.L_Excel2007AndLaterMacroEnabledWorkbooksAndTemplates)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_Excel2007AndLaterMacroEnabledWorkbooksAndTemplatesDropID" valueName="xlsmandxltmfiles">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr4)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr5)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr6)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Excel2007AndLaterAddInFiles" class="User" displayName="$(string.L_Excel2007AndLaterAddInFiles)" explainText="$(string.L_ExcelFileBlockExplain)" presentation="$(presentation.L_Excel2007AndLaterAddInFiles)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_Excel2007AndLaterAddInFilesDropID" valueName="xlamfiles">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Excel2007AndLaterBinaryWorkbooks" class="User" displayName="$(string.L_Excel2007AndLaterBinaryWorkbooks)" explainText="$(string.L_ExcelFileBlockExplain)" presentation="$(presentation.L_Excel2007AndLaterBinaryWorkbooks)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_Excel2007AndLaterBinaryWorkbooksDropID" valueName="xlsbfiles">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr4)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr5)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr6)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_OpenDocumentSpreadsheetFiles" class="User" displayName="$(string.L_OpenDocumentSpreadsheetFiles)" explainText="$(string.L_ExcelFileBlockExplain)" presentation="$(presentation.L_OpenDocumentSpreadsheetFiles)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_OpenDocumentSpreadsheetFilesDropID" valueName="opendocumentspreadsheet">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr4)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr5)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr6)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Excel972003AddInFiles" class="User" displayName="$(string.L_Excel972003AddInFiles)" explainText="$(string.L_ExcelFileBlockExplain)" presentation="$(presentation.L_Excel972003AddInFiles)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_Excel972003AddInFilesDropID" valueName="xl97addins">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Excel972003WorkbooksAndTemplates" class="User" displayName="$(string.L_Excel972003WorkbooksAndTemplates)" explainText="$(string.L_ExcelFileBlockExplain)" presentation="$(presentation.L_Excel972003WorkbooksAndTemplates)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_Excel972003WorkbooksAndTemplatesDropID" valueName="xl97workbooksandtemplates">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr4)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr5)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr6)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Excel9597WorkbooksAndTemplates" class="User" displayName="$(string.L_Excel9597WorkbooksAndTemplates)" explainText="$(string.L_ExcelFileBlockExplain)" presentation="$(presentation.L_Excel9597WorkbooksAndTemplates)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_Excel9597WorkbooksAndTemplatesDropID" valueName="xl9597workbooksandtemplates">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr4)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr5)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr6)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Excel95Workbooks" class="User" displayName="$(string.L_Excel95Workbooks)" explainText="$(string.L_ExcelFileBlockExplain)" presentation="$(presentation.L_Excel95Workbooks)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_Excel95WorkbooksDropID" valueName="xl95workbooks">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr4)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr5)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr6)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Excel4Workbooks" class="User" displayName="$(string.L_Excel4Workbooks)" explainText="$(string.L_ExcelFileBlockExplainBlockedFiles)" presentation="$(presentation.L_Excel4Workbooks)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_Excel4WorkbooksDropID" valueName="xl4workbooks">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr4)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr5)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr6)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Excel4Worksheets" class="User" displayName="$(string.L_Excel4Worksheets)" explainText="$(string.L_ExcelFileBlockExplainBlockedFiles)" presentation="$(presentation.L_Excel4Worksheets)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_Excel4WorksheetsDropID" valueName="xl4worksheets">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr4)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr5)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr6)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Excel3Worksheets" class="User" displayName="$(string.L_Excel3Worksheets)" explainText="$(string.L_ExcelFileBlockExplainBlockedFiles)" presentation="$(presentation.L_Excel3Worksheets)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_Excel3WorksheetsDropID" valueName="xl3worksheets">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr4)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr5)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr6)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Excel2Worksheets" class="User" displayName="$(string.L_Excel2Worksheets)" explainText="$(string.L_ExcelFileBlockExplainBlockedFiles)" presentation="$(presentation.L_Excel2Worksheets)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_Excel2WorksheetsDropID" valueName="xl2worksheets">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr4)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr5)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr6)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Excel4MacrosheetsAndAddInFiles" class="User" displayName="$(string.L_Excel4MacrosheetsAndAddInFiles)" explainText="$(string.L_ExcelFileBlockExplainBlockedFiles)" presentation="$(presentation.L_Excel4MacrosheetsAndAddInFiles)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_Excel4MacrosheetsAndAddInFilesDropID" valueName="xl4macros">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr4)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr5)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr6)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Excel3MacrosheetsAndAddInFiles" class="User" displayName="$(string.L_Excel3MacrosheetsAndAddInFiles)" explainText="$(string.L_ExcelFileBlockExplainBlockedFiles)" presentation="$(presentation.L_Excel3MacrosheetsAndAddInFiles)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_Excel3MacrosheetsAndAddInFilesDropID" valueName="xl3macros">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr4)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr5)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr6)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Excel2MacrosheetsAndAddInFiles" class="User" displayName="$(string.L_Excel2MacrosheetsAndAddInFiles)" explainText="$(string.L_ExcelFileBlockExplainBlockedFiles)" presentation="$(presentation.L_Excel2MacrosheetsAndAddInFiles)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_Excel2MacrosheetsAndAddInFilesDropID" valueName="xl2macros">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr4)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr5)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr6)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_WebPagesAndExcel2003XMLSpreadsheets" class="User" displayName="$(string.L_WebPagesAndExcel2003XMLSpreadsheets)" explainText="$(string.L_ExcelFileBlockExplain)" presentation="$(presentation.L_WebPagesAndExcel2003XMLSpreadsheets)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_WebPagesAndExcel2003XMLSpreadsheetsDropID" valueName="htmlandxmlssfiles">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr4)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr5)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr6)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_XMLFiles" class="User" displayName="$(string.L_XMLFiles)" explainText="$(string.L_ExcelFileBlockExplain)" presentation="$(presentation.L_XMLFiles)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_XMLFilesDropID" valueName="xmlfiles">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_TextFiles" class="User" displayName="$(string.L_TextFiles)" explainText="$(string.L_ExcelFileBlockExplain)" presentation="$(presentation.L_TextFiles)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_TextFilesDropID" valueName="textfiles">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_ExcelAddInFiles" class="User" displayName="$(string.L_ExcelAddInFiles)" explainText="$(string.L_ExcelFileBlockExplain)" presentation="$(presentation.L_ExcelAddInFiles)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_ExcelAddInFilesDropID" valueName="xllfiles">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_DBaseIIIANDIVFiles" class="User" displayName="$(string.L_DBaseIIIANDIVFiles)" explainText="$(string.L_ExcelFileBlockExplain)" presentation="$(presentation.L_DBaseIIIANDIVFiles)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_DBaseIIIANDIVFilesDropID" valueName="dbasefiles">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_MicrosoftOfficeQueryFiles" class="User" displayName="$(string.L_MicrosoftOfficeQueryFiles)" explainText="$(string.L_ExcelFileBlockExplain)" presentation="$(presentation.L_MicrosoftOfficeQueryFiles)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_MicrosoftOfficeQueryFilesDropID" valueName="officequeries">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr4)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr5)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr6)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_OfficeDataConnectionFiles" class="User" displayName="$(string.L_OfficeDataConnectionFiles)" explainText="$(string.L_ExcelFileBlockExplain)" presentation="$(presentation.L_OfficeDataConnectionFiles)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_OfficeDataConnectionFilesDropID" valueName="officedataconnections">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_OtherDataSourceFiles" class="User" displayName="$(string.L_OtherDataSourceFiles)" explainText="$(string.L_ExcelFileBlockExplain)" presentation="$(presentation.L_OtherDataSourceFiles)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_OtherDataSourceFilesDropID" valueName="officedatasources">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_OfflineCubeFiles" class="User" displayName="$(string.L_OfflineCubeFiles)" explainText="$(string.L_ExcelFileBlockExplain)" presentation="$(presentation.L_OfflineCubeFiles)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_OfflineCubeFilesDropID" valueName="offlinecubefiles">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_DifAndSylkFiles" class="User" displayName="$(string.L_DifAndSylkFiles)" explainText="$(string.L_ExcelFileBlockExplain)" presentation="$(presentation.L_DifAndSylkFiles)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_DifAndSylkFilesDropID" valueName="difandsylkfiles">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_LegacyConvertersForExcel" class="User" displayName="$(string.L_LegacyConvertersForExcel)" explainText="$(string.L_ExcelFileBlockExplain)" presentation="$(presentation.L_LegacyConvertersForExcel)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_LegacyConvertersForExcelDropID" valueName="converters">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr4)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr5)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr6)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_MicrosoftOfficeOpenXMLConvertersForExcel" class="User" displayName="$(string.L_MicrosoftOfficeOpenXMLConvertersForExcel)" explainText="$(string.L_ExcelFileBlockExplain)" presentation="$(presentation.L_MicrosoftOfficeOpenXMLConvertersForExcel)" key="software\policies\microsoft\office\15.0\excel\security\fileblock">
+      <parentCategory ref="L_FileBlockSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_MicrosoftOfficeOpenXMLConvertersForExcelDropID" valueName="ooxmlconverters">
+          <item displayName="$(string.L_ExcelFileBlockStr1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr4)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr5)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.L_ExcelFileBlockStr6)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_AllowTrustedLocationsOnTheNetwork" class="User" displayName="$(string.L_AllowTrustedLocationsOnTheNetwork)" explainText="$(string.L_AllowTrustedLocationsOnTheNetworkExplain)" key="software\policies\microsoft\office\15.0\excel\security\trusted locations" valueName="allownetworklocations">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisableTrustedLoc" class="User" displayName="$(string.L_DisableTrustedLoc)" explainText="$(string.L_DisableTrustedLocExplain)" key="software\policies\microsoft\office\15.0\excel\security\trusted locations" valueName="alllocationsdisabled">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_TrustedLoc01" class="User" displayName="$(string.L_TrustedLoc01)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc01)" key="software\policies\microsoft\office\15.0\excel\security\trusted locations\location1">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_Pathcolon" valueName="path" expandable="true" />
+        <text id="L_Datecolon" valueName="date" />
+        <text id="L_Descriptioncolon" valueName="description" />
+        <boolean id="L_Allowsubfolders" valueName="allowsubfolders">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc02" class="User" displayName="$(string.L_TrustedLoc02)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc02)" key="software\policies\microsoft\office\15.0\excel\security\trusted locations\location2">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_pathcolon5" valueName="path" expandable="true" />
+        <text id="L_datecolon6" valueName="date" />
+        <text id="L_descriptioncolon7" valueName="description" />
+        <boolean id="L_allowsubfolders8" valueName="allowsubfolders">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc03" class="User" displayName="$(string.L_TrustedLoc03)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc03)" key="software\policies\microsoft\office\15.0\excel\security\trusted locations\location3">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_pathcolon9" valueName="path" expandable="true" />
+        <text id="L_datecolon10" valueName="date" />
+        <text id="L_descriptioncolon11" valueName="description" />
+        <boolean id="L_allowsubfolders12" valueName="allowsubfolders">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc04" class="User" displayName="$(string.L_TrustedLoc04)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc04)" key="software\policies\microsoft\office\15.0\excel\security\trusted locations\location4">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_pathcolon13" valueName="path" expandable="true" />
+        <text id="L_datecolon14" valueName="date" />
+        <text id="L_descriptioncolon15" valueName="description" />
+        <boolean id="L_allowsubfolders16" valueName="allowsubfolders">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc05" class="User" displayName="$(string.L_TrustedLoc05)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc05)" key="software\policies\microsoft\office\15.0\excel\security\trusted locations\location5">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_pathcolon17" valueName="path" expandable="true" />
+        <text id="L_datecolon18" valueName="date" />
+        <text id="L_descriptioncolon19" valueName="description" />
+        <boolean id="L_allowsubfolders20" valueName="allowsubfolders">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc06" class="User" displayName="$(string.L_TrustedLoc06)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc06)" key="software\policies\microsoft\office\15.0\excel\security\trusted locations\location6">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_pathcolon21" valueName="path" expandable="true" />
+        <text id="L_datecolon22" valueName="date" />
+        <text id="L_descriptioncolon23" valueName="description" />
+        <boolean id="L_allowsubfolders24" valueName="allowsubfolders">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc07" class="User" displayName="$(string.L_TrustedLoc07)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc07)" key="software\policies\microsoft\office\15.0\excel\security\trusted locations\location7">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_pathcolon25" valueName="path" expandable="true" />
+        <text id="L_datecolon26" valueName="date" />
+        <text id="L_descriptioncolon27" valueName="description" />
+        <boolean id="L_allowsubfolders28" valueName="allowsubfolders">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc08" class="User" displayName="$(string.L_TrustedLoc08)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc08)" key="software\policies\microsoft\office\15.0\excel\security\trusted locations\location8">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_pathcolon29" valueName="path" expandable="true" />
+        <text id="L_datecolon30" valueName="date" />
+        <text id="L_descriptioncolon31" valueName="description" />
+        <boolean id="L_allowsubfolders32" valueName="allowsubfolders">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc09" class="User" displayName="$(string.L_TrustedLoc09)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc09)" key="software\policies\microsoft\office\15.0\excel\security\trusted locations\location9">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_pathcolon33" valueName="path" expandable="true" />
+        <text id="L_datecolon34" valueName="date" />
+        <text id="L_descriptioncolon35" valueName="description" />
+        <boolean id="L_allowsubfolders36" valueName="allowsubfolders">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc10" class="User" displayName="$(string.L_TrustedLoc10)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc10)" key="software\policies\microsoft\office\15.0\excel\security\trusted locations\location10">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_pathcolon37" valueName="path" expandable="true" />
+        <text id="L_datecolon38" valueName="date" />
+        <text id="L_descriptioncolon39" valueName="description" />
+        <boolean id="L_allowsubfolders40" valueName="allowsubfolders">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc11" class="User" displayName="$(string.L_TrustedLoc11)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc11)" key="software\policies\microsoft\office\15.0\excel\security\trusted locations\location11">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_pathcolon41" valueName="path" expandable="true" />
+        <text id="L_datecolon42" valueName="date" />
+        <text id="L_descriptioncolon43" valueName="description" />
+        <boolean id="L_allowsubfolders44" valueName="allowsubfolders">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc12" class="User" displayName="$(string.L_TrustedLoc12)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc12)" key="software\policies\microsoft\office\15.0\excel\security\trusted locations\location12">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_pathcolon45" valueName="path" expandable="true" />
+        <text id="L_datecolon46" valueName="date" />
+        <text id="L_descriptioncolon47" valueName="description" />
+        <boolean id="L_allowsubfolders48" valueName="allowsubfolders">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc13" class="User" displayName="$(string.L_TrustedLoc13)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc13)" key="software\policies\microsoft\office\15.0\excel\security\trusted locations\location13">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_pathcolon49" valueName="path" expandable="true" />
+        <text id="L_datecolon50" valueName="date" />
+        <text id="L_descriptioncolon51" valueName="description" />
+        <boolean id="L_allowsubfolders52" valueName="allowsubfolders">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc14" class="User" displayName="$(string.L_TrustedLoc14)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc14)" key="software\policies\microsoft\office\15.0\excel\security\trusted locations\location14">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_pathcolon53" valueName="path" expandable="true" />
+        <text id="L_datecolon54" valueName="date" />
+        <text id="L_descriptioncolon55" valueName="description" />
+        <boolean id="L_allowsubfolders56" valueName="allowsubfolders">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc15" class="User" displayName="$(string.L_TrustedLoc15)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc15)" key="software\policies\microsoft\office\15.0\excel\security\trusted locations\location15">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_pathcolon57" valueName="path" expandable="true" />
+        <text id="L_datecolon58" valueName="date" />
+        <text id="L_descriptioncolon59" valueName="description" />
+        <boolean id="L_allowsubfolders60" valueName="allowsubfolders">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc16" class="User" displayName="$(string.L_TrustedLoc16)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc16)" key="software\policies\microsoft\office\15.0\excel\security\trusted locations\location16">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_pathcolon61" valueName="path" expandable="true" />
+        <text id="L_datecolon62" valueName="date" />
+        <text id="L_descriptioncolon63" valueName="description" />
+        <boolean id="L_allowsubfolders64" valueName="allowsubfolders">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc17" class="User" displayName="$(string.L_TrustedLoc17)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc17)" key="software\policies\microsoft\office\15.0\excel\security\trusted locations\location17">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_pathcolon65" valueName="path" expandable="true" />
+        <text id="L_datecolon66" valueName="date" />
+        <text id="L_descriptioncolon67" valueName="description" />
+        <boolean id="L_allowsubfolders68" valueName="allowsubfolders">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc18" class="User" displayName="$(string.L_TrustedLoc18)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc18)" key="software\policies\microsoft\office\15.0\excel\security\trusted locations\location18">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_pathcolon69" valueName="path" expandable="true" />
+        <text id="L_datecolon70" valueName="date" />
+        <text id="L_descriptioncolon71" valueName="description" />
+        <boolean id="L_allowsubfolders72" valueName="allowsubfolders">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc19" class="User" displayName="$(string.L_TrustedLoc19)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc19)" key="software\policies\microsoft\office\15.0\excel\security\trusted locations\location19">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_pathcolon73" valueName="path" expandable="true" />
+        <text id="L_datecolon74" valueName="date" />
+        <text id="L_descriptioncolon75" valueName="description" />
+        <boolean id="L_allowsubfolders76" valueName="allowsubfolders">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_TrustedLoc20" class="User" displayName="$(string.L_TrustedLoc20)" explainText="$(string.L_TrustedLocationsExplain)" presentation="$(presentation.L_TrustedLoc20)" key="software\policies\microsoft\office\15.0\excel\security\trusted locations\location20">
+      <parentCategory ref="L_TrustedLocations" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_pathcolon77" valueName="path" expandable="true" />
+        <text id="L_datecolon78" valueName="date" />
+        <text id="L_descriptioncolon79" valueName="description" />
+        <boolean id="L_allowsubfolders80" valueName="allowsubfolders">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_SetNumberOfPlacesInTheRecentPlacesList" class="User" displayName="$(string.L_SetNumberOfPlacesInTheRecentPlacesList)" explainText="$(string.L_SetNumberOfPlacesInTheRecentPlacesListExplain)" presentation="$(presentation.L_SetNumberOfPlacesInTheRecentPlacesList)" key="software\policies\microsoft\office\15.0\excel\place mru">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_SetNumberOfPlacesInTheRecentPlacesListSpinID" valueName="max display" minValue="0" maxValue="20" />
+      </elements>
+    </policy>
+    <policy name="L_Defaultdirection" class="User" displayName="$(string.L_Defaultdirection)" explainText="$(string.L_DefaultDirectionExplain)" presentation="$(presentation.L_Defaultdirection)" key="software\policies\microsoft\office\15.0\excel\options">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_defaultdirection81" valueName="defaultsheetr2l">
+          <item displayName="$(string.L_RighttoLeft3)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Lefttoright4)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Cursormovement" class="User" displayName="$(string.L_Cursormovement)" explainText="$(string.L_CursorMovementExplain)" presentation="$(presentation.L_Cursormovement)" key="software\policies\microsoft\office\15.0\excel\options">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_cursormovement82" valueName="cursorvisual">
+          <item displayName="$(string.L_Logical)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Visual)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Showcontrolcharacters" class="User" displayName="$(string.L_Showcontrolcharacters)" explainText="$(string.L_ShowControlCharactersExplain)" key="software\policies\microsoft\office\15.0\excel\options" valueName="controlcharacters">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_LoadpicturesfromWebpagesnotcreatedinExcel" class="User" displayName="$(string.L_LoadpicturesfromWebpagesnotcreatedinExcel)" explainText="$(string.L_LoadpicturesfromWebpagesnotcreatedinExcelExplain)" key="software\policies\microsoft\office\15.0\excel\internet" valueName="donotloadpictures">
+      <parentCategory ref="L_General" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_MicrosoftExcelmenuorHelpkey" class="User" displayName="$(string.L_MicrosoftExcelmenuorHelpkey)" explainText="$(string.L_MSEmenuorhelpExplain)" presentation="$(presentation.L_MicrosoftExcelmenuorHelpkey)" key="software\policies\microsoft\office\15.0\excel\options">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_Helpkey" valueName="menukey" />
+      </elements>
+    </policy>
+    <policy name="L_Transitionnavigationkeys" class="User" displayName="$(string.L_Transitionnavigationkeys)" explainText="$(string.L_TransitionnavigationkeysExplain)" key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="fisi_33_1">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Ignoreotherapplications" class="User" displayName="$(string.L_Ignoreotherapplications)" explainText="$(string.L_IgnoreotherappsExplain)" key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="fddeenabled_6_1">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_ZoomonrollwithIntelliMouse" class="User" displayName="$(string.L_ZoomonrollwithIntelliMouse)" explainText="$(string.L_ZoomonrollwithIntelliMouseExplain)" key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="frollzoom_98_1">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Shownames" class="User" displayName="$(string.L_Shownames)" explainText="$(string.L_ShownamesExplain)" key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="fshowchartnames_96_1">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Showvalues" class="User" displayName="$(string.L_Showvalues)" explainText="$(string.L_ShowvaluesExplain)" key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="fshowcharttipvalues_97_1">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Editdirectlyincell" class="User" displayName="$(string.L_Editdirectlyincell)" explainText="$(string.L_EditdirectlyincellExplain)" key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="fnoincell_66_1">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_EnableFillHandleAndCellDragAndDrop" class="User" displayName="$(string.L_EnableFillHandleAndCellDragAndDrop)" explainText="$(string.L_EnableFillHandleAndCellDragAndDropExplain)" key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="fdisabledman_36_1">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Alertbeforeoverwritingcells" class="User" displayName="$(string.L_Alertbeforeoverwritingcells)" explainText="$(string.L_AlertbeforeoverwritingcellsExplain)" key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="fnodragwarning_76_1">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_MoveselectionafterEnter" class="User" displayName="$(string.L_MoveselectionafterEnter)" explainText="$(string.L_MoveselectionafterEnterExplain)" key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="fentermove_75_1">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_MoveselectionafterEnterdirection" class="User" displayName="$(string.L_MoveselectionafterEnterdirection)" explainText="$(string.L_SpecifiesthedirectionthattheselectionismovedaftertheEnterkey)" presentation="$(presentation.L_MoveselectionafterEnterdirection)" key="software\policies\microsoft\office\15.0\excel\options">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_moveselectionafterenterdirection84" valueName="moveenterdir">
+          <item displayName="$(string.L_Down)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Right)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Up)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_Left)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Automaticallyinsertadecimalpoint" class="User" displayName="$(string.L_Automaticallyinsertadecimalpoint)" explainText="$(string.L_AutomaticallyinsertadecimalpointExplain)" key="software\policies\microsoft\office\15.0\excel\options" valueName="autodec">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="5" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="4" />
+      </disabledValue>
+    </policy>
+    <policy name="L_CutAndCopyObjectsWithCells" class="User" displayName="$(string.L_CutAndCopyObjectsWithCells)" explainText="$(string.L_CutAndCopyObjectsWithCellsExplain)" key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="fobjwcellmove_71_1">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Asktoupdateautomaticlinks" class="User" displayName="$(string.L_Asktoupdateautomaticlinks)" explainText="$(string.L_AsktoupdateautomaticlinksExplain)" key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="fupdateext_78_1">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_EnableAutoCompleteforcellvalues" class="User" displayName="$(string.L_EnableAutoCompleteforcellvalues)" explainText="$(string.L_EnableAutoCompleteforcellvaluesExplain)" key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="fautocomplete_128_1">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_ExtendDataRangeFormatsAndFormulas" class="User" displayName="$(string.L_ExtendDataRangeFormatsAndFormulas)" explainText="$(string.L_ExtendDataRangeFormatsAndFormulasExplain)" key="software\policies\microsoft\office\15.0\excel\options" valueName="extendlist">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Enableautomaticpercententry" class="User" displayName="$(string.L_Enableautomaticpercententry)" explainText="$(string.L_EnableautomaticpercententryExplain)" key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="fdisableautopercent_99_1">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_ShowPasteOptionsButtonWhenContentIsPasted" class="User" displayName="$(string.L_ShowPasteOptionsButtonWhenContentIsPasted)" explainText="$(string.L_ShowPasteOptionsButtonWhenContentIsPastedExplain)" key="software\policies\microsoft\office\15.0\common\general" valueName="pasteoptions">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_ShowInsertOptionsbuttons" class="User" displayName="$(string.L_ShowInsertOptionsbuttons)" explainText="$(string.L_ShowInsertOptionsbuttonsExplain)" key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="enableinsertcellsooui_102_1">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_ShowFormulabarinNormalView" class="User" displayName="$(string.L_ShowFormulabarinNormalView)" explainText="$(string.L_ShowFormulabarinNormalViewExplain)" key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="ffmlaf_1_1">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_ShowFormulabarinFullView" class="User" displayName="$(string.L_ShowFormulabarinFullView)" explainText="$(string.L_CheckedDisplaystheFormulabarwhentheFullScreencommandintheVie)" key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="ffmlafull_68_1">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Functiontooltips" class="User" displayName="$(string.L_Functiontooltips)" explainText="$(string.L_FunctiontooltipsExplain)" key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="fshowfuntips_101_1">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Comments" class="User" displayName="$(string.L_Comments)" explainText="$(string.L_Determineshowcommentsaredisplayedontheworksheet)" presentation="$(presentation.L_Comments)" key="software\policies\microsoft\office\15.0\excel\options\binaryoptions">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <disabledList>
+        <item key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="fnoteoffv5_35_1">
+          <value>
+            <delete />
+          </value>
+        </item>
+      </disabledList>
+      <elements>
+        <enum id="L_comments85" valueName="vmdnotedisp_38_2">
+          <item displayName="$(string.L_None)">
+            <value>
+              <decimal value="0" />
+            </value>
+            <valueList>
+              <item key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="fnoteoffv5_35_1">
+                <value>
+                  <decimal value="1" />
+                </value>
+              </item>
+            </valueList>
+          </item>
+          <item displayName="$(string.L_Commentindicatoronly)">
+            <value>
+              <decimal value="1" />
+            </value>
+            <valueList>
+              <item key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="fnoteoffv5_35_1">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+            </valueList>
+          </item>
+          <item displayName="$(string.L_Commentindicator)">
+            <value>
+              <decimal value="2" />
+            </value>
+            <valueList>
+              <item key="software\policies\microsoft\office\15.0\excel\options\binaryoptions" valueName="fnoteoffv5_35_1">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+            </valueList>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_Recentlyusedfilelist" class="User" displayName="$(string.L_Recentlyusedfilelist)" explainText="$(string.L_RecentlyusedfilelistExplain)" presentation="$(presentation.L_Recentlyusedfilelist)" key="software\policies\microsoft\office\15.0\excel\file mru">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <decimal id="L_Entriesonrecentlyusedfilelist" valueName="max display" minValue="0" maxValue="50" />
+      </elements>
+    </policy>
+    <policy name="L_Alternatestartupfilelocation" class="User" displayName="$(string.L_Alternatestartupfilelocation)" explainText="$(string.L_AlternatestartupfilelocationExplain)" presentation="$(presentation.L_Alternatestartupfilelocation)" key="software\policies\microsoft\office\15.0\excel\options">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_alternatestartupfilelocation86" valueName="altstartup" expandable="true" />
+      </elements>
+    </policy>
+    <policy name="L_Listoferrormessagestocustomize" class="User" displayName="$(string.L_Listoferrormessagestocustomize)" explainText="$(string.L_EntererrorIDforValueNameandcustombuttontextforValue)" presentation="$(presentation.L_Listoferrormessagestocustomize)" key="software\policies\microsoft\office\15.0\excel\customizablealerts">
+      <parentCategory ref="L_Customizableerrormessages" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledList>
+        <item key="software\policies\microsoft\office\15.0\excel\customizablealerts" valueName="policyon">
+          <value>
+            <decimal value="1" />
+          </value>
+        </item>
+      </enabledList>
+      <disabledList>
+        <item key="software\policies\microsoft\office\15.0\excel\customizablealerts" valueName="policyon">
+          <value>
+            <delete />
+          </value>
+        </item>
+      </disabledList>
+      <elements>
+        <list id="L_listoferrormessagestocustomize87" explicitValue="true" />
+      </elements>
+    </policy>
+    <policy name="L_Donotshowdataextractionoptionswhenopeningcorruptworkbooks" class="User" displayName="$(string.L_Donotshowdataextractionoptionswhenopeningcorruptworkbooks)" explainText="$(string.L_DonotshowdataextractionoptionswExplain)" key="software\policies\microsoft\office\15.0\excel\options" valueName="extractdatadisableui">
+      <parentCategory ref="L_DataRecovery" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Disablecommandbarbuttonsandmenuitems" class="User" displayName="$(string.L_Disablecommandbarbuttonsandmenuitems)" explainText="$(string.L_DisablecommandbarbuttonsandmenuitemsPredefinedExplain)" presentation="$(presentation.L_Disablecommandbarbuttonsandmenuitems)" key="software\policies\microsoft\office\15.0\excel\disabledcmdbaritemscheckboxes">
+      <parentCategory ref="L_Predefined" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <disabledList>
+        <item key="software\policies\microsoft\office\15.0\excel\disabledcmdbaritemscheckboxes" valueName="filepublishaswebpage">
+          <value>
+            <delete />
+          </value>
+        </item>
+        <item key="software\policies\microsoft\office\15.0\excel\disabledcmdbaritemscheckboxes" valueName="weboptions">
+          <value>
+            <delete />
+          </value>
+        </item>
+        <item key="software\policies\microsoft\office\15.0\excel\disabledcmdbaritemscheckboxes" valueName="generaloptions">
+          <value>
+            <delete />
+          </value>
+        </item>
+        <item key="software\policies\microsoft\office\15.0\excel\disabledcmdbaritemscheckboxes" valueName="fileopensearchtheweb">
+          <value>
+            <delete />
+          </value>
+        </item>
+      </disabledList>
+      <elements>
+        <boolean id="L_OfficeButtonxcelOptionsCustomizationCombinedPreviewWebPagePreview" valueName="filewebpagepreview">
+          <trueValue>
+            <string>3655</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_OfficeButtonExcelOptionsCustomizationMailRecipient" valueName="sendtomailrecipient">
+          <trueValue>
+            <string>2188</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_InsertLinksHyperlink" valueName="inserthyperlink">
+          <trueValue>
+            <string>1576</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_ReviewChangesProtectSheet" valueName="toolsprotectsheet">
+          <trueValue>
+            <string>893</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_ReviewChangesProtectWorkbook" valueName="flyoutanchorprotectworkbookmenu">
+          <trueValue>
+            <string>16132</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_ReviewChangesProtectSharing" valueName="toolsprotectshare">
+          <trueValue>
+            <string>3059</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_ViewMacrosMacros" valueName="flyoutanchormacros">
+          <trueValue>
+            <string>16106</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_DeveloperCodeMacros" valueName="toolsmacromacros">
+          <trueValue>
+            <string>186</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_DeveloperCodeRecordMacro" valueName="toolsmacrorecord">
+          <trueValue>
+            <string>184</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_DeveloperCodemacroSecurity" valueName="toolsmacrosecurity">
+          <trueValue>
+            <string>3627</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_DeveloperCodeVisualbasic" valueName="toolsmacrovbe">
+          <trueValue>
+            <string>1695</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_OfficeButtonExcelOptionsCustomizeDocumentLocation" valueName="webaddress">
+          <trueValue>
+            <string>1740</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_Disableshortcutkeys" class="User" displayName="$(string.L_Disableshortcutkeys)" explainText="$(string.L_DisableshortcutkeysExplain)" presentation="$(presentation.L_Disableshortcutkeys)" key="software\policies\microsoft\office\15.0\excel\disabledshortcutkeyscheckboxes">
+      <parentCategory ref="L_Predefined" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <boolean id="L_CtrlFHomeEditingFind" valueName="find">
+          <trueValue>
+            <string>70,8</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_CtrlKInsertLinksHyperlinks" valueName="inserthyperlink">
+          <trueValue>
+            <string>75,8</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_AltF8ToolsMacroMacros" valueName="toolsmacromacros">
+          <trueValue>
+            <string>119,16</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+        <boolean id="L_AltLVDeveloperCodeVisualBasic" valueName="toolsmacrovbe">
+          <trueValue>
+            <string>122,16</string>
+          </trueValue>
+          <falseValue>
+            <string>0</string>
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="L_disablecommandbarbuttonsandmenuitems165" class="User" displayName="$(string.L_disablecommandbarbuttonsandmenuitems165)" explainText="$(string.L_DisablecommandbarbuttonsandmenuitemsCustomExplain)" presentation="$(presentation.L_disablecommandbarbuttonsandmenuitems165)" key="software\policies\microsoft\office\15.0\excel\disabledcmdbaritemslist">
+      <parentCategory ref="L_Custom" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <list id="L_EnteracommandbarIDtodisable" valuePrefix="TCID" />
+      </elements>
+    </policy>
+    <policy name="L_disableshortcutkeys166" class="User" displayName="$(string.L_disableshortcutkeys166)" explainText="$(string.L_DisableshortcutkeysCustomExplain)" presentation="$(presentation.L_disableshortcutkeys166)" key="software\policies\microsoft\office\15.0\excel\disabledshortcutkeyslist">
+      <parentCategory ref="L_Custom" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <list id="L_Enterakeyandmodifiertodisable" valuePrefix="KeyMod" />
+      </elements>
+    </policy>
+    <policy name="L_TurnOffFileSynchronizationViaSOAPOverHTTP" class="User" displayName="$(string.L_TurnOffFileSynchronizationViaSOAPOverHTTP)" explainText="$(string.L_TurnOffFileSynchronizationViaSOAPOverHTTPExplain)" key="software\policies\microsoft\office\15.0\common\internet" valueName="fsshttpoffexcel">
+      <parentCategory ref="L_ServerSettings" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_Graphgallerypath" class="User" displayName="$(string.L_Graphgallerypath)" explainText="$(string.L_GraphgallerypathExplain)" presentation="$(presentation.L_Graphgallerypath)" key="software\policies\microsoft\office\15.0\graph\options">
+      <parentCategory ref="L_miscellaneous168" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_Graphgallerypath169" valueName="gallerypath" expandable="true" />
+      </elements>
+    </policy>
+    <policy name="L_Enablefourdigityeardisplay" class="User" displayName="$(string.L_Enablefourdigityeardisplay)" explainText="$(string.L_EnablefourdigityeardisplayExplain)" key="software\policies\microsoft\office\15.0\excel\options" valueName="enablefourdigityeardisplay">
+      <parentCategory ref="L_miscellaneous168" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DoNotCacheNetworkFilesLocally" class="User" displayName="$(string.L_DoNotCacheNetworkFilesLocally)" explainText="$(string.L_DoNotCacheNetworkFilesLocallyExplain)" key="software\policies\microsoft\office\15.0\excel\options" valueName="networkresiliency">
+      <parentCategory ref="L_miscellaneous168" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="L_OLAPPivotTableUserDefinedFunctionUDFsecuritysetting" class="User" displayName="$(string.L_OLAPPivotTableUserDefinedFunctionUDFsecuritysetting)" explainText="$(string.L_OLAPPivotTableUserDefinedFunctionExplain)" presentation="$(presentation.L_OLAPPivotTableUserDefinedFunctionUDFsecuritysetting)" key="software\policies\microsoft\office\15.0\excel\options">
+      <parentCategory ref="L_miscellaneous168" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_olappivottableuserdefinedfunctionudfsecuritysetting171" valueName="olapudfsecurity">
+          <item displayName="$(string.L_AllowALLUDFs)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_AllowsafeUDFsonly)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.L_AllowNOUDFs)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_BlockAllUnmanagedAddins" class="User" displayName="$(string.L_BlockAllUnmanagedAddins)" explainText="$(string.L_BlockAllUnmanagedAddinsExplainText)" key="software\policies\microsoft\office\15.0\excel\resiliency" valueName="restricttolist">
+      <parentCategory ref="L_miscellaneous168" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_ListOfManagedAddins" class="User" displayName="$(string.L_ListOfManagedAddins)" explainText="$(string.L_ListOfManagedAddinsExplainText)" presentation="$(presentation.L_ListOfManagedAddins)" key="software\policies\microsoft\office\15.0\excel\resiliency\addinlist">
+      <parentCategory ref="L_miscellaneous168" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledList>
+        <item key="software\policies\microsoft\office\15.0\excel\resiliency\addinlist" valueName="policyon">
+          <value>
+            <decimal value="1" />
+          </value>
+        </item>
+      </enabledList>
+      <disabledList>
+        <item key="software\policies\microsoft\office\15.0\excel\resiliency\addinlist" valueName="policyon">
+          <value>
+            <delete />
+          </value>
+        </item>
+      </disabledList>
+      <elements>
+        <list id="L_ListOfManagedAddins2" explicitValue="true" />
+      </elements>
+    </policy>
+    <policy name="L_AutomaticallyFlashFill" class="User" displayName="$(string.L_AutomaticallyFlashFill)" explainText="$(string.L_AutomaticallyFlashFillExplain)" key="software\policies\microsoft\office\15.0\excel\options" valueName="flashfill">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_ChartRefTrackingEnabled" class="User" displayName="$(string.L_ChartRefTrackingEnabledTitle)" explainText="$(string.L_ChartRefTrackingEnabledExplain)" key="software\policies\microsoft\office\15.0\excel\options" valueName="charttrackingrefbased">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_WebContentWarningLevel" class="User" displayName="$(string.L_WebContentWarningLevel)" explainText="$(string.L_WebContentWarningLevelExplain)" presentation="$(presentation.L_WebContentWarningLevel)" key="software\policies\microsoft\office\15.0\excel\security">
+      <parentCategory ref="L_Security" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <enum id="L_WebContentWarningLevelValue" valueName="webservicefunctionwarnings">
+          <item displayName="$(string.L_WebContentWarningEnableAll)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.L_WebContentWarningWarningAll)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.L_WebContentWarningDisableAll)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_AllowQuickAnalysis" class="User" displayName="$(string.L_AllowQuickAnalysis)" explainText="$(string.L_AllowQuickAnalysisExplain)" key="software\policies\microsoft\office\15.0\common\toolbars\excel" valueName="allowquickanalysis">
+      <parentCategory ref="L_OptionsGeneral" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_DisableOfficeStartExcel" class="User" displayName="$(string.L_DisableOfficeStartExcel)" explainText="$(string.L_DisableOfficeStartExcelExplain)" key="software\policies\microsoft\office\15.0\excel\options" valueName="disableboottoofficestart">
+      <parentCategory ref="L_miscellaneous168" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_PersonalTemplatesPath" class="User" displayName="$(string.L_PersonalTemplatesPath)" explainText="$(string.L_PersonalTemplatesPathExplain)" presentation="$(presentation.L_PersonalTemplatesPath)" key="software\policies\microsoft\office\15.0\excel\options">
+      <parentCategory ref="L_miscellaneous168" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_PersonalTemplatesPath" valueName="personaltemplates" expandable="true" />
+      </elements>
+    </policy>
+    <policy name="L_DefaultCustomTab" class="User" displayName="$(string.L_DefaultCustomTab)" explainText="$(string.L_DefaultCustomTabExplain)" key="software\policies\microsoft\office\15.0\excel\options" valueName="officestartdefaulttab">
+      <parentCategory ref="L_miscellaneous168" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_ShowAlertIfNotDefault" class="User" displayName="$(string.L_ShowAlertIfNotDefault)" explainText="$(string.L_ShowAlertIfNotDefaultExplain)" key="software\policies\microsoft\office\15.0\excel\options" valueName="alertifnotdefault">
+      <parentCategory ref="L_Advanced" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>

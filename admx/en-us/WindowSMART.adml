@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName></displayName>
+  <description></description>
+  <resources>
+    <stringTable>
+      <string id="WsCategory">WindowSMART 2013 Configuration</string>
+      <string id="Supported_Win">At least Microsoft Windows XP Professional with SP2 or Windows Server 2003 family with SP1</string>
+      <string id="A_DiskPollingAnalysis">Disk Polling and Analysis</string>
+      <string id="DiskPollingAnalysisHelp">Configures settings which specify how often WindowSMART 2013 should poll disks in the computer, and for which types of conditions alerts should be raised.
+
+WARNING: Do NOT disable this policy item. Disabling this policy item removes critical Registry entries that WindowSMART uses, and WindowSMART will automatically recreate default values. If you want to lock down these settings and prevent users from changing them, please set the policy to Enabled and specify the desired values.</string>
+      <string id="DiskPollingInterval">Disk Polling Interval for SMART Data (milliseconds - 180000 = 3 minutes, 600000 = 10 minutes, 3600000 = 1 hour, 86400000 = 1 day, 648000000 = 1 week)</string>
+      <string id="RaiseWarningAlert">Notify if a disk generates a Warning alert</string>
+      <string id="RaiseWarningAlert_1">Notify the user</string>
+      <string id="RaiseWarningAlert_2">Ignore the alert</string>
+      <string id="RaiseGeriatricAlert">Notify if a disk generates a Geriatric alert</string>
+      <string id="RaiseGeriatricAlert_1">Notify the user</string>
+      <string id="RaiseGeriatricAlert_2">Ignore the alert</string>
+      <string id="Q_BlockUI">Block Users from Running WindowSMART Client</string>
+      <string id="BlockUIHelp">Configures whether or not users are allowed to run the WindowSMART client (user interface). If this policy is disabled or not configured, users may run the client (provided they have sufficient perms to run an application in elevated mode). If this policy is enabled, users (including administrators) are forbidden from running the UI. This policy has no effect on the WindowSMART Lightweight Client, which has no UI.</string>
+      <string id="B_Temperatures">Disk Temperature Preferences and Alerts</string>
+      <string id="TemperaturesHelp">Configures the display preference of temperatures in the WindowSMART user interface. You can also specify the temperature thresholds (in Celsius) for Critical, Overheated, Hot and Warm, and also specify whether Hot and Warm alerts should be reported. If you specify that Hot alerts should be ignored but not Warm alerts, a policy error occurs. It is also a policy error to set a more severe temperature threshold less than that of a less severe temperature (i.e. setting 55 for Critical and 56 for Overheated).
+
+WARNING: Do NOT disable this policy item. Disabling this policy item removes critical Registry entries that WindowSMART uses, and WindowSMART will automatically recreate default values. If you want to lock down these settings and prevent users from changing them, please set the policy to Enabled and specify the desired values.
+
+If you choose to have the computer shut down in a thermal emergency (a disk remains overheated or critically hot for 3 or more consecutive polling intervals), your disk polling interval should be set in the range of 5-20 minutes).</string>
+      <string id="TemperatureDisplayPreference">Temperature Display Preference</string>
+      <string id="TempDisplay_1">Celsius</string>
+      <string id="TempDisplay_2">Fahrenheit</string>
+      <string id="TempDisplay_3">Kelvin</string>
+      <string id="TempDisplayCritical">Critical Temperature Threshold</string>
+      <string id="TempDisplayOverheated">Overheated Temperature Threshold</string>
+      <string id="TempDisplayHot">Hot Temperature Threshold</string>
+      <string id="TempDisplayWarm">Warm Temperature Threshold</string>
+      <string id="TempIgnoreHot">When a hot disk is detected</string>
+      <string id="TempIgnoreHot_1">Ignore hot disks</string>
+      <string id="TempIgnoreHot_2">Generate an alert</string>
+      <string id="TempIgnoreWarm">When a warm disk is detected</string>
+      <string id="TempIgnoreWarm_1">Ignore warm disks</string>
+      <string id="TempIgnoreWarm_2">Generate an alert</string>
+      <string id="ThermalEmergencyShutdown">Action to take in a thermal emergency - a disk remains overheated or critically hot for 3 or more consecutive polling intervals</string>
+      <string id="ThermalShutdown_1">Alert and shut down the computer</string>
+      <string id="ThermalShutdown_2">Alert, but do not shut down</string>
+      <string id="D_VirtualDisks">Virtual Disk Enumeration</string>
+      <string id="VirtualDisksHelp">This setting specifies whether you want to ignore virtual disks. Ignoring virtual disks is rcommended. Virtual disks do not possess SMART data and in many cases present erroneous data to WindowSMART. Ignoring them prevents their appearance in the UI, and prevents the service from processing them.</string>
+      <string id="NeverEnumerateVDs">Virtual disk behavior</string>
+      <string id="NeverEnumerateVDs_1">Never enumerate known virtual disks (recommended)</string>
+      <string id="NeverEnumerateVDs_2">Enumerate them as a real disk</string>
+      <string id="C_AllowIgnore">Allow Users to Ignore Problems</string>
+      <string id="AllowIgnoreHelp">This setting specifies whether users are allowed to ignore problems on disks such as bad sectors. If this policy is not configured or enabled, users can ignore problems. If this policy is disabled, users cannot ignore problems. This does not preclude users from ignoring entire disks, since some disks like flash drives and media cards are known to report erroneous data that trigger false alerts.</string>
+      <string id="E_EmailNotification">Email Notifications</string>
+      <string id="EmailNotificationHelp">You can have WindowSMART send disk health alerts and product update alerts to up to three unique email addresses, which can be individuals or distribution lists. You need to provide at a minimum the email server settings and at least one recipient, but in most cases you must also provide authentication credentials. The credentials, if provided here, must be provided in their encrypted format, not their plaintext format. It is recommended you configure WindowSMART on an administrator's PC, then copy those settings as appropriate. MAKE SURE TO TEST these settings prior to deploying them across your domain(s).
+
+The best way to test is to configure these settings on a test PC, validate that they work and then export the Registry settings. For the username and password, if authentication is used, you must copy the ENCRYPTED username and password, or else the authentication will fail.</string>
+      <string id="EmailEnable">Email alerts are</string>
+      <string id="EmailEnable_1">Enabled</string>
+      <string id="EmailEnable_2">Disabled</string>
+      <string id="EmailServerHost">Server Hostname</string>
+      <string id="EmailServerPort">Server Port</string>
+      <string id="EmailUseSsl">Use SSL</string>
+      <string id="UseSSL_1">Send email using SSL</string>
+      <string id="UseSSL_2">Send email in plaintext</string>
+      <string id="EmailSenderFriendly">Sender Friendly Name</string>
+      <string id="EmailSenderAddress">Sender Email Address</string>
+      <string id="EmailUseAuthentication">Server authentication</string>
+      <string id="EmailUserName">Username (paste encrypted value)</string>
+      <string id="EmailUserPassword">Password (paste encrypted value)</string>
+      <string id="EmailRecipient1Friendly">Recipient Friendly Name</string>
+      <string id="EmailRecipient1Address">Recipient Email Address</string>
+      <string id="EmailRecipient2Address">Recipient 2 Address (optional)</string>
+      <string id="EmailRecipient3Address">Recipient 3 Address (optional)</string>
+      <string id="EmailUseAuthentication_1">Use credentials when sending mail</string>
+      <string id="EmailUseAuthentication_2">No credentials</string>
+      <string id="F_BoxcarNotification">iOS (iPhone/iPad/iPod Touch) Notification Via Boxcar</string>
+      <string id="BoxcarNotificationHelp">This setting specifies settings for sending alert notifications via Boxcar to Applie iOS devices. Boxcar is supported on iPhone, iPad and iPod Touch.. If this policy is enabled, the Boxcar notifications are administrator defined and cannot be changed by the user. If this policy is disabled, Boxcar notifications are disabled and cannot be enabled or changed by the user. If this policy is not configured, users are free to configure the Boxcar settings.</string>
+      <string id="BoxcarEnable">Send disk health alerts via Boxcar</string>
+      <string id="BoxcarEnable_1">Enabled</string>
+      <string id="BoxcarEnable_2">Disabled</string>
+      <string id="BoxcarEmailAddress">Email Address(es) (separate multiple addresses by commas, no spaces)</string>
+      <string id="G_ProwlNotification">iOS (iPhone/iPad/iPod Touch) Notification Via Prowl</string>
+      <string id="ProwlNotificationHelp">This setting specifies settings for sending alert notifications via Prowl to Apple iOS devices. Prowl is supported on iPhone, iPad and iPod Touch. If this policy is enabled, the Prowl notifications are administrator defined and cannot be changed by the user. If this policy is disabled, Prowl notifications are disabled and cannot be enabled or changed by the user. If this policy is not configured, users are free to configure the Prowl settings.</string>
+      <string id="ProwlEnable">Send disk health alerts via Prowl</string>
+      <string id="ProwlEnable_1">Enabled</string>
+      <string id="ProwlEnable_2">Disabled</string>
+      <string id="ProwlApiKeychain">Prowl API Keychain (up to 5 values, separated by commas, no spaces)</string>
+      <string id="H_NmaNotification">Android Notification Via NMA</string>
+      <string id="NmaNotificationHelp">This setting specifies settings for sending alert notifications via Notify My Android to Android devices. NMA is supported on many/most Android phones and tablets. If this policy is enabled, the NMA notifications are administrator defined and cannot be changed by the user. If this policy is disabled, NMA notifications are disabled and cannot be enabled or changed by the user. If this policy is not configured, users are free to configure the NMA settings.</string>
+      <string id="NmaEnable">Send disk health alerts via NMA</string>
+      <string id="NmaEnable_1">Enabled</string>
+      <string id="NmaEnable_2">Disabled</string>
+      <string id="NmaApiKeychain">NMA API Keychain (up to 5 values, separated by commas, no spaces)</string>
+      <string id="I_ToastyNotification">Windows Phone Notification Via Toasty</string>
+      <string id="ToastyNotificationHelp">This setting specifies settings for sending alert notifications via Toasty to Windows Phone devices. Toasty is supported on Windows Phone 7 devices (and possibly Windows Phone 8). If this policy is enabled, the Toasty notifications are administrator defined and cannot be changed by the user. If this policy is disabled, Toasty notifications are disabled and cannot be enabled or changed by the user. If this policy is not configured, users are free to configure the Toasty settings.</string>
+      <string id="ToastyEnable">Send disk health alerts via Toasty</string>
+      <string id="ToastyEnable_1">Enabled</string>
+      <string id="ToastyEnable_2">Disabled</string>
+      <string id="ToastyApiKeychain">Toasty Device IDs (up to 5 GUIDs, separated by commas, no curly braces or spaces)</string>
+      <string id="J_GrowlNotification">Desktop Notification Via Growl</string>
+      <string id="GrowlNotificationHelp">This setting specifies settings for sending alert notifications to the Growl desktop client. You can send Growl notifications to the local machine or to a remote machine running Growl, including a Mac running Growl. If this policy is enabled, the Growl notifications are administrator defined and cannot be changed by the user. If this policy is disabled, Growl notifications are disabled and cannot be enabled or changed by the user. If this policy is not configured, users are free to configure the Growl settings.
+
+If sending Growl alerts to a remote machine, you MUST paste the ENCRYPTED password value. The easiest way to set this up is to install WindowSMART on an administrator's PC, customize as desired and then export the Registry settings. You will need to copy the GrowlPassword registry value.</string>
+      <string id="GrowlEnable">Send disk health alerts via Growl</string>
+      <string id="GrowlEnable_1">Enabled</string>
+      <string id="GrowlEnable_2">Disabled</string>
+      <string id="GrowlRemoteEnable">Send alerts to remote computer instead of local</string>
+      <string id="GrowlRemoteEnable_1">Send alerts to REMOTE computer</string>
+      <string id="GrowlRemoteEnable_2">Keep alerts on LOCAL computer</string>
+      <string id="GrowlRemotePrt">Remote computer port (default 23053)</string>
+      <string id="GrowlRemotePC">Remote computer name</string>
+      <string id="GrowlRemotePDubya">Remote computer password (paste encrypted value)</string>
+      <string id="K_SnarlNotification">Desktop Notification Via Snarl</string>
+      <string id="SnarlNotificationHelp">This setting specifies settings for sending alert notifications to the Snarl desktop client. You can send Snarl notifications to the local machine. If this policy is enabled, the Snarl notifications are administrator defined and cannot be changed by the user. If this policy is disabled, Snarl notifications are disabled and cannot be enabled or changed by the user. If this policy is not configured, users are free to configure the Snarl settings.</string>
+      <string id="SnarlEnable">Send disk health alerts via Snarl</string>
+      <string id="SnarlEnable_1">Enabled</string>
+      <string id="SnarlEnable_2">Disabled</string>
+      <string id="L_AdvancedSettings">Advanced Configuration Settings</string>
+      <string id="AdvancedSettingsHelp">These settings allow you to control which options on the Advanced tab are available to users. Items include deletion of stale disk data, resetting defaults and debug log configuration. If this policy is enabled, the options you specify are enforced on the user. If this policy is disabled, all advanced options are disabled and unavailable to the user. If this policy is not configured, all advanced options are available to the user. (If the user resets settings, any other configured WindowSMART policies will be reapplied on the next policy refresh.)</string>
+      <string id="DeleteStale">Allow user to delete stale disk data (recommended)</string>
+      <string id="DeleteStale_1">Deletes allowed</string>
+      <string id="DeleteStale_2">Deletes forbidden</string>
+      <string id="RestoreDefaults">Allow user to restore default settings</string>
+      <string id="RestoreDefaults_1">Allowed</string>
+      <string id="RestoreDefaults_2">Forbidden</string>
+      <string id="ResetEverything">Allow user to reset everything</string>
+      <string id="ResetEverything_1">Allowed</string>
+      <string id="ResetEverything_2">Forbidden</string>
+      <string id="WmiFallback">When P/Invoke call fails to get disk data</string>
+      <string id="WmiFallback_1">Fall back to WMI (recommended)</string>
+      <string id="WmiFallback_2">Allow the call to fail (not recommended)</string>
+      <string id="ZeroThresh">Try zero-threshold method on SiI if primary method fails</string>
+      <string id="ZeroThresh_1">Use zero-threshold method</string>
+      <string id="ZeroThresh_2">Do not use zero-threshold method</string>
+      <string id="M_Debugging">Debug Logging</string>
+      <string id="DebuggingHelp">These settings allow you to control whether or not users can create SmartInspect debug logs. If this policy is enabled, you can control whether logging is allowed, mandatory or forbidden, as well as the debug location. If this policy is disabled, logs are never generated. If this policy is not configured, the user has full control over the logging, including the log location.
+
+Set the 'SmartInspect Debug Logging is' field to Allow for the user to decide whether to enable logging, Mandatory to always generate logs or Forbidden to never create logs.
+
+The SmartInspect Debug Log Location field is always required, even if logging is forbidden. If unsure of a location, specify %DEFAULT% to let the operating system use its default location (i.e. C:\ProgramData), or specify a custom path.</string>
+      <string id="LogRequirement">SmartInspect Debug Logging is</string>
+      <string id="LogRequirement_1">Allowed</string>
+      <string id="LogRequirement_2">Mandatory</string>
+      <string id="LogRequirement_3">Forbidden</string>
+      <string id="LogLocation">SmartInspect Debug Log Location (required)</string>
+      <string id="N_SolidState">SSD-Specific Settings</string>
+      <string id="SolidStateHelp">These settings allow you to control alert thresholds for Solid State Disks (SSDs). If this policy is enabled, the alert thresholds are administrator-set and cannot be changed by the user. If this policy is disabled or not configured, the user is able to change the alert thresholds.</string>
+      <string id="CriticalWearout">Critical Wearout/Life Left Threshold</string>
+      <string id="WarningWearout">Warning Wearout/Life Left Threshold</string>
+      <string id="CriticalRetirement">Critical Sector Retirement Threshold</string>
+      <string id="WarningRetirement">Warning Sector Retirement Threshold</string>
+      <string id="O_CheckForUpdates">Allow user to check for updates</string>
+      <string id="CheckForUpdatesHelp">Set this policy to Disabled to prevent the user from checking for product updates. Set this policy to Enabled or leave at Not Configured to allow the user to check for updates.</string>
+      <string id="P_UiTheme">User interface theme</string>
+      <string id="UiThemeHelp">Allows you to specify whether the user can customize the WindowSMART client UI. If this policy is enabled, the settings you select are enforced and cannot be changed by the user. If this policy is disabled, the main window background is set to No Texture and window header color is set to Green (default), and cannot be changed. If this policy is not configured, the user can change both theme settings.</string>
+      <string id="WindowBackground">Main Window Background</string>
+      <string id="WindowBackground_1">Metal Grate</string>
+      <string id="WindowBackground_2">Lightning</string>
+      <string id="WindowBackground_3">Cracked Glass</string>
+      <string id="WindowBackground_4">No Texture</string>
+      <string id="WindowHeaderColor">Window Header/Help About Dialogue Color</string>
+      <string id="HeaderColor_1">Green</string>
+      <string id="HeaderColor_2">Blue</string>
+      <string id="S_CustomSupportMessage">Custom support message</string>
+      <string id="CustomSupportMessageHelp">Sets a custom support message for users. If your environment is configured such that end users can receive WindowSMART alerts, they may be frightened or unsure of what action to take. Here you can specify a custom support message with instructions on what they should so, such as, 'Please contact the Helpdesk at +1-999-555-1111, option 4 for further assistance.' There is a 256-character limit to the message.
+
+If this policy is enabled, you must define the support message. If this policy is disabled, no custom support message is ever appended to alerts. If this policy is not configured, the support message can be configured through the use of the WindowSMART Enterprise Management command line tool.</string>
+      <string id="CustomMessageText">Support message text</string>
+      <string id="R_EmergencyBackup">Emergency backup when disk failure is detected</string>
+      <string id="EmergencyBackupHelp">Controls whether or not WindowSMART will run an emergency backup if a disk failure condition is detected. WindowSMART can run an emergency backup either to a local drive or to a shared drive over the network, and can also run a third-party program. If this policy is enabled, the settings you select are enforced and cannot be changed by the user. If this policy is disabled, an emergency backup will never run. If this policy is not configured, users are free to customize emergency backup settings.
+
+If backing up over the network, you MUST specify a username and password. The password is stored encrypted, so you MUST paste the ENCRYPTED password value. The easiest way to set this up is to install WindowSMART on an administrator's PC, customize as desired and then export the Registry settings. You will need to copy the BackupPass registry value.
+
+When specifying directories to include in a backup, enter them one per line. Note that an emergency backup will attempt to determine the drive letter(s) of a failing disk(s), so an emergency backup will only back up data from drive letter(s) on failing disks, not all of the specified folders. If the drive letters cannot be determined, all specified folders will be backed up.
+
+Excluding items: To exclude items, you need to specify the pattern to exclude. If you want to exclude files or folders containing the term 'helloworld' then specify 'helloworld'. To exclude folders (and their contents) that start with the name 'helloworld' specify '\helloworld'. To exclude files with a .TMP extension specify '.tmp'. Do NOT use wildcard characters (* or ?) in your exclude items.
+
+If running a third-party backup program, you can specify the arguments {PHYSICALDISKS} and {DRIVELETTERS} to pass a comma-separated list of failing disk numbers and letters, respectively, to the backup program.</string>
+      <string id="EnableEmergencyBackup">Emergency backup behavior if disk reports failure (TEC)</string>
+      <string id="PerformEmergencyBackup_1">Run emergency backup</string>
+      <string id="PerformEmergencyBackup_2">Do not run emergency backup</string>
+      <string id="HotBackup">Emergency backup behavior if TEC is on temperature or airflow temperature</string>
+      <string id="PerformHotBackup_1">Do not run emergency backup</string>
+      <string id="PerformHotBackup_2">Run emergency backup anyway</string>
+      <string id="EmergencyBackupNetwork">Emergency backup target</string>
+      <string id="BackupLocal_1">Local Path</string>
+      <string id="BackupLocal_2">Network Shared Drive</string>
+      <string id="BackupLocalPath">Local backup target (i.e. D:\Backups)</string>
+      <string id="BackupRemotePath">Shared drive target (i.e. \\backupserver\backups)</string>
+      <string id="RemoteBackupUser">Username for remote backup (required for network backup) - specify in format domain\username or user@domain</string>
+      <string id="RemoteBackupPassword">Password for remote backup user (paste encrypted value)</string>
+      <string id="ItemsToInclude">Directories to include in the backup (one per line) (Example: D:\\Users\\John)</string>
+      <string id="ItemsToExclude">Items to exclude (one per line) (Example: .tmp)</string>
+      <string id="DoCustomBackup">Run a third-party backup program (or other tool)</string>
+      <string id="PerformCustomBackup_1">Run third-party backup</string>
+      <string id="PerformCustomBackup_2">Do not run third-party backup</string>
+      <string id="CustomProgram">Full path and executable of third-party program</string>
+      <string id="CustomArgs">Optional program arguments</string>
+      <string id="T_DiagnosticUpload">Developer diagnostic debugging upload</string>
+      <string id="DiagnosticUploadHelp">Controls whether or not end users are allowed to generate and upload a diagnostic debugging report. Such a report contains details about the computer, debug logs (if they are available) and a free-form text field where users can type details about a problem they've experienced. If this policy is enabled, you can customize whether users can generate such reports and, if they are allowed, you can specify an alternate FTP server (with credentials) where they should be sent. The credentials are not encrypted. If this policy is enabled, debugging report uploads are controlled by the settings you specify. If this policy is disabled, users cannot generate debugging reports. If this policy is not configured, users can generate debug reports and they will be sent to Dojo North Software.
+
+NOTE: If you want to have reports uploaded to an internal server, you MUST specify values for ALL three FTP fields: server, username and password. If any are left blank, all will be ignored.</string>
+      <string id="AllowDiagnosticReport">Allow diagnostic reports to be created and sent</string>
+      <string id="AllowDiagnosticReport_1">Allowed (recommended)</string>
+      <string id="AllowDiagnosticReport_2">Forbidden</string>
+      <string id="FtpServer">Corporate FTP Server</string>
+      <string id="FtpUser">FTP username</string>
+      <string id="FtpPass">FTP password (not encrypted)</string>
+      <string id="ADMXMigrator_UnresolvedString">ADMX Migrator encountered a string that is not present in the source ADM string table.</string>
+      <string id="ADMXMigrator_NoSupportedOn">ADMX Migrator encountered a policy that does not have a supportedOn value.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="A_DiskPollingAnalysis">
+        <decimalTextBox refId="DiskPollingInterval" defaultValue="600000">Disk Polling Interval for SMART Data (milliseconds - 180000 = 3 minutes, 600000 = 10 minutes, 3600000 = 1 hour, 86400000 = 1 day, 648000000 = 1 week)</decimalTextBox>
+        <dropdownList refId="RaiseWarningAlert" noSort="true">Notify if a disk generates a Warning alert</dropdownList>
+        <dropdownList refId="RaiseGeriatricAlert" noSort="true">Notify if a disk generates a Geriatric alert</dropdownList>
+      </presentation>
+      <presentation id="B_Temperatures">
+        <dropdownList refId="TemperatureDisplayPreference">Temperature Display Preference</dropdownList>
+        <decimalTextBox refId="TempDisplayCritical" defaultValue="65">Critical Temperature Threshold</decimalTextBox>
+        <decimalTextBox refId="TempDisplayOverheated" defaultValue="55">Overheated Temperature Threshold</decimalTextBox>
+        <decimalTextBox refId="TempDisplayHot" defaultValue="50">Hot Temperature Threshold</decimalTextBox>
+        <decimalTextBox refId="TempDisplayWarm" defaultValue="42">Warm Temperature Threshold</decimalTextBox>
+        <dropdownList refId="TempIgnoreHot" noSort="true" defaultItem="1">When a hot disk is detected</dropdownList>
+        <dropdownList refId="TempIgnoreWarm" noSort="true">When a warm disk is detected</dropdownList>
+        <dropdownList refId="ThermalEmergencyShutdown" noSort="true" defaultItem="1">Action to take in a thermal emergency - a disk remains overheated or critically hot for 3 or more consecutive polling intervals</dropdownList>
+      </presentation>
+      <presentation id="D_VirtualDisks">
+        <dropdownList refId="NeverEnumerateVDs" noSort="true">Virtual disk behavior</dropdownList>
+      </presentation>
+      <presentation id="C_AllowIgnore" />
+      <presentation id="Q_BlockUI" />
+      <presentation id="E_EmailNotification">
+        <dropdownList refId="EmailEnable" noSort="true" defaultItem="1">Email alerts are</dropdownList>
+        <textBox refId="EmailServerHost">
+          <label>Server Hostname</label>
+        </textBox>
+        <decimalTextBox refId="EmailServerPort" defaultValue="25">Server Port</decimalTextBox>
+        <dropdownList refId="EmailUseSsl" noSort="true" defaultItem="1">Use SSL</dropdownList>
+        <textBox refId="EmailSenderFriendly">
+          <label>Sender Friendly Name</label>
+        </textBox>
+        <textBox refId="EmailSenderAddress">
+          <label>Sender Email Address</label>
+        </textBox>
+        <dropdownList refId="EmailUseAuthentication" noSort="true" defaultItem="1">Server authentication</dropdownList>
+        <textBox refId="EmailUserName">
+          <label>Username (paste encrypted value)</label>
+        </textBox>
+        <textBox refId="EmailUserPassword">
+          <label>Password (paste encrypted value)</label>
+        </textBox>
+        <textBox refId="EmailRecipient1Friendly">
+          <label>Recipient Friendly Name</label>
+        </textBox>
+        <textBox refId="EmailRecipient1Address">
+          <label>Recipient Email Address</label>
+        </textBox>
+        <textBox refId="EmailRecipient2Address">
+          <label>Recipient 2 Address (optional)</label>
+        </textBox>
+        <textBox refId="EmailRecipient3Address">
+          <label>Recipient 3 Address (optional)</label>
+        </textBox>
+      </presentation>
+      <presentation id="F_BoxcarNotification">
+        <dropdownList refId="BoxcarEnable" noSort="true" defaultItem="1">Send disk health alerts via Boxcar</dropdownList>
+        <textBox refId="BoxcarEmailAddress">
+          <label>Email Address(es) (separate multiple addresses by commas, no spaces)</label>
+        </textBox>
+      </presentation>
+      <presentation id="G_ProwlNotification">
+        <dropdownList refId="ProwlEnable" noSort="true" defaultItem="1">Send disk health alerts via Prowl</dropdownList>
+        <textBox refId="ProwlApiKeychain">
+          <label>Prowl API Keychain (up to 5 values, separated by commas, no spaces)</label>
+        </textBox>
+      </presentation>
+      <presentation id="H_NmaNotification">
+        <dropdownList refId="NmaEnable" noSort="true" defaultItem="1">Send disk health alerts via NMA</dropdownList>
+        <textBox refId="NmaApiKeychain">
+          <label>NMA API Keychain (up to 5 values, separated by commas, no spaces)</label>
+        </textBox>
+      </presentation>
+      <presentation id="I_ToastyNotification">
+        <dropdownList refId="ToastyEnable" noSort="true" defaultItem="1">Send disk health alerts via Toasty</dropdownList>
+        <textBox refId="ToastyApiKeychain">
+          <label>Toasty Device IDs (up to 5 GUIDs, separated by commas, no curly braces or spaces)</label>
+        </textBox>
+      </presentation>
+      <presentation id="J_GrowlNotification">
+        <dropdownList refId="GrowlEnable" noSort="true" defaultItem="1">Send disk health alerts via Growl</dropdownList>
+        <dropdownList refId="GrowlRemoteEnable" noSort="true" defaultItem="1">Send alerts to remote computer instead of local</dropdownList>
+        <textBox refId="GrowlRemotePC">
+          <label>Remote computer name</label>
+        </textBox>
+        <decimalTextBox refId="GrowlRemotePrt" defaultValue="23053">Remote computer port (default 23053)</decimalTextBox>
+        <textBox refId="GrowlRemotePDubya">
+          <label>Remote computer password (paste encrypted value)</label>
+        </textBox>
+      </presentation>
+      <presentation id="K_SnarlNotification">
+        <dropdownList refId="SnarlEnable" noSort="true" defaultItem="1">Send disk health alerts via Snarl</dropdownList>
+      </presentation>
+      <presentation id="L_AdvancedSettings">
+        <dropdownList refId="DeleteStale" noSort="true">Allow user to delete stale disk data (recommended)</dropdownList>
+        <dropdownList refId="RestoreDefaults" noSort="true">Allow user to restore default settings</dropdownList>
+        <dropdownList refId="ResetEverything" noSort="true">Allow user to reset everything</dropdownList>
+        <dropdownList refId="WmiFallback" noSort="true">When P/Invoke call fails to get disk data</dropdownList>
+        <dropdownList refId="ZeroThresh" noSort="true" defaultItem="1">Try zero-threshold method on SiI if primary method fails</dropdownList>
+      </presentation>
+      <presentation id="M_Debugging">
+        <dropdownList refId="LogRequirement" noSort="true">SmartInspect Debug Logging is</dropdownList>
+        <textBox refId="LogLocation">
+          <label>SmartInspect Debug Log Location (required)</label>
+        </textBox>
+      </presentation>
+      <presentation id="N_SolidState">
+        <decimalTextBox refId="CriticalWearout" defaultValue="10">Critical Wearout/Life Left Threshold</decimalTextBox>
+        <decimalTextBox refId="WarningWearout" defaultValue="30">Warning Wearout/Life Left Threshold</decimalTextBox>
+        <decimalTextBox refId="CriticalRetirement" defaultValue="150">Critical Sector Retirement Threshold</decimalTextBox>
+        <decimalTextBox refId="WarningRetirement" defaultValue="50">Warning Sector Retirement Threshold</decimalTextBox>
+      </presentation>
+      <presentation id="O_CheckForUpdates" />
+      <presentation id="P_UiTheme">
+        <dropdownList refId="WindowBackground" noSort="true">Main Window Background</dropdownList>
+        <dropdownList refId="WindowHeaderColor" noSort="true">Window Header/Help About Dialogue Color</dropdownList>
+      </presentation>
+      <presentation id="S_CustomSupportMessage">
+        <textBox refId="CustomMessageText">
+          <label>Support message text</label>
+        </textBox>
+      </presentation>
+      <presentation id="R_EmergencyBackup">
+        <dropdownList refId="EnableEmergencyBackup" noSort="true">Emergency backup behavior if disk reports failure (TEC)</dropdownList>
+        <dropdownList refId="HotBackup" noSort="true">Emergency backup behavior if TEC is on temperature or airflow temperature</dropdownList>
+        <dropdownList refId="EmergencyBackupNetwork" noSort="true">Emergency backup target</dropdownList>
+        <textBox refId="BackupLocalPath">
+          <label>Local backup target (i.e. D:\Backups)</label>
+        </textBox>
+        <textBox refId="BackupRemotePath">
+          <label>Shared drive target (i.e. \\backupserver\backups)</label>
+        </textBox>
+        <textBox refId="RemoteBackupUser">
+          <label>Username for remote backup (required for network backup) - specify in format domain\username or user@domain</label>
+        </textBox>
+        <textBox refId="RemoteBackupPassword">
+          <label>Password for remote backup user (paste encrypted value)</label>
+        </textBox>
+        <dropdownList refId="DoCustomBackup" noSort="true">Run a third-party backup program (or other tool)</dropdownList>
+        <textBox refId="CustomProgram">
+          <label>Full path and executable of third-party program</label>
+        </textBox>
+        <textBox refId="CustomArgs">
+          <label>Optional program arguments</label>
+        </textBox>
+      </presentation>
+      <presentation id="T_DiagnosticUpload">
+        <dropdownList refId="AllowDiagnosticReport" noSort="true">Allow diagnostic reports to be created and sent</dropdownList>
+        <textBox refId="FtpServer">
+          <label>Corporate FTP Server</label>
+        </textBox>
+        <textBox refId="FtpUser">
+          <label>FTP username</label>
+        </textBox>
+        <textBox refId="FtpPass">
+          <label>FTP password (not encrypted)</label>
+        </textBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

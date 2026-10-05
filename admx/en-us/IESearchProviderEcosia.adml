@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="11.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>enter display name here</displayName>
+  <description>enter description here</description>
+  <resources>
+    <stringTable>
+      <string id="AddSearchProvider">Add Ecosia to user's list of search providers</string>
+      <string id="Ecosia">Ecosia</string>
+      <string id="InternetExplorer">Internet Explorer</string>
+      <string id="IE_ExplainAddSearchProvider">This policy adds Ecosia to the user's default list of search providers. Normally, search providers can be added from third-party toolbars or in Setup. The user can also add a search provider from the provider's website.
+
+If you enable this policy setting, the user can add and remove search providers, but only from the set of search providers specified in the list of policy keys for search providers (found under [HKCU or HKLM\Software\policies\Microsoft\Internet Explorer\SearchScopes]).
+
+If you disable or do not configure this policy setting, the user can configure their list of search providers unless another policy setting restricts such configuration.</string>
+      <string id="IE_ExplainCat">Contains settings to configure Internet Explorer</string>
+      <string id="IE_ExplainNoSearchProvider">This policy setting prevents the user from changing the default search provider for the Address bar and the toolbar Search box.
+
+If you enable this policy setting, the user cannot change the default search provider.
+
+If you disable or do not configure this policy setting, the user can change the default search provider.</string>
+      <string id="IE_Explain_PopulateSearchProviderList">This policy adds Ecosia to the list of search providers that will be displayed in Internet Explorer's search box.
+
+If you enable this policy setting and if the "Restrict search providers to a specific list of search providers" Group Policy setting is enabled, this list will be the only list that appears in the Internet Explorer drop-down list. If the "Add Ecosia to user's list of search providers" Group Policy setting is enabled, Ecosia will be added to the user's list of search providers.
+
+If you disable this policy setting or do not configure it, users will have complete freedom to create their own search provider list.</string>
+      <string id="IE_ExplainSpecificSearchProvider">This policy setting allows you to restrict the search providers that appear in the Search box in Internet Explorer to those defined in the list of policy keys for search providers (found under [HKCU or HKLM\Software\policies\Microsoft\Internet Explorer\SearchScopes]). Normally, search providers can be added from third-party toolbars or in Setup, but the user can also add them from a search provider's website.
+
+If you enable this policy setting, the user cannot configure the list of search providers on his or her computer, and any default providers installed do not appear (including providers installed from other applications). The only providers that appear are those in the list of policy keys for search providers. Note: This list can be created through a custom administrative template file. For information about creating this custom administrative template file, see the Internet Explorer documentation on search providers.
+
+If you disable or do not configure this policy setting, the user can configure his or her list of search providers.</string>
+      <string id="NoSearchProvider">Prevent changing the default search provider</string>
+      <string id="PopulateSearchProviderList">Add Ecosia to search providers</string>
+      <string id="SpecificSearchProvider">Restrict search providers to Ecosia</string>
+      <string id="SUPPORTED_IE7">At least Internet Explorer 7.0</string>
+    </stringTable>
+  </resources>
+</policyDefinitionResources>

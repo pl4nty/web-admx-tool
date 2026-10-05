@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions" ><!--Created using ADM Template Editor V4.2.15-->
+<!--Created on 12 Feb 2015 17:53:39-->
+<!--ADM Template Editor is marketed by Syspro. Visit us at www.sysprosoft.com-->
+
+	<displayName >Enter Display Name here</displayName>
+	<description >Enter Description of ADMX File</description>
+	<resources >
+		<stringTable ><!--Storage for String Definitions-->
+
+			<string id="String_SupportedOn_Undefined_2" >At least Microsoft Windows Vista.</string>
+			<string id="String_Cat_SolarWinds_Orion_4" >SolarWinds Orion Agent</string>
+			<string id="String_CatExplain_44" />
+			<string id="String_Policy_Policy_to_Configure_6" >Policy to Configure SolarWinds Orion Agent</string>
+			<string id="String_Explain_7" >Help Area with descriptions of the fields.
+			Providing target information is switching agent into provisioning mode</string>
+			<string id="String_Policy_DropList_Select_Policy_to_Configure_True_39" >True</string>
+			<string id="String_Policy_DropList_Select_Policy_to_Configure_False_40" >False</string>
+			<string id="String_Policy_DropList_Select_Policy_to_Configure_True_16" >True</string>
+			<string id="String_Policy_DropList_Select_Policy_to_Configure_False_17" >False</string>
+			<string id="String_Policy_DropList_Select_Policy_to_Configure_True_36" >True</string>
+			<string id="String_Policy_DropList_Select_Policy_to_Configure_False_37" >False</string>
+			<string id="String_Policy_DropList_Select_Policy_to_Configure_Default_52" >Default</string>
+			<string id="String_Policy_DropList_Select_Policy_to_Configure_AutoDiscovery_53" >AutoDiscovery</string>
+			<string id="String_Policy_DropList_Select_Policy_to_Configure_Disabled_54" >Disabled</string>
+			<string id="String_Policy_DropList_Select_Policy_to_Configure_UserDefined_55" >UserDefined</string>
+		</stringTable>
+		<presentationTable ><!--Storage for Presentation Definitions-->
+
+			<presentation id="Policy_Policy_to_Configure_5" >
+				<textBox refId="Policy_TextBox_Element_Policy_to_Configure_8" >
+					<label >Policy Version:</label>
+				</textBox>
+				<textBox refId="Policy_TextBox_Element_Policy_to_Configure_10" >
+					<label >Target Host:</label>
+				</textBox>
+				<textBox refId="Policy_TextBox_Element_Policy_to_Configure_11" >
+					<label >Target IP:</label>
+				</textBox>
+				<decimalTextBox refId="Policy_Numeric_ElementPolicy_to_Configure_12" spinStep="1" spin="true" defaultValue="17778" >Target Port:</decimalTextBox>
+				<dropdownList refId="Policy_DropList_Element_Policy_to_Configure_38" defaultItem="1" >Use Web Server:</dropdownList>
+				<decimalTextBox refId="Policy_Numeric_ElementPolicy_to_Configure_14" spinStep="1" spin="true" defaultValue="17790" >Web Server Port:</decimalTextBox>
+				<dropdownList refId="Policy_DropList_Element_Policy_to_Configure_15" defaultItem="1" >AutoUpgrade:</dropdownList>
+				<textBox refId="Policy_TextBox_Element_Policy_to_Configure_22" >
+					<label >Certificate Store:</label>
+				</textBox>
+				<textBox refId="Policy_TextBox_Element_Policy_to_Configure_23" >
+					<label >Certificate StoreType:</label>
+					<defaultValue >LocalMachine</defaultValue>
+				</textBox>
+				<textBox refId="Policy_TextBox_Element_Policy_to_Configure_25" >
+					<label >Certificate Serial:</label>
+				</textBox>
+				<textBox refId="Policy_TextBox_Element_Policy_to_Configure_24" >
+					<label >Certificate Subject:</label>
+				</textBox>
+				<textBox refId="Policy_TextBox_Element_Policy_to_Configure_26" >
+					<label >Certificate Thumbprint:</label>
+				</textBox>
+				<textBox refId="Policy_TextBox_Element_Policy_to_Configure_21" >
+					<label >Shared Secret:</label>
+				</textBox>
+				<dropdownList refId="Policy_DropList_Element_Policy_to_Configure_35" defaultItem="1" >Logging Enabled?</dropdownList>
+				<decimalTextBox refId="Policy_Numeric_ElementPolicy_to_Configure_28" spinStep="1" spin="true" defaultValue="1" >Logging Options:</decimalTextBox>
+				<decimalTextBox refId="Policy_Numeric_ElementPolicy_to_Configure_29" spinStep="1" spin="true" defaultValue="1" >Logging Level:</decimalTextBox>
+				<decimalTextBox refId="Policy_Numeric_ElementPolicy_to_Configure_30" spinStep="1" spin="true" defaultValue="1" >Logging File Size (MB):</decimalTextBox>
+				<decimalTextBox refId="Policy_Numeric_ElementPolicy_to_Configure_31" spinStep="1" spin="true" defaultValue="1" >Logging Max Files:</decimalTextBox>
+				<textBox refId="Policy_TextBox_Element_Policy_to_Configure_45" >
+					<label >CACertStoreType:</label>
+				</textBox>
+				<textBox refId="Policy_TextBox_Element_Policy_to_Configure_46" >
+					<label >CACertStore:</label>
+				</textBox>
+				<textBox refId="Policy_TextBox_Element_Policy_to_Configure_47" >
+					<label >CACertSubject:</label>
+				</textBox>
+				<decimalTextBox refId="Policy_Numeric_ElementPolicy_to_Configure_48" spinStep="100" spin="true" defaultValue="900" >MaintenancePeriod_s:</decimalTextBox>
+				<decimalTextBox refId="Policy_Numeric_ElementPolicy_to_Configure_49" spinStep="1000" spin="true" defaultValue="5000" >ReconnectTimeout_ms:</decimalTextBox>
+				<decimalTextBox refId="Policy_Numeric_ElementPolicy_to_Configure_50" spinStep="1000" spin="true" defaultValue="60000" >ClientPoll_ms:</decimalTextBox>
+				<dropdownList refId="Policy_DropList_Element_Policy_to_Configure_51" defaultItem="0" >Http Proxy Access Type:</dropdownList>
+				<textBox refId="Policy_TextBox_Element_Policy_to_Configure_56" >
+					<label >Http Proxy Uri:</label>
+				</textBox>
+				<textBox refId="Policy_TextBox_Element_Policy_to_Configure_19" >
+					<label >Web Proxy Username:</label>
+				</textBox>
+				<textBox refId="Policy_TextBox_Element_Policy_to_Configure_20" >
+					<label >Web Proxy Password:</label>
+				</textBox>
+			</presentation>
+		</presentationTable>
+	</resources>
+</policyDefinitionResources>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	Policy Definition template language file (en-US)
+	Product: Access Director
+	Version: 2.5.0
+	Revision: 1.1.0
+
+	(c) 2015 NoLightPeople
+	(w) http://nolightpeople.com
+	(t) http://twitter.com/nolightpeople/
+-->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+	<displayName>Access Director</displayName>
+	<description>Access Director policy settings</description>
+	<resources>
+		<stringTable>
+			<!-- Categories -->
+			<string id="AccessDirectorCategory">Access Director</string>
+			<string id="AccessDirectorCategory_help">Contains settings to control the behavior of Access Director.</string>
+
+			<string id="AccessDirectorAdvancedCategory">Advanced Settings</string>
+			<string id="AccessDirectorAdvancedCategory_help">Contains settings to control advanced settings for Access Director.</string>
+
+			<string id="AccessDirectorAuditCategory">Audit Settings</string>
+			<string id="AccessDirectorAuditCategory_help">Contains settings to control behavior of Access Director Audit settings.</string>
+
+			<string id="AccessDirectorConnectorCategory">Connector Settings</string>
+			<string id="AccessDirectorConnectorCategory_help">Contains settings to control behavior of Access Director Connector settings.</string>
+
+			<string id="AccessDirectorLocalizationCategory">Localization Settings</string>
+			<string id="AccessDirectorLocalizationCategory_help">Contains settings to control behavior of Access Director Localization settings.</string>
+
+			<!-- Standard Settings -->
+			<string id="AccessGroup">Enable Local Security Group</string>
+			<string id="AccessGroup_help">If you enable this policy setting, Access Director will validate if the current user is member of the defined group. If you enable this policy setting and the local security group does not exist or user is not a member, Access Director will restrict the user from assigning privileges. User is required to be direct member, as service do not resolve local group or domain group membership. If you disable or do not configure this setting, Access Director does not validate against a Local Security Group allowing current user to assigned privileges.</string>
+			
+      <string id="AccessPeriod">Set time-span for assigning privileges</string>
+			<string id="AccessPeriod_help">This policy setting sets the time-span for users to gain administrative privileges. If you enable this setting, time-span can be from to one to 60 minutes. If you disable do not configure this setting Access Director will use default value.</string>
+			<string id="AccessPeriodT-01">1 minute</string>
+			<string id="AccessPeriodT-02">2 minutes (default)</string>
+			<string id="AccessPeriodT-05">5 minutes</string>
+			<string id="AccessPeriodT-10">10 minutes</string>
+			<string id="AccessPeriodT-15">15 minutes</string>
+			<string id="AccessPeriodT-20">20 minutes</string>
+			<string id="AccessPeriodT-30">30 minutes</string>
+			<string id="AccessPeriodT-60">1 hour</string>
+
+			<string id="Identity">Set user name presentation</string>
+			<string id="Identity_help">This policy setting configure the presentation of the user name for the Access Director Tray icon. If you enable this policy setting, user name can be set as Username, Full name or Domain\Username. If you disable or do not configure this policy setting, Access Director will use default value.</string>
+			<string id="IdentityType1">User name</string>
+			<string id="IdentityType2">Full name</string>
+			<string id="IdentityType3">Domain\User name</string>
+
+			<!-- Advanced Settings -->
+			<string id="AssignPrivilegesAtLogin">Assign privileges at login</string>
+			<string id="AssignPrivilegesAtLogin_help">If you enable this policy setting, Access Director will is assign privileges to the users at login. Following the users is not required to use tray icon to assign privileges and the user is having privileges assigned during the whole login period. If you disable or do not configure this policy setting, the users is required to use tray icon to assign privileges.</string>
+
+			<string id="Resuscitate">Enable resuscitate</string>
+			<string id="Resuscitate_help">If you enable this policy setting, you can specify if Access Director will preserve local administrator membership during logoff/restart/shutdown (not recommended). If you disable or do not configure this policy setting, Access Director will remove the user from the local administrator group during an active time-span.</string>
+			<string id="ResuscitateLevel1">Preserve elevation during logout/login</string>
+			<string id="ResuscitateLevel2">Preserve elevation during restart/shutdown</string>
+			<string id="ResuscitateLevel3">Preserve elevation for all</string>
+
+			<string id="UserConfig">Enable user configuration</string>
+			<string id="UserConfig_help">If you enable this policy setting, end users can be giving access to configure settings. Settings available: Allow Basis configuration (Assignment time, Identity), Allow Advanced configuration (AssignAtLogin (disable timer)), Allow Resuscitate configuration (Hidden from configuration window). If you disable or do not configure this policy setting, end users does not have access to configure settings.</string>
+			<string id="UserConfigLevel1">Allow Basis configuration</string>
+			<string id="UserConfigLevel2">Allow Advanced configuration</string>
+			<string id="UserConfigLevel3">Allow Resuscitate configuration</string>
+
+			<string id="VerboseLogging">Enable verbose logging</string>
+			<string id="VerboseLogging_help">If you enable this policy setting, Access Director will do verbose logging to %TEMP%\AccessDirector.log. If you disable or do not configure this policy setting, Access Director will maintain standard logging.</string>
+
+			<!-- Audit Settings -->
+			<string id="Audit">Enable Audit</string>
+			<string id="Audit_help">If you enable this policy setting the Access Director activity is logged in plain text in the audit log placed in %TEMP%\. If you disable or do not configure this policy setting, Access Director do not maintain an audit log.</string>
+
+			<string id="AuditRFE">Enable reason for Assigning Privileges prompt</string>
+			<string id="AuditRFE_help">This policy setting allows you to specify whether Access Director will request ‘reason for Assigning Privileges’ prompt as part of the assignment process. If you disable or do not configure this setting, ‘reason for Assigning Privileges’ prompt is not active. Note: Setting has no effect if “Enable Audit” setting is disabled or not configured.</string>
+
+			<string id="AuditURL">Set Audit URL</string>
+			<string id="AuditURL_help">If you enable this policy setting, Access Director will upload the audit logs to the defined URL. A properly crafted web-service must available and you have to specify the Connector URL. If you disable or do not configure this policy setting audit logs are not collected. Note: Setting has no effect if “Enable Audit” setting is disabled or not configured</string>
+
+			<string id="AuditRefresh">Set Audit refresh interval</string>
+			<string id="AuditRefresh_help">To specify the Audit refresh interval, click Enabled and then enter a value. The value that you specify is the number of seconds to use for the Connector refresh interval. For example, 1800 seconds is 30 minutes.</string>
+
+			<!-- Connector Settings -->
+			<string id="Connector">Enable Connector</string>
+			<string id="Connector_help">If you enable this this policy setting, Access Director will be able to integrate to third-party solutions for assigning privileges validation. If you enable this this policy setting, a properly crafted web-service must available and you have to specify the Connector URL.</string>
+
+			<string id="ConnectorURL">Set Connector URL</string>
+			<string id="ConnectorURL_help">If you enable this policy setting, Access Director will attempt to validate assignments request using third-party integration. If URL is not available, Access Director will use cached information. Note: Setting has no effect if “Enable Connector” setting is disabled or not configured.</string>
+
+			<string id="ConnecterRefresh">Set Connector refresh</string>
+			<string id="ConnecterRefresh_help">To specify the Connector refresh interval, click Enabled and then enter a value. The value that you specify is the number of seconds to use for the Connector refresh interval. For example, 1800 seconds is 30 minutes. Note: Setting has no effect if “Enable Connector” setting is disabled or not configured.</string>
+
+      <string id="ConnecterRefreshInterval">Set Connector refresh interval</string>
+      <string id="ConnecterRefreshInterval_help">If you enable this policy setting, renewing cached information is require within the specified renewal interval. If cached information fails to validate within the renewal interval, Access Director will deny assigning privileges. To specify the Connector renewal interval, click Enabled and then enter a value. The value that you specify is the number of days to use for the Connector renewal interval. Note: Setting has no effect if “Enable Connector” setting is disabled or not configured.</string>
+      <string id="ConnecterRefreshIntervalT-01">1 day</string>
+      <string id="ConnecterRefreshIntervalT-02">2 days</string>
+      <string id="ConnecterRefreshIntervalT-03">3 days</string>
+      <string id="ConnecterRefreshIntervalT-04">4 days</string>
+      <string id="ConnecterRefreshIntervalT-05">5 days</string>
+      <string id="ConnecterRefreshIntervalT-06">6 days</string>
+      <string id="ConnecterRefreshIntervalT-07">1 week</string>
+      <string id="ConnecterRefreshIntervalT-14">2 weeks</string>
+
+      <!-- Localization Settings -->
+			<string id="PreferredUIReference">Enable Preferred UI Reference</string>
+			<string id="PreferredUIReference_help">If you enable this policy setting, you can specify the behavior for UI language is following Windows Display Language or the defined Keyboard layout. If you disable or do not configure this setting, ‘UI language’ will use Windows Display Language as reference. Note: If you configure a language and no applicable .LNG files is not present, Access Director ‘UI language’ will default to English.</string>
+			<string id="UIRef01">Windows Display Language</string>
+			<string id="UIRef02">Keyboard layout</string>
+			
+			<string id="PreferredUILanguage">Enable Preferred UI Language</string>
+			<string id="PreferredUILanguage_help">If you enable this policy setting, Access Director will use to the selected ‘UI language’. If you disable or do not configure this setting, ‘UI language’ will use Windows Display Language as reference. Note: If you configure a language and no applicable .LNG files is not present, Access Director ‘UI language’ will default to English.</string>
+			<string id="UILang01">English</string>
+			<string id="UILang02">Japanese</string>
+			<string id="UILang03">Korean</string>
+			<string id="UILang04">German</string>
+			<string id="UILang05">Simplified Chinese</string>
+			<string id="UILang06">Traditional Chinese</string>
+			<string id="UILang07">French</string>
+			<string id="UILang08">Spanish</string>
+			<string id="UILang09">Italian</string>
+			<string id="UILang10">Swedish</string>
+			<string id="UILang11">Dutch</string>
+			<string id="UILang12">Portuguese (Brazil)</string>
+			<string id="UILang13">Finnish</string>
+			<string id="UILang14">Norwegian</string>
+			<string id="UILang15">Danish</string>
+			<string id="UILang16">Hungarian</string>
+			<string id="UILang17">Polish</string>
+			<string id="UILang18">Russian</string>
+			<string id="UILang19">Czech</string>
+			<string id="UILang20">Greek</string>
+			<string id="UILang21">Portuguese (Portugal)</string>
+			<string id="UILang22">Turkish</string>
+			<string id="UILang23">Arabic</string>
+			<string id="UILang24">Hebrew</string>
+			<string id="UILang25">Slovak</string>
+			<string id="UILang26">Slovenian</string>
+			<string id="UILang27">Romanian</string>
+			<string id="UILang28">Croatian</string>
+			<string id="UILang29">Bulgarian</string>
+			<string id="UILang30">Estonian</string>
+			<string id="UILang31">Lithuanian</string>
+			<string id="UILang32">Latvian</string>
+			<string id="UILang33">Thai</string>
+			<string id="UILang34">Traditional Chinese (Hong Kong)</string>
+			<string id="UILang35">Traditional Chinese (Taiwan)</string>
+			<string id="UILang36">Serbian (Latin)</string>
+			<string id="UILang37">Ukrainian</string>
+
+		</stringTable>
+
+		<presentationTable>
+			<!-- Standard Settings -->
+			<presentation id="AccessGroupPrompt">
+				<textBox refId="AccessGroupPrompt">
+					<label>Type the name of the local security group</label>
+					<defaultValue>Access Director</defaultValue>
+				</textBox>
+			</presentation>
+			<presentation id="AccessPeriodPrompt">
+				<dropdownList refId="AccessPeriodPrompt" noSort="true" defaultItem="1">Select time-frame for asigning privileges</dropdownList>
+			</presentation>
+			<presentation id="IdentityPrompt">
+				<dropdownList refId="IdentityPrompt" noSort="true" defaultItem="1">Select tray icon presentation of user name</dropdownList>
+			</presentation>
+
+			<!-- Advanced Settings -->
+			<presentation id="UserConfigPrompt">
+				<dropdownList refId="UserConfigPrompt" noSort="true" defaultItem="0">Select User configuration level</dropdownList>
+			</presentation>
+			<presentation id="ResuscitatePrompt">
+				<dropdownList refId="ResuscitatePrompt" noSort="true" defaultItem="0">Select Resuscitate options</dropdownList>
+			</presentation>
+
+			<!-- Audit Settings -->
+			<presentation id="AuditURLPrompt">
+				<textBox refId="AuditURLPrompt">
+					<label>Type the location (URL) of your Audit website</label>
+					<defaultValue>http://internal.domain.com/custom/audit.aspx</defaultValue>
+				</textBox>
+			</presentation>
+			<presentation id="AuditRefreshPrompt">
+				<decimalTextBox defaultValue="900" refId="AuditRefreshPrompt">Select Audit refresh interval in seconds</decimalTextBox>
+			</presentation>
+
+			<!-- Connector Settings -->
+			<presentation id="ConnectorURLPrompt">
+				<textBox refId="ConnectorURLPrompt">
+					<label>Type the location (URL) of your Connector website</label>
+					<defaultValue>http://internal.domain.com/custom/connecter.aspx</defaultValue>
+				</textBox>
+			</presentation>
+			<presentation id="ConnecterRefreshPrompt">
+				<decimalTextBox refId="ConnecterRefreshPrompt" defaultValue="900">Select Connector refresh interval in seconds</decimalTextBox>
+			</presentation>
+      <presentation id="ConnecterRefreshIntervalPrompt">
+        <dropdownList refId="ConnecterRefreshIntervalPrompt" noSort="true" defaultItem="3">Select Connector refresh interval in seconds</dropdownList>
+      </presentation>
+
+			<!-- Localization Settings -->
+			<presentation id="PreferredUIReferencePrompt">
+				<dropdownList refId="PreferredUIReferencePrompt" noSort="true" defaultItem="0">Select Preferred UI Reference</dropdownList>
+			</presentation>
+			<presentation id="PreferredUILanguagePrompt">
+				<dropdownList refId="PreferredUILanguagePrompt" noSort="false" defaultItem="6">Select Preferred UI Language</dropdownList>
+			</presentation>
+
+		</presentationTable>
+	</resources>
+</policyDefinitionResources>

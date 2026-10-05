@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+	<displayName>WPKG-GP</displayName>
+	<description>Configures WPKG-GP agent parameters</description>
+	<resources>
+		<stringTable>
+		
+			<string id="WPKG-GP_Main">WPKG-GP</string>
+			<string id="WPKG-GP_Network">Network</string>
+			<string id="WPKG-GP_Misc">Miscellanous</string>
+			
+			<string id="WPKG-GP_Enable">Enable WPKG-GP and configure base settings</string>
+			<string id="WPKG-GP_EnableD">This Policy must be on for Wpkg-GP to work.
+			
+Command path: This is the path to your wpkg.js or cmd/bat script for starting WPKG.
+
+Disable at boot: Disable WPKG-GP execution at boot. Other methods of executing will still work.</string>
+
+			<string id="WPKG-GP_NetworkCredentials">Use specific credentials for network connections</string>
+			<string id="WPKG-GP_NetworkCredentialsD">The specific credentials (username and password) WPKG-GP agent will use when connecting to the network share containing WPKG command (wpkg.js).
+			
+WARNING: The password will be saved in clear-text in the registry. If you want it to be encrypted, configure it via the wpkg-gp.ini file instead.</string>
+
+			<string id="WPKG-GP_ConnectionAttempts">Set number and timing of SMB connection attempts</string>
+			<string id="WPKG-GP_ConnectionAttemptsD">Enable this policy to adjust default number of SMB share mount retries and retry delays.
+			
+As mounting SMB share offers a really long timeout, OS booting might stall singificantly (several minutes) when file server is unaccessible (eg. with mobile computers off the company site).</string>
+
+			<string id="WPKG-GP_NetworkTest">Perform TCP test before SMB logon attempts</string>
+			<string id="WPKG-GP_NetworkTestD">Enable this policy if you want WPKG-GP to perform a simple TCP connection test before trying to mount the share.
+			
+This helps to dramatically reduce boot stall when clients are not within reach of Wpkg network share, as the TCP timeout is much shorter than SMB.
+
+You may use your file server as test host/service. If using different server or service, you must remember to apply same set of network scope access rules for this feature to work properly.</string>
+
+			<string id="WPKG-GP_WpkgVerbosity">Set logging verbosity</string>
+			<string id="WPKG-GP_WpkgVerbosityD">Set level of verbosity for WPKG-GP agent logs. The higher number means more verbose log output.</string>
+
+			<string id="WPKG-GP_WpkgRebootOptions">Configure reboot options</string>
+			<string id="WPKG-GP_WpkgRebootOptionsD">Configure how WPKG-GP agent should react when Wpkg.js requests shutdown (eg. when package requests it)</string>
+
+			<string id="WPKG-GP_WpkgExecuteByNonAdmins">Allow non-admins to execute WPKG-GP</string>
+			<string id="WPKG-GP_WpkgExecuteByNonAdminsD">Configure whether users not in local administrators group should be able to execute Wpkg-GP. 
+			
+Enabling this means that users on other computers that is not a member of the local administrators group on this computer can execute WPKG-GP. Users that are a member of the local Administrators group can always execute WPKG-GP regardless# of this setting.
+
+This setting is disabled by default.</string>
+
+			<string id="WPKG-GP_WpkgExecuteByLocalUsers">Allow local users to execute WPKG-GP</string>
+			<string id="WPKG-GP_WpkgExecuteByLocalUsersD">Configure whether all local users on the computer should be able to execute Wpkg-GP.
+
+This is necessary for the users to initiate installation of software themselves if the setting "Allow non-admins to execute WPKG-GP" is disabled.
+
+This setting is enabled by default.</string>
+
+			<string id="WPKG-GP_WpkgActivityIndicator">Enable activity indicator</string>
+			<string id="WPKG-GP_WpkgActivityIndicatorD">Configure whether to show an activity indicator when Wpkg-GP is executing.
+			
+This setting is enabled by default.</string>
+
+		</stringTable>
+		
+		<presentationTable>
+		
+			<presentation id="WPKG-GP_EnableP">
+				<textBox refId="WPKG-GP_WpkgCommand"><label>WPKG command:</label></textBox>
+				<checkBox refId="WPKG-GP_DisableAtBootUp" defaultChecked="false">Disable WPKG-GP at boot-up</checkBox>
+			</presentation>
+		
+			<presentation id="WPKG-GP_NetworkCredentialsP">
+				<textBox refId="WPKG-GP_WpkgNetworkUsername"><label>Username:</label></textBox>
+				<textBox refId="WPKG-GP_WpkgNetworkPassword"><label>Password:</label></textBox>
+			</presentation>
+		
+			<presentation id="WPKG-GP_ConnectionAttemptsP">
+				<decimalTextBox refId="WPKG-GP_ConnectionTries" defaultValue="7" spinStep="1">Number of attempts to mount share before giving up: </decimalTextBox>
+				<decimalTextBox refId="WPKG-GP_ConnectionSleepBeforeRetry" defaultValue="5" spinStep="1">Delay time between each attempt (s): </decimalTextBox>
+			</presentation>
+		
+			<presentation id="WPKG-GP_NetworkTestP">
+				<textBox refId="WPKG-GP_TestConnectHost"><label>Host to test (IP or hostname):</label></textBox>
+				<decimalTextBox refId="WPKG-GP_TestConnectPort" defaultValue="445" spinStep="1">TCP port: </decimalTextBox>
+				<decimalTextBox refId="WPKG-GP_TestConnectTries" defaultValue="5" spinStep="1">Number of attempts: </decimalTextBox>
+			</presentation>
+		
+			<presentation id="WPKG-GP_WpkgVerbosityP">
+				<decimalTextBox refId="WPKG-GP_WpkgVerbosity" defaultValue="1" spinStep="1">Log verbosity level: </decimalTextBox>
+			</presentation>
+		
+			<presentation id="WPKG-GP_WpkgRebootOptionsP">
+				<checkBox refId="WPKG-GP_WpkgRebootPolicy" defaultChecked="false">Ignore reboot requests sent by wpkg.js</checkBox>
+				<decimalTextBox refId="WPKG-GP_WpkgMaxReboots" defaultValue="5" spinStep="1">Limit number of reboots during single startup session: </decimalTextBox>
+			</presentation>		
+			
+
+		</presentationTable>
+		
+	</resources>
+</policyDefinitionResources>

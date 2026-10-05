@@ -1,0 +1,75 @@
+﻿<!-- Copyright (c) Dell Inc. 2015. All rights reserved. -->
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName>
+  </displayName>
+  <description>
+  </description>
+  <resources>
+    <stringTable>
+	<string id="cname_Battery">Informações da bateria
+    </string>
+	<string id="SUPPORTED_DCPM">Dell Command | Power Manager</string>
+	<string id="BatterySettings">Configurações de bateria
+    </string>
+    <string id="pol_BatterySettings">Essa política personaliza a configuração da bateria. 
+
+Nota: As configurações ocultas da bateria serão ignoradas se alguma opção diferente de "Controlado pelo usuário" for selecionada no campo "Selecionar uma configuração de bateria"
+
+Selecione uma configuração de bateria:	
+Selecione uma opção na lista suspensa para bloquear a configuração.
+
+Nota: Quando "Personalizado" for selecionado, os valores Iniciar o carregamento e Parar o carregamento precisam ser definidos.
+Abaixo estão os valores gerais de início/parada. Os valores podem variar entre os diferentes sistemas. Se um valor especificado não estiver dentro dos recursos mínimos ou máximos do sistema cliente, serão usados os limites mínimos ou máximos do sistema cliente.        
+* O valor mínimo de início é 50%
+* O valor máximo de parada é 95% 
+* Os valores de início e de parada precisam ser diferentes em mais de 5%
+
+Nota: "Bloquear a configuração atual do BIOS" faz com que a interface do usuário mostre a configuração de bateria atual do BIOS como somente leitura. 
+
+Selecione as configurações de bateria a serem ocultas:
+Selecione uma ou mais configurações para que não estejam disponíveis na interface do usuário.
+		
+Nota: Selecionar "Não configurado" ou "Desativado" terá o mesmo efeito.	
+    </string>
+
+	<string id="None">Controlado pelo usuário</string>
+	<string id="ReadOnly">Bloquear a configuração atual do BIOS</string>	
+	<string id="StandardChargeMode">Padrão</string>
+	<string id="ExpressChargeMode">ExpressCharge™</string>
+	<string id="AdaptiveChargeMode">Adaptável</string>
+	<string id="PrimarilyACUseChargeMode">Principalmente o uso em CA</string>
+	<string id="CustomChargeMode">Personalizada</string>
+	<string id="cname_OrderBatteryLinkPolicy">Link para compra de baterias</string>
+	<string id="expl_OrderBatteryLinkPolicy">Esta política personaliza o link para compra de baterias. O padrão é um link de URL para http://www.dell.com/batteryhealthmeter. 
+	
+Você pode digitar um URL ou um endereço "mailto" (por exemplo: mailto:seu@email.com).  Um endereço "mailto" exigirá que um cliente de e-mail esteja instalado no sistema cliente.
+ 	
+Nota: Selecionar "Não configurado" ou "Desativado" terá o mesmo efeito.
+	 </string>
+    </stringTable>
+    <presentationTable>
+	
+    <presentation id="pol_BatterySettings">
+		<dropdownList refId="BIChargeMode" defaultItem="0" noSort="true">Selecionar uma configuração de bateria:</dropdownList>
+	    <text></text>	
+        <text>Configurar a porcentagem de início e de parada do carregamento se o modo Carga personalizada estiver selecionado acima.</text>	  
+        <decimalTextBox refId="BICustomChargeStartValue" defaultValue="0" spinStep="1">Iniciar o carregamento (em ou abaixo):</decimalTextBox>	    
+        <decimalTextBox refId="BICustomChargeStopValue" defaultValue="0" spinStep="1">Parar o carregamento (em ou acima):</decimalTextBox>
+	    <text></text>			
+        <text>Selecione a(s) configuração(ões) de bateria que você quer ocultar:</text>
+        <checkBox refId="BIRestrictChargeModeStandard">Padrão</checkBox>
+		<checkBox refId="BIRestrictChargeModeExpress">ExpressCharge™</checkBox>
+	    <checkBox refId="BIRestrictChargeModeAdaptive">Adaptável</checkBox>
+	    <checkBox refId="BIRestrictChargeModeCustom">Personalizada</checkBox>
+	    <checkBox refId="BIRestrictChargeModePrimarilyAC">Principalmente o uso em CA</checkBox>		
+    </presentation>
+	
+	<presentation id="pol_OrderBatteryLinkPolicy">
+        <textBox refId="OrderBatteryLink">
+          <label>Personalizar o link para compra de baterias:</label>
+          <defaultValue>Digite o URL aqui</defaultValue>
+        </textBox>
+      </presentation>
+   </presentationTable>
+  </resources>
+</policyDefinitionResources>

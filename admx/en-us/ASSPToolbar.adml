@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>ASSP Toolbar for Outlook</displayName>
+  <description>Defines the available group policy settings for ASSP Toolbar for Outlook</description>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_ASSP14X">Outlook XP or higher and ASSP version 1.4.x or later.</string>
+      <string id="SUPPORTED_ASSP15X">Outlook XP or higher and ASSP version 1.5.x or later.</string>
+      <string id="SUPPORTED_ASSP1517">Outlook XP or higher and ASSP version 1.5.1.7 or later.</string>
+      <string id="SUPPORTED_ASSP212">Outlook XP or higher and ASSP version 2.1.2.12105 or later.</string>
+      <string id="SUPPORTED_ASSPTB20X_OR_21X">Outlook XP or higher and ASSP Toolbar for Outlook version 2.0.x or 2.1.x only.</string>
+      <string id="SUPPORTED_ASSPTB25X">Outlook XP or higher and ASSP Toolbar for Outlook version 2.5.x or later.</string>
+      <string id="SUPPORTED_OL2007">Outlook 2007 or higher.</string>
+      <string id="SUPPORTED_OL2007_OR_EARLIER">Outlook XP, 2003 or 2007.</string>
+      <string id="SUPPORTED_OLXP">Outlook XP or higher.</string>
+      <string id="Category_ASSP_Toolbar">ASSP Toolbar</string>
+      <string id="Category_ASSP_Config">ASSP Configuration</string>
+      <string id="Category_Toolbar_Config">Toolbar Configuration</string>
+      <string id="Category_Outlook_Config">Outlook Configuration</string>
+      <string id="AnalyseAddressOnOff_Bool">Enable ASSP Analyse Button</string>
+      <string id="AnalyseAddressOnOff_Help">Display (enable) or hide (disable) the ASSP Analyse button on the toolbar.
+
+Set this option to Disabled if you do not want users to send messages to ASSP for analysis.
+
+NB: The analyse facility is available only in ASSP version 1.4.x or later, so you should disable this setting if you are running an earlier version of ASSP.</string>
+      <string id="BlockReportAddressOnOff_Bool">Enable ASSP Block Report Button</string>
+      <string id="BlockReportAddressOnOff_Help">Display (enable) or hide (disable) the ASSP Block Report button on the toolbar.
+
+Set this option to Disabled if you do not want users to request ASSP for block reports.
+
+NB: The BlockReport facility is available only in ASSP version 1.5.x or later, so you should disable this setting if you are running an earlier version of ASSP.</string>
+      <string id="ASSPDomainName_EditText">ASSP domain name</string>
+      <string id="ASSPDomainName_Help">Define the (dummy) domain name that is defined for the ASSP e-mail interface.
+
+Remember to include this domain name in ASSP's 'Local Domains' setting.</string>
+      <string id="ASSPDomainName_Def">&lt;insert domain name here&gt;</string>
+      <string id="HelpAddressOnOff_Bool">Enable ASSP Help Button</string>
+      <string id="HelpAddressOnOff_Help">Display (enable) or hide (disable) the ASSP Help button on the toolbar.
+
+Set this option to Disabled if you do not want users to send messages to the ASSP help address.</string>
+      <string id="ASSPSpamAddress_EditText">Spam reporting address</string>
+      <string id="ASSPSpamAddress_Help">The email username to use for reporting spam.
+
+This is the same as the ASSP 'Report Spam Address' Email Interface setting.</string>
+      <string id="ASSPSpamAddress_Def">asspspam</string>
+      <string id="ASSPNotSpamAddress_EditText">Not-Spam reporting address</string>
+      <string id="ASSPNotSpamAddress_Help">The email username to use for reporting ham.
+
+This is the same as the ASSP 'Report not-Spam Address' Email Interface setting.</string>
+      <string id="ASSPNotSpamAddress_Def">asspnotspam</string>
+      <string id="WhitelistingOnOff_Bool">Enable Whitelisting Buttons</string>
+      <string id="WhitelistingOnOff_Help">Display (enable) or hide (disable) the whitelist management buttons on the toolbar.
+
+Set this option to Disabled if you do not want users to add addresses to, or remove addresses from, the ASSP whitelist.</string>
+      <string id="BlacklistingOnOff_Bool">Enable Blacklisting Buttons</string>
+      <string id="BlacklistingOnOff_Help">Display (enable) or hide (disable) the blacklist management buttons on the toolbar.
+
+Set this option to Disabled if you do not want users to add addresses to, or remove addresses from, the ASSP blacklist.
+
+NB: The blacklisting facility is available only in ASSP version 1.5.1.7 or later, so you should disable this setting if you are running an earlier version of ASSP.</string>
+      <string id="PersBlacklistingOnOff_Bool">Enable Personal Blacklisting Buttons</string>
+      <string id="PersBlacklistingOnOff_Help">Display (enable) or hide (disable) the personal blacklist management and report buttons on the toolbar.
+
+Set this option to Disabled if you do not want users to add addresses to, or remove addresses from, their ASSP personal blacklist.
+
+NB: The personal blacklisting facility is available only in ASSP version 2.1.2.12105 or later, so you should disable this setting if you are running an earlier version of ASSP.</string>
+      <string id="RedlistingOnOff_Bool">Enable Redlisting Buttons</string>
+      <string id="RedlistingOnOff_Help">Display (enable) or hide (disable) the Redlist management buttons on the toolbar.
+
+Set this option to Disabled if you do not want users to add themselves to, or remove themselves from, the ASSP Redlist.</string>
+      <string id="SpamLoversOnOff_Bool">Enable SpamLovers Buttons</string>
+      <string id="SpamLoversOnOff_Help">Display (enable) or hide (disable) the SpamLovers management buttons on the toolbar.
+
+Set this option to Disabled if you do not want users to add themselves to, or remove themselves from, the ASSP SpamLovers list.</string>
+      <string id="NoProcessingOnOff_Bool">Enable NoProcessing Buttons</string>
+      <string id="NoProcessingOnOff_Help">Display (enable) or hide (disable) the NoProcessing management buttons on the toolbar.
+
+Set this option to Disabled if you do not want users to add themselves to, or remove themselves from, the ASSP NoProcessing list.</string>
+      <string id="ASSPAnalyseAddress_EditText">ASSP Analyse address</string>
+      <string id="ASSPAnalyseAddress_Help">The email username to use for requesting ASSP to analyse a message.
+
+This is the same as the ASSP 'Request Analyze Report' Email Interface setting.
+
+NB: The analyse facility is available only in ASSP version 1.4.x or later.</string>
+      <string id="ASSPAnalyseAddress_Def">asspanalyze</string>
+      <string id="ASSPBlockReportAddress_EditText">ASSP Block Report address</string>
+      <string id="ASSPBlockReportAddress_Help">The email username to use for requesting ASSP for a block report.
+
+This is the same as the ASSP 'Request Block Report' Email Interface setting.
+
+NB: The block report facility is available only in ASSP version 1.5.x or later.</string>
+      <string id="ASSPBlockReportAddress_Def">asspblock</string>
+      <string id="ASSPHelpAddress_EditText">ASSP Help address</string>
+      <string id="ASSPHelpAddress_Help">The email username to use for requesting ASSP help.
+
+This is the same as the ASSP 'Help Address' Email Interface setting.</string>
+      <string id="ASSPHelpAddress_Def">assphelp</string>
+      <string id="ASSPWhitelistAddress_EditText">Whitelist addition address</string>
+      <string id="ASSPWhitelistAddress_Help">The email username to use for adding an address to the ASSP whitelist.
+
+This is the same as the ASSP 'Add to Whitelist Address' Email Interface setting.</string>
+      <string id="ASSPWhitelistAddress_Def">asspwhite</string>
+      <string id="ASSPNotWhitelistAddress_EditText">Whitelist removal address</string>
+      <string id="ASSPNotWhitelistAddress_Help">The email username to use for removing an address from the ASSP whitelist.
+
+This is the same as the ASSP 'Remove from Whitelist Address' Email Interface setting.</string>
+      <string id="ASSPNotWhitelistAddress_Def">asspnotwhite</string>
+      <string id="ASSPBlacklistAddress_EditText">Blacklist addition address</string>
+      <string id="ASSPBlacklistAddress_Help">The email username to use for adding an address to the ASSP blacklist.
+
+This is the same as the ASSP 'Add to Blacklisted Addresses' Email Interface setting.
+
+NB: The blacklisting facility is available only in ASSP version 1.5.1.7 or later.</string>
+      <string id="ASSPBlacklistAddress_Def">asspblack</string>
+      <string id="ASSPNotBlacklistAddress_EditText">Blacklist removal address</string>
+      <string id="ASSPNotBlacklistAddress_Help">The email username to use for removing an address from the ASSP blacklist.
+
+This is the same as the ASSP 'Remove from Blacklisted Addresses' Email Interface setting.
+
+NB: The blacklisting facility is available only in ASSP version 1.5.1.7 or later.</string>
+      <string id="ASSPNotBlacklistAddress_Def">asspnotblack</string>
+      <string id="ASSPPersBlacklistAddress_EditText">Personal blacklist addition address</string>
+      <string id="ASSPPersBlacklistAddress_Help">The email username to use for adding an address to a user's ASSP personal blacklist.
+
+This is the same as the ASSP 'Add to Personal Blacklisted Addresses' Email Interface setting.
+
+NB: The personal blacklisting facility is available only in ASSP version 2.1.2.12105 or later, so you should disable this setting if you are running an earlier version of ASSP.</string>
+      <string id="ASSPPersBlacklistAddress_Def">assppersblack</string>
+      <string id="ASSPNotPersBlacklistAddress_EditText">Personal blacklist removal address</string>
+      <string id="ASSPNotPersBlacklistAddress_Help">The email username to use for removing an address from a user's ASSP personal blacklist.
+
+This is the same as the ASSP 'Remove from Personal Blacklisted Addresses' Email Interface setting.
+
+NB: The personal blacklisting facility is available only in ASSP version 2.1.2.12105 or later, so you should disable this setting if you are running an earlier version of ASSP.</string>
+      <string id="ASSPNotPersBlacklistAddress_Def">assppersnotblack</string>
+      <string id="ASSPRedlistAddress_EditText">Redlist addition address</string>
+      <string id="ASSPRedlistAddress_Help">The email username to use for adding an address to the ASSP Redlist.
+
+This is the same as the ASSP 'Add to Redlist Address' Email Interface setting.</string>
+      <string id="ASSPRedlistAddress_Def">asspred</string>
+      <string id="ASSPNotRedlistAddress_EditText">Redlist removal address</string>
+      <string id="ASSPNotRedlistAddress_Help">The email username to use for removing an address from the ASSP Redlist.
+
+This is the same as the ASSP 'Remove from Redlist Address' Email Interface setting.</string>
+      <string id="ASSPNotRedlistAddress_Def">asspnotred</string>
+      <string id="ASSPSpamLoversAddress_EditText">SpamLovers addition address</string>
+      <string id="ASSPSpamLoversAddress_Help">The email username to use for adding an address to the ASSP SpamLovers list.
+
+This is the same as the ASSP 'Add to SpamLovers Address' Email Interface setting.</string>
+      <string id="ASSPSpamLoversAddress_Def">asspspamlovers</string>
+      <string id="ASSPNotSpamLoversAddress_EditText">SpamLovers removal address</string>
+      <string id="ASSPNotSpamLoversAddress_Help">The email username to use for removing an address from the ASSP SpamLovers list.
+
+This is the same as the ASSP 'Remove from SpamLovers Address' Email Interface setting.</string>
+      <string id="ASSPNotSpamLoversAddress_Def">asspnotspamlovers</string>
+      <string id="ASSPNoProcessingAddress_EditText">NoProcessing addition address</string>
+      <string id="ASSPNoProcessingAddress_Help">The email username to use for adding an address to the ASSP NoProcessing list.
+
+This is the same as the ASSP 'Add to NoProcessing Address' Email Interface setting.</string>
+      <string id="ASSPNoProcessingAddress_Def">asspnoprocessing</string>
+      <string id="ASSPNotNoProcessingAddress_EditText">NoProcessing removal address</string>
+      <string id="ASSPNotNoProcessingAddress_Help">The email username to use for removing an address from the ASSP NoProcessing list.
+
+This is the same as the ASSP 'Remove from NoProcessing Address' Email Interface setting.</string>
+      <string id="ASSPNotNoProcessingAddress_Def">asspnotnoprocessing</string>
+      <string id="LicenceKey_EditText">Licence Key</string>
+      <string id="LicenceKey_Help">For use with ASSP Toolbar for Outlook 2.0.x or 2.1.x only, enable this setting to specify the toolbar licence key to use for clients.
+
+Paste in the licence key (as a single line) you received after purchasing your licence.
+
+NB: Each licence key allows installation on a specified number of workstations. You must ensure you do not roll-out a licence key to more workstations than it is licensed for.</string>
+      <string id="LicenceKey_Def">
+      </string>
+      <string id="SerialNumber_EditText">Serial Number</string>
+      <string id="SerialNumber_Help">For use with ASSP Toolbar for Outlook 2.5.x or later, enable this setting to specify the serial number of the toolbar licence to use for clients.
+
+Paste in the serial number you received after purchasing your licence.
+
+When specifying the serial number, you also need to enable and specify the release code setting.
+
+NB: Each licence allows installation on a specified number of workstations. You must ensure you do not roll-out a licence to more workstations than it is licensed for.</string>
+      <string id="SerialNumber_Def">
+      </string>
+      <string id="ReleaseCode_EditText">Release Code</string>
+      <string id="ReleaseCode_Help">For use with ASSP Toolbar for Outlook 2.5.x or later, enable this setting to specify the release code of the toolbar licence to use for clients.
+
+Paste in the release code you received after purchasing your licence.
+
+When specifying the release code, you also need to enable and specify the serial number setting.
+
+NB: Each licence allows installation on a specified number of workstations. You must ensure you do not roll-out a licence to more workstations than it is licensed for.</string>
+      <string id="ReleaseCode_Def">
+      </string>
+      <string id="ProcessSpamList_Bool">Process spam emails after reporting</string>
+      <string id="ProcessSpamList_Help">Enable this to specify how emails the user reports as spam are processed after a user reports them.
+
+If you choose this option, you must also configure the 'Move reported spam to folder' policy setting.
+
+Set to 'not configured' to allow the user to choose.</string>
+      <string id="ProcessSpamList_Desc">Choose action:</string>
+      <string id="ProcessSpamList_NoAction">No action</string>
+      <string id="ProcessSpamList_Delete">Delete</string>
+      <string id="ProcessSpamList_MoveToFolder">Move to folder</string>
+      <string id="MoveSpamToFolder_EditText">Move reported spam to folder</string>
+      <string id="MoveSpamToFolder_Help">Enable this to specify the path to the folder reported spam should be moved to by the toolbar. You need to enable this setting if you configure the 'Process spam emails after reporting' setting to 'Move to folder'.
+
+For Outlook 2003 and later, set this to an empty string to denote the user's Junk E-mail folder. You must specify a non-empty string for Outlook XP clients.
+
+A folder path is of the form '\\&lt;store&gt;\&lt;folder1&gt;\..\&lt;foldern&gt;', where &lt;store&gt; is the name of the message store to use, and the rest of the path specifies the folder hierarchy. If you omit the '\\&lt;store&gt;\' prefix, the folder path is assumed to be in the user's default message store.</string>
+      <string id="MoveSpamToFolder_Def">
+      </string>
+      <string id="ProcessNotSpamList_Bool">Process not-spam emails after reporting</string>
+      <string id="ProcessNotSpamList_Help">Enable this to specify how emails the user reports as not-spam are processed after a user reports them.
+
+Set to 'not configured' to allow the user to choose.</string>
+      <string id="ProcessNotSpamList_Desc">Choose action:</string>
+      <string id="ProcessNotSpamList_NoAction">No action</string>
+      <string id="ProcessNotSpamList_MoveToInbox">Move to Inbox</string>
+      <string id="ForwardNotSpamToOrigRecipientOnOff_Bool">Forward not-spam to original recipient</string>
+      <string id="ForwardNotSpamToOrigRecipientOnOff_Help">When a spam message is copied to an administrator by ASSP, and that person reports it as not-spam, this setting controls whether the toolbar automatically forwards the message to the original recipient. This setting requires ASSP version 1.4.x or later to function.</string>
+      <string id="StripSpamSubjectPrefix_EditText">Delete prepended subject text(s) from processed not-spam emails</string>
+      <string id="StripSpamSubjectPrefix_Help">For versions of ASSP 1.3.3.x and earlier, use this to specify the spam tags to be removed from an email's subject line when the user reports the email as not-spam.
+
+Specify the string that your ASSP installation prepends to spam emails, if any. such as [SPAM] - or set it to an empty string to prevent the user from configuring this setting. To specify multiple strings to remove, separate each string with a '|' (pipe) character (if a string contains a pipe, prefix it with a circumflex, thus: '^|')".
+
+NB: If you are using ASSP 1.4.x or later the toolbar will automatically remove prepended spam tags, so you don't need to specify this setting. You can, however, then use this setting to remove any spam tags that may be prepended by another anti-spam filter in front of ASSP.</string>
+      <string id="StripSpamSubjectPrefix_Def">[SPAM]</string>
+      <string id="AskConfirmReportsOnOff_Bool">Require user to confirm spam reports</string>
+      <string id="AskConfirmReportsOnOff_Help">Controls whether the user is required to confirm spam and not-spam reports.
+
+Having the user confirm spam/not-spam reports helps to avoid accidental reporting.
+
+Set to 'not configured' to allow the user to choose.</string>
+      <string id="DeleteAfterSendOnOff_Bool">Delete spam reports after sending</string>
+      <string id="DeleteAfterSendOnOff_Help">Enable or disable this to specify whether the spam report and whitelist/redlist/blacklist, etc., request emails generated by the toolbar are deleted automatically after sending.
+
+Deleting these report emails helps reduce clutter in a user's Sent Items folder.
+
+Set to 'not configured' to allow the user to choose.</string>
+      <string id="AckReportsOnOff_Bool">Acknowledge reports via desktop alerts</string>
+      <string id="AckReportsOnOff_Help">Controls whether a desktop alert is displayed to the user acknowledging that report emails have been successfully submitted.</string>
+      <string id="UserIsASSPAdminOnOff_Bool">Allow ASSP administration features</string>
+      <string id="UserIsASSPAdminOnOff_Help">Specifies whether or not the user has access to ASSP administration features. If set to Enabled, the toolbar will allow the user to specify email addresses in the body of emails that add to/remove from the ASSP Redlist, SpamLovers list and NoProcessing list, and in ASSP Block Report requests. There is no danger in allowing this feature in the toolbar, as access to administration functions is managed through the ASSP admin interface - this setting only affects the user interface presented by the toolbar.
+
+The admin features are available only in ASSP version 1.5.x or later, so you should disable this setting if you are running an earlier version of ASSP.</string>
+      <string id="OptionsOnOff_Bool">Enable Options Form</string>
+      <string id="OptionsOnOff_Help">Enable or disable user's access to the toolbar's Options form.</string>
+      <string id="HelpOnOff_Bool">Enable Online Help</string>
+      <string id="HelpOnOff_Help">Enable or disable the user's access to the toolbar's online help.
+
+Disable this setting if you do not want the Help button to appear on the toolbar.
+
+Note that this option does not remove the online help file from the toolbar's installation folder, so it will still be accessible to adventurous users.</string>
+      <string id="StartupUpdateCheckOnOff_Bool">Enable Startup Update Check</string>
+      <string id="StartupUpdateCheckOnOff_Help">Enable or disable the toolbar's automatic check for updates on startup of Outlook.
+
+Disable this setting if you do not want the toolbar to automatically check for updates to the toolbar when starting Outlook.</string>
+      <string id="UpdateOnOff_Bool">Enable 'Check for Updates' Button</string>
+      <string id="UpdateOnOff_Help">Display (enable) or hide (disable) the 'Check for Updates' button on the toolbar.
+
+Disable this setting if you do not want your users to access the 'Check for Updates' button on the toolbar.</string>
+      <string id="UpdateInfoSource_EditText">Location of Update Info Source File</string>
+      <string id="UpdateInfoSource_Help">The ASSP Toolbar for Outlook allows you to host the latest update installer for the toolbar, rather than use the FreeYourNet update server. This allows you to control when users can update their Outlook clients.
+
+To host updates yourself, you need to create an 'Update Info Source File' which tells the client toolbars what the latest version available is, and where they can download it from.
+
+Both the Update Info Source File and the update distribution file can be located either on a company intranet (accessible to clients via a http URL) or on a network share (accessible via a UNC path or mapped drive).
+
+Please refer to the ASSP Toolbar for Outlook product documentation for details.
+
+When not configured, this policy setting will default to the standard FreeYourNet update info source URL.</string>
+      <string id="UpdateInfoSource_Def">url=http://www.assptoolbar.com/pubftp/ASSPToolbar/verinfo.txt</string>
+      <string id="ToolbarShowCaptionsOnOff_Bool">Show captions on toolbar buttons</string>
+      <string id="ToolbarShowCaptionsOnOff_Help">Enabled or disable the display of captions on toolbar buttons.
+
+When captions are not shown, buttons will be displayed with icons only, making the toolbar smaller on-screen.</string>
+      <string id="OutlookAccount_EditText">Outlook account to use</string>
+      <string id="OutlookAccount_Help">The name of the user's Outlook account to be used for sending spam reports and whitelist/redlist/blacklist, etc., requests to ASSP.
+
+Set this to an empty string to enforce the user's default account, or to the specific name of an account to use. When not configured, this policy setting allows the user to choose an account via the toolbar's Options form.</string>
+      <string id="OutlookAccount_Def">
+      </string>
+      <string id="OutlookRuleOnOff_Bool">Enable ASSP-tagged spam filing</string>
+      <string id="OutlookRuleOnOff_Help">Use this setting to control whether the toolbar automatically files ASSP-tagged spam received to a (specified) user folder.
+
+The toolbar can examine a received message's header and/or subject line for defined text: if it finds the specified text the message is automatically moved to the specified folder. If you enable this setting, you must also configure the rule name (for Outlook 2007 and later clients), the folders to process, the header strings, the subject strings, and the target folder settings.
+
+WARNING: Do not enable this setting for Outlook 2003 (or earlier) clients where the Inbox routinely contains more than a few hundred messages, as it may result in high CPU usage.</string>
+      <string id="OutlookRuleName_EditText">File ASSP-tagged spam rule name</string>
+      <string id="OutlookRuleName_Help">Use this to name the rule created by the toolbar. You must configure this setting if you enable the rule creation and you have Outlook 2007 (or later) clients.</string>
+      <string id="OutlookRuleName_Def">File ASSP-detected spam</string>
+      <string id="OutlookRuleProcessFolders_EditText">Process folders for ASSP-tagged spam</string>
+      <string id="OutlookRuleProcessFolders_Help">Use this to specify the folders the toolbar will look in for ASSP-tagged spam.
+
+If you set this to an empty string the toolbar will look in the user's Inbox. Specify one or more folder paths, separated by a '|' (pipe) character (if a foldername contains a pipe, prefix it with a circumflex, thus: '^|'). Each folder path is of the form '\\&lt;store&gt;\&lt;folder1&gt;\..\&lt;foldern&gt;', where &lt;store&gt; is the name of the message store to use, and the rest of the path specifies the folder hierarchy. If you omit the '\\&lt;store&gt;\' prefix, the folder path is assumed to be in the user's default message store.</string>
+      <string id="OutlookRuleProcessFolders_Def">Inbox</string>
+      <string id="OutlookRuleFolder_EditText">File ASSP-tagged spam to folder</string>
+      <string id="OutlookRuleFolder_Help">Use this to specify the folder ASSP-tagged spam should be moved to.
+
+Set this to an empty string to denote the user's Junk E-mail folder. A folder path is of the form '\\&lt;store&gt;\&lt;folder1&gt;\..\&lt;foldern&gt;', where &lt;store&gt; is the name of the message store to use, and the rest of the path specifies the folder hierarchy. If you omit the '\\&lt;store&gt;\' prefix, the folder path is assumed to be in the user's default message store.</string>
+      <string id="OutlookRuleFolder_Def">
+      </string>
+      <string id="OutlookRuleHeaderStrings_EditText">ASSP-tagged header strings to match</string>
+      <string id="OutlookRuleHeaderStrings_Help">Use this setting to define the message header strings that the toolbar will look for in incoming messages. Separate multiple strings with the '|' pipe character '|' (if a string contains a pipe, prefix it with a circumflex, thus: '^|').
+
+If spam filing is enabled you must also enable this setting.
+
+Common values for this setting are 'X-Assp-Spam: YES' or 'X-Assp-Spam-Reason: Bayesian spam' (without the quotes). Enable this setting and set it to empty if you wish to identify ASSP-tagged spam by subject only.</string>
+      <string id="OutlookRuleHeaderStrings_Def">X-Assp-Spam: YES</string>
+      <string id="OutlookRuleSubjectStrings_EditText">ASSP-tagged subject strings to match</string>
+      <string id="OutlookRuleSubjectStrings_Help">Use this setting to define the message subject line strings that the toolbar will look for in incoming messages. Separate multiple strings with the '|' (pipe) character (if a string contains a pipe, prefix it with a circumflex, thus: '^|').
+
+If spam filing is enabled you must also enable this setting.
+
+A common value for this setting is '[Spam]' (without the quotes). Enable this setting and set it to empty if you wish to identify ASSP-tagged spam by header only.</string>
+      <string id="OutlookRuleSubjectStrings_Def">
+      </string>
+      <string id="OutlookRuleStopAfterProcessingOnOff_Bool">Stop processing after applying rule</string>
+      <string id="OutlookRuleStopAfterProcessingOnOff_Help">Set this to enabled (or leave it not configured) if you want rule processing to stop in Outlook after the 'File ASSP-tagged spam' rule fires.
+
+If you want following rules to be processed too, disable this setting.</string>
+      <string id="ADMXMigrator_UnresolvedString">ADMX Migrator encountered a string that is not present in the source ADM string table.</string>
+      <string id="ADMXMigrator_NoSupportedOn">ADMX Migrator encountered a policy that does not have a supportedOn value.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="ASSPDomainName_EditText">
+        <textBox refId="ASSPDomainName_EditText">
+          <label>ASSP domain name:</label>
+          <defaultValue>&lt;insert domain name here&gt;</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="ASSPSpamAddress_EditText">
+        <textBox refId="ASSPSpamAddress_EditText">
+          <label>Spam reporting address:</label>
+          <defaultValue>asspspam</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="ASSPNotSpamAddress_EditText">
+        <textBox refId="ASSPNotSpamAddress_EditText">
+          <label>Not-Spam reporting address:</label>
+          <defaultValue>asspnotspam</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="ASSPWhitelistAddress_EditText">
+        <textBox refId="ASSPWhitelistAddress_EditText">
+          <label>Whitelist addition address:</label>
+          <defaultValue>asspwhite</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="ASSPNotWhitelistAddress_EditText">
+        <textBox refId="ASSPNotWhitelistAddress_EditText">
+          <label>Whitelist removal address:</label>
+          <defaultValue>asspnotwhite</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="ASSPBlacklistAddress_EditText">
+        <textBox refId="ASSPBlacklistAddress_EditText">
+          <label>Blacklist addition address:</label>
+          <defaultValue>asspblack</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="ASSPNotBlacklistAddress_EditText">
+        <textBox refId="ASSPNotBlacklistAddress_EditText">
+          <label>Blacklist removal address:</label>
+          <defaultValue>asspnotblack</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="ASSPPersBlacklistAddress_EditText">
+        <textBox refId="ASSPPersBlacklistAddress_EditText">
+          <label>Personal blacklist addition address:</label>
+          <defaultValue>assppersblack</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="ASSPNotPersBlacklistAddress_EditText">
+        <textBox refId="ASSPNotPersBlacklistAddress_EditText">
+          <label>Personal blacklist removal address:</label>
+          <defaultValue>assppersnotblack</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="ASSPRedlistAddress_EditText">
+        <textBox refId="ASSPRedlistAddress_EditText">
+          <label>Redlist addition address:</label>
+          <defaultValue>asspred</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="ASSPNotRedlistAddress_EditText">
+        <textBox refId="ASSPNotRedlistAddress_EditText">
+          <label>Redlist removal address:</label>
+          <defaultValue>asspnotred</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="ASSPSpamLoversAddress_EditText">
+        <textBox refId="ASSPSpamLoversAddress_EditText">
+          <label>SpamLovers addition address:</label>
+          <defaultValue>asspspamlovers</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="ASSPNotSpamLoversAddress_EditText">
+        <textBox refId="ASSPNotSpamLoversAddress_EditText">
+          <label>SpamLovers removal address:</label>
+          <defaultValue>asspnotspamlovers</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="ASSPNoProcessingAddress_EditText">
+        <textBox refId="ASSPNoProcessingAddress_EditText">
+          <label>NoProcessing addition address:</label>
+          <defaultValue>asspnoprocessing</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="ASSPNotNoProcessingAddress_EditText">
+        <textBox refId="ASSPNotNoProcessingAddress_EditText">
+          <label>NoProcessing removal address:</label>
+          <defaultValue>asspnotnoprocessing</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="ASSPAnalyseAddress_EditText">
+        <textBox refId="ASSPAnalyseAddress_EditText">
+          <label>ASSP Analyse address:</label>
+          <defaultValue>asspanalyze</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="ASSPBlockReportAddress_EditText">
+        <textBox refId="ASSPBlockReportAddress_EditText">
+          <label>ASSP Block Report address:</label>
+          <defaultValue>asspblock</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="ASSPHelpAddress_EditText">
+        <textBox refId="ASSPHelpAddress_EditText">
+          <label>ASSP Help address:</label>
+          <defaultValue>assphelp</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="SerialNumber_EditText">
+        <textBox refId="SerialNumber_EditText">
+          <label>Serial Number:</label>
+          <defaultValue>
+          </defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="ReleaseCode_EditText">
+        <textBox refId="ReleaseCode_EditText">
+          <label>Release Code:</label>
+          <defaultValue>
+          </defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="LicenceKey_EditText">
+        <textBox refId="LicenceKey_EditText">
+          <label>Licence Key:</label>
+          <defaultValue>
+          </defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="WhitelistingOnOff_Bool" />
+      <presentation id="BlacklistingOnOff_Bool" />
+      <presentation id="PersBlacklistingOnOff_Bool" />
+      <presentation id="RedlistingOnOff_Bool" />
+      <presentation id="SpamLoversOnOff_Bool" />
+      <presentation id="NoProcessingOnOff_Bool" />
+      <presentation id="AnalyseAddressOnOff_Bool" />
+      <presentation id="BlockReportAddressOnOff_Bool" />
+      <presentation id="HelpAddressOnOff_Bool" />
+      <presentation id="OptionsOnOff_Bool" />
+      <presentation id="HelpOnOff_Bool" />
+      <presentation id="StartupUpdateCheckOnOff_Bool" />
+      <presentation id="UpdateOnOff_Bool" />
+      <presentation id="ToolbarShowCaptionsOnOff_Bool" />
+      <presentation id="ProcessSpamList_Bool">
+        <dropdownList refId="ProcessSpamList_Desc" defaultItem="0">Choose action:</dropdownList>
+      </presentation>
+      <presentation id="MoveSpamToFolder_EditText">
+        <textBox refId="MoveSpamToFolder_EditText">
+          <label>Move reported spam to folder:</label>
+          <defaultValue>
+          </defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="ProcessNotSpamList_Bool">
+        <dropdownList refId="ProcessNotSpamList_Desc" defaultItem="0">Choose action:</dropdownList>
+      </presentation>
+      <presentation id="StripSpamSubjectPrefix_EditText">
+        <textBox refId="StripSpamSubjectPrefix_EditText">
+          <label>Delete prepended subject text(s) from processed not-spam emails:</label>
+          <defaultValue>
+          </defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="ForwardNotSpamToOrigRecipientOnOff_Bool" />
+      <presentation id="AskConfirmReportsOnOff_Bool" />
+      <presentation id="DeleteAfterSendOnOff_Bool" />
+      <presentation id="AckReportsOnOff_Bool" />
+      <presentation id="UserIsASSPAdminOnOff_Bool" />
+      <presentation id="UpdateInfoSource_EditText">
+        <textBox refId="UpdateInfoSource_EditText">
+          <label>Location of Update Info Source File:</label>
+          <defaultValue>url=http://www.assptoolbar.com/pubftp/ASSPToolbar/verinfo.txt</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="OutlookAccount_EditText">
+        <textBox refId="OutlookAccount_EditText">
+          <label>Outlook account to use:</label>
+          <defaultValue>
+          </defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="OutlookRuleOnOff_Bool" />
+      <presentation id="OutlookRuleName_EditText">
+        <textBox refId="OutlookRuleName_EditText">
+          <label>File ASSP-tagged spam rule name:</label>
+          <defaultValue>File ASSP-detected spam</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="OutlookRuleProcessFolders_EditText">
+        <textBox refId="OutlookRuleProcessFolders_EditText">
+          <label>Process folders for ASSP-tagged spam:</label>
+          <defaultValue>Inbox</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="OutlookRuleFolder_EditText">
+        <textBox refId="OutlookRuleFolder_EditText">
+          <label>File ASSP-tagged spam to folder:</label>
+          <defaultValue>
+          </defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="OutlookRuleHeaderStrings_EditText">
+        <textBox refId="OutlookRuleHeaderStrings_EditText">
+          <label>ASSP-tagged header strings to match:</label>
+          <defaultValue>X-Assp-Spam: YES</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="OutlookRuleSubjectStrings_EditText">
+        <textBox refId="OutlookRuleSubjectStrings_EditText">
+          <label>ASSP-tagged subject strings to match:</label>
+          <defaultValue>
+          </defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="OutlookRuleStopAfterProcessingOnOff_Bool" />
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

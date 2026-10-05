@@ -1,0 +1,671 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="fullarmor" namespace="FullArmor.84326725-30ac-4225-ab0d-fb44de0996a9" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <supersededAdm fileName="D:\Users\sawyemat\Desktop\WindowSMART.adm" />
+  <resources minRequiredRevision="1.0" />
+  <supportedOn>
+    <definitions>
+      <definition name="Supported_Win" displayName="$(string.Supported_Win)" />
+      <definition name="SUPPORTED_NotSpecified" displayName="$(string.ADMXMigrator_NoSupportedOn)" />
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="WsCategory" displayName="$(string.WsCategory)" />
+  </categories>
+  <policies>
+    <policy name="A_DiskPollingAnalysis" class="Machine" displayName="$(string.A_DiskPollingAnalysis)" explainText="$(string.DiskPollingAnalysisHelp)" presentation="$(presentation.A_DiskPollingAnalysis)" key="Software\Dojo North Software\HomeServerSMART\Configuration" valueName="Dpa">
+      <parentCategory ref="WsCategory" />
+      <supportedOn ref="Supported_Win" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <decimal id="DiskPollingInterval" valueName="PollingInterval" minValue="180000" maxValue="648000000" />
+        <enum id="RaiseWarningAlert" valueName="ReportWarning" required="true">
+          <item displayName="$(string.RaiseWarningAlert_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.RaiseWarningAlert_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+        <enum id="RaiseGeriatricAlert" valueName="ReportGeriatric" required="true">
+          <item displayName="$(string.RaiseGeriatricAlert_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.RaiseGeriatricAlert_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="B_Temperatures" class="Machine" displayName="$(string.B_Temperatures)" explainText="$(string.TemperaturesHelp)" presentation="$(presentation.B_Temperatures)" key="Software\Dojo North Software\HomeServerSMART\Configuration" valueName="TempCtl">
+      <parentCategory ref="WsCategory" />
+      <supportedOn ref="Supported_Win" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <enum id="TemperatureDisplayPreference" valueName="TemperaturePreference" required="true">
+          <item displayName="$(string.TempDisplay_1)">
+            <value>
+              <string>C</string>
+            </value>
+          </item>
+          <item displayName="$(string.TempDisplay_2)">
+            <value>
+              <string>F</string>
+            </value>
+          </item>
+          <item displayName="$(string.TempDisplay_3)">
+            <value>
+              <string>K</string>
+            </value>
+          </item>
+        </enum>
+        <decimal id="TempDisplayCritical" valueName="CriticalTempThreshold" minValue="38" maxValue="70" />
+        <decimal id="TempDisplayOverheated" valueName="OverheatedTempThreshold" minValue="37" maxValue="69" />
+        <decimal id="TempDisplayHot" valueName="HotTempThreshold" minValue="36" maxValue="68" />
+        <decimal id="TempDisplayWarm" valueName="WarmTempThreshold" minValue="35" maxValue="67" />
+        <enum id="TempIgnoreHot" valueName="IgnoreHot" required="true">
+          <item displayName="$(string.TempIgnoreHot_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.TempIgnoreHot_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+        <enum id="TempIgnoreWarm" valueName="IgnoreWarm" required="true">
+          <item displayName="$(string.TempIgnoreWarm_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.TempIgnoreWarm_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+        <enum id="ThermalEmergencyShutdown" valueName="ThermalShutdown" required="true">
+          <item displayName="$(string.ThermalShutdown_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.ThermalShutdown_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="D_VirtualDisks" class="Machine" displayName="$(string.D_VirtualDisks)" explainText="$(string.VirtualDisksHelp)" presentation="$(presentation.D_VirtualDisks)" key="Software\Dojo North Software\HomeServerSMART\Configuration" valueName="VirtualIgnore">
+      <parentCategory ref="WsCategory" />
+      <supportedOn ref="Supported_Win" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <enum id="NeverEnumerateVDs" valueName="IgnoreVirtualDisks" required="true">
+          <item displayName="$(string.NeverEnumerateVDs_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.NeverEnumerateVDs_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="C_AllowIgnore" class="Machine" displayName="$(string.C_AllowIgnore)" explainText="$(string.AllowIgnoreHelp)" presentation="$(presentation.C_AllowIgnore)" key="Software\Dojo North Software\HomeServerSMART\Configuration" valueName="AllowIgnoredItems">
+      <parentCategory ref="WsCategory" />
+      <supportedOn ref="Supported_Win" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="Q_BlockUI" class="Machine" displayName="$(string.Q_BlockUI)" explainText="$(string.BlockUIHelp)" presentation="$(presentation.Q_BlockUI)" key="Software\Dojo North Software\HomeServerSMART\Configuration" valueName="UserInterfaceMode">
+      <parentCategory ref="WsCategory" />
+      <supportedOn ref="Supported_Win" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="E_EmailNotification" class="Machine" displayName="$(string.E_EmailNotification)" explainText="$(string.EmailNotificationHelp)" presentation="$(presentation.E_EmailNotification)" key="Software\Dojo North Software\HomeServerSMART\Configuration" valueName="EmailNotificate">
+      <parentCategory ref="WsCategory" />
+      <supportedOn ref="Supported_Win" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <enum id="EmailEnable" valueName="MailAlertsEnabled" required="true">
+          <item displayName="$(string.EmailEnable_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.EmailEnable_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+        <text id="EmailServerHost" valueName="MailServer" />
+        <decimal id="EmailServerPort" valueName="ServerPort" minValue="1" maxValue="65535" />
+        <enum id="EmailUseSsl" valueName="UseSSL" required="true">
+          <item displayName="$(string.UseSSL_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.UseSSL_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+        <text id="EmailSenderFriendly" valueName="SenderFriendly" />
+        <text id="EmailSenderAddress" valueName="SenderEmail" />
+        <enum id="EmailUseAuthentication" valueName="AuthenticationEnabled" required="true">
+          <item displayName="$(string.EmailUseAuthentication_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.EmailUseAuthentication_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+        <text id="EmailUserName" valueName="MailUser" />
+        <text id="EmailUserPassword" valueName="MailPassword" />
+        <text id="EmailRecipient1Friendly" valueName="RecipientFriendly" />
+        <text id="EmailRecipient1Address" valueName="RecipientEmail" />
+        <text id="EmailRecipient2Address" valueName="RecipientEmail2" />
+        <text id="EmailRecipient3Address" valueName="RecipientEmail3" />
+      </elements>
+    </policy>
+    <policy name="F_BoxcarNotification" class="Machine" displayName="$(string.F_BoxcarNotification)" explainText="$(string.BoxcarNotificationHelp)" presentation="$(presentation.F_BoxcarNotification)" key="Software\Dojo North Software\HomeServerSMART\Configuration" valueName="BoxcarNotificate">
+      <parentCategory ref="WsCategory" />
+      <supportedOn ref="Supported_Win" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <enum id="BoxcarEnable" valueName="UseBoxcarNotificate" required="true">
+          <item displayName="$(string.BoxcarEnable_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.BoxcarEnable_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+        <text id="BoxcarEmailAddress" valueName="BoxcarEmailAddress" />
+      </elements>
+    </policy>
+    <policy name="G_ProwlNotification" class="Machine" displayName="$(string.G_ProwlNotification)" explainText="$(string.ProwlNotificationHelp)" presentation="$(presentation.G_ProwlNotification)" key="Software\Dojo North Software\HomeServerSMART\Configuration" valueName="ProwlNotificate">
+      <parentCategory ref="WsCategory" />
+      <supportedOn ref="Supported_Win" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <enum id="ProwlEnable" valueName="UseProwlNotificate" required="true">
+          <item displayName="$(string.ProwlEnable_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.ProwlEnable_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+        <text id="ProwlApiKeychain" valueName="ProwlApiKeychain" />
+      </elements>
+    </policy>
+    <policy name="H_NmaNotification" class="Machine" displayName="$(string.H_NmaNotification)" explainText="$(string.NmaNotificationHelp)" presentation="$(presentation.H_NmaNotification)" key="Software\Dojo North Software\HomeServerSMART\Configuration" valueName="NmaNotificate">
+      <parentCategory ref="WsCategory" />
+      <supportedOn ref="Supported_Win" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <enum id="NmaEnable" valueName="UseNmaNotificate" required="true">
+          <item displayName="$(string.NmaEnable_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.NmaEnable_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+        <text id="NmaApiKeychain" valueName="NmaApiKeychain" />
+      </elements>
+    </policy>
+    <policy name="I_ToastyNotification" class="Machine" displayName="$(string.I_ToastyNotification)" explainText="$(string.ToastyNotificationHelp)" presentation="$(presentation.I_ToastyNotification)" key="Software\Dojo North Software\HomeServerSMART\Configuration" valueName="ToastyNotificate">
+      <parentCategory ref="WsCategory" />
+      <supportedOn ref="Supported_Win" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <enum id="ToastyEnable" valueName="UseToastyNotificate" required="true">
+          <item displayName="$(string.ToastyEnable_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.ToastyEnable_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+        <text id="ToastyApiKeychain" valueName="WindowsPhoneGuids" />
+      </elements>
+    </policy>
+    <policy name="J_GrowlNotification" class="Machine" displayName="$(string.J_GrowlNotification)" explainText="$(string.GrowlNotificationHelp)" presentation="$(presentation.J_GrowlNotification)" key="Software\Dojo North Software\HomeServerSMART\Configuration" valueName="GrowlNotificate">
+      <parentCategory ref="WsCategory" />
+      <supportedOn ref="Supported_Win" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <enum id="GrowlEnable" valueName="UseGrowlNotificate" required="true">
+          <item displayName="$(string.GrowlEnable_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.GrowlEnable_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+        <enum id="GrowlRemoteEnable" valueName="UseGrowlRemoteNotificate" required="true">
+          <item displayName="$(string.GrowlRemoteEnable_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.GrowlRemoteEnable_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+        <text id="GrowlRemotePC" valueName="GrowlRemoteMachine" />
+        <decimal id="GrowlRemotePrt" valueName="GrowlRemotePort" minValue="1" maxValue="65535" />
+        <text id="GrowlRemotePDubya" valueName="GrowlPassword" />
+      </elements>
+    </policy>
+    <policy name="K_SnarlNotification" class="Machine" displayName="$(string.K_SnarlNotification)" explainText="$(string.SnarlNotificationHelp)" presentation="$(presentation.K_SnarlNotification)" key="Software\Dojo North Software\HomeServerSMART\Configuration" valueName="SnarlNotificate">
+      <parentCategory ref="WsCategory" />
+      <supportedOn ref="Supported_Win" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <enum id="SnarlEnable" valueName="UseSnarlNotificate" required="true">
+          <item displayName="$(string.SnarlEnable_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.SnarlEnable_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="L_AdvancedSettings" class="Machine" displayName="$(string.L_AdvancedSettings)" explainText="$(string.AdvancedSettingsHelp)" presentation="$(presentation.L_AdvancedSettings)" key="Software\Dojo North Software\HomeServerSMART\Configuration" valueName="AdvancedSettings">
+      <parentCategory ref="WsCategory" />
+      <supportedOn ref="Supported_Win" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <enum id="DeleteStale" valueName="DeleteStale" required="true">
+          <item displayName="$(string.DeleteStale_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.DeleteStale_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+        <enum id="RestoreDefaults" valueName="RestoreDefaults" required="true">
+          <item displayName="$(string.RestoreDefaults_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.RestoreDefaults_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+        <enum id="ResetEverything" valueName="ResetEverything" required="true">
+          <item displayName="$(string.ResetEverything_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.ResetEverything_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+        <enum id="WmiFallback" valueName="FallbackToWmi" required="true">
+          <item displayName="$(string.WmiFallback_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.WmiFallback_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+        <enum id="ZeroThresh" valueName="SiIAdvanced" required="true">
+          <item displayName="$(string.ZeroThresh_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.ZeroThresh_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="M_Debugging" class="Machine" displayName="$(string.M_Debugging)" explainText="$(string.DebuggingHelp)" presentation="$(presentation.M_Debugging)" key="Software\Dojo North Software\HomeServerSMART\Configuration" valueName="DebuggingControl">
+      <parentCategory ref="WsCategory" />
+      <supportedOn ref="Supported_Win" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <enum id="LogRequirement" valueName="LogRequirement" required="true">
+          <item displayName="$(string.LogRequirement_1)">
+            <value>
+              <string>Allow</string>
+            </value>
+          </item>
+          <item displayName="$(string.LogRequirement_2)">
+            <value>
+              <string>Mandatory</string>
+            </value>
+          </item>
+          <item displayName="$(string.LogRequirement_3)">
+            <value>
+              <string>Forbidden</string>
+            </value>
+          </item>
+        </enum>
+        <text id="LogLocation" valueName="SmartInspectDebugLogLocation" required="true" />
+      </elements>
+    </policy>
+    <policy name="N_SolidState" class="Machine" displayName="$(string.N_SolidState)" explainText="$(string.SolidStateHelp)" presentation="$(presentation.N_SolidState)" key="Software\Dojo North Software\HomeServerSMART\Configuration" valueName="SSD">
+      <parentCategory ref="WsCategory" />
+      <supportedOn ref="Supported_Win" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <decimal id="CriticalWearout" valueName="SsdLifeLeftCritical" minValue="1" maxValue="20" />
+        <decimal id="WarningWearout" valueName="SsdLifeLeftWarning" minValue="21" maxValue="50" />
+        <decimal id="CriticalRetirement" valueName="SsdRetirementCritical" minValue="50" maxValue="65535" />
+        <decimal id="WarningRetirement" valueName="SsdRetirementWarning" minValue="5" maxValue="65534" />
+      </elements>
+    </policy>
+    <policy name="O_CheckForUpdates" class="Machine" displayName="$(string.O_CheckForUpdates)" explainText="$(string.CheckForUpdatesHelp)" presentation="$(presentation.O_CheckForUpdates)" key="Software\Dojo North Software\HomeServerSMART\Configuration" valueName="CheckForUpdates">
+      <parentCategory ref="WsCategory" />
+      <supportedOn ref="Supported_Win" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="P_UiTheme" class="Machine" displayName="$(string.P_UiTheme)" explainText="$(string.UiThemeHelp)" presentation="$(presentation.P_UiTheme)" key="Software\Dojo North Software\HomeServerSMART\Configuration" valueName="UiTheme">
+      <parentCategory ref="WsCategory" />
+      <supportedOn ref="Supported_Win" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <enum id="WindowBackground" valueName="WindowBackground" required="true">
+          <item displayName="$(string.WindowBackground_1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.WindowBackground_2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.WindowBackground_3)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.WindowBackground_4)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+        <enum id="WindowHeaderColor" valueName="UseDefaultSkinning" required="true">
+          <item displayName="$(string.HeaderColor_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.HeaderColor_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="S_CustomSupportMessage" class="Machine" displayName="$(string.S_CustomSupportMessage)" explainText="$(string.CustomSupportMessageHelp)" presentation="$(presentation.S_CustomSupportMessage)" key="Software\Dojo North Software\HomeServerSMART\Configuration" valueName="UseSupportMessage">
+      <parentCategory ref="WsCategory" />
+      <supportedOn ref="Supported_Win" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <text id="CustomMessageText" valueName="SupportMessage" required="true" />
+      </elements>
+    </policy>
+    <policy name="R_EmergencyBackup" class="Machine" displayName="$(string.R_EmergencyBackup)" explainText="$(string.EmergencyBackupHelp)" presentation="$(presentation.R_EmergencyBackup)" key="Software\Dojo North Software\HomeServerSMART\Configuration" valueName="UseEmergencyBackup">
+      <parentCategory ref="WsCategory" />
+      <supportedOn ref="Supported_Win" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <enum id="EnableEmergencyBackup" valueName="PerformEmergencyBackup" required="true">
+          <item displayName="$(string.PerformEmergencyBackup_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.PerformEmergencyBackup_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+        <enum id="HotBackup" valueName="NoHotBackup" required="true">
+          <item displayName="$(string.PerformHotBackup_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.PerformHotBackup_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+        <enum id="EmergencyBackupNetwork" valueName="BackupLocal" required="true">
+          <item displayName="$(string.BackupLocal_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.BackupLocal_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+        <text id="BackupLocalPath" valueName="LocalBackupPath" />
+        <text id="BackupRemotePath" valueName="UNCBackupPath" />
+        <text id="RemoteBackupUser" valueName="BackupUser" />
+        <text id="RemoteBackupPassword" valueName="BackupPass" />
+        <enum id="DoCustomBackup" valueName="PerformCustomBackup" required="true">
+          <item displayName="$(string.PerformCustomBackup_1)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+          <item displayName="$(string.PerformCustomBackup_2)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+        </enum>
+        <text id="CustomProgram" valueName="CustomBackupProgram" />
+        <text id="CustomArgs" valueName="CustomBackupArgs" />
+      </elements>
+    </policy>
+    <policy name="T_DiagnosticUpload" class="Machine" displayName="$(string.T_DiagnosticUpload)" explainText="$(string.DiagnosticUploadHelp)" presentation="$(presentation.T_DiagnosticUpload)" key="Software\Dojo North Software\HomeServerSMART\Configuration" valueName="UseDiagnostics">
+      <parentCategory ref="WsCategory" />
+      <supportedOn ref="Supported_Win" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <enum id="AllowDiagnosticReport" valueName="NoDiagnostics" required="true">
+          <item displayName="$(string.AllowDiagnosticReport_1)">
+            <value>
+              <string>False</string>
+            </value>
+          </item>
+          <item displayName="$(string.AllowDiagnosticReport_2)">
+            <value>
+              <string>True</string>
+            </value>
+          </item>
+        </enum>
+        <text id="FtpServer" valueName="DebuggingTarget" required="true" />
+        <text id="FtpUser" valueName="DebuggingAuth1" required="true" />
+        <text id="FtpPass" valueName="DebuggingAuth2" required="true" />
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>
