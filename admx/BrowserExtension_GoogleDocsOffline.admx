@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--Google Docs Offline Browser Extension ghbmnnjooekpmoecnnnilnnbdlolhkhi version: 1.110.1 generator: 5883e514aca5-->
+  <!--Google Docs Offline ghbmnnjooekpmoecnnnilnnbdlolhkhi version: 1.110.1 generator: 3b343c82f03a-->
   <policyNamespaces>
     <target namespace="BrowserExtension.ghbmnnjooekpmoecnnnilnnbdlolhkhi" prefix="ext_ghbmnnjooekpmoecnnnilnnbdlolhkhi"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
   </policyNamespaces>
   <resources minRequiredRevision="1.0"/>
@@ -12,7 +13,9 @@
     </definitions>
   </supportedOn>
   <categories>
-    <category name="extension" displayName="$(string.extension)"/>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
   </categories>
   <policies>
     <policy name="extension_allowedDocsOfflineDomains" class="Both" displayName="$(string.extension_allowedDocsOfflineDomains)" explainText="$(string.extension_allowedDocsOfflineDomains_Explain)" presentation="$(presentation.extension_allowedDocsOfflineDomains)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\ghbmnnjooekpmoecnnnilnnbdlolhkhi\policy">

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--Screencastify Browser Extension pdgepnkbokhdgjnhfmklkijfbdgngccm version: 4.24.6.5532 generator: 51bf0d0c218f-->
+  <!--Screencastify pdgepnkbokhdgjnhfmklkijfbdgngccm version: 4.24.6.5532 generator: d5d9fbe1d8de-->
   <policyNamespaces>
     <target namespace="BrowserExtension.pdgepnkbokhdgjnhfmklkijfbdgngccm" prefix="ext_pdgepnkbokhdgjnhfmklkijfbdgngccm"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
   </policyNamespaces>
   <resources minRequiredRevision="1.0"/>
@@ -12,7 +13,9 @@
     </definitions>
   </supportedOn>
   <categories>
-    <category name="extension" displayName="$(string.extension)"/>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
   </categories>
   <policies>
     <policy name="extension_disableQuickstartGuide" class="Both" displayName="$(string.extension_disableQuickstartGuide)" explainText="$(string.extension_disableQuickstartGuide_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdgepnkbokhdgjnhfmklkijfbdgngccm\policy" valueName="disableQuickstartGuide">

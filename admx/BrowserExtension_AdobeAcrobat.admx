@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--Adobe Acrobat Browser Extension elhekieabhbkpmcefcoobjddigjcaadp version: 26.9.2.0 generator: 5e3ea0289b43-->
+  <!--Adobe Acrobat elhekieabhbkpmcefcoobjddigjcaadp version: 26.9.2.0 generator: 9dc5511f6037-->
   <policyNamespaces>
     <target namespace="BrowserExtension.elhekieabhbkpmcefcoobjddigjcaadp" prefix="ext_elhekieabhbkpmcefcoobjddigjcaadp"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
   </policyNamespaces>
   <resources minRequiredRevision="1.0"/>
@@ -12,7 +13,9 @@
     </definitions>
   </supportedOn>
   <categories>
-    <category name="extension" displayName="$(string.extension)"/>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
   </categories>
   <policies>
     <policy name="extension_OpenHelpx" class="Both" displayName="$(string.extension_OpenHelpx)" explainText="$(string.extension_OpenHelpx_Explain)" presentation="$(presentation.extension_OpenHelpx)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\elhekieabhbkpmcefcoobjddigjcaadp\policy">

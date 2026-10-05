@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--Claude Browser Extension fcoeoabgfenejglbffodgkkbkcdhcgfn version: 1.0.98 generator: f83cd25bd759-->
+  <!--Claude fcoeoabgfenejglbffodgkkbkcdhcgfn version: 1.0.98 generator: 206b754d04d4-->
   <policyNamespaces>
     <target namespace="BrowserExtension.fcoeoabgfenejglbffodgkkbkcdhcgfn" prefix="ext_fcoeoabgfenejglbffodgkkbkcdhcgfn"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
   </policyNamespaces>
   <resources minRequiredRevision="1.0"/>
@@ -12,7 +13,9 @@
     </definitions>
   </supportedOn>
   <categories>
-    <category name="extension" displayName="$(string.extension)"/>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
   </categories>
   <policies>
     <policy name="extension_blockedUrlPatterns" class="Both" displayName="$(string.extension_blockedUrlPatterns)" explainText="$(string.extension_blockedUrlPatterns_Explain)" presentation="$(presentation.extension_blockedUrlPatterns)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\fcoeoabgfenejglbffodgkkbkcdhcgfn\policy">

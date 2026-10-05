@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--Bitwarden Browser Extension jbkfoedolllekgbhcbcoahefnbanhhlh version: 2026.9.3 generator: 987d80091222-->
+  <!--Bitwarden jbkfoedolllekgbhcbcoahefnbanhhlh version: 2026.9.3 generator: 1118e49c3dcf-->
   <policyNamespaces>
     <target namespace="BrowserExtension.jbkfoedolllekgbhcbcoahefnbanhhlh" prefix="ext_jbkfoedolllekgbhcbcoahefnbanhhlh"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
   </policyNamespaces>
   <resources minRequiredRevision="1.0"/>
@@ -12,7 +13,9 @@
     </definitions>
   </supportedOn>
   <categories>
-    <category name="extension" displayName="$(string.extension)"/>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
     <category name="extension_environment" displayName="$(string.extension_environment)">
       <parentCategory ref="extension"/>
     </category>

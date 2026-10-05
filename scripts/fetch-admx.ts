@@ -5,7 +5,7 @@ import { execSync } from 'child_process'
 import { unzipSync } from 'fflate'
 import { walkDir, runWithLimit } from '../src/admxUtils'
 import { createHash } from 'crypto'
-import { generateExtensionAdmx, readExtensionPackage, readTemplateStamp, sameVersion, unpackCrx } from '../src/extensionAdmx'
+import { generateExtensionAdmx, generateExtensionCategoryAdmx, readExtensionPackage, readTemplateStamp, sameVersion, unpackCrx } from '../src/extensionAdmx'
 
 const ROOT = resolve(process.cwd())
 const ADMX_DIR = join(ROOT, 'admx')
@@ -234,7 +234,7 @@ const extensions: [name: string, slug: string, ids: Partial<Record<ExtensionStor
   ['Ghostery', 'Ghostery', { chrome: 'mlomiejdfkolichcflejclcbmpeaniij', edge: 'fclbdkbhjlgkbpfldjodgjncejkkjcme' }],
   ['Google Docs Offline', 'GoogleDocsOffline', { chrome: 'ghbmnnjooekpmoecnnnilnnbdlolhkhi' }],
   ['Grammarly', 'Grammarly', { chrome: 'kbfnbcaeplbcioakkpcpgfkobkghlhen', edge: 'cnlefmmeadmemmdciolhbnfeacpdfbkd' }],
-  ['Microsoft Defender', 'DefenderBrowserProtection', { chrome: 'bkbeeeffjjeopflfhgeknacdieedcoml' }],
+  ['Microsoft Defender Browser Protection', 'DefenderBrowserProtection', { chrome: 'bkbeeeffjjeopflfhgeknacdieedcoml' }],
   ['Privacy Badger', 'PrivacyBadger', { chrome: 'pkehgijcmpdhfbdbbnkijodmdjhbjlgp', edge: 'mkejgcgkdlddbggjhhflekkondicpnop' }],
   ['Read&Write', 'ReadWrite', { chrome: 'inoeonmfapjbbkmdafoankkfajkcphgd', edge: 'bjglhpoliipklkfjcahfefdlfpifcinb' }],
   ['Screencastify', 'Screencastify', { chrome: 'mmeijimgabbpbgpdklnllpncmdofkcpn', edge: 'pdgepnkbokhdgjnhfmklkijfbdgngccm' }],
@@ -354,7 +354,15 @@ function downloadAndExtract(buf: Buffer, isOffice: boolean, collector?: string[]
   return extract7z(buf, isOffice, collector)
 }
 
+function writeExtensionCategory() {
+  const { admx, adml } = generateExtensionCategoryAdmx()
+  writeFileSync(join(ADMX_DIR, 'BrowserExtensions.admx'), admx)
+  mkdirSync(langDir('en-us'), { recursive: true })
+  writeFileSync(join(langDir('en-us'), 'BrowserExtensions.adml'), adml)
+}
+
 async function fetchExtension(source: Source & { extension: Extension }, idx: number, total: number) {
+  writeExtensionCategory()
   const { name, slug, store, id } = source.extension
   const fileSlug = `BrowserExtension_${slug}`
   const result = { ok: true as const, admx: 1, adml: 1, fileSlugToDownloadUrl: { [fileSlug]: STORE_URL[store](id) } }

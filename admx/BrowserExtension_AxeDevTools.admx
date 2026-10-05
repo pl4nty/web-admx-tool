@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--axe DevTools Browser Extension kcenlimkmjjkdfcaleembgmldmnnlfkn version: 4.138.0 generator: 162ed6e92885-->
+  <!--axe DevTools kcenlimkmjjkdfcaleembgmldmnnlfkn version: 4.138.0 generator: eb900d165041-->
   <policyNamespaces>
     <target namespace="BrowserExtension.kcenlimkmjjkdfcaleembgmldmnnlfkn" prefix="ext_kcenlimkmjjkdfcaleembgmldmnnlfkn"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
   </policyNamespaces>
   <resources minRequiredRevision="1.0"/>
@@ -12,7 +13,9 @@
     </definitions>
   </supportedOn>
   <categories>
-    <category name="extension" displayName="$(string.extension)"/>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
   </categories>
   <policies>
     <policy name="extension_AxeURL" class="Both" displayName="$(string.extension_AxeURL)" explainText="$(string.extension_AxeURL_Explain)" presentation="$(presentation.extension_AxeURL)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\kcenlimkmjjkdfcaleembgmldmnnlfkn\policy">

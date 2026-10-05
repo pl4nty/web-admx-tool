@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { zipSync, strToU8 } from 'fflate'
-import { generateExtensionAdmx, parseLenientJson, readExtensionPackage, readTemplateStamp, sameVersion, unpackCrx } from './extensionAdmx'
+import { generateExtensionAdmx, generateExtensionCategoryAdmx, parseLenientJson, readExtensionPackage, readTemplateStamp, sameVersion, unpackCrx } from './extensionAdmx'
 import { parseAdmx, parseAdml } from './parser'
 
 const ID = 'abcdefghijklmnopabcdefghijklmnop'
@@ -51,7 +51,8 @@ describe('generateExtensionAdmx', () => {
     const parsed = await parseAdmx(admx)
     expect(parsed.target.namespace).toBe(`BrowserExtension.${ID}`)
     expect(admx).toContain(`key="Software\\Policies\\Microsoft\\Edge\\3rdparty\\extensions\\${ID}\\policy"`)
-    expect(parsed.categories[0]).toMatchObject({ name: 'extension', parentRef: null })
+    expect(parsed.categories[0]).toMatchObject({ name: 'extension', parentRef: 'browserextension:BrowserExtensions' })
+    expect(parsed.using).toContainEqual({ namespace: 'BrowserExtension', prefix: 'browserextension' })
   })
 
   it('maps schema types to ADMX elements', async () => {
@@ -69,9 +70,9 @@ describe('generateExtensionAdmx', () => {
   it('resolves localized strings and escapes XML', async () => {
     const { strings, presentations } = await parseAdml(adml)
     expect(adml).toContain('>Enabled</string>')
-    expect(adml).toContain('<displayName>Test &amp; Co Browser Extension</displayName>')
+    expect(adml).toContain('<displayName>Test &amp; Co</displayName>')
     expect(adml).toContain('Default: &quot;a&quot;')
-    expect(strings.extension).toBe('Test & Co Browser Extension')
+    expect(strings.extension).toBe('Test & Co')
     expect(presentations.extension_rules[0].label).toMatch(/JSON/)
   })
 })
@@ -86,5 +87,15 @@ describe('template stamp', () => {
     expect(sameVersion('2.1.1067', '2.1.1067.0')).toBe(true)
     expect(sameVersion('1.0', '1')).toBe(true)
     expect(sameVersion('1.10', '1.1')).toBe(false)
+  })
+})
+
+describe('generateExtensionCategoryAdmx', () => {
+  it('defines the shared parent category', async () => {
+    const { admx, adml } = generateExtensionCategoryAdmx()
+    const parsed = await parseAdmx(admx)
+    expect(parsed.target).toEqual({ namespace: 'BrowserExtension', prefix: 'browserextension' })
+    expect(parsed.categories).toEqual([{ name: 'BrowserExtensions', displayName: '$(string.BrowserExtensions)', parentRef: null }])
+    expect((await parseAdml(adml)).strings.BrowserExtensions).toBe('Browser Extensions')
   })
 })

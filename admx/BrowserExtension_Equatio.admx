@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--Equatio Browser Extension hjngolefdpdnooamgdldlkjgmdcmcjnc version: 68.0.0 generator: 67920aae7d57-->
+  <!--Equatio hjngolefdpdnooamgdldlkjgmdcmcjnc version: 68.0.0 generator: 8d69d42edd57-->
   <policyNamespaces>
     <target namespace="BrowserExtension.hjngolefdpdnooamgdldlkjgmdcmcjnc" prefix="ext_hjngolefdpdnooamgdldlkjgmdcmcjnc"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
   </policyNamespaces>
   <resources minRequiredRevision="1.0"/>
@@ -12,7 +13,9 @@
     </definitions>
   </supportedOn>
   <categories>
-    <category name="extension" displayName="$(string.extension)"/>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
     <category name="extension_features" displayName="$(string.extension_features)">
       <parentCategory ref="extension"/>
     </category>

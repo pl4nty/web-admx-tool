@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--Authenticator Browser Extension ocglkepbibnalbgmbachknglpdipeoio version: 8.0.1 generator: 048db1039928-->
+  <!--Authenticator ocglkepbibnalbgmbachknglpdipeoio version: 8.0.1 generator: 4360a27ad227-->
   <policyNamespaces>
     <target namespace="BrowserExtension.ocglkepbibnalbgmbachknglpdipeoio" prefix="ext_ocglkepbibnalbgmbachknglpdipeoio"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
   </policyNamespaces>
   <resources minRequiredRevision="1.0"/>
@@ -12,7 +13,9 @@
     </definitions>
   </supportedOn>
   <categories>
-    <category name="extension" displayName="$(string.extension)"/>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
   </categories>
   <policies>
     <policy name="extension_disableInstallHelp" class="Both" displayName="$(string.extension_disableInstallHelp)" explainText="$(string.extension_disableInstallHelp_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\ocglkepbibnalbgmbachknglpdipeoio\policy" valueName="disableInstallHelp">

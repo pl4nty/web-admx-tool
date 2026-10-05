@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--uBlock Origin Browser Extension odfafepnkmbhccpbejgmiehpchacaeak version: 2026.916.75.0 generator: c77639969e94-->
+  <!--uBlock Origin odfafepnkmbhccpbejgmiehpchacaeak version: 2026.916.75.0 generator: a2dd21b8920d-->
   <policyNamespaces>
     <target namespace="BrowserExtension.odfafepnkmbhccpbejgmiehpchacaeak" prefix="ext_odfafepnkmbhccpbejgmiehpchacaeak"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
   </policyNamespaces>
   <resources minRequiredRevision="1.0"/>
@@ -12,7 +13,9 @@
     </definitions>
   </supportedOn>
   <categories>
-    <category name="extension" displayName="$(string.extension)"/>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
     <category name="extension_toAdd" displayName="$(string.extension_toAdd)">
       <parentCategory ref="extension"/>
     </category>

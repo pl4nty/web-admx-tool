@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--Privacy Badger Browser Extension mkejgcgkdlddbggjhhflekkondicpnop version: 2026.9.15 generator: 7cee85211fd4-->
+  <!--Privacy Badger mkejgcgkdlddbggjhhflekkondicpnop version: 2026.9.15 generator: 74ad193ece68-->
   <policyNamespaces>
     <target namespace="BrowserExtension.mkejgcgkdlddbggjhhflekkondicpnop" prefix="ext_mkejgcgkdlddbggjhhflekkondicpnop"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
   </policyNamespaces>
   <resources minRequiredRevision="1.0"/>
@@ -12,7 +13,9 @@
     </definitions>
   </supportedOn>
   <categories>
-    <category name="extension" displayName="$(string.extension)"/>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
   </categories>
   <policies>
     <policy name="extension_checkForDNTPolicy" class="Both" displayName="$(string.extension_checkForDNTPolicy)" explainText="$(string.extension_checkForDNTPolicy_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\mkejgcgkdlddbggjhhflekkondicpnop\policy" valueName="checkForDNTPolicy">

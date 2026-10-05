@@ -28,6 +28,9 @@ export interface ExtensionTemplateInput {
 
 const REGISTRY_ROOT = 'Software\\Policies\\Microsoft\\Edge\\3rdparty\\extensions'
 
+/** Shared "Browser Extensions" parent category, defined by generateExtensionCategoryAdmx */
+const PARENT = { namespace: 'BrowserExtension', prefix: 'browserextension', category: 'BrowserExtensions' }
+
 /** Chromium reads integer policies as signed 32-bit */
 const DECIMAL_MAX = 2147483647
 
@@ -127,7 +130,7 @@ export const sameVersion = (a: string, b: string) => {
 }
 
 export function generateExtensionAdmx(input: ExtensionTemplateInput): { admx: string; adml: string } {
-  const displayName = `${input.name} Browser Extension`
+  const displayName = input.name
   const rootKey = `${REGISTRY_ROOT}\\${input.id}\\policy`
   const messages = Object.fromEntries(
     Object.entries(input.messages ?? {}).map(([k, v]) => [k.toLowerCase(), v?.message])
@@ -162,12 +165,12 @@ export function generateExtensionAdmx(input: ExtensionTemplateInput): { admx: st
   }
   const addString = (id: string, text: string) => { strings.set(id, text); return `$(string.${id})` }
 
-  const categories: { name: string; displayName: string; parent?: string }[] = []
+  const categories: { name: string; displayName: string; parent: string }[] = []
   const policies = new XmlWriter()
   const presentations = new XmlWriter()
   const prefix = `ext_${input.id}`
   const rootCategory = uniqueId('extension')
-  categories.push({ name: rootCategory, displayName })
+  categories.push({ name: rootCategory, displayName, parent: `${PARENT.prefix}:${PARENT.category}` })
 
   const explain = (schema: any) => {
     const parts = [localize(schema.description)].filter(Boolean) as string[]
@@ -261,16 +264,16 @@ export function generateExtensionAdmx(input: ExtensionTemplateInput): { admx: st
   admx.raw(comment)
   admx.open('policyNamespaces')
     .leaf('target', { namespace: `BrowserExtension.${input.id}`, prefix })
+    .leaf('using', { namespace: PARENT.namespace, prefix: PARENT.prefix })
     .leaf('using', { namespace: 'Microsoft.Policies.Windows', prefix: 'windows' })
     .close('policyNamespaces')
   admx.leaf('resources', { minRequiredRevision: '1.0' })
   admx.open('supportedOn').open('definitions')
-    .leaf('definition', { name: 'SUPPORTED_EXTENSION', displayName: addString('SUPPORTED_EXTENSION', displayName) })
+    .leaf('definition', { name: 'SUPPORTED_EXTENSION', displayName: addString('SUPPORTED_EXTENSION', `${input.name} browser extension`) })
     .close('definitions').close('supportedOn')
   admx.open('categories')
   for (const cat of categories) {
-    if (!cat.parent) admx.leaf('category', { name: cat.name, displayName: addString(cat.name, cat.displayName) })
-    else admx.open('category', { name: cat.name, displayName: addString(cat.name, cat.displayName) })
+    admx.open('category', { name: cat.name, displayName: addString(cat.name, cat.displayName) })
       .leaf('parentCategory', { ref: cat.parent })
       .close('category')
   }
@@ -285,7 +288,7 @@ export function generateExtensionAdmx(input: ExtensionTemplateInput): { admx: st
   adml.open('policyDefinitionResources', { revision: '1.0', schemaVersion: '1.0', xmlns: 'http://www.microsoft.com/GroupPolicy/PolicyDefinitions' })
   adml.raw(comment)
   adml.leaf('displayName', {}, displayName)
-  adml.leaf('description', {}, `Policies for the ${displayName}, generated from its managed storage schema`)
+  adml.leaf('description', {}, `Policies for the ${input.name} browser extension, generated from its managed storage schema`)
   adml.open('resources')
   adml.open('stringTable')
   for (const [id, text] of strings) adml.leaf('string', { id }, text)
@@ -299,4 +302,36 @@ export function generateExtensionAdmx(input: ExtensionTemplateInput): { admx: st
   adml.close('policyDefinitionResources')
 
   return { admx: admx.toString(), adml: adml.toString() }
+}
+
+/** The "Browser Extensions" category that every generated extension template is nested under. */
+export function generateExtensionCategoryAdmx(): { admx: string; adml: string } {
+  const header = '<?xml version="1.0" encoding="utf-8"?>'
+  const attrs = 'revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"'
+  const admx = [
+    header,
+    `<policyDefinitions ${attrs}>`,
+    '  <policyNamespaces>',
+    `    <target namespace="${PARENT.namespace}" prefix="${PARENT.prefix}"/>`,
+    '  </policyNamespaces>',
+    '  <resources minRequiredRevision="1.0"/>',
+    '  <categories>',
+    `    <category name="${PARENT.category}" displayName="$(string.${PARENT.category})"/>`,
+    '  </categories>',
+    '  <policies/>',
+    '</policyDefinitions>',
+  ]
+  const adml = [
+    header,
+    `<policyDefinitionResources ${attrs}>`,
+    '  <displayName>Browser Extensions</displayName>',
+    '  <description>Parent category for browser extension policies</description>',
+    '  <resources>',
+    '    <stringTable>',
+    `      <string id="${PARENT.category}">Browser Extensions</string>`,
+    '    </stringTable>',
+    '  </resources>',
+    '</policyDefinitionResources>',
+  ]
+  return { admx: admx.join('\n') + '\n', adml: adml.join('\n') + '\n' }
 }

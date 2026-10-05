@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--uBlock Origin Lite Browser Extension cimighlppcgcoapaliogpjjdehbnofhn version: 2026.930.1227 generator: e6dbe66e52a9-->
+  <!--uBlock Origin Lite cimighlppcgcoapaliogpjjdehbnofhn version: 2026.930.1227 generator: a623e74b9c3a-->
   <policyNamespaces>
     <target namespace="BrowserExtension.cimighlppcgcoapaliogpjjdehbnofhn" prefix="ext_cimighlppcgcoapaliogpjjdehbnofhn"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
   </policyNamespaces>
   <resources minRequiredRevision="1.0"/>
@@ -12,7 +13,9 @@
     </definitions>
   </supportedOn>
   <categories>
-    <category name="extension" displayName="$(string.extension)"/>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
   </categories>
   <policies>
     <policy name="extension_defaultFiltering" class="Both" displayName="$(string.extension_defaultFiltering)" explainText="$(string.extension_defaultFiltering_Explain)" presentation="$(presentation.extension_defaultFiltering)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\cimighlppcgcoapaliogpjjdehbnofhn\policy">

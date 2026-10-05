@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--Dashlane Browser Extension gehmmocbbkpblljhkekmfhjpfbkclbph version: 6.2640.1 generator: ccb1ddf7a5e2-->
+  <!--Dashlane gehmmocbbkpblljhkekmfhjpfbkclbph version: 6.2640.1 generator: 681dd4bd26e8-->
   <policyNamespaces>
     <target namespace="BrowserExtension.gehmmocbbkpblljhkekmfhjpfbkclbph" prefix="ext_gehmmocbbkpblljhkekmfhjpfbkclbph"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
   </policyNamespaces>
   <resources minRequiredRevision="1.0"/>
@@ -12,7 +13,9 @@
     </definitions>
   </supportedOn>
   <categories>
-    <category name="extension" displayName="$(string.extension)"/>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
   </categories>
   <policies>
     <policy name="extension_is_extension_mass_deployed" class="Both" displayName="$(string.extension_is_extension_mass_deployed)" explainText="$(string.extension_is_extension_mass_deployed_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\gehmmocbbkpblljhkekmfhjpfbkclbph\policy" valueName="is_extension_mass_deployed">

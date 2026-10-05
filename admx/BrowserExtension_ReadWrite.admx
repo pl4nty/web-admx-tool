@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--Read&Write Browser Extension bjglhpoliipklkfjcahfefdlfpifcinb version: 2.1.1067 generator: 6a2dadba768d-->
+  <!--Read&Write bjglhpoliipklkfjcahfefdlfpifcinb version: 2.1.1067 generator: 9b620b38415a-->
   <policyNamespaces>
     <target namespace="BrowserExtension.bjglhpoliipklkfjcahfefdlfpifcinb" prefix="ext_bjglhpoliipklkfjcahfefdlfpifcinb"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
   </policyNamespaces>
   <resources minRequiredRevision="1.0"/>
@@ -12,7 +13,9 @@
     </definitions>
   </supportedOn>
   <categories>
-    <category name="extension" displayName="$(string.extension)"/>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
     <category name="extension_settings" displayName="$(string.extension_settings)">
       <parentCategory ref="extension"/>
     </category>

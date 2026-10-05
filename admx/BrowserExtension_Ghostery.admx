@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--Ghostery Browser Extension fclbdkbhjlgkbpfldjodgjncejkkjcme version: 10.6.6 generator: 3d1556922fa6-->
+  <!--Ghostery fclbdkbhjlgkbpfldjodgjncejkkjcme version: 10.6.6 generator: 6a71622335e1-->
   <policyNamespaces>
     <target namespace="BrowserExtension.fclbdkbhjlgkbpfldjodgjncejkkjcme" prefix="ext_fclbdkbhjlgkbpfldjodgjncejkkjcme"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
   </policyNamespaces>
   <resources minRequiredRevision="1.0"/>
@@ -12,7 +13,9 @@
     </definitions>
   </supportedOn>
   <categories>
-    <category name="extension" displayName="$(string.extension)"/>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
   </categories>
   <policies>
     <policy name="extension_disableOnboarding" class="Both" displayName="$(string.extension_disableOnboarding)" explainText="$(string.extension_disableOnboarding_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\fclbdkbhjlgkbpfldjodgjncejkkjcme\policy" valueName="disableOnboarding">
