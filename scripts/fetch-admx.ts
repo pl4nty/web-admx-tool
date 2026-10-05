@@ -215,7 +215,6 @@ const sources: Source[] = [
   src(() => msDownload(108847)), // Windows 11 2026 Update (26H2)
   src(() => msDownload(49030, url => url.includes('x64')), true),
   src(() => msDownload(55319, url => /Windows 11 .*Security Baseline\.zip$/i.test(url), true)),
-  src(() => 'https://web.archive.org/web/20200723045549/https://msdnshared.blob.core.windows.net/media/2016/10/MSS-legacy.zip'),
   src(() => githubRelease('microsoft', 'PowerToys', /GroupPolicyObjectFiles.*\.zip$/i)),
   { getUrls: async () => [await lenovoPolicyTemplateDownload()], allowMissing: true },
   src(() => dellCommandUpdateDownload()),
