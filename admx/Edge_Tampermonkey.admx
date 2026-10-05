@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--Tampermonkey Microsoft Edge extension iikmkjmpaadaobahmlepeloendndfphd version: 5.5.0-->
+  <policyNamespaces>
+    <target namespace="Microsoft.Policies.Edge.ThirdParty.iikmkjmpaadaobahmlepeloendndfphd" prefix="ext_iikmkjmpaadaobahmlepeloendndfphd"/>
+    <using namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="microsoft_edge:Extensions"/>
+    </category>
+  </categories>
+  <policies>
+    <policy name="extension_jsonImport" class="Both" displayName="$(string.extension_jsonImport)" explainText="$(string.extension_jsonImport_Explain)" presentation="$(presentation.extension_jsonImport)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\iikmkjmpaadaobahmlepeloendndfphd\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_jsonImport_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\iikmkjmpaadaobahmlepeloendndfphd\policy\jsonImport" valuePrefix=""/>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

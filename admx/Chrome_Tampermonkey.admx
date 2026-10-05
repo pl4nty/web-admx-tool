@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--Tampermonkey Google Chrome extension dhdgffkkebhmkfjojejmpbldmpobfkfo version: 5.5.1-->
+  <policyNamespaces>
+    <target namespace="Google.Policies.ThirdParty.dhdgffkkebhmkfjojejmpbldmpobfkfo" prefix="ext_dhdgffkkebhmkfjojejmpbldmpobfkfo"/>
+    <using namespace="Google.Policies.Chrome" prefix="chrome"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="chrome:Extensions"/>
+    </category>
+  </categories>
+  <policies>
+    <policy name="extension_jsonImport" class="Both" displayName="$(string.extension_jsonImport)" explainText="$(string.extension_jsonImport_Explain)" presentation="$(presentation.extension_jsonImport)" key="Software\Policies\Google\Chrome\3rdparty\extensions\dhdgffkkebhmkfjojejmpbldmpobfkfo\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_jsonImport_Part" key="Software\Policies\Google\Chrome\3rdparty\extensions\dhdgffkkebhmkfjojejmpbldmpobfkfo\policy\jsonImport" valuePrefix=""/>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

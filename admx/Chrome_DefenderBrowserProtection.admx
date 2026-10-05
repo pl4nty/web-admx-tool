@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--Microsoft Defender Browser Protection Google Chrome extension bkbeeeffjjeopflfhgeknacdieedcoml version: 1.664-->
+  <policyNamespaces>
+    <target namespace="Google.Policies.ThirdParty.bkbeeeffjjeopflfhgeknacdieedcoml" prefix="ext_bkbeeeffjjeopflfhgeknacdieedcoml"/>
+    <using namespace="Google.Policies.Chrome" prefix="chrome"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="chrome:Extensions"/>
+    </category>
+  </categories>
+  <policies>
+    <policy name="extension_HideProtectionToggle" class="Both" displayName="$(string.extension_HideProtectionToggle)" explainText="$(string.extension_HideProtectionToggle_Explain)" key="Software\Policies\Google\Chrome\3rdparty\extensions\bkbeeeffjjeopflfhgeknacdieedcoml\policy" valueName="HideProtectionToggle">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_PreventBlockOverride" class="Both" displayName="$(string.extension_PreventBlockOverride)" explainText="$(string.extension_PreventBlockOverride_Explain)" key="Software\Policies\Google\Chrome\3rdparty\extensions\bkbeeeffjjeopflfhgeknacdieedcoml\policy" valueName="PreventBlockOverride">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>

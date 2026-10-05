@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--Claude Google Chrome extension fcoeoabgfenejglbffodgkkbkcdhcgfn version: 1.0.98-->
+  <displayName>Claude (Google Chrome)</displayName>
+  <description>Policies for the Claude extension for Google Chrome, generated from its managed storage schema</description>
+  <resources>
+    <stringTable>
+      <string id="extension_blockedUrlPatterns">Blocked URL patterns</string>
+      <string id="extension_blockedUrlPatterns_Explain">URL patterns where Claude in Chrome is blocked. Each pattern is matched against the page's hostname and path (e.g. 'example.com/admin'). Use '*' as a wildcard to match any sequence of characters. Patterns are case-insensitive; a leading 'http://', 'https://', or 'www.' is ignored. A bare domain with no path is treated as '&lt;domain&gt;/*'. Example: 'github.com/myorg/*' blocks all pages under that path.</string>
+      <string id="extension_forceLoginOrgUUID">Force Login Organization UUID</string>
+      <string id="extension_forceLoginOrgUUID_Explain">Restricts which Anthropic organization(s) the extension can be used with. Accepts either a single UUID string or a JSON-encoded array of UUID strings. If the signed-in user's organization is not in this list, the extension shows a blocking page with a log out button. A Claude Desktop of a third-party deployment (an organization using Claude through its own model provider, on Anthropic's control plane) manages the extension while paired with it over the local connection — same account and organization as the extension — and may take control only if its organization is in this list (any organization when the list is unset). While managed, page data and telemetry stay local: the extension does not connect to Anthropic's hosted browser bridge, does not send error reports, performance telemetry, or usage analytics, does not fetch feature configuration from Anthropic, and makes no Anthropic API calls beyond identifying the signed-in user and the hosted URL-safety check; its own chat and tools are unavailable, and per-site permission decisions and prompts are delegated to Claude Desktop (safety-critical confirmations stay in the browser).</string>
+      <string id="SUPPORTED_EXTENSION">Claude extension for Google Chrome</string>
+      <string id="extension">Claude</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="extension_blockedUrlPatterns">
+        <listBox refId="extension_blockedUrlPatterns_Part">Blocked URL patterns</listBox>
+      </presentation>
+      <presentation id="extension_forceLoginOrgUUID">
+        <textBox refId="extension_forceLoginOrgUUID_Part">
+          <label>Force Login Organization UUID</label>
+        </textBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

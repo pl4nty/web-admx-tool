@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--uBlock Origin Microsoft Edge extension odfafepnkmbhccpbejgmiehpchacaeak version: 2026.916.75.0-->
+  <displayName>uBlock Origin (Microsoft Edge)</displayName>
+  <description>Policies for the uBlock Origin extension for Microsoft Edge, generated from its managed storage schema</description>
+  <resources>
+    <stringTable>
+      <string id="extension_adminSettings">A valid JSON string compliant with uBO's backup format</string>
+      <string id="extension_adminSettings_Explain">All entries present will overwrite local settings.</string>
+      <string id="extension_advancedSettings">A list of [name,value] pairs to populate advanced settings</string>
+      <string id="extension_userSettings">A list of [name,value] pairs to populate user settings</string>
+      <string id="extension_disableDashboard">Set to true to prevent access to configuration options</string>
+      <string id="extension_disabledPopupPanelParts">An array of strings used to remove parts of the popup panel</string>
+      <string id="extension_toAdd_trustedSiteDirectives">A list of trusted-site directives</string>
+      <string id="extension_toAdd_trustedSiteDirectives_Explain">Trusted-site directives to always add at launch time.</string>
+      <string id="extension_toOverwrite_filters">A collection of filters</string>
+      <string id="extension_toOverwrite_filters_Explain">The set of user filters to use at launch time -- where each entry is a distinct line.</string>
+      <string id="extension_toOverwrite_filterLists">A collection of list identifiers and/or list URLs</string>
+      <string id="extension_toOverwrite_filterLists_Explain">The set of filter lists to use at launch time.</string>
+      <string id="extension_toOverwrite_trustedSiteDirectives">A list of trusted-site directives</string>
+      <string id="SUPPORTED_EXTENSION">uBlock Origin extension for Microsoft Edge</string>
+      <string id="extension">uBlock Origin</string>
+      <string id="extension_toAdd">Settings to add at launch time</string>
+      <string id="extension_toOverwrite">Settings to overwrite at launch time</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="extension_adminSettings">
+        <textBox refId="extension_adminSettings_Part">
+          <label>A valid JSON string compliant with uBO's backup format</label>
+        </textBox>
+      </presentation>
+      <presentation id="extension_advancedSettings">
+        <listBox refId="extension_advancedSettings_Part">A list of [name,value] pairs to populate advanced settings (one JSON value per entry)</listBox>
+      </presentation>
+      <presentation id="extension_userSettings">
+        <listBox refId="extension_userSettings_Part">A list of [name,value] pairs to populate user settings (one JSON value per entry)</listBox>
+      </presentation>
+      <presentation id="extension_disabledPopupPanelParts">
+        <listBox refId="extension_disabledPopupPanelParts_Part">An array of strings used to remove parts of the popup panel</listBox>
+      </presentation>
+      <presentation id="extension_toAdd_trustedSiteDirectives">
+        <listBox refId="extension_toAdd_trustedSiteDirectives_Part">A list of trusted-site directives</listBox>
+      </presentation>
+      <presentation id="extension_toOverwrite_filters">
+        <listBox refId="extension_toOverwrite_filters_Part">A collection of filters</listBox>
+      </presentation>
+      <presentation id="extension_toOverwrite_filterLists">
+        <listBox refId="extension_toOverwrite_filterLists_Part">A collection of list identifiers and/or list URLs</listBox>
+      </presentation>
+      <presentation id="extension_toOverwrite_trustedSiteDirectives">
+        <listBox refId="extension_toOverwrite_trustedSiteDirectives_Part">A list of trusted-site directives</listBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

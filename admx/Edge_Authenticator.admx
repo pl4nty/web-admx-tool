@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--Authenticator Microsoft Edge extension ocglkepbibnalbgmbachknglpdipeoio version: 8.0.1-->
+  <policyNamespaces>
+    <target namespace="Microsoft.Policies.Edge.ThirdParty.ocglkepbibnalbgmbachknglpdipeoio" prefix="ext_ocglkepbibnalbgmbachknglpdipeoio"/>
+    <using namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="microsoft_edge:Extensions"/>
+    </category>
+  </categories>
+  <policies>
+    <policy name="extension_disableInstallHelp" class="Both" displayName="$(string.extension_disableInstallHelp)" explainText="$(string.extension_disableInstallHelp_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\ocglkepbibnalbgmbachknglpdipeoio\policy" valueName="disableInstallHelp">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_disableBackup" class="Both" displayName="$(string.extension_disableBackup)" explainText="$(string.extension_disableBackup_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\ocglkepbibnalbgmbachknglpdipeoio\policy" valueName="disableBackup">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_disableExport" class="Both" displayName="$(string.extension_disableExport)" explainText="$(string.extension_disableExport_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\ocglkepbibnalbgmbachknglpdipeoio\policy" valueName="disableExport">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_storageArea" class="Both" displayName="$(string.extension_storageArea)" explainText="$(string.extension_storageArea_Explain)" presentation="$(presentation.extension_storageArea)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\ocglkepbibnalbgmbachknglpdipeoio\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_storageArea_Part" valueName="storageArea" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_feedbackURL" class="Both" displayName="$(string.extension_feedbackURL)" explainText="$(string.extension_feedbackURL_Explain)" presentation="$(presentation.extension_feedbackURL)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\ocglkepbibnalbgmbachknglpdipeoio\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_feedbackURL_Part" valueName="feedbackURL" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_enforcePassword" class="Both" displayName="$(string.extension_enforcePassword)" explainText="$(string.extension_enforcePassword_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\ocglkepbibnalbgmbachknglpdipeoio\policy" valueName="enforcePassword">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_enforceAutolock" class="Both" displayName="$(string.extension_enforceAutolock)" explainText="$(string.extension_enforceAutolock_Explain)" presentation="$(presentation.extension_enforceAutolock)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\ocglkepbibnalbgmbachknglpdipeoio\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_enforceAutolock_Part" valueName="enforceAutolock" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_passwordPolicy" class="Both" displayName="$(string.extension_passwordPolicy)" explainText="$(string.extension_passwordPolicy_Explain)" presentation="$(presentation.extension_passwordPolicy)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\ocglkepbibnalbgmbachknglpdipeoio\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_passwordPolicy_Part" valueName="passwordPolicy" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_passwordPolicyHint" class="Both" displayName="$(string.extension_passwordPolicyHint)" explainText="$(string.extension_passwordPolicyHint_Explain)" presentation="$(presentation.extension_passwordPolicyHint)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\ocglkepbibnalbgmbachknglpdipeoio\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_passwordPolicyHint_Part" valueName="passwordPolicyHint" maxLength="1048576"/>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--Claude Google Chrome extension fcoeoabgfenejglbffodgkkbkcdhcgfn version: 1.0.98-->
+  <policyNamespaces>
+    <target namespace="Google.Policies.ThirdParty.fcoeoabgfenejglbffodgkkbkcdhcgfn" prefix="ext_fcoeoabgfenejglbffodgkkbkcdhcgfn"/>
+    <using namespace="Google.Policies.Chrome" prefix="chrome"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="chrome:Extensions"/>
+    </category>
+  </categories>
+  <policies>
+    <policy name="extension_blockedUrlPatterns" class="Both" displayName="$(string.extension_blockedUrlPatterns)" explainText="$(string.extension_blockedUrlPatterns_Explain)" presentation="$(presentation.extension_blockedUrlPatterns)" key="Software\Policies\Google\Chrome\3rdparty\extensions\fcoeoabgfenejglbffodgkkbkcdhcgfn\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_blockedUrlPatterns_Part" key="Software\Policies\Google\Chrome\3rdparty\extensions\fcoeoabgfenejglbffodgkkbkcdhcgfn\policy\blockedUrlPatterns" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_forceLoginOrgUUID" class="Both" displayName="$(string.extension_forceLoginOrgUUID)" explainText="$(string.extension_forceLoginOrgUUID_Explain)" presentation="$(presentation.extension_forceLoginOrgUUID)" key="Software\Policies\Google\Chrome\3rdparty\extensions\fcoeoabgfenejglbffodgkkbkcdhcgfn\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_forceLoginOrgUUID_Part" valueName="forceLoginOrgUUID" maxLength="1048576"/>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

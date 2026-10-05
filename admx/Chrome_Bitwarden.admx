@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--Bitwarden Google Chrome extension nngceckbapebfimnlniiiahkandclblb version: 2026.9.3-->
+  <policyNamespaces>
+    <target namespace="Google.Policies.ThirdParty.nngceckbapebfimnlniiiahkandclblb" prefix="ext_nngceckbapebfimnlniiiahkandclblb"/>
+    <using namespace="Google.Policies.Chrome" prefix="chrome"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="chrome:Extensions"/>
+    </category>
+    <category name="extension_environment" displayName="$(string.extension_environment)">
+      <parentCategory ref="extension"/>
+    </category>
+  </categories>
+  <policies>
+    <policy name="extension_environment_base" class="Both" displayName="$(string.extension_environment_base)" explainText="$(string.extension_environment_base_Explain)" presentation="$(presentation.extension_environment_base)" key="Software\Policies\Google\Chrome\3rdparty\extensions\nngceckbapebfimnlniiiahkandclblb\policy\environment">
+      <parentCategory ref="extension_environment"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_environment_base_Part" valueName="base" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_environment_webVault" class="Both" displayName="$(string.extension_environment_webVault)" presentation="$(presentation.extension_environment_webVault)" key="Software\Policies\Google\Chrome\3rdparty\extensions\nngceckbapebfimnlniiiahkandclblb\policy\environment">
+      <parentCategory ref="extension_environment"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_environment_webVault_Part" valueName="webVault" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_environment_api" class="Both" displayName="$(string.extension_environment_api)" presentation="$(presentation.extension_environment_api)" key="Software\Policies\Google\Chrome\3rdparty\extensions\nngceckbapebfimnlniiiahkandclblb\policy\environment">
+      <parentCategory ref="extension_environment"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_environment_api_Part" valueName="api" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_environment_identity" class="Both" displayName="$(string.extension_environment_identity)" presentation="$(presentation.extension_environment_identity)" key="Software\Policies\Google\Chrome\3rdparty\extensions\nngceckbapebfimnlniiiahkandclblb\policy\environment">
+      <parentCategory ref="extension_environment"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_environment_identity_Part" valueName="identity" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_environment_icons" class="Both" displayName="$(string.extension_environment_icons)" presentation="$(presentation.extension_environment_icons)" key="Software\Policies\Google\Chrome\3rdparty\extensions\nngceckbapebfimnlniiiahkandclblb\policy\environment">
+      <parentCategory ref="extension_environment"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_environment_icons_Part" valueName="icons" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_environment_notifications" class="Both" displayName="$(string.extension_environment_notifications)" presentation="$(presentation.extension_environment_notifications)" key="Software\Policies\Google\Chrome\3rdparty\extensions\nngceckbapebfimnlniiiahkandclblb\policy\environment">
+      <parentCategory ref="extension_environment"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_environment_notifications_Part" valueName="notifications" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_environment_events" class="Both" displayName="$(string.extension_environment_events)" presentation="$(presentation.extension_environment_events)" key="Software\Policies\Google\Chrome\3rdparty\extensions\nngceckbapebfimnlniiiahkandclblb\policy\environment">
+      <parentCategory ref="extension_environment"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_environment_events_Part" valueName="events" maxLength="1048576"/>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

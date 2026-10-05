@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--Adobe Acrobat Microsoft Edge extension elhekieabhbkpmcefcoobjddigjcaadp version: 26.9.2.0-->
+  <policyNamespaces>
+    <target namespace="Microsoft.Policies.Edge.ThirdParty.elhekieabhbkpmcefcoobjddigjcaadp" prefix="ext_elhekieabhbkpmcefcoobjddigjcaadp"/>
+    <using namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="microsoft_edge:Extensions"/>
+    </category>
+  </categories>
+  <policies>
+    <policy name="extension_OpenHelpx" class="Both" displayName="$(string.extension_OpenHelpx)" explainText="$(string.extension_OpenHelpx_Explain)" presentation="$(presentation.extension_OpenHelpx)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\elhekieabhbkpmcefcoobjddigjcaadp\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_OpenHelpx_Part" valueName="OpenHelpx" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_UsageMeasurement" class="Both" displayName="$(string.extension_UsageMeasurement)" explainText="$(string.extension_UsageMeasurement_Explain)" presentation="$(presentation.extension_UsageMeasurement)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\elhekieabhbkpmcefcoobjddigjcaadp\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_UsageMeasurement_Part" valueName="UsageMeasurement" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_UninstallPopup" class="Both" displayName="$(string.extension_UninstallPopup)" explainText="$(string.extension_UninstallPopup_Explain)" presentation="$(presentation.extension_UninstallPopup)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\elhekieabhbkpmcefcoobjddigjcaadp\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_UninstallPopup_Part" valueName="UninstallPopup" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_DisableGenAI" class="Both" displayName="$(string.extension_DisableGenAI)" explainText="$(string.extension_DisableGenAI_Explain)" presentation="$(presentation.extension_DisableGenAI)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\elhekieabhbkpmcefcoobjddigjcaadp\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_DisableGenAI_Part" valueName="DisableGenAI" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_DisableWhatsNewAutoOpen" class="Both" displayName="$(string.extension_DisableWhatsNewAutoOpen)" explainText="$(string.extension_DisableWhatsNewAutoOpen_Explain)" presentation="$(presentation.extension_DisableWhatsNewAutoOpen)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\elhekieabhbkpmcefcoobjddigjcaadp\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_DisableWhatsNewAutoOpen_Part" valueName="DisableWhatsNewAutoOpen" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_DisableExpress" class="Both" displayName="$(string.extension_DisableExpress)" explainText="$(string.extension_DisableExpress_Explain)" presentation="$(presentation.extension_DisableExpress)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\elhekieabhbkpmcefcoobjddigjcaadp\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_DisableExpress_Part" valueName="DisableExpress" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_DisableShareTextToWhatsApp" class="Both" displayName="$(string.extension_DisableShareTextToWhatsApp)" explainText="$(string.extension_DisableShareTextToWhatsApp_Explain)" presentation="$(presentation.extension_DisableShareTextToWhatsApp)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\elhekieabhbkpmcefcoobjddigjcaadp\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_DisableShareTextToWhatsApp_Part" valueName="DisableShareTextToWhatsApp" maxLength="1048576"/>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>
