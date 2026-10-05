@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--Push Security dljjddkmmcminffjbcmeccgfbjlhmhlm version: 2.49.27 generator: fcf757435e62-->
+  <policyNamespaces>
+    <target namespace="BrowserExtension.dljjddkmmcminffjbcmeccgfbjlhmhlm" prefix="ext_dljjddkmmcminffjbcmeccgfbjlhmhlm"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
+  </categories>
+  <policies>
+    <policy name="extension_env" class="Both" displayName="$(string.extension_env)" explainText="$(string.extension_env_Explain)" presentation="$(presentation.extension_env)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\dljjddkmmcminffjbcmeccgfbjlhmhlm\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_env_Part" valueName="env" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_envKey" class="Both" displayName="$(string.extension_envKey)" explainText="$(string.extension_envKey_Explain)" presentation="$(presentation.extension_envKey)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\dljjddkmmcminffjbcmeccgfbjlhmhlm\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_envKey_Part" valueName="envKey" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_region" class="Both" displayName="$(string.extension_region)" explainText="$(string.extension_region_Explain)" presentation="$(presentation.extension_region)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\dljjddkmmcminffjbcmeccgfbjlhmhlm\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_region_Part" valueName="region" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_token" class="Both" displayName="$(string.extension_token)" explainText="$(string.extension_token_Explain)" presentation="$(presentation.extension_token)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\dljjddkmmcminffjbcmeccgfbjlhmhlm\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_token_Part" valueName="token" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_email" class="Both" displayName="$(string.extension_email)" explainText="$(string.extension_email_Explain)" presentation="$(presentation.extension_email)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\dljjddkmmcminffjbcmeccgfbjlhmhlm\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_email_Part" valueName="email" maxLength="1048576"/>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

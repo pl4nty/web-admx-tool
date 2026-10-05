@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--Netskope pjfbgcbklnoeejjipoabcfnijajgikpb version: 135.0.0 generator: dd6dfab4fd75-->
+  <displayName>Netskope</displayName>
+  <description>Policies for the Netskope browser extension, generated from its managed storage schema</description>
+  <resources>
+    <stringTable>
+      <string id="extension_tenant">Tenant URL</string>
+      <string id="extension_block_disable">Prevent Disable</string>
+      <string id="extension_block_disable_Explain">Prevent users from disabling the extension.</string>
+      <string id="extension_disabled">Disable Traffic Steering</string>
+      <string id="extension_disabled_Explain">Disable traffic steering by extension.</string>
+      <string id="extension_enforce_os">Enforced Operating Systems</string>
+      <string id="extension_enforce_os_Explain">List of operating systems the extension is allowed to steering traffic.</string>
+      <string id="extension_bypass_list">Bypass URL List</string>
+      <string id="extension_bypass_list_Explain">List of domains or URLs to bypass the extension.</string>
+      <string id="extension_header_skip_list">Domains to Skip Header Injection</string>
+      <string id="extension_header_skip_list_Explain">List of domains where header injection for explicit proxy authentication will be excluded.</string>
+      <string id="extension_pac_url">PAC File URL</string>
+      <string id="extension_pac_url_Explain">URL to fetch the Proxy Auto-Config file.</string>
+      <string id="extension_pac_data">PAC Script Content</string>
+      <string id="extension_pac_data_Explain">Raw content of the PAC script to be used.</string>
+      <string id="extension_user_notification_enabled">User Notifications</string>
+      <string id="extension_user_notification_enabled_Explain">Show notifications to users when actions occur.</string>
+      <string id="extension_hidePopup">Hide Popup</string>
+      <string id="extension_hidePopup_Explain">Prevent the popup from being displayed.</string>
+      <string id="SUPPORTED_EXTENSION">Netskope browser extension</string>
+      <string id="extension">Netskope</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="extension_tenant">
+        <textBox refId="extension_tenant_Part">
+          <label>Tenant URL</label>
+        </textBox>
+      </presentation>
+      <presentation id="extension_enforce_os">
+        <listBox refId="extension_enforce_os_Part">Enforced Operating Systems</listBox>
+      </presentation>
+      <presentation id="extension_bypass_list">
+        <listBox refId="extension_bypass_list_Part">Bypass URL List</listBox>
+      </presentation>
+      <presentation id="extension_header_skip_list">
+        <listBox refId="extension_header_skip_list_Part">Domains to Skip Header Injection</listBox>
+      </presentation>
+      <presentation id="extension_pac_url">
+        <textBox refId="extension_pac_url_Part">
+          <label>PAC File URL</label>
+        </textBox>
+      </presentation>
+      <presentation id="extension_pac_data">
+        <textBox refId="extension_pac_data_Part">
+          <label>PAC Script Content</label>
+        </textBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

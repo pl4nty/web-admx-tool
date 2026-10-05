@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--Netskope pjfbgcbklnoeejjipoabcfnijajgikpb version: 135.0.0 generator: dd6dfab4fd75-->
+  <policyNamespaces>
+    <target namespace="BrowserExtension.pjfbgcbklnoeejjipoabcfnijajgikpb" prefix="ext_pjfbgcbklnoeejjipoabcfnijajgikpb"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
+  </categories>
+  <policies>
+    <policy name="extension_tenant" class="Both" displayName="$(string.extension_tenant)" presentation="$(presentation.extension_tenant)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pjfbgcbklnoeejjipoabcfnijajgikpb\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_tenant_Part" valueName="tenant" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_block_disable" class="Both" displayName="$(string.extension_block_disable)" explainText="$(string.extension_block_disable_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pjfbgcbklnoeejjipoabcfnijajgikpb\policy" valueName="block_disable">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_disabled" class="Both" displayName="$(string.extension_disabled)" explainText="$(string.extension_disabled_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pjfbgcbklnoeejjipoabcfnijajgikpb\policy" valueName="disabled">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_enforce_os" class="Both" displayName="$(string.extension_enforce_os)" explainText="$(string.extension_enforce_os_Explain)" presentation="$(presentation.extension_enforce_os)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pjfbgcbklnoeejjipoabcfnijajgikpb\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_enforce_os_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pjfbgcbklnoeejjipoabcfnijajgikpb\policy\enforce_os" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_bypass_list" class="Both" displayName="$(string.extension_bypass_list)" explainText="$(string.extension_bypass_list_Explain)" presentation="$(presentation.extension_bypass_list)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pjfbgcbklnoeejjipoabcfnijajgikpb\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_bypass_list_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pjfbgcbklnoeejjipoabcfnijajgikpb\policy\bypass_list" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_header_skip_list" class="Both" displayName="$(string.extension_header_skip_list)" explainText="$(string.extension_header_skip_list_Explain)" presentation="$(presentation.extension_header_skip_list)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pjfbgcbklnoeejjipoabcfnijajgikpb\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_header_skip_list_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pjfbgcbklnoeejjipoabcfnijajgikpb\policy\header_skip_list" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_pac_url" class="Both" displayName="$(string.extension_pac_url)" explainText="$(string.extension_pac_url_Explain)" presentation="$(presentation.extension_pac_url)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pjfbgcbklnoeejjipoabcfnijajgikpb\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_pac_url_Part" valueName="pac_url" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_pac_data" class="Both" displayName="$(string.extension_pac_data)" explainText="$(string.extension_pac_data_Explain)" presentation="$(presentation.extension_pac_data)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pjfbgcbklnoeejjipoabcfnijajgikpb\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_pac_data_Part" valueName="pac_data" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_user_notification_enabled" class="Both" displayName="$(string.extension_user_notification_enabled)" explainText="$(string.extension_user_notification_enabled_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pjfbgcbklnoeejjipoabcfnijajgikpb\policy" valueName="user_notification_enabled">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_hidePopup" class="Both" displayName="$(string.extension_hidePopup)" explainText="$(string.extension_hidePopup_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pjfbgcbklnoeejjipoabcfnijajgikpb\policy" valueName="hidePopup">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>
