@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--Google Docs Offline Browser Extension ghbmnnjooekpmoecnnnilnnbdlolhkhi version: 1.110.1 generator: 5883e514aca5-->
+  <policyNamespaces>
+    <target namespace="BrowserExtension.ghbmnnjooekpmoecnnnilnnbdlolhkhi" prefix="ext_ghbmnnjooekpmoecnnnilnnbdlolhkhi"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)"/>
+  </categories>
+  <policies>
+    <policy name="extension_allowedDocsOfflineDomains" class="Both" displayName="$(string.extension_allowedDocsOfflineDomains)" explainText="$(string.extension_allowedDocsOfflineDomains_Explain)" presentation="$(presentation.extension_allowedDocsOfflineDomains)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\ghbmnnjooekpmoecnnnilnnbdlolhkhi\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_allowedDocsOfflineDomains_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\ghbmnnjooekpmoecnnnilnnbdlolhkhi\policy\allowedDocsOfflineDomains" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_autoEnabledDocsOfflineDomains" class="Both" displayName="$(string.extension_autoEnabledDocsOfflineDomains)" explainText="$(string.extension_autoEnabledDocsOfflineDomains_Explain)" presentation="$(presentation.extension_autoEnabledDocsOfflineDomains)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\ghbmnnjooekpmoecnnnilnnbdlolhkhi\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_autoEnabledDocsOfflineDomains_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\ghbmnnjooekpmoecnnnilnnbdlolhkhi\policy\autoEnabledDocsOfflineDomains" valuePrefix=""/>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

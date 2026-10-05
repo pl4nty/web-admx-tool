@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--Google Docs Offline Browser Extension ghbmnnjooekpmoecnnnilnnbdlolhkhi version: 1.110.1 generator: 5883e514aca5-->
+  <displayName>Google Docs Offline Browser Extension</displayName>
+  <description>Policies for the Google Docs Offline Browser Extension, generated from its managed storage schema</description>
+  <resources>
+    <stringTable>
+      <string id="extension_allowedDocsOfflineDomains">Allow users to enable Docs offline for the specified managed domains.</string>
+      <string id="extension_allowedDocsOfflineDomains_Explain">Users on managed devices will be able to enable docs offline if they are part of the specified managed domains.</string>
+      <string id="extension_autoEnabledDocsOfflineDomains">Auto enable Docs offline for the specified managed domains in certain eligible situations.</string>
+      <string id="extension_autoEnabledDocsOfflineDomains_Explain">Users on managed devices, in certain eligible situations, will be able to automatically access and edit recent files offline for the managed domains set in this property. They can still disable it from Drive settings.</string>
+      <string id="SUPPORTED_EXTENSION">Google Docs Offline Browser Extension</string>
+      <string id="extension">Google Docs Offline Browser Extension</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="extension_allowedDocsOfflineDomains">
+        <listBox refId="extension_allowedDocsOfflineDomains_Part">Allow users to enable Docs offline for the specified managed domains.</listBox>
+      </presentation>
+      <presentation id="extension_autoEnabledDocsOfflineDomains">
+        <listBox refId="extension_autoEnabledDocsOfflineDomains_Part">Auto enable Docs offline for the specified managed domains in certain eligible situations.</listBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

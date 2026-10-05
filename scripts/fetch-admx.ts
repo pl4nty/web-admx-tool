@@ -4,7 +4,8 @@ import { join, resolve, sep } from 'path'
 import { execSync } from 'child_process'
 import { unzipSync } from 'fflate'
 import { walkDir, runWithLimit } from '../src/admxUtils'
-import { generateExtensionAdmx, readExtensionPackage, unpackCrx, type ExtensionBrowser } from '../src/extensionAdmx'
+import { createHash } from 'crypto'
+import { generateExtensionAdmx, readExtensionPackage, readTemplateStamp, sameVersion, unpackCrx } from '../src/extensionAdmx'
 
 const ROOT = resolve(process.cwd())
 const ADMX_DIR = join(ROOT, 'admx')
@@ -201,24 +202,27 @@ function extract7z(buf: Buffer, isOffice: boolean, collector?: string[]) {
   }
 }
 
-type Extension = { name: string; slug: string; browser: ExtensionBrowser; id: string }
+type ExtensionStore = 'chrome' | 'edge'
+type Extension = { name: string; slug: string; store: ExtensionStore; id: string }
 type Source = { getUrls: () => Promise<string[]> | string[]; office?: boolean; allowMissing?: boolean; extension?: Extension }
 const src = (fn: () => Promise<string> | string, office?: boolean): Source =>
   ({ getUrls: async () => [await fn()], ...(office ? { office: true } : {}) })
 const srcAll = (fn: () => Promise<string[]>): Source => ({ getUrls: fn })
 
 // Browser extensions with a managed storage schema. ADMX are generated from the
-// schema, see src/extensionAdmx.ts. IDs differ between the Chrome Web Store and
-// Edge Add-ons, and the registry key includes the ID, so each store gets its own template.
-const CRX_URL: Record<ExtensionBrowser, (id: string) => string> = {
-  chrome: id => `https://clients2.google.com/service/update2/crx?response=redirect&prodversion=150.0&acceptformat=crx2,crx3&x=id%3D${id}%26uc`,
-  edge: id => `https://edge.microsoft.com/extensionwebstorebase/v1/crx?response=redirect&prodversion=150.0&x=id%3D${id}%26installsource%3Dondemand%26uc`,
+// schema with Edge registry keys, see src/extensionAdmx.ts. The key includes the
+// extension ID, so use the Edge Add-ons ID where one exists, otherwise the
+// Chrome Web Store ID (which Edge also uses when installing from that store).
+// Omaha update checks: v=0.0.0.0 returns the latest version and its download URL
+const UPDATE_URL: Record<ExtensionStore, (id: string) => string> = {
+  chrome: id => `https://clients2.google.com/service/update2/crx?prodversion=150.0&acceptformat=crx2,crx3&x=id%3D${id}%26v%3D0.0.0.0%26uc`,
+  edge: id => `https://edge.microsoft.com/extensionwebstorebase/v1/crx?prodversion=150.0&x=id%3D${id}%26v%3D0.0.0.0%26uc`,
 }
-const STORE_URL: Record<ExtensionBrowser, (id: string) => string> = {
+const STORE_URL: Record<ExtensionStore, (id: string) => string> = {
   chrome: id => `https://chromewebstore.google.com/detail/${id}`,
   edge: id => `https://microsoftedge.microsoft.com/addons/detail/${id}`,
 }
-const extensions: [name: string, slug: string, ids: Partial<Record<ExtensionBrowser, string>>][] = [
+const extensions: [name: string, slug: string, ids: Partial<Record<ExtensionStore, string>>][] = [
   ['Adobe Acrobat', 'AdobeAcrobat', { chrome: 'efaidnbmnnnibpcajpcglclefindmkaj', edge: 'elhekieabhbkpmcefcoobjddigjcaadp' }],
   ['Authenticator', 'Authenticator', { chrome: 'bhghoamapcdpbohphigoooaddinpkbai', edge: 'ocglkepbibnalbgmbachknglpdipeoio' }],
   ['axe DevTools', 'AxeDevTools', { chrome: 'lhdoppojpmngadmnindnejefpokejbdd', edge: 'kcenlimkmjjkdfcaleembgmldmnnlfkn' }],
@@ -230,7 +234,7 @@ const extensions: [name: string, slug: string, ids: Partial<Record<ExtensionBrow
   ['Ghostery', 'Ghostery', { chrome: 'mlomiejdfkolichcflejclcbmpeaniij', edge: 'fclbdkbhjlgkbpfldjodgjncejkkjcme' }],
   ['Google Docs Offline', 'GoogleDocsOffline', { chrome: 'ghbmnnjooekpmoecnnnilnnbdlolhkhi' }],
   ['Grammarly', 'Grammarly', { chrome: 'kbfnbcaeplbcioakkpcpgfkobkghlhen', edge: 'cnlefmmeadmemmdciolhbnfeacpdfbkd' }],
-  ['Microsoft Defender Browser Protection', 'DefenderBrowserProtection', { chrome: 'bkbeeeffjjeopflfhgeknacdieedcoml' }],
+  ['Microsoft Defender', 'DefenderBrowserProtection', { chrome: 'bkbeeeffjjeopflfhgeknacdieedcoml' }],
   ['Privacy Badger', 'PrivacyBadger', { chrome: 'pkehgijcmpdhfbdbbnkijodmdjhbjlgp', edge: 'mkejgcgkdlddbggjhhflekkondicpnop' }],
   ['Read&Write', 'ReadWrite', { chrome: 'inoeonmfapjbbkmdafoankkfajkcphgd', edge: 'bjglhpoliipklkfjcahfefdlfpifcinb' }],
   ['Screencastify', 'Screencastify', { chrome: 'mmeijimgabbpbgpdklnllpncmdofkcpn', edge: 'pdgepnkbokhdgjnhfmklkijfbdgngccm' }],
@@ -239,9 +243,11 @@ const extensions: [name: string, slug: string, ids: Partial<Record<ExtensionBrow
   ['uBlock Origin', 'uBlockOrigin', { edge: 'odfafepnkmbhccpbejgmiehpchacaeak' }],
   ['uBlock Origin Lite', 'uBlockOriginLite', { chrome: 'ddkjiahejlhfcafbddmgiahcphecmpfh', edge: 'cimighlppcgcoapaliogpjjdehbnofhn' }],
 ]
-const extensionSources: Source[] = extensions.flatMap(([name, slug, ids]) =>
-  (Object.entries(ids) as [ExtensionBrowser, string][]).map(([browser, id]) =>
-    ({ getUrls: () => [CRX_URL[browser](id)], extension: { name, slug, browser, id } })))
+const extensionSources: Source[] = extensions.map(([name, slug, ids]) => {
+  const store: ExtensionStore = ids.edge ? 'edge' : 'chrome'
+  const id = ids[store]!
+  return { getUrls: () => [UPDATE_URL[store](id)], extension: { name, slug, store, id } }
+})
 
 const sources: Source[] = [
   src(() => 'https://dl.google.com/dl/edgedl/chrome/policy/policy_templates.zip'),
@@ -349,16 +355,35 @@ function downloadAndExtract(buf: Buffer, isOffice: boolean, collector?: string[]
 }
 
 async function fetchExtension(source: Source & { extension: Extension }, idx: number, total: number) {
-  const { name, slug, browser, id } = source.extension
-  const [url] = await source.getUrls()
-  const { manifest, schema, messages } = readExtensionPackage(unpackCrx(await download(url)))
-  const { admx, adml } = generateExtensionAdmx({ name, id, browser, version: manifest.version, schema, messages })
-  const fileSlug = `${browser === 'chrome' ? 'Chrome' : 'Edge'}_${slug}`
-  writeFileSync(join(ADMX_DIR, `${fileSlug}.admx`), admx)
+  const { name, slug, store, id } = source.extension
+  const fileSlug = `BrowserExtension_${slug}`
+  const result = { ok: true as const, admx: 1, adml: 1, fileSlugToDownloadUrl: { [fileSlug]: STORE_URL[store](id) } }
+  const admxPath = join(ADMX_DIR, `${fileSlug}.admx`)
+  const admlPath = join(langDir('en-us'), `${fileSlug}.adml`)
+
+  const [updateUrl] = await source.getUrls()
+  const update = (await fetchText(updateUrl)).match(/<updatecheck\b[^>]*>/)?.[0] ?? ''
+  const attr = (name: string) => update.match(new RegExp(`\\b${name}="([^"]*)"`))?.[1]?.replace(/&amp;/g, '&')
+  const [codebase, version] = [attr('codebase'), attr('version')]
+  if (!codebase || !version) throw new Error(`No update available for ${name} (${store} ${id})`)
+
+  // Skip the download when neither the extension nor the generator changed
+  const fingerprint = createHash('sha1')
+    .update(readFileSync(join(ROOT, 'src', 'extensionAdmx.ts'))).update(JSON.stringify(source.extension))
+    .digest('hex').slice(0, 12)
+  const stamp = existsSync(admxPath) && existsSync(admlPath) ? readTemplateStamp(readFileSync(admxPath, 'utf8')) : {}
+  if (stamp.version && stamp.fingerprint === fingerprint && sameVersion(stamp.version, version)) {
+    console.log(`[${idx + 1}/${total}] ${name} ${version} unchanged`)
+    return result
+  }
+
+  const { manifest, schema, messages } = readExtensionPackage(unpackCrx(await download(codebase)))
+  const { admx, adml } = generateExtensionAdmx({ name, id, version: manifest.version, fingerprint, schema, messages })
+  writeFileSync(admxPath, admx)
   mkdirSync(langDir('en-us'), { recursive: true })
-  writeFileSync(join(langDir('en-us'), `${fileSlug}.adml`), adml)
-  console.log(`[${idx + 1}/${total}] ${name} ${manifest.version} (${browser} ${id})`)
-  return { ok: true as const, admx: 1, adml: 1, fileSlugToDownloadUrl: { [fileSlug]: STORE_URL[browser](id) } }
+  writeFileSync(admlPath, adml)
+  console.log(`[${idx + 1}/${total}] ${name} ${manifest.version} (${store} ${id})`)
+  return result
 }
 
 async function fetchSource(source: Source, idx: number, total: number) {

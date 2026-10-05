@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { zipSync, strToU8 } from 'fflate'
-import { generateExtensionAdmx, parseLenientJson, readExtensionPackage, unpackCrx } from './extensionAdmx'
+import { generateExtensionAdmx, parseLenientJson, readExtensionPackage, readTemplateStamp, sameVersion, unpackCrx } from './extensionAdmx'
 import { parseAdmx, parseAdml } from './parser'
 
 const ID = 'abcdefghijklmnopabcdefghijklmnop'
@@ -45,13 +45,13 @@ describe('generateExtensionAdmx', () => {
       nested: { type: 'object', properties: { '0': { $ref: 'Shared' }, shared: { id: 'Shared', type: 'object', properties: { url: { type: 'string' } } } } },
     },
   }
-  const { admx, adml } = generateExtensionAdmx({ name: 'Test & Co', id: ID, browser: 'edge', version: '1.2', schema, messages: { t: { message: 'Enabled' } } })
+  const { admx, adml } = generateExtensionAdmx({ name: 'Test & Co', id: ID, version: '1.2', schema, messages: { t: { message: 'Enabled' } } })
 
   it('targets the browser extension policy key', async () => {
     const parsed = await parseAdmx(admx)
-    expect(parsed.target.namespace).toBe(`Microsoft.Policies.Edge.ThirdParty.${ID}`)
+    expect(parsed.target.namespace).toBe(`BrowserExtension.${ID}`)
     expect(admx).toContain(`key="Software\\Policies\\Microsoft\\Edge\\3rdparty\\extensions\\${ID}\\policy"`)
-    expect(admx).toContain('<parentCategory ref="microsoft_edge:Extensions"/>')
+    expect(parsed.categories[0]).toMatchObject({ name: 'extension', parentRef: null })
   })
 
   it('maps schema types to ADMX elements', async () => {
@@ -69,9 +69,22 @@ describe('generateExtensionAdmx', () => {
   it('resolves localized strings and escapes XML', async () => {
     const { strings, presentations } = await parseAdml(adml)
     expect(adml).toContain('>Enabled</string>')
-    expect(adml).toContain('Test &amp; Co')
+    expect(adml).toContain('<displayName>Test &amp; Co Browser Extension</displayName>')
     expect(adml).toContain('Default: &quot;a&quot;')
-    expect(strings.extension).toBe('Test & Co')
+    expect(strings.extension).toBe('Test & Co Browser Extension')
     expect(presentations.extension_rules[0].label).toMatch(/JSON/)
+  })
+})
+
+describe('template stamp', () => {
+  it('round-trips version and fingerprint through the header comment', () => {
+    const { admx } = generateExtensionAdmx({ name: 'X', id: ID, version: '1.2.3', fingerprint: 'abc123', schema: { type: 'object', properties: {} } })
+    expect(readTemplateStamp(admx)).toEqual({ version: '1.2.3', fingerprint: 'abc123' })
+  })
+
+  it('compares versions ignoring trailing zeros', () => {
+    expect(sameVersion('2.1.1067', '2.1.1067.0')).toBe(true)
+    expect(sameVersion('1.0', '1')).toBe(true)
+    expect(sameVersion('1.10', '1.1')).toBe(false)
   })
 })

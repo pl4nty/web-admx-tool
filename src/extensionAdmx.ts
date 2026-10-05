@@ -3,7 +3,7 @@
  * schema (manifest `storage.managed_schema`).
  *
  * Port of Chromium's components/policy/tools/generate_extension_admx.py, with:
- * - Edge support (Software\Policies\Microsoft\Edge\3rdparty\extensions)
+ * - Edge registry keys (Software\Policies\Microsoft\Edge\3rdparty\extensions)
  * - `$ref`s resolved regardless of where the referenced `id` is declared
  * - enums rendered as dropdowns, integer min/max carried into decimal elements
  * - property-less objects and non-string list items accepted as JSON strings,
@@ -13,36 +13,20 @@
  */
 import { unzipSync, strFromU8 } from 'fflate'
 
-export type ExtensionBrowser = 'chrome' | 'edge'
-
 export interface ExtensionTemplateInput {
   /** Display name, e.g. "uBlock Origin" */
   name: string
-  /** 32-character extension ID in the browser's store */
+  /** 32-character extension ID, as installed in Edge */
   id: string
-  browser: ExtensionBrowser
   version?: string
+  /** Opaque value recorded in the header comment, used to detect stale templates */
+  fingerprint?: string
   schema: any
   /** Default-locale messages.json contents, used to resolve __MSG_x__ placeholders */
   messages?: Record<string, { message: string }>
 }
 
-const BROWSERS = {
-  chrome: {
-    label: 'Google Chrome',
-    registryRoot: 'Software\\Policies\\Google\\Chrome\\3rdparty\\extensions',
-    namespace: 'Google.Policies.ThirdParty',
-    parentNamespace: 'Google.Policies.Chrome',
-    parentPrefix: 'chrome',
-  },
-  edge: {
-    label: 'Microsoft Edge',
-    registryRoot: 'Software\\Policies\\Microsoft\\Edge\\3rdparty\\extensions',
-    namespace: 'Microsoft.Policies.Edge.ThirdParty',
-    parentNamespace: 'Microsoft.Policies.Edge',
-    parentPrefix: 'microsoft_edge',
-  },
-} as const
+const REGISTRY_ROOT = 'Software\\Policies\\Microsoft\\Edge\\3rdparty\\extensions'
 
 /** Chromium reads integer policies as signed 32-bit */
 const DECIMAL_MAX = 2147483647
@@ -84,7 +68,8 @@ export function unpackCrx(buf: Uint8Array): Record<string, Uint8Array> {
   } else if (buf[0] !== 0x50 || buf[1] !== 0x4B) {
     throw new Error('Not a CRX or zip package')
   }
-  return unzipSync(buf.subarray(offset))
+  // Only JSON is needed; skip inflating the rest (some packages are >100 MB)
+  return unzipSync(buf.subarray(offset), { filter: file => /\.json$/i.test(file.name) })
 }
 
 /** Reads the manifest, managed schema and default-locale messages from an unpacked extension. */
@@ -129,9 +114,21 @@ class XmlWriter {
   toString() { return this.lines.join('\n') + '\n' }
 }
 
+/** Reads the version and fingerprint recorded by generateExtensionAdmx */
+export function readTemplateStamp(admx: string): { version?: string; fingerprint?: string } {
+  const header = admx.match(/<!--[^\n]*?-->/)?.[0] ?? ''
+  return { version: header.match(/ version: (\S+)/)?.[1], fingerprint: header.match(/ generator: ([^\s-]+)/)?.[1] }
+}
+
+/** Compares extension versions, ignoring trailing zero components (1.2 == 1.2.0.0) */
+export const sameVersion = (a: string, b: string) => {
+  const norm = (v: string) => v.split('.').map(Number).join('.').replace(/(\.0)+$/, '')
+  return norm(a) === norm(b)
+}
+
 export function generateExtensionAdmx(input: ExtensionTemplateInput): { admx: string; adml: string } {
-  const browser = BROWSERS[input.browser]
-  const rootKey = `${browser.registryRoot}\\${input.id}\\policy`
+  const displayName = `${input.name} Browser Extension`
+  const rootKey = `${REGISTRY_ROOT}\\${input.id}\\policy`
   const messages = Object.fromEntries(
     Object.entries(input.messages ?? {}).map(([k, v]) => [k.toLowerCase(), v?.message])
   )
@@ -165,12 +162,12 @@ export function generateExtensionAdmx(input: ExtensionTemplateInput): { admx: st
   }
   const addString = (id: string, text: string) => { strings.set(id, text); return `$(string.${id})` }
 
-  const categories: { name: string; displayName: string; parent: string }[] = []
+  const categories: { name: string; displayName: string; parent?: string }[] = []
   const policies = new XmlWriter()
   const presentations = new XmlWriter()
   const prefix = `ext_${input.id}`
   const rootCategory = uniqueId('extension')
-  categories.push({ name: rootCategory, displayName: input.name, parent: `${browser.parentPrefix}:Extensions` })
+  categories.push({ name: rootCategory, displayName })
 
   const explain = (schema: any) => {
     const parts = [localize(schema.description)].filter(Boolean) as string[]
@@ -256,25 +253,24 @@ export function generateExtensionAdmx(input: ExtensionTemplateInput): { admx: st
   for (const [name, schema] of Object.entries(input.schema.properties ?? {}))
     addPolicy(name, schema, rootCategory, rootKey)
 
-  const comment = `<!--${input.name} ${browser.label} extension ${input.id}${input.version ? ` version: ${input.version}` : ''}-->`
-  const supportedText = `${input.name} extension for ${browser.label}`
+  const comment = `<!--${displayName} ${input.id}${input.version ? ` version: ${input.version}` : ''}${input.fingerprint ? ` generator: ${input.fingerprint}` : ''}-->`
 
   const admx = new XmlWriter()
   admx.raw('<?xml version="1.0" encoding="utf-8"?>')
   admx.open('policyDefinitions', { revision: '1.0', schemaVersion: '1.0', xmlns: 'http://www.microsoft.com/GroupPolicy/PolicyDefinitions' })
   admx.raw(comment)
   admx.open('policyNamespaces')
-    .leaf('target', { namespace: `${browser.namespace}.${input.id}`, prefix })
-    .leaf('using', { namespace: browser.parentNamespace, prefix: browser.parentPrefix })
+    .leaf('target', { namespace: `BrowserExtension.${input.id}`, prefix })
     .leaf('using', { namespace: 'Microsoft.Policies.Windows', prefix: 'windows' })
     .close('policyNamespaces')
   admx.leaf('resources', { minRequiredRevision: '1.0' })
   admx.open('supportedOn').open('definitions')
-    .leaf('definition', { name: 'SUPPORTED_EXTENSION', displayName: addString('SUPPORTED_EXTENSION', supportedText) })
+    .leaf('definition', { name: 'SUPPORTED_EXTENSION', displayName: addString('SUPPORTED_EXTENSION', displayName) })
     .close('definitions').close('supportedOn')
   admx.open('categories')
   for (const cat of categories) {
-    admx.open('category', { name: cat.name, displayName: addString(cat.name, cat.displayName) })
+    if (!cat.parent) admx.leaf('category', { name: cat.name, displayName: addString(cat.name, cat.displayName) })
+    else admx.open('category', { name: cat.name, displayName: addString(cat.name, cat.displayName) })
       .leaf('parentCategory', { ref: cat.parent })
       .close('category')
   }
@@ -288,8 +284,8 @@ export function generateExtensionAdmx(input: ExtensionTemplateInput): { admx: st
   adml.raw('<?xml version="1.0" encoding="utf-8"?>')
   adml.open('policyDefinitionResources', { revision: '1.0', schemaVersion: '1.0', xmlns: 'http://www.microsoft.com/GroupPolicy/PolicyDefinitions' })
   adml.raw(comment)
-  adml.leaf('displayName', {}, `${input.name} (${browser.label})`)
-  adml.leaf('description', {}, `Policies for the ${supportedText}, generated from its managed storage schema`)
+  adml.leaf('displayName', {}, displayName)
+  adml.leaf('description', {}, `Policies for the ${displayName}, generated from its managed storage schema`)
   adml.open('resources')
   adml.open('stringTable')
   for (const [id, text] of strings) adml.leaf('string', { id }, text)

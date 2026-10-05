@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--DuckDuckGo Browser Extension caoacbimdbbljakfhgikoodekdnlcgpk version: 2026.8.6 generator: d9468ada4204-->
+  <policyNamespaces>
+    <target namespace="BrowserExtension.caoacbimdbbljakfhgikoodekdnlcgpk" prefix="ext_caoacbimdbbljakfhgikoodekdnlcgpk"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)"/>
+  </categories>
+  <policies>
+    <policy name="extension_hasSeenPostInstall" class="Both" displayName="$(string.extension_hasSeenPostInstall)" explainText="$(string.extension_hasSeenPostInstall_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\caoacbimdbbljakfhgikoodekdnlcgpk\policy" valueName="hasSeenPostInstall">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>

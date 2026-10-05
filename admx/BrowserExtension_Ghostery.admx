@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--Ghostery Browser Extension fclbdkbhjlgkbpfldjodgjncejkkjcme version: 10.6.6 generator: 3d1556922fa6-->
+  <policyNamespaces>
+    <target namespace="BrowserExtension.fclbdkbhjlgkbpfldjodgjncejkkjcme" prefix="ext_fclbdkbhjlgkbpfldjodgjncejkkjcme"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)"/>
+  </categories>
+  <policies>
+    <policy name="extension_disableOnboarding" class="Both" displayName="$(string.extension_disableOnboarding)" explainText="$(string.extension_disableOnboarding_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\fclbdkbhjlgkbpfldjodgjncejkkjcme\policy" valueName="disableOnboarding">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_disableUserControl" class="Both" displayName="$(string.extension_disableUserControl)" explainText="$(string.extension_disableUserControl_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\fclbdkbhjlgkbpfldjodgjncejkkjcme\policy" valueName="disableUserControl">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_disableUserAccount" class="Both" displayName="$(string.extension_disableUserAccount)" explainText="$(string.extension_disableUserAccount_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\fclbdkbhjlgkbpfldjodgjncejkkjcme\policy" valueName="disableUserAccount">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_disableTrackersPreview" class="Both" displayName="$(string.extension_disableTrackersPreview)" explainText="$(string.extension_disableTrackersPreview_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\fclbdkbhjlgkbpfldjodgjncejkkjcme\policy" valueName="disableTrackersPreview">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_trustedDomains" class="Both" displayName="$(string.extension_trustedDomains)" explainText="$(string.extension_trustedDomains_Explain)" presentation="$(presentation.extension_trustedDomains)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\fclbdkbhjlgkbpfldjodgjncejkkjcme\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_trustedDomains_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\fclbdkbhjlgkbpfldjodgjncejkkjcme\policy\trustedDomains" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_customFilters" class="Both" displayName="$(string.extension_customFilters)" explainText="$(string.extension_customFilters_Explain)" presentation="$(presentation.extension_customFilters)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\fclbdkbhjlgkbpfldjodgjncejkkjcme\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_customFilters_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\fclbdkbhjlgkbpfldjodgjncejkkjcme\policy\customFilters" valuePrefix=""/>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

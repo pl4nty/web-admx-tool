@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--uBlock Origin Lite Browser Extension cimighlppcgcoapaliogpjjdehbnofhn version: 2026.930.1227 generator: e6dbe66e52a9-->
+  <policyNamespaces>
+    <target namespace="BrowserExtension.cimighlppcgcoapaliogpjjdehbnofhn" prefix="ext_cimighlppcgcoapaliogpjjdehbnofhn"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)"/>
+  </categories>
+  <policies>
+    <policy name="extension_defaultFiltering" class="Both" displayName="$(string.extension_defaultFiltering)" explainText="$(string.extension_defaultFiltering_Explain)" presentation="$(presentation.extension_defaultFiltering)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\cimighlppcgcoapaliogpjjdehbnofhn\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_defaultFiltering_Part" valueName="defaultFiltering" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_disabledFeatures" class="Both" displayName="$(string.extension_disabledFeatures)" explainText="$(string.extension_disabledFeatures_Explain)" presentation="$(presentation.extension_disabledFeatures)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\cimighlppcgcoapaliogpjjdehbnofhn\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_disabledFeatures_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\cimighlppcgcoapaliogpjjdehbnofhn\policy\disabledFeatures" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_disableFirstRunPage" class="Both" displayName="$(string.extension_disableFirstRunPage)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\cimighlppcgcoapaliogpjjdehbnofhn\policy" valueName="disableFirstRunPage">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_noFiltering" class="Both" displayName="$(string.extension_noFiltering)" presentation="$(presentation.extension_noFiltering)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\cimighlppcgcoapaliogpjjdehbnofhn\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_noFiltering_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\cimighlppcgcoapaliogpjjdehbnofhn\policy\noFiltering" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_rulesets" class="Both" displayName="$(string.extension_rulesets)" explainText="$(string.extension_rulesets_Explain)" presentation="$(presentation.extension_rulesets)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\cimighlppcgcoapaliogpjjdehbnofhn\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_rulesets_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\cimighlppcgcoapaliogpjjdehbnofhn\policy\rulesets" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_popupBlockMode" class="Both" displayName="$(string.extension_popupBlockMode)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\cimighlppcgcoapaliogpjjdehbnofhn\policy" valueName="popupBlockMode">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_showBlockedCount" class="Both" displayName="$(string.extension_showBlockedCount)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\cimighlppcgcoapaliogpjjdehbnofhn\policy" valueName="showBlockedCount">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_strictBlockMode" class="Both" displayName="$(string.extension_strictBlockMode)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\cimighlppcgcoapaliogpjjdehbnofhn\policy" valueName="strictBlockMode">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>
