@@ -166,9 +166,9 @@ If you enable this policy setting, you can choose from three options to control 
 
 2. "Block embedding/linking, allow other activation" prevents the Flash control from being loaded when directly referenced by the document, but does not prevent activation through another object.
 
-3. "Allow all activation" overrides Office's default behavior, allowing the Flash Control to be activated.
+3. "Allow all activation" restores Office's default behavior, allowing the Flash control to be activated.
 
-Because this setting is not a true Group Policy setting and "tattoos" the registry, enabling the "Block all activations" option is the only way to restore default behavior after either "Block embedding/linking, allow other activation" or "Allow all Activations" options has been applied. We do not recommend configuring this setting to "Disabled," nor to "Not Configured" after it has been enabled.
+Because this setting is not a true Group Policy setting and "tattoos" the registry, enabling the "Allow all activation" option is the only way to restore default behavior after either of the "Block" options has been applied. We do not recommend configuring this setting to "Disabled," nor to "Not Configured" after it has been enabled.
 </string>
       <string id="BlockFlash_BlockActivation">Block all activation</string>
       <string id="BlockFlash_BlockEmbedded">Block embedding/linking, allow other activation</string>

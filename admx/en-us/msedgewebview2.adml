@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 156.0.4301.0--><displayName/><description/><resources><stringTable><string id="WebView2LoaderOverrideSettings_group">Loader Override Settings</string><string id="BrowserExecutableFolder">Configure the location of the browser executable folder</string><string id="BrowserExecutableFolder_Explain">This policy configures WebView2 applications to use the WebView2 Runtime in the specified path. The folder should contain the following files: msedgewebview2.exe, msedge.dll, and so on.
+<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 156.0.4314.8--><displayName/><description/><resources><stringTable><string id="WebView2LoaderOverrideSettings_group">Loader Override Settings</string><string id="BrowserExecutableFolder">Configure the location of the browser executable folder</string><string id="BrowserExecutableFolder_Explain">This policy configures WebView2 applications to use the WebView2 Runtime in the specified path. The folder should contain the following files: msedgewebview2.exe, msedge.dll, and so on.
 
 To set the value for the folder path, provide a Value name and Value pair. Set value name to the Application User Model ID or the executable file name. You can use the &quot;*&quot; wildcard as value name to apply to all applications.
 
@@ -99,9 +99,9 @@ Policy options mapping:
 
 * RestrictedMode (0) = Disable communication with the Experimentation and Configuration Service
 
-Use the preceding information when configuring this policy.</string><string id="ExperimentationAndConfigurationServiceControl_FullMode">Retrieve configurations and experiments</string><string id="ExperimentationAndConfigurationServiceControl_ConfigurationsOnlyMode">Retrieve configurations only</string><string id="ExperimentationAndConfigurationServiceControl_RestrictedMode">Disable communication with the Experimentation and Configuration Service</string><string id="ForcePermissionPolicyUnloadDefaultEnabled">Controls whether unload event handlers can be disabled.</string><string id="ForcePermissionPolicyUnloadDefaultEnabled_Explain">unload event handlers are being deprecated. Whether they fire depends on the unload Permissions-Policy.
-Currently, the policy allows them by default. In the future, they move to being disallowed by default, and sites must explicitly enable them using Permissions-Policy headers.
-This enterprise policy can be used to opt out of this gradual deprecation by forcing the default to stay enabled.
+Use the preceding information when configuring this policy.</string><string id="ExperimentationAndConfigurationServiceControl_FullMode">Retrieve configurations and experiments</string><string id="ExperimentationAndConfigurationServiceControl_ConfigurationsOnlyMode">Retrieve configurations only</string><string id="ExperimentationAndConfigurationServiceControl_RestrictedMode">Disable communication with the Experimentation and Configuration Service</string><string id="ForcePermissionPolicyUnloadDefaultEnabled">Controls whether unload event handlers can be disabled.</string><string id="ForcePermissionPolicyUnloadDefaultEnabled_Explain">The unload event handlers are being deprecated. Whether they fire depends on the unload Permissions-Policy.
+Currently, the policy allows them by default. In the future, they will be disallowed by default, and sites must explicitly enable them using Permissions-Policy headers.
+This enterprise policy can be used to opt out of this gradual deprecation by forcing the default to remain enabled.
 
 Pages might depend on unload event handlers to save data or to signal the end of a user session to the server.
 This dependency isn't recommended because it's unreliable and impacts performance by blocking use of BackForwardCache.
@@ -128,7 +128,11 @@ If you disable this policy, it prevents users or Microsoft Edge variations from 
 
 If you enable or don't configure this policy, it allows enabling NewBaseUrlInheritanceBehavior.
 
-The policy became obsolete starting from Microsoft Edge version 136, but the NewBaseUrlInheritanceBehaviorAllowed feature was removed in Microsoft Edge version 123.</string><string id="NewPDFReaderWebView2List">Enable built-in PDF reader powered by Adobe Acrobat for WebView2</string><string id="NewPDFReaderWebView2List_Explain">This policy configures WebView2 applications to launch the new version of the PDF reader that's powered by Adobe Acrobat's PDF reader. The new PDF reader ensures that there's no loss of functionality and delivers an enhanced PDF experience. This experience includes richer rendering, improved performance, strong security for PDF file handling, and greater accessibility.
+The policy became obsolete starting from Microsoft Edge version 136, but the NewBaseUrlInheritanceBehaviorAllowed feature was removed in Microsoft Edge version 123.</string><string id="NewPDFReaderWebView2List">Enable built-in PDF reader powered by Adobe Acrobat for WebView2 (deprecated)</string><string id="NewPDFReaderWebView2List_Explain">DEPRECATED: This policy is deprecated. It is currently supported but will become obsolete in a future release.
+
+Starting in Microsoft Edge WebView2 version 156, this policy is deprecated as the built-in PDF reader experience has transitioned to the newer version. The policy will remain supported for a minimum of 6 major releases and is planned to become obsolete starting in Microsoft Edge WebView2 version 162. Once obsolete, organizations will no longer be able to use this policy to opt WebView2 applications out of the new PDF reader. Your organization should remove this policy before it becomes obsolete.
+
+This policy configures WebView2 applications to launch the new version of the PDF reader that's powered by Adobe Acrobat's PDF reader. The new PDF reader ensures that there's no loss of functionality and delivers an enhanced PDF experience. This experience includes richer rendering, improved performance, strong security for PDF file handling, and greater accessibility.
 
 If this policy is specified for an application, it is possible that it may impact other related applications as well. The policy is applied to all WebView2s sharing the same WebView2 user data folder. These WebView2s could potentially belong to multiple applications if those applications, which are likely from the same product family, are designed to share the same user data folder.
 
@@ -142,7 +146,7 @@ Example value:
 
 {&quot;name&quot;: &quot;app1.exe&quot;, &quot;value&quot;: true}
 {&quot;name&quot;: &quot;app_id_for_app2&quot;, &quot;value&quot;: true}
-{&quot;name&quot;: &quot;*&quot;, &quot;value&quot;: false}</string><string id="NewPDFReaderWebView2ListDesc">Enable built-in PDF reader powered by Adobe Acrobat for WebView2</string><string id="RSAKeyUsageForLocalAnchorsEnabled">Check RSA key usage for server certificates issued by local trust anchors (obsolete)</string><string id="RSAKeyUsageForLocalAnchorsEnabled_Explain">OBSOLETE: This policy is obsolete and doesn't work after Microsoft Edge 135.
+{&quot;name&quot;: &quot;*&quot;, &quot;value&quot;: false}</string><string id="NewPDFReaderWebView2ListDesc">Enable built-in PDF reader powered by Adobe Acrobat for WebView2 (deprecated)</string><string id="RSAKeyUsageForLocalAnchorsEnabled">Check RSA key usage for server certificates issued by local trust anchors (obsolete)</string><string id="RSAKeyUsageForLocalAnchorsEnabled_Explain">OBSOLETE: This policy is obsolete and doesn't work after Microsoft Edge 135.
 
 The X.509 key usage extension declares how the key in a certificate can be
 used. These instructions ensure certificates aren't used in an unintended

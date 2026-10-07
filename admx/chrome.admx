@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--chrome version: 154.0.8037.98-->
+  <!--chrome version: 155.0.8059.40-->
   <policyNamespaces>
     <target namespace="Google.Policies.Chrome" prefix="chrome"/>
     <using namespace="Google.Policies" prefix="Google"/>
@@ -1789,6 +1789,16 @@
         <list id="ExtensionInstallTypeBlocklistDesc" key="Software\Policies\Google\Chrome\ExtensionInstallTypeBlocklist" valuePrefix=""/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.ExtensionReviewPromptsEnabled)" explainText="$(string.ExtensionReviewPromptsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="ExtensionReviewPromptsEnabled" presentation="$(presentation.ExtensionReviewPromptsEnabled)" valueName="ExtensionReviewPromptsEnabled">
+      <parentCategory ref="Extensions"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.ExtensionSettings)" explainText="$(string.ExtensionSettings_Explain)" key="Software\Policies\Google\Chrome" name="ExtensionSettings" presentation="$(presentation.ExtensionSettings)">
       <parentCategory ref="Extensions"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -2112,6 +2122,29 @@
           <item displayName="$(string.ThirdPartyAiChatSettings_Disabled)">
             <value>
               <decimal value="1"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.TryOnYouSettings)" explainText="$(string.TryOnYouSettings_Explain)" key="Software\Policies\Google\Chrome" name="TryOnYouSettings" presentation="$(presentation.TryOnYouSettings)">
+      <parentCategory ref="GenerativeAI"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="TryOnYouSettings" valueName="TryOnYouSettings">
+          <item displayName="$(string.TryOnYouSettings_Allowed)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.TryOnYouSettings_AllowedWithoutDataCollection)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.TryOnYouSettings_Disabled)">
+            <value>
+              <decimal value="2"/>
             </value>
           </item>
         </enum>
@@ -2780,6 +2813,16 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.BackgroundModeEnabled)" explainText="$(string.BackgroundModeEnabled_Explain)" key="Software\Policies\Google\Chrome" name="BackgroundModeEnabled" presentation="$(presentation.BackgroundModeEnabled)" valueName="BackgroundModeEnabled">
+      <parentCategory ref="googlechrome"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.BackgroundTabFreezingEnabled)" explainText="$(string.BackgroundTabFreezingEnabled_Explain)" key="Software\Policies\Google\Chrome" name="BackgroundTabFreezingEnabled" presentation="$(presentation.BackgroundTabFreezingEnabled)" valueName="BackgroundTabFreezingEnabled">
       <parentCategory ref="googlechrome"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
@@ -3982,16 +4025,6 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.NTPFooterManagementNoticeEnabled)" explainText="$(string.NTPFooterManagementNoticeEnabled_Explain)" key="Software\Policies\Google\Chrome" name="NTPFooterManagementNoticeEnabled" presentation="$(presentation.NTPFooterManagementNoticeEnabled)" valueName="NTPFooterManagementNoticeEnabled">
-      <parentCategory ref="googlechrome"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.NTPMiddleSlotAnnouncementVisible)" explainText="$(string.NTPMiddleSlotAnnouncementVisible_Explain)" key="Software\Policies\Google\Chrome" name="NTPMiddleSlotAnnouncementVisible" presentation="$(presentation.NTPMiddleSlotAnnouncementVisible)" valueName="NTPMiddleSlotAnnouncementVisible">
       <parentCategory ref="googlechrome"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
@@ -6683,6 +6716,16 @@
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.MutationEventsEnabled)" explainText="$(string.MutationEventsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="MutationEventsEnabled" presentation="$(presentation.MutationEventsEnabled)" valueName="MutationEventsEnabled">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.NTPMiddleSlotAnnouncementVisible)" explainText="$(string.NTPMiddleSlotAnnouncementVisible_Explain)" key="Software\Policies\Google\Chrome" name="NTPMiddleSlotAnnouncementVisible" presentation="$(presentation.NTPMiddleSlotAnnouncementVisible)" valueName="NTPMiddleSlotAnnouncementVisible">
       <parentCategory ref="RemovedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
