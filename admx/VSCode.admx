@@ -456,16 +456,7 @@
 		<decimal id="ExtensionsAutoUpdateDelay" valueName="ExtensionsAutoUpdateDelay" />
 			</elements>
 		</policy>
-		<policy name="ChatAgentSandboxAllowAutoApprove" class="Both" displayName="$(string.ChatAgentSandboxAllowAutoApprove)" explainText="$(string.ChatAgentSandboxAllowAutoApprove_agentSandbox_allowAutoApprove)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentSandboxAllowAutoApprove)">
-			<parentCategory ref="terminalIntegratedConfigurationTitle" />
-			<supportedOn ref="Supported_1_116" />
-			<elements>
-		<boolean id="ChatAgentSandboxAllowAutoApprove" valueName="ChatAgentSandboxAllowAutoApprove">
-			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
-		</boolean>
-			</elements>
-		</policy>
-		<policy name="ChatAgentSandboxAllowNetwork" class="Both" displayName="$(string.ChatAgentSandboxAllowNetwork)" explainText="$(string.ChatAgentSandboxAllowNetwork_agentSandbox_allowNetwork)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentSandboxAllowNetwork)">
+		<policy name="ChatAgentSandboxAllowNetwork" class="Both" displayName="$(string.ChatAgentSandboxAllowNetwork)" explainText="$(string.ChatAgentSandboxAllowNetwork_agentSandbox_allowNetworkPolicy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentSandboxAllowNetwork)">
 			<parentCategory ref="terminalIntegratedConfigurationTitle" />
 			<supportedOn ref="Supported_1_127" />
 			<elements>
@@ -474,7 +465,7 @@
 		</boolean>
 			</elements>
 		</policy>
-		<policy name="ChatAgentSandboxAllowUnsandboxedCommands" class="Both" displayName="$(string.ChatAgentSandboxAllowUnsandboxedCommands)" explainText="$(string.ChatAgentSandboxAllowUnsandboxedCommands_agentSandbox_allowUnsandboxedCommands)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentSandboxAllowUnsandboxedCommands)">
+		<policy name="ChatAgentSandboxAllowUnsandboxedCommands" class="Both" displayName="$(string.ChatAgentSandboxAllowUnsandboxedCommands)" explainText="$(string.ChatAgentSandboxAllowUnsandboxedCommands_agentSandbox_allowUnsandboxedCommandsPolicy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentSandboxAllowUnsandboxedCommands)">
 			<parentCategory ref="terminalIntegratedConfigurationTitle" />
 			<supportedOn ref="Supported_1_116" />
 			<elements>
@@ -483,7 +474,7 @@
 		</boolean>
 			</elements>
 		</policy>
-		<policy name="ChatAgentSandboxEnabled" class="Both" displayName="$(string.ChatAgentSandboxEnabled)" explainText="$(string.ChatAgentSandboxEnabled_agentSandbox_enabledSetting)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentSandboxEnabled)">
+		<policy name="ChatAgentSandboxEnabled" class="Both" displayName="$(string.ChatAgentSandboxEnabled)" explainText="$(string.ChatAgentSandboxEnabled_agentSandbox_enabledPolicy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentSandboxEnabled)">
 			<parentCategory ref="terminalIntegratedConfigurationTitle" />
 			<supportedOn ref="Supported_1_116" />
 			<elements>

@@ -38,11 +38,11 @@
 			<string id="BrowserChatTools">BrowserChatTools</string>
 			<string id="BrowserChatTools_browser_enableChatTools">When enabled, chat agents can use browser tools to open and interact with pages in the Integrated Browser.</string>
 			<string id="ChatAgentAllowedNetworkDomains">ChatAgentAllowedNetworkDomains</string>
-			<string id="ChatAgentAllowedNetworkDomains_chat_agent_allowedNetworkDomains">Allowed domains for network access by agent tools (fetch tool, integrated browser). Applies when `#chat.agent.networkFilter#` or `#chat.agent.sandbox.enabled#` is enabled. When `#chat.agent.sandbox.allowNetwork#` is enabled, all domains are allowed. Supports wildcards like `*.example.com`. When both allowed and denied lists are empty, all domains are blocked. Denied domains (see `#chat.agent.deniedNetworkDomains#`) take precedence.
+			<string id="ChatAgentAllowedNetworkDomains_chat_agent_allowedNetworkDomains">Allowed domains for network access by agent tools (fetch tool, integrated browser) when `#chat.agent.networkFilter#` is enabled. In Copilot Agent Host sessions with sandboxing (`#chat.agent.sandbox.enabled#`) enabled, also restricts the integrated browser when outbound network access (`#chat.agent.sandbox.network.allowNetwork#`) is allowed; an empty allow list adds no sandbox restriction. This list does not enable outbound access. Supports wildcards like `*.example.com`. Outside sandboxing, when both allowed and denied lists are empty, all domains are blocked. Denied domains (see `#chat.agent.sandbox.network.deniedDomains#`) take precedence.
 
 Changes may not take full effect until VS Code is restarted.</string>
 			<string id="ChatAgentDeniedNetworkDomains">ChatAgentDeniedNetworkDomains</string>
-			<string id="ChatAgentDeniedNetworkDomains_chat_agent_deniedNetworkDomains">Denied domains for network access by agent tools (fetch tool, integrated browser). Applies when `#chat.agent.networkFilter#` or `#chat.agent.sandbox.enabled#` is enabled. This does not apply when `#chat.agent.sandbox.allowNetwork#` is enabled. Takes precedence over `#chat.agent.allowedNetworkDomains#`. Supports wildcards like `*.example.com`.
+			<string id="ChatAgentDeniedNetworkDomains_chat_agent_deniedNetworkDomains">Denied domains for network access by agent tools (fetch tool, integrated browser) when `#chat.agent.networkFilter#` is enabled. Also applies to the integrated browser in sandboxed Copilot Agent Host sessions (`#chat.agent.sandbox.enabled#`); allowing outbound network access (`#chat.agent.sandbox.network.allowNetwork#`) does not bypass this list. Takes precedence over `#chat.agent.sandbox.network.allowedDomains#`. Supports wildcards like `*.example.com`.
 
 Changes may not take full effect until VS Code is restarted.</string>
 			<string id="ChatAgentExtensionTools">ChatAgentExtensionTools</string>
@@ -52,7 +52,7 @@ Changes may not take full effect until VS Code is restarted.</string>
 			<string id="ChatAgentMode">ChatAgentMode</string>
 			<string id="ChatAgentMode_chat_agent_enabled_description">When enabled, agent mode can be activated from chat and tools in agentic contexts with side effects can be used.</string>
 			<string id="ChatAgentNetworkFilter">ChatAgentNetworkFilter</string>
-			<string id="ChatAgentNetworkFilter_chat_agent_networkFilter">When enabled, network access by agent tools (fetch tool, integrated browser) is restricted according to `#chat.agent.allowedNetworkDomains#` and `#chat.agent.deniedNetworkDomains#`. Domain filtering is also applied to those tools when `#chat.agent.sandbox.enabled#` is enabled.
+			<string id="ChatAgentNetworkFilter_chat_agent_networkFilter">When enabled, network access by agent tools (fetch tool, integrated browser) is restricted according to `#chat.agent.sandbox.network.allowedDomains#` and `#chat.agent.sandbox.network.deniedDomains#`. Domain filtering is also applied to those tools when `#chat.agent.sandbox.enabled#` is enabled.
 
 Changes may not take full effect until VS Code is restarted.</string>
 			<string id="ChatAllowedMcpServers">ChatAllowedMcpServers</string>
@@ -156,14 +156,12 @@ Note: This setting only controls tool approval and does not prevent the agent fr
 			<string id="ExtensionsAutoUpdate_extensions_autoUpdate_off">Extensions are not automatically updated.</string>
 			<string id="ExtensionsAutoUpdateDelay">ExtensionsAutoUpdateDelay</string>
 			<string id="ExtensionsAutoUpdateDelay_extensions_autoUpdateDelay">Controls the delay in hours after an extension update is published before it is automatically installed. Only applies when `#extensions.autoUpdate#` is set to `on`. This delay helps avoid installing potentially problematic updates immediately after release.</string>
-			<string id="ChatAgentSandboxAllowAutoApprove">ChatAgentSandboxAllowAutoApprove</string>
-			<string id="ChatAgentSandboxAllowAutoApprove_agentSandbox_allowAutoApprove">Controls whether agent mode terminal commands that run inside the sandbox are auto-approved. When disabled, the run in terminal tool uses the existing approval flow. This applies only when `#chat.agent.sandbox.enabled#` is enabled.</string>
 			<string id="ChatAgentSandboxAllowNetwork">ChatAgentSandboxAllowNetwork</string>
-			<string id="ChatAgentSandboxAllowNetwork_agentSandbox_allowNetwork">When `#chat.agent.sandbox.enabled#` is enabled, controls whether to allow all network domains in the sandbox. When enabled, the sandbox preserves file system restrictions while relaxing all network restrictions.</string>
+			<string id="ChatAgentSandboxAllowNetwork_agentSandbox_allowNetworkPolicy">Deprecated. Controls whether the Local agent sandbox allows outbound connections to all network domains while preserving file system restrictions. Use the sandbox.userPolicy.network.allowOutbound managed setting to enforce outbound network restrictions in Copilot Agent Host.</string>
 			<string id="ChatAgentSandboxAllowUnsandboxedCommands">ChatAgentSandboxAllowUnsandboxedCommands</string>
-			<string id="ChatAgentSandboxAllowUnsandboxedCommands_agentSandbox_allowUnsandboxedCommands">Controls whether agent mode terminal commands can run outside the sandbox after user confirmation when a sandboxed command fails or when sandbox restrictions would block the command. This applies only when `#chat.agent.sandbox.enabled#` is enabled.</string>
+			<string id="ChatAgentSandboxAllowUnsandboxedCommands_agentSandbox_allowUnsandboxedCommandsPolicy">Deprecated. Controls whether Local agent terminal commands can run outside the sandbox after user confirmation when sandbox restrictions would block the command. Use the sandbox.allowBypass managed setting to control sandbox bypass in Copilot Agent Host.</string>
 			<string id="ChatAgentSandboxEnabled">ChatAgentSandboxEnabled</string>
-			<string id="ChatAgentSandboxEnabled_agentSandbox_enabledSetting">Controls whether agent mode uses sandboxing to restrict what tools can do. When enabled, tools like the terminal are run in a sandboxed environment to limit access to the system. Use `#chat.agent.sandbox.allowNetwork#` to allow all network domains.</string>
+			<string id="ChatAgentSandboxEnabled_agentSandbox_enabledPolicy">Deprecated. Controls whether the Local agent uses sandboxing to restrict what tools can do. In Copilot Agent Host, this legacy policy supplies an overridable sandbox default, not a mandatory requirement. Use the runtime-native sandbox.enabled managed setting to require sandboxing in Copilot Agent Host.</string>
 			<string id="ChatAgentSandboxEnabled_agentSandbox_enabledSetting_offDescription">Disable sandboxing for agent mode tools.</string>
 			<string id="ChatAgentSandboxEnabled_agentSandbox_enabledSetting_onDescription">Enable sandboxing for agent mode tools.</string>
 			<string id="ChatToolsTerminalEnableAutoApprove">ChatToolsTerminalEnableAutoApprove</string>
@@ -234,7 +232,6 @@ Note: This setting only controls tool approval and does not prevent the agent fr
 			<presentation id="ExtensionGalleryServiceUrl"><textBox refId="ExtensionGalleryServiceUrl"><label>ExtensionGalleryServiceUrl:</label></textBox></presentation>
 			<presentation id="ExtensionsAutoUpdate"><dropdownList refId="ExtensionsAutoUpdate" /></presentation>
 			<presentation id="ExtensionsAutoUpdateDelay"><decimalTextBox refId="ExtensionsAutoUpdateDelay" defaultValue="12">ExtensionsAutoUpdateDelay</decimalTextBox></presentation>
-			<presentation id="ChatAgentSandboxAllowAutoApprove"><checkBox refId="ChatAgentSandboxAllowAutoApprove">ChatAgentSandboxAllowAutoApprove</checkBox></presentation>
 			<presentation id="ChatAgentSandboxAllowNetwork"><checkBox refId="ChatAgentSandboxAllowNetwork">ChatAgentSandboxAllowNetwork</checkBox></presentation>
 			<presentation id="ChatAgentSandboxAllowUnsandboxedCommands"><checkBox refId="ChatAgentSandboxAllowUnsandboxedCommands">ChatAgentSandboxAllowUnsandboxedCommands</checkBox></presentation>
 			<presentation id="ChatAgentSandboxEnabled"><dropdownList refId="ChatAgentSandboxEnabled" /></presentation>
