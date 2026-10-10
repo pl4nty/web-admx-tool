@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2019 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   revision="1.1" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="system" namespace="BaseALT.Policies.System" />
+    <using prefix="products" namespace="BaseALT.Policies.Products" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <supportedOn>
+    <definitions>
+      <!--ALT Sisyphus-->
+      <definition name="SUPPORTED_Sisyphus" displayName="$(string.SUPPORTED_Sisyphus)">
+        <or>
+          <reference ref="products:Branch"/>
+        </or>
+      </definition>
+
+      <!--ALT Sisyphus only-->
+      <definition name="SUPPORTED_SisyphusOnly" displayName="$(string.SUPPORTED_SisyphusOnly)">
+        <or>
+          <reference ref="products:Sisyphus"/>
+        </or>
+      </definition>
+
+      <!--ALT Platform 8-->
+      <definition name="SUPPORTED_AltP8" displayName="$(string.SUPPORTED_AltP8)">
+        <or>
+          <reference ref="products:BranchP8"/>
+          <range ref="products:Branch" minVersionIndex="1"/>
+        </or>
+      </definition>
+
+      <!--ALT Platform 8 only-->
+      <definition name="SUPPORTED_AltP8_Only" displayName="$(string.SUPPORTED_AltP8_Only)">
+        <or>
+          <reference ref="products:BranchP8"/>
+          <range ref="products:Branch" minVersionIndex="1" maxVersionIndex="1"/>
+        </or>
+      </definition>
+
+      <!--ALT Platform 9-->
+      <definition name="SUPPORTED_AltP9" displayName="$(string.SUPPORTED_AltP9)">
+        <or>
+          <reference ref="products:BranchP9"/>
+          <range ref="products:Branch" minVersionIndex="2"/>
+        </or>
+      </definition>
+
+      <!--ALT Platform 9 only-->
+      <definition name="SUPPORTED_AltP9_Only" displayName="$(string.SUPPORTED_AltP9_Only)">
+        <or>
+          <reference ref="products:BranchP9"/>
+          <range ref="products:Branch" minVersionIndex="2" maxVersionIndex="2"/>
+        </or>
+      </definition>
+
+ <!--ALT Platform 10-->
+      <definition name="SUPPORTED_AltP10" displayName="$(string.SUPPORTED_AltP10)">
+        <or>
+          <reference ref="products:BranchP10"/>
+          <range ref="products:Branch" minVersionIndex="3"/>
+        </or>
+      </definition>
+
+      <!--ALT Platform 10 only-->
+      <definition name="SUPPORTED_AltP10_Only" displayName="$(string.SUPPORTED_AltP10_Only)">
+        <or>
+          <reference ref="products:BranchP10"/>
+          <range ref="products:Branch" minVersionIndex="3" maxVersionIndex="3"/>
+        </or>
+      </definition>
+
+ <!--ALT Platform 11-->
+      <definition name="SUPPORTED_AltP11" displayName="$(string.SUPPORTED_AltP11)">
+        <or>
+          <reference ref="products:BranchP11"/>
+          <range ref="products:Branch" minVersionIndex="4"/>
+        </or>
+      </definition>
+
+      <!--ALT Platform 11 only-->
+      <definition name="SUPPORTED_AltP11_Only" displayName="$(string.SUPPORTED_AltP11_Only)">
+        <or>
+          <reference ref="products:BranchP11"/>
+          <range ref="products:Branch" minVersionIndex="4" maxVersionIndex="4"/>
+        </or>
+      </definition>
+    </definitions>
+
+  </supportedOn>
+  <categories>
+    <category name="ALT_System" displayName="$(string.ALT_System)" explainText="$(string.ALT_System_Help)" />
+    <category name="ALT_Security" displayName="$(string.ALT_Security)" explainText="$(string.ALT_Security_Help)">
+      <parentCategory ref="ALT_System" />
+    </category>
+    <category name="ALT_Services" displayName="$(string.ALT_Services)" explainText="$(string.ALT_Services_Help)">
+      <parentCategory ref="ALT_System" />
+    </category>
+    <category name="ALT_SSHD" displayName="$(string.ALT_SSHD)" explainText="$(string.ALT_SSHD_Help)">
+      <parentCategory ref="ALT_Services" />
+    </category>
+    <category name="ALT_SSSD" displayName="$(string.ALT_SSSD)" explainText="$(string.ALT_SSSD_Help)">
+      <parentCategory ref="ALT_Services" />
+    </category>
+    <category name="ALT_Systemd" displayName="$(string.ALT_Systemd)" explainText="$(string.ALT_Systemd_Help)">
+      <parentCategory ref="ALT_Services" />
+    </category>
+    <category name="ALT_SambaOptions" displayName="$(string.ALT_SambaOptions)"  explainText="$(string.ALT_SambaOptions_Help)" >
+      <parentCategory ref="ALT_Services" />
+    </category>
+    <category name="ALT_WinbindDNSupdateOptions" displayName="$(string.ALT_WinbindDNSupdateOptions)"  explainText="$(string.ALT_WinbindDNSupdateOptions_Help)" >
+      <parentCategory ref="ALT_Services" />
+    </category>
+
+
+    <category name="ALT_Settings_KDE" displayName="$(string.ALT_Settings_KDE)" explainText="$(string.ALT_Settings_KDE_Help)">
+      <parentCategory ref="ALT_System" />
+    </category>
+    <category name="ALT_PowerManagement_KDE" displayName="$(string.ALT_PowerManagement_KDE)" explainText="$(string.ALT_PowerManagement_KDE_Help)">
+      <parentCategory ref="ALT_Settings_KDE" />
+    </category>
+    <category name="ALT_Appearance_KDE" displayName="$(string.ALT_Appearance_KDE)" explainText="$(string.ALT_Appearance_KDE_Help)">
+      <parentCategory ref="ALT_Settings_KDE" />
+    </category>
+    <category name="ALT_Application_KDE" displayName="$(string.ALT_Application_KDE)" explainText="$(string.ALT_Application_KDE_Help)">
+      <parentCategory ref="ALT_Settings_KDE" />
+    </category>
+    <category name="ALT_Devices_KDE" displayName="$(string.ALT_Devices_KDE)" explainText="$(string.ALT_Devices_KDE_Help)">
+      <parentCategory ref="ALT_Settings_KDE" />
+    </category>
+    <category name="ALT_Environment_KDE" displayName="$(string.ALT_Environment_KDE)" explainText="$(string.ALT_Environment_KDE_Help)">
+      <parentCategory ref="ALT_Settings_KDE" />
+    </category>
+    <category name="ALT_LAPS" displayName="$(string.ALT_LAPS)" explainText="$(string.ALT_LAPS_Help)">
+      <parentCategory ref="ALT_System" />
+    </category>
+    <category name="ALT_Settings_Gnome" displayName="$(string.ALT_Settings_Gnome)" explainText="$(string.ALT_Settings_Gnome_Help)">
+      <parentCategory ref="ALT_System" />
+    </category>
+    <category name="ALT_Apperance_Gnome" displayName="$(string.ALT_Apperance_Gnome)" explainText="$(string.ALT_Apperance_Gnome_Help)">
+      <parentCategory ref="ALT_Settings_Gnome" />
+    </category>
+    <category name="ALT_Enviroment_Gnome" displayName="$(string.ALT_Enviroment_Gnome)" explainText="$(string.ALT_Enviroment_Gnome_Help)">
+      <parentCategory ref="ALT_Settings_Gnome" />
+    </category>
+    <category name="ALT_PowerManagement_Gnome" displayName="$(string.ALT_PowerManagement_Gnome)" explainText="$(string.ALT_PowerManagement_Gnome_Help)">
+      <parentCategory ref="ALT_Settings_Gnome" />
+    </category>
+    <category name="ALT_Multitasking_Gnome" displayName="$(string.ALT_Multitasking_Gnome)" explainText="$(string.ALT_Multitasking_Gnome_Help)">
+      <parentCategory ref="ALT_Settings_Gnome" />
+    </category>
+    <category name="ALT_Accessibility_Gnome" displayName="$(string.ALT_Accessibility_Gnome)" explainText="$(string.ALT_Accessibility_Gnome_Help)">
+      <parentCategory ref="ALT_Settings_Gnome" />
+    </category>
+    <category name="ALT_LockScreen_Gnome" displayName="$(string.ALT_LockScreen_Gnome)" explainText="$(string.ALT_LockScreen_Gnome_Help)">
+      <parentCategory ref="ALT_Settings_Gnome" />
+    </category>
+    <category name="ALT_Vision_Gnome" displayName="$(string.ALT_Vision_Gnome)" explainText="$(string.ALT_Vision_Gnome_Help)">
+      <parentCategory ref="ALT_Accessibility_Gnome" />
+    </category>
+
+
+    <category name="ALT_Network" displayName="$(string.ALT_Network)" explainText="$(string.ALT_Network_Help)">
+      <parentCategory ref="ALT_System" />
+    </category>
+    <category name="ALT_CD_DVD" displayName="$(string.ALT_CD_DVD)" explainText="$(string.ALT_CD_DVD_Help)">
+      <parentCategory ref="ALT_System" />
+    </category>
+    <category name="ALT_Mounting" displayName="$(string.ALT_Mounting)" explainText="$(string.ALT_Mounting_Help)">
+      <parentCategory ref="ALT_System" />
+    </category>
+    <category name="ALT_Virtualization" displayName="$(string.ALT_Virtualization)" explainText="$(string.ALT_Virtualization_Help)">
+      <parentCategory ref="ALT_System" />
+    </category>
+    <category name="ALT_Graphics" displayName="$(string.ALT_Graphics)" explainText="$(string.ALT_Graphics_Help)">
+      <parentCategory ref="ALT_System" />
+    </category>
+    <category name="ALT_DisplayManager" displayName="$(string.ALT_DisplayManager)" explainText="$(string.ALT_DisplayManager_Help)">
+      <parentCategory ref="ALT_Graphics" />
+    </category>
+    <category name="ALT_Hardware" displayName="$(string.ALT_Hardware)" explainText="$(string.ALT_Hardware_Help)">
+      <parentCategory ref="ALT_System" />
+    </category>
+    <category name="ALT_Databases" displayName="$(string.ALT_Databases)" explainText="$(string.ALT_Databases_Help)">
+      <parentCategory ref="ALT_System" />
+    </category>
+    <category name="LinuxComponents" displayName="$(string.LinuxComponents)" explainText="$(string.LinuxComponents_Help)" />
+
+
+    <category name="ALT_Settings_Mate" displayName="$(string.ALT_Settings_Mate)" explainText="$(string.ALT_Settings_Mate_Help)">
+      <parentCategory ref="ALT_System" />
+    </category>
+    <category name="ALT_Background_Mate" displayName="$(string.ALT_Background_Mate)" explainText="$(string.ALT_Background_Mate_Help)">
+      <parentCategory ref="ALT_Settings_Mate" />
+    </category>
+    <category name="ALT_Screensaver_Mate" displayName="$(string.ALT_Screensaver_Mate)" explainText="$(string.ALT_Screensaver_Mate_Help)">
+      <parentCategory ref="ALT_Settings_Mate" />
+    </category>
+    <category name="ALT_User_Restrictions_Mate" displayName="$(string.ALT_User_Restrictions_Mate)" explainText="$(string.ALT_User_Restrictions_Mate_Help)">
+      <parentCategory ref="ALT_Settings_Mate" />
+    </category>
+    <category name="ALT_Session_Mate" displayName="$(string.ALT_Session_Mate)" explainText="$(string.ALT_Session_Mate_Help)">
+      <parentCategory ref="ALT_Settings_Mate" />
+    </category>
+    <category name="ALT_Remote_Access_Vino_Gnome" displayName="$(string.ALT_Remote_Access_Vino_Gnome)" explainText="$(string.ALT_Remote_Access_Vino_Gnome_Help)">
+      <parentCategory ref="ALT_System" />
+    </category>
+    <category name="ALT_Windows_Manager_Marco" displayName="$(string.ALT_Windows_Manager_Marco)" explainText="$(string.ALT_Windows_Manager_Marco_Help)">
+      <parentCategory ref="ALT_Settings_Mate" />
+    </category>
+    <category name="ALT_Windows_Manager_Marco_Keyboard" displayName="$(string.ALT_Windows_Manager_Marco_Keyboard)" explainText="$(string.ALT_Windows_Manager_Marco_Keyboard_Help)">
+      <parentCategory ref="ALT_Windows_Manager_Marco" />
+    </category>
+
+
+    <category name="ALT_Polkit" displayName="$(string.ALT_Polkit)" explainText="$(string.ALT_Polkit_Help)">
+      <parentCategory ref="ALT_System" />
+    </category>
+    <category name="ALT_Udisks2" displayName="$(string.ALT_Udisks2)" explainText="$(string.ALT_Udisks2_Help)">
+      <parentCategory ref="ALT_Polkit" />
+    </category>
+    <category name="ALT_PackageKit" displayName="$(string.ALT_PackageKit)" explainText="$(string.ALT_PackageKit_Help)">
+      <parentCategory ref="ALT_Polkit" />
+    </category>
+    <category name="ALT_NetworkManagerPolkit" displayName="$(string.ALT_NetworkManagerPolkit)" explainText="$(string.ALT_NetworkManagerPolkit_Help)">
+      <parentCategory ref="ALT_Polkit" />
+    </category>
+    <category name="ALT_TokenPolkit" displayName="$(string.ALT_TokenPolkit)" explainText="$(string.ALT_TokenPolkit_Help)">
+      <parentCategory ref="ALT_Polkit" />
+    </category>
+    <category name="ALT_ModemManagerPolkit" displayName="$(string.ALT_ModemManagerPolkit)" explainText="$(string.ALT_ModemManagerPolkit_Help)">
+      <parentCategory ref="ALT_Polkit" />
+    </category>
+    <category name="ALT_AccountsPolkit" displayName="$(string.ALT_AccountsPolkit)" explainText="$(string.ALT_AccountsPolkit_help)">
+      <parentCategory ref="ALT_Polkit" />    
+    </category>
+    <category name="ALT_MachinePolkit" displayName="$(string.ALT_MachinePolkit)" explainText="$(string.ALT_MachinePolkit_Help)">
+      <parentCategory ref="ALT_Polkit" />
+    </category>
+    <category name="ALT_RealmdPolkit" displayName="$(string.ALT_RealmdPolkit)" explainText="$(string.ALT_RealmdPolkit_Help)">
+      <parentCategory ref="ALT_Polkit" />
+    </category>
+    <category name="ALT_LoginPolkit" displayName="$(string.ALT_LoginPolkit)" explainText="$(string.ALT_LoginPolkit_Help)">
+      <parentCategory ref="ALT_Polkit" />
+    </category>
+    <category name="ALT_Color-ManagerPolkit" displayName="$(string.ALT_Color-ManagerPolkit)" explainText="$(string.ALT_Color-ManagerPolkit_Help)">
+      <parentCategory ref="ALT_Polkit" />
+    </category>
+    <category name="ALT_TimedatePolkit" displayName="$(string.ALT_TimedatePolkit)" explainText="$(string.ALT_TimedatePolkit_Help)">
+      <parentCategory ref="ALT_Polkit" />
+    </category>
+     <category name="ALT_HostnamePolkit" displayName="$(string.ALT_HostnamePolkit)" explainText="$(string.ALT_HostnamePolkit_Help)">
+      <parentCategory ref="ALT_Polkit" />
+    </category>
+    <category name="ALT_SystemdPolkit" displayName="$(string.ALT_SystemdPolkit)" explainText="$(string.ALT_SystemdPolkit_Help)">
+      <parentCategory ref="ALT_Polkit" />
+    </category>
+    <category name="ALT_DisplayManagerPolkit" displayName="$(string.ALT_DisplayManagerPolkit)" explainText="$(string.ALT_DisplayManagerPolkit_help)">
+      <parentCategory ref="ALT_Polkit" />
+    </category>
+  </categories>
+</policyDefinitions>

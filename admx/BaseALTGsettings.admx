@@ -1,0 +1,2686 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2019 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="gsettings" namespace="BaseALT.Policies.Gsettings" />
+    <using prefix="system" namespace="BaseALT.Policies.System" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <policies>
+    <policy name="OrgMateBackgroundSecondaryColorUser" class="User"
+        displayName="$(string.org-mate-background-secondary-color)"
+        explainText="$(string.org-mate-background-secondary-color_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateBackgroundSecondaryColorUser-pr)" >
+      <parentCategory ref="system:ALT_Background_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <text id="OrgMateBackgroundSecondaryColor_setter" valueName="org.mate.background.secondary-color"/>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateBackgroundSecondaryColorMachine" class="Machine"
+        displayName="$(string.org-mate-background-secondary-color)"
+        explainText="$(string.org-mate-background-secondary-color_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateBackgroundSecondaryColorMachine-pr)" >
+      <parentCategory ref="system:ALT_Background_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <text id="OrgMateBackgroundSecondaryColor_setter" valueName="org.mate.background.secondary-color"/>
+        <boolean id="OrgMateBackgroundSecondaryColor_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.background.secondary-color">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateBackgroundPictureOptionsUser" class="User"
+        displayName="$(string.org-mate-background-picture-options)" 
+        explainText="$(string.org-mate-background-picture-options_help)"  
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateBackgroundPictureOptionsUser-pr)">
+      <parentCategory ref="system:ALT_Background_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateBackgroundPictureOptions_setter" valueName="org.mate.background.picture-options" required="true">
+          <item displayName="$(string.org-mate-background-picture-options_None)">
+            <value>
+              <string>none</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-background-picture-options_Wallpaper)">
+            <value>
+              <string>wallpaper</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-background-picture-options_Centered)">
+            <value>
+              <string>centered</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-background-picture-options_Scaled)">
+            <value>
+              <string>scaled</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-background-picture-options_Stretched)">
+            <value>
+              <string>stretched</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-background-picture-options_Zoom)">
+            <value>
+              <string>zoom</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-background-picture-options_Spanned)">
+            <value>
+              <string>spanned</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateBackgroundPictureOptionsMachine" class="Machine"
+        displayName="$(string.org-mate-background-picture-options)" 
+        explainText="$(string.org-mate-background-picture-options_help)"  
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateBackgroundPictureOptionsMachine-pr)">
+      <parentCategory ref="system:ALT_Background_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateBackgroundPictureOptions_setter" valueName="org.mate.background.picture-options" required="true">
+          <item displayName="$(string.org-mate-background-picture-options_None)">
+            <value>
+              <string>none</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-background-picture-options_Wallpaper)">
+            <value>
+              <string>wallpaper</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-background-picture-options_Centered)">
+            <value>
+              <string>centered</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-background-picture-options_Scaled)">
+            <value>
+              <string>scaled</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-background-picture-options_Stretched)">
+            <value>
+              <string>stretched</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-background-picture-options_Zoom)">
+            <value>
+              <string>zoom</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-background-picture-options_Spanned)">
+            <value>
+              <string>spanned</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateBackgroundPictureOptions_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.background.picture-options">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateBackgroundColorShadingTypeUser" class="User"
+        displayName="$(string.org-mate-background-color-shading-type)"
+        explainText="$(string.org-mate-background-color-shading-type_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateBackgroundColorShadingTypeUser-pr)" >
+      <parentCategory ref="system:ALT_Background_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateBackgroundColorShadingType_setter" required="true" valueName="org.mate.background.color-shading-type">
+          <item displayName="$(string.org-mate-background-color-shading-type-horizontal-gradient)">
+            <value>
+              <string>horizontal-gradient</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-background-color-shading-type-vertical-gradient)">
+            <value>
+              <string>vertical-gradient</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-background-color-shading-type-solid)">
+            <value>
+              <string>solid</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateBackgroundColorShadingTypeMachine" class="Machine"
+        displayName="$(string.org-mate-background-color-shading-type)"
+        explainText="$(string.org-mate-background-color-shading-type_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateBackgroundColorShadingTypeMachine-pr)" >
+      <parentCategory ref="system:ALT_Background_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateBackgroundColorShadingType_setter" required="true" valueName="org.mate.background.color-shading-type">
+          <item displayName="$(string.org-mate-background-color-shading-type-horizontal-gradient)">
+            <value>
+              <string>horizontal-gradient</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-background-color-shading-type-vertical-gradient)">
+            <value>
+              <string>vertical-gradient</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-background-color-shading-type-solid)">
+            <value>
+              <string>solid</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateBackgroundColorShadingType_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.background.color-shading-type">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateBackgroundPictureFilenameUser" class="User"
+        displayName="$(string.org-mate-background-picture-filename)"
+        explainText="$(string.org-mate-background-picture-filename_help)"
+        presentation="$(presentation.OrgMateBackgroundPictureFilenameUser-pr)"
+        key="Software\BaseALT\Policies\gsettings">
+      <parentCategory ref="system:ALT_Background_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <text id="OrgMateBackgroundPictureFilename_setter" valueName="org.mate.background.picture-filename" />
+      </elements>
+    </policy>
+
+    <policy name="OrgMateBackgroundPictureFilenameMachine" class="Machine"
+        displayName="$(string.org-mate-background-picture-filename)"
+        explainText="$(string.org-mate-background-picture-filename_help)"
+        presentation="$(presentation.OrgMateBackgroundPictureFilenameMachine-pr)"
+        key="Software\BaseALT\Policies\gsettings">
+      <parentCategory ref="system:ALT_Background_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <text id="OrgMateBackgroundPictureFilename_setter" valueName="org.mate.background.picture-filename" />
+        <boolean id="OrgMateBackgroundPictureFilename_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.background.picture-filename">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateBackgroundPrimaryColorUser" class="User"
+        displayName="$(string.org-mate-background-primary-color)"
+        explainText="$(string.org-mate-background-primary-color_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateBackgroundPrimaryColorUser-pr)" >
+      <parentCategory ref="system:ALT_Background_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <text id="OrgMateBackgroundPrimaryColor_setter" valueName="org.mate.background.primary-color"/>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateBackgroundPrimaryColorMachine" class="Machine"
+        displayName="$(string.org-mate-background-primary-color)"
+        explainText="$(string.org-mate-background-primary-color_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateBackgroundPrimaryColorMachine-pr)" >
+      <parentCategory ref="system:ALT_Background_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <text id="OrgMateBackgroundPrimaryColor_setter" valueName="org.mate.background.primary-color"/>
+        <boolean id="OrgMateBackgroundPrimaryColor_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.background.primary-color">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateScreesaverIdleActivationEnabledUser" class="User"
+        displayName="$(string.org-mate-screensaver-idle-activation-enabled)"
+        explainText="$(string.org-mate-screensaver-idle-activation-enabled_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.mate.screensaver.idle-activation-enabled">
+      <parentCategory ref="system:ALT_Screensaver_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgMateScreesaverIdleActivationEnabledMachine" class="Machine"
+        displayName="$(string.org-mate-screensaver-idle-activation-enabled)"
+        explainText="$(string.org-mate-screensaver-idle-activation-enabled_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateScreesaverIdleActivationEnabledMachine-pr)" >
+      <parentCategory ref="system:ALT_Screensaver_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateScreesaverIdleActivationEnabled_setter" required="true" valueName="org.mate.screensaver.idle-activation-enabled">
+          <item displayName="$(string.org-mate-screensaver-idle-activation-enabled-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-screensaver-idle-activation-enabled-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateScreesaverIdleActivationEnabled_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.screensaver.idle-activation-enabled">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateScreensaverLockEnabledUser" class="User"
+        displayName="$(string.org-mate-screensaver-lock-enabled)"
+        explainText="$(string.org-mate-screensaver-lock-enabled_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.mate.screensaver.lock-enabled">
+      <parentCategory ref="system:ALT_Screensaver_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgMateScreensaverLockEnabledMachine" class="Machine"
+        displayName="$(string.org-mate-screensaver-lock-enabled)"
+        explainText="$(string.org-mate-screensaver-lock-enabled_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateScreensaverLockEnabledMachine-pr)" >
+      <parentCategory ref="system:ALT_Screensaver_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateScreensaverLockEnabled_setter" required="true" valueName="org.mate.screensaver.lock-enabled">
+          <item displayName="$(string.org-mate-screensaver-lock-enabled-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-screensaver-lock-enabled-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateScreensaverLockEnabled_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.screensaver.lock-enabled">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateScreensaverModeUser" class="User"
+        displayName="$(string.org-mate-screensaver-mode)"
+        explainText="$(string.org-mate-screensaver-mode_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateScreensaverModeUser-pr)">
+      <parentCategory ref="system:ALT_Screensaver_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateScreensaverMode_setter" required="true" valueName="org.mate.screensaver.mode">
+          <item displayName="$(string.org-mate-screensaver-mode_blank_only)">
+            <value>
+              <string>blank-only</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-screensaver-mode_random)">
+            <value>
+              <string>random</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-screensaver-mode_single)">
+            <value>
+              <string>single</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateScreensaverModeMachine" class="Machine"
+        displayName="$(string.org-mate-screensaver-mode)"
+        explainText="$(string.org-mate-screensaver-mode_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateScreensaverModeMachine-pr)">
+      <parentCategory ref="system:ALT_Screensaver_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateScreensaverMode_setter" required="true" valueName="org.mate.screensaver.mode">
+          <item displayName="$(string.org-mate-screensaver-mode_blank_only)">
+            <value>
+              <string>blank-only</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-screensaver-mode_random)">
+            <value>
+              <string>random</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-screensaver-mode_single)">
+            <value>
+              <string>single</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateScreensaverMode_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.screensaver.mode">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateScreensaverLockDelayUser" class="User"
+        displayName="$(string.org-mate-screensaver-lock-delay)"
+        explainText="$(string.org-mate-screensaver-lock-delay_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateScreensaverLockDelayUser-pr)">
+      <parentCategory ref="system:ALT_Screensaver_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <decimal id="OrgMateScreensaverLockDelay_setter" valueName="org.mate.screensaver.lock-delay" minValue="1" maxValue="2147483647" />
+      </elements>
+    </policy>
+
+    <policy name="OrgMateScreensaverLockDelayMachine" class="Machine"
+        displayName="$(string.org-mate-screensaver-lock-delay)"
+        explainText="$(string.org-mate-screensaver-lock-delay_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateScreensaverLockDelayMachine-pr)">
+      <parentCategory ref="system:ALT_Screensaver_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <decimal id="OrgMateScreensaverLockDelay_setter" valueName="org.mate.screensaver.lock-delay" minValue="1" maxValue="2147483647" />
+        <boolean id="OrgMateScreensaverLockDelay_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.screensaver.lock-delay">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateSessionIdleDelayUser" class="User"
+        displayName="$(string.org-mate-session-idle-delay)"
+        explainText="$(string.org-mate-session-idle-delay_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateSessionIdleDelayUser-pr)">
+      <parentCategory ref="system:ALT_Session_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <decimal id="OrgMateSessionIdleDelay_setter" valueName="org.mate.session.idle-delay" minValue="1" maxValue="2147483647" />
+      </elements>
+    </policy>
+
+    <policy name="OrgMateSessionIdleDelayMachine" class="Machine"
+        displayName="$(string.org-mate-session-idle-delay)"
+        explainText="$(string.org-mate-session-idle-delay_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateSessionIdleDelayMachine-pr)">
+      <parentCategory ref="system:ALT_Session_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <decimal id="OrgMateSessionIdleDelay_setter" valueName="org.mate.session.idle-delay" minValue="1" maxValue="2147483647" />
+        <boolean id="OrgMateSessionIdleDelay_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.session.idle-delay">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateSessionLogoutTimeoutUser" class="User"
+        displayName="$(string.org-mate-session-logout-timeout)"
+        explainText="$(string.org-mate-session-logout-timeout_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateSessionLogoutTimeoutUser-pr)">
+      <parentCategory ref="system:ALT_Session_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <decimal id="OrgMateSessionLogoutTimeout_setter" valueName="org.mate.session.logout-timeout" minValue="0" maxValue="300" />
+      </elements>
+    </policy>
+
+    <policy name="OrgMateSessionLogoutTimeoutMachine" class="Machine"
+        displayName="$(string.org-mate-session-logout-timeout)"
+        explainText="$(string.org-mate-session-logout-timeout_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateSessionLogoutTimeoutMachine-pr)">
+      <parentCategory ref="system:ALT_Session_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <decimal id="OrgMateSessionLogoutTimeout_setter" valueName="org.mate.session.logout-timeout" minValue="0" maxValue="300" />
+        <boolean id="OrgMateSessionLogoutTimeout_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.session.logout-timeout">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateScreensaverLogoutDelayUser" class="User"
+        displayName="$(string.org-mate-screensaver-logout-delay)"
+        explainText="$(string.org-mate-screensaver-logout-delay_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateScreensaverLogoutDelayUser-pr)">
+      <parentCategory ref="system:ALT_Screensaver_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <decimal id="OrgMateScreensaverLogoutDelay_setter" valueName="org.mate.screensaver.logout-delay" minValue="1" maxValue="2147483647" />
+      </elements>
+    </policy>
+
+    <policy name="OrgMateScreensaverLogoutDelayMachine" class="Machine"
+        displayName="$(string.org-mate-screensaver-logout-delay)"
+        explainText="$(string.org-mate-screensaver-logout-delay_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateScreensaverLogoutDelayMachine-pr)">
+      <parentCategory ref="system:ALT_Screensaver_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <decimal id="OrgMateScreensaverLogoutDelay_setter" valueName="org.mate.screensaver.logout-delay" minValue="1" maxValue="2147483647" />
+        <boolean id="OrgMateScreensaverLogoutDelay_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.screensaver.logout-delay">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateScreensaverCycleDelayUser" class="User"
+        displayName="$(string.org-mate-screensaver-cycle-delay)"
+        explainText="$(string.org-mate-screensaver-cycle-delay_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateScreensaverCycleDelayUser-pr)">
+      <parentCategory ref="system:ALT_Screensaver_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <decimal id="OrgMateScreensaverCycleDelay_setter" valueName="org.mate.screensaver.cycle-delay" minValue="0" maxValue="2147483647" />
+      </elements>
+    </policy>
+
+    <policy name="OrgMateScreensaverCycleDelayMachine" class="Machine"
+        displayName="$(string.org-mate-screensaver-cycle-delay)"
+        explainText="$(string.org-mate-screensaver-cycle-delay_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateScreensaverCycleDelayMachine-pr)">
+      <parentCategory ref="system:ALT_Screensaver_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <decimal id="OrgMateScreensaverCycleDelay_setter" valueName="org.mate.screensaver.cycle-delay" minValue="0" maxValue="2147483647" />
+        <boolean id="OrgMateScreensaverCycleDelay_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.screensaver.cycle-delay">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateScreensaverUserSwitchEnabledUser" class="User"
+        displayName="$(string.org-mate-screensaver-user-switch-enabled)"
+        explainText="$(string.org-mate-screensaver-user-switch-enabled_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.mate.screensaver.user-switch-enabled">
+      <parentCategory ref="system:ALT_Screensaver_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgMateScreensaverUserSwitchEnabledMachine" class="Machine"
+        displayName="$(string.org-mate-screensaver-user-switch-enabled)"
+        explainText="$(string.org-mate-screensaver-user-switch-enabled_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateScreensaverUserSwitchEnabledMachine-pr)">
+      <parentCategory ref="system:ALT_Screensaver_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateScreensaverUserSwitchEnabled_setter" required="true" valueName="org.mate.screensaver.user-switch-enabled">
+          <item displayName="$(string.org-mate-screensaver-user-switch-enabled-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-screensaver-user-switch-enabled-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateScreensaverUserSwitchEnabled_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.screensaver.user-switch-enabled">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateScreensaverLogoutEnabledUser" class="User"
+        displayName="$(string.org-mate-screensaver-logout-enabled)"
+        explainText="$(string.org-mate-screensaver-logout-enabled_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.mate.screensaver.logout-enabled">
+      <parentCategory ref="system:ALT_Screensaver_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgMateScreensaverLogoutEnabledMachine" class="Machine"
+        displayName="$(string.org-mate-screensaver-logout-enabled)"
+        explainText="$(string.org-mate-screensaver-logout-enabled_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateScreensaverLogoutEnabledMachine-pr)">
+      <parentCategory ref="system:ALT_Screensaver_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateScreensaverLogoutEnabled_setter" required="true" valueName="org.mate.screensaver.logout-enabled">
+          <item displayName="$(string.org-mate-screensaver-logout-enabled-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-screensaver-logout-enabled-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateScreensaverLogoutEnabled_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.screensaver.logout-enabled">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateLockdownDisableLogOutUser" class="User"
+        displayName="$(string.org-mate-lockdown-disable-log-out)"
+        explainText="$(string.org-mate-lockdown-disable-log-out_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.mate.lockdown.disable-log-out">
+      <parentCategory ref="system:ALT_User_Restrictions_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgMateLockdownDisableLogOutMachine" class="Machine"
+        displayName="$(string.org-mate-lockdown-disable-log-out)"
+        explainText="$(string.org-mate-lockdown-disable-log-out_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateLockdownDisableLogOutMachine-pr)">
+      <parentCategory ref="system:ALT_User_Restrictions_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateLockdownDisableLogOut_setter" required="true" valueName="org.mate.lockdown.disable-log-out">
+          <item displayName="$(string.org-mate-lockdown-disable-log-out-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-lockdown-disable-log-out-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateLockdownDisableLogOut_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.lockdown.disable-log-out">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateLockdownDisableLockScreenUser" class="User"
+        displayName="$(string.org-mate-lockdown-disable-lock-screen)"
+        explainText="$(string.org-mate-lockdown-disable-lock-screen_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.mate.lockdown.disable-lock-screen">
+      <parentCategory ref="system:ALT_User_Restrictions_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgMateLockdownDisableLockScreenMachine" class="Machine"
+        displayName="$(string.org-mate-lockdown-disable-lock-screen)"
+        explainText="$(string.org-mate-lockdown-disable-lock-screen_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateLockdownDisableLockScreenMachine-pr)">
+      <parentCategory ref="system:ALT_User_Restrictions_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateLockdownDisableLockScreen_setter" required="true" valueName="org.mate.lockdown.disable-lock-screen">
+          <item displayName="$(string.org-mate-lockdown-disable-lock-screen-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-lockdown-disable-lock-screen-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateLockdownDisableLockScreen_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.lockdown.disable-lock-screen">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateLockdownDisableUserSwitchingUser" class="User"
+        displayName="$(string.org-mate-lockdown-disable-user-switching)"
+        explainText="$(string.org-mate-lockdown-disable-user-switching_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.mate.lockdown.disable-user-switching">
+      <parentCategory ref="system:ALT_User_Restrictions_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgMateLockdownDisableUserSwitchingMachine" class="Machine"
+        displayName="$(string.org-mate-lockdown-disable-user-switching)"
+        explainText="$(string.org-mate-lockdown-disable-user-switching_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateLockdownDisableUserSwitchingMachine-pr)">
+      <parentCategory ref="system:ALT_User_Restrictions_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateLockdownDisableUserSwitching_setter" required="true" valueName="org.mate.lockdown.disable-user-switching">
+          <item displayName="$(string.org-mate-lockdown-disable-user-switching-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-lockdown-disable-user-switching-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateLockdownDisableUserSwitching_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.lockdown.disable-user-switching">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateLockdownDisableThemeSettingsUser" class="User"
+        displayName="$(string.org-mate-lockdown-disable-theme-settings)"
+        explainText="$(string.org-mate-lockdown-disable-theme-settings_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.mate.lockdown.disable-theme-settings">
+      <parentCategory ref="system:ALT_User_Restrictions_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgMateLockdownDisableThemeSettingsMachine" class="Machine"
+        displayName="$(string.org-mate-lockdown-disable-theme-settings)"
+        explainText="$(string.org-mate-lockdown-disable-theme-settings_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateLockdownDisableThemeSettingsMachine-pr)">
+      <parentCategory ref="system:ALT_User_Restrictions_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateLockdownDisableThemeSettings_setter" required="true" valueName="org.mate.lockdown.disable-theme-settings">
+          <item displayName="$(string.org-mate-lockdown-disable-theme-settings-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-lockdown-disable-theme-settings-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateLockdownDisableThemeSettings_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.lockdown.disable-theme-settings">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgGnomeVinoViewOnlyUser" class="User"
+        displayName="$(string.org-gnome-vino-view-only)"
+        explainText="$(string.org-gnome-vino-view-only_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.gnome.Vino.view-only">
+      <parentCategory ref="system:ALT_Remote_Access_Vino_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgGnomeVinoViewOnlyMachine" class="Machine"
+        displayName="$(string.org-gnome-vino-view-only)"
+        explainText="$(string.org-gnome-vino-view-only_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeVinoViewOnlyMachine-pr)">
+      <parentCategory ref="system:ALT_Remote_Access_Vino_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgGnomeVinoViewOnly_setter" required="true" valueName="org.gnome.Vino.view-only">
+          <item displayName="$(string.org-gnome-vino-view-only-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-gnome-vino-view-only-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgGnomeVinoViewOnly_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.Vino.view-only">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgGnomeVinoPromptEnabledUser" class="User"
+        displayName="$(string.org-gnome-vino-prompt-enabled)"
+        explainText="$(string.org-gnome-vino-prompt-enabled_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.gnome.Vino.prompt-enabled">
+      <parentCategory ref="system:ALT_Remote_Access_Vino_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgGnomeVinoPromptEnabledMachine" class="Machine"
+        displayName="$(string.org-gnome-vino-prompt-enabled)"
+        explainText="$(string.org-gnome-vino-prompt-enabled_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeVinoPromptEnabledMachine-pr)">
+      <parentCategory ref="system:ALT_Remote_Access_Vino_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgGnomeVinoPromptEnabled_setter" required="true" valueName="org.gnome.Vino.prompt-enabled">
+          <item displayName="$(string.org-gnome-vino-prompt-enabled-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-gnome-vino-prompt-enabled-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgGnomeVinoPromptEnabled_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.Vino.prompt-enabled">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgGnomeVinoIconVisibilityUser" class="User"
+        displayName="$(string.org-gnome-vino-icon-visibility)"
+        explainText="$(string.org-gnome-vino-icon-visibility_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeVinoIconVisibilityUser-pr)" >
+      <parentCategory ref="system:ALT_Remote_Access_Vino_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgGnomeVinoIconVisibility_setter" required="true" valueName="org.gnome.Vino.icon-visibility">
+          <item displayName="$(string.org-gnome-vino-icon-visibility-never)">
+            <value>
+              <string>never</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-gnome-vino-icon-visibility-always)">
+            <value>
+              <string>always</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-gnome-vino-icon-visibility-client)">
+            <value>
+              <string>client</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <policy name="OrgGnomeVinoIconVisibilityMachine" class="Machine"
+        displayName="$(string.org-gnome-vino-icon-visibility)"
+        explainText="$(string.org-gnome-vino-icon-visibility_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeVinoIconVisibilityMachine-pr)" >
+      <parentCategory ref="system:ALT_Remote_Access_Vino_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgGnomeVinoIconVisibility_setter" required="true" valueName="org.gnome.Vino.icon-visibility">
+          <item displayName="$(string.org-gnome-vino-icon-visibility-never)">
+            <value>
+              <string>never</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-gnome-vino-icon-visibility-always)">
+            <value>
+              <string>always</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-gnome-vino-icon-visibility-client)">
+            <value>
+              <string>client</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgGnomeVinoIconVisibility_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.Vino.icon-visibility">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgGnomeVinoEnabledUser" class="User"
+        displayName="$(string.org-gnome-vino-enabled)"
+        explainText="$(string.org-gnome-vino-enabled_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.gnome.Vino.enabled">
+      <parentCategory ref="system:ALT_Remote_Access_Vino_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgGnomeVinoEnabledMachine" class="Machine"
+        displayName="$(string.org-gnome-vino-enabled)"
+        explainText="$(string.org-gnome-vino-enabled_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeVinoEnabledMachine-pr)" >
+      <parentCategory ref="system:ALT_Remote_Access_Vino_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgGnomeVinoEnabled_setter" required="true" valueName="org.gnome.Vino.enabled">
+          <item displayName="$(string.org-gnome-vino-enabled-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-gnome-vino-enabled-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgGnomeVinoEnabled_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.Vino.enabled">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgGnomeVinoAlternativePortUser" class="User"
+        displayName="$(string.org-gnome-vino-alternative-port)"
+        explainText="$(string.org-gnome-vino-alternative-port_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeVinoAlternativePortUser-pr)">
+      <parentCategory ref="system:ALT_Remote_Access_Vino_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <decimal id="OrgGnomeVinoAlternativePort_setter" valueName="org.gnome.Vino.alternative-port" minValue="5000" maxValue="50000" />
+      </elements>
+    </policy>
+
+    <policy name="OrgGnomeVinoAlternativePortMachine" class="Machine"
+        displayName="$(string.org-gnome-vino-alternative-port)"
+        explainText="$(string.org-gnome-vino-alternative-port_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeVinoAlternativePortMachine-pr)">
+      <parentCategory ref="system:ALT_Remote_Access_Vino_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <decimal id="OrgGnomeVinoAlternativePort_setter" valueName="org.gnome.Vino.alternative-port" minValue="5000" maxValue="50000" />
+        <boolean id="OrgGnomeVinoAlternativePort_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.Vino.alternative-port">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgGnomeVinoUseAlternativePortUser" class="User"
+        displayName="$(string.org-gnome-vino-use-alternative-port)"
+        explainText="$(string.org-gnome-vino-use-alternative-port_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.gnome.Vino.use-alternative-port">
+      <parentCategory ref="system:ALT_Remote_Access_Vino_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgGnomeVinoUseAlternativePortMachine" class="Machine"
+        displayName="$(string.org-gnome-vino-use-alternative-port)"
+        explainText="$(string.org-gnome-vino-use-alternative-port_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeVinoUseAlternativePortMachine-pr)">
+      <parentCategory ref="system:ALT_Remote_Access_Vino_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgGnomeVinoUseAlternativePort_setter" required="true" valueName="org.gnome.Vino.use-alternative-port">
+          <item displayName="$(string.org-gnome-vino-use-alternative-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-gnome-vino-use-alternative-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgGnomeVinoUseAlternativePort_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.Vino.use-alternative-port">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgGnomeVinoAuthenticationMethodsUser" class="User"
+        displayName="$(string.org-gnome-vino-authentication-methods)"
+        explainText="$(string.org-gnome-vino-authentication-methods_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeVinoAuthenticationMethodsUser-pr)">
+      <parentCategory ref="system:ALT_Remote_Access_Vino_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgGnomeVinoAuthenticationMethods_setter" required="true" valueName="org.gnome.Vino.authentication-methods">
+          <item displayName="$(string.org-gnome-vino-authentication-methods-none)">
+            <value>
+              <string>none</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-gnome-vino-authentication-methods-vnc)">
+            <value>
+              <string>vnc</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <policy name="OrgGnomeVinoAuthenticationMethodsMachine" class="Machine"
+        displayName="$(string.org-gnome-vino-authentication-methods)"
+        explainText="$(string.org-gnome-vino-authentication-methods_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeVinoAuthenticationMethodsMachine-pr)">
+      <parentCategory ref="system:ALT_Remote_Access_Vino_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgGnomeVinoAuthenticationMethods_setter" required="true" valueName="org.gnome.Vino.authentication-methods">
+          <item displayName="$(string.org-gnome-vino-authentication-methods-none)">
+            <value>
+              <string>none</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-gnome-vino-authentication-methods-vnc)">
+            <value>
+              <string>vnc</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgGnomeVinoAuthenticationMethods_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.Vino.authentication-methods">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneraButtonLayoutUser" class="User"
+        displayName="$(string.org-mate-marco-button-layout)"
+        explainText="$(string.org-mate-marco-button-layout_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneraButtonLayoutUser-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <text id="OrgMateMarcoGeneraButtonLayout_setter" valueName="org.mate.Marco.general.button-layout" />
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneraButtonLayoutMachine" class="Machine"
+        displayName="$(string.org-mate-marco-button-layout)"
+        explainText="$(string.org-mate-marco-button-layout_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneraButtonLayoutMachine-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <text id="OrgMateMarcoGeneraButtonLayout_setter" valueName="org.mate.Marco.general.button-layout" />
+        <boolean id="OrgMateMarcoGeneraButtonLayout_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.Marco.general.button-layout">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralWrapStyleUser" class="User"
+        displayName="$(string.org-mate-marco-general-wrap-style)"
+        explainText="$(string.org-mate-marco-general-wrap-style_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralWrapStyleUser-pr)" >
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateMarcoGeneralWrapStyle_setter" required="true" valueName="org.mate.Marco.general.wrap-style">
+          <item displayName="$(string.org-mate-Marco-general-wrap-style-no-wrap)">
+            <value>
+              <string>no wrap</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-Marco-general-wrap-style-classic)">
+            <value>
+              <string>classic</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-Marco-general-wrap-style-toroidal)">
+            <value>
+              <string>toroidal</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralWrapStyleMachine" class="Machine"
+        displayName="$(string.org-mate-marco-general-wrap-style)"
+        explainText="$(string.org-mate-marco-general-wrap-style_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralWrapStyleMachine-pr)" >
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateMarcoGeneralWrapStyle_setter" required="true" valueName="org.mate.Marco.general.wrap-style">
+          <item displayName="$(string.org-mate-Marco-general-wrap-style-no-wrap)">
+            <value>
+              <string>no wrap</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-Marco-general-wrap-style-classic)">
+            <value>
+              <string>classic</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-Marco-general-wrap-style-toroidal)">
+            <value>
+              <string>toroidal</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateMarcoGeneralWrapStyle_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.Marco.general.wrap-style">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralShowTabBorderUser" class="User"
+        displayName="$(string.org-mate-marco-general-show-tab-border)"
+        explainText="$(string.org-mate-marco-general-show-tab-border_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.mate.Marco.general.show-tab-border">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralShowTabBorderMachine" class="Machine"
+        displayName="$(string.org-mate-marco-general-show-tab-border)"
+        explainText="$(string.org-mate-marco-general-show-tab-border_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralShowTabBorderMachine-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateMarcoGeneralShowTabBorder_setter" required="true" valueName="org.mate.Marco.general.show-tab-border">
+          <item displayName="$(string.org-mate-marco-general-show-tab-border-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-show-tab-border-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateMarcoGeneralShowTabBorder_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.Marco.general.show-tab-border">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralAllowTopTilingUser" class="User"
+        displayName="$(string.org-mate-marco-general-allow-top-tiling)"
+        explainText="$(string.org-mate-marco-general-allow-top-tiling_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.mate.Marco.general.allow-top-tiling">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralAllowTopTilingMachine" class="Machine"
+        displayName="$(string.org-mate-marco-general-allow-top-tiling)"
+        explainText="$(string.org-mate-marco-general-allow-top-tiling_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralAllowTopTilingMachine-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateMarcoGeneralAllowTopTiling_setter" required="true" valueName="org.mate.Marco.general.allow-top-tiling">
+          <item displayName="$(string.org-mate-marco-general-allow-top-tiling-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-allow-top-tiling-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateMarcoGeneralAllowTopTilingMachine_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.Marco.general.allow-top-tiling">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralFocusNewWindowsUser" class="User"
+        displayName="$(string.org-mate-marco-general-focus-new-windows)"
+        explainText="$(string.org-mate-marco-general-focus-new-windows_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralFocusNewWindowsUser-pr)" >
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateMarcoGeneralFocusNewWindows_setter" required="true" valueName="org.mate.Marco.general.focus-new-windows">
+          <item displayName="$(string.org-mate-Marco-general-focus-new-windows-smart)">
+            <value>
+              <string>smart</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-Marco-general-focus-new-windows-strict)">
+            <value>
+              <string>strict</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralFocusNewWindowsMachine" class="Machine"
+        displayName="$(string.org-mate-marco-general-focus-new-windows)"
+        explainText="$(string.org-mate-marco-general-focus-new-windows_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralFocusNewWindowsMachine-pr)" >
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateMarcoGeneralFocusNewWindows_setter" required="true" valueName="org.mate.Marco.general.focus-new-windows">
+          <item displayName="$(string.org-mate-Marco-general-focus-new-windows-smart)">
+            <value>
+              <string>smart</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-Marco-general-focus-new-windows-strict)">
+            <value>
+              <string>strict</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateMarcoGeneralFocusNewWindows_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.Marco.general.focus-new-windows">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralAllowTilingUser" class="User"
+        displayName="$(string.org-mate-marco-general-allow-tiling)"
+        explainText="$(string.org-mate-marco-general-allow-tiling_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.mate.Marco.general.allow-tiling">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralAllowTilingMachine" class="Machine"
+        displayName="$(string.org-mate-marco-general-allow-tiling)"
+        explainText="$(string.org-mate-marco-general-allow-tiling_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralAllowTilingMachine-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateMarcoGeneralAllowTiling_setter" required="true" valueName="org.mate.Marco.general.allow-tiling">
+          <item displayName="$(string.org-mate-marco-general-allow-tiling-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-allow-tiling-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateMarcoGeneralAllowTiling_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.Marco.general.allow-tiling">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralNumWorkspacesUser" class="User"
+        displayName="$(string.org-mate-marco-general-num-workspaces)"
+        explainText="$(string.org-mate-marco-general-num-workspaces_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralNumWorkspacesUser-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <decimal id="OrgMateMarcoGeneralNumWorkspaces_setter" valueName="org.mate.Marco.general.num-workspaces" minValue="1" maxValue="36" />
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralNumWorkspacesMachine" class="Machine"
+        displayName="$(string.org-mate-marco-general-num-workspaces)"
+        explainText="$(string.org-mate-marco-general-num-workspaces_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralNumWorkspacesMachine-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <decimal id="OrgMateMarcoGeneralNumWorkspaces_setter" valueName="org.mate.Marco.general.num-workspaces" minValue="1" maxValue="36" />
+        <boolean id="OrgMateMarcoGeneralNumWorkspaces_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.Marco.general.num-workspaces">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralPlacementModeUser" class="User"
+        displayName="$(string.org-mate-marco-general-placement-mode)"
+        explainText="$(string.org-mate-marco-general-placement-mode_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralPlacementModeUser-pr)" >
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateMarcoGeneralPlacementMode_setter" required="true" valueName="org.mate.Marco.general.placement-mode">
+          <item displayName="$(string.org-mate-marco-general-placement-mode-automatic)">
+            <value>
+              <string>automatic</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-placement-mode-pointer)">
+            <value>
+              <string>pointer</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-placement-mode-manual)">
+            <value>
+              <string>manual</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralPlacementModeMachine" class="Machine"
+        displayName="$(string.org-mate-marco-general-placement-mode)"
+        explainText="$(string.org-mate-marco-general-placement-mode_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralPlacementModeMachine-pr)" >
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateMarcoGeneralPlacementMode_setter" required="true" valueName="org.mate.Marco.general.placement-mode">
+          <item displayName="$(string.org-mate-marco-general-placement-mode-automatic)">
+            <value>
+              <string>automatic</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-placement-mode-pointer)">
+            <value>
+              <string>pointer</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-placement-mode-manual)">
+            <value>
+              <string>manual</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateMarcoGeneralPlacementMode_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.Marco.general.placement-mode">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralAutoRaiseUser" class="User"
+        displayName="$(string.org-mate-marco-general-auto-raise)"
+        explainText="$(string.org-mate-marco-general-auto-raise_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.mate.Marco.general.auto-raise">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralAutoRaiseMachine" class="Machine"
+        displayName="$(string.org-mate-marco-general-auto-raise)"
+        explainText="$(string.org-mate-marco-general-auto-raise_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralAutoRaiseMachine-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateMarcoGeneralAutoRaise_setter" required="true" valueName="org.mate.Marco.general.auto-raise">
+          <item displayName="$(string.org-mate-marco-general-auto-raise-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-auto-raise-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateMarcoGeneralAutoRaise_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.Marco.general.auto-raise">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralActionMiddleClickTitlebarUser" class="User"
+        displayName="$(string.org-mate-marco-general-action-middle-click-titlebar)"
+        explainText="$(string.org-mate-marco-general-action-middle-click-titlebar_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralActionMiddleClickTitlebarUser-pr)" >
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateMarcoGeneralActionMiddleClickTitlebar_setter" required="true" valueName="org.mate.Marco.general.action-middle-click-titlebar">
+          <item displayName="$(string.org-mate-marco-general-action-middle-click-titlebar-toggle_shade)">
+            <value>
+              <string>toggle shade</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-middle-click-titlebar-toggle_maximize)">
+            <value>
+              <string>toggle maximize</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-middle-click-titlebar-toggle_maximize_horizontally)">
+            <value>
+              <string>toggle maximize horizontally</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-middle-click-titlebar-toggle_maximize_vertically)">
+            <value>
+              <string>toggle maximize vertically</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-middle-click-titlebar-minimize)">
+            <value>
+              <string>minimize</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-middle-click-titlebar-none)">
+            <value>
+              <string>none</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-middle-click-titlebar-lower)">
+            <value>
+              <string>lower</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-middle-click-titlebar-menu)">
+            <value>
+              <string>menu</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-middle-click-titlebar-last)">
+            <value>
+              <string>last</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralActionMiddleClickTitlebarMachine" class="Machine"
+        displayName="$(string.org-mate-marco-general-action-middle-click-titlebar)"
+        explainText="$(string.org-mate-marco-general-action-middle-click-titlebar_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralActionMiddleClickTitlebarMachine-pr)" >
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateMarcoGeneralActionMiddleClickTitlebar_setter" required="true" valueName="org.mate.Marco.general.action-middle-click-titlebar">
+          <item displayName="$(string.org-mate-marco-general-action-middle-click-titlebar-toggle_shade)">
+            <value>
+              <string>toggle shade</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-middle-click-titlebar-toggle_maximize)">
+            <value>
+              <string>toggle maximize</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-middle-click-titlebar-toggle_maximize_horizontally)">
+            <value>
+              <string>toggle maximize horizontally</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-middle-click-titlebar-toggle_maximize_vertically)">
+            <value>
+              <string>toggle maximize vertically</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-middle-click-titlebar-minimize)">
+            <value>
+              <string>minimize</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-middle-click-titlebar-none)">
+            <value>
+              <string>none</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-middle-click-titlebar-lower)">
+            <value>
+              <string>lower</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-middle-click-titlebar-menu)">
+            <value>
+              <string>menu</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-middle-click-titlebar-last)">
+            <value>
+              <string>last</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateMarcoGeneralActionMiddleClickTitlebar_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.Marco.general.action-middle-click-titlebar">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralActionRightClickTitlebarUser" class="User"
+        displayName="$(string.org-mate-marco-general-action-right-click-titlebar)"
+        explainText="$(string.org-mate-marco-general-action-right-click-titlebar_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralActionRightClickTitlebarUser-pr)" >
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateMarcoGeneralActionRightClickTitlebar_setter" required="true" valueName="org.mate.Marco.general.action-right-click-titlebar">
+          <item displayName="$(string.org-mate-marco-general-action-right-click-titlebar-toggle_shade)">
+            <value>
+              <string>toggle shade</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-right-click-titlebar-toggle_maximize)">
+            <value>
+              <string>toggle maximize</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-right-click-titlebar-toggle_maximize_horizontally)">
+            <value>
+              <string>toggle maximize horizontally</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-right-click-titlebar-toggle_maximize_vertically)">
+            <value>
+              <string>toggle maximize vertically</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-right-click-titlebar-minimize)">
+            <value>
+              <string>minimize</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-right-click-titlebar-none)">
+            <value>
+              <string>none</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-right-click-titlebar-lower)">
+            <value>
+              <string>lower</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-right-click-titlebar-menu)">
+            <value>
+              <string>menu</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-right-click-titlebar-last)">
+            <value>
+              <string>last</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralActionRightClickTitlebarMachine" class="Machine"
+        displayName="$(string.org-mate-marco-general-action-right-click-titlebar)"
+        explainText="$(string.org-mate-marco-general-action-right-click-titlebar_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralActionRightClickTitlebarMachine-pr)" >
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateMarcoGeneralActionRightClickTitlebar_setter" required="true" valueName="org.mate.Marco.general.action-right-click-titlebar">
+          <item displayName="$(string.org-mate-marco-general-action-right-click-titlebar-toggle_shade)">
+            <value>
+              <string>toggle shade</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-right-click-titlebar-toggle_maximize)">
+            <value>
+              <string>toggle maximize</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-right-click-titlebar-toggle_maximize_horizontally)">
+            <value>
+              <string>toggle maximize horizontally</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-right-click-titlebar-toggle_maximize_vertically)">
+            <value>
+              <string>toggle maximize vertically</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-right-click-titlebar-minimize)">
+            <value>
+              <string>minimize</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-right-click-titlebar-none)">
+            <value>
+              <string>none</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-right-click-titlebar-lower)">
+            <value>
+              <string>lower</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-right-click-titlebar-menu)">
+            <value>
+              <string>menu</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-right-click-titlebar-last)">
+            <value>
+              <string>last</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateMarcoGeneralActionRightClickTitlebar_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.Marco.general.action-right-click-titlebar">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralActionDoubleClickTitlebarUser" class="User"
+        displayName="$(string.org-mate-marco-general-action-double-click-titlebar)"
+        explainText="$(string.org-mate-marco-general-action-double-click-titlebar_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralActionDoubleClickTitlebarUser-pr)" >
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateMarcoGeneralActionDoubleClickTitlebar_setter" required="true" valueName="org.mate.Marco.general.action-double-click-titlebar">
+          <item displayName="$(string.org-mate-marco-general-action-double-click-titlebar-toggle_shade)">
+            <value>
+              <string>toggle shade</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-double-click-titlebar-toggle_maximize)">
+            <value>
+              <string>toggle maximize</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-double-click-titlebar-toggle_maximize_horizontally)">
+            <value>
+              <string>toggle maximize horizontally</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-double-click-titlebar-toggle_maximize_vertically)">
+            <value>
+              <string>toggle maximize vertically</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-double-click-titlebar-minimize)">
+            <value>
+              <string>minimize</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-double-click-titlebar-none)">
+            <value>
+              <string>none</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-double-click-titlebar-lower)">
+            <value>
+              <string>lower</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-double-click-titlebar-menu)">
+            <value>
+              <string>menu</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-double-click-titlebar-last)">
+            <value>
+              <string>last</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralActionDoubleClickTitlebarMachine" class="Machine"
+        displayName="$(string.org-mate-marco-general-action-double-click-titlebar)"
+        explainText="$(string.org-mate-marco-general-action-double-click-titlebar_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralActionDoubleClickTitlebarMachine-pr)" >
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateMarcoGeneralActionDoubleClickTitlebar_setter" required="true" valueName="org.mate.Marco.general.action-double-click-titlebar">
+          <item displayName="$(string.org-mate-marco-general-action-double-click-titlebar-toggle_shade)">
+            <value>
+              <string>toggle shade</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-double-click-titlebar-toggle_maximize)">
+            <value>
+              <string>toggle maximize</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-double-click-titlebar-toggle_maximize_horizontally)">
+            <value>
+              <string>toggle maximize horizontally</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-double-click-titlebar-toggle_maximize_vertically)">
+            <value>
+              <string>toggle maximize vertically</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-double-click-titlebar-minimize)">
+            <value>
+              <string>minimize</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-double-click-titlebar-none)">
+            <value>
+              <string>none</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-double-click-titlebar-lower)">
+            <value>
+              <string>lower</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-double-click-titlebar-menu)">
+            <value>
+              <string>menu</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-action-double-click-titlebar-last)">
+            <value>
+              <string>last</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateMarcoGeneralActionDoubleClickTitlebar_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.Marco.general.action-double-click-titlebar">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralThemeUser" class="User"
+        displayName="$(string.org-mate-marco-general-theme)"
+        explainText="$(string.org-mate-marco-general-theme_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralThemeUser-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <text id="OrgMateMarcoGeneralTheme_setter" valueName="org.mate.Marco.general.theme" />
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralThemeMachine" class="Machine"
+        displayName="$(string.org-mate-marco-general-theme)"
+        explainText="$(string.org-mate-marco-general-theme_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralThemeMachine-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <text id="OrgMateMarcoGeneralTheme_setter" valueName="org.mate.Marco.general.theme" />
+        <boolean id="OrgMateMarcoGeneralTheme_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.Marco.general.theme">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralTitlebarFontUser" class="User"
+        displayName="$(string.org-mate-marco-general-titlebar-font)"
+        explainText="$(string.org-mate-marco-general-titlebar-font_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralTitlebarFont-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <text id="OrgMateMarcoGeneralTitlebarFont_setter" valueName="org.mate.Marco.general.titlebar-font" />
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralTitlebarFontMachine" class="Machine"
+        displayName="$(string.org-mate-marco-general-titlebar-font)"
+        explainText="$(string.org-mate-marco-general-titlebar-font_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralTitlebarFontMachine-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <text id="OrgMateMarcoGeneralTitlebarFont_setter" valueName="org.mate.Marco.general.titlebar-font" />
+        <boolean id="OrgMateMarcoGeneralTitlebarFont_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.Marco.general.titlebar-font">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralFocusModeUser" class="User"
+        displayName="$(string.org-mate-marco-general-focus-mode)"
+        explainText="$(string.org-mate-marco-general-focus-mode_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralFocusModeUser-pr)" >
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateMarcoGeneralFocusMode_setter" required="true" valueName="org.mate.Marco.general.focus-mode">
+          <item displayName="$(string.org-mate-marco-general-focus-mode-click)">
+            <value>
+              <string>click</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-focus-mode-sloppy)">
+            <value>
+              <string>sloppy</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-focus-mode-mouse)">
+            <value>
+              <string>mouse</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralFocusModeMachine" class="Machine"
+        displayName="$(string.org-mate-marco-general-focus-mode)"
+        explainText="$(string.org-mate-marco-general-focus-mode_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralFocusModeMachine-pr)" >
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateMarcoGeneralFocusMode_setter" required="true" valueName="org.mate.Marco.general.focus-mode">
+          <item displayName="$(string.org-mate-marco-general-focus-mode-click)">
+            <value>
+              <string>click</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-focus-mode-sloppy)">
+            <value>
+              <string>sloppy</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-focus-mode-mouse)">
+            <value>
+              <string>mouse</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateMarcoGeneralFocusMode_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.Marco.general.focus-mode">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralTitlebarUsesSystemFontUser" class="User"
+        displayName="$(string.org-mate-marco-general-titlebar-uses-system-font)"
+        explainText="$(string.org-mate-marco-general-titlebar-uses-system-font_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.mate.Marco.general.titlebar-uses-system-font">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralTitlebarUsesSystemFontMachine" class="Machine"
+        displayName="$(string.org-mate-marco-general-titlebar-uses-system-font)"
+        explainText="$(string.org-mate-marco-general-titlebar-uses-system-font_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralTitlebarUsesSystemFontMachine-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateMarcoGeneralTitlebarUsesSystemFont_setter" required="true" valueName="org.mate.Marco.general.titlebar-uses-system-font">
+          <item displayName="$(string.org-mate-marco-general-titlebar-uses-system-font-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-titlebar-uses-system-font-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateMarcoGeneralTitlebarUsesSystemFont_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.Marco.general.titlebar-uses-system-font">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralCompositingFastAltTabUser" class="User"
+        displayName="$(string.org-mate-marco-general-compositing-fast-alt-tab)"
+        explainText="$(string.org-mate-marco-general-compositing-fast-alt-tab_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.mate.Marco.general.compositing-fast-alt-tab">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralCompositingFastAltTabMachine" class="Machine"
+        displayName="$(string.org-mate-marco-general-compositing-fast-alt-tab)"
+        explainText="$(string.org-mate-marco-general-compositing-fast-alt-tab_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralCompositingFastAltTabMachine-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateMarcoGeneralCompositingFastAltTab_setter" required="true" valueName="org.mate.Marco.general.compositing-fast-alt-tab">
+          <item displayName="$(string.org-mate-marco-general-compositing-fast-alt-tab-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-compositing-fast-alt-tab-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateMarcoGeneralCompositingFastAltTab_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.Marco.compositing-fast-alt-tab">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralAutoRaiseDelayUser" class="User"
+        displayName="$(string.org-mate-marco-general-auto-raise-delay)"
+        explainText="$(string.org-mate-marco-general-auto-raise-delay_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralAutoRaiseDelayUser-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <decimal id="OrgMateMarcoGeneralAutoRaiseDelay_setter" valueName="org.mate.Marco.general.auto-raise-delay" minValue="1" />
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralAutoRaiseDelayMachine" class="Machine"
+        displayName="$(string.org-mate-marco-general-auto-raise-delay)"
+        explainText="$(string.org-mate-marco-general-auto-raise-delay_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralAutoRaiseDelayMachine-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <decimal id="OrgMateMarcoGeneralAutoRaiseDelay_setter" valueName="org.mate.Marco.general.auto-raise-delay" minValue="1" />
+        <boolean id="OrgMateMarcoGeneralAutoRaiseDelay_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.Marco.general.auto-raise-delay">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralCenterNewWindowsUser" class="User"
+        displayName="$(string.org-mate-marco-general-center-new-windows)"
+        explainText="$(string.org-mate-marco-general-center-new-windows_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.mate.Marco.general.center-new-windows">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralCenterNewWindowsMachine" class="Machine"
+        displayName="$(string.org-mate-marco-general-center-new-windows)"
+        explainText="$(string.org-mate-marco-general-center-new-windows_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralCenterNewWindowsMachine-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateMarcoGeneralCenterNewWindows_setter" required="true" valueName="org.mate.Marco.general.center-new-windows">
+          <item displayName="$(string.org-mate-marco-general-center-new-windows-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-marco-general-center-new-windows-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateMarcoGeneralCenterNewWindows_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.Marco.general.center-new-windows">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralIconSizeUser" class="User"
+        displayName="$(string.org-mate-marco-general-icon-size)"
+        explainText="$(string.org-mate-marco-general-icon-size_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralIconSizeUser-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <decimal id="OrgMateMarcoGeneralIconSize_setter" valueName="org.mate.Marco.general.icon-size" minValue="8" maxValue="256" />
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralIconSizeMachine" class="Machine"
+        displayName="$(string.org-mate-marco-general-icon-size)"
+        explainText="$(string.org-mate-marco-general-icon-size_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralIconSizeMachine-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <decimal id="OrgMateMarcoGeneralIconSize_setter" valueName="org.mate.Marco.general.icon-size" minValue="8" maxValue="256" />
+        <boolean id="OrgMateMarcoGeneralIconSize_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.Marco.general.icon-size">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralAltTabMaxColumnsUser" class="User"
+        displayName="$(string.org-mate-marco-general-alt-tab-max-columns)"
+        explainText="$(string.org-mate-marco-general-alt-tab-max-columns_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralAltTabMaxColumnsUser-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <decimal id="OrgMateMarcoGeneralAltTabMaxColumns_setter" valueName="org.mate.Marco.general.alt-tab-max-columns" minValue="1" maxValue="64" />
+      </elements>
+    </policy>
+
+    <policy name="OrgMateMarcoGeneralAltTabMaxColumnsMachine" class="Machine"
+        displayName="$(string.org-mate-marco-general-alt-tab-max-columns)"
+        explainText="$(string.org-mate-marco-general-alt-tab-max-columns_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateMarcoGeneralAltTabMaxColumnsMachine-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <decimal id="OrgMateMarcoGeneralAltTabMaxColumns_setter" valueName="org.mate.Marco.general.alt-tab-max-columns" minValue="1" maxValue="64" />
+        <boolean id="OrgMateMarcoGeneralAltTabMaxColumns_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.Marco.general.alt-tab-max-columns">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMatePeripheralsKeyboardDelayUser" class="User"
+        displayName="$(string.org-mate-peripherals-keyboard-delay)"
+        explainText="$(string.org-mate-peripherals-keyboard-delay_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMatePeripheralsKeyboardDelayUser-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco_Keyboard" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <decimal id="OrgMatePeripheralsKeyboardDelay_setter" valueName="org.mate.peripherals-keyboard.delay" />
+      </elements>
+    </policy>
+
+    <policy name="OrgMatePeripheralsKeyboardDelayMachine" class="Machine"
+        displayName="$(string.org-mate-peripherals-keyboard-delay)"
+        explainText="$(string.org-mate-peripherals-keyboard-delay_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMatePeripheralsKeyboardDelayMachine-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco_Keyboard" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <decimal id="OrgMatePeripheralsKeyboardDelay_setter" valueName="org.mate.peripherals-keyboard.delay"/>
+        <boolean id="OrgMatePeripheralsKeyboardDelay_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.peripherals-keyboard.delay">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMatePeripheralsKeyboardRepeatUser" class="User"
+        displayName="$(string.org-mate-peripherals-keyboard-repeat)"
+        explainText="$(string.org-mate-peripherals-keyboard-repeat_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.mate.peripherals-keyboard.repeat">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco_Keyboard" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgMatePeripheralsKeyboardRepeatMachine" class="Machine"
+        displayName="$(string.org-mate-peripherals-keyboard-repeat)"
+        explainText="$(string.org-mate-peripherals-keyboard-repeat_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMatePeripheralsKeyboardRepeatMachine-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco_Keyboard" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMatePeripheralsKeyboardRepeat_setter" required="true" valueName="org.mate.peripherals-keyboard-repeat">
+          <item displayName="$(string.org-mate-peripherals-keyboard-repeat-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-peripherals-keyboard-repeat-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMatePeripheralsKeyboardRepeat_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.peripherals-keyboard.repeat">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMatePeripheralsKeyboardRateUser" class="User"
+        displayName="$(string.org-mate-peripherals-keyboard-rate)"
+        explainText="$(string.org-mate-peripherals-keyboard-rate_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMatePeripheralsKeyboardRateUser-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco_Keyboard" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <decimal id="OrgMatePeripheralsKeyboardRate_setter" valueName="org.mate.peripherals-keyboard.rate" />
+      </elements>
+    </policy>
+
+    <policy name="OrgMatePeripheralsKeyboardRateMachine" class="Machine"
+        displayName="$(string.org-mate-peripherals-keyboard-rate)"
+        explainText="$(string.org-mate-peripherals-keyboard-rate_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMatePeripheralsKeyboardRateMachine-pr)">
+      <parentCategory ref="system:ALT_Windows_Manager_Marco_Keyboard" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <decimal id="OrgMatePeripheralsKeyboardRate_setter" valueName="org.mate.peripherals-keyboard.rate" />
+        <boolean id="OrgMatePeripheralsKeyboardRate_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.peripherals-keyboard.rate">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateSessionLogoutPromptUser" class="User"
+        displayName="$(string.org-mate-session-logout-prompt)"
+        explainText="$(string.org-mate-session-logout-prompt_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.mate.session.logout-prompt">
+      <parentCategory ref="system:ALT_Session_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgMateSessionLogoutPromptMachine" class="Machine"
+        displayName="$(string.org-mate-session-logout-prompt)"
+        explainText="$(string.org-mate-session-logout-prompt_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateSessionLogoutPromptMachine-pr)">
+      <parentCategory ref="system:ALT_Session_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateSessionLogoutPrompt_setter" required="true" valueName="org.mate.session.logout-prompt">
+          <item displayName="$(string.org-mate-session-logout-prompt-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-session-logout-prompt-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateSessionLogoutPrompt_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.session.logout-prompt">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateSessionAutoSaveSessionUser" class="User"
+        displayName="$(string.org-mate-session-auto-save-session)"
+        explainText="$(string.org-mate-session-auto-save-session_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.mate.session.auto-save-session">
+      <parentCategory ref="system:ALT_Session_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgMateSessionAutoSaveSessionMachine" class="Machine"
+        displayName="$(string.org-mate-session-auto-save-session)"
+        explainText="$(string.org-mate-session-auto-save-session_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateSessionAutoSaveSessionMachine-pr)">
+      <parentCategory ref="system:ALT_Session_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateSessionAutoSaveSession_setter" required="true" valueName="org.mate.session.auto-save-session">
+          <item displayName="$(string.org-mate-session-auto-save-session-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-session-auto-save-session-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateSessionAutoSaveSession_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.session.auto-save-session">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="OrgMateSessionShowHiddenAppsUser" class="User"
+        displayName="$(string.org-mate-session-show-hidden-apps)"
+        explainText="$(string.org-mate-session-show-hidden-apps_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        valueName="org.mate.session.show-hidden-apps">
+      <parentCategory ref="system:ALT_Session_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="OrgMateSessionShowHiddenAppsMachine" class="Machine"
+        displayName="$(string.org-mate-session-show-hidden-apps)"
+        explainText="$(string.org-mate-session-show-hidden-apps_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgMateSessionShowHiddenAppsMachine-pr)">
+      <parentCategory ref="system:ALT_Session_Mate" />
+      <supportedOn ref="system:SUPPORTED_AltP9" />
+      <elements>
+        <enum id="OrgMateSessionShowHiddenApps_setter" required="true" valueName="org.mate.session.show-hidden-apps">
+          <item displayName="$(string.org-mate-session-show-hidden-apps-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.org-mate-session-show-hidden-apps-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgMateSessionShowHiddenApps_setter_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.mate.session.show-hidden-apps">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="WinbindDNSUpdateIPv4" class="Machine"
+        displayName="$(string.org-altlinux-winbind-dnsupdate-ipv4)"
+        explainText="$(string.org-altlinux-winbind-dnsupdate-ipv4_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.WinbindDNSUpdateIPv4-pr)">
+      <parentCategory ref="system:ALT_WinbindDNSupdateOptions" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="WinbindDNSUpdateIPv4_setter" required="true" valueName="org.altlinux.winbind.dnsupdate.enable-update-ipv4">
+          <item displayName="$(string.WinbindDNSUpdate-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.WinbindDNSUpdate-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="WinbindDNSUpdateIPv4ptr_setter" valueName="org.altlinux.winbind.dnsupdate.ipv4-ptr-update">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="WinbindDNSUpdateIPv6" class="Machine"
+        displayName="$(string.org-altlinux-winbind-dnsupdate-ipv6)"
+        explainText="$(string.org-altlinux-winbind-dnsupdate-ipv6_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.WinbindDNSUpdateIPv6-pr)">
+      <parentCategory ref="system:ALT_WinbindDNSupdateOptions" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="WinbindDNSUpdateIPv6_setter" required="true" valueName="org.altlinux.winbind.dnsupdate.enable-update-ipv6">
+          <item displayName="$(string.WinbindDNSUpdate-true)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.WinbindDNSUpdate-false)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="WinbindDNSUpdateIPv6ptr_setter" valueName="org.altlinux.winbind.dnsupdate.ipv6-ptr-update">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <policy name="WinbindDNSUpdateTTL" class="Machine"
+        displayName="$(string.org-altlinux-winbind-dnsupdate-ttl)"
+        explainText="$(string.org-altlinux-winbind-dnsupdate-ttl_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.WinbindDNSUpdateTTL-pr)">
+      <parentCategory ref="system:ALT_WinbindDNSupdateOptions" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <decimal id="WinbindDNSUpdateTTL_setter" valueName="org.altlinux.winbind.dnsupdate.ttl" minValue="0" maxValue="604800" />
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

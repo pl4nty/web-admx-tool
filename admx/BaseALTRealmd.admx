@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2023 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="realmd" namespace="BaseALT.Policies.Realmd" />
+    <using prefix="system" namespace="BaseALT.Policies.System" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <policies>
+    <policy class="Machine" displayName="$(string.org-freedesktop-realmd-configure-realm)"
+        explainText="$(string.org-freedesktop-realmd-configure-realm_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.realmd.configure-realm"
+        valuename="org.freedesktop.realmd.configure-realm"
+        presentation="$(presentation.org-freedesktop-Realmd-pr)">
+      <parentCategory ref="system:ALT_RealmdPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopRealmd_setter" valueName="org.freedesktop.realmd.configure-realm" required="true">
+          <item displayName="$(string.org-freedesktop-realmd-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopRealmd_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.realmd.configure-realm">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-realmd-configure-realm)"
+        explainText="$(string.org-freedesktop-realmd-configure-realm-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.realmd.configure-realm-user"
+        valuename="org.freedesktop.realmd.configure-realm"
+        presentation="$(presentation.org-freedesktop-Realmd-user-pr)">
+      <parentCategory ref="system:ALT_RealmdPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopRealmd_setter" valueName="org.freedesktop.realmd.configure-realm" required="true">
+          <item displayName="$(string.org-freedesktop-realmd-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-realmd-deconfigure-realm)"
+        explainText="$(string.org-freedesktop-realmd-deconfigure-realm_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.realmd.deconfigure-realm"
+        valuename="org.freedesktop.realmd.deconfigure-realm"
+        presentation="$(presentation.org-freedesktop-Realmd-pr)">
+      <parentCategory ref="system:ALT_RealmdPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopRealmd_setter" valueName="org.freedesktop.realmd.deconfigure-realm" required="true">
+          <item displayName="$(string.org-freedesktop-realmd-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopRealmd_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.realmd.deconfigure-realm">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-realmd-deconfigure-realm)"
+        explainText="$(string.org-freedesktop-realmd-deconfigure-realm-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.realmd.deconfigure-realm-user"
+        valuename="org.freedesktop.realmd.deconfigure-realm"
+        presentation="$(presentation.org-freedesktop-Realmd-user-pr)">
+      <parentCategory ref="system:ALT_RealmdPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopRealmd_setter" valueName="org.freedesktop.realmd.deconfigure-realm" required="true">
+          <item displayName="$(string.org-freedesktop-realmd-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-realmd-discover-realm)"
+        explainText="$(string.org-freedesktop-realmd-discover-realm_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.realmd.discover-realm"
+        valuename="org.freedesktop.realmd.discover-realm"
+        presentation="$(presentation.org-freedesktop-Realmd-pr)">
+      <parentCategory ref="system:ALT_RealmdPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopRealmd_setter" valueName="org.freedesktop.realmd.discover-realm" required="true">
+          <item displayName="$(string.org-freedesktop-realmd-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopRealmd_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.realmd.discover-realm">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-realmd-discover-realm)"
+        explainText="$(string.org-freedesktop-realmd-discover-realm-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.realmd.discover-realm-user"
+        valuename="org.freedesktop.realmd.discover-realm"
+        presentation="$(presentation.org-freedesktop-Realmd-user-pr)">
+      <parentCategory ref="system:ALT_RealmdPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopRealmd_setter" valueName="org.freedesktop.realmd.discover-realm" required="true">
+          <item displayName="$(string.org-freedesktop-realmd-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-realmd-login-policy)"
+        explainText="$(string.org-freedesktop-realmd-login-policy_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.realmd.login-policy"
+        valuename="org.freedesktop.realmd.login-policy"
+        presentation="$(presentation.org-freedesktop-Realmd-pr)">
+      <parentCategory ref="system:ALT_RealmdPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopRealmd_setter" valueName="org.freedesktop.realmd.login-policy" required="true">
+          <item displayName="$(string.org-freedesktop-realmd-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopRealmd_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.realmd.login-policy">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-realmd-login-policy)"
+        explainText="$(string.org-freedesktop-realmd-login-policy-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.realmd.login-policy-user"
+        valuename="org.freedesktop.realmd.login-policy"
+        presentation="$(presentation.org-freedesktop-Realmd-user-pr)">
+      <parentCategory ref="system:ALT_RealmdPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopRealmd_setter" valueName="org.freedesktop.realmd.login-policy" required="true">
+          <item displayName="$(string.org-freedesktop-realmd-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-realmd-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

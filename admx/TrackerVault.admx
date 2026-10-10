@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2001-25 PDF-XChange Co Ltd.  -->
+<policyDefinitions	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					revision="1.0"
+					xsi:schemaLocation=""
+					schemaVersion="1.0"
+					xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+
+	<policyNamespaces>
+		<target prefix="pxce" namespace="TrackerSoftware.Vault.Policies" />
+		<using prefix="products" namespace="Microsoft.Policies.Products"/>
+	</policyNamespaces>
+	
+	<resources minRequiredRevision="1.0" fallbackCulture="en-us"/>
+
+	<supportedOn>
+		<products>
+			<product name="Vault" displayName="$(string.Vault)" />
+		</products>
+		<definitions>
+			<definition name="SupportedOn_1" displayName="$(string.SupportedOn_1)">
+				<and>
+					<range ref="Vault" minVersionIndex="1"/>
+				</and>
+			</definition>
+			<definition name="SupportedOn_2" displayName="$(string.SupportedOn_2)">
+				<and>
+					<range ref="Vault" minVersionIndex="1"/>
+				</and>
+			</definition>
+			<definition name="SupportedOn_3" displayName="$(string.SupportedOn_3)">
+				<and>
+					<range ref="Vault" minVersionIndex="1"/>
+				</and>
+			</definition>
+			<definition name="SupportedOn_4" displayName="$(string.SupportedOn_4)">
+				<and>
+					<range ref="Vault" minVersionIndex="1"/>
+				</and>
+			</definition>
+		</definitions>
+	</supportedOn>
+	
+	<categories>
+		<category name="Cat_Vault_1" displayName="$(string.Cat_Vault_1)"/>
+
+		<category name="Cat_Activation_1" displayName="$(string.Cat_Activation_1)">
+			<parentCategory ref="Cat_Vault_1" />
+		</category>
+		
+	</categories>
+	
+	<policies>
+		<!-- Activation Server URL -->
+		<policy name="Policy_Activation_URL" class="Machine"
+				displayName="$(string.Policy_Activation_URL)" explainText="$(string.Policy_Activation_URL_exp)"
+				key="SOFTWARE\Policies\Tracker Software\Vault"
+				presentation="$(presentation.Policy_Activation_URL)">
+			<parentCategory ref="Cat_Activation_1" />
+			<supportedOn ref="SupportedOn_1" />
+			<elements>
+				<text id="Policy_Activation_URL_Text" valueName="KeyURL" />
+			</elements>
+		</policy>
+		
+		<!-- Auto-activation keys -->
+		<policy name="Policy_Activation_Auto" class="Machine"
+				displayName="$(string.Policy_Activation_Auto)" explainText="$(string.Policy_Activation_Auto_exp)"
+				key="SOFTWARE\Policies\Tracker Software\Vault"
+				valueName="b.AutoActivate">
+			<parentCategory ref="Cat_Activation_1"/>
+			<supportedOn ref="SupportedOn_2"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- Manual keys upgrade -->
+		<policy name="Policy_Upgrade_Manual" class="Machine"
+				displayName="$(string.Policy_Upgrade_Manual)" explainText="$(string.Policy_Upgrade_Manual_exp)"
+				key="SOFTWARE\Policies\Tracker Software\Vault"
+				valueName="b.ManualUpgrade">
+			<parentCategory ref="Cat_Activation_1"/>
+			<supportedOn ref="SupportedOn_4"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		
+		<!-- License accounting -->
+		<policy name="Policy_License_Accounting" class="Machine"
+				displayName="$(string.Policy_License_Accounting)" explainText="$(string.Policy_License_Accounting_exp)"
+				key="SOFTWARE\Policies\Tracker Software\Vault"
+				presentation="$(presentation.Policy_License_Accounting)"				
+				valueName="ManageLicenseAccounting">
+			<parentCategory ref="Cat_Activation_1"/>
+			<supportedOn ref="SupportedOn_3"/>
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>			
+			<elements>
+				<enum
+				  id="LicenseAccountingModeDrop"
+				  valueName="LicenseAccountingMode">
+					<item displayName="$(string.LicenseAccountingByHardwareId)">
+						<value>
+							<decimal value="0" />
+						</value>
+					</item>
+					<item displayName="$(string.LicenseAccountingByUserId)">
+						<value>
+							<decimal value="1" />
+						</value>
+					</item>				
+				</enum>
+			</elements>
+		</policy>
+	</policies>
+</policyDefinitions>

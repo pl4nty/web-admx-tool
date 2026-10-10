@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Version 7.18.0 -->
+<policyDefinitions revision="501.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="licensing" namespace="RealVNC.Policies.licensing" />
+    <using prefix="realvnc" namespace="RealVNC.Policies.realvnc" />
+  </policyNamespaces>
+  <resources minRequiredRevision="501.0" />
+  <categories>
+    <category name="Licensing" displayName="$(string.RealVNC_licensing_category)" explainText="$(string.RealVNC_licensing_category_help)">
+      <parentCategory ref="realvnc:RealVNC" />
+    </category>
+    <category name="Restrictions" displayName="$(string.RealVNC_restrictions_category)" explainText="$(string.RealVNC_restrictions_category_help)">
+      <parentCategory ref="realvnc:RealVNC" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="RealVNC_vncserver_Machine_vncserverlicense" class="Machine" displayName="$(string.RealVNC_vncserver_Machine_vncserverlicense)" explainText="$(string.RealVNC_vncserver_Machine_vncserverlicense_help)" presentation="$(presentation.RealVNC_vncserver_Machine_vncserverlicense)" key="Software\Policies\RealVNC\licenses\vncserver">
+      <parentCategory ref="Licensing" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <elements>
+        <text id="Value" valueName="vnc.lic" maxLength="10240"/>
+      </elements>
+    </policy>
+    <policy name="RealVNC_vncserver_Machine_vncserverlicense_6x" class="Machine" displayName="$(string.RealVNC_vncserver_Machine_vncserverlicense_6x)" explainText="$(string.RealVNC_vncserver_Machine_vncserverlicense_6x_help)" presentation="$(presentation.RealVNC_vncserver_Machine_vncserverlicense_6x)" key="Software\Policies\RealVNC">
+      <parentCategory ref="Licensing" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <elements>
+        <text id="Value" valueName="vncserver_license" />
+      </elements>
+    </policy>
+    <policy name="RealVNC_vncserver_Machine_blocknonpolicyservers" class="Machine" displayName="$(string.RealVNC_vncserver_Machine_blocknonpolicyservers)" explainText="$(string.RealVNC_vncserver_Machine_blocknonpolicyservers_help)" presentation="$(presentation.RealVNC_vncserver_Machine_blocknonpolicyservers)" key="Software\Policies\RealVNC\restrictions" valueName="BlockNonPolicyServers">
+      <parentCategory ref="Restrictions" />
+      <supportedOn ref="SUPPORTED_ProductOnly" />
+      <enabledValue>
+        <string>1</string>
+      </enabledValue>
+      <disabledValue>
+        <string>0</string>
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>
+      

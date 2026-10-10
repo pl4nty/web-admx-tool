@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2023 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="timedate" namespace="BaseALT.Policies.TimeDate" />
+    <using prefix="system" namespace="BaseALT.Policies.System" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <policies>
+    <policy class="Machine" displayName="$(string.org-freedesktop-timedate1-set-local-rtc)"
+        explainText="$(string.org-freedesktop-timedate1-set-local-rtc_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.timedate1.set-local-rtc"
+        valuename="org.freedesktop.timedate1.set-local-rtc"
+        presentation="$(presentation.org-freedesktop-timedate1-pr)">
+      <parentCategory ref="system:ALT_TimedatePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopTimedate1_setter" valueName="org.freedesktop.timedate1.set-local-rtc" required="true">
+          <item displayName="$(string.org-freedesktop-timedate1-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopTimedate1_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.timedate1.set-local-rtc">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-timedate1-set-local-rtc)"
+        explainText="$(string.org-freedesktop-timedate1-set-local-rtc-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.timedate1.set-local-rtc-user"
+        valuename="org.freedesktop.timedate1.set-local-rtc"
+        presentation="$(presentation.org-freedesktop-timedate1-user-pr)">
+      <parentCategory ref="system:ALT_TimedatePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopTimedate1_setter" valueName="org.freedesktop.timedate1.set-local-rtc" required="true">
+          <item displayName="$(string.org-freedesktop-timedate1-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-timedate1-set-ntp)"
+        explainText="$(string.org-freedesktop-timedate1-set-ntp_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.timedate1.set-ntp"
+        valuename="org.freedesktop.timedate1.set-ntp"
+        presentation="$(presentation.org-freedesktop-timedate1-pr)">
+      <parentCategory ref="system:ALT_TimedatePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopTimedate1_setter" valueName="org.freedesktop.timedate1.set-ntp" required="true">
+          <item displayName="$(string.org-freedesktop-timedate1-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopTimedate1_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.timedate1.set-ntp">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-timedate1-set-ntp)"
+        explainText="$(string.org-freedesktop-timedate1-set-ntp-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.timedate1.set-ntp-user"
+        valuename="org.freedesktop.timedate1.set-ntp"
+        presentation="$(presentation.org-freedesktop-timedate1-user-pr)">
+      <parentCategory ref="system:ALT_TimedatePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopTimedate1_setter" valueName="org.freedesktop.timedate1.set-ntp" required="true">
+          <item displayName="$(string.org-freedesktop-timedate1-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-timedate1-set-time)"
+        explainText="$(string.org-freedesktop-timedate1-set-time_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.timedate1.set-time"
+        valuename="org.freedesktop.timedate1.set-time"
+        presentation="$(presentation.org-freedesktop-timedate1-pr)">
+      <parentCategory ref="system:ALT_TimedatePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopTimedate1_setter" valueName="org.freedesktop.timedate1.set-time" required="true">
+          <item displayName="$(string.org-freedesktop-timedate1-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopTimedate1_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.timedate1.set-time">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-timedate1-set-time)"
+        explainText="$(string.org-freedesktop-timedate1-set-time-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.timedate1.set-time-user"
+        valuename="org.freedesktop.timedate1.set-time"
+        presentation="$(presentation.org-freedesktop-timedate1-user-pr)">
+      <parentCategory ref="system:ALT_TimedatePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopTimedate1_setter" valueName="org.freedesktop.timedate1.set-time" required="true">
+          <item displayName="$(string.org-freedesktop-timedate1-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-timedate1-set-timezone)"
+        explainText="$(string.org-freedesktop-timedate1-set-timezone_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.timedate1.set-timezone"
+        valuename="org.freedesktop.timedate1.set-timezone"
+        presentation="$(presentation.org-freedesktop-timedate1-pr)">
+      <parentCategory ref="system:ALT_TimedatePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopTimedate1_setter" valueName="org.freedesktop.timedate1.set-timezone" required="true">
+          <item displayName="$(string.org-freedesktop-timedate1-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopTimedate1_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.timedate1.set-timezone">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-timedate1-set-timezone)"
+        explainText="$(string.org-freedesktop-timedate1-set-timezone-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.timedate1.set-timezone-user"
+        valuename="org.freedesktop.timedate1.set-timezone"
+        presentation="$(presentation.org-freedesktop-timedate1-user-pr)">
+      <parentCategory ref="system:ALT_TimedatePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopTimedate1_setter" valueName="org.freedesktop.timedate1.set-timezone" required="true">
+          <item displayName="$(string.org-freedesktop-timedate1-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-timedate1-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

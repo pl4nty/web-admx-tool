@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2019-2024 Michael Grafnetter  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="2.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions"  xsi:schemaLocation="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions ../../Schema/PolicyDefinitionFiles.xsd">
+  <displayName>YubiKey Minidriver</displayName>
+  <description>YubiKey Smart Card Minidriver Settings</description>
+  <resources>
+    <stringTable>
+      <string id="YubiKeyMinidriver">YubiKey Minidriver</string>
+      <string id="YubiKeyMinidriver_DebugOn">Enable debug logging</string>
+      <string id="YubiKeyMinidriver_DebugOn_Help">To assist in diagnosing issues, it is recommend that you include a log file containing the issue observed.
+
+If you enable this policy setting, log files will be created for each running process in %SystemDrive%\Logs. You can additionally addjust the verbosity of the log files.
+
+If you disable or do not configure this setting, no log files will be created.</string>
+      <string id="YubiKeyMinidriver_NewKeyTouchPolicy">Configure touch policy for new keys</string>
+      <string id="YubiKeyMinidriver_NewKeyTouchPolicy_Help">The YubiKey can be set to require a physical touch to confirm any cryptographic operations. This is an optional feature to increase security, ensuring that any authentication operation must be carried out in person. The YubiKey Minidriver sets the touch policy are set when a key is first imported or generated. Once set for a key on the YubiKey, the policies cannot be changed.
+
+If you enable this policy setting, one of the following touch policies will be configured on new keys generated or imported through the minidriver:
+
+Never
+Default policy of never requiring a user touch
+
+Always
+Policy is set to require a user touch to confirm each and every cryptographic operation. Yubico does not recommend using this setting, as some Windows services, such as login, may require multiple cryptographic operations in a short time span.
+
+Cached
+Policy is set to require physical touch once, then allow for cryptographic operations in a small time window afterwards. For using the physical touch option with Windows Smart Card Logon, this option is required. 
+
+If you disable or do not configure this policy setting, newly imported or generated keys through the minidriver will never require a user touch.</string>
+      <string id="YubiKeyMinidriver_NewKeyTouchPolicy_Never">Never</string>
+      <string id="YubiKeyMinidriver_NewKeyTouchPolicy_Always">Always</string>
+      <string id="YubiKeyMinidriver_NewKeyTouchPolicy_Cached">Cached</string>
+      <string id="YubiKeyMinidriver_EnableUnsafeKeygen">Enable ROCA mitigation</string>
+      <string id="YubiKeyMinidriver_EnableUnsafeKeygen_Help">Some YubiKey 4 devices were part of the Infineon RSA key generation vulnerability, CVE-2017-15361, referred to by its discoverers as “Return of Coppersmith’s Attack” (ROCA). This vulnerability concerns the generation of weak keys that may allow the private key to be derived by an attacker in possession of public key. 
+
+If you enable this setting, the YubiKey Minidriver will block RSA key generation on vulnerable YubiKey 4 hardware and will create an error in the Windows Log for all failed RSA key generation events.
+
+If you disable or do not configure this setting, the YubiKey Minidriver will allow RSA key generation on vulnerable YubiKey 4 hardware, but will create a warning in the Windows Log for all successful RSA key generation events. The log message will include the serial number of the YubiKey 4, indicate the YubiKey needs to be replaced, and refers to the YSA-2017-01 security advisory for additional information.
+</string>
+      <string id="YubiKeyMinidriver_BlockPUKOnMGMUpgrade">Block PUK on Management Key upgrade</string>
+      <string id="YubiKeyMinidriver_BlockPUKOnMGMUpgrade_Help">When a YubiKey is used with the YubiKey Minidriver for the first time, the YubiKey Minidriver checks to ensure default values are not being used for the management key and the PIN Unblock Code (PUK). If the default values are in use, the YubiKey Minidriver will upgrade the Management key to a protected value and block the PUK. A blocked PUK will prevent the PIN Unblock function from being active. To prevent the PUK from being blocked, the setting must be configured prior to setting up keys.
+
+If you enable or do not configure this setting, the PUK block feature will be enabled.
+
+If you disable this policy setting, the PUK block feature will be disabled.</string>
+      <string id="YubiKeyMinidriver_DebugVerbosity_L0">Level 0 - Card module methods only</string>
+      <string id="YubiKeyMinidriver_DebugVerbosity_L1">Level 1 - Errors and warnings</string>
+      <string id="YubiKeyMinidriver_DebugVerbosity_L2">Level 2 - Informational</string>
+      <string id="YubiKeyMinidriver_DebugVerbosity_L3">Level 3 - Full APDU tracing</string>
+      <string id="YubiKeyMinidriver_PinCacheTimeout">Configure PIN cache timeout</string>
+      <string id="YubiKeyMinidriver_PinCacheTimeout_Help">If either the User PIN or External PIN cache policies is set to Timed, this setting sets the number of seconds for which the BaseCSP should cache the PIN.
+
+If you enable this setting, the PIN cache timeout will be set to the value you specify.
+
+If you disable or do not configure this setting, the PIN cache timeout will default to 60 seconds.</string>
+      <string id="YubiKeyMinidriver_UserPinCachePolicy">Configure User PIN cache policy</string>
+      <string id="YubiKeyMinidriver_UserPinCachePolicy_Help">This setting overrides the PIN cache policy for the User PIN_ID in the YubiKey Minidriver.
+
+If you enable this policy setting, one of the following User PIN cache policies will be configured:
+
+Normal
+For this mode, the PIN is cached by the Base CSP per process per logon ID.
+
+Timed
+For this mode, the PIN is invalidated after an indicated period of time.
+
+None
+When the PIN cannot be cached, Base CSP never adds the PIN to the cache. This means that any subsequent operations must occur before the Base CSP transaction time-out expires.
+
+Always prompt
+Unlike None, when this cache mode is set, the Base CSP transaction time-out is not applicable. The PIN is collected from the user and then submitted to the card for verification before each call that requires authentication.
+
+Note: Windows logon may not work properly if a PIN is not cached. This behavior is by design. Therefore, careful consideration should be given when setting a PIN cache mode to any value other than Normal.
+
+If you do not configure this setting, the value will default to Normal.</string>
+      <string id="YubiKeyMinidriver_ExternalPinCachePolicy">Configure External PIN cache policy</string>
+      <string id="YubiKeyMinidriver_ExternalPinCachePolicy_Help">This setting overrides the PIN cache policy for the External PIN_ID in the YubiKey Minidriver.
+
+If you enable this policy setting, one of the following External PIN cache policies will be configured:
+
+Normal
+For this mode, the PIN is cached by the Base CSP per process per logon ID.
+
+Timed
+For this mode, the PIN is invalidated after an indicated period of time.
+
+None
+When the PIN cannot be cached, Base CSP never adds the PIN to the cache. This means that any subsequent operations must occur before the Base CSP transaction time-out expires.
+
+Always prompt
+Unlike None, when this cache mode is set, the Base CSP transaction time-out is not applicable. The PIN is collected from the user and then submitted to the card for verification before each call that requires authentication.
+
+Note: Windows logon may not work properly if a PIN is not cached. This behavior is by design. Therefore, careful consideration should be given when setting a PIN cache mode to any value other than Normal.
+
+If you do not configure this setting, the value will default to None.</string>
+      <string id="YubiKeyMinidriver_PinCachePolicy_Normal">Normal</string>
+      <string id="YubiKeyMinidriver_PinCachePolicy_Timed">Timed</string>
+      <string id="YubiKeyMinidriver_PinCachePolicy_None">None</string>
+      <string id="YubiKeyMinidriver_PinCachePolicy_AlwaysPrompt">Always prompt</string>
+      <string id="YubiKeyMinidriver_ManageCSPCache">Disable automatic BaseCSP cache management</string>
+      <string id="YubiKeyMinidriver_ManageCSPCache_Help">This setting controls if the minidriver will trim the BaseCSP cached values (container map, certificates) if changes in the certificates and keys stored on the YubiKey are detected.
+
+If you enable this setting, the minidriver will not automatically trim the BaseCSP cache.
+
+If you disable or do not configure this setting, the minidriver will automatically trim the BaseCSP cache.</string>
+      <string id="YubiKeyMinidriver_AutoFingerprint">Disable automatic fingerprint prompt</string>
+      <string id="YubiKeyMinidriver_AutoFingerprint_Help">This setting governs the behavior of the YubiKey Minidriver fingerprint prompt.
+
+If you disable or do not configure this setting, the YubiKey Minidriver will prompt for fingerprint without confirmation on the first authentication attempt.
+
+If you enable this setting, user confirmation will be required first.</string>
+      <string id="YubiKeyMinidriver_ProtectManagement">Enable card management key</string>
+      <string id="YubiKeyMinidriver_ProtectManagement_Help">This setting governs the creation and storage of the PIV card management key within a secure object to enable write access for PIV functionality.
+
+If you disable or do not configure this setting, the YubiKey Minidriver will generate a new card management key and store it in a PIN read-protected object (in the YubiKey PIV application) when the factory default value is present during PIN entry (e.g. during enrollment).
+
+If you enable this setting, the YubiKey Minidriver will never change the management key, so that third party solutions (e.g. CMS products) may assume ownership of this key.</string>
+      <string id="YubiKeyMinidriver_RefreshDeviceKeys">Configure device key refresh</string>
+      <string id="YubiKeyMinidriver_RefreshDeviceKeys_Help">This setting controls the behavior of container map synchronization that happens based on the defined timeout.
+
+If you enable or do not configure this setting, the YubiKey Minidriver will check that the container map stored in the mscmap PIV object matches the container map in the SCardCache. Additionally, the minidriver will enumerate all keys and certificates in the PIV application and then update the map accordingly.
+
+Setting a higher value than default may have a positive impact on performance.
+
+If you disable this setting, the minidriver will not perform the synchronization. This can have a major positive performance impact, especially over RDP, however certificates enrolled outside of the YubiKey Minidriver may not be present in the container map as reported to the BaseCSP.</string>
+      <string id="YubiKeyMinidriver_SupportAlwaysPin">Disable support for the Always Prompt PIN</string>
+      <string id="YubiKeyMinidriver_SupportAlwaysPin_Help">This setting enables/disables support for the 'Always Prompt' PIN_ID in the YubiKey Minidriver.
+
+The 'Always Prompt' PIN_ID has its PIN_CACHE_POLICY_TYPE set to 'PinCacheAlwaysPrompt' and will be assigned as the PIN for key containers that map to PIV slots that have the PIN_ALWAYS pin policy in the YubiKey PIV application (e.g., slot 9c) in devices that support slot metadata (YubiKey 5.2.7+).
+
+If you enable this setting, the YubiKey Minidriver will not support the 'Always Prompt' PIN_ID.
+
+If you disable or do not configure this setting, the YubiKey Minidriver will support the 'Always Prompt' PIN_ID.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="YubiKeyMinidriver_NewKeyTouchPolicy">
+        <dropdownList refId="NewKeyTouchPolicy_Options" defaultItem="0" noSort="true">Touch policy:</dropdownList>
+      </presentation>
+      <presentation id="YubiKeyMinidriver_Debug">
+        <dropdownList refId="DebugVerbosity_Options" defaultItem="0" noSort="true">Debug log verbosity:</dropdownList>
+      </presentation>
+      <presentation id="YubiKeyMinidriver_PinCacheTimeout">
+        <decimalTextBox refId="PinCacheTimeout_Value" defaultValue="60" spin="true" spinStep="60">PIN cache timeout (seconds):</decimalTextBox>
+      </presentation>
+      <presentation id="YubiKeyMinidriver_UserPinCachePolicy">
+        <dropdownList refId="UserPinCachePolicy_Options" defaultItem="0" noSort="true">PIN cache policy:</dropdownList>
+      </presentation>
+      <presentation id="YubiKeyMinidriver_ExternalPinCachePolicy">
+        <dropdownList refId="ExternalPinCachePolicy_Options" defaultItem="2" noSort="true">PIN cache policy:</dropdownList>
+      </presentation>
+      <presentation id="YubiKeyMinidriver_RefreshDeviceKeys">
+        <decimalTextBox refId="RefreshWindow" defaultValue="300" spin="true" spinStep="60">Refresh window (seconds):</decimalTextBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

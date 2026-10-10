@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0" xml:space="preserve">
+  <displayName>
+  </displayName>
+  <description>
+  </description>
+  <resources>
+    <stringTable>
+
+      <string id="GeneralSettings">General Client settings</string>
+      <string id="WindowsLogonScreenText">Windows logon screen</string>
+      <string id="SeparateLogonTileSettings">Separate logon tile settings</string>
+      <string id="PasswordUrlsUReset">Url overrides (uReset)</string>
+      <string id="PasswordUrlsSpr">Url overrides (SPR)</string>
+      <string id="SpecopsPasswordPolicy">Specops Password Policy</string>
+      <string id="SpecopsPasswordReset">Specops Password Reset</string>
+      <string id="SecuredBrowser">Secured Browser</string>
+      <string id="ResetPasswordLinkCategory">Password Reset link on Windows Logon screen</string>
+      <string id="ResetPasswordLinkText">Reset Password link text on Windows Logon screen</string>
+      <string id="ResetPasswordLinkTextExplain">Customize the text displayed on the Reset Password link on the logon screen, that users click to reset their password.</string>	  
+      <string id="WindowsLogonScreenLanguage">Language for enhanced functionality to the Windows Logon screen</string>
+      <string id="WindowsLogonScreenLanguageExplain">Language for enhanced functionality to the Windows Logon screen, such as the "Reset Password" link. By default, the computer's system language is used. This setting should be an IETF tag of the language, e.g. 'en' for English.</string>
+      <string id="SpecopsUResetClient">Specops Client</string>
+
+      <string id="IncludeDcsFromDnsCacheWhenGettingPasswordChangeFailure">Use domain controllers from the DNS cache to display assigned policy rules when password change fails</string>
+      <string id="IncludeDcsFromDnsCacheWhenGettingPasswordChangeFailureExplain">If a user fails to meet password policy rules when changing their passwords via the logon server, Specops Password Client will use the domain controllers from the DNS cache to locate the domain controller that received the password change request. This will provide additional details from Specops Password Policy that will help users meet their assigned policy rules. This setting is enabled by default.</string>
+      <string id="IncludeAllDcsWhenGettingPasswordChangeFailure">Query all writable domain controllers to display assigned policy rules when password change fails</string>
+      <string id="IncludeAllDcsWhenGettingPasswordChangeFailureExplain">If a user fails to meet password policy rules when changing their passwords via the logon server, Specops Password Client will use all writable domain controllers in the domain to locate the domain controller that received the password change request. Normally, the Specops Password Client is able to find that domain controller without enabling this setting. This setting is disabled by default.</string>
+
+      <string id="CreateStartMenuShortcuts">Create all start menu shortcuts to password enroll/change/reset</string>
+      <string id="CreateStartMenuShortcutsExplain">Enabling this (which is the default if not configured) will create start menu shortcuts to Specops enroll/change/reset web pages when the user logs in to a computer (unless the shortcuts already exists).
+
+If set to disabled, no start menu shortcuts will be created. Existing shortcuts, if any, will be deleted at next logon.
+
+Note that if this setting is configured, it will override the individual start menu shortcut settings.
+
+The actual URLs for enroll/change/reset will be read when the user clicks the shortcut, so even if the URLs have changed (e.g. Password Reset Web server has been moved), the URLs will be up to date.</string>
+
+		<string id="CreateStartMenuShortcutChange">Create start menu shortcut to password change</string>
+		<string id="CreateStartMenuShortcutEnroll">Create start menu shortcut to enroll</string>
+		<string id="CreateStartMenuShortcutReset">Create start menu shortcut to password reset</string>
+
+		<string id="CreateStartMenuShortcutChangeExplain">Enabling this (which is the default if not configured) will create a start menu shortcut to a Specops password change web page when the user logs in to a computer (unless the shortcuts already exists).
+
+If set to disabled, the start menu shortcut will be created. Existing shortcut, if any, will be deleted at next logon.</string>
+
+		<string id="CreateStartMenuShortcutEnrollExplain">Enabling this (which is the default if not configured) will create a start menu shortcut to a Specops enrollment web page when the user logs in to a computer (unless the shortcuts already exists).
+
+If set to disabled, the start menu shortcut will be created. Existing shortcut, if any, will be deleted at next logon.</string>
+
+				      <string id="CreateStartMenuShortcutResetExplain">Enabling this (which is the default if not configured) will create a start menu shortcut to a Specops password reset web page when the user logs in to a computer (unless the shortcuts already exists).
+
+If set to disabled, the start menu shortcut will be created. Existing shortcut, if any, will be deleted at next logon.</string>
+
+		<string id="StartMenuShortcutsLanguages">List of languages for which start menu shortcuts are created</string>
+      <string id="StartMenuShortcutsLanguagesExplain">When creating start menu shortcuts for Password Reset, Password Change and Password Enrollment, default is to localize the names with the Operating System's default language.
+
+Enabling this setting overrides with one or more languages.
+
+This should be a comma-separated list of IETF language tags.
+
+For instance, setting to "en,sv" will create English and Swedish start menu shortcuts.</string>
+
+	    <string id="AdSettingsContainerDn">Overridden settings container</string>
+	    <string id="AdSettingsContainerDnExplain">Only configure this if overriding default settings during Gatekeeper installation.
+
+When installing Gatekeeper(s), settings are saved in a container in Active Directory.
+
+By default, this container is created under  the 'System' container in the Active Directory Domain root.
+
+The full distinguished name of the default location depends on the reset system:
+* uReset: 'CN=Settings,CN=uReset,CN=Specops,CN=System,DC=ACME,DC=ORG'.
+* uReset for Specops Authentication: 'CN=Settings,CN=SpecopsAuthentication,CN=Specops,CN=System,DC=ACME,DC=ORG'.
+
+It is however possible to override the default location. In this case, this setting must be set to the distinguished name of the selected location, for the Specops Client to be able to locate its settings.
+
+The path to the settings object can be copied from admin tool. Note that the full distinguished name to the settings container containing the settings should be used.
+
+For instance, this setting could be 'CN=Settings,CN=uReset,CN=Specops,OU=Local Branch Office,DC=ACME,DC=ORG'.</string>
+
+	    <string id="AdScopes">Overridden AD scopes</string>
+	    <string id="AdScopesExplain">Only configure this in a multi domain scenario.
+
+When installing Gatekeeper(s), settings are saved in a container in Active Directory. In a multi domain scenario, client computers from other domains might not be able to access that.
+
+Instead, copy distinguished names of the AD search scopes defined from Admin Tools, and enter in here and deployed to client computer's registry.</string>
+
+	    <string id="AdSettingsContainerTypeUReset">uReset</string>
+	    <string id="AdSettingsContainerTypeSa">uReset for Specops Authentication</string>
+	    <string id="AdSettingsContainerType">Type of reset system</string>
+	    <string id="AdSettingsContainerTypeExplain">If the setting 'Overriden settings container' is defined, the setting 'Type of reset system' should also be set.
+
+If not configured, and 'Overridden settings container' is configured, the type of reset system is defaulted to 'uReset for Specops Authentication'.</string>
+
+		<string id="AskUserIfCertificateHasWarnings">Ask user if certificate has warnings</string>
+		<string id="AskUserIfCertificateHasWarningsExplain">This setting controls how the SecuredBrowser acts if a presented server certificate has one or more warnings.
+
+If set to disabled, or not configured, certificates with one or more warnings will cause the secured browser to close.
+
+If set to enabled, and a SSL/TLS certificate that has warnings is presented from a server, the secured browser will popup a dialog, asking the user whether to accept the certificate or not.
+
+NOTE! This setting should be used only for testing purpose, typically if using a self signed web server certificate, not trusted by the client computer where secured browser is running.
+
+In a production environment this setting should be disabled or not configured.</string>
+
+		<string id="EnableEnrollmentReminders">Show enrollment reminders</string>
+		<string id="EnableEnrollmentRemindersExplain">The Specops Client will look at the user's subobject to see if the user is enrolled with the selected reset system. If not enrolled, the client will display an enrollment reminder.
+
+If set Enabled, or Not Configured, the client will show enrollment reminders.
+
+If set Disabled, no enrollment reminders will be shown.</string>
+
+		<string id="EnablePasswordExpirationReminders">Show password expiration reminders</string>
+		<string id="EnablePasswordExpirationRemindersExplain">The Specops Client will look in Active Directory to see when the user's password expires. If about to expire, the client will a display reminder to change password.
+
+If set Enabled, or Not Configured, the client will show password expiration reminders.
+
+If set Disabled, no password expiration reminders will be shown.</string>
+
+    <string id="EnforceSprInsteadOfUReset">Prefer SPR over uReset</string>
+		<string id="EnforceSprInsteadOfUResetExplain">In an environment where both uReset and SPR settings might apply, enable this to use SPR over uReset when a user's settings can't be resolved.
+
+If set to disabled, or not configured, uReset will be preferred.
+
+if set to enabled. SPR will be preferred.
+			
+For instance, when displaying the "Password Reset..." link on Windows Logon screen, this setting determines whether the Password Reset URL will be uReset or SPR.
+
+Normally, there is no need to configure this.</string>
+
+		<string id="EnableExternalUrlCacheFromScp">Enables local registry caching of the ExternalUrl from SCP</string>
+		<string id="EnableExternalUrlCacheFromScpExplain">Enabling this (default if not configured) means the Specops uReset Client, at logon, reads the SCP and saves the ExternalUrl configured in the SCP locally in registry.
+		
+The cached ExternalUrl will be used if user wants to do a reset (from "Password Reset..." on the Windows Logon screen, or the Start Menu shortcut for reset), but only has Internet connection, but not to the company Intranet.
+
+If set to disabled, the ExternalUrl will not be cached.
+
+Normally, there is no need to configure this.</string>
+
+
+		<string id="EnablePasswordResetLinkOnLogonScreen">Show the Password Reset link</string>
+
+		<string id="ExcludeOtherCredentialProviders">Exclude other credential providers</string>
+		<string id="ExcludeOtherCredentialProvidersExplain">Enabling this will exclude all credential providers except Specops. Configure this setting only if advised by Specops.</string>
+		<string id="ExcludeWrappedFilter">Exclude wrapped credential provider filters</string>
+		<string id="ExcludeWrappedFilterExplain">Enabling this will exclude some wrapped credential provider filters. Configure this setting only if advised by Specops.</string>
+		
+		<string id="SecuredBrowserAccountType">Account running the Secured Browser</string>
+		<string xml:space="preserve" id="SecuredBrowserAccountTypeExplain">The Secured Browser is launched when clicking 'Reset Password...' from Windows logon screen.
+
+This setting decides the user account used for the Secured Browser process(es).
+
+It is strongly recommended to keep the default value.
+
+If using 'SecuredBrowserDotNet' (recommended), it is possible to enforce running as local system (default) or network service.
+
+If using the IE based Secured Browser, it is possible to enforce running as network service (default) or local system.</string>
+		<string id="SecuredBrowserAccountTypeNetworkService">NT AUTHORITY\Network Service</string>
+		<string id="SecuredBrowserAccountTypeLocalSystem">NT AUTHORITY\Local System</string>
+
+		<string id="SecuredBrowserKeepScreenActive">Prevent closing the secured browser before timeout</string>
+		<string id="AlwaysShowPasswordResetLinkOnLogonScreen">Show Reset Password link even if connection to Active Directory can't be verified</string>
+
+		<string id="SppUpdateCredentialCacheAfterPasswordChange">Update credential cache after password reset</string>
+      <string id="SppUpdateCredentialCacheAfterPasswordChangeExplain">After a user successfully has completed a password reset from the reset password link on the logon screen, the user's entry in the Windows credential cache is updated with the new credentials. This makes it possible for the user to logon directly after the password change, even if the computer isn't connected to the domain network.
+
+If this value isn't configured, credential cache will be updated after a password reset. Set this value to 'Disabled' to prevent updating the credential cache.
+
+Normally there is no need to configure this setting.</string>
+
+		<string id="SppTimeoutWhenReadingPasswordChangeFailure">Timeout when attempting to get details about a failed password change</string>
+      <string id="SppTimeoutWhenReadingPasswordChangeFailureExplain">After a user's attempt to change password from 'ctrl-alt-del', Specops uReset Client will contact the DC to find details about the password change failure (failed rules).
+
+If the DC isn't reachable, or the Specops Password Policy Sentinel isn't installed, this value controls the timeout, in milliseconds, before giving up.
+
+Note that Specops Password Policy must be installed on all DCs for this feature to be used.
+
+Normally there is no need to configure this setting.</string>
+
+		
+	<string id="EnablePasswordResetLinkOnLogonScreenExplain">By default the Reset Password link on the logon screen is enabled. This enables users in organizations with Specops reset solutions to reset their password from Windows Logon Screen.
+
+If set to enabled, or not configured, the "Reset Password..." link will be displayed if available, or depending on the value of 'Show Reset Password link even if connection to Active Directory can't be verified'.
+
+If set to disabled, the "Reset Password..." link will never be displayed. This might be useful for organizations having Password Policy already implemented while trying out a Specops reset product, but only want to display the reset password link on certain computers.
+
+Normally, there is no need to configure this setting.</string>
+
+	<string id="SecuredBrowserKeepScreenActiveExplain">Windows can deselect the logon interface if not using mouse or keyboard for (typically) 2 minutes. This can effectively terminate an ongoing password reset session, thus cause annoyance for the user. This typically happens if the Windows GPO 'Interactive logon: Do not require CTRL+ALT+DEL' is set to 'disabled' on W10 systems. The secured browser automatically attempts to solve this by generating silent keyboard events to prevent closing.
+
+If set to enabled, silent keyboard events will be sent periodically to prevent timeouts.
+
+If set to disabled, silent keyboard events will not be sent to prevent timeouts.
+
+If not configured, silent keyboard events will be sent on Windows 10 systems where CTRL-ALT-DEL at logon has been enforced (i.e. 'Interactive logon: Do not require CTRL+ALT+DEL' set to 'disabled').
+
+Normally, there is no need to configure this setting.</string>
+
+	<string id="AlwaysShowPasswordResetLinkOnLogonScreenExplain">By default the Reset Password link will always be shown on the logon screen and any network errors will be displayed when pressing the link.
+
+If this setting is disabled, then the Reset Password link is only shown when the network is started and Active Directory can be contacted.
+
+Normally, there is no need to configure this setting.</string>
+
+      <string id="SecuredBrowserProxyDisplayName">Proxy</string>
+      <string id="SecuredBrowserProxyExplain">When Secured Browser is launched from the "Reset Password..." link on Windows Logon screen, it's running as network service with the computer's identity.
+
+An organization using a proxy server, often configures users' proxy settings through Group Policies. The network service account is normally not affected by the same group policy as user, and therefore has different proxy settings than ordinary users.
+
+This setting, allows configuring proxy settings for the secured browser when launched from the "Reset Password..." link on Windows Logon screen.
+
+If set to "Default IE proxy settings for 'network service'", IE settings for network service will be used. By default, those are not configured.
+
+If set to "Specific proxy server", proxy server specified in "Proxy URL" will be used. This use the same format as Internet Explorer proxy settings, e.g. 'http://proxy.local:1234'.
+
+If set to "No proxy", proxy will not be used.
+
+If not configured, "Default IE proxy settings for 'network service'" will be used. Normally this means that no proxy will be used, since proxy settings usually not are configured for the network service account.
+</string>
+      <string id="SecuredBrowserProxyTypeEnumValueUseIeSettings">Default IE proxy settings for 'network service'</string>
+      <string id="SecuredBrowserProxyTypeEnumValueSpecifiedProxy">Specific proxy server</string>
+      <string id="SecuredBrowserProxyTypeEnumValueNone">No proxy</string>
+
+
+
+
+
+      
+  <string id="UrlInputLabel">URL:</string>
+	<string id="IntervalBetweenRemindersInMinutes">Interval between checking AD for notifications</string>
+	<string id="IntervalBetweenRemindersInMinutesExplain">Used to specify the interval in minutes when client starts looking in Active Directory and notifies user if enrollment is needed, or, if Specops Password Policy is enabled, if password is about to expire.</string>
+	<string id="SprCustomMobileAttributeTitle">Name of attribute used for Mobile number (to override 'mobile')</string>
+	<string id="SprCustomMobileAttribute">Attribute name:</string>
+	<string id="SprCustomMobileAttributeExplain">If the Specops Password Reset Server has been configured to use a custom mobile attribute on the user object, then this setting must be configured to the same value. By default the 'mobile' attribute on the user object is used.</string>
+
+	<string id="PasswordUrlReset">Reset Password web page URL</string>
+	<string id="PasswordUrlResetExplain">Used to specify a URL for the Reset Password web page. When configured the client uses this URL instead of the URL configured in the service connection point published in Active Directory.</string>
+
+	<string id="PasswordUrlResetExternal">Reset Password web page URL from Internet</string>
+	<string id="PasswordUrlResetExternalExplain">Used to specify a URL for the Reset Password web page when not connected to the corporate network ("Offline URL" in Specops Password Reset 6.x). When configured the client uses this URL instead of the URL configured in the service connection point published in Active Directory.</string>
+
+	<string id="PasswordUrlEnroll">Enrollment web page URL</string>
+	<string id="PasswordUrlEnrollExplain">Used to specify a URL for the Enrollment web page. When configured the client uses this URL instead of the URL configured in the service connection point published in Active Directory.</string>
+	<string id="PasswordUrlEnrollWithIntroPage">Enrollment web page with intro URL</string>
+	<string id="PasswordUrlEnrollWithIntroPageExplain">Used to specify a URL for the Enrollment web page with intro. When configured the client uses this URL instead of the URL configured in the service connection point published in Active Directory.</string>
+	<string id="PasswordUrlChange">Change Password web page URL</string>
+	<string id="PasswordUrlChangeExplain">Used to specify a URL for the Change Password web page. When configured the client uses this URL instead of the URL configured in the service connection point published in Active Directory.</string>
+	<string id="PasswordUrlHelpdesk">Helpdesk web page URL</string>
+	<string id="PasswordUrlHelpdeskExplain">Used to specify a URL for the Helpdesk web page. When configured the client uses this URL instead of the URL configured in the service connection point published in Active Directory.</string>
+	<string id="PasswordUrlReporting">Reporting web page URL</string>
+	<string id="PasswordUrlReportingExplain">Used to specify a URL for the Reporting web page. When configured the client uses this URL instead of the URL configured in the service connection point published in Active Directory.</string>
+
+	<string id="SprShowResetLinkTipWhenWrongPassword">Show tip about reset password link when user enter wrong password</string>
+	<string id="SprShowResetLinkTipWhenAccountLockedOut">Show tip about reset password link if user account has been locked out</string>
+	<string id="SpShowLogonTile">Enable Separate Password Reset Logon Tile</string>
+	<string id="ShowLogonTileExplain">Enables or disables Password Reset Tile on Logon screen.
+
+If enabled, a separate tile on the logon screen will be displayed.
+
+Clicking this tile launches browser to the Password Reset page.
+
+Default is disabled, i.e. Separate logon tile will not be used.</string>
+	  <string id="EnableCredentialProvider">Enhance Windows Logon and Password Change Interface</string>
+	  <string id="EnableCredentialProviderExplain">Enabling enhances the user interface for Windows Logon Password Changes. This feature enhances (wraps) the standard Microsoft credential provider with the following features:
+
+  * When a user gets a password change rejected, details about the Specops Password Policy policies not fulfilled will be displayed (whereas the built-in Microsoft credential provider only informs that the password change was rejected without providing further details). This feature requires Specops Password Policy sentinel on all domain controllers.
+  * Show the 'Reset Password...' clickable link that enables users to reset forgotten passwords or locked out accounts. This feature requires Specops Password Reset.
+  * Automatically select the last logged on user's tile, saving the user from an extra click on the user's icon before every logon/unlock.
+
+This setting is used by the Specops Password client. There is normally no need to define this value.</string>
+	  <string id="EnableRulesUI">Shows Rules UI during password change</string>
+	  <string id="EnableRulesUIExplain">Shows Rules UI during password change. This feature is supported on Windows 10 x64 with .net Framework 4.5.
+
+If not set, or set to enabled, the Rules UI will be displayed. There is normally no need to define this value.</string>
+
+	  <string id="EnableDpapiUpdate">Update local encryption keys in DPAPI after password reset</string>
+	  <string id="EnableDpapiUpdateExplain">Update local encryption keys in DPAPI after password reset from the reset password link on the logon screen. This feature is supported on Windows 10 x64 with .net Framework 4.5.
+	  
+This feature requires uReset for Specops Authentication. Encryption keys will only be updated if there is no connection to the domain controller.</string>
+
+	  <string xml:space="preserve" id="ForceDpapiAndCachedCredentialUpdate">Force DPAPI and CachedCredentials-Update after password reset</string>
+	  <string xml:space="preserve" id="ForceDpapiAndCachedCredentialUpdateExplain">This settings forces DPAPI and CachedCredentials-Update after a password reset (from the reset password link on the logon screen) regardless of domain connection status. 
+
+This setting overrides the settings "Update local encryption keys in DPAPI after password reset" and "Update credential cache after password reset".</string>
+		
+      <string xml:space="preserve" id="MaxNumberOfMasterKeys">Max number of Master Keys to handle for DPAPI</string>
+	  <string xml:space="preserve" id="MaxNumberOfMasterKeysExplain">This setting overrides the default value of maximum number of Master Keys to handle for DPAPI encryption.
+
+It could be used if certain users have an unusually large number of DPAPI keys.</string>
+
+	  <string id="ProxyServerUrl">Proxy Server URL for Secured Browser</string>
+	  <string id="ProxyServerUrlExplain">This setting enables the use of a proxy server for the Secured Browser. Example value: "http://proxyserver:proxyport"</string>
+		
+	  <string id="ProxyServerPacUrl">Proxy Server PAC URL for Secured Browser</string>
+	  <string id="ProxyServerPacUrlExplain">This setting enables the use of a proxy server with Proxy Auto-Configuration (PAC) for the Secured Browser. Example value: "http://proxyserver/proxy.pac"</string>
+
+	  <string id="SpLogonTileBitmap">Custom bitmap path</string>
+      <string id="LogonTileBitmap">Path to bitmap:</string>
+      <string id="LogonTileBitmapExplain">This setting is used only if the 'Separate Password Reset Logon Tile' is enabled.
+
+Overrides the default bitmap shown as Password Reset image. Specify the full path to a Windows .bmp file of size 128x128, e.g. 'C:\Images\ResetPassword.bmp'.
+
+If not set, or the file doesn't exist or is invalid, a default bitmap will be used. Note! Always use a locally stored bitmap, as network might not be available.</string>
+      <string id="WrappedCredentialProviderGuid">Guid:</string>
+      <string id="SprWrappedCredentialProviderGuid">GUID of credential provider to wrap</string>
+      <string id="SprWrappedCredentialProviderGuidExplain">Specifies guid of the credential provider to wrap. If this isn't configured or doesn't contain a valid guid, the Microsoft standard credential provider will be wrapped.
+	  
+The format of the guid should be like '{6F45DC1E-5384-457A-BC13-2CD81B0D28ED}' except the surrounding quotes.
+
+Not all credential providers supports being wrapped, it must be tested in each specific case.</string>
+      <string id="WrappedCredentialProviderGuid2">Guid:</string>
+      <string id="SprWrappedCredentialProviderGuid2">GUID of second credential provider to wrap</string>
+      <string id="SprWrappedCredentialProviderGuid2Explain">Specifies guid of a second credential provider to wrap. If this isn't configured or doesn't contain a valid guid, the Windows Hello for Business PIN provider will be wrapped.
+	  
+The format of the guid should be like '{6F45DC1E-5384-457A-BC13-2CD81B0D28ED}' except the surrounding quotes.
+
+Not all credential providers supports being wrapped, it must be tested in each specific case.</string>
+
+  <string id="WrapInConsoleSession">Wrapping in console login sessions</string>
+  <string id="WrapInConsoleSessionExplain">If another third party credential provider is configured as wrapped provider, this setting tells if that provider should be called in case the user logs in from a console session.
+
+This setting will only have effect if a another third party credential provider has been configured in 'GUID of credential provider to wrap'.
+
+If set to enabled, or not configured, the wrapped third party will be used.
+
+If set to disabled, the wrapped provider will be filtered out.
+
+Normally, there is no need to configure this setting.</string>
+  <string id="WrapInRdpSession">Wrapping in RDP login sessions</string>
+  <string id="WrapInRdpSessionExplain">If another third party credential provider is configured as wrapped provider, this setting tells if that provider should be called in case the user logs in from an RDP session.
+
+This setting will only have effect if a another third party credential provider has been configured in 'GUID of credential provider to wrap'.
+
+If set to enabled, or not configured, the wrapped third party will be used.
+
+If set to disabled, the wrapped provider will be filtered out.
+
+Normally, there is no need to configure this setting.</string>
+
+
+      <string id="ADMXMigrator_UnresolvedString">ADMX Migrator encountered a string that is not present in the source ADM string table.</string>
+      <string id="ADMXMigrator_NoSupportedOn">ADMX Migrator encountered a policy that does not have a supportedOn value.</string>
+		
+	    <string id="SecuredBrowserIdleTimeOutSeconds">Time before the Windows Logon screen "deselects" the selected logon tile</string>
+	    <string id="SecuredBrowserIdleTimeOutSecondsExplain">By default, a selected tile on the Windows logon screen (Windows 8 and newer), is deselected after 30 seconds of user inactivity.
+
+Activities such as keyboard/mouse use will restart the deselect timeout.
+
+When a user clicks the "Reset Password..." link from the logon screen, the credential provider behind the Secured Browser window is unloaded after the configured time. If this setting is not configured, the credential provider changes the Windows logon default timeout to 900 seconds.
+
+Changing the default value is not recommended.</string>
+
+	    <string id="SecuredBrowserCloseTimeoutSeconds">Timeout before the Secured Browser is closed</string>
+	    <string id="SecuredBrowserCloseTimeoutSecondsExplain">By default, the Secured Browser will automatically close after X seconds of user inactivity.
+
+Activities such as keyboard/mouse use will restart the close timeout.
+
+If this value isn't configured, the Secured Browser is closed after 600 seconds.
+
+Changing the default value is not recommended.</string>
+
+	    <string id="SecuredBrowserShowClosingTimerTimeoutSeconds">When the timeout timer is displayed</string>
+	    <string id="SecuredBrowserShowClosingTimerTimeoutSecondsExplain">By default, a timer in the status bar is displayed 120 seconds before the Secured Browser closes due to inactivity.
+
+Setting the "Time in seconds" to a higher value will not affect the timeouts, but rather display the timer as long as the Secured Browser is active.
+
+Setting the "Time in seconds" to a zero value will not affect the timeouts, but the timer will not be displayed.
+
+Changing the default value is not recommended.</string>
+
+
+		<string id="DynamicFeedbackPasswordChange">Dynamic feedback and password change</string>
+		<string id="ShowUnicodePasswordRule">Show the Unicode password rule</string>
+		<string id="ShowUnicodePasswordRuleExplain">When enabling "complexity" in a Windows password policy, "Unicode" is one of the criteria.
+
+Showing this to end users might appear too technical and therefore this rule can be hidden.
+
+Set this value to 'enabled' to always show the Unicode password rule if it is affecting the user.
+
+Set this value to 'disabled' to never show the Unicode rule.
+
+Default will use the default value in Specops Client.</string>
+
+		<string id="TextToSpeechEnabled">Enable text to speech</string>
+		<string id="TextToSpeechEnabledExplain">Enable this setting to have the dynamic feedback window read information about password rules.</string>
+		<string id="TextToSpeechVoice">Text to speech custom voice</string>
+		<string id="TextToSpeechVoiceExplain">Use this setting to configure a specific voice for the text to speech feature. If not configured, the system default voice will be used. To see available voice, look at the list of installed Windows Narrator voices that are not tagged as 'natural'</string>
+		
+		<string id="AzureSSPR">Azure Active Directory self-service password reset (SSPR)</string>
+
+		<string id="EnableAzureSSPR">Use Azure SSPR for password resets</string>
+		<string id="EnableAzureSSPRExplain">This setting configures the use of Azure SSPR, which means that Azure Active Directory accounts can be reset through the Secured Browser from the lock screen.</string>
+		<string id="AzureSSPRUrl">Azure SSPR URL</string>
+		<string id="AzureSSPRUrlExplain">This setting overrides the default URL for Azure SSPR. 
+
+If the setting is not configured, the default URL for Azure SSPR is used.
+
+This setting does not normally need to be configured.</string>
+
+		<string id="CertificateAuthentication">Smart Card Authentication</string>
+
+		<string id="CertificateEnabled">Enable Smart Card authentication</string>
+		<string id="CertificateEnabledExplain">By default the Secured Browser can be used for certificate authentication with a smart card. In order to disable the feature configure the setting to false.</string>
+		
+		<string id="CertificateApiBaseUrl">API URL</string>
+		<string id="CertificateApiBaseUrlExplain">This settings configures the API URL that the Secured Browser calls in order to perform a certificate authentication.</string>
+
+		<string id="Pkcs11LibraryPath">Pkcs11 DLL library path</string>
+		<string id="Pkcs11LibraryPathExplain">This setting configures the path to the Pkcs11 DLL library that is needed to communicate with the smart card reader.</string>
+		
+		<string id="CertificateSithsEnabled">Enable SITHS eID smart card authentication</string>
+		<string id="CertificateSithsEnabledExplain">Secured Browser can be used for certificate authentication with a SITHS eID smart card (Swedish healthcare). In order to enable the feature configure the setting to true.</string>
+
+		<string id="MfaLogin">Specops MFA for Windows</string>		
+		<string id="WinMfa_OfflineIdentityService">Offline identity service</string>
+		<string id="WinMfa_OfflineIdentityServiceExplain">Default is Specops ID. Configure which means of authentication to use when the Specops Authentication API cannot be reached.
+		
+Configure this setting if you want to use anything other than the recommend default, the Specops ID mobile app.</string>
+		<string id="WinMfa_OfflineIdentityServiceSpecopsId">Specops ID</string>
+		<string id="WinMfa_OfflineIdentityServiceSmartcard">Smart Card</string>
+		<string id="WinMfa_OfflineIdentityServiceOfflineCode">Offline Code (any TOTP app)</string>
+		
+		<string id="WinMfa_AllowLocalUsers">Allow local users when MFA is enabled</string>
+		<string id="WinMfa_AllowLocalUsersExplain">Default is enabled if not configured. If this setting is disabled, local user accounts will not be allowed to sign in.</string>
+
+		<string id="WinMfa_EnableLocal">Enable MFA for local logins</string>
+		<string id="WinMfa_EnableLocalExplain">Default is disabled if not configured. If this setting is enabled, users will be required to authenticate with additional factors when logging in to Windows locally.</string>
+		
+		<string id="WinMfa_EnableRemote">Enable MFA for remote logins</string>		
+		<string id="WinMfa_EnableRemoteExplain">Default is disabled if not configured. If this setting is enabled, users will be required to authenticate with additional factors when logging in using RDP with NLA with Kerberos.</string>
+
+		<string id="WinMfa_EnableElevation">Enable MFA for elevation (Run as Administrator)</string>		
+		<string id="WinMfa_EnableElevationExplain">Default is disabled if not configured. If this setting is enabled, administrators will be required to authenticate with additional factors whenever they elevate privileges, such as when running an application as Administrator. This capability requires Limited User Access to be enabled, and the UAC elevation prompt must be configured to always require credentials (username and password).</string>
+
+		<string id="MfaAuthApi">Specops Authentication API Configuration</string>
+		<string id="MfaAuthApiExplain">The web API configuration for the Specops Authentication API used by MFA for Windows. 
+		
+These settings must be configured for MFA to work.</string>
+		
+		<string id="WinMfa_DispatcherApiUrlText">Specops Authentication API URL</string>
+		<string id="WinMfa_ApiKeyText">Specops Authentication API Key</string>
+		
+		<string id="WinMfa_AllowOfflineAuth">Allow offline authentication</string>
+		<string id="WinMfa_AllowOfflineAuthExplain">By default, offline authentication is disabled, which disables login if the computer is offline or a temporary service outage or misconfiguration occurs.
+		
+Enable this setting if you want to allow offline authentication at times the Specops Authentication API cannot be reached, or there are other service outages.</string>
+		
+		<string id="WinMfa_DaysBeforeRequireOnlineAuth">Number of days before requiring online authentication</string>
+		<string id="WinMfa_DaysBeforeRequireOnlineAuthExplain">Default is 30 days if not configured. If offline authentication is enabled, a user can log in with offline authentication up to the configured number of days before being required to go online in order to login.
+		
+Change this setting if you have different requirements for online authentication requirement than the default of 30 days.</string>
+	
+		<string id="WinMfa_TimeBeforeRequireMfa">Time before requiring MFA after successful online authentication.</string>
+		<string id="WinMfa_TimeBeforeRequireMfaExplain">Default is 0 days if not configured. MFA is required for every login by default when MFA is enabled.
+		
+Change this setting if you want to allow users to log in without MFA for a specified period of time after successful online authentication.
+
+The format is "HH:MM:SS" and the maximum time is 72 hours. If an invalid value is entered, MFA will be required for every login.</string>
+		
+		<string id="WinMfa_HttpTimeoutSeconds">Maximum allowed time per request, before MFA times out.</string>
+		<string id="WinMfa_HttpTimeoutSecondsExplain">The default timeout is 30 seconds. If you want quicker feedback about server outages or errors you may adjust this setting.</string>
+		
+		<string id="WinMfa_SmartCardConfiguration">Smart Card Configuration</string>
+		<string id="WinMfa_SmartCardConfigurationExplain">
+This setting configures how the Smart Card option is displayed to the users. 
+		
+Specify where the required PKCS11 library is located.
+
+Set if certificate expiration should be validated before authentication.
+
+Enable this setting if you are using Smart Card as the option for Offline Authentications.
+		</string>
+    </stringTable>
+    <presentationTable>
+
+<presentation id="CertificateEnabledPresentation" />
+		
+<presentation id="CertificateSithsEnabledPresentation" />
+
+<presentation id="CertificateApiBaseUrlPresentation">
+  <textBox refId="CertificateApiBaseUrlText">
+	  <label>API URL:</label>
+	  <defaultValue></defaultValue>
+  </textBox>
+</presentation>
+
+<presentation id="Pkcs11LibraryPathPresentation">
+  <multiTextBox refId="Pkcs11LibraryPathText">DLL path:</multiTextBox>
+</presentation>
+
+
+      <presentation id="CreateStartMenuShortcutsPresentation" />
+      <presentation id="CreateStartMenuShortcutChangePresentation" />
+      <presentation id="CreateStartMenuShortcutEnrollPresentation" />
+      <presentation id="CreateStartMenuShortcutResetPresentation" />
+
+      <presentation id="StartMenuShortcutsLanguagesPresentation">
+		  <textBox refId="StartMenuShortCutLanguageList">
+			  <label>Languages (comma separated list)</label>
+			  <defaultValue></defaultValue>
+		  </textBox>
+      </presentation>
+      <presentation id="AdSettingsContainerDnPresentation">
+		  <textBox refId="AdSettingsContainerDnText">
+			  <label>Distinguished name to settings container</label>
+			  <defaultValue></defaultValue>
+		  </textBox>
+      </presentation>
+      <presentation id="AdScopesPresentation">
+		  <multiTextBox refId="AdScopesText">Distinguished names to AD scopes (as seen in Admin Tools)</multiTextBox>
+      </presentation>
+      <presentation id="AdSettingsContainerTypePresentation">
+        <dropdownList refId="AdSettingsContainerTypeBox" defaultItem="1">Type of reset system:</dropdownList>
+      </presentation>
+	  <presentation id="WinMfa_OfflineIdentityServicePresentation">
+        <dropdownList refId="WinMfa_OfflineIdentityServiceBox" defaultItem="2">Offline identity service:</dropdownList>
+      </presentation>
+      <presentation id="EnableEnrollmentRemindersPresentation" />
+      <presentation id="EnablePasswordExpirationRemindersPresentation" />
+      <presentation id="EnforceSprInsteadOfUResetPresentation" />
+      <presentation id="ExcludeOtherCredentialProvidersPresentation" />
+      <presentation id="ExcludeWrappedFilterPresentation" />
+      <presentation id="AskUserIfCertificateHasWarningsPresentation" />
+      <presentation id="EnableExternalUrlCacheFromScpPresentation" />
+      <presentation id="AlwaysShowPasswordResetLinkOnLogonScreen" />
+      <presentation id="EnablePasswordResetLinkOnLogonScreen" />
+		<presentation id="SppUpdateCredentialCacheAfterPasswordChange" />
+		<presentation id="SppTimeoutWhenReadingPasswordChangeFailure">
+			<decimalTextBox refId="SppTimeoutWhenReadingPasswordChangeFailure" defaultValue="10000">Timeout in milliseconds:</decimalTextBox>
+		</presentation>
+		<presentation id="ResetExternalUrl">
+        <textBox refId="UrlInputLabel">
+          <label>URL:</label>
+			<defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="IntervalBetweenRemindersInMinutes">
+        <decimalTextBox refId="IntervalBetweenRemindersInMinutes" defaultValue="120">Interval in minutes:</decimalTextBox>
+      </presentation>
+      <presentation id="ResetPasswordLinkText" >
+        <textBox refId="ResetPasswordLinkText">
+          <label>Custom text:</label>
+	  <defaultValue></defaultValue>
+        </textBox>
+      </presentation>		
+      <presentation id="WindowsLogonScreenLanguage" >
+        <textBox refId="WindowsLogonScreenLanguage">
+          <label>Left Language Tag (e.g. 'en' for English):</label>
+	  <defaultValue></defaultValue>
+        </textBox>
+      </presentation>	
+      <presentation id="SprCustomMobileAttributeTitle">
+        <textBox refId="SprCustomMobileAttribute">
+          <label>Attribute name:</label>
+			<defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="SprShowResetLinkTipWhenWrongPassword" />
+      <presentation id="SprShowResetLinkTipWhenAccountLockedOut" />
+      <presentation id="SpShowLogonTile" />
+      <presentation id="EnableCredentialProviderPresentation" />
+      <presentation id="EnableRulesUIPresentation" />
+      <presentation id="EnableDpapiUpdatePresentation" />
+      <presentation id="ForceDpapiAndCachedCredentialUpdatePresentation" />
+      <presentation id="MaxNumberOfMasterKeysPresentation">
+		<decimalTextBox refId="MaxNumberOfMasterKeys" defaultValue="250">Max number of master keys</decimalTextBox>
+	  </presentation>
+		
+      <presentation id="ProxyServerUrlPresentation">
+		 <textBox refId="ProxyServerUrl">
+          <label>Proxy server URL:</label>
+          <defaultValue></defaultValue>
+        </textBox>		  
+	  </presentation>
+				
+	  <presentation id="ProxyServerPacUrlPresentation">
+		 <textBox refId="ProxyServerPacUrl">
+          <label>Proxy server PAC URL:</label>
+          <defaultValue></defaultValue>
+        </textBox>		  
+	  </presentation>
+
+      <presentation id="SpLogonTileBitmap">
+        <textBox refId="LogonTileBitmap">
+          <label>Path to bitmap:</label>
+			<defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="SprWrappedCredentialProviderGuid">
+        <textBox refId="WrappedCredentialProviderGuid">
+          <label>Guid:</label>
+			<defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="SprWrappedCredentialProviderGuid2">
+        <textBox refId="WrappedCredentialProviderGuid2">
+          <label>Guid:</label>
+			<defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="WrapInConsoleSession"/>
+      <presentation id="WrapInRdpSession"/>
+      <presentation id="PasswordUrlReset">
+        <textBox refId="UrlInputLabel">
+          <label>URL:</label>
+			<defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="PasswordUrlResetExternal">
+        <textBox refId="UrlInputLabel">
+          <label>URL:</label>
+			<defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="PasswordUrlEnroll">
+        <textBox refId="UrlInputLabel">
+          <label>URL:</label>
+			<defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="PasswordUrlEnrollWithIntroPage">
+        <textBox refId="UrlInputLabel">
+          <label>URL:</label>
+			<defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="PasswordUrlChange">
+        <textBox refId="UrlInputLabel">
+          <label>URL:</label>
+			<defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="PasswordUrlHelpdesk">
+        <textBox refId="UrlInputLabel">
+          <label>URL:</label>
+          <defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="PasswordUrlReporting">
+        <textBox refId="UrlInputLabel">
+          <label>URL:</label>
+			<defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+		<presentation id="IncludeDcsFromDnsCacheWhenGettingPasswordChangeFailure"/>
+		<presentation id="IncludeAllDcsWhenGettingPasswordChangeFailure"/>
+
+      <presentation id="SecuredBrowserAccountTypePresentation">
+        <dropdownList refId="SecuredBrowserAccountTypeBox" defaultItem="0" noSort="true">Account:</dropdownList>
+      </presentation>
+
+	    <presentation id="SecuredBrowserIdleTimeOutSeconds">
+		    <decimalTextBox refId="SecuredBrowserIdleTimeOutSeconds" defaultValue="900">Time in seconds</decimalTextBox>
+	    </presentation>
+	    <presentation id="SecuredBrowserCloseTimeoutSeconds">
+		    <decimalTextBox refId="SecuredBrowserCloseTimeoutSeconds" defaultValue="600">Time in seconds</decimalTextBox>
+	    </presentation>
+	    <presentation id="SecuredBrowserShowClosingTimerTimeoutSeconds">
+		    <decimalTextBox refId="SecuredBrowserShowClosingTimerTimeoutSeconds" defaultValue="120">Time in seconds</decimalTextBox>
+	    </presentation>
+		<presentation id="SecuredBrowserKeepScreenActive"/>
+
+		<presentation id="ShowUnicodePasswordRulePresentation" />
+		<presentation id="TextToSpeechEnabledPresentation" />
+		<presentation id="TextToSpeechVoicePresentation" >
+			<textBox refId="TextToSpeechVoicePresentationText">
+			  <label>Voice Name:</label>
+				<defaultValue></defaultValue>
+			</textBox>
+        </presentation>		
+
+		<presentation id="AzureSSPRUrlPresentation">
+        <textBox refId="AzureADSelfServicePasswordResetUrlText">
+          <label>URL:</label>
+			<defaultValue></defaultValue>
+        </textBox>
+        </presentation>		
+				
+		<presentation id="MfaAuthApiPresentation">
+			<textBox refId="WinMfa_DispatcherApiUrlText">
+				<label>API URL:
+				</label>
+				<defaultValue></defaultValue>
+			</textBox>
+			
+			<textBox refId="WinMfa_ApiKeyText">
+				<label>API Key:
+				</label>
+				<defaultValue></defaultValue>
+			</textBox>
+		</presentation>
+		
+		<presentation id="WinMfa_SmartCardConfigurationPresentation">
+			<textBox refId="WinMfa_SmartCardDisplayNameText">
+				<label>Name to display for user:</label>
+				<defaultValue>Smart Card</defaultValue>
+			</textBox>
+			
+			<textBox refId="WinMfa_SmartCardPkcs11LibraryPathText">
+				<label>DLL path:</label>
+				<defaultValue></defaultValue>
+			</textBox>
+
+			<checkBox refId="WinMfa_SmartCardVerifyCertificateExpirationText" 
+					  defaultChecked="true">Verify certificate expiration</checkBox>
+		</presentation>
+		
+		<presentation id="WinMfa_DaysBeforeRequireOnlineAuthPresentation">
+				<decimalTextBox refId="WinMfa_DaysBeforeRequireOnlineAuth" defaultValue="5">Number of days before requiring online authentication</decimalTextBox>
+		</presentation>		
+		
+		<presentation id="WinMfa_HttpTimeoutSecondsPresentation">
+				<decimalTextBox refId="WinMfa_HttpTimeoutSeconds" defaultValue="9">Number of seconds to wait until a request times out</decimalTextBox>
+		</presentation>
+		
+		<presentation id="WinMfa_TimeBeforeRequireMfaPresentation">
+				<textBox refId="WinMfa_TimeBeforeRequireMfa">
+					<label>Time before requiring MFA after successful online authentication:
+					</label>
+					<defaultValue>12:00:00</defaultValue>
+				</textBox>
+		</presentation>
+		
+	</presentationTable>
+  </resources>
+</policyDefinitionResources>

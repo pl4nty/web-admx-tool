@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2014-25 PDF-XChange Co Ltd.  -->
+<policyDefinitionResources	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							revision="1.0"
+							schemaVersion="1.0"
+							xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+
+	<displayName>PDF-XChange Editor ADMX File</displayName>
+	<description>ADMX file for PDF-XChange Editor</description>
+	<resources>
+		<stringTable>
+			<string id="PDFXEditor">PDF-XChange: Editor</string>
+			<string id="PDFXEditor1">PDF-XChange Editor 5.5</string>
+			<string id="PDFXEditor2">PDF-XChange Editor 5.5.312</string>
+			<string id="PDFXEditor_3140">PDF-XChange Editor 5.5.314</string>
+
+			<string id="SupportedOn_1">PDF-XChange Editor v5.5.312 or later</string>
+			<string id="SupportedOn_2">PDF-XChange Editor v5.5.314 or later</string>
+			<string id="SupportedOn_3">PDF-XChange Editor v6.0.318 or later</string>
+			<string id="SupportedOn_4">PDF-XChange Editor v7.0.323 or later</string>
+			<string id="SupportedOn_5">PDF-XChange Editor v7.0.325 or later</string>
+			<string id="SupportedOn_6">PDF-XChange Editor v7.0.328 or later</string>
+			<string id="SupportedOn_7">PDF-XChange Editor v8.1.332 or later</string>
+			<string id="SupportedOn_8">PDF-XChange Editor v9.0.350 or later</string>
+			<string id="SupportedOn_9">PDF-XChange Editor v9.0.353 or later</string>
+			<string id="SupportedOn_95">PDF-XChange Editor v9.5.366 or later</string>
+			<string id="SupportedOn_1010">PDF-XChange Editor v10.1.0 or later</string>
+			<string id="SupportedOn_1011">PDF-XChange Editor v10.1.1 or later</string>
+			<string id="SupportedOn_1042">PDF-XChange Editor v10.4.2 or later</string>
+			<string id="SupportedOn_1051">PDF-XChange Editor v10.5.1 or later</string>
+			<string id="SupportedOn_1060">PDF-XChange Editor v10.6.0 or later</string>
+			<string id="SupportedOn_1080">PDF-XChange Editor v10.8.0 or later</string>
+			<string id="SupportedOn_1082">PDF-XChange Editor v10.8.2 or later</string>
+			<string id="SupportedOn_1083">PDF-XChange Editor v10.8.3 or later</string>
+
+			<string id="Cat_PDFEditor_1">PDF-XChange: Editor</string>
+			<string id="Cat_Preferences_1">Preferences</string>
+			<string id="Cat_Security_1">Security</string>
+			<string id="Cat_Registration_1">Registration</string>
+			<string id="Cat_FileAssociations_1">File Associations</string>
+			<string id="Cat_JavaScript_1">JavaScript</string>
+			<string id="Cat_CmdOpts_1">Toolbars/Menu Options</string>
+			<string id="Cat_Update_1">Update</string>
+			<string id="Cat_Plugins_1">Plugins</string>
+			<string id="Cat_DocInfoBar_1">Document Info Bar</string>
+			<string id="Cat_Misc_1">Miscellaneous</string>
+			<string id="Cat_CertMan_1">Certificate Manager</string>
+
+			<string id="Policy_CmdOpts_AllBarsLocked">Lock All Toolbars/Menus</string>
+			<string id="Policy_CmdOpts_AllBarsLocked_exp">Locks all toolbars and menus against customization by end-users.</string>
+
+			<string id="Policy_CmdOpts_AllPanesLocked">Lock All Tool-panes</string>
+			<string id="Policy_CmdOpts_AllPanesLocked_exp">Locks all tool-panes and menus against toggling/resizing by end-user.</string>
+
+			<string id="Policy_CmdOpts_BarsVisibility">Toolbars Visibility</string>
+			<string id="Policy_CmdOpts_BarsVisibility_exp">Specifies the custom visibility state for certain toolbars.
+
+Examples:
+file:0|commenting:0 - to hide 'File' and 'Commenting' toolbars.
+*:0|file:1|commenting:1 - to hide all existing toolbars except the 'File' and 'Commenting' toolbars.</string>
+
+			<string id="Policy_CmdOpts_CmdVisibility">Commands Visibility</string>
+			<string id="Policy_CmdOpts_CmdVisibility_exp">Specifies the custom visibility of certain commands on toolbars/menus.
+
+Examples:
+open:0|save:0 - to hide 'Open' and 'Save' commands in toolbars/menus.
+*:0|open:1|save:1 - to hide all commands in toolbars and menus except the 'Open' and 'Save' commands.</string>
+
+			<string id="Policy_CmdOpts_CmdAccess">Commands Availability</string>
+			<string id="Policy_CmdOpts_CmdAccess_exp">Specifies the custom availability of certain commands on toolbars/menus.
+
+Examples:
+open:0|save:0 - to disable 'Open' and 'Save' commands in toolbars/menus.
+*:0|open:1|save:1 - to disable all commands in toolbars and menus except the 'Open' and 'Save' commands.</string>
+
+			<string id="Policy_CmdOpts_CanResetBars">Allow Reseting Toolbars/Menus</string>
+			<string id="Policy_CmdOpts_CanResetBars_exp">Specifies if user is allowed to reset customization of toolbars/menus.</string>
+
+			<string id="Policy_CmdOpts_CanResetAll">Allow Reseting All Customizations of Toolbars/Menus</string>
+			<string id="Policy_CmdOpts_CanResetAll_exp">Specifies if user is allowed to reset all customizations of all toolbars/menus.</string>
+
+			<string id="Policy_CmdOpts_CanCreateBars">Allow Creating Custom Toolbars</string>
+			<string id="Policy_CmdOpts_CanCreateBars_exp">Specifies if user is allowed to create new custom toolbars.</string>
+
+			<string id="Policy_CmdOpts_CanDeleteBars">Allow Removing Custom Toolbars</string>
+			<string id="Policy_CmdOpts_CanDeleteBars_exp">Specifies if user is allowed to remove custom toolbars.</string>
+
+			<string id="Policy_CmdOpts_CanRenameBars">Allow Renaming Custom Toolbars</string>
+			<string id="Policy_CmdOpts_CanRenameBars_exp">Specifies if user is allowed to rename custom toolbars.</string>
+
+			<string id="Policy_CmdOpts_HidePRO">Hide All Unlicensed Features</string>
+			<string id="Policy_CmdOpts_HidePRO_exp">Do not show on toolbars and menus features that require a license if a license is not present.</string>
+
+			<string id="Policy_Security_CanShowOpenPermErrMsg">Show Permission Issue Warning</string>
+			<string id="Policy_Security_CanShowOpenPermErrMsg_exp">Controls the displaying of special message-box that notifies the end-user that current action is forbidden by administrator.</string>
+
+			<string id="Policy_JavaScript_Enable">JavaScript Actions</string>
+			<string id="Policy_JavaScript_Enable_exp">Allows or blocks the execution of JavaScript actions inside documents.</string>
+
+			<string id="Policy_JavaScript_WarnOnExecute">Show Warning on Execute</string>
+			<string id="Policy_JavaScript_WarnOnExecute_exp">Specifies whether to show a warning message when a JavaScript action executes but execution is not permitted.</string>
+
+			<string id="Policy_JavaScript_EnableConsole">JavaScript Interactive Console</string>
+			<string id="Policy_JavaScript_EnableConsole_exp">Allows or blocks use of the special interactive console for JavaScript.</string>
+
+			<string id="Policy_JavaScript_UserAppLevel">User defined AppLevel JavaScript</string>
+			<string id="Policy_JavaScript_UserAppLevel_exp">Allows or blocks execution of application level (global) scripts located in a user's folder.</string>
+
+			<string id="Policy_OpenFilePerm">Open Files Policy</string>
+			<string id="Policy_OpenFilePerm_exp">Specifies Editor's behavior when file is going to be opened in result of Launch, URI, GotoR, etc. actions.
+
+Possible values are:
+Default (-2): Uses program's default behavior.
+Always Ask (-1): Always ask the user what to do every time they want to open a file linked from inside a PDF.
+Deny (0): Forbids opening all files inside a PDF.
+Allow (1): Allows opening any file(s) without restriction.
+Use Lists (2): Use the 'File-Extensions Trusted/Untrusted List' parameter.
+Allow PDF (3): Always open PDF-files without confirmation, for other files use the default behavior.</string>
+
+			<string id="Policy_OpenEmbedPerm">Open Embedded Files Policy</string>
+			<string id="Policy_OpenEmbedPerm_exp">Specifies Editor's behavior on opening embedded files inside a PDF.
+
+Possible values are:
+Default (-2): Uses program's default behavior.
+Always Ask (-1): Always ask the user what to do every time they want to open embedded files.
+Deny (0): Forbids opening any embedded files.
+Allow (1): Allows opening any embedded files without restriction.
+Allow PDF (3): Always open embedded PDF-files without confirmation, for other files use default the behavior.</string>
+
+			<string id="Policy_OpenSitePerm">Open Sites Policy</string>
+			<string id="Policy_OpenSitePerm_exp">Specifies Editor's behavior on opening sites from inside a PDF.
+
+Possible values are:
+Default (-2): Uses program's default behavior.
+Always Ask (-1): Always ask the user what to do every time they want to open a URL.
+Deny (0): Forbids all URLs
+Allow (1): Allows all URLs
+Use Sites/Protocols Trusted/Untrusted Lists (2): It enables using the 'Protocols Trusted/Untrusted List', 'Trusted Sites List' and 'Untrusted Sites List' parameters.</string>
+
+			<string id="Policy_OpenFilePerm_Item_1">Default</string>
+			<string id="Policy_OpenFilePerm_Item_2">Always ask</string>
+			<string id="Policy_OpenFilePerm_Item_3">Deny</string>
+			<string id="Policy_OpenFilePerm_Item_4">Allow</string>
+			<string id="Policy_OpenFilePerm_Item_5">Use File-Extensions Trusted/Untrusted List</string>
+			<string id="Policy_OpenFilePerm_Item_51">Use Sites/Protocols Trusted/Untrusted Lists</string>
+			<string id="Policy_OpenFilePerm_Item_6">Allow PDF</string>
+
+			<string id="Policy_OpenFileBWList">File-Extensions Trusted/Untrusted List</string>
+			<string id="Policy_OpenFileBWList_exp">List of extensions with their permission levels.
+List is a string of elements separated by '|' character. Each element consists of two parts separated by ':'.
+First part is an extension and the second part is the permission level. Possible permissions levels are:
+0 - always ask user;
+1 - always allow;
+2 - always deny the extension.
+
+Examples:
+exe:2|com:2|bat:2|pdf:1|doc:0|docx:0 - to prevent some executable formats, allow PDFs, always ask for MS-Word documents.
+*:2|pdf:1 - to allow opening PDF-documents only.</string>
+
+			<string id="Policy_OpenSiteBWList">Protocols Trusted/Untrusted List</string>
+			<string id="Policy_OpenSiteBWList_exp">List of URI protocols with their permission levels.
+List is a string of elements separated by '|' character. Each element consists of two parts separated by ':'
+First part is a protocol, and the second part - permission level. Possible permissions level are:
+0 - always ask user;
+1 - always allow;
+2 - always deny the protocol.
+Because this is based purely on the string used with the protocol used, any protocol may be blocked here.
+
+Examples:
+mailto:0|https:1|file:2 - to prevent open URLs to local files, allow opening secured URLs, always ask user about 'mailto' jumps.
+*:2|https:1 - to allow only secured URLs.</string>
+
+			<string id="Policy_TrustedSitesList">Trusted Sites List</string>
+			<string id="Policy_TrustedSitesList_exp">List of host names and/or its patterns that are allowed to open without prompting. Each text line must contain only one host name/pattern.
+
+Example:
+https://www.google.com
+*.google.com
+*.goog??.*
+
+The name pattern may contain special symbols, such as '*' and/or '?'.
+
+Note: this parameter can be used only when 'Open Sites Policy' parameter is set to 'Use Sites/Protocols Trusted/Untrusted Lists' value.
+</string>
+			
+			<string id="Policy_UntrustedSitesList">Untrusted Sites List</string>
+			<string id="Policy_UntrustedSitesList_exp">List of host names and/or its patterns that are denied to open. Each text line must contain only one host name/pattern.
+
+Example:
+http://www.noname99.com
+*.noname??.com
+
+The name pattern may contain special symbols, such as '*' and/or '?'.
+
+Note: this parameter can be used only when 'Open Sites Policy' parameter is set to 'Use Sites/Protocols Trusted/Untrusted Lists' value.</string>
+
+			<string id="Policy_DefaultDocSaveAsConverter">Default format for document Save As.</string>
+			<string id="Policy_DefaultDocSaveAsConverter_exp">Specifies the format (like, PDF/A) to choose by default when using the Save As feature.</string>
+			<string id="Policy_SaveAsConverter_native">PDF</string>
+			<string id="Policy_SaveAsConverter_pdfa">PDF/A</string>
+			<string id="Policy_SaveAsConverter_pdfx">PDF/X</string>
+			<string id="Policy_SaveAsConverter_opt">Optimized PDF</string>
+			<string id="Policy_SaveAsConverter_sanitized">Sanitized PDF</string>
+
+			<string id="Policy_CanCopySerial">Allow Copy Serial Keys</string>
+			<string id="Policy_CanCopySerial_exp">Specifies if user is allowed to copy serial keys to the clipboard on Preferences->Registration page.</string>
+
+			<string id="Policy_CanDeleteSerial">Allow Delete Serial Keys</string>
+			<string id="Policy_CanDeleteSerial_exp">Specifies if user is allowed to delete serial keys on Preferences->Registration page.</string>
+
+			<string id="Policy_CanAddSerial">Allow Add Serial Keys</string>
+			<string id="Policy_CanAddSerial_exp">Specifies if user is allowed to add serial keys on Preferences->Registration page.</string>
+
+			<string id="Policy_CanRenewSerial">Allow Renew Serial Keys</string>
+			<string id="Policy_CanRenewSerial_exp">Specifies if user is allowed to renew serial keys on Preferences->Registration page.</string>
+
+			<string id="Policy_CanAutoUpgradeSerials">Allow Auto-upgrade Serial Keys</string>
+			<string id="Policy_CanAutoUpgradeSerials_exp">Specifies if application is allowed to auto-upgrade all installed serial keys (it requires connection to the Internet).</string>
+
+			<string id="Policy_CanShowActivationWarn">Allow Keys Activation Notification</string>
+			<string id="Policy_CanShowActivationWarn_exp">Specifies if application is allowed to show the notification about license keys activation required.</string>
+
+			<string id="Policy_HidePrefPages">Preferences Pages Access</string>
+			<string id="Policy_HidePrefPages_exp">List of IDs of pages in 'Preferences' dialog with their access modes.
+List is a string of elements separated by '|' character. Each element consists of two parts separated by ':'.
+First part is an ID of preference page and the second part - is the access mode number. Possible access modes are:
+0 - hide;
+1 - show (by default);
+2 - disable.
+
+Examples:
+Registration:0 - to hide 'Registration' page.
+*:0|Docs:1 - to show only 'Documents' page.
+
+The list of standard page IDs:
+Accessibility, Assoc, ColorMan, Commenting, CustomUI, Defaults, Docs, ExportConverters, Forms, FullScreen, Identity, ImportConverters, JavaScript, Languages, LaunchApp, Mail, Measurement, PageDisplay, PageText, Performance, Plugins, Registration, Rendering, ScannerPresets, SearchProviders, Security, Signatures, Snapshot, Speech, Update.</string>
+
+			<!-- Disable Plugins -->
+			<string id="Policy_DisablePlugins">Plugins Access</string>
+			<string id="Policy_DisablePlugins_exp">A list of plugins with their permission levels.
+The list is a string of elements separated by a'|' (pipe) character. Each element consists of two parts separated by a ':' (colon).
+The first part is a plugin file name without an extension, and the second part - is the access mode level. Possible levels are:
+0 - disable;
+1 - enable;
+
+The wild card '*' defines the level for all plugins that not explicitly mentioned in the list that follows it.
+
+Examples:
+'*:0|bookmarks:1' -- disable all plugins except bookmarks;
+'SharePoint:0' -- disable only SharePoint plugin</string>
+
+
+			<!-- Doc Info Bar-->
+			<string id="Policy_DisableDocInfoSpans">Document Info Bar</string>
+			<string id="Policy_DisableDocInfoSpans_exp">A list of document info bar panels with their permission levels.
+The list is a string of elements separated by a'|' (pipe) character. Each element consists of two parts separated by a ':' (colon).
+The first part is a document info bar panel ID, and the second part - is the access mode level. Possible levels are:
+0 - disable;
+1 - enable;
+
+The wild card '*' defines the level for all panels that not explicitly mentioned in the list that follows it.
+
+Examples:
+'*:0|DigiSig:1' -- disable all panels except the "Digital Signature" one;
+'Form:0' -- disable only "Form" panel
+
+The list of all standard panel IDs (please note, ID is case sensitive):
+ProFeaturesUsed, ViewSignVer, PDFA, DigiSig, Form, ApplyRedact, ApplySign, BrokenFlags, FlashAvail, UR3</string>
+
+			<!-- Get Info from AD -->
+			<string id="Policy_GetInfoFromAD">Get User Identity information from Active Directory</string>
+			<string id="Policy_GetInfoFromAD_exp">When enabled, user identity information (see Preferences -&gt; Identity) will be taken from Active Directory instead of user settings. When set, overrides user settings.</string>
+
+			<!-- Allow use ReOpen -->
+			<string id="Policy_AllowUseReOpen">Allow use of the ReOpen function (atomic file reopen)</string>
+			<string id="Policy_AllowUseReOpen_exp">The ReOpen function allows changes to access levels for an open file from
+'for reading' to 'for writing' and vise versa without closing and reopening the file again.  Some file systems do not
+implement ithis correctly. Disable this option to prevent the use of the ReOpen function and instead use the CreateFile/CloseHandle pair of functions.</string>
+			
+			<string id="Policy_SharedStampsFolder">Path to Shared Stamp Collections</string>
+			<string id="Policy_SharedStampsFolder_exp">This option allows you to specify the intranet-path to stamp collections that can be easily and simultaneously used by many users and from different machines. These collections will be read-only for all users.</string>
+
+			<!-- Allow create certificate -->
+			<string id="Policy_AllowCreateCertificates">Allow create self-signed certificates</string>
+			<string id="Policy_AllowCreateCertificates_exp">Specifies if the user is allowed to create self-signed certificates and store them in the Windows Certificate Store or as a .pfx file.</string>
+
+			<string id="Policy_AllowUseCertificatesFromFiles">Allow using certificates from a file (*.pfx, *.p12)</string>
+			<string id="Policy_AllowUseCertificatesFromFiles_exp">Specifies if the user is allowed to use certificates from files (*.pfx, *.p12).</string>
+
+			<!-- Allow to Ask for Set as Default -->
+			<string id="Policy_AllowCheckFileAssoc">Check if PDF-XChange Editor is default application</string>
+			<string id="Policy_AllowCheckFileAssoc_exp">Specifies if the Editor can check on start-up if it is a default PDF application and ask user the set it as default if it is not.
+
+If this policy is set to "Disabled" it will override users settings.</string>
+
+			<!-- Allow to Check for Updates -->
+			<string id="Policy_AllowCheckForUpdates">Allow User to Check for Updates for the application</string>
+			<string id="Policy_AllowCheckForUpdates_exp">Specifies if the user is allowed to check for updates for the application.</string>
+
+			<!-- Default Paper Index -->
+			<string id="Policy_DefPaperIndex">Default Paper Size</string>
+			<string id="Policy_DefPaperIndex_exp">Specifies the default page size for creating or editing documents.</string>
+
+			<string id="Policy_PaperIndex_Default">Auto(Regional)</string>
+
+			<string id="Policy_PaperIndex_A4">A4</string>
+			<string id="Policy_PaperIndex_Letter">Letter/ANSI A</string>
+			<string id="Policy_PaperIndex_USLegal">US Legal</string>
+			<string id="Policy_PaperIndex_Tabloid">Tabloid/ANSI B</string>
+			<string id="Policy_PaperIndex_ANSI_C">ANSI C</string>
+			<string id="Policy_PaperIndex_ANSI_D">ANSI D</string>
+			<string id="Policy_PaperIndex_ANSI_E">ANSI E</string>
+			<string id="Policy_PaperIndex_ANSI_F">ANSI F</string>
+			<string id="Policy_PaperIndex_A3">A3</string>
+
+
+			<string id="Policy_Auto">Auto</string>
+
+			<string id="Policy_CmdOpts_TbLayout">Toolbars Layout (Ribbon/Classic)</string>
+			<string id="Policy_CmdOpts_TbLayout_exp">Specifies what kind of toolbars layout should be shown: Ribbon or Classic Toolbars.</string>
+
+			<string id="Policy_CmdOpts_InBrowserTbLayout">Toolbars Layout in Browser Plug-In (Ribbon/Classic)</string>
+			<string id="Policy_CmdOpts_InBrowserTbLayout_exp">Specifies what kind of toolbars layout should be shown in Browser Plug-In: Ribbon or Classic Toolbars.</string>
+
+			<string id="Policy_CmdOpts_RibbonSize">Size of the Ribbon Pane (Expanded/Collapsed) in the Stand Alone Editor</string>
+			<string id="Policy_CmdOpts_RibbonSize_exp">Specifies the size (Expanded/Collapsed) of the Ribbon pane in the Stand Alone Editor on the first start.</string>
+
+			<string id="Policy_CmdOpts_InBrowserRibbonSize">Size of the Ribbon Pane (Expanded/Collapsed) in Browser Plug-In</string>
+			<string id="Policy_CmdOpts_InBrowserRibbonSize_exp">Specifies the size (Expanded/Collapsed) of the Ribbon pane in Browser Plug-In on the first start.</string>
+
+			<string id="Policy_CmdOpts_TbLayout_Ribbon">Ribbon UI</string>
+			<string id="Policy_CmdOpts_TbLayout_Classic">Classic Toolbars</string>
+
+			<string id="Policy_CmdOpts_RibbonSize_Expanded">Expanded</string>
+			<string id="Policy_CmdOpts_RibbonSize_Collapsed">Collapsed</string>
+
+			<string id="Policy_CmdOpts_ShowRbFileMenuOnStart">Show Ribbon's File menu on Start</string>
+			<string id="Policy_CmdOpts_ShowRbFileMenuOnStart_exp">Enable it to show the Ribbon's File menu on application start.</string>
+
+			<!-- Allow WebDav places -->
+			<string id="Policy_AllowWebDavPlaces">Allow WebDav-Places</string>
+			<string id="Policy_AllowWebDavPlaces_exp">Specifies whether the user is allowed to add/use WebDav-Places in the application to access files on servers that support the WebDav extension of the HTTP-protocol.</string>
+
+			<string id="Policy_CmdOpts_DetectSharePointBehindLocalFS">Detect SharePoint files</string>
+			<string id="Policy_CmdOpts_DetectSharePointBehindLocalFS_exp">When enabled, this feature automatically detects files stored on SharePoint—even when they’re accessed via a mapped local drive—and then activates all relevant SharePoint functionality for those files.</string>
+
+
+			<string id="Policy_SharedTrustedListFile">Full filename of the shared trusted certificate list</string>
+			<string id="Policy_SharedTrustedListFile_exp">This option allows you to specify a shared file that contains a trusted certificate list used by many users and from different machines. This list will be read-only for all users.</string>
+
+			<string id="Policy_TrustListAutoUpdate">Allow trusted certificate list auto update</string>
+			<string id="Policy_TrustListAutoUpdate_exp">When enabled, the Editor will check whether an updated trusted certificate list is available on the server and prompt to update it.</string>
+
+			<string id="Policy_TrustListManualUpdate">Allow trusted certificate list manual update</string>
+			<string id="Policy_TrustListManualUpdate_exp">Specifies whether users can manually update the trusted certificate list.</string>
+
+			<string id="Policy_TrustListAskBeforeUpdate">Ask before update trusted certificate list</string>
+			<string id="Policy_TrustListAskBeforeUpdate_exp">Specifies whether users should be asked before updating the trusted certificate list.</string>
+
+			<string id="Policy_Security_AllowSendDocWithBugReport">Allow sending documents within bug reports</string>
+			<string id="Policy_Security_AllowSendDocWithBugReport_exp">Specifies whether users can send documents in bug reports.</string>
+
+			<string id="Policy_Security_ImportWebPageViaOpenUrlPerm">Allow to load webpages via 'Open from URL'</string>
+			<string id="Policy_Security_ImportWebPageViaOpenUrlPerm_exp">Specifies whether users are allowed to load a webpage using the 'Open from URL' feature, when the specified URL points to a webpage rather than a document.</string>
+
+			<string id="Policy_Security_CanLoadAzurePluginInsideAnotherApp">Allow loading the Azure RMS (Purview) plug-in when embedded in 3rd party apps</string>
+			<string id="Policy_Security_CanLoadAzurePluginInsideAnotherApp_exp">Specifies whether the Azure RMS (Purview) plug-in may be loaded in the context of a third-party application that embeds the Editor.</string>
+			
+
+		</stringTable>
+
+
+		<!-- Presentations -->
+		<presentationTable>
+			<presentation id="Policy_OpenFilePerm">
+				<dropdownList refId="Policy_OpenFilePerm_Enum" noSort="true">Value:</dropdownList>
+			</presentation>
+
+			<presentation id="Policy_OpenEmbedPerm">
+				<dropdownList refId="Policy_OpenEmbedPerm_Enum" noSort="true">Value:</dropdownList>
+			</presentation>
+
+			<presentation id="Policy_OpenSitePerm">
+				<dropdownList refId="Policy_OpenSitePerm_Enum" noSort="true">Value:</dropdownList>
+			</presentation>
+
+			<presentation id="Policy_OpenFileBWList">
+				<text>Enter the list of extensions with their permissions levels.</text>
+				<textBox refId="Policy_OpenFileBWList_List">
+					<label>List</label>
+				</textBox>
+			</presentation>
+
+			<presentation id="Policy_OpenSiteBWList">
+				<text>Enter the list of protocols with their permissions levels.</text>
+				<textBox refId="Policy_OpenSiteBWList_List">
+					<label>List</label>
+				</textBox>
+			</presentation>
+
+			<presentation id="Policy_TrustedSitesList">
+				<text>Enter the list of names.</text>
+				<multiTextBox refId="Policy_TrustedSitesList_List" defaultHeight="10"/>
+			</presentation>
+
+			<presentation id="Policy_UntrustedSitesList">
+				<text>Enter the list of names.</text>
+				<multiTextBox refId="Policy_UntrustedSitesList_List" defaultHeight="10"/>
+			</presentation>
+
+			<presentation id="Policy_HidePrefPages">
+				<text>Enter IDs of preferences pages, defining their access modes.</text>
+				<textBox refId="Policy_HidePrefPages_List">
+					<label>List</label>
+				</textBox>
+			</presentation>
+
+			<presentation id="Policy_DisablePlugins">
+				<text>Enter GUIDs (in { }) or plugin file names (without extension), defining their access modes.</text>
+				<textBox refId="Policy_DisablePlugins_List">
+					<label>List</label>
+				</textBox>
+			</presentation>
+
+			<presentation id="Policy_DisableDocInfoSpans">
+				<text>Enter IDs of Document Info Bar Panels, defining their access modes.</text>
+				<textBox refId="Policy_DisableDocInfoSpans_List">
+					<label>List</label>
+				</textBox>
+			</presentation>
+
+			<presentation id="Policy_CmdOpts_BarsVisibility">
+				<text>Enter the list of toolbar identifiers with their visibility state values.</text>
+				<textBox refId="Policy_CmdOpts_BarsVisibility_List">
+					<label>List</label>
+				</textBox>
+			</presentation>
+
+			<presentation id="Policy_CmdOpts_CmdVisibility">
+				<text>Enter the list of command identifiers with their visibility state values.</text>
+				<textBox refId="Policy_CmdOpts_CmdVisibility_List">
+					<label>List</label>
+				</textBox>
+			</presentation>
+
+			<presentation id="Policy_CmdOpts_CmdAccess">
+				<text>Enter the list of command identifiers with their access state values.</text>
+				<textBox refId="Policy_CmdOpts_CmdAccess_List">
+					<label>List</label>
+				</textBox>
+			</presentation>
+
+			<presentation id="Policy_DefPaperIndex">
+				<dropdownList refId="Policy_DefPaperIndex_Enum" noSort="true">Value:</dropdownList>
+			</presentation>
+
+			<presentation id="Policy_CmdOpts_TbLayout">
+				<dropdownList refId="Policy_CmdOpts_TbLayout_Enum" noSort="true">Value:</dropdownList>
+			</presentation>
+
+			<presentation id="Policy_CmdOpts_InBrowserTbLayout">
+				<dropdownList refId="Policy_CmdOpts_InBrowserTbLayout_Enum" noSort="true">Value:</dropdownList>
+			</presentation>
+
+			<presentation id="Policy_CmdOpts_InBrowserRibbonSize">
+				<dropdownList refId="Policy_CmdOpts_InBrowserRibbonSize_Enum" noSort="true">Value:</dropdownList>
+			</presentation>
+
+			<presentation id="Policy_CmdOpts_RibbonSize">
+				<dropdownList refId="Policy_CmdOpts_RibbonSize_Enum" noSort="true">Value:</dropdownList>
+			</presentation>
+
+			<presentation id="Policy_SharedStampsFolder">
+				<text>Enter path to shared stamp collections.</text>
+				<textBox refId="Policy_SharedStampsFolder_Edit">
+					<label>Path</label>
+				</textBox>
+			</presentation>
+
+			<presentation id="Policy_SharedTrustedListFile">
+				<text>Enter path to shared trusted certificate list.</text>
+				<textBox refId="Policy_SharedTrustedListFile_Edit">
+					<label>Filename</label>
+				</textBox>
+			</presentation>
+
+			<presentation id="Policy_DefaultDocSaveAsConverter">
+				<dropdownList refId="Policy_DefaultDocSaveAsConverter_Box" defaultItem="0" noSort="true">Formats</dropdownList>
+			</presentation>
+
+		</presentationTable>
+	</resources>
+</policyDefinitionResources>
