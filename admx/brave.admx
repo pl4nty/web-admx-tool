@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--brave version: 155.1.99.25-->
+  <!--brave version: 156.1.99.29-->
   <policyNamespaces>
     <target namespace="BraveSoftware.Policies.Brave" prefix="brave"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -1673,6 +1673,26 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.AutofillAddressEnabled)" explainText="$(string.AutofillAddressEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AutofillAddressEnabled" presentation="$(presentation.AutofillAddressEnabled)" valueName="AutofillAddressEnabled">
+      <parentCategory ref="DeprecatedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.AutofillCreditCardEnabled)" explainText="$(string.AutofillCreditCardEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AutofillCreditCardEnabled" presentation="$(presentation.AutofillCreditCardEnabled)" valueName="AutofillCreditCardEnabled">
+      <parentCategory ref="DeprecatedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.DeveloperToolsDisabled)" explainText="$(string.DeveloperToolsDisabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="DeveloperToolsDisabled" presentation="$(presentation.DeveloperToolsDisabled)" valueName="DeveloperToolsDisabled">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -2041,6 +2061,26 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.AutofillAddressEnabled)" explainText="$(string.AutofillAddressEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave\Recommended" name="AutofillAddressEnabled_recommended" presentation="$(presentation.AutofillAddressEnabled)" valueName="AutofillAddressEnabled">
+      <parentCategory ref="DeprecatedPolicies_recommended"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.AutofillCreditCardEnabled)" explainText="$(string.AutofillCreditCardEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave\Recommended" name="AutofillCreditCardEnabled_recommended" presentation="$(presentation.AutofillCreditCardEnabled)" valueName="AutofillCreditCardEnabled">
+      <parentCategory ref="DeprecatedPolicies_recommended"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.SafeBrowsingEnabled)" explainText="$(string.SafeBrowsingEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave\Recommended" name="SafeBrowsingEnabled_recommended" presentation="$(presentation.SafeBrowsingEnabled)" valueName="SafeBrowsingEnabled">
       <parentCategory ref="DeprecatedPolicies_recommended"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -2176,6 +2216,29 @@
           <item displayName="$(string.AIModeSettings_Disabled)">
             <value>
               <decimal value="1"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.AutofillGenAiSettings)" explainText="$(string.AutofillGenAiSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AutofillGenAiSettings" presentation="$(presentation.AutofillGenAiSettings)">
+      <parentCategory ref="GenerativeAI"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="AutofillGenAiSettings" valueName="AutofillGenAiSettings">
+          <item displayName="$(string.AutofillGenAiSettings_Allowed)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.AutofillGenAiSettings_AllowedWithoutLogging)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.AutofillGenAiSettings_Disabled)">
+            <value>
+              <decimal value="2"/>
             </value>
           </item>
         </enum>
@@ -3096,26 +3159,6 @@
       <elements>
         <list id="AutoOpenFileTypesDesc" key="Software\Policies\BraveSoftware\Brave\AutoOpenFileTypes" valuePrefix=""/>
       </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.AutofillAddressEnabled)" explainText="$(string.AutofillAddressEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AutofillAddressEnabled" presentation="$(presentation.AutofillAddressEnabled)" valueName="AutofillAddressEnabled">
-      <parentCategory ref="brave"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.AutofillCreditCardEnabled)" explainText="$(string.AutofillCreditCardEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AutofillCreditCardEnabled" presentation="$(presentation.AutofillCreditCardEnabled)" valueName="AutofillCreditCardEnabled">
-      <parentCategory ref="brave"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.AutofillSettings)" explainText="$(string.AutofillSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AutofillSettings" presentation="$(presentation.AutofillSettings)">
       <parentCategory ref="brave"/>
@@ -5290,26 +5333,6 @@
       <elements>
         <text id="ApplicationLocaleValue" maxLength="1000000" valueName="ApplicationLocaleValue"/>
       </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.AutofillAddressEnabled)" explainText="$(string.AutofillAddressEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave\Recommended" name="AutofillAddressEnabled_recommended" presentation="$(presentation.AutofillAddressEnabled)" valueName="AutofillAddressEnabled">
-      <parentCategory ref="brave_recommended"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.AutofillCreditCardEnabled)" explainText="$(string.AutofillCreditCardEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave\Recommended" name="AutofillCreditCardEnabled_recommended" presentation="$(presentation.AutofillCreditCardEnabled)" valueName="AutofillCreditCardEnabled">
-      <parentCategory ref="brave_recommended"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.BackgroundModeEnabled)" explainText="$(string.BackgroundModeEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave\Recommended" name="BackgroundModeEnabled_recommended" presentation="$(presentation.BackgroundModeEnabled)" valueName="BackgroundModeEnabled">
       <parentCategory ref="brave_recommended"/>
@@ -7807,6 +7830,16 @@
         <text id="RemoteAccessHostTalkGadgetPrefix" maxLength="1000000" valueName="RemoteAccessHostTalkGadgetPrefix"/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.SafeBrowsingExtendedReportingEnabled)" explainText="$(string.SafeBrowsingExtendedReportingEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SafeBrowsingExtendedReportingEnabled" presentation="$(presentation.SafeBrowsingExtendedReportingEnabled)" valueName="SafeBrowsingExtendedReportingEnabled">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.DefaultSearchProviderIconURL)" explainText="$(string.DefaultSearchProviderIconURL_Explain)" key="Software\Policies\BraveSoftware\Brave\Recommended" name="DefaultSearchProviderIconURL_recommended" presentation="$(presentation.DefaultSearchProviderIconURL)">
       <parentCategory ref="RemovedPolicies_recommended"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -7929,16 +7962,6 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
-    <policy class="Both" displayName="$(string.SafeBrowsingExtendedReportingEnabled)" explainText="$(string.SafeBrowsingExtendedReportingEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SafeBrowsingExtendedReportingEnabled" presentation="$(presentation.SafeBrowsingExtendedReportingEnabled)" valueName="SafeBrowsingExtendedReportingEnabled">
-      <parentCategory ref="SafeBrowsing"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
     <policy class="Both" displayName="$(string.SafeBrowsingProtectionLevel)" explainText="$(string.SafeBrowsingProtectionLevel_Explain)" key="Software\Policies\BraveSoftware\Brave" name="SafeBrowsingProtectionLevel" presentation="$(presentation.SafeBrowsingProtectionLevel)">
       <parentCategory ref="SafeBrowsing"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -8039,6 +8062,16 @@
         <text id="HomepageLocation" maxLength="1000000" valueName="HomepageLocation"/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.LaunchOnStartupEnabled)" explainText="$(string.LaunchOnStartupEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="LaunchOnStartupEnabled" presentation="$(presentation.LaunchOnStartupEnabled)" valueName="LaunchOnStartupEnabled">
+      <parentCategory ref="Startup"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.NewTabPageLocation)" explainText="$(string.NewTabPageLocation_Explain)" key="Software\Policies\BraveSoftware\Brave" name="NewTabPageLocation" presentation="$(presentation.NewTabPageLocation)">
       <parentCategory ref="Startup"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -8107,6 +8140,16 @@
       <elements>
         <text id="HomepageLocation" maxLength="1000000" valueName="HomepageLocation"/>
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LaunchOnStartupEnabled)" explainText="$(string.LaunchOnStartupEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave\Recommended" name="LaunchOnStartupEnabled_recommended" presentation="$(presentation.LaunchOnStartupEnabled)" valueName="LaunchOnStartupEnabled">
+      <parentCategory ref="Startup_recommended"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.RestoreOnStartup)" explainText="$(string.RestoreOnStartup_Explain)" key="Software\Policies\BraveSoftware\Brave\Recommended" name="RestoreOnStartup_recommended" presentation="$(presentation.RestoreOnStartup)">
       <parentCategory ref="Startup_recommended"/>
