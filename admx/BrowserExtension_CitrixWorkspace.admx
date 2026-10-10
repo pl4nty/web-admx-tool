@@ -1,0 +1,1759 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--Citrix Workspace haiffjcadagjlijoggckpgfnoeiflnem version: 26.3.60.2 generator: dbecac5329a4-->
+  <policyNamespaces>
+    <target namespace="BrowserExtension.haiffjcadagjlijoggckpgfnoeiflnem" prefix="ext_haiffjcadagjlijoggckpgfnoeiflnem"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
+    <category name="extension_settings" displayName="$(string.extension_settings)">
+      <parentCategory ref="extension"/>
+    </category>
+    <category name="extension_settings_power_settings" displayName="$(string.extension_settings_power_settings)">
+      <parentCategory ref="extension_settings"/>
+    </category>
+    <category name="extension_settings_store_settings" displayName="$(string.extension_settings_store_settings)">
+      <parentCategory ref="extension_settings"/>
+    </category>
+    <category name="extension_settings_store_settings_beacons" displayName="$(string.extension_settings_store_settings_beacons)">
+      <parentCategory ref="extension_settings_store_settings"/>
+    </category>
+    <category name="extension_settings_store_settings_rf_web" displayName="$(string.extension_settings_store_settings_rf_web)">
+      <parentCategory ref="extension_settings_store_settings"/>
+    </category>
+    <category name="extension_settings_store_settings_sso" displayName="$(string.extension_settings_store_settings_sso)">
+      <parentCategory ref="extension_settings_store_settings"/>
+    </category>
+    <category name="extension_settings_engine_settings" displayName="$(string.extension_settings_engine_settings)">
+      <parentCategory ref="extension_settings"/>
+    </category>
+    <category name="extension_settings_engine_settings_performanceCounter" displayName="$(string.extension_settings_engine_settings_performanceCounter)">
+      <parentCategory ref="extension_settings_engine_settings"/>
+    </category>
+    <category name="extension_settings_engine_settings_aot" displayName="$(string.extension_settings_engine_settings_aot)">
+      <parentCategory ref="extension_settings_engine_settings"/>
+    </category>
+    <category name="extension_settings_engine_settings_fpsMeter" displayName="$(string.extension_settings_engine_settings_fpsMeter)">
+      <parentCategory ref="extension_settings_engine_settings"/>
+    </category>
+    <category name="extension_settings_engine_settings_ceip" displayName="$(string.extension_settings_engine_settings_ceip)">
+      <parentCategory ref="extension_settings_engine_settings"/>
+    </category>
+    <category name="extension_settings_engine_settings_userinput" displayName="$(string.extension_settings_engine_settings_userinput)">
+      <parentCategory ref="extension_settings_engine_settings"/>
+    </category>
+    <category name="extension_settings_engine_settings_analytics" displayName="$(string.extension_settings_engine_settings_analytics)">
+      <parentCategory ref="extension_settings_engine_settings"/>
+    </category>
+    <category name="extension_settings_engine_settings_thirdPartyServices" displayName="$(string.extension_settings_engine_settings_thirdPartyServices)">
+      <parentCategory ref="extension_settings_engine_settings"/>
+    </category>
+    <category name="extension_settings_engine_settings_ui" displayName="$(string.extension_settings_engine_settings_ui)">
+      <parentCategory ref="extension_settings_engine_settings"/>
+    </category>
+    <category name="extension_settings_engine_settings_ui_toolbar" displayName="$(string.extension_settings_engine_settings_ui_toolbar)">
+      <parentCategory ref="extension_settings_engine_settings_ui"/>
+    </category>
+    <category name="extension_settings_engine_settings_ui_sessionsize" displayName="$(string.extension_settings_engine_settings_ui_sessionsize)">
+      <parentCategory ref="extension_settings_engine_settings_ui"/>
+    </category>
+    <category name="extension_settings_engine_settings_ui_sessionsize_available" displayName="$(string.extension_settings_engine_settings_ui_sessionsize_available)">
+      <parentCategory ref="extension_settings_engine_settings_ui_sessionsize"/>
+    </category>
+    <category name="extension_settings_engine_settings_ui_appSwitcher" displayName="$(string.extension_settings_engine_settings_ui_appSwitcher)">
+      <parentCategory ref="extension_settings_engine_settings_ui"/>
+    </category>
+    <category name="extension_settings_engine_settings_ui_touch" displayName="$(string.extension_settings_engine_settings_ui_touch)">
+      <parentCategory ref="extension_settings_engine_settings_ui"/>
+    </category>
+    <category name="extension_settings_engine_settings_features" displayName="$(string.extension_settings_engine_settings_features)">
+      <parentCategory ref="extension_settings_engine_settings"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_ime" displayName="$(string.extension_settings_engine_settings_features_ime)">
+      <parentCategory ref="extension_settings_engine_settings_features"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_audio" displayName="$(string.extension_settings_engine_settings_features_audio)">
+      <parentCategory ref="extension_settings_engine_settings_features"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_video" displayName="$(string.extension_settings_engine_settings_features_video)">
+      <parentCategory ref="extension_settings_engine_settings_features"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_video_config" displayName="$(string.extension_settings_engine_settings_features_video_config)">
+      <parentCategory ref="extension_settings_engine_settings_features_video"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_accessibility" displayName="$(string.extension_settings_engine_settings_features_accessibility)">
+      <parentCategory ref="extension_settings_engine_settings_features"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_graphics" displayName="$(string.extension_settings_engine_settings_features_graphics)">
+      <parentCategory ref="extension_settings_engine_settings_features"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_graphics_h264Support" displayName="$(string.extension_settings_engine_settings_features_graphics_h264Support)">
+      <parentCategory ref="extension_settings_engine_settings_features_graphics"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_graphics_dpiSetting" displayName="$(string.extension_settings_engine_settings_features_graphics_dpiSetting)">
+      <parentCategory ref="extension_settings_engine_settings_features_graphics"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_graphics_graphicsWebWorker" displayName="$(string.extension_settings_engine_settings_features_graphics_graphicsWebWorker)">
+      <parentCategory ref="extension_settings_engine_settings_features_graphics"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_bcr" displayName="$(string.extension_settings_engine_settings_features_bcr)">
+      <parentCategory ref="extension_settings_engine_settings_features"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_bcr_javascript" displayName="$(string.extension_settings_engine_settings_features_bcr_javascript)">
+      <parentCategory ref="extension_settings_engine_settings_features_bcr"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_filetransfer" displayName="$(string.extension_settings_engine_settings_features_filetransfer)">
+      <parentCategory ref="extension_settings_engine_settings_features"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_com" displayName="$(string.extension_settings_engine_settings_features_com)">
+      <parentCategory ref="extension_settings_engine_settings_features"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_msTeamsOptimization" displayName="$(string.extension_settings_engine_settings_features_msTeamsOptimization)">
+      <parentCategory ref="extension_settings_engine_settings_features"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_IWS" displayName="$(string.extension_settings_engine_settings_features_IWS)">
+      <parentCategory ref="extension_settings_engine_settings_features"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_usb" displayName="$(string.extension_settings_engine_settings_features_usb)">
+      <parentCategory ref="extension_settings_engine_settings_features"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_fontAppearance" displayName="$(string.extension_settings_engine_settings_features_fontAppearance)">
+      <parentCategory ref="extension_settings_engine_settings_features"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_edt" displayName="$(string.extension_settings_engine_settings_features_edt)">
+      <parentCategory ref="extension_settings_engine_settings_features"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_clientDriveMapping" displayName="$(string.extension_settings_engine_settings_features_clientDriveMapping)">
+      <parentCategory ref="extension_settings_engine_settings_features"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_networkPrinting" displayName="$(string.extension_settings_engine_settings_features_networkPrinting)">
+      <parentCategory ref="extension_settings_engine_settings_features"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_UrlRedirection" displayName="$(string.extension_settings_engine_settings_features_UrlRedirection)">
+      <parentCategory ref="extension_settings_engine_settings_features"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_serviceContinuity" displayName="$(string.extension_settings_engine_settings_features_serviceContinuity)">
+      <parentCategory ref="extension_settings_engine_settings_features"/>
+    </category>
+    <category name="extension_settings_engine_settings_features_manualSessionReconnect" displayName="$(string.extension_settings_engine_settings_features_manualSessionReconnect)">
+      <parentCategory ref="extension_settings_engine_settings_features"/>
+    </category>
+    <category name="extension_settings_engine_settings_hardware" displayName="$(string.extension_settings_engine_settings_hardware)">
+      <parentCategory ref="extension_settings_engine_settings"/>
+    </category>
+    <category name="extension_settings_engine_settings_transport" displayName="$(string.extension_settings_engine_settings_transport)">
+      <parentCategory ref="extension_settings_engine_settings"/>
+    </category>
+    <category name="extension_settings_engine_settings_uniqueID" displayName="$(string.extension_settings_engine_settings_uniqueID)">
+      <parentCategory ref="extension_settings_engine_settings"/>
+    </category>
+    <category name="extension_settings_engine_settings_seamless" displayName="$(string.extension_settings_engine_settings_seamless)">
+      <parentCategory ref="extension_settings_engine_settings"/>
+    </category>
+    <category name="extension_settings_engine_settings_vc_channel" displayName="$(string.extension_settings_engine_settings_vc_channel)">
+      <parentCategory ref="extension_settings_engine_settings"/>
+    </category>
+    <category name="extension_settings_engine_settings_ica" displayName="$(string.extension_settings_engine_settings_ica)">
+      <parentCategory ref="extension_settings_engine_settings"/>
+    </category>
+    <category name="extension_settings_device_settings" displayName="$(string.extension_settings_device_settings)">
+      <parentCategory ref="extension_settings"/>
+    </category>
+    <category name="extension_settings_device_settings_deviceRules" displayName="$(string.extension_settings_device_settings_deviceRules)">
+      <parentCategory ref="extension_settings_device_settings"/>
+    </category>
+  </categories>
+  <policies>
+    <policy name="extension_settings_settings_version" class="Both" displayName="$(string.extension_settings_settings_version)" presentation="$(presentation.extension_settings_settings_version)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_settings_settings_version_Part" valueName="settings_version" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_power_settings_keep_awake_level" class="Both" displayName="$(string.extension_settings_power_settings_keep_awake_level)" presentation="$(presentation.extension_settings_power_settings_keep_awake_level)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\power_settings">
+      <parentCategory ref="extension_settings_power_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_settings_power_settings_keep_awake_level_Part" valueName="keep_awake_level" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_store_settings_name" class="Both" displayName="$(string.extension_settings_store_settings_name)" presentation="$(presentation.extension_settings_store_settings_name)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\store_settings">
+      <parentCategory ref="extension_settings_store_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_settings_store_settings_name_Part" valueName="name" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_store_settings_removeStatusCodeCheck" class="Both" displayName="$(string.extension_settings_store_settings_removeStatusCodeCheck)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\store_settings" valueName="removeStatusCodeCheck">
+      <parentCategory ref="extension_settings_store_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_store_settings_beacons_external" class="Both" displayName="$(string.extension_settings_store_settings_beacons_external)" presentation="$(presentation.extension_settings_store_settings_beacons_external)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\store_settings\beacons">
+      <parentCategory ref="extension_settings_store_settings_beacons"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_settings_store_settings_beacons_external_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\store_settings\beacons\external" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_store_settings_beacons_internal" class="Both" displayName="$(string.extension_settings_store_settings_beacons_internal)" presentation="$(presentation.extension_settings_store_settings_beacons_internal)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\store_settings\beacons">
+      <parentCategory ref="extension_settings_store_settings_beacons"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_settings_store_settings_beacons_internal_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\store_settings\beacons\internal" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_store_settings_gateways" class="Both" displayName="$(string.extension_settings_store_settings_gateways)" presentation="$(presentation.extension_settings_store_settings_gateways)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\store_settings">
+      <parentCategory ref="extension_settings_store_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_settings_store_settings_gateways_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\store_settings\gateways" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_store_settings_rf_web_url" class="Both" displayName="$(string.extension_settings_store_settings_rf_web_url)" presentation="$(presentation.extension_settings_store_settings_rf_web_url)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\store_settings\rf_web">
+      <parentCategory ref="extension_settings_store_settings_rf_web"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_settings_store_settings_rf_web_url_Part" valueName="url" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_store_settings_sso_extensionId" class="Both" displayName="$(string.extension_settings_store_settings_sso_extensionId)" presentation="$(presentation.extension_settings_store_settings_sso_extensionId)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\store_settings\sso">
+      <parentCategory ref="extension_settings_store_settings_sso"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_settings_store_settings_sso_extensionId_Part" valueName="extensionId" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_store_settings_externalApps" class="Both" displayName="$(string.extension_settings_store_settings_externalApps)" presentation="$(presentation.extension_settings_store_settings_externalApps)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\store_settings">
+      <parentCategory ref="extension_settings_store_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_settings_store_settings_externalApps_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\store_settings\externalApps" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_store_settings_allowEditStoreName" class="Both" displayName="$(string.extension_settings_store_settings_allowEditStoreName)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\store_settings" valueName="allowEditStoreName">
+      <parentCategory ref="extension_settings_store_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_store_settings_secondary_stores" class="Both" displayName="$(string.extension_settings_store_settings_secondary_stores)" presentation="$(presentation.extension_settings_store_settings_secondary_stores)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\store_settings">
+      <parentCategory ref="extension_settings_store_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_settings_store_settings_secondary_stores_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\store_settings\secondary_stores" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_performanceCounter_enabled" class="Both" displayName="$(string.extension_settings_engine_settings_performanceCounter_enabled)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\performanceCounter" valueName="enabled">
+      <parentCategory ref="extension_settings_engine_settings_performanceCounter"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_aot_enabled" class="Both" displayName="$(string.extension_settings_engine_settings_aot_enabled)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\aot" valueName="enabled">
+      <parentCategory ref="extension_settings_engine_settings_aot"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_aot_maxRecords" class="Both" displayName="$(string.extension_settings_engine_settings_aot_maxRecords)" presentation="$(presentation.extension_settings_engine_settings_aot_maxRecords)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\aot">
+      <parentCategory ref="extension_settings_engine_settings_aot"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_settings_engine_settings_aot_maxRecords_Part" valueName="maxRecords" minValue="0" maxValue="2147483647"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_aot_directSocket" class="Both" displayName="$(string.extension_settings_engine_settings_aot_directSocket)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\aot" valueName="directSocket">
+      <parentCategory ref="extension_settings_engine_settings_aot"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_fpsMeter_visibility" class="Both" displayName="$(string.extension_settings_engine_settings_fpsMeter_visibility)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\fpsMeter" valueName="visibility">
+      <parentCategory ref="extension_settings_engine_settings_fpsMeter"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_fpsMeter_updateFrequency" class="Both" displayName="$(string.extension_settings_engine_settings_fpsMeter_updateFrequency)" presentation="$(presentation.extension_settings_engine_settings_fpsMeter_updateFrequency)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\fpsMeter">
+      <parentCategory ref="extension_settings_engine_settings_fpsMeter"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_settings_engine_settings_fpsMeter_updateFrequency_Part" valueName="updateFrequency" minValue="0" maxValue="2147483647"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_ceip_enabled" class="Both" displayName="$(string.extension_settings_engine_settings_ceip_enabled)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ceip" valueName="enabled">
+      <parentCategory ref="extension_settings_engine_settings_ceip"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_userinput_enableMouseKeyboardOverBasicFec" class="Both" displayName="$(string.extension_settings_engine_settings_userinput_enableMouseKeyboardOverBasicFec)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\userinput" valueName="enableMouseKeyboardOverBasicFec">
+      <parentCategory ref="extension_settings_engine_settings_userinput"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_analytics_enabled" class="Both" displayName="$(string.extension_settings_engine_settings_analytics_enabled)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\analytics" valueName="enabled">
+      <parentCategory ref="extension_settings_engine_settings_analytics"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_analytics_sendPublicIPToCAS" class="Both" displayName="$(string.extension_settings_engine_settings_analytics_sendPublicIPToCAS)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\analytics" valueName="sendPublicIPToCAS">
+      <parentCategory ref="extension_settings_engine_settings_analytics"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_analytics_connectionEnabled" class="Both" displayName="$(string.extension_settings_engine_settings_analytics_connectionEnabled)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\analytics" valueName="connectionEnabled">
+      <parentCategory ref="extension_settings_engine_settings_analytics"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_analytics_crashlytics" class="Both" displayName="$(string.extension_settings_engine_settings_analytics_crashlytics)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\analytics" valueName="crashlytics">
+      <parentCategory ref="extension_settings_engine_settings_analytics"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_thirdPartyServices_disableGACS" class="Both" displayName="$(string.extension_settings_engine_settings_thirdPartyServices_disableGACS)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\thirdPartyServices" valueName="disableGACS">
+      <parentCategory ref="extension_settings_engine_settings_thirdPartyServices"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_thirdPartyServices_disableFeatureFlag" class="Both" displayName="$(string.extension_settings_engine_settings_thirdPartyServices_disableFeatureFlag)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\thirdPartyServices" valueName="disableFeatureFlag">
+      <parentCategory ref="extension_settings_engine_settings_thirdPartyServices"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_toolbar_switchToNewToolbar" class="Both" displayName="$(string.extension_settings_engine_settings_ui_toolbar_switchToNewToolbar)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\toolbar" valueName="switchToNewToolbar">
+      <parentCategory ref="extension_settings_engine_settings_ui_toolbar"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_toolbar_menubar" class="Both" displayName="$(string.extension_settings_engine_settings_ui_toolbar_menubar)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\toolbar" valueName="menubar">
+      <parentCategory ref="extension_settings_engine_settings_ui_toolbar"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_toolbar_usb" class="Both" displayName="$(string.extension_settings_engine_settings_ui_toolbar_usb)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\toolbar" valueName="usb">
+      <parentCategory ref="extension_settings_engine_settings_ui_toolbar"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_toolbar_fileTransfer" class="Both" displayName="$(string.extension_settings_engine_settings_ui_toolbar_fileTransfer)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\toolbar" valueName="fileTransfer">
+      <parentCategory ref="extension_settings_engine_settings_ui_toolbar"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_toolbar_about" class="Both" displayName="$(string.extension_settings_engine_settings_ui_toolbar_about)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\toolbar" valueName="about">
+      <parentCategory ref="extension_settings_engine_settings_ui_toolbar"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_toolbar_lock" class="Both" displayName="$(string.extension_settings_engine_settings_ui_toolbar_lock)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\toolbar" valueName="lock">
+      <parentCategory ref="extension_settings_engine_settings_ui_toolbar"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_toolbar_disconnect" class="Both" displayName="$(string.extension_settings_engine_settings_ui_toolbar_disconnect)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\toolbar" valueName="disconnect">
+      <parentCategory ref="extension_settings_engine_settings_ui_toolbar"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_toolbar_logoff" class="Both" displayName="$(string.extension_settings_engine_settings_ui_toolbar_logoff)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\toolbar" valueName="logoff">
+      <parentCategory ref="extension_settings_engine_settings_ui_toolbar"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_toolbar_fullscreen" class="Both" displayName="$(string.extension_settings_engine_settings_ui_toolbar_fullscreen)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\toolbar" valueName="fullscreen">
+      <parentCategory ref="extension_settings_engine_settings_ui_toolbar"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_toolbar_multitouch" class="Both" displayName="$(string.extension_settings_engine_settings_ui_toolbar_multitouch)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\toolbar" valueName="multitouch">
+      <parentCategory ref="extension_settings_engine_settings_ui_toolbar"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_toolbar_preferences" class="Both" displayName="$(string.extension_settings_engine_settings_ui_toolbar_preferences)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\toolbar" valueName="preferences">
+      <parentCategory ref="extension_settings_engine_settings_ui_toolbar"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_toolbar_gestureGuide" class="Both" displayName="$(string.extension_settings_engine_settings_ui_toolbar_gestureGuide)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\toolbar" valueName="gestureGuide">
+      <parentCategory ref="extension_settings_engine_settings_ui_toolbar"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_toolbar_viewLogs" class="Both" displayName="$(string.extension_settings_engine_settings_ui_toolbar_viewLogs)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\toolbar" valueName="viewLogs">
+      <parentCategory ref="extension_settings_engine_settings_ui_toolbar"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_toolbar_minimize" class="Both" displayName="$(string.extension_settings_engine_settings_ui_toolbar_minimize)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\toolbar" valueName="minimize">
+      <parentCategory ref="extension_settings_engine_settings_ui_toolbar"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_toolbar_pinUnpin" class="Both" displayName="$(string.extension_settings_engine_settings_ui_toolbar_pinUnpin)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\toolbar" valueName="pinUnpin">
+      <parentCategory ref="extension_settings_engine_settings_ui_toolbar"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_toolbar_connectionStrengthIndicator" class="Both" displayName="$(string.extension_settings_engine_settings_ui_toolbar_connectionStrengthIndicator)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\toolbar" valueName="connectionStrengthIndicator">
+      <parentCategory ref="extension_settings_engine_settings_ui_toolbar"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_toolbar_displayResolution" class="Both" displayName="$(string.extension_settings_engine_settings_ui_toolbar_displayResolution)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\toolbar" valueName="displayResolution">
+      <parentCategory ref="extension_settings_engine_settings_ui_toolbar"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_toolbar_cdm" class="Both" displayName="$(string.extension_settings_engine_settings_ui_toolbar_cdm)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\toolbar" valueName="cdm">
+      <parentCategory ref="extension_settings_engine_settings_ui_toolbar"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_toolbar_keyboard" class="Both" displayName="$(string.extension_settings_engine_settings_ui_toolbar_keyboard)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\toolbar" valueName="keyboard">
+      <parentCategory ref="extension_settings_engine_settings_ui_toolbar"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_sessionsize_windowstate" class="Both" displayName="$(string.extension_settings_engine_settings_ui_sessionsize_windowstate)" presentation="$(presentation.extension_settings_engine_settings_ui_sessionsize_windowstate)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\sessionsize">
+      <parentCategory ref="extension_settings_engine_settings_ui_sessionsize"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_settings_engine_settings_ui_sessionsize_windowstate_Part" valueName="windowstate" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_sessionsize_minwidth" class="Both" displayName="$(string.extension_settings_engine_settings_ui_sessionsize_minwidth)" presentation="$(presentation.extension_settings_engine_settings_ui_sessionsize_minwidth)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\sessionsize">
+      <parentCategory ref="extension_settings_engine_settings_ui_sessionsize"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_settings_engine_settings_ui_sessionsize_minwidth_Part" valueName="minwidth" minValue="0" maxValue="2147483647"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_sessionsize_minheight" class="Both" displayName="$(string.extension_settings_engine_settings_ui_sessionsize_minheight)" presentation="$(presentation.extension_settings_engine_settings_ui_sessionsize_minheight)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\sessionsize">
+      <parentCategory ref="extension_settings_engine_settings_ui_sessionsize"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_settings_engine_settings_ui_sessionsize_minheight_Part" valueName="minheight" minValue="0" maxValue="2147483647"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_sessionsize_available_default" class="Both" displayName="$(string.extension_settings_engine_settings_ui_sessionsize_available_default)" presentation="$(presentation.extension_settings_engine_settings_ui_sessionsize_available_default)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\sessionsize\available">
+      <parentCategory ref="extension_settings_engine_settings_ui_sessionsize_available"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_settings_engine_settings_ui_sessionsize_available_default_Part" valueName="default" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_sessionsize_available_values" class="Both" displayName="$(string.extension_settings_engine_settings_ui_sessionsize_available_values)" presentation="$(presentation.extension_settings_engine_settings_ui_sessionsize_available_values)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\sessionsize\available">
+      <parentCategory ref="extension_settings_engine_settings_ui_sessionsize_available"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_settings_engine_settings_ui_sessionsize_available_values_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\sessionsize\available\values" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_appSwitcher_enhancedAppSwitcher" class="Both" displayName="$(string.extension_settings_engine_settings_ui_appSwitcher_enhancedAppSwitcher)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\appSwitcher" valueName="enhancedAppSwitcher">
+      <parentCategory ref="extension_settings_engine_settings_ui_appSwitcher"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_appSwitcher_showTaskbar" class="Both" displayName="$(string.extension_settings_engine_settings_ui_appSwitcher_showTaskbar)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\appSwitcher" valueName="showTaskbar">
+      <parentCategory ref="extension_settings_engine_settings_ui_appSwitcher"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_appSwitcher_showAutoHide" class="Both" displayName="$(string.extension_settings_engine_settings_ui_appSwitcher_showAutoHide)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\appSwitcher" valueName="showAutoHide">
+      <parentCategory ref="extension_settings_engine_settings_ui_appSwitcher"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_appSwitcher_autoHide" class="Both" displayName="$(string.extension_settings_engine_settings_ui_appSwitcher_autoHide)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\appSwitcher" valueName="autoHide">
+      <parentCategory ref="extension_settings_engine_settings_ui_appSwitcher"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_appSwitcher_showIconsOnly" class="Both" displayName="$(string.extension_settings_engine_settings_ui_appSwitcher_showIconsOnly)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\appSwitcher" valueName="showIconsOnly">
+      <parentCategory ref="extension_settings_engine_settings_ui_appSwitcher"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_netPromoters" class="Both" displayName="$(string.extension_settings_engine_settings_ui_netPromoters)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui" valueName="netPromoters">
+      <parentCategory ref="extension_settings_engine_settings_ui"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_splashScreen" class="Both" displayName="$(string.extension_settings_engine_settings_ui_splashScreen)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui" valueName="splashScreen">
+      <parentCategory ref="extension_settings_engine_settings_ui"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_assistiveCursor" class="Both" displayName="$(string.extension_settings_engine_settings_ui_assistiveCursor)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui" valueName="assistiveCursor">
+      <parentCategory ref="extension_settings_engine_settings_ui"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_refreshStore" class="Both" displayName="$(string.extension_settings_engine_settings_ui_refreshStore)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui" valueName="refreshStore">
+      <parentCategory ref="extension_settings_engine_settings_ui"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_showServerCursor" class="Both" displayName="$(string.extension_settings_engine_settings_ui_showServerCursor)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui" valueName="showServerCursor">
+      <parentCategory ref="extension_settings_engine_settings_ui"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_touch_defaultMode" class="Both" displayName="$(string.extension_settings_engine_settings_ui_touch_defaultMode)" presentation="$(presentation.extension_settings_engine_settings_ui_touch_defaultMode)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\touch">
+      <parentCategory ref="extension_settings_engine_settings_ui_touch"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_settings_engine_settings_ui_touch_defaultMode_Part" valueName="defaultMode" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_touch_detectTabletMode" class="Both" displayName="$(string.extension_settings_engine_settings_ui_touch_detectTabletMode)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\touch" valueName="detectTabletMode">
+      <parentCategory ref="extension_settings_engine_settings_ui_touch"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_touch_enableMobileComboBoxRedirection" class="Both" displayName="$(string.extension_settings_engine_settings_ui_touch_enableMobileComboBoxRedirection)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\touch" valueName="enableMobileComboBoxRedirection">
+      <parentCategory ref="extension_settings_engine_settings_ui_touch"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ui_touch_enablePointerForTouchEvents" class="Both" displayName="$(string.extension_settings_engine_settings_ui_touch_enablePointerForTouchEvents)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ui\touch" valueName="enablePointerForTouchEvents">
+      <parentCategory ref="extension_settings_engine_settings_ui_touch"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_ime_customKeyboardMapping" class="Both" displayName="$(string.extension_settings_engine_settings_features_ime_customKeyboardMapping)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\ime" valueName="customKeyboardMapping">
+      <parentCategory ref="extension_settings_engine_settings_features_ime"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_ime_keyboardIMEHotkeys" class="Both" displayName="$(string.extension_settings_engine_settings_features_ime_keyboardIMEHotkeys)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\ime" valueName="keyboardIMEHotkeys">
+      <parentCategory ref="extension_settings_engine_settings_features_ime"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_ime_genericIME" class="Both" displayName="$(string.extension_settings_engine_settings_features_ime_genericIME)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\ime" valueName="genericIME">
+      <parentCategory ref="extension_settings_engine_settings_features_ime"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_ime_multiMonitor" class="Both" displayName="$(string.extension_settings_engine_settings_features_ime_multiMonitor)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\ime" valueName="multiMonitor">
+      <parentCategory ref="extension_settings_engine_settings_features_ime"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_ime_inputMode" class="Both" displayName="$(string.extension_settings_engine_settings_features_ime_inputMode)" presentation="$(presentation.extension_settings_engine_settings_features_ime_inputMode)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\ime">
+      <parentCategory ref="extension_settings_engine_settings_features_ime"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_settings_engine_settings_features_ime_inputMode_Part" valueName="inputMode" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_ime_sendSysShortcutForFullscreen" class="Both" displayName="$(string.extension_settings_engine_settings_features_ime_sendSysShortcutForFullscreen)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\ime" valueName="sendSysShortcutForFullscreen">
+      <parentCategory ref="extension_settings_engine_settings_features_ime"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_audio_EnableAdaptiveAudio" class="Both" displayName="$(string.extension_settings_engine_settings_features_audio_EnableAdaptiveAudio)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\audio" valueName="EnableAdaptiveAudio">
+      <parentCategory ref="extension_settings_engine_settings_features_audio"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_audio_EnableStereoRecording" class="Both" displayName="$(string.extension_settings_engine_settings_features_audio_EnableStereoRecording)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\audio" valueName="EnableStereoRecording">
+      <parentCategory ref="extension_settings_engine_settings_features_audio"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_audio_AudioRedirectionV4" class="Both" displayName="$(string.extension_settings_engine_settings_features_audio_AudioRedirectionV4)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\audio" valueName="AudioRedirectionV4">
+      <parentCategory ref="extension_settings_engine_settings_features_audio"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_audio_EnableLossTolerantAudio" class="Both" displayName="$(string.extension_settings_engine_settings_features_audio_EnableLossTolerantAudio)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\audio" valueName="EnableLossTolerantAudio">
+      <parentCategory ref="extension_settings_engine_settings_features_audio"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_video_enable" class="Both" displayName="$(string.extension_settings_engine_settings_features_video_enable)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\video" valueName="enable">
+      <parentCategory ref="extension_settings_engine_settings_features_video"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_video_config_prefEncodeFormat" class="Both" displayName="$(string.extension_settings_engine_settings_features_video_config_prefEncodeFormat)" presentation="$(presentation.extension_settings_engine_settings_features_video_config_prefEncodeFormat)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\video\config">
+      <parentCategory ref="extension_settings_engine_settings_features_video_config"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_settings_engine_settings_features_video_config_prefEncodeFormat_Part" valueName="prefEncodeFormat" minValue="0" maxValue="2147483647"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_video_config_codecType" class="Both" displayName="$(string.extension_settings_engine_settings_features_video_config_codecType)" presentation="$(presentation.extension_settings_engine_settings_features_video_config_codecType)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\video\config">
+      <parentCategory ref="extension_settings_engine_settings_features_video_config"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_settings_engine_settings_features_video_config_codecType_Part" valueName="codecType" minValue="0" maxValue="2147483647"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_video_config_frameRate" class="Both" displayName="$(string.extension_settings_engine_settings_features_video_config_frameRate)" presentation="$(presentation.extension_settings_engine_settings_features_video_config_frameRate)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\video\config">
+      <parentCategory ref="extension_settings_engine_settings_features_video_config"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_settings_engine_settings_features_video_config_frameRate_Part" valueName="frameRate" minValue="0" maxValue="2147483647"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_video_config_width" class="Both" displayName="$(string.extension_settings_engine_settings_features_video_config_width)" presentation="$(presentation.extension_settings_engine_settings_features_video_config_width)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\video\config">
+      <parentCategory ref="extension_settings_engine_settings_features_video_config"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_settings_engine_settings_features_video_config_width_Part" valueName="width" minValue="0" maxValue="2147483647"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_video_config_height" class="Both" displayName="$(string.extension_settings_engine_settings_features_video_config_height)" presentation="$(presentation.extension_settings_engine_settings_features_video_config_height)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\video\config">
+      <parentCategory ref="extension_settings_engine_settings_features_video_config"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_settings_engine_settings_features_video_config_height_Part" valueName="height" minValue="0" maxValue="2147483647"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_accessibility_enable" class="Both" displayName="$(string.extension_settings_engine_settings_features_accessibility_enable)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\accessibility" valueName="enable">
+      <parentCategory ref="extension_settings_engine_settings_features_accessibility"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_graphics_jpegSupport" class="Both" displayName="$(string.extension_settings_engine_settings_features_graphics_jpegSupport)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\graphics" valueName="jpegSupport">
+      <parentCategory ref="extension_settings_engine_settings_features_graphics"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_graphics_h264Support_enabled" class="Both" displayName="$(string.extension_settings_engine_settings_features_graphics_h264Support_enabled)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\graphics\h264Support" valueName="enabled">
+      <parentCategory ref="extension_settings_engine_settings_features_graphics_h264Support"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_graphics_h264Support_losslessOverlays" class="Both" displayName="$(string.extension_settings_engine_settings_features_graphics_h264Support_losslessOverlays)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\graphics\h264Support" valueName="losslessOverlays">
+      <parentCategory ref="extension_settings_engine_settings_features_graphics_h264Support"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_graphics_h264Support_dirtyRegions" class="Both" displayName="$(string.extension_settings_engine_settings_features_graphics_h264Support_dirtyRegions)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\graphics\h264Support" valueName="dirtyRegions">
+      <parentCategory ref="extension_settings_engine_settings_features_graphics_h264Support"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_graphics_h264Support_yuv444Support" class="Both" displayName="$(string.extension_settings_engine_settings_features_graphics_h264Support_yuv444Support)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\graphics\h264Support" valueName="yuv444Support">
+      <parentCategory ref="extension_settings_engine_settings_features_graphics_h264Support"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_graphics_dpiSetting_scaleToDPI" class="Both" displayName="$(string.extension_settings_engine_settings_features_graphics_dpiSetting_scaleToDPI)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\graphics\dpiSetting" valueName="scaleToDPI">
+      <parentCategory ref="extension_settings_engine_settings_features_graphics_dpiSetting"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_graphics_multiMonitor" class="Both" displayName="$(string.extension_settings_engine_settings_features_graphics_multiMonitor)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\graphics" valueName="multiMonitor">
+      <parentCategory ref="extension_settings_engine_settings_features_graphics"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_graphics_kioskMultimonitor" class="Both" displayName="$(string.extension_settings_engine_settings_features_graphics_kioskMultimonitor)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\graphics" valueName="kioskMultimonitor">
+      <parentCategory ref="extension_settings_engine_settings_features_graphics"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_graphics_enableMultiMonitorCustomLayout" class="Both" displayName="$(string.extension_settings_engine_settings_features_graphics_enableMultiMonitorCustomLayout)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\graphics" valueName="enableMultiMonitorCustomLayout">
+      <parentCategory ref="extension_settings_engine_settings_features_graphics"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_graphics_useThinwireV2" class="Both" displayName="$(string.extension_settings_engine_settings_features_graphics_useThinwireV2)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\graphics" valueName="useThinwireV2">
+      <parentCategory ref="extension_settings_engine_settings_features_graphics"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_graphics_spanMonitorSubset" class="Both" displayName="$(string.extension_settings_engine_settings_features_graphics_spanMonitorSubset)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\graphics" valueName="spanMonitorSubset">
+      <parentCategory ref="extension_settings_engine_settings_features_graphics"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_graphics_graphicsWebWorker_enabled" class="Both" displayName="$(string.extension_settings_engine_settings_features_graphics_graphicsWebWorker_enabled)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\graphics\graphicsWebWorker" valueName="enabled">
+      <parentCategory ref="extension_settings_engine_settings_features_graphics_graphicsWebWorker"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_graphics_graphicsWasmRender" class="Both" displayName="$(string.extension_settings_engine_settings_features_graphics_graphicsWasmRender)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\graphics" valueName="graphicsWasmRender">
+      <parentCategory ref="extension_settings_engine_settings_features_graphics"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_graphics_enableLossTolerantGraphics" class="Both" displayName="$(string.extension_settings_engine_settings_features_graphics_enableLossTolerantGraphics)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\graphics" valueName="enableLossTolerantGraphics">
+      <parentCategory ref="extension_settings_engine_settings_features_graphics"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_bcr_javascript_disable" class="Both" displayName="$(string.extension_settings_engine_settings_features_bcr_javascript_disable)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\bcr\javascript" valueName="disable">
+      <parentCategory ref="extension_settings_engine_settings_features_bcr_javascript"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_autoUsbDisable" class="Both" displayName="$(string.extension_settings_engine_settings_features_autoUsbDisable)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features" valueName="autoUsbDisable">
+      <parentCategory ref="extension_settings_engine_settings_features"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_filetransfer_allowupload" class="Both" displayName="$(string.extension_settings_engine_settings_features_filetransfer_allowupload)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\filetransfer" valueName="allowupload">
+      <parentCategory ref="extension_settings_engine_settings_features_filetransfer"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_filetransfer_allowdownload" class="Both" displayName="$(string.extension_settings_engine_settings_features_filetransfer_allowdownload)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\filetransfer" valueName="allowdownload">
+      <parentCategory ref="extension_settings_engine_settings_features_filetransfer"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_filetransfer_maxuploadsize" class="Both" displayName="$(string.extension_settings_engine_settings_features_filetransfer_maxuploadsize)" presentation="$(presentation.extension_settings_engine_settings_features_filetransfer_maxuploadsize)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\filetransfer">
+      <parentCategory ref="extension_settings_engine_settings_features_filetransfer"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_settings_engine_settings_features_filetransfer_maxuploadsize_Part" valueName="maxuploadsize" minValue="0" maxValue="2147483647"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_filetransfer_maxdownloadsize" class="Both" displayName="$(string.extension_settings_engine_settings_features_filetransfer_maxdownloadsize)" presentation="$(presentation.extension_settings_engine_settings_features_filetransfer_maxdownloadsize)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\filetransfer">
+      <parentCategory ref="extension_settings_engine_settings_features_filetransfer"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_settings_engine_settings_features_filetransfer_maxdownloadsize_Part" valueName="maxdownloadsize" minValue="0" maxValue="2147483647"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_com_portname" class="Both" displayName="$(string.extension_settings_engine_settings_features_com_portname)" presentation="$(presentation.extension_settings_engine_settings_features_com_portname)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\com">
+      <parentCategory ref="extension_settings_engine_settings_features_com"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_settings_engine_settings_features_com_portname_Part" valueName="portname" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_sendAllKeys" class="Both" displayName="$(string.extension_settings_engine_settings_features_sendAllKeys)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features" valueName="sendAllKeys">
+      <parentCategory ref="extension_settings_engine_settings_features"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_msTeamsOptimization_screenSharing" class="Both" displayName="$(string.extension_settings_engine_settings_features_msTeamsOptimization_screenSharing)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\msTeamsOptimization" valueName="screenSharing">
+      <parentCategory ref="extension_settings_engine_settings_features_msTeamsOptimization"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_msTeamsOptimization_appSharing" class="Both" displayName="$(string.extension_settings_engine_settings_features_msTeamsOptimization_appSharing)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\msTeamsOptimization" valueName="appSharing">
+      <parentCategory ref="extension_settings_engine_settings_features_msTeamsOptimization"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_msTeamsOptimization_seamlessApps" class="Both" displayName="$(string.extension_settings_engine_settings_features_msTeamsOptimization_seamlessApps)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\msTeamsOptimization" valueName="seamlessApps">
+      <parentCategory ref="extension_settings_engine_settings_features_msTeamsOptimization"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_msTeamsOptimization_backgroundEffects" class="Both" displayName="$(string.extension_settings_engine_settings_features_msTeamsOptimization_backgroundEffects)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\msTeamsOptimization" valueName="backgroundEffects">
+      <parentCategory ref="extension_settings_engine_settings_features_msTeamsOptimization"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_msTeamsOptimization_streamResolution" class="Both" displayName="$(string.extension_settings_engine_settings_features_msTeamsOptimization_streamResolution)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\msTeamsOptimization" valueName="streamResolution">
+      <parentCategory ref="extension_settings_engine_settings_features_msTeamsOptimization"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_msTeamsOptimization_secondaryRingtone" class="Both" displayName="$(string.extension_settings_engine_settings_features_msTeamsOptimization_secondaryRingtone)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\msTeamsOptimization" valueName="secondaryRingtone">
+      <parentCategory ref="extension_settings_engine_settings_features_msTeamsOptimization"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_msTeamsOptimization_webHID" class="Both" displayName="$(string.extension_settings_engine_settings_features_msTeamsOptimization_webHID)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\msTeamsOptimization" valueName="webHID">
+      <parentCategory ref="extension_settings_engine_settings_features_msTeamsOptimization"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_msTeamsOptimization_hidDeviceBlockList" class="Both" displayName="$(string.extension_settings_engine_settings_features_msTeamsOptimization_hidDeviceBlockList)" presentation="$(presentation.extension_settings_engine_settings_features_msTeamsOptimization_hidDeviceBlockList)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\msTeamsOptimization">
+      <parentCategory ref="extension_settings_engine_settings_features_msTeamsOptimization"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_settings_engine_settings_features_msTeamsOptimization_hidDeviceBlockList_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\msTeamsOptimization\hidDeviceBlockList" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_msTeamsOptimization_webcamSupportInMM" class="Both" displayName="$(string.extension_settings_engine_settings_features_msTeamsOptimization_webcamSupportInMM)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\msTeamsOptimization" valueName="webcamSupportInMM">
+      <parentCategory ref="extension_settings_engine_settings_features_msTeamsOptimization"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_IWS_enable" class="Both" displayName="$(string.extension_settings_engine_settings_features_IWS_enable)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\IWS" valueName="enable">
+      <parentCategory ref="extension_settings_engine_settings_features_IWS"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_usb_enableCompositeDeviceSplit" class="Both" displayName="$(string.extension_settings_engine_settings_features_usb_enableCompositeDeviceSplit)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\usb" valueName="enableCompositeDeviceSplit">
+      <parentCategory ref="extension_settings_engine_settings_features_usb"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_usb_enableDoubleHop" class="Both" displayName="$(string.extension_settings_engine_settings_features_usb_enableDoubleHop)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\usb" valueName="enableDoubleHop">
+      <parentCategory ref="extension_settings_engine_settings_features_usb"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_usb_allowUserConfigForAutoRedirection" class="Both" displayName="$(string.extension_settings_engine_settings_features_usb_allowUserConfigForAutoRedirection)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\usb" valueName="allowUserConfigForAutoRedirection">
+      <parentCategory ref="extension_settings_engine_settings_features_usb"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_usb_enableDDCUSBPolicy" class="Both" displayName="$(string.extension_settings_engine_settings_features_usb_enableDDCUSBPolicy)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\usb" valueName="enableDDCUSBPolicy">
+      <parentCategory ref="extension_settings_engine_settings_features_usb"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_usb_enableDefaultAllowPolicy" class="Both" displayName="$(string.extension_settings_engine_settings_features_usb_enableDefaultAllowPolicy)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\usb" valueName="enableDefaultAllowPolicy">
+      <parentCategory ref="extension_settings_engine_settings_features_usb"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_usb_alwaysAutoRedirectOnFirstSessionLaunch" class="Both" displayName="$(string.extension_settings_engine_settings_features_usb_alwaysAutoRedirectOnFirstSessionLaunch)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\usb" valueName="alwaysAutoRedirectOnFirstSessionLaunch">
+      <parentCategory ref="extension_settings_engine_settings_features_usb"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_fontAppearance_enableFontSmoothing" class="Both" displayName="$(string.extension_settings_engine_settings_features_fontAppearance_enableFontSmoothing)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\fontAppearance" valueName="enableFontSmoothing">
+      <parentCategory ref="extension_settings_engine_settings_features_fontAppearance"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_fontAppearance_fontSmoothingType" class="Both" displayName="$(string.extension_settings_engine_settings_features_fontAppearance_fontSmoothingType)" presentation="$(presentation.extension_settings_engine_settings_features_fontAppearance_fontSmoothingType)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\fontAppearance">
+      <parentCategory ref="extension_settings_engine_settings_features_fontAppearance"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_settings_engine_settings_features_fontAppearance_fontSmoothingType_Part" valueName="fontSmoothingType" minValue="0" maxValue="2147483647"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_edt_enabled" class="Both" displayName="$(string.extension_settings_engine_settings_features_edt_enabled)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\edt" valueName="enabled">
+      <parentCategory ref="extension_settings_engine_settings_features_edt"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_edt_logLevel" class="Both" displayName="$(string.extension_settings_engine_settings_features_edt_logLevel)" presentation="$(presentation.extension_settings_engine_settings_features_edt_logLevel)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\edt">
+      <parentCategory ref="extension_settings_engine_settings_features_edt"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_settings_engine_settings_features_edt_logLevel_Part" valueName="logLevel" minValue="0" maxValue="2147483647"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_clientDriveMapping_enabled" class="Both" displayName="$(string.extension_settings_engine_settings_features_clientDriveMapping_enabled)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\clientDriveMapping" valueName="enabled">
+      <parentCategory ref="extension_settings_engine_settings_features_clientDriveMapping"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_clientDriveMapping_availableAccessLevels" class="Both" displayName="$(string.extension_settings_engine_settings_features_clientDriveMapping_availableAccessLevels)" presentation="$(presentation.extension_settings_engine_settings_features_clientDriveMapping_availableAccessLevels)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\clientDriveMapping">
+      <parentCategory ref="extension_settings_engine_settings_features_clientDriveMapping"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_settings_engine_settings_features_clientDriveMapping_availableAccessLevels_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\clientDriveMapping\availableAccessLevels" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_clientDriveMapping_accessLevel" class="Both" displayName="$(string.extension_settings_engine_settings_features_clientDriveMapping_accessLevel)" presentation="$(presentation.extension_settings_engine_settings_features_clientDriveMapping_accessLevel)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\clientDriveMapping">
+      <parentCategory ref="extension_settings_engine_settings_features_clientDriveMapping"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_settings_engine_settings_features_clientDriveMapping_accessLevel_Part" valueName="accessLevel" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_networkPrinting_enable" class="Both" displayName="$(string.extension_settings_engine_settings_features_networkPrinting_enable)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\networkPrinting" valueName="enable">
+      <parentCategory ref="extension_settings_engine_settings_features_networkPrinting"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_UrlRedirection_forceOpenInClient" class="Both" displayName="$(string.extension_settings_engine_settings_features_UrlRedirection_forceOpenInClient)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\UrlRedirection" valueName="forceOpenInClient">
+      <parentCategory ref="extension_settings_engine_settings_features_UrlRedirection"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_serviceContinuity_enable" class="Both" displayName="$(string.extension_settings_engine_settings_features_serviceContinuity_enable)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\serviceContinuity" valueName="enable">
+      <parentCategory ref="extension_settings_engine_settings_features_serviceContinuity"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_enableAADSSO" class="Both" displayName="$(string.extension_settings_engine_settings_features_enableAADSSO)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features" valueName="enableAADSSO">
+      <parentCategory ref="extension_settings_engine_settings_features"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_manualSessionReconnect_enabled" class="Both" displayName="$(string.extension_settings_engine_settings_features_manualSessionReconnect_enabled)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\manualSessionReconnect" valueName="enabled">
+      <parentCategory ref="extension_settings_engine_settings_features_manualSessionReconnect"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_features_manualSessionReconnect_reconnectDialogDisplayInterval" class="Both" displayName="$(string.extension_settings_engine_settings_features_manualSessionReconnect_reconnectDialogDisplayInterval)" presentation="$(presentation.extension_settings_engine_settings_features_manualSessionReconnect_reconnectDialogDisplayInterval)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\features\manualSessionReconnect">
+      <parentCategory ref="extension_settings_engine_settings_features_manualSessionReconnect"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_settings_engine_settings_features_manualSessionReconnect_reconnectDialogDisplayInterval_Part" valueName="reconnectDialogDisplayInterval" minValue="0" maxValue="2147483647"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_hardware_webgl" class="Both" displayName="$(string.extension_settings_engine_settings_hardware_webgl)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\hardware" valueName="webgl">
+      <parentCategory ref="extension_settings_engine_settings_hardware"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_hardware_webglSubTex" class="Both" displayName="$(string.extension_settings_engine_settings_hardware_webglSubTex)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\hardware" valueName="webglSubTex">
+      <parentCategory ref="extension_settings_engine_settings_hardware"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_hardware_webglHighPrecision" class="Both" displayName="$(string.extension_settings_engine_settings_hardware_webglHighPrecision)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\hardware" valueName="webglHighPrecision">
+      <parentCategory ref="extension_settings_engine_settings_hardware"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_transport_outbufscountclient" class="Both" displayName="$(string.extension_settings_engine_settings_transport_outbufscountclient)" presentation="$(presentation.extension_settings_engine_settings_transport_outbufscountclient)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\transport">
+      <parentCategory ref="extension_settings_engine_settings_transport"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_settings_engine_settings_transport_outbufscountclient_Part" valueName="outbufscountclient" minValue="0" maxValue="2147483647"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_transport_outbufscounthost" class="Both" displayName="$(string.extension_settings_engine_settings_transport_outbufscounthost)" presentation="$(presentation.extension_settings_engine_settings_transport_outbufscounthost)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\transport">
+      <parentCategory ref="extension_settings_engine_settings_transport"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_settings_engine_settings_transport_outbufscounthost_Part" valueName="outbufscounthost" minValue="0" maxValue="2147483647"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_transport_cgpEnabled" class="Both" displayName="$(string.extension_settings_engine_settings_transport_cgpEnabled)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\transport" valueName="cgpEnabled">
+      <parentCategory ref="extension_settings_engine_settings_transport"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_transport_wasmCgpEnabled" class="Both" displayName="$(string.extension_settings_engine_settings_transport_wasmCgpEnabled)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\transport" valueName="wasmCgpEnabled">
+      <parentCategory ref="extension_settings_engine_settings_transport"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_transport_aggressiveSRTrigger" class="Both" displayName="$(string.extension_settings_engine_settings_transport_aggressiveSRTrigger)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\transport" valueName="aggressiveSRTrigger">
+      <parentCategory ref="extension_settings_engine_settings_transport"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_transport_webTransport" class="Both" displayName="$(string.extension_settings_engine_settings_transport_webTransport)" presentation="$(presentation.extension_settings_engine_settings_transport_webTransport)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\transport">
+      <parentCategory ref="extension_settings_engine_settings_transport"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_settings_engine_settings_transport_webTransport_Part" valueName="webTransport" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_transport_nativeSocket" class="Both" displayName="$(string.extension_settings_engine_settings_transport_nativeSocket)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\transport" valueName="nativeSocket">
+      <parentCategory ref="extension_settings_engine_settings_transport"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_transport_CGPParallelConnectTCPDelay" class="Both" displayName="$(string.extension_settings_engine_settings_transport_CGPParallelConnectTCPDelay)" presentation="$(presentation.extension_settings_engine_settings_transport_CGPParallelConnectTCPDelay)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\transport">
+      <parentCategory ref="extension_settings_engine_settings_transport"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_settings_engine_settings_transport_CGPParallelConnectTCPDelay_Part" valueName="CGPParallelConnectTCPDelay" minValue="0" maxValue="2147483647"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_uniqueID_prefixKey" class="Both" displayName="$(string.extension_settings_engine_settings_uniqueID_prefixKey)" presentation="$(presentation.extension_settings_engine_settings_uniqueID_prefixKey)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\uniqueID">
+      <parentCategory ref="extension_settings_engine_settings_uniqueID"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_settings_engine_settings_uniqueID_prefixKey_Part" valueName="prefixKey" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_uniqueID_restrictNameLength" class="Both" displayName="$(string.extension_settings_engine_settings_uniqueID_restrictNameLength)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\uniqueID" valueName="restrictNameLength">
+      <parentCategory ref="extension_settings_engine_settings_uniqueID"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_uniqueID_useAssetID" class="Both" displayName="$(string.extension_settings_engine_settings_uniqueID_useAssetID)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\uniqueID" valueName="useAssetID">
+      <parentCategory ref="extension_settings_engine_settings_uniqueID"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_uniqueID_useMaxAssetIDLimit" class="Both" displayName="$(string.extension_settings_engine_settings_uniqueID_useMaxAssetIDLimit)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\uniqueID" valueName="useMaxAssetIDLimit">
+      <parentCategory ref="extension_settings_engine_settings_uniqueID"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_seamless_showInShelf" class="Both" displayName="$(string.extension_settings_engine_settings_seamless_showInShelf)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\seamless" valueName="showInShelf">
+      <parentCategory ref="extension_settings_engine_settings_seamless"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_customVC" class="Both" displayName="$(string.extension_settings_engine_settings_customVC)" presentation="$(presentation.extension_settings_engine_settings_customVC)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings">
+      <parentCategory ref="extension_settings_engine_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_settings_engine_settings_customVC_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\customVC" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_customVCWhitelistURL" class="Both" displayName="$(string.extension_settings_engine_settings_customVCWhitelistURL)" presentation="$(presentation.extension_settings_engine_settings_customVCWhitelistURL)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings">
+      <parentCategory ref="extension_settings_engine_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_settings_engine_settings_customVCWhitelistURL_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\customVCWhitelistURL" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_engine_settings_vc_channel_CTXCPM_" class="Both" displayName="$(string.extension_settings_engine_settings_vc_channel_CTXCPM_)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\vc_channel" valueName="CTXCPM ">
+      <parentCategory ref="extension_settings_engine_settings_vc_channel"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_vc_channel_CTXCCM_" class="Both" displayName="$(string.extension_settings_engine_settings_vc_channel_CTXCCM_)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\vc_channel" valueName="CTXCCM ">
+      <parentCategory ref="extension_settings_engine_settings_vc_channel"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_vc_channel_CTXTW_" class="Both" displayName="$(string.extension_settings_engine_settings_vc_channel_CTXTW_)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\vc_channel" valueName="CTXTW  ">
+      <parentCategory ref="extension_settings_engine_settings_vc_channel"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_vc_channel_CTXTWI_0" class="Both" displayName="$(string.extension_settings_engine_settings_vc_channel_CTXTWI_0)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\vc_channel" valueName="CTXTWI\0">
+      <parentCategory ref="extension_settings_engine_settings_vc_channel"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_vc_channel_CTXCLIP" class="Both" displayName="$(string.extension_settings_engine_settings_vc_channel_CTXCLIP)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\vc_channel" valueName="CTXCLIP">
+      <parentCategory ref="extension_settings_engine_settings_vc_channel"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_vc_channel_CTXCAM_" class="Both" displayName="$(string.extension_settings_engine_settings_vc_channel_CTXCAM_)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\vc_channel" valueName="CTXCAM ">
+      <parentCategory ref="extension_settings_engine_settings_vc_channel"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_vc_channel_CTXMM_" class="Both" displayName="$(string.extension_settings_engine_settings_vc_channel_CTXMM_)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\vc_channel" valueName="CTXMM  ">
+      <parentCategory ref="extension_settings_engine_settings_vc_channel"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_vc_channel_CTXCTL_" class="Both" displayName="$(string.extension_settings_engine_settings_vc_channel_CTXCTL_)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\vc_channel" valueName="CTXCTL ">
+      <parentCategory ref="extension_settings_engine_settings_vc_channel"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_vc_channel_CTXEUEM" class="Both" displayName="$(string.extension_settings_engine_settings_vc_channel_CTXEUEM)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\vc_channel" valueName="CTXEUEM">
+      <parentCategory ref="extension_settings_engine_settings_vc_channel"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_vc_channel_CTXGUSB" class="Both" displayName="$(string.extension_settings_engine_settings_vc_channel_CTXGUSB)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\vc_channel" valueName="CTXGUSB">
+      <parentCategory ref="extension_settings_engine_settings_vc_channel"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_vc_channel_CTXFILE" class="Both" displayName="$(string.extension_settings_engine_settings_vc_channel_CTXFILE)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\vc_channel" valueName="CTXFILE">
+      <parentCategory ref="extension_settings_engine_settings_vc_channel"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_vc_channel_CTXMOB" class="Both" displayName="$(string.extension_settings_engine_settings_vc_channel_CTXMOB)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\vc_channel" valueName="CTXMOB">
+      <parentCategory ref="extension_settings_engine_settings_vc_channel"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_vc_channel_CTXMTCH" class="Both" displayName="$(string.extension_settings_engine_settings_vc_channel_CTXMTCH)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\vc_channel" valueName="CTXMTCH">
+      <parentCategory ref="extension_settings_engine_settings_vc_channel"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_vc_channel_CTXSCRD" class="Both" displayName="$(string.extension_settings_engine_settings_vc_channel_CTXSCRD)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\vc_channel" valueName="CTXSCRD">
+      <parentCategory ref="extension_settings_engine_settings_vc_channel"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_vc_channel_CTXMTOP" class="Both" displayName="$(string.extension_settings_engine_settings_vc_channel_CTXMTOP)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\vc_channel" valueName="CTXMTOP">
+      <parentCategory ref="extension_settings_engine_settings_vc_channel"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_vc_channel_CTXIME_" class="Both" displayName="$(string.extension_settings_engine_settings_vc_channel_CTXIME_)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\vc_channel" valueName="CTXIME ">
+      <parentCategory ref="extension_settings_engine_settings_vc_channel"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_vc_channel_CTXTUI" class="Both" displayName="$(string.extension_settings_engine_settings_vc_channel_CTXTUI)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\vc_channel" valueName="CTXTUI">
+      <parentCategory ref="extension_settings_engine_settings_vc_channel"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_engine_settings_ica_v4Reducer" class="Both" displayName="$(string.extension_settings_engine_settings_ica_v4Reducer)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\engine_settings\ica" valueName="v4Reducer">
+      <parentCategory ref="extension_settings_engine_settings_ica"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_device_settings_deviceRules_autoRedirect" class="Both" displayName="$(string.extension_settings_device_settings_deviceRules_autoRedirect)" presentation="$(presentation.extension_settings_device_settings_deviceRules_autoRedirect)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\device_settings\deviceRules">
+      <parentCategory ref="extension_settings_device_settings_deviceRules"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_settings_device_settings_deviceRules_autoRedirect_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\device_settings\deviceRules\autoRedirect" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_device_settings_deviceRules_allow" class="Both" displayName="$(string.extension_settings_device_settings_deviceRules_allow)" presentation="$(presentation.extension_settings_device_settings_deviceRules_allow)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\device_settings\deviceRules">
+      <parentCategory ref="extension_settings_device_settings_deviceRules"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_settings_device_settings_deviceRules_allow_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\device_settings\deviceRules\allow" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_device_settings_deviceRules_deny" class="Both" displayName="$(string.extension_settings_device_settings_deviceRules_deny)" presentation="$(presentation.extension_settings_device_settings_deviceRules_deny)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\device_settings\deviceRules">
+      <parentCategory ref="extension_settings_device_settings_deviceRules"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_settings_device_settings_deviceRules_deny_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\haiffjcadagjlijoggckpgfnoeiflnem\policy\settings\device_settings\deviceRules\deny" valuePrefix=""/>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>
