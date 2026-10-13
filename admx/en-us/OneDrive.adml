@@ -374,20 +374,20 @@ If you enable this setting, the sync app doesn't upload new files that match the
 If you disable or do not configure this setting, the sync app uploads all supported files in all synced folders.</string>
         
       <!-- DisableDefaultODIgnoreList -->
-      <string id="DisableDefaultODIgnoreList">Disable the default ignored extension list</string>
-      <string id="DisableDefaultODIgnoreList_help">This setting lets you disable the default list of file extensions that are excluded from being uploaded to OneDrive or SharePoint.
+      <string id="DisableDefaultODIgnoreList">Disable the default ignored extension and folder lists</string>
+      <string id="DisableDefaultODIgnoreList_help">This setting lets you disable the default lists of file extensions (such as database write-ahead log files) and folder names (such as node_modules) that are excluded from being uploaded to OneDrive or SharePoint.
 
-If you enable this setting, the sync app will not load the default ignored extension list. Any existing files that were previously ignored due to the default ignored extension list will start syncing.The OneDrive sync app must be restarted after this setting is enabled for the setting to take effect.
+If you enable this setting, the sync app will not load the default ignore lists. Any existing items that were previously ignored due to the default lists will start syncing. The OneDrive sync app must be restarted after this setting is enabled for the setting to take effect.
 
-If you disable or do not configure this setting, the sync app will load the default ignored extension list and continue to ignore files based on the default rules.</string>
+If you disable or do not configure this setting, the sync app will load the default ignore lists and continue to ignore items based on the default rules.</string>
 
       <!-- DisableChangesToODIgnoreList -->
-      <string id="DisableChangesToODIgnoreList">Prevent users at your organization from changing the ignore list</string>
-      <string id="DisableChangesToODIgnoreList_help">This setting prevents users from modifying the list of files/folders that are excluded from being uploaded to OneDrive or SharePoint.
+      <string id="DisableChangesToODIgnoreList">Prevent users at your organization from changing the default ignored extension and folder lists</string>
+      <string id="DisableChangesToODIgnoreList_help">This setting prevents users from modifying the default lists of file extensions and folder names that are excluded from being uploaded to OneDrive or SharePoint.
 
-If you enable this setting, The UI that allows users to add or remove keywords from the ignore list will be hidden. Existing GPO ignore rules and default rules will be visible but uneditable. The OneDrive sync app must be restarted after this setting is enabled for the setting to take effect.
+If you enable this setting, the UI that allows users to add or remove keywords from the default ignore lists will be hidden. Existing GPO ignore rules and the default ignore lists will be visible but uneditable. The OneDrive sync app must be restarted after this setting is enabled for the setting to take effect.
 
-If you disable or do not configure this setting, the UI that allows users to add or remove keywords from the ignore list will be visible and users can choose to add or remove ignore rules with the exception that GPO rules remain uneditable.</string>
+If you disable or do not configure this setting, the UI that allows users to add or remove keywords from the ignore lists will be visible and users can choose to add or remove ignore rules, with the exception that GPO rules remain uneditable.</string>
 
       <!-- EnableODIgnoreFolderListFromGPO -->
       <string id="EnableODIgnoreFolderListFromGPO">Exclude specific kinds of folders from being uploaded</string>
