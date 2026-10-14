@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2025 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="laps" namespace="BaseALT.Policies.LAPS" />
+    <using prefix="system" namespace="BaseALT.Policies.System" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <policies>
+    <policy name="LAPS_PasswordSettings" class="Machine" displayName="$(string.LAPS_PasswordSettings)"
+        explainText="$(string.LAPS_PasswordSettings_Help)"
+        key="Software\BaseALT\Policies\Laps"
+        presentation="$(presentation.LAPS_PasswordSettings)">
+      <parentCategory ref="system:ALT_LAPS"/>
+      <supportedOn ref="system:SUPPORTED_AltP11"/>
+      <elements>
+        <enum id="LAPS_PasswordComplexity" valueName="PasswordComplexity">
+          <item displayName="$(string.LAPS_PwdComplexity_Item_1)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.LAPS_PwdComplexity_Item_2)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+          <item displayName="$(string.LAPS_PwdComplexity_Item_3)">
+            <value>
+              <decimal value="3"/>
+            </value>
+          </item>
+          <item displayName="$(string.LAPS_PwdComplexity_Item_4)">
+            <value>
+              <decimal value="4"/>
+            </value>
+          </item>
+        </enum>
+        <decimal id="LAPS_PasswordLength" valueName="PasswordLength" minValue="8" maxValue="64"/>
+        <decimal id="LAPS_PasswordAgeDays" valueName="PasswordAgeDays" minValue="1" maxValue="365"/>
+      </elements>
+    </policy>
+    <policy name="LAPS_AdminName" class="Machine" displayName="$(string.LAPS_AdminName)"
+        explainText="$(string.LAPS_AdminName_Help)"
+        key="Software\BaseALT\Policies\Laps"
+        presentation="$(presentation.LAPS_AdminName)">
+      <parentCategory ref="system:ALT_LAPS"/>
+      <supportedOn ref="system:SUPPORTED_AltP11"/>
+      <elements>
+        <text id="TEXT_AdminAccountName" valueName="AdministratorAccountName" maxLength="64" required="true"/>
+      </elements>
+    </policy>
+    <policy name="LAPS_ADPasswordEncryptionEnabled" class="Machine" displayName="$(string.LAPS_ADPasswordEncryptionEnabled)"
+        explainText="$(string.LAPS_ADPasswordEncryptionEnabled_Help)"
+        key="Software\BaseALT\Policies\Laps"
+        valueName="ADPasswordEncryptionEnabled">
+      <parentCategory ref="system:ALT_LAPS"/>
+      <supportedOn ref="system:SUPPORTED_AltP11"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="LAPS_ADPasswordEncryptionPrincipal" class="Machine" displayName="$(string.LAPS_ADPasswordEncryptionPrincipal)"
+        explainText="$(string.LAPS_ADPasswordEncryptionPrincipal_Help)"
+        key="Software\BaseALT\Policies\Laps"
+        presentation="$(presentation.LAPS_ADPasswordEncryptionPrincipal)">
+      <parentCategory ref="system:ALT_LAPS"/>
+      <supportedOn ref="system:SUPPORTED_AltP11"/>
+      <elements>
+        <text id="TEXT_ADPasswordEncryptionPrincipal" valueName="ADPasswordEncryptionPrincipal" maxLength="128"/>
+      </elements>
+    </policy>
+    <policy name="LAPS_ADEncryptedPasswordHistorySize" class="Machine" displayName="$(string.LAPS_ADEncryptedPasswordHistorySize)"
+        explainText="$(string.LAPS_ADEncryptedPasswordHistorySize_Help)"
+        key="Software\BaseALT\Policies\Laps"
+        presentation="$(presentation.LAPS_ADEncryptedPasswordHistorySize)">
+      <parentCategory ref="system:ALT_LAPS"/>
+      <supportedOn ref="system:SUPPORTED_AltP11"/>
+      <elements>
+        <decimal id="LAPS_ADEncryptedPasswordHistorySize_INT" valueName="ADEncryptedPasswordHistorySize" minValue="0" maxValue="12"/>
+      </elements>
+    </policy>
+    
+    <policy name="LAPS_BackupDirectory" class="Machine" displayName="$(string.LAPS_BackupDirectory)"
+      explainText="$(string.LAPS_BackupDirectory_Help)"
+      key="Software\BaseALT\Policies\Laps"
+      presentation="$(presentation.LAPS_BackupDirectory)">
+      <parentCategory ref="system:ALT_LAPS"/>
+      <supportedOn ref="system:SUPPORTED_AltP11"/>
+      <elements>
+        <enum id="LAPS_BackupDirectory" valueName="BackupDirectory">
+          <item displayName="$(string.LAPS_BackupDirectoryDisabled)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.LAPS_BackupDirectoryAD)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <policy name="LAPS_DontAllowPwdExpirationBehindPolicy" class="Machine" displayName="$(string.LAPS_DontAllowPwdExpirationBehindPolicy)"
+        explainText="$(string.LAPS_DontAllowPwdExpirationBehindPolicy_Help)"
+        key="Software\BaseALT\Policies\Laps"
+        valueName="PasswordExpirationProtectionEnabled">
+      <parentCategory ref="system:ALT_LAPS"/>
+      <supportedOn ref="system:SUPPORTED_AltP11"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="LAPS_PostAuthenticationActions" class="Machine" displayName="$(string.LAPS_PostAuthenticationActions)"
+        explainText="$(string.LAPS_PostAuthenticationActions_Help)"
+        key="Software\BaseALT\Policies\Laps"
+        presentation="$(presentation.LAPS_PostAuthenticationActions)">
+      <parentCategory ref="system:ALT_LAPS"/>
+      <supportedOn ref="system:SUPPORTED_AltP11"/>
+      <elements>
+        <decimal id="LAPS_PostAuthenticationResetDelay_INT" valueName="PostAuthenticationResetDelay" minValue="0" maxValue="24"/>
+        <enum id="LAPS_PostAuthenticationActions" valueName="PostAuthenticationActions">
+          <item displayName="$(string.PostAuthenticationActions_Item0)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.PostAuthenticationActions_Item1)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.PostAuthenticationActions_Item3)">
+            <value>
+              <decimal value="3"/>
+            </value>
+          </item>
+          <item displayName="$(string.PostAuthenticationActions_Item5)">
+            <value>
+              <decimal value="5"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

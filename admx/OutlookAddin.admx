@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+	<policyNamespaces>
+		<target prefix="netatwork" namespace="NetAtWork.Policies.NetAtWork" />
+		<using prefix="windows" namespace="Microsoft.Policies.Windows" />		
+	</policyNamespaces>
+	<resources minRequiredRevision="1.0" />
+	<supportedOn>
+		<definitions>
+			<definition name="SUPPORTED_OutlookAddin78OrHigher" displayName="$(string.SUPPORTED_OutlookAddin78OrHigher)" />
+			<definition name="SUPPORTED_OutlookAddin85OrHigher" displayName="$(string.SUPPORTED_OutlookAddin85OrHigher)" />
+			<definition name="SUPPORTED_OutlookAddin90OrHigher" displayName="$(string.SUPPORTED_OutlookAddin90OrHigher)" />
+			<definition name="SUPPORTED_OutlookAddin91OrHigher" displayName="$(string.SUPPORTED_OutlookAddin91OrHigher)" />
+			<definition name="SUPPORTED_OutlookAddin92OrHigher" displayName="$(string.SUPPORTED_OutlookAddin92OrHigher)" />
+			<definition name="SUPPORTED_OutlookAddin130OrHigher" displayName="$(string.SUPPORTED_OutlookAddin130OrHigher)" />
+		</definitions>
+	</supportedOn>
+	<categories>
+		<category name="NetAtWorkMailGateway" displayName="$(string.NetAtWorkMailGatewayCategoryDisplayName)" explainText="$(string.NetAtWorkMailGatewayCategoryExplainText)" />
+		<category name="OutlookAddin" displayName="$(string.OutlookAddinCategoryDisplayName)" explainText="$(string.OutlookAddinCategoryExplainText)">
+			<parentCategory ref="NetAtWorkMailGateway" />
+		</category>
+	</categories>
+	<policies>
+		<policy
+			name="ConfigureReplyLinkExpirationTimeInDays"
+			class="User"
+			displayName="$(string.ConfigureReplyLinkExpirationTimeInDaysDisplayName)"
+			explainText="$(string.ConfigureReplyLinkExpirationTimeInDaysExplainText)"
+			key="Software\Policies\Net at Work GmbH\Net at Work MailGateway\Outlook AddIn"
+			presentation="$(presentation.ReplyLinkExpirationTimeInDays)">
+			<parentCategory ref="OutlookAddin" />
+			<supportedOn ref="SUPPORTED_OutlookAddin92OrHigher" />
+			<elements>
+				<enum
+					id="ReplyLinkExpirationTimeInDaysPresentation"
+					valueName="ReplyLinkExpirationTimeInDays"
+					required="true">
+					<item displayName="$(string.ReplyLinkExpirationTimeInDaysNever)">
+						<value>
+							<decimal value="2147483647" />
+						</value>
+					</item>
+					<item displayName="$(string.ReplyLinkExpirationTimeInDaysToday)">
+						<value>
+							<decimal value="0" />
+						</value>
+					</item>
+					<item displayName="$(string.ReplyLinkExpirationTimeInDays1Day)">
+						<value>
+							<decimal value="1" />
+						</value>
+					</item>
+					<item displayName="$(string.ReplyLinkExpirationTimeInDays2Days)">
+						<value>
+							<decimal value="2" />
+						</value>
+					</item>
+					<item displayName="$(string.ReplyLinkExpirationTimeInDays3Days)">
+						<value>
+							<decimal value="3" />
+						</value>
+					</item>
+					<item displayName="$(string.ReplyLinkExpirationTimeInDays5Days)">
+						<value>
+							<decimal value="5" />
+						</value>
+					</item>
+					<item displayName="$(string.ReplyLinkExpirationTimeInDays7Days)">
+						<value>
+							<decimal value="7" />
+						</value>
+					</item>
+					<item displayName="$(string.ReplyLinkExpirationTimeInDays10Days)">
+						<value>
+							<decimal value="10" />
+						</value>
+					</item>
+					<item displayName="$(string.ReplyLinkExpirationTimeInDays14Days)">
+						<value>
+							<decimal value="14" />
+						</value>
+					</item>
+					<item displayName="$(string.ReplyLinkExpirationTimeInDays1Month)">
+						<value>
+							<decimal value="30" />
+						</value>
+					</item>
+					<item displayName="$(string.ReplyLinkExpirationTimeInDays2Month)">
+						<value>
+							<decimal value="60" />
+						</value>
+					</item>
+					<item displayName="$(string.ReplyLinkExpirationTimeInDays3Month)">
+						<value>
+							<decimal value="90" />
+						</value>
+					</item>
+					<item displayName="$(string.ReplyLinkExpirationTimeInDays4Month)">
+						<value>
+							<decimal value="120" />
+						</value>
+					</item>
+					<item displayName="$(string.ReplyLinkExpirationTimeInDays6Month)">
+						<value>
+							<decimal value="180" />
+						</value>
+					</item>
+					<item displayName="$(string.ReplyLinkExpirationTimeInDays1Year)">
+						<value>
+							<decimal value="365" />
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+		<policy
+			name="ConfigureReplyLinkReplyLimit"
+			class="User"
+			displayName="$(string.ConfigureReplyLinkReplyLimitDisplayName)"
+			explainText="$(string.ConfigureReplyLinkReplyLimitExplainText)"
+			key="Software\Policies\Net at Work GmbH\Net at Work MailGateway\Outlook AddIn"
+			presentation="$(presentation.ReplyLinkReplyLimit)">
+			<parentCategory ref="OutlookAddin" />
+			<supportedOn ref="SUPPORTED_OutlookAddin92OrHigher" />
+			<elements>
+				<enum
+					id="ReplyLinkReplyLimitPresentation"
+					valueName="ReplyLinkReplyLimit"
+					required="true">
+					<item displayName="$(string.ReplyLinkReplyLimitNever)">
+						<value>
+							<decimal value="0" />
+						</value>
+					</item>
+					<item displayName="$(string.ReplyLinkReplyLimit1)">
+						<value>
+							<decimal value="1" />
+						</value>
+					</item>
+					<item displayName="$(string.ReplyLinkReplyLimit2)">
+						<value>
+							<decimal value="2" />
+						</value>
+					</item>
+					<item displayName="$(string.ReplyLinkReplyLimit3)">
+						<value>
+							<decimal value="3" />
+						</value>
+					</item>
+					<item displayName="$(string.ReplyLinkReplyLimit5)">
+						<value>
+							<decimal value="5" />
+						</value>
+					</item>
+					<item displayName="$(string.ReplyLinkReplyLimit10)">
+						<value>
+							<decimal value="10" />
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+		<policy
+			name="ConfigureResponseLinkText"
+			class="User"
+			displayName="$(string.ConfigureResponseLinkTextDisplayName)"
+			explainText="$(string.ConfigureResponseLinkTextExplainText)"
+			key="Software\Policies\Net at Work GmbH\Net at Work MailGateway\Outlook AddIn"
+			presentation="$(presentation.ResponseLinkText)"
+			>
+			<parentCategory ref="OutlookAddin" />
+			<supportedOn ref="SUPPORTED_OutlookAddin91OrHigher" />
+			<elements>
+				<!-- NOTE: You can define a valueName in the parent policy tag to write a boolean (0|1) to the registry and another valueName in the text tag to write the actual URL. -->
+				<text id="ResponseLinkTextPresentation" valueName="ResponseLinkText" required="true" />
+			</elements>
+		</policy>
+		<policy
+			name="ConfigureWebPortalSharedSecret"
+			class="User"
+			displayName="$(string.ConfigureWebPortalSharedSecretDisplayName)"
+			explainText="$(string.ConfigureWebPortalSharedSecretExplainText)"
+			key="Software\Policies\Net at Work GmbH\Net at Work MailGateway\Outlook AddIn"
+			presentation="$(presentation.WebPortalSharedSecret)"
+			>
+			<parentCategory ref="OutlookAddin" />
+			<supportedOn ref="SUPPORTED_OutlookAddin90OrHigher" />
+			<elements>
+				<!-- NOTE: You can define a valueName in the parent policy tag to write a boolean (0|1) to the registry and another valueName in the text tag to write the actual URL. -->
+				<text id="WebPortalSharedSecretPresentation" valueName="WebPortalSharedSecret" required="true" />
+			</elements>			
+		</policy>
+		<policy
+			name="ConfigureWebPortalUrl"
+			class="User"
+			displayName="$(string.ConfigureWebPortalUrlDisplayName)"
+			explainText="$(string.ConfigureWebPortalUrlExplainText)"
+			key="Software\Policies\Net at Work GmbH\Net at Work MailGateway\Outlook AddIn"
+			presentation="$(presentation.WebPortalUrl)"
+			>
+			<parentCategory ref="OutlookAddin" />
+			<supportedOn ref="SUPPORTED_OutlookAddin90OrHigher" />
+			<elements>
+				<!-- NOTE: You can define a valueName in the parent policy tag to write a boolean (0|1) to the registry and another valueName in the text tag to write the actual URL. -->
+				<text id="WebPortalUrlPresentation" valueName="WebPortalUrl" required="true" />
+			</elements>
+		</policy>
+		<policy
+			name="ConfigureDecryptPdfAvailable"
+			class="User"
+			displayName="$(string.ConfigureDecryptPdfAvailableDisplayName)"
+			explainText="$(string.ConfigureDecryptPdfAvailableExplainText)"
+			key="Software\Policies\Net at Work GmbH\Net at Work MailGateway\Outlook AddIn"
+			valueName="DecryptPdfAvailable"
+			>
+			<parentCategory ref="OutlookAddin" />
+			<supportedOn ref="SUPPORTED_OutlookAddin85OrHigher" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		<policy
+			name="ConfigureAutomaticEncryptionAvailable"
+			class="User"
+			displayName="$(string.ConfigureAutomaticEncryptionAvailableDisplayName)"
+			explainText="$(string.ConfigureAutomaticEncryptionAvailableExplainText)"
+			key="Software\Policies\Net at Work GmbH\Net at Work MailGateway\Outlook AddIn"
+			valueName="AutomaticEncryptionAvailable"
+			>
+			<parentCategory ref="OutlookAddin" />
+			<supportedOn ref="SUPPORTED_OutlookAddin78OrHigher" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		<policy
+			name="ConfigurePdfSecurityAvailable"
+			class="User"
+			displayName="$(string.ConfigurePdfSecurityAvailableDisplayName)"
+			explainText="$(string.ConfigurePdfSecurityAvailableExplainText)"
+			key="Software\Policies\Net at Work GmbH\Net at Work MailGateway\Outlook AddIn"
+			valueName="PdfSecurityAvailable"
+			>
+			<parentCategory ref="OutlookAddin" />
+			<supportedOn ref="SUPPORTED_OutlookAddin78OrHigher" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		<policy
+			name="ConfigurePdfPasswordGeneratorAvailable"
+			class="User"
+			displayName="$(string.ConfigurePdfPasswordGeneratorAvailableDisplayName)"
+			explainText="$(string.ConfigurePdfPasswordGeneratorAvailableExplainText)"
+			key="Software\Policies\Net at Work GmbH\Net at Work MailGateway\Outlook AddIn"
+			valueName="PdfPasswordGeneratorAvailable"
+			>
+			<parentCategory ref="OutlookAddin" />
+			<supportedOn ref="SUPPORTED_OutlookAddin78OrHigher" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		<policy
+			name="ConfigureTextMessageForPdfPasswordAvailable"
+			class="User"
+			displayName="$(string.ConfigureTextMessageForPdfPasswordAvailableDisplayName)"
+			explainText="$(string.ConfigureTextMessageForPdfPasswordAvailableExplainText)"
+			key="Software\Policies\Net at Work GmbH\Net at Work MailGateway\Outlook AddIn"
+			valueName="TextMessageForPdfPasswordAvailable"
+			>
+			<parentCategory ref="OutlookAddin" />
+			<supportedOn ref="SUPPORTED_OutlookAddin78OrHigher" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		<policy
+			name="ConfigureMailEncryptionAvailable"
+			class="User"
+			displayName="$(string.ConfigureMailEncryptionAvailableDisplayName)"
+			explainText="$(string.ConfigureMailEncryptionAvailableExplainText)"
+			key="Software\Policies\Net at Work GmbH\Net at Work MailGateway\Outlook AddIn"
+			valueName="MailEncryptionAvailable"
+			>
+			<parentCategory ref="OutlookAddin" />
+			<supportedOn ref="SUPPORTED_OutlookAddin78OrHigher" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		<policy
+			name="ConfigureDeMailDeliveryOptionsAvailable"
+			class="User"
+			displayName="$(string.ConfigureDeMailDeliveryOptionsAvailableDisplayName)"
+			explainText="$(string.ConfigureDeMailDeliveryOptionsAvailableExplainText)"
+			key="Software\Policies\Net at Work GmbH\Net at Work MailGateway\Outlook AddIn"
+			valueName="DeMailDeliveryOptionsAvailable"
+			>
+			<parentCategory ref="OutlookAddin" />
+			<supportedOn ref="SUPPORTED_OutlookAddin78OrHigher" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		<policy
+			name="ConfigureConfirmationOfRetrieveAvailable"
+			class="User"
+			displayName="$(string.ConfigureConfirmationOfRetrieveAvailableDisplayName)"
+			explainText="$(string.ConfigureConfirmationOfRetrieveAvailableExplainText)"
+			key="Software\Policies\Net at Work GmbH\Net at Work MailGateway\Outlook AddIn"
+			valueName="ConfirmationOfRetrieveAvailable"
+			>
+			<parentCategory ref="OutlookAddin" />
+			<supportedOn ref="SUPPORTED_OutlookAddin78OrHigher" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		<policy
+			name="ConfigureWriteSubjectFlags"
+			class="User"
+			displayName="$(string.ConfigureWriteSubjectFlagsDisplayName)"
+			explainText="$(string.ConfigureWriteSubjectFlagsExplainText)"
+			key="Software\Policies\Net at Work GmbH\Net at Work MailGateway\Outlook AddIn"
+			valueName="WriteSubjectFlags"
+			>
+			<parentCategory ref="OutlookAddin" />
+			<supportedOn ref="SUPPORTED_OutlookAddin85OrHigher" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		<policy
+			name="ConfigureUrlProtectionAvailable"
+			class="User"
+			displayName="$(string.ConfigureUrlProtectionAvailableDisplayName)"
+			explainText="$(string.ConfigureUrlProtectionAvailableExplainText)"
+			key="Software\Policies\Net at Work GmbH\Net at Work MailGateway\Outlook AddIn"
+			valueName="UrlProtectionAvailable">
+			<parentCategory ref="OutlookAddin" />
+			<supportedOn ref="SUPPORTED_OutlookAddin130OrHigher" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+	</policies>
+</policyDefinitions>

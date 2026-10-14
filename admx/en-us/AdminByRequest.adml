@@ -1,0 +1,137 @@
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName>
+  </displayName>
+  <description>
+  </description>
+  <resources>
+    <stringTable>
+      <string id="ABR_HEADER">Admin By Request</string>
+      <string id="ABR_COMPANY_NAME">Company Name</string>
+      <string id="ABR_COMPANY_NAME_INFO">Overrules the company name that appears on user interfaces, which is by default the licensed company name.</string>
+      <string id="ABR_ENABLE">Administrator Session: Feature enabled</string>
+      <string id="ABR_ENABLE_INFO">Enables Administrator Session option. If not configured, cloud settings are used. If neither is configured, feature is enabled.</string>
+      <string id="ABR_ENABLE_APPS">Run As Admin: Feature enabled</string>
+      <string id="ABR_ENABLE_APPS_INFO">Enables Run As Admin feature. If not configured, cloud settings are used. If neither is configured, feature is enabled.</string>
+      <string id="ABR_AUTO_APPROVE">Administrator Session: Auto-approve</string>
+      <string id="ABR_AUTO_APPROVE_INFO">Enables automatic session approval. If not configured, cloud settings are used. If neither is configured, auto-approval is enabled.</string>
+      <string id="ABR_AUTO_APPROVE_APPS">Run As Admin: Auto-approve</string>
+      <string id="ABR_AUTO_APPROVE_APPS_INFO">Enables automatic Run As Admin approval. If not configured, cloud settings are used. If neither is configured, auto-approval is enabled.</string>
+      <string id="ABR_REQUIRE_REASON">Administrator Session: Require reason</string>
+      <string id="ABR_REQUIRE_REASON_INFO">Enables the Administrator Session reason screen. If not configured, cloud settings are used. If neither is configured, reason screen is enabled.</string>
+      <string id="ABR_REQUIRE_REASON_APPS">Run As Admin: Require reason</string>
+      <string id="ABR_REQUIRE_REASON_APPS_INFO">Enables automatic Run As Admin reason screen. If not configured, cloud settings are used. If neither is configured, auto-approval is enabled.</string>
+      <string id="ABR_ADMIN_MINUTES">Administrator Session: Access minutes</string>
+      <string id="ABR_ADMIN_MINUTES_INFO">Defines number of minutes the user is administrator.</string>
+      <string id="ABR_ADMIN_MINUTES_DEFAULT">Default</string>
+      <string id="ABR_ADMIN_MINUTES_5">5 minutes</string>
+      <string id="ABR_ADMIN_MINUTES_10">10 minutes</string>
+      <string id="ABR_ADMIN_MINUTES_15">15 minutes</string>
+      <string id="ABR_ADMIN_MINUTES_30">30 minutes</string>
+      <string id="ABR_ADMIN_MINUTES_60">60 minutes</string>
+      <string id="ABR_ADMIN_MINUTES_120">120 minutes</string>
+      <string id="ABR_LANGUAGE">Forced UI language</string>
+      <string id="ABR_LANGUAGE_INFO">Forces user interface language. Default is to use the Windows user preference language.</string>
+      <string id="ABR_LANGUAGE_AUTO">Auto</string>
+      <string id="ABR_LANGUAGE_EN">English</string>
+      <string id="ABR_LANGUAGE_ES">Spanish</string>
+      <string id="ABR_LANGUAGE_DE">German</string>
+      <string id="ABR_LANGUAGE_FR">French</string>
+      <string id="ABR_LANGUAGE_DA">Danish</string>
+      <string id="ABR_LANGUAGE_SV">Swedish</string>
+      <string id="ABR_LANGUAGE_NN">Norwegian</string>
+      <string id="ABR_ENABLE_UAC">Force UAC enabled</string>
+      <string id="ABR_ENABLE_UAC_INFO">Enables User Account Control (UAC), if it is not enabled.</string>
+      <string id="ABR_CLEAN_ADMINS_GROUP">Clean administrators group</string>
+      <string id="ABR_CLEAN_ADMINS_GROUP_INFO">If enabled, the user is removed from the administrators group at login time, unless the user is administrator based on a domain group membership or is logging on using the built in administrator account.</string>
+      <string id="ABR_LEARNING_MODE">Learning Mode</string>
+      <string id="ABR_LEARNING_MODE_INFO">Enables learning mode identifying legacy applications for whitelistings.</string>
+      <string id="ABR_DESKTOP_ICON">Create desktop icon</string>
+      <string id="ABR_DESKTOP_ICON_INFO">If disabled, removes the desktop icon created by Admin By Request. Default is to create the desktop icon.</string>
+      <string id="ABR_LOG_FILE">Log to file</string>
+      <string id="ABR_LOG_FILE_INFO">Optional log file. Every time a user elevates, it will be logged to this file.</string>
+
+      <string id="ABR_SHOW_INSTRUCTIONS">Instructions: Show instructions</string>
+      <string id="ABR_SHOW_INSTRUCTIONS_INFO">Show instructions (Codes of Conduct) message when starting an administrator session.</string>
+      <string id="ABR_SHOW_RUNAS_GFX">Instructions: Show Run As Graphics</string>
+      <string id="ABR_SHOW_RUNAS_GFX_INFO">Show the "Run As Administrator" graphics on the instructions (Codes of Conduct) screen.</string>
+      <string id="ABR_INSTRUCTION_HEADER">Instructions: Header text</string>
+      <string id="ABR_INSTRUCTION_HEADER_INFO">Header line for for instructions (Codes of Conduct) screen.</string>
+      <string id="ABR_INSTRUCTIONS">Instructions: Body text</string>
+      <string id="ABR_INSTRUCTIONS_INFO">Body text for instructions (Codes of Conduct) screen.</string>
+
+      <string id="ABR_USER_GROUPS">Limit usage by user group membership</string>
+      <string id="ABR_USER_GROUPS_INFO">If defined, the user must be member of at least one of these groups. Multiple groups or OUs must be split by a vertical pipe, such as "Domain Admins|Customer Relations". This is because comma may naturally appear in groups or OU names and always appears in full distinguished names for OUs. OUs can be specified as full distinguished name or simply the OU name itself. Note that if a OU name is not unique, the check will happen on either. In a list, the user/computer must be member of one (not all) to allow administrator elevation. Note that local users (except Administrator) can not elevate, when domain groups or OUs are in place. Users can always request a PIN code for elevation, in case of an exception.</string>
+      <string id="ABR_USER_OUS">Limit usage by user OU</string>
+      <string id="ABR_USER_OUS_INFO">If defined, the user must be member of at least one of these groups. Multiple groups or OUs must be split by a vertical pipe, such as "Domain Admins|Customer Relations". This is because comma may naturally appear in groups or OU names and always appears in full distinguished names for OUs. OUs can be specified as full distinguished name or simply the OU name itself. Note that if a OU name is not unique, the check will happen on either. In a list, the user/computer must be member of one (not all) to allow administrator elevation. Note that local users (except Administrator) can not elevate, when domain groups or OUs are in place. Users can always request a PIN code for elevation, in case of an exception.</string>
+      <string id="ABR_COMPUTER_GROUPS">Limit usage by computer group membership</string>
+      <string id="ABR_COMPUTER_GROUPS_INFO">If defined, the computer must be member of at least one of these groups. Multiple groups or OUs must be split by a vertical pipe, such as "Domain Admins|Customer Relations". This is because comma may naturally appear in groups or OU names and always appears in full distinguished names for OUs. OUs can be specified as full distinguished name or simply the OU name itself. Note that if a OU name is not unique, the check will happen on either. In a list, the user/computer must be member of one (not all) to allow administrator elevation. Note that local users (except Administrator) can not elevate, when domain groups or OUs are in place. Users can always request a PIN code for elevation, in case of an exception.</string>
+      <string id="ABR_COMPUTER_OUS">Limit usage by computer OU</string>
+      <string id="ABR_COMPUTER_OUS_INFO">If defined, the computer must be member of at least one of these groups. Multiple groups or OUs must be split by a vertical pipe, such as "Domain Admins|Customer Relations". This is because comma may naturally appear in groups or OU names and always appears in full distinguished names for OUs. OUs can be specified as full distinguished name or simply the OU name itself. Note that if a OU name is not unique, the check will happen on either. In a list, the user/computer must be member of one (not all) to allow administrator elevation. Note that local users (except Administrator) can not elevate, when domain groups or OUs are in place. Users can always request a PIN code for elevation, in case of an exception.</string>
+
+      <string id="ABR_SERVER_LOG_ADMIN_LOGINS">Server edition: Log admin logins</string>
+      <string id="ABR_SERVER_LOG_ADMIN_LOGINS_INFO">Only applies to Server edition. If enabled (default), logs the session log on and log off to the "Admin Logins" tab in the web portal, when an administrator (the build-in administrator account or an account that is administrator through a group) logs on.</string>
+      <string id="ABR_SERVER_REQUEST_GROUP">Server edition: Request access group membershop</string>
+      <string id="ABR_SERVER_REQUEST_GROUP_INFO">On servers, if the user is not an administrator and is member of this group, the Admin By Request app will start and work as on Workstation edition. Default is "Admin By Request Users". If the user is not an administrator or member of this group, the application will not start. Multiple groups must be split by a vertical pipe, such as "Admin By Request Users|Help Desk Users". This is because comma may naturally appear in groups.</string>
+      <string id="ABR_DESKTOP_ICON_NAME">Desktop icon name</string>
+      <string id="ABR_DESKTOP_ICON_NAME_INFO">Overrules the default name of the desktop and programs icon. Note that the default icon name is localized.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="ABR_COMPANY_NAME_PRESENTATION">
+        <textBox refId="ABR_COMPANY_NAME_CAPTION">
+          <label>Company name</label>
+        </textBox>
+      </presentation>
+      <presentation id="ABR_ADMIN_MINUTES_PRESENTATION">
+        <dropdownList refId="ABR_ADMIN_MINUTES_DROPDOWN" noSort="true">Minutes</dropdownList>
+      </presentation>
+      <presentation id="ABR_LANGUAGE_PRESENTATION">
+        <dropdownList refId="ABR_LANGUAGE_DROPDOWN" noSort="true">Language</dropdownList>
+      </presentation>
+      <presentation id="ABR_LOG_FILE_PRESENTATION">
+        <textBox refId="ABR_LOG_FILE_CAPTION">
+          <label>Log file</label>
+        </textBox>
+      </presentation>
+      <presentation id="ABR_INSTRUCTION_HEADER_PRESENTATION">
+        <textBox refId="ABR_INSTRUCTION_HEADER_CAPTION">
+          <label>Text</label>
+        </textBox>
+      </presentation>
+      <presentation id="ABR_INSTRUCTIONS_PRESENTATION">
+        <textBox refId="ABR_INSTRUCTIONS_CAPTION">
+          <label>Text</label>
+        </textBox>
+      </presentation>
+      <presentation id="ABR_USER_GROUPS_PRESENTATION">
+        <textBox refId="ABR_USER_GROUPS_CAPTION">
+          <label>Group(s)</label>
+        </textBox>
+      </presentation>
+      <presentation id="ABR_USER_OUS_PRESENTATION">
+        <textBox refId="ABR_USER_OUS_CAPTION">
+          <label>OU(s)</label>
+        </textBox>
+      </presentation>
+      <presentation id="ABR_COMPUTER_GROUPS_PRESENTATION">
+        <textBox refId="ABR_COMPUTER_GROUPS_CAPTION">
+          <label>Group(s)</label>
+        </textBox>
+      </presentation>
+      <presentation id="ABR_COMPUTER_OUS_PRESENTATION">
+        <textBox refId="ABR_COMPUTER_OUS_CAPTION">
+          <label>OU(s)</label>
+        </textBox>
+      </presentation>
+      <presentation id="ABR_SERVER_REQUEST_GROUP_PRESENTATION">
+        <textBox refId="ABR_SERVER_REQUEST_GROUP_CAPTION">
+          <label>Server Request Group(s)</label>
+        </textBox>
+      </presentation>
+      <presentation id="ABR_DESKTOP_ICON_NAME_PRESENTATION">
+        <textBox refId="ABR_DESKTOP_ICON_NAME_CAPTION">
+          <label>Desktop icon name</label>
+        </textBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

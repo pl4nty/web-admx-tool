@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2001-25 PDF-XChange Co Ltd. -->
+<policyDefinitionResources	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							revision="1.0"
+							schemaVersion="1.0"
+							xsi:schemaLocation=""
+							xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+
+	<displayName>PDF-XChange Vault ADMX File</displayName>
+	<description>ADMX file for managing serial keys for PDF-XChange products.</description>
+	<resources>
+
+		<!-- String Table -->
+		<stringTable>
+			<string id="Vault">PDF-XChange Co Ltd.: Vault</string>
+			
+			<string id="SupportedOn_1">Products v9.0.350 or later</string>
+			<string id="SupportedOn_2">Products v9.0.351 or later</string>
+			<string id="SupportedOn_3">Products v9.0.360 or later</string>
+			<string id="SupportedOn_4">Products v10.7.398 or later</string>
+
+			<string id="Cat_Vault_1">PDF-XChange: Vault</string>
+			<string id="Cat_Activation_1">Key Activation/Upgrade</string>
+
+			<string id="Policy_Activation_URL">Key Activation Server URL</string>
+			<string id="Policy_Activation_URL_exp">Specifies the URL of the key activation server.</string>
+
+			<string id="Policy_Activation_Auto">Automatic key activation</string>
+			<string id="Policy_Activation_Auto_exp">Allows automatic silent activation of non-activated keys if present.</string>
+
+			<string id="Policy_Upgrade_Manual">Manual keys upgrade</string>
+			<string id="Policy_Upgrade_Manual_exp">Allows user to upgrade license keys manually.</string>
+
+			<string id="Policy_License_Accounting">License accounting</string>
+			<string id="Policy_License_Accounting_exp">
+License instance can be accounted either on per-machine or per-user basis. 
+The default mode is per-machine accounting. 
+Per-user accounting can be preferable for non-persistent VDI installations 
+to prevent the license capacity withdrawal for the whole VD pool. 
+			</string>
+			<string id="LicenseAccountingByHardwareId">Per machine</string>
+			<string id="LicenseAccountingByUserId">Per user</string>
+			
+		</stringTable>
+
+		<!-- Presentations -->
+		<presentationTable>
+			<presentation id="Policy_Activation_URL">
+				<text>Specify server URL.</text>
+				<textBox refId="Policy_Activation_URL_Text">
+					<label>URL:</label>
+				</textBox>
+			</presentation>
+			<presentation id="Policy_License_Accounting">
+				<dropdownList refId="LicenseAccountingModeDrop" defaultItem="0">Use the following license accounting mode:</dropdownList>
+			</presentation>
+
+		</presentationTable>
+
+
+	</resources>
+</policyDefinitionResources>

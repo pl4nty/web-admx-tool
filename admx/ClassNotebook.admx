@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-16"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="classNotebookAddin" namespace="ClassNotebookAddin.OneNote.Office.Microsoft.Policies.Windows" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="L_CategoryClassNotebookAddinForOneNote" displayName="$(string.L_CategoryNameClassNotebookAddinForOneNote)" />
+    <category name="L_CategoryLms" displayName="$(string.L_CategoryNameLms)">
+      <parentCategory ref="L_CategoryClassNotebookAddinForOneNote" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="L_PolicyLms" class="User" displayName="$(string.L_PolicyNameLms)" explainText="$(string.L_PolicyExplainTextLms)" presentation="$(presentation.L_Lms)" key="Software\Policies\Microsoft\OneNoteClassNotebook">
+      <parentCategory ref="L_CategoryLms" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_LmsValue" valueName="Lms" />
+      </elements>
+    </policy>
+    <policy name="L_PolicyLmsHost" class="User" displayName="$(string.L_PolicyNameLmsHost)" explainText="$(string.L_PolicyExplainTextLmsHost)" presentation="$(presentation.L_LmsHost)" key="Software\Policies\Microsoft\OneNoteClassNotebook">
+      <parentCategory ref="L_CategoryLms" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_LmsHostValue" valueName="LmsHost" />
+      </elements>
+    </policy>
+    <policy name="L_PolicyClientId" class="User" displayName="$(string.L_PolicyNameClientId)" explainText="$(string.L_PolicyExplainTextClientId)" presentation="$(presentation.L_ClientId)" key="Software\Policies\Microsoft\OneNoteClassNotebook">
+      <parentCategory ref="L_CategoryLms" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_ClientIdValue" valueName="ClientId" />
+      </elements>
+    </policy>
+    <policy name="L_PolicyClientSecret" class="User" displayName="$(string.L_PolicyNameClientSecret)" explainText="$(string.L_PolicyExplainTextClientSecret)" presentation="$(presentation.L_ClientSecret)" key="Software\Policies\Microsoft\OneNoteClassNotebook">
+      <parentCategory ref="L_CategoryLms" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_ClientSecretValue" valueName="ClientSecret" />
+      </elements>
+    </policy>
+    <policy name="L_PolicyToken" class="User" displayName="$(string.L_PolicyNameToken)" explainText="$(string.L_PolicyExplainTextToken)" presentation="$(presentation.L_Token)" key="Software\Policies\Microsoft\OneNoteClassNotebook">
+      <parentCategory ref="L_CategoryLms" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_TokenValue" valueName="Token" />
+      </elements>
+    </policy>
+    <policy name="L_PolicySchoolCode" class="User" displayName="$(string.L_PolicyNameSchoolCode)" explainText="$(string.L_PolicyExplainTextSchoolCode)" presentation="$(presentation.L_SchoolCode)" key="Software\Policies\Microsoft\OneNoteClassNotebook">
+      <parentCategory ref="L_CategoryLms" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_SchoolCodeValue" valueName="SchoolCode" />
+      </elements>
+    </policy>
+    <policy name="L_PolicySchoolYear" class="User" displayName="$(string.L_PolicyNameSchoolYear)" explainText="$(string.L_PolicyExplainTextSchoolYear)" presentation="$(presentation.L_SchoolYear)" key="Software\Policies\Microsoft\OneNoteClassNotebook">
+      <parentCategory ref="L_CategoryLms" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <elements>
+        <text id="L_SchoolYearValue" valueName="SchoolYear" />
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2023 BaseALT, Ltd.  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" revision="1.0" schemaVersion="1.0">
+  <displayName>ALT Group Policies definitions</displayName>
+  <description>This file contains the Group Policy appliers definitions used by ALT operating system.</description>
+
+  <resources>
+    <stringTable>
+      <string id="ALT_GroupPolicies">Group Policies</string>
+      <string id="ALT_GroupPolicies_Help">Group Policy settings.</string>
+
+      <string id="ALT_GPUpdateAppliers">GPUpdate Mechanisms</string>
+      <string id="ALT_GPUpdateAppliers_Help">Group Policy update appliers settings.</string>
+
+      <string id="ALT_GPLocalUsers">Group policies for local users</string>
+      <string id="ALT_GPLocalUsers_Help">If enabled, group policies will be applied to local users.</string>
+
+      <string id="ALT_IniFiles">Processing INI file configuration</string>
+      <string id="ALT_IniFiles_Help">This section contains settings that determine the processing of INI files configured through the Group Policy Editor.</string>
+
+      <string id="gpupdate_force_update">Force download of Group Policy templates</string>
+      <string id="gpupdate_force_update_help">This policy disables Group Policy Template (GPT) version matching when downloading.</string>
+
+      <string id="gpupdate_global_experimental">Experimental Group Policies</string>
+      <string id="gpupdate_global_experimental_help">This policy enables experimental group policy appliers features globally.</string>
+
+      <string id="gpupdate_windows_mapping">Windows keys mapping for ALT Group Policies</string>
+      <string id="gpupdate_windows_mapping_help">This policy globally enables/disables mechanisms for displaying some Windows keys for applying group policies in the ALT operating system.</string>
+
+      <string id="gpupdate_control_applier">Control system facilities</string>
+      <string id="gpupdate_control_applier_help">This policy enables group policy Control applier features.</string>
+
+      <string id="gpupdate_chromium_applier">Chromium browser</string>
+      <string id="gpupdate_chromium_applier_help">This policy enables group policy Chromium applier feature.</string>
+
+      <string id="gpupdate_firefox_applier">Firefox browser</string>
+      <string id="gpupdate_firefox_applier_help">This policy enables group policy Firefox applier feature.</string>
+
+      <string id="gpupdate_cups_applier">Printer settings</string>
+      <string id="gpupdate_cups_applier_help">This policy enables group policy CUPS applier feature.</string>
+
+      <string id="gpupdate_cups_user_applier">Printer settings for users</string>
+      <string id="gpupdate_cups_user_applier_help">This policy enables group policy CUPS applier for users feature.</string>
+
+      <string id="gpupdate_folders_applier">Local folders control</string>
+      <string id="gpupdate_folders_applier_help">This policy enables group policy Folders applier feature.</string>
+
+      <string id="gpupdate_folders_user_applier">Local folders control for users</string>
+      <string id="gpupdate_folders_user_applier_help">This policy enables group policy Folders applier for users feature.</string>
+
+      <string id="gpupdate_cifs_user_applier">Network drives mounting for users</string>
+      <string id="gpupdate_cifs_user_applier_help">This policy enables group policy CIFS applier for users feature.
+
+      Additional configuration of the mechanism can be performed using the policies "Time before unmounting network directories", "Mapping network drives of the machine/user in the home directory" and "Name of the directory for mounting network drives of the machine/user".
+      </string>
+
+      <string id="gpupdate_cifs_applier">Network drives mounting</string>
+      <string id="gpupdate_cifs_applier_help">This policy enables group policy CIFS applier feature.
+
+      Additional configuration of the mechanism can be performed using the policies "Time before unmounting network directories", "Mapping network drives of the machine/user in the home directory" and "Name of the directory for mounting network drives of the machine/user".
+      </string>
+
+      <string id="gpupdate_gsettings_applier">GSettings configuration</string>
+      <string id="gpupdate_gsettings_applier_help">This policy enables group policy GSettings applier feature.</string>
+
+      <string id="gpupdate_gsettings_user_applier">GSettings mechanisms for users</string>
+      <string id="gpupdate_gsettings_user_applier_help">This policy enables group policy GSettings applier for users feature.</string>
+
+      <string id="gpupdate_polkit_applier">Polkit configuration</string>
+      <string id="gpupdate_polkit_applier_help">This policy enables group policy Polkit applier feature.</string>
+
+      <string id="gpupdate_polkit_user_applier">Polkit configuration for users</string>
+      <string id="gpupdate_polkit_user_applier_help">This policy enables group policy Polkit applier for users feature.</string>
+
+      <string id="gpupdate_packages_applier">Install and remove packages</string>
+      <string id="gpupdate_packages_applier_help">This policy enables group policy Packages applier feature.</string>
+
+      <string id="gpupdate_packages_user_applier">Install and remove for users</string>
+      <string id="gpupdate_packages_user_applier_help">This policy enables group policy Packages applier for users feature.</string>
+
+      <string id="gpupdate_shortcuts_applier">Shortcuts control</string>
+      <string id="gpupdate_shortcuts_applier_help">This policy enables group policy Shortcuts applier feature.</string>
+
+      <string id="gpupdate_shortcuts_user_applier">Shortcuts control for users</string>
+      <string id="gpupdate_shortcuts_user_applier_help">This policy enables group policy Shortcuts applier for users feature.</string>
+
+      <string id="gpupdate_systemd_applier">Systemd services</string>
+      <string id="gpupdate_systemd_applier_help">This policy enables group policy Systemd applier feature.</string>
+
+      <string id="gpupdate_firewall_applier">Firewall configuration support</string>
+      <string id="gpupdate_firewall_applier_help">This policy enables group policy Firewall applier feature.</string>
+
+      <string id="gpupdate_ntp_applier">NTP configuration support</string>
+      <string id="gpupdate_ntp_applier_help">This policy enables group policy NTP applier feature.</string>
+
+      <string id="gp_local_users_group_users">Filter users by group</string>
+      <string id="gp_local_users_group_users_help">This policy allows to enable/disable group policies applying for users not in the «users» group.</string>
+
+      <string id="gp_local_users_group_localusers">Enable local users</string>
+      <string id="gp_local_users_group_localusers_help">This policy allows to enable/disable group policies applying for local users.</string>
+
+      <string id="gp_local_users_system-uids">Filter users by uid</string>
+      <string id="gp_local_users_system-uids_help">This policy allows to disable/disable group policies applying for users with uid less 500.</string>
+
+      <string id="gpupdate_scrollsysvoldc_applier">Enumeration of domain controllers for connect to SysVol</string>
+      <string id="gpupdate_scrollsysvoldc_applier_help">This policy enables iterating over domain controllers with a configured SysVol network directory if in the automatically selected domain controller SysVol does not have looking group policies templates.</string>
+
+      <string id="gpupdate_files_applier">File copy control</string>
+      <string id="gpupdate_files_applier_help">This policy enables the file copy mechanism</string>
+
+      <string id="gpupdate_files_user_applier">File copy control for users</string>
+      <string id="gpupdate_files_user_applier_help">This policy enables the file copy mechanism for users</string>
+
+      <string id="gpupdate_inifiles_applier">Ini-file creation control</string>
+      <string id="gpupdate_inifiles_applier_help">This policy enables the Ini-file creation mechanism</string>
+
+      <string id="gpupdate_inifiles_user_applier">Ini-file control for users</string>
+      <string id="gpupdate_inifiles_user_applier_help">This policy enables the Ini-file creation mechanism for users</string>
+
+      <string id="gpupdate_scripts_applier">Script execution module for machine</string>
+      <string id="gpupdate_scripts_applier_help">This policy enables disables the scripting group policy execution engine for computers.</string>
+
+      <string id="gpupdate_scripts_user_applier">Script execution module for users</string>
+      <string id="gpupdate_scripts_user_applier_help">This policy enables disables the scripting group policy execution engine for users.</string>
+
+      <string id="gpupdate_kde_applier">Setting up the KDE Plasma environment</string>
+      <string id="gpupdate_kde_applier_help">This policy enables/disables the KDE Plasma environment configuration group policy runner for desktops.</string>
+
+      <string id="gpupdate_kde_user_applier">Setting up the KDE Plasma environment for users</string>
+      <string id="gpupdate_kde_user_applier_help">This policy enables/disables the KDE Plasma environment configuration group policy execution module for users.</string>
+
+      <string id="gpupdate_yandex_browser_applier">Yandex Browser</string>
+      <string id="gpupdate_yandex_browser_applier_help">This policy enables group policy Yandex Browser applier feature.</string>
+
+      <string id="gpupdate_thunderbird_applier">Thunderbird Mail Client Configuration</string>
+      <string id="gpupdate_thunderbird_applier_help">This policy enables the Thunderbird Mail Client Group Policy mechanism</string>
+
+      <string id="gpupdate_envvars_applier">Configure environment variables</string>
+      <string id="gpupdate_envvars_applier_help">This policy enables the mechanism for applying environment variable settings</string>
+
+      <string id="gpupdate_envvars_applier_user">Configure environment variables for users</string>
+      <string id="gpupdate_envvars_applier_user_help">This policy enables the mechanism for applying environment variable settings for users</string>
+
+      <string id="gpupdate_plugins">Enabling GPUpdate plugins</string>
+      <string id="gpupdate_plugins_help">This policy allows you to enable the use of GPUpdate plugins for applying group policies.</string>
+
+      <string id="gpupdate_plugins_list">GPUpdate Plugins List</string>
+      <string id="gpupdate_plugins_list_help">This policy allows you to configure a list of allowed GPUpdate plugins for applying Group Policy to a machine.
+
+Enabled — the plugins specified in the list are used;
+
+Disabled/Not configured — all plugins located in the /usr/lib/gpupdate/plugins/ and /gpoa/frontend_plugins/ directories are used.
+
+Example: DMApplier
+
+Note: This setting is only used when the "Enabling GPUpdate plugins" policy is enabled.
+
+      </string>
+      <string id="gpupdate_plugins_list_user">GPUpdate Plugins List</string>
+      <string id="gpupdate_plugins_list_user_help">This policy allows you to configure a list of allowed GPUpdate plugins for applying Group Policy to a user.
+
+Enabled — the plugins specified in the list are used;
+
+Disabled/Not configured — all plugins located in the /usr/lib/gpupdate/plugins/ and /gpoa/frontend_plugins/ directories are used.
+
+Example: DMApplier
+
+Note: This setting is only used when the "Enabling GPUpdate plugins" policy is enabled.
+
+      </string>
+      <string id="gpupdate_allow_trust_user_policy">Allow user policies from trusted domains to be applied</string>
+      <string id="gpupdate_allow_trust_user_policy_help">This policy allows you to enable the application of user policies for accounts from trusted domains.
+
+If the policy is disabled or not configured, user policies for accounts from trusted domains will not be applied.
+
+      </string>
+      <string id="gpupdate_cifsacl_disable">Disable the cifsacl argument</string>
+      <string id="gpupdate_cifsacl_disable_help">The policy allows you to disable the cifsacl argument for autofs when mounting network drives via group policies.
+
+Disabled (default) - the cifsacl argument is used when mounting.
+
+Enabled - the cifsacl argument is disabled when mounting.
+
+      </string>
+      <string id="gpupdate_cifsacl_user_disable">Disable the cifsacl argument</string>
+      <string id="gpupdate_cifsacl_user_disable_help">The policy allows you to disable the cifsacl argument for autofs when mounting user network drives via group policies.
+
+      Disabled (default) - the cifsacl argument is used when mounting.
+
+      Enabled - the cifsacl argument is disabled when mounting.
+
+      </string>
+      <string id="gpupdate_shortcuts_merge">Use machine policy shortcuts for the user</string>
+      <string id="gpupdate_shortcuts_merge_help">Enabling this policy allows you to use machine policy shortcut settings for the user.
+
+Enabled - Shortcuts configured in the machine group policy are displayed to users.
+
+Disabled/Not configured - Shortcuts configured in the machine group policy will be added to the /etc/skel directory and will only be applied to new users when they are created.
+
+      </string>
+      <string id="gpupdate_drive_maps_home_user">Mapping user's network drives in the home directory</string>
+      <string id="gpupdate_drive_maps_home_user_help">Mapping user's network drives in the home directory
+
+Disabled (default) — symbolic links to user's network drives mount points will not be placed in the home directory.
+
+Enabled — symbolic links to user's network drives mount points will be displayed in the home directory:
+
+   /run/media/USERNAME/drives -> ~/net.drives — for user's network drives;
+
+   /run/media/USERNAME/.drives -> ~/.net.drives — for hidden user's network drives.
+
+Note: The name of the mount directory can be specified using the "Name of the user's network drive mount directory" policy.
+      </string>
+      <string id="gpupdate_drive_maps_home">Mapping machine's network drives in the home directory</string>
+      <string id="gpupdate_drive_maps_home_help">Mapping machine's network drives in the home directory
+
+Disabled (default) — symbolic links to machine's network drives mount points will not be placed in the home directory.
+
+Enabled — symbolic links to machine's network drives mount points will be displayed in the home directory:
+
+   /media/gpupdate/drives.system -> ~/net.drives.system — for system network drives;
+
+   /media/gpupdate/.drives.system -> ~/.net.drives.system — for hidden system network drives.
+
+Note: The name of the mount directory can be specified using the "Name of the machine's network drive mount directory" policy.
+      </string>
+      <string id="gpupdate_filescopy_applier">Configuring the File Copy Mechanism</string>
+      <string id="gpupdate_filescopy_applier_help">Configuring the File Copy Mechanism
+
+This policy allows you to configure the file copying mechanism. Files with certain suffixes (extensions) are granted the right to execute when copying along the specified paths.
+
+If the policy is enabled, you must specify a list of copy paths and a list of suffixes.
+
+When copying files with the specified suffixes along the assigned paths, the right to execute is added.
+
+If the policy is disabled or not configured, the copy mechanism works by default.
+
+Example: If the suffix ".py" is specified in the suffix list, and the path "/usr/bin" is specified in the path list, then files with the suffix ".py" will become executable when copied to the path "/usr/bin".
+      </string>
+
+      <string id="gpupdate_networkshares_applier">Сreating network directories</string>
+      <string id="gpupdate_networkshares_applier_help">The policy includes a mechanism for creating network directories
+
+      </string>
+      <string id="gpupdate_networkshares_applier_user">Сreating network directories for users</string>
+      <string id="gpupdate_networkshares_applier_user_help">The policy includes a mechanism for creating network directories for users
+
+      </string>
+      <string id="gpupdate_autofs_timer">Time until network directories are unmounted</string>
+      <string id="gpupdate_autofs_timer_help">The policy allows you to set the time (in seconds) before unmounting network directories mounted using group policies.
+
+      </string>
+      <string id="gpupdate_autofs_timer_user">Time until network directories are unmounted</string>
+      <string id="gpupdate_autofs_timer_user_help">The policy allows you to set the time (in seconds) before unmounting network directories mounted using group policies.
+
+      </string>
+      <string id="gpupdate_laps_applier">Configuring LAPS</string>
+      <string id="gpupdate_laps_applier_help">The policy enables a mechanism for managing local administrator passwords.
+
+      </string>
+      <string id="gpupdate_drive_maps_name">Name of the machine's network drive mount directory</string>
+      <string id="gpupdate_drive_maps_name_help">The policy allows you to specify the name of the symbolic link to the machine's network drive mount directory
+
+If the policy is disabled or not configured, the default symbolic link name is set as follows:
+
+/media/gpupdate/{drives.system} — for system network drives and /media/gpupdate/.{drives.system} — for hidden system network drives.
+
+When the "Display machine's network drives in the home directory" policy is enabled, the symbolic link name is set as follows:
+
+~/net.{drives.system} — for system network drives and ~/.net.{drives.system} — for hidden system network drives.
+
+Note: {drives.system} is the default value that points to the disk being connected, replace it with the actual name without curly braces.
+
+      </string>
+      <string id="gpupdate_drive_maps_name_user">Name of the user's network drive mount directory</string>
+      <string id="gpupdate_drive_maps_name_user_help">The policy allows you to specify the name of the symbolic link to the user's network drive mount directory
+
+If the policy is disabled or not configured, the default symbolic link name is set as follows:
+
+/run/media/USERNAME/{drives} — for user network drives and /run/media/USERNAME/.{drives} — for hidden user network drives.
+
+When the "Display user network drives in the home directory" policy is enabled, the symbolic link name is set as follows:
+
+~/net.{drives} — for user network drives and ~/.net.{drives} — for hidden user network drives.
+
+Note: {drives} is the value that by default points to the connected drive, replace it with the current name without curly braces.
+
+      </string>
+      <string id="gpupdate_drive_maps_home_disable_net">Network drive mount directory name prefix</string>
+      <string id="gpupdate_drive_maps_home_disable_net_help">This policy allows you to disable the "net." prefix in the names of symbolic links to network drive mount directories
+
+When the "Map machine network drives in the home directory" policy is enabled, the symbolic link name is set as follows:
+
+~/net.{drives.system} — for system network drives and ~/.net.{drives.system} — for hidden system network drives.
+
+When the "Map user network drives in the home directory" policy is enabled, the symbolic link name is set as follows:
+
+~/net.{drives} — for user network drives and ~/.net.{drives} — for hidden user network drives.
+
+If the policy is disabled or not configured, the names of symbolic links to mount directories begin with the prefix "net."
+
+The "net." prefix is ​​removed from the link names depending on the selected options.
+
+      </string>
+      <string id="UserPolicyMode">Configure user Group Policy loopback processing mode</string>
+      <string id="UserPolicyMode_Help">This policy setting directs the system to apply the set of Group Policy objects for the computer to any user who logs on to a computer affected by this setting.
+It is intended for special-use computers, such as those in public places, laboratories, and classrooms, where you must modify the user setting based on the computer that is being used.
+
+By default, the user's Group Policy Objects determine which user settings apply.
+If this setting is enabled, then, when a user logs on to this computer, the computer's Group Policy Objects determine which set of Group Policy Objects applies.
+
+If you enable this setting, you can select one of the following modes from the Mode box:
+
+"Replace" indicates that the user settings defined in the computer's Group Policy Objects replace the user settings normally applied to the user.
+
+"Merge" indicates that the user settings defined in the computer's Group Policy Objects and the user settings normally applied to the user are combined.
+If the settings conflict, the user settings in the computer's Group Policy Objects take precedence over the user's normal settings.
+
+If you disable this setting or do not configure it, the user's Group Policy Objects determines which user settings apply.
+      </string>
+
+      <string id="IniFilesAllowEmptySections">Interpretation of empty quotation marks in the name of an INI file section (section)</string>
+      <string id="IniFilesAllowEmptySections_help">This policy determines the interpretation of empty quotation marks in the name of a section (section) when processing INI files configured through the Group Policy Editor.
+
+If the policy is enabled, empty quotation marks (single or double) are not considered a section name and are interpreted as the absence of a section—the value is processed as a string outside the section.
+
+If the policy is disabled or not configured, empty quotation marks are interpreted as a section name.
+
+Note: Only a pair of quotation marks with no characters between them ('') is considered an empty value. If there is at least one character between the quotation marks (for example, a space: ' '), the value is interpreted as a section name.
+
+Note: Enabling this policy may cause INI file formats to deviate from the standard specification. This may cause incompatibility with applications that use the classic INI file handling rules and may result in unpredictable behavior.
+      </string>
+
+      <string id="IniFilesAllowUnquotedCommas">Handling comma-separated values ​​in INI files</string>
+      <string id="IniFilesAllowUnquotedCommas_help">This policy determines whether values ​​containing commas are required to be enclosed in quotation marks when processing INI files configured through the Group Policy Editor.
+
+If this policy is enabled, values ​​containing commas are written without quotation marks.
+
+If this policy is disabled or not configured, values ​​containing commas are automatically enclosed in quotation marks.
+
+Note: When this policy is enabled, the INI file format may not conform to the standard specification. This may lead to incompatibility with applications that use classic INI file processing rules and cause unpredictable behavior.
+
+      </string>
+
+      <string id="IniFilesAllowSpecialChars">Processing special characters in .ini file values</string>
+      <string id="IniFilesAllowSpecialChars_help">This policy determines whether special characters are allowed in .ini file values ​​without quotation marks when applying settings through the Group Policy Editor.
+
+If this policy is enabled, values ​​containing special characters can be written without quotation marks.
+
+If this policy is disabled or not configured, values ​​containing special characters are enclosed in quotation marks.
+
+The following special characters are supported:
+
+! @ $ % ^ &amp; * ( ) _ + { } " : ? &lt; &gt; № : * , / -
+
+The characters "#" and ";" are not supported because they are used to denote comments in INI files.
+
+Note: When this policy is enabled, the INI file format may not comply with the standard specification. This may lead to incompatibility with applications that use the classic INI file processing rules and cause unpredictable behavior.
+
+      </string>
+      <string id="SecurePermissionsDisabled">Disable enforcement of secure permissions and ownership for files</string>
+      <string id="SecurePermissionsDisabled_help">This policy allows you to disable enforcement of secure permissions (chmod) and ownership (chown) for files deployed through Group Policy.
+
+Disabled — When copying files through the Group Policy Editor, strict permissions and ownership are automatically assigned according to the built-in list of sensitive paths.
+
+Enabled — Secure permissions and ownership are not assigned; files are assigned standard permissions (0o644/0o755) and the default owner.
+
+List of restrictions when this policy is enabled:
+
+For system paths, the owner is root:root (or a specialized group, such as ssl-cert for /etc/ssl/private, ldap for /etc/openldap/slapd.conf), with permissions of 0o440–0o710 depending on the path. For user paths (~/.ssh/id_rsa, ~/.pgpass, etc.), the owner is set to username:primary_group, with permissions of 0o400–0o600.
+
+The full list includes: SSH keys, TLS/SSL certificates, sudoers configurations, crontab, Kerberos, Samba, Kubernetes, VPN, cloud credentials, etc.
+
+      </string>
+
+      <string id="UserPolicyMode_Merge">Merge</string>
+      <string id="UserPolicyMode_Replace">Replace</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="GpupdateFilescopyApplier">
+        <listBox refId="MarkerUsagePathList">List of copy paths:</listBox>
+        <listBox refId="ExtensionMarkerList">List of file suffixes:</listBox>
+      </presentation>
+      <presentation id="UserPolicyMode">
+        <dropdownList refId="UserPolicyMode-setter" noSort="true" defaultItem="1">Mode:</dropdownList>
+      </presentation>
+      <presentation id="GpupdateAutofsTimer-pr">
+        <decimalTextBox refId="AutofsTimer_setter" defaultValue="120">Time until network directories are unmounted:</decimalTextBox>
+      </presentation>
+      <presentation id="GPUpdateDriveMapsName">
+       <textBox refId="DriveMapsName-setter">
+         <label>Network drive mount directory name:</label>
+       </textBox>
+      </presentation>
+      <presentation id="GPUpdateDriveMapsDisableNet-pr">
+        <checkBox refId="DriveMapsHomeDisableNet-setter">Remove "net." prefix from directory link names for machine network drives</checkBox>
+        <checkBox refId="DriveMapsHomeDisableNetUser-setter">Remove "net." prefix from directory link names for user network drives</checkBox>
+      </presentation>
+      <presentation id="PluginsList-pr">
+        <listBox refId="PluginsListSetter">Plugins list:</listBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

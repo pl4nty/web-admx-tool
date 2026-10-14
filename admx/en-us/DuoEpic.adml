@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions"
+                           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <displayName>Unused</displayName>
+  <description>Unused</description>
+  <resources>
+    <stringTable>
+      <!-- Category descriptions -->
+      <string id="CategoryDuo_Display">Duo Authentication for Epic</string>
+      <string id="CategoryDuo_Explain">Duo Authentication for Epic integration policy settings</string>
+      <string id="CategoryBasic_Display">Duo Service Settings</string>
+      <string id="CategoryBasic_Explain">Duo cloud service settings</string>	  
+      <string id="CategoryClient_Display">Client Settings</string>
+      <string id="CategoryClient_Explain">Epic authentication device behavior settings</string>
+
+      <!-- Service -->
+      <string id="ApiHostname_Display">Duo Service: Duo API Hostname</string>
+	  <string id="ApiHostname_Explain">The DNS name of the Duo API host as shown on the integration's properties page in the Duo Admin Panel.
+
+Required.</string>
+      <string id="IntegrationId_Display">Duo Service: Duo Integration Key</string>
+      <string id="IntegrationId_Explain">The Duo integration key (ikey) as shown on the integration's properties page in the Duo Admin Panel.
+
+Required.</string>
+      <string id="IntegrationSecret_Display">Duo Service: Duo Secret Key</string>
+      <string id="IntegrationSecret_Explain">The Duo secret key (skey) as shown on the integration's properties page in the Duo Admin Panel.
+
+Required.</string>
+      <string id="GuiProtocolSsl3_Display">Duo Service: Use SSL v3</string>
+      <string id="GuiProtocolSsl3_Explain">Enables use of SSL v3 to communicate with the Duo service. Duo Authentication for Epic will use the highest enabled protocol it can negotiate with the service.
+
+Default: Enabled.</string>
+      <string id="GuiProtocolTls10_Display">Duo Service: Use TLS 1.0</string>
+      <string id="GuiProtocolTls10_Explain">Enables use of TLS v1.0 to communicate with the Duo service. Duo Authentication for Epic will use the highest enabled protocol it can negotiate with the service.
+
+Default: Enabled.</string>
+      <string id="GuiProtocolTls11_Display">Duo Service: Use TLS 1.1</string>
+      <string id="GuiProtocolTls11_Explain">Enables use of TLS v1.1 to communicate with the Duo service. Duo Authentication for Epic will use the highest enabled protocol it can negotiate with the service.
+
+Default: Enabled.</string>
+      <string id="GuiProtocolTls12_Display">Duo Service: Use TLS 1.2</string>
+      <string id="GuiProtocolTls12_Explain">Enables use of TLS v1.2 to communicate with the Duo service. Duo Authentication for Epic will use the highest enabled protocol it can negotiate with the service.
+
+Default: Enabled.</string>
+      <string id="TimeoutTotalOperation_Display">Duo Service: Total Operation Timeout</string>
+      <string id="TimeoutTotalOperation_Explain">Timeout for total Duo authentication request processing, including DNS resolution, in milliseconds.
+
+Default: 60000.</string>
+      <string id="TimeoutGetCapabilities_Display">Duo Service: Preauth Timeout</string>
+      <string id="TimeoutGetCapabilities_Explain">Timeout for the first endpoint accessed for authentication. This includes DNS resolution and server response, in milliseconds. On failure, this call is retried once.
+
+Default: 5000.</string>
+      <string id="RetriesGetCapabilities_Display">Duo Service: Preauth Retries</string>
+      <string id="RetriesGetCapabilities_Explain">The number of times to retry the first call to the Duo authentication service on failure.
+
+Default: 1.</string>
+      <string id="RetriesGeneral_Display">Duo Service: General Retries</string>
+      <string id="RetriesGeneral_Explain">The default number of times to retry a failed call to the Duo authentication service.
+
+Default: 2.</string>
+      <string id="HttpProxyHost_Display">Duo Service: HTTP Proxy Hostname</string>
+      <string id="HttpProxyHost_Explain">If specified, all Duo web requests are sent via this HTTP proxy.  This does not affect web browsing or any other application.
+
+Default: Disabled.</string>
+
+      <string id="HttpProxyPort_Display">Duo Service: HTTP Proxy Port</string>
+      <string id="HttpProxyPort_Explain">If HTTP Proxy Hostname is specified, the port used to connect to the HTTP proxy.
+
+Default: 80.</string>
+
+      <!-- Client -->
+      <string id="GuiCustomHelpUrl_Display">Client: Need Help URL</string>
+      <string id="GuiCustomHelpUrl_Explain">Redirect users to a custom help URL when the upper-right "Need Help?" button is clicked instead of the Duo User Guide at http://guide.duosecurity.com.
+
+Default: Disabled.</string>
+      <string id="GuiCustomHelpTooltip_Display">Client: Need Help Tooltip</string>
+      <string id="GuiCustomHelpTooltip_Explain">Displays custom tooltip text when the mouse hovers over the "Need Help" button.
+
+Default: "Guide to Two-Factor Authentication".</string>
+      <string id="GuiErrorPostfix_Display">Client: Error Postfix Text</string>
+      <string id="GuiErrorPostfix_Explain">A text string that is appended to any client error messages, such as "Please contact the help desk."
+
+Default: None.</string>
+      <string id="GuiPermitOnlyDuoBypass_Display">Client: Permit Only Duo Bypass Passcodes</string>
+      <string id="GuiPermitOnlyDuoBypass_Explain">If enabled, the client only accepts Duo Bypass codes for the Passcode authentication method. Prevents use of passcodes generated by the Duo Mobile app, hardware tokens, or received via SMS, even when those authentication methods are enabled in the Duo Admin Panel.
+
+Default: Disabled.</string>
+      <string id="GuiErrorOnDisabledMobileOtp_Display">Client: Refuse Mobile OTP Codes If Disabled</string>
+      <string id="GuiErrorOnDisabledMobileOtp_Explain">If enabled, if a user attempts to use a Duo Mobile OTP code but has no devices that support it, then the client will report an error and not attempt authentication with the service.  If disabled, the client will attempt to authenticate with the code, and then display an "Incorrect Passcode" error in the status bar.
+
+Default: Enabled.</string>
+
+      <string id="GuiShowNeedHelp_Display">Client: Show the "Need Help?" Button</string>
+      <string id="GuiShowNeedHelp_Explain">Enable to show the "Need Help?" button in the Duo authentication prompt window; disable to hide the button.
+
+Default: Enabled.</string>
+      <string id="GuiDisplayTranslatedError_Display">Client: Display Authentication Errors</string>
+      <string id="GuiDisplayTranslatedError_Explain">Display any errors communicating with the Duo service to perform authentication, such as invalid service settings, DNS resolution failure, timeouts, or invalid responses.  Disable this setting to suppress display of authentication errors.
+
+Default: Enabled.</string>
+      <string id="GuiDisplayUntranslatedError_Display">Client: Display Other Errors</string>
+      <string id="GuiDisplayUntranslatedError_Explain">Display any unexpected internal processing errors not involving authentication processing, such as requesting SMS passcodes or displaying the GUI.  Disable this setting to suppress display of these errors.
+
+Default: Enabled.</string>
+      <string id="GuiAutoPush_Display">Client: Enable Auto Push</string>
+      <string id="GuiAutoPush_Explain">When enabled, Duo Authentication for Epic sends a Duo authentication request to the user's primary device as soon as the window is displayed instead of waiting for the user to click Login. The user must have at least one push-capable device for AutoPush to work.
+
+Default: Disabled.</string>
+      <string id="GuiTopmost_Display">Client: Duo Window on Top</string>
+      <string id="GuiTopmost_Explain">Force the Duo Window to display on top of any other window.  Enable this setting only if the Duo login window is not visible when two-factor authentication is performed.
+
+Default: Disabled.</string>
+      <string id="EpicEnableDebugLogging_Display">Client: Enable Debug Logging</string>
+      <string id="EpicEnableDebugLogging_Explain">Enables diagnostic logging, describing all interaction with the Duo cloud service and Epic.  The file is named &quot;DuoEpic.log&quot; and is saved to the current user's %TEMP% directory (e.g., C:\Users\DuoUser\AppData\Local\Temp).  There is no support for rollover or size capping.  No sensitive data is written to the log.
+
+Default: Disabled.</string>
+      <string id="EpicUsernameSource_Display">Client: Duo Username Source</string>
+      <string id="EpicUsernameSource_Explain">Epic sends several usernames to the authentication devices.  This setting determines which is used to login to Duo.
+
+Default: Epic application.</string>
+      <string id="EpicUsernameSource_Epic">Epic application</string>
+      <string id="EpicUsernameSource_Windows">Windows username</string>      
+    </stringTable>
+
+    <presentationTable>
+      <presentation id="ApiHostname" >
+        <textBox refId="ApiHostname_TextBox">
+          <label>Enter the Duo API Hostname:</label>
+        </textBox>
+      </presentation>
+      <presentation id="IntegrationId" >
+        <textBox refId="IntegrationId_TextBox">
+          <label>Enter the integration key:</label>
+        </textBox>
+      </presentation>
+      <presentation id="IntegrationSecret" >
+        <textBox refId="IntegrationSecret_TextBox">
+          <label>Enter the secret key:</label>
+        </textBox>
+      </presentation>
+      <presentation id="TimeoutTotalOperation" >
+        <decimalTextBox refId="TimeoutTotalOperation_DecTextBox" defaultValue="60000">Enter the total operation timeout (in milliseconds):</decimalTextBox>
+      </presentation>
+      <presentation id="TimeoutGetCapabilities" >
+        <decimalTextBox refId="TimeoutGetCapabilities_DecTextBox" defaultValue="5000">Enter the preauth timeout (in milliseconds):</decimalTextBox>
+      </presentation>
+      <presentation id="RetriesGetCapabilities" >
+        <decimalTextBox refId="RetriesGetCapabilities_DecTextBox" defaultValue="1">Enter the number of times to retry the first Duo authentication call if it fails:</decimalTextBox>
+      </presentation>
+      <presentation id="RetriesGeneral" >
+        <decimalTextBox refId="RetriesGeneral_DecTextBox" defaultValue="1">Enter the default number of times to retry a failed Duo authentication call:</decimalTextBox>
+      </presentation>
+      <presentation id="HttpProxyHost" >
+        <textBox refId="HttpProxyHost_TextBox">
+          <label>Enter the HTTP proxy hostname:</label>
+        </textBox>
+      </presentation>
+      <presentation id="HttpProxyPort" >
+        <decimalTextBox refId="HttpProxyPort_DecTextBox" defaultValue="80">Enter the port number to use for the HTTP proxy:</decimalTextBox>
+      </presentation>
+      
+
+      <presentation id="GuiCustomHelpUrl" >
+        <textBox refId="GuiCustomHelpUrl_TextBox">
+          <label>Specify a custom help URL:</label>
+        </textBox>
+      </presentation>
+      <presentation id="GuiCustomHelpTooltip" >
+        <textBox refId="GuiCustomHelpTooltip_TextBox">
+          <label>Specify custom tooltip text:</label>
+        </textBox>
+      </presentation>
+      <presentation id="GuiErrorPostfix" >
+        <textBox refId="GuiErrorPostfix_TextBox">
+          <label>Specify the postfix message text:</label>
+        </textBox>
+      </presentation>
+	  
+      <presentation id="EpicUsernameSource">
+        <dropdownList refId="EpicUsernameSource_Enum" noSort="true" defaultItem="0">Use this Epic-supplied username for Duo login:</dropdownList>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

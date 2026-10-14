@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+	
+	<policyNamespaces>
+		<target prefix="SpecopsClient" namespace="Specopssoft.Authentication.NonAdClientSettings" />
+		<using prefix="windows" namespace="Microsoft.Policies.Windows" />
+	</policyNamespaces>
+
+	<resources minRequiredRevision="1.0" />
+
+	<categories>
+		
+		<category name="SpecopsClient" displayName="$(string.SpecopsClient)" />
+
+		<category name="GeneralSettings" displayName="$(string.GeneralSettings)">
+			<parentCategory ref="SpecopsClient" />
+		</category>
+
+		<category name="ServiceUrlSettings" displayName="$(string.ServiceUrlSettings)">
+			<parentCategory ref="SpecopsClient" />
+		</category>
+
+	</categories>
+
+
+	<policies>
+
+	<policy name="CreateStartMenuShortcutChange" class="Machine"
+				displayName="$(string.CreateStartMenuShortcutChange)"
+				explainText="$(string.CreateStartMenuShortcutChangeExplain)"
+				presentation="$(presentation.CreateStartMenuShortcutChangePresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings"
+				valueName="CreateStartMenuShortcutChange">
+			<parentCategory ref="GeneralSettings" />
+			<supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="CreateStartMenuShortcutEnroll" class="Machine"
+				displayName="$(string.CreateStartMenuShortcutEnroll)"
+				explainText="$(string.CreateStartMenuShortcutEnrollExplain)"
+				presentation="$(presentation.CreateStartMenuShortcutEnrollPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings"
+				valueName="CreateStartMenuShortcutEnroll">
+			<parentCategory ref="GeneralSettings" />
+			<supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="CreateStartMenuShortcutReset" class="Machine"
+				displayName="$(string.CreateStartMenuShortcutReset)"
+				explainText="$(string.CreateStartMenuShortcutResetExplain)"
+				presentation="$(presentation.CreateStartMenuShortcutResetPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings"
+				valueName="CreateStartMenuShortcutReset">
+			<parentCategory ref="GeneralSettings" />
+			<supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="AllowShortcutsWithoutOnpremDomain" class="Machine"
+				displayName="$(string.AllowShortcutsWithoutOnpremDomainDisplay)"
+				explainText="$(string.AllowShortcutsWithoutOnpremDomainExplain)"
+				presentation="$(presentation.PresentationAllowShortcutsWithoutOnpremDomain)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings"
+				valueName="AllowShortcutsWithoutOnpremDomain">
+			<parentCategory ref="GeneralSettings" />
+			<supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="ServiceUrlEnroll" class="Machine"
+				displayName="$(string.ServiceUrlEnrollDisplay)"
+				explainText="$(string.ServiceUrlEnrollExplain)"
+				presentation="$(presentation.PresentationServiceUrlEnroll)"
+				key="Software\Policies\Specopssoft\uReset\Client\Urls">
+			<parentCategory ref="ServiceUrlSettings" />
+			<supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+			<elements>
+				<text id="TextServiceUrlEnroll" valueName="Enroll" />
+			</elements>
+		</policy>
+
+		<policy name="ServiceUrlReset" class="Machine"
+				displayName="$(string.ServiceUrlResetDisplay)"
+				explainText="$(string.ServiceUrlResetExplain)"
+				presentation="$(presentation.PresentationServiceUrlReset)"
+				key="Software\Policies\Specopssoft\uReset\Client\Urls">
+			<parentCategory ref="ServiceUrlSettings" />
+			<supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+			<elements>
+				<text id="TextServiceUrlReset" valueName="Reset" />
+			</elements>
+		</policy>
+
+		<policy name="ServiceUrlChange" class="Machine"
+				displayName="$(string.ServiceUrlChangeDisplay)"
+				explainText="$(string.ServiceUrlChangeExplain)"
+				presentation="$(presentation.PresentationServiceUrlChange)"
+				key="Software\Policies\Specopssoft\uReset\Client\Urls">
+			<parentCategory ref="ServiceUrlSettings" />
+			<supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+			<elements>
+				<text id="TextServiceUrlChange" valueName="Change" />
+			</elements>
+		</policy>
+
+		<policy name="EnablePasswordResetLinkOnLogonScreen" class="Machine"
+				displayName="$(string.EnablePasswordResetLinkOnLogonScreen)"
+				explainText="$(string.EnablePasswordResetLinkOnLogonScreenExplain)"
+				presentation="$(presentation.EnablePasswordResetLinkOnLogonScreen)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings"
+				valueName="EnablePasswordResetLink">
+			<parentCategory ref="GeneralSettings" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		
+		<policy name="CreateStartMenuShortcuts" class="Machine"
+				displayName="$(string.CreateStartMenuShortcuts)"
+				explainText="$(string.CreateStartMenuShortcutsExplain)"
+				presentation="$(presentation.CreateStartMenuShortcutsPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings"
+				valueName="CreateStartMenuShortcuts">
+			<parentCategory ref="GeneralSettings" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		
+	</policies>
+</policyDefinitions>
