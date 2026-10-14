@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--Check by CyberDrain knepjpocdagponkonnbggpcnhnaikajg version: 1.2.0 generator: 56a62b2611f6-->
+  <displayName>Check by CyberDrain</displayName>
+  <description>Policies for the Check by CyberDrain browser extension, generated from its managed storage schema</description>
+  <resources>
+    <stringTable>
+      <string id="extension_showNotifications">Show Notifications</string>
+      <string id="extension_showNotifications_Explain">Display security notifications and warnings
+
+Default: true</string>
+      <string id="extension_enableValidPageBadge">Show Valid Page Badge</string>
+      <string id="extension_enableValidPageBadge_Explain">Display validation badge on legitimate Microsoft login pages
+
+Default: true</string>
+      <string id="extension_validPageBadgeTimeout">Valid Page Badge Timeout (seconds)</string>
+      <string id="extension_validPageBadgeTimeout_Explain">Auto-dismiss timeout for the valid page badge in seconds. Set to 0 for no timeout (badge stays visible until manually dismissed).
+
+Default: 5</string>
+      <string id="extension_enablePageBlocking">Page Blocking Enabled</string>
+      <string id="extension_enablePageBlocking_Explain">Enable blocking of malicious pages
+
+Default: true</string>
+      <string id="extension_enableCippReporting">CIPP Reporting Enabled</string>
+      <string id="extension_enableCippReporting_Explain">Enable reporting to CIPP server
+
+Default: false</string>
+      <string id="extension_cippServerUrl">CIPP Server URL</string>
+      <string id="extension_cippServerUrl_Explain">Base URL for CIPP reporting server
+
+Default: &quot;&quot;</string>
+      <string id="extension_cippTenantId">CIPP Tenant ID/Domain</string>
+      <string id="extension_cippTenantId_Explain">Tenant identifier to include with CIPP alerts for multi-tenant environments
+
+Default: &quot;&quot;</string>
+      <string id="extension_customRulesUrl">Custom Rules URL</string>
+      <string id="extension_customRulesUrl_Explain">URL to fetch custom detection rules from
+
+Default: &quot;&quot;</string>
+      <string id="extension_updateInterval">Update Interval (hours)</string>
+      <string id="extension_updateInterval_Explain">How often to update detection rules in hours
+
+Default: 24</string>
+      <string id="extension_urlAllowlist">URL Allowlist (URLs with wildcards or Regex)</string>
+      <string id="extension_urlAllowlist_Explain">Array of URL patterns or regex patterns to allowlist URLs from detection. Supports simple URLs with * wildcards (e.g., https://google.com/*) or advanced regex patterns.</string>
+      <string id="extension_enableDebugLogging">Debug Logging Enabled</string>
+      <string id="extension_enableDebugLogging_Explain">Enable debug logging for troubleshooting
+
+Default: false</string>
+      <string id="extension_genericWebhook_enabled">Enabled</string>
+      <string id="extension_genericWebhook_enabled_Explain">Enable generic webhook
+
+Default: false</string>
+      <string id="extension_genericWebhook_url">Webhook URL</string>
+      <string id="extension_genericWebhook_url_Explain">The URL to send webhook payloads to
+
+Default: &quot;&quot;</string>
+      <string id="extension_genericWebhook_events">Event Types</string>
+      <string id="extension_genericWebhook_events_Explain">Array of event types to send to this webhook</string>
+      <string id="extension_customBranding_companyName">Company Name</string>
+      <string id="extension_customBranding_companyName_Explain">Company name to display in the extension
+
+Default: &quot;&quot;</string>
+      <string id="extension_customBranding_productName">Product Name</string>
+      <string id="extension_customBranding_productName_Explain">Custom name for the extension
+
+Default: &quot;&quot;</string>
+      <string id="extension_customBranding_supportEmail">Support Email</string>
+      <string id="extension_customBranding_supportEmail_Explain">Email address for user support
+
+Default: &quot;&quot;</string>
+      <string id="extension_customBranding_supportUrl">Support URL</string>
+      <string id="extension_customBranding_supportUrl_Explain">URL opened by the popup Support link
+
+Default: &quot;&quot;</string>
+      <string id="extension_customBranding_privacyPolicyUrl">Privacy URL</string>
+      <string id="extension_customBranding_privacyPolicyUrl_Explain">URL opened by the popup Privacy link
+
+Default: &quot;&quot;</string>
+      <string id="extension_customBranding_aboutUrl">About URL</string>
+      <string id="extension_customBranding_aboutUrl_Explain">URL opened by the popup About link
+
+Default: &quot;&quot;</string>
+      <string id="extension_customBranding_primaryColor">Primary Color</string>
+      <string id="extension_customBranding_primaryColor_Explain">Primary theme color (hex code)
+
+Default: &quot;#F77F00&quot;</string>
+      <string id="extension_customBranding_logoUrl">Logo URL</string>
+      <string id="extension_customBranding_logoUrl_Explain">URL to company logo
+
+Default: &quot;&quot;</string>
+      <string id="extension_domainSquatting_enabled">Enabled</string>
+      <string id="extension_domainSquatting_enabled_Explain">Enable or disable domain squatting detection
+
+Default: true</string>
+      <string id="extension_domainSquatting_deviationThreshold">Deviation Threshold</string>
+      <string id="extension_domainSquatting_deviationThreshold_Explain">Maximum number of character differences (Levenshtein distance) to trigger detection. Lower values are stricter.
+
+Default: 2</string>
+      <string id="extension_domainSquatting_algorithms_levenshtein">Levenshtein Distance</string>
+      <string id="extension_domainSquatting_algorithms_levenshtein_Explain">Detect domains with small character differences
+
+Default: true</string>
+      <string id="extension_domainSquatting_algorithms_homoglyph">Homoglyph Detection</string>
+      <string id="extension_domainSquatting_algorithms_homoglyph_Explain">Detect confusable characters (e.g., 'a' vs 'а')
+
+Default: true</string>
+      <string id="extension_domainSquatting_algorithms_typosquat">Typosquatting Detection</string>
+      <string id="extension_domainSquatting_algorithms_typosquat_Explain">Detect common typing mistakes and character swaps
+
+Default: true</string>
+      <string id="extension_domainSquatting_algorithms_combosquat">Combosquatting Detection</string>
+      <string id="extension_domainSquatting_algorithms_combosquat_Explain">Detect domains with added prefixes/suffixes
+
+Default: true</string>
+      <string id="extension_domainSquatting_protectedDomains">Additional Protected Domains</string>
+      <string id="extension_domainSquatting_protectedDomains_Explain">OPTIONAL: Additional domains to protect beyond those automatically extracted from the URL allowlist. Normally you should just add domains to the URL allowlist instead.</string>
+      <string id="extension_domainSquatting_Action">Action</string>
+      <string id="extension_domainSquatting_Action_Explain">Action to take when domain squatting is detected
+
+Allowed values: &quot;block&quot;, &quot;warn&quot;, &quot;log&quot;
+
+Default: &quot;block&quot;</string>
+      <string id="extension_domainSquatting_Action_Item0">block</string>
+      <string id="extension_domainSquatting_Action_Item1">warn</string>
+      <string id="extension_domainSquatting_Action_Item2">log</string>
+      <string id="extension_domainSquatting_logDetections">Log Detections</string>
+      <string id="extension_domainSquatting_logDetections_Explain">Log all domain squatting detections to activity log
+
+Default: true</string>
+      <string id="SUPPORTED_EXTENSION">Check by CyberDrain browser extension</string>
+      <string id="extension">Check by CyberDrain</string>
+      <string id="extension_genericWebhook">Generic Webhook</string>
+      <string id="extension_customBranding">Custom Branding</string>
+      <string id="extension_domainSquatting">Domain Squatting Detection</string>
+      <string id="extension_domainSquatting_algorithms">Detection Algorithms</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="extension_validPageBadgeTimeout">
+        <decimalTextBox refId="extension_validPageBadgeTimeout_Part">Valid Page Badge Timeout (seconds)</decimalTextBox>
+      </presentation>
+      <presentation id="extension_cippServerUrl">
+        <textBox refId="extension_cippServerUrl_Part">
+          <label>CIPP Server URL</label>
+        </textBox>
+      </presentation>
+      <presentation id="extension_cippTenantId">
+        <textBox refId="extension_cippTenantId_Part">
+          <label>CIPP Tenant ID/Domain</label>
+        </textBox>
+      </presentation>
+      <presentation id="extension_customRulesUrl">
+        <textBox refId="extension_customRulesUrl_Part">
+          <label>Custom Rules URL</label>
+        </textBox>
+      </presentation>
+      <presentation id="extension_updateInterval">
+        <decimalTextBox refId="extension_updateInterval_Part">Update Interval (hours)</decimalTextBox>
+      </presentation>
+      <presentation id="extension_urlAllowlist">
+        <listBox refId="extension_urlAllowlist_Part">URL Allowlist (URLs with wildcards or Regex)</listBox>
+      </presentation>
+      <presentation id="extension_genericWebhook_url">
+        <textBox refId="extension_genericWebhook_url_Part">
+          <label>Webhook URL</label>
+        </textBox>
+      </presentation>
+      <presentation id="extension_genericWebhook_events">
+        <listBox refId="extension_genericWebhook_events_Part">Event Types</listBox>
+      </presentation>
+      <presentation id="extension_customBranding_companyName">
+        <textBox refId="extension_customBranding_companyName_Part">
+          <label>Company Name</label>
+        </textBox>
+      </presentation>
+      <presentation id="extension_customBranding_productName">
+        <textBox refId="extension_customBranding_productName_Part">
+          <label>Product Name</label>
+        </textBox>
+      </presentation>
+      <presentation id="extension_customBranding_supportEmail">
+        <textBox refId="extension_customBranding_supportEmail_Part">
+          <label>Support Email</label>
+        </textBox>
+      </presentation>
+      <presentation id="extension_customBranding_supportUrl">
+        <textBox refId="extension_customBranding_supportUrl_Part">
+          <label>Support URL</label>
+        </textBox>
+      </presentation>
+      <presentation id="extension_customBranding_privacyPolicyUrl">
+        <textBox refId="extension_customBranding_privacyPolicyUrl_Part">
+          <label>Privacy URL</label>
+        </textBox>
+      </presentation>
+      <presentation id="extension_customBranding_aboutUrl">
+        <textBox refId="extension_customBranding_aboutUrl_Part">
+          <label>About URL</label>
+        </textBox>
+      </presentation>
+      <presentation id="extension_customBranding_primaryColor">
+        <textBox refId="extension_customBranding_primaryColor_Part">
+          <label>Primary Color</label>
+        </textBox>
+      </presentation>
+      <presentation id="extension_customBranding_logoUrl">
+        <textBox refId="extension_customBranding_logoUrl_Part">
+          <label>Logo URL</label>
+        </textBox>
+      </presentation>
+      <presentation id="extension_domainSquatting_deviationThreshold">
+        <decimalTextBox refId="extension_domainSquatting_deviationThreshold_Part">Deviation Threshold</decimalTextBox>
+      </presentation>
+      <presentation id="extension_domainSquatting_protectedDomains">
+        <listBox refId="extension_domainSquatting_protectedDomains_Part">Additional Protected Domains</listBox>
+      </presentation>
+      <presentation id="extension_domainSquatting_Action">
+        <dropdownList refId="extension_domainSquatting_Action_Part">Action</dropdownList>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

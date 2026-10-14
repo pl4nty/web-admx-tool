@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--KeePassXC-Browser pdffhmdngciaglkoonimfcmckehcpafo version: 1.10.4.1 generator: de9fe7996ff7-->
+  <policyNamespaces>
+    <target namespace="BrowserExtension.pdffhmdngciaglkoonimfcmckehcpafo" prefix="ext_pdffhmdngciaglkoonimfcmckehcpafo"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
+    <category name="extension_settings" displayName="$(string.extension_settings)">
+      <parentCategory ref="extension"/>
+    </category>
+  </categories>
+  <policies>
+    <policy name="extension_settings_afterFillSorting" class="Both" displayName="$(string.extension_settings_afterFillSorting)" presentation="$(presentation.extension_settings_afterFillSorting)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_settings_afterFillSorting_Part" valueName="afterFillSorting" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_afterFillSortingTotp" class="Both" displayName="$(string.extension_settings_afterFillSortingTotp)" presentation="$(presentation.extension_settings_afterFillSortingTotp)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_settings_afterFillSortingTotp_Part" valueName="afterFillSortingTotp" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_autoCompleteUsernames" class="Both" displayName="$(string.extension_settings_autoCompleteUsernames)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="autoCompleteUsernames">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_autoFillAndSend" class="Both" displayName="$(string.extension_settings_autoFillAndSend)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="autoFillAndSend">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_autoFillSingleEntry" class="Both" displayName="$(string.extension_settings_autoFillSingleEntry)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="autoFillSingleEntry">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_autoFillRelevantCredential" class="Both" displayName="$(string.extension_settings_autoFillRelevantCredential)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="autoFillRelevantCredential">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_autoFillSingleTotp" class="Both" displayName="$(string.extension_settings_autoFillSingleTotp)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="autoFillSingleTotp">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_autoRetrieveCredentials" class="Both" displayName="$(string.extension_settings_autoRetrieveCredentials)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="autoRetrieveCredentials">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_autoSubmit" class="Both" displayName="$(string.extension_settings_autoSubmit)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="autoSubmit">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_bannerPosition" class="Both" displayName="$(string.extension_settings_bannerPosition)" presentation="$(presentation.extension_settings_bannerPosition)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_settings_bannerPosition_Part" valueName="bannerPosition" minValue="0" maxValue="2147483647"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_checkUpdateKeePassXC" class="Both" displayName="$(string.extension_settings_checkUpdateKeePassXC)" presentation="$(presentation.extension_settings_checkUpdateKeePassXC)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_settings_checkUpdateKeePassXC_Part" valueName="checkUpdateKeePassXC" minValue="0" maxValue="2147483647"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_clearCredentialsTimeout" class="Both" displayName="$(string.extension_settings_clearCredentialsTimeout)" presentation="$(presentation.extension_settings_clearCredentialsTimeout)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_settings_clearCredentialsTimeout_Part" valueName="clearCredentialsTimeout" minValue="0" maxValue="2147483647"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_colorTheme" class="Both" displayName="$(string.extension_settings_colorTheme)" presentation="$(presentation.extension_settings_colorTheme)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_settings_colorTheme_Part" valueName="colorTheme" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_connectionMethod" class="Both" displayName="$(string.extension_settings_connectionMethod)" presentation="$(presentation.extension_settings_connectionMethod)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_settings_connectionMethod_Part" valueName="connectionMethod" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_credentialSorting" class="Both" displayName="$(string.extension_settings_credentialSorting)" presentation="$(presentation.extension_settings_credentialSorting)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_settings_credentialSorting_Part" valueName="credentialSorting" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_debugLogging" class="Both" displayName="$(string.extension_settings_debugLogging)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="debugLogging">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_defaultGroup" class="Both" displayName="$(string.extension_settings_defaultGroup)" presentation="$(presentation.extension_settings_defaultGroup)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_settings_defaultGroup_Part" valueName="defaultGroup" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_defaultPasskeyGroup" class="Both" displayName="$(string.extension_settings_defaultPasskeyGroup)" presentation="$(presentation.extension_settings_defaultPasskeyGroup)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_settings_defaultPasskeyGroup_Part" valueName="defaultPasskeyGroup" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_defaultGroupAlwaysAsk" class="Both" displayName="$(string.extension_settings_defaultGroupAlwaysAsk)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="defaultGroupAlwaysAsk">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_defined_custom_fields" class="Both" displayName="$(string.extension_settings_defined_custom_fields)" presentation="$(presentation.extension_settings_defined_custom_fields)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_settings_defined_custom_fields_Part" valueName="defined-custom-fields" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_downloadFaviconAfterSave" class="Both" displayName="$(string.extension_settings_downloadFaviconAfterSave)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="downloadFaviconAfterSave">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_passkeys" class="Both" displayName="$(string.extension_settings_passkeys)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="passkeys">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_passkeysFallback" class="Both" displayName="$(string.extension_settings_passkeysFallback)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="passkeysFallback">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_redirectAllowance" class="Both" displayName="$(string.extension_settings_redirectAllowance)" presentation="$(presentation.extension_settings_redirectAllowance)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_settings_redirectAllowance_Part" valueName="redirectAllowance" minValue="0" maxValue="2147483647"/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_saveDomainOnly" class="Both" displayName="$(string.extension_settings_saveDomainOnly)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="saveDomainOnly">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_showGettingStartedGuideAlert" class="Both" displayName="$(string.extension_settings_showGettingStartedGuideAlert)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="showGettingStartedGuideAlert">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_showGroupNameInAutocomplete" class="Both" displayName="$(string.extension_settings_showGroupNameInAutocomplete)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="showGroupNameInAutocomplete">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_showLoginFormIcon" class="Both" displayName="$(string.extension_settings_showLoginFormIcon)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="showLoginFormIcon">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_showLoginNotifications" class="Both" displayName="$(string.extension_settings_showLoginNotifications)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="showLoginNotifications">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_showNotifications" class="Both" displayName="$(string.extension_settings_showNotifications)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="showNotifications">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_showOTPIcon" class="Both" displayName="$(string.extension_settings_showOTPIcon)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="showOTPIcon">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_showTroubleshootingGuideAlert" class="Both" displayName="$(string.extension_settings_showTroubleshootingGuideAlert)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="showTroubleshootingGuideAlert">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_sitePreferences" class="Both" displayName="$(string.extension_settings_sitePreferences)" presentation="$(presentation.extension_settings_sitePreferences)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_settings_sitePreferences_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings\sitePreferences" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_settings_useCompactMode" class="Both" displayName="$(string.extension_settings_useCompactMode)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="useCompactMode">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_useMonochromeToolbarIcon" class="Both" displayName="$(string.extension_settings_useMonochromeToolbarIcon)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="useMonochromeToolbarIcon">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_useObserver" class="Both" displayName="$(string.extension_settings_useObserver)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="useObserver">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_usePredefinedSites" class="Both" displayName="$(string.extension_settings_usePredefinedSites)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="usePredefinedSites">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_settings_usePasswordGeneratorIcons" class="Both" displayName="$(string.extension_settings_usePasswordGeneratorIcons)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\pdffhmdngciaglkoonimfcmckehcpafo\policy\settings" valueName="usePasswordGeneratorIcons">
+      <parentCategory ref="extension_settings"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>
