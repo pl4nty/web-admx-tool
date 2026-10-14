@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 157.0.4322.0-->
+  <!--microsoft_edge version: 157.0.4329.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -85,6 +85,7 @@
       <definition displayName="$(string.SUPPORTED_WIN7_V152)" name="SUPPORTED_WIN7_V152"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V153)" name="SUPPORTED_WIN7_V153"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V154)" name="SUPPORTED_WIN7_V154"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V156)" name="SUPPORTED_WIN7_V156"/>
       <definition displayName="$(string.SUPPORTED_WIN7_ONLY_V77)" name="SUPPORTED_WIN7_ONLY_V77"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V81_V85)" name="OBSOLETE_WIN7_V81_V85"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V125_V137)" name="OBSOLETE_WIN7_V125_V137"/>
@@ -300,6 +301,9 @@
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.Relaunch_group)" name="Relaunch">
+      <parentCategory ref="microsoft_edge"/>
+    </category>
+    <category displayName="$(string.Remix_group)" name="Remix">
       <parentCategory ref="microsoft_edge"/>
     </category>
     <category displayName="$(string.ScarewareBlocker_group)" name="ScarewareBlocker">
@@ -3212,6 +3216,24 @@
       <supportedOn ref="SUPPORTED_WIN7_V93"/>
       <elements>
         <text id="RelaunchWindow" maxLength="1000000" valueName="RelaunchWindow"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.RemixAvailability)" explainText="$(string.RemixAvailability_Explain)" key="Software\Policies\Microsoft\Edge" name="RemixAvailability" presentation="$(presentation.RemixAvailability)">
+      <parentCategory ref="Remix"/>
+      <supportedOn ref="SUPPORTED_WIN7_V156"/>
+      <elements>
+        <enum id="RemixAvailability" valueName="RemixAvailability">
+          <item displayName="$(string.RemixAvailability_Disabled)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.RemixAvailability_ForceEnabled)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+        </enum>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.ScarewareBlockerAllowListDomains)" explainText="$(string.ScarewareBlockerAllowListDomains_Explain)" key="Software\Policies\Microsoft\Edge" name="ScarewareBlockerAllowListDomains" presentation="$(presentation.ScarewareBlockerAllowListDomains)">

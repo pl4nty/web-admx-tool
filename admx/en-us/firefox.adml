@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<policyDefinitionResources xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" revision="8.3" schemaVersion="1.0">
+<policyDefinitionResources xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" revision="8.4" schemaVersion="1.0">
   <displayName/>
   <description/>
   <resources>
@@ -93,6 +93,7 @@
       <string id="SUPPORTED_FF154">Firefox 154 or later, Firefox 153 ESR or later</string>
       <string id="SUPPORTED_FF155_ONLY">Firefox 155 or later</string>
       <string id="SUPPORTED_FF156_ONLY">Firefox 156 or later</string>
+      <string id="SUPPORTED_FF158_ONLY">Firefox 158 or later</string>
       <string id="firefox">Firefox</string>
       <string id="Permissions_group">Permissions</string>
       <string id="Camera_group">Camera</string>
@@ -1150,8 +1151,10 @@ If this policy is not configured, you will get suggestions from Firefox related 
 If this policy is disabled, you will not get these suggestions.
 
 If this policy is not configured, you will get occasional sponsored suggestions.</string>
-      <string id="FirefoxSuggest_ImproveSuggest">Improve the Firefox Suggest experience</string>
-      <string id="FirefoxSuggest_ImproveSuggest_Explain">If this policy is enabled, you will help create a richer search experience by allowing Mozilla to process your search queries.
+      <string id="FirefoxSuggest_ImproveSuggest">Improve the Firefox Suggest experience (Deprecated)</string>
+      <string id="FirefoxSuggest_ImproveSuggest_Explain">This policy is deprecated. Use "Enable online suggestions" instead. If both are set, "Enable online suggestions" takes precedence.
+
+If this policy is enabled, you will help create a richer search experience by allowing Mozilla to process your search queries.
 
 If this policy is disabled or not configured, you do not allow Mozilla to process your search queries.</string>
       <string id="FirefoxSuggest_Locked">Do not allow preferences to be changed</string>
@@ -1573,6 +1576,52 @@ This setting follows the Firefox Home "Locked" policy.</string>
       <string id="FirefoxHome_Widgets_Blocked_Explain">A list of widget ids to turn off individually on the new tab page. Blocked widgets are always locked, whether or not "Locked" is set, so the user cannot turn them back on.
 
 Valid ids are clocks, crossword, focusTimer, lists, pictureOfTheDay, privacy, recentSearches, sportsWidget, stocks and weather.</string>
+      <string id="ContentAnalysis_MaxConnectionsCount">Maximum connections</string>
+      <string id="ContentAnalysis_MaxConnectionsCount_Explain">If this policy is enabled, it sets the maximum number of concurrent connections to the DLP agent. For stability reasons, values exceeding 256 are ignored.
+
+If this policy is disabled or not configured, the Firefox default of 32 applies.</string>
+      <string id="RelaunchRequired_group">Required Relaunch After Update</string>
+      <string id="RelaunchRequired_NotificationPeriodHours">Notification period (hours)</string>
+      <string id="RelaunchRequired_NotificationPeriodHours_Explain">If this policy is enabled, users are notified at least this many hours before a required relaunch. This takes effect once an update has been downloaded or staged and is ready to install.
+
+If this policy is disabled or not configured, the Firefox default applies.</string>
+      <string id="RelaunchRequired_RestartTimeOfDay_Hour">Relaunch hour</string>
+      <string id="RelaunchRequired_RestartTimeOfDay_Hour_Explain">If this policy is enabled, the required relaunch is scheduled at this hour, in 24-hour format between 0 and 23.
+
+At the scheduled time Firefox closes and reopens automatically. Tabs are restored, but the user is not prompted and cannot cancel the restart.
+
+Note: If less than one hour remains until the scheduled time, the restart is deferred to the same time the following day.
+
+If this policy is disabled or not configured, the Firefox default applies.</string>
+      <string id="RelaunchRequired_RestartTimeOfDay_Minute">Relaunch minute</string>
+      <string id="RelaunchRequired_RestartTimeOfDay_Minute_Explain">If this policy is enabled, the required relaunch is scheduled at this minute, between 0 and 59.
+
+If this policy is disabled or not configured, the Firefox default applies.</string>
+      <string id="FirefoxSuggest_OnlineEnabled">Enable online suggestions</string>
+      <string id="FirefoxSuggest_OnlineEnabled_Explain">If this policy is enabled, Firefox Suggest fetches suggestions as the user types.
+
+If this policy is disabled, Firefox Suggest is limited to suggestions stored locally.
+
+If this policy is not configured, the Firefox default applies.
+
+This setting replaces the deprecated "Improve the Firefox Suggest experience" setting.</string>
+      <string id="SearchEngines_DefaultPrivate">Default search engine for private browsing</string>
+      <string id="SearchEngines_DefaultPrivate_Explain">If this policy is enabled, the named search engine is used as the default in private browsing windows. The name must match an available search engine exactly.
+
+If this policy is disabled or not configured, private browsing windows use the same default search engine as normal windows.</string>
+      <string id="InterceptionPoints_ClipboardCopy_group">Clipboard Copy</string>
+      <string id="ContentAnalysis_InterceptionPoints_ClipboardCopy">Enabled</string>
+      <string id="ContentAnalysis_InterceptionPoints_ClipboardCopy_Explain">If this policy is disabled, clipboard copy operations will not use DLP.
+
+If this policy is enabled or not configured, clipboard copy operations will use DLP.</string>
+      <string id="ContentAnalysis_InterceptionPoints_ClipboardCopy_PlainTextOnly">Plain Text Only</string>
+      <string id="ContentAnalysis_InterceptionPoints_ClipboardCopy_PlainTextOnly_Explain">If this policy is disabled, all formats will be analyzed on clipboard copy, which some DLP agents may not expect.
+
+If this policy is enabled or not configured, only the text/plain format will be analyzed on clipboard copy.</string>
+      <string id="GenerativeAI_SmartWindow">Smart Window</string>
+      <string id="GenerativeAI_SmartWindow_Explain">If this policy is disabled, Smart Window is not available.
+
+If this policy is enabled or not configured, Smart Window is available.</string>
     </stringTable>
     <presentationTable>
       <presentation id="AppUpdateURL">
@@ -1823,6 +1872,11 @@ Valid ids are clocks, crossword, focusTimer, lists, pictureOfTheDay, privacy, re
       </presentation>
       <presentation id="AIControls_Value">
         <dropdownList refId="AIControls_Value"/>
+      </presentation>
+      <presentation id="SearchEngines_DefaultPrivate">
+        <textBox refId="SearchEngines_DefaultPrivate">
+          <label/>
+        </textBox>
       </presentation>
     </presentationTable>
   </resources>

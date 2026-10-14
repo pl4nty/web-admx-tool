@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<policyDefinitions xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" revision="8.3" schemaVersion="1.0">
+<policyDefinitions xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" revision="8.4" schemaVersion="1.0">
   <policyNamespaces>
     <target prefix="firefox" namespace="Mozilla.Policies.Firefox"/>
     <using prefix="Mozilla" namespace="Mozilla.Policies"/>
   </policyNamespaces>
-  <resources minRequiredRevision="8.3"/>
+  <resources minRequiredRevision="8.4"/>
   <supportedOn>
     <definitions>
       <definition name="UNSUPPORTED" displayName="$(string.UNSUPPORTED)"/>
@@ -95,6 +95,7 @@
       <definition name="SUPPORTED_FF154" displayName="$(string.SUPPORTED_FF154)"/>
       <definition name="SUPPORTED_FF155_ONLY" displayName="$(string.SUPPORTED_FF155_ONLY)"/>
       <definition name="SUPPORTED_FF156_ONLY" displayName="$(string.SUPPORTED_FF156_ONLY)"/>
+      <definition name="SUPPORTED_FF158_ONLY" displayName="$(string.SUPPORTED_FF158_ONLY)"/>
     </definitions>
   </supportedOn>
   <categories>
@@ -242,6 +243,12 @@
 
     <category displayName="$(string.FirefoxHome_Widgets_group)" name="FirefoxHome_Widgets">
       <parentCategory ref="FirefoxHome"/>
+    </category>
+    <category displayName="$(string.RelaunchRequired_group)" name="RelaunchRequired">
+      <parentCategory ref="firefox"/>
+    </category>
+    <category displayName="$(string.InterceptionPoints_ClipboardCopy_group)" name="InterceptionPoints_ClipboardCopy">
+      <parentCategory ref="InterceptionPoints"/>
     </category>
   </categories>
   <policies>
@@ -4681,7 +4688,7 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
-    <policy name="ContentAnalysis_InterceptionPoints_DragAndDrop_PlainTextOnly" class="Both" displayName="$(string.ContentAnalysis_InterceptionPoints_DragAndDrop_PlainTextOnly)" explainText="$(string.ContentAnalysis_InterceptionPoints_DragAndDrop_PlainTextOnly_Explain)" key="Software\Policies\Mozilla\Firefox\ContentAnalysis\InterceptionPoints\DragAndDrop" valueName="PlainTextEnabled">
+    <policy name="ContentAnalysis_InterceptionPoints_DragAndDrop_PlainTextOnly" class="Both" displayName="$(string.ContentAnalysis_InterceptionPoints_DragAndDrop_PlainTextOnly)" explainText="$(string.ContentAnalysis_InterceptionPoints_DragAndDrop_PlainTextOnly_Explain)" key="Software\Policies\Mozilla\Firefox\ContentAnalysis\InterceptionPoints\DragAndDrop" valueName="PlainTextOnly">
       <parentCategory ref="InterceptionPoints_DragAndDrop"/>
       <supportedOn ref="SUPPORTED_FF138_ONLY"/>
       <enabledValue>
@@ -5245,6 +5252,81 @@
       <elements>
         <list id="List" key="Software\Policies\Mozilla\Firefox\FirefoxHome\Widgets\Blocked" valuePrefix=""/>
       </elements>
+    </policy>
+    <policy name="ContentAnalysis_MaxConnectionsCount" class="Both" displayName="$(string.ContentAnalysis_MaxConnectionsCount)" explainText="$(string.ContentAnalysis_MaxConnectionsCount_Explain)" key="Software\Policies\Mozilla\Firefox\ContentAnalysis" presentation="$(presentation.Number)">
+      <parentCategory ref="ContentAnalysis"/>
+      <supportedOn ref="SUPPORTED_FF138_ONLY"/>
+      <elements>
+        <decimal id="Number" valueName="MaxConnectionsCount" minValue="0" maxValue="256"/>
+      </elements>
+    </policy>
+    <policy name="RelaunchRequired_NotificationPeriodHours" class="Both" displayName="$(string.RelaunchRequired_NotificationPeriodHours)" explainText="$(string.RelaunchRequired_NotificationPeriodHours_Explain)" key="Software\Policies\Mozilla\Firefox\RelaunchRequired" presentation="$(presentation.Number)">
+      <parentCategory ref="RelaunchRequired"/>
+      <supportedOn ref="SUPPORTED_FF150_ONLY"/>
+      <elements>
+        <decimal id="Number" valueName="NotificationPeriodHours"/>
+      </elements>
+    </policy>
+    <policy name="RelaunchRequired_RestartTimeOfDay_Hour" class="Both" displayName="$(string.RelaunchRequired_RestartTimeOfDay_Hour)" explainText="$(string.RelaunchRequired_RestartTimeOfDay_Hour_Explain)" key="Software\Policies\Mozilla\Firefox\RelaunchRequired\RestartTimeOfDay" presentation="$(presentation.Number)">
+      <parentCategory ref="RelaunchRequired"/>
+      <supportedOn ref="SUPPORTED_FF150_ONLY"/>
+      <elements>
+        <decimal id="Number" valueName="Hour" minValue="0" maxValue="23"/>
+      </elements>
+    </policy>
+    <policy name="RelaunchRequired_RestartTimeOfDay_Minute" class="Both" displayName="$(string.RelaunchRequired_RestartTimeOfDay_Minute)" explainText="$(string.RelaunchRequired_RestartTimeOfDay_Minute_Explain)" key="Software\Policies\Mozilla\Firefox\RelaunchRequired\RestartTimeOfDay" presentation="$(presentation.Number)">
+      <parentCategory ref="RelaunchRequired"/>
+      <supportedOn ref="SUPPORTED_FF150_ONLY"/>
+      <elements>
+        <decimal id="Number" valueName="Minute" minValue="0" maxValue="59"/>
+      </elements>
+    </policy>
+    <policy name="FirefoxSuggest_OnlineEnabled" class="Both" displayName="$(string.FirefoxSuggest_OnlineEnabled)" explainText="$(string.FirefoxSuggest_OnlineEnabled_Explain)" key="Software\Policies\Mozilla\Firefox\FirefoxSuggest" valueName="OnlineEnabled">
+      <parentCategory ref="FirefoxSuggest"/>
+      <supportedOn ref="SUPPORTED_FF118"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="SearchEngines_DefaultPrivate" class="Both" displayName="$(string.SearchEngines_DefaultPrivate)" explainText="$(string.SearchEngines_DefaultPrivate_Explain)" key="Software\Policies\Mozilla\Firefox\SearchEngines" presentation="$(presentation.SearchEngines_DefaultPrivate)">
+      <parentCategory ref="Search"/>
+      <supportedOn ref="SUPPORTED_FF71"/>
+      <elements>
+        <text id="SearchEngines_DefaultPrivate" valueName="DefaultPrivate" required="true"/>
+      </elements>
+    </policy>
+    <policy name="ContentAnalysis_InterceptionPoints_ClipboardCopy" class="Both" displayName="$(string.ContentAnalysis_InterceptionPoints_ClipboardCopy)" explainText="$(string.ContentAnalysis_InterceptionPoints_ClipboardCopy_Explain)" key="Software\Policies\Mozilla\Firefox\ContentAnalysis\InterceptionPoints\ClipboardCopy" valueName="Enabled">
+      <parentCategory ref="InterceptionPoints_ClipboardCopy"/>
+      <supportedOn ref="SUPPORTED_FF158_ONLY"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="ContentAnalysis_InterceptionPoints_ClipboardCopy_PlainTextOnly" class="Both" displayName="$(string.ContentAnalysis_InterceptionPoints_ClipboardCopy_PlainTextOnly)" explainText="$(string.ContentAnalysis_InterceptionPoints_ClipboardCopy_PlainTextOnly_Explain)" key="Software\Policies\Mozilla\Firefox\ContentAnalysis\InterceptionPoints\ClipboardCopy" valueName="PlainTextOnly">
+      <parentCategory ref="InterceptionPoints_ClipboardCopy"/>
+      <supportedOn ref="SUPPORTED_FF158_ONLY"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="GenerativeAI_SmartWindow" class="Both" displayName="$(string.GenerativeAI_SmartWindow)" explainText="$(string.GenerativeAI_SmartWindow_Explain)" key="Software\Policies\Mozilla\Firefox\GenerativeAI" valueName="SmartWindow">
+      <parentCategory ref="GenerativeAI"/>
+      <supportedOn ref="SUPPORTED_FF150_ONLY"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
   </policies>
 </policyDefinitions>
