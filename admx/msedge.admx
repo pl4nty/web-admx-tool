@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 157.0.4329.0-->
+  <!--microsoft_edge version: 157.0.4334.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -86,6 +86,7 @@
       <definition displayName="$(string.SUPPORTED_WIN7_V153)" name="SUPPORTED_WIN7_V153"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V154)" name="SUPPORTED_WIN7_V154"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V156)" name="SUPPORTED_WIN7_V156"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V157)" name="SUPPORTED_WIN7_V157"/>
       <definition displayName="$(string.SUPPORTED_WIN7_ONLY_V77)" name="SUPPORTED_WIN7_ONLY_V77"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V81_V85)" name="OBSOLETE_WIN7_V81_V85"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V125_V137)" name="OBSOLETE_WIN7_V125_V137"/>
@@ -5201,6 +5202,16 @@
     <policy class="Both" displayName="$(string.CopilotNewTabPageEnabled)" explainText="$(string.CopilotNewTabPageEnabled_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="CopilotNewTabPageEnabled_recommended" presentation="$(presentation.CopilotNewTabPageEnabled)" valueName="CopilotNewTabPageEnabled">
       <parentCategory ref="microsoft_edge_recommended"/>
       <supportedOn ref="SUPPORTED_WIN7_V148"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.CopilotOnSensitiveContentEnabled)" explainText="$(string.CopilotOnSensitiveContentEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="CopilotOnSensitiveContentEnabled" presentation="$(presentation.CopilotOnSensitiveContentEnabled)" valueName="CopilotOnSensitiveContentEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V157"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
