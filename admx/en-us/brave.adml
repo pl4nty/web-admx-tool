@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0"><!--brave version: 156.1.99.41--><displayName/><description/><resources><stringTable><string id="SUPPORTED_WIN7">Microsoft Windows 7 or later</string><string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string><string id="Cat_Brave">Brave Software</string><string id="brave">Brave</string><string id="brave_recommended">Brave - Default Settings (users can override)</string><string id="Accessibility_group">Accessibility settings</string><string id="LiveCaptionEnabled">Enable Live Caption</string><string id="LiveCaptionEnabled_Explain">Enable the Live Caption feature.
+<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0"><!--brave version: 156.1.100.5--><displayName/><description/><resources><stringTable><string id="SUPPORTED_WIN7">Microsoft Windows 7 or later</string><string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string><string id="Cat_Brave">Brave Software</string><string id="brave">Brave</string><string id="brave_recommended">Brave - Default Settings (users can override)</string><string id="Accessibility_group">Accessibility settings</string><string id="LiveCaptionEnabled">Enable Live Caption</string><string id="LiveCaptionEnabled_Explain">Enable the Live Caption feature.
 
 If this policy is set to Enabled, Live Caption will always be turned on.
 
@@ -1207,6 +1207,10 @@ Setting this policy will cause Brave to be slower when accessing websites.
 
 This policy only affects TLS 1.3 and QUIC; it does not affect earlier versions of TLS.
 
+This policy can be set for the machine and for the user. If set for the user, this policy only affects network requests initiated by the user profile, and may not affect network requests made by Brave to carry out browser-wide background tasks; those are controlled by the machine-level value. If this policy is set at both the machine level and the user level, the machine-level value applies, unless the policy precedence order has been changed by the CloudUserPolicyOverridesCloudMachinePolicy policy.
+
+For versions 155 and below, this policy is machine-wide only.
+
 Example value: cnsa</string><string id="PreferSlowCiphers_CNSA">Prefer ciphers satisfying the requirements of CNSA 1.0 and 2.0</string><string id="PreferSlowCiphers_Default">Use Brave's default cipher order</string><string id="PreferSlowKexAlgorithms">Prefer specific key exchange algorithms for TLS</string><string id="PreferSlowKexAlgorithms_Explain">This policy configures Brave to order its preferred key agreement algorithms (supported groups) in TLS 1.3 to reflect a preference for algorithms that have been approved by a specific compliance regime.
 
 Setting this policy does not guarantee that any specific algorithms will be negotiated.
@@ -1222,6 +1226,10 @@ Setting this policy is not required for security. The default cryptography used 
 Setting this policy will cause Brave to be slower when accessing websites.
 
 This policy only affects TLS 1.3 and QUIC; it does not affect earlier versions of TLS.
+
+This policy can be set for the machine and for the user. If set for the user, this policy only affects network requests initiated by the user profile, and may not affect network requests made by Brave to carry out browser-wide background tasks; those are controlled by the machine-level value. If this policy is set at both the machine level and the user level, the machine-level value applies, unless the policy precedence order has been changed by the CloudUserPolicyOverridesCloudMachinePolicy policy.
+
+For versions 155 and below, this policy is machine-wide only.
 
 Example value: cnsa2</string><string id="PreferSlowKexAlgorithms_CNSA2_0">Prefer key exchange methods satisfying the requirements of CNSA 2.0</string><string id="PreferSlowKexAlgorithms_Default">Use Brave's default supported groups</string><string id="DefaultSearchProvider_group">Default search provider</string><string id="DefaultSearchProviderAlternateURLs">List of alternate URLs for the default search provider</string><string id="DefaultSearchProviderAlternateURLs_Explain">If DefaultSearchProviderEnabled is on, then setting DefaultSearchProviderAlternateURLs specifies a list of alternate URLs for extracting search terms from the search engine. The URLs should include the string '{searchTerms}'.
 
