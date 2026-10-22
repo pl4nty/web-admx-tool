@@ -27,6 +27,7 @@
 			<definition name="Supported_1_137" displayName="$(string.Supported_1_137)" />
 			<definition name="Supported_1_140" displayName="$(string.Supported_1_140)" />
 			<definition name="Supported_1_142" displayName="$(string.Supported_1_142)" />
+			<definition name="Supported_1_143" displayName="$(string.Supported_1_143)" />
 			<definition name="Supported_1_67" displayName="$(string.Supported_1_67)" />
 			<definition name="Supported_1_96" displayName="$(string.Supported_1_96)" />
 			<definition name="Supported_1_99" displayName="$(string.Supported_1_99)" />
@@ -207,13 +208,6 @@
 		</boolean>
 			</elements>
 		</policy>
-		<policy name="ChatStrictMarketplaces" class="Both" displayName="$(string.ChatStrictMarketplaces)" explainText="$(string.ChatStrictMarketplaces_chat_plugins_strictMarketplaces_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatStrictMarketplaces)">
-			<parentCategory ref="interactiveSessionConfigurationTitle" />
-			<supportedOn ref="Supported_1_122" />
-			<elements>
-		<multiText id="ChatStrictMarketplaces" valueName="ChatStrictMarketplaces" required="true" />
-			</elements>
-		</policy>
 		<policy name="ChatStrictPluginOnlyCustomization" class="Both" displayName="$(string.ChatStrictPluginOnlyCustomization)" explainText="$(string.ChatStrictPluginOnlyCustomization_chat_customizations_strictPluginOnlyCustomization_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatStrictPluginOnlyCustomization)">
 			<parentCategory ref="interactiveSessionConfigurationTitle" />
 			<supportedOn ref="Supported_1_132" />
@@ -262,6 +256,15 @@
 			<supportedOn ref="Supported_1_126" />
 			<elements>
 		<boolean id="Codex3PIntegration" valueName="Codex3PIntegration">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
+		<policy name="CopilotCliCommand" class="Both" displayName="$(string.CopilotCliCommand)" explainText="$(string.CopilotCliCommand_chat_copilotCliCommand_enabled_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.CopilotCliCommand)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_143" />
+			<elements>
+		<boolean id="CopilotCliCommand" valueName="CopilotCliCommand">
 			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
 		</boolean>
 			</elements>
