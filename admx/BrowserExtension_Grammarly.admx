@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--Grammarly cnlefmmeadmemmdciolhbnfeacpdfbkd version: 14.1154.0 generator: 1ca1ff1b906b-->
+  <policyNamespaces>
+    <target namespace="BrowserExtension.cnlefmmeadmemmdciolhbnfeacpdfbkd" prefix="ext_cnlefmmeadmemmdciolhbnfeacpdfbkd"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
+  </categories>
+  <policies>
+    <policy name="extension_GrammarlyEnrollmentToken" class="Both" displayName="$(string.extension_GrammarlyEnrollmentToken)" explainText="$(string.extension_GrammarlyEnrollmentToken_Explain)" presentation="$(presentation.extension_GrammarlyEnrollmentToken)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\cnlefmmeadmemmdciolhbnfeacpdfbkd\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_GrammarlyEnrollmentToken_Part" valueName="GrammarlyEnrollmentToken" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_GrammarlyBlockedClients" class="Both" displayName="$(string.extension_GrammarlyBlockedClients)" explainText="$(string.extension_GrammarlyBlockedClients_Explain)" presentation="$(presentation.extension_GrammarlyBlockedClients)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\cnlefmmeadmemmdciolhbnfeacpdfbkd\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_GrammarlyBlockedClients_Part" valueName="GrammarlyBlockedClients" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_GrammarlyBlockedDomains" class="Both" displayName="$(string.extension_GrammarlyBlockedDomains)" explainText="$(string.extension_GrammarlyBlockedDomains_Explain)" presentation="$(presentation.extension_GrammarlyBlockedDomains)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\cnlefmmeadmemmdciolhbnfeacpdfbkd\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_GrammarlyBlockedDomains_Part" valueName="GrammarlyBlockedDomains" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_GrammarlyConfidentialModeEnabled" class="Both" displayName="$(string.extension_GrammarlyConfidentialModeEnabled)" explainText="$(string.extension_GrammarlyConfidentialModeEnabled_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\cnlefmmeadmemmdciolhbnfeacpdfbkd\policy" valueName="GrammarlyConfidentialModeEnabled">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_GrammarlyDlpEnabled" class="Both" displayName="$(string.extension_GrammarlyDlpEnabled)" explainText="$(string.extension_GrammarlyDlpEnabled_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\cnlefmmeadmemmdciolhbnfeacpdfbkd\policy" valueName="GrammarlyDlpEnabled">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_GrammarlyExtensionMode" class="Both" displayName="$(string.extension_GrammarlyExtensionMode)" explainText="$(string.extension_GrammarlyExtensionMode_Explain)" presentation="$(presentation.extension_GrammarlyExtensionMode)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\cnlefmmeadmemmdciolhbnfeacpdfbkd\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_GrammarlyExtensionMode_Part" valueName="GrammarlyExtensionMode" maxLength="1048576"/>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>
