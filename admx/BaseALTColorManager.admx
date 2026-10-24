@@ -1,0 +1,858 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2023 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="colormanager" namespace="BaseALT.Policies.Color-manager" />
+    <using prefix="system" namespace="BaseALT.Policies.System" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <policies>
+    <policy class="Machine" displayName="$(string.org-freedesktop-color-manager-create-device)"
+        explainText="$(string.org-freedesktop-color-manager-create-device_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.color-manager.create-device"
+        valuename="org.freedesktop.color-manager.create-device"
+        presentation="$(presentation.org-freedesktop-color-manager-pr)">
+      <parentCategory ref="system:ALT_Color-ManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopColor-Manager_setter" valueName="org.freedesktop.color-manager.create-device" required="true">
+          <item displayName="$(string.org-freedesktop-color-manager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopColor-Manager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.color-manager.create-device">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-color-manager-create-device)"
+        explainText="$(string.org-freedesktop-color-manager-create-device-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.color-manager.create-device-user"
+        valuename="org.freedesktop.color-manager.create-device"
+        presentation="$(presentation.org-freedesktop-color-manager-user-pr)">
+      <parentCategory ref="system:ALT_Color-ManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopColor-Manager_setter" valueName="org.freedesktop.color-manager.create-device" required="true">
+          <item displayName="$(string.org-freedesktop-color-manager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-color-manager-create-profile)"
+        explainText="$(string.org-freedesktop-color-manager-create-profile_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.color-manager.create-profile"
+        valuename="org.freedesktop.color-manager.create-profile"
+        presentation="$(presentation.org-freedesktop-color-manager-pr)">
+      <parentCategory ref="system:ALT_Color-ManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopColor-Manager_setter" valueName="org.freedesktop.color-manager.create-profile" required="true">
+          <item displayName="$(string.org-freedesktop-color-manager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopColor-Manager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.color-manager.create-profile">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-color-manager-create-profile)"
+        explainText="$(string.org-freedesktop-color-manager-create-profile-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.color-manager.create-profile-user"
+        valuename="org.freedesktop.color-manager.create-profile"
+        presentation="$(presentation.org-freedesktop-color-manager-user-pr)">
+      <parentCategory ref="system:ALT_Color-ManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopColor-Manager_setter" valueName="org.freedesktop.color-manager.create-profile" required="true">
+          <item displayName="$(string.org-freedesktop-color-manager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-color-manager-delete-device)"
+        explainText="$(string.org-freedesktop-color-manager-delete-device_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.color-manager.delete-device"
+        valuename="org.freedesktop.color-manager.delete-device"
+        presentation="$(presentation.org-freedesktop-color-manager-pr)">
+      <parentCategory ref="system:ALT_Color-ManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopColor-Manager_setter" valueName="org.freedesktop.color-manager.delete-device" required="true">
+          <item displayName="$(string.org-freedesktop-color-manager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopColor-Manager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.color-manager.delete-device">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-color-manager-delete-device)"
+        explainText="$(string.org-freedesktop-color-manager-delete-device-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.color-manager.delete-device-user"
+        valuename="org.freedesktop.color-manager.delete-device"
+        presentation="$(presentation.org-freedesktop-color-manager-user-pr)">
+      <parentCategory ref="system:ALT_Color-ManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopColor-Manager_setter" valueName="org.freedesktop.color-manager.delete-device" required="true">
+          <item displayName="$(string.org-freedesktop-color-manager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-color-manager-delete-profile)"
+        explainText="$(string.org-freedesktop-color-manager-delete-profile_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.color-manager.delete-profile"
+        valuename="org.freedesktop.color-manager.delete-profile"
+        presentation="$(presentation.org-freedesktop-color-manager-pr)">
+      <parentCategory ref="system:ALT_Color-ManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopColor-Manager_setter" valueName="org.freedesktop.color-manager.delete-profile" required="true">
+          <item displayName="$(string.org-freedesktop-color-manager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopColor-Manager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.color-manager.delete-profile">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-color-manager-delete-profile)"
+        explainText="$(string.org-freedesktop-color-manager-delete-profile-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.color-manager.delete-profile-user"
+        valuename="org.freedesktop.color-manager.delete-profile"
+        presentation="$(presentation.org-freedesktop-color-manager-user-pr)">
+      <parentCategory ref="system:ALT_Color-ManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopColor-Manager_setter" valueName="org.freedesktop.color-manager.delete-profile" required="true">
+          <item displayName="$(string.org-freedesktop-color-manager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-color-manager-device-inhibit)"
+        explainText="$(string.org-freedesktop-color-manager-device-inhibit_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.color-manager.device-inhibit"
+        valuename="org.freedesktop.color-manager.device-inhibit"
+        presentation="$(presentation.org-freedesktop-color-manager-pr)">
+      <parentCategory ref="system:ALT_Color-ManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopColor-Manager_setter" valueName="org.freedesktop.color-manager.device-inhibit" required="true">
+          <item displayName="$(string.org-freedesktop-color-manager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopColor-Manager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.color-manager.device-inhibit">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-color-manager-device-inhibit)"
+        explainText="$(string.org-freedesktop-color-manager-device-inhibit-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.color-manager.device-inhibit-user"
+        valuename="org.freedesktop.color-manager.device-inhibit"
+        presentation="$(presentation.org-freedesktop-color-manager-user-pr)">
+      <parentCategory ref="system:ALT_Color-ManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopColor-Manager_setter" valueName="org.freedesktop.color-manager.device-inhibit" required="true">
+          <item displayName="$(string.org-freedesktop-color-manager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-color-manager-install-system-wide)"
+        explainText="$(string.org-freedesktop-color-manager-install-system-wide_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.color-manager.install-system-wide"
+        valuename="org.freedesktop.color-manager.install-system-wide"
+        presentation="$(presentation.org-freedesktop-color-manager-pr)">
+      <parentCategory ref="system:ALT_Color-ManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopColor-Manager_setter" valueName="org.freedesktop.color-manager.install-system-wide" required="true">
+          <item displayName="$(string.org-freedesktop-color-manager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopColor-Manager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.color-manager.install-system-wide">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-color-manager-install-system-wide)"
+        explainText="$(string.org-freedesktop-color-manager-install-system-wide-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.color-manager.install-system-wide-user"
+        valuename="org.freedesktop.color-manager.install-system-wide"
+        presentation="$(presentation.org-freedesktop-color-manager-user-pr)">
+      <parentCategory ref="system:ALT_Color-ManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopColor-Manager_setter" valueName="org.freedesktop.color-manager.install-system-wide" required="true">
+          <item displayName="$(string.org-freedesktop-color-manager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-color-manager-modify-device)"
+        explainText="$(string.org-freedesktop-color-manager-modify-device_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.color-manager.modify-device"
+        valuename="org.freedesktop.color-manager.modify-device"
+        presentation="$(presentation.org-freedesktop-color-manager-pr)">
+      <parentCategory ref="system:ALT_Color-ManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopColor-Manager_setter" valueName="org.freedesktop.color-manager.modify-device" required="true">
+          <item displayName="$(string.org-freedesktop-color-manager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopColor-Manager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.color-manager.modify-device">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-color-manager-modify-device)"
+        explainText="$(string.org-freedesktop-color-manager-modify-device-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.color-manager.modify-device-user"
+        valuename="org.freedesktop.color-manager.modify-device"
+        presentation="$(presentation.org-freedesktop-color-manager-user-pr)">
+      <parentCategory ref="system:ALT_Color-ManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopColor-Manager_setter" valueName="org.freedesktop.color-manager.modify-device" required="true">
+          <item displayName="$(string.org-freedesktop-color-manager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-color-manager-modify-profile)"
+        explainText="$(string.org-freedesktop-color-manager-modify-profile_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.color-manager.modify-profile"
+        valuename="org.freedesktop.color-manager.modify-profile"
+        presentation="$(presentation.org-freedesktop-color-manager-pr)">
+      <parentCategory ref="system:ALT_Color-ManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopColor-Manager_setter" valueName="org.freedesktop.color-manager.modify-profile" required="true">
+          <item displayName="$(string.org-freedesktop-color-manager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopColor-Manager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.color-manager.modify-profile">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-color-manager-modify-profile)"
+        explainText="$(string.org-freedesktop-color-manager-modify-profile-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.color-manager.modify-profile-user"
+        valuename="org.freedesktop.color-manager.modify-profile"
+        presentation="$(presentation.org-freedesktop-color-manager-user-pr)">
+      <parentCategory ref="system:ALT_Color-ManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopColor-Manager_setter" valueName="org.freedesktop.color-manager.modify-profile" required="true">
+          <item displayName="$(string.org-freedesktop-color-manager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-color-manager-sensor-lock)"
+        explainText="$(string.org-freedesktop-color-manager-sensor-lock_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.color-manager.sensor-lock"
+        valuename="org.freedesktop.color-manager.sensor-lock"
+        presentation="$(presentation.org-freedesktop-color-manager-pr)">
+      <parentCategory ref="system:ALT_Color-ManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopColor-Manager_setter" valueName="org.freedesktop.color-manager.sensor-lock" required="true">
+          <item displayName="$(string.org-freedesktop-color-manager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopColor-Manager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.color-manager.sensor-lock">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-color-manager-sensor-lock)"
+        explainText="$(string.org-freedesktop-color-manager-sensor-lock-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.color-manager.sensor-lock-user"
+        valuename="org.freedesktop.color-manager.sensor-lock"
+        presentation="$(presentation.org-freedesktop-color-manager-user-pr)">
+      <parentCategory ref="system:ALT_Color-ManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopColor-Manager_setter" valueName="org.freedesktop.color-manager.sensor-lock" required="true">
+          <item displayName="$(string.org-freedesktop-color-manager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-color-manager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

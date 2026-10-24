@@ -1,0 +1,2764 @@
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+
+	<policyNamespaces>
+		<target prefix="fullarmor" namespace="FullArmor.Policies.C727F62E_43A9_4EB2_B27A_F2BBA0925FD6" />
+		<using prefix="windows" namespace="Microsoft.Policies.Windows" />
+	</policyNamespaces>
+
+	<supersededAdm fileName="" />
+	<resources minRequiredRevision="1.0" />
+
+	<categories>
+		<category
+			name="CAT_SEPPmail"
+			displayName="$(string.CAT_SEPPmail)"
+			explainText="$(string.CAT_SEPPmail_Help)" />
+
+	<!-- Begin: HKLM -->
+		<category
+			name="CAT_SEPPmail_Computer"
+			displayName="$(string.CAT_SEPPmail_Computer)"
+			explainText="$(string.CAT_SEPPmail_Computer_Help)">
+			<parentCategory ref="CAT_SEPPmail" />
+		</category>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<category
+			name="CAT_SEPPmail_User"
+			displayName="$(string.CAT_SEPPmail_User)"
+			explainText="$(string.CAT_SEPPmail_User_Help)">
+			<parentCategory ref="CAT_SEPPmail" />
+		</category>
+	<!-- End: HCU -->
+
+	<!-- Begin: HKLM -->
+		<category
+			name="CAT_SEPPmail_Computer_Tooltips"
+			displayName="$(string.CAT_SEPPmail_Computer_Tooltips)"
+			explainText="$(string.CAT_SEPPmail_Computer_Tooltips_Help)">
+			<parentCategory ref="CAT_SEPPmail_Computer" />
+		</category>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<category
+			name="CAT_SEPPmail_User_Tooltips"
+			displayName="$(string.CAT_SEPPmail_User_Tooltips)"
+			explainText="$(string.CAT_SEPPmail_User_Tooltips_Help)">
+			<parentCategory ref="CAT_SEPPmail_User" />
+		</category>		
+	< /End: HCU -->
+
+	<!-- Begin: HKLM -->
+		<category
+			name="CAT_SEPPmail_Computer_Tooltips_DE"
+			displayName="$(string.CAT_SEPPmail_Computer_Tooltips_DE)"
+			explainText="$(string.CAT_SEPPmail_Computer_Tooltips_DE_Help)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips" />
+		</category>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<category
+			name="CAT_SEPPmail_User_Tooltips_DE"
+			displayName="$(string.CAT_SEPPmail_User_Tooltips_DE)"
+			explainText="$(string.CAT_SEPPmail_User_Tooltips_DE_Help)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips" />
+		</category>
+	< /End: HCU -->
+
+	<!-- Begin: HKLM -->		
+		<category
+			name="CAT_SEPPmail_Computer_Tooltips_EN"
+			displayName="$(string.CAT_SEPPmail_Computer_Tooltips_EN)"
+			explainText="$(string.CAT_SEPPmail_Computer_Tooltips_EN_Help)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips" />
+		</category>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<category
+			name="CAT_SEPPmail_User_Tooltips_EN"
+			displayName="$(string.CAT_SEPPmail_User_Tooltips_EN)"
+			explainText="$(string.CAT_SEPPmail_User_Tooltips_EN_Help)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips" />
+		</category>
+	< /End: HCU -->
+
+	<!-- Begin: HKLM -->		
+		<category
+			name="CAT_SEPPmail_Computer_Tooltips_FR"
+			displayName="$(string.CAT_SEPPmail_Computer_Tooltips_FR)"
+			explainText="$(string.CAT_SEPPmail_Computer_Tooltips_FR_Help)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips" />
+		</category>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<category
+			name="CAT_SEPPmail_User_Tooltips_FR"
+			displayName="$(string.CAT_SEPPmail_User_Tooltips_FR)"
+			explainText="$(string.CAT_SEPPmail_User_Tooltips_FR_Help)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips" />
+		</category>
+	< /End: HCU -->
+
+	<!-- Begin: HKLM -->		
+		<category
+			name="CAT_SEPPmail_Computer_Tooltips_IT"
+			displayName="$(string.CAT_SEPPmail_Computer_Tooltips_IT)"
+			explainText="$(string.CAT_SEPPmail_Computer_Tooltips_IT_Help)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips" />
+		</category>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<category
+			name="CAT_SEPPmail_User_Tooltips_IT"
+			displayName="$(string.CAT_SEPPmail_User_Tooltips_IT)"
+			explainText="$(string.CAT_SEPPmail_User_Tooltips_IT_Help)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips" />
+		</category>
+	< /End: HCU -->
+	</categories>
+
+	<policies>
+<!-- Begin: Button configuration -->
+<!-- Begin: Button "Encrypt" -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_SMEncrypt"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_SMEncrypt)"
+			explainText="$(string.POL_SEPPmail_Computer_SMEncrypt_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_SMEncrypt)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_SMEncrypt" valueName="SMEncrypt">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	
+		<policy
+			name="POL_SEPPmail_Computer_SMEncryptSelected"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_SMEncryptSelected)"
+			explainText="$(string.POL_SEPPmail_Computer_SMEncryptSelected_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_SMEncryptSelected)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_SMEncryptSelected" valueName="SMEncryptSelected">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+
+		<policy
+			name="POL_SEPPmail_Computer_s-smenc"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_s-smenc)"
+			explainText="$(string.POL_SEPPmail_Computer_s-smenc_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_s-smenc)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_s-smenc" valueName="s-smenc"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<policy
+			name="POL_SEPPmail_User_SMEncrypt"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_SMEncrypt)"
+			explainText="$(string.POL_SEPPmail_User_SMEncrypt_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_SMEncrypt)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_SMEncrypt" valueName="SMEncrypt">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	
+		<policy
+			name="POL_SEPPmail_User_SMEncryptSelected"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_SMEncryptSelected)"
+			explainText="$(string.POL_SEPPmail_User_SMEncryptSelected_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_SMEncryptSelected)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_SMEncryptSelected" valueName="SMEncryptSelected">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+
+		<policy
+			name="POL_SEPPmail_User_s-smenc"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_s-smenc)"
+			explainText="$(string.POL_SEPPmail_User_s-smenc_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_s-smenc)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_s-smenc" valueName="s-smenc"/>
+			</elements>
+		</policy>
+	<!-- End: HCU -->
+<!-- End: Button "Encrypt" -->
+
+<!-- Begin: Button "Encrypt with read receipt" -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_SMWebmail"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_SMWebmail)"
+			explainText="$(string.POL_SEPPmail_Computer_SMWebmail_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_SMWebmail)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_SMWebmail" valueName="SMWebmail">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	
+		<policy
+			name="POL_SEPPmail_Computer_SMWebmailSelected"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_SMWebmailSelected)"
+			explainText="$(string.POL_SEPPmail_Computer_SMWebmailSelected_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_SMWebmailSelected)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_SMWebmailSelected" valueName="SMWebmailSelected">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+
+		<policy
+			name="POL_SEPPmail_Computer_s-smwebmail"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_s-smwebmail)"
+			explainText="$(string.POL_SEPPmail_Computer_s-smwebmail_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_s-smwebmail)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_s-smwebmail" valueName="s-smwebmail"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<policy
+			name="POL_SEPPmail_User_SMWebmail"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_SMWebmail)"
+			explainText="$(string.POL_SEPPmail_User_SMWebmail_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_SMWebmail)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_SMWebmail" valueName="SMWebmail">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	
+		<policy
+			name="POL_SEPPmail_User_SMWebmailSelected"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_SMWebmailSelected)"
+			explainText="$(string.POL_SEPPmail_User_SMWebmailSelected_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_SMWebmailSelected)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_SMWebmailSelected" valueName="SMWebmailSelected">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+
+		<policy
+			name="POL_SEPPmail_User_s-smwebmail"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_s-smwebmail)"
+			explainText="$(string.POL_SEPPmail_User_s-smwebmail_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_s-smwebmail)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_s-smwebmail" valueName="s-smwebmail"/>
+			</elements>
+		</policy>
+	<!-- End: HCU -->
+<!-- End: Button "Encrypt with read receipt" -->
+
+<!-- Begin: Button "Internal encryption" -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_SMInternalEncryption"
+			class="Machine" 
+			displayName="$(string.POL_SEPPmail_Computer_SMInternalEncryption)"
+			explainText="$(string.POL_SEPPmail_Computer_SMInternalEncryption_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_SMInternalEncryption)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_SMInternalEncryption" valueName="SMInternalEncryption">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+
+		<policy
+			name="POL_SEPPmail_Computer_SMInternalEncryptionSelected"
+			class="Machine" 
+			displayName="$(string.POL_SEPPmail_Computer_SMInternalEncryptionSelected)"
+			explainText="$(string.POL_SEPPmail_Computer_SMInternalEncryptionSelected_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_SMInternalEncryptionSelected)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_SMInternalEncryptionSelected" valueName="SMInternalEncryptionSelected">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	
+		<policy
+			name="POL_SEPPmail_Computer_InternalRecipient"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_InternalRecipient)"
+			explainText="$(string.POL_SEPPmail_Computer_InternalRecipient_Help)"
+			presentation="$(presentation.POL_SEPPmail_Computer_InternalRecipient)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_InternalRecipient" valueName="InternalRecipient"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<policy
+			name="POL_SEPPmail_User_SMInternalEncryption"
+			class="User" 
+			displayName="$(string.POL_SEPPmail_User_SMInternalEncryption)"
+			explainText="$(string.POL_SEPPmail_User_SMInternalEncryption_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_SMInternalEncryption)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_SMInternalEncryption" valueName="SMInternalEncryption">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+
+		<policy
+			name="POL_SEPPmail_User_SMInternalEncryptionSelected"
+			class="User" 
+			displayName="$(string.POL_SEPPmail_User_SMInternalEncryptionSelected)"
+			explainText="$(string.POL_SEPPmail_User_SMInternalEncryptionSelected_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_SMInternalEncryptionSelected)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_SMInternalEncryptionSelected" valueName="SMInternalEncryptionSelected">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	
+		<policy
+			name="POL_SEPPmail_User_InternalRecipient"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_InternalRecipient)"
+			explainText="$(string.POL_SEPPmail_User_InternalRecipient_Help)"
+			presentation="$(presentation.POL_SEPPmail_User_InternalRecipient)"
+			key="Software\SEPPmail\OutlookAddIn">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_InternalRecipient" valueName="InternalRecipient"/>
+			</elements>
+		</policy>
+	<!-- End: HCU -->
+<!-- End: Button "Internal encryption" -->
+
+<!-- Begin: Button "Unencrypted" -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_SMNoEncryption"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_SMNoEncryption)"
+			explainText="$(string.POL_SEPPmail_Computer_SMNoEncryption_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_SMNoEncryption)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_SMNoEncryption" valueName="SMNoEncryption">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	
+		<policy
+			name="POL_SEPPmail_Computer_SMNoEncryptionSelected"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_SMNoEncryptionSelected)"
+			explainText="$(string.POL_SEPPmail_Computer_SMNoEncryptionSelected_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_SMNoEncryptionSelected)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_SMNoEncryptionSelected" valueName="SMNoEncryptionSelected">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+
+		<policy
+			name="POL_SEPPmail_Computer_s-smnoenc"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_s-smnoenc)"
+			explainText="$(string.POL_SEPPmail_Computer_s-smnoenc_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_s-smnoenc)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_s-smnoenc" valueName="s-smnoenc"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<policy
+			name="POL_SEPPmail_User_SMNoEncryption"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_SMNoEncryption)"
+			explainText="$(string.POL_SEPPmail_User_SMNoEncryption_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_SMNoEncryption)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_SMNoEncryption" valueName="SMNoEncryption">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	
+		<policy
+			name="POL_SEPPmail_User_SMNoEncryptionSelected"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_SMNoEncryptionSelected)"
+			explainText="$(string.POL_SEPPmail_User_SMNoEncryptionSelected_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_SMNoEncryptionSelected)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_SMNoEncryptionSelected" valueName="SMNoEncryptionSelected">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+
+		<policy
+			name="POL_SEPPmail_User_s-smnoenc"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_s-smnoenc)"
+			explainText="$(string.POL_SEPPmail_User_s-smnoenc_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_s-smnoenc)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_s-smnoenc" valueName="s-smnoenc"/>
+			</elements>
+		</policy>
+	<!-- End: HCU -->
+<!-- End: Button "Unencrypted" -->
+
+<!-- Begin: Button "Sign" -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_SMSign"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_SMSign)"
+			explainText="$(string.POL_SEPPmail_Computer_SMSign_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_SMSign)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_SMSign" valueName="SMSign">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	
+		<policy
+			name="POL_SEPPmail_Computer_SMSignSelected"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_SMSignSelected)"
+			explainText="$(string.POL_SEPPmail_Computer_SMSignSelected_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_SMSignSelected)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_SMSignSelected" valueName="SMSignSelected">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+
+		<policy
+			name="POL_SEPPmail_Computer_s-smsign"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_s-smsign)"
+			explainText="$(string.POL_SEPPmail_Computer_s-smsign_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_s-smsign)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_s-smsign" valueName="s-smsign"/>
+			</elements>
+		</policy>	
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<policy
+			name="POL_SEPPmail_User_SMSign"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_SMSign)"
+			explainText="$(string.POL_SEPPmail_User_SMSign_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_SMSign)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_SMSign" valueName="SMSign">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	
+		<policy
+			name="POL_SEPPmail_User_SMSignSelected"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_SMSignSelected)"
+			explainText="$(string.POL_SEPPmail_User_SMSignSelected_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_SMSignSelected)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_SMSignSelected" valueName="SMSignSelected">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+
+		<policy
+			name="POL_SEPPmail_User_s-smsign"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_s-smsign)"
+			explainText="$(string.POL_SEPPmail_User_s-smsign_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_s-smsign)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_s-smsign" valueName="s-smsign"/>
+			</elements>
+		</policy>	
+	<!-- End: HCU -->
+<!-- End: Button "Sign" -->
+
+<!-- Begin: Button "Plain" -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_SMPlain"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_SMPlain)"
+			explainText="$(string.POL_SEPPmail_Computer_SMPlain_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_SMPlain)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_SMPlain" valueName="SMPlain">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	
+		<policy
+			name="POL_SEPPmail_Computer_SMPlainSelected"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_SMPlainSelected)"
+			explainText="$(string.POL_SEPPmail_Computer_SMPlainSelected_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_SMPlainSelected)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_SMPlainSelected" valueName="SMPlainSelected">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+		
+		<policy
+			name="POL_SEPPmail_Computer_s-smplain"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_s-smplain)"
+			explainText="$(string.POL_SEPPmail_Computer_s-smplain_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_s-smplain)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_s-smplain" valueName="s-smplain"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<policy
+			name="POL_SEPPmail_User_SMPlain"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_SMPlain)"
+			explainText="$(string.POL_SEPPmail_User_SMPlain_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_SMPlain)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_SMPlain" valueName="SMPlain">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	
+		<policy
+			name="POL_SEPPmail_User_SMPlainSelected"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_SMPlainSelected)"
+			explainText="$(string.POL_SEPPmail_User_SMPlainSelected_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_SMPlainSelected)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_SMPlainSelected" valueName="SMPlainSelected">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+		
+		<policy
+			name="POL_SEPPmail_User_s-smplain"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_s-smplain)"
+			explainText="$(string.POL_SEPPmail_User_s-smplain_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_s-smplain)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_s-smplain" valueName="s-smplain"/>
+			</elements>
+		</policy>
+	<!-- End: HCU -->
+<!-- End: Button "Plain" -->
+
+<!-- Begin: Button "Large File Transfer" -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_SMLargeFileTransfer"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_SMLargeFileTransfer)"
+			explainText="$(string.POL_SEPPmail_Computer_SMLargeFileTransfer_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_SMLargeFileTransfer)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_SMLargeFileTransfer" valueName="SMLargeFileTransfer">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	
+		<policy
+			name="POL_SEPPmail_Computer_SMLargeFileTransferSelected"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_SMLargeFileTransferSelected)"
+			explainText="$(string.POL_SEPPmail_Computer_SMLargeFileTransferSelected_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_SMLargeFileTransferSelected)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_SMLargeFileTransferSelected" valueName="SMLargeFileTransferSelected">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+
+		<policy
+			name="POL_SEPPmail_Computer_SMLargeFileTransferBypass"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_SMLargeFileTransferBypass)"
+			explainText="$(string.POL_SEPPmail_Computer_SMLargeFileTransferBypass_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_SMLargeFileTransferBypass)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_SMLargeFileTransferBypass" valueName="SMLargeFileTransferBypass">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	
+		<policy
+			name="POL_SEPPmail_Computer_s-smlfm"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_s-smlfm)"
+			explainText="$(string.POL_SEPPmail_Computer_s-smlfm_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_s-smlfm)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_s-smlfm" valueName="s-smlfm"/>
+			</elements>
+		</policy>
+
+		<policy
+			name="POL_SEPPmail_Computer_LFTSEPPmailHostname"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_LFTSEPPmailHostname)"
+			explainText="$(string.POL_SEPPmail_Computer_LFTSEPPmailHostname_Help)"
+			presentation="$(presentation.POL_SEPPmail_Computer_LFTSEPPmailHostname)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_LFTSEPPmailHostname" valueName="LFTSEPPmailHostname"/>
+			</elements>
+		</policy>
+
+		<policy
+			name="POL_SEPPmail_Computer_InsecureLFTUploadConnection"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_InsecureLFTUploadConnection)"
+			explainText="$(string.POL_SEPPmail_Computer_InsecureLFTUploadConnection_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_InsecureLFTUploadConnection)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_InsecureLFTUploadConnection" valueName="InsecureLFTUploadConnection">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<policy
+			name="POL_SEPPmail_User_SMLargeFileTransfer"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_SMLargeFileTransfer)"
+			explainText="$(string.POL_SEPPmail_User_SMLargeFileTransfer_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_SMLargeFileTransfer)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_SMLargeFileTransfer" valueName="SMLargeFileTransfer">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	
+		<policy
+			name="POL_SEPPmail_User_SMLargeFileTransferSelected"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_SMLargeFileTransferSelected)"
+			explainText="$(string.POL_SEPPmail_User_SMLargeFileTransferSelected_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_SMLargeFileTransferSelected)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_SMLargeFileTransferSelected" valueName="SMLargeFileTransferSelected">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+
+		<policy
+			name="POL_SEPPmail_User_SMLargeFileTransferBypass"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_SMLargeFileTransferBypass)"
+			explainText="$(string.POL_SEPPmail_User_SMLargeFileTransferBypass_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_SMLargeFileTransferBypass)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_SMLargeFileTransferBypass" valueName="SMLargeFileTransferBypass">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	
+		<policy
+			name="POL_SEPPmail_User_s-smlfm"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_s-smlfm)"
+			explainText="$(string.POL_SEPPmail_User_s-smlfm_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_s-smlfm)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_s-smlfm" valueName="s-smlfm"/>
+			</elements>
+		</policy>
+
+		<policy
+			name="POL_SEPPmail_User_LFTSEPPmailHostname"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_LFTSEPPmailHostname)"
+			explainText="$(string.POL_SEPPmail_User_LFTSEPPmailHostname_Help)"
+			presentation="$(presentation.POL_SEPPmail_User_LFTSEPPmailHostname)"
+			key="Software\SEPPmail\OutlookAddIn">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_LFTSEPPmailHostname" valueName="LFTSEPPmailHostname"/>
+			</elements>
+		</policy>
+
+		<policy
+			name="POL_SEPPmail_User_InsecureLFTUploadConnection"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_InsecureLFTUploadConnection)"
+			explainText="$(string.POL_SEPPmail_User_InsecureLFTUploadConnection_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_InsecureLFTUploadConnection)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_InsecureLFTUploadConnection" valueName="InsecureLFTUploadConnection">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	<!-- End: HCU -->
+<!-- End: Button "Large File Transfer" -->
+
+<!-- Begin: Button "Help" -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_SMHelp"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_SMHelp)"
+			explainText="$(string.POL_SEPPmail_Computer_SMHelp_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			valueName="SMHelp"
+			presentation="$(presentation.POL_SEPPmail_Computer_SMHelp)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_SMHelp" valueName="SMHelp">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	
+		<policy
+			name="POL_SEPPmail_Computer_WebSite"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_WebSite)"
+			explainText="$(string.POL_SEPPmail_Computer_WebSite_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_WebSite)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_WebSite" valueName="WebSite"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<policy
+			name="POL_SEPPmail_User_SMHelp"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_SMHelp)"
+			explainText="$(string.POL_SEPPmail_User_SMHelp_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			valueName="SMHelp"
+			presentation="$(presentation.POL_SEPPmail_User_SMHelp)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_SMHelp" valueName="SMHelp">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	
+		<policy
+			name="POL_SEPPmail_User_WebSite"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_WebSite)"
+			explainText="$(string.POL_SEPPmail_User_WebSite_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_WebSite)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_WebSite" valueName="WebSite"/>
+			</elements>
+		</policy>
+	<!-- End: HCU -->
+<!-- End: Button "Help" -->
+<!-- End: Button configuration -->
+	
+<!-- Begin: "Categorisation" -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Categorize"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Categorize)"
+			explainText="$(string.POL_SEPPmail_Computer_Categorize_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_Categorize)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_Categorize" valueName="Categorize">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<policy
+			name="POL_SEPPmail_User_Categorize"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Categorize)"
+			explainText="$(string.POL_SEPPmail_User_Categorize_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_Categorize)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_Categorize" valueName="Categorize">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	<!-- End: HCU -->
+	<!-- Begin: "CategorisationHistory" -->
+		<!-- Begin: HKLM -->
+			<policy
+				name="POL_SEPPmail_Computer_CategorizeHistory"
+				class="Machine"
+				displayName="$(string.POL_SEPPmail_Computer_CategorizeHistory)"
+				explainText="$(string.POL_SEPPmail_Computer_CategorizeHistory_Help)"
+				key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+				presentation="$(presentation.POL_SEPPmail_Computer_CategorizeHistory)">
+				<parentCategory ref="CAT_SEPPmail_Computer"/>
+				<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+				<elements>
+					<boolean id="DXT_SEPPmail_Computer_CategorizeHistory" valueName="CategorizeHistory">
+						<trueValue>
+							<decimal value="1"/>
+						</trueValue>
+						<falseValue>
+							<decimal value="0"/>
+						</falseValue>
+					</boolean>
+				</elements>
+			</policy>
+		<!-- End: HKLM -->
+		<!-- Begin: HCU -->
+			<policy
+				name="POL_SEPPmail_User_CategorizeHistory"
+				class="User"
+				displayName="$(string.POL_SEPPmail_User_CategorizeHistory)"
+				explainText="$(string.POL_SEPPmail_User_CategorizeHistory_Help)"
+				key="Software\SEPPmail\OutlookAddIn"
+				presentation="$(presentation.POL_SEPPmail_User_CategorizeHistory)">
+				<parentCategory ref="CAT_SEPPmail_User"/>
+				<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+				<elements>
+					<boolean id="DXT_SEPPmail_User_CategorizeHistory" valueName="CategorizeHistory">
+						<trueValue>
+							<decimal value="1"/>
+						</trueValue>
+						<falseValue>
+							<decimal value="0"/>
+						</falseValue>
+					</boolean>
+				</elements>
+			</policy>
+		<!-- End: HCU -->
+	<!-- End: "CategorisationHistory" -->
+<!-- End: "Categorisation" -->
+
+
+<!-- Begin: "Only HKLM config" -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_LMonly"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_LMonly)"
+			explainText="$(string.POL_SEPPmail_Computer_LMonly_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_LMonly)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_LMonly" valueName="LMonly">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- No: HCU -->
+<!-- End: "Only HKLM config" -->
+
+<!-- Begin: "Position of subject tag" -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_PlaceSubjectFlagsAtStart"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_PlaceSubjectFlagsAtStart)"
+			explainText="$(string.POL_SEPPmail_Computer_PlaceSubjectFlagsAtStart_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_PlaceSubjectFlagsAtStart)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_PlaceSubjectFlagsAtStart" valueName="PlaceSubjectFlagsAtStart">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<policy
+			name="POL_SEPPmail_User_PlaceSubjectFlagsAtStart"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_PlaceSubjectFlagsAtStart)"
+			explainText="$(string.POL_SEPPmail_User_PlaceSubjectFlagsAtStart_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_PlaceSubjectFlagsAtStart)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_PlaceSubjectFlagsAtStart" valueName="PlaceSubjectFlagsAtStart">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	<!-- End: HCU -->
+<!-- End: "Position of subject tag" -->
+
+<!-- Begin: "Subject mode" -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_subject-mod"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_subject-mod)"
+			explainText="$(string.POL_SEPPmail_Computer_subject-mod_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_subject-mod)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_subject-mod" valueName="subject-mod">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<policy
+			name="POL_SEPPmail_User_subject-mod"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_subject-mod)"
+			explainText="$(string.POL_SEPPmail_User_subject-mod_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_subject-mod)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_subject-mod" valueName="subject-mod">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	<!-- End: HCU -->
+<!-- End: "Subject mode" -->
+
+<!-- Begin: "Tool tips" -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_Tooltips" valueName="Tooltips">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_Tooltips" valueName="Tooltips">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	</End: HCU -->
+<!-- End: "Tool tips" -->
+
+<!-- Begin: "Warning" -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_SMWarning"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_SMWarning)"
+			explainText="$(string.POL_SEPPmail_Computer_SMWarning_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_SMWarning)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_SMWarning" valueName="SMWarning">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	
+		<policy
+			name="POL_SEPPmail_Computer_SMWarningDomainWhitelist"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_SMWarningDomainWhitelist)"
+			explainText="$(string.POL_SEPPmail_Computer_SMWarningDomainWhitelist_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_SMWarningDomainWhitelist)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_SMWarningDomainWhitelist" valueName="SMWarningDomainWhitelist"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<policy
+			name="POL_SEPPmail_User_SMWarning"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_SMWarning)"
+			explainText="$(string.POL_SEPPmail_User_SMWarning_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_SMWarning)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_SMWarning" valueName="SMWarning">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	
+		<policy
+			name="POL_SEPPmail_User_SMWarningDomainWhitelist"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_SMWarningDomainWhitelist)"
+			explainText="$(string.POL_SEPPmail_User_SMWarningDomainWhitelist_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_SMWarningDomainWhitelist)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_SMWarningDomainWhitelist" valueName="SMWarningDomainWhitelist"/>
+			</elements>
+		</policy>
+	<!-- End: HCU -->
+<!-- End: "Warning" -->
+
+<!-- Begin: LDAP configuration -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_LDAPPermissionCheckActive"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_LDAPPermissionCheckActive)"
+			explainText="$(string.POL_SEPPmail_Computer_LDAPPermissionCheckActive_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_LDAPPermissionCheckActive)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_Computer_LDAPPermissionCheckActive" valueName="LDAPPermissionCheckActive">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<policy
+			name="POL_SEPPmail_User_LDAPPermissionCheckActive"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_LDAPPermissionCheckActive)"
+			explainText="$(string.POL_SEPPmail_User_LDAPPermissionCheckActive_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_LDAPPermissionCheckActive)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<boolean id="DXT_SEPPmail_User_LDAPPermissionCheckActive" valueName="LDAPPermissionCheckActive">
+				    <trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	<!-- End: HCU -->
+
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_LDAPServerAddress"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_LDAPServerAddress)"
+			explainText="$(string.POL_SEPPmail_Computer_LDAPServerAddress_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_LDAPServerAddress)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_LDAPServerAddress" valueName="LDAPServerAddress"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<policy
+			name="POL_SEPPmail_User_LDAPServerAddress"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_LDAPServerAddress)"
+			explainText="$(string.POL_SEPPmail_User_LDAPServerAddress_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_LDAPServerAddress)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_LDAPServerAddress" valueName="LDAPServerAddress"/>
+			</elements>
+		</policy>
+	<!-- End: HCU -->
+
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_LDAPUsername"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_LDAPUsername)"
+			explainText="$(string.POL_SEPPmail_Computer_LDAPUsername_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_LDAPUsername)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_LDAPUsername" valueName="LDAPUsername"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<policy
+			name="POL_SEPPmail_User_LDAPUsername"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_LDAPUsername)"
+			explainText="$(string.POL_SEPPmail_User_LDAPUsername_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_LDAPUsername)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_LDAPUsername" valueName="LDAPUsername"/>
+			</elements>
+		</policy>
+	<!-- End: HCU -->
+
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_LDAPPassword"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_LDAPPassword)"
+			explainText="$(string.POL_SEPPmail_Computer_LDAPPassword_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_LDAPPassword)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_LDAPPassword" valueName="LDAPPassword"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<policy
+			name="POL_SEPPmail_User_LDAPPassword"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_LDAPPassword)"
+			explainText="$(string.POL_SEPPmail_User_LDAPPassword_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_LDAPPassword)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_LDAPPassword" valueName="LDAPPassword"/>
+			</elements>
+		</policy>
+	<!-- End: HCU -->
+
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_LDAPAuthenticationTypes"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_LDAPAuthenticationTypes)"
+			explainText="$(string.POL_SEPPmail_Computer_LDAPAuthenticationTypes_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_LDAPAuthenticationTypes)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_LDAPAuthenticationTypes" valueName="LDAPAuthenticationTypes"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<policy
+			name="POL_SEPPmail_User_LDAPAuthenticationTypes"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_LDAPAuthenticationTypes)"
+			explainText="$(string.POL_SEPPmail_User_LDAPAuthenticationTypes_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_LDAPAuthenticationTypes)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_LDAPAuthenticationTypes" valueName="LDAPAuthenticationTypes"/>
+			</elements>
+		</policy>
+	<!-- End: HCU -->
+
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_LDAPOrganizationalUnit"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_LDAPOrganizationalUnit)"
+			explainText="$(string.POL_SEPPmail_Computer_LDAPOrganizationalUnit_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_LDAPOrganizationalUnit)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_LDAPOrganizationalUnit" valueName="LDAPOrganizationalUnit"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<policy
+			name="POL_SEPPmail_User_LDAPOrganizationalUnit"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_LDAPOrganizationalUnit)"
+			explainText="$(string.POL_SEPPmail_User_LDAPOrganizationalUnit_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_LDAPOrganizationalUnit)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_LDAPOrganizationalUnit" valueName="LDAPOrganizationalUnit"/>
+			</elements>
+		</policy>
+	<!-- End: HCU -->
+
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_LDAPQuery"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_LDAPQuery)"
+			explainText="$(string.POL_SEPPmail_Computer_LDAPQuery_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_Computer_LDAPQuery)">
+			<parentCategory ref="CAT_SEPPmail_Computer"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_LDAPQuery" valueName="LDAPQuery"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<policy
+			name="POL_SEPPmail_User_LDAPQuery"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_LDAPQuery)"
+			explainText="$(string.POL_SEPPmail_User_LDAPQuery_Help)"
+			key="Software\SEPPmail\OutlookAddIn"
+			presentation="$(presentation.POL_SEPPmail_User_LDAPQuery)">
+			<parentCategory ref="CAT_SEPPmail_User"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_LDAPQuery" valueName="LDAPQuery"/>
+			</elements>
+		</policy>
+	<!-- End: HCU -->
+<!-- End: LDAP configuration -->
+
+<!-- Begin: Tool tips configuration -->
+<!-- Begin: Tool tips DE -->
+<!-- Begin: Encrypt -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_DE_Encrypt"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_DE_Encrypt)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_DE_Encrypt_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\DE"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_DE_Encrypt)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_DE"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_DE_Encrypt" valueName="Encrypt"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_DE_Encrypt"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_DE_Encrypt)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_DE_Encrypt_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\DE"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_DE_Encrypt)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_DE"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_DE_Encrypt" valueName="Encrypt"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: Encrypt -->
+
+<!-- Begin: Webmail -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_DE_Webmail"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_DE_Webmail)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_DE_Webmail_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\DE"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_DE_Webmail)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_DE"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_DE_Webmail" valueName="Webmail"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_DE_Webmail"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_DE_Webmail)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_DE_Webmail_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\DE"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_DE_Webmail)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_DE"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_DE_Webmail" valueName="Webmail"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: Webmail -->
+
+<!-- Begin: InternalEncryption -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_DE_InternalEncryption"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_DE_InternalEncryption)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_DE_InternalEncryption_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\DE"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_DE_InternalEncryption)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_DE"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_DE_InternalEncryption" valueName="InternalEncryption"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_DE_InternalEncryption"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_DE_InternalEncryption)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_DE_InternalEncryption_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\DE"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_DE_InternalEncryption)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_DE"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_DE_InternalEncryption" valueName="InternalEncryption"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: InternalEncryption -->
+
+<!-- Begin: NoEncryption -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_DE_NoEncryption"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_DE_NoEncryption)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_DE_NoEncryption_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\DE"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_DE_NoEncryption)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_DE"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_DE_NoEncryption" valueName="NoEncryption"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_DE_NoEncryption"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_DE_NoEncryption)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_DE_NoEncryption_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\DE"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_DE_NoEncryption)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_DE"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_DE_NoEncryption" valueName="NoEncryption"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: NoEncryption -->
+
+<!-- Begin: Sign -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_DE_Sign"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_DE_Sign)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_DE_Sign_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\DE"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_DE_Sign)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_DE"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_DE_Sign" valueName="Sign"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_DE_Sign"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_DE_Sign)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_DE_Sign_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\DE"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_DE_Sign)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_DE"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_DE_Sign" valueName="Sign"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: Sign -->
+
+<!-- Begin: Plain -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_DE_Plain"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_DE_Plain)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_DE_Plain_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\DE"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_DE_Plain)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_DE"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_DE_Plain" valueName="Plain"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_DE_Plain"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_DE_Plain)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_DE_Plain_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\DE"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_DE_Plain)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_DE"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_DE_Plain" valueName="Plain"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: Plain -->
+
+<!-- Begin: LargeFileTransfer -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_DE_LargeFileTransfer"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_DE_LargeFileTransfer)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_DE_LargeFileTransfer_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\DE"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_DE_LargeFileTransfer)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_DE"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_DE_LargeFileTransfer" valueName="LargeFileTransfer"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_DE_LargeFileTransfer"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_DE_LargeFileTransfer)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_DE_LargeFileTransfer_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\DE"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_DE_LargeFileTransfer)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_DE"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_DE_LargeFileTransfer" valueName="LargeFileTransfer"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: LargeFileTransfer -->
+
+<!-- Begin: Help -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_DE_Help"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_DE_Help)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_DE_Help_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\DE"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_DE_Help)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_DE"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_DE_Help" valueName="Help"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_DE_Help"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_DE_Help)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_DE_Help_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\DE"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_DE_Help)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_DE"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_DE_Help" valueName="Help"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: Help -->
+<!-- End: Tool tips DE -->
+<!-- Begin: Tool tips EN -->
+<!-- Begin: Encrypt -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_EN_Encrypt"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_EN_Encrypt)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_EN_Encrypt_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\EN"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_EN_Encrypt)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_EN"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_EN_Encrypt" valueName="Encrypt"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_EN_Encrypt"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_EN_Encrypt)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_EN_Encrypt_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\EN"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_EN_Encrypt)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_EN"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_EN_Encrypt" valueName="Encrypt"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: Encrypt -->
+
+<!-- Begin: Webmail -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_EN_Webmail"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_EN_Webmail)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_EN_Webmail_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\EN"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_EN_Webmail)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_EN"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_EN_Webmail" valueName="Webmail"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_EN_Webmail"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_EN_Webmail)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_EN_Webmail_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\EN"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_EN_Webmail)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_EN"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_EN_Webmail" valueName="Webmail"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: Webmail -->
+
+<!-- Begin: InternalEncryption -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_EN_InternalEncryption"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_EN_InternalEncryption)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_EN_InternalEncryption_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\EN"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_EN_InternalEncryption)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_EN"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_EN_InternalEncryption" valueName="InternalEncryption"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_EN_InternalEncryption"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_EN_InternalEncryption)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_EN_InternalEncryption_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\EN"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_EN_InternalEncryption)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_EN"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_EN_InternalEncryption" valueName="InternalEncryption"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: InternalEncryption -->
+
+<!-- Begin: NoEncryption -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_EN_NoEncryption"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_EN_NoEncryption)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_EN_NoEncryption_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\EN"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_EN_NoEncryption)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_EN"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_EN_NoEncryption" valueName="NoEncryption"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_EN_NoEncryption"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_EN_NoEncryption)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_EN_NoEncryption_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\EN"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_EN_NoEncryption)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_EN"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_EN_NoEncryption" valueName="NoEncryption"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: NoEncryption -->
+
+<!-- Begin: Sign -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_EN_Sign"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_EN_Sign)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_EN_Sign_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\EN"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_EN_Sign)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_EN"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_EN_Sign" valueName="Sign"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_EN_Sign"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_EN_Sign)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_EN_Sign_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\EN"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_EN_Sign)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_EN"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_EN_Sign" valueName="Sign"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: Sign -->
+
+<!-- Begin: Plain -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_EN_Plain"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_EN_Plain)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_EN_Plain_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\EN"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_EN_Plain)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_EN"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_EN_Plain" valueName="Plain"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_EN_Plain"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_EN_Plain)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_EN_Plain_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\EN"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_EN_Plain)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_EN"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_EN_Plain" valueName="Plain"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: Plain -->
+
+<!-- Begin: LargeFileTransfer -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_EN_LargeFileTransfer"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_EN_LargeFileTransfer)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_EN_LargeFileTransfer_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\EN"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_EN_LargeFileTransfer)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_EN"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_EN_LargeFileTransfer" valueName="LargeFileTransfer"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_EN_LargeFileTransfer"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_EN_LargeFileTransfer)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_EN_LargeFileTransfer_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\EN"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_EN_LargeFileTransfer)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_EN"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_EN_LargeFileTransfer" valueName="LargeFileTransfer"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: LargeFileTransfer -->
+
+<!-- Begin: Help -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_EN_Help"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_EN_Help)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_EN_Help_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\EN"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_EN_Help)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_EN"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_EN_Help" valueName="Help"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_EN_Help"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_EN_Help)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_EN_Help_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\EN"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_EN_Help)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_EN"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_EN_Help" valueName="Help"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: Help -->
+<!-- End: Tool tips EN -->
+<!-- Begin: Tool tips FR -->
+<!-- Begin: Encrypt -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_FR_Encrypt"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_FR_Encrypt)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_FR_Encrypt_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\FR"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_FR_Encrypt)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_FR"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_FR_Encrypt" valueName="Encrypt"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_FR_Encrypt"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_FR_Encrypt)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_FR_Encrypt_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\FR"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_FR_Encrypt)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_FR"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_FR_Encrypt" valueName="Encrypt"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: Encrypt -->
+
+<!-- Begin: Webmail -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_FR_Webmail"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_FR_Webmail)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_FR_Webmail_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\FR"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_FR_Webmail)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_FR"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_FR_Webmail" valueName="Webmail"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_FR_Webmail"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_FR_Webmail)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_FR_Webmail_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\FR"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_FR_Webmail)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_FR"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_FR_Webmail" valueName="Webmail"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: Webmail -->
+
+<!-- Begin: InternalEncryption -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_FR_InternalEncryption"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_FR_InternalEncryption)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_FR_InternalEncryption_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\FR"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_FR_InternalEncryption)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_FR"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_FR_InternalEncryption" valueName="InternalEncryption"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_FR_InternalEncryption"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_FR_InternalEncryption)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_FR_InternalEncryption_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\FR"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_FR_InternalEncryption)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_FR"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_FR_InternalEncryption" valueName="InternalEncryption"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: InternalEncryption -->
+
+<!-- Begin: NoEncryption -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_FR_NoEncryption"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_FR_NoEncryption)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_FR_NoEncryption_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\FR"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_FR_NoEncryption)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_FR"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_FR_NoEncryption" valueName="NoEncryption"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_FR_NoEncryption"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_FR_NoEncryption)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_FR_NoEncryption_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\FR"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_FR_NoEncryption)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_FR"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_FR_NoEncryption" valueName="NoEncryption"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: NoEncryption -->
+
+<!-- Begin: Sign -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_FR_Sign"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_FR_Sign)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_FR_Sign_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\FR"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_FR_Sign)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_FR"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_FR_Sign" valueName="Sign"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_FR_Sign"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_FR_Sign)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_FR_Sign_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\FR"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_FR_Sign)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_FR"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_FR_Sign" valueName="Sign"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: Sign -->
+
+<!-- Begin: Plain -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_FR_Plain"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_FR_Plain)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_FR_Plain_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\FR"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_FR_Plain)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_FR"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_FR_Plain" valueName="Plain"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_FR_Plain"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_FR_Plain)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_FR_Plain_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\FR"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_FR_Plain)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_FR"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_FR_Plain" valueName="Plain"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: Plain -->
+
+<!-- Begin: LargeFileTransfer -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_FR_LargeFileTransfer"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_FR_LargeFileTransfer)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_FR_LargeFileTransfer_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\FR"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_FR_LargeFileTransfer)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_FR"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_FR_LargeFileTransfer" valueName="LargeFileTransfer"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_FR_LargeFileTransfer"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_FR_LargeFileTransfer)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_FR_LargeFileTransfer_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\FR"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_FR_LargeFileTransfer)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_FR"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_FR_LargeFileTransfer" valueName="LargeFileTransfer"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: LargeFileTransfer -->
+
+<!-- Begin: Help -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_FR_Help"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_FR_Help)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_FR_Help_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\FR"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_FR_Help)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_FR"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_FR_Help" valueName="Help"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_FR_Help"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_FR_Help)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_FR_Help_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\FR"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_FR_Help)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_FR"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_FR_Help" valueName="Help"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: Help -->
+<!-- End: Tool tips FR -->
+<!-- Begin: Tool tips IT -->
+<!-- Begin: Encrypt -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_IT_Encrypt"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_IT_Encrypt)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_IT_Encrypt_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\IT"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_IT_Encrypt)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_IT"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_IT_Encrypt" valueName="Encrypt"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_IT_Encrypt"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_IT_Encrypt)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_IT_Encrypt_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\IT"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_IT_Encrypt)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_IT"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_IT_Encrypt" valueName="Encrypt"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: Encrypt -->
+
+<!-- Begin: Webmail -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_IT_Webmail"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_IT_Webmail)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_IT_Webmail_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\IT"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_IT_Webmail)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_IT"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_IT_Webmail" valueName="Webmail"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_IT_Webmail"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_IT_Webmail)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_IT_Webmail_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\IT"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_IT_Webmail)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_IT"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_IT_Webmail" valueName="Webmail"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: Webmail -->
+
+<!-- Begin: InternalEncryption -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_IT_InternalEncryption"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_IT_InternalEncryption)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_IT_InternalEncryption_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\IT"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_IT_InternalEncryption)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_IT"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_IT_InternalEncryption" valueName="InternalEncryption"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_IT_InternalEncryption"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_IT_InternalEncryption)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_IT_InternalEncryption_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\IT"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_IT_InternalEncryption)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_IT"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_IT_InternalEncryption" valueName="InternalEncryption"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: InternalEncryption -->
+
+<!-- Begin: NoEncryption -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_IT_NoEncryption"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_IT_NoEncryption)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_IT_NoEncryption_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\IT"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_IT_NoEncryption)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_IT"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_IT_NoEncryption" valueName="NoEncryption"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_IT_NoEncryption"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_IT_NoEncryption)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_IT_NoEncryption_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\IT"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_IT_NoEncryption)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_IT"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_IT_NoEncryption" valueName="NoEncryption"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: NoEncryption -->
+
+<!-- Begin: Sign -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_IT_Sign"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_IT_Sign)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_IT_Sign_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\IT"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_IT_Sign)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_IT"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_IT_Sign" valueName="Sign"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_IT_Sign"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_IT_Sign)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_IT_Sign_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\IT"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_IT_Sign)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_IT"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_IT_Sign" valueName="Sign"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: Sign -->
+
+<!-- Begin: Plain -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_IT_Plain"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_IT_Plain)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_IT_Plain_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\IT"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_IT_Plain)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_IT"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_IT_Plain" valueName="Plain"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_IT_Plain"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_IT_Plain)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_IT_Plain_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\IT"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_IT_Plain)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_IT"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_IT_Plain" valueName="Plain"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: Plain -->
+
+<!-- Begin: LargeFileTransfer -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_IT_LargeFileTransfer"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_IT_LargeFileTransfer)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_IT_LargeFileTransfer_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\IT"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_IT_LargeFileTransfer)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_IT"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_IT_LargeFileTransfer" valueName="LargeFileTransfer"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_IT_LargeFileTransfer"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_IT_LargeFileTransfer)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_IT_LargeFileTransfer_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\IT"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_IT_LargeFileTransfer)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_IT"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_IT_LargeFileTransfer" valueName="LargeFileTransfer"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: LargeFileTransfer -->
+
+<!-- Begin: Help -->
+	<!-- Begin: HKLM -->
+		<policy
+			name="POL_SEPPmail_Computer_Tooltips_IT_Help"
+			class="Machine"
+			displayName="$(string.POL_SEPPmail_Computer_Tooltips_IT_Help)"
+			explainText="$(string.POL_SEPPmail_Computer_Tooltips_IT_Help_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\IT"
+			presentation="$(presentation.POL_SEPPmail_Computer_Tooltips_IT_Help)">
+			<parentCategory ref="CAT_SEPPmail_Computer_Tooltips_IT"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_Computer_Tooltips_IT_Help" valueName="Help"/>
+			</elements>
+		</policy>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<policy
+			name="POL_SEPPmail_User_Tooltips_IT_Help"
+			class="User"
+			displayName="$(string.POL_SEPPmail_User_Tooltips_IT_Help)"
+			explainText="$(string.POL_SEPPmail_User_Tooltips_IT_Help_Help)"
+			key="SOFTWARE\WOW6432Node\SEPPmail\OutlookAddIn\Tooltips\IT"
+			presentation="$(presentation.POL_SEPPmail_User_Tooltips_IT_Help)">
+			<parentCategory ref="CAT_SEPPmail_User_Tooltips_IT"/>
+			<supportedOn ref="windows:SUPPORTED_WindowsVista"/>
+			<elements>
+				<text id="TXT_SEPPmail_User_Tooltips_IT_Help" valueName="Help"/>
+			</elements>
+		</policy>
+	< /End: HCU -->
+<!-- End: Help -->
+<!-- End: Tool tips IT -->
+<!-- End: Tool tips configuration -->
+	</policies>
+
+  </policyDefinitions>

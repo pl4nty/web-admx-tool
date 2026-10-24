@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2023 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="kde" namespace="BaseALT.Policies.KDE" />
+    <using prefix="system" namespace="BaseALT.Policies.System" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <policies>
+  <policy name="kde-win-activate" class="Both" displayName="$(string.kde-win-activate)"
+    explainText="$(string.kde-win-activate_help)"
+    key="Software\BaseALT\Policies\KDE\kwinrc\Windows"
+    presentation="$(presentation.kde-win-activate-pr)">
+    <parentCategory ref="system:ALT_Environment_KDE" />
+    <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="kde-win-activate_setter" valueName="FocusPolicy" required="true">
+          <item displayName="$(string.kde-win-act-Click_to_focus)">
+            <value>
+              <string>FocusFollowMouse</string>
+            </value>
+          </item>
+          <item displayName="$(string.kde-win-act-Focus_follows_mouse)">
+            <value>
+              <string>FocusFollowsMouse</string>
+            </value>
+          </item>
+          <item displayName="$(string.kde-win-act-Focus_under_mouse)">
+            <value>
+              <string>FocusUnderMouse</string>
+            </value>
+          </item>
+          <item displayName="$(string.kde-win-act-Focus_under_mouse-Mp)">
+            <value>
+              <string>FocusStrictlyUnderMouse</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="NextFocusPrefersMouse" key="Software\BaseALT\Policies\KDE\kwinrc\Windows" valueName="NextFocusPrefersMouse">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+        <boolean id="kde-win-activate_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="kwinrc.Windows.FocusPolicy">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+  <policy name="kde-win-rendering" class="Both" displayName="$(string.kde-win-rendering)"
+    explainText="$(string.kde-win-rendering_help)"
+    key="Software\BaseALT\Policies\KDE\kwinrc\Compositing"
+    presentation="$(presentation.kde-win-rendering-pr)">
+    <parentCategory ref="system:ALT_Environment_KDE" />
+    <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="kde-win-rendering_setter" valueName="LatencyPolicy" required="true">
+          <item displayName="$(string.kde-win-rend-ExtremelyLow)">
+            <value>
+              <string>ExtremelyLow</string>
+            </value>
+          </item>
+          <item displayName="$(string.kde-win-rend-Low)">
+            <value>
+              <string>Low</string>
+            </value>
+          </item>
+          <item displayName="$(string.kde-win-rend-Medium)">
+            <value>
+              <string>Medium</string>
+            </value>
+          </item>
+          <item displayName="$(string.kde-win-rend-High)">
+            <value>
+              <string>High</string>
+            </value>
+          </item>
+          <item displayName="$(string.kde-win-rend-MostHigh)">
+            <value>
+              <string>NONE</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="kde-win-rendering_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="kwinrc.Compositing.LatencyPolicy">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+  <policy name="kde-language" class="Both" displayName="$(string.kde-language)"
+    explainText="$(string.kde-language_help)"
+    key="Software\BaseALT\Policies\KDE"
+    presentation="$(presentation.kde-language-pr)">
+    <parentCategory ref="system:ALT_Settings_KDE" />
+    <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <text id="kde-format_setter" key="Software\BaseALT\Policies\KDE\plasma-localerc\Formats" valueName="LANG"/>
+        <boolean id="kde-format_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="plasma-localerc.Formats.LANG">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+        <text id="kde-language_setter" key="Software\BaseALT\Policies\KDE\plasma-localerc\Translation" valueName="LANGUAGE"/>
+        <boolean id="kde-language_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="plasma-localerc.Translation.LANGUAGE">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+  <policy name="kde-desktops" class="Both" displayName="$(string.kde-desktops)"
+    explainText="$(string.kde-desktops_help)"
+    key="Software\BaseALT\Policies\KDE\kwinrc\Desktops"
+    presentation="$(presentation.kde-desktops-pr)">
+    <parentCategory ref="system:ALT_Settings_KDE" />
+    <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <decimal id="kde-desktoprows_setter" valueName="Rows" minValue="1" maxValue="20" />
+        <decimal id="kde-desktopnumber_setter" valueName="Number" minValue="1" maxValue="20" />
+        <boolean id="kde-desktoprows_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="kwinrc.Desktops.Rows">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+        <boolean id="kde-desktopnumber_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="kwinrc.Desktops.Number">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+  <policy name="kde-automount" class="Both" displayName="$(string.kde-automount)"
+    explainText="$(string.kde-automount_help)"
+    key="Software\BaseALT\Policies\KDE\kded_device_automounterrc\General"
+    presentation="$(presentation.kde-automount-pr)">
+    <parentCategory ref="system:ALT_Settings_KDE" />
+    <supportedOn ref="system:SUPPORTED_AltP10" />
+    <elements>
+      <boolean id="kde-automount_setter"  valueName="AutomountEnabled">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      <boolean id="kde-automount_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="kded_device_automounterrc.General.AutomountEnabled">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      <boolean id="kde-automountonlogin_setter"  valueName="AutomountOnLogin">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      <boolean id="kde-automountonlogin_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="kded_device_automounterrc.General.AutomountOnLogin">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      <boolean id="kde-automountonplugin_setter"  valueName="AutomountOnPlugin">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      <boolean id="kde-automountonplugin_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="kded_device_automounterrc.General.AutomountOnPlugin">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      <boolean id="kde-automountuknowndevices_setter"  valueName="AutomountUnknownDevices">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+        <boolean id="kde-automountuknowndevices_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="kded_device_automounterrc.General.AutomountUnknownDevices">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+  <policy name="kde-filesearch" class="Both" displayName="$(string.kde-filesearch)"
+    explainText="$(string.kde-filesearch_help)"
+    key="Software\BaseALT\Policies\KDE"
+    presentation="$(presentation.kde-filesearch-pr)">
+    <parentCategory ref="system:ALT_Settings_KDE" />
+    <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <boolean id="kde-basicsettings_setter" key="Software\BaseALT\Policies\KDE\baloofilerc\Basic Settings" valueName="Indexing-Enabled">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+        <boolean id="kde-onlybasic_setter" key="Software\BaseALT\Policies\KDE\baloofilerc\General" valueName="only basic indexing">
+          <trueValue>
+            <decimal value="0" />
+          </trueValue>
+          <falseValue>
+            <decimal value="1" />
+          </falseValue>
+          </boolean>
+        <boolean id="kde-indexhidden_setter" key="Software\BaseALT\Policies\KDE\baloofilerc\General" valueName="index hidden folders">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+        <boolean id="kde-filesearch_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="baloofilerc.Basic Settings.Indexing-Enabled">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+  <policy name="kde-iconstheme" class="Both" displayName="$(string.kde-iconstheme)"
+    explainText="$(string.kde-iconstheme_help)"
+    presentation="$(presentation.kde-iconstheme-pr)"
+    key="Software\BaseALT\Policies\KDE\kdeglobals\Icons">
+    <parentCategory ref="system:ALT_Appearance_KDE" />
+    <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <text id="kde-iconstheme_setter" valueName="Theme"/>
+        <boolean id="kde-iconstheme_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="kdeglobals.Icons.Theme" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+  <policy name="kde-look-and-feel" class="Both" displayName="$(string.kde-look-and-feel)"
+    explainText="$(string.kde-look-and-feel_help)"
+    presentation="$(presentation.kde-look-and-feel-pr)"
+    key="Software\BaseALT\Policies\KDE\kdeglobals\KDE">
+    <parentCategory ref="system:ALT_Appearance_KDE" />
+    <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <text id="kde-look-and-feel_setter" valueName="LookAndFeelPackage"/>
+        <boolean id="kde-look-and-feel_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="kdeglobals.KDE.LookAndFeelPackage" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+  <policy name="kde-background" class="Both" displayName="$(string.kde-background)"
+    explainText="$(string.kde-background_help)"
+    presentation="$(presentation.kde-background-pr)"
+    key="Software\BaseALT\Policies\KDE\ksplashrc\KSplash">
+    <parentCategory ref="system:ALT_Appearance_KDE" />
+    <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <text id="kde-background_setter" valueName="Theme"/>
+        <boolean id="kde-background_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="ksplashrc.KSplash.Theme" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+  <policy name="kde-desktoptheme" class="Both" displayName="$(string.kde-desktoptheme)"
+    explainText="$(string.kde-desktoptheme_help)"
+    presentation="$(presentation.kde-desktoptheme-pr)"
+    key="Software\BaseALT\Policies\KDE\plasmarc\Theme">
+    <parentCategory ref="system:ALT_Appearance_KDE" />
+    <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <text id="kde-desktoptheme_setter" valueName="name"/>
+        <boolean id="kde-desktoptheme_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="plasmarc.Theme.name" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+  <policy name="kde-browserapp" class="User" displayName="$(string.kde-browserapp)"
+    explainText="$(string.kde-browserapp_help)"
+    presentation="$(presentation.kde-browserapp-pr)"
+    key="Software\BaseALT\Policies\KDE\mimeapps.list\Default Applications">
+    <parentCategory ref="system:ALT_Application_KDE" />
+    <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum  id="kde-browserapp_setter" valueName="x-scheme-handler/http" required="true">
+          <item displayName="$(string.kde-browserapp-yandex)">
+            <value>
+              <string>yandex-browser.desktop;</string>
+            </value>
+          </item>
+          <item displayName="$(string.kde-browserapp-firefox)">
+            <value>
+              <string>firefox.desktop;</string>
+            </value>
+          </item>
+          <item displayName="$(string.kde-browserapp-chromium)">
+            <value>
+              <string>chromium-gost.desktop;</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+  <policy name="kde-wallpaper" class="User" displayName="$(string.kde-wallpaper)"
+    explainText="$(string.kde-wallpaper_help)"
+    presentation="$(presentation.kde-wallpaper-pr)"
+    key="Software\BaseALT\Policies\KDE\wallpaper\wallpaperimage">
+    <parentCategory ref="system:ALT_Appearance_KDE" />
+    <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <text id="kde-wallpaper_setter" valueName="Image"/>
+      </elements>
+    </policy>
+  <policy name="kde-plasma-update" class="User" displayName="$(string.kde-plasma-update)"
+    explainText="$(string.kde-plasma-update_help)"
+    key="Software\BaseALT\Policies\KDE\Plasma"
+    valueName="Update">
+      <parentCategory ref="system:ALT_Environment_KDE"/>
+      <supportedOn ref="system:SUPPORTED_AltP9"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+  <policy name="kde-colorscheme" class="Both" displayName="$(string.kde-colorscheme)"
+    explainText="$(string.kde-colorscheme_help)"
+    presentation="$(presentation.kde-colorscheme-pr)"
+    key="Software\BaseALT\Policies\KDE\kdeglobals\General">
+    <parentCategory ref="system:ALT_Appearance_KDE" />
+    <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <text id="kde-colorscheme_setter" valueName="ColorScheme"/>
+        <boolean id="kde-colorscheme_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="kdeglobals.General.ColorScheme" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+  <policy name="kde-cursortheme" class="Both" displayName="$(string.kde-cursortheme)"
+    explainText="$(string.kde-cursortheme_help)"
+    presentation="$(presentation.kde-cursortheme-pr)"
+    key="Software\BaseALT\Policies\KDE\kcminputrc\Mouse">
+    <parentCategory ref="system:ALT_Appearance_KDE" />
+    <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <text id="kde-cursortheme_setter" valueName="cursorTheme"/>
+        <boolean id="kde-cursortheme_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="kcminputrc.Mouse.cursorTheme" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy name="kde-filterbar" class="User" displayName="$(string.kde-filterbar)"
+    explainText="$(string.kde-filterbar_help)"
+    presentation="$(presentation.kde-filterbar-pr)"
+    key="Software\BaseALT\Policies\KDE\dolphinrc\General">
+    <parentCategory ref="system:ALT_Appearance_KDE" />
+    <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <boolean id="kde-filterbar_setter" valueName="FilterBar">
+            <trueValue>
+              <decimal value="1" />
+            </trueValue>
+            <falseValue>
+              <decimal value="0" />
+            </falseValue>
+            </boolean>
+      </elements>
+    </policy>
+  <policy name="kde-graphic-effects" class="Both" displayName="$(string.kde-graphic-effects)"
+      explainText="$(string.kde-graphic-effects_help)"
+      presentation="$(presentation.kde-graphic-effects-pr)"
+      key="Software\BaseALT\Policies\KDE\kwinrc\Compositing">
+      <parentCategory ref="system:ALT_Environment_KDE"/>
+      <supportedOn ref="system:SUPPORTED_AltP10"/>
+      <elements>
+        <boolean id="kde-graphic-effects_setter" valueName="Enabled">
+            <trueValue>
+              <decimal value="1" />
+            </trueValue>
+            <falseValue>
+              <decimal value="0" />
+            </falseValue>
+            </boolean>
+        <boolean id="kde-graphic-effects_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="kwinrc.Compositing.Enabled" >
+            <trueValue>
+              <decimal value="1" />
+            </trueValue>
+            <falseValue>
+              <decimal value="0" />
+            </falseValue>
+            </boolean>
+      </elements>
+    </policy>
+  <policy name="kde-showdelete" class="Both" displayName="$(string.kde-showdelete)"
+      explainText="$(string.kde-showdelete_help)"
+      presentation="$(presentation.kde-showdelete-pr)"
+      key="Software\BaseALT\Policies\KDE\kdeglobals\KDE">
+      <parentCategory ref="system:ALT_Settings_KDE"/>
+      <supportedOn ref="system:SUPPORTED_AltP10"/>
+      <elements>
+        <boolean id="kde-showdelete_setter" valueName="ShowDeleteCommand">
+            <trueValue>
+              <decimal value="1" />
+            </trueValue>
+            <falseValue>
+              <decimal value="0" />
+            </falseValue>
+            </boolean>
+        <boolean id="kde-showdelete_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="kdeglobals.KDE.ShowDeleteCommand" >
+            <trueValue>
+              <decimal value="1" />
+            </trueValue>
+            <falseValue>
+              <decimal value="0" />
+            </falseValue>
+            </boolean>
+      </elements>
+    </policy>
+  <policy name="kde-singleclick" class="Both" displayName="$(string.kde-singleclick)"
+      explainText="$(string.kde-singleclick_help)"
+      presentation="$(presentation.kde-singleclick-pr)"
+      key="Software\BaseALT\Policies\KDE\kdeglobals\KDE">
+      <parentCategory ref="system:ALT_Environment_KDE"/>
+      <supportedOn ref="system:SUPPORTED_AltP10"/>
+      <elements>
+      <boolean id="kde-singleclick_setter" valueName="SingleClick">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      <boolean id="kde-singleclick_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="kdeglobals.KDE.SingleClick" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+    </elements>
+    </policy>
+  <policy name="kde-brightnesscontrol" class="Both" displayName="$(string.kde-brightnesscontrol)"
+    explainText="$(string.kde-brightnesscontrol_help)"
+    presentation="$(presentation.kde-brightnesscontrol-pr)"
+    key="Software\BaseALT\Policies\KDE">
+    <parentCategory ref="system:ALT_PowerManagement_KDE" />
+    <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <text id="kde-acbrightnesscontrol_setter" key="Software\BaseALT\Policies\KDE\powermanagementprofilesrc\AC)(BrightnessControl" valueName="value"/>
+        <boolean id="kde-acbrightnesscontrol_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="powermanagementprofilesrc.AC)(BrightnessControl.value" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+        <text id="kde-batbrightnesscontrol_setter" key="Software\BaseALT\Policies\KDE\powermanagementprofilesrc\Battery)(BrightnessControl" valueName="value"/>
+        <boolean id="kde-batbrightnesscontrol_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="powermanagementprofilesrc.Battery)(BrightnessControl.value" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+        <text id="kde-lowbrightnesscontrol_setter" key="Software\BaseALT\Policies\KDE\powermanagementprofilesrc\LowBattery)(BrightnessControl" valueName="value"/>
+        <boolean id="kde-lowbrightnesscontrol_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="powermanagementprofilesrc.LowBattery)(BrightnessControl.value" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy name="kde-keyboardbrightnesscontrol" class="Both" displayName="$(string.kde-keyboardbrightnesscontrol)"
+    explainText="$(string.kde-keyboardbrightnesscontrol_help)"
+    presentation="$(presentation.kde-keyboardbrightnesscontrol-pr)"
+    key="Software\BaseALT\Policies\KDE">
+    <parentCategory ref="system:ALT_PowerManagement_KDE" />
+    <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <text id="kde-ackeyboardbrightnesscontrol_setter" key="Software\BaseALT\Policies\KDE\powermanagementprofilesrc\AC)(KeyboardBrightnessControl" valueName="value"/>
+        <boolean id="kde-ackeyboardbrightnesscontrol_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="powermanagementprofilesrc.AC)(KeyboardBrightnessControl.value" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+        <text id="kde-batkeyboardbrightnesscontrol_setter" key="Software\BaseALT\Policies\KDE\powermanagementprofilesrc\Battery)(KeyboardBrightnessControl" valueName="value"/>
+        <boolean id="kde-batkeyboardbrightnesscontrol_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="powermanagementprofilesrc.Battery)(KeyboardBrightnessControl.value" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+        <text id="kde-lowkeyboardbrightnesscontrol_setter" key="Software\BaseALT\Policies\KDE\powermanagementprofilesrc\LowBattery)(KeyboardBrightnessControl" valueName="value"/>
+        <boolean id="kde-lowkeyboardbrightnesscontrol_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="powermanagementprofilesrc.LowBattery)(KeyboardBrightnessControl.value" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy name="kde-dimdisplay" class="Both" displayName="$(string.kde-dimdisplay)"
+    explainText="$(string.kde-dimdisplay_help)"
+    presentation="$(presentation.kde-dimdisplay-pr)"
+    key="Software\BaseALT\Policies\KDE">
+    <parentCategory ref="system:ALT_PowerManagement_KDE" />
+    <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <text id="kde-acdimdisplay_setter" key="Software\BaseALT\Policies\KDE\powermanagementprofilesrc\AC)(DimDisplay" valueName="idleTime"/>
+        <boolean id="kde-acdimdisplay_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="powermanagementprofilesrc.AC)(DimDisplay.idleTime" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+        <text id="kde-batdimdisplay_setter" key="Software\BaseALT\Policies\KDE\powermanagementprofilesrc\Battery)(DimDisplay" valueName="idleTime"/>
+        <boolean id="kde-batdimdisplay_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="powermanagementprofilesrc.Battery)(DimDisplay.idleTime" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+        <text id="kde-lowdimdisplay_setter" key="Software\BaseALT\Policies\KDE\powermanagementprofilesrc\LowBattery)(DimDisplay" valueName="idleTime"/>
+        <boolean id="kde-lowdimdisplay_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="powermanagementprofilesrc.LowBattery)(DimDisplay.idleTime" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy name="kde-dpmscontrol" class="Both" displayName="$(string.kde-dpmscontrol)"
+    explainText="$(string.kde-dpmscontrol_help)"
+    presentation="$(presentation.kde-dpmscontrol-pr)"
+    key="Software\BaseALT\Policies\KDE">
+    <parentCategory ref="system:ALT_PowerManagement_KDE" />
+    <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <text id="kde-acdpmscontrol_setter" key="Software\BaseALT\Policies\KDE\powermanagementprofilesrc\AC)(DPMSControl" valueName="idleTime"/>
+        <boolean id="kde-acdpmscontrol_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="powermanagementprofilesrc.AC)(DPMSControl.idleTime" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+        <text id="kde-batdpmscontrol_setter" key="Software\BaseALT\Policies\KDE\powermanagementprofilesrc\Battery)(DPMSControl" valueName="idleTime"/>
+        <boolean id="kde-batdpmscontrol_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="powermanagementprofilesrc.Battery)(DPMSControl.idleTime" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+        <text id="kde-lowdpmscontrol_setter" key="Software\BaseALT\Policies\KDE\powermanagementprofilesrc\LowBattery)(DPMSControl" valueName="idleTime"/>
+        <boolean id="kde-lowdpmscontrol_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="powermanagementprofilesrc.LowBattery)(DPMSControl.idleTime" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy name="kde-screenlocker" class="Both" displayName="$(string.kde-screenlocker)"
+    explainText="$(string.kde-screenlocker_help)"
+    presentation="$(presentation.kde-screenlocker-pr)"
+    key="Software\BaseALT\Policies\KDE">
+    <parentCategory ref="system:ALT_Environment_KDE" />
+    <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <boolean id="kde-screenlocker-autolock_setter" key="Software\BaseALT\Policies\KDE\kscreenlockerrc\Daemon" valueName="Autolock" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+        <boolean id="kde-screenlocker-autolock_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="kscreenlockerrc.Daemon.Autolock" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+        <decimal id="kde-screenlocker-timeout_setter" key="Software\BaseALT\Policies\KDE\kscreenlockerrc\Daemon" valueName="Timeout" minValue="1" maxValue="99"/>
+        <boolean id="kde-screenlocker-timeout_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="kscreenlockerrc.Daemon.Timeout" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+        <boolean id="kde-screenlocker-lockonresume_setter" key="Software\BaseALT\Policies\KDE\kscreenlockerrc\Daemon" valueName="LockOnResume" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+        <boolean id="kde-screenlocker-lockonresume_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="kscreenlockerrc.Daemon.LockOnResume" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+        <decimal id="kde-screenlocker-lockgrace_setter" key="Software\BaseALT\Policies\KDE\kscreenlockerrc\Daemon" valueName="LockGrace" minValue="0" maxValue="300"/>
+        <boolean id="kde-screenlocker-lockgrace_blocker" key="Software\BaseALT\Policies\KDELocks" valueName="kscreenlockerrc.Daemon.LockGrace" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

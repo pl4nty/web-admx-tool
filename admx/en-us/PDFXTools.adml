@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2014-25 PDF-XChange Co Ltd. -->
+<policyDefinitionResources	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							revision="1.0"
+							schemaVersion="1.0"
+							xsi:schemaLocation=""
+							xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+
+	<displayName>PDF-Tools ADMX File</displayName>
+	<description>ADMX file for PDF-Tools</description>
+	<resources>
+		<stringTable>
+			<string id="PDFXTools">PDF-XChange: Tools</string>
+			<string id="PDFXTools1">PDF-Tools 6.0</string>
+			<string id="PDFXTools2">PDF-Tools 6.0.318</string>
+			<string id="PDFXTools3">PDF-Tools 6.0.322</string>
+      <string id="PDFXTools4">PDF-Tools 8.0</string>
+      <string id="PDFXTools5">PDF-Tools 8.0.335</string>
+      <string id="PDFXTools6">PDF-Tools 9.0</string>
+      <string id="PDFXTools7">PDF-Tools 9.0.350</string>
+      <string id="PDFXTools8">PDF-Tools 9.0.353</string>
+      <string id="PDFXTools9">PDF-Tools 9.0.355</string>
+
+      <string id="SupportedOn_1">PDF-Tools v6.0.318 or later</string>
+			<string id="SupportedOn_2">PDF-Tools v6.0.322 or later</string>
+      <string id="SupportedOn_3">PDF-Tools v8.0.325 or later</string>
+      <string id="SupportedOn_4">PDF-Tools v8.0.335 or later</string>
+      <string id="SupportedOn_5">PDF-Tools v9.0.350 or later</string>
+      <string id="SupportedOn_6">PDF-Tools v9.0.353 or later</string>
+      <string id="SupportedOn_7">PDF-Tools v9.0.355 or later</string>
+	  <string id="SupportedOn_95">PDF-Tools v9.5.366 or later</string>
+	  <string id="SupportedOn_1042">PDF-XChange Editor v10.4.2 or later</string>
+      
+	  <string id="Cat_PDFTools_1">PDF-XChange: Tools</string>
+	  <string id="Cat_Preferences_1">Preferences</string>
+	  <string id="Cat_General_1">General</string>
+	  <string id="Cat_Registration_1">Registration</string>
+      <string id="Cat_Hints_1">Hints</string>
+	  <string id="Cat_CmdOpts_1">Toolbars/Menus Options</string>
+	  <string id="Cat_Update_1">Update</string>
+      <string id="Cat_Misc_1">Miscellaneous</string>
+			
+	  <string id="Policy_CmdOpts_CmdVisibility">Commands Visibility</string>
+	  <string id="Policy_CmdOpts_CmdVisibility_exp">Specifies a custom visibility state for commands on toolbars and menus.
+
+Examples:
+tool.edit:0|tool.clone:0|tool.create:0|delete:0 - to hide the 'Edit', 'Clone', 'Create', and 'Delete' commands in toolbars and menus.
+*:0|tool.run|search - to hide all command items except the 'Run' command and the search-bar.
+Available standard commmand identifiers:
+tool.run, tool.edit, tool.clone, tool.create, delete, opts, help, search.</string>
+
+			<string id="Policy_CmdOpts_CmdAccess">Commands Availability</string>
+			<string id="Policy_CmdOpts_CmdAccess_exp">Specifies the custom availability of certain commands on toolbars and menus.
+
+Examples:
+tool.edit:0|tool.clone:0|tool.create:0|delete:0 - to disable 'Edit', 'Clone', 'Create', 'Delete' commands in toolbars and menus.
+*:0|tool.run|search - to disable all command items except the 'Run' command and the search-bar.
+Available standard commmand identifiers:
+tool.run, tool.edit, tool.clone, tool.create, delete, opts, help, search.</string>
+
+			<string id="Policy_CanCopySerial">Allow Copy Serial Keys</string>
+			<string id="Policy_CanCopySerial_exp">Specifies if user is allowed to copy serial keys to the clipboard on Preferences->Registration page.</string>
+
+			<string id="Policy_CanDeleteSerial">Allow Delete Serial Keys</string>
+			<string id="Policy_CanDeleteSerial_exp">Specifies if user is allowed to delete serial keys on Preferences->Registration page.</string>
+
+			<string id="Policy_CanAddSerial">Allow Add Serial Keys</string>
+			<string id="Policy_CanAddSerial_exp">Specifies if user is allowed to add serial keys on Preferences->Registration page.</string>
+
+			<string id="Policy_CanRenewSerial">Allow Renew Serial Keys</string>
+			<string id="Policy_CanRenewSerial_exp">Specifies if user is allowed to renew serial keys on Preferences->Registration page.</string>
+
+			<string id="Policy_CanAutoUpgradeSerials">Allow Auto-upgrade Serial Keys</string>
+			<string id="Policy_CanAutoUpgradeSerials_exp">Specifies if application is allowed to auto-upgrade all installed serial keys (it requires connection to the Internet).</string>
+
+			<string id="Policy_HidePrefPages">Preferences Pages Access</string>
+			<string id="Policy_HidePrefPages_exp">List of IDs of pages in 'Preferences' dialog with their access modes.
+The list is a string of elements separated by a '|' character. Each element consists of two parts separated by a ':'.
+First part is the ID of the preference page and the second part is the access mode number. Possible access modes are:
+0 - hide;
+1 - show (by default);
+2 - disable.
+Examples:
+Registration:0 - to hide 'Registration' page.
+*:0|CustomUI:1 - to show only 'Custom UI' page.
+Available standard page IDs:
+CustomUI, Identity, Languages, Measurement, Registration, Signatures.</string>
+
+      <!-- Default Paper Index -->
+      <string id="Policy_DefPaperIndex">Default Paper Size</string>
+      <string id="Policy_DefPaperIndex_exp">Specifies the default page size for creating or editing documents.</string>
+
+      <string id="Policy_PaperIndex_Default">Auto(Regional)</string>
+
+      <string id="Policy_PaperIndex_A4">A4</string>
+      <string id="Policy_PaperIndex_Letter">Letter/ANSI A</string>
+      <string id="Policy_PaperIndex_USLegal">US Legal</string>
+      <string id="Policy_PaperIndex_Tabloid">Tabloid/ANSI B</string>
+      <string id="Policy_PaperIndex_ANSI_C">ANSI C</string>
+      <string id="Policy_PaperIndex_ANSI_D">ANSI D</string>
+      <string id="Policy_PaperIndex_ANSI_E">ANSI E</string>
+      <string id="Policy_PaperIndex_ANSI_F">ANSI F</string>
+      <string id="Policy_PaperIndex_A3">A3</string>
+
+			<string id="Policy_StdToolsVisibility">Standard Tools Visibility</string>
+			<string id="Policy_StdToolsVisibility_exp">List of identifiers of standard tools with their visibility factors.
+The list is a string of elements separated by a '|' character. Each element consists of two parts separated by a ':'.
+The first part is the ID of the tool and the second part is the visibility factor. Possible factor values are:
+0 - hide;
+1 - show;
+Examples:
+*:0|imagesToPDF:1|scanToPDF:1 - to show 'Create PDF from Images' and 'Scan to PDF' tools only.
+Available standard tool IDs:
+filesToPDF, imagesToPDF, scanToPDF, textToPDF, addWatermarks, addHeaderAndFooter, addBatesNumbering, addPagesBackground, cropPages, resizePages, rotatePages, ocrPages, extractPages, splitMergePDF, extractImagesFromPDF, pdfToImages, convertToPDFA, optimizePDF, securePDF, addDigSign, certifyPDF, addTimeStamp, overlayDoc.
+Tip: to see the identifiers for all existing Tools use the command:
+PDFXTools.exe /DumpTools "c:\PDFTools.txt"</string>
+
+			<string id="Policy_StdToolsAccess">Standard Tools Access</string>
+			<string id="Policy_StdToolsAccess_exp">List of identifiers of standard tools with their access modes.
+The list is a string of elements separated by a '|' character. Each element consists of two parts separated by a ':'.
+The first part is the ID of the tool and the second part is the access mode. Possible access modes are:
+0 - read-only (imposible to edit parameters of tool);
+1 - editable;
+Examples:
+*:0|imagesToPDF:1 - to prevent changing all standard tools excepting 'Create PDF from Images' tool.
+Available standard tool IDs:
+filesToPDF, imagesToPDF, scanToPDF, textToPDF, addWatermarks, addHeaderAndFooter, addBatesNumbering, addPagesBackground, cropPages, resizePages, rotatePages, ocrPages, extractPages, splitMergePDF, extractImagesFromPDF, pdfToImages, convertToPDFA, optimizePDF, securePDF, addDigSign, certifyPDF, addTimeStamp, overlayDoc.
+Tip: to see the identifiers for all existing Tools use the command:
+PDFXTools.exe /DumpTools "c:\PDFTools.txt"</string>
+
+			<string id="Policy_CustToolsVisibility">Custom Tools Visibility</string>
+			<string id="Policy_CustToolsVisibility_exp">List of identifiers of custom tools with their visibility factors.
+The list is a string of elements separated by a '|' character. Each element consists of two parts separated by a ':'.
+The first part is the ID of the tool and the second part is the visibility factor. Possible factor values are:
+0 - hide;
+1 - show;
+Examples:
+*:0|{C57F2DF9-FC8C-4521-8E0F5A39AEAB8895}:1 - to show only one custom tool with a specified ID. 
+Tip: to see identifiers of all existing Tools use the command:
+PDFXTools.exe /DumpTools "c:\PDFTools.txt"</string>
+
+			<string id="Policy_CustToolsAccess">Custom Tools Access</string>
+			<string id="Policy_CustToolsAccess_exp">List of identifiers of custom tools with their access modes.
+The list is a string of elements separated by a '|' character. Each element consists of two parts separated by a ':'.
+The first part is the ID of the tool and the second part is the access mode. Possible access modes are:
+0 - read-only (imposible to edit parameters of tool);
+1 - editable;
+Examples:
+*:0|{C57F2DF9-FC8C-4521-8E0F5A39AEAB8895}:1 - to prevent changing all custom tools except one custom tool with a specified ID.
+Tip: to see identifiers for all existing Tools use the command:
+PDFXTools.exe /DumpTools "c:\PDFTools.txt"</string>
+
+			<string id="Policy_StdCatVisibility">Standard Categories Visibility</string>
+			<string id="Policy_StdCatVisibility_exp">List of identifiers of standard categories with their visibility factors.
+The list is a string of elements separated by a '|' character. Each element consists of two parts separated by a ':'.
+The first part is the ID of the category and the second part is the visibility factor. Possible factor values are:
+0 - hide;
+1 - show;
+Examples:
+*:0|createPDF:1|comments:1 - to show the 'Create PDF' and 'Comments' categories only.
+The example list of standard categories IDs:
+createPDF, pages, comments, protection, optimizePDF, PDFStandard, exportPDF, advanced.
+Tip: to see identifiers of all existing Categories use the command:
+PDFXTools.exe /DumpCategories "c:\PDFTools_Categories.txt"</string>
+
+			<string id="Policy_CustCatVisibility">Custom Categories Visibility</string>
+			<string id="Policy_CustCatVisibility_exp">List of identifiers of custom categories with their visibility factors.
+The list is a string of elements separated by a '|' character. Each element consists of two parts separated by a ':'.
+The first part is the ID of the category and the second part is the visibility factor. Possible factor values are:
+0 - hide;
+1 - show;
+Examples:
+*:0|{17F9DA9C-0E4E-4276-B40FFD223D1F5397}:1 - to show only one custom category that has specified ID.
+Tip: to see identifiers of all existing Categories use the command:
+PDFXTools.exe /DumpCategories "c:\PDFTools_Categories.txt"</string>
+			
+			<string id="Policy_CanEditToolList">Allow Change List of Tools</string>
+			<string id="Policy_CanEditToolList_exp">Specifies if the application is allowed to add new tools or delete existing tools.</string>
+
+			<string id="Policy_CanEditToolParams">Allow Edit Tools</string>
+			<string id="Policy_CanEditToolParams_exp">Specifies if the application is allowed to edit existing tools (i.e. change its options).</string>
+
+			<string id="Policy_CanImpExpSettings">Allow Export/Import Program Settings</string>
+			<string id="Policy_CanImpExpSettings_exp">Specifies if the application is allowed to export/import settings.</string>
+
+			<!-- Allow to Check for Updates -->
+			<string id="Policy_AllowCheckForUpdates">Allow User to Check for Updates for the application</string>
+			<string id="Policy_AllowCheckForUpdates_exp">Specifies if the user is allowed to check for updates for the application.</string>
+
+      <!-- Hide License Warning -->
+      <string id="Policy_HideLicenseWarning">Hide warnings about renewing the license.</string>
+      <string id="Policy_HideLicenseWarning_exp">Specifies if a warning about renewing the license is shown to users.</string>
+
+      <!-- Hide License Activation Warning -->
+      <string id="Policy_HideLicenseActivationWarning">Hide warnings about activation the license for user</string>
+      <string id="Policy_HideLicenseActivationWarning_exp">Specifies if a warning about activation the license is showed for users.</string>
+
+      <!-- Hide Enhanced OCR Hint -->
+      <string id="Policy_HideEnhancedOcrHint">Hide hints about using Enhanced OCR</string>
+      <string id="Policy_HideEnhancedOcrHint_exp">Specifies if a hint about using Enhanced OCR is shown to users.</string>
+    
+      <!-- Hide Folder Monitors Hint -->
+      <string id="Policy_HideFMonitorsHint">Hide hint about errors in Folder Monitors</string>
+      <string id="Policy_HideFMonitorsHint_exp">Specifies if a hint about errors in Folder Monitors is shown to users.</string>
+      
+      <!-- Do not Tool Report on Startup -->
+      <string id="Policy_DoNotShowToolReport">Do not show Tool Report by default</string>
+      <string id="Policy_DoNotShowToolReport_exp">Specifies if a Tool Report is expanded by default.</string>
+			
+		<!-- Allow WebDav places -->
+		<string id="Policy_AllowWebDavPlaces">Allow WebDav-Places</string>
+		<string id="Policy_AllowWebDavPlaces_exp">Specifies whether the user is allowed to add/use WebDav-Places in appication to access files on servers that support the WebDav extension of the HTTP-protocol.</string>
+			
+    </stringTable>
+		
+	
+		<!-- Presentations -->
+		<presentationTable>
+
+			<presentation id="Policy_HidePrefPages">
+				<text>Enter IDs of preferences pages, defining their access modes.</text>
+				<textBox refId="Policy_HidePrefPages_List">
+					<label>List</label>
+				</textBox>
+			</presentation>
+
+			<presentation id="Policy_CmdOpts_CmdVisibility">
+				<text>Enter a list of command identifiers with their visibility state values.</text>
+				<textBox refId="Policy_CmdOpts_CmdVisibility_List">
+					<label>List</label>
+				</textBox>
+			</presentation>
+
+			<presentation id="Policy_CmdOpts_CmdAccess">
+				<text>Enter a list of command identifiers with their access state values.</text>
+				<textBox refId="Policy_CmdOpts_CmdAccess_List">
+					<label>List</label>
+				</textBox>
+			</presentation>
+
+			<presentation id="Policy_StdToolsVisibility">
+				<text>Enter a list of identifiers of standard tools with their visibility factors.</text>
+				<textBox refId="Policy_StdToolsVisibility_List">
+					<label>List</label>
+				</textBox>
+			</presentation>
+
+			<presentation id="Policy_StdToolsAccess">
+				<text>Enter a list of identifiers of standard tools with their access modes.</text>
+				<textBox refId="Policy_StdToolsAccess_List">
+					<label>List</label>
+				</textBox>
+			</presentation>
+
+			<presentation id="Policy_CustToolsVisibility">
+				<text>Enter a list of identifiers of custom tools with their visibility factors.</text>
+				<textBox refId="Policy_CustToolsVisibility_List">
+					<label>List</label>
+				</textBox>
+			</presentation>
+
+			<presentation id="Policy_CustToolsAccess">
+				<text>Enter a list of identifiers of custom tools with their access modes.</text>
+				<textBox refId="Policy_CustToolsAccess_List">
+					<label>List</label>
+				</textBox>
+			</presentation>
+
+			<presentation id="Policy_StdCatVisibility">
+				<text>Enter a list of identifiers of standard categories with their visibility factors.</text>
+				<textBox refId="Policy_StdCatVisibility_List">
+					<label>List</label>
+				</textBox>
+			</presentation>
+
+			<presentation id="Policy_CustCatVisibility">
+				<text>Enter a list of identifiers of custom categories with their visibility factors.</text>
+				<textBox refId="Policy_CustCatVisibility_List">
+					<label>List</label>
+				</textBox>
+			</presentation>
+
+      <presentation id="Policy_DefPaperIndex">
+        <dropdownList refId="Policy_DefPaperIndex_Enum" noSort="true">Value:</dropdownList>
+      </presentation>
+      
+		</presentationTable>
+	</resources>
+</policyDefinitionResources>

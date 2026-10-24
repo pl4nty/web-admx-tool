@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2014-25 PDF-XChange Co Ltd.  -->
+<policyDefinitions	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					revision="1.0"
+					xsi:schemaLocation=""
+					schemaVersion="1.0"
+					xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+
+	<policyNamespaces>
+		<target prefix="pdft" namespace="TrackerSoftware.PDFXTools.Policies" />
+		<using prefix="products" namespace="Microsoft.Policies.Products"/>
+	</policyNamespaces>
+	
+	<resources minRequiredRevision="1.0" fallbackCulture="en-us"/>
+
+	<supportedOn>
+		<products>
+			<product name="PDFXTools" displayName="$(string.PDFXTools)">
+				<majorVersion name="PDFXTools6_0_1" displayName="$(string.PDFXTools1)" versionIndex="1">
+					<minorVersion name="PDFXTools6_0_318" displayName="$(string.PDFXTools2)" versionIndex="0"/>
+				</majorVersion>
+				<majorVersion name="PDFXTools6_0_2" displayName="$(string.PDFXTools1)" versionIndex="2">
+					<minorVersion name="PDFXTools6_0_322" displayName="$(string.PDFXTools3)" versionIndex="0"/>
+				</majorVersion>
+        <majorVersion name="PDFXTools8_0_1" displayName="$(string.PDFXTools4)" versionIndex="3">
+          <minorVersion name="PDFXTools8_0_335" displayName="$(string.PDFXTools5)" versionIndex="0"/>
+        </majorVersion>
+        <majorVersion name="PDFXTools9_0_1" displayName="$(string.PDFXTools6)" versionIndex="4">
+          <minorVersion name="PDFXTool9_0_350" displayName="$(string.PDFXTools7)" versionIndex="0"/>
+        </majorVersion>
+        <majorVersion name="PDFXTools9_0_2" displayName="$(string.PDFXTools6)" versionIndex="5">
+          <minorVersion name="PDFXTool9_0_353" displayName="$(string.PDFXTools8)" versionIndex="0"/>
+        </majorVersion>
+        <majorVersion name="PDFXTools9_0_3" displayName="$(string.PDFXTools6)" versionIndex="6">
+          <minorVersion name="PDFXTools9_0_355" displayName="$(string.PDFXTools9)" versionIndex="0"/>
+        </majorVersion>
+      </product>
+		</products>
+		<definitions>
+			<definition name="SupportedOn_1" displayName="$(string.SupportedOn_1)">
+				<and>
+					<range ref="PDFXTools" minVersionIndex="1"/>
+				</and>
+			</definition>
+			<definition name="SupportedOn_2" displayName="$(string.SupportedOn_2)">
+				<and>
+					<range ref="PDFXTools" minVersionIndex="2"/>
+				</and>
+			</definition>
+      <definition name="SupportedOn_3" displayName="$(string.SupportedOn_3)">
+        <and>
+          <range ref="PDFXTools" minVersionIndex="3"/>
+        </and>
+      </definition>
+      <definition name="SupportedOn_4" displayName="$(string.SupportedOn_4)">
+        <and>
+          <range ref="PDFXTools" minVersionIndex="4"/>
+        </and>
+      </definition>
+      <definition name="SupportedOn_5" displayName="$(string.SupportedOn_5)">
+        <and>
+          <range ref="PDFXTools" minVersionIndex="5"/>
+        </and>
+      </definition>
+      <definition name="SupportedOn_6" displayName="$(string.SupportedOn_6)">
+        <and>
+          <range ref="PDFXTools" minVersionIndex="6"/>
+        </and>
+      </definition>
+      <definition name="SupportedOn_7" displayName="$(string.SupportedOn_7)">
+        <and>
+          <range ref="PDFXTools" minVersionIndex="7"/>
+        </and>
+      </definition>
+		<definition name="SupportedOn_95" displayName="$(string.SupportedOn_95)">
+		<and>
+			<range ref="PDFXTools" minVersionIndex="9"/>
+		</and>
+	</definition>
+
+		</definitions>
+	</supportedOn>
+	
+	<categories>
+		
+		<category name="Cat_PDFXTools_1" displayName="$(string.Cat_PDFTools_1)" />
+
+		<category name="Cat_General_1" displayName="$(string.Cat_General_1)">
+			<parentCategory ref="Cat_PDFXTools_1" />
+		</category>
+		<category name="Cat_Preferences_1" displayName="$(string.Cat_Preferences_1)">
+			<parentCategory ref="Cat_PDFXTools_1" />
+		</category>
+		<category name="Cat_Registration_1" displayName="$(string.Cat_Registration_1)">
+			<parentCategory ref="Cat_PDFXTools_1" />
+		</category>
+    <category name="Cat_Hints_1" displayName="$(string.Cat_Hints_1)">
+      <parentCategory ref="Cat_PDFXTools_1" />
+    </category>
+		<category name="Cat_CmdOpts_1" displayName="$(string.Cat_CmdOpts_1)">
+			<parentCategory ref="Cat_PDFXTools_1" />
+		</category>
+		<category name="Cat_Update_1" displayName="$(string.Cat_Update_1)">
+			<parentCategory ref="Cat_PDFXTools_1" />
+		</category>
+    <category name="Cat_Misc_1" displayName="$(string.Cat_Misc_1)">
+      <parentCategory ref="Cat_PDFXTools_1" />
+    </category>
+
+  </categories>
+	
+	<policies>
+
+		<!-- Copy Serial -->
+		<policy name="Policy_CanCopySerial" class="Machine"
+				displayName="$(string.Policy_CanCopySerial)" explainText="$(string.Policy_CanCopySerial_exp)"
+				key="Software\Policies\Tracker Software\PDFXTools\6.0\Registration"
+				valueName="b.CanCopySerials">
+			<parentCategory ref="Cat_Registration_1"/>
+			<supportedOn ref="SupportedOn_1"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- Delete Serial -->
+		<policy name="Policy_CanDeleteSerial" class="Machine"
+				displayName="$(string.Policy_CanDeleteSerial)" explainText="$(string.Policy_CanDeleteSerial_exp)"
+				key="Software\Policies\Tracker Software\PDFXTools\6.0\Registration"
+				valueName="b.CanDeleteSerials">
+			<parentCategory ref="Cat_Registration_1"/>
+			<supportedOn ref="SupportedOn_95"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- Add Serial -->
+		<policy name="Policy_CanAddSerial" class="Machine"
+				displayName="$(string.Policy_CanAddSerial)" explainText="$(string.Policy_CanAddSerial_exp)"
+				key="Software\Policies\Tracker Software\PDFXTools\6.0\Registration"
+				valueName="b.CanAddSerials">
+			<parentCategory ref="Cat_Registration_1"/>
+			<supportedOn ref="SupportedOn_95"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- Renew Serial -->
+		<policy name="Policy_CanRenewSerial" class="Machine"
+				displayName="$(string.Policy_CanRenewSerial)" explainText="$(string.Policy_CanRenewSerial_exp)"
+				key="Software\Policies\Tracker Software\PDFXTools\6.0\Registration"
+				valueName="b.CanRenewSerials">
+			<parentCategory ref="Cat_Registration_1"/>
+			<supportedOn ref="SupportedOn_95"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- Can Auto-upgrade Serials -->
+		<policy name="Policy_CanAutoUpgradeSerials" class="Machine"
+				displayName="$(string.Policy_CanAutoUpgradeSerials)" explainText="$(string.Policy_CanAutoUpgradeSerials_exp)"
+				key="Software\Policies\Tracker Software\PDFXTools\6.0\Registration"
+				valueName="b.CanAutoUpgradeSerials">
+			<parentCategory ref="Cat_Registration_1"/>
+			<supportedOn ref="SupportedOn_1"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- CmdOpts CmdVisibility -->
+		<policy name="Policy_CmdOpts_CmdVisibility" class="Machine"
+				displayName="$(string.Policy_CmdOpts_CmdVisibility)" explainText="$(string.Policy_CmdOpts_CmdVisibility_exp)"
+				key="Software\Policies\Tracker Software\PDFXTools\6.0\CmdOpts"
+				presentation="$(presentation.Policy_CmdOpts_CmdVisibility)"
+				>
+			<parentCategory ref="Cat_CmdOpts_1" />
+			<supportedOn ref="SupportedOn_1" />
+			<elements>
+				<text id="Policy_CmdOpts_CmdVisibility_List"
+					  maxLength="4096"
+					  valueName="t.CmdVisibility"/>
+			</elements>
+		</policy>
+
+		<!-- CmdOpts CmdAccess -->
+		<policy name="Policy_CmdOpts_CmdAccess" class="Machine"
+				displayName="$(string.Policy_CmdOpts_CmdAccess)" explainText="$(string.Policy_CmdOpts_CmdAccess_exp)"
+				key="Software\Policies\Tracker Software\PDFXTools\6.0\CmdOpts"
+				presentation="$(presentation.Policy_CmdOpts_CmdAccess)"
+				>
+			<parentCategory ref="Cat_CmdOpts_1" />
+			<supportedOn ref="SupportedOn_1" />
+			<elements>
+				<text id="Policy_CmdOpts_CmdAccess_List"
+					  maxLength="4096"
+					  valueName="t.CmdAccess"/>
+			</elements>
+		</policy>
+
+		<!-- Preferences Pages Access -->
+		<policy name="Policy_HidePrefPages" class="Machine"
+				    displayName="$(string.Policy_HidePrefPages)" explainText="$(string.Policy_HidePrefPages_exp)"
+				    key="Software\Policies\Tracker Software\PDFXTools\6.0\AppPrefs"
+				    presentation="$(presentation.Policy_HidePrefPages)">
+			<parentCategory ref="Cat_Preferences_1"/>
+			<supportedOn ref="SupportedOn_1"/>
+			<elements>
+				<text id="Policy_HidePrefPages_List"
+					  maxLength="4096"
+					  valueName="t.PagesAccess"/>
+			</elements>
+		</policy>
+
+    <!-- Default Paper Index -->
+    <policy name="Policy_DefPaperIndex" class="Machine"
+				    displayName="$(string.Policy_DefPaperIndex)" explainText="$(string.Policy_DefPaperIndex_exp)"
+				    key="Software\Policies\Tracker Software\PDFXTools\6.0\Misc"
+				    presentation="$(presentation.Policy_DefPaperIndex)">
+      <parentCategory ref="Cat_Misc_1" />
+      <supportedOn ref="SupportedOn_3" />
+      <elements>
+        <enum id="Policy_DefPaperIndex_Enum" key="Software\Policies\Tracker Software\PDFXTools\6.0\Misc" valueName="i.DefPaperIndex">
+          <item displayName="$(string.Policy_PaperIndex_Default)">
+            <value>
+              <decimal value="4294967295"/>
+            </value>
+          </item>
+          <item displayName="$(string.Policy_PaperIndex_A4)">
+            <value>
+              <decimal value="4"/>
+            </value>
+          </item>
+          <item displayName="$(string.Policy_PaperIndex_Letter)">
+            <value>
+              <decimal value="11"/>
+            </value>
+          </item>
+          <item displayName="$(string.Policy_PaperIndex_USLegal)">
+            <value>
+              <decimal value="18"/>
+            </value>
+          </item>
+          <item displayName="$(string.Policy_PaperIndex_A3)">
+            <value>
+              <decimal value="3"/>
+            </value>
+          </item>
+          <item displayName="$(string.Policy_PaperIndex_Tabloid)">
+            <value>
+              <decimal value="12"/>
+            </value>
+          </item>
+          <item displayName="$(string.Policy_PaperIndex_ANSI_C)">
+            <value>
+              <decimal value="14"/>
+            </value>
+          </item>
+          <item displayName="$(string.Policy_PaperIndex_ANSI_D)">
+            <value>
+              <decimal value="15"/>
+            </value>
+          </item>
+          <item displayName="$(string.Policy_PaperIndex_ANSI_E)">
+            <value>
+              <decimal value="16"/>
+            </value>
+          </item>
+          <item displayName="$(string.Policy_PaperIndex_ANSI_F)">
+            <value>
+              <decimal value="17"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+	<!-- Allow WebDav places -->
+	<policy name="Policy_AllowWebDavPlaces" class="Machine"
+			displayName="$(string.Policy_AllowWebDavPlaces)" explainText="$(string.Policy_AllowWebDavPlaces_exp)"
+			key="Software\Policies\Tracker Software\PDFXTools\6.0\Misc"
+			valueName="b.AllowWebDavPlaces">
+		<parentCategory ref="Cat_Misc_1" />
+		<supportedOn ref="SupportedOn_1042" />
+		<enabledValue>
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue >
+			<decimal value="0" />
+		</disabledValue>
+	</policy>
+
+	<!-- StdToolsVisibility -->
+	<policy name="Policy_StdToolsVisibility" class="Machine"
+			displayName="$(string.Policy_StdToolsVisibility)" explainText="$(string.Policy_StdToolsVisibility_exp)"
+			key="Software\Policies\Tracker Software\PDFXTools\6.0\General"
+			presentation="$(presentation.Policy_StdToolsVisibility)">
+		<parentCategory ref="Cat_General_1"/>
+		<supportedOn ref="SupportedOn_1"/>
+		<elements>
+			<text id="Policy_StdToolsVisibility_List"
+					maxLength="4096"
+					valueName="t.StdToolsVisibility"/>
+		</elements>
+	</policy>
+
+	<!-- StdToolsAccess -->
+	<policy name="Policy_StdToolsAccess" class="Machine"
+			displayName="$(string.Policy_StdToolsAccess)" explainText="$(string.Policy_StdToolsAccess_exp)"
+			key="Software\Policies\Tracker Software\PDFXTools\6.0\General"
+			presentation="$(presentation.Policy_StdToolsAccess)">
+		<parentCategory ref="Cat_General_1"/>
+		<supportedOn ref="SupportedOn_1"/>
+		<elements>
+			<text id="Policy_StdToolsAccess_List"
+					maxLength="4096"
+					valueName="t.StdToolsAccess"/>
+		</elements>
+	</policy>
+
+	<!-- CustToolsVisibility -->
+	<policy name="Policy_CustToolsVisibility" class="Machine"
+			displayName="$(string.Policy_CustToolsVisibility)" explainText="$(string.Policy_CustToolsVisibility_exp)"
+			key="Software\Policies\Tracker Software\PDFXTools\6.0\General"
+			presentation="$(presentation.Policy_CustToolsVisibility)">
+		<parentCategory ref="Cat_General_1"/>
+		<supportedOn ref="SupportedOn_1"/>
+		<elements>
+			<text id="Policy_CustToolsVisibility_List"
+					maxLength="4096"
+					valueName="t.CustToolsVisibility"/>
+		</elements>
+	</policy>
+
+	<!-- CustToolsAccess -->
+	<policy name="Policy_CustToolsAccess" class="Machine"
+			displayName="$(string.Policy_CustToolsAccess)" explainText="$(string.Policy_CustToolsAccess_exp)"
+			key="Software\Policies\Tracker Software\PDFXTools\6.0\General"
+			presentation="$(presentation.Policy_CustToolsAccess)">
+		<parentCategory ref="Cat_General_1"/>
+		<supportedOn ref="SupportedOn_1"/>
+		<elements>
+			<text id="Policy_CustToolsAccess_List"
+					maxLength="4096"
+					valueName="t.CustToolsAccess"/>
+		</elements>
+	</policy>
+
+	<!-- StdCategoriesVisibility -->
+	<policy name="Policy_StdCatVisibility" class="Machine"
+			displayName="$(string.Policy_StdCatVisibility)" explainText="$(string.Policy_StdCatVisibility_exp)"
+			key="Software\Policies\Tracker Software\PDFXTools\6.0\General"
+			presentation="$(presentation.Policy_StdCatVisibility)">
+		<parentCategory ref="Cat_General_1"/>
+		<supportedOn ref="SupportedOn_2"/>
+		<elements>
+			<text id="Policy_StdCatVisibility_List"
+					maxLength="4096"
+					valueName="t.StdCatVisibility"/>
+		</elements>
+	</policy>
+
+	<!-- CustCategoriesVisibility -->
+	<policy name="Policy_CustCatVisibility" class="Machine"
+			displayName="$(string.Policy_CustCatVisibility)" explainText="$(string.Policy_CustCatVisibility_exp)"
+			key="Software\Policies\Tracker Software\PDFXTools\6.0\General"
+			presentation="$(presentation.Policy_CustCatVisibility)">
+		<parentCategory ref="Cat_General_1"/>
+		<supportedOn ref="SupportedOn_2"/>
+		<elements>
+			<text id="Policy_CustCatVisibility_List"
+					maxLength="4096"
+					valueName="t.CustCatVisibility"/>
+		</elements>
+	</policy>
+		
+	<!-- CanEditToolList -->
+	<policy name="Policy_CanEditToolList" class="Machine"
+			displayName="$(string.Policy_CanEditToolList)" explainText="$(string.Policy_CanEditToolList_exp)"
+			key="Software\Policies\Tracker Software\PDFXTools\6.0\General"
+			valueName="b.CanEditToolList">
+		<parentCategory ref="Cat_General_1" />
+		<supportedOn ref="SupportedOn_1"/>
+		<enabledValue >
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue >
+			<decimal value="0" />
+		</disabledValue>
+	</policy>
+
+	<!-- CanEditToolParams -->
+	<policy name="Policy_CanEditToolParams" class="Machine"
+			displayName="$(string.Policy_CanEditToolParams)" explainText="$(string.Policy_CanEditToolParams_exp)"
+			key="Software\Policies\Tracker Software\PDFXTools\6.0\General"
+			valueName="b.CanEditToolParams">
+		<parentCategory ref="Cat_General_1" />
+		<supportedOn ref="SupportedOn_1"/>
+		<enabledValue >
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue >
+			<decimal value="0" />
+		</disabledValue>
+	</policy>
+
+	<!-- CanImpExpSettings -->
+	<policy name="Policy_CanImpExpSettings" class="Machine"
+			displayName="$(string.Policy_CanImpExpSettings)" explainText="$(string.Policy_CanImpExpSettings_exp)"
+			key="Software\Policies\Tracker Software\PDFXTools\6.0\General"
+			valueName="b.CanImpExpSettings">
+		<parentCategory ref="Cat_General_1" />
+		<supportedOn ref="SupportedOn_1"/>
+		<enabledValue >
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue >
+			<decimal value="0" />
+		</disabledValue>
+	</policy>
+
+	<!-- Allow to Check for Updates -->
+	<policy name="Policy_AllowCheckForUpdates" class="Machine"
+			displayName="$(string.Policy_AllowCheckForUpdates)" explainText="$(string.Policy_AllowCheckForUpdates_exp)"
+			key="Software\Policies\Tracker Software\PDFXTools\6.0\Update"
+			valueName="b.AllowCheck">
+		<parentCategory ref="Cat_Update_1" />
+		<supportedOn ref="SupportedOn_1"/>
+		<enabledValue >
+			<decimal value="1" />
+		</enabledValue>
+		<disabledValue >
+			<decimal value="0" />
+		</disabledValue>
+	</policy>
+
+    <!-- Hide License Warning -->
+    <policy name="Policy_HideLicenseWarning" class="Machine"
+				displayName="$(string.Policy_HideLicenseWarning)" explainText="$(string.Policy_HideLicenseWarning_exp)"
+				key="Software\Policies\Tracker Software\PDFXTools\6.0\Registration"
+				valueName="b.HideLicenseWarning">
+      <parentCategory ref="Cat_Registration_1" />
+      <supportedOn ref="SupportedOn_4"/>
+      <enabledValue >
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue >
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Hide License Activation Warning -->
+    <policy name="Policy_HideLicenseActivationWarning" class="Machine"
+				displayName="$(string.Policy_HideLicenseActivationWarning)" explainText="$(string.Policy_HideLicenseActivationWarning_exp)"
+				key="Software\Policies\Tracker Software\PDFXTools\6.0\Registration"
+				valueName="b.HideLicenseActivationWarning">
+      <parentCategory ref="Cat_Registration_1" />
+      <supportedOn ref="SupportedOn_5"/>
+      <enabledValue >
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue >
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Hide Enhanced OCR Hint -->
+    <policy name="Policy_HideEnhancedOcrHint" class="Machine"
+				displayName="$(string.Policy_HideEnhancedOcrHint)" explainText="$(string.Policy_HideEnhancedOcrHint_exp)"
+				key="Software\Policies\Tracker Software\PDFXTools\6.0\Hints"
+				valueName="b.HideEnhOcrHint">
+      <parentCategory ref="Cat_Hints_1" />
+      <supportedOn ref="SupportedOn_5"/>
+      <enabledValue >
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue >
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="Policy_HideFMonitorsHint" class="Machine"
+            displayName="$(string.Policy_HideFMonitorsHint)" explainText="$(string.Policy_HideFMonitorsHint_exp)"
+						key="Software\Policies\Tracker Software\PDFXTools\6.0\Hints"
+            valueName="b.HideFMonitorsHint">
+      <parentCategory ref="Cat_Hints_1" />
+      <supportedOn ref="SupportedOn_7"/>
+      <enabledValue >
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue >
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+            
+    <!-- Do not Tool Report on Startup -->
+    <policy name="Policy_DoNotShowToolReport" class="Machine"
+				displayName="$(string.Policy_DoNotShowToolReport)" explainText="$(string.Policy_DoNotShowToolReport_exp)"
+				key="Software\Policies\Tracker Software\PDFXTools\6.0\General"
+				valueName="b.DoNotShowToolReport">
+      <parentCategory ref="Cat_General_1" />
+      <supportedOn ref="SupportedOn_6"/>
+      <enabledValue >
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue >
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+  </policies>
+
+</policyDefinitions>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2019-2020 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="products" namespace="BaseALT.Policies.Products" />
+    <using prefix="system" namespace="BaseALT.Policies.System" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+
+  <supportedOn>
+    <products>
+      <!-- BaseALT Sisyphus Solutions -->
+      <product name="Sisyphus" displayName="$(string.Sisyphus)">
+        <majorVersion name="Branch" displayName="$(string.Branch)" versionIndex="1">
+          <minorVersion name="BranchP7" displayName="$(string.BranchP7)" versionIndex="0"/>
+          <minorVersion name="BranchP8" displayName="$(string.BranchP8)" versionIndex="1"/>
+          <minorVersion name="BranchP9" displayName="$(string.BranchP9)" versionIndex="2"/>
+          <minorVersion name="BranchP10" displayName="$(string.BranchP10)" versionIndex="3"/>
+          <minorVersion name="BranchP11" displayName="$(string.BranchP11)" versionIndex="4"/>
+        </majorVersion>
+        <majorVersion name="ALTWorkstation8" displayName="$(string.ALTWorkstation8)" versionIndex="2">
+          <minorVersion name="ALTWorkstation8_8" displayName="$(string.ALTWorkstation8_8)" versionIndex="0"/>
+          <minorVersion name="ALTWorkstation8_81" displayName="$(string.ALTWorkstation8_81)" versionIndex="1"/>
+          <minorVersion name="ALTWorkstation8_82" displayName="$(string.ALTWorkstation8_82)" versionIndex="2"/>
+          <minorVersion name="ALTWorkstation8_821" displayName="$(string.ALTWorkstation8_821)" versionIndex="3"/>
+        </majorVersion>
+        <majorVersion name="ALTWorkstationK8" displayName="$(string.ALTWorkstationK8)" versionIndex="3">
+          <minorVersion name="ALTWorkstationK8_8" displayName="$(string.ALTWorkstationK8_8)" versionIndex="0"/>
+          <minorVersion name="ALTWorkstationK8_81" displayName="$(string.ALTWorkstationK8_81)" versionIndex="1"/>
+          <minorVersion name="ALTWorkstationK8_82" displayName="$(string.ALTWorkstationK8_82)" versionIndex="2"/>
+          <minorVersion name="ALTWorkstationK8_83" displayName="$(string.ALTWorkstationK8_83)" versionIndex="3"/>
+        </majorVersion>
+        <majorVersion name="ALTEducation8" displayName="$(string.ALTEducation8)" versionIndex="4">
+          <minorVersion name="ALTEducation8_8" displayName="$(string.ALTEducation8_8)" versionIndex="0"/>
+          <minorVersion name="ALTEducation8_81" displayName="$(string.ALTEducation8_81)" versionIndex="1"/>
+          <minorVersion name="ALTEducation8_82" displayName="$(string.ALTEducation8_82)" versionIndex="2"/>
+          <minorVersion name="ALTEducation8_821" displayName="$(string.ALTEducation8_821)" versionIndex="3"/>
+        </majorVersion>
+        <majorVersion name="ALTServer8" displayName="$(string.ALTServer8)" versionIndex="5">
+          <minorVersion name="ALTServer8_8" displayName="$(string.ALTServer8_8)" versionIndex="0"/>
+          <minorVersion name="ALTServer8_82" displayName="$(string.ALTServer8_82)" versionIndex="1"/>
+          <minorVersion name="ALTServer8_821" displayName="$(string.ALTServer8_821)" versionIndex="2"/>
+        </majorVersion>
+        <majorVersion name="ALTWorkstation9" displayName="$(string.ALTWorkstation9)" versionIndex="6">
+          <minorVersion name="ALTWorkstation9_9" displayName="$(string.ALTWorkstation9_9)" versionIndex="0"/>
+          <minorVersion name="ALTWorkstation9_91" displayName="$(string.ALTWorkstation9_91)" versionIndex="1"/>
+          <minorVersion name="ALTWorkstation9_92" displayName="$(string.ALTWorkstation9_92)" versionIndex="2"/>
+        </majorVersion>
+        <majorVersion name="ALTWorkstationK9" displayName="$(string.ALTWorkstationK9)" versionIndex="7">
+          <minorVersion name="ALTWorkstationK9_9" displayName="$(string.ALTWorkstationK9_9)" versionIndex="0"/>
+          <minorVersion name="ALTWorkstationK9_91" displayName="$(string.ALTWorkstationK9_91)" versionIndex="1"/>
+          <minorVersion name="ALTWorkstationK9_92" displayName="$(string.ALTWorkstationK9_92)" versionIndex="2"/>
+        </majorVersion>
+        <majorVersion name="ALTEducation9" displayName="$(string.ALTEducation9)" versionIndex="8">
+          <minorVersion name="ALTEducation9_9" displayName="$(string.ALTEducation9_9)" versionIndex="0"/>
+          <minorVersion name="ALTEducation9_91" displayName="$(string.ALTEducation9_91)" versionIndex="1"/>
+          <minorVersion name="ALTEducation9_92" displayName="$(string.ALTEducation9_92)" versionIndex="2"/>
+        </majorVersion>
+        <majorVersion name="ALTServer9" displayName="$(string.ALTServer9)" versionIndex="9">
+          <minorVersion name="ALTServer9_9" displayName="$(string.ALTServer9_9)" versionIndex="0"/>
+          <minorVersion name="ALTServer9_91" displayName="$(string.ALTServer9_91)" versionIndex="1"/>
+          <minorVersion name="ALTServer9_92" displayName="$(string.ALTServer9_92)" versionIndex="2"/>
+        </majorVersion>
+        <majorVersion name="ALTServerV9" displayName="$(string.ALTServerV9)" versionIndex="10">
+          <minorVersion name="ALTServerV9_9" displayName="$(string.ALTServerV9_9)" versionIndex="0"/>
+          <minorVersion name="ALTServerV9_91" displayName="$(string.ALTServerV9_91)" versionIndex="1"/>
+          <minorVersion name="ALTServerV9_92" displayName="$(string.ALTServerV9_92)" versionIndex="2"/>
+        </majorVersion>
+        <majorVersion name="ALTWorkstation10" displayName="$(string.ALTWorkstation10)" versionIndex="11">
+          <minorVersion name="ALTWorkstation10_10" displayName="$(string.ALTWorkstation10_10)" versionIndex="0"/>
+        </majorVersion>
+        <majorVersion name="ALTWorkstationK10" displayName="$(string.ALTWorkstationK10)" versionIndex="12">
+          <minorVersion name="ALTWorkstationK10_10" displayName="$(string.ALTWorkstationK10_10)" versionIndex="0"/>
+        </majorVersion>
+        <majorVersion name="ALTEducation10" displayName="$(string.ALTEducation10)" versionIndex="13">
+          <minorVersion name="ALTEducation10_10" displayName="$(string.ALTEducation10_10)" versionIndex="0"/>
+        </majorVersion>
+        <majorVersion name="ALTServer10" displayName="$(string.ALTServer10)" versionIndex="14">
+          <minorVersion name="ALTServer10_10" displayName="$(string.ALTServer10_10)" versionIndex="0"/>
+        </majorVersion>
+        <majorVersion name="ALTServerV10" displayName="$(string.ALTServerV10)" versionIndex="15">
+          <minorVersion name="ALTServerV10_10" displayName="$(string.ALTServerV10_10)" versionIndex="0"/>
+        </majorVersion>
+        <majorVersion name="SimplyLinux10" displayName="$(string.SimplyLinux10)" versionIndex="16">
+          <minorVersion name="SimplyLinux10_10" displayName="$(string.SimplyLinux10_10)" versionIndex="0"/>
+        </majorVersion>
+        <majorVersion name="ALTWorkstation11" displayName="$(string.ALTWorkstation11)" versionIndex="17">
+          <minorVersion name="ALTWorkstation11_11" displayName="$(string.ALTWorkstation11_11)" versionIndex="0"/>
+        </majorVersion>
+      </product>
+    </products>
+  </supportedOn>
+</policyDefinitions>

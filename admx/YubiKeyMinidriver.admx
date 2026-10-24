@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2019-2024 Michael Grafnetter  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="2.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions"  xsi:schemaLocation="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions ../Schema/PolicyDefinitionFiles.xsd">
+  <policyNamespaces>
+    <target prefix="ykmd" namespace="Yubico.YubiKey.Policies.Minidriver" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="2.0" />
+  <categories>
+    <category name="YubiKeyMinidriver" displayName="$(string.YubiKeyMinidriver)" />
+  </categories>
+  <policies>
+    <policy name="YubiKeyMinidriver_DebugOn" class="Machine" displayName="$(string.YubiKeyMinidriver_DebugOn)" explainText="$(string.YubiKeyMinidriver_DebugOn_Help)" key="Software\Yubico\ykmd" valueName="DebugOn" presentation="$(presentation.YubiKeyMinidriver_Debug)">
+      <parentCategory ref="YubiKeyMinidriver" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <enum id="DebugVerbosity_Options" key="Software\Yubico\ykmd" valueName="DebugVerbosity" required="true">
+          <item displayName="$(string.YubiKeyMinidriver_DebugVerbosity_L0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.YubiKeyMinidriver_DebugVerbosity_L1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.YubiKeyMinidriver_DebugVerbosity_L2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.YubiKeyMinidriver_DebugVerbosity_L3)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="YubiKeyMinidriver_NewKeyTouchPolicy" class="Machine" displayName="$(string.YubiKeyMinidriver_NewKeyTouchPolicy)" explainText="$(string.YubiKeyMinidriver_NewKeyTouchPolicy_Help)" presentation="$(presentation.YubiKeyMinidriver_NewKeyTouchPolicy)" key="Software\Yubico\ykmd">
+      <parentCategory ref="YubiKeyMinidriver" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="NewKeyTouchPolicy_Options" key="Software\Yubico\ykmd" valueName="NewKeyTouchPolicy" required="true">
+          <item displayName="$(string.YubiKeyMinidriver_NewKeyTouchPolicy_Never)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.YubiKeyMinidriver_NewKeyTouchPolicy_Always)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.YubiKeyMinidriver_NewKeyTouchPolicy_Cached)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="YubiKeyMinidriver_EnableUnsafeKeygen" class="Machine" displayName="$(string.YubiKeyMinidriver_EnableUnsafeKeygen)" explainText="$(string.YubiKeyMinidriver_EnableUnsafeKeygen_Help)" key="Software\Yubico\yubikeypiv" valueName="Enable_Unsafe_Keygen_ROCA">
+      <parentCategory ref="YubiKeyMinidriver" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="YubiKeyMinidriver_BlockPUKOnMGMUpgrade" class="Machine" displayName="$(string.YubiKeyMinidriver_BlockPUKOnMGMUpgrade)" explainText="$(string.YubiKeyMinidriver_BlockPUKOnMGMUpgrade_Help)" key="Software\Yubico\ykmd" valueName="BlockPUKOnMGMUpgrade">
+      <parentCategory ref="YubiKeyMinidriver" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="YubiKeyMinidriver_ProtectManagement" class="Machine" displayName="$(string.YubiKeyMinidriver_ProtectManagement)" explainText="$(string.YubiKeyMinidriver_ProtectManagement_Help)" key="Software\Yubico\ykmd" valueName="ProtectManagement">
+      <parentCategory ref="YubiKeyMinidriver" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="YubiKeyMinidriver_ManageCSPCache" class="Machine" displayName="$(string.YubiKeyMinidriver_ManageCSPCache)" explainText="$(string.YubiKeyMinidriver_ManageCSPCache_Help)" key="Software\Yubico\ykmd" valueName="ManageCSPCache">
+      <parentCategory ref="YubiKeyMinidriver" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="YubiKeyMinidriver_SupportAlwaysPin" class="Machine" displayName="$(string.YubiKeyMinidriver_SupportAlwaysPin)" explainText="$(string.YubiKeyMinidriver_SupportAlwaysPin_Help)" key="Software\Yubico\ykmd" valueName="SupportAlwaysPin">
+      <parentCategory ref="YubiKeyMinidriver" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="YubiKeyMinidriver_AutoFingerprint" class="Machine" displayName="$(string.YubiKeyMinidriver_AutoFingerprint)" explainText="$(string.YubiKeyMinidriver_AutoFingerprint_Help)" key="Software\Yubico\ykmd" valueName="AutoFingerprint">
+      <parentCategory ref="YubiKeyMinidriver" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="YubiKeyMinidriver_UserPinCachePolicy" class="Machine" displayName="$(string.YubiKeyMinidriver_UserPinCachePolicy)" explainText="$(string.YubiKeyMinidriver_UserPinCachePolicy_Help)" key="Software\Yubico\ykmd" presentation="$(presentation.YubiKeyMinidriver_UserPinCachePolicy)">
+      <parentCategory ref="YubiKeyMinidriver" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="UserPinCachePolicy_Options" key="Software\Yubico\ykmd" valueName="UserPinCachePolicy" required="true">
+          <item displayName="$(string.YubiKeyMinidriver_PinCachePolicy_Normal)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.YubiKeyMinidriver_PinCachePolicy_Timed)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.YubiKeyMinidriver_PinCachePolicy_None)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+          <item displayName="$(string.YubiKeyMinidriver_PinCachePolicy_AlwaysPrompt)">
+            <value>
+              <decimal value="3"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="YubiKeyMinidriver_ExternalPinCachePolicy" class="Machine" displayName="$(string.YubiKeyMinidriver_ExternalPinCachePolicy)" explainText="$(string.YubiKeyMinidriver_ExternalPinCachePolicy_Help)" key="Software\Yubico\ykmd" presentation="$(presentation.YubiKeyMinidriver_ExternalPinCachePolicy)">
+      <parentCategory ref="YubiKeyMinidriver" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="ExternalPinCachePolicy_Options" key="Software\Yubico\ykmd" valueName="ExternalPinCachePolicy" required="true">
+          <item displayName="$(string.YubiKeyMinidriver_PinCachePolicy_Normal)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.YubiKeyMinidriver_PinCachePolicy_Timed)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.YubiKeyMinidriver_PinCachePolicy_None)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+          <item displayName="$(string.YubiKeyMinidriver_PinCachePolicy_AlwaysPrompt)">
+            <value>
+              <decimal value="3"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="YubiKeyMinidriver_PinCacheTimeout" class="Machine" displayName="$(string.YubiKeyMinidriver_PinCacheTimeout)" explainText="$(string.YubiKeyMinidriver_PinCacheTimeout_Help)" key="Software\Yubico\ykmd" presentation="$(presentation.YubiKeyMinidriver_PinCacheTimeout)">
+      <parentCategory ref="YubiKeyMinidriver" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <decimal id="PinCacheTimeout_Value" key="Software\Yubico\ykmd" valueName="PinCacheTimeout" minValue="1" maxValue="3600" required="true" />
+      </elements>
+    </policy>
+    <policy name="YubiKeyMinidriver_RefreshDeviceKeys" class="Machine" displayName="$(string.YubiKeyMinidriver_RefreshDeviceKeys)" explainText="$(string.YubiKeyMinidriver_RefreshDeviceKeys_Help)" key="Software\Yubico\ykmd" valueName="RefreshDeviceKeys" presentation="$(presentation.YubiKeyMinidriver_RefreshDeviceKeys)">
+      <parentCategory ref="YubiKeyMinidriver" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <decimal id="RefreshWindow" key="Software\Yubico\ykmd" valueName="RefreshWindow" minValue="1" maxValue="3600" required="true" />
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

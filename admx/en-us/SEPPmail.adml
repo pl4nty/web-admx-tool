@@ -1,0 +1,2246 @@
+﻿<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+	<displayName>
+	</displayName>
+	<description>
+	</description>
+	<resources>
+
+	<stringTable>
+
+	<!-- Begin: HKLM -->
+		<string id="CAT_SEPPmail">SEPPmail</string>
+		<string id="CAT_SEPPmail_Help">SEPPmail Outlook Add-In settings
+
+Further information on how to configure this add-in via GPOs can be found under
+	https://docs.seppmail.com/en/index.html?06_moa_05_registry.htm
+		</string>
+	<!-- End: HKLM -->
+
+	<!-- Begin: HKLM -->
+		<string id="CAT_SEPPmail_Computer">Computer</string>
+		<string id="CAT_SEPPmail_Computer_Help">This category configures the values located under the [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\SEPPmail\OutlookAddIn] key.
+The values are machine-related.
+Any additional user-related values that may be present are usually of higher value.
+		</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<string id="CAT_SEPPmail_User">User</string>
+		<string id="CAT_SEPPmail_User_Help">This category configures the values located under the [HKEY_CURRENT_USER\Software\OutlookAddIn] key.
+The values are user-specific.
+Existing user-related values are usually more significant than the machine-related values.
+		</string>
+	<!-- End: HCU -->
+
+	<!-- Begin: HKLM -->
+		<string id="CAT_SEPPmail_Computer_Tooltips">Tooltips</string>
+		<string id="CAT_SEPPmail_Computer_Tooltips_Help">This category configures the values located under the [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\SEPPmail\OutlookAddIn\Tooltips] key.</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="CAT_SEPPmail_User_Tooltips">Tooltips</string>
+		<string id="CAT_SEPPmail_User_Tooltips_Help">This category configures the values located under the [HKEY_CURRENT_USER\Software\OutlookAddIn\Tooltips] key.</string>
+	< /End: HCU -->
+
+	<!-- Begin: HKLM -->
+		<string id="CAT_SEPPmail_Computer_Tooltips_DE">DE</string>
+		<string id="CAT_SEPPmail_Computer_Tooltips_DE_Help">This category configures the values located under the [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\SEPPmail\OutlookAddIn\Tooltips\DE] key.</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="CAT_SEPPmail_User_Tooltips_DE">DE</string>
+		<string id="CAT_SEPPmail_User_Tooltips_DE_Help">This category configures the values located under the [HKEY_CURRENT_USER\Software\OutlookAddIn\Tooltips\DE] key.</string>
+	< /End: HCU -->
+
+	<!-- Begin: HKLM -->
+		<string id="CAT_SEPPmail_Computer_Tooltips_EN">EN</string>
+		<string id="CAT_SEPPmail_Computer_Tooltips_EN_Help">This category configures the values located under the [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\SEPPmail\OutlookAddIn\Tooltips\EN] key.</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="CAT_SEPPmail_User_Tooltips_EN">EN</string>
+		<string id="CAT_SEPPmail_User_Tooltips_EN_Help">This category configures the values located under the [HKEY_CURRENT_USER\Software\OutlookAddIn\Tooltips\EN] key.</string>
+	< /End: HCU -->
+
+	<!-- Begin: HKLM -->
+		<string id="CAT_SEPPmail_Computer_Tooltips_FR">FR</string>
+		<string id="CAT_SEPPmail_Computer_Tooltips_FR_Help">This category configures the values located under the [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\SEPPmail\OutlookAddIn\Tooltips\FR] key.</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="CAT_SEPPmail_User_Tooltips_FR">FR</string>
+		<string id="CAT_SEPPmail_User_Tooltips_FR_Help">This category configures the values located under the [HKEY_CURRENT_USER\Software\OutlookAddIn\Tooltips\FR] key.</string>
+	< /End: HCU -->
+
+	<!-- Begin: HKLM -->
+		<string id="CAT_SEPPmail_Computer_Tooltips_IT">IT</string>
+		<string id="CAT_SEPPmail_Computer_Tooltips_IT_Help">This category configures the values located under the [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\SEPPmail\OutlookAddIn\Tooltips\IT] key.</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="CAT_SEPPmail_User_Tooltips_IT">IT</string>
+		<string id="CAT_SEPPmail_User_Tooltips_IT_Help">This category configures the values located under the [HKEY_CURRENT_USER\Software\OutlookAddIn\Tooltips\IT] key.</string>
+	< /End: HCU -->
+		
+<!-- Begin: Button description -->
+<!-- Begin: Button "Encrypt" -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_SMEncrypt">SMEncrypt</string>
+		<string id="POL_SEPPmail_Computer_SMEncrypt_Help">Show "encrypt" button in ribbon of new e-mail.
+
+default is "active"
+		</string>
+
+		<string id="POL_SEPPmail_Computer_SMEncryptSelected">SMEncryptSelected</string>
+		<string id="POL_SEPPmail_Computer_SMEncryptSelected_Help">Activates "encrypt" button in ribbon of new e-mail by default.
+If the associated button is not displayed, the function remains active!
+	
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_Computer_s-smenc">s-smenc</string>
+		<string id="POL_SEPPmail_Computer_s-smenc_Help">When Subject-Mode is activated this is the subject tag added by choosing Encrypt button.
+
+The indicator set here for the action must correlate with the configuration in the "Ruleset Generator" of the appliance.
+(see also https://docs.seppmail.com/de/index.html?07_mi_07_mp__mail-processing.htm#rg_e_oe_alwaysencryptmailswiththefollowingtextinsubject)
+
+Default is [confidential]
+		</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<string id="POL_SEPPmail_User_SMEncrypt">SMEncrypt</string>
+		<string id="POL_SEPPmail_User_SMEncrypt_Help">Show "encrypt" button in ribbon of new e-mail.
+
+default is "active
+		</string>
+
+		<string id="POL_SEPPmail_User_SMEncryptSelected">SMEncryptSelected</string>
+		<string id="POL_SEPPmail_User_SMEncryptSelected_Help">Activates "encrypt" button in ribbon of new e-mail by default.
+If the associated button is not displayed, the function remains active!
+
+default is "inactive"
+		</string>
+		
+		<string id="POL_SEPPmail_User_s-smenc">s-smenc</string>
+		<string id="POL_SEPPmail_User_s-smenc_Help">When Subject-Mode is activated this is the subject tag added by choosing Encrypt button.
+
+The indicator set here for the action must correlate with the configuration in the "Ruleset Generator" of the appliance.
+(see also https://docs.seppmail.com/de/index.html?07_mi_07_mp__mail-processing.htm#rg_e_oe_alwaysencryptmailswiththefollowingtextinsubject)
+
+Default is [confidential]
+		</string>
+	<!-- End: HCU -->
+<!-- End: Button "Encrypt" -->
+<!-- Begin: Button "Encrypt with read receipt" -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_SMWebmail">SMWebmail</string>
+		<string id="POL_SEPPmail_Computer_SMWebmail_Help">Show "encrypt with read receipt" button in ribbon of new e-mail.
+
+default is "active"
+		</string>
+
+		<string id="POL_SEPPmail_Computer_SMWebmailSelected">SMWebmailSelected</string>
+		<string id="POL_SEPPmail_Computer_SMWebmailSelected_Help">Activates "encrypt with read receipt" button in ribbon of new e-mail by default.
+If the associated button is not displayed, the function remains active!				 
+
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_Computer_s-smwebmail">s-smwebmail</string>
+		<string id="POL_SEPPmail_Computer_s-smwebmail_Help">When Subject-Mode is activated this is the subject tag added by choosing EncryptWithReadReceipt button.
+
+The indicator set here for the action must correlate with the configuration in the "Ruleset Generator" of the appliance.
+(see also https://docs.seppmail.com/de/index.html?07_mi_07_mp__mail-processing.htm#rg_e_oe_alwaysuseginatechnologyformailswithoutlookprivateflagset)		  
+
+Default is [priv]
+		</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<string id="POL_SEPPmail_User_SMWebmail">SMWebmail</string>
+		<string id="POL_SEPPmail_User_SMWebmail_Help">Show "encrypt with read receipt" button in ribbon of new e-mail.
+
+default is "active"
+		</string>
+
+		<string id="POL_SEPPmail_User_SMWebmailSelected">SMWebmailSelected</string>
+		<string id="POL_SEPPmail_User_SMWebmailSelected_Help">Activates "encrypt with read receipt" button in ribbon of new e-mail by default.
+If the associated button is not displayed, the function remains active!
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_User_s-smwebmail">s-smwebmail</string>
+		<string id="POL_SEPPmail_User_s-smwebmail_Help">When Subject-Mode is activated this is the subject tag added by choosing EncryptWithReadReceipt button.
+
+The indicator set here for the action must correlate with the configuration in the "Ruleset Generator" of the appliance.
+(see also https://docs.seppmail.com/de/index.html?07_mi_07_mp__mail-processing.htm#rg_e_oe_alwaysuseginatechnologyformailswithoutlookprivateflagset)
+
+Default is [priv]
+		</string>
+	<!-- End: HCU -->
+<!-- End: Button "Encrypt with read receipt" -->
+<!-- Begin: Button "Internal encryption" -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_SMInternalEncryption">SMInternalEncryption</string>
+		<string id="POL_SEPPmail_Computer_SMInternalEncryption_Help">Shows "internal encryption" button in ribbon of new e-mail.
+
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_Computer_SMInternalEncryptionSelected">SMInternalEncryptionSelected</string>
+		<string id="POL_SEPPmail_Computer_SMInternalEncryptionSelected_Help">Activates "internal encryption" button in ribbon of new e-mail by default.
+If the associated button is not displayed, the function remains active!
+
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_Computer_InternalRecipient">InternalRecipient</string>
+		<string id="POL_SEPPmail_Computer_InternalRecipient_Help">If the Internal Mail Encryption (IME) is activated (this must be configured on the appliance, see also https://docs.seppmail.com/en/index.html?03_wp_05_af_03_ime_01_e2e__end-to-end-encryption.htm),
+
+ime@imepseudodomain activates IME V1.0 [default]
+@ime.&lt;your-domain.tld&gt; activates IME V2.0
+		</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<string id="POL_SEPPmail_User_SMInternalEncryption">SMInternalEncryption</string>
+		<string id="POL_SEPPmail_User_SMInternalEncryption_Help">Shows "internal encryption" button in ribbon of new e-mail.
+(see also https://docs.seppmail.com/de/index.html?06_moa_08_internal-encryption.htm)
+
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_User_SMInternalEncryptionSelected">SMInternalEncryptionSelected</string>
+		<string id="POL_SEPPmail_User_SMInternalEncryptionSelected_Help">Activates "internal encryption" button in ribbon of new e-mail by default.
+If the associated button is not displayed, the function remains active!
+
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_User_InternalRecipient">InternalRecipient</string>
+		<string id="POL_SEPPmail_User_InternalRecipient_Help">If the Internal Mail Encryption (IME) is activated (this must be configured on the appliance, see also https://docs.seppmail.com/en/index.html?03_wp_05_af_03_ime_01_e2e__end-to-end-encryption.htm),
+
+ime@imepseudodomain activates IME V1.0 [default]
+@ime.&lt;your-domain.tld&gt; activates IME V2.0
+		</string>
+	<!-- End: HCU -->
+<!-- End: Button "Internal encryption" -->
+<!-- Begin: Button "Unencrypted" -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_SMNoEncryption">SMNoEncryption</string>
+		<string id="POL_SEPPmail_Computer_SMNoEncryption_Help">Show "Unencrypted" button in ribbon of new e-mail.
+
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_Computer_SMNoEncryptionSelected">SMNoEncryptionSelected</string>
+		<string id="POL_SEPPmail_Computer_SMNoEncryptionSelected_Help">Activates "Unencrypted" button in ribbon of new e-mail by default.
+If the associated button is not displayed, the function remains active!
+
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_Computer_s-smnoenc">s-smnoenc</string>
+		<string id="POL_SEPPmail_Computer_s-smnoenc_Help">When Subject-Mode is activated this is the subject tag added by choosing NoEncrypt button.
+
+The indicator set here for the action must correlate with the configuration in the "Ruleset Generator" of the appliance.
+(see also https://docs.seppmail.com/en/index.html?07_mi_07_mp__mail-processing.htm#rg_e_oe_donotencryptoutgoingmailswiththefollowingtextinsubject)
+
+Default is [noenc]
+		</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<string id="POL_SEPPmail_User_SMNoEncryption">SMNoEncryption</string>
+		<string id="POL_SEPPmail_User_SMNoEncryption_Help">Show "Unencrypted" button in ribbon of new e-mail.
+
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_User_SMNoEncryptionSelected">SMNoEncryptionSelected</string>
+		<string id="POL_SEPPmail_User_SMNoEncryptionSelected_Help">Activates "Unencrypted" button in ribbon of new e-mail by default.
+If the associated button is not displayed, the function remains active!
+
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_User_s-smnoenc">s-smnoenc</string>
+		<string id="POL_SEPPmail_User_s-smnoenc_Help">When Subject-Mode is activated this is the subject tag added by choosing NoEncrypt button.
+
+The indicator set here for the action must correlate with the configuration in the "Ruleset Generator" of the appliance.
+(see also https://docs.seppmail.com/en/index.html?07_mi_07_mp__mail-processing.htm#rg_e_oe_donotencryptoutgoingmailswiththefollowingtextinsubject)
+
+Default is [noenc]
+		</string>
+	<!-- End: HCU -->
+<!-- End: Button "Unencrypted" -->
+<!-- Begin: Button "Sign" -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_SMSign">SMSign</string>
+		<string id="POL_SEPPmail_Computer_SMSign_Help">Show "sign" button in ribbon of new e-mail.
+
+default is "active"
+		</string>
+		
+		<string id="POL_SEPPmail_Computer_SMSignSelected">SMSignSelected</string>
+		<string id="POL_SEPPmail_Computer_SMSignSelected_Help">Activates "sign" button in ribbon of new e-mail by default.
+If the associated button is not displayed, the function remains active!
+
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_Computer_s-smsign">s-smsign</string>
+		<string id="POL_SEPPmail_Computer_s-smsign_Help">When Subject-Mode is activated this is the subject tag added by choosing Sign button.
+
+The indicator set here for the action must correlate with the configuration in the "Ruleset Generator" of the appliance.
+(see also https://docs.seppmail.com/de/index.html?07_mi_07_mp__mail-processing.htm#rg_s_oe_smimesignoutgoingmailswiththefollowingtextinsubject)
+
+Default is [sign]
+		</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<string id="POL_SEPPmail_User_SMSign">SMSign</string>
+		<string id="POL_SEPPmail_User_SMSign_Help">Show "sign" button in ribbon of new e-mail.
+
+default is "active"
+		</string>
+		
+		<string id="POL_SEPPmail_User_SMSignSelected">SMSignSelected</string>
+		<string id="POL_SEPPmail_User_SMSignSelected_Help">Activates "sign
+" button in ribbon of new e-mail by default.
+If the associated button is not displayed, the function remains active!
+
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_User_s-smsign">s-smsign</string>
+		<string id="POL_SEPPmail_User_s-smsign_Help">When Subject-Mode is activated this is the subject tag added by choosing Sign button.
+
+The indicator set here for the action must correlate with the configuration in the "Ruleset Generator" of the appliance.
+(see also https://docs.seppmail.com/en/index.html?07_mi_07_mp__mail-processing.htm#rg_s_oe_smimesignoutgoingmailswiththefollowingtextinsubject)
+
+Default is [sign]
+		</string>
+	<!-- End: HCU -->
+<!-- End: Button "Sign" -->
+<!-- Begin: Button "Plain" -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_SMPlain">SMPlain</string>
+		<string id="POL_SEPPmail_Computer_SMPlain_Help">Show "Plain" button in ribbon of new e-mail.
+
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_Computer_SMPlainSelected">SMPlainSelected</string>
+		<string id="POL_SEPPmail_Computer_SMPlainSelected_Help">Activates "Plain" button in ribbon of new e-mail by default.
+If the associated button is not displayed, the function remains active!
+
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_Computer_s-smplain">s-smplain</string>
+		<string id="POL_SEPPmail_Computer_s-smplain_Help">When Subject-Mode is activated this is the subject tag added by choosing NoEncrypt button.
+
+Das hier eingestellte Kennzeichen für die Aktion muss mit der Konfiguration im "Ruleset Generator" der Appliance korrelieren.
+(siehe auch https://docs.seppmail.com/en/index.html?07_mi_07_mp__mail-processing.htm#rg_gs_donottouchmailswiththefollowingtextinsubject)
+
+Default is [plain]
+		</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<string id="POL_SEPPmail_User_SMPlain">SMPlain</string>
+		<string id="POL_SEPPmail_User_SMPlain_Help">Show "Plain" button in ribbon of new e-mail.
+
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_User_SMPlainSelected">SMPlainSelected</string>
+		<string id="POL_SEPPmail_User_SMPlainSelected_Help">Activates "Plain" button in ribbon of new e-mail by default.
+If the associated button is not displayed, the function remains active!
+
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_User_s-smplain">s-smplain</string>
+		<string id="POL_SEPPmail_User_s-smplain_Help">When Subject-Mode is activated this is the subject tag added by choosing NoEncrypt button.
+
+The indicator set here for the action must correlate with the configuration in the "Ruleset Generator" of the appliance.
+(see also https://docs.seppmail.com/de/index.html?07_mi_07_mp__mail-processing.htm#rg_gs_donottouchmailswiththefollowingtextinsubject)
+		
+Default is [plain]
+		</string>
+	<!-- End: HCU -->
+<!-- End: Button "Plain" -->
+
+<!-- Begin: Button "Large File Transfer" -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_SMLargeFileTransfer">SMLargeFileTransfer</string>
+		<string id="POL_SEPPmail_Computer_SMLargeFileTransfer_Help">Show "Large File Transfer" (LFT) button in ribbon of new e-mail.
+(see also https://docs.seppmail.com/en/index.html?06_moa_07_large-file-transfer.htm)
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_Computer_SMLargeFileTransferSelected">SMLargeFileTransferSelected</string>
+		<string id="POL_SEPPmail_Computer_SMLargeFileTransferSelected_Help">Activates "Large File Transfer" (LFT) button in ribbon of new e-mail by default.
+If the associated button is not displayed, the function remains active!
+
+default is "inactive"
+		</string>
+		
+		<string id="POL_SEPPmail_Computer_SMLargeFileTransferBypass">SMLargeFileTransferBypass</string>
+		<string id="POL_SEPPmail_Computer_SMLargeFileTransferBypass_Help">Defines whether the bypass mode should be used for large file transfer.
+(see also https://docs.seppmail.com/en/index.html?03_wp_05_af_02_lft_03_add-in.htm)
+
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_Computer_LFTSEPPmailHostname">LFTSEPPmailHostname</string>
+		<string id="POL_SEPPmail_Computer_LFTSEPPmailHostname_Help">Hostname of GINA domain, which has to be used for large file upload (Large File Transfer is needed and has to be configured on appliance)</string>
+
+		<string id="POL_SEPPmail_Computer_InsecureLFTUploadConnection">InsecureLFTUploadConnection</string>
+		<string id="POL_SEPPmail_Computer_InsecureLFTUploadConnection_Help">Allows unsecured large file upload when activated.
+
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_Computer_s-smlfm">s-smlfm</string>
+		<string id="POL_SEPPmail_Computer_s-smlfm_Help">Defines the indicator that is to be set in the "Subject Mode" for the respective action in the subject of the e-mail.
+
+The indicator set here for the action must correlate with the configuration in the "Ruleset Generator" of the appliance.
+(see also https://docs.seppmail.com/de/index.html?07_mi_07_mp__mail-processing.htm#rg_lf_alwaysuselargefileprocessingformailswiththefollowingtextinsubject)
+
+default is [lfm]
+		</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<string id="POL_SEPPmail_User_SMLargeFileTransfer">SMLargeFileTransfer</string>
+		<string id="POL_SEPPmail_User_SMLargeFileTransfer_Help">Show "Large File Transfer" (LFT) button in ribbon of new e-mail.
+(see also https://docs.seppmail.com/en/index.html?06_moa_07_large-file-transfer.htm)
+
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_User_SMLargeFileTransferSelected">SMLargeFileTransferSelected</string>
+		<string id="POL_SEPPmail_User_SMLargeFileTransferSelected_Help">Activates "Large File Transfer" (LFT) button in ribbon of new e-mail by default.
+If the associated button is not displayed, the function remains active!
+
+default is "inactive"
+		</string>
+		
+		<string id="POL_SEPPmail_User_SMLargeFileTransferBypass">SMLargeFileTransferBypass</string>
+		<string id="POL_SEPPmail_User_SMLargeFileTransferBypass_Help">Defines whether the bypass mode should be used for large file transfer.
+(see also https://docs.seppmail.com/de/index.html?03_wp_05_af_02_lft_03_add-in.htm)
+
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_User_LFTSEPPmailHostname">LFTSEPPmailHostname</string>
+		<string id="POL_SEPPmail_User_LFTSEPPmailHostname_Help">Hostname of GINA domain, which has to be used for large file upload (Large File Transfer is needed and has to be configured on appliance)</string>
+
+		<string id="POL_SEPPmail_User_InsecureLFTUploadConnection">InsecureLFTUploadConnection</string>
+		<string id="POL_SEPPmail_User_InsecureLFTUploadConnection_Help">Allows unsecured large file upload when activated.
+
+default is "inactive" (secure)
+		</string>
+
+		<string id="POL_SEPPmail_User_s-smlfm">s-smlfm</string>
+		<string id="POL_SEPPmail_User_s-smlfm_Help">When Subject-Mode is activated this is the subject tag added by choosing LFT button.
+
+The indicator set here for the action must correlate with the configuration in the "Ruleset Generator" of the appliance.
+(see also https://docs.seppmail.com/en/index.html?07_mi_07_mp__mail-processing.htm#rg_lf_alwaysuselargefileprocessingformailswiththefollowingtextinsubject)
+
+Default is [lfm]
+		</string>
+	<!-- End: HCU -->
+<!-- End: Button "Large File Transfer" -->
+
+<!-- Begin: Button "Help" -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_SMHelp">SMHelp</string>
+		<string id="POL_SEPPmail_Computer_SMHelp_Help">Show "help" button in ribbon of new e-mail.
+
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_Computer_WebSite">Web Site</string>
+		<string id="POL_SEPPmail_Computer_WebSite_Help">Website displayed when klicking help button.
+
+Default is https://www.seppmail.ch
+		</string>
+
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<string id="POL_SEPPmail_User_SMHelp">SMHelp</string>
+		<string id="POL_SEPPmail_User_SMHelp_Help">Show "help" button in ribbon of new e-mail.
+
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_User_WebSite">Web Site</string>
+		<string id="POL_SEPPmail_User_WebSite_Help">Website displayed when klicking help button.
+
+Default is https://docs.seppmail.com
+		</string>
+	<!-- End: HCU -->
+<!-- End: Button "Help" -->
+<!-- End: Button description -->
+
+<!-- Begin: "Categorisation" -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Categorize">Categorize</string>
+		<string id="POL_SEPPmail_Computer_Categorize_Help">Categorises outgoing e-mails.
+
+default is "inactive" (off)
+		</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<string id="POL_SEPPmail_User_Categorize">CategorizeHistory</string>
+		<string id="POL_SEPPmail_User_Categorize_Help">Categorises outgoing e-mails.
+
+default is "inactive" (off)
+		</string>
+	<!-- End: HCU -->
+	<!-- Begin: "CategorisationHistory" -->
+		<!-- Begin: HKLM -->
+			<string id="POL_SEPPmail_Computer_CategorizeHistory">CategorizeHistory</string>
+			<string id="POL_SEPPmail_Computer_CategorizeHistory_Help">Also categorise e-mails that have been processed since the last Outlook start (or initial from the beginning).
+
+default is "inactive" (off)
+			</string>
+		<!-- End: HKLM -->
+		<!-- Begin: HCU -->
+			<string id="POL_SEPPmail_User_CategorizeHistory">CategorizeHistory</string>
+			<string id="POL_SEPPmail_User_CategorizeHistory_Help">Also categorise e-mails that have been processed since the last Outlook start (or initial from the beginning).
+
+default is "inactive" (off)
+			</string>
+		<!-- End: HCU -->
+	<!-- End: "CategorisationHistory" -->
+<!-- End: "Categorisation" -->
+
+<!-- Begin: "Only HKLM config" -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_LMonly">LMonly</string>
+		<string id="POL_SEPPmail_Computer_LMonly_Help">Only use computer settings (user settings are ignored when activated!).
+
+default is "inactive"
+		</string>
+	<!-- End: HKLM -->
+	<!-- No HCU -->
+<!-- End: "Only HKLM config" -->
+
+<!-- Begin: "Position of subject tag" -->
+		<string id="POL_SEPPmail_Computer_PlaceSubjectFlagsAtStart">PlaceSubjectFlagsAtStart</string>
+		<string id="POL_SEPPmail_Computer_PlaceSubjectFlagsAtStart_Help">Specifies whether control commands are inserted at the beginning of the subject.
+
+default is "inactive" (at the end)
+
+This setting is only relevant if "subject-mod" is activated.
+		</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<string id="POL_SEPPmail_User_PlaceSubjectFlagsAtStart">PlaceSubjectFlagsAtStart</string>
+		<string id="POL_SEPPmail_User_PlaceSubjectFlagsAtStart_Help">Specifies whether control commands are inserted at the beginning of the subject.
+
+default is "inactive" (at the end)
+
+This setting is only relevant if "subject-mod" is activated.
+		</string>
+	<!-- End: HCU -->
+<!-- End: "Position of subject tag" -->
+
+<!-- Begin: "Subject mode" -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_subject-mod">subject-mod</string>
+		<string id="POL_SEPPmail_Computer_subject-mod_Help">Use subject tags instead of x-headers to triger kryptographic actions.
+
+default is "inactive"
+		</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<string id="POL_SEPPmail_User_subject-mod">subject-mod</string>
+		<string id="POL_SEPPmail_User_subject-mod_Help">Use subject tags instead of x-headers to triger kryptographic actions.
+
+default is "inactive"
+		</string>
+	<!-- End: HCU -->
+<!-- End: "Subject mode" -->
+<!-- Begin: "UsageTimeStamp" -->
+	<!-- Begin: HKLM
+		<string id="POL_SEPPmail_Computer_UsageTimeStamp">UsageTimeStamp</string>
+		<string id="POL_SEPPmail_Computer_UsageTimeStamp_Help">Indicates the time of the last change in the machine settings</string>
+	-->
+	<!-- Begin: HCU -->
+		<string id="POL_SEPPmail_User_UsageTimeStamp">UsageTimeStamp</string>
+		<string id="POL_SEPPmail_User_UsageTimeStamp_Help">Indicates the time of the last change in the user settings
+
+If this value is set to a point in time in the distant future, the acceptance of the machine settings is suppressed.
+		</string>
+	<!-- End: HCU -->
+<!-- End: "UsageTimeStamp" -->
+<!-- Begin: "Tool tips" -->
+	<!-- Begin: HKLM -->
+
+		<string id="POL_SEPPmail_Computer_Tooltips">Tooltips</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_Help">Show tooltips by positioning the mouse on a button in ribbon of new e-mail.
+(Requires "Tooltips" to be defined in the respective language of Outlook installation)
+
+default is "inactive"
+		</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips">Tooltips</string>
+		<string id="POL_SEPPmail_User_Tooltips_Help">Show tooltips by positioning the mouse on a button in ribbon of new e-mail.
+(Requires "Tooltips" to be defined in the respective language of Outlook installation)
+
+default is "inactive"
+		</string>
+	< /End: HCU -->
+<!-- End: "Tool tips" -->
+
+<!-- Begin: "Warning" -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_SMWarning">SMWarning</string>
+		<string id="POL_SEPPmail_Computer_SMWarning_Help">Displays a warning message, when no encryption is choosen.
+
+default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_Computer_SMWarningDomainWhitelist">SMWarningDomainWhitelist</string>
+		<string id="POL_SEPPmail_Computer_SMWarningDomainWhitelist_Help">Recipient domains to which the warning message should be suppressed (separated by space).</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<string id="POL_SEPPmail_User_SMWarning">SMWarning</string>
+		<string id="POL_SEPPmail_User_SMWarning_Help">Displays a warning message, when no encryption is choosen.
+
+0default is "inactive"
+		</string>
+
+		<string id="POL_SEPPmail_User_SMWarningDomainWhitelist">SMWarningDomainWhitelist</string>
+		<string id="POL_SEPPmail_User_SMWarningDomainWhitelist_Help">Recipient domains to which the warning message should be suppressed (separated by space).</string>
+	<!-- End: HCU -->
+<!-- End: "Warning" -->
+
+<!-- Begin: LDAP -->
+<!-- Begin: LDAPPermissionCheckActive -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_LDAPPermissionCheckActive">LDAPPermissionCheckActive</string>
+		<string id="POL_SEPPmail_Computer_LDAPPermissionCheckActive_Help">Activates LDAP authorization control
+(see also https://docs.seppmail.com/en/index.html?06_moa_09_authorization-control-via-ldap.htm).
+
+default is "inactive"
+		</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<string id="POL_SEPPmail_User_LDAPPermissionCheckActive">LDAPPermissionCheckActive</string>
+		<string id="POL_SEPPmail_User_LDAPPermissionCheckActive_Help">Activates LDAP authorization control
+(see also https://docs.seppmail.com/de/index.html?06_moa_09_authorization-control-via-ldap.htm).
+default is "inactive"
+		</string>
+	<!-- End: HCU -->
+<!-- End: LDAPPermissionCheckActive -->
+<!-- Begin: LDAPServerAddress -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_LDAPServerAddress">LDAPServerAddress</string>
+		<string id="POL_SEPPmail_Computer_LDAPServerAddress_Help">Adress of the LDAP servers for authorization control.</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<string id="POL_SEPPmail_User_LDAPServerAddress">LDAPServerAddress</string>
+		<string id="POL_SEPPmail_User_LDAPServerAddress_Help">Adress of the LDAP servers for authorization control.</string>
+	<!-- End: HCU -->
+<!-- End: LDAPServerAddress -->
+<!-- Begin: LDAPUsername -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_LDAPUsername">LDAPUsername</string>
+		<string id="POL_SEPPmail_Computer_LDAPUsername_Help">User that is authorized to query the LDAP.</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<string id="POL_SEPPmail_User_LDAPUsername">LDAPUsername</string>
+		<string id="POL_SEPPmail_User_LDAPUsername_Help">User that is authorized to query the LDAP.</string>
+	<!-- End: HCU -->
+<!-- End: LDAPUsername -->
+<!-- Begin: LDAPPassword -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_LDAPPassword">LDAPPassword</string>
+		<string id="POL_SEPPmail_Computer_LDAPPassword_Help">Password of the user that is authorized to query the LDAP.</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<string id="POL_SEPPmail_User_LDAPPassword">LDAPPassword</string>
+		<string id="POL_SEPPmail_User_LDAPPassword_Help">Password of the user that is authorized to query the LDAP.</string>
+	<!-- End: HCU -->
+<!-- End: LDAPPassword -->
+<!-- Begin: LDAPAuthenticationTypes -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_LDAPAuthenticationTypes">LDAPAuthenticationTypes</string>
+		<string id="POL_SEPPmail_Computer_LDAPAuthenticationTypes_Help">Authentication method to use for LDAP logon.
+Multiple values can be specified comma-separated.
+Possible values are described in https://msdn.microsoft.com/dede/library/system.directoryservices.authenticationtypes(v=vs.110).aspx.
+If the entry does not exist or is empty, NTLM authentication (secure) is used.
+
+Possible settings:
+- secure
+- fast
+- bind
+		</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<string id="POL_SEPPmail_User_LDAPAuthenticationTypes">LDAPAuthenticationTypes</string>
+		<string id="POL_SEPPmail_User_LDAPAuthenticationTypes_Help">Authentication method to use for LDAP logon.
+Multiple values can be specified comma-separated.
+Possible values are described in https://msdn.microsoft.com/dede/library/system.directoryservices.authenticationtypes(v=vs.110).aspx.
+If the entry does not exist or is empty, NTLM authentication (secure) is used.
+
+Possible settings:
+- secure
+- fast
+- bind
+		</string>
+	<!-- End: HCU -->
+<!-- End: LDAPAuthenticationTypes -->
+<!-- Begin: LDAPOrganizationalUnit -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_LDAPOrganizationalUnit">LDAPOrganizationalUnit</string>
+		<string id="POL_SEPPmail_Computer_LDAPOrganizationalUnit_Help">LDAP OrganizationsUnit for which the query is executed, for example
+
+OU=Users,DC=test,DC=server,DC=tld
+		</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<string id="POL_SEPPmail_User_LDAPOrganizationalUnit">LDAPOrganizationalUnit</string>
+		<string id="POL_SEPPmail_User_LDAPOrganizationalUnit_Help">LDAP OrganizationsUnit for which the query is executed, for example
+
+OU=Users,DC=test,DC=server,DC=tld
+		</string>
+	<!-- End: HCU -->
+<!-- End: LDAPOrganizationalUnit -->
+<!-- Begin: LDAPQuery -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_LDAPQuery">LDAPQuery</string>
+		<string id="POL_SEPPmail_Computer_LDAPQuery_Help">LDAP query, in which the selected sender address is used instead of the placeholder {0}, if it exists and is authorized. Otherwise, no result will be returned.
+
+Example:
+(&amp;(mail={0})(SEPPmailPermission=*))
+		</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<string id="POL_SEPPmail_User_LDAPQuery">LDAPQuery</string>
+		<string id="POL_SEPPmail_User_LDAPQuery_Help">LDAP query, in which the selected sender address is used instead of the placeholder {0}, if it exists and is authorized. Otherwise, no result will be returned.
+
+Example:
+(&amp;(mail={0})(SEPPmailPermission=*))
+		</string>
+	<!-- End: HCU -->
+<!-- End: LDAPQuery -->
+<!-- End: LDAP configuration -->
+
+<!-- Begin: Tool tips  -->
+<!-- Begin: Tool tips DE -->
+<!-- Begin: Encrypt -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_DE_Encrypt">Encrypt</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_DE_Encrypt_Help">German tooltip text for button "Encrypt"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_DE_Encrypt">Encrypt</string>
+		<string id="POL_SEPPmail_User_Tooltips_DE_Encrypt_Help">German tooltip text for button "Encrypt"</string>
+	< /End: HCU -->
+<!-- End: Encrypt -->
+
+<!-- Begin: Webmail -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_DE_Webmail">Webmail</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_DE_Webmail_Help">German tooltip text for button "Encrypt with read receipt"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_DE_Webmail">Webmail</string>
+		<string id="POL_SEPPmail_User_Tooltips_DE_Webmail_Help">German tooltip text for button "Encrypt with read receipt"</string>
+	< /End: HCU -->
+<!-- End: Webmail -->
+
+<!-- Begin: InternalEncryption -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_DE_InternalEncryption">InternalEncryption</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_DE_InternalEncryption_Help">German tooltip text for button "Encrypt internal e-mails"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_DE_InternalEncryption">InternalEncryption</string>
+		<string id="POL_SEPPmail_User_Tooltips_DE_InternalEncryption_Help">German tooltip text for button "Encrypt internal e-mails"</string>
+	< /End: HCU -->
+<!-- End: InternalEncryption -->
+
+<!-- Begin: NoEncryption -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_DE_NoEncryption">NoEncryption</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_DE_NoEncryption_Help">German tooltip text for button "No encryption"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_DE_NoEncryption">NoEncryption</string>
+		<string id="POL_SEPPmail_User_Tooltips_DE_NoEncryption_Help">German tooltip text for button "No encryption"</string>
+	< /End: HCU -->
+<!-- End: NoEncryption -->
+
+<!-- Begin: Sign -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_DE_Sign">Sign</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_DE_Sign_Help">German tooltip text for button "Sign"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_DE_Sign">Sign</string>
+		<string id="POL_SEPPmail_User_Tooltips_DE_Sign_Help">German tooltip text for button "Sign"</string>
+	< /End: HCU -->
+<!-- End: Sign -->
+
+<!-- Begin: Plain -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_DE_Plain">Plain</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_DE_Plain_Help">German tooltip text for button "Plain"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_DE_Plain">Plain</string>
+		<string id="POL_SEPPmail_User_Tooltips_DE_Plain_Help">German tooltip text for button "Plain"</string>
+	< /End: HCU -->
+<!-- End: Plain -->
+
+<!-- Begin: LargeFileTransfer -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_DE_LargeFileTransfer">LargeFileTransfer</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_DE_LargeFileTransfer_Help">German tooltip text for button "Large File Transfer"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_DE_LargeFileTransfer">LargeFileTransfer</string>
+		<string id="POL_SEPPmail_User_Tooltips_DE_LargeFileTransfer_Help">German tooltip text for button "Large File Transfer"</string>
+	< /End: HCU -->
+<!-- End: LargeFileTransfer -->
+
+<!-- Begin: Help -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_DE_Help">Help</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_DE_Help_Help">German tooltip text for button "Help"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_DE_Help">Help</string>
+		<string id="POL_SEPPmail_User_Tooltips_DE_Help_Help">German tooltip text for button "Help"</string>
+	< /End: HCU -->
+<!-- End: Help -->
+<!-- End: Tool tips DE -->
+<!-- Begin: Tool tips EN -->
+<!-- Begin: Encrypt -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_EN_Encrypt">Encrypt</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_EN_Encrypt_Help">German tooltip text for button "Encrypt"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_EN_Encrypt">Encrypt</string>
+		<string id="POL_SEPPmail_User_Tooltips_EN_Encrypt_Help">German tooltip text for button "Encrypt"</string>
+	< /End: HCU -->
+<!-- End: Encrypt -->
+
+<!-- Begin: Webmail -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_EN_Webmail">Webmail</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_EN_Webmail_Help">German tooltip text for button "Encrypt with read receipt"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_EN_Webmail">Webmail</string>
+		<string id="POL_SEPPmail_User_Tooltips_EN_Webmail_Help">German tooltip text for button "Encrypt with read receipt"</string>
+	< /End: HCU -->
+<!-- End: Webmail -->
+
+<!-- Begin: InternalEncryption -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_EN_InternalEncryption">InternalEncryption</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_EN_InternalEncryption_Help">German tooltip text for button "Encrypt internal e-mails"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_EN_InternalEncryption">InternalEncryption</string>
+		<string id="POL_SEPPmail_User_Tooltips_EN_InternalEncryption_Help">German tooltip text for button "Encrypt internal e-mails"</string>
+	< /End: HCU -->
+<!-- End: InternalEncryption -->
+
+<!-- Begin: NoEncryption -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_EN_NoEncryption">NoEncryption</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_EN_NoEncryption_Help">German tooltip text for button "No encryption"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_EN_NoEncryption">NoEncryption</string>
+		<string id="POL_SEPPmail_User_Tooltips_EN_NoEncryption_Help">German tooltip text for button "No encryption"</string>
+	< /End: HCU -->
+<!-- End: NoEncryption -->
+
+<!-- Begin: Sign -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_EN_Sign">Sign</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_EN_Sign_Help">German tooltip text for button "Sign"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_EN_Sign">Sign</string>
+		<string id="POL_SEPPmail_User_Tooltips_EN_Sign_Help">German tooltip text for button "Sign"</string>
+	< /End: HCU -->
+<!-- End: Sign -->
+
+<!-- Begin: Plain -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_EN_Plain">Plain</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_EN_Plain_Help">German tooltip text for button "Plain"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_EN_Plain">Plain</string>
+		<string id="POL_SEPPmail_User_Tooltips_EN_Plain_Help">German tooltip text for button "Plain"</string>
+	< /End: HCU -->
+<!-- End: Plain -->
+
+<!-- Begin: LargeFileTransfer -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_EN_LargeFileTransfer">LargeFileTransfer</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_EN_LargeFileTransfer_Help">German tooltip text for button "Large File Transfer"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_EN_LargeFileTransfer">LargeFileTransfer</string>
+		<string id="POL_SEPPmail_User_Tooltips_EN_LargeFileTransfer_Help">German tooltip text for button "Large File Transfer"</string>
+	< /End: HCU -->
+<!-- End: LargeFileTransfer -->
+
+<!-- Begin: Help -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_EN_Help">Help</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_EN_Help_Help">German tooltip text for button "Help"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_EN_Help">Help</string>
+		<string id="POL_SEPPmail_User_Tooltips_EN_Help_Help">German tooltip text for button "Help"</string>
+	< /End: HCU -->
+<!-- End: Help -->
+<!-- End: Tool tips EN -->
+<!-- Begin: Tool tips FR -->
+<!-- Begin: Encrypt -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_FR_Encrypt">Encrypt</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_FR_Encrypt_Help">German tooltip text for button "Encrypt"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_FR_Encrypt">Encrypt</string>
+		<string id="POL_SEPPmail_User_Tooltips_FR_Encrypt_Help">German tooltip text for button "Encrypt"</string>
+	< /End: HCU -->
+<!-- End: Encrypt -->
+
+<!-- Begin: Webmail -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_FR_Webmail">Webmail</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_FR_Webmail_Help">German tooltip text for button "Encrypt with read receipt"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_FR_Webmail">Webmail</string>
+		<string id="POL_SEPPmail_User_Tooltips_FR_Webmail_Help">German tooltip text for button "Encrypt with read receipt"</string>
+	< /End: HCU -->
+<!-- End: Webmail -->
+
+<!-- Begin: InternalEncryption -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_FR_InternalEncryption">InternalEncryption</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_FR_InternalEncryption_Help">German tooltip text for button "Encrypt internal e-mails"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_FR_InternalEncryption">InternalEncryption</string>
+		<string id="POL_SEPPmail_User_Tooltips_FR_InternalEncryption_Help">German tooltip text for button "Encrypt internal e-mails"</string>
+	< /End: HCU -->
+<!-- End: InternalEncryption -->
+
+<!-- Begin: NoEncryption -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_FR_NoEncryption">NoEncryption</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_FR_NoEncryption_Help">German tooltip text for button "No encryption"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_FR_NoEncryption">NoEncryption</string>
+		<string id="POL_SEPPmail_User_Tooltips_FR_NoEncryption_Help">German tooltip text for button "No encryption"</string>
+	< /End: HCU -->
+<!-- End: NoEncryption -->
+
+<!-- Begin: Sign -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_FR_Sign">Sign</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_FR_Sign_Help">German tooltip text for button "Sign"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_FR_Sign">Sign</string>
+		<string id="POL_SEPPmail_User_Tooltips_FR_Sign_Help">German tooltip text for button "Sign"</string>
+	< /End: HCU -->
+<!-- End: Sign -->
+
+<!-- Begin: Plain -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_FR_Plain">Plain</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_FR_Plain_Help">German tooltip text for button "Plain"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_FR_Plain">Plain</string>
+		<string id="POL_SEPPmail_User_Tooltips_FR_Plain_Help">German tooltip text for button "Plain"</string>
+	< /End: HCU -->
+<!-- End: Plain -->
+
+<!-- Begin: LargeFileTransfer -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_FR_LargeFileTransfer">LargeFileTransfer</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_FR_LargeFileTransfer_Help">German tooltip text for button "Large File Transfer"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_FR_LargeFileTransfer">LargeFileTransfer</string>
+		<string id="POL_SEPPmail_User_Tooltips_FR_LargeFileTransfer_Help">German tooltip text for button "Large File Transfer"</string>
+	< /End: HCU -->
+<!-- End: LargeFileTransfer -->
+
+<!-- Begin: Help -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_FR_Help">Help</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_FR_Help_Help">German tooltip text for button "Help"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_FR_Help">Help</string>
+		<string id="POL_SEPPmail_User_Tooltips_FR_Help_Help">German tooltip text for button "Help"</string>
+	< /End: HCU -->
+<!-- End: Help -->
+<!-- End: Tool tips FR -->
+<!-- Begin: Tool tips IT -->
+<!-- Begin: Encrypt -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_IT_Encrypt">Encrypt</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_IT_Encrypt_Help">German tooltip text for button "Encrypt"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_IT_Encrypt">Encrypt</string>
+		<string id="POL_SEPPmail_User_Tooltips_IT_Encrypt_Help">German tooltip text for button "Encrypt"</string>
+	< /End: HCU -->
+<!-- End: Encrypt -->
+
+<!-- Begin: Webmail -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_IT_Webmail">Webmail</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_IT_Webmail_Help">German tooltip text for button "Encrypt with read receipt"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_IT_Webmail">Webmail</string>
+		<string id="POL_SEPPmail_User_Tooltips_IT_Webmail_Help">German tooltip text for button "Encrypt with read receipt"</string>
+	< /End: HCU -->
+<!-- End: Webmail -->
+
+<!-- Begin: InternalEncryption -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_IT_InternalEncryption">InternalEncryption</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_IT_InternalEncryption_Help">German tooltip text for button "Encrypt internal e-mails"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_IT_InternalEncryption">InternalEncryption</string>
+		<string id="POL_SEPPmail_User_Tooltips_IT_InternalEncryption_Help">German tooltip text for button "Encrypt internal e-mails"</string>
+	< /End: HCU -->
+<!-- End: InternalEncryption -->
+
+<!-- Begin: NoEncryption -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_IT_NoEncryption">NoEncryption</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_IT_NoEncryption_Help">German tooltip text for button "No encryption"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_IT_NoEncryption">NoEncryption</string>
+		<string id="POL_SEPPmail_User_Tooltips_IT_NoEncryption_Help">German tooltip text for button "No encryption"</string>
+	< /End: HCU -->
+<!-- End: NoEncryption -->
+
+<!-- Begin: Sign -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_IT_Sign">Sign</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_IT_Sign_Help">German tooltip text for button "Sign"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_IT_Sign">Sign</string>
+		<string id="POL_SEPPmail_User_Tooltips_IT_Sign_Help">German tooltip text for button "Sign"</string>
+	< /End: HCU -->
+<!-- End: Sign -->
+
+<!-- Begin: Plain -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_IT_Plain">Plain</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_IT_Plain_Help">German tooltip text for button "Plain"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_IT_Plain">Plain</string>
+		<string id="POL_SEPPmail_User_Tooltips_IT_Plain_Help">German tooltip text for button "Plain"</string>
+	< /End: HCU -->
+<!-- End: Plain -->
+
+<!-- Begin: LargeFileTransfer -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_IT_LargeFileTransfer">LargeFileTransfer</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_IT_LargeFileTransfer_Help">German tooltip text for button "Large File Transfer"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_IT_LargeFileTransfer">LargeFileTransfer</string>
+		<string id="POL_SEPPmail_User_Tooltips_IT_LargeFileTransfer_Help">German tooltip text for button "Large File Transfer"</string>
+	< /End: HCU -->
+<!-- End: LargeFileTransfer -->
+
+<!-- Begin: Help -->
+	<!-- Begin: HKLM -->
+		<string id="POL_SEPPmail_Computer_Tooltips_IT_Help">Help</string>
+		<string id="POL_SEPPmail_Computer_Tooltips_IT_Help_Help">German tooltip text for button "Help"</string>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<string id="POL_SEPPmail_User_Tooltips_IT_Help">Help</string>
+		<string id="POL_SEPPmail_User_Tooltips_IT_Help_Help">German tooltip text for button "Help"</string>
+	< /End: HCU -->
+<!-- End: Help -->
+<!-- End: Tool tips IT -->
+<!-- End: Tool tips  -->
+
+	</stringTable>
+
+	<presentationTable>
+	
+<!-- Begin: Button configuration -->
+<!-- Begin: Button "Encrypt" -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_SMEncrypt">
+			<checkBox refId="DXT_SEPPmail_Computer_SMEncrypt" defaultChecked="true">Show "encrypt" button in ribbon of new e-mail.</checkBox>
+		</presentation>
+	
+		<presentation id="POL_SEPPmail_Computer_SMEncryptSelected">
+			<checkBox refId="DXT_SEPPmail_Computer_SMEncryptSelected" defaultChecked="false">Activate "encrypt" button in ribbon of new e-mail by default.</checkBox>
+		</presentation>
+
+		<presentation id="POL_SEPPmail_Computer_s-smenc">
+			<textBox refId="TXT_SEPPmail_Computer_s-smenc">
+				<label>s-smenc</label>
+				<defaultValue>[confidential]</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<presentation id="POL_SEPPmail_User_SMEncrypt">
+			<checkBox refId="DXT_SEPPmail_User_SMEncrypt" defaultChecked="true">Show "encrypt" button in ribbon of new e-mail.</checkBox>
+		</presentation>
+	
+		<presentation id="POL_SEPPmail_User_SMEncryptSelected">
+			<checkBox refId="DXT_SEPPmail_User_SMEncryptSelected" defaultChecked="false">Activate "encrypt" button in ribbon of new e-mail by default.</checkBox>
+		</presentation>
+
+		<presentation id="POL_SEPPmail_User_s-smenc">
+			<textBox refId="TXT_SEPPmail_User_s-smenc">
+				<label>s-smenc</label>
+				<defaultValue>[confidential]</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HCU -->
+<!-- End: Button "Encrypt" -->
+
+<!-- Begin: Button "Encrypt with read receipt" -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_SMWebmail">
+			<checkBox refId="DXT_SEPPmail_Computer_SMWebmail" defaultChecked="true">Activate "encrypt with read receipt" button in ribbon of new e-mail by default.</checkBox>
+		</presentation>
+	
+		<presentation id="POL_SEPPmail_Computer_SMWebmailSelected">
+			<checkBox refId="DXT_SEPPmail_Computer_SMWebmailSelected" defaultChecked="false">Activate "encrypt with read receipt" button in ribbon of new e-mail by default.</checkBox>
+		</presentation>
+
+		<presentation id="POL_SEPPmail_Computer_s-smwebmail">
+			<textBox refId="TXT_SEPPmail_Computer_s-smwebmail">
+				<label>s-smwebmail</label>
+				<defaultValue>[priv]</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<presentation id="POL_SEPPmail_User_SMWebmail">
+			<checkBox refId="DXT_SEPPmail_User_SMWebmail" defaultChecked="true">Activate "encrypt with read receipt" button in ribbon of new e-mail by default.</checkBox>
+		</presentation>
+	
+		<presentation id="POL_SEPPmail_User_SMWebmailSelected">
+			<checkBox refId="DXT_SEPPmail_User_SMWebmailSelected" defaultChecked="false">Activate "encrypt with read receipt" button in ribbon of new e-mail by default.</checkBox>
+		</presentation>
+
+		<presentation id="POL_SEPPmail_User_s-smwebmail">
+			<textBox refId="TXT_SEPPmail_User_s-smwebmail">
+				<label>s-smwebmail</label>
+				<defaultValue>[priv]</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HCU -->
+<!-- End: Button "Encrypt with read receipt" -->
+
+<!-- Begin: Button "Internal encryption" -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_SMInternalEncryption">
+			<checkBox refId="DXT_SEPPmail_Computer_SMInternalEncryption" defaultChecked="false">Activate "internal encryption" button in ribbon of new e-mail by default.</checkBox>
+		</presentation>
+	
+		<presentation id="POL_SEPPmail_Computer_SMInternalEncryptionSelected">
+			<checkBox refId="DXT_SEPPmail_Computer_SMInternalEncryptionSelected" defaultChecked="false">Activate "internal encryption" button in ribbon of new e-mail by default.</checkBox>
+		</presentation>
+	
+		<presentation id="POL_SEPPmail_Computer_InternalRecipient">
+			<textBox refId="TXT_SEPPmail_Computer_InternalRecipient">
+				<label>InternalRecipient</label>
+				<defaultValue>ime@imepseudodomain.local</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<presentation id="POL_SEPPmail_User_SMInternalEncryption">
+			<checkBox refId="DXT_SEPPmail_User_SMInternalEncryption" defaultChecked="false">Activate "internal encryption" button in ribbon of new e-mail by default.</checkBox>
+		</presentation>
+	
+		<presentation id="POL_SEPPmail_User_SMInternalEncryptionSelected">
+			<checkBox refId="DXT_SEPPmail_User_SMInternalEncryptionSelected" defaultChecked="false">Activate "internal encryption" button in ribbon of new e-mail by default.</checkBox>
+		</presentation>
+	
+		<presentation id="POL_SEPPmail_User_InternalRecipient">
+			<textBox refId="TXT_SEPPmail_User_InternalRecipient">
+				<label>InternalRecipient</label>
+				<defaultValue>ime@imepseudodomain.local</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HCU -->
+<!-- End: Button "Internal encryption" -->
+
+<!-- Begin: Button "Unencrypted" -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_SMNoEncryption">
+			<checkBox refId="DXT_SEPPmail_Computer_SMNoEncryption" defaultChecked="false">Show "No encryption" button in ribbon of new e-mail.</checkBox>
+		</presentation>
+	
+		<presentation id="POL_SEPPmail_Computer_SMNoEncryptionSelected">
+			<checkBox refId="DXT_SEPPmail_Computer_SMNoEncryptionSelected" defaultChecked="false">Activate "Internal encryption" button in ribbon of new e-mail by default.</checkBox>
+		</presentation>
+
+		<presentation id="POL_SEPPmail_Computer_s-smnoenc">
+			<textBox refId="TXT_SEPPmail_Computer_s-smnoenc">
+				<label>s-smnoenc</label>
+				<defaultValue>[noenc]</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<presentation id="POL_SEPPmail_User_SMNoEncryption">
+			<checkBox refId="DXT_SEPPmail_User_SMNoEncryption" defaultChecked="false">Show "No encryption" button in ribbon of new e-mail.</checkBox>
+		</presentation>
+	
+		<presentation id="POL_SEPPmail_User_SMNoEncryptionSelected">
+			<checkBox refId="DXT_SEPPmail_User_SMNoEncryptionSelected" defaultChecked="false">Activate "Internal encryption" button in ribbon of new e-mail by default.</checkBox>
+		</presentation>
+
+		<presentation id="POL_SEPPmail_User_s-smnoenc">
+			<textBox refId="TXT_SEPPmail_User_s-smnoenc">
+				<label>s-smnoenc</label>
+				<defaultValue>[noenc]</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HCU -->
+<!-- End: Button "Unencrypted" -->
+
+<!-- Begin: Button "Sign" -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_SMSign">
+			<checkBox refId="DXT_SEPPmail_Computer_SMSign" defaultChecked="true">Show "Sign" button in ribbon of new e-mail.</checkBox>
+		</presentation>
+	
+		<presentation id="POL_SEPPmail_Computer_SMSignSelected">
+			<checkBox refId="DXT_SEPPmail_Computer_SMSignSelected" defaultChecked="false">Activate "Sign" button in ribbon of new e-mail by default.</checkBox>
+		</presentation>
+
+		<presentation id="POL_SEPPmail_Computer_s-smsign">
+			<textBox refId="TXT_SEPPmail_Computer_s-smsign">
+				<label>s-smsign</label>
+				<defaultValue>[sign]</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<presentation id="POL_SEPPmail_User_SMSign">
+			<checkBox refId="DXT_SEPPmail_User_SMSign" defaultChecked="true">Show "Sign" button in ribbon of new e-mail.</checkBox>
+		</presentation>
+	
+		<presentation id="POL_SEPPmail_User_SMSignSelected">
+			<checkBox refId="DXT_SEPPmail_User_SMSignSelected" defaultChecked="false">Activate "Sign" button in ribbon of new e-mail by default.</checkBox>
+		</presentation>
+
+		<presentation id="POL_SEPPmail_User_s-smsign">
+			<textBox refId="TXT_SEPPmail_User_s-smsign">
+				<label>s-smsign</label>
+				<defaultValue>[sign]</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HCU -->
+<!-- End: Button "Sign" -->
+
+<!-- Begin: Button "Plain" -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_SMPlain">
+			<checkBox refId="DXT_SEPPmail_Computer_SMPlain" defaultChecked="false">Show "Plain" button in ribbon of new e-mail.</checkBox>
+		</presentation>
+	
+		<presentation id="POL_SEPPmail_Computer_SMPlainSelected">
+			<checkBox refId="DXT_SEPPmail_Computer_SMPlainSelected" defaultChecked="false">Activate "Plain" button in ribbon of new e-mail by default.</checkBox>
+		</presentation>
+
+		<presentation id="POL_SEPPmail_Computer_s-smplain">
+			<textBox refId="TXT_SEPPmail_Computer_s-smplain">
+				<label>s-smplain</label>
+				<defaultValue>[plain]</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<presentation id="POL_SEPPmail_User_SMPlain">
+			<checkBox refId="DXT_SEPPmail_User_SMPlain" defaultChecked="false">Show "Plain" button in ribbon of new e-mail.</checkBox>
+		</presentation>
+	
+		<presentation id="POL_SEPPmail_User_SMPlainSelected">
+			<checkBox refId="DXT_SEPPmail_User_SMPlainSelected" defaultChecked="false">Activate "Plain" button in ribbon of new e-mail by default.</checkBox>
+		</presentation>
+
+		<presentation id="POL_SEPPmail_User_s-smplain">
+			<textBox refId="TXT_SEPPmail_User_s-smplain">
+				<label>s-smplain</label>
+				<defaultValue>[plain]</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HCU -->
+<!-- End: Button "Plain" -->
+
+<!-- Begin: Button "Large File Transfer" -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_SMLargeFileTransfer">
+			<checkBox refId="DXT_SEPPmail_Computer_SMLargeFileTransfer" defaultChecked="false">Show "Large File Transfer" button in ribbon of new e-mail.</checkBox>
+		</presentation>
+	
+		<presentation id="POL_SEPPmail_Computer_SMLargeFileTransferSelected">
+			<checkBox refId="DXT_SEPPmail_Computer_SMLargeFileTransferSelected" defaultChecked="false">Activate "Large File Transfer" button in ribbon of new e-mail by default.</checkBox>
+		</presentation>
+
+		<presentation id="POL_SEPPmail_Computer_SMLargeFileTransferBypass">
+			<checkBox refId="DXT_SEPPmail_Computer_SMLargeFileTransferBypass" defaultChecked="false">Defines whether the bypass mode should be used for large file transfer.</checkBox>
+		</presentation>
+	
+		<presentation id="POL_SEPPmail_Computer_LFTSEPPmailHostname">
+			<textBox refId="TXT_SEPPmail_Computer_LFTSEPPmailHostname">
+				<label>LFTSEPPmailHostname</label>
+				<defaultValue></defaultValue>
+			</textBox>
+		</presentation>
+
+		<presentation id="POL_SEPPmail_Computer_InsecureLFTUploadConnection">
+			<checkBox refId="DXT_SEPPmail_Computer_InsecureLFTUploadConnection" defaultChecked="false">Permit insecure connections for "Large File Transfer Bypass" connections</checkBox>
+		</presentation>
+
+		<presentation id="POL_SEPPmail_Computer_s-smlfm">
+			<textBox refId="TXT_SEPPmail_Computer_s-smlfm">
+				<label>s-smlfm</label>
+				<defaultValue>[lfm]</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<presentation id="POL_SEPPmail_User_SMLargeFileTransfer">
+			<checkBox refId="DXT_SEPPmail_User_SMLargeFileTransfer" defaultChecked="false">Show "Large File Transfer" button in ribbon of new e-mail.</checkBox>
+		</presentation>
+	
+		<presentation id="POL_SEPPmail_User_SMLargeFileTransferSelected">
+			<checkBox refId="DXT_SEPPmail_User_SMLargeFileTransferSelected" defaultChecked="false">Activate "Large File Transfer" button in ribbon of new e-mail by default.</checkBox>
+		</presentation>
+
+		<presentation id="POL_SEPPmail_User_SMLargeFileTransferBypass">
+			<checkBox refId="DXT_SEPPmail_User_SMLargeFileTransferBypass" defaultChecked="false">Defines whether the bypass mode should be used for large file transfer.</checkBox>
+		</presentation>
+	
+		<presentation id="POL_SEPPmail_User_LFTSEPPmailHostname">
+			<textBox refId="TXT_SEPPmail_User_LFTSEPPmailHostname">
+				<label>LFTSEPPmailHostname</label>
+				<defaultValue></defaultValue>
+			</textBox>
+		</presentation>
+
+		<presentation id="POL_SEPPmail_User_InsecureLFTUploadConnection">
+			<checkBox refId="DXT_SEPPmail_User_InsecureLFTUploadConnection" defaultChecked="false">Permit insecure connections for "Large File Transfer Bypass" connections</checkBox>
+		</presentation>
+
+		<presentation id="POL_SEPPmail_User_s-smlfm">
+			<textBox refId="TXT_SEPPmail_User_s-smlfm">
+				<label>s-smlfm</label>
+				<defaultValue>[lfm]</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HCU -->
+<!-- End: Button "Large File Transfer" -->
+
+<!-- Begin: Button "Help" -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_SMHelp">
+			<checkBox refId="DXT_SEPPmail_Computer_SMHelp" defaultChecked="false">Show "Help" button in ribbon of new e-mail.</checkBox>
+		</presentation>
+	
+		<presentation id="POL_SEPPmail_Computer_WebSite">
+			<textBox refId="TXT_SEPPmail_Computer_WebSite">
+				<label>Web Site</label>
+				<defaultValue>https://www.seppmail.ch</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<presentation id="POL_SEPPmail_User_SMHelp">
+			<checkBox refId="DXT_SEPPmail_User_SMHelp" defaultChecked="false">Show "Help" button in ribbon of new e-mail.</checkBox>
+		</presentation>
+	
+		<presentation id="POL_SEPPmail_User_WebSite">
+			<textBox refId="TXT_SEPPmail_User_WebSite">
+				<label>Web Site</label>
+				<defaultValue>https://www.seppmail.ch</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HCU -->
+<!-- End: Button "Help" -->
+<!-- End: Button configuration -->
+	
+<!-- Begin: "Categorisation" -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Categorize">
+			<checkBox refId="DXT_SEPPmail_Computer_Categorize" defaultChecked="false">Activates categorisation of new e-mails.</checkBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<presentation id="POL_SEPPmail_User_Categorize">
+			<checkBox refId="DXT_SEPPmail_User_Categorize" defaultChecked="false">Activates categorisation of new e-mails.</checkBox>
+		</presentation>
+	<!-- End: HCU -->
+<!-- End: "Categorisation" -->
+
+<!-- Begin: "Categorisation of old e-mails" -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_CategorizeHistory">
+			<checkBox refId="DXT_SEPPmail_Computer_CategorizeHistory" defaultChecked="false">Activates categorisation of all e-mails.</checkBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<presentation id="POL_SEPPmail_User_CategorizeHistory">
+			<checkBox refId="DXT_SEPPmail_User_CategorizeHistory" defaultChecked="false">Activates categorisation of all e-mails.</checkBox>
+		</presentation>
+	<!-- End: HCU -->
+<!-- End: "Categorisation of old e-mails" -->
+
+<!-- Begin: "Only HKLM config" -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_LMonly">
+			<checkBox refId="DXT_SEPPmail_Computer_LMonly" defaultChecked="false">Disables user based settings</checkBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- No: HCU -->
+<!-- End: "Only HKLM config" -->
+
+<!-- Begin: "Position of subject tag" -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_PlaceSubjectFlagsAtStart">
+			<checkBox refId="DXT_SEPPmail_Computer_PlaceSubjectFlagsAtStart" defaultChecked="false">Place subject tags at the beginning of the subject</checkBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<presentation id="POL_SEPPmail_User_PlaceSubjectFlagsAtStart">
+			<checkBox refId="DXT_SEPPmail_User_PlaceSubjectFlagsAtStart" defaultChecked="false">Place subject tags at the beginning of the subject</checkBox>
+		</presentation>
+	<!-- End: HCU -->
+<!-- End: "Position of subject tag" -->
+
+<!-- Begin: "Subject mode" -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_subject-mod">
+			<checkBox refId="DXT_SEPPmail_Computer_subject-mod" defaultChecked="false">Use subject tags instead of x-headers</checkBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<presentation id="POL_SEPPmail_User_subject-mod">
+			<checkBox refId="DXT_SEPPmail_User_subject-mod" defaultChecked="false">Use subject tags instead of x-headers</checkBox>
+		</presentation>
+	<!-- End: HCU -->
+<!-- End: "Subject mode" -->
+
+<!-- Begin: "UsageTimeStamp" -->
+	<!-- Begin: HKLM
+		<presentation id="POL_SEPPmail_Computer_UsageTimeStamp">
+			<textBox refId="TXT_SEPPmail_Computer_UsageTimeStamp">
+				<label>UsageTimeStamp</label>
+				<defaultValue></defaultValue>
+			</textBox>
+		</presentation>
+	-->
+	<!-- Begin: HCU -->
+		<presentation id="POL_SEPPmail_User_UsageTimeStamp">
+			<textBox refId="TXT_SEPPmail_User_UsageTimeStamp">
+				<label>UsageTimeStamp</label>
+				<defaultValue>2100,1,1,0,0,0</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HCU -->
+<!-- End: "UsageTimeStamp" -->
+
+<!-- Begin: "Tool tips" -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips">
+			<checkBox refId="DXT_SEPPmail_Computer_Tooltips" defaultChecked="false">Activate tooltips (mouse over)</checkBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips">
+			<checkBox refId="DXT_SEPPmail_User_Tooltips" defaultChecked="false">Activate tooltips (mouse over)</checkBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: "Tool tips" -->
+
+<!-- Begin: "Warning" -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_SMWarning">
+			<checkBox refId="DXT_SEPPmail_Computer_SMWarning" defaultChecked="false">Show warning when no encryption is choosen</checkBox>
+		</presentation>
+	
+		<presentation id="POL_SEPPmail_Computer_SMWarningDomainWhitelist">
+			<textBox refId="TXT_SEPPmail_Computer_SMWarningDomainWhitelist">
+				<label>SMWarningDomainWhitelist</label>
+				<defaultValue></defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<presentation id="POL_SEPPmail_User_SMWarning">
+			<checkBox refId="DXT_SEPPmail_User_SMWarning" defaultChecked="false">Show warning when no encryption is choosen</checkBox>
+		</presentation>
+	
+		<presentation id="POL_SEPPmail_User_SMWarningDomainWhitelist">
+			<textBox refId="TXT_SEPPmail_User_SMWarningDomainWhitelist">
+				<label>SMWarningDomainWhitelist</label>
+				<defaultValue></defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HCU -->
+<!-- End: "Warning" -->
+		
+<!-- Begin: LDAP configuration -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_LDAPPermissionCheckActive">
+			<checkBox refId="DXT_SEPPmail_Computer_LDAPPermissionCheckActive" defaultChecked="false">Activate LDAP permission check</checkBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<presentation id="POL_SEPPmail_User_LDAPPermissionCheckActive">
+			<checkBox refId="DXT_SEPPmail_User_LDAPPermissionCheckActive" defaultChecked="false">Activate LDAP permission check</checkBox>
+		</presentation>
+	<!-- End: HCU -->
+
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_LDAPServerAddress">
+			<textBox refId="TXT_SEPPmail_Computer_LDAPServerAddress">
+				<label>LDAPServerAddress</label>
+				<defaultValue></defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<presentation id="POL_SEPPmail_User_LDAPServerAddress">
+			<textBox refId="TXT_SEPPmail_User_LDAPServerAddress">
+				<label>LDAPServerAddress</label>
+				<defaultValue></defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HCU -->
+
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_LDAPUsername">
+			<textBox refId="TXT_SEPPmail_Computer_LDAPUsername">
+				<label>LDAPUsername</label>
+				<defaultValue></defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<presentation id="POL_SEPPmail_User_LDAPUsername">
+			<textBox refId="TXT_SEPPmail_User_LDAPUsername">
+				<label>LDAPUsername</label>
+				<defaultValue></defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HCU -->
+
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_LDAPPassword">
+			<textBox refId="TXT_SEPPmail_Computer_LDAPPassword">
+				<label>LDAPPassword</label>
+				<defaultValue></defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<presentation id="POL_SEPPmail_User_LDAPPassword">
+			<textBox refId="TXT_SEPPmail_User_LDAPPassword">
+				<label>LDAPPassword</label>
+				<defaultValue></defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HCU -->
+
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_LDAPAuthenticationTypes">
+			<textBox refId="TXT_SEPPmail_Computer_LDAPAuthenticationTypes">
+				<label>LDAPAuthenticationTypes</label>
+				<defaultValue></defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<presentation id="POL_SEPPmail_User_LDAPAuthenticationTypes">
+			<textBox refId="TXT_SEPPmail_User_LDAPAuthenticationTypes">
+				<label>LDAPAuthenticationTypes</label>
+				<defaultValue></defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HCU -->
+
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_LDAPOrganizationalUnit">
+			<textBox refId="TXT_SEPPmail_Computer_LDAPOrganizationalUnit">
+				<label>LDAPOrganizationalUnit</label>
+				<defaultValue></defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<presentation id="POL_SEPPmail_User_LDAPOrganizationalUnit">
+			<textBox refId="TXT_SEPPmail_User_LDAPOrganizationalUnit">
+				<label>LDAPOrganizationalUnit</label>
+				<defaultValue></defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HCU -->
+
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_LDAPQuery">
+			<textBox refId="TXT_SEPPmail_Computer_LDAPQuery">
+				<label>LDAPQuery</label>
+				<defaultValue></defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU -->
+		<presentation id="POL_SEPPmail_User_LDAPQuery">
+			<textBox refId="TXT_SEPPmail_User_LDAPQuery">
+				<label>LDAPQuery</label>
+				<defaultValue></defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HCU -->
+<!-- End: LDAP configuration -->
+
+<!-- Begin: Tool tips configuration -->
+<!-- Begin: Tool tips DE -->
+<!-- Begin: Encrypt -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_DE_Encrypt">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_DE_Encrypt">
+				<label>Encrypt</label>
+				<defaultValue>Gewährleistet ein sicheres Übertragen von E-Mails über das Internet. Das Lesen der Mail durch unbefugte Dritte wird hiermit unterbunden.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_DE_Encrypt">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_DE_Encrypt">
+				<label>Encrypt</label>
+				<defaultValue>Gewährleistet ein sicheres Übertragen von E-Mails über das Internet. Das Lesen der Mail durch unbefugte Dritte wird hiermit unterbunden.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: Encrypt -->
+
+<!-- Begin: Webmail -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_DE_Webmail">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_DE_Webmail">
+				<label>Webmail</label>
+				<defaultValue>Erzwingt das Verwenden der GINA Technologie und gewährleistet somit eine zuverlässige Lesebestätigung. Weiterhin bietet diese Methode unter Umständen eine bessere Kompatibilität zu Mobilen Endgeräten.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_DE_Webmail">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_DE_Webmail">
+				<label>Webmail</label>
+				<defaultValue>Erzwingt das Verwenden der GINA Technologie und gewährleistet somit eine zuverlässige Lesebestätigung. Weiterhin bietet diese Methode unter Umständen eine bessere Kompatibilität zu Mobilen Endgeräten.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: Webmail -->
+
+<!-- Begin: InternalEncryption -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_DE_InternalEncryption">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_DE_InternalEncryption">
+				<label>InternalEncryption</label>
+				<defaultValue>Gewährleistet ein sicheres Übertragen von E-Mails auch im internen Firmennetz.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_DE_InternalEncryption">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_DE_InternalEncryption">
+				<label>InternalEncryption</label>
+				<defaultValue>Gewährleistet ein sicheres Übertragen von E-Mails auch im internen Firmennetz.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: InternalEncryption -->
+
+<!-- Begin: NoEncryption -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_DE_NoEncryption">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_DE_NoEncryption">
+				<label>NoEncryption</label>
+				<defaultValue>Unterbindet das Verschlüsseln der E-Mail, sofern dies die firmeninterne Voreinstellung ist. Dies kann unter Umständen sinnvoll sein, wenn der Empfänger dies anfordert. Hintergrund können Probleme beim Öffnen der E-Mail auf Mobilen Endgeräten sein. Dabei ist unbedingt zu prüfen, ob der Inhalt der E-Mail ein unverschlüsseltes Versenden erlaubt! Gegebenenfalls ist das Verwenden von „Verschlüsseln mit Lesebestätigung" – und damit der Einsatz der GINA Technologie – zu bevorzugen, da dies auch auf Mobilen Endgeräten funktioniert.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_DE_NoEncryption">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_DE_NoEncryption">
+				<label>NoEncryption</label>
+				<defaultValue>Unterbindet das Verschlüsseln der E-Mail, sofern dies die firmeninterne Voreinstellung ist. Dies kann unter Umständen sinnvoll sein, wenn der Empfänger dies anfordert. Hintergrund können Probleme beim Öffnen der E-Mail auf Mobilen Endgeräten sein. Dabei ist unbedingt zu prüfen, ob der Inhalt der E-Mail ein unverschlüsseltes Versenden erlaubt! Gegebenenfalls ist das Verwenden von „Verschlüsseln mit Lesebestätigung" – und damit der Einsatz der GINA Technologie – zu bevorzugen, da dies auch auf Mobilen Endgeräten funktioniert.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: NoEncryption -->
+
+<!-- Begin: Sign -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_DE_Sign">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_DE_Sign">
+				<label>Sign</label>
+				<defaultValue>Signiert die E-Mail und stellt somit die Identität des Absenders, sowie die Integrität der E-Mail für den Empfänger sicher.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_DE_Sign">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_DE_Sign">
+				<label>Sign</label>
+				<defaultValue>Signiert die E-Mail und stellt somit die Identität des Absenders, sowie die Integrität der E-Mail für den Empfänger sicher.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: Sign -->
+
+<!-- Begin: Plain -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_DE_Plain">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_DE_Plain">
+				<label>Plain</label>
+				<defaultValue>Unterdrückt jegliche kryptographische Aktion, sofern dies die firmeninterne Voreinstellung ist. Dies kann unter Umständen sinnvoll sein, wenn der Empfänger dies anfordert. Hintergrund können Probleme beim Öffnen der E-Mail auf Mobilen Endgeräten sein. Dabei ist unbedingt zu prüfen, ob der Inhalt der E-Mail ein unverschlüsseltes Versenden erlaubt! Gegebenenfalls ist das Verwenden von „Verschlüsseln mit Lesebestätigung" – und damit der Einsatz der GINA Technologie – zu bevorzugen, da dies auch auf Mobilen Endgeräten funktioniert.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_DE_Plain">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_DE_Plain">
+				<label>Plain</label>
+				<defaultValue>Unterdrückt jegliche kryptographische Aktion, sofern dies die firmeninterne Voreinstellung ist. Dies kann unter Umständen sinnvoll sein, wenn der Empfänger dies anfordert. Hintergrund können Probleme beim Öffnen der E-Mail auf Mobilen Endgeräten sein. Dabei ist unbedingt zu prüfen, ob der Inhalt der E-Mail ein unverschlüsseltes Versenden erlaubt! Gegebenenfalls ist das Verwenden von „Verschlüsseln mit Lesebestätigung" – und damit der Einsatz der GINA Technologie – zu bevorzugen, da dies auch auf Mobilen Endgeräten funktioniert.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: Plain -->
+
+<!-- Begin: LargeFileTransfer -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_DE_LargeFileTransfer">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_DE_LargeFileTransfer">
+				<label>LargeFileTransfer</label>
+				<defaultValue>Erzwingt das Verwenden von Large File Transfer, unabhängig vom voreingestellten Schwellwert. Damit ist das Übertragen großer Dateien via E-Mail möglich.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_DE_LargeFileTransfer">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_DE_LargeFileTransfer">
+				<label>LargeFileTransfer</label>
+				<defaultValue>Erzwingt das Verwenden von Large File Transfer, unabhängig vom voreingestellten Schwellwert. Damit ist das Übertragen großer Dateien via E-Mail möglich.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: LargeFileTransfer -->
+
+<!-- Begin: Help -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_DE_Help">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_DE_Help">
+				<label>Help</label>
+				<defaultValue>Öffnet die Hilfeseite für dieses Add-In.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_DE_Help">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_DE_Help">
+				<label>Help</label>
+				<defaultValue>Öffnet die Hilfeseite für dieses Add-In.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: Help -->
+<!-- End: Tool tips DE -->
+<!-- Begin: Tool tips EN -->
+<!-- Begin: Encrypt -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_EN_Encrypt">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_EN_Encrypt">
+				<label>Encrypt</label>
+				<defaultValue>Ensures secure transmission of e-mails over the Internet. This prevents unauthorized third parties from reading the e-mail.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_EN_Encrypt">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_EN_Encrypt">
+				<label>Encrypt</label>
+				<defaultValue>Ensures secure transmission of e-mails over the Internet. This prevents unauthorized third parties from reading the e-mail.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: Encrypt -->
+
+<!-- Begin: Webmail -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_EN_Webmail">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_EN_Webmail">
+				<label>Webmail</label>
+				<defaultValue>Forces the use of GINA technology and thus guarantees a reliable read confirmation. Furthermore, this method may offer better compatibility with mobile devices.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_EN_Webmail">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_EN_Webmail">
+				<label>Webmail</label>
+				<defaultValue>Forces the use of GINA technology and thus guarantees a reliable read confirmation. Furthermore, this method may offer better compatibility with mobile devices.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: Webmail -->
+
+<!-- Begin: InternalEncryption -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_EN_InternalEncryption">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_EN_InternalEncryption">
+				<label>InternalEncryption</label>
+				<defaultValue>Ensures secure transmission of e-mails even in the internal company network.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_EN_InternalEncryption">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_EN_InternalEncryption">
+				<label>InternalEncryption</label>
+				<defaultValue>Ensures secure transmission of e-mails even in the internal company network.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: InternalEncryption -->
+
+<!-- Begin: NoEncryption -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_EN_NoEncryption">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_EN_NoEncryption">
+				<label>NoEncryption</label>
+				<defaultValue>Prevents the e-mail from being encrypted, provided this is the company's default setting. This may make sense if the recipient requests it. This may be due to problems when opening the e-mail on mobile devices. It is essential to check whether the content of the e-mail allows unencrypted sending! If necessary, the use of "encryption with read confirmation" - and thus the use of GINA technology - should be preferred, since this also works on mobile devices.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_EN_NoEncryption">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_EN_NoEncryption">
+				<label>NoEncryption</label>
+				<defaultValue>Prevents the e-mail from being encrypted, provided this is the company's default setting. This may make sense if the recipient requests it. This may be due to problems when opening the e-mail on mobile devices. It is essential to check whether the content of the e-mail allows unencrypted sending! If necessary, the use of "encryption with read confirmation" - and thus the use of GINA technology - should be preferred, since this also works on mobile devices.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: NoEncryption -->
+
+<!-- Begin: Sign -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_EN_Sign">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_EN_Sign">
+				<label>Sign</label>
+				<defaultValue>Signs the e-mail and thus ensures the identity of the sender and the integrity of the e-mail for the recipient.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_EN_Sign">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_EN_Sign">
+				<label>Sign</label>
+				<defaultValue>Signs the e-mail and thus ensures the identity of the sender and the integrity of the e-mail for the recipient.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: Sign -->
+
+<!-- Begin: Plain -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_EN_Plain">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_EN_Plain">
+				<label>Plain</label>
+				<defaultValue>Suppresses any cryptographic action, provided this is the company's internal default. This may make sense if the recipient requests it. This may be due to problems when opening the e-mail on mobile devices. It is essential to check whether the content of the e-mail allows unencrypted sending! If necessary, the use of "encryption with read confirmation" - and thus the use of GINA technology - should be preferred, since this also works on mobile devices.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_EN_Plain">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_EN_Plain">
+				<label>Plain</label>
+				<defaultValue>Suppresses any cryptographic action, provided this is the company's internal default. This may make sense if the recipient requests it. This may be due to problems when opening the e-mail on mobile devices. It is essential to check whether the content of the e-mail allows unencrypted sending! If necessary, the use of "encryption with read confirmation" - and thus the use of GINA technology - should be preferred, since this also works on mobile devices.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: Plain -->
+
+<!-- Begin: LargeFileTransfer -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_EN_LargeFileTransfer">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_EN_LargeFileTransfer">
+				<label>LargeFileTransfer</label>
+				<defaultValue>Forces the use of Large File Transfer regardless of the preset threshold. This makes it possible to transfer large files via e-mail.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_EN_LargeFileTransfer">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_EN_LargeFileTransfer">
+				<label>LargeFileTransfer</label>
+				<defaultValue>Forces the use of Large File Transfer regardless of the preset threshold. This makes it possible to transfer large files via e-mail.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: LargeFileTransfer -->
+
+<!-- Begin: Help -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_EN_Help">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_EN_Help">
+				<label>Help</label>
+				<defaultValue>Opens the help page for this Add-In.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_EN_Help">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_EN_Help">
+				<label>Help</label>
+				<defaultValue>Opens the help page for this Add-In.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: Help -->		
+<!-- End: Tool tips EN -->
+<!-- Begin: Tool tips FR -->
+<!-- Begin: Encrypt -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_FR_Encrypt">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_FR_Encrypt">
+				<label>Encrypt</label>
+				<defaultValue>Assure la transmission sécurisée des e-mails sur Internet. Cela empêche les tiers non autorisés de lire le courrier.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_FR_Encrypt">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_FR_Encrypt">
+				<label>Encrypt</label>
+				<defaultValue>Assure la transmission sécurisée des e-mails sur Internet. Cela empêche les tiers non autorisés de lire le courrier.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: Encrypt -->
+
+<!-- Begin: Webmail -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_FR_Webmail">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_FR_Webmail">
+				<label>Webmail</label>
+				<defaultValue>Force l'utilisation de la technologie GINA et garantit ainsi une confirmation de lecture fiable. De plus, cette méthode peut offrir une meilleure compatibilité avec les appareils mobiles.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_FR_Webmail">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_FR_Webmail">
+				<label>Webmail</label>
+				<defaultValue>Force l'utilisation de la technologie GINA et garantit ainsi une confirmation de lecture fiable. De plus, cette méthode peut offrir une meilleure compatibilité avec les appareils mobiles.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: Webmail -->
+
+<!-- Begin: InternalEncryption -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_FR_InternalEncryption">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_FR_InternalEncryption">
+				<label>InternalEncryption</label>
+				<defaultValue>Assure la transmission sécurisée des e-mails même dans le réseau interne de l'entreprise.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_FR_InternalEncryption">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_FR_InternalEncryption">
+				<label>InternalEncryption</label>
+				<defaultValue>Assure la transmission sécurisée des e-mails même dans le réseau interne de l'entreprise.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: InternalEncryption -->
+
+<!-- Begin: NoEncryption -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_FR_NoEncryption">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_FR_NoEncryption">
+				<label>NoEncryption</label>
+				<defaultValue>Empêche le courrier électronique d'être crypté, à condition qu'il s'agisse du paramètre par défaut de l'entreprise. Cela peut avoir un sens si le destinataire le demande. Cela peut être dû à des problèmes lors de l'ouverture de l'e-mail sur les appareils mobiles. Il est essentiel de vérifier si le contenu du mail permet un envoi non crypté! Si nécessaire, l'utilisation du "chiffrement avec confirmation de lecture" - et donc l'utilisation de la technologie GINA - devrait être préférée, car cela fonctionne également sur les appareils mobiles.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_FR_NoEncryption">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_FR_NoEncryption">
+				<label>NoEncryption</label>
+				<defaultValue>Empêche le courrier électronique d'être crypté, à condition qu'il s'agisse du paramètre par défaut de l'entreprise. Cela peut avoir un sens si le destinataire le demande. Cela peut être dû à des problèmes lors de l'ouverture de l'e-mail sur les appareils mobiles. Il est essentiel de vérifier si le contenu du mail permet un envoi non crypté! Si nécessaire, l'utilisation du "chiffrement avec confirmation de lecture" - et donc l'utilisation de la technologie GINA - devrait être préférée, car cela fonctionne également sur les appareils mobiles.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: NoEncryption -->
+
+<!-- Begin: Sign -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_FR_Sign">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_FR_Sign">
+				<label>Sign</label>
+				<defaultValue>Signe l'e-mail et garantit ainsi l'identité de l'expéditeur et l'intégrité de l'e-mail pour le destinataire.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_FR_Sign">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_FR_Sign">
+				<label>Sign</label>
+				<defaultValue>Signe l'e-mail et garantit ainsi l'identité de l'expéditeur et l'intégrité de l'e-mail pour le destinataire.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: Sign -->
+
+<!-- Begin: Plain -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_FR_Plain">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_FR_Plain">
+				<label>Plain</label>
+				<defaultValue>Supprime toute action cryptographique, à condition qu'il s'agisse du défaut interne de l'entreprise. Cela peut avoir un sens si le destinataire le demande. Cela peut être dû à des problèmes lors de l'ouverture de l'e-mail sur les appareils mobiles. Il est essentiel de vérifier si le contenu du mail permet un envoi non crypté! Si nécessaire, l'utilisation du "chiffrement avec confirmation de lecture" - et donc l'utilisation de la technologie GINA - devrait être préférée, car cela fonctionne également sur les appareils mobiles.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_FR_Plain">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_FR_Plain">
+				<label>Plain</label>
+				<defaultValue>Supprime toute action cryptographique, à condition qu'il s'agisse du défaut interne de l'entreprise. Cela peut avoir un sens si le destinataire le demande. Cela peut être dû à des problèmes lors de l'ouverture de l'e-mail sur les appareils mobiles. Il est essentiel de vérifier si le contenu du mail permet un envoi non crypté! Si nécessaire, l'utilisation du "chiffrement avec confirmation de lecture" - et donc l'utilisation de la technologie GINA - devrait être préférée, car cela fonctionne également sur les appareils mobiles.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: Plain -->
+
+<!-- Begin: LargeFileTransfer -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_FR_LargeFileTransfer">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_FR_LargeFileTransfer">
+				<label>LargeFileTransfer</label>
+				<defaultValue>Force l'utilisation de Large File Transfer quel que soit le seuil prédéfini. Cela permet de transférer des fichiers volumineux par e-mail.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_FR_LargeFileTransfer">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_FR_LargeFileTransfer">
+				<label>LargeFileTransfer</label>
+				<defaultValue>Force l'utilisation de Large File Transfer quel que soit le seuil prédéfini. Cela permet de transférer des fichiers volumineux par e-mail.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: LargeFileTransfer -->
+
+<!-- Begin: Help -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_FR_Help">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_FR_Help">
+				<label>Help</label>
+				<defaultValue>Ouvre la page d'aide de ce complément.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_FR_Help">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_FR_Help">
+				<label>Help</label>
+				<defaultValue>Ouvre la page d'aide de ce complément.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: Help -->
+<!-- End: Tool tips FR -->
+<!-- Begin: Tool tips IT -->
+<!-- Begin: Encrypt -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_IT_Encrypt">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_IT_Encrypt">
+				<label>Encrypt</label>
+				<defaultValue>Garantisce la trasmissione sicura di e-mail su Internet. Ciò impedisce a terzi non autorizzati di leggere la posta.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_IT_Encrypt">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_IT_Encrypt">
+				<label>Encrypt</label>
+				<defaultValue>Garantisce la trasmissione sicura di e-mail su Internet. Ciò impedisce a terzi non autorizzati di leggere la posta.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: Encrypt -->
+
+<!-- Begin: Webmail -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_IT_Webmail">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_IT_Webmail">
+				<label>Webmail</label>
+				<defaultValue>Forza l'uso della tecnologia GINA e garantisce quindi una conferma di lettura affidabile. Inoltre, questo metodo può offrire una migliore compatibilità con i dispositivi mobili.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_IT_Webmail">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_IT_Webmail">
+				<label>Webmail</label>
+				<defaultValue>Forza l'uso della tecnologia GINA e garantisce quindi una conferma di lettura affidabile. Inoltre, questo metodo può offrire una migliore compatibilità con i dispositivi mobili.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: Webmail -->
+
+<!-- Begin: InternalEncryption -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_IT_InternalEncryption">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_IT_InternalEncryption">
+				<label>InternalEncryption</label>
+				<defaultValue>Garantisce la trasmissione sicura di e-mail anche nella rete aziendale interna.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_IT_InternalEncryption">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_IT_InternalEncryption">
+				<label>InternalEncryption</label>
+				<defaultValue>Garantisce la trasmissione sicura di e-mail anche nella rete aziendale interna.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: InternalEncryption -->
+
+<!-- Begin: NoEncryption -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_IT_NoEncryption">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_IT_NoEncryption">
+				<label>NoEncryption</label>
+				<defaultValue>Impedisce la crittografia dell'email, purché questa sia l'impostazione predefinita dell'azienda. Questo può avere senso se il destinatario lo richiede. Ciò può essere dovuto a problemi all'apertura dell'email sui dispositivi mobili. È essenziale verificare se il contenuto della posta consente l'invio non crittografato! Se necessario, l'uso della "crittografia con conferma di lettura" - e quindi l'uso della tecnologia GINA - dovrebbe essere preferito, poiché funziona anche su dispositivi mobili.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_IT_NoEncryption">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_IT_NoEncryption">
+				<label>NoEncryption</label>
+				<defaultValue>Impedisce la crittografia dell'email, purché questa sia l'impostazione predefinita dell'azienda. Questo può avere senso se il destinatario lo richiede. Ciò può essere dovuto a problemi all'apertura dell'email sui dispositivi mobili. È essenziale verificare se il contenuto della posta consente l'invio non crittografato! Se necessario, l'uso della "crittografia con conferma di lettura" - e quindi l'uso della tecnologia GINA - dovrebbe essere preferito, poiché funziona anche su dispositivi mobili.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: NoEncryption -->
+
+<!-- Begin: Sign -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_IT_Sign">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_IT_Sign">
+				<label>Sign</label>
+				<defaultValue>Firma l'e-mail e garantisce quindi l'identità del mittente e l'integrità dell'email per il destinatario.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_IT_Sign">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_IT_Sign">
+				<label>Sign</label>
+				<defaultValue>Firma l'e-mail e garantisce quindi l'identità del mittente e l'integrità dell'email per il destinatario.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: Sign -->
+
+<!-- Begin: Plain -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_IT_Plain">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_IT_Plain">
+				<label>Plain</label>
+				<defaultValue>Supprime toute action cryptographique, à condition qu'il s'agisse du défaut interne de l'entreprise. Cela peut avoir un sens si le destinataire le demande. Cela peut être dû à des problèmes lors de l'ouverture de l'e-mail sur les appareils mobiles. Il est essentiel de vérifier si le contenu du mail permet un envoi non crypté! Si nécessaire, l'utilisation du "chiffrement avec confirmation de lecture" - et donc l'utilisation de la technologie GINA - devrait être préférée, car cela fonctionne également sur les appareils mobiles.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_IT_Plain">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_IT_Plain">
+				<label>Plain</label>
+				<defaultValue>Supprime toute action cryptographique, à condition qu'il s'agisse du défaut interne de l'entreprise. Cela peut avoir un sens si le destinataire le demande. Cela peut être dû à des problèmes lors de l'ouverture de l'e-mail sur les appareils mobiles. Il est essentiel de vérifier si le contenu du mail permet un envoi non crypté! Si nécessaire, l'utilisation du "chiffrement avec confirmation de lecture" - et donc l'utilisation de la technologie GINA - devrait être préférée, car cela fonctionne également sur les appareils mobiles.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: Plain -->
+
+<!-- Begin: LargeFileTransfer -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_IT_LargeFileTransfer">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_IT_LargeFileTransfer">
+				<label>LargeFileTransfer</label>
+				<defaultValue>Forza l'uso di Large File Transfer indipendentemente dalla soglia preimpostata. Ciò consente di trasferire file di grandi dimensioni tramite e-mail.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_IT_LargeFileTransfer">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_IT_LargeFileTransfer">
+				<label>LargeFileTransfer</label>
+				<defaultValue>Forza l'uso di Large File Transfer indipendentemente dalla soglia preimpostata. Ciò consente di trasferire file di grandi dimensioni tramite e-mail.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: LargeFileTransfer -->
+
+<!-- Begin: Help -->
+	<!-- Begin: HKLM -->
+		<presentation id="POL_SEPPmail_Computer_Tooltips_IT_Help">
+			<textBox refId="TXT_SEPPmail_Computer_Tooltips_IT_Help">
+				<label>Help</label>
+				<defaultValue>Apre la pagina di aiuto per questo componente aggiuntivo.</defaultValue>
+			</textBox>
+		</presentation>
+	<!-- End: HKLM -->
+	<!-- Begin: HCU>
+		<presentation id="POL_SEPPmail_User_Tooltips_IT_Help">
+			<textBox refId="TXT_SEPPmail_User_Tooltips_IT_Help">
+				<label>Help</label>
+				<defaultValue>Apre la pagina di aiuto per questo componente aggiuntivo.</defaultValue>
+			</textBox>
+		</presentation>
+	< /End: HCU -->
+<!-- End: Help -->
+<!-- End: Tool tips IT -->
+<!-- End: Tool tip configuration -->
+		
+	</presentationTable>
+	</resources>
+</policyDefinitionResources>

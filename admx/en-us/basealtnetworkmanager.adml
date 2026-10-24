@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2023 BaseALT, Ltd.  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" revision="1.0" schemaVersion="1.0">
+  <displayName>ALT polkit-policies definitions of NetworkManager</displayName>
+  <description>This file contains the NetworkManager service polkit-policies definitions used by ALT operating system.</description>
+
+  <resources>
+    <stringTable>
+      <string id="ALT_NetworkManagerPolkit">NetworkManager permission</string>
+      <string id="ALT_NetworkManagerPolkit_Help">Managing NetworkManager permissions</string>
+
+      <string id="org-freedesktop-NetworkManager-checkpoint-rollback">Permission to rollback configuration of interfaces to a checkpoint-rollback</string>
+      <string id="org-freedesktop-NetworkManager-checkpoint-rollback_help">Policy controls the permission to create or rollback to a checkpoint-rollback of network interfaces
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-checkpoint-rollback-user">Permission to rollback configuration of interfaces to a checkpoint-rollback</string>
+      <string id="org-freedesktop-NetworkManager-checkpoint-rollback-user_help">Policy controls the permission to create or rollback to a checkpoint-rollback of network interfaces
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-connectivity-check">Permission to check Network connection</string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-connectivity-check_help">The policy controls whether to enable or disable network connectivity check.
+
+NetworkManager updates the network connection status and returns a value with the new (current) status.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-connectivity-check-user">Permission to check Network connection</string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-connectivity-check-user_help">The policy controls whether to enable or disable network connectivity check.
+
+NetworkManager updates the network connection status and returns a value with the new (current) status.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-network">Permission to enable or disable networking</string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-network_help">The policy controls the permission to enable or disable network communication on the system.
+
+If network communication is disabled, all managed interfaces are disconnected and deactivated. If network communication is enabled, all managed interfaces are available for activation.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-network-user">Permission to enable or disable networking</string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-network-user_help">The policy controls the permission to enable or disable network communication on the system.
+
+If network communication is disabled, all managed interfaces are disconnected and deactivated. If network communication is enabled, all managed interfaces are available for activation.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-statistics">Permission to enable or disable statistics</string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-statistics_help">The policy controls whether to enable or disable the device statistics counter.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-statistics-user">Permission to enable or disable statistics</string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-statistics-user_help">The policy controls whether to enable or disable the device statistics counter.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-wifi">Permission to enable or disable Wi-Fi devices</string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-wifi_help">The policy controls the permission to enable or disable Wi-Fi devices.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-wifi-user">Permission to enable or disable Wi-Fi devices</string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-wifi-user_help">The policy controls the permission to enable or disable Wi-Fi devices.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-wimax">Permission to enable or disable WiMAX devices</string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-wimax_help">The policy controls the permission to enable or disable mobile WiMAX broadband devices.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-wimax-user">Permission to enable or disable WiMAX devices</string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-wimax-user_help">The policy controls the permission to enable or disable mobile WiMAX broadband devices.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-wwan">Permission to enable or disable WWAN-devices</string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-wwan_help">The policy controls the permission to enable or disable WWAN-devices.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-wwan-user">Permission to enable or disable WWAN-devices</string>
+      <string id="org-freedesktop-NetworkManager-enable-disable-wwan-user_help">The policy controls the permission to enable or disable WWAN-devices.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-network-control">Permission to change system settings for the network</string>
+      <string id="org-freedesktop-NetworkManager-network-control_help">The policy controls the permission to change system network settings.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-network-control-user">Permission to change system settings for the network</string>
+      <string id="org-freedesktop-NetworkManager-network-control-user_help">The policy controls the permission to change system network settings.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-reload">Permission to reload NetworkManager</string>
+      <string id="org-freedesktop-NetworkManager-reload_help">The policy controls the permission to reboot NetworkManager.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-reload-user">Permission to reload NetworkManager</string>
+      <string id="org-freedesktop-NetworkManager-reload-user_help">The policy controls the permission to reboot NetworkManager.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-settings-modify-global-dns">Permission to change the general DNS settings</string>
+      <string id="org-freedesktop-NetworkManager-settings-modify-global-dns_help">The policy controls whether changes to the general DNS configuration are allowed.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-settings-modify-global-dns-user">Permission to change the general DNS settings</string>
+      <string id="org-freedesktop-NetworkManager-settings-modify-global-dns-user_help">The policy controls whether changes to the general DNS configuration are allowed.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-settings-modify-hostname">Permission to change the permanent system hostname</string>
+      <string id="org-freedesktop-NetworkManager-settings-modify-hostname_help">The policy controls the permission to change the system's permanent hostname.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-settings-modify-hostname-user">Permission to change the permanent system hostname</string>
+      <string id="org-freedesktop-NetworkManager-settings-modify-hostname-user_help">The policy controls the permission to change the system's permanent hostname.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-settings-modify-own">Permission to changes personal network settings</string>
+      <string id="org-freedesktop-NetworkManager-settings-modify-own_help">The policy controls the permission to change personal network connections.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-settings-modify-own-user">Permission to changes personal network settings</string>
+      <string id="org-freedesktop-NetworkManager-settings-modify-own-user_help">The policy controls the permission to change personal network connections.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-settings-modify-system">Permission to change network connections for all users</string>
+      <string id="org-freedesktop-NetworkManager-settings-modify-system_help">The policy controls the permission to change system network settings for all users.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-settings-modify-system-user">Permission to change network connections for all users</string>
+      <string id="org-freedesktop-NetworkManager-settings-modify-system-user_help">The policy controls the permission to change system network settings for all users.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-sleep-wake">Permission to change NetworkManager's  sleep state</string>
+      <string id="org-freedesktop-NetworkManager-sleep-wake_help">The policy controls the permission to put NetworkManager into hibernation mode or wake from hibernation mode.
+
+In the sleep state, all interfaces controlled by the NM are deactivated. While awake, devices are available for activation.
+The NM sleep state is not invoked by the user directly; The function is designed to track the suspension/resume of the system.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-sleep-wake-user">Permission to change NetworkManager's  sleep state</string>
+      <string id="org-freedesktop-NetworkManager-sleep-wake-user_help">The policy controls the permission to put NetworkManager into hibernation mode or wake from hibernation mode.
+
+In the sleep state, all interfaces controlled by the NM are deactivated. While awake, devices are available for activation.
+The NM sleep state is not invoked by the user directly; The function is designed to track the suspension/resume of the system.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-wifi-scan">Permission to scan Wi-Fi networks</string>
+      <string id="org-freedesktop-NetworkManager-wifi-scan_help">The policy controls the permission to scan Wi-Fi networks.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-wifi-scan-user">Permission to scan Wi-Fi networks</string>
+      <string id="org-freedesktop-NetworkManager-wifi-scan-user_help">The policy controls the permission to scan Wi-Fi networks.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-wifi-share-open">Permission to shared connections over an open Wi-Fi network</string>
+      <string id="org-freedesktop-NetworkManager-wifi-share-open_help">The policy controls whether to allow shared connections over an open Wi-Fi network.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-wifi-share-open-user">Permission to shared connections over an open Wi-Fi network</string>
+      <string id="org-freedesktop-NetworkManager-wifi-share-open-user_help">The policy controls whether to allow shared connections over an open Wi-Fi network.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-wifi-share-protected">Permission to shared connections over an protected Wi-Fi network</string>
+      <string id="org-freedesktop-NetworkManager-wifi-share-protected_help">The policy controls the permission for sharing connections over a protected Wi-Fi network
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-wifi-share-protected-user">Permission to shared connections over an protected Wi-Fi network</string>
+      <string id="org-freedesktop-NetworkManager-wifi-share-protected-user_help">The policy controls the permission for sharing connections over a protected Wi-Fi network
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+      </string>
+      <string id="org-freedesktop-NetworkManager-polkit-No">No</string>
+      <string id="org-freedesktop-NetworkManager-polkit-Yes">Yes</string>
+      <string id="org-freedesktop-NetworkManager-polkit-Auth-self">Auth_self</string>
+      <string id="org-freedesktop-NetworkManager-polkit-Auth-admin">Auth_admin</string>
+      <string id="org-freedesktop-NetworkManager-polkit-Auth-self-keep">Auth_self_keep</string>
+      <string id="org-freedesktop-NetworkManager-polkit-Auth-admin-keep">Auth_admin_keep</string>
+
+    </stringTable>
+    <presentationTable>
+      <presentation id="org-freedesktop-NetworkManager-polkit-pr">
+        <dropdownList noSort="true" defaultItem="1" refId="OrgFreedesktopNetworkManager_setter">Restriction Options:</dropdownList>
+        <checkBox refId="OrgFreedesktopNetworkManager_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="org-freedesktop-NetworkManager-polkit-user-pr">
+        <dropdownList noSort="true" defaultItem="1" refId="OrgFreedesktopNetworkManager_setter">Restriction Options:</dropdownList>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

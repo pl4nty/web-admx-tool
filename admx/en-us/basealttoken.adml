@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2023 BaseALT, Ltd.  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" revision="1.0" schemaVersion="1.0">
+  <displayName>ALT polkit-policies definitions of daemons to pcsc_lite tokens and smart</displayName>
+  <description>This file contains the daemons of pcsc_lite tokens and smart polkit-policies definitions used by ALT operating system.</description>
+
+  <resources>
+    <stringTable>
+
+      <string id="org-debian-pcsc-lite-access_pcsc">Permission access to the PC/SC daemon</string>
+      <string id="org-debian-pcsc-lite-access_pcsc_help">Policy controls the permission to access of the PC/SC daemon for tokens.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-debian-pcsc-lite-access_pcsc-user">Permission access to the PC/SC daemon</string>
+      <string id="org-debian-pcsc-lite-access_pcsc-user_help">Policy controls the permission to access of the PC/SC daemon for tokens.
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+      </string>
+      <string id="org-debian-pcsc-lite-access_card">Permission access to the smart card</string>
+      <string id="org-debian-pcsc-lite-access_card_help">Policy controls the permission to access the smart card
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-debian-pcsc-lite-access_card-user">Permission access to the smart card</string>
+      <string id="org-debian-pcsc-lite-access_card-user_help">Policy controls the permission to access the smart card
+
+Disabled/Not configured — Permissions are determined by system settings.
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permis
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+      </string>
+
+      <string id="org-debian-pcsc-lite-polkit-No">No</string>
+      <string id="org-debian-pcsc-lite-polkit-Yes">Yes</string>
+      <string id="org-debian-pcsc-lite-polkit-Auth-self">Auth_self</string>
+      <string id="org-debian-pcsc-lite-polkit-Auth-admin">Auth_admin</string>
+      <string id="org-debian-pcsc-lite-polkit-Auth-self-keep">Auth_self_keep</string>
+      <string id="org-debian-pcsc-lite-polkit-Auth-admin-keep">Auth_admin_keep</string>
+
+    </stringTable>
+    <presentationTable>
+      <presentation id="org-debian-pcsc-lite-pr">
+        <dropdownList noSort="true" defaultItem="1" refId="OrgDebianPcscLite_setter">Restriction Options:</dropdownList>
+        <checkBox refId="OrgDebianPcscLite_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="org-debian-pcsc-lite-user-pr">
+        <dropdownList noSort="true" defaultItem="1" refId="OrgDebianPcscLite_setter">Restriction Options:</dropdownList>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

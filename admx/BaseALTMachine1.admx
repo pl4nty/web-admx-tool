@@ -1,0 +1,764 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2023 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="machine" namespace="BaseALT.Policies.machine1" />
+    <using prefix="system" namespace="BaseALT.Policies.System" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <policies>
+    <policy class="Machine" displayName="$(string.org-freedesktop-machine1-host-login)"
+        explainText="$(string.org-freedesktop-machine1-host-login_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.machine1.host-login"
+        valuename="org.freedesktop.machine1.host-login"
+        presentation="$(presentation.org-freedesktop-Machine1-pr)">
+      <parentCategory ref="system:ALT_MachinePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopMachine_setter" valueName="org.freedesktop.machine1.host-login" required="true">
+          <item displayName="$(string.org-freedesktop-machine-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopMachine_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.machine1.host-login">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-machine1-host-login)"
+        explainText="$(string.org-freedesktop-machine1-host-login-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.machine1.host-login-user"
+        valuename="org.freedesktop.machine1.host-login"
+        presentation="$(presentation.org-freedesktop-Machine1-user-pr)">
+      <parentCategory ref="system:ALT_MachinePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopMachine_setter" valueName="org.freedesktop.machine1.host-login" required="true">
+          <item displayName="$(string.org-freedesktop-machine-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-machine1-host-open-pty)"
+        explainText="$(string.org-freedesktop-machine1-host-open-pty_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.machine1.host-open-pty"
+        valuename="org.freedesktop.machine1.host-open-pty"
+        presentation="$(presentation.org-freedesktop-Machine1-pr)">
+      <parentCategory ref="system:ALT_MachinePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopMachine_setter" valueName="org.freedesktop.machine1.host-open-pty" required="true">
+          <item displayName="$(string.org-freedesktop-machine-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopMachine_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.machine1.host-open-pty">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-machine1-host-open-pty)"
+        explainText="$(string.org-freedesktop-machine1-host-open-pty-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.machine1.host-open-pty-user"
+        valuename="org.freedesktop.machine1.host-open-pty"
+        presentation="$(presentation.org-freedesktop-Machine1-user-pr)">
+      <parentCategory ref="system:ALT_MachinePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopMachine_setter" valueName="org.freedesktop.machine1.host-open-pty" required="true">
+          <item displayName="$(string.org-freedesktop-machine-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-machine1-host-shell)"
+        explainText="$(string.org-freedesktop-machine1-host-shell_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.machine1.host-shell"
+        valuename="org.freedesktop.machine1.host-shell"
+        presentation="$(presentation.org-freedesktop-Machine1-pr)">
+      <parentCategory ref="system:ALT_MachinePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopMachine_setter" valueName="org.freedesktop.machine1.host-shell" required="true">
+          <item displayName="$(string.org-freedesktop-machine-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopMachine_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.machine1.host-shell">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-machine1-host-shell)"
+        explainText="$(string.org-freedesktop-machine1-host-shell-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.machine1.host-shell-user"
+        valuename="org.freedesktop.machine1.host-shell"
+        presentation="$(presentation.org-freedesktop-Machine1-user-pr)">
+      <parentCategory ref="system:ALT_MachinePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopMachine_setter" valueName="org.freedesktop.machine1.host-shell" required="true">
+          <item displayName="$(string.org-freedesktop-machine-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-machine1-login)"
+        explainText="$(string.org-freedesktop-machine1-login_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.machine1.login"
+        valuename="org.freedesktop.machine1.login"
+        presentation="$(presentation.org-freedesktop-Machine1-pr)">
+      <parentCategory ref="system:ALT_MachinePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopMachine_setter" valueName="org.freedesktop.machine1.login" required="true">
+          <item displayName="$(string.org-freedesktop-machine-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopMachine_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.machine1.login">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-machine1-login)"
+        explainText="$(string.org-freedesktop-machine1-login-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.machine1.login-user"
+        valuename="org.freedesktop.machine1.login"
+        presentation="$(presentation.org-freedesktop-Machine1-user-pr)">
+      <parentCategory ref="system:ALT_MachinePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopMachine_setter" valueName="org.freedesktop.machine1.login" required="true">
+          <item displayName="$(string.org-freedesktop-machine-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-machine1-manage-images)"
+        explainText="$(string.org-freedesktop-machine1-manage-images_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.machine1.manage-images"
+        valuename="org.freedesktop.machine1.manage-images"
+        presentation="$(presentation.org-freedesktop-Machine1-pr)">
+      <parentCategory ref="system:ALT_MachinePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopMachine_setter" valueName="org.freedesktop.machine1.manage-images" required="true">
+          <item displayName="$(string.org-freedesktop-machine-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopMachine_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.machine1.manage-images">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-machine1-manage-images)"
+        explainText="$(string.org-freedesktop-machine1-manage-images-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.machine1.manage-images-user"
+        valuename="org.freedesktop.machine1.manage-images"
+        presentation="$(presentation.org-freedesktop-Machine1-user-pr)">
+      <parentCategory ref="system:ALT_MachinePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopMachine_setter" valueName="org.freedesktop.machine1.manage-images" required="true">
+          <item displayName="$(string.org-freedesktop-machine-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-machine1-manage-machines)"
+        explainText="$(string.org-freedesktop-machine1-manage-machines_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.machine1.manage-machines"
+        valuename="org.freedesktop.machine1.manage-machines"
+        presentation="$(presentation.org-freedesktop-Machine1-pr)">
+      <parentCategory ref="system:ALT_MachinePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopMachine_setter" valueName="org.freedesktop.machine1.manage-machines" required="true">
+          <item displayName="$(string.org-freedesktop-machine-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopMachine_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.machine1.manage-machines">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-machine1-manage-machines)"
+        explainText="$(string.org-freedesktop-machine1-manage-machines-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.machine1.manage-machines-user"
+        valuename="org.freedesktop.machine1.manage-machines"
+        presentation="$(presentation.org-freedesktop-Machine1-user-pr)">
+      <parentCategory ref="system:ALT_MachinePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopMachine_setter" valueName="org.freedesktop.machine1.manage-machines" required="true">
+          <item displayName="$(string.org-freedesktop-machine-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-machine1-open-pty)"
+        explainText="$(string.org-freedesktop-machine1-open-pty_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.machine1.open-pty"
+        valuename="org.freedesktop.machine1.open-pty"
+        presentation="$(presentation.org-freedesktop-Machine1-pr)">
+      <parentCategory ref="system:ALT_MachinePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopMachine_setter" valueName="org.freedesktop.machine1.open-pty" required="true">
+          <item displayName="$(string.org-freedesktop-machine-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopMachine_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.machine1.open-pty">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-machine1-open-pty)"
+        explainText="$(string.org-freedesktop-machine1-open-pty-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.machine1.open-pty-user"
+        valuename="org.freedesktop.machine1.open-pty"
+        presentation="$(presentation.org-freedesktop-Machine1-user-pr)">
+      <parentCategory ref="system:ALT_MachinePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopMachine_setter" valueName="org.freedesktop.machine1.open-pty" required="true">
+          <item displayName="$(string.org-freedesktop-machine-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-machine1-shell)"
+        explainText="$(string.org-freedesktop-machine1-shell_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.machine1.shell"
+        valuename="org.freedesktop.machine1.shell"
+        presentation="$(presentation.org-freedesktop-Machine1-pr)">
+      <parentCategory ref="system:ALT_MachinePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopMachine_setter" valueName="org.freedesktop.machine1.shell" required="true">
+          <item displayName="$(string.org-freedesktop-machine-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopMachine_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.machine1.shell">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-machine1-shell)"
+        explainText="$(string.org-freedesktop-machine1-shell-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.machine1.shell-user"
+        valuename="org.freedesktop.machine1.shell"
+        presentation="$(presentation.org-freedesktop-Machine1-user-pr)">
+      <parentCategory ref="system:ALT_MachinePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopMachine_setter" valueName="org.freedesktop.machine1.shell" required="true">
+          <item displayName="$(string.org-freedesktop-machine-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-machine-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

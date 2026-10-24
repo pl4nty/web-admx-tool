@@ -1,0 +1,543 @@
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<policyNamespaces>
+		<target prefix="sfwin" namespace="ShareFile.Policies.SFWindows"/>
+		<using prefix="windows" namespace="Microsoft.Policies.Windows"/>
+	</policyNamespaces>
+	<supersededAdm fileName=""/>
+	<resources minRequiredRevision="1.0" fallbackCulture="en-us"/>
+	<categories>
+		<category name="CATEGORY_USER_SHAREFILE" displayName="$(string.CATEGORY_SHAREFILE_NAME)" explainText="$(string.CATEGORY_SHAREFILE_DESC)"/>
+		<category name="CATEGORY_MACHINE_SHAREFILE" displayName="$(string.CATEGORY_SHAREFILE_NAME)" explainText="$(string.CATEGORY_SHAREFILE_DESC)"/>
+		<category name="CATEGORY_USER_SFWIN" displayName="$(string.CATEGORY_SFWIN_NAME)" explainText="$(string.CATEGORY_SFWIN_DESC)">
+			<parentCategory ref="CATEGORY_USER_SHAREFILE" />
+		</category>
+		<category name="CATEGORY_MACHINE_SFWIN" displayName="$(string.CATEGORY_SFWIN_NAME)" explainText="$(string.CATEGORY_SFWIN_DESC)">
+			<parentCategory ref="CATEGORY_MACHINE_SHAREFILE" />
+		</category>
+		<category name="CATEGORY_USER_REDIRECTED_FOLDERS" displayName="$(string.CATEGORY_USER_REDIRECTED_FOLDERS_NAME)" explainText="$(string.CATEGORY_USER_REDIRECTED_FOLDERS_DESC)">
+			<parentCategory ref="CATEGORY_USER_SFWIN" />
+		</category>
+	</categories>
+	<policies>	
+		<policy name="POLICY_USER_ENABLE_APP" class="User" displayName="$(string.POLICY_ENABLE_APP_NAME)" explainText="$(string.POLICY_ENABLE_APP_DESC)" presentation="$(presentation.POLICY_ENABLE_APP)" key="Software\Policies\ShareFile\ShareFile for Windows">
+			<parentCategory ref="CATEGORY_USER_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<boolean id="BOOL_ENABLE_APP" valueName="EnableApplication">
+					<trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+		<policy name="POLICY_MACHINE_ENABLE_APP" class="Machine" displayName="$(string.POLICY_ENABLE_APP_NAME)" explainText="$(string.POLICY_ENABLE_APP_DESC)" presentation="$(presentation.POLICY_ENABLE_APP)" key="Software\Policies\ShareFile\ShareFile for Windows">
+			<parentCategory ref="CATEGORY_MACHINE_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<boolean id="BOOL_ENABLE_APP" valueName="EnableApplication">
+					<trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>			
+		</policy>
+		<policy name="POLICY_USER_UPLOAD_EXCLUDED" class="User" displayName="$(string.POLICY_UPLOAD_EXCLUDED_NAME)" explainText="$(string.POLICY_UPLOAD_EXCLUDED_DESC)" presentation="$(presentation.POLICY_UPLOAD_EXCLUDED)" key="Software\Policies\ShareFile\ShareFile for Windows">
+			<parentCategory ref="CATEGORY_USER_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<multiText id="MULTITXT_UPLOAD_EXCLUDED" valueName="ExcludedFromUploadExtensions"/>
+			</elements>
+		</policy>
+		<policy name="POLICY_ENABLE_ONPREM_CONNECTORS" class="Machine" displayName="$(string.POLICY_ENABLE_ONPREM_CONNECTORS_NAME)" explainText="$(string.POLICY_ENABLE_ONPREM_CONNECTORS_DESC)" presentation="$(presentation.POLICY_ENABLE_ONPREM_CONNECTORS)" key="Software\Policies\ShareFile\ShareFile for Windows">
+			<parentCategory ref="CATEGORY_MACHINE_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<boolean id="BOOL_ENABLE_ONPREM_CONNECTORS" valueName="EnableOnPremiseConnectors">
+					<trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+		<policy name="POLICY_ENABLE_PERSONAL_CLOUD_CONNECTORS" class="Machine" displayName="$(string.POLICY_ENABLE_PERSONAL_CLOUD_CONNECTORS_NAME)" explainText="$(string.POLICY_ENABLE_PERSONAL_CLOUD_CONNECTORS_DESC)" presentation="$(presentation.POLICY_ENABLE_PERSONAL_CLOUD_CONNECTORS)" key="Software\Policies\ShareFile\ShareFile for Windows">
+			<parentCategory ref="CATEGORY_MACHINE_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<boolean id="BOOL_ENABLE_PERSONAL_CLOUD_CONNECTORS" valueName="EnablePersonalCloudConnectors">
+					<trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+		<policy name="POLICY_USER_MOUNT_POINT1" class="User" displayName="$(string.POLICY_MOUNT_POINT_NAME1)" explainText="$(string.POLICY_MOUNT_POINT_DESC)" presentation="$(presentation.POLICY_MOUNT_POINT)" key="Software\Policies\ShareFile\ShareFile for Windows">
+			<parentCategory ref="CATEGORY_USER_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<text id="TXT_MOUNT_POINT_LOCAL" valueName="MountPoint1-Local"/>
+				<text id="TXT_MOUNT_POINT_SHAREFILE" valueName="MountPoint1-ShareFile"/>
+				<text id="TXT_MOUNT_POINT_DISPLAYNAME" valueName="MountPoint1-DisplayName"/>
+			</elements>
+		</policy>
+		<policy name="POLICY_USER_MOUNT_POINT2" class="User" displayName="$(string.POLICY_MOUNT_POINT_NAME2)" explainText="$(string.POLICY_MOUNT_POINT_DESC)" presentation="$(presentation.POLICY_MOUNT_POINT)" key="Software\Policies\ShareFile\ShareFile for Windows">
+			<parentCategory ref="CATEGORY_USER_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<text id="TXT_MOUNT_POINT_LOCAL" valueName="MountPoint2-Local"/>
+				<text id="TXT_MOUNT_POINT_SHAREFILE" valueName="MountPoint2-ShareFile"/>
+				<text id="TXT_MOUNT_POINT_DISPLAYNAME" valueName="MountPoint2-DisplayName"/>
+			</elements>
+		</policy>
+		<policy name="POLICY_USER_MOUNT_POINT3" class="User" displayName="$(string.POLICY_MOUNT_POINT_NAME3)" explainText="$(string.POLICY_MOUNT_POINT_DESC)" presentation="$(presentation.POLICY_MOUNT_POINT)" key="Software\Policies\ShareFile\ShareFile for Windows">
+			<parentCategory ref="CATEGORY_USER_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<text id="TXT_MOUNT_POINT_LOCAL" valueName="MountPoint3-Local"/>
+				<text id="TXT_MOUNT_POINT_SHAREFILE" valueName="MountPoint3-ShareFile"/>
+				<text id="TXT_MOUNT_POINT_DISPLAYNAME" valueName="MountPoint3-DisplayName"/>
+			</elements>
+		</policy>
+		<policy name="POLICY_USER_MOUNT_POINT4" class="User" displayName="$(string.POLICY_MOUNT_POINT_NAME4)" explainText="$(string.POLICY_MOUNT_POINT_DESC)" presentation="$(presentation.POLICY_MOUNT_POINT)" key="Software\Policies\ShareFile\ShareFile for Windows">
+			<parentCategory ref="CATEGORY_USER_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<text id="TXT_MOUNT_POINT_LOCAL" valueName="MountPoint4-Local"/>
+				<text id="TXT_MOUNT_POINT_SHAREFILE" valueName="MountPoint4-ShareFile"/>
+				<text id="TXT_MOUNT_POINT_DISPLAYNAME" valueName="MountPoint4-DisplayName"/>
+			</elements>
+		</policy>
+		<policy name="POLICY_USER_MOUNT_POINT5" class="User" displayName="$(string.POLICY_MOUNT_POINT_NAME5)" explainText="$(string.POLICY_MOUNT_POINT_DESC)" presentation="$(presentation.POLICY_MOUNT_POINT)" key="Software\Policies\ShareFile\ShareFile for Windows">
+			<parentCategory ref="CATEGORY_USER_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<text id="TXT_MOUNT_POINT_LOCAL" valueName="MountPoint5-Local"/>
+				<text id="TXT_MOUNT_POINT_SHAREFILE" valueName="MountPoint5-ShareFile"/>
+				<text id="TXT_MOUNT_POINT_DISPLAYNAME" valueName="MountPoint5-DisplayName"/>
+			</elements>
+		</policy>
+		<policy name="POLICY_USER_MOUNT_POINT6" class="User" displayName="$(string.POLICY_MOUNT_POINT_NAME6)" explainText="$(string.POLICY_MOUNT_POINT_DESC)" presentation="$(presentation.POLICY_MOUNT_POINT)" key="Software\Policies\ShareFile\ShareFile for Windows">
+			<parentCategory ref="CATEGORY_USER_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<text id="TXT_MOUNT_POINT_LOCAL" valueName="MountPoint6-Local"/>
+				<text id="TXT_MOUNT_POINT_SHAREFILE" valueName="MountPoint6-ShareFile"/>
+				<text id="TXT_MOUNT_POINT_DISPLAYNAME" valueName="MountPoint6-DisplayName"/>
+			</elements>
+		</policy>
+		<policy name="POLICY_USER_MOUNT_POINT7" class="User" displayName="$(string.POLICY_MOUNT_POINT_NAME7)" explainText="$(string.POLICY_MOUNT_POINT_DESC)" presentation="$(presentation.POLICY_MOUNT_POINT)" key="Software\Policies\ShareFile\ShareFile for Windows">
+			<parentCategory ref="CATEGORY_USER_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<text id="TXT_MOUNT_POINT_LOCAL" valueName="MountPoint7-Local"/>
+				<text id="TXT_MOUNT_POINT_SHAREFILE" valueName="MountPoint7-ShareFile"/>
+				<text id="TXT_MOUNT_POINT_DISPLAYNAME" valueName="MountPoint7-DisplayName"/>
+			</elements>
+		</policy>
+		<policy name="POLICY_USER_MOUNT_POINT8" class="User" displayName="$(string.POLICY_MOUNT_POINT_NAME8)" explainText="$(string.POLICY_MOUNT_POINT_DESC)" presentation="$(presentation.POLICY_MOUNT_POINT)" key="Software\Policies\ShareFile\ShareFile for Windows">
+			<parentCategory ref="CATEGORY_USER_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<text id="TXT_MOUNT_POINT_LOCAL" valueName="MountPoint8-Local"/>
+				<text id="TXT_MOUNT_POINT_SHAREFILE" valueName="MountPoint8-ShareFile"/>
+				<text id="TXT_MOUNT_POINT_DISPLAYNAME" valueName="MountPoint8-DisplayName"/>
+			</elements>
+		</policy>
+		<policy name="POLICY_USER_MOUNT_POINT9" class="User" displayName="$(string.POLICY_MOUNT_POINT_NAME9)" explainText="$(string.POLICY_MOUNT_POINT_DESC)" presentation="$(presentation.POLICY_MOUNT_POINT)" key="Software\Policies\ShareFile\ShareFile for Windows">
+			<parentCategory ref="CATEGORY_USER_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<text id="TXT_MOUNT_POINT_LOCAL" valueName="MountPoint9-Local"/>
+				<text id="TXT_MOUNT_POINT_SHAREFILE" valueName="MountPoint9-ShareFile"/>
+				<text id="TXT_MOUNT_POINT_DISPLAYNAME" valueName="MountPoint9-DisplayName"/>
+			</elements>
+		</policy>
+		<policy name="POLICY_USER_MOUNT_POINT10" class="User" displayName="$(string.POLICY_MOUNT_POINT_NAME10)" explainText="$(string.POLICY_MOUNT_POINT_DESC)" presentation="$(presentation.POLICY_MOUNT_POINT)" key="Software\Policies\ShareFile\ShareFile for Windows">
+			<parentCategory ref="CATEGORY_USER_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<text id="TXT_MOUNT_POINT_LOCAL" valueName="MountPoint10-Local"/>
+				<text id="TXT_MOUNT_POINT_SHAREFILE" valueName="MountPoint10-ShareFile"/>
+				<text id="TXT_MOUNT_POINT_DISPLAYNAME" valueName="MountPoint10-DisplayName"/>
+			</elements>
+		</policy>
+		<policy name="POLICY_ACCOUNT" displayName="$(string.POLICY_ACCOUNT)" explainText="$(string.POLICY_ACCOUNT_HELP)" key="Software\Policies\ShareFile\ShareFile for Windows" class="User" presentation="$(presentation.POLICY_ACCOUNT)">
+      		<parentCategory ref="CATEGORY_USER_SFWIN"/>
+      		<supportedOn ref="windows:SUPPORTED_Windows7"/>
+      		<elements>
+        		<text id="TXT_ACCOUNT" valueName="Account"/>
+      		</elements>
+    	</policy>
+		<policy name="POLICY_CACHE_SIZE" displayName="$(string.POLICY_CACHE_SIZE)" explainText="$(string.POLICY_CACHE_SIZE_HELP)" key="Software\Policies\ShareFile\ShareFile for Windows" class="Machine" presentation="$(presentation.POLICY_CACHE_SIZE)">
+			<parentCategory ref="CATEGORY_MACHINE_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<decimal id="NUM_CACHE_SIZE" valueName="CacheSize" minValue="256" storeAsText="true"/>
+			</elements>
+		</policy>
+		<policy name="POLICY_DELETE_CACHE" displayName="$(string.POLICY_DELETE_CACHE)" explainText="$(string.POLICY_DELETE_CACHE_HELP)" key="Software\Policies\ShareFile\ShareFile for Windows" class="Machine" presentation="$(presentation.POLICY_DELETE_CACHE)">
+			<parentCategory ref="CATEGORY_MACHINE_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<boolean id="BOOL_DELETE_CACHE" valueName="DeleteCacheOnExit">
+					<trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+		<policy name="POLICY_ENABLE_AUTO_UPDATE" displayName="$(string.POLICY_ENABLE_AUTO_UPDATE)" explainText="$(string.POLICY_ENABLE_AUTO_UPDATE_HELP)" key="Software\Policies\ShareFile\ShareFile for Windows" class="Machine" presentation="$(presentation.POLICY_ENABLE_AUTO_UPDATE)">
+			<parentCategory ref="CATEGORY_MACHINE_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<enum id="ENUM_AUTO_UPDATE_MODE" valueName="EnableAutoUpdate" required="true">
+					<item displayName="$(string.POLICY_ENABLE_AUTO_UPDATE_MODE_ENABLED_NONADMINS)">
+						<value>
+							<decimal value="2" />
+						</value>
+					</item>
+					<item displayName="$(string.POLICY_ENABLE_AUTO_UPDATE_MODE_ENABLED)">
+						<value>
+							<decimal value="1" />
+						</value>
+					</item>
+					<item displayName="$(string.POLICY_ENABLE_AUTO_UPDATE_MODE_DISABLED)">
+						<value>
+							<decimal value="0" />
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+		<policy name="POLICY_CACHE_LOCATION" displayName="$(string.POLICY_CACHE_LOCATION)" explainText="$(string.POLICY_CACHE_LOCATION_HELP)" key="Software\Policies\ShareFile\ShareFile for Windows" class="Machine" presentation="$(presentation.POLICY_CACHE_LOCATION)">
+			<parentCategory ref="CATEGORY_MACHINE_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<text id="TXT_CACHE_LOCATION" valueName="CacheLocation" expandable="true"/>
+			</elements>
+		</policy>
+		<policy name="POLICY_LOGSFOLDER_SIZE" displayName="$(string.POLICY_LOGSFOLDER_SIZE)" explainText="$(string.POLICY_LOGSFOLDER_SIZE_HELP)" key="Software\Policies\ShareFile\ShareFile for Windows" class="Machine" presentation="$(presentation.POLICY_LOGSFOLDER_SIZE)">
+			<parentCategory ref="CATEGORY_MACHINE_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<decimal id="NUM_LOGSFOLDER_SIZE" valueName="LogsSize" minValue="100" maxValue="1024" storeAsText="true"/>
+			</elements>
+		</policy>
+		<policy name="POLICY_DISABLE_TUTORIAL" displayName="$(string.POLICY_DISABLE_TUTORIAL)" explainText="$(string.POLICY_DISABLE_TUTORIAL_HELP)" key="Software\Policies\ShareFile\ShareFile for Windows" class="Machine" presentation="$(presentation.POLICY_DISABLE_TUTORIAL)">
+			<parentCategory ref="CATEGORY_MACHINE_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+			<boolean id="BOOL_DISABLE_TUTORIAL" valueName="DisableTutorial">
+				<trueValue>
+					<decimal value="1"/>
+				</trueValue>
+				<falseValue>
+					<decimal value="0"/>
+				</falseValue>
+			</boolean>
+			</elements>
+		</policy>
+		<policy name="POLICY_ENABLE_OFFLINEACCESS" displayName="$(string.POLICY_ENABLE_OFFLINEACCESS)" explainText="$(string.POLICY_ENABLE_OFFLINEACCESS_HELP)" key="Software\Policies\ShareFile\ShareFile for Windows" class="Machine" presentation="$(presentation.POLICY_ENABLE_OFFLINEACCESS)">
+			<parentCategory ref="CATEGORY_MACHINE_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+			<boolean id="BOOL_ENABLE_OFFLINEACCESS" valueName="EnableOfflineAccess">
+				<trueValue>
+					<decimal value="1"/>
+				</trueValue>
+				<falseValue>
+					<decimal value="0"/>
+				</falseValue>
+			</boolean>
+			</elements>
+		</policy>
+		<policy name="POLICY_PREFETCH_METADATA" displayName="$(string.POLICY_PREFETCH_METADATA)" explainText="$(string.POLICY_PREFETCH_METADATA_HELP)" key="Software\Policies\ShareFile\ShareFile for Windows" class="Machine" presentation="$(presentation.POLICY_PREFETCH_METADATA)">
+			<parentCategory ref="CATEGORY_MACHINE_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+			<boolean id="BOOL_PREFETCH_METADATA" valueName="PrefetchMetadata">
+				<trueValue>
+					<decimal value="1"/>
+				</trueValue>
+				<falseValue>
+					<decimal value="0"/>
+				</falseValue>
+			</boolean>
+			</elements>
+		</policy>
+		<policy name="POLICY_CACHE_MODE" displayName="$(string.POLICY_CACHE_MODE)" explainText="$(string.POLICY_CACHE_MODE_HELP)" key="Software\Policies\ShareFile\ShareFile for Windows" class="Machine" presentation="$(presentation.POLICY_CACHE_MODE)">
+			<parentCategory ref="CATEGORY_MACHINE_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+			<enum id="ENUM_CACHE_MODE" valueName="CacheMode">
+				<item displayName="$(string.POLICY_CACHE_MODE_DEFAULT)"><value>
+					<decimal value="0"/>
+				</value></item>
+				<item displayName="$(string.POLICY_CACHE_MODE_IMMEDIATE)"><value>
+					<decimal value="1"/>
+				</value></item>
+				<item displayName="$(string.POLICY_CACHE_MODE_QUEUED)"><value>
+					<decimal value="2"/>
+				</value></item>
+			</enum>
+			</elements>
+		</policy>
+		<policy name="POLICY_AUTOCHECKOUT_MODE" displayName="$(string.POLICY_ENABLE_AUTOCHECKOUT)" explainText="$(string.POLICY_ENABLE_AUTOCHECKOUT_HELP)" key="Software\Policies\ShareFile\ShareFile for Windows" class="Machine" presentation="$(presentation.POLICY_AUTOCHECKOUT_MODE)">
+			<parentCategory ref="CATEGORY_MACHINE_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+			<enum id="ENUM_AUTOCHECKOUT_MODE" valueName="EnableAutoCheckOut">
+				<item displayName="$(string.POLICY_AUTOCHECKOUT_MODE_PROMPT)"><value>
+					<decimal value="1"/>
+				</value></item>
+				<item displayName="$(string.POLICY_AUTOCHECKOUT_MODE_AUTO)"><value>
+					<decimal value="2"/>
+				</value></item>
+			</enum>
+			</elements>
+		</policy>
+		<policy name="POLICY_ENABLE_CLEARCACHEONLOGOUT" displayName="$(string.POLICY_ENABLE_CLEARCACHEONLOGOUT)" explainText="$(string.POLICY_ENABLE_CLEARCACHEONLOGOUT_HELP)" key="Software\Policies\ShareFile\ShareFile for Windows" class="Machine" presentation="$(presentation.POLICY_ENABLE_CLEARCACHEONLOGOUT)">
+			<parentCategory ref="CATEGORY_MACHINE_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+			<boolean id="BOOL_ENABLE_CLEARCACHEONLOGOUT" valueName="EnableClearCacheOnLogout">
+				<trueValue>
+					<decimal value="1"/>
+				</trueValue>
+				<falseValue>
+					<decimal value="0"/>
+				</falseValue>
+			</boolean>
+			</elements>
+		</policy>
+		<policy name="POLICY_FORCED_OFFLINE_ACCESS" displayName="$(string.POLICY_FORCED_OFFLINE_ACCESS)" explainText="$(string.POLICY_FORCED_OFFLINE_ACCESS_HELP)" key="Software\Policies\ShareFile\ShareFile for Windows" class="User" presentation="$(presentation.POLICY_FORCED_OFFLINE_ACCESS)">
+			<parentCategory ref="CATEGORY_USER_SFWIN"/>
+      		<supportedOn ref="windows:SUPPORTED_Windows7"/>
+      		<elements>
+        		<multiText id="MULTITEXT_FORCED_OFFLINE_ACCESS" valueName="ForceOfflineAccessFolderIds"/>
+      		</elements>
+		</policy>
+		<policy name="POLICY_REDIRECT_DOWNLOADS" class="User" displayName="$(string.POLICY_REDIRECT_DOWNLOADS_NAME)" explainText="$(string.POLICY_REDIRECT_DOWNLOADS_DESC)" presentation="$(presentation.POLICY_FOLDER_REDIRECT)" key="Software\Policies\ShareFile\ShareFile for Windows\FolderRedirection">
+			<parentCategory ref="CATEGORY_USER_REDIRECTED_FOLDERS"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<text id="TXT_REDIRECT_PATH" valueName="Downloads"/>
+				<boolean id="BOOL_REDIRECT_MOVE_CONTENTS" valueName="Downloads-MoveContents">
+					<trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+		<policy name="POLICY_REDIRECT_DESKTOP" class="User" displayName="$(string.POLICY_REDIRECT_DESKTOP_NAME)" explainText="$(string.POLICY_REDIRECT_DESKTOP_DESC)" presentation="$(presentation.POLICY_FOLDER_REDIRECT)" key="Software\Policies\ShareFile\ShareFile for Windows\FolderRedirection">
+			<parentCategory ref="CATEGORY_USER_REDIRECTED_FOLDERS"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<text id="TXT_REDIRECT_PATH" valueName="Desktop"/>
+				<boolean id="BOOL_REDIRECT_MOVE_CONTENTS" valueName="Desktop-MoveContents">
+					<trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+		<policy name="POLICY_REDIRECT_CONTACTS" class="User" displayName="$(string.POLICY_REDIRECT_CONTACTS_NAME)" explainText="$(string.POLICY_REDIRECT_CONTACTS_DESC)" presentation="$(presentation.POLICY_FOLDER_REDIRECT)" key="Software\Policies\ShareFile\ShareFile for Windows\FolderRedirection">
+			<parentCategory ref="CATEGORY_USER_REDIRECTED_FOLDERS"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<text id="TXT_REDIRECT_PATH" valueName="Contacts"/>
+				<boolean id="BOOL_REDIRECT_MOVE_CONTENTS" valueName="Contacts-MoveContents">
+					<trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+		<policy name="POLICY_REDIRECT_DOCUMENTS" class="User" displayName="$(string.POLICY_REDIRECT_DOCUMENTS_NAME)" explainText="$(string.POLICY_REDIRECT_DOCUMENTS_DESC)" presentation="$(presentation.POLICY_FOLDER_REDIRECT)" key="Software\Policies\ShareFile\ShareFile for Windows\FolderRedirection">
+			<parentCategory ref="CATEGORY_USER_REDIRECTED_FOLDERS"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<text id="TXT_REDIRECT_PATH" valueName="Documents"/>
+				<boolean id="BOOL_REDIRECT_MOVE_CONTENTS" valueName="Documents-MoveContents">
+					<trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+		<policy name="POLICY_REDIRECT_FAVORITES" class="User" displayName="$(string.POLICY_REDIRECT_FAVORITES_NAME)" explainText="$(string.POLICY_REDIRECT_FAVORITES_DESC)" presentation="$(presentation.POLICY_FOLDER_REDIRECT)" key="Software\Policies\ShareFile\ShareFile for Windows\FolderRedirection">
+			<parentCategory ref="CATEGORY_USER_REDIRECTED_FOLDERS"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<text id="TXT_REDIRECT_PATH" valueName="Favorites"/>
+				<boolean id="BOOL_REDIRECT_MOVE_CONTENTS" valueName="Favorites-MoveContents">
+					<trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+		<policy name="POLICY_REDIRECT_LINKS" class="User" displayName="$(string.POLICY_REDIRECT_LINKS_NAME)" explainText="$(string.POLICY_REDIRECT_LINKS_DESC)" presentation="$(presentation.POLICY_FOLDER_REDIRECT)" key="Software\Policies\ShareFile\ShareFile for Windows\FolderRedirection">
+			<parentCategory ref="CATEGORY_USER_REDIRECTED_FOLDERS"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<text id="TXT_REDIRECT_PATH" valueName="Links"/>
+				<boolean id="BOOL_REDIRECT_MOVE_CONTENTS" valueName="Links-MoveContents">
+					<trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+		<policy name="POLICY_REDIRECT_MUSIC" class="User" displayName="$(string.POLICY_REDIRECT_MUSIC_NAME)" explainText="$(string.POLICY_REDIRECT_MUSIC_DESC)" presentation="$(presentation.POLICY_FOLDER_REDIRECT)" key="Software\Policies\ShareFile\ShareFile for Windows\FolderRedirection">
+			<parentCategory ref="CATEGORY_USER_REDIRECTED_FOLDERS"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<text id="TXT_REDIRECT_PATH" valueName="Music"/>
+				<boolean id="BOOL_REDIRECT_MOVE_CONTENTS" valueName="Music-MoveContents">
+					<trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+		<policy name="POLICY_REDIRECT_PICTURES" class="User" displayName="$(string.POLICY_REDIRECT_PICTURES_NAME)" explainText="$(string.POLICY_REDIRECT_PICTURES_DESC)" presentation="$(presentation.POLICY_FOLDER_REDIRECT)" key="Software\Policies\ShareFile\ShareFile for Windows\FolderRedirection">
+			<parentCategory ref="CATEGORY_USER_REDIRECTED_FOLDERS"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<text id="TXT_REDIRECT_PATH" valueName="Pictures"/>
+				<boolean id="BOOL_REDIRECT_MOVE_CONTENTS" valueName="Pictures-MoveContents">
+					<trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+		<policy name="POLICY_REDIRECT_SAVEDGAMES" class="User" displayName="$(string.POLICY_REDIRECT_SAVEDGAMES_NAME)" explainText="$(string.POLICY_REDIRECT_SAVEDGAMES_DESC)" presentation="$(presentation.POLICY_FOLDER_REDIRECT)" key="Software\Policies\ShareFile\ShareFile for Windows\FolderRedirection">
+			<parentCategory ref="CATEGORY_USER_REDIRECTED_FOLDERS"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<text id="TXT_REDIRECT_PATH" valueName="Saved Games"/>
+				<boolean id="BOOL_REDIRECT_MOVE_CONTENTS" valueName="Saved Games-MoveContents">
+					<trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+		<policy name="POLICY_REDIRECT_VIDEOS" class="User" displayName="$(string.POLICY_REDIRECT_VIDEOS_NAME)" explainText="$(string.POLICY_REDIRECT_VIDEOS_DESC)" presentation="$(presentation.POLICY_FOLDER_REDIRECT)" key="Software\Policies\ShareFile\ShareFile for Windows\FolderRedirection">
+			<parentCategory ref="CATEGORY_USER_REDIRECTED_FOLDERS"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<text id="TXT_REDIRECT_PATH" valueName="Videos"/>
+				<boolean id="BOOL_REDIRECT_MOVE_CONTENTS" valueName="Videos-MoveContents">
+					<trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+		<policy name="POLICY_REDIRECTION_BACKUP_FOLDER" class="User" displayName="$(string.POLICY_REDIRECTION_BACKUP_FOLDER_NAME)" explainText="$(string.POLICY_REDIRECTION_BACKUP_FOLDER_DESC)" presentation="$(presentation.POLICY_REDIRECTION_BACKUP_FOLDER)" key="Software\Policies\ShareFile\ShareFile for Windows\FolderRedirection">
+			<parentCategory ref="CATEGORY_USER_REDIRECTED_FOLDERS"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<text id="TXT_BACKUP_PATH" valueName="RedirectionBackupRootFolder"/>
+				<decimal id="NUM_RETENTION_PERIOD" valueName="RedirectionBackupRetentionPeriod"/>
+				<decimal id="NUM_CLEANUP_INTERVAL" valueName="RedirectionBackupCleanUpInterval"/>
+			</elements>
+		</policy>
+		<policy name="POLICY_ONPREM_CONNECTOR_REFRESH_FREQUENCY" class="Machine" displayName="$(string.POLICY_ONPREM_CONNECTOR_REFRESH_FREQUENCY_NAME)" explainText="$(string.POLICY_ONPREM_CONNECTOR_REFRESH_FREQUENCY_DESC)" presentation="$(presentation.POLICY_ONPREM_CONNECTOR_REFRESH_FREQUENCY)" key="Software\Policies\ShareFile\ShareFile for Windows">
+			<parentCategory ref="CATEGORY_MACHINE_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<decimal id="NUM_ONPREM_CONNECTOR_REFRESH_FREQUENCY" valueName="OnPremConnectorRefreshFrequency" minValue="5" maxValue="3600"/>
+			</elements>
+		</policy>
+		<policy name="POLICY_ENABLE_ANALYTICS" displayName="$(string.POLICY_ENABLE_ANALYTICS)" explainText="$(string.POLICY_ENABLE_ANALYTICS_HELP)" key="Software\Policies\ShareFile\ShareFile for Windows" class="Machine" presentation="$(presentation.POLICY_ENABLE_ANALYTICS)">
+			<parentCategory ref="CATEGORY_MACHINE_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<boolean id="BOOL_ENABLE_ANALYTICS" valueName="EnableAnalytics">
+					<trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+		<policy name="POLICY_DESKTOP_COEDITING" displayName="$(string.POLICY_DESKTOP_COEDITING)" explainText="$(string.POLICY_DESKTOP_COEDITING_HELP)" key="Software\Policies\ShareFile\ShareFile for Windows" class="User" presentation="$(presentation.POLICY_DESKTOP_COEDITING)">
+			<parentCategory ref="CATEGORY_USER_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<boolean id="BOOL_DESKTOP_COEDITING" valueName="EnableDesktopCoEditing">
+					<trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+		<policy name="POLICY_RECYCLE_DELETED_LOCAL_ITEMS" displayName="$(string.POLICY_RECYCLE_DELETED_LOCAL_ITEMS)" explainText="$(string.POLICY_RECYCLE_DELETED_LOCAL_ITEMS_HELP)" key="Software\Policies\ShareFile\ShareFile for Windows" class="Machine" presentation="$(presentation.POLICY_RECYCLE_DELETED_LOCAL_ITEMS)">
+			<parentCategory ref="CATEGORY_MACHINE_SFWIN"/>
+			<supportedOn ref="windows:SUPPORTED_Windows7"/>
+			<elements>
+				<boolean id="BOOL_RECYCLE_DELETED_LOCAL_ITEMS" valueName="RecycleDeletedLocalItems">
+					<trueValue>
+						<decimal value="1"/>
+					</trueValue>
+					<falseValue>
+						<decimal value="0"/>
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+	</policies>
+</policyDefinitions>
