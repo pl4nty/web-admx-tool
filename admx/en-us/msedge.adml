@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 158.0.4344.0--><displayName/><description/><resources><stringTable><string id="ApplicationGuard_group">Application Guard settings</string><string id="ApplicationGuardContainerProxy">Application Guard Container Proxy</string><string id="ApplicationGuardContainerProxy_Explain">Configures the proxy settings for Microsoft Edge Application Guard.
+<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 158.0.4357.0--><displayName/><description/><resources><stringTable><string id="ApplicationGuard_group">Application Guard settings</string><string id="ApplicationGuardContainerProxy">Application Guard Container Proxy</string><string id="ApplicationGuardContainerProxy_Explain">Configures the proxy settings for Microsoft Edge Application Guard.
 
 If you enable this policy, Microsoft Edge Application Guard ignores other sources of proxy configurations.
 
@@ -1407,15 +1407,13 @@ If the user turned on the setting and then turned it off, this setting may not w
 If the Admin first sets the policy as Enabled, but then changes it to not configured or disabled, it has no impact on
 user settings and the setting remains as it is.
 
-When disabled or not configured, the user can manage the Allow extensions from other store setting.</string><string id="EdgeSafeHostingExtensionEnabled">Control Microsoft Edge Safe Hosting Extension</string><string id="EdgeSafeHostingExtensionEnabled_Explain">This policy controls whether the Microsoft Edge Safe Hosting component extension is installed automatically when users visit supported Microsoft services, such as Microsoft 365 Copilot app.
+When disabled or not configured, the user can manage the Allow extensions from other store setting.</string><string id="EdgeSafeHostingExtensionEnabled">Control Microsoft Edge Safe Hosting Extension (deprecated)</string><string id="EdgeSafeHostingExtensionEnabled_Explain">DEPRECATED: This policy is deprecated. It is currently supported but will become obsolete in a future release.
 
-The Microsoft Edge Safe Hosting extension provides additional security capabilities for these services. When a user accesses a supported service, the extension installs automatically to enable those protections.
+Starting in Microsoft Edge version 158, this policy is deprecated and will become obsolete in Microsoft Edge version 164. The Microsoft Edge Safe Hosting extension is being retired because the Microsoft services that required it no longer depend on it. The browser no longer installs the extension automatically, and removes any existing automatically installed copy, regardless of how this policy is configured. No replacement policy is needed, and you don't need to take any action.
 
-If you enable or don't configure this policy, the extension installs automatically and remains installed for 90 days after the user's last visit, then is removed if no further activity occurs.
+This policy previously controlled whether the Microsoft Edge Safe Hosting component extension was installed automatically when users visited supported Microsoft services, such as Microsoft 365 Copilot app.
 
-If you disable this policy, the extension won't install automatically. If it’s already installed, it will be removed.
-
-Note: This policy controls only automatic installation. It doesn’t prevent users from manually installing other extensions from the Microsoft Edge Add-ons website.</string><string id="ExtensionAllowedTypes">Configure allowed extension types</string><string id="ExtensionAllowedTypes_Explain">Setting the policy controls which apps and extensions can be installed in Microsoft Edge, which hosts they can interact with, and limits runtime access.
+Note: This policy never affected whether users can manually install extensions from the Microsoft Edge Add-ons website.</string><string id="ExtensionAllowedTypes">Configure allowed extension types</string><string id="ExtensionAllowedTypes_Explain">Setting the policy controls which apps and extensions can be installed in Microsoft Edge, which hosts they can interact with, and limits runtime access.
 
 If you don't set this policy, there aren't any restrictions on acceptable extension and app types.
 
