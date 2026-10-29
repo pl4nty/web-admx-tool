@@ -28,6 +28,7 @@
 			<definition name="Supported_1_140" displayName="$(string.Supported_1_140)" />
 			<definition name="Supported_1_142" displayName="$(string.Supported_1_142)" />
 			<definition name="Supported_1_143" displayName="$(string.Supported_1_143)" />
+			<definition name="Supported_1_144" displayName="$(string.Supported_1_144)" />
 			<definition name="Supported_1_67" displayName="$(string.Supported_1_67)" />
 			<definition name="Supported_1_96" displayName="$(string.Supported_1_96)" />
 			<definition name="Supported_1_99" displayName="$(string.Supported_1_99)" />
@@ -92,6 +93,15 @@
 		</boolean>
 			</elements>
 		</policy>
+		<policy name="ChatAgentHostGitHubEnvironments" class="Both" displayName="$(string.ChatAgentHostGitHubEnvironments)" explainText="$(string.ChatAgentHostGitHubEnvironments_githubEnvironments_enabled_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentHostGitHubEnvironments)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_144" />
+			<elements>
+		<boolean id="ChatAgentHostGitHubEnvironments" valueName="ChatAgentHostGitHubEnvironments">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
 		<policy name="ChatAgentMode" class="Both" displayName="$(string.ChatAgentMode)" explainText="$(string.ChatAgentMode_chat_agent_enabled_description)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatAgentMode)">
 			<parentCategory ref="interactiveSessionConfigurationTitle" />
 			<supportedOn ref="Supported_1_99" />
@@ -140,6 +150,40 @@
 			<supportedOn ref="Supported_1_118" />
 			<elements>
 		<multiText id="ChatApprovedAccountOrganizations" valueName="ChatApprovedAccountOrganizations" required="true" />
+			</elements>
+		</policy>
+		<policy name="ChatCanvases" class="Both" displayName="$(string.ChatCanvases)" explainText="$(string.ChatCanvases_chat_canvases_enabled_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatCanvases)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_144" />
+			<elements>
+		<boolean id="ChatCanvases" valueName="ChatCanvases">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
+		<policy name="ChatCopilotConnectors" class="Both" displayName="$(string.ChatCopilotConnectors)" explainText="$(string.ChatCopilotConnectors_chat_customizations_copilotConnectors_enabled)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatCopilotConnectors)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_144" />
+			<elements>
+		<boolean id="ChatCopilotConnectors" valueName="ChatCopilotConnectors">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
+		<policy name="ChatCustomizationMarketplace" class="Both" displayName="$(string.ChatCustomizationMarketplace)" explainText="$(string.ChatCustomizationMarketplace_chat_customizations_marketplace_enabled)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatCustomizationMarketplace)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_144" />
+			<elements>
+		<boolean id="ChatCustomizationMarketplace" valueName="ChatCustomizationMarketplace">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
+			</elements>
+		</policy>
+		<policy name="ChatDefaultConfiguration" class="Both" displayName="$(string.ChatDefaultConfiguration)" explainText="$(string.ChatDefaultConfiguration_chat_defaultConfiguration_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatDefaultConfiguration)">
+			<parentCategory ref="interactiveSessionConfigurationTitle" />
+			<supportedOn ref="Supported_1_144" />
+			<elements>
+		<multiText id="ChatDefaultConfiguration" valueName="ChatDefaultConfiguration" required="true" />
 			</elements>
 		</policy>
 		<policy name="ChatDefaultModel" class="Both" displayName="$(string.ChatDefaultModel)" explainText="$(string.ChatDefaultModel_chat_defaultModel_policy)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.ChatDefaultModel)">
