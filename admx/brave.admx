@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--brave version: 156.1.101.3-->
+  <!--brave version: 157.1.101.8-->
   <policyNamespaces>
     <target namespace="BraveSoftware.Policies.Brave" prefix="brave"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -1663,6 +1663,29 @@
         <list id="WindowPlacementBlockedForUrlsDesc" key="Software\Policies\BraveSoftware\Brave\WindowPlacementBlockedForUrls" valuePrefix=""/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.AutofillPredictionSettings)" explainText="$(string.AutofillPredictionSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AutofillPredictionSettings" presentation="$(presentation.AutofillPredictionSettings)">
+      <parentCategory ref="DeprecatedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="AutofillPredictionSettings" valueName="AutofillPredictionSettings">
+          <item displayName="$(string.AutofillPredictionSettings_Allowed)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.AutofillPredictionSettings_AllowedWithoutLogging)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.AutofillPredictionSettings_Disabled)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.AutoFillEnabled)" explainText="$(string.AutoFillEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AutoFillEnabled" presentation="$(presentation.AutoFillEnabled)" valueName="AutoFillEnabled">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -1684,6 +1707,16 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.AutofillCreditCardEnabled)" explainText="$(string.AutofillCreditCardEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AutofillCreditCardEnabled" presentation="$(presentation.AutofillCreditCardEnabled)" valueName="AutofillCreditCardEnabled">
+      <parentCategory ref="DeprecatedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.BackForwardCacheForWebSocketsAllowed)" explainText="$(string.BackForwardCacheForWebSocketsAllowed_Explain)" key="Software\Policies\BraveSoftware\Brave" name="BackForwardCacheForWebSocketsAllowed" presentation="$(presentation.BackForwardCacheForWebSocketsAllowed)" valueName="BackForwardCacheForWebSocketsAllowed">
       <parentCategory ref="DeprecatedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
@@ -2133,6 +2166,16 @@
         <list id="ExtensionExtendedBackgroundLifetimeForPortConnectionsToUrlsDesc" key="Software\Policies\BraveSoftware\Brave\ExtensionExtendedBackgroundLifetimeForPortConnectionsToUrls" valuePrefix=""/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.ExtensionForceInstallWithSearchOrNewTabOverridesEnabled)" explainText="$(string.ExtensionForceInstallWithSearchOrNewTabOverridesEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ExtensionForceInstallWithSearchOrNewTabOverridesEnabled" presentation="$(presentation.ExtensionForceInstallWithSearchOrNewTabOverridesEnabled)" valueName="ExtensionForceInstallWithSearchOrNewTabOverridesEnabled">
+      <parentCategory ref="Extensions"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.ExtensionInstallAllowlist)" explainText="$(string.ExtensionInstallAllowlist_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ExtensionInstallAllowlist" presentation="$(presentation.ExtensionInstallAllowlist)">
       <parentCategory ref="Extensions"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -2237,29 +2280,6 @@
             </value>
           </item>
           <item displayName="$(string.AutofillGenAiSettings_Disabled)">
-            <value>
-              <decimal value="2"/>
-            </value>
-          </item>
-        </enum>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.AutofillPredictionSettings)" explainText="$(string.AutofillPredictionSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AutofillPredictionSettings" presentation="$(presentation.AutofillPredictionSettings)">
-      <parentCategory ref="GenerativeAI"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <enum id="AutofillPredictionSettings" valueName="AutofillPredictionSettings">
-          <item displayName="$(string.AutofillPredictionSettings_Allowed)">
-            <value>
-              <decimal value="0"/>
-            </value>
-          </item>
-          <item displayName="$(string.AutofillPredictionSettings_AllowedWithoutLogging)">
-            <value>
-              <decimal value="1"/>
-            </value>
-          </item>
-          <item displayName="$(string.AutofillPredictionSettings_Disabled)">
             <value>
               <decimal value="2"/>
             </value>
@@ -2637,6 +2657,13 @@
       <supportedOn ref="SUPPORTED_WIN7"/>
       <elements>
         <list id="AllHttpAuthSchemesAllowedForOriginsDesc" key="Software\Policies\BraveSoftware\Brave\AllHttpAuthSchemesAllowedForOrigins" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.AllHttpAuthSchemesAllowedForProxies)" explainText="$(string.AllHttpAuthSchemesAllowedForProxies_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AllHttpAuthSchemesAllowedForProxies" presentation="$(presentation.AllHttpAuthSchemesAllowedForProxies)">
+      <parentCategory ref="HTTPAuthentication"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <list id="AllHttpAuthSchemesAllowedForProxiesDesc" key="Software\Policies\BraveSoftware\Brave\AllHttpAuthSchemesAllowedForProxies" valuePrefix=""/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.AllowCrossOriginAuthPrompt)" explainText="$(string.AllowCrossOriginAuthPrompt_Explain)" key="Software\Policies\BraveSoftware\Brave" name="AllowCrossOriginAuthPrompt" presentation="$(presentation.AllowCrossOriginAuthPrompt)" valueName="AllowCrossOriginAuthPrompt">
@@ -3183,16 +3210,6 @@
       <elements>
         <list id="AutoplayAllowlistDesc" key="Software\Policies\BraveSoftware\Brave\AutoplayAllowlist" valuePrefix=""/>
       </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.BackForwardCacheForWebSocketsAllowed)" explainText="$(string.BackForwardCacheForWebSocketsAllowed_Explain)" key="Software\Policies\BraveSoftware\Brave" name="BackForwardCacheForWebSocketsAllowed" presentation="$(presentation.BackForwardCacheForWebSocketsAllowed)" valueName="BackForwardCacheForWebSocketsAllowed">
-      <parentCategory ref="brave"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.BackgroundModeEnabled)" explainText="$(string.BackgroundModeEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="BackgroundModeEnabled" presentation="$(presentation.BackgroundModeEnabled)" valueName="BackgroundModeEnabled">
       <parentCategory ref="brave"/>
@@ -4673,16 +4690,6 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.QuicAllowed)" explainText="$(string.QuicAllowed_Explain)" key="Software\Policies\BraveSoftware\Brave" name="QuicAllowed" presentation="$(presentation.QuicAllowed)" valueName="QuicAllowed">
-      <parentCategory ref="brave"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <enabledValue>
-        <decimal value="1"/>
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0"/>
-      </disabledValue>
-    </policy>
-    <policy class="Both" displayName="$(string.ReduceAcceptLanguageEnabled)" explainText="$(string.ReduceAcceptLanguageEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ReduceAcceptLanguageEnabled" presentation="$(presentation.ReduceAcceptLanguageEnabled)" valueName="ReduceAcceptLanguageEnabled">
       <parentCategory ref="brave"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
@@ -7245,6 +7252,16 @@
       </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.RSAKeyUsageForLocalAnchorsEnabled)" explainText="$(string.RSAKeyUsageForLocalAnchorsEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="RSAKeyUsageForLocalAnchorsEnabled" presentation="$(presentation.RSAKeyUsageForLocalAnchorsEnabled)" valueName="RSAKeyUsageForLocalAnchorsEnabled">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.ReduceAcceptLanguageEnabled)" explainText="$(string.ReduceAcceptLanguageEnabled_Explain)" key="Software\Policies\BraveSoftware\Brave" name="ReduceAcceptLanguageEnabled" presentation="$(presentation.ReduceAcceptLanguageEnabled)" valueName="ReduceAcceptLanguageEnabled">
       <parentCategory ref="RemovedPolicies"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
       <enabledValue>
