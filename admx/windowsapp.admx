@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+    <policyNamespaces>
+        <target prefix="windowsApp" namespace="Microsoft.Policies.WindowsApp" />
+    </policyNamespaces>
+    <resources minRequiredRevision="1.0" />
+
+    <supportedOn>
+        <definitions>
+            <definition name="WINAPP_SUPPORTED" displayName="$(string.WINAPP_SUPPORTED)"/>
+        </definitions>
+    </supportedOn>
+    <categories>
+        <category name="WINAPP_NODE" displayName="$(string.WINAPP_NODE)" />
+    </categories>
+    <policies>
+
+        <!-- P0-1 Turn off automatic store updates for Windows app -->
+        <policy name="WINAPP_UpdatePolicy" class="Machine" displayName="$(string.WINAPP_UpdatePolicy)" explainText="$(string.WINAPP_UpdatePolicy_Explain)" key="SOFTWARE\Policies\WindowsApp" presentation="$(presentation.WINAPP_UpdatePolicy)">
+          <parentCategory ref="WINAPP_NODE"/>
+          <supportedOn ref="WINAPP_SUPPORTED"/>
+          <elements>
+              <enum id="WINAPP_UpdateMode" valueName="DisableAutomaticUpdates">
+                <item displayName="$(string.WINAPP_Update_EnableAll)">
+                  <value>
+                    <decimal value="0"/>
+                  </value>
+                </item>
+                <item displayName="$(string.WINAPP_Update_DisableAll)">
+                  <value>
+                    <decimal value="1"/>
+                  </value>
+                </item>
+                <item displayName="$(string.WINAPP_Update_DisableStore)">
+                  <value
+                    ><decimal value="2"/>
+                  </value>
+                </item>
+                <item displayName="$(string.WINAPP_Update_DisableNonStore)">
+                  <value>
+                    <decimal value="3"/>
+                  </value>
+                </item>
+              </enum>
+          </elements>
+        </policy>
+
+        <!-- P0-2 Automatically log off users after inactive interval -->
+        <policy name="WINAPP_AutoLogoff" class="Machine" displayName="$(string.WINAPP_AutoLogoff)" explainText="$(string.WINAPP_AutoLogoff_Explain)" key="SOFTWARE\Policies\WindowsApp" valueName="AutoLogoffEnable" presentation="$(presentation.WINAPP_AutoLogoff)">
+          <parentCategory ref="WINAPP_NODE"/>
+          <supportedOn ref="WINAPP_SUPPORTED"/>
+          <enabledValue>
+            <decimal value="1"/>
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0"/>
+          </disabledValue>
+          <elements>
+              <decimal id="WINAPP_AutoLogoffTimeout" valueName="AutoLogoffTimeInterval" minValue="1" required="true"/>
+          </elements>
+        </policy>
+
+        <!-- P0-3 Skip First Run Experience (FRE) -->
+        <policy name="WINAPP_SkipFRE" class="Machine" displayName="$(string.WINAPP_SkipFRE)" explainText="$(string.WINAPP_SkipFRE_Explain)" key="SOFTWARE\Policies\Windows365" valueName="SkipFRE">
+          <parentCategory ref="WINAPP_NODE"/>
+          <supportedOn ref="WINAPP_SUPPORTED"/>
+          <enabledValue>
+            <decimal value="1"/>
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0"/>
+          </disabledValue>
+        </policy>
+
+        <!-- P1-1 AdminReleaseRing -->
+        <policy name="WINAPP_AdminReleaseRing" class="Machine" displayName="$(string.WINAPP_AdminReleaseRing)" explainText="$(string.WINAPP_AdminReleaseRing_Explain)" key="SOFTWARE\Policies\WindowsApp" presentation="$(presentation.WINAPP_AdminReleaseRing)">
+          <parentCategory ref="WINAPP_NODE"/>
+          <supportedOn ref="WINAPP_SUPPORTED"/>
+          <elements>
+            <enum id="WINAPP_AdminReleaseRingValueEnum" valueName="AdminReleaseRing">
+                <item displayName="$(string.WINAPP_AdminReleaseRingValue_Public)">
+                  <value>
+                    <decimal value="0"/>
+                  </value>
+                </item>
+                <item displayName="$(string.WINAPP_AdminReleaseRingValue_Insider)">
+                  <value>
+                    <decimal value="3"/>
+                  </value>
+                </item>
+              </enum>
+          </elements>
+        </policy>
+
+        <!-- P1-2 Auto Populate Desktop Shortcuts -->
+        <policy name="WINAPP_AutoCreateDesktopShortcuts" class="Machine" displayName="$(string.WINAPP_AutoCreateDesktopShortcuts)" explainText="$(string.WINAPP_AutoCreateDesktopShortcuts_Explain)" key="SOFTWARE\Policies\WindowsApp" valueName="AutoCreateDesktopShortcuts">
+          <parentCategory ref="WINAPP_NODE"/>
+          <supportedOn ref="WINAPP_SUPPORTED"/>
+          <enabledValue>
+            <decimal value="1"/>
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0"/>
+          </disabledValue>
+        </policy>
+
+    </policies>
+</policyDefinitions>

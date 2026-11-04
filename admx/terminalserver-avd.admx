@@ -83,7 +83,7 @@
                 </enum>
             </elements>
         </policy>
-      
+
        <policy name="AVD_SERVER_CONNECTION_INTERVAL_GRAPHICS_DATA" class="Machine" displayName="$(string.AVD_SERVER_CONNECTION_INTERVAL_GRAPHICS_DATA)" explainText="$(string.AVD_SERVER_CONNECTION_INTERVAL_GRAPHICS_DATA_EXPLAIN)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="fEnableConnectionIntervalGraphicsData">
             <parentCategory ref="AVD_GP_NODE" />
             <supportedOn ref="AVD_SUPPORTED" />
@@ -94,7 +94,7 @@
                 <decimal value="0" />
             </disabledValue>
         </policy>
-      
+
         <!-- Transport Policies -->
 
         <policy name="AVD_SERVER_UDP_PORT_REDIRECTOR" class="Machine" displayName="$(string.AVD_SERVER_UDP_PORT_REDIRECTOR)" presentation="$(presentation.AVD_SERVER_UDP_PORT_REDIRECTOR)" explainText="$(string.AVD_SERVER_UDP_PORT_REDIRECTOR_EXPLAIN)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="fUseUdpPortRedirector">
@@ -110,7 +110,7 @@
                 <decimal id="Part_UdpRedirectorPort" valueName="UdpRedirectorPort" minValue="1024" maxValue="65535" storeAsText="false" />
             </elements>
         </policy>
-      
+
         <policy name="AVD_SERVER_UDP_STUN_CLIENT_PORT_RANGE" class="Machine" displayName="$(string.AVD_SERVER_UDP_STUN_CLIENT_PORT_RANGE)" presentation="$(presentation.AVD_SERVER_UDP_STUN_CLIENT_PORT_RANGE)" explainText="$(string.AVD_SERVER_UDP_STUN_CLIENT_PORT_RANGE_EXPLAIN)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="ICEEnableClientPortRange">
             <parentCategory ref="AVD_GP_NODE" />
             <supportedOn ref="AVD_SUPPORTED" />

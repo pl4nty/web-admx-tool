@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 158.0.4357.0-->
+  <!--microsoft_edge version: 159.0.4378.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -87,6 +87,7 @@
       <definition displayName="$(string.SUPPORTED_WIN7_V154)" name="SUPPORTED_WIN7_V154"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V156)" name="SUPPORTED_WIN7_V156"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V157)" name="SUPPORTED_WIN7_V157"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V158)" name="SUPPORTED_WIN7_V158"/>
       <definition displayName="$(string.SUPPORTED_WIN7_ONLY_V77)" name="SUPPORTED_WIN7_ONLY_V77"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V81_V85)" name="OBSOLETE_WIN7_V81_V85"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V125_V137)" name="OBSOLETE_WIN7_V125_V137"/>
@@ -169,6 +170,7 @@
       <definition displayName="$(string.OBSOLETE_WIN7_V77_V97)" name="OBSOLETE_WIN7_V77_V97"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V112_V128)" name="OBSOLETE_WIN7_V112_V128"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V102_V105)" name="OBSOLETE_WIN7_V102_V105"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V148_V157)" name="OBSOLETE_WIN7_V148_V157"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V109_V120)" name="OBSOLETE_WIN7_V109_V120"/>
     </definitions>
   </supportedOn>
@@ -1750,6 +1752,13 @@
         <list id="AllHttpAuthSchemesAllowedForOriginsDesc" key="Software\Policies\Microsoft\Edge\AllHttpAuthSchemesAllowedForOrigins" valuePrefix=""/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.AllHttpAuthSchemesAllowedForProxies)" explainText="$(string.AllHttpAuthSchemesAllowedForProxies_Explain)" key="Software\Policies\Microsoft\Edge" name="AllHttpAuthSchemesAllowedForProxies" presentation="$(presentation.AllHttpAuthSchemesAllowedForProxies)">
+      <parentCategory ref="HTTPAuthentication"/>
+      <supportedOn ref="SUPPORTED_WIN7_V157"/>
+      <elements>
+        <list id="AllHttpAuthSchemesAllowedForProxiesDesc" key="Software\Policies\Microsoft\Edge\AllHttpAuthSchemesAllowedForProxies" valuePrefix=""/>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.AllowCrossOriginAuthPrompt)" explainText="$(string.AllowCrossOriginAuthPrompt_Explain)" key="Software\Policies\Microsoft\Edge" name="AllowCrossOriginAuthPrompt" presentation="$(presentation.AllowCrossOriginAuthPrompt)" valueName="AllowCrossOriginAuthPrompt">
       <parentCategory ref="HTTPAuthentication"/>
       <supportedOn ref="SUPPORTED_WIN7_V77"/>
@@ -1824,6 +1833,16 @@
     <policy class="Both" displayName="$(string.WindowsHelloForHTTPAuthEnabled)" explainText="$(string.WindowsHelloForHTTPAuthEnabled_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="WindowsHelloForHTTPAuthEnabled_recommended" presentation="$(presentation.WindowsHelloForHTTPAuthEnabled)" valueName="WindowsHelloForHTTPAuthEnabled">
       <parentCategory ref="HTTPAuthentication_recommended"/>
       <supportedOn ref="SUPPORTED_WIN7_V90"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.AgentProfileEnabled)" explainText="$(string.AgentProfileEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="AgentProfileEnabled" presentation="$(presentation.AgentProfileEnabled)" valueName="AgentProfileEnabled">
+      <parentCategory ref="Identity"/>
+      <supportedOn ref="SUPPORTED_WIN7_V158"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -4877,14 +4896,14 @@
     </policy>
     <policy class="Both" displayName="$(string.BrowsingWithCopilotAllowList)" explainText="$(string.BrowsingWithCopilotAllowList_Explain)" key="Software\Policies\Microsoft\Edge" name="BrowsingWithCopilotAllowList" presentation="$(presentation.BrowsingWithCopilotAllowList)">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V148"/>
+      <supportedOn ref="OBSOLETE_WIN7_V148_V157"/>
       <elements>
         <list id="BrowsingWithCopilotAllowListDesc" key="Software\Policies\Microsoft\Edge\BrowsingWithCopilotAllowList" valuePrefix=""/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.BrowsingWithCopilotBlockList)" explainText="$(string.BrowsingWithCopilotBlockList_Explain)" key="Software\Policies\Microsoft\Edge" name="BrowsingWithCopilotBlockList" presentation="$(presentation.BrowsingWithCopilotBlockList)">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V148"/>
+      <supportedOn ref="OBSOLETE_WIN7_V148_V157"/>
       <elements>
         <list id="BrowsingWithCopilotBlockListDesc" key="Software\Policies\Microsoft\Edge\BrowsingWithCopilotBlockList" valuePrefix=""/>
       </elements>
@@ -5048,6 +5067,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.CommercialJourneysGetThingsDoneEnabled)" explainText="$(string.CommercialJourneysGetThingsDoneEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="CommercialJourneysGetThingsDoneEnabled" presentation="$(presentation.CommercialJourneysGetThingsDoneEnabled)" valueName="CommercialJourneysGetThingsDoneEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V158"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.ComponentUpdatesEnabled)" explainText="$(string.ComponentUpdatesEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="ComponentUpdatesEnabled" presentation="$(presentation.ComponentUpdatesEnabled)" valueName="ComponentUpdatesEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V77"/>
@@ -5057,6 +5086,29 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.ComponentUpdatesMode)" explainText="$(string.ComponentUpdatesMode_Explain)" key="Software\Policies\Microsoft\Edge" name="ComponentUpdatesMode" presentation="$(presentation.ComponentUpdatesMode)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V157"/>
+      <elements>
+        <enum id="ComponentUpdatesMode" valueName="ComponentUpdatesMode">
+          <item displayName="$(string.ComponentUpdatesMode_AllComponentUpdates)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComponentUpdatesMode_CriticalComponentUpdatesOnly)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComponentUpdatesMode_NoComponentUpdates)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.ComposeInlineEnabled)" explainText="$(string.ComposeInlineEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="ComposeInlineEnabled" presentation="$(presentation.ComposeInlineEnabled)" valueName="ComposeInlineEnabled">
       <parentCategory ref="microsoft_edge"/>
@@ -5193,6 +5245,20 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.CopilotBrowserUseAllowList)" explainText="$(string.CopilotBrowserUseAllowList_Explain)" key="Software\Policies\Microsoft\Edge" name="CopilotBrowserUseAllowList" presentation="$(presentation.CopilotBrowserUseAllowList)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V158"/>
+      <elements>
+        <list id="CopilotBrowserUseAllowListDesc" key="Software\Policies\Microsoft\Edge\CopilotBrowserUseAllowList" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.CopilotBrowserUseBlockList)" explainText="$(string.CopilotBrowserUseBlockList_Explain)" key="Software\Policies\Microsoft\Edge" name="CopilotBrowserUseBlockList" presentation="$(presentation.CopilotBrowserUseBlockList)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V158"/>
+      <elements>
+        <list id="CopilotBrowserUseBlockListDesc" key="Software\Policies\Microsoft\Edge\CopilotBrowserUseBlockList" valuePrefix=""/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.CopilotCDPPageContext)" explainText="$(string.CopilotCDPPageContext_Explain)" key="Software\Policies\Microsoft\Edge" name="CopilotCDPPageContext" presentation="$(presentation.CopilotCDPPageContext)" valueName="CopilotCDPPageContext">
       <parentCategory ref="microsoft_edge"/>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>Windows App</displayName>
+  <description>Windows App Policies</description>
+  <resources>
+    <stringTable>
+      <string id="WINAPP_NODE">Windows App</string>
+      <string id="WINAPP_SUPPORTED">Windows 10 or later</string>
+
+      <!-- P0-1 -->
+      <string id="WINAPP_UpdatePolicy">Turn off automatic updates for Windows App</string>
+      <string id="WINAPP_UpdatePolicy_Explain">Controls how the Windows App checks for and installs updates.
+
+If you enable this policy, choose one of the following options:
+  
+  Enable updates: Windows App will automatically check for and install updates from all sources.
+  Disable updates from all locations: Windows App will not check for or install updates from any source.
+  Disable updates from the Microsoft Store: Windows App will not download updates from the Microsoft Store but may still update from other sources.
+  Disable updates from non-store CDN location: Windows App will not download updates from non-store CDN sources but may still update from the Microsoft Store.
+
+If you disable or do not configure this policy, automatic updates are enabled for Windows App.
+      </string>
+
+      <string id="WINAPP_Update_EnableAll">Enable updates</string>
+      <string id="WINAPP_Update_DisableAll">Disable updates from all locations</string>
+      <string id="WINAPP_Update_DisableStore">Disable updates from the Microsoft Store</string>
+      <string id="WINAPP_Update_DisableNonStore">Disable updates from non-store CDN location</string>
+
+      <!-- P0-2 -->
+      <string id="WINAPP_AutoLogoff">Automatically log off users after inactive interval</string>
+      <string id="WINAPP_AutoLogoff_Explain">Automatically signs out of the Windows App after a period of inactivity. This does not sign the user out of any remote session.
+
+If you enable this policy, specify the inactivity timeout in minutes. After the specified time of inactivity, the Windows App will automatically sign out.
+
+If you disable or do not configure this policy, the Windows App will remain signed in regardless of inactivity.
+      </string>
+
+      <!-- P0-3 -->
+      <string id="WINAPP_SkipFRE">Skip First Run Experience (FRE)</string>
+      <string id="WINAPP_SkipFRE_Explain">Skips the initial first-run experience and quick tour when the Windows App launches, taking the user directly to the connection center.
+
+If you enable this policy, the first-run experience and quick tour are skipped.
+
+If you disable or do not configure this policy, the first-run experience and quick tour will appear when the Windows App launches for the first time.
+      </string>
+
+      <!-- P1-1 -->
+      <string id="WINAPP_AdminReleaseRing">Admin Release Ring Policy</string>
+      <string id="WINAPP_AdminReleaseRing_Explain">Allows administrators to specify the release ring for the Windows App.
+
+If you enable this policy, choose one of the following options:
+
+  Public: The Windows App uses the standard release ring.
+  Insider: The Windows App uses the Insider release ring for early access to features.
+
+If you disable or do not configure this policy, the Windows App uses the Public release ring.
+      </string>
+      <string id="WINAPP_AdminReleaseRingValue_Public">Public</string>
+      <string id="WINAPP_AdminReleaseRingValue_Insider">Insider</string>
+
+      <!-- P1-2 -->
+      <string id="WINAPP_AutoCreateDesktopShortcuts">Automatically creates Windows App shortcuts to desktop</string>
+      <string id="WINAPP_AutoCreateDesktopShortcuts_Explain">Automatically creates Windows App shortcuts to the desktop to launch resources specified by the IT administrator.
+
+If you enable this policy, Windows App will automatically create desktop shortcuts for resources configured by the IT admin in the Azure Virtual Desktop portal. After the user signs in, these shortcuts will be created on the desktop. When the user signs out, the shortcuts will be automatically cleaned up.
+
+If you disable or do not configure this policy, desktop shortcuts will not be automatically created.
+      </string>
+
+    </stringTable>
+    <presentationTable>
+      <presentation id="WINAPP_UpdatePolicy">
+        <dropdownList refId="WINAPP_UpdateMode" defaultItem="0">Update restriction:</dropdownList>
+      </presentation>
+      <presentation id="WINAPP_AutoLogoff">
+        <decimalTextBox refId="WINAPP_AutoLogoffTimeout">Inactivity timeout (minutes):</decimalTextBox>
+      </presentation>
+      <presentation id="WINAPP_AdminReleaseRing">
+        <dropdownList refId="WINAPP_AdminReleaseRingValueEnum" defaultItem="0">Admin Release Ring:</dropdownList>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>
