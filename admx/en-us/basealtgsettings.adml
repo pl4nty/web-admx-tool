@@ -1,0 +1,1089 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2022 BaseALT, Ltd.  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" revision="1.0" schemaVersion="1.0">
+  <displayName>ALT desktop configurations definitions</displayName>
+  <description>This file contains the desktop configurations definitions used by ALT operating system.</description>
+  <resources>
+    <stringTable>
+      <string id="org-mate-background-secondary-color">Final gradient color</string>
+      <string id="org-mate-background-secondary-color_help">Sets the color of the right or bottom edge of the desktop when drawing a gradient. Not used when Gradient Type is set to Solid.
+
+Possible values:
+
+Color keyword (red, aqua, navy, etc.);
+
+String like #RRGGBB;
+
+String of type rgb(0,0,0).
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-background-picture-options">Background image display method</string>
+      <string id="org-mate-background-picture-options_help">Sets the display method for the image specified by the Desktop Background Picture setting.
+
+Possible values:
+
+"None" (no);
+
+"Wallpaper" (mosaic) — duplicates the image in its original size so that the image completely covers the desktop;
+
+"Centered" — displays the image in the center of the desktop in accordance with the original image size;
+
+"Scaled" — enlarges the image, maintaining proportions, until the size of one of the image boundaries coincides with the size of one of the screen boundaries;
+
+"Stretched" — enlarges the image to fit the size of the desktop, changing the proportions if necessary;
+
+"Zoom" (scale) — enlarges the smallest side of the image until its value coincides with the size of the corresponding screen border; the image can be cropped on the other side;
+
+"Spanned" (fill) — enlarges the image, maintaining proportions, until the size of one of the image borders coincides with the size of one of the screen borders.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-background-picture-options_None">None</string>
+      <string id="org-mate-background-picture-options_Wallpaper">Wallpaper</string>
+      <string id="org-mate-background-picture-options_Centered">Centered</string>
+      <string id="org-mate-background-picture-options_Scaled">Scaled</string>
+      <string id="org-mate-background-picture-options_Stretched">Stretched</string>
+      <string id="org-mate-background-picture-options_Zoom">Zoom</string>
+      <string id="org-mate-background-picture-options_Spanned">Spanned</string>
+
+      <string id="org-mate-background-color-shading-type">Gradient type</string>
+      <string id="org-mate-background-color-shading-type_help">Sets the gradient type:
+
+"Horizontal gradient" — a gradient effect from the left edge of the screen to the right;
+
+"Vertical gradient" — a gradient effect from the top edge of the screen to the bottom;
+
+"Solid Fill"—fill the desktop background with one color.
+
+This option is only user if the Desktop Background Picture option is not set.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-background-color-shading-type-horizontal-gradient">Horizontal gradient</string>
+      <string id="org-mate-background-color-shading-type-vertical-gradient">Vertical gradient</string>
+      <string id="org-mate-background-color-shading-type-solid">Solid fill</string>
+
+      <string id="org-mate-background-picture-filename">Desktop background picture</string>
+      <string id="org-mate-background-picture-filename_help">Allows you to set an image as your desktop background by specifying a file (for example, /usr/share/backgrounds/mate/nature/Wood.jpg) containing the image.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-mate-background-primary-color">The initial color of the gradient (solid fill color)</string>
+      <string id="org-mate-background-primary-color_help">Sets the color of the left or top edge of the desktop, or the solid fill color when drawing a gradient, depending on the gradient type set.
+
+Possible values:
+
+Color keyword (red, aqua, navy, etc.);
+
+String like #RRGGBB;
+
+String of type rgb(0,0,0).
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-screensaver-idle-activation-enabled">Enable screen saver</string>
+      <string id="org-mate-screensaver-idle-activation-enabled_help">Setting this option enables the screensaver when the computer is idle.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-screensaver-idle-activation-enabled-true">Enabled</string>
+      <string id="org-mate-screensaver-idle-activation-enabled-false">Disabled</string>
+
+      <string id="org-mate-screensaver-lock-enabled">Lock your computer</string>
+      <string id="org-mate-screensaver-lock-enabled_help">Enables the computer to be locked when the screensaver is activated. The lock will be enabled after the time interval set in the "Time until password lock" parameter.
+
+This option is only user if the Enable Screen Saver option is activated.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-screensaver-lock-enabled-true">Enabled</string>
+      <string id="org-mate-screensaver-lock-enabled-false">Disabled</string>
+
+      <string id="org-mate-screensaver-mode">Operating mode</string>
+      <string id="org-mate-screensaver-mode_help">Sets the screen saver mode. This option is only user if the Enable Screen Saver option is activated.
+
+Possible values:
+
+"Blank screen" — do not show any images, only a black screen;
+
+"Random themes" — select a screen saver theme randomly;
+
+"Selected Theme" — show one (specified) screen saver theme.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-screensaver-mode_blank_only">Blank screen</string>
+      <string id="org-mate-screensaver-mode_random">Random themes</string>
+      <string id="org-mate-screensaver-mode_single">Selected theme</string>
+
+      <string id="org-mate-screensaver-lock-delay">Time before password lock</string>
+      <string id="org-mate-screensaver-lock-delay_help">Sets the number of minutes after which the computer will be locked after activating the screen saver.
+
+This option is only user if the "Turn on screen saver" and "Lock your computer" options are activated.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-mate-screensaver-logout-delay">Time before logout</string>
+      <string id="org-mate-screensaver-logout-delay_help">Sets the number of minutes after the screen saver is activated, the user will be given the opportunity to log out of the session.
+
+This option is only user if the "Enable screen saver" and "Log out after lock" options are activated.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-mate-screensaver-cycle-delay">Theme change time</string>
+      <string id="org-mate-screensaver-cycle-delay_help">Sets the interval (in minutes) between changing screensaver themes.
+
+This option is only user if the Enable Screen Saver option is activated and if the Operation Mode option is set to Random Themes.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-mate-screensaver-user-switch-enabled">Switch user after blocking</string>
+      <string id="org-mate-screensaver-user-switch-enabled_help">Adds a Switch User button to the screen unlock dialog.
+
+This option is only user if the Turn on screen saver and Lock your computer option is activated.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-screensaver-user-switch-enabled-true">Enabled</string>
+      <string id="org-mate-screensaver-user-switch-enabled-false">Disabled</string>
+
+      <string id="org-mate-screensaver-logout-enabled">Logout after being locked</string>
+      <string id="org-mate-screensaver-logout-enabled_help">After some delay, adds a logout button ("End session") to the screen unlock dialog. The delay time is specified in the "Session exit time" parameter.
+
+This option is only user if the "Turn on screen saver" and "Lock your computer" options are activated.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-screensaver-logout-enabled-true">Enabled</string>
+      <string id="org-mate-screensaver-logout-enabled-false">Disabled</string>
+
+      <string id="org-mate-lockdown-disable-log-out">Disables the user from logging out</string>
+      <string id="org-mate-lockdown-disable-log-out_help">Setting this option prevents the user from logging out of their session.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-lockdown-disable-log-out-true">Enabled</string>
+      <string id="org-mate-lockdown-disable-log-out-false">Disabled</string>
+
+      <string id="org-mate-lockdown-disable-lock-screen">Disable screen lock</string>
+      <string id="org-mate-lockdown-disable-lock-screen_help">Setting this option prevents the user from locking the screen with a password.
+
+When this parameter is set, the value of the "Computer Lock" parameter is ignored.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-lockdown-disable-lock-screen-true">Enabled</string>
+      <string id="org-mate-lockdown-disable-lock-screen-false">Disabled</string>
+
+      <string id="org-mate-lockdown-disable-user-switching">Disable user switching</string>
+      <string id="org-mate-lockdown-disable-user-switching_help">Setting this option prevents the user from switching to another account while their session is active.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-lockdown-disable-user-switching-true">Enabled</string>
+      <string id="org-mate-lockdown-disable-user-switching-false">Disabled</string>
+
+      <string id="org-mate-lockdown-disable-theme-settings">Disable selection of desktop themes</string>
+      <string id="org-mate-lockdown-disable-theme-settings_help">Setting this option prevents the user from changing the theme settings.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-lockdown-disable-theme-settings-true">Enabled</string>
+      <string id="org-mate-lockdown-disable-theme-settings-false">Disabled</string>
+
+      <string id="org-gnome-vino-view-only">Remote control</string>
+      <string id="org-gnome-vino-view-only_help">Setting this option disables remote control of the desktop. Remote users are only allowed to view the desktop, but not control the mouse and keyboard.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-gnome-vino-view-only-true">Enabled</string>
+      <string id="org-gnome-vino-view-only-false">Disabled</string>
+
+      <string id="org-gnome-vino-prompt-enabled">Confirmation when connecting</string>
+      <string id="org-gnome-vino-prompt-enabled_help">Enables a confirmation prompt for any attempt to access the desktop. Recommended if the connection is not password protected.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-gnome-vino-prompt-enabled-true">Enabled</string>
+      <string id="org-gnome-vino-prompt-enabled-false">Disabled</string>
+
+      <string id="org-gnome-vino-icon-visibility">Connection icon </string>
+      <string id="org-gnome-vino-icon-visibility_help">Controls whether the connection icon is displayed in the notification area. Possible values:
+
+"Never" — the icon is not displayed;
+
+"Always" — the icon is always displayed;
+
+"Only when a client connects" — the icon is displayed when a remote user connects.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-gnome-vino-icon-visibility-never">Never</string>
+      <string id="org-gnome-vino-icon-visibility-always">Always</string>
+      <string id="org-gnome-vino-icon-visibility-client">Only when a client is connected</string>
+
+      <string id="org-gnome-vino-enabled">Remote access</string>
+      <string id="org-gnome-vino-enabled_help">Setting this option allows remote desktop access using the RFB and VNC protocol.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-gnome-vino-enabled-true">Enabled</string>
+      <string id="org-gnome-vino-enabled-false">Disabled</string>
+
+      <string id="org-gnome-vino-alternative-port">Alternative port</string>
+      <string id="org-gnome-vino-alternative-port_help">Alternative connection port. The range of values is from 5000 to 50000. The default port is 5900.
+
+Used only when the "Enable alternate port" option is selected
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-gnome-vino-use-alternative-port">Enable alternative port</string>
+      <string id="org-gnome-vino-use-alternative-port_help">Enable listening on an alternative port for remote connections (instead of the default port 5900). The port is specified in the "Alternate port" parameter.</string>
+      <string id="org-gnome-vino-use-alternative-true">Enabled</string>
+      <string id="org-gnome-vino-use-alternative-false">Disabled</string>
+
+      <string id="org-gnome-vino-authentication-methods">Authentication methods</string>
+      <string id="org-gnome-vino-authentication-methods_help">This parameter sets the authentication method for users connecting to the remote desktop.
+
+Possible values:
+
+"Vnc" — a password is required to connect;
+
+"None" — no password is required to connect.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-gnome-vino-authentication-methods-none">None</string>
+      <string id="org-gnome-vino-authentication-methods-vnc">Vnc</string>
+
+      <string id="org-mate-marco-button-layout">Window title icons</string>
+      <string id="org-mate-marco-button-layout_help">Settings for the placement of icons in the window title. The separator of the right and left halves is a colon. For example, the line 'menu:minimize,maximize,spacer,close' places the window menu icon on the left, and on the right are the icons for minimizing, expanding, and closing the window.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-mate-marco-general-wrap-style">Switching workspaces</string>
+      <string id="org-mate-marco-general-wrap-style_help">Defines how to swipe from one desktop to another at the desktop switcher border:
+
+"No wrap" — when you try to scroll through the workspace beyond the border of the switch, nothing will happen;
+
+"Classic" — the end of one line leads to the beginning of the next and the end of one column leads to the beginning of the next;
+
+"Toroidal" — the end of each line leads to its own beginning and the end of each column leads to its same beginning.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-mate-Marco-general-wrap-style-no-wrap">No wrap</string>
+      <string id="org-mate-Marco-general-wrap-style-classic">Classic</string>
+      <string id="org-mate-Marco-general-wrap-style-toroidal">Toroidal</string>
+
+      <string id="org-mate-marco-general-show-tab-border">Window border when switching with Alt+Tab</string>
+      <string id="org-mate-marco-general-show-tab-border_help">Highlight the border of the selected window when switching using Alt+Tab.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-marco-general-show-tab-border-true">Enabled</string>
+      <string id="org-mate-marco-general-show-tab-border-false">Disabled</string>
+
+      <string id="org-mate-marco-general-allow-top-tiling">Unfold while dragging</string>
+      <string id="org-mate-marco-general-allow-top-tiling_help">Enables a window to expand to full screen when dragged to the top center of the screen. This option is only user if the Resize window as you drag option is activated.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-marco-general-allow-top-tiling-true">Enabled</string>
+      <string id="org-mate-marco-general-allow-top-tiling-false">Disabled</string>
+
+      <string id="org-mate-marco-general-focus-new-windows">Switch focus to new window</string>
+      <string id="org-mate-marco-general-focus-new-windows_help">Defines how the new window receives focus:
+
+"Smart" — a new window receives focus when created;
+
+"Strict" — windows launched from the terminal do not receive focus.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-Marco-general-focus-new-windows-smart">Smart</string>
+      <string id="org-mate-Marco-general-focus-new-windows-strict">Strict</string>
+
+      <string id="org-mate-marco-general-allow-tiling">Resize window while dragging</string>
+      <string id="org-mate-marco-general-allow-tiling_help">Enables window resizing when dragged to different areas of the screen.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-marco-general-allow-tiling-true">Enabled</string>
+      <string id="org-mate-marco-general-allow-tiling-false">Disabled</string>
+
+      <string id="org-mate-marco-general-num-workspaces">Number of workspaces</string>
+      <string id="org-mate-marco-general-num-workspaces_help">Set the number of workspaces. The range of acceptable values is 1-36.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-mate-marco-general-placement-mode">Location of new windows</string>
+      <string id="org-mate-marco-general-placement-mode_help">Specifies how new windows will be positioned:
+
+"Automatic" — the system selects a location based on the available space on the desktop, or cascades if there is no space;
+
+"Pointer" — new windows are placed in accordance with the position of the mouse pointer;
+
+Manual — The user must manually position the new window using the mouse and keyboard.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-marco-general-placement-mode-automatic">Automatic</string>
+      <string id="org-mate-marco-general-placement-mode-pointer">Pointer</string>
+      <string id="org-mate-marco-general-placement-mode-manual">Manual</string>
+
+      <string id="org-mate-marco-general-auto-raise">Automatically raise window that receives focus</string>
+      <string id="org-mate-marco-general-auto-raise_help">When enabled, the window that receives focus is automatically displayed on top of the others.
+
+The Window Activation Mode must be set to Sloppy or Mouse.
+
+The interval after which the window rises is set in the "Recovery delay" setting.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-mate-marco-general-auto-raise-true">Enabled</string>
+      <string id="org-mate-marco-general-auto-raise-false">Disabled</string>
+
+      <string id="org-mate-marco-general-action-middle-click-titlebar">Action for clicking the middle button on the window title</string>
+      <string id="org-mate-marco-general-action-middle-click-titlebar_help">Set the action performed when the middle mouse button is clicked on the window title:
+
+"Toggle to header" ("toggle_shade") – minimize the window to the header. By double-clicking, the window expands back;
+
+"Full screen" ("toggle_maximize") — expand the window to full screen or restore the original size;
+
+"Stretch vertically" ("toggle_maximize_vertically") — expand the window vertically without changing its width;
+
+"Stretch horizontally" ("toggle_maximize_vertically") — expand the window horizontally without changing its height;
+
+"Minimize" — minimize the window;
+
+"Show menu" ("menu") – show the window menu;
+
+"Push" ("lower") – place a window under others;
+
+"Do nothing" ("none") — do not perform any action;
+
+"Last action" ("last") – repeat the previous action.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-marco-general-action-middle-click-titlebar-toggle_shade">Collapse to title</string>
+      <string id="org-mate-marco-general-action-middle-click-titlebar-toggle_maximize">Full screen</string>
+      <string id="org-mate-marco-general-action-middle-click-titlebar-toggle_maximize_horizontally">Stretch horizontally</string>
+      <string id="org-mate-marco-general-action-middle-click-titlebar-toggle_maximize_vertically">Extend vertically</string>
+      <string id="org-mate-marco-general-action-middle-click-titlebar-minimize">Collapse</string>
+      <string id="org-mate-marco-general-action-middle-click-titlebar-none">Do nothing</string>
+      <string id="org-mate-marco-general-action-middle-click-titlebar-lower">Push</string>
+      <string id="org-mate-marco-general-action-middle-click-titlebar-menu">Show menu</string>
+      <string id="org-mate-marco-general-action-middle-click-titlebar-last">Last action</string>
+
+      <string id="org-mate-marco-general-action-right-click-titlebar">Right-click action on the window title</string>
+      <string id="org-mate-marco-general-action-right-click-titlebar_help">Set the action performed when you right-click the window title:
+
+"Toggle to header" ("toggle_shade") – minimize the window to the header. By double-clicking, the window expands back;
+
+"Full screen" ("toggle_maximize") — expand the window to full screen or restore the original size;
+
+"Stretch vertically" ("toggle_maximize_vertically") — expand the window vertically without changing its width;
+
+"Stretch horizontally" ("toggle_maximize_vertically") — expand the window horizontally without changing its height;
+
+"Minimize" — minimize the window;
+
+"Show menu" ("menu") – show the window menu;
+
+"Push" ("lower") – place a window under others;
+
+"Do nothing" ("none") — do not perform any action;
+
+"Last action" ("last") – repeat the previous action.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-marco-general-action-right-click-titlebar-toggle_shade">Collapse to title</string>
+      <string id="org-mate-marco-general-action-right-click-titlebar-toggle_maximize">Full screen</string>
+      <string id="org-mate-marco-general-action-right-click-titlebar-toggle_maximize_horizontally">Stretch horizontally</string>
+      <string id="org-mate-marco-general-action-right-click-titlebar-toggle_maximize_vertically">Extend vertically</string>
+      <string id="org-mate-marco-general-action-right-click-titlebar-minimize">Collapse</string>
+      <string id="org-mate-marco-general-action-right-click-titlebar-none">Do nothing</string>
+      <string id="org-mate-marco-general-action-right-click-titlebar-lower">Push</string>
+      <string id="org-mate-marco-general-action-right-click-titlebar-menu">Show menu</string>
+      <string id="org-mate-marco-general-action-right-click-titlebar-last">Last action</string>
+
+      <string id="org-mate-marco-general-action-double-click-titlebar">Action for double-clicking the window title</string>
+      <string id="org-mate-marco-general-action-double-click-titlebar_help">Set the action performed by double-clicking the window title with the left button:
+
+"Toggle to header" ("toggle_shade") – minimize the window to the header. By double-clicking, the window expands back;
+
+"Full screen" ("toggle_maximize") — expand the window to full screen or restore the original size;
+
+"Stretch vertically" ("toggle_maximize_vertically") — expand the window vertically without changing its width;
+
+"Stretch horizontally" ("toggle_maximize_vertically") — expand the window horizontally without changing its height;
+
+"Minimize" — minimize the window;
+
+"Show menu" ("menu") – show the window menu;
+
+"Push" ("lower") – place a window under others;
+
+"Do nothing" ("none") — do not perform any action;
+
+"Last action" ("last") – repeat the previous action.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-marco-general-action-double-click-titlebar-toggle_shade">Collapse to title</string>
+      <string id="org-mate-marco-general-action-double-click-titlebar-toggle_maximize">Full screen</string>
+      <string id="org-mate-marco-general-action-double-click-titlebar-toggle_maximize_horizontally">Stretch horizontally</string>
+      <string id="org-mate-marco-general-action-double-click-titlebar-toggle_maximize_vertically">Extend vertically</string>
+      <string id="org-mate-marco-general-action-double-click-titlebar-minimize">Collapse</string>
+      <string id="org-mate-marco-general-action-double-click-titlebar-none">Do nothing</string>
+      <string id="org-mate-marco-general-action-double-click-titlebar-lower">Push</string>
+      <string id="org-mate-marco-general-action-double-click-titlebar-menu">Show menu</string>
+      <string id="org-mate-marco-general-action-double-click-titlebar-last">Last action</string>
+
+      <string id="org-mate-marco-general-theme">Theme</string>
+      <string id="org-mate-marco-general-theme_help">Sets the theme responsible for displaying window borders, title bars, etc.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-mate-marco-general-titlebar-font">Window title font</string>
+      <string id="org-mate-marco-general-titlebar-font_help">Sets the window title bar font. For example, 'Noto Sans Bold 10'.
+    
+This setting is ignored if the System Font in Window Titles option is enabled.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-mate-marco-general-focus-mode">Window activation mode</string>
+      <string id="org-mate-marco-general-focus-mode_help">Window focus mode determines how windows are activated. Valid values:
+
+"Click" — to activate the window you need to click on it;
+
+"Sloppy" — the window is activated when the mouse pointer moves over it;
+
+"Mouse" — a window is activated when the mouse pointer moves into it, and becomes inactive when the mouse pointer moves away from it.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-marco-general-focus-mode-click">Click</string>
+      <string id="org-mate-marco-general-focus-mode-sloppy">Sloppy</string>
+      <string id="org-mate-marco-general-focus-mode-mouse">Mouse</string>
+
+      <string id="org-mate-marco-general-titlebar-uses-system-font">System font in window titles</string>
+      <string id="org-mate-marco-general-titlebar-uses-system-font_help">When enabled, window titles will use the system font.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-marco-general-titlebar-uses-system-font-true">Enabled</string>
+      <string id="org-mate-marco-general-titlebar-uses-system-font-false">Disabled</string>
+
+      <string id="org-mate-marco-general-compositing-fast-alt-tab">Thumbnails when switching windows</string>
+      <string id="org-mate-marco-general-compositing-fast-alt-tab_help">If Enabled, application icons will be displayed instead of thumbnails in the Alt+Tab switching window.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-marco-general-compositing-fast-alt-tab-true">Enabled</string>
+      <string id="org-mate-marco-general-compositing-fast-alt-tab-false">Disabled</string>
+
+      <string id="org-mate-marco-general-auto-raise-delay">Recovery delay</string>
+      <string id="org-mate-marco-general-auto-raise-delay_help">Time interval in milliseconds after which the window in focus will be raised above the others.
+    
+This option is only user if the "Automatically raise window that receives focus" option is activated.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-mate-marco-general-center-new-windows">New windows in the center</string>
+      <string id="org-mate-marco-general-center-new-windows_help">If Enabled, new windows will open in the center of the screen.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-marco-general-center-new-windows-true">Enabled</string>
+      <string id="org-mate-marco-general-center-new-windows-false">Disabled</string>
+
+      <string id="org-mate-marco-general-icon-size">Icon size in Alt+Tab window</string>
+      <string id="org-mate-marco-general-icon-size_help">Sets the size of icons in the Alt+Tab application switcher window.
+    
+Range of acceptable values: 8-256.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-mate-marco-general-alt-tab-max-columns">Alt+Tab toggle window size</string>
+      <string id="org-mate-marco-general-alt-tab-max-columns_help">Sets the number of columns in the Alt+Tab application switching window.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-mate-peripherals-keyboard-delay">Delay before repeat</string>
+      <string id="org-mate-peripherals-keyboard-delay_help">Delay before repeating a pressed and held key.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-mate-peripherals-keyboard-repeat">Repeat key held down</string>
+      <string id="org-mate-peripherals-keyboard-repeat_help">Enable repeating of a pressed and held key.
+
+If you press and hold a key while typing repeat is enabled, the action corresponding to the key will be repeated. For example, if you press and hold a key with a letter, that letter will be repeated many times.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-mate-peripherals-keyboard-repeat-true">Enabled</string>
+      <string id="org-mate-peripherals-keyboard-repeat-false">Disabled</string>
+
+      <string id="org-mate-peripherals-keyboard-rate">Replay rate</string>
+      <string id="org-mate-peripherals-keyboard-rate_help">Sets the repeat rate of a pressed and held key.</string>
+
+      <string id="org-mate-session-idle-delay">The interval of inactivity after which the session is considered idle</string>
+      <string id="org-mate-session-idle-delay_help">This policy allows you to set the time in minutes after which the session will be considered idle.
+
+This option is only user if the "Enable screen saver" and "Log out after lock" options are activated.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-mate-session-logout-timeout">Session exit timeout</string>
+      <string id="org-mate-session-logout-timeout_help">This policy allows you to set the time in seconds after which the logout will occur.
+
+This option is only used if the "Request when exiting session" policy is enabled.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-mate-session-logout-prompt">Request when exiting the session</string>
+      <string id="org-mate-session-logout-prompt_help">When this parameter is set to the "enabled" state, a dialog box will be displayed before the end of the session with a choice of actions: end the current session, switch the user or cancel the action.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-session-logout-prompt-true">Enabled</string>
+      <string id="org-mate-session-logout-prompt-false">Disabled</string>
+
+      <string id="org-mate-session-auto-save-session">Saving sessions</string>
+      <string id="org-mate-session-auto-save-session_help">When you set this parameter to the "enabled" state, the system will automatically save work session for recovery the next time you start.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-session-auto-save-session-true">Enabled</string>
+      <string id="org-mate-session-auto-save-session-false">Disabled</string>
+
+      <string id="org-mate-session-show-hidden-apps">Displaying hidden automatically launched applications</string>
+      <string id="org-mate-session-show-hidden-apps_help">When this parameter is set to the "enabled" state, hidden automatically launched programs will be visible in the "Settings for running applications" menu.
+
+The "Block" option — (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-mate-session-show-hidden-apps-true">Enabled</string>
+      <string id="org-mate-session-show-hidden-apps-false">Disabled</string>
+
+      <string id="org-altlinux-winbind-dnsupdate-ipv4">Update IPv4 DNS records</string>
+      <string id="org-altlinux-winbind-dnsupdate-ipv4_help">The policy allows you to enable the update of the forward and reverse IPv4 DNS records of the computer.
+
+Note: Enabling the "Update reverse IPv4 DNS record" option is only user when the "Update forward IPv4 DNS record" option is enabled.
+
+      </string>
+      <string id="org-altlinux-winbind-dnsupdate-ipv6">Update IPv6 DNS records</string>
+      <string id="org-altlinux-winbind-dnsupdate-ipv6_help">The policy allows you to enable the update of the forward and reverse IPv6 DNS records of the computer.
+
+Note: Enabling the "Update reverse IPv6 DNS record" option is only user when the "Update forward IPv6 DNS record" option is enabled.
+
+      </string>
+      <string id="WinbindDNSUpdate-true">Enabled</string>
+      <string id="WinbindDNSUpdate-false">Disabled</string>
+
+      <string id="org-altlinux-winbind-dnsupdate-ttl">DNS record storage time</string>
+      <string id="org-altlinux-winbind-dnsupdate-ttl_help">The policy allows you to set the DNS record storage time in the cache.
+
+      </string>
+
+     </stringTable>
+
+    <presentationTable>
+      <presentation id="OrgMateBackgroundSecondaryColorMachine-pr">
+        <textBox refId="OrgMateBackgroundSecondaryColor_setter">
+          <label>Color:</label>
+        </textBox>
+        <checkBox refId="OrgMateBackgroundSecondaryColor_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateBackgroundSecondaryColorUser-pr">
+        <textBox refId="OrgMateBackgroundSecondaryColor_setter">
+          <label>Color:</label>
+        </textBox>
+      </presentation>
+
+      <presentation id="OrgMateBackgroundPictureOptionsUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateBackgroundPictureOptions_setter">Method for displaying the desktop background picture:</dropdownList>
+      </presentation>
+
+      <presentation id="OrgMateBackgroundPictureOptionsMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateBackgroundPictureOptions_setter">Method for displaying the desktop background picture:</dropdownList>
+        <checkBox refId="OrgMateBackgroundPictureOptions_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateBackgroundColorShadingTypeUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateBackgroundColorShadingType_setter">Gradient type:</dropdownList>
+      </presentation>
+
+      <presentation id="OrgMateBackgroundColorShadingTypeMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateBackgroundColorShadingType_setter">Gradient type:</dropdownList>
+        <checkBox refId="OrgMateBackgroundColorShadingType_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateBackgroundPictureFilenameUser-pr">
+        <textBox refId="OrgMateBackgroundPictureFilename_setter">
+          <label>Path to image:</label>
+        </textBox>
+      </presentation>
+
+      <presentation id="OrgMateBackgroundPictureFilenameMachine-pr">
+        <textBox refId="OrgMateBackgroundPictureFilename_setter">
+          <label>Path to image:</label>
+        </textBox>
+        <checkBox refId="OrgMateBackgroundPictureFilename_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateBackgroundPrimaryColorUser-pr">
+        <textBox refId="OrgMateBackgroundPrimaryColor_setter">
+          <label>Color:</label>
+        </textBox>
+      </presentation>
+
+      <presentation id="OrgMateBackgroundPrimaryColorMachine-pr">
+        <textBox refId="OrgMateBackgroundPrimaryColor_setter">
+          <label>Color:</label>
+        </textBox>
+        <checkBox refId="OrgMateBackgroundPrimaryColor_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateScreesaverIdleActivationEnabledMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateScreesaverIdleActivationEnabled_setter">Select Enabled or Disabled:</dropdownList>
+        <checkBox refId="OrgMateScreesaverIdleActivationEnabled_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateScreensaverLockEnabledMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateScreensaverLockEnabled_setter">Select Enabled or Disabled:</dropdownList>
+        <checkBox refId="OrgMateScreensaverLockEnabled_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateScreensaverModeUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateScreensaverMode_setter">Select the screen saver mode:</dropdownList>
+      </presentation>
+
+      <presentation id="OrgMateScreensaverModeMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateScreensaverMode_setter">Select the screen saver mode:</dropdownList>
+        <checkBox refId="OrgMateScreensaverMode_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateScreensaverLockDelayUser-pr">
+        <decimalTextBox refId="OrgMateScreensaverLockDelay_setter" defaultValue="1">Time in minutes</decimalTextBox>
+      </presentation>
+
+      <presentation id="OrgMateScreensaverLockDelayMachine-pr">
+        <decimalTextBox refId="OrgMateScreensaverLockDelay_setter" defaultValue="1">Time in minutes:</decimalTextBox>
+        <checkBox refId="OrgMateScreensaverLockDelay_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateScreensaverLogoutDelayUser-pr">
+        <decimalTextBox refId="OrgMateScreensaverLogoutDelay_setter" defaultValue="1">Time in minutes:</decimalTextBox>
+      </presentation>
+
+      <presentation id="OrgMateScreensaverLogoutDelayMachine-pr">
+        <decimalTextBox refId="OrgMateScreensaverLogoutDelay_setter" defaultValue="1">Time in minutes:</decimalTextBox>
+        <checkBox refId="OrgMateScreensaverLogoutDelay_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateScreensaverCycleDelayUser-pr">
+        <decimalTextBox refId="OrgMateScreensaverCycleDelay_setter" defaultValue="1">Time in minutes:</decimalTextBox>
+      </presentation>
+
+      <presentation id="OrgMateScreensaverCycleDelayMachine-pr">
+        <decimalTextBox refId="OrgMateScreensaverCycleDelay_setter" defaultValue="1">Time in minutes:</decimalTextBox>
+        <checkBox refId="OrgMateScreensaverCycleDelay_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateScreensaverUserSwitchEnabledMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateScreensaverUserSwitchEnabled_setter">Select Enabled or Disabled:</dropdownList>
+        <checkBox refId="OrgMateScreensaverUserSwitchEnabled_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateScreensaverLogoutEnabledMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateScreensaverLogoutEnabled_setter">Select Enabled or Disabled:</dropdownList>
+        <checkBox refId="OrgMateScreensaverLogoutEnabled_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateLockdownDisableLogOutMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateLockdownDisableLogOut_setter">Select Enabled or Disabled:</dropdownList>
+        <checkBox refId="OrgMateLockdownDisableLogOut_setter_blocker">Lock</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateLockdownDisableLockScreenMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateLockdownDisableLockScreen_setter">Select Enabled or Disabled:</dropdownList>
+        <checkBox refId="OrgMateLockdownDisableLockScreen_setter_blocker">Lock</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateLockdownDisableUserSwitchingMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateLockdownDisableUserSwitching_setter">Select Enabled or Disabled:</dropdownList>
+        <checkBox refId="OrgMateLockdownDisableUserSwitching_setter_blocker">Lock</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateLockdownDisableThemeSettingsMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateLockdownDisableThemeSettings_setter">Select Enabled or Disabled:</dropdownList>
+        <checkBox refId="OrgMateLockdownDisableThemeSettings_setter_blocker">Lock</checkBox>
+      </presentation>
+
+      <presentation id="OrgGnomeVinoViewOnlyMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgGnomeVinoViewOnly_setter">Select Enabled or Disabled:</dropdownList>
+        <checkBox refId="OrgGnomeVinoViewOnly_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgGnomeVinoPromptEnabledMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgGnomeVinoPromptEnabled_setter">Select Enabled or Disabled:</dropdownList>
+        <checkBox refId="OrgGnomeVinoPromptEnabled_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgGnomeVinoIconVisibilityUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgGnomeVinoIconVisibility_setter">Show notification:</dropdownList>
+      </presentation>
+
+      <presentation id="OrgGnomeVinoIconVisibilityMachine-pr">
+         <dropdownList noSort="true" defaultItem="0" refId="OrgGnomeVinoIconVisibility_setter">Show notification:</dropdownList>
+         <checkBox refId="OrgGnomeVinoIconVisibility_setter_blocker">Block</checkBox>
+       </presentation>
+
+       <presentation id="OrgGnomeVinoEnabledMachine-pr">
+         <dropdownList noSort="true" defaultItem="0" refId="OrgGnomeVinoEnabled_setter">Select Enabled or Disabled:</dropdownList>
+         <checkBox refId="OrgGnomeVinoEnabled_setter_blocker">Block</checkBox>
+       </presentation>
+
+       <presentation id="OrgGnomeVinoAlternativePortUser-pr">
+         <decimalTextBox refId="OrgGnomeVinoAlternativePort_setter" defaultValue="5000">Port:</decimalTextBox>
+       </presentation>
+
+         <presentation id="OrgGnomeVinoAlternativePortMachine-pr">
+         <decimalTextBox refId="OrgGnomeVinoAlternativePort_setter" defaultValue="5000">Port:</decimalTextBox>
+         <checkBox refId="OrgGnomeVinoAlternativePort_setter_blocker">Block</checkBox>
+       </presentation>
+
+       <presentation id="OrgGnomeVinoUseAlternativePortMachine-pr">
+       <dropdownList noSort="true" defaultItem="0" refId="OrgGnomeVinoUseAlternativePort_setter">Select Enabled or Disabled:</dropdownList>
+         <checkBox refId="OrgGnomeVinoUseAlternativePort_setter_blocker">Block</checkBox>
+       </presentation>
+
+       <presentation id="OrgGnomeVinoAuthenticationMethodsUser-pr">
+         <dropdownList noSort="true" defaultItem="0" refId="OrgGnomeVinoAuthenticationMethods_setter">Method:</dropdownList>
+       </presentation>
+
+       <presentation id="OrgGnomeVinoAuthenticationMethodsMachine-pr">
+         <dropdownList noSort="true" defaultItem="0" refId="OrgGnomeVinoAuthenticationMethods_setter">Method:</dropdownList>
+         <checkBox refId="OrgGnomeVinoAuthenticationMethods_setter_blocker">Block</checkBox>
+       </presentation>
+
+      <presentation id="OrgMateMarcoGeneraButtonLayoutUser-pr">
+        <textBox refId="OrgMateMarcoGeneraButtonLayout_setter">
+          <label></label>
+        </textBox>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneraButtonLayoutMachine-pr">
+        <textBox refId="OrgMateMarcoGeneraButtonLayout_setter">
+          <label></label>
+        </textBox>
+        <checkBox refId="OrgMateMarcoGeneraButtonLayout_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneralWrapStyleUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateMarcoGeneralWrapStyle_setter">Method:</dropdownList>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneralWrapStyleMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateMarcoGeneralWrapStyle_setter">Method:</dropdownList>
+        <checkBox refId="OrgMateMarcoGeneralWrapStyle_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneralShowTabBorderMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateMarcoGeneralShowTabBorder_setter">Select Enabled or Disabled:</dropdownList>
+        <checkBox refId="OrgMateMarcoGeneralShowTabBorder_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneralAllowTopTilingMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateMarcoGeneralAllowTopTiling_setter">Select Enabled or Disabled:</dropdownList>
+        <checkBox refId="OrgMateMarcoGeneralAllowTopTilingMachine_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneralFocusNewWindowsUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateMarcoGeneralFocusNewWindows_setter">Passing focus:</dropdownList>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneralFocusNewWindowsMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateMarcoGeneralFocusNewWindows_setter">Passing focus:</dropdownList>
+        <checkBox refId="OrgMateMarcoGeneralFocusNewWindows_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneralAllowTilingMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateMarcoGeneralAllowTiling_setter">Select Enabled or Disabled:</dropdownList>
+        <checkBox refId="OrgMateMarcoGeneralAllowTiling_setter_blocker">Block</checkBox>
+      </presentation>
+
+        <presentation id="OrgMateMarcoGeneralNumWorkspacesUser-pr">
+        <decimalTextBox refId="OrgMateMarcoGeneralNumWorkspaces_setter" defaultValue="2">Quantity:</decimalTextBox>
+      </presentation>
+
+        <presentation id="OrgMateMarcoGeneralNumWorkspacesMachine-pr">
+        <decimalTextBox refId="OrgMateMarcoGeneralNumWorkspaces_setter" defaultValue="2">Quantity:</decimalTextBox>
+        <checkBox refId="OrgMateMarcoGeneralNumWorkspaces_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneralPlacementModeUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateMarcoGeneralPlacementMode_setter">Location:</dropdownList>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneralPlacementModeMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateMarcoGeneralPlacementMode_setter">Location:</dropdownList>
+        <checkBox refId="OrgMateMarcoGeneralPlacementMode_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneralAutoRaiseMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateMarcoGeneralAutoRaise_setter">Select Enabled or Disabled:</dropdownList>
+        <checkBox refId="OrgMateMarcoGeneralAutoRaise_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneralActionMiddleClickTitlebarUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateMarcoGeneralActionMiddleClickTitlebar_setter">Action:</dropdownList>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneralActionMiddleClickTitlebarMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateMarcoGeneralActionMiddleClickTitlebar_setter">Action:</dropdownList>
+        <checkBox refId="OrgMateMarcoGeneralActionMiddleClickTitlebar_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneralActionRightClickTitlebarUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateMarcoGeneralActionRightClickTitlebar_setter">Action:</dropdownList>
+      </presentation>
+
+        <presentation id="OrgMateMarcoGeneralActionRightClickTitlebarMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateMarcoGeneralActionRightClickTitlebar_setter">Action:</dropdownList>
+        <checkBox refId="OrgMateMarcoGeneralActionRightClickTitlebar_setter_blocker">Block</checkBox>
+      </presentation>
+
+        <presentation id="OrgMateMarcoGeneralActionDoubleClickTitlebarUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateMarcoGeneralActionDoubleClickTitlebar_setter">Action:</dropdownList>
+      </presentation>
+
+        <presentation id="OrgMateMarcoGeneralActionDoubleClickTitlebarMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateMarcoGeneralActionDoubleClickTitlebar_setter">Action:</dropdownList>
+        <checkBox refId="OrgMateMarcoGeneralActionDoubleClickTitlebar_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneralThemeUser-pr">
+        <textBox refId="OrgMateMarcoGeneralTheme_setter">
+          <label>Theme:</label>
+        </textBox>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneralThemeMachine-pr">
+        <textBox refId="OrgMateMarcoGeneralTheme_setter">
+          <label>Theme:</label>
+        </textBox>
+        <checkBox refId="OrgMateMarcoGeneralTheme_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneralTitlebarFont-pr">
+        <textBox refId="OrgMateMarcoGeneralTitlebarFont_setter">
+          <label>Theme:</label>
+        </textBox>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneralTitlebarFontMachine-pr">
+        <textBox refId="OrgMateMarcoGeneralTitlebarFont_setter">
+          <label>Theme:</label>
+        </textBox>
+        <checkBox refId="OrgMateMarcoGeneralTitlebarFont_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneralFocusModeUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateMarcoGeneralFocusMode_setter">Window focus switching mode:</dropdownList>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneralFocusModeMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateMarcoGeneralFocusMode_setter">Window focus switching mode:</dropdownList>
+        <checkBox refId="OrgMateMarcoGeneralFocusMode_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneralTitlebarUsesSystemFontMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateMarcoGeneralTitlebarUsesSystemFont_setter">Select Enabled or Disabled:</dropdownList>
+        <checkBox refId="OrgMateMarcoGeneralTitlebarUsesSystemFont_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneralCompositingFastAltTabMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateMarcoGeneralCompositingFastAltTab_setter">Select Enabled or Disabled:</dropdownList>
+        <checkBox refId="OrgMateMarcoGeneralCompositingFastAltTab_setter_blocker">Block</checkBox>
+      </presentation>
+
+        <presentation id="OrgMateMarcoGeneralAutoRaiseDelayUser-pr">
+        <decimalTextBox refId="OrgMateMarcoGeneralAutoRaiseDelay_setter" defaultValue="500">Milliseconds:</decimalTextBox>
+      </presentation>
+
+        <presentation id="OrgMateMarcoGeneralAutoRaiseDelayMachine-pr">
+        <decimalTextBox refId="OrgMateMarcoGeneralAutoRaiseDelay_setter" defaultValue="500">Milliseconds:</decimalTextBox>
+        <checkBox refId="OrgMateMarcoGeneralAutoRaiseDelay_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateMarcoGeneralCenterNewWindowsMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateMarcoGeneralCenterNewWindows_setter">Select Enabled or Disabled:</dropdownList>
+        <checkBox refId="OrgMateMarcoGeneralCenterNewWindows_setter_blocker">Block</checkBox>
+      </presentation>
+
+        <presentation id="OrgMateMarcoGeneralIconSizeUser-pr">
+        <decimalTextBox refId="OrgMateMarcoGeneralIconSize_setter" defaultValue="48">Size:</decimalTextBox>
+      </presentation>
+
+        <presentation id="OrgMateMarcoGeneralIconSizeMachine-pr">
+        <decimalTextBox refId="OrgMateMarcoGeneralIconSize_setter" defaultValue="48">Size:</decimalTextBox>
+        <checkBox refId="OrgMateMarcoGeneralIconSize_setter_blocker">Block</checkBox>
+      </presentation>
+
+        <presentation id="OrgMateMarcoGeneralAltTabMaxColumnsUser-pr">
+        <decimalTextBox refId="OrgMateMarcoGeneralAltTabMaxColumns_setter" defaultValue="5">Number of columns:</decimalTextBox>
+      </presentation>
+
+        <presentation id="OrgMateMarcoGeneralAltTabMaxColumnsMachine-pr">
+        <decimalTextBox refId="OrgMateMarcoGeneralAltTabMaxColumns_setter" defaultValue="5">Number of columns:</decimalTextBox>
+        <checkBox refId="OrgMateMarcoGeneralAltTabMaxColumns_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMatePeripheralsKeyboardDelayUser-pr">
+        <decimalTextBox refId="OrgMatePeripheralsKeyboardDelay_setter">Delay:</decimalTextBox>
+      </presentation>
+
+      <presentation id="OrgMatePeripheralsKeyboardDelayMachine-pr">
+        <decimalTextBox refId="OrgMatePeripheralsKeyboardDelay_setter">Delay:</decimalTextBox>
+        <checkBox refId="OrgMatePeripheralsKeyboardDelay_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMatePeripheralsKeyboardRepeatMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMatePeripheralsKeyboardRepeat_setter">Repeat the key that is held down</dropdownList>
+        <checkBox refId="OrgMatePeripheralsKeyboardRepeat_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMatePeripheralsKeyboardRateUser-pr">
+        <decimalTextBox refId="OrgMatePeripheralsKeyboardRate_setter">Repeat rate:</decimalTextBox>
+      </presentation>
+
+      <presentation id="OrgMatePeripheralsKeyboardRateMachine-pr">
+        <decimalTextBox refId="OrgMatePeripheralsKeyboardRate_setter">Repeat rate:</decimalTextBox>
+        <checkBox refId="OrgMatePeripheralsKeyboardRate_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateSessionIdleDelayUser-pr">
+        <decimalTextBox refId="OrgMateSessionIdleDelay_setter" defaultValue="5">Time in minutes</decimalTextBox>
+      </presentation>
+
+      <presentation id="OrgMateSessionIdleDelayMachine-pr">
+        <decimalTextBox refId="OrgMateSessionIdleDelay_setter" defaultValue="5">Time in minutes:</decimalTextBox>
+        <checkBox refId="OrgMateSessionIdleDelay_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateSessionLogoutTimeoutUser-pr">
+        <decimalTextBox refId="OrgMateSessionLogoutTimeout_setter" defaultValue="60">Time in seconds</decimalTextBox>
+      </presentation>
+
+      <presentation id="OrgMateSessionLogoutTimeoutMachine-pr">
+        <decimalTextBox refId="OrgMateSessionLogoutTimeout_setter" defaultValue="60">Time in seconds:</decimalTextBox>
+        <checkBox refId="OrgMateSessionLogoutTimeout_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateSessionLogoutPromptMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateSessionLogoutPrompt_setter">Request when exiting a session:</dropdownList>
+        <checkBox refId="OrgMateSessionLogoutPrompt_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateSessionAutoSaveSessionMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateSessionAutoSaveSession_setter">Saving sessions:</dropdownList>
+        <checkBox refId="OrgMateSessionAutoSaveSession_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="OrgMateSessionShowHiddenAppsMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="OrgMateSessionShowHiddenApps_setter">Show hidden startup applications:</dropdownList>
+        <checkBox refId="OrgMateSessionShowHiddenApps_setter_blocker">Block</checkBox>
+      </presentation>
+
+      <presentation id="WinbindDNSUpdateIPv4-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="WinbindDNSUpdateIPv4_setter">Updating forward IPv4 DNS record:</dropdownList>
+        <checkBox refId="WinbindDNSUpdateIPv4ptr_setter">Updating reverse IPv4 DNS record:</checkBox>
+      </presentation>
+
+      <presentation id="WinbindDNSUpdateIPv6-pr">
+        <dropdownList noSort="true" defaultItem="1" refId="WinbindDNSUpdateIPv6_setter">Updating forward IPv6 DNS record:</dropdownList>
+        <checkBox refId="WinbindDNSUpdateIPv6ptr_setter">Updating reverse IPv6 DNS record:</checkBox>
+      </presentation>
+
+      <presentation id="WinbindDNSUpdateTTL-pr">
+        <decimalTextBox refId="WinbindDNSUpdateTTL_setter" defaultValue="3600">Time in seconds:</decimalTextBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

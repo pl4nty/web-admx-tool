@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2023 BaseALT, Ltd.  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" revision="1.0" schemaVersion="1.0">
+  <displayName>ALT Accounts policies definitions</displayName>
+  <description> Accounts policies for the ALT operating system.</description>
+  <resources>
+    <stringTable>
+
+      <string id="org-freedesktop-accounts-change-own-password">Permission to change a user's own password</string>
+      <string id="org-freedesktop-accounts-change-own-password_help">The policy restricts the ability to change a user's own password
+
+Disabled/Unconfigured — restrictions are defined by system parameters.
+
+Enabled — restriction with defined rights;
+
+Possible values:
+
+"No" — set restriction with action denial (user is not allowed to perform the action);
+
+"Yes" — remove the restriction (the user can perform the action without any authentication);
+
+"Auth_self" — the user must enter his/her password for authentication. Note, this level of restriction is not sufficient for most multi-user applications, "Auth_admin" is usually recommended;
+
+"Auth_admin" — the user must enter the administrator password at each request. Requires authentication of the user with administrator privileges;
+
+"Auth_self_keep" — similar to "Auth_self", but authorization is maintained for a short period of time (e.g., five minutes). Note, this level of restriction is insufficient for most multi-user applications, "Auth_admin_keep" is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but authorization is maintained for a short period of time (e.g., five minutes);
+      
+Note: the possession of administrative rights in a PolicyKit context is determined by its rules. By default, Alt asks for the password of a user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-accounts-change-own-password-user">Permission to change a user's own password</string>
+      <string id="org-freedesktop-accounts-change-own-password-user_help">The policy restricts the ability to change a user's own password
+
+Disabled/Unconfigured — restrictions are defined by system parameters.
+
+Enabled — restriction with defined rights;
+
+Possible values:
+
+"No" — set restriction with action denial (user is not allowed to perform the action);
+
+"Yes" — remove the restriction (the user can perform the action without any authentication);
+
+"Auth_self" — the user must enter his/her password for authentication. Note, this level of restriction is not sufficient for most multi-user applications, "Auth_admin" is usually recommended;
+
+"Auth_admin" — the user must enter the administrator password at each request. Requires authentication of the user with administrator privileges;
+
+"Auth_self_keep" — similar to "Auth_self", but authorization is maintained for a short period of time (e.g., five minutes). Note, this level of restriction is insufficient for most multi-user applications, "Auth_admin_keep" is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but authorization is maintained for a short period of time (e.g., five minutes);
+      
+Note: the possession of administrative rights in a PolicyKit context is determined by its rules. By default, Alt asks for the password of a user in the "wheel" group.
+
+      </string>
+      <string id="org-freedesktop-accounts-change-own-user-data">Permission to modify your own user data</string>
+      <string id="org-freedesktop-accounts-change-own-user-data_help">The policy restricts the ability to modify your own user data
+
+Disabled/Unconfigured — restrictions are defined by system parameters.
+
+Enabled — restriction with defined rights;
+
+Possible values:
+
+"No" — set restriction with action denial (user is not allowed to perform the action);
+
+"Yes" — remove the restriction (the user can perform the action without any authentication);
+
+"Auth_self" — the user must enter his/her password for authentication. Note, this level of restriction is not sufficient for most multi-user applications, "Auth_admin" is usually recommended;
+
+"Auth_admin" — the user must enter the administrator password at each request. Requires authentication of the user with administrator privileges;
+
+"Auth_self_keep" — similar to "Auth_self", but authorization is maintained for a short period of time (e.g., five minutes). Note, this level of restriction is insufficient for most multi-user applications, "Auth_admin_keep" is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but authorization is maintained for a short period of time (e.g., five minutes);
+      
+Note: the possession of administrative rights in a PolicyKit context is determined by its rules. By default, Alt asks for the password of a user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-accounts-change-own-user-data-user">Permission to modify your own user data</string>
+      <string id="org-freedesktop-accounts-change-own-user-data-user_help">The policy restricts the ability to modify your own user data   
+
+Disabled/Unconfigured — restrictions are defined by system parameters.
+
+Enabled — restriction with defined rights;
+
+Possible values:
+
+"No" — set restriction with action denial (user is not allowed to perform the action);
+
+"Yes" — remove the restriction (the user can perform the action without any authentication);
+
+"Auth_self" — the user must enter his/her password for authentication. Note, this level of restriction is not sufficient for most multi-user applications, "Auth_admin" is usually recommended;
+
+"Auth_admin" — the user must enter the administrator password at each request. Requires authentication of the user with administrator privileges;
+
+"Auth_self_keep" — similar to "Auth_self", but authorization is maintained for a short period of time (e.g., five minutes). Note, this level of restriction is insufficient for most multi-user applications, "Auth_admin_keep" is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but authorization is maintained for a short period of time (e.g., five minutes);
+      
+Note: the possession of administrative rights in a PolicyKit context is determined by its rules. By default, Alt asks for the password of a user in the "wheel" group.
+
+      </string>
+      <string id="org-freedesktop-accounts-set-login-option">Permission to change the configuration of the login screen</string>
+      <string id="org-freedesktop-accounts-set-login-option_help">The policy restricts the ability to change the logon screen configuration
+
+Disabled/Unconfigured — restrictions are defined by system parameters.
+
+Enabled — restriction with defined rights;
+
+Possible values:
+
+"No" — set restriction with action denial (user is not allowed to perform the action);
+
+"Yes" — remove the restriction (the user can perform the action without any authentication);
+
+"Auth_self" — the user must enter his/her password for authentication. Note, this level of restriction is not sufficient for most multi-user applications, "Auth_admin" is usually recommended;
+
+"Auth_admin" — the user must enter the administrator password at each request. Requires authentication of the user with administrator privileges;
+
+"Auth_self_keep" — similar to "Auth_self", but authorization is maintained for a short period of time (e.g., five minutes). Note, this level of restriction is insufficient for most multi-user applications, "Auth_admin_keep" is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but authorization is maintained for a short period of time (e.g., five minutes);
+      
+Note: the possession of administrative rights in a PolicyKit context is determined by its rules. By default, Alt asks for the password of a user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-accounts-set-login-option-user">Permission to change the configuration of the login screen</string>
+      <string id="org-freedesktop-accounts-set-login-option-user_help">The policy restricts the ability to change the logon screen configuration
+
+Disabled/Unconfigured — restrictions are defined by system parameters.
+
+Enabled — restriction with defined rights;
+
+Possible values:
+
+"No" — set restriction with action denial (user is not allowed to perform the action);
+
+"Yes" — remove the restriction (the user can perform the action without any authentication);
+
+"Auth_self" — the user must enter his/her password for authentication. Note, this level of restriction is not sufficient for most multi-user applications, "Auth_admin" is usually recommended;
+
+"Auth_admin" — the user must enter the administrator password at each request. Requires authentication of the user with administrator privileges;
+
+"Auth_self_keep" — similar to "Auth_self", but authorization is maintained for a short period of time (e.g., five minutes). Note, this level of restriction is insufficient for most multi-user applications, "Auth_admin_keep" is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but authorization is maintained for a short period of time (e.g., five minutes);
+      
+Note: the possession of administrative rights in a PolicyKit context is determined by its rules. By default, Alt asks for the password of a user in the "wheel" group.
+
+      </string>
+      <string id="org-freedesktop-accounts-user-administration">Permission to manage user accounts</string>
+      <string id="org-freedesktop-accounts-user-administration_help">The policy restricts the ability to manage user accounts
+
+Disabled/Unconfigured — restrictions are defined by system parameters.
+
+Enabled — restriction with defined rights;
+
+Possible values:
+
+"No" — set restriction with action denial (user is not allowed to perform the action);
+
+"Yes" — remove the restriction (the user can perform the action without any authentication);
+
+"Auth_self" — the user must enter his/her password for authentication. Note, this level of restriction is not sufficient for most multi-user applications, "Auth_admin" is usually recommended;
+
+"Auth_admin" — the user must enter the administrator password at each request. Requires authentication of the user with administrator privileges;
+
+"Auth_self_keep" — similar to "Auth_self", but authorization is maintained for a short period of time (e.g., five minutes). Note, this level of restriction is insufficient for most multi-user applications, "Auth_admin_keep" is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but authorization is maintained for a short period of time (e.g., five minutes);
+      
+Note: the possession of administrative rights in a PolicyKit context is determined by its rules. By default, Alt asks for the password of a user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+      <string id="org-freedesktop-accounts-user-administration-user">Permission to manage user accounts</string>
+      <string id="org-freedesktop-accounts-user-administration-user_help">The policy restricts the ability to manage user accounts
+
+Disabled/Unconfigured — restrictions are defined by system parameters.
+
+Enabled — restriction with defined rights;
+
+Possible values:
+
+"No" — set restriction with action denial (user is not allowed to perform the action);
+
+"Yes" — remove the restriction (the user can perform the action without any authentication);
+
+"Auth_self" — the user must enter his/her password for authentication. Note, this level of restriction is not sufficient for most multi-user applications, "Auth_admin" is usually recommended;
+
+"Auth_admin" — the user must enter the administrator password at each request. Requires authentication of the user with administrator privileges;
+
+"Auth_self_keep" — similar to "Auth_self", but authorization is maintained for a short period of time (e.g., five minutes). Note, this level of restriction is insufficient for most multi-user applications, "Auth_admin_keep" is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but authorization is maintained for a short period of time (e.g., five minutes);
+      
+Note: the possession of administrative rights in a PolicyKit context is determined by its rules. By default, Alt asks for the password of a user in the "wheel" group.
+
+
+      </string>
+
+      <string id="org-freedesktop-accounts-No">No</string>
+      <string id="org-freedesktop-accounts-Yes">Yes</string>
+      <string id="org-freedesktop-accounts-Auth-self">Auth_self</string>
+      <string id="org-freedesktop-accounts-Auth-admin">Auth_admin</string>
+      <string id="org-freedesktop-accounts-Auth-self-keep">Auth_self_keep</string>
+      <string id="org-freedesktop-accounts-Auth-admin-keep">Auth_admin_keep</string>
+
+</stringTable>
+    <presentationTable>
+      <presentation id="org-freedesktop-accounts-pr">
+       <dropdownList noSort="true" defaultItem="1" refId="OrgFreedesktopAccounts_setter">Restriction options:</dropdownList>
+       <checkBox refId="OrgFreedesktopAccounts_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="org-freedesktop-accounts-user-pr">
+       <dropdownList noSort="true" defaultItem="1" refId="OrgFreedesktopAccounts_setter">Restriction options:</dropdownList>
+      </presentation>
+    </presentationTable>
+  </resources>
+ </policyDefinitionResources>
+
+
+

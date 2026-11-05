@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2023 BaseALT, Ltd.  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" revision="1.0" schemaVersion="1.0">
+  <displayName>Definitions of the KDE Plasma policies of the Alt operating system</displayName>
+  <description>This file contains policy definitions for managing the KDE Plasma environment in the Alt operating system.</description>
+
+  <resources>
+    <stringTable>
+      <string id="ALT_Settings_KDE">Settings of the KDE Plasma graphics system</string>
+      <string id="ALT_Settings_KDE_Help">Settings of the KDE Plasma graphics system.</string>
+
+      <string id="kde-win-activate">Window activation mode</string>
+      <string id="kde-win-activate_help">The mode of switching focus to a window determines how windows are activated. Acceptable values:
+
+"Click to focus" — the window becomes active after clicking on the title or inside the window.
+
+"Click to focus" (mouse precedence) — this mode is similar to "Click Focus". If the system itself has to select the active window (for example, when the active window was closed), preference is given to the window under the mouse pointer.
+
+"Focus follows mouse" — the window is activated when the mouse pointer is moved to this window. Windows that appear under the mouse pointer randomly will not receive focus, since preventing the focus change works as usual. This option is similar to "Click Focus", but no click is required."
+
+"Focus follows mouse" (mouse precedence) — this mode is similar to "Focus follows mouse". If the system itself has to select the active window (for example, when closing the active window), preference will be given to the window located under the mouse pointer. This mode should be selected to change the focus by hovering the mouse pointer.
+
+"Focus under the mouse" — the focus is always in the window under the mouse. Note: Preventing focus change and switching via Alt+Tab contradict this behavior and will not work.
+
+"Focus strictly under mouse" — the focus is always in the window under the mouse pointer (and if it is empty under it, it is lost). Note: Preventing focus change and switching via Alt+Tab contradict this behavior and will not work.
+
+The "Block" option is necessary to prevent the user from changing this setting.
+
+      </string>
+
+      <string id="kde-win-rendering">Draw delay</string>
+      <string id="kde-win-rendering_help">The policy allows you to select the level of delay and smoothness of the animation. Valid values:
+
+"Forced low latency (may lead to artifacts)";
+
+"Prefer low latency";
+
+"The balance of speed and smoothness";
+
+"Prefer smoother animation";
+
+"Forced smoothest animation".
+
+The "Block" option is necessary to prevent the user from changing this setting.
+
+      </string>
+
+      <string id="kde-language">Regional and Language Options</string>
+      <string id="kde-language_help">These parameters not only change the settings for the system language itself, but also set the currency settings, time standard, numeric values, name writing style, telephone code, and country telephone number standard. The parameters are entered in the “Standard” and “Language” fields, respectively. For example, standard: ru_RU.UTF-8, language: ru. Valid values:
+
+“Russian language” standard — ru_RU.UTF-8, language — ru;
+
+“French language” standard — fr_FR.UTF-8, language — fr;
+
+“German language” standard — de_DE.UTF-8, language — de;
+
+“English (American)” standard — en_US.UTF-8, language — en_US;
+
+“English (British)” standard – en_GB.UTF-8, language – en_GB.
+
+The "Block" option is necessary to prevent the user from changing this setting.
+
+      </string>
+
+      <string id="kde-automount">Setting Up Connected Devices</string>
+      <string id="kde-automount_help">This policy allows you to configure automatic mounting of connected devices. Possible options for setting up automatic mounting:
+
+"At login";
+
+"When connected";
+
+"Automatically mount media that has never been manually mounted before".
+
+Note: The options “At login”, “At connected”, and “Automatically mount media that have never been manually mounted before” only is only used when the “Automatically mount devices” option is enabled.
+
+The "Block" option is necessary to prevent the user from changing this setting.
+
+      </string>
+
+      <string id="kde-filesearch">File search service</string>
+      <string id="kde-filesearch_help">This policy allows you to configure the file search service, index the contents of files, index hidden files and folders. Possible setting options:
+
+"Enable File Search Service"
+
+"Enable file content indexing"
+
+“Enable indexing of hidden files and folders”
+
+Note: The “Enable indexing of file contents” and “Enable indexing of hidden files and folders” options only is only used if the “Enable File Search Service” option is enabled.
+
+The "Block" option is necessary to prevent the user from changing this setting.
+
+      </string>
+
+      <string id="kde-desktops">Virtual desktops</string>
+      <string id="kde-desktops_help">This policy allows you to configure the number of virtual desktops. The number of tables can be from one to four inclusive.
+
+The "Block" option is necessary to prevent the user from changing this setting.
+
+      </string>
+
+      <string id="kde-wallpaper">Desktop wallpaper</string>
+      <string id="kde-wallpaper_help">This policy allows you to set the desktop wallpaper by specifying the path to the image.
+
+Example paths:
+
+/usr/share/wallpapers/image.png — local path to the image;
+
+smb://computername/share/image.png — path in Linux format to the image in the shared directory on the server;
+
+\\computername\share\image.png — path in Windows format to the image in the shared directory on the server.
+
+      </string>
+
+      <string id="kde-graphic-effects">Graphic effects</string>
+      <string id="kde-graphic-effects_help">The policy configures enabling or disabling graphical effects on login.
+
+The "Block" option is necessary to prevent the user from changing this setting.
+
+      </string>
+
+      <string id="kde-showdelete">Deleting directories and files in the context menu</string>
+      <string id="kde-showdelete_help">The policy allows you to add or remove the "delete" button in the Dolphin context menu.
+
+The "Block" option is necessary to prevent the user from changing this setting.
+
+      </string>
+
+      <string id="kde-filterbar">Enabling the filter panel in the Dolphin file manager</string>
+      <string id="kde-filterbar_help">The policy allows you to enable or disable the filter panel in the Dolphin file manager</string>
+
+      <string id="kde-singleclick">Opening a file or directory with one click</string>
+      <string id="kde-singleclick_help">This policy configures opening a folder or file with one click.
+
+If the policy is enabled, clicking will open the file or folder.
+
+If the policy is disabled, clicking on the file or folder will highlight it.
+
+The "Block" option is necessary to prevent the user from changing this setting.
+
+      </string>
+
+      <string id="kde-colorscheme">Colors</string>
+      <string id="kde-colorscheme_help">This policy allows you to set a color scheme by specifying the name of the scheme (for example, BreezeClassic). The use of a color scheme depends on its availability in the system. To add new schemes, you must install packages that include these schemes.
+
+Possible parameter values:
+
+      - OxygenCold
+      - BreezeClassic
+      - BreezeLight
+      - BreezeDark
+      - Oxygen
+
+The "Block" option is necessary to prevent the user from changing this setting.
+
+      </string>
+
+      <string id="kde-cursortheme">Cursor theme</string>
+      <string id="kde-cursortheme_help">This policy allows you to set the mouse cursor theme by specifying the theme name (for example, Adwaita). The use of a cursor theme depends on its availability in the system. To add new themes, you must install packages that include those themes.
+
+Possible parameter values:
+
+      - Adwaita
+      - Breeze_Snow
+      - KDE_Classic
+      - Oxygen_Black
+      - Oxygen_Blue
+      - Oxygen_White
+      - Oxygen_Yellow
+      - Oxygen_Zion
+      - jimmac
+      - breeze_cursors
+
+The "Block" option is necessary to prevent the user from changing this setting.
+
+      </string>
+
+      <string id="kde-iconstheme">Icons theme</string>
+      <string id="kde-iconstheme_help">This policy allows you to set an icon theme by specifying the theme name (for example, gnome). The application of an icon theme depends on its availability in the system. To add new themes, you must install packages that include those themes.
+
+Possible parameter values:
+
+      - Adwaita
+      - Oxygen
+      - Breeze
+      - Breeze_dark
+      - Gnome
+
+The "Block" option is necessary to prevent the user from changing this setting.
+
+      </string>
+
+      <string id="kde-look-and-feel">Design of the working environment</string>
+      <string id="kde-look-and-feel_help">This policy allows you to set a desktop theme by specifying the theme name in the format: org.kde.name.desktop or org.kde.name, depending on the name of the theme in the /usr/share/plasma/look-and-feel directory (for example , org.kde.breeze.desktop or org.kde.oxygen).
+
+The use of a theme depends on its availability in the system. To add new themes, you must install packages that include those themes.
+
+Possible parameter values:
+
+      - org.kde.breeze.desktop
+      - org.kde.oxygen
+
+The "Block" option is necessary to prevent the user from changing this setting.
+
+      </string>
+
+      <string id="kde-background">Background theme</string>
+      <string id="kde-background_help">This policy allows you to set a desktop theme by specifying the theme name in the format: org.kde.name.desktop or org.kde.name, depending on the name of the theme in the /usr/share/plasma/look-and-feel directory (for example , org.kde.breeze.desktop or org.kde.oxygen).
+
+The use of a theme depends on its availability in the system. To add new themes, you must install packages that include those themes.
+
+Possible parameter values:
+
+      - org.kde.breeze.desktop
+      - org.kde.breezedark.desktop
+      - org.kde.oxygen
+      - org.kde.breezetwilight.desktop
+
+The "Block" option is necessary to prevent the user from changing this setting.
+
+      </string>
+
+      <string id="kde-desktoptheme">Desktop decoration</string>
+      <string id="kde-desktoptheme_help">This policy allows you to set a desktop theme by specifying the theme name (for example, default). The use of a desktop theme depends on its availability on the system. To add new themes, you must install packages that include those themes.
+
+Possible parameter values:
+
+      - default
+      - breeze-light
+      - breeze-dark
+      - oxygen
+      - air
+
+The "Block" option is necessary to prevent the user from changing this setting.
+
+      </string>
+
+      <string id="kde-browserapp">Default browser</string>
+      <string id="kde-browserapp_help">This policy allows you to select the default browser. Note: the application of settings is available only if the selected browser is installed in the system.
+
+       Valid parameter values:
+
+       - Yandex Browser
+       - Firefox
+       - Chromium-gost
+
+      </string>
+
+      <string id="kde-brightnesscontrol">Screen brightness</string>
+      <string id="kde-brightnesscontrol_help">This policy allows you to adjust the screen brightness depending on the power supply mode.
+
+Screen brightness in mains power mode: range of values from 0 to 100;
+
+Screen brightness in battery mode: range from 0 to 100;
+
+Screen brightness at low battery level: value range from 0 to 100.
+
+The "Block" option is necessary to prevent the user from changing this setting.
+
+      </string>
+
+      <string id="kde-keyboardbrightnesscontrol">Keyboard brightness</string>
+      <string id="kde-keyboardbrightnesscontrol_help">This policy allows you to adjust the keyboard brightness depending on the power supply mode.
+
+Keyboard brightness in mains power mode: range of values from 0 to 100;
+
+Keyboard brightness in battery mode: range of values from 0 to 100;
+
+Keyboard brightness at low battery level: value range from 0 to 100.
+
+The "Block" option is necessary to prevent the user from changing this setting.
+
+      </string>
+
+      <string id="kde-dimdisplay">Screen fading</string>
+      <string id="kde-dimdisplay_help">This policy allows you to configure the time before the screen goes dark depending on the power supply mode. The exact time in minutes specified in milliseconds is used to indicate. If the time in milliseconds is incorrect and does not correspond to an integer value in minutes, the time is automatically rounded to the nearest integer value in minutes.
+
+Valid parameter values are in milliseconds, for example:
+
+60000 milliseconds — 1 minute;
+
+120000 milliseconds — 2 minutes;
+
+600000 milliseconds — 10 minutes.
+
+The "Block" option is necessary to prevent the user from changing this setting.
+
+      </string>
+
+      <string id="kde-dpmscontrol">Monitor energy saving</string>
+      <string id="kde-dpmscontrol_help">This policy allows you to configure the time before the monitor turns off depending on the power supply mode. The exact time in minutes specified in seconds is used to indicate. If the time in seconds is incorrect and does not correspond to an integer value in minutes, then the time is automatically rounded to the nearest integer value in minutes.
+
+Valid parameter values in seconds, for example:
+
+60 seconds — 1 minute;
+
+300 seconds — 5 minutes;
+
+600 seconds — 10 minutes.
+
+The "Block" option is necessary to prevent the user from changing this setting.
+
+      </string>
+
+      <string id="kde-screenlocker">Screen lock</string>
+      <string id="kde-screenlocker_help">This policy allows you to adjust screen lock settings.
+
+The “Time until screen locks when inactive” setting will only be applied if the “Automatically lock screen” option is enabled.
+
+The “Block” option is necessary to prevent the user from changing this setting.
+
+      </string>
+
+      <string id="kde-plasma-update">Update the Plasma graphical environment</string>
+      <string id="kde-plasma-update_help">If the policy is enabled, when the path to the desktop image file changes, the Plasma-plasmashell graphical environment service will be automatically updated.
+
+      </string>
+
+      <string id="kde-win-act-Click_to_focus">Click to focus</string>
+      <string id="kde-win-act-Focus_follows_mouse">Focus follows mouse</string>
+      <string id="kde-win-act-Focus_under_mouse">Focus under mouse</string>
+      <string id="kde-win-act-Focus_under_mouse-Mp">Focus strictly under mouse</string>
+
+      <string id="kde-win-rend-ExtremelyLow">Forced low latency (may lead to artifacts)</string>
+      <string id="kde-win-rend-Low">Prefer low latency</string>
+      <string id="kde-win-rend-Medium">Balance of speed and smoothness</string>
+      <string id="kde-win-rend-High">Prefer smoother animation</string>
+      <string id="kde-win-rend-MostHigh">Force the smoothest animation</string>
+
+      <string id="kde-autolock-enabled">Enabled</string>
+      <string id="kde-autolock-disabled">Disabled</string>
+
+      <string id="kde-lockonresume-enabled">Enabled</string>
+      <string id="kde-lockonresume-disabled">Disabled</string>
+
+      <string id="kde-browserapp-yandex">Yandex-Browser</string>
+      <string id="kde-browserapp-firefox">Firefox</string>
+      <string id="kde-browserapp-chromium">Chromium-gost</string>
+
+      </stringTable>
+    <presentationTable>
+      <presentation id="kde-win-activate-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="kde-win-activate_setter">Possible modes:</dropdownList>
+        <checkBox refId="NextFocusPrefersMouse">Mouse precedence</checkBox>
+        <checkBox refId="kde-win-activate_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="kde-language-pr">
+        <textBox refId="kde-format_setter">
+          <label>Standard:</label>
+        </textBox>
+        <checkBox refId="kde-format_blocker">Block system standard setting</checkBox>
+        <textBox refId="kde-language_setter">
+          <label>Language:</label>
+        </textBox>
+        <checkBox refId="kde-language_blocker">Block system language setting</checkBox>
+      </presentation>
+      <presentation id="kde-win-rendering-pr">
+        <dropdownList noSort="true" defaultItem="4" refId="kde-win-rendering_setter">Possible language options:</dropdownList>
+        <checkBox refId="kde-win-rendering_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="kde-desktops-pr">
+        <decimalTextBox refId="kde-desktopnumber_setter" defaultValue="1">Number of virtual tables on the panel:</decimalTextBox>
+        <checkBox refId="kde-desktopnumber_blocker">Block setting the number of virtual desks</checkBox>
+        <decimalTextBox refId="kde-desktoprows_setter" defaultValue="1">Number of lines to display virtual desks on the panel:</decimalTextBox>
+        <checkBox refId="kde-desktoprows_blocker">Block setting the number of virtual desktop display lines</checkBox>
+      </presentation>
+      <presentation id="kde-automount-pr">
+        <checkBox refId="kde-automount_setter">Automatically mount devices</checkBox>
+        <checkBox refId="kde-automount_blocker">Block automount setting</checkBox>
+        <checkBox refId="kde-automountonlogin_setter">At login</checkBox>
+        <checkBox refId="kde-automountonlogin_blocker">Block automount setting at login</checkBox>
+        <checkBox refId="kde-automountonplugin_setter">When connected</checkBox>
+        <checkBox refId="kde-automountonplugin_blocker">Block automount setting when connecting</checkBox>
+        <checkBox refId="kde-automountuknowndevices_setter">Automatically mount media that has never been manually mounted before</checkBox>
+        <checkBox refId="kde-automountuknowndevices_blocker">Block the option to automatically mount devices that were not manually mounted</checkBox>
+      </presentation>
+      <presentation id="kde-filesearch-pr">
+        <checkBox refId="kde-basicsettings_setter">Enable file search service only</checkBox>
+        <checkBox refId="kde-onlybasic_setter">Enable file content indexing</checkBox>
+        <checkBox refId="kde-indexhidden_setter">Enable indexing of hidden files and folders</checkBox>
+        <checkBox refId="kde-filesearch_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="kde-wallpaper-pr">
+        <textBox refId="kde-wallpaper_setter">
+          <label>Path to image:</label>
+        </textBox>
+      </presentation>
+      <presentation id="kde-colorscheme-pr">
+        <textBox refId="kde-colorscheme_setter">
+          <label>Color scheme:</label>
+        </textBox>
+        <checkBox refId="kde-colorscheme_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="kde-cursortheme-pr">
+        <textBox refId="kde-cursortheme_setter">
+          <label>Cursor theme:</label>
+        </textBox>
+        <checkBox refId="kde-cursortheme_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="kde-filterbar-pr">
+        <checkBox refId="kde-filterbar_setter">Enable filter panel in Dolphin file manager</checkBox>
+      </presentation>
+      <presentation id="kde-graphic-effects-pr">
+        <checkBox refId="kde-graphic-effects_setter">Enable graphic effects</checkBox>
+        <checkBox refId="kde-graphic-effects_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="kde-singleclick-pr">
+        <checkBox refId="kde-singleclick_setter">Opening a folder or file with one click</checkBox>
+        <checkBox refId="kde-singleclick_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="kde-showdelete-pr">
+        <checkBox refId="kde-showdelete_setter">Add "delete" button from Dolphin context menu</checkBox>
+        <checkBox refId="kde-showdelete_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="kde-iconstheme-pr">
+        <textBox refId="kde-iconstheme_setter">
+          <label>Icons theme:</label>
+        </textBox>
+        <checkBox refId="kde-iconstheme_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="kde-look-and-feel-pr">
+        <textBox refId="kde-look-and-feel_setter">
+          <label>Design of the working environment:</label>
+        </textBox>
+        <checkBox refId="kde-look-and-feel_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="kde-background-pr">
+        <textBox refId="kde-background_setter">
+          <label>Screensaver theme:</label>
+        </textBox>
+        <checkBox refId="kde-background_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="kde-desktoptheme-pr">
+        <textBox refId="kde-desktoptheme_setter">
+          <label>Desktop theme:</label>
+        </textBox>
+        <checkBox refId="kde-desktoptheme_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="kde-browserapp-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="kde-browserapp_setter">Default browser:</dropdownList>
+      </presentation>
+      <presentation id="kde-brightnesscontrol-pr">
+        <textBox refId="kde-acbrightnesscontrol_setter">
+          <label>Screen brightness when powered from mains:</label>
+        </textBox>
+        <checkBox refId="kde-acbrightnesscontrol_blocker">Block brightness control when on AC power</checkBox>
+        <textBox refId="kde-batbrightnesscontrol_setter">
+          <label>Screen brightness on battery power:</label>
+        </textBox>
+        <checkBox refId="kde-batbrightnesscontrol_blocker">Block brightness control when on battery power</checkBox>
+        <textBox refId="kde-lowbrightnesscontrol_setter">
+          <label>Screen brightness when battery is low:</label>
+        </textBox>
+        <checkBox refId="kde-lowbrightnesscontrol_blocker">Block brightness control when battery is low</checkBox>
+        </presentation>
+      <presentation id="kde-keyboardbrightnesscontrol-pr">
+        <textBox refId="kde-ackeyboardbrightnesscontrol_setter">
+          <label>Keyboard brightness when powered from mains:</label>
+        </textBox>
+        <checkBox refId="kde-ackeyboardbrightnesscontrol_blocker">Block brightness control when on mains power</checkBox>
+        <textBox refId="kde-batkeyboardbrightnesscontrol_setter">
+          <label>Keyboard brightness on battery power:</label>
+        </textBox>
+        <checkBox refId="kde-batkeyboardbrightnesscontrol_blocker">Block brightness control when on battery power</checkBox>
+        <textBox refId="kde-lowkeyboardbrightnesscontrol_setter">
+          <label>Keyboard brightness when battery is low:</label>
+        </textBox>
+        <checkBox refId="kde-lowkeyboardbrightnesscontrol_blocker">Block brightness control when battery is low</checkBox>
+      </presentation>
+      <presentation id="kde-dimdisplay-pr">
+        <textBox refId="kde-acdimdisplay_setter">
+          <label>Time before screen goes dark when powered from mains:</label>
+        </textBox>
+        <checkBox refId="kde-acdimdisplay_blocker">Block AC dimming setting</checkBox>
+        <textBox refId="kde-batdimdisplay_setter">
+          <label>Time before screen goes blank when on battery power:</label>
+        </textBox>
+        <checkBox refId="kde-batdimdisplay_blocker">Block dimming setting when on battery power</checkBox>
+        <textBox refId="kde-lowdimdisplay_setter">
+          <label>Time before screen goes blank when battery is low:</label>
+        </textBox>
+        <checkBox refId="kde-lowdimdisplay_blocker">Block low battery dim setting</checkBox>
+       </presentation>
+      <presentation id="kde-dpmscontrol-pr">
+        <textBox refId="kde-acdpmscontrol_setter">
+          <label>Time before the monitor turns off when powered from the mains:</label>
+        </textBox>
+        <checkBox refId="kde-acdpmscontrol_blocker">Block time setting when on mains power</checkBox>
+        <textBox refId="kde-batdpmscontrol_setter">
+          <label>Time before the monitor turns off when on battery power:</label>
+        </textBox>
+        <checkBox refId="kde-batdpmscontrol_blocker">Block time setting when on battery power</checkBox>
+        <textBox refId="kde-lowdpmscontrol_setter">
+          <label>Time before monitor turns off when battery is low:</label>
+        </textBox>
+        <checkBox refId="kde-lowdpmscontrol_blocker">Block time setting when battery is low</checkBox>
+       </presentation>
+       <presentation id="kde-screenlocker-pr">
+        <checkBox refId="kde-screenlocker-autolock_setter">Automatically lock screen</checkBox>
+        <checkBox refId="kde-screenlocker-autolock_blocker">Lock automatic screen lock setting</checkBox>
+        <decimalTextBox refId="kde-screenlocker-timeout_setter" defaultValue="5">Time until the screen locks when there is no activity in minutes:
+        </decimalTextBox>
+        <checkBox refId="kde-screenlocker-timeout_blocker">Block timeout settings</checkBox>
+        <checkBox refId="kde-screenlocker-lockonresume_setter">Automatically lock the screen after resuming from standby</checkBox>
+        <checkBox refId="kde-screenlocker-lockonresume_blocker">Block the auto-lock setting when resuming from standby</checkBox>
+        <decimalTextBox refId="kde-screenlocker-lockgrace_setter" defaultValue="5">Time to unlock the screen without a password in seconds:
+        </decimalTextBox>
+        <checkBox refId="kde-screenlocker-lockgrace_blocker">Lock automatic unlock time setting</checkBox>
+      </presentation>
+     </presentationTable>
+  </resources>
+</policyDefinitionResources>

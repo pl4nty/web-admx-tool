@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2023 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="displaymanagerpolkit" namespace="BaseALT.Policies.DisplayManagerPolkit" />
+    <using prefix="system" namespace="BaseALT.Policies.System" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <policies>
+    <policy class="Machine" displayName="$(string.org-freedesktop-DisplayManager-AccountsService-ModifyAny)"
+        explainText="$(string.org-freedesktop-DisplayManager-AccountsService-ModifyAny_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.DisplayManager.AccountsService.ModifyAny"
+        valuename="org.freedesktop.DisplayManager.AccountsService.ModifyAny"
+        presentation="$(presentation.org-freedesktop-DisplayManagerPolkit-pr)">
+      <parentCategory ref="system:ALT_DisplayManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopDisplayManager_setter" valueName="org.freedesktop.DisplayManager.AccountsService.ModifyAny" required="true">
+          <item displayName="$(string.org-freedesktop-displaymanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopDisplayManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.DisplayManager.AccountsService.ModifyAny">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-DisplayManager-AccountsService-ModifyAny)"
+        explainText="$(string.org-freedesktop-DisplayManager-AccountsService-ModifyAny-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.DisplayManager.AccountsService.ModifyAnyUser"
+        valuename="org.freedesktop.DisplayManager.AccountsService.ModifyAny"
+        presentation="$(presentation.org-freedesktop-DisplayManagerPolkit-user-pr)">
+      <parentCategory ref="system:ALT_DisplayManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopDisplayManager_setter" valueName="org.freedesktop.DisplayManager.AccountsService.ModifyAny" required="true">
+          <item displayName="$(string.org-freedesktop-displaymanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-DisplayManager-AccountsService-ModifyOwn)"
+        explainText="$(string.org-freedesktop-DisplayManager-AccountsService-ModifyOwn_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.DisplayManager.AccountsService.ModifyOwn"
+        valuename="org.freedesktop.DisplayManager.AccountsService.ModifyOwn"
+        presentation="$(presentation.org-freedesktop-DisplayManagerPolkit-pr)">
+      <parentCategory ref="system:ALT_DisplayManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopDisplayManager_setter" valueName="org.freedesktop.DisplayManager.AccountsService.ModifyOwn" required="true">
+          <item displayName="$(string.org-freedesktop-displaymanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopDisplayManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.DisplayManager.AccountsService.ModifyOwn">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+     </policy>
+     <policy class="User" displayName="$(string.org-freedesktop-DisplayManager-AccountsService-ModifyOwn)"
+        explainText="$(string.org-freedesktop-DisplayManager-AccountsService-ModifyOwn-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.DisplayManager.AccountsService.ModifyOwnUser"
+        valuename="org.freedesktop.DisplayManager.AccountsService.ModifyOwn"
+        presentation="$(presentation.org-freedesktop-DisplayManagerPolkit-user-pr)">
+      <parentCategory ref="system:ALT_DisplayManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopDisplayManager_setter" valueName="org.freedesktop.DisplayManager.AccountsService.ModifyOwn" required="true">
+          <item displayName="$(string.org-freedesktop-displaymanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+     </policy>
+     <policy class="Machine" displayName="$(string.org-freedesktop-DisplayManager-AccountsService-ReadAny)"
+        explainText="$(string.org-freedesktop-DisplayManager-AccountsService-ReadAny_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.DisplayManager.AccountsService.ReadAny"
+        valuename="org.freedesktop.DisplayManager.AccountsService.ReadAny"
+        presentation="$(presentation.org-freedesktop-DisplayManagerPolkit-pr)">
+      <parentCategory ref="system:ALT_DisplayManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopDisplayManager_setter" valueName="org.freedesktop.DisplayManager.AccountsService.ReadAny" required="true">
+          <item displayName="$(string.org-freedesktop-displaymanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopDisplayManager_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.DisplayManager.AccountsService.ReadAny">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-DisplayManager-AccountsService-ReadAny)"
+        explainText="$(string.org-freedesktop-DisplayManager-AccountsService-ReadAny-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.DisplayManager.AccountsService.ReadAnyUser"
+        valuename="org.freedesktop.DisplayManager.AccountsService.ReadAny"
+        presentation="$(presentation.org-freedesktop-DisplayManagerPolkit-user-pr)">
+      <parentCategory ref="system:ALT_DisplayManagerPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopDisplayManager_setter" valueName="org.freedesktop.DisplayManager.AccountsService.ReadAny" required="true">
+          <item displayName="$(string.org-freedesktop-displaymanager-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-displaymanager-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="DisplayManager_GreeterBackground" class="Machine"
+        displayName="$(string.displaymanager-greeter-background)"
+        explainText="$(string.displaymanager-greeter-background_help)"
+        presentation="$(presentation.DisplayManager_GreeterBackground-pr)"
+        key="Software\BaseALT\Policies\DisplayManager">
+      <parentCategory ref="system:ALT_DisplayManager" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <text id="DisplayManager_GreeterBackground_setter" valueName="Greeter.Background" />
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

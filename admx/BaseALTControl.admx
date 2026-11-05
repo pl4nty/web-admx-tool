@@ -1,0 +1,1316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2019 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="control" namespace="BaseALT.Policies.Control" />
+    <using prefix="system" namespace="BaseALT.Policies.System" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <policies>
+    <policy class="Machine" displayName="$(string.at)" explainText="$(string.at_help)" key="Software\BaseALT\Policies\Control" name="at" presentation="$(presentation.at)">
+      <parentCategory ref="system:ALT_Services"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="at_setter" required="true" valueName="at">
+          <item displayName="$(string.at_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.at_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+          <item displayName="$(string.at_atdaemon)">
+            <value>
+              <string>atdaemon</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.chage)" explainText="$(string.chage_help)" key="Software\BaseALT\Policies\Control" name="chage" presentation="$(presentation.chage)">
+      <parentCategory ref="system:ALT_Security"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="chage_setter" required="true" valueName="chage">
+          <item displayName="$(string.chage_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.chage_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.chfn)" explainText="$(string.chfn_help)" key="Software\BaseALT\Policies\Control" name="chfn" presentation="$(presentation.chfn)">
+      <parentCategory ref="system:ALT_Security"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="chfn_setter" required="true" valueName="chfn">
+          <item displayName="$(string.chfn_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.chfn_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.chrony)" explainText="$(string.chrony_help)" key="Software\BaseALT\Policies\Control" name="chrony" presentation="$(presentation.chrony)">
+      <parentCategory ref="system:ALT_Services"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="chrony_setter" required="true" valueName="chrony">
+          <item displayName="$(string.chrony_server)">
+            <value>
+              <string>server</string>
+            </value>
+          </item>
+          <item displayName="$(string.chrony_client)">
+            <value>
+              <string>client</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.chsh)" explainText="$(string.chsh_help)" key="Software\BaseALT\Policies\Control" name="chsh" presentation="$(presentation.chsh)">
+      <parentCategory ref="system:ALT_Security"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="chsh_setter" required="true" valueName="chsh">
+          <item displayName="$(string.chsh_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.chsh_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.consolehelper)" explainText="$(string.consolehelper_help)" key="Software\BaseALT\Policies\Control" name="consolehelper" presentation="$(presentation.consolehelper)">
+      <parentCategory ref="system:ALT_Security"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="consolehelper_setter" required="true" valueName="consolehelper">
+          <item displayName="$(string.consolehelper_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.consolehelper_wheelonly)">
+            <value>
+              <string>wheelonly</string>
+            </value>
+          </item>
+          <item displayName="$(string.consolehelper_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.crontab)" explainText="$(string.crontab_help)" key="Software\BaseALT\Policies\Control" name="crontab" presentation="$(presentation.crontab)">
+      <parentCategory ref="system:ALT_Services"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="crontab_setter" required="true" valueName="crontab">
+          <item displayName="$(string.crontab_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.crontab_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.cups)" explainText="$(string.cups_help)" key="Software\BaseALT\Policies\Control" name="cups" presentation="$(presentation.cups)">
+      <parentCategory ref="system:ALT_Services"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="cups_setter" required="true" valueName="cups">
+          <item displayName="$(string.cups_server)">
+            <value>
+              <string>server</string>
+            </value>
+          </item>
+          <item displayName="$(string.cups_local)">
+            <value>
+              <string>local</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.dvd-ram-control)" explainText="$(string.dvd-ram-control_help)" key="Software\BaseALT\Policies\Control" name="dvd-ram-control" presentation="$(presentation.dvd-ram-control)">
+      <parentCategory ref="system:ALT_CD_DVD"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="dvd-ram-control_setter" required="true" valueName="dvd-ram-control">
+          <item displayName="$(string.dvd-ram-control_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.dvd-ram-control_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+          <item displayName="$(string.dvd-ram-control_legacy)">
+            <value>
+              <string>legacy</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.dvd_rw-booktype)" explainText="$(string.dvd_rw-booktype_help)" key="Software\BaseALT\Policies\Control" name="dvd_rw-booktype" presentation="$(presentation.dvd_rw-booktype)">
+      <parentCategory ref="system:ALT_CD_DVD"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="dvd_rw-booktype_setter" required="true" valueName="dvd_rw-booktype">
+          <item displayName="$(string.dvd_rw-booktype_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.dvd_rw-booktype_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+          <item displayName="$(string.dvd_rw-booktype_legacy)">
+            <value>
+              <string>legacy</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.dvd_rw-format)" explainText="$(string.dvd_rw-format_help)" key="Software\BaseALT\Policies\Control" name="dvd_rw-format" presentation="$(presentation.dvd_rw-format)">
+      <parentCategory ref="system:ALT_CD_DVD"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="dvd_rw-format_setter" required="true" valueName="dvd_rw-format">
+          <item displayName="$(string.dvd_rw-format_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.dvd_rw-format_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+          <item displayName="$(string.dvd_rw-format_legacy)">
+            <value>
+              <string>legacy</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.dvd_rw-mediainfo)" explainText="$(string.dvd_rw-mediainfo_help)" key="Software\BaseALT\Policies\Control" name="dvd_rw-mediainfo" presentation="$(presentation.dvd_rw-mediainfo)">
+      <parentCategory ref="system:ALT_CD_DVD"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="dvd_rw-mediainfo_setter" required="true" valueName="dvd_rw-mediainfo">
+          <item displayName="$(string.dvd_rw-mediainfo_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.dvd_rw-mediainfo_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+          <item displayName="$(string.dvd_rw-mediainfo_legacy)">
+            <value>
+              <string>legacy</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.fusermount)" explainText="$(string.fusermount_help)" key="Software\BaseALT\Policies\Control" name="fusermount" presentation="$(presentation.fusermount)">
+      <parentCategory ref="system:ALT_Mounting"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="fusermount_setter" required="true" valueName="fusermount">
+          <item displayName="$(string.fusermount_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.fusermount_fuseonly)">
+            <value>
+              <string>fuseonly</string>
+            </value>
+          </item>
+          <item displayName="$(string.fusermount_wheelonly)">
+            <value>
+              <string>wheelonly</string>
+            </value>
+          </item>
+          <item displayName="$(string.fusermount_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.gpasswd)" explainText="$(string.gpasswd_help)" key="Software\BaseALT\Policies\Control" name="gpasswd" presentation="$(presentation.gpasswd)">
+      <parentCategory ref="system:ALT_Security"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="gpasswd_setter" required="true" valueName="gpasswd">
+          <item displayName="$(string.gpasswd_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.gpasswd_wheelonly)">
+            <value>
+              <string>wheelonly</string>
+            </value>
+          </item>
+          <item displayName="$(string.gpasswd_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.groupmems)" explainText="$(string.groupmems_help)" key="Software\BaseALT\Policies\Control" name="groupmems" presentation="$(presentation.groupmems)">
+      <parentCategory ref="system:ALT_Security"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="groupmems_setter" required="true" valueName="groupmems">
+          <item displayName="$(string.groupmems_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.groupmems_wheelonly)">
+            <value>
+              <string>wheelonly</string>
+            </value>
+          </item>
+          <item displayName="$(string.groupmems_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.growisofs)" explainText="$(string.growisofs_help)" key="Software\BaseALT\Policies\Control" name="growisofs" presentation="$(presentation.growisofs)">
+      <parentCategory ref="system:ALT_CD_DVD"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="growisofs_setter" required="true" valueName="growisofs">
+          <item displayName="$(string.growisofs_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.growisofs_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+          <item displayName="$(string.growisofs_legacy)">
+            <value>
+              <string>legacy</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.hddtemp)" explainText="$(string.hddtemp_help)" key="Software\BaseALT\Policies\Control" name="hddtemp" presentation="$(presentation.hddtemp)">
+      <parentCategory ref="system:ALT_Security"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="hddtemp_setter" required="true" valueName="hddtemp">
+          <item displayName="$(string.hddtemp_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.hddtemp_wheelonly)">
+            <value>
+              <string>wheelonly</string>
+            </value>
+          </item>
+          <item displayName="$(string.hddtemp_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.lightdm-greeter-hide-users)" explainText="$(string.lightdm-greeter-hide-users_help)" key="Software\BaseALT\Policies\Control" name="lightdm-greeter-hide-users" presentation="$(presentation.lightdm-greeter-hide-users)">
+      <parentCategory ref="system:ALT_Graphics"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="lightdm-greeter-hide-users_setter" required="true" valueName="lightdm-greeter-hide-users">
+          <item displayName="$(string.lightdm-greeter-hide-users_show)">
+            <value>
+              <string>show</string>
+            </value>
+          </item>
+          <item displayName="$(string.lightdm-greeter-hide-users_hide)">
+            <value>
+              <string>hide</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.mtr)" explainText="$(string.mtr_help)" key="Software\BaseALT\Policies\Control" name="mtr" presentation="$(presentation.mtr)">
+      <parentCategory ref="system:ALT_Network"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="mtr_setter" required="true" valueName="mtr">
+          <item displayName="$(string.mtr_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.mtr_netadmin)">
+            <value>
+              <string>netadmin</string>
+            </value>
+          </item>
+          <item displayName="$(string.mtr_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.ldap-reverse-dns-lookup)" explainText="$(string.ldap-reverse-dns-lookup_help)" key="Software\BaseALT\Policies\Control" name="ldap-reverse-dns-lookup" presentation="$(presentation.ldap-reverse-dns-lookup)">
+      <parentCategory ref="system:ALT_Services"/>
+      <supportedOn ref="system:SUPPORTED_AltP9"/>
+      <elements>
+        <enum id="ldap-reverse-dns-lookup_setter" required="true" valueName="ldap-reverse-dns-lookup">
+          <item displayName="$(string.ldap-reverse-dns-lookup_allow)">
+            <value>
+              <string>allow</string>
+            </value>
+          </item>
+          <item displayName="$(string.ldap-reverse-dns-lookup_deny)">
+            <value>
+              <string>deny</string>
+            </value>
+          </item>
+          <item displayName="$(string.ldap-reverse-dns-lookup_default)">
+            <value>
+              <string>default</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.ldap-tls-cert-check)" explainText="$(string.ldap-tls-cert-check_help)" key="Software\BaseALT\Policies\Control" name="ldap-tls-cert-check" presentation="$(presentation.ldap-tls-cert-check)">
+      <parentCategory ref="system:ALT_Services"/>
+      <supportedOn ref="system:SUPPORTED_AltP9"/>
+      <elements>
+        <enum id="ldap-tls-cert-check_setter" required="true" valueName="ldap-tls-cert-check">
+          <item displayName="$(string.ldap-tls-cert-check_default)">
+            <value>
+              <string>default</string>
+            </value>
+          </item>
+          <item displayName="$(string.ldap-tls-cert-check_never)">
+            <value>
+              <string>never</string>
+            </value>
+          </item>
+          <item displayName="$(string.ldap-tls-cert-check_allow)">
+            <value>
+              <string>allow</string>
+            </value>
+          </item>
+          <item displayName="$(string.ldap-tls-cert-check_try)">
+            <value>
+              <string>try</string>
+            </value>
+          </item>
+          <item displayName="$(string.ldap-tls-cert-check_demand)">
+            <value>
+              <string>demand</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.mount)" explainText="$(string.mount_help)" key="Software\BaseALT\Policies\Control" name="mount" presentation="$(presentation.mount)">
+      <parentCategory ref="system:ALT_Mounting"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="mount_setter" required="true" valueName="mount">
+          <item displayName="$(string.mount_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.mount_wheelonly)">
+            <value>
+              <string>wheelonly</string>
+            </value>
+          </item>
+          <item displayName="$(string.mount_unprivileged)">
+            <value>
+              <string>unprivileged</string>
+            </value>
+          </item>
+          <item displayName="$(string.mount_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.newgrp)" explainText="$(string.newgrp_help)" key="Software\BaseALT\Policies\Control" name="newgrp" presentation="$(presentation.newgrp)">
+      <parentCategory ref="system:ALT_Security"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="newgrp_setter" required="true" valueName="newgrp">
+          <item displayName="$(string.newgrp_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.newgrp_wheelonly)">
+            <value>
+              <string>wheelonly</string>
+            </value>
+          </item>
+          <item displayName="$(string.newgrp_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.nfsmount)" explainText="$(string.nfsmount_help)" key="Software\BaseALT\Policies\Control" name="nfsmount" presentation="$(presentation.nfsmount)">
+      <parentCategory ref="system:ALT_Mounting"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="nfsmount_setter" required="true" valueName="nfsmount">
+          <item displayName="$(string.nfsmount_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.nfsmount_wheelonly)">
+            <value>
+              <string>wheelonly</string>
+            </value>
+          </item>
+          <item displayName="$(string.nfsmount_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.pam_mktemp)" explainText="$(string.pam_mktemp_help)" key="Software\BaseALT\Policies\Control" valueName="pam_mktemp" name="pam_mktemp">
+      <parentCategory ref="system:ALT_Security"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <enabledValue>
+        <string>enabled</string>
+      </enabledValue>
+      <disabledValue>
+        <string>disabled</string>
+      </disabledValue>
+    </policy>
+    <policy class="Machine" displayName="$(string.passwd)" explainText="$(string.passwd_help)" key="Software\BaseALT\Policies\Control" name="passwd" presentation="$(presentation.passwd)">
+      <parentCategory ref="system:ALT_Security"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="passwd_setter" required="true" valueName="passwd">
+          <item displayName="$(string.passwd_tcb)">
+            <value>
+              <string>tcb</string>
+            </value>
+          </item>
+          <item displayName="$(string.passwd_traditional)">
+            <value>
+              <string>traditional</string>
+            </value>
+          </item>
+          <item displayName="$(string.passwd_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.passwdqc-enforce)" explainText="$(string.passwdqc-enforce_help)" key="Software\BaseALT\Policies\Control" name="passwdqc-enforce" presentation="$(presentation.passwdqc-enforce)">
+      <parentCategory ref="system:ALT_Security"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="passwdqc-enforce_setter" required="true" valueName="passwdqc-enforce">
+          <item displayName="$(string.passwdqc-enforce_everyone)">
+            <value>
+              <string>everyone</string>
+            </value>
+          </item>
+          <item displayName="$(string.passwdqc-enforce_users)">
+            <value>
+              <string>users</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.ping)" explainText="$(string.ping_help)" key="Software\BaseALT\Policies\Control" name="ping" presentation="$(presentation.ping)">
+      <parentCategory ref="system:ALT_Network"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="ping_setter" required="true" valueName="ping">
+          <item displayName="$(string.ping_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.ping_netadmin)">
+            <value>
+              <string>netadmin</string>
+            </value>
+          </item>
+          <item displayName="$(string.ping_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+          <item displayName="$(string.ping_public_caps)">
+            <value>
+              <string>public_caps</string>
+            </value>
+          </item>
+          <item displayName="$(string.ping_netadmin_caps)">
+            <value>
+              <string>netadmin_caps</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.postfix)" explainText="$(string.postfix_help)" key="Software\BaseALT\Policies\Control" name="postfix" presentation="$(presentation.postfix)">
+      <parentCategory ref="system:ALT_Services"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="postfix_setter" required="true" valueName="postfix">
+          <item displayName="$(string.postfix_local)">
+            <value>
+              <string>local</string>
+            </value>
+          </item>
+          <item displayName="$(string.postfix_server)">
+            <value>
+              <string>server</string>
+            </value>
+          </item>
+          <item displayName="$(string.postfix_filter)">
+            <value>
+              <string>filter</string>
+                </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.postqueue)" explainText="$(string.postqueue_help)" key="Software\BaseALT\Policies\Control" name="postqueue" presentation="$(presentation.postqueue)">
+      <parentCategory ref="system:ALT_Services"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="postqueue_setter" required="true" valueName="postqueue">
+          <item displayName="$(string.postqueue_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.postqueue_mailadm)">
+            <value>
+              <string>mailadm</string>
+            </value>
+          </item>
+          <item displayName="$(string.postqueue_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.ppp)" explainText="$(string.ppp_help)" key="Software\BaseALT\Policies\Control" name="ppp" presentation="$(presentation.ppp)">
+      <parentCategory ref="system:ALT_Network"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="ppp_setter" required="true" valueName="ppp">
+          <item displayName="$(string.ppp_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+          <item displayName="$(string.ppp_traditional)">
+            <value>
+              <string>traditional</string>
+            </value>
+          </item>
+          <item displayName="$(string.ppp_uucp)">
+            <value>
+              <string>uucp</string>
+            </value>
+          </item>
+          <item displayName="$(string.ppp_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.rpcbind)" explainText="$(string.rpcbind_help)" key="Software\BaseALT\Policies\Control" name="rpcbind" presentation="$(presentation.rpcbind)">
+      <parentCategory ref="system:ALT_Services"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="rpcbind_setter" required="true" valueName="rpcbind">
+          <item displayName="$(string.rpcbind_server)">
+            <value>
+              <string>server</string>
+            </value>
+          </item>
+          <item displayName="$(string.rpcbind_local)">
+            <value>
+              <string>local</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.sftp)" explainText="$(string.sftp_help)" key="Software\BaseALT\Policies\Control" valueName="sftp" name="sftp">
+      <parentCategory ref="system:ALT_Services"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <enabledValue>
+        <string>enabled</string>
+      </enabledValue>
+      <disabledValue>
+        <string>disabled</string>
+      </disabledValue>
+    </policy>
+    <policy class="Machine" displayName="$(string.pam_canonicalize_user)" explainText="$(string.pam_canonicalize_user_help)" key="Software\BaseALT\Policies\Control" valueName="pam_canonicalize_user" name="pam_canonicalize_user">
+      <parentCategory ref="system:ALT_Security"/>
+      <supportedOn ref="system:SUPPORTED_AltP10"/>
+      <enabledValue>
+        <string>enabled</string>
+      </enabledValue>
+      <disabledValue>
+        <string>disabled</string>
+      </disabledValue>
+    </policy>
+    <policy class="Machine" displayName="$(string.sshd-allow-groups)" explainText="$(string.sshd-allow-groups_help)" key="Software\BaseALT\Policies\Control" valueName="sshd-allow-groups" name="sshd-allow-groups">
+      <parentCategory ref="system:ALT_SSHD"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <enabledValue>
+        <string>enabled</string>
+      </enabledValue>
+      <disabledValue>
+        <string>disabled</string>
+      </disabledValue>
+    </policy>
+    <policy class="Machine" displayName="$(string.sshd-allow-groups-list)" explainText="$(string.sshd-allow-groups-list_help)" key="Software\BaseALT\Policies\Control" name="sshd-allow-groups-list" presentation="$(presentation.sshd-allow-groups-list)">
+      <parentCategory ref="system:ALT_SSHD"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="sshd-allow-groups-list_setter" required="true" valueName="sshd-allow-groups-list">
+          <item displayName="$(string.sshd-allow-groups-list_users)">
+            <value>
+              <string>users</string>
+            </value>
+          </item>
+          <item displayName="$(string.sshd-allow-groups-list_remote)">
+            <value>
+              <string>remote</string>
+            </value>
+          </item>
+          <item displayName="$(string.sshd-allow-groups-list_wheelonly)">
+            <value>
+              <string>wheelonly</string>
+            </value>
+          </item>
+          <item displayName="$(string.sshd-allow-groups-list_remoteonly)">
+            <value>
+              <string>remoteonly</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.sshd-gssapi-auth)" explainText="$(string.sshd-gssapi-auth_help)" key="Software\BaseALT\Policies\Control" valueName="sshd-gssapi-auth" name="sshd-gssapi-auth">
+      <parentCategory ref="system:ALT_SSHD"/>
+      <supportedOn ref="system:SUPPORTED_AltP9"/>
+      <enabledValue>
+        <string>enabled</string>
+      </enabledValue>
+      <disabledValue>
+        <string>disabled</string>
+      </disabledValue>
+    </policy>
+    <policy class="Machine" displayName="$(string.sshd-password-auth)" explainText="$(string.sshd-password-auth_help)" key="Software\BaseALT\Policies\Control" valueName="sshd-password-auth" name="sshd-password-auth">
+      <parentCategory ref="system:ALT_SSHD"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <enabledValue>
+        <string>enabled</string>
+      </enabledValue>
+      <disabledValue>
+        <string>disabled</string>
+      </disabledValue>
+    </policy>
+    <policy class="Machine" displayName="$(string.sshd-permit-root-login)" explainText="$(string.sshd-permit-root-login_help)" key="Software\BaseALT\Policies\Control" name="sshd-permit-root-login" presentation="$(presentation.sshd-permit-root-login)">
+      <parentCategory ref="system:ALT_SSHD"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="sshd-permit-root-login_setter" required="true" valueName="sshd-permit-root-login">
+          <item displayName="$(string.sshd-permit-root-login_without_password)">
+            <value>
+              <string>without_password</string>
+            </value>
+          </item>
+          <item displayName="$(string.sshd-permit-root-login_enabled)">
+            <value>
+              <string>enabled</string>
+            </value>
+          </item>
+          <item displayName="$(string.sshd-permit-root-login_disabled)">
+            <value>
+              <string>disabled</string>
+            </value>
+          </item>
+          <item displayName="$(string.sshd-permit-root-login_default)">
+            <value>
+              <string>default</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.ssh-gssapi-auth)" explainText="$(string.ssh-gssapi-auth_help)" key="Software\BaseALT\Policies\Control" valueName="ssh-gssapi-auth" name="ssh-gssapi-auth">
+      <parentCategory ref="system:ALT_Services"/>
+      <supportedOn ref="system:SUPPORTED_AltP9"/>
+      <enabledValue>
+        <string>enabled</string>
+      </enabledValue>
+      <disabledValue>
+        <string>disabled</string>
+      </disabledValue>
+    </policy>
+    <policy class="Machine" displayName="$(string.sssd-ad-gpo-access-control)" explainText="$(string.sssd-ad-gpo-access-control_help)" key="Software\BaseALT\Policies\Control" name="sssd-ad-gpo-access-control" presentation="$(presentation.sssd-ad-gpo-access-control)">
+      <parentCategory ref="system:ALT_SSSD"/>
+      <supportedOn ref="system:SUPPORTED_AltP9"/>
+      <elements>
+        <enum id="sssd-ad-gpo-access-control_setter" required="true" valueName="sssd-ad-gpo-access-control">
+          <item displayName="$(string.sssd-ad-gpo-access-control_enforced)">
+            <value>
+              <string>enforced</string>
+            </value>
+          </item>
+          <item displayName="$(string.sssd-ad-gpo-access-control_permissived)">
+            <value>
+              <string>permissived</string>
+            </value>
+          </item>
+          <item displayName="$(string.sssd-ad-gpo-access-control_disabled)">
+            <value>
+              <string>disabled</string>
+            </value>
+          </item>
+          <item displayName="$(string.sssd-ad-gpo-access-control_default)">
+            <value>
+              <string>default</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.sssd-ad-gpo-ignore-unreadable)" explainText="$(string.sssd-ad-gpo-ignore-unreadable_help)" key="Software\BaseALT\Policies\Control" name="sssd-ad-gpo-ignore-unreadable" presentation="$(presentation.sssd-ad-gpo-ignore-unreadable)">
+      <parentCategory ref="system:ALT_SSSD"/>
+      <supportedOn ref="system:SUPPORTED_AltP9"/>
+      <elements>
+        <enum id="sssd-ad-gpo-ignore-unreadable_setter" required="true" valueName="sssd-ad-gpo-ignore-unreadable">
+          <item displayName="$(string.sssd-ad-gpo-ignore-unreadable_enabled)">
+            <value>
+              <string>enabled</string>
+            </value>
+          </item>
+          <item displayName="$(string.sssd-ad-gpo-ignore-unreadable_disabled)">
+            <value>
+              <string>disabled</string>
+            </value>
+          </item>
+          <item displayName="$(string.sssd-ad-gpo-ignore-unreadable_default)">
+            <value>
+              <string>default</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.sssd-cache-credentials)" explainText="$(string.sssd-cache-credentials_help)" key="Software\BaseALT\Policies\Control" name="sssd-cache-credentials" presentation="$(presentation.sssd-cache-credentials)">
+      <parentCategory ref="system:ALT_SSSD"/>
+      <supportedOn ref="system:SUPPORTED_AltP9"/>
+      <elements>
+        <enum id="sssd-cache-credentials_setter" required="true" valueName="sssd-cache-credentials">
+          <item displayName="$(string.sssd-cache-credentials_enabled)">
+            <value>
+              <string>enabled</string>
+            </value>
+          </item>
+          <item displayName="$(string.sssd-cache-credentials_disabled)">
+            <value>
+              <string>disabled</string>
+            </value>
+          </item>
+          <item displayName="$(string.sssd-cache-credentials_default)">
+            <value>
+              <string>default</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.sssd-drop-privileges)" explainText="$(string.sssd-drop-privileges_help)" key="Software\BaseALT\Policies\Control" name="sssd-drop-privileges" presentation="$(presentation.sssd-drop-privileges)">
+      <parentCategory ref="system:ALT_SSSD"/>
+      <supportedOn ref="system:SUPPORTED_AltP9"/>
+      <elements>
+        <enum id="sssd-drop-privileges_setter" required="true" valueName="sssd-drop-privileges">
+          <item displayName="$(string.sssd-drop-privileges_privileged)">
+            <value>
+              <string>privileged</string>
+            </value>
+          </item>
+          <item displayName="$(string.sssd-drop-privileges_unprivileged)">
+            <value>
+              <string>unprivileged</string>
+            </value>
+          </item>
+          <item displayName="$(string.sssd-drop-privileges_default)">
+            <value>
+              <string>default</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.sssd-dyndns-update)" explainText="$(string.sssd-dyndns-update_help)" key="Software\BaseALT\Policies\Control" name="sssd-dyndns-upudate" presentation="$(presentation.sssd-dyndns-update)">
+      <parentCategory ref="system:ALT_SSSD"/>
+      <supportedOn ref="system:SUPPORTED_AltP9"/>
+      <elements>
+        <enum id="sssd-dyndns-update_setter" required="true" valueName="sssd-dyndns-update">
+          <item displayName="$(string.sssd-dyndns-update_enabled)">
+            <value>
+              <string>enabled</string>
+            </value>
+          </item>
+          <item displayName="$(string.sssd-dyndns-update_disabled)">
+            <value>
+              <string>disabled</string>
+            </value>
+          </item>
+          <item displayName="$(string.sssd-dyndns-update_default)">
+            <value>
+              <string>default</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.sssd-dyndns-update-ptr)" explainText="$(string.sssd-dyndns-update-ptr_help)" key="Software\BaseALT\Policies\Control" name="sssd-dyndns-upudate-ptr" presentation="$(presentation.sssd-dyndns-update)">
+      <parentCategory ref="system:ALT_SSSD"/>
+      <supportedOn ref="system:SUPPORTED_AltP9"/>
+      <elements>
+        <enum id="sssd-dyndns-update_setter" required="true" valueName="sssd-dyndns-update-ptr">
+          <item displayName="$(string.sssd-dyndns-update-ptr_enabled)">
+            <value>
+              <string>enabled</string>
+            </value>
+          </item>
+          <item displayName="$(string.sssd-dyndns-update-ptr_disabled)">
+            <value>
+              <string>disabled</string>
+            </value>
+          </item>
+          <item displayName="$(string.sssd-dyndns-update-ptr_default)">
+            <value>
+              <string>default</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.su)" explainText="$(string.su_help)" key="Software\BaseALT\Policies\Control" name="su" presentation="$(presentation.su)">
+      <parentCategory ref="system:ALT_Security"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="su_setter" required="true" valueName="su">
+          <item displayName="$(string.su_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.su_wheel)">
+            <value>
+              <string>wheel</string>
+            </value>
+          </item>
+          <item displayName="$(string.su_wheelonly)">
+            <value>
+              <string>wheelonly</string>
+            </value>
+          </item>
+          <item displayName="$(string.su_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.sudo)" explainText="$(string.sudo_help)" key="Software\BaseALT\Policies\Control" name="sudo" presentation="$(presentation.sudo)">
+      <parentCategory ref="system:ALT_Security"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="sudo_setter" required="true" valueName="sudo">
+          <item displayName="$(string.sudo_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.sudo_wheelonly)">
+            <value>
+              <string>wheelonly</string>
+            </value>
+          </item>
+          <item displayName="$(string.sudo_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.sudoers)" explainText="$(string.sudoers_help)" key="Software\BaseALT\Policies\Control" name="sudoers" presentation="$(presentation.sudoers)">
+      <parentCategory ref="system:ALT_Security"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="sudoers_setter" required="true" valueName="sudoers">
+          <item displayName="$(string.sudoers_strict)">
+            <value>
+              <string>strict</string>
+            </value>
+          </item>
+          <item displayName="$(string.sudoers_relaxed)">
+            <value>
+              <string>relaxed</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.sudoreplay)" explainText="$(string.sudoreplay_help)" key="Software\BaseALT\Policies\Control" name="sudoreplay" presentation="$(presentation.sudoreplay)">
+      <parentCategory ref="system:ALT_Security"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="sudoreplay_setter" required="true" valueName="sudoreplay">
+          <item displayName="$(string.sudoreplay_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.sudoreplay_wheelonly)">
+            <value>
+              <string>wheelonly</string>
+            </value>
+          </item>
+          <item displayName="$(string.sudoreplay_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.sudowheel)" explainText="$(string.sudowheel_help)" key="Software\BaseALT\Policies\Control" valueName="sudowheel" name="sudowheel">
+      <parentCategory ref="system:ALT_Security"/>
+      <supportedOn ref="system:SUPPORTED_AltP9"/>
+      <enabledValue>
+        <string>enabled</string>
+      </enabledValue>
+      <disabledValue>
+        <string>disabled</string>
+      </disabledValue>
+    </policy>
+    <policy class="Machine" displayName="$(string.system-auth)" explainText="$(string.system-auth_help)" key="Software\BaseALT\Policies\Control" name="system-auth" presentation="$(presentation.system-auth)">
+      <parentCategory ref="system:ALT_Security"/>
+      <supportedOn ref="system:SUPPORTED_AltP9"/>
+      <elements>
+        <enum id="system-auth_setter" required="true" valueName="system-auth">
+          <item displayName="$(string.system-auth_sss)">
+            <value>
+              <string>sss</string>
+            </value>
+          </item>
+          <item displayName="$(string.system-auth_winbind)">
+            <value>
+              <string>winbind</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.tcb_chkpwd)" explainText="$(string.tcb_chkpwd_help)" key="Software\BaseALT\Policies\Control" name="tcb_chkpwd" presentation="$(presentation.tcb_chkpwd)">
+      <parentCategory ref="system:ALT_Security"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="tcb_chkpwd_setter" required="true" valueName="tcb_chkpwd">
+          <item displayName="$(string.tcb_chkpwd_traditional)">
+            <value>
+              <string>traditional</string>
+            </value>
+          </item>
+          <item displayName="$(string.tcb_chkpwd_tcb)">
+            <value>
+              <string>tcb</string>
+            </value>
+          </item>
+          <item displayName="$(string.tcb_chkpwd_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.udisks2)" explainText="$(string.udisks2_help)" key="Software\BaseALT\Policies\Control" name="udisks2" presentation="$(presentation.udisks2)">
+      <parentCategory ref="system:ALT_Mounting"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="udisks2_setter" required="true" valueName="udisks2">
+          <item displayName="$(string.udisks2_default)">
+            <value>
+              <string>default</string>
+            </value>
+          </item>
+          <item displayName="$(string.udisks2_shared)">
+            <value>
+              <string>shared</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.virtualbox)" explainText="$(string.virtualbox_help)" key="Software\BaseALT\Policies\Control" name="virtualbox" presentation="$(presentation.virtualbox)">
+      <parentCategory ref="system:ALT_Virtualization"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="virtualbox_setter" required="true" valueName="virtualbox">
+          <item displayName="$(string.virtualbox_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.virtualbox_vboxusers)">
+            <value>
+              <string>vboxusers</string>
+            </value>
+          </item>
+          <item displayName="$(string.virtualbox_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.wireshark-capture)" explainText="$(string.wireshark-capture_help)" key="Software\BaseALT\Policies\Control" name="wireshark-capture" presentation="$(presentation.wireshark-capture)">
+      <parentCategory ref="system:ALT_Network"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="wireshark-capture_setter" required="true" valueName="wireshark-capture">
+          <item displayName="$(string.wireshark-capture_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.wireshark-capture_relaxed)">
+            <value>
+              <string>relaxed</string>
+            </value>
+          </item>
+          <item displayName="$(string.wireshark-capture_netadmin)">
+            <value>
+              <string>netadmin</string>
+            </value>
+          </item>
+          <item displayName="$(string.wireshark-capture_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.write)" explainText="$(string.write_help)" key="Software\BaseALT\Policies\Control" name="write" presentation="$(presentation.write)">
+      <parentCategory ref="system:ALT_Security"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="write_setter" required="true" valueName="write">
+          <item displayName="$(string.write_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.write_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.xdg-user-dirs)" explainText="$(string.xdg-user-dirs_help)" key="Software\BaseALT\Policies\Control" valueName="xdg-user-dirs" name="xdg-user-dirs">
+      <parentCategory ref="system:ALT_Graphics"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <enabledValue>
+        <string>enabled</string>
+      </enabledValue>
+      <disabledValue>
+        <string>disabled</string>
+      </disabledValue>
+    </policy>
+    <policy class="Machine" displayName="$(string.xorg-server)" explainText="$(string.xorg-server_help)" key="Software\BaseALT\Policies\Control" name="xorg-server" presentation="$(presentation.xorg-server)">
+      <parentCategory ref="system:ALT_Graphics"/>
+      <supportedOn ref="system:SUPPORTED_AltP8"/>
+      <elements>
+        <enum id="xorg-server_setter" required="true" valueName="xorg-server">
+          <item displayName="$(string.xorg-server_public)">
+            <value>
+              <string>public</string>
+            </value>
+          </item>
+          <item displayName="$(string.xorg-server_xgrp)">
+            <value>
+              <string>xgrp</string>
+            </value>
+          </item>
+          <item displayName="$(string.xorg-server_restricted)">
+            <value>
+              <string>restricted</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+     <policy class="Machine" displayName="$(string.smb-conf-usershares)" explainText="$(string.smb-conf-usershares_help)" key="Software\BaseALT\Policies\Control" valueName="smb-conf-usershares" name="smb-conf-usershares">
+      <parentCategory ref="system:ALT_SambaOptions"/>
+      <supportedOn ref="system:SUPPORTED_AltP10"/>
+      <enabledValue>
+        <string>enabled</string>
+      </enabledValue>
+      <disabledValue>
+        <string>disabled</string>
+      </disabledValue>
+    </policy>
+    <policy class="Machine" displayName="$(string.role-usershares)" explainText="$(string.role-usershares_help)" key="Software\BaseALT\Policies\Control" valueName="role-usershares" name="role-usershares">
+      <parentCategory ref="system:ALT_SambaOptions"/>
+      <supportedOn ref="system:SUPPORTED_AltP10"/>
+      <enabledValue>
+        <string>enabled</string>
+      </enabledValue>
+      <disabledValue>
+        <string>disabled</string>
+      </disabledValue>
+    </policy>
+    <policy class="Machine" displayName="$(string.role-sambashare)" explainText="$(string.role-sambashare_help)" key="Software\BaseALT\Policies\Control" valueName="role-sambashare" name="role-sambashare">
+      <parentCategory ref="system:ALT_SambaOptions"/>
+      <supportedOn ref="system:SUPPORTED_AltP10"/>
+      <enabledValue>
+        <string>enabled</string>
+      </enabledValue>
+      <disabledValue>
+        <string>disabled</string>
+      </disabledValue>
+    </policy>
+    <policy class="Machine" displayName="$(string.smb-conf-usershare-allow-guests)" explainText="$(string.smb-conf-usershare-allow-guests_help)" key="Software\BaseALT\Policies\Control" valueName="smb-conf-usershare-allow-guests" name="smb-conf-usershare-allow-guests">
+      <parentCategory ref="system:ALT_SambaOptions"/>
+      <supportedOn ref="system:SUPPORTED_AltP10"/>
+      <enabledValue>
+        <string>enabled</string>
+      </enabledValue>
+      <disabledValue>
+        <string>disabled</string>
+      </disabledValue>
+    </policy>
+    <policy class="Machine" displayName="$(string.smb-conf-usershare-allow-list)" explainText="$(string.smb-conf-usershare-allow-list_help)" key="Software\BaseALT\Policies\Control" valueName="smb-conf-usershare-allow-list" name="smb-conf-usershare-allow-list">
+      <parentCategory ref="system:ALT_SambaOptions"/>
+      <supportedOn ref="system:SUPPORTED_AltP10"/>
+      <enabledValue>
+        <string>enabled</string>
+      </enabledValue>
+      <disabledValue>
+        <string>disabled</string>
+      </disabledValue>
+    </policy>
+    <policy class="Machine" displayName="$(string.smb-conf-usershare-deny-list)" explainText="$(string.smb-conf-usershare-deny-list_help)" key="Software\BaseALT\Policies\Control" valueName="smb-conf-usershare-deny-list" name="smb-conf-usershare-deny-list">
+      <parentCategory ref="system:ALT_SambaOptions"/>
+      <supportedOn ref="system:SUPPORTED_AltP10"/>
+      <enabledValue>
+        <string>enabled</string>
+      </enabledValue>
+      <disabledValue>
+        <string>disabled</string>
+      </disabledValue>
+    </policy>
+    <policy class="Machine" displayName="$(string.smb-conf-usershare-owner-only)" explainText="$(string.smb-conf-usershare-owner-only_help)" key="Software\BaseALT\Policies\Control" valueName="smb-conf-usershare-owner-only" name="smb-conf-usershare-owner-only">
+      <parentCategory ref="system:ALT_SambaOptions"/>
+      <supportedOn ref="system:SUPPORTED_AltP10"/>
+      <enabledValue>
+        <string>enabled</string>
+      </enabledValue>
+      <disabledValue>
+        <string>disabled</string>
+      </disabledValue>
+    </policy> 
+  </policies>
+</policyDefinitions>

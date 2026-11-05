@@ -12,10 +12,14 @@ const CONCURRENCY = Number(process.env.FETCH_JOBS || 4)
 const filter = process.argv[2]?.startsWith('-') ? null : process.argv[2] ?? null
 
 const headers: Record<string, string> = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' }
-if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`
+// Only send the token to the GitHub API: other hosts reject unknown bearer tokens, and must not see it
+const authHeaders = (url: string): Record<string, string> =>
+  process.env.GITHUB_TOKEN && new URL(url).hostname === 'api.github.com'
+    ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` }
+    : {}
 
 const fetchOk = async (url: string, init?: RequestInit) => {
-  const response = await fetch(url, { headers, ...init })
+  const response = await fetch(url, { ...init, headers: { ...headers, ...init?.headers as Record<string, string>, ...authHeaders(url) } })
   if (response.ok) return response
   throw new Error(`HTTP ${response.status} for ${url}`)
 }
@@ -95,6 +99,19 @@ async function dellCommandUpdateDownload(): Promise<string> {
   return exe[0]
 }
 
+// Foxit publishes templates per release under <YYYY>.<N>.0/tools/ with an Apache directory listing
+async function foxitGpoTemplate(product: 'Editor' | 'Reader'): Promise<string> {
+  const base = 'https://cdn01.foxitsoftware.com/product/phantomPDF/desktop/win/'
+  const name = `Foxit%20PDF%20${product}_enu_admx&adml.zip`
+  for (let year = new Date().getFullYear() + 1; year >= 2023; year--)
+    for (let release = 4; release >= 1; release--) {
+      const response = await fetch(`${base}${year}.${release}.0/tools/`, { headers })
+      if (response.ok && (await response.text()).includes(`href="${name.replace('&', '&amp;')}"`))
+        return `${base}${year}.${release}.0/tools/${name}`
+    }
+  throw new Error(`No Foxit PDF ${product} GPO template found`)
+}
+
 const LANG_MAP: Record<string, string> = {
   adm: 'en-us', en: 'en-us', de: 'de-de', es: 'es-es', 'es-419': 'es-es',
   fr: 'fr-fr', it: 'it-it', ja: 'ja-jp', ko: 'ko-kr', nl: 'nl-nl',
@@ -145,8 +162,10 @@ function resolveDest(entryPath: string, isOffice: boolean): { dir: string; name:
 // want (Zoom's ZoomVDI_Combined_* merge the per-scope files). Skip the merged
 // variants in favour of the split ones.
 const IS_MERGED_TEMPLATE = (name: string) => /^ZoomVDI_Combined_HK(CU|LM)\.adm[lx]$/i.test(name)
+// macOS-built zips carry AppleDouble resource forks (`__MACOSX/._Foo.admx`) that are not XML
+const IS_APPLEDOUBLE = (name: string) => name.startsWith('._')
 const IS_ADMX = (name: string) =>
-  (/\.admx$/i.test(name) || /\.adml\d*$/i.test(name)) && !IS_MERGED_TEMPLATE(name)
+  (/\.admx$/i.test(name) || /\.adml\d*$/i.test(name)) && !IS_MERGED_TEMPLATE(name) && !IS_APPLEDOUBLE(name)
 
 function toUtf8(data: Uint8Array): Buffer {
   if (data[0] === 0xFF && data[1] === 0xFE)
@@ -188,7 +207,7 @@ function extract7z(buf: Buffer, isOffice: boolean, collector?: string[]) {
     // self-extracting installers) while still extracting the ADMX/ADML we need, so
     // ignore its exit code and rely on the file walk below to determine success.
     try { execSync(`7z x -y -o"${tmp}/x" "${tmp}/a" > /dev/null 2>&1`, { timeout: 120_000 }) } catch { }
-    for (const f of walkDir(join(tmp, 'x'), n => /\.zip$/i.test(n) || /^\[\d+\]$/.test(n)))
+    for (const f of walkDir(join(tmp, 'x'), n => /\.(zip|msi)$/i.test(n) || /^\[\d+\]$/.test(n)))
       try { execSync(`7z x -y -o"${f}_x" "${f}" -ir!*.admx -ir!*.adml -ir!*.zip -ir![0] > /dev/null 2>&1`, { timeout: 60_000 }) } catch { }
     let admx = 0, adml = 0
     const base = join(tmp, 'x')
@@ -299,11 +318,83 @@ const sources: Source[] = [
     'https://raw.githubusercontent.com/microsoft/WSL/master/intune/WSL.admx',
     'https://raw.githubusercontent.com/microsoft/WSL/master/intune/en-US/WSL.adml',
   ]),
+  // Sources below were discovered via the Internet Archive copy of admx.help (offline since 2025),
+  // limited to maintained products with vendor- or author-hosted templates.
+  // Microsoft
+  src(() => msDownload(51934, url => /GroupPolicyTemplates\.zip$/i.test(url))), // OneNote Class Notebook
+  src(() => 'https://www.expta.com/IPv6Configuration.zip'),
+  src(async () => {
+    const html = await fetchText('https://www.carlwebster.com/downloads/')
+    const match = html.match(/href="(https:\/\/www\.dropbox\.com\/[^"]*HideDrives\.zip[^"]*)"/i)
+    if (!match) throw new Error('No HideDrives link found')
+    return match[1].replace(/&amp;/g, '&').replace(/dl=0/, 'dl=1')
+  }),
+  // Citrix
+  src(() => 'https://dl.sharefile.com/sfwin-gpo'), // Citrix Files / ShareFile for Windows
+  // Security and remote access
+  srcAll(async () => [
+    'https://dl.duosecurity.com/DuoEpic_Policies_and_Documentation-latest.zip',
+    'https://dl.duosecurity.com/DuoEpicHyperdrive_Policies_and_Documentation-latest.zip',
+  ]),
+  src(() => 'https://dl.duosecurity.com/DuoWinLogon_MSIs_Policies_and_Documentation-latest.zip'),
+  srcAll(async () => [
+    'https://raw.githubusercontent.com/MichaelGrafnetter/yubikey-minidriver-admx/master/PolicyDefinitions/YubiKeyMinidriver.admx',
+    'https://raw.githubusercontent.com/MichaelGrafnetter/yubikey-minidriver-admx/master/PolicyDefinitions/en-US/YubiKeyMinidriver.adml',
+  ]),
+  src(() => 'https://gcstoragedownload.blob.core.windows.net/download/AdmPwd.E/Latest/AdmPwd.E.Tools.Setup.x64.zip'),
+  src(() => 'https://www.adminbyrequest.com/ADMX'),
+  srcAll(async () => [
+    'https://download.specopssoft.com/Release/Client/Specops.Client.AdmxTemplates.zip',
+    'https://download.specopssoft.com/Release/Client/Specops.Client.AzureAdJoinedComputer.AdmxTemplates.zip',
+  ]),
+  srcAll(async () => [
+    'https://downloads.realvnc.com/download/file/policy.files/RealVNC-server-admx-templates-Latest.zip',
+    'https://downloads.realvnc.com/download/file/policy.files/RealVNC-viewer-admx-templates-Latest.zip',
+  ]),
+  src(() => 'https://www.donkz.nl/download/group-policy-template-files/'), // Remote Desktop Plus
+  src(async () => {
+    const html = await fetchText('https://support.controlup.com/docs/locking-ui-with-group-policy')
+    const match = html.match(/href="(https:\/\/cdn\.document360\.io\/[^"]+\.zip)"/i)
+    if (!match) throw new Error('No ControlUp ADMX link found')
+    return match[1]
+  }),
+  srcAll(async () => ['lithnet.admx', 'lithnet.idlelogoff.admx', 'en-US/lithnet.adml', 'en-US/lithnet.idlelogoff.adml']
+    .map(file => `https://raw.githubusercontent.com/lithnet/idle-logoff/master/src/Lithnet.IdleLogoff/PolicyDefinitions/${file}`)),
+  // Applications
+  src(() => foxitGpoTemplate('Editor')),
+  src(() => foxitGpoTemplate('Reader')),
+  src(() => 'https://www.pdf-xchange.com/Tracker_AD_AdministrativeTemplates.zip'),
+  src(() => 'https://www.binaryfortress.com/Data/Download/?package=displayfusion&admxtemplates=1'),
+  src(() => 'https://www.binaryfortress.com/Data/Download/?package=fileseek&admxtemplates=1'),
+  src(() => 'https://help.mailstore.com/en/server/images/a/a0/MailStore_ADMX.zip'),
+  srcAll(async () => [
+    'https://raw.githubusercontent.com/samba-team/samba/master/libgpo/admx/samba.admx',
+    'https://raw.githubusercontent.com/samba-team/samba/master/libgpo/admx/en-US/samba.adml',
+  ]),
+  src(() => 'https://api.github.com/repos/altlinux/admx-basealt/zipball/master'),
+  srcAll(async () => [
+    'https://raw.githubusercontent.com/mattermost/desktop/master/resources/windows/gpo/mattermost.admx',
+    'https://raw.githubusercontent.com/mattermost/desktop/master/resources/windows/gpo/en-US/mattermost.adml',
+  ]),
+  src(() => 'https://service.nospamproxy.de/file/OutlookGroupPolicies'),
+  src(() => 'https://www.cp-lab.com/Files/pwdmgr-admx.zip'), // Password Manager XP
+  src(() => 'https://downloads.seppmail.com/zip/SEPPmailOutlookAddIn_admx.zip'),
+  src(() => 'https://www.softmaker.net/down/softmaker-office-2024-admin-templates.zip'),
+  srcAll(async () => [
+    'https://raw.githubusercontent.com/ubuntu/adsys/main/policies/Ubuntu/all/Ubuntu.admx',
+    'https://raw.githubusercontent.com/ubuntu/adsys/main/policies/Ubuntu/all/Ubuntu.adml',
+  ]),
+  // policies/en/ holds the English ADML; the top-level one is Russian
+  srcAll(async () => [
+    'https://download.cdn.yandex.net/browser/corporate/YandexBrowser.admx',
+    'https://download.cdn.yandex.net/browser/corporate/policies/en/YandexBrowser.adml',
+  ]),
 ]
 
 function downloadAndExtract(buf: Buffer, isOffice: boolean, collector?: string[]) {
   if (buf[0] === 0x50 && buf[1] === 0x4B) {
-    try { return extractZip(buf, isOffice, collector) } catch { }
+    // Fall through to 7z when the zip only wraps nested archives (e.g. an MSI)
+    try { const result = extractZip(buf, isOffice, collector); if (result.admx) return result } catch { }
   }
   return extract7z(buf, isOffice, collector)
 }
