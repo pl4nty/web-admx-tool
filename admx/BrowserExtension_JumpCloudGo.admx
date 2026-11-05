@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--JumpCloud Go jdoahkhfkeipblhbhppmcbdgapeoaopa version: 3.2.0 generator: 43686a3e7d80-->
+  <policyNamespaces>
+    <target namespace="BrowserExtension.jdoahkhfkeipblhbhppmcbdgapeoaopa" prefix="ext_jdoahkhfkeipblhbhppmcbdgapeoaopa"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
+  </categories>
+  <policies>
+    <policy name="extension_clientId" class="Both" displayName="$(string.extension_clientId)" explainText="$(string.extension_clientId_Explain)" presentation="$(presentation.extension_clientId)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\jdoahkhfkeipblhbhppmcbdgapeoaopa\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_clientId_Part" valueName="clientId" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_clientSecret" class="Both" displayName="$(string.extension_clientSecret)" explainText="$(string.extension_clientSecret_Explain)" presentation="$(presentation.extension_clientSecret)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\jdoahkhfkeipblhbhppmcbdgapeoaopa\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_clientSecret_Part" valueName="clientSecret" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_region" class="Both" displayName="$(string.extension_region)" explainText="$(string.extension_region_Explain)" presentation="$(presentation.extension_region)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\jdoahkhfkeipblhbhppmcbdgapeoaopa\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_region_Part" valueName="region" maxLength="1048576"/>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

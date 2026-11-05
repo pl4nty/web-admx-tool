@@ -4,6 +4,8 @@ import { join, resolve, sep } from 'path'
 import { execSync } from 'child_process'
 import { unzipSync } from 'fflate'
 import { walkDir, runWithLimit } from '../src/admxUtils'
+import { createHash } from 'crypto'
+import { generateExtensionAdmx, generateExtensionCategoryAdmx, readExtensionPackage, readTemplateStamp, sameVersion, unpackCrx } from '../src/extensionAdmx'
 
 const ROOT = resolve(process.cwd())
 const ADMX_DIR = join(ROOT, 'admx')
@@ -200,10 +202,63 @@ function extract7z(buf: Buffer, isOffice: boolean, collector?: string[]) {
   }
 }
 
-type Source = { getUrls: () => Promise<string[]> | string[]; office?: boolean; allowMissing?: boolean }
+type ExtensionStore = 'chrome' | 'edge'
+type Extension = { name: string; slug: string; store: ExtensionStore; id: string }
+type Source = { getUrls: () => Promise<string[]> | string[]; office?: boolean; allowMissing?: boolean; extension?: Extension }
 const src = (fn: () => Promise<string> | string, office?: boolean): Source =>
   ({ getUrls: async () => [await fn()], ...(office ? { office: true } : {}) })
 const srcAll = (fn: () => Promise<string[]>): Source => ({ getUrls: fn })
+
+// Browser extensions with a managed storage schema. ADMX are generated from the
+// schema with Edge registry keys, see src/extensionAdmx.ts. The key includes the
+// extension ID, so use the Edge Add-ons ID where one exists, otherwise the
+// Chrome Web Store ID (which Edge also uses when installing from that store).
+// Omaha update checks: v=0.0.0.0 returns the latest version and its download URL
+const UPDATE_URL: Record<ExtensionStore, (id: string) => string> = {
+  chrome: id => `https://clients2.google.com/service/update2/crx?prodversion=150.0&acceptformat=crx2,crx3&x=id%3D${id}%26v%3D0.0.0.0%26uc`,
+  edge: id => `https://edge.microsoft.com/extensionwebstorebase/v1/crx?prodversion=150.0&x=id%3D${id}%26v%3D0.0.0.0%26uc`,
+}
+const STORE_URL: Record<ExtensionStore, (id: string) => string> = {
+  chrome: id => `https://chromewebstore.google.com/detail/${id}`,
+  edge: id => `https://microsoftedge.microsoft.com/addons/detail/${id}`,
+}
+const extensions: [name: string, slug: string, ids: Partial<Record<ExtensionStore, string>>][] = [
+  ['Adobe Acrobat', 'AdobeAcrobat', { chrome: 'efaidnbmnnnibpcajpcglclefindmkaj', edge: 'elhekieabhbkpmcefcoobjddigjcaadp' }],
+  ['Authenticator', 'Authenticator', { chrome: 'bhghoamapcdpbohphigoooaddinpkbai', edge: 'ocglkepbibnalbgmbachknglpdipeoio' }],
+  ['axe DevTools', 'AxeDevTools', { chrome: 'lhdoppojpmngadmnindnejefpokejbdd', edge: 'kcenlimkmjjkdfcaleembgmldmnnlfkn' }],
+  ['Bitwarden', 'Bitwarden', { chrome: 'nngceckbapebfimnlniiiahkandclblb', edge: 'jbkfoedolllekgbhcbcoahefnbanhhlh' }],
+  ['Check by CyberDrain', 'CyberDrainCheck', { chrome: 'benimdeioplgkhanklclahllklceahbe', edge: 'knepjpocdagponkonnbggpcnhnaikajg' }],
+  ['Citrix Workspace', 'CitrixWorkspace', { chrome: 'haiffjcadagjlijoggckpgfnoeiflnem' }],
+  ['Claude', 'Claude', { chrome: 'fcoeoabgfenejglbffodgkkbkcdhcgfn' }],
+  ['Dashlane', 'Dashlane', { chrome: 'fdjamakpfbbddfjaooikfcpapjohcfmg', edge: 'gehmmocbbkpblljhkekmfhjpfbkclbph' }],
+  ['DeepL', 'DeepL', { chrome: 'cofdbpoegempjloogbagkncekinflcnj', edge: 'fancfknaplihpclbhbpclnmmjcjanbaf' }],
+  ['DuckDuckGo', 'DuckDuckGo', { chrome: 'bkdgflcldnnnapblkhphbgpggdiikppg', edge: 'caoacbimdbbljakfhgikoodekdnlcgpk' }],
+  ['Equatio', 'Equatio', { chrome: 'hjngolefdpdnooamgdldlkjgmdcmcjnc' }],
+  ['Ghostery', 'Ghostery', { chrome: 'mlomiejdfkolichcflejclcbmpeaniij', edge: 'fclbdkbhjlgkbpfldjodgjncejkkjcme' }],
+  ['Google Docs Offline', 'GoogleDocsOffline', { chrome: 'ghbmnnjooekpmoecnnnilnnbdlolhkhi' }],
+  ['Google Password Alert', 'GooglePasswordAlert', { chrome: 'noondiphcddnnabmjcihcjfbhfklnnep' }],
+  ['Grammarly', 'Grammarly', { chrome: 'kbfnbcaeplbcioakkpcpgfkobkghlhen', edge: 'cnlefmmeadmemmdciolhbnfeacpdfbkd' }],
+  ['Idira Identity', 'IdiraIdentity', { chrome: 'jifcoadedkediabkmjbflemiblmnbjfk', edge: 'mblkikdcdlfpljlmgijhccbhiijkhded' }],
+  ['JumpCloud Go', 'JumpCloudGo', { chrome: 'jdoahkhfkeipblhbhppmcbdgapeoaopa' }],
+  ['KeePassXC-Browser', 'KeePassXCBrowser', { chrome: 'oboonakemofpalcgghocfoadofidjkkk', edge: 'pdffhmdngciaglkoonimfcmckehcpafo' }],
+  ['LanguageTool', 'LanguageTool', { chrome: 'oldceeleldhonbafppcapldpdifcinji', edge: 'hfjadhjooeceemgojogkhlppanjkbobc' }],
+  ['Microsoft Defender Browser Protection', 'DefenderBrowserProtection', { chrome: 'bkbeeeffjjeopflfhgeknacdieedcoml' }],
+  ['Netskope', 'Netskope', { chrome: 'pjfbgcbklnoeejjipoabcfnijajgikpb' }],
+  ['Privacy Badger', 'PrivacyBadger', { chrome: 'pkehgijcmpdhfbdbbnkijodmdjhbjlgp', edge: 'mkejgcgkdlddbggjhhflekkondicpnop' }],
+  ['Psono', 'Psono', { chrome: 'eljmjmgjkbmpmfljlmklcfineebidmlo', edge: 'abobmepfpbkapdlmfhnnkebcnhgeccbm' }],
+  ['Push Security', 'PushSecurity', { chrome: 'dljjddkmmcminffjbcmeccgfbjlhmhlm' }],
+  ['Read&Write', 'ReadWrite', { chrome: 'inoeonmfapjbbkmdafoankkfajkcphgd', edge: 'bjglhpoliipklkfjcahfefdlfpifcinb' }],
+  ['Screencastify', 'Screencastify', { chrome: 'mmeijimgabbpbgpdklnllpncmdofkcpn', edge: 'pdgepnkbokhdgjnhfmklkijfbdgngccm' }],
+  ['Tampermonkey', 'Tampermonkey', { chrome: 'dhdgffkkebhmkfjojejmpbldmpobfkfo', edge: 'iikmkjmpaadaobahmlepeloendndfphd' }],
+  // uBlock Origin (MV2) is no longer available from the Chrome Web Store
+  ['uBlock Origin', 'uBlockOrigin', { edge: 'odfafepnkmbhccpbejgmiehpchacaeak' }],
+  ['uBlock Origin Lite', 'uBlockOriginLite', { chrome: 'ddkjiahejlhfcafbddmgiahcphecmpfh', edge: 'cimighlppcgcoapaliogpjjdehbnofhn' }],
+]
+const extensionSources: Source[] = extensions.map(([name, slug, ids]) => {
+  const store: ExtensionStore = ids.edge ? 'edge' : 'chrome'
+  const id = ids[store]!
+  return { getUrls: () => [UPDATE_URL[store](id)], extension: { name, slug, store, id } }
+})
 
 const sources: Source[] = [
   src(() => 'https://dl.google.com/dl/edgedl/chrome/policy/policy_templates.zip'),
@@ -299,6 +354,7 @@ const sources: Source[] = [
     'https://raw.githubusercontent.com/microsoft/WSL/master/intune/WSL.admx',
     'https://raw.githubusercontent.com/microsoft/WSL/master/intune/en-US/WSL.adml',
   ]),
+  ...extensionSources,
 ]
 
 function downloadAndExtract(buf: Buffer, isOffice: boolean, collector?: string[]) {
@@ -308,7 +364,48 @@ function downloadAndExtract(buf: Buffer, isOffice: boolean, collector?: string[]
   return extract7z(buf, isOffice, collector)
 }
 
+function writeExtensionCategory() {
+  const { admx, adml } = generateExtensionCategoryAdmx()
+  writeFileSync(join(ADMX_DIR, 'BrowserExtensions.admx'), admx)
+  mkdirSync(langDir('en-us'), { recursive: true })
+  writeFileSync(join(langDir('en-us'), 'BrowserExtensions.adml'), adml)
+}
+
+async function fetchExtension(source: Source & { extension: Extension }, idx: number, total: number) {
+  writeExtensionCategory()
+  const { name, slug, store, id } = source.extension
+  const fileSlug = `BrowserExtension_${slug}`
+  const result = { ok: true as const, admx: 1, adml: 1, fileSlugToDownloadUrl: { [fileSlug]: STORE_URL[store](id) } }
+  const admxPath = join(ADMX_DIR, `${fileSlug}.admx`)
+  const admlPath = join(langDir('en-us'), `${fileSlug}.adml`)
+
+  const [updateUrl] = await source.getUrls()
+  const update = (await fetchText(updateUrl)).match(/<updatecheck\b[^>]*>/)?.[0] ?? ''
+  const attr = (name: string) => update.match(new RegExp(`\\b${name}="([^"]*)"`))?.[1]?.replace(/&amp;/g, '&')
+  const [codebase, version] = [attr('codebase'), attr('version')]
+  if (!codebase || !version) throw new Error(`No update available for ${name} (${store} ${id})`)
+
+  // Skip the download when neither the extension nor the generator changed
+  const fingerprint = createHash('sha1')
+    .update(readFileSync(join(ROOT, 'src', 'extensionAdmx.ts'))).update(JSON.stringify(source.extension))
+    .digest('hex').slice(0, 12)
+  const stamp = existsSync(admxPath) && existsSync(admlPath) ? readTemplateStamp(readFileSync(admxPath, 'utf8')) : {}
+  if (stamp.version && stamp.fingerprint === fingerprint && sameVersion(stamp.version, version)) {
+    console.log(`[${idx + 1}/${total}] ${name} ${version} unchanged`)
+    return result
+  }
+
+  const { manifest, schema, messages } = readExtensionPackage(unpackCrx(await download(codebase)))
+  const { admx, adml } = generateExtensionAdmx({ name, id, version: manifest.version, fingerprint, schema, messages })
+  writeFileSync(admxPath, admx)
+  mkdirSync(langDir('en-us'), { recursive: true })
+  writeFileSync(admlPath, adml)
+  console.log(`[${idx + 1}/${total}] ${name} ${manifest.version} (${store} ${id})`)
+  return result
+}
+
 async function fetchSource(source: Source, idx: number, total: number) {
+  if (source.extension) return fetchExtension(source as Source & { extension: Extension }, idx, total)
   const urls = await source.getUrls()
   let admx = 0, adml = 0
   const fileSlugToDownloadUrl: Record<string, string> = {}
