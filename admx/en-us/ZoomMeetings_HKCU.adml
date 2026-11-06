@@ -2520,6 +2520,18 @@ If this policy is not set, client will use the default setting.</string>
 If this policy is set, the client will use the specified SSO vanity URLs and users can select from them.
 If this policy is not set, client will use the default setting.</string>
       <string id="SetMultipleSSOVanityUrl_Part">Set multiple SSO vanity URLs</string>
+      <string id="EnforceFipsForGovMeeting_Policy">Enforce FIPS mode when joining a Zoom for Government meeting</string>
+      <string id="EnforceFipsForGovMeeting_Policy_Recommend">Enforce FIPS mode when joining a Zoom for Government meeting (Recommendation Setting)</string>
+      <string id="EnforceFipsForGovMeeting_Explain">Default policy is disabled.
+If this policy is enabled, a commercial Zoom client will switch to FIPS mode when joining a Zoom for Government meeting.
+If this policy is disabled, the client will use its default behavior and this policy will not enforce a switch to FIPS mode when joining a Zoom for Government meeting.
+If this policy is not set, client will use the default setting.</string>
+      <string id="EnforceFipsForGovSignin_Policy">Enforce FIPS mode when switching to a Zoom for Government sign-in domain</string>
+      <string id="EnforceFipsForGovSignin_Policy_Recommend">Enforce FIPS mode when switching to a Zoom for Government sign-in domain (Recommendation Setting)</string>
+      <string id="EnforceFipsForGovSignin_Explain">Default policy is disabled.
+If this policy is enabled, the client will switch from its default mode to FIPS mode when the user switches from a commercial sign-in domain to a Zoom for Government sign-in domain.
+If this policy is disabled, the client will use its default behavior and this policy will not enforce a switch to FIPS mode when the user switches to a Zoom for Government sign-in domain.
+If this policy is not set, client will use the default setting.</string>
     </stringTable>
     <presentationTable>
       <presentation id="EnableClientAutoUpdate_Policy" />
@@ -2977,6 +2989,8 @@ If this policy is not set, client will use the default setting.</string>
           <label>Set multiple SSO vanity URLs</label>
         </textBox>
       </presentation>
+      <presentation id="EnforceFipsForGovMeeting_Policy" />
+      <presentation id="EnforceFipsForGovSignin_Policy" />
       <presentation id="EnableClientAutoUpdate_Policy_Recommend" />
       <presentation id="DisableCreatingDesktopShortcut_Policy_Recommend" />
       <presentation id="AutoStartAfterReboot_Policy_Recommend" />
@@ -3430,6 +3444,8 @@ If this policy is not set, client will use the default setting.</string>
           <label>Set multiple SSO vanity URLs</label>
         </textBox>
       </presentation>
+      <presentation id="EnforceFipsForGovMeeting_Policy_Recommend" />
+      <presentation id="EnforceFipsForGovSignin_Policy_Recommend" />
     </presentationTable>
   </resources>
 </policyDefinitionResources>

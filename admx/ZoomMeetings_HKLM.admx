@@ -951,6 +951,16 @@
         <text id="SetMultipleSSOVanityUrl_Part" valueName="SetMultipleSSOVanityUrl" />
       </elements>
     </policy>
+    <policy name="EnforceFipsForGovSignin_Policy" class="Machine" displayName="$(string.EnforceFipsForGovSignin_Policy)" explainText="$(string.EnforceFipsForGovSignin_Explain)" presentation="$(presentation.EnforceFipsForGovSignin_Policy)" key="Software\Policies\Zoom\Zoom Meetings\General" valueName="EnforceFipsForGovSignin">
+      <parentCategory ref="zoomgeneral" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="AU2_EnableAutoUpdate_Policy" class="Machine" displayName="$(string.AU2_EnableAutoUpdate_Policy)" explainText="$(string.AU2_EnableAutoUpdate_Explain)" presentation="$(presentation.AU2_EnableAutoUpdate_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Updates" valueName="AU2_EnableAutoUpdate">
       <parentCategory ref="zoomupdates" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
@@ -2645,6 +2655,16 @@
         <decimal id="SelfViewMode_Part" valueName="SelfViewMode" required="true" minValue="0" maxValue="2" />
       </elements>
     </policy>
+    <policy name="EnforceFipsForGovMeeting_Policy" class="Machine" displayName="$(string.EnforceFipsForGovMeeting_Policy)" explainText="$(string.EnforceFipsForGovMeeting_Explain)" presentation="$(presentation.EnforceFipsForGovMeeting_Policy)" key="Software\Policies\Zoom\Zoom Meetings\Meetings" valueName="EnforceFipsForGovMeeting">
+      <parentCategory ref="zoommeetings" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="EnableClientAutoUpdate_Policy_Recommend" class="Machine" displayName="$(string.EnableClientAutoUpdate_Policy_Recommend)" explainText="$(string.EnableClientAutoUpdate_Explain)" presentation="$(presentation.EnableClientAutoUpdate_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="EnableClientAutoUpdate">
       <parentCategory ref="zoomgeneral_recommend" />
       <supportedOn ref="SUPPORTED_WINXPSP2" />
@@ -3522,6 +3542,16 @@
       <elements>
         <text id="SetMultipleSSOVanityUrl_Part" valueName="SetMultipleSSOVanityUrl" />
       </elements>
+    </policy>
+    <policy name="EnforceFipsForGovSignin_Policy_Recommend" class="Machine" displayName="$(string.EnforceFipsForGovSignin_Policy_Recommend)" explainText="$(string.EnforceFipsForGovSignin_Explain)" presentation="$(presentation.EnforceFipsForGovSignin_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\General" valueName="EnforceFipsForGovSignin">
+      <parentCategory ref="zoomgeneral_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
     </policy>
     <policy name="AU2_EnableAutoUpdate_Policy_Recommend" class="Machine" displayName="$(string.AU2_EnableAutoUpdate_Policy_Recommend)" explainText="$(string.AU2_EnableAutoUpdate_Explain)" presentation="$(presentation.AU2_EnableAutoUpdate_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Updates" valueName="AU2_EnableAutoUpdate">
       <parentCategory ref="zoomupdates_recommend" />
@@ -5206,6 +5236,16 @@
       <elements>
         <decimal id="SelfViewMode_Part" valueName="SelfViewMode" required="true" minValue="0" maxValue="2" />
       </elements>
+    </policy>
+    <policy name="EnforceFipsForGovMeeting_Policy_Recommend" class="Machine" displayName="$(string.EnforceFipsForGovMeeting_Policy_Recommend)" explainText="$(string.EnforceFipsForGovMeeting_Explain)" presentation="$(presentation.EnforceFipsForGovMeeting_Policy_Recommend)" key="Software\Policies\Zoom\Zoom Meetings\Recommended\Meetings" valueName="EnforceFipsForGovMeeting">
+      <parentCategory ref="zoommeetings_recommend" />
+      <supportedOn ref="SUPPORTED_WINXPSP2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
     </policy>
   </policies>
 </policyDefinitions>
