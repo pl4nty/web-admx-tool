@@ -29,6 +29,7 @@
 			<definition name="Supported_1_142" displayName="$(string.Supported_1_142)" />
 			<definition name="Supported_1_143" displayName="$(string.Supported_1_143)" />
 			<definition name="Supported_1_144" displayName="$(string.Supported_1_144)" />
+			<definition name="Supported_1_145" displayName="$(string.Supported_1_145)" />
 			<definition name="Supported_1_67" displayName="$(string.Supported_1_67)" />
 			<definition name="Supported_1_96" displayName="$(string.Supported_1_96)" />
 			<definition name="Supported_1_99" displayName="$(string.Supported_1_99)" />
@@ -581,6 +582,15 @@
 			<item displayName="$(string.UpdateMode_start)"><value><string>start</string></value></item>
 			<item displayName="$(string.UpdateMode_default)"><value><string>default</string></value></item>
 		</enum>
+			</elements>
+		</policy>
+		<policy name="UpdateRestartWhenIdle" class="Both" displayName="$(string.UpdateRestartWhenIdle)" explainText="$(string.UpdateRestartWhenIdle_restartWhenIdle)" key="Software\Policies\Microsoft\VSCode" presentation="$(presentation.UpdateRestartWhenIdle)">
+			<parentCategory ref="updateConfigurationTitle" />
+			<supportedOn ref="Supported_1_145" />
+			<elements>
+		<boolean id="UpdateRestartWhenIdle" valueName="UpdateRestartWhenIdle">
+			<trueValue><decimal value="1" /></trueValue><falseValue><decimal value="0" /></falseValue>
+		</boolean>
 			</elements>
 		</policy>
 	</policies>

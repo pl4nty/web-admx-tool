@@ -28,6 +28,7 @@
 			<string id="Supported_1_142">Visual Studio Code &gt;= 1.142</string>
 			<string id="Supported_1_143">Visual Studio Code &gt;= 1.143</string>
 			<string id="Supported_1_144">Visual Studio Code &gt;= 1.144</string>
+			<string id="Supported_1_145">Visual Studio Code &gt;= 1.145</string>
 			<string id="Supported_1_67">Visual Studio Code &gt;= 1.67</string>
 			<string id="Supported_1_96">Visual Studio Code &gt;= 1.96</string>
 			<string id="Supported_1_99">Visual Studio Code &gt;= 1.99</string>
@@ -96,7 +97,7 @@ Changes may not take full effect until VS Code is restarted.</string>
 			<string id="ChatPluginsEnabled">ChatPluginsEnabled</string>
 			<string id="ChatPluginsEnabled_chat_plugins_enabled">Enable agent plugin integration in chat.</string>
 			<string id="ChatStrictPluginOnlyCustomization">ChatStrictPluginOnlyCustomization</string>
-			<string id="ChatStrictPluginOnlyCustomization_chat_customizations_strictPluginOnlyCustomization_policy">Blocks standalone user and workspace skills, agents, hooks, instructions, and MCP servers while keeping eligible plugin customizations available.</string>
+			<string id="ChatStrictPluginOnlyCustomization_chat_customizations_strictPluginOnlyCustomization_policy">Blocks standalone user and workspace skills, agents, hooks, instructions, and MCP servers while keeping eligible plugin customizations available. When delivered through Copilot managed settings, also blocks executable Copilot extensions from user, workspace, and session directories.</string>
 			<string id="ChatTemporaryDefaultToLocalHarness">ChatTemporaryDefaultToLocalHarness</string>
 			<string id="ChatTemporaryDefaultToLocalHarness_chat_temporaryDefaultToLocalHarness_policy">Temporarily keeps Local available and prevents automatic selection of the Copilot harness, overriding rollout settings and managed sandbox and permission routing. Local does not enforce runtime-only sandbox and permission settings.</string>
 			<string id="ChatToolsAutoApprove">ChatToolsAutoApprove</string>
@@ -195,6 +196,8 @@ Note: This setting only controls tool approval and does not prevent the agent fr
 			<string id="UpdateMode_manual">Disable automatic background update checks. Updates will be available if you manually check for updates.</string>
 			<string id="UpdateMode_start">Check for updates only on startup. Disable automatic background update checks.</string>
 			<string id="UpdateMode_default">Enable automatic update checks. Code will check for updates automatically and periodically.</string>
+			<string id="UpdateRestartWhenIdle">UpdateRestartWhenIdle</string>
+			<string id="UpdateRestartWhenIdle_restartWhenIdle">Controls whether to restart automatically to apply a downloaded update after the screen has been locked for a minute while on power, keeping the machine from going to sleep until then. The restart only happens if every window can be restored exactly as it was, for example when no terminal process, task, debug session, chat request, or agent session is running, and it does not take focus from another application. Only supported on macOS.</string>
 		</stringTable>
 		<presentationTable>
 			<presentation id="AgentsVoice"><checkBox refId="AgentsVoice">AgentsVoice</checkBox></presentation>
@@ -260,6 +263,7 @@ Note: This setting only controls tool approval and does not prevent the agent fr
 			<presentation id="EnableFeedback"><checkBox refId="EnableFeedback">EnableFeedback</checkBox></presentation>
 			<presentation id="TelemetryLevel"><dropdownList refId="TelemetryLevel" /></presentation>
 			<presentation id="UpdateMode"><dropdownList refId="UpdateMode" /></presentation>
+			<presentation id="UpdateRestartWhenIdle"><checkBox refId="UpdateRestartWhenIdle">UpdateRestartWhenIdle</checkBox></presentation>
 		</presentationTable>
 	</resources>
 </policyDefinitionResources>
