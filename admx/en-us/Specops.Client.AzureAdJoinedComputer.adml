@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0" xml:space="preserve">
+
+  <displayName>Specops Client (Azure AD Computers)</displayName>
+  <description>Specops Client settings for Azure AD joined computers</description>
+
+  <resources>
+    <stringTable>
+
+	  <string id="SpecopsClient">Specops Client (Azure AD Computers)</string>
+
+	  <string id="GeneralSettings">General settings for Specops Client</string>
+	  <string id="ServiceUrlSettings">URLs to Specops Authentication</string>
+
+	  <string id="AllowShortcutsWithoutOnpremDomainDisplay">Enable shortcuts for cloud joined computer</string>
+	  <string id="AllowShortcutsWithoutOnpremDomainExplain">Allows using the start menu shortcuts (reset/enroll/change) for cloud joined computers (not joined to an Active Directory domain)</string>
+
+	  <string id="DisableWindowsChangePasswordDisplay">Remove 'Change Password' in Windows</string>
+	  <string id="DisableWindowsChangePasswordExplain">Removes 'Change Password' from Windows after having pressed ctrl-alt-del.</string>
+
+	  <string id="EnablePasswordResetLinkOnLogonScreen">Show the Password Reset link</string>				
+	  <string id="EnablePasswordResetLinkOnLogonScreenExplain">By default the Reset Password link on the logon screen is enabled. This enables users in organizations with Specops reset solutions to reset their password from Windows Logon Screen.
+
+If set to enabled, or not configured, the "Reset Password..." link will be displayed if available, or depending on the value of 'Show Reset Password link even if connection to Active Directory can't be verified'.
+
+If set to disabled, the "Reset Password..." link will never be displayed. This might be useful for organizations having Password Policy already implemented while trying out a Specops reset product, but only want to display the reset password link on certain computers.
+
+Normally, there is no need to configure this setting.</string>
+
+	  <string id="ServiceUrlEnrollDisplay">URL to web page for user enrollment</string>
+	  <string id="ServiceUrlEnrollExplain">URL to web page for user enrollment. This URL can be found in the Gatekeeper tool.</string>
+	  <string id="ServiceUrlResetDisplay">URL to web page for resetting password</string>
+	  <string id="ServiceUrlResetExplain">URL to web page for resetting password. This URL can be found in the Gatekeeper tool.</string>
+	  <string id="ServiceUrlChangeDisplay">URL to web page for changing password</string>
+	  <string id="ServiceUrlChangeExplain">URL to web page for changing password. This URL can be found in the Gatekeeper tool.</string>
+	  
+	  <string id="CreateStartMenuShortcutChange">Create start menu shortcut to password change</string>
+	  <string id="CreateStartMenuShortcutEnroll">Create start menu shortcut to enroll</string>
+	  <string id="CreateStartMenuShortcutReset">Create start menu shortcut to password reset</string>
+
+	  <string id="CreateStartMenuShortcutChangeExplain">Enabling this (which is the default if not configured) will create a start menu shortcut to a Specops password change web page when the user logs in to a computer (unless the shortcuts already exists).
+
+If set to disabled, the start menu shortcut will not be created. Existing shortcut, if any, will be deleted at next logon.</string>
+
+	  <string id="CreateStartMenuShortcutEnrollExplain">Enabling this (which is the default if not configured) will create a start menu shortcut to a Specops enrollment web page when the user logs in to a computer (unless the shortcuts already exists).
+
+If set to disabled, the start menu shortcut will not be created. Existing shortcut, if any, will be deleted at next logon.</string>
+
+	  <string id="CreateStartMenuShortcutResetExplain">Enabling this (which is the default if not configured) will create a start menu shortcut to a Specops password reset web page when the user logs in to a computer (unless the shortcuts already exists).
+
+If set to disabled, the start menu shortcut will not be created. Existing shortcut, if any, will be deleted at next logon.</string>
+
+      <string id="CreateStartMenuShortcuts">Create all start menu shortcuts to password enroll/change/reset</string>
+      <string id="CreateStartMenuShortcutsExplain">Enabling this (which is the default if not configured) will create start menu shortcuts to Specops enroll/change/reset web pages when the user logs in to a computer (unless the shortcuts already exists).
+
+If set to disabled, no start menu shortcuts will be created. Existing shortcuts, if any, will be deleted at next logon.
+
+Note that if this setting is configured, it will override the individual start menu shortcut settings.
+
+The actual URLs for enroll/change/reset will be read when the user clicks the shortcut, so even if the URLs have changed (e.g. Password Reset Web server has been moved), the URLs will be up to date.</string>
+
+		
+    </stringTable>
+
+    <presentationTable>
+
+      <presentation id="CreateStartMenuShortcutsPresentation" />
+      <presentation id="CreateStartMenuShortcutChangePresentation" />
+      <presentation id="CreateStartMenuShortcutEnrollPresentation" />
+      <presentation id="CreateStartMenuShortcutResetPresentation" />
+
+      <presentation id="EnablePasswordResetLinkOnLogonScreen" />
+
+      <presentation id="PresentationDisableWindowsChangePassword" />
+      <presentation id="PresentationAllowShortcutsWithoutOnpremDomain" />
+
+      <presentation id="PresentationServiceUrlEnroll">
+        <textBox refId="TextServiceUrlEnroll">
+          <label>URL:</label>
+			<defaultValue>https://login.specopssoft.com/Authentication/Enroll/?domainName=ACME.ORG</defaultValue>
+        </textBox>
+      </presentation>
+
+      <presentation id="PresentationServiceUrlReset">
+        <textBox refId="TextServiceUrlReset">
+          <label>URL:</label>
+			<defaultValue>https://login.specopssoft.com/Authentication/Password/Reset/?domainName=ACME.ORG</defaultValue>
+        </textBox>
+      </presentation>
+
+      <presentation id="PresentationServiceUrlChange">
+        <textBox refId="TextServiceUrlChange">
+          <label>URL:</label>
+			<defaultValue>https://login.specopssoft.com/Authentication/Password/Change/?domainName=ACME.ORG</defaultValue>
+        </textBox>
+      </presentation>
+
+	</presentationTable>
+
+  </resources>
+
+</policyDefinitionResources>

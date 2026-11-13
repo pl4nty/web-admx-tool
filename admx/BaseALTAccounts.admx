@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2023 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="accountspolkit" namespace="BaseALT.Policies.AccountsPolkit" />
+    <using prefix="system" namespace="BaseALT.Policies.System" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <policies>
+    <policy class="Machine" displayName="$(string.org-freedesktop-accounts-change-own-password)"
+        explainText="$(string.org-freedesktop-accounts-change-own-password_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.accounts.change-own-password"
+        valuename="org.freedesktop.accounts.change-own-password"
+        presentation="$(presentation.org-freedesktop-accounts-pr)">
+      <parentCategory ref="system:ALT_AccountsPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopAccounts_setter" valueName="org.freedesktop.accounts.change-own-password" required="true">
+          <item displayName="$(string.org-freedesktop-accounts-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopAccounts_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.accounts.change-own-password">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-accounts-change-own-password)"
+        explainText="$(string.org-freedesktop-accounts-change-own-password-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.accounts.change-own-password-user"
+        valuename="org.freedesktop.accounts.change-own-password"
+        presentation="$(presentation.org-freedesktop-accounts-user-pr)">
+      <parentCategory ref="system:ALT_AccountsPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopAccounts_setter" valueName="org.freedesktop.accounts.change-own-password" required="true">
+          <item displayName="$(string.org-freedesktop-accounts-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-accounts-change-own-user-data)"
+        explainText="$(string.org-freedesktop-accounts-change-own-user-data_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.accounts.change-own-user-data"
+        valuename="org.freedesktop.accounts.change-own-user-data"
+        presentation="$(presentation.org-freedesktop-accounts-pr)">
+      <parentCategory ref="system:ALT_AccountsPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopAccounts_setter" valueName="org.freedesktop.accounts.change-own-user-data" required="true">
+          <item displayName="$(string.org-freedesktop-accounts-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopAccounts_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.accounts.change-own-user-data">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+     </policy>
+     <policy class="User" displayName="$(string.org-freedesktop-accounts-change-own-user-data)"
+        explainText="$(string.org-freedesktop-accounts-change-own-user-data-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.accounts.change-own-user-data-user"
+        valuename="org.freedesktop.accounts.change-own-user-data"
+        presentation="$(presentation.org-freedesktop-accounts-user-pr)">
+      <parentCategory ref="system:ALT_AccountsPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopAccounts_setter" valueName="org.freedesktop.accounts.change-own-user-data" required="true">
+          <item displayName="$(string.org-freedesktop-accounts-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+     </policy>
+     <policy class="Machine" displayName="$(string.org-freedesktop-accounts-set-login-option)"
+        explainText="$(string.org-freedesktop-accounts-set-login-option_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.accounts.set-login-option"
+        valuename="org.freedesktop.accounts.set-login-option"
+        presentation="$(presentation.org-freedesktop-accounts-pr)">
+      <parentCategory ref="system:ALT_AccountsPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopAccounts_setter" valueName="org.freedesktop.accounts.set-login-option" required="true">
+          <item displayName="$(string.org-freedesktop-accounts-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopAccounts_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.accounts.set-login-option">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-accounts-set-login-option)"
+        explainText="$(string.org-freedesktop-accounts-set-login-option-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.accounts.set-login-option-user"
+        valuename="org.freedesktop.accounts.set-login-option"
+        presentation="$(presentation.org-freedesktop-accounts-user-pr)">
+      <parentCategory ref="system:ALT_AccountsPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopAccounts_setter" valueName="org.freedesktop.accounts.set-login-option" required="true">
+          <item displayName="$(string.org-freedesktop-accounts-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-accounts-user-administration)"
+        explainText="$(string.org-freedesktop-accounts-user-administration_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.accounts.user-administration"
+        valuename="org.freedesktop.accounts.user-administration"
+        presentation="$(presentation.org-freedesktop-accounts-pr)">
+      <parentCategory ref="system:ALT_AccountsPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopAccounts_setter" valueName="org.freedesktop.accounts.user-administration" required="true">
+          <item displayName="$(string.org-freedesktop-accounts-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopAccounts_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.accounts.user-administration">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-accounts-user-administration)"
+        explainText="$(string.org-freedesktop-accounts-user-administration-user_help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.accounts.user-administration-user"
+        valuename="org.freedesktop.accounts.user-administration"
+        presentation="$(presentation.org-freedesktop-accounts-user-pr)">
+      <parentCategory ref="system:ALT_AccountsPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopAccounts_setter" valueName="org.freedesktop.accounts.user-administration" required="true">
+          <item displayName="$(string.org-freedesktop-accounts-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-accounts-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

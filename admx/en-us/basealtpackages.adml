@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2020 BaseALT, Ltd.  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" revision="1.0" schemaVersion="1.0">
+  <displayName>ALT management packages definitions</displayName>
+  <description>This file contains the install and remove packages definitions used by ALT operating system.</description>
+
+  <resources>
+    <stringTable>
+      <string id="ALT_Packages">Packages control</string>
+      <string id="ALT_Packages_Help">Software installation settings from packages repository.</string>
+
+      <string id="packages_install">Software install</string>
+      <string id="packages_install_help">This policy defines the list of packages to be installed
+
+Specify a list of packages, one per line:
+      </string>
+      <string id="packages_remove">Software removal</string>
+      <string id="packages_remove_help">This policy defines the list of packages to be removed
+
+Specify a list of packages, one per line
+      </string>
+
+      <string id="sync_packages_work_machine">Synchronous work with packages</string>
+      <string id="sync_packages_work_machine_help">Enabling this setting will prohibit the work (installation, removal) with packages in the background, which can slow down the computer when the policy is applied (when the machine boots).</string>
+
+      <string id="sync_packages_work_user">Synchronous work with packages</string>
+      <string id="sync_packages_work_user_help">Enabling this setting will prohibit work (installation, removal) with packages in the background, which can slow down the computer when the policy is applied (during user login).</string>
+
+    </stringTable>
+    <presentationTable>
+      <presentation id="InstallPackagesMachine">
+        <listBox refId="InstallPackagesList">List of packages to install</listBox>
+      </presentation>
+
+      <presentation id="InstallPackagesUser">
+        <listBox refId="InstallPackagesList">List of packages to install</listBox>
+      </presentation>
+
+      <presentation id="RemovePackagesMachine">
+        <listBox refId="RemovePackagesList">List of packages to remove</listBox>
+      </presentation>
+
+      <presentation id="RemovePackagesUser">
+        <listBox refId="RemovePackagesList">List of packages to remove</listBox>
+      </presentation>
+
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2019 BaseALT, Ltd.  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" revision="1.0" schemaVersion="1.0">
+  <displayName>ALT control installed facilities definitions</displayName>
+  <description>This file contains the control installed facilities definitions used by ALT operating system.</description>
+
+  <resources>
+    <stringTable>
+      <string id="at">Access rights and behavior of the job queue /usr/bin/at</string>
+      <string id="at_help">The policy allows you to control the behavior and access rights to run the job queue at (access rights to run /usr/bin/at)
+
+All users — All users are allowed to run /usr/bin/at
+
+Only root — Only superuser (root) allowed to run /usr/bin/at
+
+Compatibility mode — mode «atdaemon», should not be used
+      </string>
+      <string id="at_public">All users</string>
+      <string id="at_restricted">Only root</string>
+      <string id="at_atdaemon">Compatibility mode</string>
+
+      <string id="chage">Execution of program /usr/bin/chage</string>
+      <string id="chage_help">Policy allows to control access to execute program /usr/bin/chage
+
+Any user — Any user can determine when he should change his/her password using the "chage" command
+
+Only root — Only superuser (root) can execute /usr/bin/chage
+      </string>
+      <string id="chage_public">Any user</string>
+      <string id="chage_restricted">Only root</string>
+
+      <string id="chfn">Execution of command /usr/bin/chfn</string>
+      <string id="chfn_help">The policy allows you to control behavior and access rights. the chfn command (/usr/bin/chfn), which can change the fields (full name, cabinet number, office number and home phone number for the user account) for your account, subject to the restrictions in /etc/login.defs. (The default configuration does not allow users to change their full name.). In addition, only the superuser can use the -o option to change the undefined parts of the GECOS field
+
+Any user — Any user can use the command /usr/bin/chfn
+
+Only root — Only superuser (root) can execute /usr/bin/chfn
+      </string>  
+      <string id="chfn_public">Any user</string>
+      <string id="chfn_restricted">Only root</string>
+
+      <string id="chsh">Permission to use /usr/bin/chsh</string>
+      <string id="chsh_help">The policy allows you to control access rights to the chsh command (/usr/bin/chsh), which changes the user login shell: this defines the name of the initial user login command; an ordinary user can change the login shell only for his account; superuser can change login shell for any account
+
+All users — All users are allowed to use /usr/bin/chsh
+
+Only root — Only superuser (root) can use /usr/bin/chsh
+      </string>
+      <string id="chsh_public">All users</string>
+      <string id="chsh_restricted">Only root</string>
+
+      <string id="chrony">Chrony NTP daemon mode</string>
+      <string id="chrony_help">This policy will determine the operation mode (configuration) of the Chrony daemon that implements the functions of the Network Time Protocol
+
+Server — If selected, uncomment or add the «allow all» directive to daemon configuration file, see documentation for details
+
+Client — if selected, it will comment out the «allow» directive in the daemon configuration file, see the documentation for details
+      </string>
+      <string id="chrony_server">Server</string>
+      <string id="chrony_client">Client</string>
+
+      <string id="consolehelper">Permission to use consolehelper</string>
+      <string id="consolehelper_help">This policy defines access rights to the consolehelper tool (/usr/lib/consolehelper/priv/auth), which allows console users to run system programs by performing authentication through PAM (which can be configured to trust all console users or to request a password at the discretion of the system administrator). When possible, authentication is performed graphically; otherwise, this is done in the text console from which consolehelper was started.
+
+Any user — Any user can use consolehelper
+
+Only wheel — Only users of the «wheel» group can use consolehelper
+
+Only root — Only superuser (root) can use consolehelper
+      </string>
+
+      <string id="consolehelper_public">Any user</string>
+      <string id="consolehelper_wheelonly">Only wheel</string>
+      <string id="consolehelper_restricted">Only root</string>
+
+      <string id="crontab">Permission to use crontab</string>
+      <string id="crontab_help">This policy defines access rights to the crontab tool (/usr/bin/crontab)
+
+Any user — Any user can use crontab
+
+Only root — Only superuser (root) can use crontab
+      </string>
+      <string id="crontab_public">Any user</string>
+      <string id="crontab_restricted">Only root</string>
+
+      <string id="cups">CUPS mode</string>
+      <string id="cups_help">This policy defines the behavior of CUPS
+
+External IPP interface — External IPP interface are available for user
+
+Only local utilities — Only local utilities can work with CUPS
+      </string>
+      <string id="cups_server">External IPP interface</string>
+      <string id="cups_local">Only local utilities</string>
+
+      <string id="dvd-ram-control">Permission to use /usr/bin/dvd-ram-control</string>
+      <string id="dvd-ram-control_help">This policy defines access rights to the /usr/bin/dvd-ram-control
+
+Only cdwriter — Only «cdwriter» group members can execute /usr/bin/dvd-ram-control
+
+Only root — Only superuser (root) can execute /usr/bin/dvd-ram-control
+
+Compatibility mode — Compatibility mode, should not be used
+      </string>
+      <string id="dvd-ram-control_public">Only cdwriter</string>
+      <string id="dvd-ram-control_restricted">Only root</string>
+      <string id="dvd-ram-control_legacy">Compatibility mode</string>
+
+      <string id="dvd_rw-booktype">Permission to use /usr/bin/dvd+rw-booktype</string>
+      <string id="dvd_rw-booktype_help">This policy defines access rights to the /usr/bin/dvd+rw-booktype
+
+Only cdwriter — Only «cdwriter» group members can execute /usr/bin/dvd+rw-booktype
+
+Only root — Only superuser (root) can execute /usr/bin/dvd+rw-booktype
+
+Compatibility mode — Compatibility mode, should not be used
+      </string>
+      <string id="dvd_rw-booktype_public">Only cdwriter</string>
+      <string id="dvd_rw-booktype_restricted">Only root</string>
+      <string id="dvd_rw-booktype_legacy">Compatibility mode</string>
+
+      <string id="dvd_rw-format">Permission to use /usr/bin/dvd+rw-format</string>
+      <string id="dvd_rw-format_help">This policy defines access rights to the /usr/bin/dvd+rw-format
+
+Only cdwriter — Only «cdwriter» group members can execute /usr/bin/dvd+rw-format
+
+Only root — Only superuser (root) can execute /usr/bin/dvd+rw-format
+
+Compatibility mode — Compatibility mode, should not be used
+      </string>
+      <string id="dvd_rw-format_public">Only cdwriter</string>
+      <string id="dvd_rw-format_restricted">Only root</string>
+      <string id="dvd_rw-format_legacy">Compatibility mode</string>
+
+      <string id="dvd_rw-mediainfo">Permission to use /usr/bin/dvd+rw-mediainfo</string>
+      <string id="dvd_rw-mediainfo_help">This policy defines access rights to the /usr/bin/dvd+rw-mediainfo
+
+Only cdwriter — Only «cdwriter» group members can execute /usr/bin/dvd+rw-mediainfo
+
+Only root — Only superuser (root) can execute /usr/bin/dvd+rw-mediainfo
+
+Compatibility mode — Compatibility mode, should not be used
+      </string>
+      <string id="dvd_rw-mediainfo_public">Only cdwriter</string>
+      <string id="dvd_rw-mediainfo_restricted">Only root</string>
+      <string id="dvd_rw-mediainfo_legacy">Compatibility mode</string>
+
+      <string id="fusermount">Access to FUSE filesystems mount</string>
+      <string id="fusermount_help">This policy defines access permissions for FUSE file system mounts (execution of programs  /usr/bin/fusermount and /usr/bin/fusermount3)
+
+Any user — Any user can execute /usr/bin/fusermount and /usr/bin/fusermount3
+
+Only fuse — Only «fuse» group members can execute /usr/bin/fusermount and /usr/bin/fusermount3
+
+Only wheel — Only «wheel» group members can execute /usr/bin/fusermount and /usr/bin/fusermount3
+
+Only root _ Only root can execute /usr/bin/fusermount and /usr/bin/fusermount3
+      </string>
+      <string id="fusermount_public">Any user</string>
+      <string id="fusermount_fuseonly">Only fuse</string>
+      <string id="fusermount_wheelonly">Only wheel</string>
+      <string id="fusermount_restricted">Only root</string>
+
+      <string id="gpasswd">Execution of program /usr/bin/gpasswd</string>
+      <string id="gpasswd_help">The policy defines the rights to run the tool /usr/bin/gpasswd
+
+Any user — Any user can execute /usr/bin/gpasswd
+
+Only wheel — Only «wheel» group members can execute /usr/bin/gpasswd
+
+Only root — Only superuser (root) can execute /usr/bin/gpasswd
+      </string>
+      <string id="gpasswd_public">Any user</string>
+      <string id="gpasswd_wheelonly">Only wheel</string>
+      <string id="gpasswd_restricted">Only root</string>
+
+      <string id="groupmems">Execution of program /usr/bin/groupmems</string>
+      <string id="groupmems_help">The policy defines the rights to execution of program /usr/bin/groupmems
+
+Any user — Any user can execute /usr/bin/groupmems
+
+Only wheel — Only «wheel» group members can execute /usr/bin/groupmems
+
+Only root — Only superuser (root) can execute /usr/bin/groupmems
+      </string>
+      <string id="groupmems_public">Any user</string>
+      <string id="groupmems_wheelonly">Only wheel</string>
+      <string id="groupmems_restricted">Only root</string>
+
+      <string id="growisofs">Permission to use /usr/bin/growisofs</string>
+      <string id="growisofs_help">The policy defines the rights to use the tool /usr/bin/growisofs
+
+Only cdwriter — Only «cdwriter» group members can execute /usr/bin/growisofs
+
+Only root — Only superuser (root) can execute /usr/bin/growisofs
+
+Compatibility mode — Compatibility mode, should not be used
+      </string>
+      <string id="growisofs_public">Only cdwriter</string>
+      <string id="growisofs_restricted">Only root</string>
+      <string id="growisofs_legacy">Compatibility</string>
+
+      <string id="hddtemp">Permission to use /usr/sbin/hddtemp</string>
+      <string id="hddtemp_help">Permission to use the tool /usr/sbin/hddtemp — monitor hard drive temperature
+
+Any user — Any user can execute /usr/sbin/hddtemp
+
+Only wheel — Only «wheel» group members can execute /usr/sbin/hddtemp
+
+Only root — Only superuser (root) can execute /usr/sbin/hddtemp
+      </string>
+      <string id="hddtemp_public">Any user</string>
+      <string id="hddtemp_wheelonly">Only wheel</string>
+      <string id="hddtemp_restricted">Only root</string>
+
+      <string id="lightdm-greeter-hide-users">List of users in the greeter (LightDM)</string>
+      <string id="lightdm-greeter-hide-users_help">This policy defines to list all users when logging in with LightDM (in greeter — on the Welcome/Logon screen of LightDM) or not
+
+Show — Show available users list in greeter
+
+Hide — Don't list all users in greeter
+      </string>
+      <string id="lightdm-greeter-hide-users_show">Show</string>
+      <string id="lightdm-greeter-hide-users_hide">Hide</string>
+
+      <string id="mtr">Permission to use /usr/bin/mtr</string>
+      <string id="mtr_help">Permission to use the network tool /usr/bin/mtr
+
+Any user — Any user can execute /usr/bin/mtr
+
+Group netadmin — Only «netadmin» group members can execute /usr/bin/mtr
+
+Only root — Only superuser (root) can execute /usr/bin/mtr
+      </string>
+      <string id="mtr_public">Any user</string>
+      <string id="mtr_netadmin">Group netadmin</string>
+      <string id="mtr_restricted">Only root</string>
+
+      <string id="ldap-reverse-dns-lookup">Reverse DNS lookup on OpenLDAP queries</string>
+      <string id="ldap-reverse-dns-lookup_help">The policy determines whether reverse DNS lookups are allowed for OpenLDAP queries
+
+Default, Allow — Perform reverse DNS lookup on OpenLDAP queries
+
+Not allow — Do not perform reverse DNS lookups on OpenLDAP queries
+      </string>
+      <string id="ldap-reverse-dns-lookup_allow">Allow</string>
+      <string id="ldap-reverse-dns-lookup_deny">Not allow</string>
+      <string id="ldap-reverse-dns-lookup_default">Default</string>
+
+      <string id="ldap-tls-cert-check">Performing certificate verification when establishing TLS OpenLDAP connections</string>
+      <string id="ldap-tls-cert-check_help">The policy defines the mode of certificate verification when installing TLS of connections OpenLDAP
+
+Default — Only establish a connection with the correct certificate
+
+Never — Do not perform any checks
+
+Allow — Establish a connection even if there is no or incorrect certificate
+
+Try — Establish a connection if there is no or with a valid certificate
+
+Demand — Only establish a connection with the correct certificate
+      </string>
+      <string id="ldap-tls-cert-check_default">Default</string>
+      <string id="ldap-tls-cert-check_never">Never</string>
+      <string id="ldap-tls-cert-check_allow">Allow</string>
+      <string id="ldap-tls-cert-check_try">Try</string>
+      <string id="ldap-tls-cert-check_demand">Demand</string>
+
+      <string id="mount">Permissions for /bin/mount and /bin/umount</string>
+      <string id="mount_help">This policy defines Permissions for /bin/mount and /bin/umount
+
+Any user — Any user is permitted to run /bin/mount and /bin/umount
+
+Only wheel — Users from the «wheel» group are permitted to run /bin/mount and /bin/umount
+
+Unprivileged mode — Any user is permitted to run /bin/mount and /bin/umount for unprivileged actions
+
+Only root — Only superuser (root) is permitted to run /bin/mount and /bin/umount
+      </string>
+      <string id="mount_public">Any user</string>
+      <string id="mount_wheelonly">Only wheel</string>
+      <string id="mount_unprivileged">Unprivileged mode</string>
+      <string id="mount_restricted">Only root</string>
+
+      <string id="newgrp">Permissions for /usr/bin/newgrp</string>
+      <string id="newgrp_help">This policy defines Permissions for /usr/bin/newgrp
+
+Any user — Any user is permitted to run /usr/bin/newgrp
+
+Only wheel — Users from the «wheel» group are permitted to run /usr/bin/newgrp
+
+Only root — Only superuser (root) is permitted to run /usr/bin/newgrp
+      </string>
+      <string id="newgrp_public">Any user</string>
+      <string id="newgrp_wheelonly">Only wheel</string>
+      <string id="newgrp_restricted">Only root</string>
+
+      <string id="nfsmount">Permissions for /sbin/mount.nfs</string>
+      <string id="nfsmount_help">This policy defines Permissions for /sbin/mount.nfs
+
+Any user — Any user is permitted to run /sbin/mount.nfs
+
+Only wheel — Users from the «wheel» group are permitted to run /sbin/mount.nfs
+
+Only root — Only superuser (root) is permitted to run /sbin/mount.nfs
+      </string>
+      <string id="nfsmount_public">Any user</string>
+      <string id="nfsmount_wheelonly">Only wheel</string>
+      <string id="nfsmount_restricted">Only root</string>
+
+      <string id="pam_mktemp">Create temporary directories</string>
+      <string id="pam_mktemp_help">This policy determines whether to create individual temporary directories for users
+
+Disabled — Disable the creation of individual temporary directories for users
+
+Enabled — Enable the creation of individual temporary directories for users
+      </string>
+
+      <string id="passwd">Managing passwords with passwd</string>
+      <string id="passwd_help">Define a password management policy using the command /usr/bin/passwd
+
+TCB — Any user can change his own password using /usr/bin/passwd when tcb scheme is enabled
+
+Traditional — Any user can change his own password using /usr/bin/passwd when tcb scheme is disabled
+
+Only root — Only superuser (root) has the right to change user passwords
+      </string>
+      <string id="passwd_tcb">TCB</string>
+      <string id="passwd_traditional">Traditional (tcb sechema off)</string>
+      <string id="passwd_restricted">Only root</string>
+
+      <string id="passwdqc-enforce">Manage password complexity checks</string>
+      <string id="passwdqc-enforce_help">Policy manages passwords for sufficient password strength
+
+Everyone — Enable password complexity checks for all users
+
+Users only — Enable password complexity checks for all but superusers
+      </string>
+      <string id="passwdqc-enforce_everyone">Everyone</string>
+      <string id="passwdqc-enforce_users">Users only</string>
+
+      <string id="ping">Permissions for /usr/bin/ping</string>
+      <string id="ping_help">This policy defines Permissions for /usr/bin/ping
+
+Any user — Any user is permitted to run /usr/bin/ping
+
+Group netadmin — Users from the «netadmin» group are permitted to run /usr/bin/ping
+
+Only root — Only superuser (root) is permitted to run /usr/bin/ping
+
+Any user (in containers) — Any user is permitted to run /usr/bin/ping (in containers)
+
+Group netadmin (in containers) — Users from the «netadmin» group are permitted to run /usr/bin/ping (in containers)
+      </string>
+      <string id="ping_public">Any user</string>
+      <string id="ping_netadmin">Group netadmin</string>
+      <string id="ping_restricted">Only root</string>
+      <string id="ping_public_caps">Any user (in containers)</string>
+      <string id="ping_netadmin_caps">Group netadmin (in containers)</string>
+
+      <string id="postfix">Postfix MTA operating mode</string>
+      <string id="postfix_help">This policy defines the Postfix (Post Transport Agent) MTA operating mode
+
+Local (disabled) — Postfix MTA is disabled
+
+Server (filters off) — Postfix MTA enabled without mail filters
+
+Filter — Postfix MTA is enabled with mail filters
+      </string>
+      <string id="postfix_local">Local (disabled)</string>
+      <string id="postfix_server">Server (filters off)</string>
+      <string id="postfix_filter">Filter</string>
+
+      <string id="postqueue">Permissions for /usr/bin/postqueue</string>
+      <string id="postqueue_help">This policy defines Permissions for /usr/bin/postqueue
+
+Any user — Any user is permitted to run /usr/bin/postqueue
+
+Group mailadm — Users from the «mailadm» group are permitted to run /usr/bin/postqueue
+
+Only root — Only superuser (root) is permitted to run /usr/bin/postqueue
+      </string>
+      <string id="postqueue_public">Any user</string>
+      <string id="postqueue_mailadm">Group mailadm</string>
+      <string id="postqueue_restricted">Only root</string>
+
+      <string id="ppp">Permissions for /usr/sbin/pppd</string>
+      <string id="ppp_help">This policy defines Permissions for /usr/sbin/pppd
+
+Only root — Only superuser (root) is permitted to run /usr/sbin/pppd
+
+Traditional — Any user has the right to run /usr/sbin/pppd without raising privileges
+
+Group uucp —  Members of the «uucp» group have the right to run /usr/sbin/pppd with superuser rights
+
+Public — Any user has the right to run /usr/sbin/pppd with superuser rights
+      </string>
+      <string id="ppp_restricted">Only root is permitted to run /usr/sbin/pppd</string>
+      <string id="ppp_traditional">Traditional</string>
+      <string id="ppp_uucp">Group uucp</string>
+      <string id="ppp_public">Public</string>
+
+      <string id="rpcbind">Rpcbind operating mode</string>
+      <string id="rpcbind_help">This policy defines the mode of operation of rpcbind (/sbin/rpcbind)
+
+Server — rpcbind will listen for incoming connections from the network
+
+Local — rpcbind will only accept local requests
+      </string>
+      <string id="rpcbind_server">Server</string>
+      <string id="rpcbind_local">Local</string>
+
+      <string id="sftp">SFTP support on OpenSSH server</string>
+      <string id="sftp_help">This policy defines SFTP support on the OpenSSH server
+
+Disabled — Disable SFTP support on the OpenSSH server
+
+Enabled — Enable SFTP support on the OpenSSH server
+      </string>
+
+      <string id="pam_canonicalize_user">Manage username canonicalization in PAM</string>
+      <string id="pam_canonicalize_user_help">The policy determines whether the system will automatically convert usernames to the standard format during authentication
+
+Enabled - entered usernames are automatically converted to the standard format;
+
+Example: Admin —> admin, User@DOMAIN —> user;
+
+Disabled - entered usernames are accepted in their original format.
+      </string>
+
+      <string id="sshd-allow-groups">Group access control to OpenSSH server</string>
+      <string id="sshd-allow-groups_help">This policy enables access control by the list of allowed groups on the OpenSSH server
+
+Disabled — Remote access control to the OpenSSH server is disabled
+
+Enabled — Remote access control to the OpenSSH server is enabled
+      </string>
+
+      <string id="sshd-allow-groups-list">Allowed groups for access to OpenSSH server</string>
+      <string id="sshd-allow-groups-list_help">This policy determines which groups are included in the list of allowed groups for the remote access service to the OpenSSH server
+
+All users — Allow access to the OpenSSH server by all users
+
+Groups wheel and remote — Allow access to the OpenSSH server by «wheel» and «remote» groups
+
+Only wheel — Allow access to the OpenSSH server by «wheel» group only
+
+Only remote — Allow access to the OpenSSH server by «remote» group only
+      </string>
+
+      <string id="sshd-allow-groups-list_users">All users</string>
+      <string id="sshd-allow-groups-list_remote">Groups wheel and remote</string>
+      <string id="sshd-allow-groups-list_wheelonly">Only wheel</string>
+      <string id="sshd-allow-groups-list_remoteonly">Only remote</string>
+
+      <string id="sshd-gssapi-auth">Support GSSAPI authentication on OpenSSH server</string>
+      <string id="sshd-gssapi-auth_help">This policy enables support for authentication using GSSAPI on the OpenSSH server
+
+Enabled — GSSAPI support on the OpenSSH server is enabled
+
+Disabled — GSSAPI support on the OpenSSH server is disabled
+       </string>
+
+      <string id="sshd-password-auth">Password authentication on OpenSSH server</string>
+      <string id="sshd-password-auth_help">This policy enables support for password authentication on the OpenSSH server
+
+Enabled — Password authentication support on the OpenSSH server is enabled
+
+Disabled — Password authentication support on the OpenSSH server is disabled
+      </string>
+
+      <string id="sshd-permit-root-login">OpenSSH authentication of root by password</string>
+      <string id="sshd-permit-root-login_help">This policy defines authentication modes for the superuser (root) on the OpenSSH server
+
+Without password — The superuser (root) is only allowed password-free authentication on the OpenSSH server
+
+Enabled — The superuser (root) is allowed to authenticate on the OpenSSH server
+
+Disabled — The superuser (root) is denied authentication on the OpenSSH server
+
+Default — Reset the authentication mode for the superuser (root) to the package default
+      </string>
+      <string id="sshd-permit-root-login_without_password">Without password only</string>
+      <string id="sshd-permit-root-login_enabled">Enabled</string>
+      <string id="sshd-permit-root-login_disabled">Disabled</string>
+      <string id="sshd-permit-root-login_default">Default</string>
+
+      <string id="ssh-gssapi-auth">Authentication of OpenSSH clients via GSSAPI</string>
+      <string id="ssh-gssapi-auth_help">This policy defines the functionality to support authentication of OpenSSH clients using via GSSAPI
+
+Enabled — GSSAPI authentication support for OpenSSH clients is enabled
+
+Disabled — GSSAPI authentication support for OpenSSH clients is disabled
+      </string>
+
+      <string id="sssd-ad-gpo-access-control">SSSD access control via Group Policies</string>
+      <string id="sssd-ad-gpo-access-control_help">This policy determines in which mode access control in SSSD will be performed based on Active Directory group policies (GPO)
+
+Enforced — SSSD GPO-based access control rules are evaluated and enforced
+
+Permissived — SSSD GPO-based access control rules are evaluated, but not enforced
+
+Disabled — SSSD GPO-based access control rules are neither evaluated nor enforced
+
+Default — SSSD GPO-based access control reset to the default value in the package
+      </string>
+      <string id="sssd-ad-gpo-access-control_enforced">Enforced</string>
+      <string id="sssd-ad-gpo-access-control_permissived">Permissived</string>
+      <string id="sssd-ad-gpo-access-control_disabled">Disabled</string>
+      <string id="sssd-ad-gpo-access-control_default">Default</string>
+
+      <string id="sssd-ad-gpo-ignore-unreadable">Ignoring policies when GPT are unavailable</string>
+      <string id="sssd-ad-gpo-ignore-unreadable_help">This setting determines whether access control rules in SSSD based on group policies will be ignored if any template (GPT) of the Group Policy Object (GPO) is not available
+
+Enabled — Ignore access control rules via group policies if group policy templates are not available for SSSD
+
+Disabled — Deny access SSSD AD users when group policy templates are not unavailable
+
+Default — The policy ignoring setting, when group policy templates are unavailable, is reset to the default value in the package
+
+      </string>
+      <string id="sssd-ad-gpo-ignore-unreadable_enabled">Enabled</string>
+      <string id="sssd-ad-gpo-ignore-unreadable_disabled">Disabled</string>
+      <string id="sssd-ad-gpo-ignore-unreadable_default">Default</string>
+
+      <string id="sssd-cache-credentials">Caching user credentials</string>
+      <string id="sssd-cache-credentials_help">This policy determines whether the credentials of remote users will be stored in the local SSSD cache
+
+Enabled — Storing user credentials in the local SSSD cache is enabled
+
+Disabled — Storing user credentials in the local SSSD cache is disabled
+
+Default — The setting for storing user credentials in the local SSSD cache reset to the default value in the package
+
+      </string>
+      <string id="sssd-cache-credentials_enabled">Enabled</string>
+      <string id="sssd-cache-credentials_disabled">Disabled</string>
+      <string id="sssd-cache-credentials_default">Default</string>
+
+      <string id="sssd-drop-privileges">SSSD privilege mode</string>
+      <string id="sssd-drop-privileges_help">This policy allows to reset the rights of the SSSD service to avoid working on behalf of the superuser (root)
+
+Privileged — The SSSD service is running on behalf of a privileged superuser (root)
+
+Unprivileged — The SSSD service is running on behalf of an unprivileged user (_sssd)
+
+Default — The SSSD privilege mode is set by default in the packager
+
+      </string>
+      <string id="sssd-drop-privileges_privileged">Privileged</string>
+      <string id="sssd-drop-privileges_unprivileged">Unprivileged</string>
+      <string id="sssd-drop-privileges_default">Default</string>
+
+      <string id="sssd-dyndns-update">Update forward DNS record</string>
+      <string id="sssd-dyndns-update_help">This policy allows to enable automatic updating of DNS records (protected with GSS-TSIG) with the client's IP address via SSSD
+
+Enabled — Automatic client DNS record update via SSSD is enabled
+
+Disabled — Automatic client DNS record update via SSSD is disabled
+
+Default — The configuration of automatic updating of client DNS records via SSSD is set by default in the package
+
+      </string>
+      <string id="sssd-dyndns-update_enabled">Enabled</string>
+      <string id="sssd-dyndns-update_disabled">Disabled</string>
+      <string id="sssd-dyndns-update_default">Default</string>
+
+      <string id="sssd-dyndns-update-ptr">Update reverse DNS record</string>
+      <string id="sssd-dyndns-update-ptr_help">This policy determines whether the client PTR record (protected with GSS-TSIG) will be updated. This policy only works if "Update forward DNS record" is enabled.
+
+Enabled — Automatic DNS update of the reverse zone record via SSSD is enabled
+
+Disabled — Automatic DNS update of the reverse zone record via SSSD is disabled
+
+Default — The configuration of automatic updating of client PTR record for reverse zone records using SSSD is set by default in the package
+
+      </string>
+      <string id="sssd-dyndns-update-ptr_enabled">Enabled</string>
+      <string id="sssd-dyndns-update-ptr_disabled">Disabled</string>
+      <string id="sssd-dyndns-update-ptr_default">Default</string>
+
+      <string id="su">Permissions for /bin/su</string>
+      <string id="su_help">This policy defines permissions for /bin/su
+
+Any user — Any user is permitted to run /bin/su
+
+All users, but not root — Any user has the right to run /bin/su, but only members of the «wheel» group can raise privileges to the superuser (root)
+
+Only wheel — Only users of the «wheel» group are allowed to run /bin/su
+
+Only root — Only superuser (root) is permitted to run /bin/su
+      </string>
+      <string id="su_public">Any user</string>
+      <string id="su_wheel">All users, but not root</string>
+      <string id="su_wheelonly">Only wheel</string>
+      <string id="su_restricted">Only root</string>
+
+      <string id="sudo">Permissions for /usr/bin/sudo</string>
+      <string id="sudo_help">This policy defines Permissions for /usr/bin/sudo
+
+Any user — Any user is permitted to run /usr/bin/sudo
+
+Only wheel — Users from the «wheel» group are permitted to run /usr/bin/sudo
+
+Only root — Only superuser (root) is permitted to run /usr/bin/sudo
+      </string>
+      <string id="sudo_public">Any user</string>
+      <string id="sudo_wheelonly">Only wheel</string>
+      <string id="sudo_restricted">Only root</string>
+
+      <string id="sudoers">Passing the parent environment to sudo</string>
+      <string id="sudoers_help">This policy determines whether the parent environment (environment variables) is passed to sudo
+
+Strict — Do not pass environment variables to the child process
+
+Relaxed — Pass environment variables to the child process
+      </string>
+      <string id="sudoers_strict">Strict</string>
+      <string id="sudoers_relaxed">Relaxed</string>
+
+      <string id="sudoreplay">Permissions for /usr/bin/sudoreplay</string>
+      <string id="sudoreplay_help">This policy defines Permissions for /usr/bin/sudoreplay
+
+Any user — Any user is permitted to run /usr/bin/sudoreplay
+
+Only wheel — Users from the «wheel» group are permitted to run /usr/bin/sudoreplay
+
+Only root — Only superuser (root) is permitted to run /usr/bin/sudoreplay
+      </string>
+      <string id="sudoreplay_public">Any user</string>
+      <string id="sudoreplay_wheelonly">Only wheel</string>
+      <string id="sudoreplay_restricted">Only root</string>
+
+      <string id="sudowheel">Allow sudo command to members of «wheel» group</string>
+      <string id="sudowheel_help">This policy allows or denies members of the «wheel» group to use the sudo command. If the policy is enabled, users in the «wheel» group can raise system privileges via the sudo command. If the policy is not configured or disabled, a member of the "wheel" groups will not be able to use the sudo command.
+
+Disabled — members of the «wheel» group cannot raise privileges with sudo command
+
+Enabled — members of the «wheel» grop can raise privileges with sudo command
+      </string>
+
+      <string id="system-auth">Authentication method</string>
+      <string id="system-auth_help">This policy defines the method of user authentication
+
+WARNING!!!
+When switching to modes other than SSSD and Winbind, group policies will cease to work, enable this policy and select a mode other than those listed above only if you are sure!
+
+Mode:
+
+Winbind — Use Winbind for authentication
+
+SSSD — Use System Security Services Daemon authentication method
+      </string>>
+      <string id="system-auth_sss">SSSD</string>
+      <string id="system-auth_winbind">Winbind</string>
+
+      <string id="tcb_chkpwd">Permissions for /usr/lib/chkpwd/tcb_chkpwd</string>
+      <string id="tcb_chkpwd_help">This policy defines permissions for privileged helper /usr/lib/chkpwd/tcb_chkpwd
+
+Any user with scheme tcb disabled — Any user can be authenticated using /usr/lib/chkpwd/tcb_chkpwd privileged helper when tcb scheme is disabled
+
+Any user with scheme tcb enabled — Any user can be authenticated using /usr/lib/chkpwd/tcb_chkpwd privileged helper when tcb scheme is enabled
+
+Only root — Only the superuser can be authenticated with /usr/lib/chkpwd/tcb_chkpwd
+      </string>
+      <string id="tcb_chkpwd_traditional">Any user with tcb disabled</string>
+      <string id="tcb_chkpwd_tcb">Any user with tcb enabled</string>
+      <string id="tcb_chkpwd_restricted">Only root</string>
+
+      <string id="udisks2">Rules for connecting USB storage media</string>
+      <string id="udisks2_help">This policy defines the rules for connecting USB storage media
+
+Default — Connect storage media individually (/run/media/$user/) for each user
+
+Shared — Connect storage media to a public point (/media/)
+      </string>
+      <string id="udisks2_default">Default</string>
+      <string id="udisks2_shared">Shared</string>
+
+      <string id="virtualbox">Permissions for VirtualBox</string>
+      <string id="virtualbox_help">This policy defines permissions for VirtualBox
+
+Any user — Any user is permitted to use VirtualBox
+
+Group vboxusers — Users of the «vboxusers» group are permitted to use VirtualBox
+
+Only root — Only superuser (root) is permitted to use VirtualBox
+      </string>
+      <string id="virtualbox_public">Any user</string>
+      <string id="virtualbox_vboxusers">Group vboxusers</string>
+      <string id="virtualbox_restricted">Only root</string>
+
+      <string id="wireshark-capture">Permissions for wireshark-capture (dumpcap)</string>
+      <string id="wireshark-capture_help">This policy defines the functionality (modes) of permission for wireshark-capture (/usr/bin/dumpcap)
+
+Any user — Any user has the right to run /usr/bin/dumpcap, traffic capture is enabled
+
+Any user, no traffic capture — Any user has the right to run /usr/bin/dumpcap, traffic capture is disabled
+
+Group netadmin — Users of the group «netadmin» have the right to run /usr/bin/dumpcap
+
+Only root — Only the superuser has the right to run /usr/bin/dumpcap
+      </string>
+      <string id="wireshark-capture_public">Any user</string>
+      <string id="wireshark-capture_relaxed">Any user, no traffic capture</string>
+      <string id="wireshark-capture_netadmin">Group netadmin</string>
+      <string id="wireshark-capture_restricted">Only root</string>
+
+      <string id="write">Permissions for /usr/bin/write</string>
+      <string id="write_help">This policy defines permissions for /usr/bin/write
+
+Any user — Any user is permitted to run /usr/bin/write
+
+Only root — Only superuser (root) is permitted to run /usr/bin/write
+      </string>
+      <string id="write_public">Any user</string>
+      <string id="write_restricted">Only root</string>
+
+      <string id="xdg-user-dirs">Standard directories in home</string>
+      <string id="xdg-user-dirs_help">This policy determines whether the standard directories feature (Documents, Downloads, Images, etc.) xdg-user-dirs works in the user's home directory
+
+Disabled — The function to save the list of user directories is disabled
+
+Enabled — The option to save the list of user directories is enabled
+      </string>
+
+      <string id="xorg-server">Permissions for Xorg</string>
+      <string id="xorg-server_help">This policy defines Permissions for Xorg (/usr/bin/Xorg)
+
+Not Configured — Any user is permitted to run /usr/bin/Xorg
+
+Any user — Any user is permitted to run /usr/bin/Xorg
+
+Group xgrp — Users of the «xgrp» group are permitted to run /usr/bin/Xorg
+
+Only root — Only superuser (root) is permitted to run /usr/bin/Xorg
+      </string>
+      <string id="xorg-server_public">Any user</string>
+      <string id="xorg-server_xgrp">Group xgrp</string>
+      <string id="xorg-server_restricted">Only root</string>
+      <string id="role-usershares">Access for members of the «users» group to usershares</string>
+      <string id="role-usershares_help">Permission for members of the «users» group to manage usershares. The configurations of user shared resources are located in the /var/lib/samba/usershares directory, where members of the «usershares» group have write permissions.
+      The policy allows you to extend the privileges of members of the «users» group by adding them to the «usershares» group.
+
+Disabled — revoke the permission for managing usershares for members of the «users» group; the option also affects the permission for managing shared directories through the preference setting;
+
+Enabled — add permission for managing usershares for members of the «users» group;
+
+Not configured — do not change the current value of the «role-usershares» parameter of the control interface.
+      </string>
+      <string id="role-sambashare">Access for members of the «sambashare» group to usershares</string>
+      <string id="role-sambashare_help">Permission for members of the «sambashare» group to manage usershares.
+The configurations of user shared resources are located in the /var/lib/samba/usershares directory, where the members of the «usershares» group have write permissions. The policy allows you to extend the privileges of members of the «sambashare» group by adding them to the «usershares» group.
+
+Disabled — revoke the permission for managing usershares for members of the «sambashare» group; the option also affects the permission for managing usershares via the preference setting;
+
+Enabled — add permission for managing usershares to members of the «sambashare» group;
+
+Not configured — do not change the current value of the «role-sambashare» parameter of the control interface.
+      </string>
+      <string id="smb-conf-usershare-allow-guests">Guest access to usershares</string>
+      <string id="smb-conf-usershare-allow-guests_help">The policy controls a user's right to access a usershare if the user is not the owner of that directory.
+The permission works in two cases:
+1. When creating a usershare without verifying the directory owner;
+2. When attempting to access a usershare without checking the directory owner;
+If the policy is enabled - the system will check the permissions for access to the usershare, and deny access to users who do not own it. Users will only be able to usershares that they own.
+If the policy is disabled, no owner verification will be performed and any directory can be shared, regardless of who owns it. Users will be able to share a directory that they do not own.
+
+The policy changes the «usershare owner only» parameter in usershares.conf.
+
+Disabled — allows access to usershare directories without checking the directory owner; allows creation of shared directories on the computer without checking the owner;
+
+Enabled — restricts access to usershares, leaving user access only to the resources that he owns; prohibits creating usershares on the computer without checking the owner;
+
+Not configured — do not change current value of «smb-conf-usershare-owner-only» parameter of control interface.
+      </string>
+      <string id="smb-conf-usershare-allow-list">Permission to create usershares in system directories</string>
+      <string id="smb-conf-usershare-allow-list_help">The policy manages the list of directories in which shares are allowed to be created. The default composition of the list is /home /srv /mnt /media /var
+
+If the «usershare prefix deny list» is set, and the «usershare prefix allow list» is set, the deny list is processed first, and then the permissions list.
+
+Disabled — disable permission to create shares in system directories from the list;
+
+Enabled — allow the creation of shared resources in the system directories from the list;
+
+Not configured — do not change current value of «smb-conf-usershare-allow-list» parameter of control interface.
+      </string>
+      <string id="smb-conf-usershare-deny-list">Prohibit the creation of usershares in system directories</string>
+      <string id="smb-conf-usershare-deny-list_help">The policy controls the list of directories where share creation is prohibited. The default composition of the list is /etc /dev /sys /proc
+
+If the «usershare prefix deny list» is set to prohibit directories and the «usershare prefix allow list» is set to allow directories, the deny list is processed first, and then the permissions list.
+
+Disabled — remove the ban on the creation of shared resources in the system directories from the list;
+
+Enabled — prohibit the creation of shared resources in the system directories from the list;
+
+Not configured - do not change current value of «smb-conf-usershare-deny-list» parameter of control interface.
+      </string>
+      <string id="smb-conf-usershare-owner-only">Access to other users' shared directories</string>
+      <string id="smb-conf-usershare-owner-only_help">The policy controls a user's right to access a shared directory if the user is not the owner of that directory. The permission works in two cases:
+1. When creating a shared directory without verifying the directory owner;
+2. When attempting to access a shared directory without checking the directory owner;
+If the policy is enabled - the system will check the permissions for access to the shared directory, and deny access to users who do not own it. Users will only be able to share directories that they own.
+If the policy is disabled, no owner verification will be performed and any directory can be shared, regardless of who owns it. Users will be able to share a directory that they do not own.
+
+The policy changes the «usershare owner only» parameter in usershares.conf.
+
+Disabled — allows access to usershare directories without checking the directory owner; allows creation of shared directories on the computer without checking the owner;
+
+Enabled — restricts access to shared directories, leaving user access only to the resources that he/she owns; prohibits creating shared directories on the computer without checking the owner;
+
+Not configured — do not change current value of «smb-conf-usershare-owner-only» parameter of control interface.
+      </string>
+      <string id="smb-conf-usershares">Permission to create usershares</string>
+      <string id="smb-conf-usershares_help">The policy controls the ability to create usershares on the computer. The setting works through the «usershare max shares» parameter, which sets a limit on the number of shared directories.
+      By default, the parameter is either 100 or 0. If «usershare max shares» is zero, the usershares are ignored.
+
+Disabled — disable usershares on the computer; parameter «usershare max shares» = 0;
+
+Enabled — allow usershares on computer; parameter «usershare max shares» = 100;
+
+Not configured — do not change current value of «smb-conf-usershares» parameter of control interface.
+      </string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="at">
+        <dropdownList noSort="true" defaultItem="0" refId="at_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="chage">
+        <dropdownList noSort="true" defaultItem="1" refId="chage_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="chfn">
+        <dropdownList noSort="true" defaultItem="1" refId="chfn_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="chsh">
+        <dropdownList noSort="true" defaultItem="1" refId="chsh_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="chrony_setter">
+        <dropdownList noSort="true" defaultItem="1" refId="chrony_setter">Select an operating mode:
+        </dropdownList>
+      </presentation>
+      <presentation id="chrony">
+        <dropdownList noSort="true" defaultItem="1" refId="chrony_setter">Select an operating mode:
+        </dropdownList>
+      </presentation>
+      <presentation id="consolehelper">
+        <dropdownList noSort="true" defaultItem="0" refId="consolehelper_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="crontab">
+        <dropdownList noSort="true" defaultItem="0" refId="crontab_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="cups">
+        <dropdownList noSort="true" defaultItem="0" refId="cups_setter">CUPS operating mode:
+        </dropdownList>
+      </presentation>
+      <presentation id="dvd-ram-control">
+        <dropdownList noSort="true" defaultItem="0" refId="dvd-ram-control_setter">Who is allowed to execute:
+         </dropdownList>
+      </presentation>
+      <presentation id="dvd_rw-booktype">
+        <dropdownList noSort="true" defaultItem="0" refId="dvd_rw-booktype_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="dvd_rw-format">
+        <dropdownList noSort="true" defaultItem="0" refId="dvd_rw-format_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="dvd_rw-mediainfo">
+        <dropdownList noSort="true" defaultItem="0" refId="dvd_rw-mediainfo_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="fusermount">
+        <dropdownList noSort="true" defaultItem="1" refId="fusermount_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="gpasswd">
+        <dropdownList noSort="true" defaultItem="2" refId="gpasswd_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="groupmems">
+        <dropdownList noSort="true" defaultItem="2" refId="groupmems_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="growisofs">
+        <dropdownList noSort="true" defaultItem="0" refId="growisofs_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="hddtemp">
+        <dropdownList noSort="true" defaultItem="1" refId="hddtemp_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="lightdm-greeter-hide-users">
+        <dropdownList noSort="true" defaultItem="0" refId="lightdm-greeter-hide-users_setter">Select a mode:
+        </dropdownList>
+      </presentation>
+      <presentation id="mtr">
+        <dropdownList noSort="true" defaultItem="1" refId="mtr_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="ldap-reverse-dns-lookup">
+        <dropdownList noSort="true" defaultItem="0" refId="ldap-reverse-dns-lookup_setter">Reverse Search:
+        </dropdownList>
+      </presentation>
+      <presentation id="ldap-tls-cert-check">
+        <dropdownList noSort="true" defaultItem="4" refId="ldap-tls-cert-check_setter">Select an operating mode:
+        </dropdownList>
+      </presentation>
+      <presentation id="mount">
+        <dropdownList noSort="true" defaultItem="0" refId="mount_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="newgrp">
+        <dropdownList noSort="true" defaultItem="2" refId="newgrp_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="nfsmount">
+        <dropdownList noSort="true" defaultItem="2" refId="nfsmount_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="passwd">
+        <dropdownList noSort="true" defaultItem="0" refId="passwd_setter">Select an operating mode:
+        </dropdownList>
+      </presentation>
+      <presentation id="passwdqc-enforce">
+        <dropdownList noSort="true" defaultItem="1" refId="passwdqc-enforce_setter">Select an operating mode:
+        </dropdownList>
+      </presentation>
+      <presentation id="ping">
+        <dropdownList noSort="true" defaultItem="0" refId="ping_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="postfix">
+        <dropdownList noSort="true" defaultItem="0" refId="postfix_setter">Select an operating mode:
+        </dropdownList>
+      </presentation>
+      <presentation id="postqueue">
+        <dropdownList noSort="true" defaultItem="0" refId="postqueue_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="ppp">
+        <dropdownList noSort="true" defaultItem="1" refId="ppp_setter">Choose an operating mode and who has the right to start:
+        </dropdownList>
+      </presentation>
+      <presentation id="rpcbind">
+        <dropdownList noSort="true" defaultItem="1" refId="rpcbind_setter">Select an operating mode:
+        </dropdownList>
+      </presentation>
+      <presentation id="sshd-allow-groups-list">
+        <dropdownList noSort="true" defaultItem="0" refId="sshd-allow-groups-list_setter">Select an operating mode:
+        </dropdownList>
+      </presentation>
+      <presentation id="sshd-permit-root-login">
+        <dropdownList noSort="true" defaultItem="3" refId="sshd-permit-root-login_setter">Select an operating mode:
+        </dropdownList>
+      </presentation>
+      <presentation id="sssd-ad-gpo-access-control">
+        <dropdownList noSort="true" defaultItem="0" refId="sssd-ad-gpo-access-control_setter">Select an operating mode:
+        </dropdownList>
+      </presentation>
+      <presentation id="sssd-ad-gpo-ignore-unreadable">
+        <dropdownList noSort="true" defaultItem="0" refId="sssd-ad-gpo-ignore-unreadable_setter">Select an operating mode:
+        </dropdownList>
+      </presentation>
+      <presentation id="sssd-cache-credentials">
+        <dropdownList noSort="true" defaultItem="0" refId="sssd-cache-credentials_setter">Select an operating mode:
+        </dropdownList>
+      </presentation>
+      <presentation id="sssd-drop-privileges">
+        <dropdownList noSort="true" defaultItem="0" refId="sssd-drop-privileges_setter">Select an operating mode:
+        </dropdownList>
+      </presentation>
+      <presentation id="sssd-dyndns-update">
+        <dropdownList noSort="true" defaultItem="0" refId="sssd-dyndns-update_setter">Select an operating mode:
+        </dropdownList>
+      </presentation>
+      <presentation id="sssd-dyndns-update-ptr">
+        <dropdownList noSort="true" defaultItem="1" refId="sssd-dyndns-update-ptr_setter">Select an operating mode:
+        </dropdownList>
+      </presentation>
+      <presentation id="su">
+        <dropdownList noSort="true" defaultItem="2" refId="su_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="sudo">
+        <dropdownList noSort="true" defaultItem="1" refId="sudo_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="sudoers">
+        <dropdownList noSort="true" defaultItem="0" refId="sudoers_setter">Select an operating mode:
+        </dropdownList>
+      </presentation>
+      <presentation id="sudoreplay">
+        <dropdownList noSort="true" defaultItem="1" refId="sudoreplay_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="system-auth">
+        <dropdownList noSort="true" defaultItem="0" refId="system-auth_setter">Select an operating mode:
+        </dropdownList>
+      </presentation>
+      <presentation id="tcb_chkpwd">
+        <dropdownList noSort="true" defaultItem="1" refId="tcb_chkpwd_setter">Select an operating mode:
+        </dropdownList>
+      </presentation>
+      <presentation id="udisks2">
+        <dropdownList noSort="true" defaultItem="0" refId="udisks2_setter">Select an operating mode:
+        </dropdownList>
+      </presentation>
+      <presentation id="virtualbox">
+        <dropdownList noSort="true" defaultItem="1" refId="virtualbox_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="wireshark-capture">
+        <dropdownList noSort="true" defaultItem="1" refId="wireshark-capture_setter">Choose an operating mode and who has the right to start:
+        </dropdownList>
+      </presentation>
+      <presentation id="write">
+        <dropdownList noSort="true" defaultItem="0" refId="write_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+      <presentation id="xorg-server">
+        <dropdownList noSort="true" defaultItem="0" refId="xorg-server_setter">Who is allowed to execute:
+        </dropdownList>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

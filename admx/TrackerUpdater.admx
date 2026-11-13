@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2014-25 PDF-XChange Co Ltd.  -->
+<policyDefinitions	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					revision="1.0"
+					xsi:schemaLocation=""
+					schemaVersion="1.0"
+					xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+
+	<policyNamespaces>
+		<target prefix="pxce" namespace="TrackerSoftware.TrackerUpdater.Policies" />
+		<using prefix="products" namespace="Microsoft.Policies.Products"/>
+	</policyNamespaces>
+	
+	<resources minRequiredRevision="1.0" fallbackCulture="en-us"/>
+
+	<supportedOn>
+		<products>
+			<product name="TrackerUpdater" displayName="$(string.TrackerUpdater)"/>
+		</products>
+		<definitions>
+			<definition name="SupportedOn" displayName="$(string.SupportedOn)">
+				<and>
+					<range ref="TrackerUpdater" minVersionIndex="1"/>
+				</and>
+			</definition>
+		</definitions>
+	</supportedOn>
+	
+	<categories>
+		<category name="Cat_Updater_1" displayName="$(string.Cat_Updater_1)"/>
+
+		<category name="Cat_General_1" displayName="$(string.Cat_General_1)">
+			<parentCategory ref="Cat_Updater_1" />
+		</category>
+		
+	</categories>
+	
+	<policies>
+		<!-- Disallow to Check for Updates -->
+		<policy name="Policy_General_Disabled" class="Machine"
+				displayName="$(string.Policy_General_Disabled)" explainText="$(string.Policy_General_Disabled_exp)"
+				key="SOFTWARE\Policies\Tracker Software\Updater\General"
+				valueName="b.Disabled">
+			<parentCategory ref="Cat_General_1" />
+			<supportedOn ref="SupportedOn" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+	</policies>
+
+</policyDefinitions>

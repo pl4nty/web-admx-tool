@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2025 BaseALT, Ltd.  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" revision="1.0" schemaVersion="1.0">
+  <displayName>GNOME Policy Definitions for the Alt Operating System</displayName>
+  <description>This file contains policy definitions for managing the GNOME environment in the Alt operating system.</description>
+
+  <resources>
+    <stringTable>
+    <string id="GnomeSleepInactiveBattery">Sleep on battery</string>
+    <string id="GnomeSleepInactiveBattery_help">Policy allows you to manage the condition for the device to go to sleep when on battery.
+
+The "Time before going to sleep when on battery" parameter is only meaningful if the "Sleep when on battery" parameter is enabled.
+
+The "Block" option (available only for the machine policy) prevents the user from changing this setting. Blocking a policy makes it take precedence over a similar policy for the user.
+
+    </string>
+    <string id="GnomeSleepInactiveAC">Sleep when plugged in</string>
+    <string id="GnomeSleepInactiveAC_help">Policy allows you to manage the condition for the device to go to sleep when plugged in.
+
+The "Time before going to sleep when plugged in" parameter is only meaningful when the "Go to sleep when plugged in" parameter is enabled.
+
+The "Block" option (available only for the machine policy) prevents the user from changing this setting. Blocking a policy makes it take precedence over a similar policy for the user.
+
+    </string>
+    <string id="org-gnome-desktop-interface-clock-show-weekday">Show day of the week on the quick settings panel</string>
+    <string id="org-gnome-desktop-interface-clock-show-weekday_help">Policy allows you to customize the display of the day of the week on the quick settings panel.
+
+The "Block" option (available only for the machine policy) prevents the user from changing this setting. Blocking a policy makes it take precedence over a similar policy for the user.
+
+    </string>
+    <string id="org-gnome-desktop-interface-clock-show-date">Show date on quick settings panel</string>
+    <string id="org-gnome-desktop-interface-clock-show-date_help">Policy allows you to customize the display of the date on the quick settings panel.
+
+The "Block" option (available only for the machine policy) prevents the user from changing this setting. Blocking the policy makes it have priority over the similar policy for the user.
+
+    </string>
+    <string id="org-gnome-desktop-interface-clock-show-seconds">Show seconds on quick settings panel</string>
+    <string id="org-gnome-desktop-interface-clock-show-seconds_help">Policy allows you to customize the display of seconds on the quick settings panel.
+
+The "Block" option (available only for the machine policy) prevents the user from changing this setting. Blocking a policy makes it have priority over a similar policy for the user.
+
+    </string>
+    <string id="org-gnome-desktop-interface-show-battery-percentage">Display battery percentage</string>
+    <string id="org-gnome-desktop-interface-show-battery-percentage_help">Policy allows you to customize the display of the battery percentage in the quick settings panel.
+
+The "Block" option (available only for the machine policy) prevents the user from changing this setting. Blocking a policy makes it have priority over a similar policy for the user.
+
+    </string>
+    <string id="org-gnome-desktop-interface-enable-animations">Animation effects</string>
+    <string id="org-gnome-desktop-interface-enable-animations_help">The policy allows you to control animation switching throughout the entire user interface.
+
+The "Block" option (available only for the machine policy) prevents the user from changing this setting. Blocking the policy makes it have priority over the similar policy for the user.
+
+    </string>
+    <string id="org-gnome-desktop-interface-color-scheme">Theme style</string>
+    <string id="org-gnome-desktop-interface-color-scheme_help">Policy allows you to choose the theme for the appearance of applications.
+
+The "Block" option (available only for the machine policy) prevents the user from changing this setting. Blocking a policy makes it take precedence over a similar policy for the user.
+
+    </string>
+    <string id="org-gnome-desktop-interface-icon-theme">Icon theme</string>
+    <string id="org-gnome-desktop-interface-icon-theme_help">The policy allows you to select the icon theme.
+
+The "Block" option (available only for the machine policy) prevents the user from changing the setting. Blocking a policy makes it take precedence over a similar policy for the user.
+
+    </string>
+    <string id="org-gnome-background-picture-filename">Desktop background</string>
+    <string id="org-gnome-background-picture-filename_help">Policy allows you to select a desktop background depending on the appearance theme by specifying the path to the image in the file:///home/user/Images/picture.jpg format.
+
+The "Block" option (available only for machine policy) prevents the user from changing this setting. Blocking a policy makes it take precedence over a similar policy for the user.
+
+    </string>
+
+    <string id="org-gnome-desktop-background-picture-options">Desktop Image adjustment</string>
+    <string id="org-gnome-desktop-background-picture-options_help">This policy allows you to choose how the background image is displayed on the desktop. This setting affects how the image adapts to the screen size or area where it is displayed.
+
+Possible values:
+
+None:
+Image fitting is disabled.
+
+Wallpaper:
+The image is repeated in tiles to fill the entire screen. This setting is used for textured wallpapers or small images that can be copied without noticeable transitions.
+
+Centered:
+The image is placed in the center of the screen without scaling. If the image dimensions are smaller than the screen resolution, empty areas are left around it (filled with the background color).
+
+Scaled:
+The image is scaled to fit the screen completely, while maintaining the image proportions. If the image proportions do not match the screen proportions, empty bars may appear.
+
+Stretched:
+The image is stretched to completely fill the screen, ignoring the proportions. This may result in distortion of the image.
+
+Zoom:
+The image is scaled to fill the entire screen without empty bars, while maintaining the proportions. The portion of the image that extends beyond the screen may be cropped.
+
+Spanned:
+The image is spread across all screens in a multi-monitor setup as a single image. This is useful if you have one large image that needs to be stretched across multiple monitors.
+
+The "Block" option - (available only for machine policy) prevents the user from changing the setting. Locking a policy makes it take precedence over a similar policy for the user.
+    </string>
+
+    <string id="org-gnome-desktop-interface-enable-hot-corners">Hot corner</string>
+    <string id="org-gnome-desktop-interface-enable-hot-corners_help">The policy allows you to enable or disable the hot corner.
+
+The hot corner in GNOME is a user interface feature that allows you to view all active applications by hovering the mouse pointer in the upper left corner of the screen.
+
+The "Block" option - (available only for the machine policy) prevents the user from changing the setting. Blocking a policy makes it take precedence over a similar policy for the user.
+    </string>
+
+    <string id="gnome-desktops">Desktops</string>
+    <string id="gnome-desktops_help">This policy allows you to manage the number of desktops.
+
+Dynamic desktops - the number of desktops changes depending on the number of open windows.
+
+Fixed desktops - the number of desktops remains constant, regardless of whether they have windows or not.
+
+Note: the "Number of desktops" parameter is only meaningful in fixed mode.
+
+The "Block" option - (available only for machine policy) prevents the user from changing the setting. Locking a policy makes it take precedence over a similar policy for the user.
+    </string>
+
+    <string id="org-gnome-mutter-workspaces-only-on-primary">Workspaces display mode</string>
+    <string id="org-gnome-mutter-workspaces-only-on-primary_help">This policy allows you to configure how desktops are displayed on displays.
+
+Workspaces only on primary display — in this mode, desktops are switched only on the primary display. Only windows related to the current desktop are displayed on additional displays, but the virtual desktops themselves are not switched.
+
+Workspaces on all displays — desktops are synchronized across all connected displays. When you switch a desktop on one screen, it changes on other screens as well.
+
+The "Block" option — (available only for the machine policy) prevents the user from changing the setting. Locking a policy makes it take precedence over a similar policy for the user.
+    </string>
+
+    <string id="org-gnome-desktop-a11y-always-show-universal-access-status">Accessibility Menu</string>
+    <string id="org-gnome-desktop-a11y-always-show-universal-access-status_help">The policy allows you to enable the display of the "Accessibility Menu" icon in the top panel.
+
+The "Block" option — (available only for the machine policy) prevents the user from changing the setting. Blocking a policy makes it take precedence over a similar policy for the user.
+    </string>
+
+    <string id="org-gnome-settings-daemon-power-button-action">Device power button action</string>
+    <string id="org-gnome-settings-daemon-power-button-action_help">The policy allows you to configure the device's behavior after pressing the power button.
+
+Possible values:
+
+- Standby;
+- Turn off;
+- Hibernate;
+- Do nothing.
+
+The "Block" option (available only for the machine policy) prohibits the user from changing the setting. Blocking a policy makes it take precedence over a similar policy for the user.
+    </string>
+
+    <string id="org-gnome-desktop-screensaver-lock-enabled">Automatic screen lock</string>
+    <string id="org-gnome-desktop-screensaver-lock-enabled_help">The policy allows you to configure automatic screen lock and the delay time for automatic screen lock.
+
+Automatic screen lock — locks the screen after it goes dark.
+
+Automatic screen lock delay — the time from screen off to screen lock. When selecting the "Screen off" state — the delay is zero and the screen locks instantly.
+
+The "Lock" option — (available only for the machine policy) prevents the user from changing the setting. Locking a policy makes it take precedence over a similar policy for the user.
+    </string>
+
+    <string id="org-gnome-desktop-session-idle-delay">Screen off delay</string>
+    <string id="org-gnome-desktop-session-idle-delay_help">The policy allows you to configure the period of inactivity (in minutes) before the screen turns off.
+
+The "Block" option - (available only for the machine policy) prevents the user from changing the setting. Blocking a policy makes it take precedence over a similar policy for the user.
+    </string>
+
+    <string id="org-gnome-desktop-notifications-show-in-lock-screen">Notifications on the lock screen</string>
+    <string id="org-gnome-desktop-notifications-show-in-lock-screen_help">The policy allows you to enable/disable the display of notifications on the lock screen.
+
+The "Block" option (available only for the machine policy) prohibits the user from changing the setting. Blocking a policy makes it take precedence over a similar policy for the user.
+    </string>
+
+    <string id="org-gnome-desktop-wm-preferences-focus-mode">Window Focus</string>
+    <string id="org-gnome-desktop-wm-preferences-focus-mode_help">This policy allows you to choose how to switch focus between windows.
+
+Available options:
+
+Triggered on click — windows become active when clicked;
+
+Triggered on hover — windows become active when the cursor moves over them. Hovering over the desktop does not change the activity;
+
+Focus follows mouse — windows become active when moved over them. Hovering over the desktop deactivates the previous window.
+
+The "Raise window above others when focus is set" option is only effective if the focus mode is set to "Triggered on hover" or "Focus follows mouse".
+
+The "Block" option (available only for the machine policy) prevents the user from changing the setting. Blocking a policy makes it take precedence over a similar policy for the user.
+    </string>
+
+    <string id="org-gnome-desktop-a11y-interface-high-contrast">High Contrast</string>
+    <string id="org-gnome-desktop-a11y-interface-high-contrast_help">The policy allows you to increase the color contrast of the foreground and background interface elements.
+
+The "Block" option (available only for the machine policy) prevents the user from changing the setting. Locking a policy makes it take precedence over a similar policy for the user.
+    </string>
+
+    <string id="org-gnome-desktop-a11y-interface-show-status-shapes">Shapes on status icons</string>
+    <string id="org-gnome-desktop-a11y-interface-show-status-shapes_help">The policy allows you to enable the use of shapes to indicate the status of settings in addition to or instead of color.
+
+The "Block" option (available only for the machine policy) prevents the user from changing the setting. Locking a policy makes it take precedence over a similar policy for the user.
+    </string>
+
+    <string id="org-gnome-desktop-interface-cursor-size">Cursor size</string>
+    <string id="org-gnome-desktop-interface-cursor-size_help">The policy allows you to set the cursor size in pixels.
+
+By default, the cursor size is 24 pixels.
+
+The "Lock" option (available only for the machine policy) prevents the user from changing the setting. Locking a policy makes it take precedence over a similar policy for the user.
+    </string>
+
+
+    <string id="gnome-time-0-minute">0 Minutes</string>
+    <string id="gnome-time-30-seconds">30 seconds</string>
+    <string id="gnome-time-1-minute">1 Minute</string>
+    <string id="gnome-time-2-minute">2 Minutes</string>
+    <string id="gnome-time-3-minute">3 Minutes</string>
+    <string id="gnome-time-4-minute">4 Minutes</string>
+    <string id="gnome-time-5-minute">5 Minutes</string>
+    <string id="gnome-time-8-minute">8 Minutes</string>
+    <string id="gnome-time-10-minute">10 Minutes</string>
+    <string id="gnome-time-12-minute">12 Minutes</string>
+    <string id="gnome-time-15-minute">15 Minutes</string>
+    <string id="gnome-time-20-minute">20 Minutes</string>
+    <string id="gnome-time-30-minute">30 Minutes</string>
+    <string id="gnome-time-60-minute">1 Hour</string>
+    <string id="gnome-screen-off">Screen off</string>
+    <string id="gnome-state-on">Enabled</string>
+    <string id="gnome-state-off">Disabled</string>
+    <string id="gnome-color-scheme-light">Light theme</string>
+    <string id="gnome-color-scheme-dark">Dark theme</string>
+    <string id="gnome-theme-Adwaita">Adwaita</string>
+    <string id="gnome-theme-HighContrast">HighContrast</string>
+    <string id="gnome-theme-GNOME">GNOME</string>
+    <string id="gnome-theme-Hicolor">Hicolor</string>
+
+    <string id="gnome-picture-options-none">None</string>
+    <string id="gnome-picture-options-wallpaper">Wallpaper</string>
+    <string id="gnome-picture-options-centered">Centered</string>
+    <string id="gnome-picture-options-scaled">Scaled</string>
+    <string id="gnome-picture-options-stretched">Stretched</string>
+    <string id="gnome-picture-options-zoom">Zoom</string>
+    <string id="gnome-picture-options-spanned">Spanned</string>
+
+    <string id="gnome-desktop-dynamic">Dynamic</string>
+    <string id="gnome-desktop-static">Fixed</string>
+
+    <string id="gnome-workspaces-main-display">On the main display</string>
+    <string id="gnome-workspaces-all-displays">On all displays</string>
+
+    <string id="power-button-action-suspend">Sleep</string>
+    <string id="power-button-action-interactive">Power off</string>
+    <string id="power-button-action-hibernate">Hibernate</string>
+    <string id="power-button-action-nothing">Do nothing</string>
+
+    <string id="gnome-focus-mode-click">Fires on click</string>
+    <string id="gnome-focus-mode-sloppy">Fires on hover</string>
+    <string id="gnome-focus-mode-mouse">Focus follows mouse</string>
+
+    <string id="gnome-cursor-24">24px</string>
+    <string id="gnome-cursor-32">32px</string>
+    <string id="gnome-cursor-48">48px</string>
+    <string id="gnome-cursor-64">64px</string>
+    <string id="gnome-cursor-96">96px</string>
+
+
+    </stringTable>
+    <presentationTable>
+      <presentation id="GnomeSleepInactiveBattery-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-sleep-power_setter">Sleep on battery:</dropdownList>
+        <checkBox refId="gnome-sleep-power_blocker">Block sleep setting</checkBox>
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-sleep-timeout_setter">Time before sleep on battery:</dropdownList>
+        <checkBox refId="gnome-sleep-timeout_blocker">Block time setting</checkBox>
+      </presentation>
+      <presentation id="GnomeSleepInactiveBattery-user-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-sleep-power_setter">Sleep on battery:</dropdownList>
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-sleep-timeout_setter">Time before sleep on battery:</dropdownList>
+      </presentation>
+      <presentation id="GnomeSleepInactiveAC-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-sleep-power_setter">Sleep on battery power:</dropdownList>
+        <checkBox refId="gnome-sleep-power_blocker">Block sleep setting</checkBox>
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-sleep-timeout_setter">Time before sleep on battery power:</dropdownList>
+        <checkBox refId="gnome-sleep-timeout_blocker">Block time setting</checkBox>
+      </presentation>
+      <presentation id="GnomeSleepInactiveAC-user-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-sleep-power_setter">Sleep on battery power:</dropdownList>
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-sleep-timeout_setter">Time before going to sleep on battery power:</dropdownList>
+      </presentation>
+      <presentation id="OrgGnomeDesktopInterfaceClockShowWeekday-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-weekday_setter">Day of week display:</dropdownList>
+        <checkBox refId="gnome-weekday_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="OrgGnomeDesktopInterfaceClockShowWeekdayUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-weekday_setter">Day of week display:</dropdownList>
+      </presentation>
+      <presentation id="OrgGnomeDesktopInterfaceClockShowDate-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-date_setter">Date display:</dropdownList>
+        <checkBox refId="gnome-date_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="OrgGnomeDesktopInterfaceClockShowDateUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-date_setter">Date display:</dropdownList>
+      </presentation>
+      <presentation id="OrgGnomeDesktopInterfaceClockShowSeconds-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-seconds_setter">Display seconds:</dropdownList>
+        <checkBox refId="gnome-seconds_blocker">Блокировать</checkBox>
+      </presentation>
+      <presentation id="OrgGnomeDesktopInterfaceClockShowSecondsUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-seconds_setter">Display seconds:</dropdownList>
+      </presentation>
+      <presentation id="OrgGnomeDesktopInterfaceBatteryPercentage-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-battery_setter">Display battery percentage:</dropdownList>
+        <checkBox refId="gnome-battery_blocker">Блокировать</checkBox>
+      </presentation>
+      <presentation id="OrgGnomeDesktopInterfaceBatteryPercentageUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-battery_setter">Display battery percentage:</dropdownList>
+      </presentation>
+      <presentation id="OrgGnomeDesktopInterfaceEnableAnimations-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-animations_setter">Animation effects:</dropdownList>
+        <checkBox refId="gnome-animations_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="OrgGnomeDesktopInterfaceEnableAnimationsUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-animations_setter">Animation effects:</dropdownList>
+      </presentation>
+      <presentation id="OrgGnomeDesktopInterfaceColorScheme-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-color-scheme_setter">Theme:</dropdownList>
+        <checkBox refId="gnome-color-scheme_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="OrgGnomeDesktopInterfaceColorSchemeUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-color-scheme_setter">Theme:</dropdownList>
+      </presentation>
+      <presentation id="OrgGnomeDesktopInterfaceIconTheme-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-icon-theme_setter">Icon theme:</dropdownList>
+        <checkBox refId="gnome-icon-theme_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="OrgGnomeDesktopInterfaceIconThemeUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-icon-theme_setter">Icon theme:</dropdownList>
+      </presentation>
+      <presentation id="OrgGnomeBackgroundPictureFilenameMachine-pr">
+        <textBox refId="OrgGnomeBackgroundPictureFilename_light_setter">
+          <label>Path to image for light theme:</label>
+        </textBox>
+        <checkBox refId="OrgGnomeBackgroundPictureFilename_light_blocker">Block image setting for light theme</checkBox>
+        <textBox refId="OrgGnomeBackgroundPictureFilename_dark_setter">
+          <label>Path to image for dark theme:</label>
+        </textBox>
+        <checkBox refId="OrgGnomeBackgroundPictureFilename_dark_blocker">Block image setting for dark theme</checkBox>
+      </presentation>
+      <presentation id="OrgGnomeBackgroundPictureFilenameUser-pr">
+        <textBox refId="OrgGnomeBackgroundPictureFilename_light_setter">
+          <label>Path to image for light theme:</label>
+        </textBox>
+        <textBox refId="OrgGnomeBackgroundPictureFilename_dark_setter">
+          <label>Path to image for dark theme:</label>
+        </textBox>
+      </presentation>
+      <presentation id="OrgGnomeDesktopBackgroundPictureOptionsMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-picture-options_setter">Adjustment method:</dropdownList>
+        <checkBox refId="gnome-picture-options_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="OrgGnomeDesktopBackgroundPictureOptionsUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-picture-options_setter">Adjustment method:</dropdownList>
+      </presentation>
+      <presentation id="OrgGnomeDesktopInterfaceEnableHotCornersMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-state_setter">Hot corner:</dropdownList>
+        <checkBox refId="gnome-state_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="OrgGnomeDesktopInterfaceEnableHotCornersUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-state_setter">Hot corner:</dropdownList>
+      </presentation>
+      <presentation id="gnome-desktops-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-desktop_setter">Desktops:</dropdownList>
+        <decimalTextBox refId="gnome-desktopnumber_setter" defaultValue="4">Number of desktops:</decimalTextBox>
+        <checkBox refId="gnome-desktop_blocker">Block setting of desktops:</checkBox>
+        <checkBox refId="gnome-desktopnumber_blocker">Block setting of number of desktops:</checkBox>
+      </presentation>
+      <presentation id="gnome-desktops-user-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-desktop_setter">Desktops:</dropdownList>
+        <decimalTextBox refId="gnome-desktopnumber_setter" defaultValue="4">Number of desktops:</decimalTextBox>
+      </presentation>
+      <presentation id="OrgGnomeMutterWorkspacesOnlyOnPrimary-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-workspaces_setter">Workspaces:</dropdownList>
+        <checkBox refId="gnome-workspaces_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="OrgGnomeMutterWorkspacesOnlyOnPrimaryUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-workspaces_setter">Workspaces:</dropdownList>
+      </presentation>
+      <presentation id="OrgGnomeDesktopA11YAlwaysShowUniversalAccessStatusMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-state_setter">Accessibility menu:</dropdownList>
+        <checkBox refId="gnome-state_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="OrgGnomeDesktopA11YAlwaysShowUniversalAccessStatusUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-state_setter">Accessibility menu:</dropdownList>
+      </presentation>
+      <presentation id="OrgGnomeSettingsDaemonPowerButtonActionMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="power-button-action_setter">Power button action:</dropdownList>
+        <checkBox refId="power-button-action_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="OrgGnomeSettingsDaemonPowerButtonActionUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="power-button-action_setter">Power button action:</dropdownList>
+      </presentation>
+      <presentation id="GnomeScreensaverLockEnabledMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-lock-enabled_setter">Automatic screen lock:</dropdownList>
+        <checkBox refId="gnome-lock-enabled_blocker">Block automatic lock setting</checkBox>
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-lock-delay_setter">Delay:</dropdownList>
+        <checkBox refId="gnome-lock-delay_blocker">Block delay setting</checkBox>
+      </presentation>
+      <presentation id="GnomeScreensaverLockEnabledUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-lock-enabled_setter">Automatic screen lock:</dropdownList>
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-lock-delay_setter">Delay:</dropdownList>
+      </presentation>
+      <presentation id="OrgGnomeDesktopSessionIdleDelayMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-idle-delay_setter">Inactivity period:</dropdownList>
+        <checkBox refId="gnome-idle-delay_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="OrgGnomeDesktopSessionIdleDelayUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-idle-delay_setter">Inactivity period:</dropdownList>
+      </presentation>
+      <presentation id="OrgGnomeDesktopNotificationsShowInLockScreenMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-desktop-notifications_setter">Notifications on lock screen:</dropdownList>
+        <checkBox refId="gnome-desktop-notifications_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="OrgGnomeDesktopNotificationsShowInLockScreenUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-desktop-notifications_setter">Notifications on lock screen:</dropdownList>
+      </presentation>
+      <presentation id="OrgGnomeDesktopFocusModeMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-focus-mode_setter">Window focus:</dropdownList>
+        <checkBox refId="gnome-focus-mode_blocker">Block window focus setting</checkBox>
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-auto-reise_setter">Raise window above others when setting focus:</dropdownList>
+        <checkBox refId="gnome-auto-reise_blocker">Block window raise setting</checkBox>
+      </presentation>
+      <presentation id="OrgGnomeDesktopFocusModeUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-focus-mode_setter">Window focus:</dropdownList>
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-auto-reise_setter">Raise window above others when setting focus:</dropdownList>
+      </presentation>
+      <presentation id="OrgGnomeDesktopA11YInterfaceHighContrastMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-state_setter">High Contrast:</dropdownList>
+        <checkBox refId="gnome-state_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="OrgGnomeDesktopA11YInterfaceHighContrastUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-state_setter">High Contrast:</dropdownList>
+      </presentation>
+      <presentation id="OrgGnomeDesktopA11YInterfaceShowStatusShapesMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-state_setter">Using shapes:</dropdownList>
+        <checkBox refId="gnome-state_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="OrgGnomeDesktopA11YInterfaceShowStatusShapesUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-state_setter">Using shapes:</dropdownList>
+      </presentation>
+      <presentation id="OrgGnomeDesktopInterfaceCursorSizeMachine-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-cursor-size_setter">Cursor size:</dropdownList>
+        <checkBox refId="gnome-cursor-size_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="OrgGnomeDesktopInterfaceCursorSizeUser-pr">
+        <dropdownList noSort="true" defaultItem="0" refId="gnome-cursor-size_setter">Cursor size:</dropdownList>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

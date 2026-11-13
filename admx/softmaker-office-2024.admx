@@ -1,0 +1,3465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="0.9" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="softmaker_policies" namespace="SoftMaker.Policies.SoftMakerOffice2024" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" fallbackCulture="en-US"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_ProductOnly"
+                       displayName="$(string.SUPPORTED_ProductOnly)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="SoftMaker_PlanMaker_2024" displayName="$(string.SoftMaker_PlanMaker_2024)" explainText="$(string.SoftMaker_PlanMaker_2024_help)">  
+       <parentCategory ref="SoftMaker" />
+    </category>
+    <category name="SoftMaker_Presentations_2024" displayName="$(string.SoftMaker_Presentations_2024)" explainText="$(string.SoftMaker_Presentations_2024_help)">  
+       <parentCategory ref="SoftMaker" />
+    </category>
+    <category name="SoftMaker_SoftMaker_Office_2024" displayName="$(string.SoftMaker_SoftMaker_Office_2024)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_help)">  
+       <parentCategory ref="SoftMaker" />
+    </category>
+    <category name="SoftMaker_TextMaker_2024" displayName="$(string.SoftMaker_TextMaker_2024)" explainText="$(string.SoftMaker_TextMaker_2024_help)">  
+       <parentCategory ref="SoftMaker" />
+    </category>
+    <category name="SoftMaker" displayName="$(string.SoftMaker)" explainText="$(string.SoftMaker_help)">  
+    </category>
+  </categories>
+  <policies>
+    <policy name="SoftMaker_PlanMaker_2024_RibbonMinimize" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_RibbonMinimize_name)" explainText="$(string.SoftMaker_PlanMaker_2024_RibbonMinimize_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="RibbonMinimize">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_RibbonMinimizeFS" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_RibbonMinimizeFS_name)" explainText="$(string.SoftMaker_PlanMaker_2024_RibbonMinimizeFS_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="RibbonMinimizeFS">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_SeparateQuickAccess" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_SeparateQuickAccess_name)" explainText="$(string.SoftMaker_PlanMaker_2024_SeparateQuickAccess_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="SeparateQuickAccess">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_ClearType" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_ClearType_name)" explainText="$(string.SoftMaker_PlanMaker_2024_ClearType_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_ClearType)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_PlanMaker_2024_ClearType" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="ClearType">
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_ClearType_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_ClearType_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_ClearType_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_ClearType_3)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_FontShow" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_FontShow_name)" explainText="$(string.SoftMaker_PlanMaker_2024_FontShow_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="FontShow">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_UseSystemSeparator" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_UseSystemSeparator_name)" explainText="$(string.SoftMaker_PlanMaker_2024_UseSystemSeparator_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_UseSystemSeparator)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_PlanMaker_2024_UseSystemSeparator" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="UseSystemSeparator">
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_UseSystemSeparator_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_UseSystemSeparator_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+     <policy name="SoftMaker_PlanMaker_2024_DecimalSeparator" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_DecimalSeparator_name)" explainText="$(string.SoftMaker_PlanMaker_2024_DecimalSeparator_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_DecimalSeparator)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+       <parentCategory ref="SoftMaker_PlanMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_PlanMaker_2024_DecimalSeparator" valueName="DecimalSeparator" maxValue="16777215" minValue="0" />
+       </elements>
+     </policy>
+     <policy name="SoftMaker_PlanMaker_2024_ThousandsSeparator" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_ThousandsSeparator_name)" explainText="$(string.SoftMaker_PlanMaker_2024_ThousandsSeparator_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_ThousandsSeparator)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+       <parentCategory ref="SoftMaker_PlanMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_PlanMaker_2024_ThousandsSeparator" valueName="ThousandsSeparator" maxValue="16777215" minValue="0" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_PlanMaker_2024_ToolTips" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_ToolTips_name)" explainText="$(string.SoftMaker_PlanMaker_2024_ToolTips_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="ToolTips">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_WarningBeep" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_WarningBeep_name)" explainText="$(string.SoftMaker_PlanMaker_2024_WarningBeep_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="WarningBeep">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+     <policy name="SoftMaker_PlanMaker_2024_Undo" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_Undo_name)" explainText="$(string.SoftMaker_PlanMaker_2024_Undo_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_Undo)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+       <parentCategory ref="SoftMaker_PlanMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_PlanMaker_2024_Undo" valueName="Undo" maxValue="999" minValue="1" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_PlanMaker_2024_ArabicSupport" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_ArabicSupport_name)" explainText="$(string.SoftMaker_PlanMaker_2024_ArabicSupport_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="ArabicSupport">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_AsianFonts" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_AsianFonts_name)" explainText="$(string.SoftMaker_PlanMaker_2024_AsianFonts_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="AsianFonts">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_DefaultFormat" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_DefaultFormat_name)" explainText="$(string.SoftMaker_PlanMaker_2024_DefaultFormat_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_DefaultFormat)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_PlanMaker_2024_DefaultFormat" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="DefaultFormat">
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_DefaultFormat_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_DefaultFormat_4)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_DefaultFormat_3)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_DefaultFormat_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_DefaultFormat_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_LargeIcons" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_LargeIcons_name)" explainText="$(string.SoftMaker_PlanMaker_2024_LargeIcons_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="LargeIcons">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_Explorer" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_Explorer_name)" explainText="$(string.SoftMaker_PlanMaker_2024_Explorer_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="Explorer">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_WSColorEnabled" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_WSColorEnabled_name)" explainText="$(string.SoftMaker_PlanMaker_2024_WSColorEnabled_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_WSColorEnabled)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_PlanMaker_2024_WSColorEnabled" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="WSColorEnabled">
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_WSColorEnabled_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_WSColorEnabled_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+     <policy name="SoftMaker_PlanMaker_2024_WSColorRGBValue" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_WSColorRGBValue_name)" explainText="$(string.SoftMaker_PlanMaker_2024_WSColorRGBValue_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_WSColorRGBValue)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+       <parentCategory ref="SoftMaker_PlanMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_PlanMaker_2024_WSColorRGBValue" valueName="WSColorRGBValue" maxValue="16777215" minValue="0" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_PlanMaker_2024_ImmediateObjectInsert" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_ImmediateObjectInsert_name)" explainText="$(string.SoftMaker_PlanMaker_2024_ImmediateObjectInsert_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_ImmediateObjectInsert)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_PlanMaker_2024_ImmediateObjectInsert" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="ImmediateObjectInsert">
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_ImmediateObjectInsert_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_ImmediateObjectInsert_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_ImmediateObjectInsert_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_LanguageID" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_name)" explainText="$(string.SoftMaker_PlanMaker_2024_LanguageID_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_LanguageID)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_PlanMaker_2024_LanguageID" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="LanguageID">
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1031)">
+            <value>
+              <decimal value="1031" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_29703)">
+            <value>
+              <decimal value="29703" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_5127)">
+            <value>
+              <decimal value="5127" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_4103)">
+            <value>
+              <decimal value="4103" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_3079)">
+            <value>
+              <decimal value="3079" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_31751)">
+            <value>
+              <decimal value="31751" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_2055)">
+            <value>
+              <decimal value="2055" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_30727)">
+            <value>
+              <decimal value="30727" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1033)">
+            <value>
+              <decimal value="1033" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_2057)">
+            <value>
+              <decimal value="2057" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1036)">
+            <value>
+              <decimal value="1036" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_3084)">
+            <value>
+              <decimal value="3084" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_3082)">
+            <value>
+              <decimal value="3082" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_2058)">
+            <value>
+              <decimal value="2058" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_2070)">
+            <value>
+              <decimal value="2070" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1046)">
+            <value>
+              <decimal value="1046" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1040)">
+            <value>
+              <decimal value="1040" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1043)">
+            <value>
+              <decimal value="1043" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1030)">
+            <value>
+              <decimal value="1030" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1044)">
+            <value>
+              <decimal value="1044" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1053)">
+            <value>
+              <decimal value="1053" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1035)">
+            <value>
+              <decimal value="1035" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1061)">
+            <value>
+              <decimal value="1061" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1062)">
+            <value>
+              <decimal value="1062" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1063)">
+            <value>
+              <decimal value="1063" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1060)">
+            <value>
+              <decimal value="1060" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1045)">
+            <value>
+              <decimal value="1045" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1029)">
+            <value>
+              <decimal value="1029" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1051)">
+            <value>
+              <decimal value="1051" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1050)">
+            <value>
+              <decimal value="1050" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_2074)">
+            <value>
+              <decimal value="2074" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_3098)">
+            <value>
+              <decimal value="3098" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1038)">
+            <value>
+              <decimal value="1038" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1048)">
+            <value>
+              <decimal value="1048" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1032)">
+            <value>
+              <decimal value="1032" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1055)">
+            <value>
+              <decimal value="1055" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1049)">
+            <value>
+              <decimal value="1049" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1026)">
+            <value>
+              <decimal value="1026" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1058)">
+            <value>
+              <decimal value="1058" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1087)">
+            <value>
+              <decimal value="1087" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_2052)">
+            <value>
+              <decimal value="2052" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1028)">
+            <value>
+              <decimal value="1028" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1041)">
+            <value>
+              <decimal value="1041" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1042)">
+            <value>
+              <decimal value="1042" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1057)">
+            <value>
+              <decimal value="1057" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1086)">
+            <value>
+              <decimal value="1086" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1025)">
+            <value>
+              <decimal value="1025" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1109)">
+            <value>
+              <decimal value="1109" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1081)">
+            <value>
+              <decimal value="1081" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1054)">
+            <value>
+              <decimal value="1054" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1107)">
+            <value>
+              <decimal value="1107" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1108)">
+            <value>
+              <decimal value="1108" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_LanguageID_1066)">
+            <value>
+              <decimal value="1066" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_FormatWholeWord" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_FormatWholeWord_name)" explainText="$(string.SoftMaker_PlanMaker_2024_FormatWholeWord_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="FormatWholeWord">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_SpellIgnoreWordsWithStartingDigits" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_SpellIgnoreWordsWithStartingDigits_name)" explainText="$(string.SoftMaker_PlanMaker_2024_SpellIgnoreWordsWithStartingDigits_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="SpellIgnoreWordsWithStartingDigits">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_CellJump" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_CellJump_name)" explainText="$(string.SoftMaker_PlanMaker_2024_CellJump_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_CellJump)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_PlanMaker_2024_CellJump" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="CellJump">
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_CellJump_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_CellJump_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_CellJump_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_CellJump_3)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_CellJump_4)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_OnlineCalc" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_OnlineCalc_name)" explainText="$(string.SoftMaker_PlanMaker_2024_OnlineCalc_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_OnlineCalc)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_PlanMaker_2024_OnlineCalc" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="OnlineCalc">
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_OnlineCalc_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_OnlineCalc_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_OnlineCalc_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_OnlineCalc_3)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_OnlineCalc_4)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_OnlineCalc_5)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_OnlineCalc_6)">
+            <value>
+              <decimal value="6" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_CaretLeftBehaviour" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_CaretLeftBehaviour_name)" explainText="$(string.SoftMaker_PlanMaker_2024_CaretLeftBehaviour_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_CaretLeftBehaviour)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_PlanMaker_2024_CaretLeftBehaviour" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="CaretLeftBehaviour">
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_CaretLeftBehaviour_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_CaretLeftBehaviour_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_AutoSave" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_AutoSave_name)" explainText="$(string.SoftMaker_PlanMaker_2024_AutoSave_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="AutoSave">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+     <policy name="SoftMaker_PlanMaker_2024_AutoTime" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_AutoTime_name)" explainText="$(string.SoftMaker_PlanMaker_2024_AutoTime_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_AutoTime)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+       <parentCategory ref="SoftMaker_PlanMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_PlanMaker_2024_AutoTime" valueName="AutoTime" maxValue="100" minValue="1" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_PlanMaker_2024_DocInfo" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_DocInfo_name)" explainText="$(string.SoftMaker_PlanMaker_2024_DocInfo_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="DocInfo">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_OnlineCheck" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_OnlineCheck_name)" explainText="$(string.SoftMaker_PlanMaker_2024_OnlineCheck_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="OnlineCheck">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_Glossary" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_Glossary_name)" explainText="$(string.SoftMaker_PlanMaker_2024_Glossary_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="Glossary">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_OnlineBeep" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_OnlineBeep_name)" explainText="$(string.SoftMaker_PlanMaker_2024_OnlineBeep_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="OnlineBeep">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_FormulaNotify" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_FormulaNotify_name)" explainText="$(string.SoftMaker_PlanMaker_2024_FormulaNotify_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="FormulaNotify">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_DirectEdit" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_DirectEdit_name)" explainText="$(string.SoftMaker_PlanMaker_2024_DirectEdit_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="DirectEdit">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_PercentEdit" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_PercentEdit_name)" explainText="$(string.SoftMaker_PlanMaker_2024_PercentEdit_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="PercentEdit">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_FormulaTip" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_FormulaTip_name)" explainText="$(string.SoftMaker_PlanMaker_2024_FormulaTip_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="FormulaTip">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_AutoComplete" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_AutoComplete_name)" explainText="$(string.SoftMaker_PlanMaker_2024_AutoComplete_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="AutoComplete">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_ExpandTables" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_ExpandTables_name)" explainText="$(string.SoftMaker_PlanMaker_2024_ExpandTables_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="ExpandTables">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+     <policy name="SoftMaker_PlanMaker_2024_CellMarkerThickness" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_CellMarkerThickness_name)" explainText="$(string.SoftMaker_PlanMaker_2024_CellMarkerThickness_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_CellMarkerThickness)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+       <parentCategory ref="SoftMaker_PlanMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_PlanMaker_2024_CellMarkerThickness" valueName="CellMarkerThickness" maxValue="5" minValue="1" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_PlanMaker_2024_CellMarkerColorAuto" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_CellMarkerColorAuto_name)" explainText="$(string.SoftMaker_PlanMaker_2024_CellMarkerColorAuto_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_CellMarkerColorAuto)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_PlanMaker_2024_CellMarkerColorAuto" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="CellMarkerColorAuto">
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_CellMarkerColorAuto_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_CellMarkerColorAuto_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+     <policy name="SoftMaker_PlanMaker_2024_CellMarkerColor" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_CellMarkerColor_name)" explainText="$(string.SoftMaker_PlanMaker_2024_CellMarkerColor_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_CellMarkerColor)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+       <parentCategory ref="SoftMaker_PlanMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_PlanMaker_2024_CellMarkerColor" valueName="CellMarkerColor" maxValue="16777215" minValue="0" />
+       </elements>
+     </policy>
+     <policy name="SoftMaker_PlanMaker_2024_MarkerSize" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_MarkerSize_name)" explainText="$(string.SoftMaker_PlanMaker_2024_MarkerSize_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_MarkerSize)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+       <parentCategory ref="SoftMaker_PlanMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_PlanMaker_2024_MarkerSize" valueName="MarkerSize" maxValue="16777215" minValue="0" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_PlanMaker_2024_ComMarkerColorAuto" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_ComMarkerColorAuto_name)" explainText="$(string.SoftMaker_PlanMaker_2024_ComMarkerColorAuto_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_ComMarkerColorAuto)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_PlanMaker_2024_ComMarkerColorAuto" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="ComMarkerColorAuto">
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_ComMarkerColorAuto_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_ComMarkerColorAuto_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+     <policy name="SoftMaker_PlanMaker_2024_CommentColor" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_CommentColor_name)" explainText="$(string.SoftMaker_PlanMaker_2024_CommentColor_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_CommentColor)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+       <parentCategory ref="SoftMaker_PlanMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_PlanMaker_2024_CommentColor" valueName="CommentColor" maxValue="16777215" minValue="0" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_PlanMaker_2024_ProtMarkerColorAuto" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_ProtMarkerColorAuto_name)" explainText="$(string.SoftMaker_PlanMaker_2024_ProtMarkerColorAuto_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_ProtMarkerColorAuto)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_PlanMaker_2024_ProtMarkerColorAuto" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="ProtMarkerColorAuto">
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_ProtMarkerColorAuto_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_PlanMaker_2024_ProtMarkerColorAuto_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+     <policy name="SoftMaker_PlanMaker_2024_ProtectColor" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_ProtectColor_name)" explainText="$(string.SoftMaker_PlanMaker_2024_ProtectColor_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_ProtectColor)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+       <parentCategory ref="SoftMaker_PlanMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_PlanMaker_2024_ProtectColor" valueName="ProtectColor" maxValue="16777215" minValue="0" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_PlanMaker_2024_LivePreview" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_LivePreview_name)" explainText="$(string.SoftMaker_PlanMaker_2024_LivePreview_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="LivePreview">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_BackGrid" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_BackGrid_name)" explainText="$(string.SoftMaker_PlanMaker_2024_BackGrid_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="BackGrid">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+     <policy name="SoftMaker_PlanMaker_2024_BackupFilesNumber" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_BackupFilesNumber_name)" explainText="$(string.SoftMaker_PlanMaker_2024_BackupFilesNumber_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_BackupFilesNumber)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+       <parentCategory ref="SoftMaker_PlanMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_PlanMaker_2024_BackupFilesNumber" valueName="BackupFilesNumber" maxValue="99" minValue="1" />
+       </elements>
+     </policy>
+     <policy name="SoftMaker_PlanMaker_2024_SnapshotNumber" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_SnapshotNumber_name)" explainText="$(string.SoftMaker_PlanMaker_2024_SnapshotNumber_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_SnapshotNumber)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+       <parentCategory ref="SoftMaker_PlanMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_PlanMaker_2024_SnapshotNumber" valueName="SnapshotNumber" maxValue="99" minValue="1" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_PlanMaker_2024_BackupFilesPath" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_BackupFilesPath_name)" explainText="$(string.SoftMaker_PlanMaker_2024_BackupFilesPath_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_BackupFilesPath)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_PlanMaker_2024_BackupFilesPath" valueName="BackupFilesPath" maxLength="254" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_TemplatePath" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_TemplatePath_name)" explainText="$(string.SoftMaker_PlanMaker_2024_TemplatePath_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_TemplatePath)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_PlanMaker_2024_TemplatePath" valueName="TemplatePath" maxLength="254" />
+      </elements>
+    </policy>
+     <policy name="SoftMaker_PlanMaker_2024_RegBarFontSize" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_RegBarFontSize_name)" explainText="$(string.SoftMaker_PlanMaker_2024_RegBarFontSize_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_RegBarFontSize)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+       <parentCategory ref="SoftMaker_PlanMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_PlanMaker_2024_RegBarFontSize" valueName="RegBarFontSize" maxValue="72" minValue="1" />
+       </elements>
+     </policy>
+     <policy name="SoftMaker_PlanMaker_2024_HistoryEntries" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_HistoryEntries_name)" explainText="$(string.SoftMaker_PlanMaker_2024_HistoryEntries_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_HistoryEntries)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+       <parentCategory ref="SoftMaker_PlanMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_PlanMaker_2024_HistoryEntries" valueName="HistoryEntries" maxValue="100" minValue="0" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_PlanMaker_2024_Documents" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_Documents_name)" explainText="$(string.SoftMaker_PlanMaker_2024_Documents_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_Documents)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_PlanMaker_2024_Documents" valueName="Documents" maxLength="254" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_Databases" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_Databases_name)" explainText="$(string.SoftMaker_PlanMaker_2024_Databases_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_Databases)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_PlanMaker_2024_Databases" valueName="Databases" maxLength="254" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_Pictures" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_Pictures_name)" explainText="$(string.SoftMaker_PlanMaker_2024_Pictures_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_Pictures)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_PlanMaker_2024_Pictures" valueName="Pictures" maxLength="254" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_Macros" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_Macros_name)" explainText="$(string.SoftMaker_PlanMaker_2024_Macros_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_Macros)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_PlanMaker_2024_Macros" valueName="Macros" maxLength="254" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_PdfFiles" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_PdfFiles_name)" explainText="$(string.SoftMaker_PlanMaker_2024_PdfFiles_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_PdfFiles)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_PlanMaker_2024_PdfFiles" valueName="PdfFiles" maxLength="254" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_OptionsFontsSheet" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_OptionsFontsSheet_name)" explainText="$(string.SoftMaker_PlanMaker_2024_OptionsFontsSheet_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="OptionsFontsSheet">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_OptionsHunspell" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_OptionsHunspell_name)" explainText="$(string.SoftMaker_PlanMaker_2024_OptionsHunspell_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="OptionsHunspell">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_OptionsAssociateFiles" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_OptionsAssociateFiles_name)" explainText="$(string.SoftMaker_PlanMaker_2024_OptionsAssociateFiles_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="OptionsAssociateFiles">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_SnapToCells" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_SnapToCells_name)" explainText="$(string.SoftMaker_PlanMaker_2024_SnapToCells_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="SnapToCells">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_PlanMaker_2024_SnapToOtherObjects" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_SnapToOtherObjects_name)" explainText="$(string.SoftMaker_PlanMaker_2024_SnapToOtherObjects_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="SnapToOtherObjects">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+     <policy name="SoftMaker_PlanMaker_2024_SnapToOtherObjectsTolerance" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_SnapToOtherObjectsTolerance_name)" explainText="$(string.SoftMaker_PlanMaker_2024_SnapToOtherObjectsTolerance_help)" presentation="$(presentation.SoftMaker_PlanMaker_2024_SnapToOtherObjectsTolerance)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024">
+       <parentCategory ref="SoftMaker_PlanMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_PlanMaker_2024_SnapToOtherObjectsTolerance" valueName="SnapToOtherObjectsTolerance" maxValue="20" minValue="2" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_PlanMaker_2024_BackupNoCleanup" class="Both" displayName="$(string.SoftMaker_PlanMaker_2024_BackupNoCleanup_name)" explainText="$(string.SoftMaker_PlanMaker_2024_BackupNoCleanup_help)" key="SOFTWARE\Policies\SoftMaker\PlanMaker 2024" valueName="BackupNoCleanup">
+      <parentCategory ref="SoftMaker_PlanMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_RibbonMinimize" class="Both" displayName="$(string.SoftMaker_Presentations_2024_RibbonMinimize_name)" explainText="$(string.SoftMaker_Presentations_2024_RibbonMinimize_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="RibbonMinimize">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_RibbonMinimizeFS" class="Both" displayName="$(string.SoftMaker_Presentations_2024_RibbonMinimizeFS_name)" explainText="$(string.SoftMaker_Presentations_2024_RibbonMinimizeFS_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="RibbonMinimizeFS">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_SeparateQuickAccess" class="Both" displayName="$(string.SoftMaker_Presentations_2024_SeparateQuickAccess_name)" explainText="$(string.SoftMaker_Presentations_2024_SeparateQuickAccess_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="SeparateQuickAccess">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_ClearType" class="Both" displayName="$(string.SoftMaker_Presentations_2024_ClearType_name)" explainText="$(string.SoftMaker_Presentations_2024_ClearType_help)" presentation="$(presentation.SoftMaker_Presentations_2024_ClearType)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_Presentations_2024_ClearType" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="ClearType">
+          <item displayName="$(string.SoftMaker_Presentations_2024_ClearType_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_ClearType_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_ClearType_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_ClearType_3)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_FontShow" class="Both" displayName="$(string.SoftMaker_Presentations_2024_FontShow_name)" explainText="$(string.SoftMaker_Presentations_2024_FontShow_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="FontShow">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_ToolTips" class="Both" displayName="$(string.SoftMaker_Presentations_2024_ToolTips_name)" explainText="$(string.SoftMaker_Presentations_2024_ToolTips_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="ToolTips">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_WarningBeep" class="Both" displayName="$(string.SoftMaker_Presentations_2024_WarningBeep_name)" explainText="$(string.SoftMaker_Presentations_2024_WarningBeep_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="WarningBeep">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+     <policy name="SoftMaker_Presentations_2024_Undo" class="Both" displayName="$(string.SoftMaker_Presentations_2024_Undo_name)" explainText="$(string.SoftMaker_Presentations_2024_Undo_help)" presentation="$(presentation.SoftMaker_Presentations_2024_Undo)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+       <parentCategory ref="SoftMaker_Presentations_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_Presentations_2024_Undo" valueName="Undo" maxValue="999" minValue="1" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_Presentations_2024_DefaultFormat" class="Both" displayName="$(string.SoftMaker_Presentations_2024_DefaultFormat_name)" explainText="$(string.SoftMaker_Presentations_2024_DefaultFormat_help)" presentation="$(presentation.SoftMaker_Presentations_2024_DefaultFormat)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_Presentations_2024_DefaultFormat" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="DefaultFormat">
+          <item displayName="$(string.SoftMaker_Presentations_2024_DefaultFormat_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_DefaultFormat_4)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_DefaultFormat_3)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_DefaultFormat_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_DefaultFormat_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_LargeIcons" class="Both" displayName="$(string.SoftMaker_Presentations_2024_LargeIcons_name)" explainText="$(string.SoftMaker_Presentations_2024_LargeIcons_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="LargeIcons">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_Explorer" class="Both" displayName="$(string.SoftMaker_Presentations_2024_Explorer_name)" explainText="$(string.SoftMaker_Presentations_2024_Explorer_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="Explorer">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_WSColorEnabled" class="Both" displayName="$(string.SoftMaker_Presentations_2024_WSColorEnabled_name)" explainText="$(string.SoftMaker_Presentations_2024_WSColorEnabled_help)" presentation="$(presentation.SoftMaker_Presentations_2024_WSColorEnabled)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_Presentations_2024_WSColorEnabled" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="WSColorEnabled">
+          <item displayName="$(string.SoftMaker_Presentations_2024_WSColorEnabled_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_WSColorEnabled_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+     <policy name="SoftMaker_Presentations_2024_WSColorRGBValue" class="Both" displayName="$(string.SoftMaker_Presentations_2024_WSColorRGBValue_name)" explainText="$(string.SoftMaker_Presentations_2024_WSColorRGBValue_help)" presentation="$(presentation.SoftMaker_Presentations_2024_WSColorRGBValue)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+       <parentCategory ref="SoftMaker_Presentations_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_Presentations_2024_WSColorRGBValue" valueName="WSColorRGBValue" maxValue="16777215" minValue="0" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_Presentations_2024_ImmediateObjectInsert" class="Both" displayName="$(string.SoftMaker_Presentations_2024_ImmediateObjectInsert_name)" explainText="$(string.SoftMaker_Presentations_2024_ImmediateObjectInsert_help)" presentation="$(presentation.SoftMaker_Presentations_2024_ImmediateObjectInsert)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_Presentations_2024_ImmediateObjectInsert" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="ImmediateObjectInsert">
+          <item displayName="$(string.SoftMaker_Presentations_2024_ImmediateObjectInsert_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_ImmediateObjectInsert_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_ImmediateObjectInsert_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_LanguageID" class="Both" displayName="$(string.SoftMaker_Presentations_2024_LanguageID_name)" explainText="$(string.SoftMaker_Presentations_2024_LanguageID_help)" presentation="$(presentation.SoftMaker_Presentations_2024_LanguageID)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_Presentations_2024_LanguageID" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="LanguageID">
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1031)">
+            <value>
+              <decimal value="1031" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_29703)">
+            <value>
+              <decimal value="29703" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_5127)">
+            <value>
+              <decimal value="5127" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_4103)">
+            <value>
+              <decimal value="4103" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_3079)">
+            <value>
+              <decimal value="3079" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_31751)">
+            <value>
+              <decimal value="31751" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_2055)">
+            <value>
+              <decimal value="2055" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_30727)">
+            <value>
+              <decimal value="30727" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1033)">
+            <value>
+              <decimal value="1033" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_2057)">
+            <value>
+              <decimal value="2057" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1036)">
+            <value>
+              <decimal value="1036" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_3084)">
+            <value>
+              <decimal value="3084" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_3082)">
+            <value>
+              <decimal value="3082" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_2058)">
+            <value>
+              <decimal value="2058" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_2070)">
+            <value>
+              <decimal value="2070" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1046)">
+            <value>
+              <decimal value="1046" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1040)">
+            <value>
+              <decimal value="1040" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1043)">
+            <value>
+              <decimal value="1043" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1030)">
+            <value>
+              <decimal value="1030" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1044)">
+            <value>
+              <decimal value="1044" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1053)">
+            <value>
+              <decimal value="1053" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1035)">
+            <value>
+              <decimal value="1035" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1061)">
+            <value>
+              <decimal value="1061" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1062)">
+            <value>
+              <decimal value="1062" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1063)">
+            <value>
+              <decimal value="1063" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1060)">
+            <value>
+              <decimal value="1060" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1045)">
+            <value>
+              <decimal value="1045" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1029)">
+            <value>
+              <decimal value="1029" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1051)">
+            <value>
+              <decimal value="1051" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1050)">
+            <value>
+              <decimal value="1050" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_2074)">
+            <value>
+              <decimal value="2074" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_3098)">
+            <value>
+              <decimal value="3098" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1038)">
+            <value>
+              <decimal value="1038" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1048)">
+            <value>
+              <decimal value="1048" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1032)">
+            <value>
+              <decimal value="1032" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1055)">
+            <value>
+              <decimal value="1055" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1049)">
+            <value>
+              <decimal value="1049" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1026)">
+            <value>
+              <decimal value="1026" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1058)">
+            <value>
+              <decimal value="1058" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1087)">
+            <value>
+              <decimal value="1087" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_2052)">
+            <value>
+              <decimal value="2052" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1028)">
+            <value>
+              <decimal value="1028" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1041)">
+            <value>
+              <decimal value="1041" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1042)">
+            <value>
+              <decimal value="1042" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1057)">
+            <value>
+              <decimal value="1057" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1086)">
+            <value>
+              <decimal value="1086" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1025)">
+            <value>
+              <decimal value="1025" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1109)">
+            <value>
+              <decimal value="1109" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1081)">
+            <value>
+              <decimal value="1081" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1054)">
+            <value>
+              <decimal value="1054" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1107)">
+            <value>
+              <decimal value="1107" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1108)">
+            <value>
+              <decimal value="1108" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_LanguageID_1066)">
+            <value>
+              <decimal value="1066" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_FormatWholeWord" class="Both" displayName="$(string.SoftMaker_Presentations_2024_FormatWholeWord_name)" explainText="$(string.SoftMaker_Presentations_2024_FormatWholeWord_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="FormatWholeWord">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+     <policy name="SoftMaker_Presentations_2024_BackupFilesNumber" class="Both" displayName="$(string.SoftMaker_Presentations_2024_BackupFilesNumber_name)" explainText="$(string.SoftMaker_Presentations_2024_BackupFilesNumber_help)" presentation="$(presentation.SoftMaker_Presentations_2024_BackupFilesNumber)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+       <parentCategory ref="SoftMaker_Presentations_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_Presentations_2024_BackupFilesNumber" valueName="BackupFilesNumber" maxValue="99" minValue="1" />
+       </elements>
+     </policy>
+     <policy name="SoftMaker_Presentations_2024_SnapshotNumber" class="Both" displayName="$(string.SoftMaker_Presentations_2024_SnapshotNumber_name)" explainText="$(string.SoftMaker_Presentations_2024_SnapshotNumber_help)" presentation="$(presentation.SoftMaker_Presentations_2024_SnapshotNumber)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+       <parentCategory ref="SoftMaker_Presentations_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_Presentations_2024_SnapshotNumber" valueName="SnapshotNumber" maxValue="99" minValue="1" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_Presentations_2024_BackupFilesPath" class="Both" displayName="$(string.SoftMaker_Presentations_2024_BackupFilesPath_name)" explainText="$(string.SoftMaker_Presentations_2024_BackupFilesPath_help)" presentation="$(presentation.SoftMaker_Presentations_2024_BackupFilesPath)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_Presentations_2024_BackupFilesPath" valueName="BackupFilesPath" maxLength="254" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_SpellIgnoreWordsWithStartingDigits" class="Both" displayName="$(string.SoftMaker_Presentations_2024_SpellIgnoreWordsWithStartingDigits_name)" explainText="$(string.SoftMaker_Presentations_2024_SpellIgnoreWordsWithStartingDigits_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="SpellIgnoreWordsWithStartingDigits">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_SpellCheckColorEnable" class="Both" displayName="$(string.SoftMaker_Presentations_2024_SpellCheckColorEnable_name)" explainText="$(string.SoftMaker_Presentations_2024_SpellCheckColorEnable_help)" presentation="$(presentation.SoftMaker_Presentations_2024_SpellCheckColorEnable)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_Presentations_2024_SpellCheckColorEnable" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="SpellCheckColorEnable">
+          <item displayName="$(string.SoftMaker_Presentations_2024_SpellCheckColorEnable_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_SpellCheckColorEnable_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+     <policy name="SoftMaker_Presentations_2024_SpellCheckColor" class="Both" displayName="$(string.SoftMaker_Presentations_2024_SpellCheckColor_name)" explainText="$(string.SoftMaker_Presentations_2024_SpellCheckColor_help)" presentation="$(presentation.SoftMaker_Presentations_2024_SpellCheckColor)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+       <parentCategory ref="SoftMaker_Presentations_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_Presentations_2024_SpellCheckColor" valueName="SpellCheckColor" maxValue="16777215" minValue="0" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_Presentations_2024_AutoSave" class="Both" displayName="$(string.SoftMaker_Presentations_2024_AutoSave_name)" explainText="$(string.SoftMaker_Presentations_2024_AutoSave_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="AutoSave">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+     <policy name="SoftMaker_Presentations_2024_AutoTime" class="Both" displayName="$(string.SoftMaker_Presentations_2024_AutoTime_name)" explainText="$(string.SoftMaker_Presentations_2024_AutoTime_help)" presentation="$(presentation.SoftMaker_Presentations_2024_AutoTime)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+       <parentCategory ref="SoftMaker_Presentations_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_Presentations_2024_AutoTime" valueName="AutoTime" maxValue="100" minValue="1" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_Presentations_2024_DocInfo" class="Both" displayName="$(string.SoftMaker_Presentations_2024_DocInfo_name)" explainText="$(string.SoftMaker_Presentations_2024_DocInfo_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="DocInfo">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_CheckHtmlLinks" class="Both" displayName="$(string.SoftMaker_Presentations_2024_CheckHtmlLinks_name)" explainText="$(string.SoftMaker_Presentations_2024_CheckHtmlLinks_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="CheckHtmlLinks">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_RaiseOrdinals" class="Both" displayName="$(string.SoftMaker_Presentations_2024_RaiseOrdinals_name)" explainText="$(string.SoftMaker_Presentations_2024_RaiseOrdinals_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="RaiseOrdinals">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_SpaceCorrection" class="Both" displayName="$(string.SoftMaker_Presentations_2024_SpaceCorrection_name)" explainText="$(string.SoftMaker_Presentations_2024_SpaceCorrection_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="SpaceCorrection">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_WordSelection" class="Both" displayName="$(string.SoftMaker_Presentations_2024_WordSelection_name)" explainText="$(string.SoftMaker_Presentations_2024_WordSelection_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="WordSelection">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_Capitalize" class="Both" displayName="$(string.SoftMaker_Presentations_2024_Capitalize_name)" explainText="$(string.SoftMaker_Presentations_2024_Capitalize_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="Capitalize">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_BiCapitals" class="Both" displayName="$(string.SoftMaker_Presentations_2024_BiCapitals_name)" explainText="$(string.SoftMaker_Presentations_2024_BiCapitals_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="BiCapitals">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_Glossary" class="Both" displayName="$(string.SoftMaker_Presentations_2024_Glossary_name)" explainText="$(string.SoftMaker_Presentations_2024_Glossary_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="Glossary">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_BkgndCorrection" class="Both" displayName="$(string.SoftMaker_Presentations_2024_BkgndCorrection_name)" explainText="$(string.SoftMaker_Presentations_2024_BkgndCorrection_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="BkgndCorrection">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_DiffCorrections" class="Both" displayName="$(string.SoftMaker_Presentations_2024_DiffCorrections_name)" explainText="$(string.SoftMaker_Presentations_2024_DiffCorrections_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="DiffCorrections">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_ShowFormattedOutline" class="Both" displayName="$(string.SoftMaker_Presentations_2024_ShowFormattedOutline_name)" explainText="$(string.SoftMaker_Presentations_2024_ShowFormattedOutline_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="ShowFormattedOutline">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_ShowObjectBoundaries" class="Both" displayName="$(string.SoftMaker_Presentations_2024_ShowObjectBoundaries_name)" explainText="$(string.SoftMaker_Presentations_2024_ShowObjectBoundaries_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="ShowObjectBoundaries">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_Guides" class="Both" displayName="$(string.SoftMaker_Presentations_2024_Guides_name)" explainText="$(string.SoftMaker_Presentations_2024_Guides_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="Guides">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_ShowRulers" class="Both" displayName="$(string.SoftMaker_Presentations_2024_ShowRulers_name)" explainText="$(string.SoftMaker_Presentations_2024_ShowRulers_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="ShowRulers">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_ShowBreaks" class="Both" displayName="$(string.SoftMaker_Presentations_2024_ShowBreaks_name)" explainText="$(string.SoftMaker_Presentations_2024_ShowBreaks_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="ShowBreaks">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_ViewColorMode" class="Both" displayName="$(string.SoftMaker_Presentations_2024_ViewColorMode_name)" explainText="$(string.SoftMaker_Presentations_2024_ViewColorMode_help)" presentation="$(presentation.SoftMaker_Presentations_2024_ViewColorMode)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_Presentations_2024_ViewColorMode" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="ViewColorMode">
+          <item displayName="$(string.SoftMaker_Presentations_2024_ViewColorMode_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_ViewColorMode_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_ViewColorMode_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+     <policy name="SoftMaker_Presentations_2024_ShowDisplay" class="Both" displayName="$(string.SoftMaker_Presentations_2024_ShowDisplay_name)" explainText="$(string.SoftMaker_Presentations_2024_ShowDisplay_help)" presentation="$(presentation.SoftMaker_Presentations_2024_ShowDisplay)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+       <parentCategory ref="SoftMaker_Presentations_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_Presentations_2024_ShowDisplay" valueName="ShowDisplay" maxValue="16777215" minValue="0" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_Presentations_2024_SmartQuotes" class="Both" displayName="$(string.SoftMaker_Presentations_2024_SmartQuotes_name)" explainText="$(string.SoftMaker_Presentations_2024_SmartQuotes_help)" presentation="$(presentation.SoftMaker_Presentations_2024_SmartQuotes)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_Presentations_2024_SmartQuotes" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="SmartQuotes">
+          <item displayName="$(string.SoftMaker_Presentations_2024_SmartQuotes_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_SmartQuotes_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_SmartQuotes_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_SmartQuotes_3)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_SmartQuotes_4)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_SmartQuotes_6)">
+            <value>
+              <decimal value="6" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_SmartQuotes_7)">
+            <value>
+              <decimal value="7" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_Presentations_2024_SmartQuotes_5)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_FrenchSpaces" class="Both" displayName="$(string.SoftMaker_Presentations_2024_FrenchSpaces_name)" explainText="$(string.SoftMaker_Presentations_2024_FrenchSpaces_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="FrenchSpaces">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_VertScroll" class="Both" displayName="$(string.SoftMaker_Presentations_2024_VertScroll_name)" explainText="$(string.SoftMaker_Presentations_2024_VertScroll_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="VertScroll">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_HorzScroll" class="Both" displayName="$(string.SoftMaker_Presentations_2024_HorzScroll_name)" explainText="$(string.SoftMaker_Presentations_2024_HorzScroll_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="HorzScroll">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_LivePreview" class="Both" displayName="$(string.SoftMaker_Presentations_2024_LivePreview_name)" explainText="$(string.SoftMaker_Presentations_2024_LivePreview_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="LivePreview">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_PresenterMode" class="Both" displayName="$(string.SoftMaker_Presentations_2024_PresenterMode_name)" explainText="$(string.SoftMaker_Presentations_2024_PresenterMode_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="PresenterMode">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_DesignPath" class="Both" displayName="$(string.SoftMaker_Presentations_2024_DesignPath_name)" explainText="$(string.SoftMaker_Presentations_2024_DesignPath_help)" presentation="$(presentation.SoftMaker_Presentations_2024_DesignPath)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_Presentations_2024_DesignPath" valueName="DesignPath" maxLength="254" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_PicBulletPath" class="Both" displayName="$(string.SoftMaker_Presentations_2024_PicBulletPath_name)" explainText="$(string.SoftMaker_Presentations_2024_PicBulletPath_help)" presentation="$(presentation.SoftMaker_Presentations_2024_PicBulletPath)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_Presentations_2024_PicBulletPath" valueName="PicBulletPath" maxLength="254" />
+      </elements>
+    </policy>
+     <policy name="SoftMaker_Presentations_2024_HistoryEntries" class="Both" displayName="$(string.SoftMaker_Presentations_2024_HistoryEntries_name)" explainText="$(string.SoftMaker_Presentations_2024_HistoryEntries_help)" presentation="$(presentation.SoftMaker_Presentations_2024_HistoryEntries)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+       <parentCategory ref="SoftMaker_Presentations_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_Presentations_2024_HistoryEntries" valueName="HistoryEntries" maxValue="100" minValue="0" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_Presentations_2024_Documents" class="Both" displayName="$(string.SoftMaker_Presentations_2024_Documents_name)" explainText="$(string.SoftMaker_Presentations_2024_Documents_help)" presentation="$(presentation.SoftMaker_Presentations_2024_Documents)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_Presentations_2024_Documents" valueName="Documents" maxLength="254" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_Databases" class="Both" displayName="$(string.SoftMaker_Presentations_2024_Databases_name)" explainText="$(string.SoftMaker_Presentations_2024_Databases_help)" presentation="$(presentation.SoftMaker_Presentations_2024_Databases)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_Presentations_2024_Databases" valueName="Databases" maxLength="254" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_Pictures" class="Both" displayName="$(string.SoftMaker_Presentations_2024_Pictures_name)" explainText="$(string.SoftMaker_Presentations_2024_Pictures_help)" presentation="$(presentation.SoftMaker_Presentations_2024_Pictures)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_Presentations_2024_Pictures" valueName="Pictures" maxLength="254" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_Macros" class="Both" displayName="$(string.SoftMaker_Presentations_2024_Macros_name)" explainText="$(string.SoftMaker_Presentations_2024_Macros_help)" presentation="$(presentation.SoftMaker_Presentations_2024_Macros)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_Presentations_2024_Macros" valueName="Macros" maxLength="254" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_PdfFiles" class="Both" displayName="$(string.SoftMaker_Presentations_2024_PdfFiles_name)" explainText="$(string.SoftMaker_Presentations_2024_PdfFiles_help)" presentation="$(presentation.SoftMaker_Presentations_2024_PdfFiles)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_Presentations_2024_PdfFiles" valueName="PdfFiles" maxLength="254" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_Designs" class="Both" displayName="$(string.SoftMaker_Presentations_2024_Designs_name)" explainText="$(string.SoftMaker_Presentations_2024_Designs_help)" presentation="$(presentation.SoftMaker_Presentations_2024_Designs)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_Presentations_2024_Designs" valueName="Designs" maxLength="254" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_OptionsFontsSheet" class="Both" displayName="$(string.SoftMaker_Presentations_2024_OptionsFontsSheet_name)" explainText="$(string.SoftMaker_Presentations_2024_OptionsFontsSheet_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="OptionsFontsSheet">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_OptionsHunspell" class="Both" displayName="$(string.SoftMaker_Presentations_2024_OptionsHunspell_name)" explainText="$(string.SoftMaker_Presentations_2024_OptionsHunspell_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="OptionsHunspell">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_OptionsAssociateFiles" class="Both" displayName="$(string.SoftMaker_Presentations_2024_OptionsAssociateFiles_name)" explainText="$(string.SoftMaker_Presentations_2024_OptionsAssociateFiles_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="OptionsAssociateFiles">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_Presentations_2024_BackupNoCleanup" class="Both" displayName="$(string.SoftMaker_Presentations_2024_BackupNoCleanup_name)" explainText="$(string.SoftMaker_Presentations_2024_BackupNoCleanup_help)" key="SOFTWARE\Policies\SoftMaker\Presentations 2024" valueName="BackupNoCleanup">
+      <parentCategory ref="SoftMaker_Presentations_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_ProductKey" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_ProductKey_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_ProductKey_help)" presentation="$(presentation.SoftMaker_SoftMaker_Office_2024_ProductKey)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_SoftMaker_Office_2024_ProductKey" valueName="ProductKey" maxLength="12" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_AskUserInfo" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_AskUserInfo_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_AskUserInfo_help)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024" valueName="AskUserInfo">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_UpdateCheckEnabled" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_UpdateCheckEnabled_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_UpdateCheckEnabled_help)" presentation="$(presentation.SoftMaker_SoftMaker_Office_2024_UpdateCheckEnabled)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_SoftMaker_Office_2024_UpdateCheckEnabled" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024" valueName="UpdateCheckEnabled">
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_UpdateCheckEnabled_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_UpdateCheckEnabled_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_UpdateCheckEnabled_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_UpdateCheckEnabled_3)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_HelpSoftMaker" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_HelpSoftMaker_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_HelpSoftMaker_help)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024" valueName="HelpSoftMaker">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_HelpManage" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_HelpManage_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_HelpManage_help)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024" valueName="HelpManage">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_UITheme" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_UITheme_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_UITheme_help)" presentation="$(presentation.SoftMaker_SoftMaker_Office_2024_UITheme)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_SoftMaker_Office_2024_UITheme" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024" valueName="UITheme">
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_UITheme_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_UITheme_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_UITheme_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_UITheme_3)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_UITheme_4)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_UserDataTitle" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_UserDataTitle_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_UserDataTitle_help)" presentation="$(presentation.SoftMaker_SoftMaker_Office_2024_UserDataTitle)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_SoftMaker_Office_2024_UserDataTitle" valueName="UserDataTitle" maxLength="63" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_UserDataName" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_UserDataName_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_UserDataName_help)" presentation="$(presentation.SoftMaker_SoftMaker_Office_2024_UserDataName)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_SoftMaker_Office_2024_UserDataName" valueName="UserDataName" maxLength="63" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_UserDataInitials" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_UserDataInitials_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_UserDataInitials_help)" presentation="$(presentation.SoftMaker_SoftMaker_Office_2024_UserDataInitials)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_SoftMaker_Office_2024_UserDataInitials" valueName="UserDataInitials" maxLength="7" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_UserDataCompany" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_UserDataCompany_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_UserDataCompany_help)" presentation="$(presentation.SoftMaker_SoftMaker_Office_2024_UserDataCompany)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_SoftMaker_Office_2024_UserDataCompany" valueName="UserDataCompany" maxLength="63" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_UserDataDepartment" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_UserDataDepartment_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_UserDataDepartment_help)" presentation="$(presentation.SoftMaker_SoftMaker_Office_2024_UserDataDepartment)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_SoftMaker_Office_2024_UserDataDepartment" valueName="UserDataDepartment" maxLength="63" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_UserDataAddress1" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_UserDataAddress1_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_UserDataAddress1_help)" presentation="$(presentation.SoftMaker_SoftMaker_Office_2024_UserDataAddress1)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_SoftMaker_Office_2024_UserDataAddress1" valueName="UserDataAddress1" maxLength="63" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_UserDataAddress2" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_UserDataAddress2_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_UserDataAddress2_help)" presentation="$(presentation.SoftMaker_SoftMaker_Office_2024_UserDataAddress2)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_SoftMaker_Office_2024_UserDataAddress2" valueName="UserDataAddress2" maxLength="63" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_UserDataZipCode" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_UserDataZipCode_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_UserDataZipCode_help)" presentation="$(presentation.SoftMaker_SoftMaker_Office_2024_UserDataZipCode)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_SoftMaker_Office_2024_UserDataZipCode" valueName="UserDataZipCode" maxLength="15" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_UserDataCity" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_UserDataCity_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_UserDataCity_help)" presentation="$(presentation.SoftMaker_SoftMaker_Office_2024_UserDataCity)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_SoftMaker_Office_2024_UserDataCity" valueName="UserDataCity" maxLength="63" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_UserDataCountry" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_UserDataCountry_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_UserDataCountry_help)" presentation="$(presentation.SoftMaker_SoftMaker_Office_2024_UserDataCountry)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_SoftMaker_Office_2024_UserDataCountry" valueName="UserDataCounry" maxLength="63" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_UserDataPhone" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_UserDataPhone_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_UserDataPhone_help)" presentation="$(presentation.SoftMaker_SoftMaker_Office_2024_UserDataPhone)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_SoftMaker_Office_2024_UserDataPhone" valueName="UserDataPhone" maxLength="31" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_UserDataPhone2" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_UserDataPhone2_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_UserDataPhone2_help)" presentation="$(presentation.SoftMaker_SoftMaker_Office_2024_UserDataPhone2)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_SoftMaker_Office_2024_UserDataPhone2" valueName="UserDataHandy" maxLength="31" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_UserDataPhone3" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_UserDataPhone3_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_UserDataPhone3_help)" presentation="$(presentation.SoftMaker_SoftMaker_Office_2024_UserDataPhone3)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_SoftMaker_Office_2024_UserDataPhone3" valueName="UserDataHandy2" maxLength="31" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_UserDataFax" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_UserDataFax_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_UserDataFax_help)" presentation="$(presentation.SoftMaker_SoftMaker_Office_2024_UserDataFax)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_SoftMaker_Office_2024_UserDataFax" valueName="UserDataFax" maxLength="31" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_UserDataEmail" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_UserDataEmail_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_UserDataEmail_help)" presentation="$(presentation.SoftMaker_SoftMaker_Office_2024_UserDataEmail)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_SoftMaker_Office_2024_UserDataEmail" valueName="UserDataEmail" maxLength="63" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_UserDataEmail2" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_UserDataEmail2_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_UserDataEmail2_help)" presentation="$(presentation.SoftMaker_SoftMaker_Office_2024_UserDataEmail2)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_SoftMaker_Office_2024_UserDataEmail2" valueName="UserDataEmail2" maxLength="63" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_UserDataEmail3" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_UserDataEmail3_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_UserDataEmail3_help)" presentation="$(presentation.SoftMaker_SoftMaker_Office_2024_UserDataEmail3)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_SoftMaker_Office_2024_UserDataEmail3" valueName="UserDataEmail3" maxLength="63" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_UserDataWWW" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_UserDataWWW_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_UserDataWWW_help)" presentation="$(presentation.SoftMaker_SoftMaker_Office_2024_UserDataWWW)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_SoftMaker_Office_2024_UserDataWWW" valueName="UserDataWWW" maxLength="95" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_SoftMaker_Office_2024_DlgLID" class="Both" displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_name)" explainText="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_help)" presentation="$(presentation.SoftMaker_SoftMaker_Office_2024_DlgLID)" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024">
+      <parentCategory ref="SoftMaker_SoftMaker_Office_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_SoftMaker_Office_2024_DlgLID" key="SOFTWARE\Policies\SoftMaker\SoftMaker Office 2024" valueName="DlgLID">
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1031)">
+            <value>
+              <decimal value="1031" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1033)">
+            <value>
+              <decimal value="1033" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_2057)">
+            <value>
+              <decimal value="2057" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1036)">
+            <value>
+              <decimal value="1036" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_3082)">
+            <value>
+              <decimal value="3082" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_2070)">
+            <value>
+              <decimal value="2070" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1046)">
+            <value>
+              <decimal value="1046" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1040)">
+            <value>
+              <decimal value="1040" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1043)">
+            <value>
+              <decimal value="1043" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1030)">
+            <value>
+              <decimal value="1030" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1053)">
+            <value>
+              <decimal value="1053" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1035)">
+            <value>
+              <decimal value="1035" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1061)">
+            <value>
+              <decimal value="1061" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1062)">
+            <value>
+              <decimal value="1062" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1063)">
+            <value>
+              <decimal value="1063" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1060)">
+            <value>
+              <decimal value="1060" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1038)">
+            <value>
+              <decimal value="1038" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1048)">
+            <value>
+              <decimal value="1048" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1032)">
+            <value>
+              <decimal value="1032" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1055)">
+            <value>
+              <decimal value="1055" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1049)">
+            <value>
+              <decimal value="1049" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1026)">
+            <value>
+              <decimal value="1026" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1058)">
+            <value>
+              <decimal value="1058" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1087)">
+            <value>
+              <decimal value="1087" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_2052)">
+            <value>
+              <decimal value="2052" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1041)">
+            <value>
+              <decimal value="1041" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1042)">
+            <value>
+              <decimal value="1042" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1057)">
+            <value>
+              <decimal value="1057" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_SoftMaker_Office_2024_DlgLID_1025)">
+            <value>
+              <decimal value="1025" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_RibbonMinimize" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_RibbonMinimize_name)" explainText="$(string.SoftMaker_TextMaker_2024_RibbonMinimize_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="RibbonMinimize">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_RibbonMinimizeFS" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_RibbonMinimizeFS_name)" explainText="$(string.SoftMaker_TextMaker_2024_RibbonMinimizeFS_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="RibbonMinimizeFS">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_SeparateQuickAccess" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_SeparateQuickAccess_name)" explainText="$(string.SoftMaker_TextMaker_2024_SeparateQuickAccess_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="SeparateQuickAccess">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_ClearType" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_ClearType_name)" explainText="$(string.SoftMaker_TextMaker_2024_ClearType_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_ClearType)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_TextMaker_2024_ClearType" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="ClearType">
+          <item displayName="$(string.SoftMaker_TextMaker_2024_ClearType_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_ClearType_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_ClearType_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_ClearType_3)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_FontShow" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_FontShow_name)" explainText="$(string.SoftMaker_TextMaker_2024_FontShow_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="FontShow">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_ToolTips" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_ToolTips_name)" explainText="$(string.SoftMaker_TextMaker_2024_ToolTips_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="ToolTips">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_WarningBeep" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_WarningBeep_name)" explainText="$(string.SoftMaker_TextMaker_2024_WarningBeep_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="WarningBeep">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+     <policy name="SoftMaker_TextMaker_2024_Undo" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_Undo_name)" explainText="$(string.SoftMaker_TextMaker_2024_Undo_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_Undo)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+       <parentCategory ref="SoftMaker_TextMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_TextMaker_2024_Undo" valueName="Undo" maxValue="999" minValue="1" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_TextMaker_2024_ArabicSupport" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_ArabicSupport_name)" explainText="$(string.SoftMaker_TextMaker_2024_ArabicSupport_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="ArabicSupport">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_AsianFonts" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_AsianFonts_name)" explainText="$(string.SoftMaker_TextMaker_2024_AsianFonts_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="AsianFonts">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_DefaultFormat" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_DefaultFormat_name)" explainText="$(string.SoftMaker_TextMaker_2024_DefaultFormat_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_DefaultFormat)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_TextMaker_2024_DefaultFormat" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="DefaultFormat">
+          <item displayName="$(string.SoftMaker_TextMaker_2024_DefaultFormat_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_DefaultFormat_7)">
+            <value>
+              <decimal value="7" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_DefaultFormat_6)">
+            <value>
+              <decimal value="6" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_DefaultFormat_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_DefaultFormat_3)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_DefaultFormat_4)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_DefaultFormat_5)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_LargeIcons" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_LargeIcons_name)" explainText="$(string.SoftMaker_TextMaker_2024_LargeIcons_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="LargeIcons">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_Explorer" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_Explorer_name)" explainText="$(string.SoftMaker_TextMaker_2024_Explorer_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="Explorer">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_WSColorEnabled" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_WSColorEnabled_name)" explainText="$(string.SoftMaker_TextMaker_2024_WSColorEnabled_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_WSColorEnabled)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_TextMaker_2024_WSColorEnabled" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="WSColorEnabled">
+          <item displayName="$(string.SoftMaker_TextMaker_2024_WSColorEnabled_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_WSColorEnabled_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+     <policy name="SoftMaker_TextMaker_2024_WSColorRGBValue" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_WSColorRGBValue_name)" explainText="$(string.SoftMaker_TextMaker_2024_WSColorRGBValue_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_WSColorRGBValue)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+       <parentCategory ref="SoftMaker_TextMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_TextMaker_2024_WSColorRGBValue" valueName="WSColorRGBValue" maxValue="16777215" minValue="0" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_TextMaker_2024_ImmediateObjectInsert" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_ImmediateObjectInsert_name)" explainText="$(string.SoftMaker_TextMaker_2024_ImmediateObjectInsert_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_ImmediateObjectInsert)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_TextMaker_2024_ImmediateObjectInsert" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="ImmediateObjectInsert">
+          <item displayName="$(string.SoftMaker_TextMaker_2024_ImmediateObjectInsert_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_ImmediateObjectInsert_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_ImmediateObjectInsert_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_LanguageID" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_name)" explainText="$(string.SoftMaker_TextMaker_2024_LanguageID_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_LanguageID)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_TextMaker_2024_LanguageID" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="LanguageID">
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1031)">
+            <value>
+              <decimal value="1031" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_29703)">
+            <value>
+              <decimal value="29703" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_5127)">
+            <value>
+              <decimal value="5127" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_4103)">
+            <value>
+              <decimal value="4103" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_3079)">
+            <value>
+              <decimal value="3079" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_31751)">
+            <value>
+              <decimal value="31751" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_2055)">
+            <value>
+              <decimal value="2055" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_30727)">
+            <value>
+              <decimal value="30727" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1033)">
+            <value>
+              <decimal value="1033" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_2057)">
+            <value>
+              <decimal value="2057" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1036)">
+            <value>
+              <decimal value="1036" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_3084)">
+            <value>
+              <decimal value="3084" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_3082)">
+            <value>
+              <decimal value="3082" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_2058)">
+            <value>
+              <decimal value="2058" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_2070)">
+            <value>
+              <decimal value="2070" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1046)">
+            <value>
+              <decimal value="1046" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1040)">
+            <value>
+              <decimal value="1040" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1043)">
+            <value>
+              <decimal value="1043" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1030)">
+            <value>
+              <decimal value="1030" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1044)">
+            <value>
+              <decimal value="1044" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1053)">
+            <value>
+              <decimal value="1053" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1035)">
+            <value>
+              <decimal value="1035" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1061)">
+            <value>
+              <decimal value="1061" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1062)">
+            <value>
+              <decimal value="1062" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1063)">
+            <value>
+              <decimal value="1063" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1060)">
+            <value>
+              <decimal value="1060" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1045)">
+            <value>
+              <decimal value="1045" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1029)">
+            <value>
+              <decimal value="1029" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1051)">
+            <value>
+              <decimal value="1051" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1050)">
+            <value>
+              <decimal value="1050" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_2074)">
+            <value>
+              <decimal value="2074" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_3098)">
+            <value>
+              <decimal value="3098" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1038)">
+            <value>
+              <decimal value="1038" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1048)">
+            <value>
+              <decimal value="1048" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1032)">
+            <value>
+              <decimal value="1032" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1055)">
+            <value>
+              <decimal value="1055" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1049)">
+            <value>
+              <decimal value="1049" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1026)">
+            <value>
+              <decimal value="1026" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1058)">
+            <value>
+              <decimal value="1058" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1087)">
+            <value>
+              <decimal value="1087" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_2052)">
+            <value>
+              <decimal value="2052" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1028)">
+            <value>
+              <decimal value="1028" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1041)">
+            <value>
+              <decimal value="1041" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1042)">
+            <value>
+              <decimal value="1042" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1057)">
+            <value>
+              <decimal value="1057" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1086)">
+            <value>
+              <decimal value="1086" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1025)">
+            <value>
+              <decimal value="1025" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1109)">
+            <value>
+              <decimal value="1109" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1081)">
+            <value>
+              <decimal value="1081" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1054)">
+            <value>
+              <decimal value="1054" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1107)">
+            <value>
+              <decimal value="1107" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1108)">
+            <value>
+              <decimal value="1108" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_LanguageID_1066)">
+            <value>
+              <decimal value="1066" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_FormatWholeWord" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_FormatWholeWord_name)" explainText="$(string.SoftMaker_TextMaker_2024_FormatWholeWord_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="FormatWholeWord">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_SpellIgnoreWordsWithStartingDigits" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_SpellIgnoreWordsWithStartingDigits_name)" explainText="$(string.SoftMaker_TextMaker_2024_SpellIgnoreWordsWithStartingDigits_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="SpellIgnoreWordsWithStartingDigits">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_SpellCheckColorEnable" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_SpellCheckColorEnable_name)" explainText="$(string.SoftMaker_TextMaker_2024_SpellCheckColorEnable_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_SpellCheckColorEnable)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_TextMaker_2024_SpellCheckColorEnable" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="SpellCheckColorEnable">
+          <item displayName="$(string.SoftMaker_TextMaker_2024_SpellCheckColorEnable_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_SpellCheckColorEnable_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+     <policy name="SoftMaker_TextMaker_2024_SpellCheckColor" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_SpellCheckColor_name)" explainText="$(string.SoftMaker_TextMaker_2024_SpellCheckColor_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_SpellCheckColor)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+       <parentCategory ref="SoftMaker_TextMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_TextMaker_2024_SpellCheckColor" valueName="SpellCheckColor" maxValue="16777215" minValue="0" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_TextMaker_2024_GrammarCheckColorEnable" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_GrammarCheckColorEnable_name)" explainText="$(string.SoftMaker_TextMaker_2024_GrammarCheckColorEnable_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_GrammarCheckColorEnable)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_TextMaker_2024_GrammarCheckColorEnable" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="GrammarCheckColorEnable">
+          <item displayName="$(string.SoftMaker_TextMaker_2024_GrammarCheckColorEnable_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_GrammarCheckColorEnable_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+     <policy name="SoftMaker_TextMaker_2024_GrammarCheckColor" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_GrammarCheckColor_name)" explainText="$(string.SoftMaker_TextMaker_2024_GrammarCheckColor_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_GrammarCheckColor)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+       <parentCategory ref="SoftMaker_TextMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_TextMaker_2024_GrammarCheckColor" valueName="GrammarCheckColor" maxValue="16777215" minValue="0" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_TextMaker_2024_TableGrid" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_TableGrid_name)" explainText="$(string.SoftMaker_TextMaker_2024_TableGrid_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="TableGrid">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_FrameGrid" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_FrameGrid_name)" explainText="$(string.SoftMaker_TextMaker_2024_FrameGrid_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="FrameGrid">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_OleBounds" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_OleBounds_name)" explainText="$(string.SoftMaker_TextMaker_2024_OleBounds_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="OleBounds">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_PageBorders" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_PageBorders_name)" explainText="$(string.SoftMaker_TextMaker_2024_PageBorders_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="PageBorders">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_DisplayGrid" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_DisplayGrid_name)" explainText="$(string.SoftMaker_TextMaker_2024_DisplayGrid_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="DisplayGrid">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_WindowWrap" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_WindowWrap_name)" explainText="$(string.SoftMaker_TextMaker_2024_WindowWrap_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="WindowWrap">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_SpaceCorrection" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_SpaceCorrection_name)" explainText="$(string.SoftMaker_TextMaker_2024_SpaceCorrection_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="SpaceCorrection">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_WordSelection" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_WordSelection_name)" explainText="$(string.SoftMaker_TextMaker_2024_WordSelection_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="WordSelection">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_Capitalize" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_Capitalize_name)" explainText="$(string.SoftMaker_TextMaker_2024_Capitalize_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="Capitalize">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_BiCapitals" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_BiCapitals_name)" explainText="$(string.SoftMaker_TextMaker_2024_BiCapitals_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="BiCapitals">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_PgfBreaks" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_PgfBreaks_name)" explainText="$(string.SoftMaker_TextMaker_2024_PgfBreaks_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_PgfBreaks)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_TextMaker_2024_PgfBreaks" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="PgfBreaks">
+          <item displayName="$(string.SoftMaker_TextMaker_2024_PgfBreaks_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_PgfBreaks_256)">
+            <value>
+              <decimal value="256" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_PgfBreaks_2048)">
+            <value>
+              <decimal value="2048" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_HRuler" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_HRuler_name)" explainText="$(string.SoftMaker_TextMaker_2024_HRuler_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="HRuler">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_VRuler" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_VRuler_name)" explainText="$(string.SoftMaker_TextMaker_2024_VRuler_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="VRuler">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_Guides" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_Guides_name)" explainText="$(string.SoftMaker_TextMaker_2024_Guides_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="Guides">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_AutoSave" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_AutoSave_name)" explainText="$(string.SoftMaker_TextMaker_2024_AutoSave_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="AutoSave">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+     <policy name="SoftMaker_TextMaker_2024_AutoTime" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_AutoTime_name)" explainText="$(string.SoftMaker_TextMaker_2024_AutoTime_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_AutoTime)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+       <parentCategory ref="SoftMaker_TextMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_TextMaker_2024_AutoTime" valueName="AutoTime" maxValue="100" minValue="1" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_TextMaker_2024_DocInfo" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_DocInfo_name)" explainText="$(string.SoftMaker_TextMaker_2024_DocInfo_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="DocInfo">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_JumpToLastPosition" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_JumpToLastPosition_name)" explainText="$(string.SoftMaker_TextMaker_2024_JumpToLastPosition_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="JumpToLastPosition">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_TxtFormat" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_TxtFormat_name)" explainText="$(string.SoftMaker_TextMaker_2024_TxtFormat_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="TxtFormat">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_Glossary" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_Glossary_name)" explainText="$(string.SoftMaker_TextMaker_2024_Glossary_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="Glossary">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_BkgndCorrection" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_BkgndCorrection_name)" explainText="$(string.SoftMaker_TextMaker_2024_BkgndCorrection_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="BkgndCorrection">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_DiffCorrections" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_DiffCorrections_name)" explainText="$(string.SoftMaker_TextMaker_2024_DiffCorrections_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="DiffCorrections">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_SmartQuotes" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_SmartQuotes_name)" explainText="$(string.SoftMaker_TextMaker_2024_SmartQuotes_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_SmartQuotes)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_TextMaker_2024_SmartQuotes" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="SmartQuotes">
+          <item displayName="$(string.SoftMaker_TextMaker_2024_SmartQuotes_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_SmartQuotes_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_SmartQuotes_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_SmartQuotes_3)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_SmartQuotes_4)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_SmartQuotes_6)">
+            <value>
+              <decimal value="6" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_SmartQuotes_7)">
+            <value>
+              <decimal value="7" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_SmartQuotes_5)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_FrenchSpaces" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_FrenchSpaces_name)" explainText="$(string.SoftMaker_TextMaker_2024_FrenchSpaces_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="FrenchSpaces">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_ShowOverflowMarker" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_ShowOverflowMarker_name)" explainText="$(string.SoftMaker_TextMaker_2024_ShowOverflowMarker_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="ShowOverflowMarker">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_VertScroll" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_VertScroll_name)" explainText="$(string.SoftMaker_TextMaker_2024_VertScroll_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="VertScroll">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_HorzScroll" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_HorzScroll_name)" explainText="$(string.SoftMaker_TextMaker_2024_HorzScroll_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="HorzScroll">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_IndentParagraphsWithTab" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_IndentParagraphsWithTab_name)" explainText="$(string.SoftMaker_TextMaker_2024_IndentParagraphsWithTab_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="IndentParagraphsWithTab">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+     <policy name="SoftMaker_TextMaker_2024_BackupFilesNumber" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_BackupFilesNumber_name)" explainText="$(string.SoftMaker_TextMaker_2024_BackupFilesNumber_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_BackupFilesNumber)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+       <parentCategory ref="SoftMaker_TextMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_TextMaker_2024_BackupFilesNumber" valueName="BackupFilesNumber" maxValue="99" minValue="1" />
+       </elements>
+     </policy>
+     <policy name="SoftMaker_TextMaker_2024_SnapshotNumber" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_SnapshotNumber_name)" explainText="$(string.SoftMaker_TextMaker_2024_SnapshotNumber_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_SnapshotNumber)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+       <parentCategory ref="SoftMaker_TextMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_TextMaker_2024_SnapshotNumber" valueName="SnapshotNumber" maxValue="99" minValue="1" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_TextMaker_2024_BackupFilesPath" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_BackupFilesPath_name)" explainText="$(string.SoftMaker_TextMaker_2024_BackupFilesPath_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_BackupFilesPath)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_TextMaker_2024_BackupFilesPath" valueName="BackupFilesPath" maxLength="254" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_HorizontalPages" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_HorizontalPages_name)" explainText="$(string.SoftMaker_TextMaker_2024_HorizontalPages_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_HorizontalPages)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_TextMaker_2024_HorizontalPages" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="HorizontalPages">
+          <item displayName="$(string.SoftMaker_TextMaker_2024_HorizontalPages_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_HorizontalPages_32)">
+            <value>
+              <decimal value="32" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_CheckHtmlLinks" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_CheckHtmlLinks_name)" explainText="$(string.SoftMaker_TextMaker_2024_CheckHtmlLinks_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="CheckHtmlLinks">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_RaiseOrdinals" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_RaiseOrdinals_name)" explainText="$(string.SoftMaker_TextMaker_2024_RaiseOrdinals_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="RaiseOrdinals">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_LivePreview" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_LivePreview_name)" explainText="$(string.SoftMaker_TextMaker_2024_LivePreview_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="LivePreview">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_EnableSpellcheck" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_EnableSpellcheck_name)" explainText="$(string.SoftMaker_TextMaker_2024_EnableSpellcheck_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="EnableSpellcheck">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_EnableGrammarcheck" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_EnableGrammarcheck_name)" explainText="$(string.SoftMaker_TextMaker_2024_EnableGrammarcheck_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="EnableGrammarcheck">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_EnableHyphenation" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_EnableHyphenation_name)" explainText="$(string.SoftMaker_TextMaker_2024_EnableHyphenation_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="EnableHyphenation">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_TemplatePath" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_TemplatePath_name)" explainText="$(string.SoftMaker_TextMaker_2024_TemplatePath_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_TemplatePath)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_TextMaker_2024_TemplatePath" valueName="TemplatePath" maxLength="254" />
+      </elements>
+    </policy>
+     <policy name="SoftMaker_TextMaker_2024_HistoryEntries" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_HistoryEntries_name)" explainText="$(string.SoftMaker_TextMaker_2024_HistoryEntries_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_HistoryEntries)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+       <parentCategory ref="SoftMaker_TextMaker_2024" />
+       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <elements>
+         <decimal id="SoftMaker_TextMaker_2024_HistoryEntries" valueName="HistoryEntries" maxValue="100" minValue="0" />
+       </elements>
+     </policy>
+    <policy name="SoftMaker_TextMaker_2024_ArabicDigits" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_ArabicDigits_name)" explainText="$(string.SoftMaker_TextMaker_2024_ArabicDigits_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_ArabicDigits)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="SoftMaker_TextMaker_2024_ArabicDigits" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="ArabicDigits">
+          <item displayName="$(string.SoftMaker_TextMaker_2024_ArabicDigits_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_ArabicDigits_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.SoftMaker_TextMaker_2024_ArabicDigits_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_Documents" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_Documents_name)" explainText="$(string.SoftMaker_TextMaker_2024_Documents_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_Documents)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_TextMaker_2024_Documents" valueName="Documents" maxLength="254" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_Databases" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_Databases_name)" explainText="$(string.SoftMaker_TextMaker_2024_Databases_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_Databases)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_TextMaker_2024_Databases" valueName="Databases" maxLength="254" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_Pictures" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_Pictures_name)" explainText="$(string.SoftMaker_TextMaker_2024_Pictures_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_Pictures)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_TextMaker_2024_Pictures" valueName="Pictures" maxLength="254" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_Macros" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_Macros_name)" explainText="$(string.SoftMaker_TextMaker_2024_Macros_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_Macros)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_TextMaker_2024_Macros" valueName="Macros" maxLength="254" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_PdfFiles" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_PdfFiles_name)" explainText="$(string.SoftMaker_TextMaker_2024_PdfFiles_help)" presentation="$(presentation.SoftMaker_TextMaker_2024_PdfFiles)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="SoftMaker_TextMaker_2024_PdfFiles" valueName="PdfFiles" maxLength="254" />
+      </elements>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_OptionsFontsSheet" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_OptionsFontsSheet_name)" explainText="$(string.SoftMaker_TextMaker_2024_OptionsFontsSheet_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="OptionsFontsSheet">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_OptionsHunspell" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_OptionsHunspell_name)" explainText="$(string.SoftMaker_TextMaker_2024_OptionsHunspell_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="OptionsHunspell">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_OptionsDudenKorrektor" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_OptionsDudenKorrektor_name)" explainText="$(string.SoftMaker_TextMaker_2024_OptionsDudenKorrektor_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="OptionsDudenKorrektor">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_OptionsAssociateFiles" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_OptionsAssociateFiles_name)" explainText="$(string.SoftMaker_TextMaker_2024_OptionsAssociateFiles_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="OptionsAssociateFiles">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SoftMaker_TextMaker_2024_BackupNoCleanup" class="Both" displayName="$(string.SoftMaker_TextMaker_2024_BackupNoCleanup_name)" explainText="$(string.SoftMaker_TextMaker_2024_BackupNoCleanup_help)" key="SOFTWARE\Policies\SoftMaker\TextMaker 2024" valueName="BackupNoCleanup">
+      <parentCategory ref="SoftMaker_TextMaker_2024" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName>Password Manager XP</displayName>
+  <description>Password Manager XP Group Policy settings</description>
+  <resources>
+    <stringTable>
+      <string id="CPLab">CP Lab</string>
+      <string id="PwdMgr">Password Manager XP</string>
+      <string id="PwdMgr_Restrictions">Restrictions</string>
+      <string id="SupportedText" />
+      <string id="HideRestrictionsPage">Hide Restrictions page</string>
+      <string id="HideRestrictionsPage_Help">Hide Restrictions page in Password Manager XP options.
+
+If you disable or do not configure this policy setting, Restrictions page will be available to users.</string>
+      <string id="HideLocationsPage">Hide Locations page</string>
+      <string id="HideLocationsPage_Help">Hide Locations page in Password Manager XP options.
+
+If you disable or do not configure this policy setting, Locations page will be available to users.</string>
+      <string id="HideBackupPage">Hide Backup page</string>
+      <string id="HideBackupPage_Help">Hide Backup page in Password Manager XP options.
+
+If you disable or do not configure this policy setting, Backup page will be available to users.</string>
+      <string id="DisableOptions">Disable options window</string>
+      <string id="DisableOptions_Help">Prevents users from accessing Password Manager XP options.
+
+If you disable or do not configure this policy setting, users will be able to access the program's options.</string>
+      <string id="DisableRemWizard">Disable Install to removable device wizard</string>
+      <string id="DisableRemWizard_Help">Prevents users from starting Install to removable device wizard.
+
+If you disable or do not configure this policy setting, Install to removable device wizard will be available to users.</string>
+      <string id="DisableRestore">Disable restore databases from backup</string>
+      <string id="DisableRestore_Help">Prevents users from restoring databases from backup.
+
+If you disable or do not configure this policy setting, users will be able to restore databases from backup.</string>
+      <string id="DisableBackup">Disable backup of databases</string>
+      <string id="DisableBackup_Help">Prevents users from backuping databases.
+
+If you disable or do not configure this policy setting, users will be able to backup databases.</string>
+      <string id="DisableDBCreate">Disable creation of new databases</string>
+      <string id="DisableDBCreate_Help">Prevents users from creating new databases.
+
+If you disable or do not configure this policy setting, users will be able to create new databases.</string>
+      <string id="DisableDBProps">Disable database properties for non administrator users</string>
+      <string id="DisableDBProps_Help">Prevents non administrator users from viewing database properties.
+
+If you disable or do not configure this policy setting, non administrator users will be able to view database properties.
+
+* This setting takes effect in Password Manager XP 2.2.372 or later.</string>
+      <string id="DisableDBFolder">Hide 'Tools &gt; Go to databases folder' menu item</string>
+      <string id="DisableDBFolder_Help">Hide 'Tools &gt; Go to databases folder' menu item.
+
+If you disable or do not configure this policy setting, users will be able to use this menu item.
+
+* This setting takes effect in Password Manager XP 2.2.372 or later.</string>
+      <string id="RegKeyPath">Path to file with registration data</string>
+      <string id="RegKeyPathLabel">File with registration data</string>
+      <string id="RegKeyPath_Help">Using this policy setting you can specify path to file with Password Manager XP registration data. Password Manager XP will read registration data from this file every time it starts.
+
+The registration data is stored in PwdManager.key file, which can be found in program's folder after registration.</string>
+      <string id="DBLocations">Databases locations</string>
+      <string id="DBLocations_Help">List of folders that will be searched for databases. UNC paths (\\Server\Share) are supported here.
+
+Users can use custom locations of databases unless "Do not allow users to use custom databases locations" option is not set.</string>
+      <string id="DisableUserLocations">Do not allow users to use custom database locations</string>
+      <string id="DBFolders">Folders to be searched for databases</string>
+      <string id="AutoBackupFolder">Folder for automatic backups</string>
+      <string id="AutoBackupFolderLabel">Folder for automatic backup</string>
+      <string id="AutoBackupFolder_Help">Specify folder for automatic backup of databases before saving.
+
+If you do not configure this policy setting, user will be able to control this option by himself.</string>
+      <string id="DisableAutoBackup">Turn off automatic backup</string>
+      <string id="DisableAutoBackup_Help">If this setting is enabled, automatic backup of databases before saving will be turned off.
+
+If this setting is disabled, automatic backup of databases before saving will be turned on.
+
+If you do not configure this policy setting, user will be able to control this option by himself.</string>
+      <string id="DbFileNameTemplate">Database file name template</string>
+      <string id="DbFileNameTemplate_Help">Specify template which is used to create or search database file names.
+Example: PMBase*.dat
+
+If you do not configure this policy setting, user will be able to control this option by himself.
+
+* This setting takes effect in Password Manager XP 2.2.358 or later.</string>
+      <string id="ADMXMigrator_UnresolvedString">ADMX Migrator encountered a string that is not present in the source ADM string table.</string>
+      <string id="ADMXMigrator_NoSupportedOn">ADMX Migrator encountered a policy that does not have a supportedOn value.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="HideRestrictionsPage" />
+      <presentation id="HideLocationsPage" />
+      <presentation id="HideBackupPage" />
+      <presentation id="DisableRemWizard" />
+      <presentation id="DisableRestore" />
+      <presentation id="DisableBackup" />
+      <presentation id="DisableOptions" />
+      <presentation id="DisableDBCreate" />
+      <presentation id="DisableDBProps" />
+      <presentation id="DisableDBFolder" />
+      <presentation id="RegKeyPath">
+        <textBox refId="RegKeyPathLabel">
+          <label>File with registration data</label>
+        </textBox>
+      </presentation>
+      <presentation id="DBLocations">
+        <listBox refId="DBFolders">Folders to be searched for databases</listBox>
+        <checkBox refId="DisableUserLocations">Do not allow users to use custom database locations</checkBox>
+      </presentation>
+      <presentation id="AutoBackupFolder">
+        <textBox refId="AutoBackupFolderLabel">
+          <label>Folder for automatic backup</label>
+        </textBox>
+      </presentation>
+      <presentation id="DisableAutoBackup" />
+      <presentation id="DbFileNameTemplate">
+        <textBox refId="DbFileNameTemplate">
+          <label>Database file name template</label>
+        </textBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

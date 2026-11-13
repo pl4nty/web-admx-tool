@@ -1,0 +1,1156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2014-25 PDF-XChange Co Ltd.  -->
+<policyDefinitions	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					revision="1.0"
+					schemaVersion="1.0"
+					xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+
+	<policyNamespaces>
+		<target prefix="pxce" namespace="TrackerSoftware.PDFXEditor.Policies" />
+		<using prefix="products" namespace="Microsoft.Policies.Products"/>
+	</policyNamespaces>
+
+	<resources minRequiredRevision="1.0" fallbackCulture="en-us"/>
+
+	<supportedOn>
+		<products>
+			<product name="PDFXEditor" displayName="$(string.PDFXEditor)">
+				<majorVersion name="PDFXEditor5_5" displayName="$(string.PDFXEditor1)" versionIndex="1">
+					<minorVersion name="PDFXEditor5_5_312" displayName="$(string.PDFXEditor2)" versionIndex="0"/>
+				</majorVersion>
+			</product>
+		</products>
+		<definitions>
+			<definition name="SupportedOn_1" displayName="$(string.SupportedOn_1)">
+				<and>
+					<range ref="PDFXEditor" minVersionIndex="1"/>
+				</and>
+			</definition>
+			<definition name="SupportedOn_2" displayName="$(string.SupportedOn_2)">
+				<and>
+					<range ref="PDFXEditor" minVersionIndex="1"/>
+				</and>
+			</definition>
+			<definition name="SupportedOn_3" displayName="$(string.SupportedOn_3)">
+				<and>
+					<range ref="PDFXEditor" minVersionIndex="1"/>
+				</and>
+			</definition>
+			<definition name="SupportedOn_4" displayName="$(string.SupportedOn_4)">
+				<and>
+					<range ref="PDFXEditor" minVersionIndex="1"/>
+				</and>
+			</definition>
+			<definition name="SupportedOn_5" displayName="$(string.SupportedOn_5)">
+				<and>
+					<range ref="PDFXEditor" minVersionIndex="1"/>
+				</and>
+			</definition>
+			<definition name="SupportedOn_6" displayName="$(string.SupportedOn_6)">
+				<and>
+					<range ref="PDFXEditor" minVersionIndex="1"/>
+				</and>
+			</definition>
+			<definition name="SupportedOn_7" displayName="$(string.SupportedOn_7)">
+				<and>
+					<range ref="PDFXEditor" minVersionIndex="1"/>
+				</and>
+			</definition>
+			<definition name="SupportedOn_8" displayName="$(string.SupportedOn_8)">
+				<and>
+					<range ref="PDFXEditor" minVersionIndex="1"/>
+				</and>
+			</definition>
+			<definition name="SupportedOn_9" displayName="$(string.SupportedOn_9)">
+				<and>
+					<range ref="PDFXEditor" minVersionIndex="1"/>
+				</and>
+			</definition>
+			<definition name="SupportedOn_95" displayName="$(string.SupportedOn_95)">
+				<and>
+					<range ref="PDFXEditor" minVersionIndex="1"/>
+				</and>
+			</definition>
+			<definition name="SupportedOn_1010" displayName="$(string.SupportedOn_1010)">
+				<and>
+					<range ref="PDFXEditor" minVersionIndex="1"/>
+				</and>
+			</definition>
+			<definition name="SupportedOn_1011" displayName="$(string.SupportedOn_1011)">
+				<and>
+					<range ref="PDFXEditor" minVersionIndex="1"/>
+				</and>
+			</definition>
+			<definition name="SupportedOn_1042" displayName="$(string.SupportedOn_1042)">
+				<and>
+					<range ref="PDFXEditor" minVersionIndex="1"/>
+				</and>
+			</definition>
+			<definition name="SupportedOn_1051" displayName="$(string.SupportedOn_1051)">
+				<and>
+					<range ref="PDFXEditor" minVersionIndex="1"/>
+				</and>
+			</definition>
+			<definition name="SupportedOn_1060" displayName="$(string.SupportedOn_1060)">
+				<and>
+					<range ref="PDFXEditor" minVersionIndex="1"/>
+				</and>
+			</definition>
+			<definition name="SupportedOn_1080" displayName="$(string.SupportedOn_1080)">
+				<and>
+					<range ref="PDFXEditor" minVersionIndex="1"/>
+				</and>
+			</definition>
+			<definition name="SupportedOn_1082" displayName="$(string.SupportedOn_1082)">
+				<and>
+					<range ref="PDFXEditor" minVersionIndex="1"/>
+				</and>
+			</definition>
+		</definitions>
+	</supportedOn>
+
+	<categories>
+
+		<category name="Cat_PDFXEditor_3_1" displayName="$(string.Cat_PDFEditor_1)" />
+
+		<category name="Cat_Security_1" displayName="$(string.Cat_Security_1)">
+			<parentCategory ref="Cat_PDFXEditor_3_1" />
+		</category>
+		<category name="Cat_Preferences_1" displayName="$(string.Cat_Preferences_1)">
+			<parentCategory ref="Cat_PDFXEditor_3_1" />
+		</category>
+		<category name="Cat_Registration_1" displayName="$(string.Cat_Registration_1)">
+			<parentCategory ref="Cat_PDFXEditor_3_1" />
+		</category>
+		<category name="Cat_FileAssociations_1" displayName="$(string.Cat_FileAssociations_1)">
+			<parentCategory ref="Cat_PDFXEditor_3_1" />
+		</category>
+		<category name="Cat_JavaScript_1" displayName="$(string.Cat_JavaScript_1)">
+			<parentCategory ref="Cat_PDFXEditor_3_1" />
+		</category>
+		<category name="Cat_CmdOpts_1" displayName="$(string.Cat_CmdOpts_1)">
+			<parentCategory ref="Cat_PDFXEditor_3_1" />
+		</category>
+		<category name="Cat_Update_1" displayName="$(string.Cat_Update_1)">
+			<parentCategory ref="Cat_PDFXEditor_3_1" />
+		</category>
+		<category name="Cat_Plugins_1" displayName="$(string.Cat_Plugins_1)">
+			<parentCategory ref="Cat_PDFXEditor_3_1" />
+		</category>
+		<category name="Cat_DocInfoBar_1" displayName="$(string.Cat_DocInfoBar_1)">
+			<parentCategory ref="Cat_PDFXEditor_3_1" />
+		</category>
+		<category name="Cat_Misc_1" displayName="$(string.Cat_Misc_1)">
+			<parentCategory ref="Cat_PDFXEditor_3_1" />
+		</category>
+		<category name="Cat_CertMan_1" displayName="$(string.Cat_CertMan_1)">
+			<parentCategory ref="Cat_PDFXEditor_3_1" />
+		</category>
+
+	</categories>
+
+	<policies>
+		<!-- Open File Policy -->
+		<policy name="Policy_OpenFilePerm" class="Machine"
+				displayName="$(string.Policy_OpenFilePerm)" explainText="$(string.Policy_OpenFilePerm_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Security"
+				presentation="$(presentation.Policy_OpenFilePerm)">
+			<parentCategory ref="Cat_Security_1" />
+			<supportedOn ref="SupportedOn_1" />
+			<elements>
+				<enum id="Policy_OpenFilePerm_Enum" key="Software\Policies\Tracker Software\PDFXEditor\3.0\Security" valueName="i.OpenFilePerm">
+					<item displayName="$(string.Policy_OpenFilePerm_Item_1)">
+						<value>
+							<decimal value="4294967294"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_OpenFilePerm_Item_2)">
+						<value>
+							<decimal value="4294967295"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_OpenFilePerm_Item_3)">
+						<value>
+							<decimal value="0"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_OpenFilePerm_Item_4)">
+						<value>
+							<decimal value="1"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_OpenFilePerm_Item_5)">
+						<value>
+							<decimal value="2"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_OpenFilePerm_Item_6)">
+						<value>
+							<decimal value="3"/>
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+
+		<!-- Open Embeded File Policy -->
+		<policy name="Policy_OpenEmbedPerm" class="Machine"
+				displayName="$(string.Policy_OpenEmbedPerm)" explainText="$(string.Policy_OpenEmbedPerm_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Security"
+				presentation="$(presentation.Policy_OpenEmbedPerm)">
+			<parentCategory ref="Cat_Security_1" />
+			<supportedOn ref="SupportedOn_1" />
+			<elements>
+				<enum id="Policy_OpenEmbedPerm_Enum" key="Software\Policies\Tracker Software\PDFXEditor\3.0\Security" valueName="i.OpenEmbedPerm">
+					<item displayName="$(string.Policy_OpenFilePerm_Item_1)">
+						<value>
+							<decimal value="4294967294"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_OpenFilePerm_Item_2)">
+						<value>
+							<decimal value="4294967295"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_OpenFilePerm_Item_3)">
+						<value>
+							<decimal value="0"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_OpenFilePerm_Item_4)">
+						<value>
+							<decimal value="1"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_OpenFilePerm_Item_5)">
+						<value>
+							<decimal value="2"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_OpenFilePerm_Item_6)">
+						<value>
+							<decimal value="3"/>
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+
+		<!-- Open Site Permission Policy -->
+		<policy name="Policy_OpenSitePerm" class="Machine"
+				displayName="$(string.Policy_OpenSitePerm)" explainText="$(string.Policy_OpenSitePerm_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Security"
+				presentation="$(presentation.Policy_OpenSitePerm)">
+			<parentCategory ref="Cat_Security_1" />
+			<supportedOn ref="SupportedOn_1" />
+			<elements>
+				<enum id="Policy_OpenSitePerm_Enum" key="Software\Policies\Tracker Software\PDFXEditor\3.0\Security" valueName="i.OpenSitePerm">
+					<item displayName="$(string.Policy_OpenFilePerm_Item_1)">
+						<value>
+							<decimal value="4294967294"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_OpenFilePerm_Item_2)">
+						<value>
+							<decimal value="4294967295"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_OpenFilePerm_Item_3)">
+						<value>
+							<decimal value="0"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_OpenFilePerm_Item_4)">
+						<value>
+							<decimal value="1"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_OpenFilePerm_Item_51)">
+						<value>
+							<decimal value="2"/>
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+
+		<!-- Open File B/W List -->
+		<policy name="Policy_OpenFileBWList" class="Machine"
+				displayName="$(string.Policy_OpenFileBWList)" explainText="$(string.Policy_OpenFileBWList_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Security"
+				presentation="$(presentation.Policy_OpenFileBWList)"
+				>
+			<parentCategory ref="Cat_Security_1" />
+			<supportedOn ref="SupportedOn_1" />
+			<elements>
+				<text id="Policy_OpenFileBWList_List"
+					  maxLength="4096"
+					  valueName="t.OpenFileBWList"/>
+			</elements>
+		</policy>
+
+		<!-- Open Site B/W List -->
+		<policy name="Policy_OpenSiteBWList" class="Machine"
+				displayName="$(string.Policy_OpenSiteBWList)" explainText="$(string.Policy_OpenSiteBWList_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Security"
+				presentation="$(presentation.Policy_OpenSiteBWList)"
+				>
+			<parentCategory ref="Cat_Security_1" />
+			<supportedOn ref="SupportedOn_1" />
+			<elements>
+				<text id="Policy_OpenSiteBWList_List"
+					  maxLength="4096"
+					  valueName="t.OpenSiteBWList"/>
+			</elements>
+		</policy>
+
+		<!-- Allowed Sites List -->
+		<policy name="Policy_TrustedSitesList" class="Machine"
+				displayName="$(string.Policy_TrustedSitesList)" explainText="$(string.Policy_TrustedSitesList_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Security"
+				presentation="$(presentation.Policy_TrustedSitesList)"
+				>
+			<parentCategory ref="Cat_Security_1" />
+			<supportedOn ref="SupportedOn_1011" />
+			<elements>
+				<multiText id="Policy_TrustedSitesList_List"
+					  maxLength="4096"
+					  valueName="t.TrustedSitesList"/>
+			</elements>
+		</policy>
+
+		<!-- Denied Sites List -->
+		<policy name="Policy_UntrustedSitesList" class="Machine"
+				displayName="$(string.Policy_UntrustedSitesList)" explainText="$(string.Policy_UntrustedSitesList_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Security"
+				presentation="$(presentation.Policy_UntrustedSitesList)"
+				>
+			<parentCategory ref="Cat_Security_1" />
+			<supportedOn ref="SupportedOn_1011" />
+			<elements>
+				<multiText id="Policy_UntrustedSitesList_List"
+					  maxLength="4096"
+					  valueName="t.UntrustedSitesList"/>
+			</elements>
+		</policy>
+
+		<!-- Security CanShowOpenPermErrMsg -->
+		<policy name="Policy_Security_CanShowOpenPermErrMsg" class="Machine"
+				displayName="$(string.Policy_Security_CanShowOpenPermErrMsg)" explainText="$(string.Policy_Security_CanShowOpenPermErrMsg_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Security"
+				valueName="b.CanShowOpenPermErrMsg">
+			<parentCategory ref="Cat_Security_1" />
+			<supportedOn ref="SupportedOn_3" />
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- Security AllowSendDocWithBugReport -->
+		<policy name="Policy_Security_AllowSendDocWithBugReport" class="Machine"
+				displayName="$(string.Policy_Security_AllowSendDocWithBugReport)" explainText="$(string.Policy_Security_AllowSendDocWithBugReport_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Security"
+				valueName="i.AllowSendDocWithBugReport">
+			<parentCategory ref="Cat_Security_1" />
+			<supportedOn ref="SupportedOn_1082" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- Security ImportWebPageViaOpenUrlPerm -->
+		<policy name="Policy_Security_ImportWebPageViaOpenUrlPerm" class="Machine"
+				displayName="$(string.Policy_Security_ImportWebPageViaOpenUrlPerm)" explainText="$(string.Policy_Security_ImportWebPageViaOpenUrlPerm_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Security"
+				valueName="i.ImportWebPageViaOpenUrlPerm">
+			<parentCategory ref="Cat_Security_1" />
+			<supportedOn ref="SupportedOn_1083" />
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- Security CanLoadAzurePluginInsideAnotherApp -->
+		<policy name="Policy_Security_CanLoadAzurePluginInsideAnotherApp" class="Machine"
+				displayName="$(string.Policy_Security_CanLoadAzurePluginInsideAnotherApp)" explainText="$(string.Policy_Security_CanLoadAzurePluginInsideAnotherApp_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Security"
+				valueName="b.CanLoadAzurePluginInsideAnotherApp">
+			<parentCategory ref="Cat_Security_1" />
+			<supportedOn ref="SupportedOn_1083" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- Copy Serial -->
+		<policy name="Policy_CanCopySerial" class="Machine"
+				displayName="$(string.Policy_CanCopySerial)" explainText="$(string.Policy_CanCopySerial_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Registration"
+				valueName="b.CanCopySerials">
+			<parentCategory ref="Cat_Registration_1"/>
+			<supportedOn ref="SupportedOn_1"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- Delete Serial -->
+		<policy name="Policy_CanDeleteSerial" class="Machine"
+				displayName="$(string.Policy_CanDeleteSerial)" explainText="$(string.Policy_CanDeleteSerial_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Registration"
+				valueName="b.CanDeleteSerials">
+			<parentCategory ref="Cat_Registration_1"/>
+			<supportedOn ref="SupportedOn_95"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- Add Serial -->
+		<policy name="Policy_CanAddSerial" class="Machine"
+				displayName="$(string.Policy_CanAddSerial)" explainText="$(string.Policy_CanAddSerial_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Registration"
+				valueName="b.CanAddSerials">
+			<parentCategory ref="Cat_Registration_1"/>
+			<supportedOn ref="SupportedOn_95"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- Add Serial -->
+		<policy name="Policy_CanRenewSerial" class="Machine"
+				displayName="$(string.Policy_CanRenewSerial)" explainText="$(string.Policy_CanRenewSerial_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Registration"
+				valueName="b.CanRenewSerials">
+			<parentCategory ref="Cat_Registration_1"/>
+			<supportedOn ref="SupportedOn_95"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+
+		<!-- Can Auto-upgrade Serials -->
+		<policy name="Policy_CanAutoUpgradeSerials" class="Machine"
+				displayName="$(string.Policy_CanAutoUpgradeSerials)" explainText="$(string.Policy_CanAutoUpgradeSerials_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Registration"
+				valueName="b.CanAutoUpgradeSerials">
+			<parentCategory ref="Cat_Registration_1"/>
+			<supportedOn ref="SupportedOn_3"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- Can Auto-upgrade Serials -->
+		<policy name="Policy_CanShowActivationWarn" class="Machine"
+				displayName="$(string.Policy_CanShowActivationWarn)" explainText="$(string.Policy_CanShowActivationWarn_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Registration"
+				valueName="b.CanShowActivationWarn">
+			<parentCategory ref="Cat_Registration_1"/>
+			<supportedOn ref="SupportedOn_8"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+
+		<!-- JavaScript Enable -->
+		<policy name="Policy_JavaScript_Enable" class="Machine"
+				displayName="$(string.Policy_JavaScript_Enable)" explainText="$(string.Policy_JavaScript_Enable_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\JavaScript"
+				valueName="b.Enable">
+			<parentCategory ref="Cat_JavaScript_1"/>
+			<supportedOn ref="SupportedOn_3"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- JavaScript WarnOnExecute -->
+		<policy name="Policy_JavaScript_WarnOnExecute" class="Machine"
+				displayName="$(string.Policy_JavaScript_WarnOnExecute)" explainText="$(string.Policy_JavaScript_WarnOnExecute_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\JavaScript"
+				valueName="b.WarnOnExecute">
+			<parentCategory ref="Cat_JavaScript_1"/>
+			<supportedOn ref="SupportedOn_3"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- JavaScript EnableConsole -->
+		<policy name="Policy_JavaScript_EnableConsole" class="Machine"
+				displayName="$(string.Policy_JavaScript_EnableConsole)" explainText="$(string.Policy_JavaScript_EnableConsole_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\JavaScript"
+				valueName="b.EnableConsole">
+			<parentCategory ref="Cat_JavaScript_1"/>
+			<supportedOn ref="SupportedOn_3"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		
+		<!-- JavaScript Enable User AppLevel Scripts -->
+		<policy name="Policy_JavaScript_UserAppLevel" class="Machine"
+				displayName="$(string.Policy_JavaScript_UserAppLevel)" explainText="$(string.Policy_JavaScript_UserAppLevel_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\JavaScript"
+				valueName="b.EnableAppLevelUserScripts">
+			<parentCategory ref="Cat_JavaScript_1"/>
+			<supportedOn ref="SupportedOn_1083"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- CmdOpts AllBarsLocked -->
+		<policy name="Policy_CmdOpts_AllBarsLocked" class="Machine"
+				displayName="$(string.Policy_CmdOpts_AllBarsLocked)" explainText="$(string.Policy_CmdOpts_AllBarsLocked_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\CmdOpts"
+				valueName="b.AllBarsLocked">
+			<parentCategory ref="Cat_CmdOpts_1"/>
+			<supportedOn ref="SupportedOn_3"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- CmdOpts AllPanesLocked -->
+		<policy name="Policy_CmdOpts_AllPanesLocked" class="Machine"
+				displayName="$(string.Policy_CmdOpts_AllPanesLocked)" explainText="$(string.Policy_CmdOpts_AllPanesLocked_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\CmdOpts"
+				valueName="b.AllPanesLocked">
+			<parentCategory ref="Cat_CmdOpts_1"/>
+			<supportedOn ref="SupportedOn_3"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- CmdOpts CanResetBars -->
+		<policy name="Policy_CmdOpts_CanResetBars" class="Machine"
+				displayName="$(string.Policy_CmdOpts_CanResetBars)" explainText="$(string.Policy_CmdOpts_CanResetBars_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\CmdOpts"
+				valueName="b.CanResetBars">
+			<parentCategory ref="Cat_CmdOpts_1"/>
+			<supportedOn ref="SupportedOn_3"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- CmdOpts CanResetBars -->
+		<policy name="Policy_CmdOpts_CanResetAll" class="Machine"
+				displayName="$(string.Policy_CmdOpts_CanResetAll)" explainText="$(string.Policy_CmdOpts_CanResetAll_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\CmdOpts"
+				valueName="b.CanResetAll">
+			<parentCategory ref="Cat_CmdOpts_1"/>
+			<supportedOn ref="SupportedOn_3"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- CmdOpts CanCreateBars -->
+		<policy name="Policy_CmdOpts_CanCreateBars" class="Machine"
+				displayName="$(string.Policy_CmdOpts_CanCreateBars)" explainText="$(string.Policy_CmdOpts_CanCreateBars_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\CmdOpts"
+				valueName="b.CanCreateBars">
+			<parentCategory ref="Cat_CmdOpts_1"/>
+			<supportedOn ref="SupportedOn_3"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- CmdOpts CanDeleteBars -->
+		<policy name="Policy_CmdOpts_CanDeleteBars" class="Machine"
+				displayName="$(string.Policy_CmdOpts_CanDeleteBars)" explainText="$(string.Policy_CmdOpts_CanDeleteBars_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\CmdOpts"
+				valueName="b.CanDeleteBars">
+			<parentCategory ref="Cat_CmdOpts_1"/>
+			<supportedOn ref="SupportedOn_3"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- CmdOpts CanRenameBars -->
+		<policy name="Policy_CmdOpts_CanRenameBars" class="Machine"
+				displayName="$(string.Policy_CmdOpts_CanRenameBars)" explainText="$(string.Policy_CmdOpts_CanRenameBars_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\CmdOpts"
+				valueName="b.CanRenameBars">
+			<parentCategory ref="Cat_CmdOpts_1"/>
+			<supportedOn ref="SupportedOn_3"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- CmdOpts HidePRO -->
+		<policy name="Policy_CmdOpts_HidePRO" class="Machine"
+				displayName="$(string.Policy_CmdOpts_HidePRO)" explainText="$(string.Policy_CmdOpts_HidePRO_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\CmdOpts"
+				valueName="b.HidePRO">
+			<parentCategory ref="Cat_CmdOpts_1"/>
+			<supportedOn ref="SupportedOn_3"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- CmdOpts BarsVisibility -->
+		<policy name="Policy_CmdOpts_BarsVisibility" class="Machine"
+				displayName="$(string.Policy_CmdOpts_BarsVisibility)" explainText="$(string.Policy_CmdOpts_BarsVisibility_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\CmdOpts"
+				presentation="$(presentation.Policy_CmdOpts_BarsVisibility)"
+				>
+			<parentCategory ref="Cat_CmdOpts_1" />
+			<supportedOn ref="SupportedOn_3" />
+			<elements>
+				<text id="Policy_CmdOpts_BarsVisibility_List"
+					  maxLength="4096"
+					  valueName="t.BarsVisibility"/>
+			</elements>
+		</policy>
+
+		<!-- CmdOpts CmdVisibility -->
+		<policy name="Policy_CmdOpts_CmdVisibility" class="Machine"
+				displayName="$(string.Policy_CmdOpts_CmdVisibility)" explainText="$(string.Policy_CmdOpts_CmdVisibility_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\CmdOpts"
+				presentation="$(presentation.Policy_CmdOpts_CmdVisibility)"
+				>
+			<parentCategory ref="Cat_CmdOpts_1" />
+			<supportedOn ref="SupportedOn_3" />
+			<elements>
+				<text id="Policy_CmdOpts_CmdVisibility_List"
+					  maxLength="4096"
+					  valueName="t.CmdVisibility"/>
+			</elements>
+		</policy>
+
+		<!-- CmdOpts CmdAccess -->
+		<policy name="Policy_CmdOpts_CmdAccess" class="Machine"
+				displayName="$(string.Policy_CmdOpts_CmdAccess)" explainText="$(string.Policy_CmdOpts_CmdAccess_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\CmdOpts"
+				presentation="$(presentation.Policy_CmdOpts_CmdAccess)"
+				>
+			<parentCategory ref="Cat_CmdOpts_1" />
+			<supportedOn ref="SupportedOn_3" />
+			<elements>
+				<text id="Policy_CmdOpts_CmdAccess_List"
+					  maxLength="4096"
+					  valueName="t.CmdAccess"/>
+			</elements>
+		</policy>
+
+		<!-- Ribbon UI -->
+		<policy name="Policy_CmdOpts_TbLayout" class="Machine"
+				displayName="$(string.Policy_CmdOpts_TbLayout)" explainText="$(string.Policy_CmdOpts_TbLayout_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\CmdOpts"
+				presentation="$(presentation.Policy_CmdOpts_TbLayout)">
+			<parentCategory ref="Cat_CmdOpts_1" />
+			<supportedOn ref="SupportedOn_6" />
+			<elements>
+				<enum id="Policy_CmdOpts_TbLayout_Enum" key="Software\Policies\Tracker Software\PDFXEditor\3.0\CmdOpts" valueName="i.RibbonUI">
+					<item displayName="$(string.Policy_CmdOpts_TbLayout_Ribbon)">
+						<value>
+							<decimal value="1"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_CmdOpts_TbLayout_Classic)">
+						<value>
+							<decimal value="0"/>
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+
+		<!-- Ribbon UI (In Browzer Plug-in) -->
+		<policy name="Policy_CmdOpts_InBrowserTbLayout" class="Machine"
+				displayName="$(string.Policy_CmdOpts_InBrowserTbLayout)" explainText="$(string.Policy_CmdOpts_InBrowserTbLayout_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\CmdOpts"
+				presentation="$(presentation.Policy_CmdOpts_InBrowserTbLayout)">
+			<parentCategory ref="Cat_CmdOpts_1" />
+			<supportedOn ref="SupportedOn_6" />
+			<elements>
+				<enum id="Policy_CmdOpts_InBrowserTbLayout_Enum" key="Software\Policies\Tracker Software\PDFXEditor\3.0\CmdOpts" valueName="i.InBrowserRibbonUI">
+					<item displayName="$(string.Policy_CmdOpts_TbLayout_Ribbon)">
+						<value>
+							<decimal value="1"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_CmdOpts_TbLayout_Classic)">
+						<value>
+							<decimal value="0"/>
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+
+		<!-- Ribbon UI (In Browzer Plug-in Ribbon Size) -->
+		<policy name="Policy_CmdOpts_InBrowserRibbonSize" class="Machine"
+				displayName="$(string.Policy_CmdOpts_InBrowserRibbonSize)" explainText="$(string.Policy_CmdOpts_InBrowserRibbonSize_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\CmdOpts"
+				presentation="$(presentation.Policy_CmdOpts_InBrowserRibbonSize)">
+			<parentCategory ref="Cat_CmdOpts_1" />
+			<supportedOn ref="SupportedOn_6" />
+			<elements>
+				<enum id="Policy_CmdOpts_InBrowserRibbonSize_Enum" key="Software\Policies\Tracker Software\PDFXEditor\3.0\CmdOpts" valueName="i.InBrowserRibbonSize">
+					<item displayName="$(string.Policy_CmdOpts_RibbonSize_Expanded)">
+						<value>
+							<decimal value="1"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_CmdOpts_RibbonSize_Collapsed)">
+						<value>
+							<decimal value="0"/>
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+
+		<!-- Ribbon UI (Stand Alone Editor Ribbon Size) -->
+		<policy name="Policy_CmdOpts_RibbonSize" class="Machine"
+				displayName="$(string.Policy_CmdOpts_RibbonSize)" explainText="$(string.Policy_CmdOpts_RibbonSize_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\CmdOpts"
+				presentation="$(presentation.Policy_CmdOpts_RibbonSize)">
+			<parentCategory ref="Cat_CmdOpts_1" />
+			<supportedOn ref="SupportedOn_6" />
+			<elements>
+				<enum id="Policy_CmdOpts_RibbonSize_Enum" key="Software\Policies\Tracker Software\PDFXEditor\3.0\CmdOpts" valueName="i.RibbonSize">
+					<item displayName="$(string.Policy_CmdOpts_RibbonSize_Expanded)">
+						<value>
+							<decimal value="1"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_CmdOpts_RibbonSize_Collapsed)">
+						<value>
+							<decimal value="0"/>
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+
+		<!-- Ribbon UI (Show Ribbon's File menu on Start) -->
+		<policy name="Policy_CmdOpts_ShowRbFileMenuOnStart" class="Machine"
+				displayName="$(string.Policy_CmdOpts_ShowRbFileMenuOnStart)" explainText="$(string.Policy_CmdOpts_ShowRbFileMenuOnStart_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\CmdOpts"
+				valueName="i.ShowRbFileMenuOnStart">
+			<parentCategory ref="Cat_CmdOpts_1"/>
+			<supportedOn ref="SupportedOn_1051"/>
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- Preferences Pages Access -->
+		<policy name="Policy_HidePrefPages" class="Machine"
+				displayName="$(string.Policy_HidePrefPages)" explainText="$(string.Policy_HidePrefPages_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\AppPrefs"
+				presentation="$(presentation.Policy_HidePrefPages)">
+			<parentCategory ref="Cat_Preferences_1"/>
+			<supportedOn ref="SupportedOn_1"/>
+			<elements>
+				<text id="Policy_HidePrefPages_List"
+					  maxLength="4096"
+					  valueName="t.PagesAccess"/>
+			</elements>
+		</policy>
+
+		<!-- Plugins Access -->
+		<policy name="Policy_DisablePlugins" class="Machine"
+				displayName="$(string.Policy_DisablePlugins)" explainText="$(string.Policy_DisablePlugins_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Plugins"
+				presentation="$(presentation.Policy_DisablePlugins)">
+			<parentCategory ref="Cat_Plugins_1"/>
+			<supportedOn ref="SupportedOn_4"/>
+			<elements>
+				<text id="Policy_DisablePlugins_List"
+					  maxLength="4096"
+					  valueName="t.Access"/>
+			</elements>
+		</policy>
+
+		<!-- DocInfo bars -->
+		<policy name="Policy_DisableDocInfoSpans" class="Machine"
+				displayName="$(string.Policy_DisableDocInfoSpans)" explainText="$(string.Policy_DisableDocInfoSpans_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\DocInfoBar"
+				presentation="$(presentation.Policy_DisableDocInfoSpans)">
+			<parentCategory ref="Cat_DocInfoBar_1"/>
+			<supportedOn ref="SupportedOn_4"/>
+			<elements>
+				<text id="Policy_DisableDocInfoSpans_List"
+					  maxLength="4096"
+					  valueName="t.Spans"/>
+			</elements>
+		</policy>
+
+		<!-- Allow use ReOpen -->
+		<policy name="Policy_AllowUseReOpen" class="Machine"
+				displayName="$(string.Policy_AllowUseReOpen)" explainText="$(string.Policy_AllowUseReOpen_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Misc"
+				valueName="b.AllowUseReOpen">
+			<parentCategory ref="Cat_Misc_1" />
+			<supportedOn ref="SupportedOn_4" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- Shared Stamps Folder -->
+		<policy name="Policy_SharedStampsFolder" class="Machine"
+				displayName="$(string.Policy_SharedStampsFolder)" explainText="$(string.Policy_SharedStampsFolder_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Misc"
+				presentation="$(presentation.Policy_SharedStampsFolder)">
+			<parentCategory ref="Cat_Misc_1" />
+			<supportedOn ref="SupportedOn_9" />
+			<elements>
+				<text id="Policy_SharedStampsFolder_Edit"
+					  maxLength="4096"
+					  valueName="t.SharedStampsFolder"/>
+			</elements>
+		</policy>
+
+		<!-- Get User Identity Info from AD -->
+		<policy name="Policy_GetInfoFromAD" class="Machine"
+				displayName="$(string.Policy_GetInfoFromAD)" explainText="$(string.Policy_GetInfoFromAD_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Misc"
+				valueName="i.GetInfoFromAD">
+			<parentCategory ref="Cat_Misc_1" />
+			<supportedOn ref="SupportedOn_7" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- Default Paper Index -->
+		<policy name="Policy_DefPaperIndex" class="Machine"
+				displayName="$(string.Policy_DefPaperIndex)" explainText="$(string.Policy_DefPaperIndex_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Misc"
+				presentation="$(presentation.Policy_DefPaperIndex)">
+			<parentCategory ref="Cat_Misc_1" />
+			<supportedOn ref="SupportedOn_5" />
+			<elements>
+				<enum id="Policy_DefPaperIndex_Enum" key="Software\Policies\Tracker Software\PDFXEditor\3.0\Misc" valueName="i.DefPaperIndex">
+					<item displayName="$(string.Policy_PaperIndex_Default)">
+						<value>
+							<decimal value="4294967295"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_PaperIndex_A4)">
+						<value>
+							<decimal value="4"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_PaperIndex_Letter)">
+						<value>
+							<decimal value="11"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_PaperIndex_USLegal)">
+						<value>
+							<decimal value="18"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_PaperIndex_A3)">
+						<value>
+							<decimal value="3"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_PaperIndex_Tabloid)">
+						<value>
+							<decimal value="12"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_PaperIndex_ANSI_C)">
+						<value>
+							<decimal value="14"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_PaperIndex_ANSI_D)">
+						<value>
+							<decimal value="15"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_PaperIndex_ANSI_E)">
+						<value>
+							<decimal value="16"/>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_PaperIndex_ANSI_F)">
+						<value>
+							<decimal value="17"/>
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+
+		<!-- Allow create certificates -->
+		<policy name="Policy_AllowCreateCertificates" class="Machine"
+				displayName="$(string.Policy_AllowCreateCertificates)" explainText="$(string.Policy_AllowCreateCertificates_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Misc"
+				valueName="b.AllowCreateCertificates">
+			<parentCategory ref="Cat_Misc_1" />
+			<supportedOn ref="SupportedOn_1010" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- Allow use certificates from files -->
+		<policy name="Policy_AllowUseCertificatesFromFiles" class="Machine"
+				displayName="$(string.Policy_AllowUseCertificatesFromFiles)" explainText="$(string.Policy_AllowUseCertificatesFromFiles_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Misc"
+				valueName="b.AllowUseCertificatesFromFiles">
+			<parentCategory ref="Cat_Misc_1" />
+			<supportedOn ref="SupportedOn_1060" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- Allow WebDav places -->
+		<policy name="Policy_AllowWebDavPlaces" class="Machine"
+				displayName="$(string.Policy_AllowWebDavPlaces)" explainText="$(string.Policy_AllowWebDavPlaces_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Misc"
+				valueName="b.AllowWebDavPlaces">
+			<parentCategory ref="Cat_Misc_1" />
+			<supportedOn ref="SupportedOn_1042" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		
+		<!-- Detect Sharepoint files -->
+		<policy name="Policy_CmdOpts_DetectSharePointBehindLocalFS" class="Machine"
+				displayName="$(string.Policy_CmdOpts_DetectSharePointBehindLocalFS)" explainText="$(string.Policy_CmdOpts_DetectSharePointBehindLocalFS_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Misc"
+				valueName="b.DetectSharePointBehindLocalFS">
+			<parentCategory ref="Cat_Misc_1" />
+			<supportedOn ref="SupportedOn_1060" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>	
+
+		<!-- Allow to Ask for Set as Default -->
+		<policy name="Policy_AllowCheckFileAssoc" class="Machine"
+				displayName="$(string.Policy_AllowCheckFileAssoc)" explainText="$(string.Policy_AllowCheckFileAssoc_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\FileAssociations"
+				valueName="b.AllowCheck">
+			<parentCategory ref="Cat_FileAssociations_1" />
+			<supportedOn ref="SupportedOn_2"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- Allow to Check for Updates -->
+		<policy name="Policy_AllowCheckForUpdates" class="Machine"
+				displayName="$(string.Policy_AllowCheckForUpdates)" explainText="$(string.Policy_AllowCheckForUpdates_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Update"
+				valueName="b.AllowCheck">
+			<parentCategory ref="Cat_Update_1" />
+			<supportedOn ref="SupportedOn_3"/>
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<!-- CertMan Shared Trusted List File -->
+		<policy name="Policy_SharedTrustedListFile" class="Machine"
+				displayName="$(string.Policy_SharedTrustedListFile)" explainText="$(string.Policy_SharedTrustedListFile_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\CertMan"
+				presentation="$(presentation.Policy_SharedTrustedListFile)">
+			<parentCategory ref="Cat_CertMan_1" />
+			<supportedOn ref="SupportedOn_1080" />
+			<elements>
+				<text id="Policy_SharedTrustedListFile_Edit"
+					  maxLength="4096"
+					  valueName="t.SharedTrustListFile"/>
+			</elements>
+		</policy>
+		
+		<!-- CertMan Trusted list update -->
+		<policy name="Policy_TrustListAutoUpdate" class ="Machine"
+				displayName="$(string.Policy_TrustListAutoUpdate)" explainText="$(string.Policy_TrustListAutoUpdate_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\CertMan"
+				valueName="i.EnableTrustListAutoUpdate">
+			<parentCategory ref="Cat_CertMan_1" />
+			<supportedOn ref="SupportedOn_1080" />
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="Policy_TrustListManualUpdate" class ="Machine"
+				displayName="$(string.Policy_TrustListManualUpdate)" explainText="$(string.Policy_TrustListManualUpdate_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\CertMan"
+				valueName="i.EnableTrustListManualUpdate">
+			<parentCategory ref="Cat_CertMan_1" />
+			<supportedOn ref="SupportedOn_1080" />
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="Policy_TrustListAskBeforeUpdate" class ="Machine"
+				displayName="$(string.Policy_TrustListAskBeforeUpdate)" explainText="$(string.Policy_TrustListAskBeforeUpdate_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\CertMan"
+				valueName="i.AskBeforeUpdateTrustList">
+			<parentCategory ref="Cat_CertMan_1" />
+			<supportedOn ref="SupportedOn_1080" />
+			<enabledValue >
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue >
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="Policy_DefaultDocSaveAsConverter" class="Machine"
+				displayName="$(string.Policy_DefaultDocSaveAsConverter)" explainText ="$(string.Policy_DefaultDocSaveAsConverter_exp)"
+				key="Software\Policies\Tracker Software\PDFXEditor\3.0\Misc"
+				presentation="$(presentation.Policy_DefaultDocSaveAsConverter)">
+			<parentCategory ref="Cat_Misc_1" />
+			<supportedOn ref="SupportedOn_1083" />
+			<elements>
+				<enum id="Policy_DefaultDocSaveAsConverter_Box" valueName="t.DefaultDocSaveAsConverter" required="true">
+					<item displayName="$(string.Policy_SaveAsConverter_native)">
+						<value>
+							<string>conv.exp.pdf</string>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_SaveAsConverter_pdfa)">
+						<value>
+							<string>conv.exp.pdfa</string>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_SaveAsConverter_pdfx)">
+						<value>
+							<string>conv.exp.pdfx</string>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_SaveAsConverter_opt)">
+						<value>
+							<string>conv.optimized.pdf</string>
+						</value>
+					</item>
+					<item displayName="$(string.Policy_SaveAsConverter_sanitized)">
+						<value>
+							<string>conv.exp.sanitize.pdf</string>
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+	</policies>
+
+</policyDefinitions>

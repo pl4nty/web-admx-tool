@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2023 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="systemd" namespace="BaseALT.Policies.Systemd1" />
+    <using prefix="system" namespace="BaseALT.Policies.System" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <policies>
+    <policy class="Machine" displayName="$(string.org-freedesktop-systemd1-manage-unit-files)"
+        explainText="$(string.org-freedesktop-systemd1-manage-unit-files_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.systemd1.manage-unit-files"
+        valuename="org.freedesktop.systemd1.manage-unit-files"
+        presentation="$(presentation.org-freedesktop-Systemd-pr)">
+      <parentCategory ref="system:ALT_SystemdPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopSystemd_setter" valueName="org.freedesktop.systemd1.manage-unit-files" required="true">
+          <item displayName="$(string.org-freedesktop-systemd-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopSystemd_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.systemd1.manage-unit-files">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-systemd1-manage-unit-files)"
+        explainText="$(string.org-freedesktop-systemd1-manage-unit-files-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.systemd1.manage-unit-files-user"
+        valuename="org.freedesktop.systemd1.manage-unit-files"
+        presentation="$(presentation.org-freedesktop-Systemd-user-pr)">
+      <parentCategory ref="system:ALT_SystemdPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopSystemd_setter" valueName="org.freedesktop.systemd1.manage-unit-files" required="true">
+          <item displayName="$(string.org-freedesktop-systemd-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-systemd1-manage-units)"
+        explainText="$(string.org-freedesktop-systemd1-manage-units_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.systemd1.manage-units"
+        valuename="org.freedesktop.systemd1.manage-units"
+        presentation="$(presentation.org-freedesktop-Systemd-pr)">
+      <parentCategory ref="system:ALT_SystemdPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopSystemd_setter" valueName="org.freedesktop.systemd1.manage-units" required="true">
+          <item displayName="$(string.org-freedesktop-systemd-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopSystemd_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.systemd1.manage-units">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-systemd1-manage-units)"
+        explainText="$(string.org-freedesktop-systemd1-manage-units-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.systemd1.manage-units-user"
+        valuename="org.freedesktop.systemd1.manage-units"
+        presentation="$(presentation.org-freedesktop-Systemd-user-pr)">
+      <parentCategory ref="system:ALT_SystemdPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopSystemd_setter" valueName="org.freedesktop.systemd1.manage-units" required="true">
+          <item displayName="$(string.org-freedesktop-systemd-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-systemd1-reload-daemon)"
+        explainText="$(string.org-freedesktop-systemd1-reload-daemon_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.systemd1.reload-daemon"
+        valuename="org.freedesktop.systemd1.reload-daemon"
+        presentation="$(presentation.org-freedesktop-Systemd-pr)">
+      <parentCategory ref="system:ALT_SystemdPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopSystemd_setter" valueName="org.freedesktop.systemd1.reload-daemon" required="true">
+          <item displayName="$(string.org-freedesktop-systemd-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopSystemd_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.systemd1.reload-daemon">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-systemd1-reload-daemon)"
+        explainText="$(string.org-freedesktop-systemd1-reload-daemon-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.systemd1.reload-daemon-user"
+        valuename="org.freedesktop.systemd1.reload-daemon"
+        presentation="$(presentation.org-freedesktop-Systemd-user-pr)">
+      <parentCategory ref="system:ALT_SystemdPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopSystemd_setter" valueName="org.freedesktop.systemd1.reload-daemon" required="true">
+          <item displayName="$(string.org-freedesktop-systemd-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-systemd1-reply-password)"
+        explainText="$(string.org-freedesktop-systemd1-reply-password_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.systemd1.reply-password"
+        valuename="org.freedesktop.systemd1.reply-password"
+        presentation="$(presentation.org-freedesktop-Systemd-pr)">
+      <parentCategory ref="system:ALT_SystemdPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopSystemd_setter" valueName="org.freedesktop.systemd1.reply-password" required="true">
+          <item displayName="$(string.org-freedesktop-systemd-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopSystemd_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.systemd1.reply-password">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-systemd1-reply-password)"
+        explainText="$(string.org-freedesktop-systemd1-reply-password-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.systemd1.reply-password-user"
+        valuename="org.freedesktop.systemd1.reply-password"
+        presentation="$(presentation.org-freedesktop-Systemd-user-pr)">
+      <parentCategory ref="system:ALT_SystemdPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopSystemd_setter" valueName="org.freedesktop.systemd1.reply-password" required="true">
+          <item displayName="$(string.org-freedesktop-systemd-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-systemd1-set-environment)"
+        explainText="$(string.org-freedesktop-systemd1-set-environment_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.systemd1.set-environment"
+        valuename="org.freedesktop.systemd1.set-environment"
+        presentation="$(presentation.org-freedesktop-Systemd-pr)">
+      <parentCategory ref="system:ALT_SystemdPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopSystemd_setter" valueName="org.freedesktop.systemd1.set-environment" required="true">
+          <item displayName="$(string.org-freedesktop-systemd-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopSystemd_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.systemd1.set-environment">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-systemd1-set-environment)"
+        explainText="$(string.org-freedesktop-systemd1-set-environment-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.systemd1.set-environment-user"
+        valuename="org.freedesktop.systemd1.set-environment"
+        presentation="$(presentation.org-freedesktop-Systemd-user-pr)">
+      <parentCategory ref="system:ALT_SystemdPolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopSystemd_setter" valueName="org.freedesktop.systemd1.set-environment" required="true">
+          <item displayName="$(string.org-freedesktop-systemd-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-systemd-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

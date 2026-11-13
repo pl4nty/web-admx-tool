@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2023 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="hostname" namespace="BaseALT.Policies.HostName" />
+    <using prefix="system" namespace="BaseALT.Policies.System" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <policies>
+    <policy class="Machine" displayName="$(string.org-freedesktop-hostname1-set-hostname)"
+        explainText="$(string.org-freedesktop-hostname1-set-hostname_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.hostname1.set-hostname"
+        valuename="org.freedesktop.hostname1.set-hostname"
+        presentation="$(presentation.org-freedesktop-hostname1-pr)">
+      <parentCategory ref="system:ALT_HostnamePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopHostname1_setter" valueName="org.freedesktop.hostname1.set-hostname" required="true">
+          <item displayName="$(string.org-freedesktop-hostname1-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopHostname1_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.hostname1.set-hostname">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-hostname1-set-hostname)"
+        explainText="$(string.org-freedesktop-hostname1-set-hostname-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.hostname1.set-hostname-user"
+        valuename="org.freedesktop.hostname1.set-hostname"
+        presentation="$(presentation.org-freedesktop-hostname1-user-pr)">
+      <parentCategory ref="system:ALT_HostnamePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopHostname1_setter" valueName="org.freedesktop.hostname1.set-hostname" required="true">
+          <item displayName="$(string.org-freedesktop-hostname1-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-hostname1-set-machine-info)"
+        explainText="$(string.org-freedesktop-hostname1-set-machine-info_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.hostname1.set-machine-info"
+        valuename="org.freedesktop.hostname1.set-machine-info"
+        presentation="$(presentation.org-freedesktop-hostname1-pr)">
+      <parentCategory ref="system:ALT_HostnamePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopHostname1_setter" valueName="org.freedesktop.hostname1.set-machine-info" required="true">
+          <item displayName="$(string.org-freedesktop-hostname1-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopHostname1_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.hostname1.set-machine-info">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-hostname1-set-machine-info)"
+        explainText="$(string.org-freedesktop-hostname1-set-machine-info-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.hostname1.set-machine-info-user"
+        valuename="org.freedesktop.hostname1.set-machine-info"
+        presentation="$(presentation.org-freedesktop-hostname1-user-pr)">
+      <parentCategory ref="system:ALT_HostnamePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopHostname1_setter" valueName="org.freedesktop.hostname1.set-machine-info" required="true">
+          <item displayName="$(string.org-freedesktop-hostname1-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Machine" displayName="$(string.org-freedesktop-hostname1-set-static-hostname)"
+        explainText="$(string.org-freedesktop-hostname1-set-static-hostname_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.hostname1.set-static-hostname"
+        valuename="org.freedesktop.hostname1.set-static-hostname"
+        presentation="$(presentation.org-freedesktop-hostname1-pr)">
+      <parentCategory ref="system:ALT_HostnamePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopHostname1_setter" valueName="org.freedesktop.hostname1.set-static-hostname" required="true">
+          <item displayName="$(string.org-freedesktop-hostname1-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="OrgFreedesktopHostname1_blocker" key="Software\BaseALT\Policies\PolkitLocks" valueName="org.freedesktop.hostname1.set-static-hostname">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy class="User" displayName="$(string.org-freedesktop-hostname1-set-static-hostname)"
+        explainText="$(string.org-freedesktop-hostname1-set-static-hostname-user_Help)"
+        key="Software\BaseALT\Policies\Polkit"
+        name="org.freedesktop.hostname1.set-static-hostname-user"
+        valuename="org.freedesktop.hostname1.set-static-hostname"
+        presentation="$(presentation.org-freedesktop-hostname1-user-pr)">
+      <parentCategory ref="system:ALT_HostnamePolkit" />
+      <supportedOn ref="system:SUPPORTED_AltP10" />
+      <elements>
+        <enum id="OrgFreedesktopHostname1_setter" valueName="org.freedesktop.hostname1.set-static-hostname" required="true">
+          <item displayName="$(string.org-freedesktop-hostname1-No)">
+            <value>
+              <string>No</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Yes)">
+            <value>
+              <string>Yes</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-self)">
+            <value>
+              <string>Auth_self</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-admin)">
+            <value>
+              <string>Auth_admin</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-self-keep)">
+            <value>
+              <string>Auth_self_keep</string>
+            </value>
+          </item>
+          <item displayName="$(string.org-freedesktop-hostname1-Auth-admin-keep)">
+            <value>
+              <string>Auth_admin_keep</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>
