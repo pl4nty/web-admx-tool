@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--Check by CyberDrain knepjpocdagponkonnbggpcnhnaikajg version: 1.2.0 generator: 56a62b2611f6-->
+  <policyNamespaces>
+    <target namespace="BrowserExtension.knepjpocdagponkonnbggpcnhnaikajg" prefix="ext_knepjpocdagponkonnbggpcnhnaikajg"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
+    <category name="extension_genericWebhook" displayName="$(string.extension_genericWebhook)">
+      <parentCategory ref="extension"/>
+    </category>
+    <category name="extension_customBranding" displayName="$(string.extension_customBranding)">
+      <parentCategory ref="extension"/>
+    </category>
+    <category name="extension_domainSquatting" displayName="$(string.extension_domainSquatting)">
+      <parentCategory ref="extension"/>
+    </category>
+    <category name="extension_domainSquatting_algorithms" displayName="$(string.extension_domainSquatting_algorithms)">
+      <parentCategory ref="extension_domainSquatting"/>
+    </category>
+  </categories>
+  <policies>
+    <policy name="extension_showNotifications" class="Both" displayName="$(string.extension_showNotifications)" explainText="$(string.extension_showNotifications_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy" valueName="showNotifications">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_enableValidPageBadge" class="Both" displayName="$(string.extension_enableValidPageBadge)" explainText="$(string.extension_enableValidPageBadge_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy" valueName="enableValidPageBadge">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_validPageBadgeTimeout" class="Both" displayName="$(string.extension_validPageBadgeTimeout)" explainText="$(string.extension_validPageBadgeTimeout_Explain)" presentation="$(presentation.extension_validPageBadgeTimeout)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_validPageBadgeTimeout_Part" valueName="validPageBadgeTimeout" minValue="0" maxValue="300"/>
+      </elements>
+    </policy>
+    <policy name="extension_enablePageBlocking" class="Both" displayName="$(string.extension_enablePageBlocking)" explainText="$(string.extension_enablePageBlocking_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy" valueName="enablePageBlocking">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_enableCippReporting" class="Both" displayName="$(string.extension_enableCippReporting)" explainText="$(string.extension_enableCippReporting_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy" valueName="enableCippReporting">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_cippServerUrl" class="Both" displayName="$(string.extension_cippServerUrl)" explainText="$(string.extension_cippServerUrl_Explain)" presentation="$(presentation.extension_cippServerUrl)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_cippServerUrl_Part" valueName="cippServerUrl" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_cippTenantId" class="Both" displayName="$(string.extension_cippTenantId)" explainText="$(string.extension_cippTenantId_Explain)" presentation="$(presentation.extension_cippTenantId)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_cippTenantId_Part" valueName="cippTenantId" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_customRulesUrl" class="Both" displayName="$(string.extension_customRulesUrl)" explainText="$(string.extension_customRulesUrl_Explain)" presentation="$(presentation.extension_customRulesUrl)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_customRulesUrl_Part" valueName="customRulesUrl" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_updateInterval" class="Both" displayName="$(string.extension_updateInterval)" explainText="$(string.extension_updateInterval_Explain)" presentation="$(presentation.extension_updateInterval)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_updateInterval_Part" valueName="updateInterval" minValue="1" maxValue="168"/>
+      </elements>
+    </policy>
+    <policy name="extension_urlAllowlist" class="Both" displayName="$(string.extension_urlAllowlist)" explainText="$(string.extension_urlAllowlist_Explain)" presentation="$(presentation.extension_urlAllowlist)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_urlAllowlist_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\urlAllowlist" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_enableDebugLogging" class="Both" displayName="$(string.extension_enableDebugLogging)" explainText="$(string.extension_enableDebugLogging_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy" valueName="enableDebugLogging">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_genericWebhook_enabled" class="Both" displayName="$(string.extension_genericWebhook_enabled)" explainText="$(string.extension_genericWebhook_enabled_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\genericWebhook" valueName="enabled">
+      <parentCategory ref="extension_genericWebhook"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_genericWebhook_url" class="Both" displayName="$(string.extension_genericWebhook_url)" explainText="$(string.extension_genericWebhook_url_Explain)" presentation="$(presentation.extension_genericWebhook_url)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\genericWebhook">
+      <parentCategory ref="extension_genericWebhook"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_genericWebhook_url_Part" valueName="url" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_genericWebhook_events" class="Both" displayName="$(string.extension_genericWebhook_events)" explainText="$(string.extension_genericWebhook_events_Explain)" presentation="$(presentation.extension_genericWebhook_events)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\genericWebhook">
+      <parentCategory ref="extension_genericWebhook"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_genericWebhook_events_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\genericWebhook\events" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_customBranding_companyName" class="Both" displayName="$(string.extension_customBranding_companyName)" explainText="$(string.extension_customBranding_companyName_Explain)" presentation="$(presentation.extension_customBranding_companyName)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\customBranding">
+      <parentCategory ref="extension_customBranding"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_customBranding_companyName_Part" valueName="companyName" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_customBranding_productName" class="Both" displayName="$(string.extension_customBranding_productName)" explainText="$(string.extension_customBranding_productName_Explain)" presentation="$(presentation.extension_customBranding_productName)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\customBranding">
+      <parentCategory ref="extension_customBranding"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_customBranding_productName_Part" valueName="productName" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_customBranding_supportEmail" class="Both" displayName="$(string.extension_customBranding_supportEmail)" explainText="$(string.extension_customBranding_supportEmail_Explain)" presentation="$(presentation.extension_customBranding_supportEmail)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\customBranding">
+      <parentCategory ref="extension_customBranding"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_customBranding_supportEmail_Part" valueName="supportEmail" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_customBranding_supportUrl" class="Both" displayName="$(string.extension_customBranding_supportUrl)" explainText="$(string.extension_customBranding_supportUrl_Explain)" presentation="$(presentation.extension_customBranding_supportUrl)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\customBranding">
+      <parentCategory ref="extension_customBranding"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_customBranding_supportUrl_Part" valueName="supportUrl" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_customBranding_privacyPolicyUrl" class="Both" displayName="$(string.extension_customBranding_privacyPolicyUrl)" explainText="$(string.extension_customBranding_privacyPolicyUrl_Explain)" presentation="$(presentation.extension_customBranding_privacyPolicyUrl)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\customBranding">
+      <parentCategory ref="extension_customBranding"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_customBranding_privacyPolicyUrl_Part" valueName="privacyPolicyUrl" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_customBranding_aboutUrl" class="Both" displayName="$(string.extension_customBranding_aboutUrl)" explainText="$(string.extension_customBranding_aboutUrl_Explain)" presentation="$(presentation.extension_customBranding_aboutUrl)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\customBranding">
+      <parentCategory ref="extension_customBranding"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_customBranding_aboutUrl_Part" valueName="aboutUrl" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_customBranding_primaryColor" class="Both" displayName="$(string.extension_customBranding_primaryColor)" explainText="$(string.extension_customBranding_primaryColor_Explain)" presentation="$(presentation.extension_customBranding_primaryColor)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\customBranding">
+      <parentCategory ref="extension_customBranding"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_customBranding_primaryColor_Part" valueName="primaryColor" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_customBranding_logoUrl" class="Both" displayName="$(string.extension_customBranding_logoUrl)" explainText="$(string.extension_customBranding_logoUrl_Explain)" presentation="$(presentation.extension_customBranding_logoUrl)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\customBranding">
+      <parentCategory ref="extension_customBranding"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_customBranding_logoUrl_Part" valueName="logoUrl" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_domainSquatting_enabled" class="Both" displayName="$(string.extension_domainSquatting_enabled)" explainText="$(string.extension_domainSquatting_enabled_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\domainSquatting" valueName="enabled">
+      <parentCategory ref="extension_domainSquatting"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_domainSquatting_deviationThreshold" class="Both" displayName="$(string.extension_domainSquatting_deviationThreshold)" explainText="$(string.extension_domainSquatting_deviationThreshold_Explain)" presentation="$(presentation.extension_domainSquatting_deviationThreshold)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\domainSquatting">
+      <parentCategory ref="extension_domainSquatting"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <decimal id="extension_domainSquatting_deviationThreshold_Part" valueName="deviationThreshold" minValue="1" maxValue="5"/>
+      </elements>
+    </policy>
+    <policy name="extension_domainSquatting_algorithms_levenshtein" class="Both" displayName="$(string.extension_domainSquatting_algorithms_levenshtein)" explainText="$(string.extension_domainSquatting_algorithms_levenshtein_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\domainSquatting\algorithms" valueName="levenshtein">
+      <parentCategory ref="extension_domainSquatting_algorithms"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_domainSquatting_algorithms_homoglyph" class="Both" displayName="$(string.extension_domainSquatting_algorithms_homoglyph)" explainText="$(string.extension_domainSquatting_algorithms_homoglyph_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\domainSquatting\algorithms" valueName="homoglyph">
+      <parentCategory ref="extension_domainSquatting_algorithms"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_domainSquatting_algorithms_typosquat" class="Both" displayName="$(string.extension_domainSquatting_algorithms_typosquat)" explainText="$(string.extension_domainSquatting_algorithms_typosquat_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\domainSquatting\algorithms" valueName="typosquat">
+      <parentCategory ref="extension_domainSquatting_algorithms"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_domainSquatting_algorithms_combosquat" class="Both" displayName="$(string.extension_domainSquatting_algorithms_combosquat)" explainText="$(string.extension_domainSquatting_algorithms_combosquat_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\domainSquatting\algorithms" valueName="combosquat">
+      <parentCategory ref="extension_domainSquatting_algorithms"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_domainSquatting_protectedDomains" class="Both" displayName="$(string.extension_domainSquatting_protectedDomains)" explainText="$(string.extension_domainSquatting_protectedDomains_Explain)" presentation="$(presentation.extension_domainSquatting_protectedDomains)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\domainSquatting">
+      <parentCategory ref="extension_domainSquatting"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_domainSquatting_protectedDomains_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\domainSquatting\protectedDomains" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy name="extension_domainSquatting_Action" class="Both" displayName="$(string.extension_domainSquatting_Action)" explainText="$(string.extension_domainSquatting_Action_Explain)" presentation="$(presentation.extension_domainSquatting_Action)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\domainSquatting">
+      <parentCategory ref="extension_domainSquatting"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <enum id="extension_domainSquatting_Action_Part" valueName="Action">
+          <item displayName="$(string.extension_domainSquatting_Action_Item0)">
+            <value>
+              <string>block</string>
+            </value>
+          </item>
+          <item displayName="$(string.extension_domainSquatting_Action_Item1)">
+            <value>
+              <string>warn</string>
+            </value>
+          </item>
+          <item displayName="$(string.extension_domainSquatting_Action_Item2)">
+            <value>
+              <string>log</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="extension_domainSquatting_logDetections" class="Both" displayName="$(string.extension_domainSquatting_logDetections)" explainText="$(string.extension_domainSquatting_logDetections_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\knepjpocdagponkonnbggpcnhnaikajg\policy\domainSquatting" valueName="logDetections">
+      <parentCategory ref="extension_domainSquatting"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>

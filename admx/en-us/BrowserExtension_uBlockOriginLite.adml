@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--uBlock Origin Lite cimighlppcgcoapaliogpjjdehbnofhn version: 2026.930.1227 generator: a623e74b9c3a-->
+  <displayName>uBlock Origin Lite</displayName>
+  <description>Policies for the uBlock Origin Lite browser extension, generated from its managed storage schema</description>
+  <resources>
+    <stringTable>
+      <string id="extension_defaultFiltering">The default filtering mode</string>
+      <string id="extension_defaultFiltering_Explain">Can be one of &quot;none&quot;, &quot;basic&quot;, &quot;optimal&quot;, &quot;complete&quot;.</string>
+      <string id="extension_disabledFeatures">User interface features to disable</string>
+      <string id="extension_disabledFeatures_Explain">A list of tokens, each of which correspond to a user interface feature to disable.</string>
+      <string id="extension_disableFirstRunPage">Disable first run page</string>
+      <string id="extension_noFiltering">List of domains for which no filtering should occur</string>
+      <string id="extension_rulesets">Rulesets to add/remove</string>
+      <string id="extension_rulesets_Explain">Prefix a ruleset id with '+' to add, or '-' to remove. Use '-*' to disable all non-default lists.</string>
+      <string id="extension_popupBlockMode">Enable/disable pop-up blocking</string>
+      <string id="extension_showBlockedCount">Enable/disable toolbar icon count badge</string>
+      <string id="extension_strictBlockMode">Enable/disable strict blocking</string>
+      <string id="SUPPORTED_EXTENSION">uBlock Origin Lite browser extension</string>
+      <string id="extension">uBlock Origin Lite</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="extension_defaultFiltering">
+        <textBox refId="extension_defaultFiltering_Part">
+          <label>The default filtering mode</label>
+        </textBox>
+      </presentation>
+      <presentation id="extension_disabledFeatures">
+        <listBox refId="extension_disabledFeatures_Part">User interface features to disable</listBox>
+      </presentation>
+      <presentation id="extension_noFiltering">
+        <listBox refId="extension_noFiltering_Part">List of domains for which no filtering should occur</listBox>
+      </presentation>
+      <presentation id="extension_rulesets">
+        <listBox refId="extension_rulesets_Part">Rulesets to add/remove</listBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--Psono abobmepfpbkapdlmfhnnkebcnhgeccbm version: 4.8.2 generator: 3d0cbbc2db68-->
+  <policyNamespaces>
+    <target namespace="BrowserExtension.abobmepfpbkapdlmfhnnkebcnhgeccbm" prefix="ext_abobmepfpbkapdlmfhnnkebcnhgeccbm"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
+  </categories>
+  <policies>
+    <policy name="extension_ConfigJson" class="Both" displayName="$(string.extension_ConfigJson)" explainText="$(string.extension_ConfigJson_Explain)" presentation="$(presentation.extension_ConfigJson)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\abobmepfpbkapdlmfhnnkebcnhgeccbm\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_ConfigJson_Part" valueName="ConfigJson" maxLength="1048576"/>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

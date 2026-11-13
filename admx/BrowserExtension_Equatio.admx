@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--Equatio hjngolefdpdnooamgdldlkjgmdcmcjnc version: 68.0.0 generator: 8d69d42edd57-->
+  <policyNamespaces>
+    <target namespace="BrowserExtension.hjngolefdpdnooamgdldlkjgmdcmcjnc" prefix="ext_hjngolefdpdnooamgdldlkjgmdcmcjnc"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
+    <category name="extension_features" displayName="$(string.extension_features)">
+      <parentCategory ref="extension"/>
+    </category>
+  </categories>
+  <policies>
+    <policy name="extension_features_prediction" class="Both" displayName="$(string.extension_features_prediction)" explainText="$(string.extension_features_prediction_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hjngolefdpdnooamgdldlkjgmdcmcjnc\policy\features" valueName="prediction">
+      <parentCategory ref="extension_features"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_features_equation" class="Both" displayName="$(string.extension_features_equation)" explainText="$(string.extension_features_equation_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hjngolefdpdnooamgdldlkjgmdcmcjnc\policy\features" valueName="equation">
+      <parentCategory ref="extension_features"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_features_latex" class="Both" displayName="$(string.extension_features_latex)" explainText="$(string.extension_features_latex_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hjngolefdpdnooamgdldlkjgmdcmcjnc\policy\features" valueName="latex">
+      <parentCategory ref="extension_features"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_features_graph" class="Both" displayName="$(string.extension_features_graph)" explainText="$(string.extension_features_graph_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hjngolefdpdnooamgdldlkjgmdcmcjnc\policy\features" valueName="graph">
+      <parentCategory ref="extension_features"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_features_handwriting" class="Both" displayName="$(string.extension_features_handwriting)" explainText="$(string.extension_features_handwriting_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hjngolefdpdnooamgdldlkjgmdcmcjnc\policy\features" valueName="handwriting">
+      <parentCategory ref="extension_features"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_features_speech" class="Both" displayName="$(string.extension_features_speech)" explainText="$(string.extension_features_speech_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hjngolefdpdnooamgdldlkjgmdcmcjnc\policy\features" valueName="speech">
+      <parentCategory ref="extension_features"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_features_companion" class="Both" displayName="$(string.extension_features_companion)" explainText="$(string.extension_features_companion_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hjngolefdpdnooamgdldlkjgmdcmcjnc\policy\features" valueName="companion">
+      <parentCategory ref="extension_features"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_features_equatio_mathspace" class="Both" displayName="$(string.extension_features_equatio_mathspace)" explainText="$(string.extension_features_equatio_mathspace_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hjngolefdpdnooamgdldlkjgmdcmcjnc\policy\features" valueName="equatio-mathspace">
+      <parentCategory ref="extension_features"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_features_screenshot_reader" class="Both" displayName="$(string.extension_features_screenshot_reader)" explainText="$(string.extension_features_screenshot_reader_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hjngolefdpdnooamgdldlkjgmdcmcjnc\policy\features" valueName="screenshot_reader">
+      <parentCategory ref="extension_features"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_features_whiteboard" class="Both" displayName="$(string.extension_features_whiteboard)" explainText="$(string.extension_features_whiteboard_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hjngolefdpdnooamgdldlkjgmdcmcjnc\policy\features" valueName="whiteboard">
+      <parentCategory ref="extension_features"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_features_stem_tools" class="Both" displayName="$(string.extension_features_stem_tools)" explainText="$(string.extension_features_stem_tools_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hjngolefdpdnooamgdldlkjgmdcmcjnc\policy\features" valueName="stem-tools">
+      <parentCategory ref="extension_features"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_features_forms_creator" class="Both" displayName="$(string.extension_features_forms_creator)" explainText="$(string.extension_features_forms_creator_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hjngolefdpdnooamgdldlkjgmdcmcjnc\policy\features" valueName="forms-creator">
+      <parentCategory ref="extension_features"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_features_math_mentor" class="Both" displayName="$(string.extension_features_math_mentor)" explainText="$(string.extension_features_math_mentor_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hjngolefdpdnooamgdldlkjgmdcmcjnc\policy\features" valueName="math-mentor">
+      <parentCategory ref="extension_features"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_features_ai_math_suggest" class="Both" displayName="$(string.extension_features_ai_math_suggest)" explainText="$(string.extension_features_ai_math_suggest_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hjngolefdpdnooamgdldlkjgmdcmcjnc\policy\features" valueName="ai-math-suggest">
+      <parentCategory ref="extension_features"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_features_triangle_calculator" class="Both" displayName="$(string.extension_features_triangle_calculator)" explainText="$(string.extension_features_triangle_calculator_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hjngolefdpdnooamgdldlkjgmdcmcjnc\policy\features" valueName="triangle-calculator">
+      <parentCategory ref="extension_features"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>
