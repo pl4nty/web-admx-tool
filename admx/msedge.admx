@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 157.0.4341.60-->
+  <!--microsoft_edge version: 160.0.4408.0-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -87,6 +87,8 @@
       <definition displayName="$(string.SUPPORTED_WIN7_V154)" name="SUPPORTED_WIN7_V154"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V156)" name="SUPPORTED_WIN7_V156"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V157)" name="SUPPORTED_WIN7_V157"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V158)" name="SUPPORTED_WIN7_V158"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V159)" name="SUPPORTED_WIN7_V159"/>
       <definition displayName="$(string.SUPPORTED_WIN7_ONLY_V77)" name="SUPPORTED_WIN7_ONLY_V77"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V81_V85)" name="OBSOLETE_WIN7_V81_V85"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V125_V137)" name="OBSOLETE_WIN7_V125_V137"/>
@@ -118,6 +120,7 @@
       <definition displayName="$(string.OBSOLETE_WIN7_V107_V133)" name="OBSOLETE_WIN7_V107_V133"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V80_V94)" name="OBSOLETE_WIN7_V80_V94"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V86_V94)" name="OBSOLETE_WIN7_V86_V94"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V141_V158)" name="OBSOLETE_WIN7_V141_V158"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V123_V131)" name="OBSOLETE_WIN7_V123_V131"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V77_V84)" name="OBSOLETE_WIN7_V77_V84"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V92_V137)" name="OBSOLETE_WIN7_V92_V137"/>
@@ -131,6 +134,7 @@
       <definition displayName="$(string.OBSOLETE_WIN7_V118_V130)" name="OBSOLETE_WIN7_V118_V130"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V132_V138)" name="OBSOLETE_WIN7_V132_V138"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V99_V144)" name="OBSOLETE_WIN7_V99_V144"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V148_V158)" name="OBSOLETE_WIN7_V148_V158"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V83_V129)" name="OBSOLETE_WIN7_V83_V129"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V78_V87)" name="OBSOLETE_WIN7_V78_V87"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V80_V84)" name="OBSOLETE_WIN7_V80_V84"/>
@@ -169,6 +173,7 @@
       <definition displayName="$(string.OBSOLETE_WIN7_V77_V97)" name="OBSOLETE_WIN7_V77_V97"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V112_V128)" name="OBSOLETE_WIN7_V112_V128"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V102_V105)" name="OBSOLETE_WIN7_V102_V105"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V148_V157)" name="OBSOLETE_WIN7_V148_V157"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V109_V120)" name="OBSOLETE_WIN7_V109_V120"/>
     </definitions>
   </supportedOn>
@@ -3075,6 +3080,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.ProfilePickerAvailability)" explainText="$(string.ProfilePickerAvailability_Explain)" key="Software\Policies\Microsoft\Edge" name="ProfilePickerAvailability" presentation="$(presentation.ProfilePickerAvailability)" valueName="ProfilePickerAvailability">
+      <parentCategory ref="Profile"/>
+      <supportedOn ref="SUPPORTED_WIN7_V159"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.ProfileTypeInProfileButtonEnabled)" explainText="$(string.ProfileTypeInProfileButtonEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="ProfileTypeInProfileButtonEnabled" presentation="$(presentation.ProfileTypeInProfileButtonEnabled)" valueName="ProfileTypeInProfileButtonEnabled">
       <parentCategory ref="Profile"/>
       <supportedOn ref="SUPPORTED_WIN7_V136"/>
@@ -3094,6 +3109,13 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.EnableProxyOverrideRulesForAllUsers)" explainText="$(string.EnableProxyOverrideRulesForAllUsers_Explain)" key="Software\Policies\Microsoft\Edge" name="EnableProxyOverrideRulesForAllUsers" presentation="$(presentation.EnableProxyOverrideRulesForAllUsers)">
+      <parentCategory ref="Proxy"/>
+      <supportedOn ref="SUPPORTED_WIN7_V159"/>
+      <elements>
+        <decimal id="EnableProxyOverrideRulesForAllUsers" maxValue="2000000000" minValue="0" valueName="EnableProxyOverrideRulesForAllUsers"/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.PacMyIpAddressIPv4ProbeAddress)" explainText="$(string.PacMyIpAddressIPv4ProbeAddress_Explain)" key="Software\Policies\Microsoft\Edge" name="PacMyIpAddressIPv4ProbeAddress" presentation="$(presentation.PacMyIpAddressIPv4ProbeAddress)">
       <parentCategory ref="Proxy"/>
@@ -3242,6 +3264,33 @@
             </value>
           </item>
         </enum>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.RemixBulkExtractionAllowed)" explainText="$(string.RemixBulkExtractionAllowed_Explain)" key="Software\Policies\Microsoft\Edge" name="RemixBulkExtractionAllowed" presentation="$(presentation.RemixBulkExtractionAllowed)" valueName="RemixBulkExtractionAllowed">
+      <parentCategory ref="Remix"/>
+      <supportedOn ref="SUPPORTED_WIN7_V159"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.RemixCustomRemixesAllowed)" explainText="$(string.RemixCustomRemixesAllowed_Explain)" key="Software\Policies\Microsoft\Edge" name="RemixCustomRemixesAllowed" presentation="$(presentation.RemixCustomRemixesAllowed)" valueName="RemixCustomRemixesAllowed">
+      <parentCategory ref="Remix"/>
+      <supportedOn ref="SUPPORTED_WIN7_V159"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.RemixDomainBlocklist)" explainText="$(string.RemixDomainBlocklist_Explain)" key="Software\Policies\Microsoft\Edge" name="RemixDomainBlocklist" presentation="$(presentation.RemixDomainBlocklist)">
+      <parentCategory ref="Remix"/>
+      <supportedOn ref="SUPPORTED_WIN7_V159"/>
+      <elements>
+        <list id="RemixDomainBlocklistDesc" key="Software\Policies\Microsoft\Edge\RemixDomainBlocklist" valuePrefix=""/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.ScarewareBlockerAllowListDomains)" explainText="$(string.ScarewareBlockerAllowListDomains_Explain)" key="Software\Policies\Microsoft\Edge" name="ScarewareBlockerAllowListDomains" presentation="$(presentation.ScarewareBlockerAllowListDomains)">
@@ -4184,7 +4233,7 @@
     </policy>
     <policy class="Both" displayName="$(string.AllowBrowsingWithCopilot)" explainText="$(string.AllowBrowsingWithCopilot_Explain)" key="Software\Policies\Microsoft\Edge" name="AllowBrowsingWithCopilot" presentation="$(presentation.AllowBrowsingWithCopilot)" valueName="AllowBrowsingWithCopilot">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V148"/>
+      <supportedOn ref="OBSOLETE_WIN7_V148_V158"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -4194,7 +4243,7 @@
     </policy>
     <policy class="Both" displayName="$(string.AllowBrowsingWithCopilot)" explainText="$(string.AllowBrowsingWithCopilot_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="AllowBrowsingWithCopilot_recommended" presentation="$(presentation.AllowBrowsingWithCopilot)" valueName="AllowBrowsingWithCopilot">
       <parentCategory ref="microsoft_edge_recommended"/>
-      <supportedOn ref="SUPPORTED_WIN7_V148"/>
+      <supportedOn ref="OBSOLETE_WIN7_V148_V158"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -4884,14 +4933,14 @@
     </policy>
     <policy class="Both" displayName="$(string.BrowsingWithCopilotAllowList)" explainText="$(string.BrowsingWithCopilotAllowList_Explain)" key="Software\Policies\Microsoft\Edge" name="BrowsingWithCopilotAllowList" presentation="$(presentation.BrowsingWithCopilotAllowList)">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V148"/>
+      <supportedOn ref="OBSOLETE_WIN7_V148_V157"/>
       <elements>
         <list id="BrowsingWithCopilotAllowListDesc" key="Software\Policies\Microsoft\Edge\BrowsingWithCopilotAllowList" valuePrefix=""/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.BrowsingWithCopilotBlockList)" explainText="$(string.BrowsingWithCopilotBlockList_Explain)" key="Software\Policies\Microsoft\Edge" name="BrowsingWithCopilotBlockList" presentation="$(presentation.BrowsingWithCopilotBlockList)">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V148"/>
+      <supportedOn ref="OBSOLETE_WIN7_V148_V157"/>
       <elements>
         <list id="BrowsingWithCopilotBlockListDesc" key="Software\Policies\Microsoft\Edge\BrowsingWithCopilotBlockList" valuePrefix=""/>
       </elements>
@@ -5065,6 +5114,29 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.ComponentUpdatesMode)" explainText="$(string.ComponentUpdatesMode_Explain)" key="Software\Policies\Microsoft\Edge" name="ComponentUpdatesMode" presentation="$(presentation.ComponentUpdatesMode)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V158"/>
+      <elements>
+        <enum id="ComponentUpdatesMode" valueName="ComponentUpdatesMode">
+          <item displayName="$(string.ComponentUpdatesMode_AllComponentUpdates)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComponentUpdatesMode_CriticalComponentUpdatesOnly)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComponentUpdatesMode_NoComponentUpdates)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.ComposeInlineEnabled)" explainText="$(string.ComposeInlineEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="ComposeInlineEnabled" presentation="$(presentation.ComposeInlineEnabled)" valueName="ComposeInlineEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V115"/>
@@ -5200,6 +5272,20 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.CopilotBrowserUseAllowList)" explainText="$(string.CopilotBrowserUseAllowList_Explain)" key="Software\Policies\Microsoft\Edge" name="CopilotBrowserUseAllowList" presentation="$(presentation.CopilotBrowserUseAllowList)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V158"/>
+      <elements>
+        <list id="CopilotBrowserUseAllowListDesc" key="Software\Policies\Microsoft\Edge\CopilotBrowserUseAllowList" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.CopilotBrowserUseBlockList)" explainText="$(string.CopilotBrowserUseBlockList_Explain)" key="Software\Policies\Microsoft\Edge" name="CopilotBrowserUseBlockList" presentation="$(presentation.CopilotBrowserUseBlockList)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V158"/>
+      <elements>
+        <list id="CopilotBrowserUseBlockListDesc" key="Software\Policies\Microsoft\Edge\CopilotBrowserUseBlockList" valuePrefix=""/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.CopilotCDPPageContext)" explainText="$(string.CopilotCDPPageContext_Explain)" key="Software\Policies\Microsoft\Edge" name="CopilotCDPPageContext" presentation="$(presentation.CopilotCDPPageContext)" valueName="CopilotCDPPageContext">
       <parentCategory ref="microsoft_edge"/>
@@ -7324,7 +7410,7 @@
     </policy>
     <policy class="Both" displayName="$(string.LiveVideoTranslationEnabled)" explainText="$(string.LiveVideoTranslationEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="LiveVideoTranslationEnabled" presentation="$(presentation.LiveVideoTranslationEnabled)" valueName="LiveVideoTranslationEnabled">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V141"/>
+      <supportedOn ref="OBSOLETE_WIN7_V141_V158"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -8690,6 +8776,26 @@
       <elements>
         <list id="SmartActionsBlockListDesc" key="Software\Policies\Microsoft\Edge\Recommended\SmartActionsBlockList" valuePrefix=""/>
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.SpawnNtpOnLastTabCloseEnabled)" explainText="$(string.SpawnNtpOnLastTabCloseEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="SpawnNtpOnLastTabCloseEnabled" presentation="$(presentation.SpawnNtpOnLastTabCloseEnabled)" valueName="SpawnNtpOnLastTabCloseEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V159"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.SpawnNtpOnLastTabCloseEnabled)" explainText="$(string.SpawnNtpOnLastTabCloseEnabled_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="SpawnNtpOnLastTabCloseEnabled_recommended" presentation="$(presentation.SpawnNtpOnLastTabCloseEnabled)" valueName="SpawnNtpOnLastTabCloseEnabled">
+      <parentCategory ref="microsoft_edge_recommended"/>
+      <supportedOn ref="SUPPORTED_WIN7_V159"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.SpeechRecognitionEnabled)" explainText="$(string.SpeechRecognitionEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="SpeechRecognitionEnabled" presentation="$(presentation.SpeechRecognitionEnabled)" valueName="SpeechRecognitionEnabled">
       <parentCategory ref="microsoft_edge"/>
