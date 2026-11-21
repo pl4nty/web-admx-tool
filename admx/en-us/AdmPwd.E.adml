@@ -1,0 +1,204 @@
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName>
+  </displayName>
+  <description>
+  </description>
+  <resources>
+    <stringTable>
+      <!--Folder names-->
+      <string id="CAT_AdmPwd">AdmPwd Enterprise</string>
+      <string id="CAT_AdmPwd_ManagedClients">Managed clients</string>
+      <string id="CAT_AdmPwd_AdminTools">Administrative tools</string>
+      <!--Configuration strings-->
+      <string id="REG_PolicyPath">Software\Policies\Microsoft Services\AdmPwd</string>
+      <!--Managed clients - values-->
+      <string id="POL_AdmPwd">Password Settings</string>
+      <string id="POL_AdmPwd_Enabled">Enable local admin password management</string>
+      <string id="POL_AdmPwd_Enabled_Help">This policy is also called a 'Master switch' for managed clients.
+It enables management of password for local administrator account. Only when enabled, managed clients manage password of local account.
+
+If you enable this policy, local administrator password is managed
+
+If you disable or not configure this policy, local administrator password is NOT managed. Managed clients only log verbose message that password management is not enabled, and do not perform any other actions.
+      </string>
+      <string id="POL_AdmPwd_Help">Configures password parameters
+
+Password complexity
+  Which character sets are used when generating a new password
+  Default: Capital letters + Small letters + Numbers + Special characters
+
+Password length
+  Minimum: 8 characters
+  Maximum: 127 characters
+  Default: 14 characters
+
+Password age in hours
+  Default: 720 hours (30 days)
+      </string>
+      <string id="SUPPORTED_WindowsVista">At least Microsoft Windows Vista or Windows Server 2003 family</string>
+      <string id="SUPPORTED_Windows7">At least Microsoft Windows 7 or Windows Server 2008 R2 family</string>
+      <string id="ITM_AdmPwd_PwdComplexity_1">Capital letters</string>
+      <string id="ITM_AdmPwd_PwdComplexity_2">Capital letters + small letters</string>
+      <string id="ITM_AdmPwd_PwdComplexity_3">Capital letters + small letters + numbers</string>
+      <string id="ITM_AdmPwd_PwdComplexity_4">Capital letters + small letters + numbers + specials</string>
+      <string id="POL_AdmPwd_AdminName">Administrator account name</string>
+      <string id="POL_AdmPwd_AdminName_Help">This policy configures name of the local account you want to manage password for.
+
+DO NOT configure when you use built-in admin account (even renamed)
+   Built-in admin account is always auto-detected by well-known SID
+
+DO configure when you use custom local admin account
+   Custom admin account is identified by its name
+      </string>
+      <string id="POL_AdmPwd_BuiltinAccountState">Desired state of built-in admin account</string>
+      <string id="POL_AdmPwd_BuiltinAccountState_Help">This policy configures Desired state of built-in admin account.
+
+If you Enable this policy, built-in admin account will be kept ENABLED.
+If you Disable this policy, built-in admin account will be kept DISABLED.
+If you do not configure this policy, state of built in admin account will not be managed.
+
+IMPORTANT: Do NOT set this policy to DISABLED if you are managing password of built-in admin account.
+      </string>
+      <string id="POL_AdmPwd_KeyString">Password encryption</string>
+      <string id="POL_AdmPwd_KeyString_Help">This policy controls whether password stored in AD is encrypted or not.
+
+If you enable this policy, you MUST also specify encryption key key for password encryption. This is public key string returned by Get-AdmPwdPublicKey cmdlet.
+
+If you disable or not configure this policy, passwords are stored in AD in clear text
+
+IMPORTANT:
+This policy allows to specify 2 types of encryption key:
+ - Legacy encryption key: CryptoAPI based key used by pre - 7.5.2.x versions of solution
+ - Encryption key: CNG based encryption key that is standard in solution version 7.5.2.x and newer
+
+This allows for coexistence of older and newer clients
+
+REMARKS
+* Password length vs. encryption key length
+  -----------------------------------------
+  If you enable password encryption, make sure that configured password length does not exceed maximum length allowed by encryption algorithm. Maximum length of password depends on public key size and can be estimated based on table below:
+  Key Size      Max password lenth
+  --------      ------------------
+  512 bits  ... 11 chars
+  1024 bits ... 43 chars
+  2048 bits ... 107 chars
+  3192 bits ... 179 chars
+  4096 bits ... 471 chars
+
+* FIPS compliance
+  ---------------
+  Encryption is considered FIPS compliant if key size is at least 2048 bits
+      </string>
+      <string id="POL_AdmPwd_PasswordHistory">Maintain password history</string>
+      <string id="POL_AdmPwd_PasswordHistory_Help">This policy controls whether password history is maintained or not.
+      
+        If you enable this policy, previous passwords are preserved in AD along with current password.
+
+        If you disable or not configure this policy, previous passwords are NOT preserved and only current password is stored in AD.
+      </string>
+      <string id="POL_AdmPwd_DontAllowPwdExpirationBehindPolicy">Do not allow password expiration time longer than required by policy</string>
+      <string id="POL_AdmPwd_DontAllowPwdExpirationBehindPolicy_Help">This policy controls whether planned password expiration longer than password age dictated by "Password Settings" policy is allowed or not.
+
+If you enable this policy and such expiration is detected, password is changed immediately and password expiration is set according to policy.
+
+If you disable or not configure this policy, password expiration time may be longer than required by "Password Settings" policy.
+      </string>
+      <string id="POL_AdmPwd_DontAllowManualPasswordChanges">Protect against manual changes of password</string>
+      <string id="POL_AdmPwd_DontAllowManualPasswordChanges_Help">This policy enables or disables detection of manual changes of password of managed local administrator account.
+
+If you enable this policy, and someone manually changes password of managed local administrator account, this change is detected during next GPO refresh, and password change is immediately enforced.
+This enforces keeping password reported in AD in sync with currently set on managed local administrator account.       
+
+If you disable this policy, detection of manual password changes of is NOT performed.
+
+If you do not configure this policy, detection of manual password changes is performed.
+      </string>
+      <string id="POL_AdmPwd_LogLevel">Logging level</string>
+      <string id="POL_AdmPwd_LogLevel_Help">This policy controls logging level for operations on managed machines
+If you enable this policy, you can specify desired logging level.
+
+If you disable or do not configure the policy, logging level is on default value, which is Errors Only.
+
+REMARK: If you configure registry value 'ExtensionDebugLevel' on GPO extension level, it always takes precedence over this policy setting.
+      </string>
+      <string id="ITM_AdmPwd_LogLevel_Errors">Errors only</string>
+      <string id="ITM_AdmPwd_LogLevel_ErrorsWarnings">Errors and Warnings</string>
+      <string id="ITM_AdmPwd_LogLevel_AllEvents">All events</string>
+      <!--Admin tools - values-->
+      <string id="POL_AdmPwd_UseSharedSPN">PDS service runs under domain account</string>
+      <string id="POL_AdmPwd_UseSharedSPN_Help">If you enable this policy, it means that you configured PDS to run under domain account, so admin tools use service specific SPN (Svc/AdmPwd) when connecting to PDS.
+
+If you disable or not configure this policy, it means that you configured PDS to run under NETWORK SERVICE account, so admin tools use default SPN (HOST/computerFQDN) when connecting to PDS.
+      </string>
+      <string id="POL_AdmPwd_PDSList">PDS to be used</string>
+      <string id="POL_AdmPwd_PDSList_Help">List of PDS instances to be used by administrative tools. Order of list gives preference.
+Enter just host FQDNs if PDS listens on default TCP port (61184) or FQDN:Port if PDS listens on custom TCP port (other than 61184), or FQDN:Port:ForestDnsName if you are outside AD forest and want to talk with more PDS's in independent AD forests.
+Examples:
+  pds.mydomain.com ... PDS listening on default port, servicing any forests
+  pds.mydomain.com:61185 ... PDS listening on custom port, servicing any forest
+  pds.mydomain.myforest.com:61184:myforest.com ... PDS on default port, servicing only forest myforest.com
+
+If you enable and configure this policy, management tools will use this list rather than list discovered from DNS via SRV records.
+
+If you disable or do not configure this policy, management tools will use list of PDS discovered from DNS via SRV record.
+      </string>
+      <string id="POL_AdmPwd_MaxPwdAge">Maximum configurable password age</string>
+      <string id="POL_AdmPwd_MaxPwdAge_Help">This policy sets maximum password age that can by configured via GPO.
+If you enable and configure this policy, password age configured in 'Password Settings' policy cannot exceed this value. If it exceeds this value, managed client will use default password age value instead.
+
+If you disable or do not configure this policy, maximum configurable password age is 1 year (8760 hours).
+      </string>
+      <string id="POL_AdmPwd_ClientReporting">Centralized client activity reporting</string>
+      <string id="POL_AdmPwd_ClientReporting_Help">This policy enables centralized reporting of client activity.
+Centralization of client events via Windows Event Forwarding (WEF) is often difficult to implement and may not scale in larger environments. Centralized client activity reporting provides efficient centralization of client events without the need to configure WEF
+
+If you ENABLE this policy, managed machines will send activity reports to configured report server via specified UDP port.
+Note: Report server can be any instance of PDS running in the environment as all PDS instances have capability to receive and record client activity events.
+
+If you DISABLE or do not configure this policy, managed clients will not send activity report to report server.
+      </string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="POL_AdmPwd">
+        <dropdownList refId="ELM_AdmPwd_PasswordComplexity" defaultItem="3">Password Complexity</dropdownList>
+        <decimalTextBox refId="ELM_AdmPwd_PasswordLength" defaultValue="14">Password Length</decimalTextBox>
+        <decimalTextBox refId="ELM_AdmPwd_PasswordAge" defaultValue="720">Password Age (Hours)</decimalTextBox>
+      </presentation>
+      
+      <presentation id="POL_AdmPwd_MaxPwdAge">
+        <decimalTextBox refId="ELM_AdmPwd_MaxPwdAge" defaultValue="8760">Max allowed password age (hours)</decimalTextBox>
+      </presentation>
+
+      <presentation id="POL_AdmPwd_LogLevel">
+        <dropdownList refId="ELM_AdmPwd_LogLevel" defaultItem="2">Log level</dropdownList>
+      </presentation>
+
+      <presentation id="POL_AdmPwd_AdminName">
+        <textBox refId="TXT_AdminAccountName">
+          <label>Administrator account name</label>
+        </textBox>
+      </presentation>
+      
+      <presentation id="POL_AdmPwd_KeyString">
+        <textBox refId="TXT_KeyString">
+          <label>Encryption key</label>
+        </textBox>
+        <textBox refId="TXT_LegacyKeyString">
+          <label>Legacy (CryptoAPI) encryption key</label>
+        </textBox>
+      </presentation>
+      
+      <presentation id="POL_AdmPwd_ClientReporting">
+        <textBox refId="TXT_ReportServer">
+          <label>Report server name</label>
+        </textBox>
+        <decimalTextBox refId="ELM_ReportServerPort" defaultValue="61184">Report server port</decimalTextBox>
+      </presentation>
+      
+      <presentation id="POL_AdmPwd_PDSList">
+				<multiTextBox refId="MULTI_TXT_PDSList">PDS instances to be used:
+        </multiTextBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

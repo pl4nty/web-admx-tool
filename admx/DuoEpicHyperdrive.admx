@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2014 Duo Security, Inc.  -->
+<!--  /policyDefinitions@schemaVersion is the version of the schema used by this file and must be 1.0 per Microsoft.
+    The revision of this ADMX file is /policyDefinitions@schema. -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   schemaVersion="1.0" revision="1.0" >
+  <policyNamespaces>
+    <target prefix="DuoEpicHyperdrive" namespace="hyperdrive.epic.windows.duosecurity.com" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+
+  <resources minRequiredRevision="1.0" />
+
+  <categories>
+    <!-- Root Computer Configuration\Policies\Administrative Templates -->
+    <category name="Duo" displayName="$(string.CategoryDuo_Display)" explainText="$(string.CategoryDuo_Explain)" />
+    <category name="Basic" displayName="$(string.CategoryBasic_Display)" explainText="$(string.CategoryBasic_Explain)" >
+      <parentCategory ref="Duo" />
+    </category>
+    <category name="Client" displayName="$(string.CategoryClient_Display)" explainText="$(string.CategoryClient_Explain)" >
+      <parentCategory ref="Duo" />
+    </category>
+  </categories>
+
+  <policies>
+
+    <!-- Notes:
+    1.  The supportedOn element with ref="windows:SUPPORTED_WindowsXP" indicates XP *and above*.
+    2.  Each policy element may be mapped to a presentation element in the ADML.  Any element that defines more or different than enabledValue/disabledValue must
+    	define presentation.
+    3.  Each value under a policy element is mapped to a corresponding child element within that presentation element.  This is done via mapping the ID attribute in this file to the refId in the ADML.
+    4.  All refs are case sensitive.  If a setting has no parentCategory ref, it is not displayed.
+    -->
+    <!-- BASIC -->
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="Host" displayName="$(string.Host_Display)" explainText="$(string.Host_Explain)" presentation="$(presentation.Host)" >
+      <parentCategory ref="Basic"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <elements>
+        <text id="Host_TextBox" valueName="Host" required="true" />
+      </elements>
+    </policy>
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="IKey" displayName="$(string.IKey_Display)" explainText="$(string.IKey_Explain)" presentation="$(presentation.IKey)" >
+      <parentCategory ref="Basic"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <elements>
+        <text id="IKey_TextBox" valueName="IKey" required="true" />
+      </elements>
+    </policy>
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="SKey" displayName="$(string.SKey_Display)" explainText="$(string.SKey_Explain)" presentation="$(presentation.SKey)" >
+      <parentCategory ref="Basic"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <elements>
+        <text id="SKey_TextBox" valueName="SKey" required="true" />
+      </elements>
+    </policy>
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="Use SSL v3" displayName="$(string.GuiProtocolSsl3_Display)" explainText="$(string.GuiProtocolSsl3_Explain)" valueName="UseSsl3" >
+      <parentCategory ref="Basic"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="Use TLS 1.0" displayName="$(string.GuiProtocolTls10_Display)" explainText="$(string.GuiProtocolTls10_Explain)" valueName="UseTls10" >
+      <parentCategory ref="Basic"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="Use TLS 1.1" displayName="$(string.GuiProtocolTls11_Display)" explainText="$(string.GuiProtocolTls11_Explain)" valueName="UseTls11" >
+      <parentCategory ref="Basic"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="Use TLS 1.2" displayName="$(string.GuiProtocolTls12_Display)" explainText="$(string.GuiProtocolTls12_Explain)" valueName="UseTls12" >
+      <parentCategory ref="Basic"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="TimeoutTotalOperation" displayName="$(string.TimeoutTotalOperation_Display)" explainText="$(string.TimeoutTotalOperation_Explain)" presentation="$(presentation.TimeoutTotalOperation)" >
+      <parentCategory ref="Basic"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <elements>
+        <decimal id="TimeoutTotalOperation_DecTextBox" valueName="TimeoutTotalOperation" minValue="0" maxValue="2147483647" />
+      </elements>
+    </policy>
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="GetCapabilitiesTimeout" displayName="$(string.TimeoutGetCapabilities_Display)" explainText="$(string.TimeoutGetCapabilities_Explain)" presentation="$(presentation.TimeoutGetCapabilities)" >
+      <parentCategory ref="Basic"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <elements>
+        <decimal id="TimeoutGetCapabilities_DecTextBox" valueName="GetCapabilitiesTimeout" minValue="0" maxValue="2147483647" />
+      </elements>
+    </policy>
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="GetCapabilitiesRetryCount" displayName="$(string.RetriesGetCapabilities_Display)" explainText="$(string.RetriesGetCapabilities_Explain)" presentation="$(presentation.RetriesGetCapabilities)" >
+      <parentCategory ref="Basic"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <elements>
+        <decimal id="RetriesGetCapabilities_DecTextBox" valueName="GetCapabilitiesRetryCount" minValue="0" maxValue="10" />
+      </elements>
+    </policy>
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="AutomaticRetryOnFailureCount" displayName="$(string.RetriesGeneral_Display)" explainText="$(string.RetriesGeneral_Explain)" presentation="$(presentation.RetriesGeneral)" >
+      <parentCategory ref="Basic"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <elements>
+        <decimal id="RetriesGeneral_DecTextBox" valueName="AutomaticRetryOnFailureCount" minValue="0" maxValue="10" />
+      </elements>
+    </policy>
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="HttpProxyHost" displayName="$(string.HttpProxyHost_Display)" explainText="$(string.HttpProxyHost_Explain)" presentation="$(presentation.HttpProxyHost)" >
+      <parentCategory ref="Basic"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <elements>
+        <text id="HttpProxyHost_TextBox" valueName="HttpProxyHost" required="true" />
+      </elements>
+    </policy>
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="HttpProxyPort" displayName="$(string.HttpProxyPort_Display)" explainText="$(string.HttpProxyPort_Explain)" presentation="$(presentation.HttpProxyPort)" >
+      <parentCategory ref="Basic"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <elements>
+        <decimal id="HttpProxyPort_DecTextBox" valueName="HttpProxyPort" minValue="0" maxValue="65536" />
+      </elements>
+    </policy>
+    
+    <!-- GUI -->
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="GuiCustomHelpUrl" displayName="$(string.GuiCustomHelpUrl_Display)" explainText="$(string.GuiCustomHelpUrl_Explain)" presentation="$(presentation.GuiCustomHelpUrl)">
+      <parentCategory ref="Client"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <elements>
+        <text id="GuiCustomHelpUrl_TextBox" valueName="GuiCustomHelpUrl" required="true" />
+      </elements>
+    </policy>
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="GuiCustomHelpTooltip" displayName="$(string.GuiCustomHelpTooltip_Display)" explainText="$(string.GuiCustomHelpTooltip_Explain)" presentation="$(presentation.GuiCustomHelpTooltip)" >
+      <parentCategory ref="Client"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <elements>
+        <text id="GuiCustomHelpTooltip_TextBox" valueName="GuiCustomHelpTooltip" required="true" />
+      </elements>
+    </policy>
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="GuiErrorPostfix" displayName="$(string.GuiErrorPostfix_Display)" explainText="$(string.GuiErrorPostfix_Explain)" presentation="$(presentation.GuiErrorPostfix)">
+      <parentCategory ref="Client"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <elements>
+        <text id="GuiErrorPostfix_TextBox" valueName="GuiErrorPostfix" required="true" />
+      </elements>
+    </policy>
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="GuiPermitOnlyDuoBypass" displayName="$(string.GuiPermitOnlyDuoBypass_Display)" explainText="$(string.GuiPermitOnlyDuoBypass_Explain)" valueName="GuiPermitOnlyDuoBypass" >
+      <parentCategory ref="Client"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="GuiErrorOnDisabledMobileOtp" displayName="$(string.GuiErrorOnDisabledMobileOtp_Display)" explainText="$(string.GuiErrorOnDisabledMobileOtp_Explain)" valueName="GuiErrorOnDisabledMobileOtp" >
+      <parentCategory ref="Client"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="GuiShowNeedHelp" displayName="$(string.GuiShowNeedHelp_Display)" explainText="$(string.GuiShowNeedHelp_Explain)" valueName="GuiShowNeedHelp" >
+      <parentCategory ref="Client"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="GuiDisplayUntranslatedError" displayName="$(string.GuiDisplayUntranslatedError_Display)" explainText="$(string.GuiDisplayUntranslatedError_Explain)" valueName="GuiDisplayUntranslatedError" >
+      <parentCategory ref="Client"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+	    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="GuiDisplayTranslatedError" displayName="$(string.GuiDisplayTranslatedError_Display)" explainText="$(string.GuiDisplayTranslatedError_Explain)" valueName="GuiDisplayTranslatedError" >
+      <parentCategory ref="Client"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="GuiAutoPush" displayName="$(string.GuiAutoPush_Display)" explainText="$(string.GuiAutoPush_Explain)" valueName="GuiAutoPush" >
+      <parentCategory ref="Client"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="GuiTopmost" displayName="$(string.GuiTopmost_Display)" explainText="$(string.GuiTopmost_Explain)" valueName="GuiTopmost" >
+      <parentCategory ref="Client"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy class="Machine" key="SOFTWARE\Wow6432Node\Policies\Duo Security\Duo Epic Hyperdrive" name="EpicEnableDebugLogging" displayName="$(string.EpicEnableDebugLogging_Display)" explainText="$(string.EpicEnableDebugLogging_Explain)" valueName="EpicEnableDebugLogging" >
+      <parentCategory ref="Client"/>
+      <supportedOn ref="windows:SUPPORTED_WindowsXP"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>

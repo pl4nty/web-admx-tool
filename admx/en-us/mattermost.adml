@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="0.1" schemaVersion="1.0">
+	<displayName/>
+	<description/>
+	<resources >
+		<stringTable >
+			<string id="RequiresMattermost43">Requires Mattermost Desktop 4.3 or later</string>
+            <string id="RequiresMattermost51">Requires Mattermost Desktop 5.1 or later</string>
+			<string id="mattermost">Mattermost</string>
+			
+      		<string id="EnableAutoUpdater">EnableAutoUpdater</string>
+			<string id="EnableAutoUpdaterDescription">If this policy is enabled, users will receive notifications when new versions of the desktop app are available. System Administrator privileges on the computer are required to install the update.</string>
+     
+			<string id="EnableServerManagement">EnableServerManagement</string>
+			<string id="EnableServerManagementDescription">If this policy is enabled, users can add or remove servers in their app settings, even if default servers are configured in DefaultServerList.
+
+If this policy is disabled, the Server Management section is hidden in the app settings and only servers defined by Group Policy can be used.</string>
+			<string id="DefaultServerList">DefaultServerList</string>
+			<string id="DefaultServerListDescription">If this policy is enabled, you can define one or more Mattermost servers that will be pre-configured for users when they launch the app. "Value name" represents the name of the corresponding server tab and "Value" is the URL of the Mattermost server.</string>
+			<string id="TrustedEmbeddedMediaOrigins">TrustedEmbeddedMediaOrigins</string>
+			<string id="TrustedEmbeddedMediaOriginsDescription">If this policy is enabled, you can define one or more embedded origins that may reuse media permissions granted to a Mattermost server origin. "Value name" must be unique and "Value" must be a JSON object with serverOrigin and embeddedOrigin string properties, for example {"serverOrigin":"https://chat.example.com","embeddedOrigin":"https://meet.example.com"}.</string>
+		</stringTable>
+		<presentationTable>
+			<presentation id="DefaultServerList">
+				<listBox refId="DefaultServerList">List of default Mattermost servers:</listBox>
+			</presentation>
+			<presentation id="TrustedEmbeddedMediaOrigins">
+				<listBox refId="TrustedEmbeddedMediaOrigins">List of trusted embedded media origins:</listBox>
+			</presentation>
+		</presentationTable>
+	</resources>
+</policyDefinitionResources>

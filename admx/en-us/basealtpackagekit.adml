@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2023 BaseALT, Ltd.  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" revision="1.0" schemaVersion="1.0">
+  <displayName>ALT PackageKit policies definitions</displayName>
+  <description>This file contains the PackageKit service policies definitions used by ALT operating system.</description>
+
+  <resources>
+    <stringTable>
+      <string id="ALT_PackageKit">PackageKit Permissions</string>
+      <string id="ALT_PackageKit_Help">Customize software installation from a package repository.</string>
+
+      <string id="org-freedesktop-packagekit-package-install">Permission to install packages</string>
+      <string id="org-freedesktop-packagekit-package-install_help">This policy grants or restricts users the right to install packages through the PackageKit package management interface.
+
+Disabled/Not configured — Permissions are determined by system settings. Default is «Auth_admin»
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permission is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+Action example: pkcon install "package_name"
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-freedesktop-packagekit-package-install-user">Permission to install packages</string>
+      <string id="org-freedesktop-packagekit-package-install-user_help">This policy grants or restricts users the right to install packages through the PackageKit package management interface.
+
+Disabled/Not configured — Permissions are determined by system settings. Default is «Auth_admin»
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permission is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+Action example: pkcon install "package_name"
+
+      </string>
+
+      <string id="org-freedesktop-packagekit-package-remove">Permission to remove packages</string>
+      <string id="org-freedesktop-packagekit-package-remove_help">This policy grants or restricts users the right to uninstall packages through the PackageKit package management interface.
+
+Disabled/Not configured — Permissions are determined by system settings. Default is «Auth_admin»
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permission is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+Action example: pkcon remove "package_name"
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-freedesktop-packagekit-package-remove-user">Permission to remove packages</string>
+      <string id="org-freedesktop-packagekit-package-remove-user_help">This policy grants or restricts users the right to uninstall packages through the PackageKit package management interface.
+
+Disabled/Not configured — Permissions are determined by system settings. Default is «Auth_admin»
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permission is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+Action example: pkcon remove "package_name"
+
+      </string>
+
+      <string id="org-freedesktop-packagekit-system-update">Permission to update packages</string>
+      <string id="org-freedesktop-packagekit-system-update_help">This policy grants or restricts users the right to update packages installed on the system through the PackageKit package management interface.
+
+Disabled/Not configured — Permissions are determined by system settings. Default is «Auth_admin»
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permission is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+Action example: pkcon update
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-freedesktop-packagekit-system-update-user">Permission to update packages</string>
+      <string id="org-freedesktop-packagekit-system-update-user_help">Disabled/Not configured — Permissions are determined by system settings. Default is «Auth_admin»
+
+Disabled/Not configured — permissions are determined by system settings — default settings for polkit actions;
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permission is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+Action example: pkcon update
+
+      </string>
+
+      <string id="org-freedesktop-packagekit-system-sources-refresh">Permission to update system package sources</string>
+      <string id="org-freedesktop-packagekit-system-sources-refresh_help">This policy grants or restricts users the right to update system package sources using the PackageKit package management interface.
+
+Disabled/Not configured — Permissions are determined by system settings. Default is «Auth_admin»
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permission is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+Action example: pkcon refresh
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-freedesktop-packagekit-system-sources-refresh-user">Permission to update system package sources</string>
+      <string id="org-freedesktop-packagekit-system-sources-refresh-user_help">This policy grants or restricts users the right to update system package sources using the PackageKit package management interface.
+
+Disabled/Not configured — Permissions are determined by system settings. Default is «Auth_admin»
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permission is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+Action example: pkcon refresh
+
+      </string>
+
+      <string id="org-freedesktop-packagekit-repair-system">Permission to restore packages on the system</string>
+      <string id="org-freedesktop-packagekit-repair-system_help">This policy grants or restricts users the right to restore the package system if it has problems, such as missing dependencies, through the PackageKit package management interface.
+
+Disabled/Not configured — Permissions are determined by system settings. Default is «Auth_admin»
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permission is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+Action example: pkcon repair
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-freedesktop-packagekit-repair-system-user">Permission to restore packages on the system</string>
+      <string id="org-freedesktop-packagekit-repair-system-user_help">This policy grants or restricts users the right to restore the package system if it has problems, such as missing dependencies, through the PackageKit package management interface.
+
+Disabled/Not configured — Permissions are determined by system settings. Default is «Auth_admin»
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permission is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+Action example: pkcon repair
+
+      </string>
+
+      <string id="org-freedesktop-packagekit-system-sources-configure">Permission to edit batch sources </string>
+      <string id="org-freedesktop-packagekit-system-sources-configure_help">This policy grants or restricts users to edit package sources on the system through the PackageKit package management interface.
+
+Disabled/Not configured — Permissions are determined by system settings. Default is «Auth_admin»
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permission is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-freedesktop-packagekit-system-sources-configure-user">Permission to edit batch sources </string>
+      <string id="org-freedesktop-packagekit-system-sources-configure-user_help">This policy grants or restricts users to edit package sources on the system through the PackageKit package management interface.
+
+Disabled/Not configured — Permissions are determined by system settings. Default is «Auth_admin»
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permission is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+      </string>
+
+      <string id="org-freedesktop-packagekit-package-install-untrusted">Permission to install unverified packages</string>
+      <string id="org-freedesktop-packagekit-package-install-untrusted_help">This policy grants or restricts user rights to install untrusted or unverified packages for external PackageKit package management.
+
+Disabled/Not configured — Permissions are determined by system settings. Default is «Auth_admin»
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permission is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-freedesktop-packagekit-package-install-untrusted-user">Permission to install unverified packages</string>
+      <string id="org-freedesktop-packagekit-package-install-untrusted-user_help">This policy grants or restricts user rights to install untrusted or unverified packages for external PackageKit package management.
+
+Disabled/Not configured — Permissions are determined by system settings. Default is «Auth_admin»
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permission is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+      </string>
+
+      <string id="org-freedesktop-packagekit-package-reinstall">Permission to install unverified packages</string>
+      <string id="org-freedesktop-packagekit-package-reinstall_help">This policy grants or restricts users the right to reinstall packages through the PackageKit package management interface.
+
+Disabled/Not configured — Permissions are determined by system settings. Default is «Auth_admin»
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permission is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-freedesktop-packagekit-package-reinstall-user">Permission to install unverified packages</string>
+      <string id="org-freedesktop-packagekit-package-reinstall-user_help">This policy grants or restricts users the right to reinstall packages through the PackageKit package management interface.
+
+Disabled/Not configured — Permissions are determined by system settings. Default is «Auth_admin»
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permission is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+      </string>
+
+      <string id="org-freedesktop-packagekit-package-eula-accept">Permission to accept the license agreement</string>
+      <string id="org-freedesktop-packagekit-package-eula-accept_help">This policy grants or restricts the right to accept the software user agreement through the PackageKit package management interface.
+
+Disabled/Not configured — Permissions are determined by system settings. Default is «Auth_admin»
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permission is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-freedesktop-packagekit-package-eula-accept-user">Permission to accept the license agreement</string>
+      <string id="org-freedesktop-packagekit-package-eula-accept-user_help">This policy grants or restricts the right to accept the software user agreement through the PackageKit package management interface.
+
+Disabled/Not configured — Permissions are determined by system settings. Default is «Auth_admin»
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permission is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+      </string>
+
+      <string id="org-freedesktop-packagekit-system-trust-signing-key">Permission to add the signing key</string>
+      <string id="org-freedesktop-packagekit-system-trust-signing-key_help">This policy grants or restricts users the right to add the signing key to the list of trusted keys in the system through the PackageKit package management interface.
+
+Disabled/Not configured — Permissions are determined by system settings. Default is «Auth_admin»
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permission is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+The "Block" option prevents the user from changing this setting. Blocking a policy makes it a priority over a similar policy for the user.
+
+      </string>
+
+      <string id="org-freedesktop-packagekit-system-trust-signing-key-user">Permission to add the signing key</string>
+      <string id="org-freedesktop-packagekit-system-trust-signing-key-user_help">This policy grants or restricts users the right to add the signing key to the list of trusted keys in the system through the PackageKit package management interface.
+
+Disabled/Not configured — Permissions are determined by system settings. Default is «Auth_admin»
+
+Enabled — permission to mount with set rights;
+
+Possible values:
+
+"No" — block permissions (the user is not allowed to perform the action);
+
+"Yes" — grant permissions (the user can perform the action without any authentication);
+
+"Auth_self" — The user must enter their password to authenticate. Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin" permission is generally recommended;
+
+"Auth_admin" — The user must enter an administrator password on each request. Requires user authentication with administrator rights;
+
+"Auth_self_keep" — Similar to "Auth_self", but the authorization is kept for a short period of time (for example, five minutes). Note that this permission is not sufficient for most uses on multi-user systems, the "Auth_admin_keep" permission is generally recommended;
+
+"Auth_admin_keep" — similar to "Auth_admin", but the authorization is kept for a short period of time (for example, five minutes);
+
+Note: the possession of administrative rights in the context of PolicyKit is determined by its rules. By default, Alt asks for the password of the user in the "wheel" group.
+
+      </string>
+
+      <string id="org-freedesktop-packagekit-package-No">No</string>
+      <string id="org-freedesktop-packagekit-package-Yes">Yes</string>
+      <string id="org-freedesktop-packagekit-package-Auth-self">Auth_self</string>
+      <string id="org-freedesktop-packagekit-package-Auth-admin">Auth_admin</string>
+      <string id="org-freedesktop-packagekit-package-Auth-self-keep">Auth_self_keep</string>
+      <string id="org-freedesktop-packagekit-package-Auth-admin-keep">Auth_admin_keep</string>
+
+    </stringTable>
+    <presentationTable>
+      <presentation id="org-freedesktop-packagekit-package-pr">
+        <dropdownList noSort="true" defaultItem="1" refId="OrgFreedesktopPackagekitPackage_setter">Restriction Options:</dropdownList>
+        <checkBox refId="OrgFreedesktopPackagekitPackage_blocker">Block</checkBox>
+      </presentation>
+      <presentation id="org-freedesktop-packagekit-package-user-pr">
+        <dropdownList noSort="true" defaultItem="1" refId="OrgFreedesktopPackagekitPackage_setter">Restriction Options:</dropdownList>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

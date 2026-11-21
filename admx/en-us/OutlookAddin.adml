@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+	<displayName>NoSpamProxy Outlook Add-In</displayName>
+	<description>Enables or disables different features of the NoSpamProxy Outlook Add-In</description>
+	<resources>
+		<stringTable>
+			<string id="SUPPORTED_OutlookAddin78OrHigher">Outlook Add-In 7.8 or higher</string>
+			<string id="SUPPORTED_OutlookAddin85OrHigher">Outlook Add-In 8.5 or higher</string>
+			<string id="SUPPORTED_OutlookAddin90OrHigher">Outlook Add-In 9.0 or higher</string>
+			<string id="SUPPORTED_OutlookAddin91OrHigher">Outlook Add-In 9.1 or higher</string>
+			<string id="SUPPORTED_OutlookAddin92OrHigher">Outlook Add-In 9.2 or higher</string>
+			<string id="SUPPORTED_OutlookAddin130OrHigher">Outlook Add-In 13.0 or higher</string>
+
+			<string id="ConfigureReplyLinkExpirationTimeInDaysDisplayName">Expiration of Large File Replies</string>
+			<string id="ConfigureReplyLinkExpirationTimeInDaysExplainText">Defines an expiration date for Large File reply links.</string>
+
+			<string id="ConfigureReplyLinkReplyLimitDisplayName">Large Files reply limit</string>
+			<string id="ConfigureReplyLinkReplyLimitExplainText">Defines a limit for the maximum number of replies to this message.</string>
+
+			<string id="ReplyLinkReplyLimitNever">Any number</string>
+			<string id="ReplyLinkReplyLimit1">1</string>
+			<string id="ReplyLinkReplyLimit2">2</string>
+			<string id="ReplyLinkReplyLimit3">3</string>
+			<string id="ReplyLinkReplyLimit5">5</string>
+			<string id="ReplyLinkReplyLimit10">10</string>
+			
+			<string id="ReplyLinkExpirationTimeInDaysNever">Never</string>
+			<string id="ReplyLinkExpirationTimeInDaysToday">Today at midnight</string>
+			<string id="ReplyLinkExpirationTimeInDays1Day">One day</string>
+			<string id="ReplyLinkExpirationTimeInDays2Days">Two days</string>
+			<string id="ReplyLinkExpirationTimeInDays3Days">Three days</string>
+			<string id="ReplyLinkExpirationTimeInDays5Days">Five days</string>
+			<string id="ReplyLinkExpirationTimeInDays7Days">Seven days</string>
+			<string id="ReplyLinkExpirationTimeInDays10Days">Ten days</string>
+			<string id="ReplyLinkExpirationTimeInDays14Days">Fourteen days</string>
+			<string id="ReplyLinkExpirationTimeInDays1Month">One month</string>
+			<string id="ReplyLinkExpirationTimeInDays2Month">Two months</string>
+			<string id="ReplyLinkExpirationTimeInDays3Month">Three months</string>
+			<string id="ReplyLinkExpirationTimeInDays4Month">Four months</string>
+			<string id="ReplyLinkExpirationTimeInDays6Month">Six month</string>
+			<string id="ReplyLinkExpirationTimeInDays1Year">One year</string>
+
+			<string id="NetAtWorkMailGatewayCategoryDisplayName">Net at Work NoSpamProxy</string>
+			<string id="NetAtWorkMailGatewayCategoryExplainText">Configures features of NoSpamProxy.</string>
+			
+			<string id="OutlookAddinCategoryDisplayName">Outlook Add-In</string>
+			<string id="OutlookAddinCategoryExplainText">Enables or disables features of the Outlook Add-In.</string>
+
+			<string id="ConfigureResponseLinkTextDisplayName">Replay link text</string>
+			<string id="ConfigureResponseLinkTextExplainText">Defines an alternative text for the Large Files reply link. If no alternative text is entered the default text will be displayed.</string>
+
+			<string id="ConfigureWebPortalSharedSecretDisplayName">Shared Web Portal password</string>
+			<string id="ConfigureWebPortalSharedSecretExplainText">Defines a password shared between Web Portal and NoSpamProxy Outlook Add-In. The shared password must be entered in the Web Portal settings of the management console and in all instances of the NoSpamProxy Outlook Add-In to ensure that Large Files can upload files.</string>
+
+			<string id="ConfigureWebPortalUrlDisplayName">Web Portal URL</string>
+			<string id="ConfigureWebPortalUrlExplainText">Defines the Web Portal URL, for example 'https://portal.example.com/enqsig'. The 'Large Files' section in the ribbon of a new e-mail message is displayed if the policy is enabled and configured with a valid URL. The section is hidden if the policy is not configured or if the configured URL has an invalid format.</string>
+
+			<string id="ConfigureDecryptPdfAvailableDisplayName">Show 'Decrypt PDF attachments'</string>
+			<string id="ConfigureDecryptPdfAvailableExplainText">Displays the 'Decrypt PDF attachments' button in the ribbon if enabled. Hides the button if disabled. The button is shown if the policy is not configured.</string>
+
+			<string id="ConfigureUrlProtectionAvailableDisplayName">Protect all files</string>
+			<string id="ConfigureUrlProtectionAvailableExplainText">Displays the 'Protect all files' button in the ribbon if enabled. Hides the button if disabled. The button is shown if the policy is not configured.</string>
+
+
+			<string id="ConfigureAutomaticEncryptionAvailableDisplayName">Show 'Automatic encryption'</string>
+			<string id="ConfigureAutomaticEncryptionAvailableExplainText">Displays the 'Automatic encryption' button in the ribbon if enabled. Hides the button if disabled. The button is shown if the policy is not configured.</string>
+
+			<string id="ConfigurePdfSecurityAvailableDisplayName">Show 'PDF Mail'</string>
+			<string id="ConfigurePdfSecurityAvailableExplainText">Displays the 'PDF Mail' button in the ribbon if enabled. Hides the button if disabled. The button is shown if the policy is not configured.</string>
+
+			<string id="ConfigurePdfPasswordGeneratorAvailableDisplayName">Show  PDF Password Generator option</string>
+			<string id="ConfigurePdfPasswordGeneratorAvailableExplainText">Displays the PDF password generator option in the dialog if enabled. Hides the option if disabled. The option is shown if the policy is not configured.</string>
+
+			<string id="ConfigureTextMessageForPdfPasswordAvailableDisplayName">Show Text-message for PDF Password option</string>
+			<string id="ConfigureTextMessageForPdfPasswordAvailableExplainText">Displays the Text-message for PDF password option in the dialog if enabled. Hides the option if disabled. The option is shown if the policy is not configured.</string>
+
+			<string id="ConfigureMailEncryptionAvailableDisplayName">Show 'Mail encryption'</string>
+			<string id="ConfigureMailEncryptionAvailableExplainText">Displays the 'Mail encryption' button in the ribbon if enabled. Hides the button if disabled. The button is shown if the policy is not configured.</string>
+
+			<string id="ConfigureDeMailDeliveryOptionsAvailableDisplayName">Show 'De-Mail'</string>
+			<string id="ConfigureDeMailDeliveryOptionsAvailableExplainText">Displays the 'De-Mail' button in the ribbon if enabled. Hides the button if disabled. The button is hidden if the policy is not configured.</string>
+
+			<string id="ConfigureConfirmationOfRetrieveAvailableDisplayName">Show 'Confirmation of retrieval'</string>
+			<string id="ConfigureConfirmationOfRetrieveAvailableExplainText">Displays the 'Confirmation of retrieval' option in De-Mail dialog if enabled. Hides the option if disabled. The option is hidden if the policy is not configured.</string>
+
+			<string id="ConfigureWriteSubjectFlagsDisplayName">Write subject flags</string>
+			<string id="ConfigureWriteSubjectFlagsExplainText">Subject flags are written in addition to e-mail headers if enabled. E-mail headers are written without subject flags if disabled. E-mail headers are written without subject flags if the policy is not configured.</string>
+
+		</stringTable>
+		
+		<presentationTable>
+			<presentation id="ResponseLinkText">
+				<textBox refId="ResponseLinkTextPresentation">
+					<label>Alternative text:</label>
+					<defaultValue>Use this link to reply securely and to send large files.</defaultValue>
+				</textBox>
+			</presentation>
+			<presentation id="WebPortalSharedSecret">
+				<textBox refId="WebPortalSharedSecretPresentation">
+					<label>Web Portal shared secret:</label>
+					<defaultValue>Example Password</defaultValue>
+				</textBox>
+			</presentation>
+			<presentation id="WebPortalUrl">
+				<textBox refId="WebPortalUrlPresentation">
+					<label>Web Portal URL:</label>
+					<defaultValue>https://portal.example.com/enqsig</defaultValue>
+				</textBox>
+			</presentation>
+			<presentation id="ReplyLinkExpirationTimeInDays">
+				<dropdownList refId="ReplyLinkExpirationTimeInDaysPresentation"
+					noSort="true"
+					defaultItem="9">Replies for Large Files expire after:</dropdownList>
+			</presentation>
+			<presentation id="ReplyLinkReplyLimit">
+				<dropdownList refId="ReplyLinkReplyLimitPresentation"
+					noSort="true"
+					defaultItem="0">Invitations for Large Files can be used this often:</dropdownList>
+			</presentation>
+		</presentationTable>
+		
+	</resources>
+</policyDefinitionResources>
