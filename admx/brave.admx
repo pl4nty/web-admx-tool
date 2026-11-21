@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0">
-  <!--brave version: 158.1.102.22-->
+  <!--brave version: 159.1.102.26-->
   <policyNamespaces>
     <target namespace="BraveSoftware.Policies.Brave" prefix="brave"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -2372,6 +2372,24 @@
         </enum>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.GeminiChromeFileUploadSettings)" explainText="$(string.GeminiChromeFileUploadSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="GeminiChromeFileUploadSettings" presentation="$(presentation.GeminiChromeFileUploadSettings)">
+      <parentCategory ref="GenerativeAI"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="GeminiChromeFileUploadSettings" valueName="GeminiChromeFileUploadSettings">
+          <item displayName="$(string.GeminiChromeFileUploadSettings_Allowed)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.GeminiChromeFileUploadSettings_Disabled)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.GeminiSettings)" explainText="$(string.GeminiSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="GeminiSettings" presentation="$(presentation.GeminiSettings)">
       <parentCategory ref="GenerativeAI"/>
       <supportedOn ref="SUPPORTED_WIN7"/>
@@ -2442,29 +2460,6 @@
             </value>
           </item>
           <item displayName="$(string.HelpMeWriteSettings_Disabled)">
-            <value>
-              <decimal value="2"/>
-            </value>
-          </item>
-        </enum>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.HistorySearchSettings)" explainText="$(string.HistorySearchSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="HistorySearchSettings" presentation="$(presentation.HistorySearchSettings)">
-      <parentCategory ref="GenerativeAI"/>
-      <supportedOn ref="SUPPORTED_WIN7"/>
-      <elements>
-        <enum id="HistorySearchSettings" valueName="HistorySearchSettings">
-          <item displayName="$(string.HistorySearchSettings_Allowed)">
-            <value>
-              <decimal value="0"/>
-            </value>
-          </item>
-          <item displayName="$(string.HistorySearchSettings_AllowedWithoutLogging)">
-            <value>
-              <decimal value="1"/>
-            </value>
-          </item>
-          <item displayName="$(string.HistorySearchSettings_Disabled)">
             <value>
               <decimal value="2"/>
             </value>
@@ -6481,6 +6476,29 @@
       <supportedOn ref="SUPPORTED_WIN7"/>
       <elements>
         <text id="FirstPartySetsOverrides" maxLength="1000000" valueName="FirstPartySetsOverrides"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.HistorySearchSettings)" explainText="$(string.HistorySearchSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="HistorySearchSettings" presentation="$(presentation.HistorySearchSettings)">
+      <parentCategory ref="RemovedPolicies"/>
+      <supportedOn ref="SUPPORTED_WIN7"/>
+      <elements>
+        <enum id="HistorySearchSettings" valueName="HistorySearchSettings">
+          <item displayName="$(string.HistorySearchSettings_Allowed)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.HistorySearchSettings_AllowedWithoutLogging)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.HistorySearchSettings_Disabled)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+        </enum>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.TabOrganizerSettings)" explainText="$(string.TabOrganizerSettings_Explain)" key="Software\Policies\BraveSoftware\Brave" name="TabOrganizerSettings" presentation="$(presentation.TabOrganizerSettings)">
