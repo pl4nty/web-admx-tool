@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--JumpCloud Go jdoahkhfkeipblhbhppmcbdgapeoaopa version: 3.2.0 generator: 43686a3e7d80-->
+  <displayName>JumpCloud Go</displayName>
+  <description>Policies for the JumpCloud Go browser extension, generated from its managed storage schema</description>
+  <resources>
+    <stringTable>
+      <string id="extension_clientId">Service Account Client ID</string>
+      <string id="extension_clientId_Explain">JumpCloud service account client ID (sa_…).</string>
+      <string id="extension_clientSecret">Service Account Client Secret</string>
+      <string id="extension_clientSecret_Explain">JumpCloud service account client secret.</string>
+      <string id="extension_region">SaaS API Region</string>
+      <string id="extension_region_Explain">Optional SaaS API region (for example eu, in, stg01). Leave empty for the default US region. When set, token exchange uses this region directly.</string>
+      <string id="SUPPORTED_EXTENSION">JumpCloud Go browser extension</string>
+      <string id="extension">JumpCloud Go</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="extension_clientId">
+        <textBox refId="extension_clientId_Part">
+          <label>Service Account Client ID</label>
+        </textBox>
+      </presentation>
+      <presentation id="extension_clientSecret">
+        <textBox refId="extension_clientSecret_Part">
+          <label>Service Account Client Secret</label>
+        </textBox>
+      </presentation>
+      <presentation id="extension_region">
+        <textBox refId="extension_region_Part">
+          <label>SaaS API Region</label>
+        </textBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>
