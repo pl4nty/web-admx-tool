@@ -88,7 +88,7 @@ Changes may not take full effect until VS Code is restarted.</string>
 			<string id="ChatExtraMarketplaces">ChatExtraMarketplaces</string>
 			<string id="ChatExtraMarketplaces_chat_plugins_extraMarketplaces_policy">Additional plugin marketplaces to query. Keys are marketplace names; values are GitHub shorthand (`owner/repo[#ref]`) or Git URIs (`{url}[#ref]`), optionally with an enterprise-managed auto-update override.</string>
 			<string id="ChatHooks">ChatHooks</string>
-			<string id="ChatHooks_chat_useHooks_description">Controls whether chat hooks are executed at strategic points during an agent's workflow. Hooks are loaded from the files configured in `#chat.hookFilesLocations#`. This setting is only used by the Local agent harness.</string>
+			<string id="ChatHooks_chat_useHooks_description">Controls whether chat hooks are executed at strategic points during an agent's workflow. The Local agent harness loads hooks from the files configured in `#chat.hookFilesLocations#`. In Copilot sessions, turning this off stops repository hooks and hooks in custom agents from the next message, while hooks in `~/.copilot` and in plugins still run. Copilot sessions use this setting from user settings or policy, not from workspace settings.</string>
 			<string id="ChatMCP">ChatMCP</string>
 			<string id="ChatMCP_chat_mcp_access">Controls access to installed Model Context Protocol servers.</string>
 			<string id="ChatMCP_chat_mcp_access_none">No access to MCP servers.</string>
