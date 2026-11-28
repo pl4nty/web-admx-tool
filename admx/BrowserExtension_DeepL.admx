@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--DeepL fancfknaplihpclbhbpclnmmjcjanbaf version: 1.101.0 generator: ba5f4604ca2d-->
+  <policyNamespaces>
+    <target namespace="BrowserExtension.fancfknaplihpclbhbpclnmmjcjanbaf" prefix="ext_fancfknaplihpclbhbpclnmmjcjanbaf"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
+  </categories>
+  <policies>
+    <policy name="extension_requireLogin" class="Both" displayName="$(string.extension_requireLogin)" explainText="$(string.extension_requireLogin_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\fancfknaplihpclbhbpclnmmjcjanbaf\policy" valueName="requireLogin">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_suggestIdp" class="Both" displayName="$(string.extension_suggestIdp)" explainText="$(string.extension_suggestIdp_Explain)" presentation="$(presentation.extension_suggestIdp)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\fancfknaplihpclbhbpclnmmjcjanbaf\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_suggestIdp_Part" valueName="suggestIdp" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_customExtensionIcon" class="Both" displayName="$(string.extension_customExtensionIcon)" explainText="$(string.extension_customExtensionIcon_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\fancfknaplihpclbhbpclnmmjcjanbaf\policy" valueName="customExtensionIcon">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_enforceSsoAutologin" class="Both" displayName="$(string.extension_enforceSsoAutologin)" explainText="$(string.extension_enforceSsoAutologin_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\fancfknaplihpclbhbpclnmmjcjanbaf\policy" valueName="enforceSsoAutologin">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_skipOnboarding" class="Both" displayName="$(string.extension_skipOnboarding)" explainText="$(string.extension_skipOnboarding_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\fancfknaplihpclbhbpclnmmjcjanbaf\policy" valueName="skipOnboarding">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_disableFloatingIcon" class="Both" displayName="$(string.extension_disableFloatingIcon)" explainText="$(string.extension_disableFloatingIcon_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\fancfknaplihpclbhbpclnmmjcjanbaf\policy" valueName="disableFloatingIcon">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_disableFloatingIconByDefault" class="Both" displayName="$(string.extension_disableFloatingIconByDefault)" explainText="$(string.extension_disableFloatingIconByDefault_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\fancfknaplihpclbhbpclnmmjcjanbaf\policy" valueName="disableFloatingIconByDefault">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_preventFeedbackSurvey" class="Both" displayName="$(string.extension_preventFeedbackSurvey)" explainText="$(string.extension_preventFeedbackSurvey_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\fancfknaplihpclbhbpclnmmjcjanbaf\policy" valueName="preventFeedbackSurvey">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_hideWrite" class="Both" displayName="$(string.extension_hideWrite)" explainText="$(string.extension_hideWrite_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\fancfknaplihpclbhbpclnmmjcjanbaf\policy" valueName="hideWrite">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>

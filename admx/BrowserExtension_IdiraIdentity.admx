@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--Idira Identity mblkikdcdlfpljlmgijhccbhiijkhded version: 26.14.2 generator: 024db902d03d-->
+  <policyNamespaces>
+    <target namespace="BrowserExtension.mblkikdcdlfpljlmgijhccbhiijkhded" prefix="ext_mblkikdcdlfpljlmgijhccbhiijkhded"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
+  </categories>
+  <policies>
+    <policy name="extension_tenantId" class="Both" displayName="$(string.extension_tenantId)" presentation="$(presentation.extension_tenantId)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\mblkikdcdlfpljlmgijhccbhiijkhded\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_tenantId_Part" valueName="tenantId" maxLength="1048576"/>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

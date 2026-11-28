@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <!--LanguageTool hfjadhjooeceemgojogkhlppanjkbobc version: 11.4.0 generator: 16028ff8aa75-->
+  <policyNamespaces>
+    <target namespace="BrowserExtension.hfjadhjooeceemgojogkhlppanjkbobc" prefix="ext_hfjadhjooeceemgojogkhlppanjkbobc"/>
+    <using namespace="BrowserExtension" prefix="browserextension"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_EXTENSION" displayName="$(string.SUPPORTED_EXTENSION)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="extension" displayName="$(string.extension)">
+      <parentCategory ref="browserextension:BrowserExtensions"/>
+    </category>
+  </categories>
+  <policies>
+    <policy name="extension_loginUrl" class="Both" displayName="$(string.extension_loginUrl)" explainText="$(string.extension_loginUrl_Explain)" presentation="$(presentation.extension_loginUrl)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hfjadhjooeceemgojogkhlppanjkbobc\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_loginUrl_Part" valueName="loginUrl" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_apiServerUrl" class="Both" displayName="$(string.extension_apiServerUrl)" explainText="$(string.extension_apiServerUrl_Explain)" presentation="$(presentation.extension_apiServerUrl)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hfjadhjooeceemgojogkhlppanjkbobc\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <text id="extension_apiServerUrl_Part" valueName="apiServerUrl" maxLength="1048576"/>
+      </elements>
+    </policy>
+    <policy name="extension_disablePrivacyConfirmation" class="Both" displayName="$(string.extension_disablePrivacyConfirmation)" explainText="$(string.extension_disablePrivacyConfirmation_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hfjadhjooeceemgojogkhlppanjkbobc\policy" valueName="disablePrivacyConfirmation">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_disablePersonalDictionary" class="Both" displayName="$(string.extension_disablePersonalDictionary)" explainText="$(string.extension_disablePersonalDictionary_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hfjadhjooeceemgojogkhlppanjkbobc\policy" valueName="disablePersonalDictionary">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_disableIgnoredRules" class="Both" displayName="$(string.extension_disableIgnoredRules)" explainText="$(string.extension_disableIgnoredRules_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hfjadhjooeceemgojogkhlppanjkbobc\policy" valueName="disableIgnoredRules">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_disableOpenInEditor" class="Both" displayName="$(string.extension_disableOpenInEditor)" explainText="$(string.extension_disableOpenInEditor_Explain)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hfjadhjooeceemgojogkhlppanjkbobc\policy" valueName="disableOpenInEditor">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy name="extension_allowedURLs" class="Both" displayName="$(string.extension_allowedURLs)" explainText="$(string.extension_allowedURLs_Explain)" presentation="$(presentation.extension_allowedURLs)" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hfjadhjooeceemgojogkhlppanjkbobc\policy">
+      <parentCategory ref="extension"/>
+      <supportedOn ref="SUPPORTED_EXTENSION"/>
+      <elements>
+        <list id="extension_allowedURLs_Part" key="Software\Policies\Microsoft\Edge\3rdparty\extensions\hfjadhjooeceemgojogkhlppanjkbobc\policy\allowedURLs" valuePrefix=""/>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>
