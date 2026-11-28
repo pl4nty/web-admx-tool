@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Version 7.18.0 -->
+<policyDefinitionResources revision="501.0" schemaVersion="1.0">
+  <displayName></displayName>
+  <description></description>
+  <resources>
+    <stringTable>
+      <string id="RealVNC_licensing_category">Licensing</string>
+      <string id="RealVNC_restrictions_category">Restrictions</string>
+      <string id="RealVNC_licensing_category_help">Apply one or more license keys to VNC Server.</string>
+      <string id="RealVNC_restrictions_category_help">Apply restrictions to the operation of VNC Server.</string>
+      <string id="RealVNC_vncserver_Machine_vncserverlicense_6x">Legacy 6.x License Key Code</string>
+      <string id="RealVNC_vncserver_Machine_vncserverlicense_6x_help">Apply a legacy 6.x license key code to VNC Server.
+
+THIS IS A LEGACY POLICY. The license key applies to version 6.x of the software. It is ignored by the latest version, and only needs to be set if policy is being deployed to computers running older versions.
+        
+Enable this policy setting and specify a RealVNC license key code as the value (this is 25 alphanumeric characters divided by hyphens into 5 groups of 5 characters each).
+
+Disable or do not configure this policy setting in order to not apply a license. VNC Server must be licensed on each computer.</string>
+
+      <string id="RealVNC_vncserver_Machine_vncserverlicense">Offline license</string>
+      <string id="RealVNC_vncserver_Machine_vncserverlicense_help">Apply an offline license to VNC Server.
+        
+Enable this policy setting and specify a RealVNC offline license as the value.
+
+Disable or do not configure this policy setting in order to not apply a license.</string>
+      <string id="RealVNC_vncserver_Machine_blocknonpolicyservers">Disable VNC Server if the license key does not support group policy.</string>
+      <string id="RealVNC_vncserver_Machine_blocknonpolicyservers_help">Enable this policy setting to prevent connections to VNC Server if the license does not support group policy.
+      
+Disable or do not configure this policy setting in order to allow connections irrespective of license type.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="RealVNC_vncserver_Machine_vncserverlicense">
+        <textBox refId="Value">
+          <label>Value</label>
+          <defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="RealVNC_vncserver_Machine_vncserverlicense_6x">
+        <textBox refId="Value">
+          <label>Value</label>
+          <defaultValue></defaultValue>
+        </textBox>
+      </presentation>         
+      <presentation id="RealVNC_vncserver_Machine_blocknonpolicyservers">
+      </presentation>       
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

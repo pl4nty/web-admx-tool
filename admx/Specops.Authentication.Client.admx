@@ -1,0 +1,1174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+	
+	<policyNamespaces>
+		<target prefix="SpecopsUResetClient" namespace="Specopssoft.Authentication.Client" />
+		<using prefix="windows" namespace="Microsoft.Policies.Windows" />
+	</policyNamespaces>
+
+	<resources minRequiredRevision="1.0" />
+
+	<supportedOn>
+		<definitions>
+			<definition name="SUPPORTED_NotSpecified" displayName="$(string.ADMXMigrator_NoSupportedOn)" />
+		</definitions>
+	</supportedOn>
+	
+	<categories>
+		
+		<category name="SpecopsUResetClient" displayName="$(string.SpecopsUResetClient)" />
+
+		<category name="GeneralSettings" displayName="$(string.GeneralSettings)">
+			<parentCategory ref="SpecopsUResetClient" />
+		</category>
+
+		<category name="WindowsLogonScreen" displayName="$(string.WindowsLogonScreenText)">
+			<parentCategory ref="SpecopsUResetClient" />
+		</category>
+
+		<category name="SeparateLogonTileSettings" displayName="$(string.SeparateLogonTileSettings)">
+			<parentCategory ref="SpecopsUResetClient" />
+		</category>
+
+		<category name="PasswordUrlsUReset" displayName="$(string.PasswordUrlsUReset)">
+			<parentCategory ref="SpecopsUResetClient" />
+		</category>
+
+		<category name="PasswordUrlsSpr" displayName="$(string.PasswordUrlsSpr)">
+			<parentCategory ref="SpecopsUResetClient" />
+		</category>
+
+		<category name="SpecopsPasswordPolicy" displayName="$(string.SpecopsPasswordPolicy)">
+			<parentCategory ref="SpecopsUResetClient" />
+		</category>
+
+		<category name="SpecopsPasswordReset" displayName="$(string.SpecopsPasswordReset)">
+			<parentCategory ref="SpecopsUResetClient" />
+		</category>
+
+		<category name="SecuredBrowser" displayName="$(string.SecuredBrowser)">
+			<parentCategory ref="SpecopsUResetClient" />
+		</category>
+
+		<category name="DynamicFeedbackPasswordChange" displayName="$(string.DynamicFeedbackPasswordChange)">
+			<parentCategory ref="SpecopsUResetClient" />
+		</category>
+
+		<category name="AzureSSPR" displayName="$(string.AzureSSPR)">
+			<parentCategory ref="SpecopsUResetClient" />
+		</category>
+
+		<category name="MfaLogin" displayName="$(string.MfaLogin)">
+			<parentCategory ref="SpecopsUResetClient" />
+		</category>		
+
+		<category name="CertificateAuthentication" displayName="$(string.CertificateAuthentication)">
+			<parentCategory ref="SpecopsUResetClient" />
+		</category>
+	</categories>
+
+	<policies>
+			
+		<policy name="CertificateSithsEnabled" class="Machine"
+				displayName="$(string.CertificateSithsEnabled)"
+				explainText="$(string.CertificateSithsEnabledExplain)"
+				presentation="$(presentation.CertificateSithsEnabledPresentation)"
+				key="Software\Policies\SpecopsSoft\uReset\Client\SecuredBrowser\CertificateAuthentication"
+				valueName="SithsEnabled">
+			<parentCategory ref="CertificateAuthentication" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="CertificateEnabled" class="Machine"
+				displayName="$(string.CertificateEnabled)"
+				explainText="$(string.CertificateEnabledExplain)"
+				presentation="$(presentation.CertificateEnabledPresentation)"
+				key="Software\Policies\SpecopsSoft\uReset\Client\SecuredBrowser\CertificateAuthentication"
+				valueName="Enabled">
+			<parentCategory ref="CertificateAuthentication" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="CertificateApiBaseUrl" class="Machine"
+				displayName="$(string.CertificateApiBaseUrl)"
+				explainText="$(string.CertificateApiBaseUrlExplain)"
+				presentation="$(presentation.CertificateApiBaseUrlPresentation)"
+				key="Software\Policies\SpecopsSoft\uReset\Client\SecuredBrowser\CertificateAuthentication">
+			<parentCategory ref="CertificateAuthentication" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<text id="CertificateApiBaseUrlText" valueName="ApiBaseUrl" />
+			</elements>
+		</policy>
+
+		<policy name="Pkcs11LibraryPath" class="Machine"
+				displayName="$(string.Pkcs11LibraryPath)"
+				explainText="$(string.Pkcs11LibraryPathExplain)"
+				presentation="$(presentation.Pkcs11LibraryPathPresentation)"
+				key="Software\Policies\SpecopsSoft\uReset\Client\SecuredBrowser\CertificateAuthentication">
+			<parentCategory ref="CertificateAuthentication" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<multiText id="Pkcs11LibraryPathText" valueName="Pkcs11LibraryPath" />
+			</elements>
+		</policy>
+
+		<policy name="IntervalBetweenRemindersInMinutes" class="Machine"
+				displayName="$(string.IntervalBetweenRemindersInMinutes)"
+				explainText="$(string.IntervalBetweenRemindersInMinutesExplain)"
+				presentation="$(presentation.IntervalBetweenRemindersInMinutes)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings">
+			<parentCategory ref="GeneralSettings" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<decimal id="IntervalBetweenRemindersInMinutes" valueName="IntervalBetweenRemindersInMinutes" required="true" minValue="10" maxValue="64800" />
+			</elements>
+		</policy>
+		
+		<policy name="WindowsLogonScreenLanguage" class="Machine"
+				displayName="$(string.WindowsLogonScreenLanguage)"
+				explainText="$(string.WindowsLogonScreenLanguageExplain)"
+				presentation="$(presentation.WindowsLogonScreenLanguage)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings">
+			<parentCategory ref="WindowsLogonScreen" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<text id="WindowsLogonScreenLanguage" valueName="WindowsLogonScreenLanguage" />
+			</elements>
+		</policy>
+		
+		<policy name="ResetPasswordLinkText" class="Machine"
+				displayName="$(string.ResetPasswordLinkText)"
+				explainText="$(string.ResetPasswordLinkTextExplain)"
+				presentation="$(presentation.ResetPasswordLinkText)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings">
+			<parentCategory ref="WindowsLogonScreen" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<text id="ResetPasswordLinkText" valueName="ResetPasswordLinkText" />
+			</elements>
+		</policy>
+		
+		<policy name="SppUpdateCredentialCacheAfterPasswordChange" class="Machine"
+				displayName="$(string.SppUpdateCredentialCacheAfterPasswordChange)"
+				explainText="$(string.SppUpdateCredentialCacheAfterPasswordChangeExplain)"
+				presentation="$(presentation.SppUpdateCredentialCacheAfterPasswordChange)"
+				key="Software\Policies\Specopssoft\uReset\Client\Spp"
+				valueName="UpdateCredentialCacheAfterPasswordChange">
+			<parentCategory ref="SpecopsPasswordPolicy" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="SppTimeoutWhenReadingPasswordChangeFailure" class="Machine"
+				displayName="$(string.SppTimeoutWhenReadingPasswordChangeFailure)"
+				explainText="$(string.SppTimeoutWhenReadingPasswordChangeFailureExplain)"
+				presentation="$(presentation.SppTimeoutWhenReadingPasswordChangeFailure)"
+				key="Software\Policies\Specopssoft\uReset\Client\Spp"
+				valueName="TimeoutWhenReadingPasswordChangeFailure">
+			<parentCategory ref="SpecopsPasswordPolicy" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<decimal id="SppTimeoutWhenReadingPasswordChangeFailure" valueName="TimeoutWhenReadingPasswordChangeFailure" required="true" minValue="500" maxValue="120000" />
+			</elements>
+		</policy>
+
+		<policy name="IncludeDcsFromDnsCacheWhenGettingPasswordChangeFailure" class="Machine"
+				displayName="$(string.IncludeDcsFromDnsCacheWhenGettingPasswordChangeFailure)"
+				explainText="$(string.IncludeDcsFromDnsCacheWhenGettingPasswordChangeFailureExplain)"
+				presentation="$(presentation.IncludeDcsFromDnsCacheWhenGettingPasswordChangeFailure)"
+				key="Software\Policies\Specopssoft\uReset\Client\Spp"
+				valueName="IncludeDcsFromDnsCacheWhenGettingPasswordChangeFailure">
+			<parentCategory ref="SpecopsPasswordPolicy" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="IncludeAllDcsWhenGettingPasswordChangeFailure" class="Machine"
+				displayName="$(string.IncludeAllDcsWhenGettingPasswordChangeFailure)"
+				explainText="$(string.IncludeAllDcsWhenGettingPasswordChangeFailureExplain)"
+				presentation="$(presentation.IncludeAllDcsWhenGettingPasswordChangeFailure)"
+				key="Software\Policies\Specopssoft\uReset\Client\Spp"
+				valueName="IncludeAllDcsWhenGettingPasswordChangeFailure">
+			<parentCategory ref="SpecopsPasswordPolicy" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="CreateStartMenuShortcuts" class="Machine"
+				displayName="$(string.CreateStartMenuShortcuts)"
+				explainText="$(string.CreateStartMenuShortcutsExplain)"
+				presentation="$(presentation.CreateStartMenuShortcutsPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings"
+				valueName="CreateStartMenuShortcuts">
+			<parentCategory ref="GeneralSettings" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="CreateStartMenuShortcutChange" class="Machine"
+				displayName="$(string.CreateStartMenuShortcutChange)"
+				explainText="$(string.CreateStartMenuShortcutChangeExplain)"
+				presentation="$(presentation.CreateStartMenuShortcutChangePresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings"
+				valueName="CreateStartMenuShortcutChange">
+			<parentCategory ref="GeneralSettings" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="CreateStartMenuShortcutEnroll" class="Machine"
+				displayName="$(string.CreateStartMenuShortcutEnroll)"
+				explainText="$(string.CreateStartMenuShortcutEnrollExplain)"
+				presentation="$(presentation.CreateStartMenuShortcutEnrollPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings"
+				valueName="CreateStartMenuShortcutEnroll">
+			<parentCategory ref="GeneralSettings" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="CreateStartMenuShortcutReset" class="Machine"
+				displayName="$(string.CreateStartMenuShortcutReset)"
+				explainText="$(string.CreateStartMenuShortcutResetExplain)"
+				presentation="$(presentation.CreateStartMenuShortcutResetPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings"
+				valueName="CreateStartMenuShortcutReset">
+			<parentCategory ref="GeneralSettings" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="StartMenuShortcutsLanguages" class="Machine"
+				displayName="$(string.StartMenuShortcutsLanguages)"
+				explainText="$(string.StartMenuShortcutsLanguagesExplain)"
+				presentation="$(presentation.StartMenuShortcutsLanguagesPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings" >
+			<parentCategory ref="GeneralSettings" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<text id="StartMenuShortCutLanguageList" valueName="StartMenuShortcutsLanguages" />
+			</elements>
+		</policy>
+
+		<policy name="AskUserIfCertificateHasWarnings" class="Machine"
+				displayName="$(string.AskUserIfCertificateHasWarnings)"
+				explainText="$(string.AskUserIfCertificateHasWarningsExplain)"
+				presentation="$(presentation.AskUserIfCertificateHasWarningsPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings"
+				valueName="AskUserIfCertificateHasWarnings">
+			<parentCategory ref="GeneralSettings" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="EnableEnrollmentReminders" class="Machine"
+				displayName="$(string.EnableEnrollmentReminders)"
+				explainText="$(string.EnableEnrollmentRemindersExplain)"
+				presentation="$(presentation.EnableEnrollmentRemindersPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings"
+				valueName="EnableEnrollmentReminders">
+			<parentCategory ref="GeneralSettings" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		
+		<policy name="EnablePasswordExpirationReminders" class="Machine"
+				displayName="$(string.EnablePasswordExpirationReminders)"
+				explainText="$(string.EnablePasswordExpirationRemindersExplain)"
+				presentation="$(presentation.EnablePasswordExpirationRemindersPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings"
+				valueName="EnablePasswordExpirationReminders">
+			<parentCategory ref="GeneralSettings" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		
+		<policy name="EnforceSprInsteadOfUReset" class="Machine"
+				displayName="$(string.EnforceSprInsteadOfUReset)"
+				explainText="$(string.EnforceSprInsteadOfUResetExplain)"
+				presentation="$(presentation.EnforceSprInsteadOfUResetPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings"
+				valueName="EnforceSprInsteadOfUReset">
+			<parentCategory ref="GeneralSettings" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		
+		<policy name="ExcludeOtherCredentialProviders" class="Machine"
+				displayName="$(string.ExcludeOtherCredentialProviders)"
+				explainText="$(string.ExcludeOtherCredentialProvidersExplain)"
+				presentation="$(presentation.ExcludeOtherCredentialProvidersPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings"
+				valueName="ExcludeOtherCredentialProviders">
+			<parentCategory ref="GeneralSettings" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		
+		<policy name="ExcludeWrappedFilter" class="Machine"
+				displayName="$(string.ExcludeWrappedFilter)"
+				explainText="$(string.ExcludeWrappedFilterExplain)"
+				presentation="$(presentation.ExcludeWrappedFilterPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings"
+				valueName="ExcludeWrappedFilter">
+			<parentCategory ref="GeneralSettings" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="EnableExternalUrlCacheFromScp" class="Machine"
+				displayName="$(string.EnableExternalUrlCacheFromScp)"
+				explainText="$(string.EnableExternalUrlCacheFromScpExplain)"
+				presentation="$(presentation.EnableExternalUrlCacheFromScpPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings"
+				valueName="EnableExternalUrlCacheFromScp">
+			<parentCategory ref="GeneralSettings" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="AdSettingsContainerDn" class="Machine"
+		        displayName="$(string.AdSettingsContainerDn)"
+		        explainText="$(string.AdSettingsContainerDnExplain)"
+		        presentation="$(presentation.AdSettingsContainerDnPresentation)"
+		        key="Software\Policies\Specopssoft\uReset\Client\Settings" >
+			<parentCategory ref="GeneralSettings" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<text id="AdSettingsContainerDnText" valueName="AdSettingsContainerDn" />
+			</elements>
+		</policy>
+
+		<policy name="AdScopes" class="Machine"
+		        displayName="$(string.AdScopes)"
+		        explainText="$(string.AdScopesExplain)"
+		        presentation="$(presentation.AdScopesPresentation)"
+		        key="Software\Policies\Specopssoft\uReset\Client\Settings" >
+			<parentCategory ref="GeneralSettings" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<multiText id="AdScopesText" valueName="AdScopes" />
+			</elements>
+		</policy>
+
+		<!-- AdSettingsContainerType -->
+		<policy name="AdSettingsContainerType" class="Machine"
+		        displayName="$(string.AdSettingsContainerType)"
+		        explainText="$(string.AdSettingsContainerTypeExplain)"
+		        presentation="$(presentation.AdSettingsContainerTypePresentation)"
+		        key="Software\Policies\Specopssoft\uReset\Client\Settings" >
+			<parentCategory ref="GeneralSettings" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<enum required="true" id="AdSettingsContainerTypeBox" valueName="AdSettingsContainerType">
+					<item displayName="$(string.AdSettingsContainerTypeUReset)">
+						<value>
+							<string>uReset</string>
+						</value>
+					</item>
+					<item displayName="$(string.AdSettingsContainerTypeSa)">
+						<value>
+							<string>SpecopsAuthentication</string>
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+
+		<policy name="SprCustomMobileAttributeTitle" class="Machine"
+				displayName="$(string.SprCustomMobileAttributeTitle)"
+				explainText="$(string.SprCustomMobileAttributeExplain)"
+				presentation="$(presentation.SprCustomMobileAttributeTitle)"
+				key="Software\Policies\Specopssoft\uReset\Client\Spr">
+			<parentCategory ref="SpecopsPasswordReset" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<text id="SprCustomMobileAttribute" valueName="CustomMobileAttribute" />
+			</elements>
+		</policy>
+
+		<policy name="SprShowResetLinkTipWhenWrongPassword" class="Machine"
+				displayName="$(string.SprShowResetLinkTipWhenWrongPassword)"
+				presentation="$(presentation.SprShowResetLinkTipWhenWrongPassword)"
+				key="Software\Policies\Specopssoft\uReset\Client\Spr"
+				valueName="ShowResetLinkTipWhenWrongPassword">
+			<parentCategory ref="SpecopsPasswordReset" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+		</policy>
+		
+		<policy name="SprShowResetLinkTipWhenAccountLockedOut" class="Machine"
+				displayName="$(string.SprShowResetLinkTipWhenAccountLockedOut)"
+				presentation="$(presentation.SprShowResetLinkTipWhenAccountLockedOut)"
+				key="Software\Policies\Specopssoft\uReset\Client\Spr"
+				valueName="ShowResetLinkTipWhenAccountLockedOut">
+			<parentCategory ref="SpecopsPasswordReset" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+		</policy>
+
+		<policy name="EnableCredentialProvider" class="Machine"
+				displayName="$(string.EnableCredentialProvider)"
+				explainText="$(string.EnableCredentialProviderExplain)"
+				presentation="$(presentation.EnableCredentialProviderPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\CredentialProvider"
+				valueName="EnableCredentialProvider">
+			<parentCategory ref="WindowsLogonScreen" />
+			<supportedOn ref="windows:SUPPORTED_WindowsVista" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="EnableRulesUI" class="Machine"
+				displayName="$(string.EnableRulesUI)"
+				explainText="$(string.EnableRulesUIExplain)"
+				presentation="$(presentation.EnableRulesUIPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\CredentialProvider"
+				valueName="EnableRulesUI">
+			<parentCategory ref="WindowsLogonScreen" />
+			<supportedOn ref="windows:SUPPORTED_WindowsVista" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="WindowsLogonScreen" class="Machine"
+				displayName="$(string.EnablePasswordResetLinkOnLogonScreen)"
+				explainText="$(string.EnablePasswordResetLinkOnLogonScreenExplain)"
+				presentation="$(presentation.EnablePasswordResetLinkOnLogonScreen)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings"
+				valueName="EnablePasswordResetLink">
+			<parentCategory ref="WindowsLogonScreen" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="AlwaysShowPasswordResetLinkOnLogonScreen" class="Machine"
+				displayName="$(string.AlwaysShowPasswordResetLinkOnLogonScreen)"
+				explainText="$(string.AlwaysShowPasswordResetLinkOnLogonScreenExplain)"
+				presentation="$(presentation.AlwaysShowPasswordResetLinkOnLogonScreen)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings"
+				valueName="AlwaysShowPasswordResetLink">
+			<parentCategory ref="WindowsLogonScreen" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+		</policy>
+
+		<policy name="SprWrappedCredentialProviderGuid" class="Machine"
+				displayName="$(string.SprWrappedCredentialProviderGuid)"
+				explainText="$(string.SprWrappedCredentialProviderGuidExplain)"
+				presentation="$(presentation.SprWrappedCredentialProviderGuid)"
+				key="Software\Policies\Specopssoft\uReset\Client\CredentialProvider">
+			<parentCategory ref="WindowsLogonScreen" />
+			<supportedOn ref="windows:SUPPORTED_WindowsVista" />
+			<elements>
+				<text id="WrappedCredentialProviderGuid" valueName="WrappedCredentialProviderGuid" />
+			</elements>
+		</policy>
+
+		<policy name="SprWrappedCredentialProviderGuid2" class="Machine"
+				displayName="$(string.SprWrappedCredentialProviderGuid2)"
+				explainText="$(string.SprWrappedCredentialProviderGuid2Explain)"
+				presentation="$(presentation.SprWrappedCredentialProviderGuid2)"
+				key="Software\Policies\Specopssoft\uReset\Client\CredentialProvider">
+			<parentCategory ref="WindowsLogonScreen" />
+			<supportedOn ref="windows:SUPPORTED_WindowsVista" />
+			<elements>
+				<text id="WrappedCredentialProviderGuid2" valueName="WrappedCredentialProviderGuid2" />
+			</elements>
+		</policy>
+
+    <policy name="WrapInRdpSession" class="Machine"
+            displayName="$(string.WrapInRdpSession)"
+            explainText="$(string.WrapInRdpSessionExplain)"
+            presentation="$(presentation.WrapInRdpSession)"
+            key="Software\Policies\Specopssoft\uReset\Client\CredentialProvider"
+						valueName="WrapInRdpSession">
+      <parentCategory ref="WindowsLogonScreen" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+    </policy>
+
+    <policy name="WrapInConsoleSession" class="Machine"
+            displayName="$(string.WrapInConsoleSession)"
+            explainText="$(string.WrapInConsoleSessionExplain)"
+            presentation="$(presentation.WrapInConsoleSession)"
+            key="Software\Policies\Specopssoft\uReset\Client\CredentialProvider"
+            valueName="WrapInConsoleSession">
+      <parentCategory ref="WindowsLogonScreen" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+		<policy name="SpShowLogonTile" class="Machine"
+				displayName="$(string.SpShowLogonTile)"
+				explainText="$(string.ShowLogonTileExplain)"
+				presentation="$(presentation.SpShowLogonTile)"
+				key="Software\Policies\Specopssoft\uReset\Client\CredentialProvider"
+				valueName="ShowLogonTile">
+			<parentCategory ref="SeparateLogonTileSettings" />
+			<supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+		</policy>
+
+		<policy name="SpLogonTileBitmap" class="Machine"
+				displayName="$(string.SpLogonTileBitmap)"
+				explainText="$(string.LogonTileBitmapExplain)"
+				presentation="$(presentation.SpLogonTileBitmap)"
+				key="Software\Policies\Specopssoft\uReset\Client\CredentialProvider">
+			<parentCategory ref="SeparateLogonTileSettings" />
+			<supportedOn ref="windows:SUPPORTED_WindowsVista" />
+			<elements>
+				<text id="LogonTileBitmap" valueName="SeparateLogonTileBitmap" />
+			</elements>
+		</policy>
+
+		<policy name="PasswordUrlReset" class="Machine"
+				displayName="$(string.PasswordUrlReset)"
+				explainText="$(string.PasswordUrlResetExplain)"
+				presentation="$(presentation.PasswordUrlReset)"
+				key="Software\Policies\Specopssoft\uReset\Client\Urls">
+			<parentCategory ref="PasswordUrlsUReset" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<text id="UrlInputLabel" valueName="Reset" />
+			</elements>
+		</policy>
+		<policy name="PasswordUrlResetExternal" class="Machine"
+				displayName="$(string.PasswordUrlResetExternal)"
+				explainText="$(string.PasswordUrlResetExternalExplain)"
+				presentation="$(presentation.PasswordUrlResetExternal)"
+				key="Software\Policies\Specopssoft\uReset\Client\Urls">
+			<parentCategory ref="PasswordUrlsUReset" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<text id="UrlInputLabel" valueName="ResetExternal" />
+			</elements>
+		</policy>
+		<policy name="PasswordUrlEnroll" class="Machine"
+				displayName="$(string.PasswordUrlEnroll)"
+				explainText="$(string.PasswordUrlEnrollExplain)"
+				presentation="$(presentation.PasswordUrlEnroll)"
+				key="Software\Policies\Specopssoft\uReset\Client\Urls">
+			<parentCategory ref="PasswordUrlsUReset" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<text id="UrlInputLabel" valueName="Enroll" />
+			</elements>
+		</policy>
+		<policy name="PasswordUrlEnrollWithIntroPage" class="Machine"
+				displayName="$(string.PasswordUrlEnrollWithIntroPage)"
+				explainText="$(string.PasswordUrlEnrollWithIntroPageExplain)"
+				presentation="$(presentation.PasswordUrlEnrollWithIntroPage)"
+				key="Software\Policies\Specopssoft\uReset\Client\Urls">
+			<parentCategory ref="PasswordUrlsUReset" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<text id="UrlInputLabel" valueName="EnrollWithIntroPage" />
+			</elements>
+		</policy>
+		<policy name="PasswordUrlChange" class="Machine"
+				displayName="$(string.PasswordUrlChange)"
+				explainText="$(string.PasswordUrlChangeExplain)"
+				presentation="$(presentation.PasswordUrlChange)"
+				key="Software\Policies\Specopssoft\uReset\Client\Urls">
+			<parentCategory ref="PasswordUrlsUReset" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<text id="UrlInputLabel" valueName="Change" />
+			</elements>
+		</policy>
+		<policy name="PasswordUrlHelpdesk" class="Machine"
+				displayName="$(string.PasswordUrlHelpdesk)"
+				explainText="$(string.PasswordUrlHelpdeskExplain)"
+				presentation="$(presentation.PasswordUrlHelpdesk)"
+				key="Software\Policies\Specopssoft\uReset\Client\Urls">
+			<parentCategory ref="PasswordUrlsUReset" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<text id="UrlInputLabel" valueName="Helpdesk" />
+			</elements>
+		</policy>
+		<policy name="PasswordUrlReporting" class="Machine"
+				displayName="$(string.PasswordUrlReporting)"
+				explainText="$(string.PasswordUrlReportingExplain)"
+				presentation="$(presentation.PasswordUrlReporting)"
+				key="Software\Policies\Specopssoft\uReset\Client\Urls">
+			<parentCategory ref="PasswordUrlsUReset" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<text id="UrlInputLabel" valueName="Reporting" />
+			</elements>
+		</policy>
+		
+		<!-- SPR -->
+		<policy name="SprPasswordUrlReset" class="Machine"
+				displayName="$(string.PasswordUrlReset)"
+				explainText="$(string.PasswordUrlResetExplain)"
+				presentation="$(presentation.PasswordUrlReset)"
+				key="Software\Policies\Specopssoft\uReset\Client\SprUrls">
+			<parentCategory ref="PasswordUrlsSpr" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<text id="UrlInputLabel" valueName="Reset" />
+			</elements>
+		</policy>
+		<policy name="SprPasswordUrlResetExternal" class="Machine"
+				displayName="$(string.PasswordUrlResetExternal)"
+				explainText="$(string.PasswordUrlResetExternalExplain)"
+				presentation="$(presentation.PasswordUrlResetExternal)"
+				key="Software\Policies\Specopssoft\uReset\Client\SprUrls">
+			<parentCategory ref="PasswordUrlsSpr" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<text id="UrlInputLabel" valueName="ResetExternal" />
+			</elements>
+		</policy>
+		<policy name="SprPasswordUrlEnroll" class="Machine"
+				displayName="$(string.PasswordUrlEnroll)"
+				explainText="$(string.PasswordUrlEnrollExplain)"
+				presentation="$(presentation.PasswordUrlEnroll)"
+				key="Software\Policies\Specopssoft\uReset\Client\SprUrls">
+			<parentCategory ref="PasswordUrlsSpr" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<text id="UrlInputLabel" valueName="Enroll" />
+			</elements>
+		</policy>
+		<policy name="SprPasswordUrlEnrollWithIntroPage" class="Machine"
+				displayName="$(string.PasswordUrlEnrollWithIntroPage)"
+				explainText="$(string.PasswordUrlEnrollWithIntroPageExplain)"
+				presentation="$(presentation.PasswordUrlEnrollWithIntroPage)"
+				key="Software\Policies\Specopssoft\uReset\Client\SprUrls">
+			<parentCategory ref="PasswordUrlsSpr" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<text id="UrlInputLabel" valueName="EnrollWithIntroPage" />
+			</elements>
+		</policy>
+		<policy name="SprPasswordUrlChange" class="Machine"
+				displayName="$(string.PasswordUrlChange)"
+				explainText="$(string.PasswordUrlChangeExplain)"
+				presentation="$(presentation.PasswordUrlChange)"
+				key="Software\Policies\Specopssoft\uReset\Client\SprUrls">
+			<parentCategory ref="PasswordUrlsSpr" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<text id="UrlInputLabel" valueName="Change" />
+			</elements>
+		</policy>
+		<policy name="SprPasswordUrlHelpdesk" class="Machine"
+				displayName="$(string.PasswordUrlHelpdesk)"
+				explainText="$(string.PasswordUrlHelpdeskExplain)"
+				presentation="$(presentation.PasswordUrlHelpdesk)"
+				key="Software\Policies\Specopssoft\uReset\Client\SprUrls">
+			<parentCategory ref="PasswordUrlsSpr" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<text id="UrlInputLabel" valueName="Helpdesk" />
+			</elements>
+		</policy>
+		<policy name="SprPasswordUrlReporting" class="Machine"
+				displayName="$(string.PasswordUrlReporting)"
+				explainText="$(string.PasswordUrlReportingExplain)"
+				presentation="$(presentation.PasswordUrlReporting)"
+				key="Software\Policies\Specopssoft\uReset\Client\SprUrls">
+			<parentCategory ref="PasswordUrlsSpr" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<text id="UrlInputLabel" valueName="Reporting" />
+			</elements>
+		</policy>
+
+    <policy name="SecuredBrowserAccountType" class="Machine"
+            displayName="$(string.SecuredBrowserAccountType)"
+            explainText="$(string.SecuredBrowserAccountTypeExplain)"
+            presentation="$(presentation.SecuredBrowserAccountTypePresentation)"
+            key="Software\Policies\Specopssoft\uReset\Client\Settings" >
+      <parentCategory ref="SecuredBrowser" />
+      <supportedOn ref="windows:SUPPORTED_WindowsXP" />
+      <elements>
+        <enum required="true" id="SecuredBrowserAccountTypeBox" valueName="SecuredBrowserAccountType">
+          <item displayName="$(string.SecuredBrowserAccountTypeNetworkService)">
+            <value>
+              <string>NetworkService</string>
+            </value>
+          </item>
+          <item displayName="$(string.SecuredBrowserAccountTypeLocalSystem)">
+            <value>
+              <string>LocalSystem</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+		<policy name="EnableDpapiUpdate" class="Machine"
+				displayName="$(string.EnableDpapiUpdate)"
+				explainText="$(string.EnableDpapiUpdateExplain)"
+				presentation="$(presentation.EnableDpapiUpdatePresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\SecuredBrowser"
+				valueName="EnableDpapiUpdate">
+			<parentCategory ref="WindowsLogonScreen" />
+			<supportedOn ref="windows:SUPPORTED_Windows8" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="ForceDpapiAndCachedCredentialUpdate" class="Machine"
+				displayName="$(string.ForceDpapiAndCachedCredentialUpdate)"
+				explainText="$(string.ForceDpapiAndCachedCredentialUpdateExplain)"
+				presentation="$(presentation.ForceDpapiAndCachedCredentialUpdatePresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\SecuredBrowser"
+				valueName="ForceDpapiAndCachedCredentialUpdate">
+			<parentCategory ref="WindowsLogonScreen" />
+			<supportedOn ref="windows:SUPPORTED_Windows8" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="MaxNumberOfMasterKeys" class="Machine"
+				displayName="$(string.MaxNumberOfMasterKeys)"
+				explainText="$(string.MaxNumberOfMasterKeysExplain)"
+				presentation="$(presentation.MaxNumberOfMasterKeysPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\SecuredBrowser">
+			<parentCategory ref="SecuredBrowser" />
+			<supportedOn ref="windows:windows:SUPPORTED_Windows8" />
+			<elements>
+				<decimal id="MaxNumberOfMasterKeys" valueName="MaxNumberOfMasterKeys" />
+			</elements>
+		</policy>
+
+		<policy name="ProxyServerUrl" class="Machine"
+		displayName="$(string.ProxyServerUrl)"
+		explainText="$(string.ProxyServerUrlExplain)"
+		presentation="$(presentation.ProxyServerUrlPresentation)"
+		key="Software\Policies\Specopssoft\uReset\Client\SecuredBrowser">
+			<parentCategory ref="SecuredBrowser" />
+			<supportedOn ref="windows:SUPPORTED_Windows8" />
+			<elements>
+				<text id="ProxyServerUrl" valueName="ProxyServerUrl" />
+			</elements>
+		</policy>
+
+		<policy name="ProxyServerPacUrl" class="Machine"
+		displayName="$(string.ProxyServerPacUrl)"
+		explainText="$(string.ProxyServerPacUrlExplain)"
+		presentation="$(presentation.ProxyServerPacUrlPresentation)"
+		key="Software\Policies\Specopssoft\uReset\Client\SecuredBrowser">
+			<parentCategory ref="SecuredBrowser" />
+			<supportedOn ref="windows:SUPPORTED_Windows8" />
+			<elements>
+				<text id="ProxyServerPacUrl" valueName="ProxyServerPacUrl" />
+			</elements>
+		</policy>
+		
+    <policy name="SecuredBrowserIdleTimeOutSeconds" class="Machine"
+            displayName="$(string.SecuredBrowserIdleTimeOutSeconds)"
+            explainText="$(string.SecuredBrowserIdleTimeOutSecondsExplain)"
+            presentation="$(presentation.SecuredBrowserIdleTimeOutSeconds)"
+            key="Software\Policies\Specopssoft\uReset\Client\SecuredBrowser">
+			<parentCategory ref="SecuredBrowser" />
+			<supportedOn ref="windows:windows:SUPPORTED_Windows8" />
+			<elements>
+				<decimal id="SecuredBrowserIdleTimeOutSeconds" valueName="LogonUiIdleTimeOutSeconds" required="true" minValue="5" maxValue="86400" />
+			</elements>
+		</policy>
+
+		<policy name="SecuredBrowserCloseTimeoutSeconds" class="Machine"
+		        displayName="$(string.SecuredBrowserCloseTimeoutSeconds)"
+		        explainText="$(string.SecuredBrowserCloseTimeoutSecondsExplain)"
+		        presentation="$(presentation.SecuredBrowserCloseTimeoutSeconds)"
+		        key="Software\Policies\Specopssoft\uReset\Client\SecuredBrowser">
+			<parentCategory ref="SecuredBrowser" />
+			<supportedOn ref="windows:windows:SUPPORTED_Windows8" />
+			<elements>
+				<decimal id="SecuredBrowserCloseTimeoutSeconds" valueName="SecuredBrowserCloseAfterSeconds" required="true" minValue="5" maxValue="86400" />
+			</elements>
+		</policy>
+
+		<policy name="SecuredBrowserShowClosingTimerTimeoutSeconds" class="Machine"
+		        displayName="$(string.SecuredBrowserShowClosingTimerTimeoutSeconds)"
+		        explainText="$(string.SecuredBrowserShowClosingTimerTimeoutSecondsExplain)"
+		        presentation="$(presentation.SecuredBrowserShowClosingTimerTimeoutSeconds)"
+		        key="Software\Policies\Specopssoft\uReset\Client\SecuredBrowser">
+			<parentCategory ref="SecuredBrowser" />
+			<supportedOn ref="windows:windows:SUPPORTED_Windows8" />
+			<elements>
+				<decimal id="SecuredBrowserShowClosingTimerTimeoutSeconds" valueName="SecuredBrowserShowClosingTimerWhenRemainingSeconds" required="true" minValue="0" maxValue="86400" />
+			</elements>
+		</policy>
+
+		<policy name="SecuredBrowserKeepScreenActive" class="Machine"
+				displayName="$(string.SecuredBrowserKeepScreenActive)"
+				explainText="$(string.SecuredBrowserKeepScreenActiveExplain)"
+				presentation="$(presentation.SecuredBrowserKeepScreenActive)"
+				key="Software\Policies\Specopssoft\uReset\Client\SecuredBrowser"
+				valueName="SecuredBrowserKeepScreenActive">
+			<parentCategory ref="SecuredBrowser" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="ShowUnicodePasswordRule" class="Machine"
+				displayName="$(string.ShowUnicodePasswordRule)"
+				explainText="$(string.ShowUnicodePasswordRuleExplain)"
+				presentation="$(presentation.ShowUnicodePasswordRulePresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\RulesUI"
+				valueName="ShowUnicodePasswordRule">
+			<parentCategory ref="DynamicFeedbackPasswordChange" />
+			<supportedOn ref="windows:SUPPORTED_WindowsVista" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="TextToSpeechEnabled" class="Machine"
+				displayName="$(string.TextToSpeechEnabled)"
+				explainText="$(string.TextToSpeechEnabledExplain)"
+				presentation="$(presentation.TextToSpeechEnabledPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\RulesUI"
+				valueName="TextToSpeechEnabled">
+			<parentCategory ref="DynamicFeedbackPasswordChange" />
+			<supportedOn ref="windows:SUPPORTED_WindowsVista" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		
+		<policy name="TextToSpeechVoice" class="Machine"
+				displayName="$(string.TextToSpeechVoice)"
+				explainText="$(string.TextToSpeechVoiceExplain)"
+				presentation="$(presentation.TextToSpeechVoicePresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\RulesUI">
+			<parentCategory ref="DynamicFeedbackPasswordChange" />
+			<supportedOn ref="windows:SUPPORTED_WindowsVista" />
+			<elements>
+				<text id="TextToSpeechVoicePresentationText" valueName="TextToSpeechVoice" />
+			</elements>
+		</policy>
+		
+		<policy name="EnableAzureSSPR" class="Machine"
+						displayName="$(string.EnableAzureSSPR)"
+						explainText="$(string.EnableAzureSSPRExplain)"
+						key="Software\Policies\Specopssoft\uReset\Client\Settings"
+						valueName="EnableAzureADSelfServicePasswordReset">
+			<parentCategory ref="AzureSSPR" />
+			<supportedOn ref="windows:windows:SUPPORTED_Windows8" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="AzureSSPRUrl" class="Machine"
+				displayName="$(string.AzureSSPRUrl)"
+				explainText="$(string.AzureSSPRUrlExplain)"
+				presentation="$(presentation.AzureSSPRUrlPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Settings">
+			<parentCategory ref="AzureSSPR" />
+			<supportedOn ref="windows:windows:SUPPORTED_Windows8" />
+			<elements>
+				<text id="AzureADSelfServicePasswordResetUrlText" valueName="AzureADSelfServicePasswordResetUrl" />
+			</elements>
+		</policy>		
+
+		<policy name="WinMfa_AllowLocalUsers" class="Machine"
+				displayName="$(string.WinMfa_AllowLocalUsers)"
+				explainText="$(string.WinMfa_AllowLocalUsersExplain)"
+				key="Software\Policies\Specopssoft\uReset\Client\Mfa"
+				valueName="WinMfa_AllowLocalUsers">
+			<parentCategory ref="MfaLogin" />
+			<supportedOn ref="windows:windows:SUPPORTED_Windows_10_0" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		
+		<policy name="WinMfa_EnableLocal" class="Machine"
+				displayName="$(string.WinMfa_EnableLocal)"
+				explainText="$(string.WinMfa_EnableLocalExplain)"
+				key="Software\Policies\Specopssoft\uReset\Client\Mfa"
+				valueName="WinMfa_EnableLocal">
+			<parentCategory ref="MfaLogin" />
+			<supportedOn ref="windows:windows:SUPPORTED_Windows_10_0" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="WinMfa_EnableRemote" class="Machine"
+				displayName="$(string.WinMfa_EnableRemote)"
+				explainText="$(string.WinMfa_EnableRemoteExplain)"
+				key="Software\Policies\Specopssoft\uReset\Client\Mfa"
+				valueName="WinMfa_EnableRemote">
+			<parentCategory ref="MfaLogin" />
+			<supportedOn ref="windows:windows:SUPPORTED_Windows_10_0" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		
+		<policy name="WinMfa_EnableElevation" class="Machine"
+				displayName="$(string.WinMfa_EnableElevation)"
+				explainText="$(string.WinMfa_EnableElevationExplain)"
+				key="Software\Policies\Specopssoft\uReset\Client\Mfa"
+				valueName="WinMfa_EnableElevation">
+			<parentCategory ref="MfaLogin" />
+			<supportedOn ref="windows:windows:SUPPORTED_Windows_10_0" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+		
+		<policy name="MfaAuthApi" class="Machine"
+				displayName="$(string.MfaAuthApi)"
+				explainText="$(string.MfaAuthApiExplain)"
+				presentation="$(presentation.MfaAuthApiPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Mfa">
+			<parentCategory ref="MfaLogin" />
+			<supportedOn ref="windows:windows:SUPPORTED_Windows_10_0" />
+			<elements>
+				<text id="WinMfa_DispatcherApiUrlText" valueName="WinMfa_DispatcherApiUrl" />
+				<text id="WinMfa_ApiKeyText" valueName="WinMfa_ApiKey" />
+			</elements>
+		</policy>
+
+		<policy name="WinMfa_AllowOfflineAuth" class="Machine"
+				displayName="$(string.WinMfa_AllowOfflineAuth)"
+				explainText="$(string.WinMfa_AllowOfflineAuthExplain)"
+				key="Software\Policies\Specopssoft\uReset\Client\Mfa"
+				valueName="WinMfa_AllowOfflineAuth">
+			<parentCategory ref="MfaLogin" />
+			<supportedOn ref="windows:windows:SUPPORTED_Windows_10_0" />
+			<enabledValue>
+				<decimal value="1" />
+			</enabledValue>
+			<disabledValue>
+				<decimal value="0" />
+			</disabledValue>
+		</policy>
+
+		<policy name="WinMfa_OfflineIdentityService" class="Machine"
+				displayName="$(string.WinMfa_OfflineIdentityService)"
+				explainText="$(string.WinMfa_OfflineIdentityServiceExplain)"
+				presentation="$(presentation.WinMfa_OfflineIdentityServicePresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Mfa">
+			<parentCategory ref="MfaLogin" />
+			<supportedOn ref="windows:windows:SUPPORTED_Windows_10_0" />
+			<elements>
+				<enum required="true" id="WinMfa_OfflineIdentityServiceBox" valueName="WinMfa_OfflineIdentityService">
+					<item displayName="$(string.WinMfa_OfflineIdentityServiceOfflineCode)">
+						<value>
+							<string>OfflineCode</string>
+						</value>
+					</item>
+					<item displayName="$(string.WinMfa_OfflineIdentityServiceSmartcard)">
+						<value>
+							<string>SmartCard</string>
+						</value>
+					</item>
+					<item displayName="$(string.WinMfa_OfflineIdentityServiceSpecopsId)">
+						<value>
+							<string>SpecopsId</string>
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+
+		<policy name="WinMfa_SmartCardConfiguration" class="Machine"
+				displayName="$(string.WinMfa_SmartCardConfiguration)"
+				explainText="$(string.WinMfa_SmartCardConfigurationExplain)"
+				presentation="$(presentation.WinMfa_SmartCardConfigurationPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Mfa">
+			<parentCategory ref="MfaLogin" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXP" />
+			<elements>
+				<text id="WinMfa_SmartCardDisplayNameText" valueName="WinMfa_SmartCardDisplayName" />
+				<text required="true" id="WinMfa_SmartCardPkcs11LibraryPathText" valueName="WinMfa_SmartCardPkcs11LibraryPath" />
+				<boolean id="WinMfa_SmartCardVerifyCertificateExpirationText" valueName="WinMfa_SmartCardVerifyCertificateExpiration">
+					<trueValue>
+						<decimal value="1" />
+					</trueValue>
+					<falseValue>
+						<decimal value="0" />
+					</falseValue>
+				</boolean>
+			</elements>
+		</policy>
+
+		<policy name="WinMfa_DaysBeforeRequireOnlineAuth" class="Machine"
+				displayName="$(string.WinMfa_DaysBeforeRequireOnlineAuth)"
+				explainText="$(string.WinMfa_DaysBeforeRequireOnlineAuthExplain)"
+				presentation="$(presentation.WinMfa_DaysBeforeRequireOnlineAuthPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Mfa">
+			<parentCategory ref="MfaLogin" />
+			<supportedOn ref="windows:windows:SUPPORTED_Windows_10_0" />
+			<elements>
+				<decimal id="WinMfa_DaysBeforeRequireOnlineAuth" valueName="WinMfa_DaysBeforeRequireOnlineAuth" required="true" minValue="1" maxValue="365" />
+			</elements>
+		</policy>
+
+		<policy name="WinMfa_TimeBeforeRequireMfa" class="Machine"
+				displayName="$(string.WinMfa_TimeBeforeRequireMfa)"
+				explainText="$(string.WinMfa_TimeBeforeRequireMfaExplain)"
+				presentation="$(presentation.WinMfa_TimeBeforeRequireMfaPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Mfa">
+			<parentCategory ref="MfaLogin" />
+			<supportedOn ref="windows:windows:SUPPORTED_Windows_10_0" />
+			<elements>
+				<text id="WinMfa_TimeBeforeRequireMfa" valueName="WinMfa_TimeBeforeRequireMfa" />
+			</elements>
+		</policy>
+
+		<policy name="WinMfa_HttpTimeoutSeconds" class="Machine"
+				displayName="$(string.WinMfa_HttpTimeoutSeconds)"
+				explainText="$(string.WinMfa_HttpTimeoutSecondsExplain)"
+				presentation="$(presentation.WinMfa_HttpTimeoutSecondsPresentation)"
+				key="Software\Policies\Specopssoft\uReset\Client\Mfa">
+			<parentCategory ref="MfaLogin" />
+			<supportedOn ref="windows:windows:SUPPORTED_Windows_10_0" />
+			<elements>
+				<decimal id="WinMfa_HttpTimeoutSeconds" valueName="WinMfa_HttpTimeoutSeconds" required="false" minValue="1" maxValue="300" />
+			</elements>
+		</policy>
+
+
+	</policies>
+
+</policyDefinitions>

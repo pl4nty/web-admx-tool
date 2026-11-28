@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+	<displayName>Hide specified drives in Citrix, RDS, Horizon, or Parallels session's My Computer</displayName>
+	<description>Hide specified drives in Citrix, RDS, Horizon, or Parallels session's My Computer</description>
+	<resources>
+		<stringTable>
+			<string id="WindowsComponents">WindowsComponents</string>
+			<string id="WindowsExplorer">WindowsExplorer</string>
+			#here is where you insert the string label you added to the admx file
+			<string id="ABDEGPROnly">Restrict A, B, D, E, G, P, and R drives only</string>
+			<string id="ALLDrives">Restrict all drives</string>
+			<string id="RestNoDrives">Do not restrict drives</string>
+			<string id="NoDrives">Hide specified drives in Citrix, RDS, Horizon, or Parallels session's My Computer</string>
+			<string id="NoDrives_Help">This policy setting allows you to hide specified drives in Citrix, RDS, Horizon, or Parallels session's My Computer.
+
+This policy setting allows you to remove the icons representing selected hard drives from My Computer and File Explorer. Also, the drive letters representing the selected drives do not appear in the standard Open dialog box.
+
+If you enable this policy setting, select a drive or combination of drives in the drop-down list.
+
+Note: This policy setting removes the drive icons. Users can still gain access to drive contents by using other methods, such as by typing the path to a directory on the drive in the Map Network Drive dialog box, in the Run dialog box, or in a command window.
+
+Also, this policy setting does not prevent users from using programs to access these drives or their contents. And, it does not prevent users from using the Disk Management snap-in to view and change drive characteristics.
+
+If you disable or do not configure this policy setting, all drives are displayed, or select the "Do not restrict drives" option in the drop-down list.
+
+Also, see the "Prevent access to drives from Citrix, RDS, Horizon, or Parallels session's My Computer" policy setting.</string>
+			<string id="NoViewOnDrive">Prevent access to drives from Citrix, RDS, Horizon, or Parallels session's My Computer</string>
+			<string id="NoViewOnDrive_Help">Prevents users from using Citrix, RDS, Horizon, or Parallels session's My Computer to gain access to the content of selected drives.
+
+If you enable this setting, users can browse the directory structure of the selected drives in My Computer or File Explorer, but they cannot open folders and access the contents. Also, they cannot use the Run dialog box or the Map Network Drive dialog box to view the directories on these drives.
+
+To use this setting, select a drive or combination of drives from the drop-down list. To allow access to all drive directories, disable this setting or select the "Do not restrict drives" option from the drop-down list.
+
+Note: The icons representing the specified drives still appear in My Computer, but if users double-click the icons, a message appears explaining that a setting prevents the action.
+
+Also, this setting does not prevent users from using programs to access local and network drives. And, it does not prevent them from using the Disk Management snap-in to view and change drive characteristics.
+
+Also, see the "Hide specified drives in Citrix, RDS, Horizon, or Parallels session's My Computer" setting.</string>
+		</stringTable>
+		<presentationTable>
+			<presentation id="NoDrives">
+				#I set noSort to false so the strings in the dropdown list are sorted in alphabetical ascending order
+				#defaultItem is array based and starts at 0 for the first item in the dropdown list
+				<dropdownList refId="NoDrivesDropdown" noSort="false" defaultItem="0">Pick one of the following combinations</dropdownList>
+			</presentation>
+			<presentation id="NoViewOnDrive">
+				#I set noSort to false so the strings in the dropdown list are sorted in alphabetical ascending order
+				#defaultItem is array based and starts at 0 for the first item in the dropdown list
+				<dropdownList refId="NoDrivesDropdown" noSort="false" defaultItem="0">Pick one of the following combinations</dropdownList>
+			</presentation>
+		</presentationTable>
+	</resources>
+</policyDefinitionResources>

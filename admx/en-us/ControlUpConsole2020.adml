@@ -1,0 +1,1593 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="7.03" schemaVersion="1.0" ><!--Created using ADM Template Editor V4.2.22-->
+<!--Created on 17 מאי 2017 14:40:49-->
+<!--ADM Template Editor is marketed by Syspro. Visit us at www.sysprosoft.com-->
+
+	<displayName >Enter Display Name here</displayName>
+	<description >This template helps manage the configuration of the ControlUp console and monitor.</description>
+	<resources >
+		<stringTable ><!--Storage for String Definitions-->
+
+			<string id="String_SupportedOn_ControlUp_7_0_and_4" >ControlUp 7.0 and greater</string>
+			<string id="SUPPORTED_v3_plus" >ControlUp 3.0 and greater</string>
+			<string id="SUPPORTED_v5" >ControlUp 5.0 and greater</string>
+			<string id="Supported_v6" >ControlUp 6.0 and greater</string>
+			<string id="ControlUp" >ControlUp</string>
+			<string id="Console" >Console</string>
+			<string id="String_Cat_Advanced_Settings_2" >Advanced Settings</string>
+			<string id="Controllers" >Controllers Pane</string>
+			<string id="EventsPane" >Events Pane</string>
+			<string id="Incidents" >Incidents Pane</string>
+			<string id="Monitors" >Monitor status</string>
+			<string id="MyOrganization" >My Organization Pane</string>
+			<string id="Accounts" >Accounts View</string>
+			<string id="SchemaAccounts" >Accounts Columns</string>
+			<string id="Storage" >Storage Views</string>
+			<string id="NetScalers" >NetScalers Views</string>
+			<string id="Agent" >Agent Control</string>
+			<string id="Computers" >Computers View</string>
+			<string id="SchemaComputers" >Computer Columns</string>
+			<string id="ProcessGroups" >Applications View</string>
+			<string id="SchemaProcessGroups" >Applications Columns</string>
+			<string id="Folders" >Folders View</string>
+			<string id="SchemaFolders" >Folders Columns</string>
+			<string id="Hosts" >Hosts View</string>
+			<string id="Navigation_Bar" >Navigation Bar</string>
+			<string id="Processes" >Processes View</string>
+			<string id="SchemaProcesses" >Processes Columns</string>
+			<string id="Sessions" >Sessions View</string>
+			<string id="SchemaSessions" >Sessions Columns</string>
+			<string id="TreeView" >Tree View</string>
+			<string id="RemoteDesktop" >Remote Desktop Pane</string>
+			<string id="Ribbons" >Ribbons</string>
+			<string id="SecurityPolicyPane" >Security Policy Pane</string>
+			<string id="Settings" >Settings</string>
+			<string id="String_Cat_Monitor_43" >Monitor</string>
+			<string id="String_Cat_Advanced_Settings_45" >Advanced Settings</string>
+			<string id="String_Policy_Regulate_information_47" >Regulate information updates</string>
+			<string id="String_Explain_When_this_policy_48" >When this policy is enabled, the ControlUp Monitor will pull performance updates from the managed computers per the schedule defined here instead of receiving push updates. 
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="String_Policy_Disable_process_52" >Disable process data collection</string>
+			<string id="String_Explain_When_this_policy_53" >When this policy is enabled, the ControlUp Monitor will not gather process data from managed computers.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="String_Policy_Disable_process_6" >Disable process flat views</string>
+			<string id="String_Explain_When_this_policy_7" >When this policy is enabled, the Processes, Accounts and Applications views will be disabled and their respective buttons in the 'My Organization' pane will be greyed out.
+
+Process information is no longer gathered real-time but is still available on-demand by double-clicking on a specific computer or session.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="String_Policy_Regulate_information_29" >Regulate information updates</string>
+			<string id="String_Explain_When_this_policy_30" >When this policy is enabled, the ControlUp console will pull performance updates from the managed computers per the schedule defined here instead of receiving push updates. 
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="String_Policy_Search_box_behavior_34" >Search box behavior</string>
+			<string id="String_Explain_This_policy_determines_35" >This policy determines which columns of the information grid in the ControlUp console will be searched when text is typed in the search box.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="String_Policy_DropList_Select_Search_box_behavior_All_fields_37" >All fields</string>
+			<string id="String_Policy_DropList_Select_Search_box_behavior_Name_field_only_38" >Name field only</string>
+			<string id="String_Policy_Prevent_automatic_40" >Prevent automatic agent deployment</string>
+			<string id="String_Explain_When_this_policy_41" >When this policy is enabled, the ControlUp console will not attempt to deploy or update agent software on managed computers.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Controllers" >Hide Controllers pane</string>
+			<string id="Hide_Controllers_Help" >This policy will hide the Controllers pane from the console.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_ServicesDashboard" >Hide Computers - Services</string>
+			<string id="Hide_ServicesDashboard_Help" >This policy will hide the Computers - Services section in the Controllers pane.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_CompareRegistryMachine" >Hide Computers - Registry</string>
+			<string id="Hide_CompareRegistryMachine_Help" >This policy will hide the Computers - Registry section in the Controllers pane.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_FileSystemDashboard" >Hide Computers - 'File System'</string>
+			<string id="Hide_FileSystemDashboard_Help" >This policy will hide the Computers - 'File System' section in the Controllers pane.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_InstalledSoftwareController" >Hide Computers - 'Programs And Updates'</string>
+			<string id="Hide_InstalledSoftwareController_Help" >This policy will hide the Computers - 'Programs And Updates' section in the Controllers pane.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_CompareSessionRegistry" >Hide Users - Registry</string>
+			<string id="Hide_CompareSessionRegistry_Help" >This policy will hide the Users - Registry section in the Controllers pane.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_InstalledSoftwareUsersController" >Hide Users - 'Programs and Updates'</string>
+			<string id="Hide_InstalledSoftwareUsersController_Help" >This policy will hide the Users - 'Programs and Updates' section in the Controllers pane.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Shares" >Hide Shares Controller</string>
+			<string id="Hide_Shares_Help" >This policy will hide the Shares Controller in the Controllers pane.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnExportToExcel" >Hide 'Export to Excel' button</string>
+			<string id="Hide_btnExportToExcel_Help" >This policy will hide the 'Export to Excel' button in the Home ribbon bar for the Controllers pane.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Events_Pane" >Hide Events pane</string>
+			<string id="Hide_Events_Pane_Help" >This policy will hide the Events pane from the console.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_IncidentsPane" >Hide Incidents Pane</string>
+			<string id="Hide_Incidents_Help" >This policy will hide the Incidents Pane.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_MonitorsStatusView" >Hide Monitor status</string>
+			<string id="Hide_MonitorsStatusView_Help" >This policy will hide the Monitor status in the lower left corner of the console.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Accounts" >Hide Accounts view</string>
+			<string id="Hide_Accounts_Help" >This policy will hide the Accounts view from the console.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_CPU_Accounts" >Hide CPU from the Accounts view</string>
+			<string id="Hide_CPU_Accounts_Help" >This policy will hide the 'CPU' column from the Accounts view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Machines_Accounts" >Hide Computers from the Accounts view</string>
+			<string id="Hide_Machines_Accounts_Help" >This policy will hide the 'Machines' column from the Accounts view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_PrivateBytes_Accounts" >Hide 'Memory (Private Bytes)' from the Accounts view</string>
+			<string id="Hide_PrivateBytes_Accounts_Help" >This policy will hide the 'Memory (Private Bytes)' column from the Accounts view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Account" >Hide Name from the Accounts view</string>
+			<string id="Hide_Account_Help" >This policy will hide the 'Name' column from the Accounts view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_PageFaultPerSec_Accounts" >Hide 'Page Faults/sec' from the Accounts view</string>
+			<string id="Hide_PageFaultPerSec_Accounts_Help" >This policy will hide the 'Page Fault/sec' column from the Accounts view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Processes_Accounts" >Hide Processes from the Accounts view</string>
+			<string id="Hide_Processes_Accounts_Help" >This policy will hide the Processes column from the Accounts view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Sessions_Accounts" >Hide Sessions from the Accounts view</string>
+			<string id="Hide_Sessions_Accounts_Help" >This policy will hide the Sessions column from the Accounts view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_SeverityLevel_Accounts" >Hide 'Stress Level' from the Accounts view</string>
+			<string id="Hide_SeverityLevel_Accounts_Help" >This policy will hide the 'Stress Level' column from the Accounts view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnAgentProperties" >Hide Properties context menu on the tree view</string>
+			<string id="Hide_btnAgentProperties_Help" >This policy will hide the 'Properties' context menu item on the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_DeployDotNETFramework" >Hide 'Deploy.NET Framework' from the actions list</string>
+			<string id="Hide_DeployDotNETFramework_Help" >If there is a need to deploy the .NET Framework to a client, then this policy will hide the 'Deploy.NET Framework' action from the 'Agent Control' actions menu.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewAgentControl" >Hide 'Agent Control' from tree view context menu</string>
+			<string id="Hide_TreeViewAgentControl_Help" >This policy will hide the entire 'Agent Control' menu from the tree view context menu.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_StartRemoteAgent" >Hide 'Start Remote Agent'</string>
+			<string id="Hide_StartRemoteAgent_Help" >This policy will hide the 'Agent Control' -&gt; 'Start Remote Agent' action from the organization tree context menu.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_StopRemoteAgent" >Hide 'Stop Remote Agent'</string>
+			<string id="Hide_StopRemoteAgent_Help" >This policy will hide the 'Agent Control' -&gt; 'Stop Remote Agent' action from the organization tree context menu.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_RestartRemoteAgent" >Hide 'Restart Remote Agent'</string>
+			<string id="Hide_RestartRemoteAgent_Help" >This policy will hide the 'Agent Control' -&gt; 'Restart Remote Agent' action from the organization tree context menu.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_RemoveRemoteAgent" >Hide 'Uninstall Remote Agent'</string>
+			<string id="Hide_RemoveRemoteAgent_Help" >This policy will hide the 'Agent Control' -&gt; 'Uninstall Remote Agent' action from the organization tree context menu.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_UpgradeRemoteAgent" >Hide 'Upgrade Remote Agent'</string>
+			<string id="Hide_UpgradeRemoteAgent_Help" >This policy will hide the 'Agent Control' -&gt; 'Upgrade Remote Agent' action from the organization tree context menu.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_ListeningPortRemoteAgent" >Hide 'Set Listening Port'</string>
+			<string id="Hide_ListeningPortRemoteAgent_Help" >This policy will hide the 'Agent Control' -&gt; 'Set Listening Port' action from the organization tree context menu.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_SendSuperMessage" >Hide 'Send Super Message'</string>
+			<string id="Hide_SendSuperMessage_Help" >This policy will hide the 'Remote Desktop Services' -&gt; 'Send Super Message' action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_SendMessage" >Hide 'Send Message'</string>
+			<string id="Hide_SendMessage_Help" >This policy will hide the 'Remote Desktop Services' -&gt; 'Send Message' action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_FlushDns" >Hide 'Flush DNS'</string>
+			<string id="Hide_FlushDns_Help" >This policy will hide the 'Flush DNS' action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_WOL" >Hide 'Wake on LAN' from the organization tree</string>
+			<string id="Hide_WOL_Help" >This policy will hide the 'Wake on LAN' action from the context menu in the organization tree
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_SendWOLSignal" >Hide 'Send Wake on LAN signal' from the Computers View context menu</string>
+			<string id="Hide_SendWOLSignal_Help" >This policy will hide the 'Power Management' -&gt; 'Send Wake on LAN signal' action from the Computers View.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Shutdown" >Hide 'Shutdown machine'</string>
+			<string id="Hide_Shutdown_Help" >This policy will hide the 'Power Management' -&gt; 'Shutdown machine' action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Reboot" >Hide 'Reboot machine'</string>
+			<string id="Hide_Reboot_Help" >This policy will hide the 'Power Management' -&gt; 'Reboot machine' action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_AbortShutdown" >Hide 'Abort Shutdown' from the Shutdown window</string>
+			<string id="Hide_AbortShutdown_Help" >This policy will hide the 'Abort Shutdown' option when you perform a 'shutdown' operation. (Normally the progress dialog has an Abort button on it.)
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_RefreshMachinePolicy" >Hide 'Refresh Machine Group Policy'</string>
+			<string id="Hide_RefreshMachinePolicy_Help" >This policy will hide the 'Group Policy' -&gt; 'Refresh Machine Group Policy' action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_ImportRegistryComputer" >Hide 'Import Registry'</string>
+			<string id="Hide_ImportRegistryComputer_Help" >This policy will hide the Registry -&gt; 'Import Registry' action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_StartProcessAsUser" >Hide 'Run As'</string>
+			<string id="Hide_StartProcessAsUser_Help" >This policy will hide the Processes -&gt; 'Run As' action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_EnableProcessExecution" >Hide 'Enable Process Execution'</string>
+			<string id="Hide_EnableProcessExecution_Help" >This policy will hide the Processes -&gt; 'Enable Process Execution' action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_DisableProcessExecution" >Hide 'Disable Process Execution'</string>
+			<string id="Hide_DisableProcessExecution_Help" >This policy will hide the Processes -&gt; 'Disable Process Execution' action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_AdminDiagnosticsInstruction" >Hide 'Admin$' diagnostic</string>
+			<string id="Hide_AdminDiagnosticsInstruction_Help" >This policy will hide the Diagnostics -&gt; Admin$ action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_EventViewerOnRemoteComputer" >Hide 'Launch Event Viewer' diagnostic</string>
+			<string id="Hide_EventViewerOnRemoteComputer_Help" >This policy will hide the Diagnostics -&gt; 'Launch Event Viewer' action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_NSLookupDiagnosticsInstruction" >Hide 'NSLookup' diagnostic</string>
+			<string id="Hide_NSLookupDiagnosticsInstruction_Help" >This policy will hide the Diagnostics -&gt; NSLookup action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_PingDiagnosticsInstruction" >Hide 'Ping' diagnostic</string>
+			<string id="Hide_PingDiagnosticsInstruction_Help" >This policy will hide the Diagnostics -&gt; Ping action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TestWMIDiagnosticsInstruction" >Hide 'Test WMI' diagnostic</string>
+			<string id="Hide_TestWMIDiagnosticsInstruction_Help" >This policy will hide the Diagnostics -&gt; 'Test WMI' action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TraceDiagnosticsInstruction" >Hide 'Trace' diagnostic</string>
+			<string id="Hide_TraceDiagnosticsInstruction_Help" >This policy will hide the Diagnostics -&gt; Trace action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_EnableMaintenanceMode" >Hide 'Enable Maintenance Mode'</string>
+			<string id="Hide_EnableMaintenanceMode_Help" >This policy will hide the 'XenDesktop Management' -&gt; 'Enable Maintenance Mode' action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_DisableMaintenanceMode" >Hide 'Disable Maintenance Mode'</string>
+			<string id="Hide_DisableMaintenanceMode_Help" >This policy will hide the 'XenDesktop Management' -&gt; 'Disable Maintenance Mode' action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_ViewRelatedIncidents" >Hide 'View Related Incidents'</string>
+			<string id="Hide_ViewRelatedIncidents_Help" >This policy will hide the 'View Related Incidents' action in all views.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_RemoteDesktopComputersView" >Hide 'RDP to Computer'</string>
+			<string id="Hide_RemoteDesktopComputersView_Help" >This policy will hide the 'RDP to Computer' action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_ConnectComputers" >Hide 'Connect'</string>
+			<string id="Hide_ConnectComputers_Help" >This policy will hide the 'Connect' action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_DisconnectComputers" >Hide 'Disconnect'</string>
+			<string id="Hide_DisconnectComputers_Help" >This policy will hide the 'Disconnect' action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_ShutdownVM" >Hide 'Shutdown Guest'</string>
+			<string id="Hide_ShutdownVM_Help" >This policy will hide the 'VM Power Management' -&gt; 'Shutdown Guest' action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_PowerOffVM" >Hide 'Force Power Off VM'</string>
+			<string id="Hide_PowerOffVM_Help" >This policy will hide the 'VM Power Management' -&gt; 'Force Power Off VM' action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_PowerOnVM" >Hide 'Power On VM'</string>
+			<string id="Hide_PowerOnVM_Help" >This policy will hide the 'VM Power Management' -&gt; 'Power On VM' action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_ResetVM" >Hide 'Force Reset VM'</string>
+			<string id="Hide_ResetVM_Help" >This policy will hide the 'VM Power Management' -&gt; 'Force Reset VM' action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_RestartVM" >Hide 'Restart Guest'</string>
+			<string id="Hide_RestartVM_Help" >This policy will hide the 'VM Power Management' -&gt; ' Restart Guest' action in the Computers view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_oActiveSessions" >Hide 'Active Sessions' from the Computers view</string>
+			<string id="Hide_oActiveSessions_Help" >This policy will hide the 'Active Sessions' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_ASPRequestQueued" >Hide 'ASP Request Queued' from the Computers view</string>
+			<string id="Hide_ASPRequestQueued_Help" >This policy will hide the 'ASP Request Queued' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_ASPRequestRejected" >Hide 'ASP Request Rejected' from the Computers view</string>
+			<string id="Hide_ASPRequestRejected_Help" >This policy will hide the 'ASP Request Rejected' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_AvgDiskReadPerSec" >Hide 'Avg Disk Read Time' from the Computers view</string>
+			<string id="Hide_AvgDiskReadPerSec_Help" >This policy will hide the 'Avg Disk Read Time' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_AvgDiskWritePerSec" >Hide 'Avg Disk Write Time' from the Computers view</string>
+			<string id="Hide_AvgDiskWritePerSec_Help" >This policy will hide the 'Avg Disk Write Time' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_CPU_Computers" >Hide 'CPU' from the Computers view</string>
+			<string id="Hide_CPU_Computers_Help" >This policy will hide the 'CPU' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_iCPUCount" >Hide 'CPU Count' from the Computers view</string>
+			<string id="Hide_iCPUCount_Help" >This policy will hide the 'CPU Count' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_CSGConnections" >Hide 'CSG Connections' from the Computers view</string>
+			<string id="Hide_CSGConnections_Help" >This policy will hide the 'CSG Connections' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Description_Computers" >Hide 'Description' from the Computers view</string>
+			<string id="Hide_Description_Computers_Help" >This policy will hide the 'Description' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_oDisconnectedSessions" >Hide 'Disconnected Sessions' from the Computers view</string>
+			<string id="Hide_oDisconnectedSessions_Help" >This policy will hide the 'Disconnected Sessions' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_AvgDiskQueue" >Hide 'Disk Queue' from the Computers view</string>
+			<string id="Hide_AvgDiskQueue_Help" >This policy will hide the 'Disk Queue' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sDNSAddresses" >Hide 'DNS A records' from the Computers view</string>
+			<string id="Hide_sDNSAddresses_Help" >This policy will hide the 'DNS A records' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sPrimaryDnsDomain" >Hide 'Domain DNS' from the Computers view</string>
+			<string id="Hide_sPrimaryDnsDomain_Help" >This policy will hide the primary DNS domain column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_eDomainRole" >Hide 'Domain Role' from the Computers view</string>
+			<string id="Hide_eDomainRole_Help" >This policy will hide the 'Domain Role' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_oErrorRate" >Hide 'Error Rate' from the Computers view</string>
+			<string id="Hide_oErrorRate_Help" >This policy will hide the 'Error Rate' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_ParentFolderPath" >Hide 'Folder' from the Computers view</string>
+			<string id="Hide_ParentFolderPath_Help" >This policy will hide the 'Folder' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_SystemDriveFreeSpace" >Hide 'Free Space on System Drive' from the Computers view</string>
+			<string id="Hide_SystemDriveFreeSpace_Help" >This policy will hide the 'Free Space on System Drive' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_dtInstallDate" >Hide 'Install Date' from the Computers view</string>
+			<string id="Hide_dtInstallDate_Help" >This policy will hide the 'Install Date' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sIPAddresses" >Hide 'IP Addresses' from the Computers view</string>
+			<string id="Hide_sIPAddresses_Help" >This policy will hide the 'IP Addresses' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_dtLastBootTime" >Hide 'Last Boot' from the Computers view</string>
+			<string id="Hide_dtLastBootTime_Help" >This policy will hide the 'Last Boot' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sManufacturer" >Hide 'Manufacturer' from the Computers view</string>
+			<string id="Hide_sManufacturer_Help" >This policy will hide the 'Manufacturer' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_MaxSpaceDrive" >Hide 'Max Free Space Drive' from the Computers view</string>
+			<string id="Hide_MaxSpaceDrive_Help" >This policy will hide the 'Max Free Space Drive' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_iTotalRAM" >Hide 'Memory' from the Computers view</string>
+			<string id="Hide_iTotalRAM_Help" >This policy will hide the 'Memory' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_MemoryInUse" >Hide 'Memory Utilization' from the Computers view</string>
+			<string id="Hide_MemoryInUse_Help" >This policy will hide the 'Memory Utilization' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_MinSpaceDrive" >Hide 'Min Free Space Drive' from the Computers view</string>
+			<string id="Hide_MinSpaceDrive_Help" >This policy will hide the 'Min Free Space Drive' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sModel" >Hide 'Model' from the Computers view</string>
+			<string id="Hide_sModel_Help" >This policy will hide the 'Model' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sName_Computers" >Hide 'Name' from the Computers view</string>
+			<string id="Hide_sName_Computers_Help" >This policy will hide the 'Name' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_NetReceivedData" >Hide 'Net Received' from the Computers view</string>
+			<string id="Hide_NetReceivedData_Help" >This policy will hide the 'Net Bytes received/sec' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_NetSentData" >Hide 'Net Sent' from the Computers view</string>
+			<string id="Hide_NetSentData_Help" >This policy will hide the 'Net Bytes sent/sec' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_NetTotalData" >Hide 'Net Total' from the Computers view</string>
+			<string id="Hide_NetTotalData_Help" >This policy will hide the 'Net Bytes Total/sec' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sOSCaption" >Hide 'Operating System' from the Computers view</string>
+			<string id="Hide_sOSCaption_Help" >This policy will hide the 'Operating System' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sOSOrganization" >Hide 'Organization' from the Computers view</string>
+			<string id="Hide_sOSOrganization_Help" >This policy will hide the 'Organization' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sOSServicePack" >Hide 'OS Service Pack' Computers view</string>
+			<string id="Hide_sOSServicePack_Help" >This policy will hide the 'OS Service Pack' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_PageFaultsPerSec" >Hide 'Pages/sec' from the Computers view</string>
+			<string id="Hide_PageFaultsPerSec_Help" >This policy will hide the 'Pages/sec' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_PagingFile" >Hide 'Paging File' from the Computers view</string>
+			<string id="Hide_PagingFile_Help" >This policy will hide the 'Paging File' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sPhysicalAddresses" >Hide 'Physical Addresses' from the Computers view</string>
+			<string id="Hide_sPhysicalAddresses_Help" >This policy will hide the 'Physical Addresses' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_DiskTime" >Hide 'Physical Disk Time' from the Computers view</string>
+			<string id="Hide_DiskTime_Help" >This policy will hide the 'Physical Disk Time' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TotalProcesses_Computers" >Hide 'Processes' from the Computers view</string>
+			<string id="Hide_TotalProcesses_Computers_Help" >This policy will hide the 'Processes' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_AvgProcessorLength" >Hide 'Processor Queue Length' from the Computers view</string>
+			<string id="Hide_AvgProcessorLength_Help" >This policy will hide the 'Processor Queue Length' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_PVSvDiskFileName" >Hide 'PVS vDisk FileName' from the Computers view</string>
+			<string id="Hide_PVSvDiskFileName_Help" >This policy will hide the 'PVS vDisk FileName' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_DNSRegisteredIPs" >Hide 'Registered IP Addresses' from the Computers view</string>
+			<string id="Hide_DNSRegisteredIPs_Help" >This policy will hide the 'Registered IP Addresses' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TotalSessions" >Hide 'Sessions' from the Computers view</string>
+			<string id="Hide_TotalSessions_Help" >This policy will hide the 'Sessions' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Status" >Hide 'Status' from the Computers view</string>
+			<string id="Hide_Status_Help" >This policy will hide the 'Status' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_SeverityLevel_Computers" >Hide 'Stress Level' from the Computers view</string>
+			<string id="Hide_SeverityLevel_Computers_Help" >This policy will hide the 'Stress Level' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sSystemType" >Hide 'System Type' from the Computers view</string>
+			<string id="Hide_sSystemType_Help" >This policy will hide the 'System Type' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_UpTime" >Hide 'Uptime' from the Computers view</string>
+			<string id="Hide_UpTime_Help" >This policy will hide the 'Uptime' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_oUserSessions" >Hide 'User Sessions' from the Computers view</string>
+			<string id="Hide_oUserSessions_Help" >This policy will hide the 'User Sessions' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_oWarningRate" >Hide 'Warning Rate' from the Computers view</string>
+			<string id="Hide_oWarningRate_Help" >This policy will hide the 'Warning Rate' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sWindowsDirectory" >Hide 'Windows Directory' from the Computers view</string>
+			<string id="Hide_sWindowsDirectory_Help" >This policy will hide the 'Windows Directory' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_QueueReadyCount" >Hide 'WorkItem Queue Ready Count' from the Computers view</string>
+			<string id="Hide_QueueReadyCount_Help" >This policy will hide the 'WorkItem Queue Ready Count' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_XenAppPubAppCount" >Hide 'XenApp Published Application Count' *</string>
+			<string id="Hide_XenAppPubAppCount_Help" >This policy will hide 'XenApp Published Application Count' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_DataStoreConnectionFailure" >Hide 'XenApp DataStore Connection Failure' from the Computers view</string>
+			<string id="Hide_DataStoreConnectionFailure_Help" >This policy will hide the 'XenApp DataStore Connection Failure' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_XenAppEdition" >Hide 'XenApp Edition' from the Computers view</string>
+			<string id="Hide_XenAppEdition_Help" >This policy will hide the 'XenApp Edition' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_XenAppFarm" >Hide 'XenApp Farm' from the Computers view</string>
+			<string id="Hide_XenAppFarm_Help" >This policy will hide the 'XenApp Farm' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_LicenseLastCheckoutTime" >Hide 'XenApp License Check-Out Time (ms)' from the Computers view</string>
+			<string id="Hide_LicenseLastCheckoutTime_Help" >This policy will hide the 'XenApp License Check-Out Time (ms)' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_LicenseConnectionFailure" >Hide 'XenApp License Server Connection Failure' from the Computers view</string>
+			<string id="Hide_LicenseConnectionFailure_Help" >This policy will hide the 'XenApp License Server Connection Failure' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_XenAppLoadEvaluator" >Hide 'XenApp Load Evaluator' from the Computers view</string>
+			<string id="Hide_XenAppLoadEvaluator_Help" >This policy will hide the 'XenApp Load Evaluator' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_BusyXMLThreadsCount" >Hide 'XenApp Number of busy XML threads' from the Computers view</string>
+			<string id="Hide_BusyXMLThreadsCount_Help" >This policy will hide the 'XenApp Number of busy XML threads' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_AppResolusionTime" >Hide 'XenApp Resolution Time (ms)' from the Computers view</string>
+			<string id="Hide_AppResolusionTime_Help" >This policy will hide 'XenApp Resolution Time (ms)' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_ResolutionQueueReadyCount" >Hide 'XenApp Resolution WorkItem Queue Ready Count' from the Computers view</string>
+			<string id="Hide_ResolutionQueueReadyCount_Help" >This policy will hide the 'XenApp Resolution WorkItem Queue Ready Count' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_ServerLoad" >Hide 'XenApp Server Load' from the Computers view</string>
+			<string id="Hide_ServerLoad_Help" >This policy will hide the 'XenApp Server Load' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_LogOnStatus" >Hide 'XenApp Server Logon Mode' from the Computers view</string>
+			<string id="Hide_LogOnStatus_Help" >This policy will hide the 'XenApp Server Logon Mode' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_XenAppVersion" >Hide 'XenApp Version' from the Computers view</string>
+			<string id="Hide_XenAppVersion_Help" >This policy will hide the 'XenApp Version' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_XenAppWorkerGroup" >Hide 'XenApp Worker Group' from the Computers view</string>
+			<string id="Hide_XenAppWorkerGroup_Help" >This policy will hide the 'XenApp Worker Group' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_XenAppZone" >Hide 'XenApp Zone' from the Computers view</string>
+			<string id="Hide_XenAppZone_Help" >This policy will hide the 'XenApp Zone' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_XenAppZoneDC" >Hide 'XenApp Zone Data Collector' from the Computers view</string>
+			<string id="Hide_XenAppZoneDC_Help" >This policy will hide the 'XenApp Zone Data Collector' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_XDeskCatalogName" >Hide 'XenDesktop Catalog Name'  from the Computers view</string>
+			<string id="Hide_XDeskCatalogName_Help" >This policy will hide the 'XDesk Catalog Name' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_AvgTransactionTime" >Hide 'XenDesktop Database Avg Transaction Time' from the Computers view</string>
+			<string id="Hide_AvgTransactionTime_Help" >This policy will hide the 'XenDesktop Database Avg Transaction Time' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_DBConnected" >Hide 'XenDesktop Database Connected' from the Computers view</string>
+			<string id="Hide_DBConnected_Help" >This policy will hide the 'XenDesktop Database Connected' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_DBTransactionsErrorRate" >Hide 'XenDesktop Database Transactions Errors/sec' from the Computers view</string>
+			<string id="Hide_DBTransactionsErrorRate_Help" >This policy will hide the 'XenDesktop Database Transactions Errors/sec' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_XDeskGroup" >Hide 'XenDesktop Desktop Group' from the Computers view</string>
+			<string id="Hide_XDeskGroup_Help" >This policy will hide the 'XenDesktop Desktop Group' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_XDeskKind" >Hide 'XenDesktop Desktop Kind' from the Computers view</string>
+			<string id="Hide_XDeskKind_Help" >This policy will hide the 'XenDesktop Desktop Kind' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_XDeskDeskState" >Hide 'XenDesktop Desktop State' from the Computers view</string>
+			<string id="Hide_XDeskDeskState_Help" >This policy will hide the 'XenDesktop Desktop State' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_XDeskFarm" >Hide 'XenDesktop Farm Name' from the Computers view</string>
+			<string id="Hide_XDeskFarm_Help" >This policy will hide the 'XenDesktop Farm Name' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_XDeskMCSImageStatus" >Hide 'XenDesktop MCS Image Out of Date’ from the Computers view</string>
+			<string id="Hide_XDeskMCSImageStatus_Help" >This policy will hide the 'XenDesktop MCS Image Out of Date' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_XDeskVDAversion" >Hide 'VDA version' from the Computers view</string>
+			<string id="Hide_XDeskVDAversion_Help" >This policy will hide the 'VDA version' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_LogonDurationAvg" >Hide 'Avg Logon Duration' from the Computers view</string>
+			<string id="Hide_LogonDurationAvg_Help" >This policy will hide the 'Avg Logon Duration' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_DiskReadsPerSec" >Hide 'Disk Reads/sec' from the Computers view</string>
+			<string id="Hide_DiskReadsPerSec_Help" >This policy will hide the 'Disk Reads/sec' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_DiskWritesPerSec" >Hide 'Disk Writes/sec' from the Computers view</string>
+			<string id="Hide_DiskWritesPerSec_Help" >This policy will hide the 'Disk Writes/sec' column from the Computers view.
+
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_ProcessGroups" >Hide Applications View</string>
+			<string id="Hide_ProcessGroups_Help" >This policy will hide the Applications view from the console.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Machines_ProcessGroups" >Hide Computers from the Applications view</string>
+			<string id="Hide_Machines_ProcessGroups_Help" >This policy will hide the Computers column from the Applications view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Processes_ProcessGroups" >Hide Processes from the Applications view</string>
+			<string id="Hide_Processes_ProcessGroups_Help" >This policy will hide the Processes column from the Applications view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Name_ProcessGroups" >Hide Name from the Applications view</string>
+			<string id="Hide_Name_ProcessGroups_Help" >This policy will hide the Name column from the Applications view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_SeverityLevel_ProcessGroups" >Hide 'Stress Level' from the Applications view</string>
+			<string id="Hide_SeverityLevel_ProcessGroups_Help" >This policy will hide the 'Stress Level' column from the Applications view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_CPU_ProcessGroups" >Hide CPU from the Applications view</string>
+			<string id="Hide_CPU_ProcessGroups_Help" >This policy will hide the CPU column from the Applications view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_PageFaultPerSec_ProcessGroups" >Hide 'Page Fault/sec' from the Applications view</string>
+			<string id="Hide_PageFaultPerSec_ProcessGroups_Help" >This policy will hide the 'Page Fault/sec' column from the Applications view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_PrivateBytes_ProcessGroups" >Hide 'Memory (Private Bytes)' from the Applications view</string>
+			<string id="Hide_PrivateBytes_ProcessGroups_Help" >This policy will hide the 'Memory (Private Bytes)' column from the Applications view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_WorkingSet_ProcessGroups" >Hide 'Memory (Working Set)' from the Applications view</string>
+			<string id="Hide_WorkingSet_ProcessGroups_Help" >This policy will hide the 'Memory (Working Set)' column from the Applications view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_cAvgInstance" >Hide 'Avg Memory per Process'  from the Applications view</string>
+			<string id="Hide_cAvgInstance_Help" >This policy will hide the 'Avg Memory per Process' column from the Applications view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_cMaxInstance" >Hide 'Maximum Memory per Process' from the Applications view</string>
+			<string id="Hide_cMaxInstance_Help" >This policy will hide the 'Maximum Memory per Process' column from the Applications view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_cMinInstance" >Hide 'Minimum Memory per Process' from the Applications view</string>
+			<string id="Hide_cMinInstance_Help" >This policy will hide the 'Maximum Memory per Process' column from the Applications view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Version_ProcessGroups" >Hide 'Product Version' from the Applications view</string>
+			<string id="Hide_Version_ProcessGroups_Help" >This policy will hide the 'Product Version' column from the Applications view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Folders" >Hide Folders View</string>
+			<string id="Hide_Folders_Help" >This policy will hide Folders view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_DisableDG" >Hide 'Disable Delivery Group'</string>
+			<string id="Hide_DisableDG_Help" >This policy will hide the 'XenDesktop Management' -&gt; 'Disable Delivery Group' action in the Folders view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_EnableDG" >Hide 'Enable Delivery Group'</string>
+			<string id="Hide_EnableDG_Help" >This policy will hide the 'XenDesktop Management' -&gt; 'Enable Delivery Group' action in the Folders view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_DisableDGMaintenanceMode" >Hide 'Disable Maintenance Mode' for Delivery Groups</string>
+			<string id="Hide_DisableDGMaintenanceMode_Help" >This policy will hide the 'XenDesktop Management' -&gt; 'Disable Maintenance Mode' action in the Folders view for XenDesktop delivery groups.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_EnableDGMaintenanceMode" >Hide 'Enable Maintenance Mode' for Delivery Groups</string>
+			<string id="Hide_EnableDGMaintenanceMode_Help" >This policy will hide the 'XenDesktop Management' -&gt; 'Enable Maintenance Mode' action in the Folders view for XenDesktop delivery groups.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Name_Folders" >Hide Name from the Folders view</string>
+			<string id="Hide_Name_Folders_Help" >This policy will hide the Name column from the Folders view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Machines_Folders" >Hide Computers from the Folders view</string>
+			<string id="Hide_Machines_Folders_Help" >This policy will hide the Computers column from the Folders view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Sessions_Folders" >Hide Sessions from the Folders view</string>
+			<string id="Hide_Sessions_Folders_Help" >This policy will hide the Sessions column from the Folders view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Processes_Folders" >Hide Processes from the Folders view</string>
+			<string id="Hide_Processes_Folders_Help" >This policy will hide the Processes column from the Folders view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_OnlineMachines" >Hide ‘Connected Computers’ from the Folders view</string>
+			<string id="Hide_OnlineMachines_Help" >This policy will hide the ‘Connected Computers’ column from the Folders view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_DisconnectedComputers" >Hide 'Disconnected Computers' from the Folders view</string>
+			<string id="Hide_DisconnectedComputers_Help" >This policy will hide the Disconnected Computers column from the Folders view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_SeverityLevel_Folders" >Hide 'Stress Level' from the Folders view</string>
+			<string id="Hide_SeverityLevel_Folders_Help" >This policy will hide the 'Stress Level' column from the Folders view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_CPU_Folders" >Hide 'Computers CPU'  from the Folders view</string>
+			<string id="Hide_CPU_Folders_Help" >This policy will hide the 'Computers CPU' column from the Folders view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_PageFaultPerSec_Folders" >Hide 'Page Faults/sec' from the Folders view</string>
+			<string id="Hide_PageFaultPerSec_Folders_Help" >This policy will hide the Page Faults/sec column from the Folders view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Description_folders" >Hide Description from the Folders view</string>
+			<string id="Hide_Description_folders_Help" >This policy will hide the Description column from the Folders view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Path" >Hide 'Folders Path' from the Folders view</string>
+			<string id="Hide_Path_Help" >This policy will hide the 'Folders Path' column from the Folders view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_LowStressedComputers" >Hide 'Low Stressed Computers' from the Folders view</string>
+			<string id="Hide_LowStressedComputers_Help" >This policy will hide the 'Low Stressed Computers' column from the Folders view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_MidStressedComputers" >Hide 'Mid Stressed Computers' from the Folders view</string>
+			<string id="Hide_MidStressedComputers_Help" >This policy will hide the Mid Stressed Computers column from the Folders view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_HighStressedComputers" >Hide 'High Stressed Computers' from the Folders view</string>
+			<string id="Hide_HighStressedComputers_Help" >This policy will hide the 'High Stressed Computers' column from the Folders view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_CriticalStressedComputers" >Hide 'Critical Stressed Computers' from the Folders view</string>
+			<string id="Hide_CriticalStressedComputers_Help" >This policy will hide the critical stressed computers from the Folders view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_LowStressedSessions" >Hide 'Low Stressed Sessions' from the Folders view</string>
+			<string id="Hide_LowStressedSessions_Help" >This policy will hide the 'Low Stressed Sessions' column from the Folders view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_MidStressedSessions" >Hide 'Mid Stressed Sessions' from the Folders view</string>
+			<string id="Hide_MidStressedSessions_Help" >This policy will hide the 'Mid Stressed Sessions' column from the Folders view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_HighStressedSessions" >Hide 'High Stressed Sessions' from the Folders view</string>
+			<string id="Hide_HighStressedSessions_Help" >This policy will hide the 'High Stressed Sessions' column from the Folders view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_CriticalStressedSessions" >Hide 'Critical Stressed Sessions' from the Folders view</string>
+			<string id="Hide_CriticalStressedSessions_Help" >This policy will hide the 'Critical Stressed Sessions' column from the Folders view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_LowStressedProcesses" >Hide 'Low Stressed Processes' from the Folders view</string>
+			<string id="Hide_LowStressedProcesses_Help" >This policy will hide the 'Low Stressed Processes' column from the Folders view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_MidStressedProcesses" >Hide 'Mid Stressed Processes' from the Folders view</string>
+			<string id="Hide_MidStressedProcesses_Help" >This policy will hide the 'Mid Stressed Processes' column from the Folders view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_HighStressedProcesses" >Hide 'High Stressed Processes' from the Folders view</string>
+			<string id="Hide_HighStressedProcesses_Help" >This policy will hide the 'High Stressed Processes' from the Folders view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_CriticalStressedProcesses" >Hide 'Critical Stressed Processes' from the Folders view</string>
+			<string id="Hide_CriticalStressedProcesses_Help" >This policy will hide the 'Critical Stressed Processes' column from the Folders view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_MinSessionPerComputer" >Hide 'Min Sessions per Computer' from the Folders view</string>
+			<string id="Hide_MinSessionPerComputer_Help" >This policy will hide the 'Min Sessions per Computer' column from the Folders view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_AvgSessionPerComputer" >Hide 'Avg Sessions per Computer' from the Folders view</string>
+			<string id="Hide_AvgSessionPerComputer_Help" >This policy will hide the 'Avg Sessions per Computer' column from the Folders view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_MaxSessionPerComputer" >Hide 'Max Sessions per Computer' from the Folders view</string>
+			<string id="Hide_MaxSessionPerComputer_Help" >This policy will hide the 'Max Sessions per Computer' column from the Folders view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_UserSessions" >Hide 'User Sessions' from the Folders view</string>
+			<string id="Hide_UserSessions_Help" >This policy will hide the 'User Sessions' column from the Folders view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Hosts_View" >Hide Hosts View</string>
+			<string id="Hide_Hosts_View_Help" >This policy will hide the Hosts view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnFoldersOnNavigation" >Hide the 'Folders' link</string>
+			<string id="Hide_btnFoldersOnNavigation_Help" >This policy will hide the 'Folders' link from the Navigation bar.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnComputersOnNavigation" >Hide the 'Computers' link</string>
+			<string id="Hide_btnComputersOnNavigation_Help" >This policy will hide the 'Computers' link from the Navigation bar.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnSessionsOnNavigation" >Hide the 'Sessions' link</string>
+			<string id="Hide_btnSessionsOnNavigation_Help" >This policy will hide the 'Sessions' link from the Navigation bar.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnProcessesOnNavigation" >Hide the 'Processes' link</string>
+			<string id="Hide_btnProcessesOnNavigation_Help" >This policy will hide the 'Processes' link from the Navigation bar.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnAccountsNavigation" >Hide the 'Accounts' link</string>
+			<string id="Hide_btnAccountsOnNavigation_Help" >This policy will hide the 'Accounts' link from the Navigation bar.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnExecutablesOnNavigation" >Hide the 'Applications' link</string>
+			<string id="Hide_btnExecutablesOnNavigation_Help" >This policy will hide the 'Applications' link from the Navigation bar.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_SearchBox" >Hide the Search box</string>
+			<string id="Hide_SearchBox_Help" >This policy will hide the search box from the right side of the Navigation bar.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnHistory" >Hide the History button</string>
+			<string id="Hide_btnHistory_Help" >This policy will hide the History button from the left side of the Navigation bar.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_NavigationToolBar" >Hide the Navigation toolbar</string>
+			<string id="Hide_NavigationToolBar_Help" >This policy will hide the Navigation bar completely.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Processes_Tables" >Hide Processes view</string>
+			<string id="Hide_Processes_Tables_Help" >This policy will hide the Processes view from the console.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_SetProcessPriority" >Hide 'Set Process Priority'</string>
+			<string id="Hide_SetProcessPriority_Help" >This policy will hide the Processes -&gt; 'Set Process Priority' action in the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_KillProcess" >Hide 'Kill Process'</string>
+			<string id="Hide_KillProcess_Help" >This policy will hide the Processes -&gt; 'Kill Process' action in the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_EndProcess" >Hide 'End Process'</string>
+			<string id="Hide_EndProcess_Help" >This policy will hide the Processes -&gt; 'End Process' action in the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_PSkillProcess" >Hide 'PsKill'</string>
+			<string id="Hide_PSkillProcess_Help" >This policy will hide the Processes -&gt; PsKill action in the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_GoToSessionFromProcess" >Hide 'Go To &gt;&gt; Session'</string>
+			<string id="Hide_GoToSessionFromProcess_Help" >This policy will hide the 'Go To -&gt; Session' action in the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="hide_SetProcessAffinity" >Hide 'Set Process Affinity'</string>
+			<string id="hide_SetProcessAffinity_Help" >This policy will hide the Processes -&gt; 'Set Process Affinity' action in the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="hide_ProcessStartCPUThrottling" >Hide 'Start CPU Throttling'</string>
+			<string id="hide_ProcessStartCPUThrottling_Help" >This policy will hide the Processes -&gt; 'Start CPU Throttling' action in the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="hide_ProcessStopCPUThrottling" >Hide 'Stop CPU Throttling'</string>
+			<string id="hide_ProcessStopCPUThrottling_Help" >This policy will hide the Processes -&gt; 'Stop CPU Throttling' action in the Processes view. (This appears only after CPU thottling has begun.)
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sName_Process" >Hide 'Process Name' from the Processes view</string>
+			<string id="Hide_sName_Process_Help" >This policy will hide the 'Process Name' column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_iPID" >Hide PID from the Processes view</string>
+			<string id="Hide_iPID_Help" >This policy will hide the PID column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_iSessionID_Processes" >Hide 'Session ID' from the Processes view</string>
+			<string id="Hide_iSessionID_Processes_Help" >This policy will hide the 'Session ID' column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sAccount" >Hide User from the Processes view</string>
+			<string id="Hide_sAccount_Help" >This policy will hide the User column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="String_Policy_Hide_Browser_URL_60" >Hide 'Browser URL column' from the Processes view</string>
+			<string id="String_Explain_When_this_policy_61" >When this policy is enabled, ControlUp will hide the 'Browser URL' column in the Processes view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sServerName_Processes" >Hide Computer from the Processes view</string>
+			<string id="Hide_sServerName_Processes_Help" >This policy will hide the Computer column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_dtStartTime" >Hide 'Start Time' from the Processes view</string>
+			<string id="Hide_dtStartTime_Help" >This policy will hide the 'Start Time' column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_iExitCode" >Hide 'Exit Code' from the Processes view</string>
+			<string id="Hide_iExitCode_Help" >This policy will hide the 'Exit Code' column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_dtExitTime" >Hide 'Exit time' from the Processes view</string>
+			<string id="Hide_dtExitTime_Help" >This policy will hide the 'Exit time' column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_dtCreated" >Hide 'Created Time' from the Processes view</string>
+			<string id="Hide_dtCreated_Help" >This policy will hide the 'Created Time' column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_dtModified" >Hide 'Modified Time' from the Processes view</string>
+			<string id="Hide_dtModified_Help" >This policy will hide the 'Modified Time' column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_ePriority" >Hide Priority from the Processes view</string>
+			<string id="Hide_ePriority_Help" >This policy will hide the Priority column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sDescription" >Hide Description from the Processes view</string>
+			<string id="Hide_sDescription_Help" >This policy will hide the Description column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_iEXESizeKB" >Hide 'Exe size (KB)' from the Processes view</string>
+			<string id="Hide_iEXESizeKB_Help" >This policy will hide the 'Exe size (KB)' column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sCommandLine" >Hide 'Command Line' from the Processes view</string>
+			<string id="Hide_sCommandLine_Help" >This policy will hide the 'Command Line' column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sEXECompany" >Hide Company from the Processes view</string>
+			<string id="Hide_sEXECompany_Help" >This policy will hide the Company column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sEXEName" >Hide 'Exe Path' from the Processes view</string>
+			<string id="Hide_sEXEName_Help" >This policy will hide the 'Exe Path' from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sEXEProductName" >Hide 'Product Name' from the Processes view</string>
+			<string id="Hide_sEXEProductName_Help" >This policy will hide the 'Product Name' column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sEXEProductVersion" >Hide 'Product Version' from the Processes view</string>
+			<string id="Hide_sEXEProductVersion_Help" >This policy will hide the 'Product Version' column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sEXEVersion" >Hide 'Exe Version' from the Processes view</string>
+			<string id="Hide_sEXEVersion_Help" >This policy will hide the 'Exe Version' column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_CPU_Usage_Processes" >Hide CPU from the Processes view</string>
+			<string id="Hide_CPU_Usage_Processes_Help" >This policy will hide the CPU column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_PageFaultPerSec_Process" >Hide 'Page Fault/sec' from the Processes view</string>
+			<string id="Hide_PageFaultPerSec_Process_Help" >This policy will hide the 'Page Fault/sec' column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_WorkingSetSize" >Hide 'Memory (Working Set)' from the Processes view</string>
+			<string id="Hide_WorkingSetSize_Help" >This policy will hide the 'Memory (Working Set)' column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_PrivateUsage_Process" >Hide 'Memory (Private Bytes)' from the Processes view</string>
+			<string id="Hide_PrivateUsage_Process_Help" >This policy will hide the ‘Memory (Private Bytes)’ column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_SeverityLevel_Process" >Hide 'Stress Level' from the Processes view</string>
+			<string id="Hide_SeverityLevel_Process_Help" >This policy will hide the 'Stress Level' column from the Processes view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="String_Policy_Hide_Browser_URL_63" >Hide 'Browser URL Domain column' from the Processes view</string>
+			<string id="String_Explain_When_this_policy_64" >When this policy is enabled, ControlUp will hide the 'Browser URL Domain' column in the Processes view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Sessions_Tables" >Hide Sessions view</string>
+			<string id="Hide_Sessions_Tables_Help" >This policy will hide the Sessions view from the console.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_GetSnapShot" >Hide 'Get Session Screenshot Without notifying the user'</string>
+			<string id="Hide_GetSnapShot_Help" >This policy will hide the 'Get Session Screenshot' -&gt; 'Without notifying the user' action in the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_GetSessionScreenshotWithNotification" >Hide 'Get Session Screenshot With user notification'</string>
+			<string id="Hide_GetSessionScreenshotWithNotification_Help" >This policy will hide the 'Get Session Screenshot' -&gt; 'With Notification' action in the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_GetSessionScreenshotWithApproval" >Hide 'Get Session Screenshot With user approval'</string>
+			<string id="Hide_GetSessionScreenshotWithApproval_Help" >This policy will hide the 'Get Session Screenshot' -&gt; 'With Approval' action in the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_RemoteAssistance" >Hide 'Remote Assistance'</string>
+			<string id="Hide_RemoteAssistance_Help" >This policy will hide the 'Remote Assistance' action in the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Chat" >Hide 'Chat'</string>
+			<string id="Hide_Chat_Help" >This policy will hide the 'Chat' action in the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_LogOffSession" >Hide 'LogOff Session'</string>
+			<string id="Hide_LogOffSession_Help" >This policy will hide the 'Remote Desktop Services' -&gt; 'LogOff Session' action in the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Shadow" >Hide 'Shadow Session'</string>
+			<string id="Hide_Shadow_Help" >This policy will hide the 'Remote Desktop Services' -&gt; 'Shadow Session' action in the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_DisconnectSession" >Hide 'Disconnect Session'</string>
+			<string id="Hide_DisconnectSession_Help" >This policy will hide the 'Remote Desktop Services' -&gt; 'Disconnect Session' action in the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_RemoveGroupPolicy" >Hide 'Kill Policy'</string>
+			<string id="Hide_RemoveGroupPolicy_Help" >This policy will hide the 'Group Policy' -&gt; 'Kill Policy' action from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_RefreshUserPolicy" >Hide 'Refresh User Group Policy'</string>
+			<string id="Hide_RefreshUserPolicy_Help" >This policy will hide the 'Group Policy' -&gt; 'Refresh User Group Policy' action from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_RefreshGroupPolicy" >Hide 'Reapply Group Policy'</string>
+			<string id="Hide_RefreshGroupPolicy_Help" >This policy will hide the 'Group Policy' -&gt; 'Reapply Group Policy' action from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_ImportRegistryUser" >Hide 'Import Registry' user</string>
+			<string id="Hide_ImportRegistryUser_Help" >This policy will hide the 'Registry' -&gt; 'Import Registry' user action from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_StartProcess" >Hide 'Start Process In Session'</string>
+			<string id="Hide_StartProcess_Help" >This policy will hide the 'Processes' -&gt; 'Start Process In Session' action from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_GoToMachine" >Hide 'Go To &gt;&gt; Computer'</string>
+			<string id="Hide_GoToMachine_Help" >This policy will hide the 'Go To &gt;&gt; Computer' action in the Sessions, Accounts, and Processes views
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_RDPToMachine" >Hide 'RDP to Computer' from Sessions and Processes view</string>
+			<string id="Hide_RDPToMachine_Help" >This policy will hide the 'RDP to Computer' action in both the Sessions and Processes views.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_iSessionID_Sessions" >Hide ID from the Sessions view</string>
+			<string id="Hide_iSessionID_Sessions_Help" >This policy will hide the ID column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sSessionName" >Hide 'Session Name' from the Sessions view</string>
+			<string id="Hide_sSessionName_Help" >This policy will hide the 'Session Name' column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sUserAccount" >Hide User from the Sessions view</string>
+			<string id="Hide_sUserAccount_Help" >This policy will hide the User column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_eConnectState" >Hide State from the Sessions view</string>
+			<string id="Hide_eConnectState_Help" >This policy will hide the State column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_dtConnectTime" >Hide 'Connect Time' from the Sessions view</string>
+			<string id="Hide_dtConnectTime_Help" >This policy will hide the 'Connect Time' column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_dtDisconnectTime" >Hide 'Disconnect Time' from the Sessions view</string>
+			<string id="Hide_dtDisconnectTime_Help" >This policy will hide the 'Disconnect Time' column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_oIdleTime" >Hide 'Idle Time' from the Sessions view</string>
+			<string id="Hide_oIdleTime_Help" >This policy will hide the 'Idle Time' column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_dtLoginTime" >Hide 'Logon Time' from the Sessions view</string>
+			<string id="Hide_dtLoginTime_Help" >This policy will hide the 'Login Time' column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TotalProcesses_Sessions" >Hide Processes from the Sessions view</string>
+			<string id="Hide_TotalProcesses_Sessions_Help" >This policy will hide the Processes column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_oClientIP" >Hide 'Client IP' from the Sessions view</string>
+			<string id="Hide_oClientIP_Help" >This policy will hide the 'Client IP' column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sClientName" >Hide 'Client Name' from the Sessions view</string>
+			<string id="Hide_sClientName_Help" >This policy will hide the 'Client Name' column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sServerName_Sessions" >Hide Computer from the Sessions view</string>
+			<string id="Hide_sServerName_Sessions_Help" >This policy will hide the Computer column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_sApplication" >Hide 'Initial Program' from the Sessions view</string>
+			<string id="Hide_sApplication_Help" >This policy will hide the 'Initial Program' column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_CPU_Usage_Sessions" >Hide CPU from the Sessions view</string>
+			<string id="Hide_CPU_Usage_Sessions_Help" >This policy will hide the CPU column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_PageFaultPerSec_Sessions" >Hide 'Page faults/sec' from the Sessions view</string>
+			<string id="Hide_PageFaultPerSec_Sessions_Help" >This policy will hide the 'Page faults/sec' column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_PrivateUsage_Sessions" >Hide ‘Memory (Private Bytes)’ from the Sessions view</string>
+			<string id="Hide_PrivateUsage_Sessions_Help" >This policy will hide the ‘Memory (Private Bytes)’ column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_WorkingSet_Sessions" >Hide ‘Memory (Working Set)’ from the Sessions view</string>
+			<string id="Hide_WorkingSet_Sessions_Help" >This policy will hide the ‘Memory (Working Set)’ column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_SeverityLevel_Sessions" >Hide ‘Stress Level’ from the Sessions view</string>
+			<string id="Hide_SeverityLevel_Sessions_Help" >This policy will hide the ‘Stress Level’ column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_DomainDNSName" >Hide 'Domain DNS' from the Sessions view</string>
+			<string id="Hide_DomainDNSName_Help" >This policy will hide the 'Domain DNS' column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_SessionLatency" >Hide 'Protocol Latency - Last Recorded' from the Sessions view</string>
+			<string id="Hide_SessionLatency_Help" >This policy will hide the 'Protocol Latency - Last Recorded' column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_LogonDuration_Sessions" >Hide 'Logon Duration' from the Sessions view</string>
+			<string id="Hide_LogonDuration_Sessions_Help" >This policy will hide the 'Logon Duration' column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_UserProfileLoadTime" >Hide 'Profile Load Time' from the Sessions view</string>
+			<string id="Hide_UserProfileLoadTime_Help" >This policy will hide the 'Profile Load Time' column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_GroupPolicyProcessingTime" >Hide 'Group Policy Load Time' from the Sessions view</string>
+			<string id="Hide_GroupPolicyProcessingTime_Help" >This policy will hide the 'Group Policy Load Time' column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_ShellLoadTime" >Hide 'Desktop Load Time' from the Sessions view</string>
+			<string id="Hide_ShellLoadTime_Help" >This policy will hide the 'Desktop Load Time' column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_LogonDurationOther" >Hide 'Logon Duration - Other' from the Sessions view</string>
+			<string id="Hide_LogonDurationOther_Help" >This policy will hide the 'Logon Duration - Other' column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_UserLogonServer" >Hide 'User Logon Server' from the Sessions view</string>
+			<string id="Hide_UserLogonServer_Help" >This policy will hide the 'User Logon Server' column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_IOReadOperationsPerSec" >Hide 'I/O Read Operations/sec' from the Sessions view</string>
+			<string id="Hide_IOReadOperationsPerSec_Help" >This policy will hide the 'I/O Read Operations/sec' column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_IOWriteOperationsPerSec" >Hide 'I/O Write Operations/sec' from the Sessions view</string>
+			<string id="Hide_IOWriteOperationsPerSec_Help" >This policy will hide the 'I/O Write Operations/sec' column from the Sessions view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Datastores" >Hide Datastores View</string>
+			<string id="Hide_Datastores_Help" >This policy will hide the Datastores view from the console.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Datastores_on_Hosts" >Hide Datastores on Hosts View</string>
+			<string id="Hide_Datastores_on_Hosts_Help" >This policy will hide the Datastores on Hosts view from the console.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_vDisks" >Hide Virtual Disks View</string>
+			<string id="Hide_vDisks_Help" >This policy will hide the Virtual Disks view from the console.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_LogicalDisks" >Hide Logical Disks View</string>
+			<string id="Hide_LogicalDisks_Help" >This policy will hide the Logical Disks view from the console.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_NetScalers" >Hide NetScalers View</string>
+			<string id="Hide_NetScalers_Help" >This policy will hide the NetScalers view from the console.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_LoadBalancers" >Hide Load Balancers View</string>
+			<string id="Hide_LoadBalancers_Help" >This policy will hide the Load Balancers view from the console.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Gateways" >Hide Gateways View</string>
+			<string id="Hide_Gateways_Help" >This policy will hide the Gateways view from the console.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_HDXSessions" >Hide HDX Sessions View</string>
+			<string id="Hide_HDXSessions_Help" >This policy will hide the HDX Sessions view from the console.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewOrganizationProperties" >Hide the 'Organization Properties' context menu</string>
+			<string id="Hide_TreeViewOrganizationProperties_Help" >This policy will hide the 'Organization Properties' context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewContextMenu" >Hide the Context menu</string>
+			<string id="Hide_TreeViewContextMenu_Help" >This policy will hide the entire context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewFocus" >Hide 'Focus' from the context menu</string>
+			<string id="Hide_TreeViewFocus_Help" >This policy will hide the 'Focus' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewConnect" >Hide 'Connect' from the context menu</string>
+			<string id="Hide_TreeViewConnect_Help" >This policy will hide the 'Connect' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewDisconnect" >Hide 'Disconnect' from the context menu</string>
+			<string id="Hide_TreeViewDisconnect_Help" >This policy will hide the 'Disconnect' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewRDP" >Hide 'RDP' from the context menu</string>
+			<string id="Hide_TreeViewRDP_Help" >This policy will hide the 'RDP' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewAddComputer" >Hide 'Add Computer' from the context menu</string>
+			<string id="Hide_TreeViewAddComputer_Help" >This policy will hide the 'Add Computer' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewAddFolder" >Hide 'Add Folder' from the context menu</string>
+			<string id="Hide_TreeViewAddFolder_Help" >This policy will hide the 'Add Folder' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewMove" >Hide 'Move to' from the context menu</string>
+			<string id="Hide_TreeViewMove_Help" >This policy will hide the 'Move to' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewRename" >Hide 'Rename' from the context menu</string>
+			<string id="Hide_TreeViewRename_Help" >This policy will hide the 'Rename' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewRemove" >Hide 'Remove' from the context menu</string>
+			<string id="Hide_TreeViewRemove_Help" >This policy will hide the 'Remove' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewEventViewerOnRemoteComputer" >Hide 'Event Log' from the context menu</string>
+			<string id="Hide_TreeViewEventViewerOnRemoteComputer_Help" >This policy will hide the 'Diagnostics -&gt; Event Log' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewAdminDiagnosticsInstruction" >Hide 'Admin$' from the context menu</string>
+			<string id="Hide_TreeViewAdminDiagnosticsInstruction_Help" >This policy will hide the 'Diagnostics -&gt; Admin$' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewNSLookupDiagnosticsInstruction" >Hide 'NSLookup' from the context menu</string>
+			<string id="Hide_TreeViewNSLookupDiagnosticsInstruction_Help" >This policy will hide the 'Diagnostics -&gt; NSLookup' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewPingDiagnosticsInstruction" >Hide 'Ping' from the context menu</string>
+			<string id="Hide_TreeViewPingDiagnosticsInstruction_Help" >This policy will hide the 'Diagnostics -&gt; Ping' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewTestWMIDiagnosticsInstruction" >Hide 'Test WMI' from the context menu</string>
+			<string id="Hide_TreeViewTestWMIDiagnosticsInstruction_Help" >This policy will hide the 'Diagnostics -&gt; Test WMI' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewTraceDiagnosticsInstruction" >Hide 'Trace' from the context menu</string>
+			<string id="Hide_TreeViewTraceDiagnosticsInstruction_Help" >This policy will hide the 'Diagnostics -&gt; Trace' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewUninstallAgent" >Hide 'Uninstall Remote Agent' from the context menu</string>
+			<string id="Hide_TreeViewUninstallAgent_Help" >This policy will hide the 'Agent Control -&gt; Uninstall Remote Agent' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewUpgradeAgent" >Hide 'Upgrade Remote Agent' from the context menu</string>
+			<string id="Hide_TreeViewUpgradeAgent_Help" >This policy will hide the 'Agent Control -&gt; Upgrade Remote Agent' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewStartAgent" >Hide 'Start Remote Agent' from the context menu</string>
+			<string id="Hide_TreeViewStartAgent_Help" >This policy will hide the 'Agent Control -&gt; Start Remote Agent' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewStopAgent" >Hide 'Stop Remote Agent' from the context menu</string>
+			<string id="Hide_TreeViewStopAgent_Help" >This policy will hide the 'Agent Control -&gt; Stop Remote Agent' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewRestartAgent" >Hide 'Restart Remote Agent' from the context menu</string>
+			<string id="Hide_TreeViewRestartAgent_Help" >This policy will hide the 'Agent Control -&gt; Restart Remote Agent' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewSetListeningPortAgent" >Hide 'Set Listening Port' from the context menu</string>
+			<string id="Hide_TreeViewSetListeningPortAgent_Help" >This policy will hide the 'Agent Control -&gt; Set Listening Port' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewFolderComputerProperties" >Hide 'Properties' from the context menu</string>
+			<string id="Hide_TreeViewFolderComputerProperties_Help" >This policy will hide the 'Properties' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewWakeOnLAN" >Hide 'Wake on LAN' from the context menu</string>
+			<string id="Hide_TreeViewWakeOnLAN_Help" >This policy will hide the 'Wake on LAN' item in the context menu from the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_RemoteDesktop" >Hide Remote Desktop options from the ControlUp console</string>
+			<string id="Hide_RemoteDesktop_Help" >This policy will hide the Remote Desktop Pane as well as all remote desktop actions from within the ControlUp console.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnAddComputers" >Hide 'Add Computers' button</string>
+			<string id="Hide_btnAddComputers_Help" >This policy will hide the 'Add Computers' button from the Home ribbon.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TreeViewAddComputerOrFolder" >Hide the 'Add' context menu on the tree view</string>
+			<string id="Hide_TreeViewAddComputerOrFolder_Help" >This policy will hide the 'Add' context menu on the tree view.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnActions" >Hide 'Actions' button</string>
+			<string id="Hide_btnActions_Help" >This policy will hide the 'Actions' button from the Home ribbon.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnSBA" >Hide 'Script Based Actions' button</string>
+			<string id="Hide_btnSBA_Help" >This policy will hide the 'Script-Based Actions' button from the Home ribbon.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnExport" >Hide 'Export' button in the Home ribbon bar</string>
+			<string id="Hide_btnExport_Help" >This policy will hide the 'Export' button on the Home ribbon bar.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_HelpRibbon" >Hide 'Help' Ribbon</string>
+			<string id="Hide_HelpRibbon_Help" >This policy will hide the entire 'Help' ribbon.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnAddIncidentTrigger" >Hide 'Add IncidentTrigger' button</string>
+			<string id="Hide_btnAddIncidentTrigger_Help" >This policy will hide the 'Add IncidentTrigger' button from the Home ribbon.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_Columns_Button" >Hide 'Columns' button</string>
+			<string id="Hide_btnColumns_HomeRibbon_Help" >This policy will hide the 'Columns' button from the Home ribbon.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnControlUpInsights" >Hide 'ControlUp Insights' button</string>
+			<string id="Hide_btnControlUpInsights_Help" >This policy will hide the 'ControlUp Insights' button from the Home ribbon.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_cmiAddHypervisorConnection" >Hide 'Add Hypervisor' button</string>
+			<string id="Hide_cmiAddHypervisorConnection_Help" >This policy will hide the 'Add Hypervisor' button from the Home ribbon as well as the context menu on the tree view
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnAddLinuxDC" >Hide 'Linux Data Collector' button</string>
+			<string id="Hide_btnAddLinuxDC_Help" >This policy will hide the 'Linux Data Collector' button from the Home ribbon.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnAddXDSite" >Hide 'Add EUC Environment' button</string>
+			<string id="Hide_btnAddXDSite_Help" >This policy will hide the 'Add EUC Environment' button from the Home ribbon.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnAddNetScaler" >Hide 'Add NetScaler' button</string>
+			<string id="Hide_btnAddNetScaler_Help" >This policy will hide the 'Add NetScaler' button from the Home ribbon.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnAddCloud" >Hide 'Add Cloud Connection' button</string>
+			<string id="Hide_btnAddCloud_Help" >This policy will hide the 'Add Cloud Connection' button from the Home ribbon.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnAddMonitor" >Hide 'Add Monitor' button</string>
+			<string id="Hide_btnAddMonitor_Help" >This policy will hide the 'Add Monitor' button from the Home ribbon.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnVirtualExpert" >Hide 'Virtual Expert' button</string>
+			<string id="Hide_btnVirtualExpert_Help" >This policy will hide the 'Virtual Expert' button from the Home ribbon.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnLaunchControlUpSolve" >Hide 'SolVE' button</string>
+			<string id="Hide_btnLaunchControlUpSolve_Help" >This policy will hide the 'SolVE' button from the SolVE ribbon.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnUserPermissionsSolve" >Hide 'User Permissions' button</string>
+			<string id="Hide_btnUserPermissionsSolve_Help" >This policy will hide the 'User Permissions' button from the SolVE ribbon.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnManageMonitorsSolve" >Hide 'Manage Monitors' button</string>
+			<string id="Hide_btnManageMonitorsSolve_Help" >This policy will hide the 'Manage Monitors' button from the SolVE ribbon.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_btnDisplaySettingsDropDown" >Hide 'Display' button</string>
+			<string id="Hide_btnDisplaySettingsDropDown_Help" >This policy will hide the 'Display' button from the Home ribbon.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_InsightsRibbon" >Hide 'ControlUp Insights' ribbon bar</string>
+			<string id="Hide_InsightsRibbon_Help" >This policy will hide the 'ControlUp Insights' ribbon bar from the console.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_SecurityPolicy" >Hide Security Policy pane</string>
+			<string id="Hide_SecurityPolicy_Help" >This policy will hide the Security Policy pane from the console.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_SettingsRibbon" >Hide all settings from the ControlUp console</string>
+			<string id="Hide_SettingsRibbon_Help" >This policy will hide the Settings ribbon bar from the ControlUp console.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabDisplaySettings" >Hide 'Display Settings'</string>
+			<string id="Hide_TabDisplaySettings_Help" >This policy will hide the 'Display Settings' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabAgentSettings" >Hide 'Agent Settings'</string>
+			<string id="Hide_TabAgentSettings_Help" >This policy will hide the 'Agent Settings' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabProxySettings" >Hide 'Proxy Settings'</string>
+			<string id="Hide_TabProxySettings_Help" >This policy will hide the 'Proxy Settings' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabADConnections" >Hide 'AD Connections'</string>
+			<string id="Hide_TabADConnections_Help" >This policy will hide the 'AD Connections' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabCredentialsStore" >Hide 'Credentials Store'</string>
+			<string id="Hide_TabCredentialsStore_Help" >This policy will hide the 'Credentials Store' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabAlertsSettings" >Hide 'Alerts Settings'</string>
+			<string id="Hide_TabAlertsSettings_Help" >This policy will hide the 'Alerts Settings' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabEventsSettings" >Hide 'Events Settings'</string>
+			<string id="Hide_TabEventsSettings_Help" >This policy will hide the 'Events Settings' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabSecuritySettings" >Hide 'Security Settings'</string>
+			<string id="Hide_TabSecuritySettings_Help" >This policy will hide the 'Security Settings' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabControllerLists" >Hide 'Controller Lists'</string>
+			<string id="Hide_TabControllerLists_Help" >This policy will hide the 'Controller Lists' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabRemoteAssistanceSettings" >Hide 'Remote Assistance'</string>
+			<string id="Hide_TabRemoteAssistanceSettings_Help" >This policy will hide the 'Remote Assistance' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabExportSettings" >Hide 'Export Settings'</string>
+			<string id="Hide_TabExportSettings_Help" >This policy will hide the 'Export Settings&quot;
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabStressSettings" >Hide 'Stress Settings'</string>
+			<string id="Hide_TabStressSettings_Help" >This policy will hide the 'Stress Settings' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabManageSchedule" >Hide 'Schedule Settings'</string>
+			<string id="Hide_TabManageSchedule_Help" >This policy will hide the 'Schedule Settings' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabManageTriggers" >Hide 'Trigger Settings'</string>
+			<string id="Hide_TabManageTriggers_Help" >This policy will hide the 'Trigger Settings' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabManageMonitors" >Hide 'Monitors Settings'</string>
+			<string id="Hide_TabManageMonitors_Help" >This policy will hide the 'Monitors Settings' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabAdvance" >Hide 'Advanced Settings'</string>
+			<string id="Hide_TabAdvance_Help" >This policy will hide the 'Advanced Settings' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabDataUpload" >Hide 'Data Upload'</string>
+			<string id="Hide_TabDataUpload_Help" >This policy will hide the 'Data Upload' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabHRSettings" >Hide 'Insights Access'</string>
+			<string id="Hide_TabHRSettings_Help" >This policy will hide the 'Insights Access' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabAuditingSettings" >Hide 'Audit Log'</string>
+			<string id="Hide_TabAuditingSettings_Help" >This policy will hide the 'Audit Log' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabDrillDownSettings" >Hide 'Virtual Expert'</string>
+			<string id="Hide_TabDrillDownSettings_Help" >This policy will hide the 'Virtual Expert' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabBrowserURLsSettings" >Hide 'Browser URLs'</string>
+			<string id="Hide_TabBrowserURLsSettings_Help" >This policy will hide the 'Browser URLs' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabActiveWindowSettings" >Hide 'Active Application'</string>
+			<string id="Hide_TabActiveWindowSettings_Help" >This policy will hide the 'Active Application' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabAppLoadTimeSettings" >Hide 'App Load Time'</string>
+			<string id="Hide_TabAppLoadTimeSettings_Help" >This policy will hide the 'App Load Time' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+			<string id="Hide_TabBranchMappingSettings" >Hide 'Branch Mapping'</string>
+			<string id="Hide_TabBranchMappingSettings_Help" >This policy will hide the 'Branch Mapping' tab in the Settings window.
+
+https://support.controlup.com/hc/en-us/articles/207202035-Locking-UI-With-Group-Policy</string>
+		</stringTable>
+		<presentationTable ><!--Storage for Presentation Definitions-->
+
+			<presentation id="Policy_Regulate_information_46" >
+				<text >What are the maximum number of concurrent transactions processes by ControlUp Monitor? (0 = unlimited)</text>
+				<decimalTextBox refId="Policy_Numeric_ElementRegulate_information_49" spinStep="1" spin="true" defaultValue="100" />
+				<text />
+				<text >What is the time interval in seconds used by ControlUp Monitor when collecting data from managed resources?</text>
+				<decimalTextBox refId="Policy_Numeric_ElementRegulate_information_50" spinStep="1" spin="true" defaultValue="3" />
+			</presentation>
+			<presentation id="Policy_Regulate_information_28" >
+				<text >What are the maximum number of concurrent transactions that should be processed by the ControlUp console?</text>
+				<decimalTextBox refId="Policy_Numeric_ElementRegulate_information_31" spinStep="1" spin="true" defaultValue="100" />
+				<text />
+				<text >What is the time interval (in seconds) that the ControlUp console will use when collecting data from managed resources?</text>
+				<decimalTextBox refId="Policy_Numeric_ElementRegulate_information_32" spinStep="1" spin="true" defaultValue="3" />
+			</presentation>
+			<presentation id="Policy_Search_box_behavior_33" >
+				<dropdownList refId="Policy_DropList_Element_Search_box_behavior_36" defaultItem="0" />
+			</presentation>
+		</presentationTable>
+	</resources>
+</policyDefinitionResources>

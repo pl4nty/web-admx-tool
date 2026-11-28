@@ -1,0 +1,1684 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2025 BaseALT, Ltd.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="gnome" namespace="BaseALT.Policies.Gnome" />
+    <using prefix="system" namespace="BaseALT.Policies.System" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <policies>
+    <policy name="GnomeSleepInactiveBattery" class="Machine"
+        displayName="$(string.GnomeSleepInactiveBattery)"
+        explainText="$(string.GnomeSleepInactiveBattery_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.GnomeSleepInactiveBattery-pr)">
+      <parentCategory ref="system:ALT_PowerManagement_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-sleep-power_setter" valueName="org.gnome.settings-daemon.plugins.power.sleep-inactive-battery-type" required="true">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <string>suspend</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <string>nothing</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-sleep-power_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.settings-daemon.plugins.power.sleep-inactive-battery-type">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <enum id="gnome-sleep-timeout_setter" valueName="org.gnome.settings-daemon.plugins.power.sleep-inactive-battery-timeout" required="true">
+          <item displayName="$(string.gnome-time-1-minute)">
+            <value>
+              <decimal value="60" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-2-minute)">
+            <value>
+              <decimal value="120" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-5-minute)">
+            <value>
+              <decimal value="300" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-10-minute)">
+            <value>
+              <decimal value="600" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-20-minute)">
+            <value>
+              <decimal value="1200" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-60-minute)">
+            <value>
+              <decimal value="3600" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-sleep-timeout_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.settings-daemon.plugins.power.sleep-inactive-battery-timeout">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy name="GnomeSleepInactiveBattery-user" class="User"
+        displayName="$(string.GnomeSleepInactiveBattery)"
+        explainText="$(string.GnomeSleepInactiveBattery_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.GnomeSleepInactiveBattery-user-pr)">
+      <parentCategory ref="system:ALT_PowerManagement_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-sleep-power_setter" valueName="org.gnome.settings-daemon.plugins.power.sleep-inactive-battery-type" required="true">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <string>suspend</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <string>nothing</string>
+            </value>
+          </item>
+        </enum>
+        <enum id="gnome-sleep-timeout_setter" valueName="org.gnome.settings-daemon.plugins.power.sleep-inactive-battery-timeout" required="true">
+          <item displayName="$(string.gnome-time-1-minute)">
+            <value>
+              <decimal value="60" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-2-minute)">
+            <value>
+              <decimal value="120" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-5-minute)">
+            <value>
+              <decimal value="300" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-10-minute)">
+            <value>
+              <decimal value="600" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-20-minute)">
+            <value>
+              <decimal value="1200" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-60-minute)">
+            <value>
+              <decimal value="3600" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="GnomeSleepInactiveAC" class="Machine"
+        displayName="$(string.GnomeSleepInactiveAC)"
+        explainText="$(string.GnomeSleepInactiveAC_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.GnomeSleepInactiveAC-pr)">
+      <parentCategory ref="system:ALT_PowerManagement_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-sleep-power_setter" valueName="org.gnome.settings-daemon.plugins.power.sleep-inactive-ac-type" required="true">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <string>suspend</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <string>nothing</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-sleep-power_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.settings-daemon.plugins.power.sleep-inactive-ac-type">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <enum id="gnome-sleep-timeout_setter" valueName="org.gnome.settings-daemon.plugins.power.sleep-inactive-ac-timeout" required="true">
+          <item displayName="$(string.gnome-time-1-minute)">
+            <value>
+              <decimal value="60" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-2-minute)">
+            <value>
+              <decimal value="120" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-5-minute)">
+            <value>
+              <decimal value="300" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-10-minute)">
+            <value>
+              <decimal value="600" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-20-minute)">
+            <value>
+              <decimal value="1200" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-60-minute)">
+            <value>
+              <decimal value="3600" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-sleep-timeout_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.settings-daemon.plugins.power.sleep-inactive-ac-timeout">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy name="GnomeSleepInactiveAC-user" class="User"
+        displayName="$(string.GnomeSleepInactiveAC)"
+        explainText="$(string.GnomeSleepInactiveAC_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.GnomeSleepInactiveAC-user-pr)">
+      <parentCategory ref="system:ALT_PowerManagement_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-sleep-power_setter" valueName="org.gnome.settings-daemon.plugins.power.sleep-inactive-ac-type" required="true">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <string>suspend</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <string>nothing</string>
+            </value>
+          </item>
+        </enum>
+        <enum id="gnome-sleep-timeout_setter" valueName="org.gnome.settings-daemon.plugins.power.sleep-inactive-ac-timeout" required="true">
+          <item displayName="$(string.gnome-time-1-minute)">
+            <value>
+              <decimal value="60" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-2-minute)">
+            <value>
+              <decimal value="120" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-5-minute)">
+            <value>
+              <decimal value="300" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-10-minute)">
+            <value>
+              <decimal value="600" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-20-minute)">
+            <value>
+              <decimal value="1200" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-60-minute)">
+            <value>
+              <decimal value="3600" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopInterfaceClockShowWeekdayMachine" class="Machine"
+        displayName="$(string.org-gnome-desktop-interface-clock-show-weekday)"
+        explainText="$(string.org-gnome-desktop-interface-clock-show-weekday_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopInterfaceClockShowWeekday-pr)" >
+      <parentCategory ref="system:ALT_Enviroment_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-weekday_setter" required="true" valueName="org.gnome.desktop.interface.clock-show-weekday">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-weekday_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.desktop.interface.clock-show-weekday">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopInterfaceClockShowWeekdayUser" class="User"
+        displayName="$(string.org-gnome-desktop-interface-clock-show-weekday)"
+        explainText="$(string.org-gnome-desktop-interface-clock-show-weekday_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopInterfaceClockShowWeekdayUser-pr)" >
+      <parentCategory ref="system:ALT_Enviroment_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-weekday_setter" required="true" valueName="org.gnome.desktop.interface.clock-show-weekday">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopInterfaceClockShowDateMachine" class="Machine"
+        displayName="$(string.org-gnome-desktop-interface-clock-show-date)"
+        explainText="$(string.org-gnome-desktop-interface-clock-show-date_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopInterfaceClockShowDate-pr)" >
+      <parentCategory ref="system:ALT_Enviroment_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-date_setter" required="true" valueName="org.gnome.desktop.interface.clock-show-date">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-date_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.desktop.interface.clock-show-date">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopInterfaceClockShowDateUser" class="User"
+        displayName="$(string.org-gnome-desktop-interface-clock-show-date)"
+        explainText="$(string.org-gnome-desktop-interface-clock-show-date_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopInterfaceClockShowDateUser-pr)" >
+      <parentCategory ref="system:ALT_Enviroment_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-date_setter" required="true" valueName="org.gnome.desktop.interface.clock-show-date">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopInterfaceClockShowSecondsMachine" class="Machine"
+        displayName="$(string.org-gnome-desktop-interface-clock-show-seconds)"
+        explainText="$(string.org-gnome-desktop-interface-clock-show-seconds_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopInterfaceClockShowSeconds-pr)" >
+      <parentCategory ref="system:ALT_Enviroment_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-seconds_setter" required="true" valueName="org.gnome.desktop.interface.clock-show-seconds">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-seconds_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.desktop.interface.clock-show-seconds">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopInterfaceClockShowSecondsUser" class="User"
+        displayName="$(string.org-gnome-desktop-interface-clock-show-seconds)"
+        explainText="$(string.org-gnome-desktop-interface-clock-show-seconds_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopInterfaceClockShowSecondsUser-pr)" >
+      <parentCategory ref="system:ALT_Enviroment_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-seconds_setter" required="true" valueName="org.gnome.desktop.interface.clock-show-seconds">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopInterfaceBatteryPercentageMachine" class="Machine"
+        displayName="$(string.org-gnome-desktop-interface-show-battery-percentage)"
+        explainText="$(string.org-gnome-desktop-interface-show-battery-percentage_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopInterfaceBatteryPercentage-pr)" >
+      <parentCategory ref="system:ALT_Enviroment_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-battery_setter" required="true" valueName="org.gnome.desktop.interface.show-battery-percentage">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-battery_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.desktop.interface.show-battery-percentage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopInterfaceBatteryPercentageUser" class="User"
+        displayName="$(string.org-gnome-desktop-interface-show-battery-percentage)"
+        explainText="$(string.org-gnome-desktop-interface-show-battery-percentage_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopInterfaceBatteryPercentageUser-pr)" >
+      <parentCategory ref="system:ALT_Enviroment_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-battery_setter" required="true" valueName="org.gnome.desktop.interface.show-battery-percentage">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopInterfaceEnableAnimationsMachine" class="Machine"
+        displayName="$(string.org-gnome-desktop-interface-enable-animations)"
+        explainText="$(string.org-gnome-desktop-interface-enable-animations_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopInterfaceEnableAnimations-pr)" >
+      <parentCategory ref="system:ALT_Enviroment_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-animations_setter" required="true" valueName="org.gnome.desktop.interface.enable-animations">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-animations_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.desktop.interface.enable-animations">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopInterfaceEnableAnimationsUser" class="User"
+        displayName="$(string.org-gnome-desktop-interface-enable-animations)"
+        explainText="$(string.org-gnome-desktop-interface-enable-animations_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopInterfaceEnableAnimationsUser-pr)" >
+      <parentCategory ref="system:ALT_Enviroment_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-animations_setter" required="true" valueName="org.gnome.desktop.interface.enable-animations">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopInterfaceColorSchemeMachine" class="Machine"
+        displayName="$(string.org-gnome-desktop-interface-color-scheme)"
+        explainText="$(string.org-gnome-desktop-interface-color-scheme_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopInterfaceColorScheme-pr)" >
+      <parentCategory ref="system:ALT_Apperance_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-color-scheme_setter" required="true" valueName="org.gnome.desktop.interface.color-scheme">
+          <item displayName="$(string.gnome-color-scheme-light)">
+            <value>
+              <string>prefer-light</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-color-scheme-dark)">
+            <value>
+              <string>prefer-dark</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-color-scheme_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.desktop.interface.color-scheme">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopInterfaceColorSchemeUser" class="User"
+        displayName="$(string.org-gnome-desktop-interface-color-scheme)"
+        explainText="$(string.org-gnome-desktop-interface-color-scheme_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopInterfaceColorSchemeUser-pr)" >
+      <parentCategory ref="system:ALT_Apperance_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-color-scheme_setter" required="true" valueName="org.gnome.desktop.interface.color-scheme">
+          <item displayName="$(string.gnome-color-scheme-light)">
+            <value>
+              <string>prefer-light</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-color-scheme-dark)">
+            <value>
+              <string>prefer-dark</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopInterfaceIconThemeMachine" class="Machine"
+        displayName="$(string.org-gnome-desktop-interface-icon-theme)"
+        explainText="$(string.org-gnome-desktop-interface-icon-theme_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopInterfaceIconTheme-pr)" >
+      <parentCategory ref="system:ALT_Apperance_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-icon-theme_setter" required="true" valueName="org.gnome.desktop.interface.icon-theme">
+          <item displayName="$(string.gnome-theme-Adwaita)">
+            <value>
+              <string>Adwaita</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-theme-HighContrast)">
+            <value>
+              <string>HighContrast</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-theme-GNOME)">
+            <value>
+              <string>GNOME</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-theme-Hicolor)">
+            <value>
+              <string>Hicolor</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-icon-theme_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.desktop.interface.icon-theme">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopInterfaceIconThemeUser" class="User"
+        displayName="$(string.org-gnome-desktop-interface-icon-theme)"
+        explainText="$(string.org-gnome-desktop-interface-icon-theme_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopInterfaceIconThemeUser-pr)" >
+      <parentCategory ref="system:ALT_Apperance_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-icon-theme_setter" required="true" valueName="org.gnome.desktop.interface.icon-theme">
+          <item displayName="$(string.gnome-theme-Adwaita)">
+            <value>
+              <string>Adwaita</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-theme-HighContrast)">
+            <value>
+              <string>HighContrast</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-theme-GNOME)">
+            <value>
+              <string>GNOME</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-theme-Hicolor)">
+            <value>
+              <string>Hicolor</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeBackgroundPictureFilenameMachine" class="Machine"
+        displayName="$(string.org-gnome-background-picture-filename)"
+        explainText="$(string.org-gnome-background-picture-filename_help)"
+        presentation="$(presentation.OrgGnomeBackgroundPictureFilenameMachine-pr)"
+        key="Software\BaseALT\Policies\gsettings">
+      <parentCategory ref="system:ALT_Apperance_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <text id="OrgGnomeBackgroundPictureFilename_light_setter" valueName="org.gnome.desktop.background.picture-uri" />
+        <text id="OrgGnomeBackgroundPictureFilename_dark_setter" valueName="org.gnome.desktop.background.picture-uri-dark" />
+        <boolean id="OrgGnomeBackgroundPictureFilename_light_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.desktop.background.picture-uri">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="OrgGnomeBackgroundPictureFilename_dark_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.desktop.background.picture-uri-dark">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeBackgroundPictureFilenameUser" class="User"
+        displayName="$(string.org-gnome-background-picture-filename)"
+        explainText="$(string.org-gnome-background-picture-filename_help)"
+        presentation="$(presentation.OrgGnomeBackgroundPictureFilenameUser-pr)"
+        key="Software\BaseALT\Policies\gsettings">
+      <parentCategory ref="system:ALT_Apperance_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <text id="OrgGnomeBackgroundPictureFilename_light_setter" valueName="org.gnome.desktop.background.picture-uri" />
+        <text id="OrgGnomeBackgroundPictureFilename_dark_setter" valueName="org.gnome.desktop.background.picture-uri-dark" />
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopBackgroundPictureOptionsMachine" class="Machine"
+        displayName="$(string.org-gnome-desktop-background-picture-options)"
+        explainText="$(string.org-gnome-desktop-background-picture-options_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopBackgroundPictureOptionsMachine-pr)" >
+      <parentCategory ref="system:ALT_Apperance_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-picture-options_setter" required="true" valueName="org.gnome.desktop.background.picture-options">
+          <item displayName="$(string.gnome-picture-options-none)">
+            <value>
+              <string>none</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-picture-options-wallpaper)">
+            <value>
+              <string>wallpaper</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-picture-options-centered)">
+            <value>
+              <string>centered</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-picture-options-scaled)">
+            <value>
+              <string>scaled</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-picture-options-stretched)">
+            <value>
+              <string>stretched</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-picture-options-zoom)">
+            <value>
+              <string>zoom</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-picture-options-spanned)">
+            <value>
+              <string>spanned</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-picture-options_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.desktop.background.picture-options">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopBackgroundPictureOptionsUser" class="User"
+        displayName="$(string.org-gnome-desktop-background-picture-options)"
+        explainText="$(string.org-gnome-desktop-background-picture-options_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopBackgroundPictureOptionsUser-pr)" >
+      <parentCategory ref="system:ALT_Apperance_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-picture-options_setter" required="true" valueName="org.gnome.desktop.background.picture-options">
+          <item displayName="$(string.gnome-picture-options-none)">
+            <value>
+              <string>none</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-picture-options-wallpaper)">
+            <value>
+              <string>wallpaper</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-picture-options-centered)">
+            <value>
+              <string>centered</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-picture-options-scaled)">
+            <value>
+              <string>scaled</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-picture-options-stretched)">
+            <value>
+              <string>stretched</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-picture-options-zoom)">
+            <value>
+              <string>zoom</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-picture-options-spanned)">
+            <value>
+              <string>spanned</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopInterfaceEnableHotCornersMachine" class="Machine"
+        displayName="$(string.org-gnome-desktop-interface-enable-hot-corners)"
+        explainText="$(string.org-gnome-desktop-interface-enable-hot-corners_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopInterfaceEnableHotCornersMachine-pr)" >
+      <parentCategory ref="system:ALT_Multitasking_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-state_setter" required="true" valueName="org.gnome.desktop.interface.enable-hot-corners">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-state_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.desktop.interface.enable-hot-corners">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopInterfaceEnableHotCornersUser" class="User"
+        displayName="$(string.org-gnome-desktop-interface-enable-hot-corners)"
+        explainText="$(string.org-gnome-desktop-interface-enable-hot-corners_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopInterfaceEnableHotCornersUser-pr)" >
+      <parentCategory ref="system:ALT_Multitasking_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-state_setter" required="true" valueName="org.gnome.desktop.interface.enable-hot-corners">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="gnome-desktops" class="Machine"
+        displayName="$(string.gnome-desktops)"
+        explainText="$(string.gnome-desktops_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.gnome-desktops-pr)">
+      <parentCategory ref="system:ALT_Multitasking_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-desktop_setter" required="true" valueName="org.gnome.mutter.dynamic-workspaces">
+          <item displayName="$(string.gnome-desktop-dynamic)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-desktop-static)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-desktop_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.mutter.dynamic-workspaces">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <decimal id="gnome-desktopnumber_setter" valueName="org.gnome.desktop.wm.preferences.num-workspaces" minValue="1" maxValue="36" />
+        <boolean id="gnome-desktopnumber_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.desktop.wm.preferences.num-workspaces">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="gnome-desktops-user" class="User"
+        displayName="$(string.gnome-desktops)"
+        explainText="$(string.gnome-desktops_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.gnome-desktops-user-pr)">
+      <parentCategory ref="system:ALT_Multitasking_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-desktop_setter" required="true" valueName="org.gnome.mutter.dynamic-workspaces">
+          <item displayName="$(string.gnome-desktop-dynamic)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-desktop-static)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <decimal id="gnome-desktopnumber_setter" valueName="org.gnome.desktop.wm.preferences.num-workspaces" minValue="1" maxValue="36" />
+      </elements>
+    </policy>
+    <policy name="OrgGnomeMutterWorkspacesOnlyOnPrimary" class="Machine"
+        displayName="$(string.org-gnome-mutter-workspaces-only-on-primary)"
+        explainText="$(string.org-gnome-mutter-workspaces-only-on-primary_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeMutterWorkspacesOnlyOnPrimary-pr)">
+      <parentCategory ref="system:ALT_Multitasking_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-workspaces_setter" required="true" valueName="org.gnome.mutter.workspaces-only-on-primary">
+          <item displayName="$(string.gnome-workspaces-main-display)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-workspaces-all-displays)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-workspaces_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.mutter.workspaces-only-on-primary">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeMutterWorkspacesOnlyOnPrimaryUser" class="User"
+        displayName="$(string.org-gnome-mutter-workspaces-only-on-primary)"
+        explainText="$(string.org-gnome-mutter-workspaces-only-on-primary_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeMutterWorkspacesOnlyOnPrimaryUser-pr)">
+      <parentCategory ref="system:ALT_Multitasking_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-workspaces_setter" required="true" valueName="org.gnome.mutter.workspaces-only-on-primary">
+          <item displayName="$(string.gnome-workspaces-main-display)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-workspaces-all-displays)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopA11YAlwaysShowUniversalAccessStatusMachine" class="Machine"
+        displayName="$(string.org-gnome-desktop-a11y-always-show-universal-access-status)"
+        explainText="$(string.org-gnome-desktop-a11y-always-show-universal-access-status_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopA11YAlwaysShowUniversalAccessStatusMachine-pr)" >
+      <parentCategory ref="system:ALT_Accessibility_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-state_setter" required="true" valueName="org.gnome.desktop.a11y.always-show-universal-access-status">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-state_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.desktop.a11y.always-show-universal-access-status">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopA11YAlwaysShowUniversalAccessStatusUser" class="User"
+        displayName="$(string.org-gnome-desktop-a11y-always-show-universal-access-status)"
+        explainText="$(string.org-gnome-desktop-a11y-always-show-universal-access-status_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopA11YAlwaysShowUniversalAccessStatusUser-pr)" >
+      <parentCategory ref="system:ALT_Accessibility_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-state_setter" required="true" valueName="org.gnome.desktop.a11y.always-show-universal-access-status">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeSettingsDaemonPowerButtonActionMachine" class="Machine"
+        displayName="$(string.org-gnome-settings-daemon-power-button-action)"
+        explainText="$(string.org-gnome-settings-daemon-power-button-action_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeSettingsDaemonPowerButtonActionMachine-pr)" >
+      <parentCategory ref="system:ALT_PowerManagement_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="power-button-action_setter" required="true" valueName="org.gnome.settings-daemon.plugins.power.power-button-action">
+          <item displayName="$(string.power-button-action-suspend)">
+            <value>
+              <string>suspend</string>
+            </value>
+          </item>
+          <item displayName="$(string.power-button-action-interactive)">
+            <value>
+              <string>interactive</string>
+            </value>
+          </item>
+          <item displayName="$(string.power-button-action-hibernate)">
+            <value>
+              <string>hibernate</string>
+            </value>
+          </item>
+          <item displayName="$(string.power-button-action-nothing)">
+            <value>
+              <string>nothing</string>
+            </value>
+          </item>
+        </enum>
+        <boolean id="power-button-action_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.settings-daemon.plugins.power.power-button-action">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeSettingsDaemonPowerButtonActionUser" class="User"
+        displayName="$(string.org-gnome-settings-daemon-power-button-action)"
+        explainText="$(string.org-gnome-settings-daemon-power-button-action_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeSettingsDaemonPowerButtonActionUser-pr)" >
+      <parentCategory ref="system:ALT_PowerManagement_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="power-button-action_setter" required="true" valueName="org.gnome.settings-daemon.plugins.power.power-button-action">
+          <item displayName="$(string.power-button-action-suspend)">
+            <value>
+              <string>suspend</string>
+            </value>
+          </item>
+          <item displayName="$(string.power-button-action-interactive)">
+            <value>
+              <string>interactive</string>
+            </value>
+          </item>
+          <item displayName="$(string.power-button-action-hibernate)">
+            <value>
+              <string>hibernate</string>
+            </value>
+          </item>
+          <item displayName="$(string.power-button-action-nothing)">
+            <value>
+              <string>nothing</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="GnomeScreensaverLockEnabledMachine" class="Machine"
+        displayName="$(string.org-gnome-desktop-screensaver-lock-enabled)"
+        explainText="$(string.org-gnome-desktop-screensaver-lock-enabled_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.GnomeScreensaverLockEnabledMachine-pr)">
+      <parentCategory ref="system:ALT_LockScreen_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-lock-enabled_setter" valueName="org.gnome.desktop.screensaver.lock-enabled" required="true">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-lock-enabled_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.desktop.screensaver.lock-enabled">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <enum id="gnome-lock-delay_setter" valueName="org.gnome.desktop.screensaver.lock-delay" required="true">
+          <item displayName="$(string.gnome-screen-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-30-seconds)">
+            <value>
+              <decimal value="30" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-1-minute)">
+            <value>
+              <decimal value="60" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-2-minute)">
+            <value>
+              <decimal value="120" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-3-minute)">
+            <value>
+              <decimal value="180" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-5-minute)">
+            <value>
+              <decimal value="300" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-30-minute)">
+            <value>
+              <decimal value="1800" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-60-minute)">
+            <value>
+              <decimal value="3600" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-lock-delay_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.desktop.screensaver.lock-delay">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy name="GnomeScreensaverLockEnabledUser" class="User"
+        displayName="$(string.org-gnome-desktop-screensaver-lock-enabled)"
+        explainText="$(string.org-gnome-desktop-screensaver-lock-enabled_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.GnomeScreensaverLockEnabledUser-pr)">
+      <parentCategory ref="system:ALT_LockScreen_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-lock-enabled_setter" valueName="org.gnome.desktop.screensaver.lock-enabled" required="true">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="gnome-lock-delay_setter" valueName="org.gnome.desktop.screensaver.lock-delay" required="true">
+          <item displayName="$(string.gnome-screen-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-30-seconds)">
+            <value>
+              <decimal value="30" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-1-minute)">
+            <value>
+              <decimal value="60" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-2-minute)">
+            <value>
+              <decimal value="120" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-3-minute)">
+            <value>
+              <decimal value="180" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-5-minute)">
+            <value>
+              <decimal value="300" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-30-minute)">
+            <value>
+              <decimal value="1800" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-60-minute)">
+            <value>
+              <decimal value="3600" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopSessionIdleDelayMachine" class="Machine"
+        displayName="$(string.org-gnome-desktop-session-idle-delay)"
+        explainText="$(string.org-gnome-desktop-session-idle-delay_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopSessionIdleDelayMachine-pr)">
+      <parentCategory ref="system:ALT_LockScreen_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-idle-delay_setter" valueName="org.gnome.desktop.session.idle-delay" required="true">
+          <item displayName="$(string.gnome-time-1-minute)">
+            <value>
+              <decimal value="60" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-2-minute)">
+            <value>
+              <decimal value="120" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-3-minute)">
+            <value>
+              <decimal value="180" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-4-minute)">
+            <value>
+              <decimal value="240" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-5-minute)">
+            <value>
+              <decimal value="300" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-8-minute)">
+            <value>
+              <decimal value="480" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-10-minute)">
+            <value>
+              <decimal value="600" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-12-minute)">
+            <value>
+              <decimal value="720" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-15-minute)">
+            <value>
+              <decimal value="900" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-0-minute)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-idle-delay_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.desktop.session.idle-delay">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+          </boolean>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopSessionIdleDelayUser" class="User"
+        displayName="$(string.org-gnome-desktop-session-idle-delay)"
+        explainText="$(string.org-gnome-desktop-session-idle-delay_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopSessionIdleDelayUser-pr)">
+      <parentCategory ref="system:ALT_LockScreen_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-idle-delay_setter" valueName="org.gnome.desktop.session.idle-delay" required="true">
+          <item displayName="$(string.gnome-time-1-minute)">
+            <value>
+              <decimal value="60" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-2-minute)">
+            <value>
+              <decimal value="120" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-3-minute)">
+            <value>
+              <decimal value="180" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-4-minute)">
+            <value>
+              <decimal value="240" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-5-minute)">
+            <value>
+              <decimal value="300" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-8-minute)">
+            <value>
+              <decimal value="480" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-10-minute)">
+            <value>
+              <decimal value="600" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-12-minute)">
+            <value>
+              <decimal value="720" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-15-minute)">
+            <value>
+              <decimal value="900" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-time-0-minute)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopNotificationsShowInLockScreenMachine" class="Machine"
+        displayName="$(string.org-gnome-desktop-notifications-show-in-lock-screen)"
+        explainText="$(string.org-gnome-desktop-notifications-show-in-lock-screen_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopNotificationsShowInLockScreenMachine-pr)" >
+      <parentCategory ref="system:ALT_LockScreen_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-desktop-notifications_setter" required="true" valueName="org.gnome.desktop.notifications.show-in-lock-screen">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-desktop-notifications_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.desktop.notifications.show-in-lock-screen">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopNotificationsShowInLockScreenUser" class="User"
+        displayName="$(string.org-gnome-desktop-notifications-show-in-lock-screen)"
+        explainText="$(string.org-gnome-desktop-notifications-show-in-lock-screen_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopNotificationsShowInLockScreenUser-pr)" >
+      <parentCategory ref="system:ALT_LockScreen_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-desktop-notifications_setter" required="true" valueName="org.gnome.desktop.notifications.show-in-lock-screen">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopFocusModeMachine" class="Machine"
+        displayName="$(string.org-gnome-desktop-wm-preferences-focus-mode)"
+        explainText="$(string.org-gnome-desktop-wm-preferences-focus-mode_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopFocusModeMachine-pr)" >
+      <parentCategory ref="system:ALT_Enviroment_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-focus-mode_setter" required="true" valueName="org.gnome.desktop.wm.preferences.focus-mode">
+          <item displayName="$(string.gnome-focus-mode-click)">
+            <value>
+              <string>click</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-focus-mode-sloppy)">
+            <value>
+              <string>sloppy</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-focus-mode-mouse)">
+            <value>
+              <string>mouse</string>
+            </value>
+          </item>
+        </enum>
+        <enum id="gnome-auto-reise_setter" required="true" valueName="org.gnome.desktop.wm.preferences.auto-raise">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-focus-mode_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.desktop.wm.preferences.focus-mode">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="gnome-auto-reise_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.desktop.wm.preferences.auto-raise">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopFocusModeUser" class="User"
+        displayName="$(string.org-gnome-desktop-wm-preferences-focus-mode)"
+        explainText="$(string.org-gnome-desktop-wm-preferences-focus-mode_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopFocusModeUser-pr)" >
+      <parentCategory ref="system:ALT_Enviroment_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-focus-mode_setter" required="true" valueName="org.gnome.desktop.wm.preferences.focus-mode">
+          <item displayName="$(string.gnome-focus-mode-click)">
+            <value>
+              <string>click</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-focus-mode-sloppy)">
+            <value>
+              <string>sloppy</string>
+            </value>
+          </item>
+          <item displayName="$(string.gnome-focus-mode-mouse)">
+            <value>
+              <string>mouse</string>
+            </value>
+          </item>
+        </enum>
+        <enum id="gnome-auto-reise_setter" required="true" valueName="org.gnome.desktop.wm.preferences.auto-raise">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopA11YInterfaceHighContrastMachine" class="Machine"
+        displayName="$(string.org-gnome-desktop-a11y-interface-high-contrast)"
+        explainText="$(string.org-gnome-desktop-a11y-interface-high-contrast_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopA11YInterfaceHighContrastMachine-pr)" >
+      <parentCategory ref="system:ALT_Vision_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-state_setter" required="true" valueName="org.gnome.desktop.a11y.interface.high-contrast">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-state_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.desktop.a11y.interface.high-contrast">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopA11YInterfaceHighContrastUser" class="User"
+        displayName="$(string.org-gnome-desktop-a11y-interface-high-contrast)"
+        explainText="$(string.org-gnome-desktop-a11y-interface-high-contrast_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopA11YInterfaceHighContrastUser-pr)" >
+      <parentCategory ref="system:ALT_Vision_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-state_setter" required="true" valueName="org.gnome.desktop.a11y.interface.high-contrast">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopA11YInterfaceShowStatusShapesMachine" class="Machine"
+        displayName="$(string.org-gnome-desktop-a11y-interface-show-status-shapes)"
+        explainText="$(string.org-gnome-desktop-a11y-interface-show-status-shapes_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopA11YInterfaceShowStatusShapesMachine-pr)" >
+      <parentCategory ref="system:ALT_Vision_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-state_setter" required="true" valueName="org.gnome.desktop.a11y.interface.show-status-shapes">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-state_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.desktop.a11y.interface.show-status-shapes">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopA11YInterfaceShowStatusShapesUser" class="User"
+        displayName="$(string.org-gnome-desktop-a11y-interface-show-status-shapes)"
+        explainText="$(string.org-gnome-desktop-a11y-interface-show-status-shapes_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopA11YInterfaceShowStatusShapesUser-pr)" >
+      <parentCategory ref="system:ALT_Vision_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-state_setter" required="true" valueName="org.gnome.desktop.a11y.interface.show-status-shapes">
+          <item displayName="$(string.gnome-state-on)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-state-off)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopInterfaceCursorSizeMachine" class="Machine"
+        displayName="$(string.org-gnome-desktop-interface-cursor-size)"
+        explainText="$(string.org-gnome-desktop-interface-cursor-size_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopInterfaceCursorSizeMachine-pr)">
+      <parentCategory ref="system:ALT_Vision_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-cursor-size_setter" valueName="org.gnome.desktop.interface.cursor-size" required="true">
+          <item displayName="$(string.gnome-cursor-24)">
+            <value>
+              <decimal value="24" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-cursor-32)">
+            <value>
+              <decimal value="32" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-cursor-48)">
+            <value>
+              <decimal value="48" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-cursor-64)">
+            <value>
+              <decimal value="64" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-cursor-96)">
+            <value>
+              <decimal value="96" />
+            </value>
+          </item>
+        </enum>
+        <boolean id="gnome-cursor-size_blocker" key="Software\BaseALT\Policies\GSettingsLocks" valueName="org.gnome.desktop.interface.cursor-size">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy name="OrgGnomeDesktopInterfaceCursorSizeUser" class="User"
+        displayName="$(string.org-gnome-desktop-interface-cursor-size)"
+        explainText="$(string.org-gnome-desktop-interface-cursor-size_help)"
+        key="Software\BaseALT\Policies\gsettings"
+        presentation="$(presentation.OrgGnomeDesktopInterfaceCursorSizeUser-pr)">
+      <parentCategory ref="system:ALT_Vision_Gnome" />
+      <supportedOn ref="system:SUPPORTED_AltP11" />
+      <elements>
+        <enum id="gnome-cursor-size_setter" valueName="org.gnome.desktop.interface.cursor-size" required="true">
+          <item displayName="$(string.gnome-cursor-24)">
+            <value>
+              <decimal value="24" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-cursor-32)">
+            <value>
+              <decimal value="32" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-cursor-48)">
+            <value>
+              <decimal value="48" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-cursor-64)">
+            <value>
+              <decimal value="64" />
+            </value>
+          </item>
+          <item displayName="$(string.gnome-cursor-96)">
+            <value>
+              <decimal value="96" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+ </policies>
+</policyDefinitions>
